@@ -529,6 +529,10 @@
       "class": "ConversationSocialExpressionEventTopicSocialConversation"
     },
     {
+      "topic": "v2.users.{id}.conversations.summaries",
+      "class": "ConversationSummaryTopicConversationSummaryEvent"
+    },
+    {
       "topic": "v2.users.{id}.conversations.videos",
       "class": "ConversationVideoEventTopicVideoConversation"
     },

@@ -5,7 +5,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**

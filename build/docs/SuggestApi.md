@@ -233,4 +233,4 @@ apiInstance.postSearchSuggest(body, opts)
 **JsonNodeSearchResponse**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

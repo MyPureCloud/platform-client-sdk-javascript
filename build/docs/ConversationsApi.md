@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
 [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
 [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
+[**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete Twitter messaging integration
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
 [**deleteConversationsMessagingSetting**](ConversationsApi#deleteConversationsMessagingSetting) | **DELETE** /api/v2/conversations/messaging/settings/{messageSettingId} | Delete a messaging setting
 [**deleteConversationsMessagingSettingsDefault**](ConversationsApi#deleteConversationsMessagingSettingsDefault) | **DELETE** /api/v2/conversations/messaging/settings/default | Delete the organization's default setting, a global default will be applied to integrations without settings
@@ -86,6 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Get Facebook messaging integration identity resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Get an open messaging integration Identity Resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings
+[**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings | Get twitter oauth settings to patch an integration
 [**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
 [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
 [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
@@ -93,6 +95,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration
 [**getConversationsMessagingIntegrationsOpen**](ConversationsApi#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
 [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration
+[**getConversationsMessagingIntegrationsTwitter**](ConversationsApi#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
+[**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get Twitter messaging integration
+[**getConversationsMessagingIntegrationsTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/twitter/oauth/settings | Get twitter oauth settings
 [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
 [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
 [**getConversationsMessagingSetting**](ConversationsApi#getConversationsMessagingSetting) | **GET** /api/v2/conversations/messaging/settings/{messageSettingId} | Get a messaging setting
@@ -144,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
+[**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update a Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update a WhatsApp messaging integration
 [**patchConversationsMessagingSetting**](ConversationsApi#patchConversationsMessagingSetting) | **PATCH** /api/v2/conversations/messaging/settings/{messageSettingId} | Update a messaging setting
@@ -220,6 +226,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
 [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi#postConversationsMessagingIntegrationsInstagram) | **POST** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration
 [**postConversationsMessagingIntegrationsOpen**](ConversationsApi#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
+[**postConversationsMessagingIntegrationsTwitter**](ConversationsApi#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 [**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | **POST** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup | Create a WhatsApp Integration using the WhatsApp embedded signup flow
 [**postConversationsMessagingSettings**](ConversationsApi#postConversationsMessagingSettings) | **POST** /api/v2/conversations/messaging/settings | Create a messaging setting
@@ -227,6 +234,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsParticipantsAttributesSearch**](ConversationsApi#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi#postConversationsScreenshareParticipantCommunicationWrapup) | **POST** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi#postConversationsSocialParticipantCommunicationWrapup) | **POST** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | **POST** /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} | Create an Agent-Type video conference and assign an agent to it
 [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
 [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -692,6 +700,56 @@ apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integratio
   })
   .catch((err) => {
     console.log('There was a failure calling deleteConversationsMessagingIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsMessagingIntegrationsTwitterIntegrationId
+
+> void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+
+
+DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}
+
+Delete Twitter messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsTwitterIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsTwitterIntegrationId');
     console.error(err);
   });
 ```
@@ -4368,6 +4426,56 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappInteg
 **IdentityResolutionConfig**
 
 
+## getConversationsMessagingIntegrationTwitterOauthSettings
+
+> TwitterOAuthSettings getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+
+
+GET /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings
+
+Get twitter oauth settings to patch an integration
+
+Requires ALL permissions:
+
+* messaging:XIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration Id of an existing integration that needs to be patched with new oauth settings
+
+apiInstance.getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationTwitterOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationTwitterOauthSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration Id of an existing integration that needs to be patched with new oauth settings |  |
+
+### Return type
+
+**TwitterOAuthSettings**
+
+
 ## getConversationsMessagingIntegrations
 
 > MessagingIntegrationEntityListing getConversationsMessagingIntegrations(opts)
@@ -4772,6 +4880,165 @@ apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId
 ### Return type
 
 **OpenIntegration**
+
+
+## getConversationsMessagingIntegrationsTwitter
+
+> TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(opts)
+
+
+GET /api/v2/conversations/messaging/integrations/twitter
+
+Get a list of Twitter Integrations
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+};
+
+apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsTwitter');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+
+### Return type
+
+**TwitterIntegrationEntityListing**
+
+
+## getConversationsMessagingIntegrationsTwitterIntegrationId
+
+> TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}
+
+Get Twitter messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'expand': "expand_example" // String | Expand instructions for the return value.
+};
+
+apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+
+### Return type
+
+**TwitterIntegration**
+
+
+## getConversationsMessagingIntegrationsTwitterOauthSettings
+
+> TwitterSignupOAuthSettings getConversationsMessagingIntegrationsTwitterOauthSettings()
+
+
+GET /api/v2/conversations/messaging/integrations/twitter/oauth/settings
+
+Get twitter oauth settings
+
+Requires ALL permissions:
+
+* messaging:XIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingIntegrationsTwitterOauthSettings()
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsTwitterOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsTwitterOauthSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**TwitterSignupOAuthSettings**
 
 
 ## getConversationsMessagingIntegrationsWhatsapp
@@ -7515,6 +7782,58 @@ apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integration
 ### Return type
 
 **OpenIntegration**
+
+
+## patchConversationsMessagingIntegrationsTwitterIntegrationId
+
+> TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+
+
+PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}
+
+Update a Twitter messaging integration
+
+Requires ALL permissions:
+
+* messaging:XIntegration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | TwitterIntegrationUpdateRequest
+
+apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | TwitterIntegrationUpdateRequest |  |
+
+### Return type
+
+**TwitterIntegration**
 
 
 ## patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId
@@ -11604,6 +11923,56 @@ apiInstance.postConversationsMessagingIntegrationsOpen(body)
 **OpenIntegration**
 
 
+## postConversationsMessagingIntegrationsTwitter
+
+> TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
+
+
+POST /api/v2/conversations/messaging/integrations/twitter
+
+Create Twitter Integration
+
+Requires ALL permissions:
+
+* messaging:XIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | TwitterIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsTwitter(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsTwitter');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | TwitterIntegrationRequest |  |
+
+### Return type
+
+**TwitterIntegration**
+
+
 ## postConversationsMessagingIntegrationsWhatsapp
 
 > WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
@@ -11980,6 +12349,60 @@ apiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId
 ### Return type
 
 void (no response body)
+
+
+## postConversationsVideoAgentconferenceCommunication
+
+> VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+
+
+POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}
+
+Create an Agent-Type video conference and assign an agent to it
+
+postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:video:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+
+apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+  .then((data) => {
+    console.log(`postConversationsVideoAgentconferenceCommunication success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsVideoAgentconferenceCommunication');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+
+### Return type
+
+**VideoConferenceDetails**
 
 
 ## postConversationsVideoParticipantCommunicationWrapup
@@ -13206,4 +13629,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

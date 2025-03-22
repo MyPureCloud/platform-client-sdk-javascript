@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -145,7 +145,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {String} pinnedMessageId pinnedMessageId
-	 * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteChatsUserMessagesPin(userId, pinnedMessageId) { 
 		// verify the required parameter 'userId' is set
@@ -392,7 +391,6 @@ class ChatApi {
 	 * Get information for a 1on1
 	 * 
 	 * @param {String} userId userId
-	 * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsUser(userId) { 
 		// verify the required parameter 'userId' is set
@@ -850,7 +848,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {Object} body Pinned Message Ids
-	 * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postChatsUserMessagesPins(userId, body) { 
 		// verify the required parameter 'userId' is set

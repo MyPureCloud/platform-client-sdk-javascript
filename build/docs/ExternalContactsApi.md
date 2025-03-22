@@ -23,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactNotes**](ExternalContactsApi#getExternalcontactsContactNotes) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes | List notes for an external contact
 [**getExternalcontactsContactUnresolved**](ExternalContactsApi#getExternalcontactsContactUnresolved) | **GET** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact
 [**getExternalcontactsContacts**](ExternalContactsApi#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
+[**getExternalcontactsContactsExport**](ExternalContactsApi#getExternalcontactsContactsExport) | **GET** /api/v2/externalcontacts/contacts/exports/{exportId} | Get export for exportId
+[**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | **GET** /api/v2/externalcontacts/contacts/exports | List exports for organization
 [**getExternalcontactsContactsSchema**](ExternalContactsApi#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
 [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
@@ -80,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsContactNotes**](ExternalContactsApi#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
 [**postExternalcontactsContactPromotion**](ExternalContactsApi#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
 [**postExternalcontactsContacts**](ExternalContactsApi#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
+[**postExternalcontactsContactsExports**](ExternalContactsApi#postExternalcontactsContactsExports) | **POST** /api/v2/externalcontacts/contacts/exports | Create bulk export
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
 [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
 [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
@@ -1014,6 +1017,114 @@ apiInstance.getExternalcontactsContacts(opts)
 ### Return type
 
 **ContactListing**
+
+
+## getExternalcontactsContactsExport
+
+> ContactsExport getExternalcontactsContactsExport(exportId)
+
+
+GET /api/v2/externalcontacts/contacts/exports/{exportId}
+
+Get export for exportId
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let exportId = "exportId_example"; // String | Export id
+
+apiInstance.getExternalcontactsContactsExport(exportId)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsExport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **exportId** | **String** | Export id |  |
+
+### Return type
+
+**ContactsExport**
+
+
+## getExternalcontactsContactsExports
+
+> ExportListing getExternalcontactsContactsExports(opts)
+
+
+GET /api/v2/externalcontacts/contacts/exports
+
+List exports for organization
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'divisionIds': ["divisionIds_example"], // [String] | Division IDs of entities
+  'after': "after_example", // String | The cursor that points to the end of the set of entities
+  'pageSize': 3.4 // Number | Number of entities to return
+};
+
+apiInstance.getExternalcontactsContactsExports(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionIds** | **[String]** | Division IDs of entities | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities | [optional]  |
+ **pageSize** | **Number** | Number of entities to return | [optional]  |
+
+### Return type
+
+**ExportListing**
 
 
 ## getExternalcontactsContactsSchema
@@ -4047,6 +4158,57 @@ apiInstance.postExternalcontactsContacts(body)
 **ExternalContact**
 
 
+## postExternalcontactsContactsExports
+
+> ContactsExport postExternalcontactsContactsExports(body)
+
+
+POST /api/v2/externalcontacts/contacts/exports
+
+Create bulk export
+
+Requires ALL permissions:
+
+* externalContacts:export:add
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Export
+
+apiInstance.postExternalcontactsContactsExports(body)
+  .then((data) => {
+    console.log(`postExternalcontactsContactsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactsExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Export |  |
+
+### Return type
+
+**ContactsExport**
+
+
 ## postExternalcontactsContactsSchemas
 
 > DataSchema postExternalcontactsContactsSchemas(body)
@@ -5402,4 +5564,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

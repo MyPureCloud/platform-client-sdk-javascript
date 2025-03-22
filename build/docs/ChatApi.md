@@ -262,8 +262,6 @@ DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}
 
 Remove a pinned message from a 1on1
 
-deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -737,8 +735,6 @@ apiInstance.getChatsThreadMessages(threadId, opts)
 GET /api/v2/chats/users/{userId}
 
 Get information for a 1on1
-
-getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1574,8 +1570,6 @@ POST /api/v2/chats/users/{userId}/messages/pins
 
 Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
 
-postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -1723,4 +1717,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

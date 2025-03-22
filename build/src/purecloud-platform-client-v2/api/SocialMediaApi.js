@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -21,12 +21,62 @@ class SocialMediaApi {
 
 
 	/**
+	 * Delete an escalation rule.
+	 * 
+	 * @param {String} escalationRuleId escalationRuleId
+	 */
+	deleteSocialmediaEscalationrule(escalationRuleId) { 
+		// verify the required parameter 'escalationRuleId' is set
+		if (escalationRuleId === undefined || escalationRuleId === null) {
+			throw 'Missing the required parameter "escalationRuleId" when calling deleteSocialmediaEscalationrule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/escalationrules/{escalationRuleId}', 
+			'DELETE', 
+			{ 'escalationRuleId': escalationRuleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a social media message.
+	 * 
+	 * @param {String} messageId messageId
+	 * deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteSocialmediaMessage(messageId) { 
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling deleteSocialmediaMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/messages/{messageId}', 
+			'DELETE', 
+			{ 'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a social topic.
 	 * 
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default.
-	 * deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteSocialmediaTopic(topicId, opts) { 
 		opts = opts || {};
@@ -57,7 +107,6 @@ class SocialMediaApi {
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
-	 * deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -127,7 +176,6 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
-	 * deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -156,12 +204,174 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Get status for async query for social media aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getSocialmediaAnalyticsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async social media query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 */
+	getSocialmediaAnalyticsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for social media messages job
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getSocialmediaAnalyticsMessagesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsMessagesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/analytics/messages/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async social media messages query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 */
+	getSocialmediaAnalyticsMessagesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsMessagesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/analytics/messages/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a single escalation rule.
+	 * 
+	 * @param {String} escalationRuleId escalationRuleId
+	 */
+	getSocialmediaEscalationrule(escalationRuleId) { 
+		// verify the required parameter 'escalationRuleId' is set
+		if (escalationRuleId === undefined || escalationRuleId === null) {
+			throw 'Missing the required parameter "escalationRuleId" when calling getSocialmediaEscalationrule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/escalationrules/{escalationRuleId}', 
+			'GET', 
+			{ 'escalationRuleId': escalationRuleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all escalation rules for a division.
+	 * 
+	 * @param {String} divisionId One division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getSocialmediaEscalationrules(divisionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling getSocialmediaEscalationrules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/escalationrules', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'divisionId': divisionId },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a single social topic.
 	 * 
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopic(topicId, opts) { 
 		opts = opts || {};
@@ -186,13 +396,43 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Retrieve all social topic data ingestion rules with pagination.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 */
+	getSocialmediaTopicDataingestionrules(topicId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null) {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules', 
+			'GET', 
+			{ 'topicId': topicId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a single Facebook data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -228,7 +468,6 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
-	 * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion(topicId, facebookIngestionRuleId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -269,7 +508,6 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -416,7 +654,6 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -452,7 +689,6 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
-	 * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId, twitterIngestionRuleId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -493,7 +729,6 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -529,7 +764,6 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopics(opts) { 
 		opts = opts || {};
@@ -555,7 +789,6 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchSocialmediaTopic(topicId, opts) { 
 		opts = opts || {};
@@ -586,7 +819,6 @@ class SocialMediaApi {
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -656,7 +888,6 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -685,12 +916,114 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Query for social media aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 */
+	postSocialmediaAnalyticsAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSocialmediaAnalyticsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/analytics/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for social media messages asynchronously
+	 * 
+	 * @param {Object} body query
+	 */
+	postSocialmediaAnalyticsMessagesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSocialmediaAnalyticsMessagesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/analytics/messages/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an escalation rule.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postSocialmediaEscalationrules(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/escalationrules', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Escalate message to a conversation manually
+	 * 
+	 * @param {String} divisionId One division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postSocialmediaEscalationsMessages(divisionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling postSocialmediaEscalationsMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/escalations/messages', 
+			'POST', 
+			{  },
+			{ 'divisionId': divisionId },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an Facebook data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postSocialmediaTopicDataingestionrulesFacebook(topicId, opts) { 
 		opts = opts || {};
@@ -750,7 +1083,6 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postSocialmediaTopicDataingestionrulesTwitter(topicId, opts) { 
 		opts = opts || {};
@@ -779,7 +1111,6 @@ class SocialMediaApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postSocialmediaTopics(opts) { 
 		opts = opts || {};
@@ -800,13 +1131,66 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+	 * 
+	 * @param {Object} body TwitterDataHistoricalTweetRequest
+	 */
+	postSocialmediaTwitterHistoricalTweets(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSocialmediaTwitterHistoricalTweets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/twitter/historical/tweets', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the escalation rule.
+	 * 
+	 * @param {String} escalationRuleId escalationRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putSocialmediaEscalationrule(escalationRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'escalationRuleId' is set
+		if (escalationRuleId === undefined || escalationRuleId === null) {
+			throw 'Missing the required parameter "escalationRuleId" when calling putSocialmediaEscalationrule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/escalationrules/{escalationRuleId}', 
+			'PUT', 
+			{ 'escalationRuleId': escalationRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the Facebook data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -876,7 +1260,6 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};

@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -258,6 +258,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -2261,6 +2286,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get twitter oauth settings to patch an integration
+	 * 
+	 * @param {String} integrationId Integration Id of an existing integration that needs to be patched with new oauth settings
+	 */
+	getConversationsMessagingIntegrationTwitterOauthSettings(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationTwitterOauthSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Integrations
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2450,6 +2500,83 @@ class ConversationsApi {
 			'GET', 
 			{ 'integrationId': integrationId },
 			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Twitter Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 */
+	getConversationsMessagingIntegrationsTwitter(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 */
+	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get twitter oauth settings
+	 * 
+	 */
+	getConversationsMessagingIntegrationsTwitterOauthSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/oauth/settings', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -4084,6 +4211,36 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body TwitterIntegrationUpdateRequest
+	 */
+	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -6433,6 +6590,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create Twitter Integration
+	 * 
+	 * @param {Object} body TwitterIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsTwitter(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 	 * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 	 * @param {Object} body WhatsAppIntegrationRequest
@@ -6631,6 +6813,37 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an Agent-Type video conference and assign an agent to it
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsVideoAgentconferenceCommunication(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoAgentconferenceCommunication';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsVideoAgentconferenceCommunication';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

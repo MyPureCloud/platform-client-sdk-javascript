@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -1187,6 +1187,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts._number Deprecated, filtering by number not supported
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getTelephonyProvidersEdgesExtensionpools(opts) { 
 		opts = opts || {};
@@ -1196,7 +1197,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensionpools', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 

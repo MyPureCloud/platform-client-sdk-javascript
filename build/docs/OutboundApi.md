@@ -7785,6 +7785,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -9075,4 +9076,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

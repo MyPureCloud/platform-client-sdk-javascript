@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -227,38 +227,6 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-	 * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-	 * @param {String} namespaceName The namespace to get
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.cursor Cursor provided when retrieving the last page
-	 * @param {String} opts.entityId entity id of the count
-	 * @param {String} opts.userId userid of the count
-	 * @deprecated
-	 */
-	getOrganizationsLimitsNamespaceCounts(namespaceName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'namespaceName' is set
-		if (namespaceName === undefined || namespaceName === null) {
-			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceCounts';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/limits/namespaces/{namespaceName}/counts', 
-			'GET', 
-			{ 'namespaceName': namespaceName },
-			{ 'cursor': opts['cursor'],'entityId': opts['entityId'],'userId': opts['userId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the default limits in a namespace for an organization
 	 * 
 	 * @param {String} namespaceName The namespace to fetch defaults limits for
@@ -274,43 +242,6 @@ class OrganizationApi {
 			'GET', 
 			{ 'namespaceName': namespaceName },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-	 * See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-	 * @param {String} namespaceName The namespace to get
-	 * @param {String} limitName The limit to get
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.entityId entity id of the count
-	 * @param {String} opts.userId userid of the count
-	 * @param {String} opts.cursor Cursor provided when retrieving the last page
-	 * @deprecated
-	 */
-	getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'namespaceName' is set
-		if (namespaceName === undefined || namespaceName === null) {
-			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceLimitCounts';
-		}
-		// verify the required parameter 'limitName' is set
-		if (limitName === undefined || limitName === null) {
-			throw 'Missing the required parameter "limitName" when calling getOrganizationsLimitsNamespaceLimitCounts';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts', 
-			'GET', 
-			{ 'namespaceName': namespaceName,'limitName': limitName },
-			{ 'entityId': opts['entityId'],'userId': opts['userId'],'cursor': opts['cursor'] },
 			{  },
 			{  },
 			null, 

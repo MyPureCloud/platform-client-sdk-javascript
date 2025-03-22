@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -1701,7 +1701,6 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body AI Scoring Settings
-	 * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putQualityFormsEvaluationAiscoringSettings(formId, body) { 
 		// verify the required parameter 'formId' is set

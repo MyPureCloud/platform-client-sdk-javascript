@@ -15,9 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrganizationsLimitsDocs**](OrganizationApi#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get limit documentation
 [**getOrganizationsLimitsDocsFreetrial**](OrganizationApi#getOrganizationsLimitsDocsFreetrial) | **GET** /api/v2/organizations/limits/docs/freetrial | Get free trial limit documentation
 [**getOrganizationsLimitsNamespace**](OrganizationApi#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
-[**getOrganizationsLimitsNamespaceCounts**](OrganizationApi#getOrganizationsLimitsNamespaceCounts) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/counts | Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
 [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi#getOrganizationsLimitsNamespaceDefaults) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/defaults | Get the default limits in a namespace for an organization
-[**getOrganizationsLimitsNamespaceLimitCounts**](OrganizationApi#getOrganizationsLimitsNamespaceLimitCounts) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts | Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
 [**getOrganizationsLimitsNamespaces**](OrganizationApi#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
 [**getOrganizationsMe**](OrganizationApi#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
 [**getOrganizationsWhitelist**](OrganizationApi#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | This route is deprecated, please use /api/v2/organizations/authentication/settings instead
@@ -470,69 +468,6 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 **LimitsEntityListing**
 
 
-## getOrganizationsLimitsNamespaceCounts
-
-> LimitCountListing getOrganizationsLimitsNamespaceCounts(namespaceName, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/organizations/limits/namespaces/{namespaceName}/counts
-
-Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-
-See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-
-Requires ANY permissions:
-
-* limits:count:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.OrganizationApi();
-
-let namespaceName = "namespaceName_example"; // String | The namespace to get
-let opts = { 
-  'cursor': "cursor_example", // String | Cursor provided when retrieving the last page
-  'entityId': "entityId_example", // String | entity id of the count
-  'userId': "userId_example" // String | userid of the count
-};
-
-apiInstance.getOrganizationsLimitsNamespaceCounts(namespaceName, opts)
-  .then((data) => {
-    console.log(`getOrganizationsLimitsNamespaceCounts success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getOrganizationsLimitsNamespaceCounts');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **namespaceName** | **String** | The namespace to get |  |
- **cursor** | **String** | Cursor provided when retrieving the last page | [optional]  |
- **entityId** | **String** | entity id of the count | [optional]  |
- **userId** | **String** | userid of the count | [optional]  |
-
-### Return type
-
-**LimitCountListing**
-
-
 ## getOrganizationsLimitsNamespaceDefaults
 
 > LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName)
@@ -579,71 +514,6 @@ apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
 ### Return type
 
 **LimitsEntityListing**
-
-
-## getOrganizationsLimitsNamespaceLimitCounts
-
-> LimitCountListing getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts
-
-Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-
-See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-
-Requires ANY permissions:
-
-* limits:count:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.OrganizationApi();
-
-let namespaceName = "namespaceName_example"; // String | The namespace to get
-let limitName = "limitName_example"; // String | The limit to get
-let opts = { 
-  'entityId': "entityId_example", // String | entity id of the count
-  'userId': "userId_example", // String | userid of the count
-  'cursor': "cursor_example" // String | Cursor provided when retrieving the last page
-};
-
-apiInstance.getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, opts)
-  .then((data) => {
-    console.log(`getOrganizationsLimitsNamespaceLimitCounts success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getOrganizationsLimitsNamespaceLimitCounts');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **namespaceName** | **String** | The namespace to get |  |
- **limitName** | **String** | The limit to get |  |
- **entityId** | **String** | entity id of the count | [optional]  |
- **userId** | **String** | userid of the count | [optional]  |
- **cursor** | **String** | Cursor provided when retrieving the last page | [optional]  |
-
-### Return type
-
-**LimitCountListing**
 
 
 ## getOrganizationsLimitsNamespaces
@@ -1104,4 +974,4 @@ apiInstance.putOrganizationsWhitelist(body)
 **OrgWhitelistSettings**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

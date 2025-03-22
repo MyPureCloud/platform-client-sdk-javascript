@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -480,6 +480,57 @@ class ExternalContactsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get export for exportId
+	 * 
+	 * @param {String} exportId Export id
+	 */
+	getExternalcontactsContactsExport(exportId) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling getExternalcontactsContactsExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/exports/{exportId}', 
+			'GET', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List exports for organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionIds Division IDs of entities
+	 * @param {String} opts.after The cursor that points to the end of the set of entities
+	 * @param {Number} opts.pageSize Number of entities to return
+	 */
+	getExternalcontactsContactsExports(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/exports', 
+			'GET', 
+			{  },
+			{ 'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -1985,6 +2036,31 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create bulk export
+	 * 
+	 * @param {Object} body Export
+	 */
+	postExternalcontactsContactsExports(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsContactsExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/exports', 
 			'POST', 
 			{  },
 			{  },

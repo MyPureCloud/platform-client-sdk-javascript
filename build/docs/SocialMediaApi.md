@@ -6,11 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteSocialmediaEscalationrule**](SocialMediaApi#deleteSocialmediaEscalationrule) | **DELETE** /api/v2/socialmedia/escalationrules/{escalationRuleId} | Delete an escalation rule.
+[**deleteSocialmediaMessage**](SocialMediaApi#deleteSocialmediaMessage) | **DELETE** /api/v2/socialmedia/messages/{messageId} | Delete a social media message.
 [**deleteSocialmediaTopic**](SocialMediaApi#deleteSocialmediaTopic) | **DELETE** /api/v2/socialmedia/topics/{topicId} | Delete a social topic.
 [**deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Delete a Facebook data ingestion rule.
 [**deleteSocialmediaTopicDataingestionrulesOpenOpenId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesOpenOpenId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} | Delete a open data ingestion rule.
 [**deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} | Delete a X (formally Twitter) data ingestion rule.
+[**getSocialmediaAnalyticsAggregatesJob**](SocialMediaApi#getSocialmediaAnalyticsAggregatesJob) | **GET** /api/v2/socialmedia/analytics/aggregates/jobs/{jobId} | Get status for async query for social media aggregates
+[**getSocialmediaAnalyticsAggregatesJobResults**](SocialMediaApi#getSocialmediaAnalyticsAggregatesJobResults) | **GET** /api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results | Fetch a page of results for an async social media query
+[**getSocialmediaAnalyticsMessagesJob**](SocialMediaApi#getSocialmediaAnalyticsMessagesJob) | **GET** /api/v2/socialmedia/analytics/messages/jobs/{jobId} | Get status for async query for social media messages job
+[**getSocialmediaAnalyticsMessagesJobResults**](SocialMediaApi#getSocialmediaAnalyticsMessagesJobResults) | **GET** /api/v2/socialmedia/analytics/messages/jobs/{jobId}/results | Fetch a page of results for an async social media messages query
+[**getSocialmediaEscalationrule**](SocialMediaApi#getSocialmediaEscalationrule) | **GET** /api/v2/socialmedia/escalationrules/{escalationRuleId} | Get a single escalation rule.
+[**getSocialmediaEscalationrules**](SocialMediaApi#getSocialmediaEscalationrules) | **GET** /api/v2/socialmedia/escalationrules | Retrieve all escalation rules for a division.
 [**getSocialmediaTopic**](SocialMediaApi#getSocialmediaTopic) | **GET** /api/v2/socialmedia/topics/{topicId} | Get a single social topic.
+[**getSocialmediaTopicDataingestionrules**](SocialMediaApi#getSocialmediaTopicDataingestionrules) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules | Retrieve all social topic data ingestion rules with pagination.
 [**getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Get a single Facebook data ingestion rule.
 [**getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion**](SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion} | Get a single Facebook data ingestion rule version.
 [**getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions**](SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions | Get the Facebook data ingestion rule versions.
@@ -25,14 +34,122 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Update the status of a Facebook data ingestion rule.
 [**patchSocialmediaTopicDataingestionrulesOpenOpenId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesOpenOpenId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} | Update the status of a open data ingestion rule.
 [**patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} | Update the status of a X (formally Twitter) data ingestion rule.
+[**postSocialmediaAnalyticsAggregatesJobs**](SocialMediaApi#postSocialmediaAnalyticsAggregatesJobs) | **POST** /api/v2/socialmedia/analytics/aggregates/jobs | Query for social media aggregates asynchronously
+[**postSocialmediaAnalyticsMessagesJobs**](SocialMediaApi#postSocialmediaAnalyticsMessagesJobs) | **POST** /api/v2/socialmedia/analytics/messages/jobs | Query for social media messages asynchronously
+[**postSocialmediaEscalationrules**](SocialMediaApi#postSocialmediaEscalationrules) | **POST** /api/v2/socialmedia/escalationrules | Create an escalation rule.
+[**postSocialmediaEscalationsMessages**](SocialMediaApi#postSocialmediaEscalationsMessages) | **POST** /api/v2/socialmedia/escalations/messages | Escalate message to a conversation manually
 [**postSocialmediaTopicDataingestionrulesFacebook**](SocialMediaApi#postSocialmediaTopicDataingestionrulesFacebook) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook | Create an Facebook data ingestion rule.
 [**postSocialmediaTopicDataingestionrulesOpen**](SocialMediaApi#postSocialmediaTopicDataingestionrulesOpen) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open | Create an open data ingestion rule.
 [**postSocialmediaTopicDataingestionrulesTwitter**](SocialMediaApi#postSocialmediaTopicDataingestionrulesTwitter) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter | Create an twitter data ingestion rule.
 [**postSocialmediaTopics**](SocialMediaApi#postSocialmediaTopics) | **POST** /api/v2/socialmedia/topics | Create a social topic.
+[**postSocialmediaTwitterHistoricalTweets**](SocialMediaApi#postSocialmediaTwitterHistoricalTweets) | **POST** /api/v2/socialmedia/twitter/historical/tweets | Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+[**putSocialmediaEscalationrule**](SocialMediaApi#putSocialmediaEscalationrule) | **PUT** /api/v2/socialmedia/escalationrules/{escalationRuleId} | Update the escalation rule.
 [**putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Update the Facebook data ingestion rule.
 [**putSocialmediaTopicDataingestionrulesOpenOpenId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesOpenOpenId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} | Update the open data ingestion rule.
 [**putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} | Update the X (formally Twitter) data ingestion rule.
 
+
+
+## deleteSocialmediaEscalationrule
+
+> void deleteSocialmediaEscalationrule(escalationRuleId)
+
+
+DELETE /api/v2/socialmedia/escalationrules/{escalationRuleId}
+
+Delete an escalation rule.
+
+Requires ANY permissions:
+
+* socialmedia:escalationRules:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
+
+apiInstance.deleteSocialmediaEscalationrule(escalationRuleId)
+  .then(() => {
+    console.log('deleteSocialmediaEscalationrule returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteSocialmediaEscalationrule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **escalationRuleId** | **String** | escalationRuleId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteSocialmediaMessage
+
+> void deleteSocialmediaMessage(messageId)
+
+
+DELETE /api/v2/socialmedia/messages/{messageId}
+
+Delete a social media message.
+
+deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* socialmedia:message:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let messageId = "messageId_example"; // String | messageId
+
+apiInstance.deleteSocialmediaMessage(messageId)
+  .then(() => {
+    console.log('deleteSocialmediaMessage returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteSocialmediaMessage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messageId** | **String** | messageId |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteSocialmediaTopic
@@ -43,8 +160,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 DELETE /api/v2/socialmedia/topics/{topicId}
 
 Delete a social topic.
-
-deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -99,8 +214,6 @@ void (no response body)
 DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}
 
 Delete a Facebook data ingestion rule.
-
-deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -216,8 +329,6 @@ DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterI
 
 Delete a X (formally Twitter) data ingestion rule.
 
-deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * socialmedia:twitterDataIngestionRule:delete
@@ -265,6 +376,320 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleI
 void (no response body)
 
 
+## getSocialmediaAnalyticsAggregatesJob
+
+> AsyncQueryStatus getSocialmediaAnalyticsAggregatesJob(jobId)
+
+
+GET /api/v2/socialmedia/analytics/aggregates/jobs/{jobId}
+
+Get status for async query for social media aggregates
+
+Requires ANY permissions:
+
+* socialmedia:postAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getSocialmediaAnalyticsAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getSocialmediaAnalyticsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaAnalyticsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getSocialmediaAnalyticsAggregatesJobResults
+
+> SocialMediaAsyncAggregateQueryResponse getSocialmediaAnalyticsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async social media query
+
+Requires ANY permissions:
+
+* socialmedia:postAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getSocialmediaAnalyticsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaAnalyticsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaAnalyticsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+**SocialMediaAsyncAggregateQueryResponse**
+
+
+## getSocialmediaAnalyticsMessagesJob
+
+> AsyncQueryStatus getSocialmediaAnalyticsMessagesJob(jobId)
+
+
+GET /api/v2/socialmedia/analytics/messages/jobs/{jobId}
+
+Get status for async query for social media messages job
+
+Requires ANY permissions:
+
+* socialmedia:postDetail:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getSocialmediaAnalyticsMessagesJob(jobId)
+  .then((data) => {
+    console.log(`getSocialmediaAnalyticsMessagesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaAnalyticsMessagesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getSocialmediaAnalyticsMessagesJobResults
+
+> SocialMediaAsyncDetailQueryResponse getSocialmediaAnalyticsMessagesJobResults(jobId, opts)
+
+
+GET /api/v2/socialmedia/analytics/messages/jobs/{jobId}/results
+
+Fetch a page of results for an async social media messages query
+
+Requires ANY permissions:
+
+* socialmedia:postDetail:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getSocialmediaAnalyticsMessagesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaAnalyticsMessagesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaAnalyticsMessagesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+**SocialMediaAsyncDetailQueryResponse**
+
+
+## getSocialmediaEscalationrule
+
+> EscalationRuleResponse getSocialmediaEscalationrule(escalationRuleId)
+
+
+GET /api/v2/socialmedia/escalationrules/{escalationRuleId}
+
+Get a single escalation rule.
+
+Requires ALL permissions:
+
+* socialmedia:escalationRules:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
+
+apiInstance.getSocialmediaEscalationrule(escalationRuleId)
+  .then((data) => {
+    console.log(`getSocialmediaEscalationrule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaEscalationrule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **escalationRuleId** | **String** | escalationRuleId |  |
+
+### Return type
+
+**EscalationRuleResponse**
+
+
+## getSocialmediaEscalationrules
+
+> SocialEscalationResponseEntityListing getSocialmediaEscalationrules(divisionId, opts)
+
+
+GET /api/v2/socialmedia/escalationrules
+
+Retrieve all escalation rules for a division.
+
+Requires ANY permissions:
+
+* socialmedia:escalationRules:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let divisionId = "divisionId_example"; // String | One division ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getSocialmediaEscalationrules(divisionId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaEscalationrules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaEscalationrules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | One division ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**SocialEscalationResponseEntityListing**
+
+
 ## getSocialmediaTopic
 
 > SocialTopicResponse getSocialmediaTopic(topicId, opts)
@@ -273,8 +698,6 @@ void (no response body)
 GET /api/v2/socialmedia/topics/{topicId}
 
 Get a single social topic.
-
-getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -321,6 +744,64 @@ apiInstance.getSocialmediaTopic(topicId, opts)
 **SocialTopicResponse**
 
 
+## getSocialmediaTopicDataingestionrules
+
+> DataIngestionRuleResponseEntityListing getSocialmediaTopicDataingestionrules(topicId, opts)
+
+
+GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules
+
+Retrieve all social topic data ingestion rules with pagination.
+
+Requires ANY permissions:
+
+* socialmedia:topic:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+};
+
+apiInstance.getSocialmediaTopicDataingestionrules(topicId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaTopicDataingestionrules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaTopicDataingestionrules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+
+### Return type
+
+**DataIngestionRuleResponseEntityListing**
+
+
 ## getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
 
 > FacebookDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts)
@@ -329,8 +810,6 @@ apiInstance.getSocialmediaTopic(topicId, opts)
 GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}
 
 Get a single Facebook data ingestion rule.
-
-getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -387,8 +866,6 @@ apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
 GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion}
 
 Get a single Facebook data ingestion rule version.
-
-getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -447,8 +924,6 @@ apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
 GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions
 
 Get the Facebook data ingestion rule versions.
-
-getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -690,8 +1165,6 @@ GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterInge
 
 Get a single X (formally Twitter) data ingestion rule.
 
-getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * socialmedia:twitterDataIngestionRule:view
@@ -747,8 +1220,6 @@ apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions/{dataIngestionRuleVersion}
 
 Get a single X (formally Twitter) data ingestion rule version.
-
-getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -807,8 +1278,6 @@ apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVe
 GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions
 
 Get the Open data ingestion rule versions.
-
-getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -870,8 +1339,6 @@ GET /api/v2/socialmedia/topics
 
 Retrieve all social topics.
 
-getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * socialmedia:topic:view
@@ -930,8 +1397,6 @@ PATCH /api/v2/socialmedia/topics/{topicId}
 
 Update a social topic.
 
-patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * socialmedia:topic:edit
@@ -985,8 +1450,6 @@ apiInstance.patchSocialmediaTopic(topicId, opts)
 PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}
 
 Update the status of a Facebook data ingestion rule.
-
-patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1102,8 +1565,6 @@ PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIn
 
 Update the status of a X (formally Twitter) data ingestion rule.
 
-patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * socialmedia:twitterDataIngestionRule:edit
@@ -1151,6 +1612,212 @@ apiInstance.patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId
 **TwitterDataIngestionRuleResponse**
 
 
+## postSocialmediaAnalyticsAggregatesJobs
+
+> AsyncQueryResponse postSocialmediaAnalyticsAggregatesJobs(body)
+
+
+POST /api/v2/socialmedia/analytics/aggregates/jobs
+
+Query for social media aggregates asynchronously
+
+Requires ANY permissions:
+
+* socialmedia:postAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let body = {}; // Object | query
+
+apiInstance.postSocialmediaAnalyticsAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postSocialmediaAnalyticsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSocialmediaAnalyticsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postSocialmediaAnalyticsMessagesJobs
+
+> AsyncQueryResponse postSocialmediaAnalyticsMessagesJobs(body)
+
+
+POST /api/v2/socialmedia/analytics/messages/jobs
+
+Query for social media messages asynchronously
+
+Requires ANY permissions:
+
+* socialmedia:postDetail:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let body = {}; // Object | query
+
+apiInstance.postSocialmediaAnalyticsMessagesJobs(body)
+  .then((data) => {
+    console.log(`postSocialmediaAnalyticsMessagesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSocialmediaAnalyticsMessagesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postSocialmediaEscalationrules
+
+> EscalationRuleResponse postSocialmediaEscalationrules(opts)
+
+
+POST /api/v2/socialmedia/escalationrules
+
+Create an escalation rule.
+
+Requires ANY permissions:
+
+* socialmedia:escalationRules:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postSocialmediaEscalationrules(opts)
+  .then((data) => {
+    console.log(`postSocialmediaEscalationrules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSocialmediaEscalationrules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**EscalationRuleResponse**
+
+
+## postSocialmediaEscalationsMessages
+
+> ManualEscalationResponse postSocialmediaEscalationsMessages(divisionId, opts)
+
+
+POST /api/v2/socialmedia/escalations/messages
+
+Escalate message to a conversation manually
+
+Requires ANY permissions:
+
+* socialmedia:message:escalate
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let divisionId = "divisionId_example"; // String | One division ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postSocialmediaEscalationsMessages(divisionId, opts)
+  .then((data) => {
+    console.log(`postSocialmediaEscalationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSocialmediaEscalationsMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | One division ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**ManualEscalationResponse**
+
+
 ## postSocialmediaTopicDataingestionrulesFacebook
 
 > FacebookDataIngestionRuleResponse postSocialmediaTopicDataingestionrulesFacebook(topicId, opts)
@@ -1159,8 +1826,6 @@ apiInstance.patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId
 POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook
 
 Create an Facebook data ingestion rule.
-
-postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1272,8 +1937,6 @@ POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter
 
 Create an twitter data ingestion rule.
 
-postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * socialmedia:twitterDataIngestionRule:add
@@ -1328,8 +1991,6 @@ POST /api/v2/socialmedia/topics
 
 Create a social topic.
 
-postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * socialmedia:topic:add
@@ -1373,6 +2034,110 @@ apiInstance.postSocialmediaTopics(opts)
 **SocialTopicResponse**
 
 
+## postSocialmediaTwitterHistoricalTweets
+
+> TwitterDataHistoricalTweetResponse postSocialmediaTwitterHistoricalTweets(body)
+
+
+POST /api/v2/socialmedia/twitter/historical/tweets
+
+Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+
+Requires ALL permissions:
+
+* socialmedia:twitterDataIngestionRule:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let body = {}; // Object | TwitterDataHistoricalTweetRequest
+
+apiInstance.postSocialmediaTwitterHistoricalTweets(body)
+  .then((data) => {
+    console.log(`postSocialmediaTwitterHistoricalTweets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSocialmediaTwitterHistoricalTweets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | TwitterDataHistoricalTweetRequest |  |
+
+### Return type
+
+**TwitterDataHistoricalTweetResponse**
+
+
+## putSocialmediaEscalationrule
+
+> EscalationRuleResponse putSocialmediaEscalationrule(escalationRuleId, opts)
+
+
+PUT /api/v2/socialmedia/escalationrules/{escalationRuleId}
+
+Update the escalation rule.
+
+Requires ALL permissions:
+
+* socialmedia:escalationRules:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putSocialmediaEscalationrule(escalationRuleId, opts)
+  .then((data) => {
+    console.log(`putSocialmediaEscalationrule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putSocialmediaEscalationrule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **escalationRuleId** | **String** | escalationRuleId |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**EscalationRuleResponse**
+
+
 ## putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
 
 > FacebookDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts)
@@ -1381,8 +2146,6 @@ apiInstance.postSocialmediaTopics(opts)
 PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}
 
 Update the Facebook data ingestion rule.
-
-putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1498,8 +2261,6 @@ PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterInge
 
 Update the X (formally Twitter) data ingestion rule.
 
-putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * socialmedia:twitterDataIngestionRule:edit
@@ -1547,4 +2308,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

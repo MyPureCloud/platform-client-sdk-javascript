@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -375,6 +375,7 @@ class RecordingApi {
 	 * @param {Object} opts.formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 	 * @param {String} opts.locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+	 * @param {Boolean} opts.includePauseAnnotationsForScreenRecordings Include applicable Secure Pause annotations from all audio recordings to all screen recordings (default to false)
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};
@@ -388,7 +389,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings', 
 			'GET', 
 			{ 'conversationId': conversationId },
-			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi'),'locale': opts['locale'] },
+			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi'),'locale': opts['locale'],'includePauseAnnotationsForScreenRecordings': opts['includePauseAnnotationsForScreenRecordings'] },
 			{  },
 			{  },
 			null, 

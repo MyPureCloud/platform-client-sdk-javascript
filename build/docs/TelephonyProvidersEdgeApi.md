@@ -2451,7 +2451,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "sortBy_example", // String | Sort by
-  '_number': "_number_example" // String | Deprecated, filtering by number not supported
+  '_number': "_number_example", // String | Deprecated, filtering by number not supported
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
 };
 
 apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
@@ -2473,6 +2474,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional]  |
  **_number** | **String** | Deprecated, filtering by number not supported | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
 
 ### Return type
 
@@ -6758,4 +6760,4 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 **TrunkBase**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

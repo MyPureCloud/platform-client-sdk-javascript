@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 217.0.0
+	 * @version 218.0.0
 	 */
 
 	/**
@@ -1280,7 +1280,6 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} uploadId UploadId
 	 * @deprecated
-	 * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
 		// verify the required parameter 'documentId' is set
@@ -2986,7 +2985,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3017,7 +3015,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3166,7 +3163,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3326,7 +3322,6 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
 	 * @deprecated
-	 * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
