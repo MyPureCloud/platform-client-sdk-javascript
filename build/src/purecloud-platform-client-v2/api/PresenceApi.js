@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 218.0.0
+	 * @version 218.1.0
 	 */
 
 	/**
@@ -25,10 +25,10 @@ class PresenceApi {
 	 * 
 	 * @param {String} definitionId Presence Definition ID
 	 */
-	deletePresenceDefinition0(definitionId) { 
+	deleteDivisionBasedPresenceDefinition(definitionId) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition0';
+			throw 'Missing the required parameter "definitionId" when calling deleteDivisionBasedPresenceDefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -103,12 +103,12 @@ class PresenceApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
 	 */
-	getPresenceDefinition0(definitionId, opts) { 
+	getDivisionBasedPresenceDefinition(definitionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition0';
+			throw 'Missing the required parameter "definitionId" when calling getDivisionBasedPresenceDefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -133,7 +133,7 @@ class PresenceApi {
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
 	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
 	 */
-	getPresenceDefinitions0(opts) { 
+	getDivisionBasedPresenceDefinitions(opts) { 
 		opts = opts || {};
 		
 
@@ -501,10 +501,10 @@ class PresenceApi {
 	 * 
 	 * @param {Object} body The Presence Definition to create
 	 */
-	postPresenceDefinitions0(body) { 
+	postDivisionBasedPresenceDefinitions(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postPresenceDefinitions0';
+			throw 'Missing the required parameter "body" when calling postDivisionBasedPresenceDefinitions';
 		}
 
 		return this.apiClient.callApi(
@@ -578,14 +578,14 @@ class PresenceApi {
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} body The updated Presence Definition
 	 */
-	putPresenceDefinition0(definitionId, body) { 
+	putDivisionBasedPresenceDefinition(definitionId, body) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition0';
+			throw 'Missing the required parameter "definitionId" when calling putDivisionBasedPresenceDefinition';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putPresenceDefinition0';
+			throw 'Missing the required parameter "body" when calling putDivisionBasedPresenceDefinition';
 		}
 
 		return this.apiClient.callApi(

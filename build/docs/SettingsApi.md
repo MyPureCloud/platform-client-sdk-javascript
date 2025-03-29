@@ -6,15 +6,63 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteEmailsSettingsThreading**](SettingsApi#deleteEmailsSettingsThreading) | **DELETE** /api/v2/emails/settings/threading | Reset email threading settings to default
 [**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | **DELETE** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Delete agent auto answer settings
 [**getEmailsSettings**](SettingsApi#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
+[**getEmailsSettingsThreading**](SettingsApi#getEmailsSettingsThreading) | **GET** /api/v2/emails/settings/threading | Get email threading settings
 [**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | **GET** /api/v2/settings/executiondata | Get the execution history enabled setting.
 [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | **GET** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Get agent auto answer settings
 [**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
+[**patchEmailsSettingsThreading**](SettingsApi#patchEmailsSettingsThreading) | **PATCH** /api/v2/emails/settings/threading | Patch email threading settings
 [**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | **PATCH** /api/v2/settings/executiondata | Edit the execution history on off setting.
 [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PATCH** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Update agent auto answer settings
 [**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PUT** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Set agent auto answer settings
 
+
+
+## deleteEmailsSettingsThreading
+
+> void deleteEmailsSettingsThreading()
+
+
+DELETE /api/v2/emails/settings/threading
+
+Reset email threading settings to default
+
+Requires ANY permissions:
+
+* conversation:emailThreadingSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+apiInstance.deleteEmailsSettingsThreading()
+  .then(() => {
+    console.log('deleteEmailsSettingsThreading returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteEmailsSettingsThreading');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (no response body)
 
 
 ## deleteUsersAgentuiAgentsAutoanswerAgentIdSettings
@@ -110,6 +158,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmailSettings**
+
+
+## getEmailsSettingsThreading
+
+> EmailThreadingSettings getEmailsSettingsThreading()
+
+
+GET /api/v2/emails/settings/threading
+
+Get email threading settings
+
+Requires ANY permissions:
+
+* conversation:emailThreadingSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+apiInstance.getEmailsSettingsThreading()
+  .then((data) => {
+    console.log(`getEmailsSettingsThreading success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEmailsSettingsThreading');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**EmailThreadingSettings**
 
 
 ## getSettingsExecutiondata
@@ -259,6 +352,58 @@ apiInstance.patchEmailsSettings(opts)
 ### Return type
 
 **EmailSettings**
+
+
+## patchEmailsSettingsThreading
+
+> EmailThreadingSettings patchEmailsSettingsThreading(opts)
+
+
+PATCH /api/v2/emails/settings/threading
+
+Patch email threading settings
+
+Requires ANY permissions:
+
+* conversation:emailThreadingSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchEmailsSettingsThreading(opts)
+  .then((data) => {
+    console.log(`patchEmailsSettingsThreading success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchEmailsSettingsThreading');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**EmailThreadingSettings**
 
 
 ## patchSettingsExecutiondata
@@ -417,4 +562,4 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@218.0.0_
+_purecloud-platform-client-v2@218.1.0_

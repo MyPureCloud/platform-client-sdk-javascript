@@ -84,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs | Get a Nuance bot in the specified Integration asynchronously
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs | Get a list of Nuance bots in the specified Integration asynchronously
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate | Try out a single credential for a Nuance bot to know if the secret is correct
+[**postIntegrationsWebhookEvents**](IntegrationsApi#postIntegrationsWebhookEvents) | **POST** /api/v2/integrations/webhooks/{tokenId}/events | Invoke Webhook
 [**putIntegrationConfigCurrent**](IntegrationsApi#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
 [**putIntegrationsActionDraftFunction**](IntegrationsApi#putIntegrationsActionDraftFunction) | **PUT** /api/v2/integrations/actions/{actionId}/draft/function | Update draft function settings.
 [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi#putIntegrationsBotconnectorIntegrationIdBots) | **PUT** /api/v2/integrations/botconnector/{integrationId}/bots | Set a list of botConnector bots plus versions for this integration
@@ -4368,6 +4369,53 @@ apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nu
 void (no response body)
 
 
+## postIntegrationsWebhookEvents
+
+> WebhookInvocationResponse postIntegrationsWebhookEvents(tokenId, body)
+
+
+POST /api/v2/integrations/webhooks/{tokenId}/events
+
+Invoke Webhook
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let tokenId = "tokenId_example"; // String | The token of the webhook to be invoked
+let body = null; // {String: Object} | Webhook Invocation Payload
+
+apiInstance.postIntegrationsWebhookEvents(tokenId, body)
+  .then((data) => {
+    console.log(`postIntegrationsWebhookEvents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsWebhookEvents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tokenId** | **String** | The token of the webhook to be invoked |  |
+ **body** | **{String: Object}** | Webhook Invocation Payload |  |
+
+### Return type
+
+**WebhookInvocationResponse**
+
+
 ## putIntegrationConfigCurrent
 
 > IntegrationConfiguration putIntegrationConfigCurrent(integrationId, opts)
@@ -4736,4 +4784,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@218.0.0_
+_purecloud-platform-client-v2@218.1.0_

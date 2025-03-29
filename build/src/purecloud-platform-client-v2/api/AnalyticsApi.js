@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 218.0.0
+	 * @version 218.1.0
 	 */
 
 	/**
@@ -130,7 +130,6 @@ class AnalyticsApi {
 	 * Get an agent and their active sessions by user ID
 	 * 
 	 * @param {String} userId userId
-	 * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsAgentStatus(userId) { 
 		// verify the required parameter 'userId' is set
@@ -1582,7 +1581,6 @@ class AnalyticsApi {
 	 * Count agents by segment type
 	 * 
 	 * @param {Object} body query
-	 * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsAgentsStatusCounts(body) { 
 		// verify the required parameter 'body' is set
@@ -1608,7 +1606,6 @@ class AnalyticsApi {
 	 * Retrieve the top 50 agents matching the query filters
 	 * 
 	 * @param {Object} body query
-	 * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsAgentsStatusQuery(body) { 
 		// verify the required parameter 'body' is set

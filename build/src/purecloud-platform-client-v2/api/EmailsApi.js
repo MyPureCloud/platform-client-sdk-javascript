@@ -5,7 +5,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 218.0.0
+	 * @version 218.1.0
 	 */
 
 	/**
@@ -21,6 +21,26 @@ class EmailsApi {
 
 
 	/**
+	 * Reset email threading settings to default
+	 * 
+	 */
+	deleteEmailsSettingsThreading() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/emails/settings/threading', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get email Contact Center settings
 	 * 
 	 */
@@ -28,6 +48,26 @@ class EmailsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get email threading settings
+	 * 
+	 */
+	getEmailsSettingsThreading() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/emails/settings/threading', 
 			'GET', 
 			{  },
 			{  },
@@ -52,6 +92,30 @@ class EmailsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch email threading settings
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchEmailsSettingsThreading(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/emails/settings/threading', 
 			'PATCH', 
 			{  },
 			{  },

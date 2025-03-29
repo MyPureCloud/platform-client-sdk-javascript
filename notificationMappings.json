@@ -149,6 +149,10 @@
       "class": "WrapupDetailEventTopicWrapupEvent"
     },
     {
+      "topic": "v2.employeeperformance.externalmetrics.definitions",
+      "class": "EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition"
+    },
+    {
       "topic": "v2.externalcontacts.contacts.{id}",
       "class": "ExternalContactsContactChangedTopicContact"
     },
@@ -323,6 +327,14 @@
     {
       "topic": "v2.outbound.settings",
       "class": "DialerOutboundSettingsConfigChangeOutboundSettings"
+    },
+    {
+      "topic": "v2.outbound.whatsappcampaigns.{id}",
+      "class": "OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign"
+    },
+    {
+      "topic": "v2.outbound.whatsappcampaigns.{id}.progress",
+      "class": "OutboundMessagingWhatsappCampaignProgressEventCampaignProgress"
     },
     {
       "topic": "v2.outbound.wrapupcodemappings.{id}",
@@ -743,6 +755,10 @@
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.workplanbids.{id}",
       "class": "WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.historicaldata.delete.jobs",
+      "class": "WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete"
     },
     {
       "topic": "v2.workforcemanagement.historicaldata.deletejob",

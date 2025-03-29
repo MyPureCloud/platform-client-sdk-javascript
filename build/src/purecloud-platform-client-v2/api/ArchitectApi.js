@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 218.0.0
+	 * @version 218.1.0
 	 */
 
 	/**
@@ -3044,6 +3044,36 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Creates a presigned URL for uploading a user prompt file
+	 * 
+	 * @param {String} promptId Prompt ID
+	 * @param {String} languageCode Language
+	 */
+	postArchitectPromptResourceUploads(promptId, languageCode) { 
+		// verify the required parameter 'promptId' is set
+		if (promptId === undefined || promptId === null) {
+			throw 'Missing the required parameter "promptId" when calling postArchitectPromptResourceUploads';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postArchitectPromptResourceUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads', 
+			'POST', 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a new user prompt resource
 	 * 
 	 * @param {String} promptId Prompt ID
@@ -3163,6 +3193,36 @@ class ArchitectApi {
 			'/api/v2/architect/systemprompts/{promptId}/history', 
 			'POST', 
 			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a presigned URL for uploading a system prompt file
+	 * 
+	 * @param {String} promptId Prompt ID
+	 * @param {String} languageCode Language
+	 */
+	postArchitectSystempromptResourceUploads(promptId, languageCode) { 
+		// verify the required parameter 'promptId' is set
+		if (promptId === undefined || promptId === null) {
+			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptResourceUploads';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postArchitectSystempromptResourceUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads', 
+			'POST', 
+			{ 'promptId': promptId,'languageCode': languageCode },
 			{  },
 			{  },
 			{  },

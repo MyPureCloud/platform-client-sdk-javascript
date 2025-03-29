@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 218.0.0
+	 * @version 218.1.0
 	 */
 
 	/**
@@ -3087,6 +3087,41 @@ class ConversationsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the feedback for the summary.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} summaryId Summary ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchConversationSummaryFeedback(conversationId, summaryId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationSummaryFeedback';
+		}
+		// verify the required parameter 'summaryId' is set
+		if (summaryId === undefined || summaryId === null) {
+			throw 'Missing the required parameter "summaryId" when calling patchConversationSummaryFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'summaryId': summaryId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

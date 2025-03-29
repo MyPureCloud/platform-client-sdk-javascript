@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 218.0.0
+	 * @version 218.1.0
 	 */
 
 	/**
@@ -2229,6 +2229,36 @@ class IntegrationsApi {
 			{  },
 			{  },
 			settings, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Invoke Webhook
+	 * 
+	 * @param {String} tokenId The token of the webhook to be invoked
+	 * @param {Object.<String, {String: Object}>} body Webhook Invocation Payload
+	 */
+	postIntegrationsWebhookEvents(tokenId, body) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null) {
+			throw 'Missing the required parameter "tokenId" when calling postIntegrationsWebhookEvents';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsWebhookEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{tokenId}/events', 
+			'POST', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

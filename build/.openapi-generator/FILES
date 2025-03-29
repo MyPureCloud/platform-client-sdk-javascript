@@ -218,6 +218,9 @@ docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/deleteDataprivacyMaskingrule-example.txt
 docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
+docs/deleteDivisionBasedPresenceDefinition-example.txt
+docs/deleteEmailsSettingsThreading-example.txt
+docs/deleteEmailsSettingsThreading-example.txt
 docs/deleteEmployeeengagementCelebration-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
@@ -336,7 +339,6 @@ docs/deleteOutboundSchedulesEmailcampaign-example.txt
 docs/deleteOutboundSchedulesMessagingcampaign-example.txt
 docs/deleteOutboundSchedulesSequence-example.txt
 docs/deleteOutboundSequence-example.txt
-docs/deletePresenceDefinition0-example.txt
 docs/deletePresenceSource-example.txt
 docs/deletePresencedefinition-example.txt
 docs/deleteProcessautomationTrigger-example.txt
@@ -757,11 +759,15 @@ docs/getDate-example.txt
 docs/getDiagnosticsLogcaptureBrowserEntriesDownloadJob-example.txt
 docs/getDiagnosticsLogcaptureBrowserUser-example.txt
 docs/getDiagnosticsLogcaptureBrowserUsers-example.txt
+docs/getDivisionBasedPresenceDefinition-example.txt
+docs/getDivisionBasedPresenceDefinitions-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
 docs/getDownload-example.txt
 docs/getEmailsSettings-example.txt
 docs/getEmailsSettings-example.txt
+docs/getEmailsSettingsThreading-example.txt
+docs/getEmailsSettingsThreading-example.txt
 docs/getEmployeeengagementCelebrations-example.txt
 docs/getEmployeeengagementRecognition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
@@ -1243,8 +1249,6 @@ docs/getOutboundSequence-example.txt
 docs/getOutboundSequences-example.txt
 docs/getOutboundSettings-example.txt
 docs/getOutboundWrapupcodemappings-example.txt
-docs/getPresenceDefinition0-example.txt
-docs/getPresenceDefinitions0-example.txt
 docs/getPresenceSettings-example.txt
 docs/getPresenceSource-example.txt
 docs/getPresenceSources-example.txt
@@ -1808,6 +1812,7 @@ docs/patchCoachingNotification-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
 docs/patchConversationSecureattributes-example.txt
+docs/patchConversationSummaryFeedback-example.txt
 docs/patchConversationUtilizationlabel-example.txt
 docs/patchConversationsAftercallworkConversationIdParticipantCommunication-example.txt
 docs/patchConversationsCall-example.txt
@@ -1850,6 +1855,8 @@ docs/patchConversationsSettings-example.txt
 docs/patchDataprivacyMaskingrule-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmailsSettings-example.txt
+docs/patchEmailsSettingsThreading-example.txt
+docs/patchEmailsSettingsThreading-example.txt
 docs/patchEmployeeengagementCelebration-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
@@ -2076,11 +2083,13 @@ docs/postArchitectGrammarLanguages-example.txt
 docs/postArchitectGrammars-example.txt
 docs/postArchitectIvrs-example.txt
 docs/postArchitectPromptHistory-example.txt
+docs/postArchitectPromptResourceUploads-example.txt
 docs/postArchitectPromptResources-example.txt
 docs/postArchitectPrompts-example.txt
 docs/postArchitectSchedulegroups-example.txt
 docs/postArchitectSchedules-example.txt
 docs/postArchitectSystempromptHistory-example.txt
+docs/postArchitectSystempromptResourceUploads-example.txt
 docs/postArchitectSystempromptResources-example.txt
 docs/postAssistants-example.txt
 docs/postAuditsQuery-example.txt
@@ -2211,6 +2220,7 @@ docs/postDataprivacyMaskingrulesValidate-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesDownloadJobs-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesQuery-example.txt
 docs/postDiagnosticsLogcaptureBrowserUser-example.txt
+docs/postDivisionBasedPresenceDefinitions-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
@@ -2310,6 +2320,7 @@ docs/postIntegrationsCredentials-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate-example.txt
+docs/postIntegrationsWebhookEvents-example.txt
 docs/postJourneyActionmaps-example.txt
 docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
@@ -2459,7 +2470,6 @@ docs/postOutboundMessagingcampaigns-example.txt
 docs/postOutboundMessagingcampaignsProgress-example.txt
 docs/postOutboundRulesets-example.txt
 docs/postOutboundSequences-example.txt
-docs/postPresenceDefinitions0-example.txt
 docs/postPresenceSources-example.txt
 docs/postPresencedefinitions-example.txt
 docs/postProcessautomationTriggerTest-example.txt
@@ -2773,6 +2783,7 @@ docs/putConversationsMessagingThreadingtimeline-example.txt
 docs/putConversationsScreenshareRecordingstate-example.txt
 docs/putConversationsSocialRecordingstate-example.txt
 docs/putConversationsVideoRecordingstate-example.txt
+docs/putDivisionBasedPresenceDefinition-example.txt
 docs/putExternalcontactsContact-example.txt
 docs/putExternalcontactsContactNote-example.txt
 docs/putExternalcontactsContactsSchema-example.txt
@@ -2869,7 +2880,6 @@ docs/putOutboundSchedulesMessagingcampaign-example.txt
 docs/putOutboundSchedulesSequence-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
-docs/putPresenceDefinition0-example.txt
 docs/putPresenceSettings-example.txt
 docs/putPresenceSource-example.txt
 docs/putPresenceUserPrimarysource-example.txt
