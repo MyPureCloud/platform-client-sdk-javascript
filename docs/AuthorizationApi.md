@@ -3141,4 +3141,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@218.0.0_
+_purecloud-platform-client-v2@218.1.0_

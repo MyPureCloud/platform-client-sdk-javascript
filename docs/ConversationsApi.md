@@ -116,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
+[**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary.
 [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
 [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
 [**patchConversationsCall**](ConversationsApi#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -5984,6 +5985,64 @@ apiInstance.patchConversationSecureattributes(conversationId, body)
 ### Return type
 
 **&#39;String&#39;**
+
+
+## patchConversationSummaryFeedback
+
+> void patchConversationSummaryFeedback(conversationId, summaryId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback
+
+Update the feedback for the summary.
+
+patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* conversation:summaryFeedback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let summaryId = "summaryId_example"; // String | Summary ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchConversationSummaryFeedback(conversationId, summaryId, opts)
+  .then(() => {
+    console.log('patchConversationSummaryFeedback returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationSummaryFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **summaryId** | **String** | Summary ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
 
 
 ## patchConversationUtilizationlabel
@@ -13629,4 +13688,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@218.0.0_
+_purecloud-platform-client-v2@218.1.0_

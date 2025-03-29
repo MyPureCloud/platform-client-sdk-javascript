@@ -334,8 +334,6 @@ GET /api/v2/analytics/agents/{userId}/status
 
 Get an agent and their active sessions by user ID
 
-getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:agentState:view
@@ -3194,8 +3192,6 @@ POST /api/v2/analytics/agents/status/counts
 
 Count agents by segment type
 
-postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:agentState:view
@@ -3245,8 +3241,6 @@ apiInstance.postAnalyticsAgentsStatusCounts(body)
 POST /api/v2/analytics/agents/status/query
 
 Retrieve the top 50 agents matching the query filters
-
-postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5654,4 +5648,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@218.0.0_
+_purecloud-platform-client-v2@218.1.0_

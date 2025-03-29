@@ -109,11 +109,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postArchitectGrammars**](ArchitectApi#postArchitectGrammars) | **POST** /api/v2/architect/grammars | Create a new grammar
 [**postArchitectIvrs**](ArchitectApi#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
 [**postArchitectPromptHistory**](ArchitectApi#postArchitectPromptHistory) | **POST** /api/v2/architect/prompts/{promptId}/history | Generate prompt history
+[**postArchitectPromptResourceUploads**](ArchitectApi#postArchitectPromptResourceUploads) | **POST** /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads | Creates a presigned URL for uploading a user prompt file
 [**postArchitectPromptResources**](ArchitectApi#postArchitectPromptResources) | **POST** /api/v2/architect/prompts/{promptId}/resources | Create a new user prompt resource
 [**postArchitectPrompts**](ArchitectApi#postArchitectPrompts) | **POST** /api/v2/architect/prompts | Create a new user prompt
 [**postArchitectSchedulegroups**](ArchitectApi#postArchitectSchedulegroups) | **POST** /api/v2/architect/schedulegroups | Creates a new schedule group
 [**postArchitectSchedules**](ArchitectApi#postArchitectSchedules) | **POST** /api/v2/architect/schedules | Create a new schedule.
 [**postArchitectSystempromptHistory**](ArchitectApi#postArchitectSystempromptHistory) | **POST** /api/v2/architect/systemprompts/{promptId}/history | Generate system prompt history
+[**postArchitectSystempromptResourceUploads**](ArchitectApi#postArchitectSystempromptResourceUploads) | **POST** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads | Creates a presigned URL for uploading a system prompt file
 [**postArchitectSystempromptResources**](ArchitectApi#postArchitectSystempromptResources) | **POST** /api/v2/architect/systemprompts/{promptId}/resources | Create system prompt resource override.
 [**postFlowHistory**](ArchitectApi#postFlowHistory) | **POST** /api/v2/flows/{flowId}/history | Generate flow history
 [**postFlowInstancesSettingsLoglevels**](ArchitectApi#postFlowInstancesSettingsLoglevels) | **POST** /api/v2/flows/{flowId}/instances/settings/loglevels | Set the logLevel for a particular flow id
@@ -6006,6 +6008,58 @@ apiInstance.postArchitectPromptHistory(promptId)
 **Operation**
 
 
+## postArchitectPromptResourceUploads
+
+> PromptAssetUpload postArchitectPromptResourceUploads(promptId, languageCode)
+
+
+POST /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads
+
+Creates a presigned URL for uploading a user prompt file
+
+Requires ALL permissions:
+
+* architect:userPrompt:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.postArchitectPromptResourceUploads(promptId, languageCode)
+  .then((data) => {
+    console.log(`postArchitectPromptResourceUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectPromptResourceUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
+
+### Return type
+
+**PromptAssetUpload**
+
+
 ## postArchitectPromptResources
 
 > PromptAsset postArchitectPromptResources(promptId, body)
@@ -6258,6 +6312,58 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 ### Return type
 
 **Operation**
+
+
+## postArchitectSystempromptResourceUploads
+
+> PromptAssetUpload postArchitectSystempromptResourceUploads(promptId, languageCode)
+
+
+POST /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads
+
+Creates a presigned URL for uploading a system prompt file
+
+Requires ALL permissions:
+
+* architect:systemPrompt:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.postArchitectSystempromptResourceUploads(promptId, languageCode)
+  .then((data) => {
+    console.log(`postArchitectSystempromptResourceUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectSystempromptResourceUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
+
+### Return type
+
+**PromptAssetUpload**
 
 
 ## postArchitectSystempromptResources
@@ -8238,4 +8344,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@218.0.0_
+_purecloud-platform-client-v2@218.1.0_
