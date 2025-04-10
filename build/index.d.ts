@@ -1085,8 +1085,10 @@ declare class AuthorizationApi {
   	getAuthorizationDivision(divisionId: string, opts?: AuthorizationApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>;
   	getAuthorizationDivisionGrants(divisionId: string, opts?: AuthorizationApi.getAuthorizationDivisionGrantsOptions): Promise<Models.AuthzDivisionGrantEntityListing>;
   	getAuthorizationDivisions(opts?: AuthorizationApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>;
+  	getAuthorizationDivisionsDeleted(opts?: AuthorizationApi.getAuthorizationDivisionsDeletedOptions): Promise<Models.AuthzDivisionEntityListing>;
   	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>;
   	getAuthorizationDivisionsLimit(): Promise<number>;
+  	getAuthorizationDivisionsQuery(opts?: AuthorizationApi.getAuthorizationDivisionsQueryOptions): Promise<Models.AuthzDivisionCursorListing>;
   	getAuthorizationDivisionspermittedMe(permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedMeOptions): Promise<Array<Models.AuthzDivision>>;
   	getAuthorizationDivisionspermittedPagedMe(permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedPagedMeOptions): Promise<Models.DivsPermittedEntityListing>;
   	getAuthorizationDivisionspermittedPagedSubjectId(subjectId: string, permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedPagedSubjectIdOptions): Promise<Models.DivsPermittedEntityListing>;
@@ -1156,6 +1158,17 @@ declare namespace AuthorizationApi {
 		"nextPage"?: string;
 		"previousPage"?: string;
 		"objectCount"?: boolean;
+		"id"?: Array<string>;
+		"name"?: string;
+	}
+	export interface getAuthorizationDivisionsDeletedOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getAuthorizationDivisionsQueryOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
 		"id"?: Array<string>;
 		"name"?: string;
 	}
@@ -2130,6 +2143,9 @@ declare class ExternalContactsApi {
   	getExternalcontactsContactsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>;
   	getExternalcontactsContactsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
   	getExternalcontactsContactsSchemas(): Promise<Models.DataSchemaListing>;
+  	getExternalcontactsContactsSchemasCoretype(coreTypeName: string): Promise<Models.Coretype>;
+  	getExternalcontactsContactsSchemasCoretypes(): Promise<Models.Coretype>;
+  	getExternalcontactsContactsSchemasLimits(): Promise<Models.SchemaQuantityLimits>;
   	getExternalcontactsExternalsource(externalSourceId: string): Promise<Models.ExternalSource>;
   	getExternalcontactsExternalsources(opts?: ExternalContactsApi.getExternalcontactsExternalsourcesOptions): Promise<Models.CursorExternalSourceListing>;
   	getExternalcontactsImportCsvSetting(settingsId: string): Promise<Models.CsvSettings>;
@@ -2142,6 +2158,7 @@ declare class ExternalContactsApi {
   	getExternalcontactsImportSettings(opts?: ExternalContactsApi.getExternalcontactsImportSettingsOptions): Promise<Models.ContactImportSettingsEntityListing>;
   	getExternalcontactsOrganization(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationOptions): Promise<Models.ExternalOrganization>;
   	getExternalcontactsOrganizationContacts(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationContactsOptions): Promise<Models.ContactListing>;
+  	getExternalcontactsOrganizationIdentifiers(externalOrganizationId: string): Promise<Models.ExternalOrganizationIdentifierListing>;
   	getExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNoteOptions): Promise<Models.Note>;
   	getExternalcontactsOrganizationNotes(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNotesOptions): Promise<Models.NoteListing>;
   	getExternalcontactsOrganizationRelationships(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationRelationshipsOptions): Promise<Models.RelationshipListing>;
@@ -2150,6 +2167,9 @@ declare class ExternalContactsApi {
   	getExternalcontactsOrganizationsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>;
   	getExternalcontactsOrganizationsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
   	getExternalcontactsOrganizationsSchemas(): Promise<Models.DataSchemaListing>;
+  	getExternalcontactsOrganizationsSchemasCoretype(coreTypeName: string): Promise<Models.Coretype>;
+  	getExternalcontactsOrganizationsSchemasCoretypes(): Promise<Models.Coretype>;
+  	getExternalcontactsOrganizationsSchemasLimits(): Promise<Models.SchemaQuantityLimits>;
   	getExternalcontactsRelationship(relationshipId: string, opts?: ExternalContactsApi.getExternalcontactsRelationshipOptions): Promise<Models.Relationship>;
   	getExternalcontactsReversewhitepageslookup(lookupVal: string, opts?: ExternalContactsApi.getExternalcontactsReversewhitepageslookupOptions): Promise<Models.ReverseWhitepagesLookupResult>;
   	getExternalcontactsScanContacts(opts?: ExternalContactsApi.getExternalcontactsScanContactsOptions): Promise<Models.CursorContactListing>;
@@ -2161,9 +2181,11 @@ declare class ExternalContactsApi {
   	getExternalcontactsScanRelationships(opts?: ExternalContactsApi.getExternalcontactsScanRelationshipsOptions): Promise<Models.CursorRelationshipListing>;
   	getExternalcontactsScanRelationshipsDivisionviewsAll(opts?: ExternalContactsApi.getExternalcontactsScanRelationshipsDivisionviewsAllOptions): Promise<Models.CursorRelationshipListing>;
   	patchExternalcontactsContactIdentifiers(contactId: string, body: Models.IdentifierClaimRequest): Promise<Models.ContactIdentifier>;
+  	patchExternalcontactsOrganizationIdentifiers(externalOrganizationId: string, body: Models.ExternalOrganizationIdentifierClaimRequest): Promise<Models.ExternalOrganizationIdentifier>;
   	postExternalcontactsBulkContacts(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>;
   	postExternalcontactsBulkContactsAdd(body: Models.BulkContactsRequest): Promise<Models.BulkContactsResponse>;
   	postExternalcontactsBulkContactsDivisionviews(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>;
+  	postExternalcontactsBulkContactsEnrich(body: Models.BulkContactsEnrichRequest, opts?: ExternalContactsApi.postExternalcontactsBulkContactsEnrichOptions): Promise<Models.BulkContactsEnrichResponse>;
   	postExternalcontactsBulkContactsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>;
   	postExternalcontactsBulkContactsUnresolved(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>;
   	postExternalcontactsBulkContactsUpdate(body: Models.BulkContactsRequest): Promise<Models.BulkContactsResponse>;
@@ -2174,6 +2196,7 @@ declare class ExternalContactsApi {
   	postExternalcontactsBulkOrganizations(body: Models.BulkIdsRequest): Promise<Models.BulkFetchOrganizationsResponse>;
   	postExternalcontactsBulkOrganizationsAdd(body: Models.BulkOrganizationsRequest): Promise<Models.BulkOrganizationsResponse>;
   	postExternalcontactsBulkOrganizationsDivisionviews(body: Models.BulkIdsRequest): Promise<Models.BulkFetchOrganizationsResponse>;
+  	postExternalcontactsBulkOrganizationsEnrich(body: Models.BulkOrganizationsEnrichRequest, opts?: ExternalContactsApi.postExternalcontactsBulkOrganizationsEnrichOptions): Promise<Models.BulkOrganizationsEnrichResponse>;
   	postExternalcontactsBulkOrganizationsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>;
   	postExternalcontactsBulkOrganizationsUpdate(body: Models.BulkOrganizationsRequest): Promise<Models.BulkOrganizationsResponse>;
   	postExternalcontactsBulkRelationships(body: Models.BulkIdsRequest): Promise<Models.BulkFetchRelationshipsResponse>;
@@ -2183,10 +2206,14 @@ declare class ExternalContactsApi {
   	postExternalcontactsContactNotes(contactId: string, body: Models.Note): Promise<Models.Note>;
   	postExternalcontactsContactPromotion(contactId: string): Promise<Models.ExternalContact>;
   	postExternalcontactsContacts(body: Models.ExternalContact): Promise<Models.ExternalContact>;
+  	postExternalcontactsContactsEnrich(body: Models.ContactEnrichRequest, opts?: ExternalContactsApi.postExternalcontactsContactsEnrichOptions): Promise<Models.ExternalContact>;
   	postExternalcontactsContactsExports(body: Models.ContactsExport): Promise<Models.ContactsExport>;
+  	postExternalcontactsContactsMerge(body: Models.MergeContactsRequest): Promise<Models.ExternalContact>;
   	postExternalcontactsContactsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>;
   	postExternalcontactsExternalsources(body: Models.ExternalSource): Promise<Models.ExternalSource>;
   	postExternalcontactsIdentifierlookup(identifier: Models.ContactIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupOptions): Promise<Models.ExternalContact>;
+  	postExternalcontactsIdentifierlookupContacts(identifier: Models.ContactIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupContactsOptions): Promise<Models.ExternalContact>;
+  	postExternalcontactsIdentifierlookupOrganizations(identifier: Models.ExternalOrganizationIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupOrganizationsOptions): Promise<Models.ExternalOrganization>;
   	postExternalcontactsImportCsvJobs(body: Models.CsvJobRequest): Promise<Models.CsvJobResponse>;
   	postExternalcontactsImportCsvSettings(body: Models.CsvSettings): Promise<Models.CsvSettings>;
   	postExternalcontactsImportCsvUploads(body: Models.CsvUploadRequest): Promise<Models.CsvUploadResponse>;
@@ -2195,6 +2222,7 @@ declare class ExternalContactsApi {
   	postExternalcontactsMergeContacts(body: Models.MergeRequest): Promise<Models.ExternalContact>;
   	postExternalcontactsOrganizationNotes(externalOrganizationId: string, body: Models.Note): Promise<Models.Note>;
   	postExternalcontactsOrganizations(body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>;
+  	postExternalcontactsOrganizationsEnrich(body: Models.ExternalOrganizationEnrichRequest, opts?: ExternalContactsApi.postExternalcontactsOrganizationsEnrichOptions): Promise<Models.ExternalOrganization>;
   	postExternalcontactsOrganizationsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>;
   	postExternalcontactsRelationships(body: Models.Relationship): Promise<Models.Relationship>;
   	putExternalcontactsContact(contactId: string, body: Models.ExternalContact): Promise<Models.ExternalContact>;
@@ -2352,8 +2380,26 @@ declare namespace ExternalContactsApi {
 		"limit"?: number;
 		"cursor"?: string;
 	}
+	export interface postExternalcontactsBulkContactsEnrichOptions { 
+		"dryRun"?: boolean;
+	}
+	export interface postExternalcontactsBulkOrganizationsEnrichOptions { 
+		"dryRun"?: boolean;
+	}
+	export interface postExternalcontactsContactsEnrichOptions { 
+		"dryRun"?: boolean;
+	}
 	export interface postExternalcontactsIdentifierlookupOptions { 
 		"expand"?: Array<string>;
+	}
+	export interface postExternalcontactsIdentifierlookupContactsOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface postExternalcontactsIdentifierlookupOrganizationsOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface postExternalcontactsOrganizationsEnrichOptions { 
+		"dryRun"?: boolean;
 	}
 }
 
@@ -2402,8 +2448,17 @@ declare namespace FlowsApi {
 declare class GamificationApi {
 	constructor(apiClient?: ApiClientClass);
   	deleteEmployeeperformanceExternalmetricsDefinition(metricId: string): Promise<void>;
+  	deleteGamificationContest(contestId: string): Promise<void>;
   	getEmployeeperformanceExternalmetricsDefinition(metricId: string): Promise<Models.ExternalMetricDefinition>;
   	getEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.getEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinitionListing>;
+  	getGamificationContest(contestId: string): Promise<Models.ContestsResponse>;
+  	getGamificationContestAgentsScores(contestId: string, opts?: GamificationApi.getGamificationContestAgentsScoresOptions): Promise<Models.ContestScoresAgentsPagedList>;
+  	getGamificationContestAgentsScoresMe(contestId: string, opts?: GamificationApi.getGamificationContestAgentsScoresMeOptions): Promise<Models.ContestScoresAgentsPagedList>;
+  	getGamificationContestAgentsScoresTrends(contestId: string): Promise<Models.ContestScoresGroupTrendList>;
+  	getGamificationContestAgentsScoresTrendsMe(contestId: string): Promise<Models.ContestScoresAgentTrendList>;
+  	getGamificationContestPrizeimage(contestId: string, prizeImageId: string): Promise<Models.PrizeImages>;
+  	getGamificationContests(opts?: GamificationApi.getGamificationContestsOptions): Promise<Models.GetContestsEssentialsListing>;
+  	getGamificationContestsMe(opts?: GamificationApi.getGamificationContestsMeOptions): Promise<Models.GetContestsEssentialsListing>;
   	getGamificationInsights(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string, opts?: GamificationApi.getGamificationInsightsOptions): Promise<Models.InsightsSummary>;
   	getGamificationInsightsDetails(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string): Promise<Models.InsightsDetails>;
   	getGamificationInsightsGroupsTrends(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.InsightsTrend>;
@@ -2451,8 +2506,11 @@ declare class GamificationApi {
   	getGamificationTemplate(templateId: string): Promise<Models.ObjectiveTemplate>;
   	getGamificationTemplates(): Promise<Models.GetTemplatesResponse>;
   	patchEmployeeperformanceExternalmetricsDefinition(metricId: string, body: Models.ExternalMetricDefinitionUpdateRequest): Promise<Models.ExternalMetricDefinition>;
+  	patchGamificationContest(contestId: string, body: Models.ContestsFinalizeRequest): Promise<Models.ContestsResponse>;
   	postEmployeeperformanceExternalmetricsData(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDataOptions): Promise<Models.ExternalMetricDataWriteResponse>;
   	postEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinition>;
+  	postGamificationContests(body: Models.ContestsCreateRequest): Promise<Models.ContestsResponse>;
+  	postGamificationContestsUploadsPrizeimages(body: Models.GamificationContestPrizeImageUploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postGamificationProfileActivate(profileId: string): Promise<Models.PerformanceProfile>;
   	postGamificationProfileDeactivate(profileId: string): Promise<Models.PerformanceProfile>;
   	postGamificationProfileMembers(profileId: string, body: Models.AssignUsers): Promise<Models.Assignment>;
@@ -2462,6 +2520,7 @@ declare class GamificationApi {
   	postGamificationProfiles(body: Models.CreatePerformanceProfile, opts?: GamificationApi.postGamificationProfilesOptions): Promise<Models.PerformanceProfile>;
   	postGamificationProfilesUserQuery(userId: string, body: Models.UserProfilesInDateRangeRequest): Promise<Models.UserProfilesInDateRange>;
   	postGamificationProfilesUsersMeQuery(body: Models.UserProfilesInDateRangeRequest): Promise<Models.UserProfilesInDateRange>;
+  	putGamificationContest(contestId: string, body: Models.ContestsCreateRequest): Promise<Models.ContestsResponse>;
   	putGamificationProfile(profileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>;
   	putGamificationProfileMetric(profileId: string, metricId: string, body: Models.CreateMetric): Promise<Models.Metric>;
   	putGamificationStatus(status: Models.GamificationStatus): Promise<Models.GamificationStatus>;
@@ -2471,6 +2530,37 @@ declare namespace GamificationApi {
 	export interface getEmployeeperformanceExternalmetricsDefinitionsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+	}
+	export interface getGamificationContestAgentsScoresOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"workday"?: string;
+		"returnsView"?: string;
+	}
+	export interface getGamificationContestAgentsScoresMeOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"workday"?: string;
+		"returnsView"?: string;
+	}
+	export interface getGamificationContestsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"dateStart"?: string;
+		"dateEnd"?: string;
+		"status"?: Array<string>;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+	}
+	export interface getGamificationContestsMeOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"dateStart"?: string;
+		"dateEnd"?: string;
+		"status"?: Array<string>;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"view"?: string;
 	}
 	export interface getGamificationInsightsOptions { 
 		"pageSize"?: number;
@@ -4095,8 +4185,10 @@ declare class ObjectsApi {
   	deleteAuthorizationDivision(divisionId: string, opts?: ObjectsApi.deleteAuthorizationDivisionOptions): Promise<void>;
   	getAuthorizationDivision(divisionId: string, opts?: ObjectsApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>;
   	getAuthorizationDivisions(opts?: ObjectsApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>;
+  	getAuthorizationDivisionsDeleted(opts?: ObjectsApi.getAuthorizationDivisionsDeletedOptions): Promise<Models.AuthzDivisionEntityListing>;
   	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>;
   	getAuthorizationDivisionsLimit(): Promise<number>;
+  	getAuthorizationDivisionsQuery(opts?: ObjectsApi.getAuthorizationDivisionsQueryOptions): Promise<Models.AuthzDivisionCursorListing>;
   	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>;
   	postAuthorizationDivisionRestore(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
   	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
@@ -4118,6 +4210,17 @@ declare namespace ObjectsApi {
 		"nextPage"?: string;
 		"previousPage"?: string;
 		"objectCount"?: boolean;
+		"id"?: Array<string>;
+		"name"?: string;
+	}
+	export interface getAuthorizationDivisionsDeletedOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getAuthorizationDivisionsQueryOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
 		"id"?: Array<string>;
 		"name"?: string;
 	}
@@ -4304,6 +4407,7 @@ declare class OutboundApi {
   	deleteOutboundDnclistCustomexclusioncolumns(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistCustomexclusioncolumnsOptions): Promise<void>;
   	deleteOutboundDnclistEmailaddresses(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistEmailaddressesOptions): Promise<void>;
   	deleteOutboundDnclistPhonenumbers(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistPhonenumbersOptions): Promise<void>;
+  	deleteOutboundDnclistWhatsappnumbers(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistWhatsappnumbersOptions): Promise<void>;
   	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId: string): Promise<void>;
   	deleteOutboundFilespecificationtemplatesBulk(id: Array<string>): Promise<void>;
   	deleteOutboundImporttemplate(importTemplateId: string): Promise<void>;
@@ -4390,6 +4494,7 @@ declare class OutboundApi {
   	patchOutboundDnclistCustomexclusioncolumns(dncListId: string, body: Models.DncPatchCustomExclusionColumnsRequest): Promise<void>;
   	patchOutboundDnclistEmailaddresses(dncListId: string, body: Models.DncPatchEmailsRequest): Promise<void>;
   	patchOutboundDnclistPhonenumbers(dncListId: string, body: Models.DncPatchPhoneNumbersRequest): Promise<void>;
+  	patchOutboundDnclistWhatsappnumbers(dncListId: string, body: Models.DncPatchWhatsAppNumbersRequest): Promise<void>;
   	patchOutboundSettings(body: Models.OutboundSettings, opts?: OutboundApi.patchOutboundSettingsOptions): Promise<void>;
   	postOutboundAttemptlimits(body: Models.AttemptLimits): Promise<Models.AttemptLimits>;
   	postOutboundCallabletimesets(body: Models.CallableTimeSet): Promise<Models.CallableTimeSet>;
@@ -4462,6 +4567,9 @@ declare namespace OutboundApi {
 		"expiredOnly"?: boolean;
 	}
 	export interface deleteOutboundDnclistPhonenumbersOptions { 
+		"expiredOnly"?: boolean;
+	}
+	export interface deleteOutboundDnclistWhatsappnumbersOptions { 
 		"expiredOnly"?: boolean;
 	}
 	export interface getOutboundAttemptlimitsOptions { 
@@ -4754,11 +4862,11 @@ declare namespace OutboundApi {
 
 declare class PresenceApi {
 	constructor(apiClient?: ApiClientClass);
-  	deleteDivisionBasedPresenceDefinition(definitionId: string): Promise<void>;
+  	deletePresenceDefinition0(definitionId: string): Promise<void>;
   	deletePresenceSource(sourceId: string): Promise<void>;
   	deletePresencedefinition(presenceId: string): Promise<void>;
-  	getDivisionBasedPresenceDefinition(definitionId: string, opts?: PresenceApi.getDivisionBasedPresenceDefinitionOptions): Promise<Models.OrganizationPresenceDefinition>;
-  	getDivisionBasedPresenceDefinitions(opts?: PresenceApi.getDivisionBasedPresenceDefinitionsOptions): Promise<Models.OrganizationPresenceDefinitionEntityListing>;
+  	getPresenceDefinition0(definitionId: string, opts?: PresenceApi.getPresenceDefinition0Options): Promise<Models.OrganizationPresenceDefinition>;
+  	getPresenceDefinitions0(opts?: PresenceApi.getPresenceDefinitions0Options): Promise<Models.OrganizationPresenceDefinitionEntityListing>;
   	getPresenceSettings(): Promise<Models.PresenceSettings>;
   	getPresenceSource(sourceId: string): Promise<Models.Source>;
   	getPresenceSources(opts?: PresenceApi.getPresenceSourcesOptions): Promise<Models.SourceEntityListing>;
@@ -4772,10 +4880,10 @@ declare class PresenceApi {
   	getUsersPresencesPurecloudBulk(opts?: PresenceApi.getUsersPresencesPurecloudBulkOptions): Promise<Array<Models.UcUserPresence>>;
   	patchUserPresence(userId: string, sourceId: string, body: Models.UserPresence): Promise<Models.UserPresence>;
   	patchUserPresencesPurecloud(userId: string, body: Models.UserPresence): Promise<Models.UserPresence>;
-  	postDivisionBasedPresenceDefinitions(body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>;
+  	postPresenceDefinitions0(body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>;
   	postPresenceSources(body: Models.Source): Promise<Models.Source>;
   	postPresencedefinitions(body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>;
-  	putDivisionBasedPresenceDefinition(definitionId: string, body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>;
+  	putPresenceDefinition0(definitionId: string, body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>;
   	putPresenceSettings(body: Models.PresenceSettings): Promise<Models.PresenceSettings>;
   	putPresenceSource(sourceId: string, body: Models.Source): Promise<Models.Source>;
   	putPresenceUserPrimarysource(userId: string, body: Models.UserPrimarySource): Promise<Models.UserPrimarySource>;
@@ -4784,10 +4892,10 @@ declare class PresenceApi {
 }
 
 declare namespace PresenceApi { 
-	export interface getDivisionBasedPresenceDefinitionOptions { 
+	export interface getPresenceDefinition0Options { 
 		"localeCode"?: string;
 	}
-	export interface getDivisionBasedPresenceDefinitionsOptions { 
+	export interface getPresenceDefinitions0Options { 
 		"deactivated"?: string;
 		"divisionId"?: Array<string>;
 		"localeCode"?: string;
@@ -5476,6 +5584,8 @@ declare namespace RoutingApi {
 		"filter"?: string;
 	}
 	export interface getRoutingEmailOutboundDomainsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 		"filter"?: string;
 	}
 	export interface getRoutingLanguagesOptions { 
@@ -6391,6 +6501,9 @@ declare class TaskManagementApi {
   	getTaskmanagementWorkitemsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>;
   	getTaskmanagementWorkitemsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
   	getTaskmanagementWorkitemsSchemas(): Promise<Models.DataSchemaListing>;
+  	getTaskmanagementWorkitemsSchemasCoretype(coreTypeName: string): Promise<Models.Coretype>;
+  	getTaskmanagementWorkitemsSchemasCoretypes(): Promise<Models.Coretype>;
+  	getTaskmanagementWorkitemsSchemasLimits(): Promise<Models.SchemaQuantityLimits>;
   	getTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeOptions): Promise<Models.Worktype>;
   	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemDateBasedRule>;
   	getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsDatebasedRulesOptions): Promise<Models.WorkitemDateBasedRuleListing>;
@@ -6944,6 +7057,7 @@ declare namespace TokensApi {
 declare class UploadsApi {
 	constructor(apiClient?: ApiClientClass);
   	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>;
+  	postGamificationContestsUploadsPrizeimages(body: Models.GamificationContestPrizeImageUploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>;
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>;
@@ -11062,6 +11176,13 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface AuthzDivisionCursorListing { 
+		"entities"?: Array<Models.AuthzDivision>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
 	export interface AuthzDivisionEntityListing { 
 		"entities"?: Array<Models.AuthzDivision>;
 		"pageSize"?: number;
@@ -11656,6 +11777,15 @@ declare namespace Models {
 		"schedule"?: Models.BuScheduleReference;
 	}
 	
+	export interface BuAgentScheduleShiftRequest { 
+		"id"?: string;
+		"startDate"?: string;
+		"lengthMinutes"?: number;
+		"activities"?: Array<Models.BuAgentScheduleActivity>;
+		"manuallyEdited"?: boolean;
+		"schedule"?: Models.BuScheduleReference;
+	}
+	
 	export interface BuAgentScheduleUpdate { 
 		"type"?: string;
 		"shiftStartDates"?: Array<string>;
@@ -11852,7 +11982,7 @@ declare namespace Models {
 		"userId": string;
 		"workPlanId"?: Models.ValueWrapperString;
 		"workPlanIdsPerWeek"?: Models.ListWrapperString;
-		"shifts"?: Array<Models.BuAgentScheduleShift>;
+		"shifts"?: Array<Models.BuAgentScheduleShiftRequest>;
 		"fullDayTimeOffMarkers"?: Array<Models.BuFullDayTimeOffMarker>;
 	}
 	
@@ -12247,6 +12377,16 @@ declare namespace Models {
 		"errorIndexes"?: Array<number>;
 	}
 	
+	export interface BulkContactsEnrichRequest { 
+		"entities"?: Array<Models.ContactEnrichRequest>;
+	}
+	
+	export interface BulkContactsEnrichResponse { 
+		"results"?: Array<Models.BulkResponseResultExternalContactContactEnrichRequestBulkEntityErrorContactEnrichRequest>;
+		"errorCount"?: number;
+		"errorIndexes"?: Array<number>;
+	}
+	
 	export interface BulkContactsRequest { 
 		"entities"?: Array<Models.ExternalContact>;
 	}
@@ -12261,6 +12401,15 @@ declare namespace Models {
 		"results"?: Array<Models.BulkResponseResultVoidEntityBulkEntityErrorEntity>;
 		"errorCount"?: number;
 		"errorIndexes"?: Array<number>;
+	}
+	
+	export interface BulkEntityErrorContactEnrichRequest { 
+		"code"?: string;
+		"message"?: string;
+		"status"?: number;
+		"retryable"?: boolean;
+		"details"?: Array<Models.BulkErrorDetail>;
+		"entity"?: Models.ContactEnrichRequest;
 	}
 	
 	export interface BulkEntityErrorEntity { 
@@ -12288,6 +12437,15 @@ declare namespace Models {
 		"retryable"?: boolean;
 		"details"?: Array<Models.BulkErrorDetail>;
 		"entity"?: Models.ExternalOrganization;
+	}
+	
+	export interface BulkEntityErrorExternalOrganizationEnrichRequest { 
+		"code"?: string;
+		"message"?: string;
+		"status"?: number;
+		"retryable"?: boolean;
+		"details"?: Array<Models.BulkErrorDetail>;
+		"entity"?: Models.ExternalOrganizationEnrichRequest;
 	}
 	
 	export interface BulkEntityErrorNote { 
@@ -12434,6 +12592,16 @@ declare namespace Models {
 		"errorIndexes"?: Array<number>;
 	}
 	
+	export interface BulkOrganizationsEnrichRequest { 
+		"entities"?: Array<Models.ExternalOrganizationEnrichRequest>;
+	}
+	
+	export interface BulkOrganizationsEnrichResponse { 
+		"results"?: Array<Models.BulkResponseResultExternalOrganizationExternalOrganizationEnrichRequestBulkEntityErrorExternalOrganizationEnrichRequest>;
+		"errorCount"?: number;
+		"errorIndexes"?: Array<number>;
+	}
+	
 	export interface BulkOrganizationsRequest { 
 		"entities"?: Array<Models.ExternalOrganization>;
 	}
@@ -12458,6 +12626,13 @@ declare namespace Models {
 		"results"?: Array<Models.BulkResult>;
 		"errorCount"?: number;
 		"errorIndexes"?: Array<number>;
+	}
+	
+	export interface BulkResponseResultExternalContactContactEnrichRequestBulkEntityErrorContactEnrichRequest { 
+		"id"?: string;
+		"success"?: boolean;
+		"entity"?: Models.ExternalContact;
+		"error"?: Models.BulkEntityErrorContactEnrichRequest;
 	}
 	
 	export interface BulkResponseResultExternalContactEntityBulkEntityErrorEntity { 
@@ -12486,6 +12661,13 @@ declare namespace Models {
 		"success"?: boolean;
 		"entity"?: Models.ExternalOrganization;
 		"error"?: Models.BulkEntityErrorExternalOrganization;
+	}
+	
+	export interface BulkResponseResultExternalOrganizationExternalOrganizationEnrichRequestBulkEntityErrorExternalOrganizationEnrichRequest { 
+		"id"?: string;
+		"success"?: boolean;
+		"entity"?: Models.ExternalOrganization;
+		"error"?: Models.BulkEntityErrorExternalOrganizationEnrichRequest;
 	}
 	
 	export interface BulkResponseResultNoteEntityBulkEntityErrorEntity { 
@@ -14837,6 +15019,20 @@ declare namespace Models {
 		"divisionId"?: string;
 	}
 	
+	export interface ContactEnrichOptions { 
+		"promote"?: boolean;
+	}
+	
+	export interface ContactEnrichRequest { 
+		"id"?: string;
+		"division"?: Models.WritableStarrableDivision;
+		"matchingIdentifiers": Array<Models.ContactIdentifier>;
+		"action": string;
+		"contact"?: Models.ExternalContact;
+		"fieldRules"?: Models.EnrichFieldRules;
+		"options"?: Models.ContactEnrichOptions;
+	}
+	
 	export interface ContactIdentifier { 
 		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
@@ -14928,6 +15124,7 @@ declare namespace Models {
 		"columnNames": Array<string>;
 		"phoneColumns"?: Array<Models.ContactPhoneNumberColumn>;
 		"emailColumns"?: Array<Models.EmailColumn>;
+		"whatsAppColumns"?: Array<Models.WhatsAppColumn>;
 		"importStatus"?: Models.ImportStatus;
 		"previewModeColumnName"?: string;
 		"previewModeAcceptedValues"?: Array<string>;
@@ -14947,6 +15144,7 @@ declare namespace Models {
 		"columnNames": Array<string>;
 		"phoneColumns"?: Array<Models.ContactPhoneNumberColumn>;
 		"emailColumns"?: Array<Models.EmailColumn>;
+		"whatsAppColumns"?: Array<Models.WhatsAppColumn>;
 		"importStatus"?: Models.ImportStatus;
 		"size"?: number;
 		"selfUri"?: string;
@@ -15040,6 +15238,7 @@ declare namespace Models {
 		"columnNames": Array<string>;
 		"phoneColumns"?: Array<Models.ContactPhoneNumberColumn>;
 		"emailColumns"?: Array<Models.EmailColumn>;
+		"whatsAppColumns"?: Array<Models.WhatsAppColumn>;
 		"previewModeColumnName"?: string;
 		"previewModeAcceptedValues"?: Array<string>;
 		"attemptLimits"?: Models.DomainEntityRef;
@@ -15486,6 +15685,193 @@ declare namespace Models {
 	export interface ContestDataWinnersUsers { 
 		"id"?: string;
 		"rank"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestDisqualifiedAgents { 
+		"id"?: string;
+		"note"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestMetricScore { 
+		"metric"?: Models.AddressableEntityRef;
+		"score"?: number;
+		"totalPoints"?: number;
+		"percentOfGoal"?: number;
+	}
+	
+	export interface ContestMetricScoreRanked { 
+		"metric"?: Models.AddressableEntityRef;
+		"score"?: number;
+		"totalPoints"?: number;
+		"percentOfGoal"?: number;
+		"rank"?: number;
+	}
+	
+	export interface ContestMetrics { 
+		"id": string;
+		"name"?: string;
+		"weight": number;
+		"minimumQualifier": number;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestPrizes { 
+		"tier": number;
+		"name": string;
+		"description": string;
+		"imageId": string;
+		"imageUrl"?: string;
+		"winnersCount": number;
+	}
+	
+	export interface ContestProfile { 
+		"id": string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestRequesingParticipantDailyInfo { 
+		"dateWorkday"?: string;
+		"contestScore"?: Models.ContestScoreRanked;
+	}
+	
+	export interface ContestScore { 
+		"score"?: number;
+		"totalPoints"?: number;
+		"percentOfGoal"?: number;
+	}
+	
+	export interface ContestScoreRanked { 
+		"score"?: number;
+		"totalPoints"?: number;
+		"percentOfGoal"?: number;
+		"rank"?: number;
+		"tier"?: number;
+	}
+	
+	export interface ContestScoresAgentTrend { 
+		"contestScore"?: Models.ContestScoreRanked;
+		"metricScores"?: Array<Models.ContestMetricScoreRanked>;
+		"disqualified"?: boolean;
+		"dateWorkday"?: string;
+	}
+	
+	export interface ContestScoresAgentTrendList { 
+		"entities"?: Array<Models.ContestScoresAgentTrend>;
+		"user"?: Models.UserReference;
+	}
+	
+	export interface ContestScoresAgents { 
+		"contestScore"?: Models.ContestScoreRanked;
+		"metricScores"?: Array<Models.ContestMetricScoreRanked>;
+		"disqualified"?: boolean;
+		"user"?: Models.UserReference;
+	}
+	
+	export interface ContestScoresAgentsPagedList { 
+		"entities"?: Array<Models.ContestScoresAgents>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"dateWorkday"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface ContestScoresGroupTrend { 
+		"dateWorkday"?: string;
+		"contestScore"?: Models.ContestScore;
+		"metricScores"?: Array<Models.ContestMetricScore>;
+	}
+	
+	export interface ContestScoresGroupTrendList { 
+		"entities"?: Array<Models.ContestScoresGroupTrend>;
+	}
+	
+	export interface ContestUserRank { 
+		"id"?: string;
+		"rank"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestWinners { 
+		"tier"?: number;
+		"users"?: Array<Models.ContestUserRank>;
+	}
+	
+	export interface ContestWinnersRequest { 
+		"tier"?: number;
+		"userIds"?: Array<string>;
+	}
+	
+	export interface ContestsCreateRequest { 
+		"id"?: string;
+		"division"?: Models.WritableDivision;
+		"title": string;
+		"description": string;
+		"dateStart": string;
+		"dateEnd": string;
+		"winningCriteria": string;
+		"dateAnnounced": string;
+		"announcementTimezone": string;
+		"anonymization": string;
+		"metrics": Array<Models.ContestMetrics>;
+		"prizes": Array<Models.ContestPrizes>;
+		"profileId": string;
+		"participantIds": Array<string>;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestsEssentials { 
+		"id"?: string;
+		"title": string;
+		"status"?: string;
+		"dateStart": string;
+		"dateEnd": string;
+		"profile"?: Models.ContestProfile;
+		"participantCount"?: number;
+		"dateAnnounced": string;
+		"dateFinalized"?: string;
+		"dateCancelled"?: string;
+		"dateModified"?: string;
+		"dateScoresModified"?: string;
+		"metrics": Array<Models.ContestMetrics>;
+		"requestingParticipantContestInfo"?: Models.ContestRequesingParticipantDailyInfo;
+		"selfUri"?: string;
+	}
+	
+	export interface ContestsFinalizeRequest { 
+		"status": string;
+		"winners"?: Array<Models.ContestWinnersRequest>;
+		"disqualifiedAgents"?: Array<Models.ContestDisqualifiedAgents>;
+	}
+	
+	export interface ContestsResponse { 
+		"id"?: string;
+		"division"?: Models.WritableDivision;
+		"title": string;
+		"description": string;
+		"dateStart": string;
+		"dateEnd": string;
+		"winningCriteria": string;
+		"dateAnnounced": string;
+		"announcementTimezone": string;
+		"anonymization": string;
+		"metrics": Array<Models.ContestMetrics>;
+		"prizes": Array<Models.ContestPrizes>;
+		"version"?: number;
+		"createdBy"?: Models.UserReference;
+		"profile"?: Models.ContestProfile;
+		"participants"?: Array<Models.UserReference>;
+		"status"?: string;
+		"participantCount"?: number;
+		"dateFinalized"?: string;
+		"dateCancelled"?: string;
+		"dateModified"?: string;
+		"dateScoresModified"?: string;
+		"winners"?: Array<Models.ContestWinners>;
+		"disqualifiedAgents"?: Array<Models.ContestDisqualifiedAgents>;
 		"selfUri"?: string;
 	}
 	
@@ -16520,6 +16906,13 @@ declare namespace Models {
 		"dateTime"?: string;
 	}
 	
+	export interface ConversationContentInteractiveApplication { 
+		"name"?: string;
+		"url"?: string;
+		"receivedMessage"?: Models.ConversationContentReceivedReplyMessage;
+		"replyMessage"?: Models.ConversationContentReceivedReplyMessage;
+	}
+	
 	export interface ConversationContentLocation { 
 		"url"?: string;
 		"address"?: string;
@@ -16552,6 +16945,12 @@ declare namespace Models {
 	export interface ConversationContentReaction { 
 		"reactionType"?: string;
 		"count": number;
+	}
+	
+	export interface ConversationContentReceivedReplyMessage { 
+		"title"?: string;
+		"subtitle"?: string;
+		"imageUrl"?: string;
 	}
 	
 	export interface ConversationContentStory { 
@@ -19985,6 +20384,7 @@ declare namespace Models {
 		"countRecordsUpdated"?: number;
 		"countRecordsDeleted"?: number;
 		"countRecordsFailed"?: number;
+		"uploadHeaders"?: { [key: string]: string; };
 		"selfUri"?: string;
 	}
 	
@@ -20560,6 +20960,7 @@ declare namespace Models {
 		"callRecords"?: { [key: string]: Models.CallRecord; };
 		"latestSmsEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"latestEmailEvaluations"?: { [key: string]: Models.MessageEvaluation; };
+		"latestWhatsAppEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"callable"?: boolean;
 		"phoneNumberStatus"?: { [key: string]: Models.PhoneNumberStatus; };
 		"contactableStatus"?: { [key: string]: Models.ContactableStatus; };
@@ -21335,6 +21736,12 @@ declare namespace Models {
 	export interface DncPatchPhoneNumbersRequest { 
 		"action"?: string;
 		"phoneNumbers"?: Array<string>;
+		"expirationDateTime"?: string;
+	}
+	
+	export interface DncPatchWhatsAppNumbersRequest { 
+		"action"?: string;
+		"whatsAppNumbers"?: Array<string>;
 		"expirationDateTime"?: string;
 	}
 	
@@ -22232,6 +22639,7 @@ declare namespace Models {
 	export interface DomainResourceConditionValue { 
 		"user"?: Models.User;
 		"queue"?: Models.Queue;
+		"team"?: Models.Team;
 		"value"?: string;
 		"type"?: string;
 	}
@@ -23341,6 +23749,18 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface EnrichFieldRule { 
+		"field"?: string;
+		"action"?: string;
+		"arrayAction"?: string;
+	}
+	
+	export interface EnrichFieldRules { 
+		"defaultAction"?: string;
+		"rules"?: Array<Models.EnrichFieldRule>;
+		"defaultArrayAction"?: string;
+	}
+	
 	export interface Entity { 
 		"id"?: string;
 	}
@@ -24296,6 +24716,7 @@ declare namespace Models {
 		"whatsAppId"?: Models.WhatsAppId;
 		"facebookId"?: Models.FacebookId;
 		"externalIds"?: Array<Models.ExternalId>;
+		"identifiers"?: Array<Models.ContactIdentifier>;
 		"modifyDate"?: string;
 		"createDate"?: string;
 		"externalOrganization"?: Models.ExternalOrganization;
@@ -24935,6 +25356,16 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ExternalOrganizationEnrichRequest { 
+		"id"?: string;
+		"division"?: Models.WritableStarrableDivision;
+		"matchingIdentifiers"?: Array<Models.ExternalOrganizationIdentifier>;
+		"action"?: string;
+		"externalOrganization"?: Models.ExternalOrganization;
+		"fieldRules"?: Models.EnrichFieldRules;
+		"selfUri"?: string;
+	}
+	
 	export interface ExternalOrganizationIdentifier { 
 		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
@@ -24943,6 +25374,15 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"externalSource"?: Models.ExternalSource;
 		"selfUri"?: string;
+	}
+	
+	export interface ExternalOrganizationIdentifierClaimRequest { 
+		"operation": string;
+		"identifier": Models.ExternalOrganizationIdentifier;
+	}
+	
+	export interface ExternalOrganizationIdentifierListing { 
+		"entities"?: Array<Models.ExternalOrganizationIdentifier>;
 	}
 	
 	export interface ExternalOrganizationListing { 
@@ -26524,6 +26964,15 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface GamificationContestPrizeImageUploadUrlRequest { 
+		"fileName"?: string;
+		"contentMd5"?: string;
+		"signedUrlTimeoutSeconds"?: number;
+		"contentType": string;
+		"contentLength": number;
+		"serverSideEncryption"?: string;
+	}
+	
 	export interface GamificationScorecardChangeTopicEvaluationDetail { 
 		"evaluationId"?: string;
 		"conversationId"?: string;
@@ -26687,6 +27136,19 @@ declare namespace Models {
 	
 	export interface GetCelebrationListing { 
 		"entities"?: Array<Models.Celebration>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface GetContestsEssentialsListing { 
+		"entities"?: Array<Models.ContestsEssentials>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
@@ -32458,6 +32920,11 @@ declare namespace Models {
 		"entities"?: Array<Models.Member>;
 	}
 	
+	export interface MergeContactsRequest { 
+		"contactIds": Array<string>;
+		"valueOverride"?: Models.ExternalContact;
+	}
+	
 	export interface MergeOperation { 
 		"sourceContact"?: Models.AddressableEntityRef;
 		"targetContact"?: Models.AddressableEntityRef;
@@ -32749,6 +33216,7 @@ declare namespace Models {
 		"dynamicContactQueueingSettings"?: Models.DynamicContactQueueingSettings;
 		"emailConfig"?: Models.EmailConfig;
 		"smsConfig"?: Models.SmsConfig;
+		"whatsAppConfig"?: Models.WhatsAppConfig;
 		"selfUri"?: string;
 	}
 	
@@ -33468,6 +33936,7 @@ declare namespace Models {
 		"type": string;
 		"subType"?: string;
 		"maxLength"?: number;
+		"minLength"?: number;
 		"examples"?: Array<Models.NamedEntityTypeMechanismExample>;
 	}
 	
@@ -34284,6 +34753,7 @@ declare namespace Models {
 		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
+		"externalSource"?: Models.AddressableEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -34488,6 +34958,7 @@ declare namespace Models {
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
 		"dateLastLogin"?: string;
+		"dateWelcomeSent"?: string;
 		"organization"?: Models.Organization;
 	}
 	
@@ -36281,6 +36752,12 @@ declare namespace Models {
 		"startDate": string;
 	}
 	
+	export interface PlanningPeriodShiftConstraints { 
+		"enabled"?: boolean;
+		"minimumCount"?: number;
+		"maximumCount"?: number;
+	}
+	
 	export interface Policy { 
 		"id"?: string;
 		"name"?: string;
@@ -36608,6 +37085,10 @@ declare namespace Models {
 		"documentVariationId": string;
 		"documentVersionId": string;
 		"surfacingMethod"?: string;
+	}
+	
+	export interface PrizeImages { 
+		"imageUrl"?: string;
 	}
 	
 	export interface ProcessScheduleUpdateUploadRequest { 
@@ -45100,6 +45581,12 @@ declare namespace Models {
 		"empty"?: boolean;
 	}
 	
+	export interface TimeAndDateSubCondition { 
+	}
+	
+	export interface TimeAndDateSubConditionRange { 
+	}
+	
 	export interface TimeInterval { 
 		"months"?: number;
 		"weeks"?: number;
@@ -46112,6 +46599,7 @@ declare namespace Models {
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
 		"dateLastLogin"?: string;
+		"dateWelcomeSent"?: string;
 		"trustUserDetails"?: Models.TrustUserDetails;
 	}
 	
@@ -46938,6 +47426,7 @@ declare namespace Models {
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
 		"dateLastLogin"?: string;
+		"dateWelcomeSent"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -47400,6 +47889,7 @@ declare namespace Models {
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
 		"dateLastLogin"?: string;
+		"dateWelcomeSent"?: string;
 		"date"?: Models.ServerDate;
 		"geolocationSettings"?: Models.GeolocationSettings;
 		"organization"?: Models.Organization;
@@ -52773,6 +53263,7 @@ declare namespace Models {
 		"data": { [key: string]: string; };
 		"latestSmsEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"latestEmailEvaluations"?: { [key: string]: Models.MessageEvaluation; };
+		"latestWhatsAppEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"callable"?: boolean;
 		"phoneNumberStatus"?: { [key: string]: Models.PhoneNumberStatus; };
 		"contactableStatus"?: { [key: string]: Models.ContactableStatus; };

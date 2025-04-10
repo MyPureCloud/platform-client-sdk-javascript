@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 218.1.0
+	 * @version 219.0.0
 	 */
 
 	/**
@@ -44,6 +44,31 @@ class UploadsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generates pre-signed URL to upload a prize image for gamification contests
+	 * 
+	 * @param {Object} body query
+	 */
+	postGamificationContestsUploadsPrizeimages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationContestsUploadsPrizeimages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/uploads/prizeimages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

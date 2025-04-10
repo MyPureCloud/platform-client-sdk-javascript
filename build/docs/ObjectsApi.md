@@ -9,8 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAuthorizationDivision**](ObjectsApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
 [**getAuthorizationDivision**](ObjectsApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
 [**getAuthorizationDivisions**](ObjectsApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
+[**getAuthorizationDivisionsDeleted**](ObjectsApi#getAuthorizationDivisionsDeleted) | **GET** /api/v2/authorization/divisions/deleted | Get a list of soft deleted divisions for the org
 [**getAuthorizationDivisionsHome**](ObjectsApi#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
 [**getAuthorizationDivisionsLimit**](ObjectsApi#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
+[**getAuthorizationDivisionsQuery**](ObjectsApi#getAuthorizationDivisionsQuery) | **GET** /api/v2/authorization/divisions/query | Retrieve a list of all divisions defined for the organization with cursor
 [**postAuthorizationDivisionObject**](ObjectsApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
 [**postAuthorizationDivisionRestore**](ObjectsApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
 [**postAuthorizationDivisions**](ObjectsApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
@@ -192,6 +194,60 @@ apiInstance.getAuthorizationDivisions(opts)
 **AuthzDivisionEntityListing**
 
 
+## getAuthorizationDivisionsDeleted
+
+> AuthzDivisionEntityListing getAuthorizationDivisionsDeleted(opts)
+
+
+GET /api/v2/authorization/divisions/deleted
+
+Get a list of soft deleted divisions for the org
+
+Requires ANY permissions:
+
+* authorization:divisionDeleted:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAuthorizationDivisionsDeleted(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsDeleted success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsDeleted');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**AuthzDivisionEntityListing**
+
+
 ## getAuthorizationDivisionsHome
 
 > AuthzDivision getAuthorizationDivisionsHome()
@@ -278,6 +334,66 @@ This endpoint does not need any parameter.
 ### Return type
 
 **&#39;Number&#39;**
+
+
+## getAuthorizationDivisionsQuery
+
+> AuthzDivisionCursorListing getAuthorizationDivisionsQuery(opts)
+
+
+GET /api/v2/authorization/divisions/query
+
+Retrieve a list of all divisions defined for the organization with cursor
+
+Use "after" and "before" param to fetch next/previous page}
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
+  'name': "name_example" // String | Optionally request specific divisions by division name
+};
+
+apiInstance.getAuthorizationDivisionsQuery(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
+ **name** | **String** | Optionally request specific divisions by division name | [optional]  |
+
+### Return type
+
+**AuthzDivisionCursorListing**
 
 
 ## postAuthorizationDivisionObject
@@ -489,4 +605,4 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 **AuthzDivision**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_

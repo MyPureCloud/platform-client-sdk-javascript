@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 218.1.0
+	 * @version 219.0.0
 	 */
 
 	/**
@@ -480,6 +480,35 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
+			'DELETE', 
+			{ 'dncListId': dncListId },
+			{ 'expiredOnly': opts['expiredOnly'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes all or expired whatsApp numbers from a DNC list.
+	 * This operation is only for Internal DNC lists of whatsApp numbers
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC whatsApp numbers that are expired (default to false)
+	 */
+	deleteOutboundDnclistWhatsappnumbers(dncListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistWhatsappnumbers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/whatsappnumbers', 
 			'DELETE', 
 			{ 'dncListId': dncListId },
 			{ 'expiredOnly': opts['expiredOnly'] },
@@ -2818,6 +2847,36 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
+			'PATCH', 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add entries to or delete entries from a DNC list.
+	 * Only Internal DNC lists may be deleted from
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} body DNC whatsApp numbers
+	 */
+	patchOutboundDnclistWhatsappnumbers(dncListId, body) { 
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistWhatsappnumbers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundDnclistWhatsappnumbers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/whatsappnumbers', 
 			'PATCH', 
 			{ 'dncListId': dncListId },
 			{  },

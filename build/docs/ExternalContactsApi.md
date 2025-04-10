@@ -29,6 +29,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
 [**getExternalcontactsContactsSchemas**](ExternalContactsApi#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
+[**getExternalcontactsContactsSchemasCoretype**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretype) | **GET** /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getExternalcontactsContactsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsContactsSchemasCoretypes) | **GET** /api/v2/externalcontacts/contacts/schemas/coretypes | Get the core types from which all schemas are built.
+[**getExternalcontactsContactsSchemasLimits**](ExternalContactsApi#getExternalcontactsContactsSchemasLimits) | **GET** /api/v2/externalcontacts/contacts/schemas/limits | Get quantitative limits on schemas
 [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | **GET** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source
 [**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | **GET** /api/v2/externalcontacts/externalsources | Fetch a list of External Sources
 [**getExternalcontactsImportCsvSetting**](ExternalContactsApi#getExternalcontactsImportCsvSetting) | **GET** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Get settings for CSV import
@@ -41,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsImportSettings**](ExternalContactsApi#getExternalcontactsImportSettings) | **GET** /api/v2/externalcontacts/import/settings | List settings for organization
 [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
+[**getExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#getExternalcontactsOrganizationIdentifiers) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | List the identifiers for an external organization
 [**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
 [**getExternalcontactsOrganizationNotes**](ExternalContactsApi#getExternalcontactsOrganizationNotes) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization
 [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi#getExternalcontactsOrganizationRelationships) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships | Fetch a relationship for an external organization
@@ -49,6 +53,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization's schema
 [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi#getExternalcontactsOrganizationsSchemas) | **GET** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas.
+[**getExternalcontactsOrganizationsSchemasCoretype**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretype) | **GET** /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | **GET** /api/v2/externalcontacts/organizations/schemas/coretypes | Get the core types from which all schemas are built.
+[**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | **GET** /api/v2/externalcontacts/organizations/schemas/limits | Get quantitative limits on schemas
 [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
 [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
@@ -60,9 +67,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
 [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships
 [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
+[**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | Claim or release identifiers for an external organization
 [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
 [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
 [**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | **POST** /api/v2/externalcontacts/bulk/contacts/divisionviews | Bulk fetch contacts across divisions
+[**postExternalcontactsBulkContactsEnrich**](ExternalContactsApi#postExternalcontactsBulkContactsEnrich) | **POST** /api/v2/externalcontacts/bulk/contacts/enrich | Bulk Enrich Contacts - Run up to 10 Enrich operations per request
 [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
 [**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi#postExternalcontactsBulkContactsUnresolved) | **POST** /api/v2/externalcontacts/bulk/contacts/unresolved | Bulk fetch unresolved ancestor contacts
 [**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi#postExternalcontactsBulkContactsUpdate) | **POST** /api/v2/externalcontacts/bulk/contacts/update | Bulk update contacts
@@ -73,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsBulkOrganizations**](ExternalContactsApi#postExternalcontactsBulkOrganizations) | **POST** /api/v2/externalcontacts/bulk/organizations | Bulk fetch organizations
 [**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi#postExternalcontactsBulkOrganizationsAdd) | **POST** /api/v2/externalcontacts/bulk/organizations/add | Bulk add organizations
 [**postExternalcontactsBulkOrganizationsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkOrganizationsDivisionviews) | **POST** /api/v2/externalcontacts/bulk/organizations/divisionviews | Bulk fetch organizations across divisions
+[**postExternalcontactsBulkOrganizationsEnrich**](ExternalContactsApi#postExternalcontactsBulkOrganizationsEnrich) | **POST** /api/v2/externalcontacts/bulk/organizations/enrich | Bulk enrich external organizations - Run up to 10 Enrich operations per request
 [**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi#postExternalcontactsBulkOrganizationsRemove) | **POST** /api/v2/externalcontacts/bulk/organizations/remove | Bulk remove organizations
 [**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi#postExternalcontactsBulkOrganizationsUpdate) | **POST** /api/v2/externalcontacts/bulk/organizations/update | Bulk update organizations
 [**postExternalcontactsBulkRelationships**](ExternalContactsApi#postExternalcontactsBulkRelationships) | **POST** /api/v2/externalcontacts/bulk/relationships | Bulk fetch relationships
@@ -82,10 +92,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsContactNotes**](ExternalContactsApi#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
 [**postExternalcontactsContactPromotion**](ExternalContactsApi#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
 [**postExternalcontactsContacts**](ExternalContactsApi#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
+[**postExternalcontactsContactsEnrich**](ExternalContactsApi#postExternalcontactsContactsEnrich) | **POST** /api/v2/externalcontacts/contacts/enrich | Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
 [**postExternalcontactsContactsExports**](ExternalContactsApi#postExternalcontactsContactsExports) | **POST** /api/v2/externalcontacts/contacts/exports | Create bulk export
+[**postExternalcontactsContactsMerge**](ExternalContactsApi#postExternalcontactsContactsMerge) | **POST** /api/v2/externalcontacts/contacts/merge | Merge up to 25 contacts into a new contact record
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
 [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
 [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
+[**postExternalcontactsIdentifierlookupContacts**](ExternalContactsApi#postExternalcontactsIdentifierlookupContacts) | **POST** /api/v2/externalcontacts/identifierlookup/contacts | Fetch a contact using an identifier type and value.
+[**postExternalcontactsIdentifierlookupOrganizations**](ExternalContactsApi#postExternalcontactsIdentifierlookupOrganizations) | **POST** /api/v2/externalcontacts/identifierlookup/organizations | Fetch an external organization using an identifier type and value.
 [**postExternalcontactsImportCsvJobs**](ExternalContactsApi#postExternalcontactsImportCsvJobs) | **POST** /api/v2/externalcontacts/import/csv/jobs | Create CSV import job
 [**postExternalcontactsImportCsvSettings**](ExternalContactsApi#postExternalcontactsImportCsvSettings) | **POST** /api/v2/externalcontacts/import/csv/settings | Create settings for CSV import
 [**postExternalcontactsImportCsvUploads**](ExternalContactsApi#postExternalcontactsImportCsvUploads) | **POST** /api/v2/externalcontacts/import/csv/uploads | Get url for CSV upload
@@ -94,6 +108,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
 [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
+[**postExternalcontactsOrganizationsEnrich**](ExternalContactsApi#postExternalcontactsOrganizationsEnrich) | **POST** /api/v2/externalcontacts/organizations/enrich | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
 [**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi#postExternalcontactsOrganizationsSchemas) | **POST** /api/v2/externalcontacts/organizations/schemas | Create a schema
 [**postExternalcontactsRelationships**](ExternalContactsApi#postExternalcontactsRelationships) | **POST** /api/v2/externalcontacts/relationships | Create a relationship
 [**putExternalcontactsContact**](ExternalContactsApi#putExternalcontactsContact) | **PUT** /api/v2/externalcontacts/contacts/{contactId} | Update an external contact
@@ -1324,6 +1339,146 @@ This endpoint does not need any parameter.
 **DataSchemaListing**
 
 
+## getExternalcontactsContactsSchemasCoretype
+
+> Coretype getExternalcontactsContactsSchemasCoretype(coreTypeName)
+
+
+GET /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* externalContacts:customFields:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+
+apiInstance.getExternalcontactsContactsSchemasCoretype(coreTypeName)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of the core type |  |
+
+### Return type
+
+**Coretype**
+
+
+## getExternalcontactsContactsSchemasCoretypes
+
+> Coretype getExternalcontactsContactsSchemasCoretypes()
+
+
+GET /api/v2/externalcontacts/contacts/schemas/coretypes
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* externalContacts:customFields:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+apiInstance.getExternalcontactsContactsSchemasCoretypes()
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Coretype**
+
+
+## getExternalcontactsContactsSchemasLimits
+
+> SchemaQuantityLimits getExternalcontactsContactsSchemasLimits()
+
+
+GET /api/v2/externalcontacts/contacts/schemas/limits
+
+Get quantitative limits on schemas
+
+Requires ANY permissions:
+
+* externalContacts:customFields:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+apiInstance.getExternalcontactsContactsSchemasLimits()
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**SchemaQuantityLimits**
+
+
 ## getExternalcontactsExternalsource
 
 > ExternalSource getExternalcontactsExternalsource(externalSourceId)
@@ -1984,6 +2139,58 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 **ContactListing**
 
 
+## getExternalcontactsOrganizationIdentifiers
+
+> ExternalOrganizationIdentifierListing getExternalcontactsOrganizationIdentifiers(externalOrganizationId)
+
+
+GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers
+
+List the identifiers for an external organization
+
+getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+
+apiInstance.getExternalcontactsOrganizationIdentifiers(externalOrganizationId)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationIdentifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+
+### Return type
+
+**ExternalOrganizationIdentifierListing**
+
+
 ## getExternalcontactsOrganizationNote
 
 > Note getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
@@ -2425,6 +2632,146 @@ This endpoint does not need any parameter.
 ### Return type
 
 **DataSchemaListing**
+
+
+## getExternalcontactsOrganizationsSchemasCoretype
+
+> Coretype getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
+
+
+GET /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* externalContacts:customFields:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+
+apiInstance.getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of the core type |  |
+
+### Return type
+
+**Coretype**
+
+
+## getExternalcontactsOrganizationsSchemasCoretypes
+
+> Coretype getExternalcontactsOrganizationsSchemasCoretypes()
+
+
+GET /api/v2/externalcontacts/organizations/schemas/coretypes
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* externalContacts:customFields:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+apiInstance.getExternalcontactsOrganizationsSchemasCoretypes()
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Coretype**
+
+
+## getExternalcontactsOrganizationsSchemasLimits
+
+> SchemaQuantityLimits getExternalcontactsOrganizationsSchemasLimits()
+
+
+GET /api/v2/externalcontacts/organizations/schemas/limits
+
+Get quantitative limits on schemas
+
+Requires ANY permissions:
+
+* externalContacts:customFields:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+apiInstance.getExternalcontactsOrganizationsSchemasLimits()
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**SchemaQuantityLimits**
 
 
 ## getExternalcontactsRelationship
@@ -3042,6 +3389,60 @@ apiInstance.patchExternalcontactsContactIdentifiers(contactId, body)
 **ContactIdentifier**
 
 
+## patchExternalcontactsOrganizationIdentifiers
+
+> ExternalOrganizationIdentifier patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body)
+
+
+PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers
+
+Claim or release identifiers for an external organization
+
+patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let body = {}; // Object | ClaimRequest
+
+apiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body)
+  .then((data) => {
+    console.log(`patchExternalcontactsOrganizationIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsOrganizationIdentifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **body** | **Object** | ClaimRequest |  |
+
+### Return type
+
+**ExternalOrganizationIdentifier**
+
+
 ## postExternalcontactsBulkContacts
 
 > BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
@@ -3192,6 +3593,64 @@ apiInstance.postExternalcontactsBulkContactsDivisionviews(body)
 ### Return type
 
 **BulkFetchContactsResponse**
+
+
+## postExternalcontactsBulkContactsEnrich
+
+> BulkContactsEnrichResponse postExternalcontactsBulkContactsEnrich(body, opts)
+
+
+POST /api/v2/externalcontacts/bulk/contacts/enrich
+
+Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+
+See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+
+postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:contact:enrich
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contact Enrich Requests
+let opts = { 
+  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+};
+
+apiInstance.postExternalcontactsBulkContactsEnrich(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContactsEnrich success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContactsEnrich');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact Enrich Requests |  |
+ **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+
+### Return type
+
+**BulkContactsEnrichResponse**
 
 
 ## postExternalcontactsBulkContactsRemove
@@ -3700,6 +4159,64 @@ apiInstance.postExternalcontactsBulkOrganizationsDivisionviews(body)
 **BulkFetchOrganizationsResponse**
 
 
+## postExternalcontactsBulkOrganizationsEnrich
+
+> BulkOrganizationsEnrichResponse postExternalcontactsBulkOrganizationsEnrich(body, opts)
+
+
+POST /api/v2/externalcontacts/bulk/organizations/enrich
+
+Bulk enrich external organizations - Run up to 10 Enrich operations per request
+
+See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+
+postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:enrich
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | External Organization Enrich Requests
+let opts = { 
+  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+};
+
+apiInstance.postExternalcontactsBulkOrganizationsEnrich(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkOrganizationsEnrich success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkOrganizationsEnrich');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | External Organization Enrich Requests |  |
+ **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+
+### Return type
+
+**BulkOrganizationsEnrichResponse**
+
+
 ## postExternalcontactsBulkOrganizationsRemove
 
 > BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body)
@@ -4158,6 +4675,64 @@ apiInstance.postExternalcontactsContacts(body)
 **ExternalContact**
 
 
+## postExternalcontactsContactsEnrich
+
+> ExternalContact postExternalcontactsContactsEnrich(body, opts)
+
+
+POST /api/v2/externalcontacts/contacts/enrich
+
+Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+
+You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+
+postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:contact:enrich
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | ContactEnrichRequest
+let opts = { 
+  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+};
+
+apiInstance.postExternalcontactsContactsEnrich(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsContactsEnrich success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactsEnrich');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ContactEnrichRequest |  |
+ **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+
+### Return type
+
+**ExternalContact**
+
+
 ## postExternalcontactsContactsExports
 
 > ContactsExport postExternalcontactsContactsExports(body)
@@ -4207,6 +4782,60 @@ apiInstance.postExternalcontactsContactsExports(body)
 ### Return type
 
 **ContactsExport**
+
+
+## postExternalcontactsContactsMerge
+
+> ExternalContact postExternalcontactsContactsMerge(body)
+
+
+POST /api/v2/externalcontacts/contacts/merge
+
+Merge up to 25 contacts into a new contact record
+
+Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+
+postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:identity:merge
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | MergeRequest
+
+apiInstance.postExternalcontactsContactsMerge(body)
+  .then((data) => {
+    console.log(`postExternalcontactsContactsMerge success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactsMerge');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | MergeRequest |  |
+
+### Return type
+
+**ExternalContact**
 
 
 ## postExternalcontactsContactsSchemas
@@ -4367,6 +4996,122 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
 ### Return type
 
 **ExternalContact**
+
+
+## postExternalcontactsIdentifierlookupContacts
+
+> ExternalContact postExternalcontactsIdentifierlookupContacts(identifier, opts)
+
+
+POST /api/v2/externalcontacts/identifierlookup/contacts
+
+Fetch a contact using an identifier type and value.
+
+Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
+
+postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let identifier = {}; // Object | 
+let opts = { 
+  'expand': ["expand_example"] // [String] | which field, if any, to expand
+};
+
+apiInstance.postExternalcontactsIdentifierlookupContacts(identifier, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsIdentifierlookupContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsIdentifierlookupContacts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **identifier** | **Object** |  |  |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources, division |
+
+### Return type
+
+**ExternalContact**
+
+
+## postExternalcontactsIdentifierlookupOrganizations
+
+> ExternalOrganization postExternalcontactsIdentifierlookupOrganizations(identifier, opts)
+
+
+POST /api/v2/externalcontacts/identifierlookup/organizations
+
+Fetch an external organization using an identifier type and value.
+
+This endpoint will only accept ExternalId type identifiers.
+
+postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let identifier = {}; // Object | 
+let opts = { 
+  'expand': ["expand_example"] // [String] | which field, if any, to expand
+};
+
+apiInstance.postExternalcontactsIdentifierlookupOrganizations(identifier, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsIdentifierlookupOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsIdentifierlookupOrganizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **identifier** | **Object** |  |  |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: identifiers, externalSources, division |
+
+### Return type
+
+**ExternalOrganization**
 
 
 ## postExternalcontactsImportCsvJobs
@@ -4623,12 +5368,15 @@ apiInstance.postExternalcontactsImportSettings(body)
 
 > ExternalContact postExternalcontactsMergeContacts(body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/externalcontacts/merge/contacts
 
 Merge two contacts into a new contact record
 
-Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
 
 Requires ANY permissions:
 
@@ -4769,6 +5517,64 @@ apiInstance.postExternalcontactsOrganizations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExternalOrganization |  |
+
+### Return type
+
+**ExternalOrganization**
+
+
+## postExternalcontactsOrganizationsEnrich
+
+> ExternalOrganization postExternalcontactsOrganizationsEnrich(body, opts)
+
+
+POST /api/v2/externalcontacts/organizations/enrich
+
+Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+
+You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+
+postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:enrich
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | ExternalOrgEnrichRequest
+let opts = { 
+  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+};
+
+apiInstance.postExternalcontactsOrganizationsEnrich(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsOrganizationsEnrich success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsOrganizationsEnrich');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ExternalOrgEnrichRequest |  |
+ **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
 
 ### Return type
 
@@ -5564,4 +6370,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_

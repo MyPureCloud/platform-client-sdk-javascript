@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 218.1.0
+	 * @version 219.0.0
 	 */
 
 	/**
@@ -2575,8 +2575,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Retrieves delete job status for historical data imports of the organization
-	 * 
+	 * Retrieves delete job status for historical data imports of the organization.
+	 * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
+	 * @deprecated
 	 */
 	getWorkforcemanagementHistoricaldataDeletejob() { 
 
@@ -6148,8 +6149,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Delete the entries of the historical data imports in the organization
-	 * 
+	 * Delete the entries of the historical data imports in the organization.
+	 * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
+	 * @deprecated
 	 */
 	postWorkforcemanagementHistoricaldataDeletejob() { 
 

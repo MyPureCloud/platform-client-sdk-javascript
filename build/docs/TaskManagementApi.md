@@ -37,6 +37,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersion) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions | Get all versions of a schema
 [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | **GET** /api/v2/taskmanagement/workitems/schemas | Get a list of schemas.
+[**getTaskmanagementWorkitemsSchemasCoretype**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype) | **GET** /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getTaskmanagementWorkitemsSchemasCoretypes**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretypes) | **GET** /api/v2/taskmanagement/workitems/schemas/coretypes | Get the core types from which all schemas are built.
+[**getTaskmanagementWorkitemsSchemasLimits**](TaskManagementApi#getTaskmanagementWorkitemsSchemasLimits) | **GET** /api/v2/taskmanagement/workitems/schemas/limits | Get quantitative limits on schemas
 [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId} | Get a worktype
 [**getTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRule) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId} | Get a date based rule
 [**getTaskmanagementWorktypeFlowsDatebasedRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsDatebasedRules) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules | Get all date based rules for a worktype
@@ -1717,6 +1720,146 @@ This endpoint does not need any parameter.
 ### Return type
 
 **DataSchemaListing**
+
+
+## getTaskmanagementWorkitemsSchemasCoretype
+
+> Coretype getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
+
+
+GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* workitems:workitemSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+
+apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of the core type |  |
+
+### Return type
+
+**Coretype**
+
+
+## getTaskmanagementWorkitemsSchemasCoretypes
+
+> Coretype getTaskmanagementWorkitemsSchemasCoretypes()
+
+
+GET /api/v2/taskmanagement/workitems/schemas/coretypes
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* workitems:workitemSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+apiInstance.getTaskmanagementWorkitemsSchemasCoretypes()
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Coretype**
+
+
+## getTaskmanagementWorkitemsSchemasLimits
+
+> SchemaQuantityLimits getTaskmanagementWorkitemsSchemasLimits()
+
+
+GET /api/v2/taskmanagement/workitems/schemas/limits
+
+Get quantitative limits on schemas
+
+Requires ANY permissions:
+
+* workitems:workitemSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+apiInstance.getTaskmanagementWorkitemsSchemasLimits()
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**SchemaQuantityLimits**
 
 
 ## getTaskmanagementWorktype
@@ -3929,4 +4072,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_

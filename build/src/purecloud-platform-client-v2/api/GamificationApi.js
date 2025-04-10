@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 218.1.0
+	 * @version 219.0.0
 	 */
 
 	/**
@@ -35,6 +35,31 @@ class GamificationApi {
 			'/api/v2/employeeperformance/externalmetrics/definitions/{metricId}', 
 			'DELETE', 
 			{ 'metricId': metricId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	deleteGamificationContest(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling deleteGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'DELETE', 
+			{ 'contestId': contestId },
 			{  },
 			{  },
 			{  },
@@ -86,6 +111,236 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	getGamificationContest(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'GET', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Contest Scores (Admin)
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts.returnsView Desired response results (default to All)
+	 */
+	getGamificationContestAgentsScores(contestId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScores';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores', 
+			'GET', 
+			{ 'contestId': contestId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'workday': opts['workday'],'returnsView': opts['returnsView'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Contest Scores for the requesting Agent/Supervisor
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts.returnsView Desired response results (Supervisor Only) (default to All)
+	 */
+	getGamificationContestAgentsScoresMe(contestId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores/me', 
+			'GET', 
+			{ 'contestId': contestId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'workday': opts['workday'],'returnsView': opts['returnsView'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest Score Trend (Average Trend)
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	getGamificationContestAgentsScoresTrends(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores/trends', 
+			'GET', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest Score Trend for the requesting Agent
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	getGamificationContestAgentsScoresTrendsMe(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresTrendsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores/trends/me', 
+			'GET', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest Prize Image by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {String} prizeImageId The ID of the prize image
+	 */
+	getGamificationContestPrizeimage(contestId, prizeImageId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestPrizeimage';
+		}
+		// verify the required parameter 'prizeImageId' is set
+		if (prizeImageId === undefined || prizeImageId === null) {
+			throw 'Missing the required parameter "prizeImageId" when calling getGamificationContestPrizeimage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}', 
+			'GET', 
+			{ 'contestId': contestId,'prizeImageId': prizeImageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a List of Contests (Admin)
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Array.<String>} opts.status 
+	 * @param {Object} opts.sortBy  (default to dateStart)
+	 * @param {Object} opts.sortOrder  (default to desc)
+	 */
+	getGamificationContests(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a List of Contests (Agent/Supervisor)
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Array.<String>} opts.status 
+	 * @param {Object} opts.sortBy  (default to dateStart)
+	 * @param {Object} opts.sortOrder  (default to desc)
+	 * @param {Object} opts.view  (default to participant)
+	 */
+	getGamificationContestsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/me', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'view': opts['view'] },
 			{  },
 			{  },
 			null, 
@@ -1746,6 +2001,36 @@ class GamificationApi {
 	}
 
 	/**
+	 * Finalize a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} body Finalize Contest
+	 */
+	patchGamificationContest(contestId, body) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling patchGamificationContest';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'PATCH', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Write External Metric Data
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1787,6 +2072,56 @@ class GamificationApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a Contest
+	 * 
+	 * @param {Object} body Create Contest
+	 */
+	postGamificationContests(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationContests';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generates pre-signed URL to upload a prize image for gamification contests
+	 * 
+	 * @param {Object} body query
+	 */
+	postGamificationContestsUploadsPrizeimages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationContestsUploadsPrizeimages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/uploads/prizeimages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2042,6 +2377,36 @@ class GamificationApi {
 			'/api/v2/gamification/profiles/users/me/query', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} body Contest
+	 */
+	putGamificationContest(contestId, body) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null) {
+			throw 'Missing the required parameter "contestId" when calling putGamificationContest';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'PUT', 
+			{ 'contestId': contestId },
 			{  },
 			{  },
 			{  },

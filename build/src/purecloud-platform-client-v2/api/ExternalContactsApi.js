@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 218.1.0
+	 * @version 219.0.0
 	 */
 
 	/**
@@ -641,6 +641,71 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 */
+	getExternalcontactsContactsSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null) {
+			throw 'Missing the required parameter "coreTypeName" when calling getExternalcontactsContactsSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 */
+	getExternalcontactsContactsSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 */
+	getExternalcontactsContactsSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch an External Source
 	 * 
 	 * @param {String} externalSourceId External Source ID
@@ -966,6 +1031,32 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * List the identifiers for an external organization
+	 * 
+	 * @param {String} externalOrganizationId External Organization ID
+	 * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsOrganizationIdentifiers(externalOrganizationId) { 
+		// verify the required parameter 'externalOrganizationId' is set
+		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationIdentifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers', 
+			'GET', 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch a note for an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization Id
@@ -1182,6 +1273,71 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 */
+	getExternalcontactsOrganizationsSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null) {
+			throw 'Missing the required parameter "coreTypeName" when calling getExternalcontactsOrganizationsSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 */
+	getExternalcontactsOrganizationsSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 */
+	getExternalcontactsOrganizationsSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/limits', 
 			'GET', 
 			{  },
 			{  },
@@ -1492,6 +1648,37 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Claim or release identifiers for an external organization
+	 * 
+	 * @param {String} externalOrganizationId External Organization ID
+	 * @param {Object} body ClaimRequest
+	 * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body) { 
+		// verify the required parameter 'externalOrganizationId' is set
+		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+			throw 'Missing the required parameter "externalOrganizationId" when calling patchExternalcontactsOrganizationIdentifiers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsOrganizationIdentifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers', 
+			'PATCH', 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk fetch contacts
 	 * 
 	 * @param {Object} body Contact ids
@@ -1558,6 +1745,36 @@ class ExternalContactsApi {
 			'POST', 
 			{  },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+	 * See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+	 * @param {Object} body Contact Enrich Requests
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
+	 * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsBulkContactsEnrich(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsEnrich';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/contacts/enrich', 
+			'POST', 
+			{  },
+			{ 'dryRun': opts['dryRun'] },
 			{  },
 			{  },
 			body, 
@@ -1819,6 +2036,36 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Bulk enrich external organizations - Run up to 10 Enrich operations per request
+	 * See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+	 * @param {Object} body External Organization Enrich Requests
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
+	 * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsBulkOrganizationsEnrich(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsEnrich';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/organizations/enrich', 
+			'POST', 
+			{  },
+			{ 'dryRun': opts['dryRun'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk remove organizations
 	 * 
 	 * @param {Object} body Organization ids
@@ -2049,6 +2296,36 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+	 * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+	 * @param {Object} body ContactEnrichRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
+	 * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsContactsEnrich(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsContactsEnrich';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/enrich', 
+			'POST', 
+			{  },
+			{ 'dryRun': opts['dryRun'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create bulk export
 	 * 
 	 * @param {Object} body Export
@@ -2061,6 +2338,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/exports', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Merge up to 25 contacts into a new contact record
+	 * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+	 * @param {Object} body MergeRequest
+	 * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsContactsMerge(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsContactsMerge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/merge', 
 			'POST', 
 			{  },
 			{  },
@@ -2141,6 +2444,66 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/identifierlookup', 
+			'POST', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			identifier, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a contact using an identifier type and value.
+	 * Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
+	 * @param {Object} identifier 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which field, if any, to expand
+	 * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsIdentifierlookupContacts(identifier, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'identifier' is set
+		if (identifier === undefined || identifier === null) {
+			throw 'Missing the required parameter "identifier" when calling postExternalcontactsIdentifierlookupContacts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/identifierlookup/contacts', 
+			'POST', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			identifier, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch an external organization using an identifier type and value.
+	 * This endpoint will only accept ExternalId type identifiers.
+	 * @param {Object} identifier 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which field, if any, to expand
+	 * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsIdentifierlookupOrganizations(identifier, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'identifier' is set
+		if (identifier === undefined || identifier === null) {
+			throw 'Missing the required parameter "identifier" when calling postExternalcontactsIdentifierlookupOrganizations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/identifierlookup/organizations', 
 			'POST', 
 			{  },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
@@ -2280,8 +2643,9 @@ class ExternalContactsApi {
 
 	/**
 	 * Merge two contacts into a new contact record
-	 * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+	 * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
 	 * @param {Object} body MergeRequest
+	 * @deprecated
 	 */
 	postExternalcontactsMergeContacts(body) { 
 		// verify the required parameter 'body' is set
@@ -2349,6 +2713,36 @@ class ExternalContactsApi {
 			'POST', 
 			{  },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+	 * You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+	 * @param {Object} body ExternalOrgEnrichRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
+	 * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsOrganizationsEnrich(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizationsEnrich';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/enrich', 
+			'POST', 
+			{  },
+			{ 'dryRun': opts['dryRun'] },
 			{  },
 			{  },
 			body, 

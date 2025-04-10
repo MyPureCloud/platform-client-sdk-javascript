@@ -6,11 +6,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteDivisionBasedPresenceDefinition**](PresenceApi#deleteDivisionBasedPresenceDefinition) | **DELETE** /api/v2/presence/definitions/{definitionId} | Delete a Presence Definition
+[**deletePresenceDefinition0**](PresenceApi#deletePresenceDefinition0) | **DELETE** /api/v2/presence/definitions/{definitionId} | Delete a Presence Definition
 [**deletePresenceSource**](PresenceApi#deletePresenceSource) | **DELETE** /api/v2/presence/sources/{sourceId} | Delete a Presence Source
 [**deletePresencedefinition**](PresenceApi#deletePresencedefinition) | **DELETE** /api/v2/presencedefinitions/{presenceId} | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
-[**getDivisionBasedPresenceDefinition**](PresenceApi#getDivisionBasedPresenceDefinition) | **GET** /api/v2/presence/definitions/{definitionId} | Get a Presence Definition
-[**getDivisionBasedPresenceDefinitions**](PresenceApi#getDivisionBasedPresenceDefinitions) | **GET** /api/v2/presence/definitions | Get a list of Presence Definitions
+[**getPresenceDefinition0**](PresenceApi#getPresenceDefinition0) | **GET** /api/v2/presence/definitions/{definitionId} | Get a Presence Definition
+[**getPresenceDefinitions0**](PresenceApi#getPresenceDefinitions0) | **GET** /api/v2/presence/definitions | Get a list of Presence Definitions
 [**getPresenceSettings**](PresenceApi#getPresenceSettings) | **GET** /api/v2/presence/settings | Get the presence settings
 [**getPresenceSource**](PresenceApi#getPresenceSource) | **GET** /api/v2/presence/sources/{sourceId} | Get a Presence Source
 [**getPresenceSources**](PresenceApi#getPresenceSources) | **GET** /api/v2/presence/sources | Get a list of Presence Sources
@@ -24,10 +24,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersPresencesPurecloudBulk**](PresenceApi#getUsersPresencesPurecloudBulk) | **GET** /api/v2/users/presences/purecloud/bulk | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
 [**patchUserPresence**](PresenceApi#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user's Presence
 [**patchUserPresencesPurecloud**](PresenceApi#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
-[**postDivisionBasedPresenceDefinitions**](PresenceApi#postDivisionBasedPresenceDefinitions) | **POST** /api/v2/presence/definitions | Create a Presence Definition
+[**postPresenceDefinitions0**](PresenceApi#postPresenceDefinitions0) | **POST** /api/v2/presence/definitions | Create a Presence Definition
 [**postPresenceSources**](PresenceApi#postPresenceSources) | **POST** /api/v2/presence/sources | Create a Presence Source
 [**postPresencedefinitions**](PresenceApi#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
-[**putDivisionBasedPresenceDefinition**](PresenceApi#putDivisionBasedPresenceDefinition) | **PUT** /api/v2/presence/definitions/{definitionId} | Update a Presence Definition
+[**putPresenceDefinition0**](PresenceApi#putPresenceDefinition0) | **PUT** /api/v2/presence/definitions/{definitionId} | Update a Presence Definition
 [**putPresenceSettings**](PresenceApi#putPresenceSettings) | **PUT** /api/v2/presence/settings | Update the presence settings
 [**putPresenceSource**](PresenceApi#putPresenceSource) | **PUT** /api/v2/presence/sources/{sourceId} | Update a Presence Source
 [**putPresenceUserPrimarysource**](PresenceApi#putPresenceUserPrimarysource) | **PUT** /api/v2/presence/users/{userId}/primarysource | Update a user's Primary Presence Source
@@ -36,9 +36,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-## deleteDivisionBasedPresenceDefinition
+## deletePresenceDefinition0
 
-> void deleteDivisionBasedPresenceDefinition(definitionId)
+> void deletePresenceDefinition0(definitionId)
 
 
 DELETE /api/v2/presence/definitions/{definitionId}
@@ -65,12 +65,12 @@ let apiInstance = new platformClient.PresenceApi();
 
 let definitionId = "definitionId_example"; // String | Presence Definition ID
 
-apiInstance.deleteDivisionBasedPresenceDefinition(definitionId)
+apiInstance.deletePresenceDefinition0(definitionId)
   .then(() => {
-    console.log('deleteDivisionBasedPresenceDefinition returned successfully.');
+    console.log('deletePresenceDefinition0 returned successfully.');
   })
   .catch((err) => {
-    console.log('There was a failure calling deleteDivisionBasedPresenceDefinition');
+    console.log('There was a failure calling deletePresenceDefinition0');
     console.error(err);
   });
 ```
@@ -191,9 +191,9 @@ apiInstance.deletePresencedefinition(presenceId)
 void (no response body)
 
 
-## getDivisionBasedPresenceDefinition
+## getPresenceDefinition0
 
-> OrganizationPresenceDefinition getDivisionBasedPresenceDefinition(definitionId, opts)
+> OrganizationPresenceDefinition getPresenceDefinition0(definitionId, opts)
 
 
 GET /api/v2/presence/definitions/{definitionId}
@@ -222,12 +222,12 @@ let opts = {
   'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 };
 
-apiInstance.getDivisionBasedPresenceDefinition(definitionId, opts)
+apiInstance.getPresenceDefinition0(definitionId, opts)
   .then((data) => {
-    console.log(`getDivisionBasedPresenceDefinition success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling getDivisionBasedPresenceDefinition');
+    console.log('There was a failure calling getPresenceDefinition0');
     console.error(err);
   });
 ```
@@ -245,9 +245,9 @@ apiInstance.getDivisionBasedPresenceDefinition(definitionId, opts)
 **OrganizationPresenceDefinition**
 
 
-## getDivisionBasedPresenceDefinitions
+## getPresenceDefinitions0
 
-> OrganizationPresenceDefinitionEntityListing getDivisionBasedPresenceDefinitions(opts)
+> OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(opts)
 
 
 GET /api/v2/presence/definitions
@@ -277,12 +277,12 @@ let opts = {
   'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 };
 
-apiInstance.getDivisionBasedPresenceDefinitions(opts)
+apiInstance.getPresenceDefinitions0(opts)
   .then((data) => {
-    console.log(`getDivisionBasedPresenceDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getPresenceDefinitions0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling getDivisionBasedPresenceDefinitions');
+    console.log('There was a failure calling getPresenceDefinitions0');
     console.error(err);
   });
 ```
@@ -967,9 +967,9 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 **UserPresence**
 
 
-## postDivisionBasedPresenceDefinitions
+## postPresenceDefinitions0
 
-> OrganizationPresenceDefinition postDivisionBasedPresenceDefinitions(body)
+> OrganizationPresenceDefinition postPresenceDefinitions0(body)
 
 
 POST /api/v2/presence/definitions
@@ -995,12 +995,12 @@ let apiInstance = new platformClient.PresenceApi();
 
 let body = {}; // Object | The Presence Definition to create
 
-apiInstance.postDivisionBasedPresenceDefinitions(body)
+apiInstance.postPresenceDefinitions0(body)
   .then((data) => {
-    console.log(`postDivisionBasedPresenceDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`postPresenceDefinitions0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling postDivisionBasedPresenceDefinitions');
+    console.log('There was a failure calling postPresenceDefinitions0');
     console.error(err);
   });
 ```
@@ -1120,9 +1120,9 @@ apiInstance.postPresencedefinitions(body)
 **OrganizationPresence**
 
 
-## putDivisionBasedPresenceDefinition
+## putPresenceDefinition0
 
-> OrganizationPresenceDefinition putDivisionBasedPresenceDefinition(definitionId, body)
+> OrganizationPresenceDefinition putPresenceDefinition0(definitionId, body)
 
 
 PUT /api/v2/presence/definitions/{definitionId}
@@ -1149,12 +1149,12 @@ let apiInstance = new platformClient.PresenceApi();
 let definitionId = "definitionId_example"; // String | Presence Definition ID
 let body = {}; // Object | The updated Presence Definition
 
-apiInstance.putDivisionBasedPresenceDefinition(definitionId, body)
+apiInstance.putPresenceDefinition0(definitionId, body)
   .then((data) => {
-    console.log(`putDivisionBasedPresenceDefinition success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`putPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling putDivisionBasedPresenceDefinition');
+    console.log('There was a failure calling putPresenceDefinition0');
     console.error(err);
   });
 ```
@@ -1431,4 +1431,4 @@ apiInstance.putUsersPresencesBulk(body)
 **[UserPresence]**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_

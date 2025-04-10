@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 218.1.0
+	 * @version 219.0.0
 	 */
 
 	/**
@@ -868,6 +868,71 @@ class TaskManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 */
+	getTaskmanagementWorkitemsSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null) {
+			throw 'Missing the required parameter "coreTypeName" when calling getTaskmanagementWorkitemsSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 */
+	getTaskmanagementWorkitemsSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 */
+	getTaskmanagementWorkitemsSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/schemas/limits', 
 			'GET', 
 			{  },
 			{  },
