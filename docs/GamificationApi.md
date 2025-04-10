@@ -7,8 +7,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteEmployeeperformanceExternalmetricsDefinition**](GamificationApi#deleteEmployeeperformanceExternalmetricsDefinition) | **DELETE** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Delete an External Metric Definition
+[**deleteGamificationContest**](GamificationApi#deleteGamificationContest) | **DELETE** /api/v2/gamification/contests/{contestId} | Delete a Contest by Id
 [**getEmployeeperformanceExternalmetricsDefinition**](GamificationApi#getEmployeeperformanceExternalmetricsDefinition) | **GET** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Get an External Metric Definition
 [**getEmployeeperformanceExternalmetricsDefinitions**](GamificationApi#getEmployeeperformanceExternalmetricsDefinitions) | **GET** /api/v2/employeeperformance/externalmetrics/definitions | Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+[**getGamificationContest**](GamificationApi#getGamificationContest) | **GET** /api/v2/gamification/contests/{contestId} | Get a Contest by Id
+[**getGamificationContestAgentsScores**](GamificationApi#getGamificationContestAgentsScores) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores | Get Contest Scores (Admin)
+[**getGamificationContestAgentsScoresMe**](GamificationApi#getGamificationContestAgentsScoresMe) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores/me | Get Contest Scores for the requesting Agent/Supervisor
+[**getGamificationContestAgentsScoresTrends**](GamificationApi#getGamificationContestAgentsScoresTrends) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores/trends | Get a Contest Score Trend (Average Trend)
+[**getGamificationContestAgentsScoresTrendsMe**](GamificationApi#getGamificationContestAgentsScoresTrendsMe) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores/trends/me | Get a Contest Score Trend for the requesting Agent
+[**getGamificationContestPrizeimage**](GamificationApi#getGamificationContestPrizeimage) | **GET** /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId} | Get a Contest Prize Image by Id
+[**getGamificationContests**](GamificationApi#getGamificationContests) | **GET** /api/v2/gamification/contests | Get a List of Contests (Admin)
+[**getGamificationContestsMe**](GamificationApi#getGamificationContestsMe) | **GET** /api/v2/gamification/contests/me | Get a List of Contests (Agent/Supervisor)
 [**getGamificationInsights**](GamificationApi#getGamificationInsights) | **GET** /api/v2/gamification/insights | Get insights summary
 [**getGamificationInsightsDetails**](GamificationApi#getGamificationInsightsDetails) | **GET** /api/v2/gamification/insights/details | Get insights details for the current user
 [**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | **GET** /api/v2/gamification/insights/groups/trends | Get insights overall trend for the current user
@@ -56,8 +65,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationTemplate**](GamificationApi#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
 [**getGamificationTemplates**](GamificationApi#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
 [**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi#patchEmployeeperformanceExternalmetricsDefinition) | **PATCH** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Update External Metric Definition
+[**patchGamificationContest**](GamificationApi#patchGamificationContest) | **PATCH** /api/v2/gamification/contests/{contestId} | Finalize a Contest by Id
 [**postEmployeeperformanceExternalmetricsData**](GamificationApi#postEmployeeperformanceExternalmetricsData) | **POST** /api/v2/employeeperformance/externalmetrics/data | Write External Metric Data
 [**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi#postEmployeeperformanceExternalmetricsDefinitions) | **POST** /api/v2/employeeperformance/externalmetrics/definitions | Create External Metric Definition
+[**postGamificationContests**](GamificationApi#postGamificationContests) | **POST** /api/v2/gamification/contests | Creates a Contest
+[**postGamificationContestsUploadsPrizeimages**](GamificationApi#postGamificationContestsUploadsPrizeimages) | **POST** /api/v2/gamification/contests/uploads/prizeimages | Generates pre-signed URL to upload a prize image for gamification contests
 [**postGamificationProfileActivate**](GamificationApi#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
 [**postGamificationProfileDeactivate**](GamificationApi#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
 [**postGamificationProfileMembers**](GamificationApi#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{profileId}/members | Assign members to a given performance profile
@@ -67,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGamificationProfiles**](GamificationApi#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
 [**postGamificationProfilesUserQuery**](GamificationApi#postGamificationProfilesUserQuery) | **POST** /api/v2/gamification/profiles/users/{userId}/query | Query performance profiles in date range for a user
 [**postGamificationProfilesUsersMeQuery**](GamificationApi#postGamificationProfilesUsersMeQuery) | **POST** /api/v2/gamification/profiles/users/me/query | Query performance profiles in date range for the current user
+[**putGamificationContest**](GamificationApi#putGamificationContest) | **PUT** /api/v2/gamification/contests/{contestId} | Update a Contest by Id
 [**putGamificationProfile**](GamificationApi#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{profileId} | Updates a performance profile
 [**putGamificationProfileMetric**](GamificationApi#putGamificationProfileMetric) | **PUT** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Updates a metric in performance profile
 [**putGamificationStatus**](GamificationApi#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
@@ -117,6 +130,57 @@ apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the External Metric Definition ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteGamificationContest
+
+> void deleteGamificationContest(contestId)
+
+
+DELETE /api/v2/gamification/contests/{contestId}
+
+Delete a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contest:delete
+* gamification:contest:deleteAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.deleteGamificationContest(contestId)
+  .then(() => {
+    console.log('deleteGamificationContest returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
 
 ### Return type
 
@@ -225,6 +289,459 @@ apiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)
 ### Return type
 
 **ExternalMetricDefinitionListing**
+
+
+## getGamificationContest
+
+> ContestsResponse getGamificationContest(contestId)
+
+
+GET /api/v2/gamification/contests/{contestId}
+
+Get a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.getGamificationContest(contestId)
+  .then((data) => {
+    console.log(`getGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
+## getGamificationContestAgentsScores
+
+> ContestScoresAgentsPagedList getGamificationContestAgentsScores(contestId, opts)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores
+
+Get Contest Scores (Admin)
+
+Requires ANY permissions:
+
+* gamification:contest:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'workday': "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'returnsView': "All" // String | Desired response results
+};
+
+apiInstance.getGamificationContestAgentsScores(contestId, opts)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScores success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScores');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **returnsView** | **String** | Desired response results | [optional] [default to All]<br />**Values**: All, TopAndBottom |
+
+### Return type
+
+**ContestScoresAgentsPagedList**
+
+
+## getGamificationContestAgentsScoresMe
+
+> ContestScoresAgentsPagedList getGamificationContestAgentsScoresMe(contestId, opts)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores/me
+
+Get Contest Scores for the requesting Agent/Supervisor
+
+Requires ALL permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'workday': "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'returnsView': "All" // String | Desired response results (Supervisor Only)
+};
+
+apiInstance.getGamificationContestAgentsScoresMe(contestId, opts)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScoresMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **returnsView** | **String** | Desired response results (Supervisor Only) | [optional] [default to All]<br />**Values**: All, TopAndBottom |
+
+### Return type
+
+**ContestScoresAgentsPagedList**
+
+
+## getGamificationContestAgentsScoresTrends
+
+> ContestScoresGroupTrendList getGamificationContestAgentsScoresTrends(contestId)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores/trends
+
+Get a Contest Score Trend (Average Trend)
+
+Requires ANY permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.getGamificationContestAgentsScoresTrends(contestId)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScoresTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+**ContestScoresGroupTrendList**
+
+
+## getGamificationContestAgentsScoresTrendsMe
+
+> ContestScoresAgentTrendList getGamificationContestAgentsScoresTrendsMe(contestId)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores/trends/me
+
+Get a Contest Score Trend for the requesting Agent
+
+Requires ANY permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresTrendsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScoresTrendsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+**ContestScoresAgentTrendList**
+
+
+## getGamificationContestPrizeimage
+
+> PrizeImages getGamificationContestPrizeimage(contestId, prizeImageId)
+
+
+GET /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}
+
+Get a Contest Prize Image by Id
+
+Requires ANY permissions:
+
+* gamification:contest:view
+* gamification:contest:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let prizeImageId = "prizeImageId_example"; // String | The ID of the prize image
+
+apiInstance.getGamificationContestPrizeimage(contestId, prizeImageId)
+  .then((data) => {
+    console.log(`getGamificationContestPrizeimage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestPrizeimage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **prizeImageId** | **String** | The ID of the prize image |  |
+
+### Return type
+
+**PrizeImages**
+
+
+## getGamificationContests
+
+> GetContestsEssentialsListing getGamificationContests(opts)
+
+
+GET /api/v2/gamification/contests
+
+Get a List of Contests (Admin)
+
+Requires ANY permissions:
+
+* gamification:contest:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'status': ["status_example"], // [String] | 
+  'sortBy': "dateStart", // String | 
+  'sortOrder': "desc" // String | 
+};
+
+apiInstance.getGamificationContests(opts)
+  .then((data) => {
+    console.log(`getGamificationContests success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContests');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **status** | **[String]** |  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
+ **sortBy** | **String** |  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
+ **sortOrder** | **String** |  | [optional] [default to desc]<br />**Values**: asc, desc |
+
+### Return type
+
+**GetContestsEssentialsListing**
+
+
+## getGamificationContestsMe
+
+> GetContestsEssentialsListing getGamificationContestsMe(opts)
+
+
+GET /api/v2/gamification/contests/me
+
+Get a List of Contests (Agent/Supervisor)
+
+Requires ALL permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'status': ["status_example"], // [String] | 
+  'sortBy': "dateStart", // String | 
+  'sortOrder': "desc", // String | 
+  'view': "participant" // String | 
+};
+
+apiInstance.getGamificationContestsMe(opts)
+  .then((data) => {
+    console.log(`getGamificationContestsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **status** | **[String]** |  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
+ **sortBy** | **String** |  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
+ **sortOrder** | **String** |  | [optional] [default to desc]<br />**Values**: asc, desc |
+ **view** | **String** |  | [optional] [default to participant]<br />**Values**: participant, creator |
+
+### Return type
+
+**GetContestsEssentialsListing**
 
 
 ## getGamificationInsights
@@ -2839,6 +3356,59 @@ apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
 **ExternalMetricDefinition**
 
 
+## patchGamificationContest
+
+> ContestsResponse patchGamificationContest(contestId, body)
+
+
+PATCH /api/v2/gamification/contests/{contestId}
+
+Finalize a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contestStatus:edit
+* gamification:contestStatus:editAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let body = {}; // Object | Finalize Contest
+
+apiInstance.patchGamificationContest(contestId, body)
+  .then((data) => {
+    console.log(`patchGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **body** | **Object** | Finalize Contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
 ## postEmployeeperformanceExternalmetricsData
 
 > ExternalMetricDataWriteResponse postEmployeeperformanceExternalmetricsData(opts)
@@ -2941,6 +3511,106 @@ apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
 ### Return type
 
 **ExternalMetricDefinition**
+
+
+## postGamificationContests
+
+> ContestsResponse postGamificationContests(body)
+
+
+POST /api/v2/gamification/contests
+
+Creates a Contest
+
+Requires ANY permissions:
+
+* gamification:contest:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | Create Contest
+
+apiInstance.postGamificationContests(body)
+  .then((data) => {
+    console.log(`postGamificationContests success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationContests');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Create Contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
+## postGamificationContestsUploadsPrizeimages
+
+> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body)
+
+
+POST /api/v2/gamification/contests/uploads/prizeimages
+
+Generates pre-signed URL to upload a prize image for gamification contests
+
+Requires ALL permissions:
+
+* gamification:contestPrizeImage:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | query
+
+apiInstance.postGamificationContestsUploadsPrizeimages(body)
+  .then((data) => {
+    console.log(`postGamificationContestsUploadsPrizeimages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationContestsUploadsPrizeimages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**UploadUrlResponse**
 
 
 ## postGamificationProfileActivate
@@ -3407,6 +4077,59 @@ apiInstance.postGamificationProfilesUsersMeQuery(body)
 **UserProfilesInDateRange**
 
 
+## putGamificationContest
+
+> ContestsResponse putGamificationContest(contestId, body)
+
+
+PUT /api/v2/gamification/contests/{contestId}
+
+Update a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contest:edit
+* gamification:contest:editAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let body = {}; // Object | Contest
+
+apiInstance.putGamificationContest(contestId, body)
+  .then((data) => {
+    console.log(`putGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **body** | **Object** | Contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
 ## putGamificationProfile
 
 > PerformanceProfile putGamificationProfile(profileId, opts)
@@ -3565,4 +4288,4 @@ apiInstance.putGamificationStatus(status)
 **GamificationStatus**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_

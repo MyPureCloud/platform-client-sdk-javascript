@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getKnowledgeKnowledgebaseUploadsUrlsJob**](UploadsApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
+[**postGamificationContestsUploadsPrizeimages**](UploadsApi#postGamificationContestsUploadsPrizeimages) | **POST** /api/v2/gamification/contests/uploads/prizeimages | Generates pre-signed URL to upload a prize image for gamification contests
 [**postIntegrationsActionDraftFunctionUpload**](UploadsApi#postIntegrationsActionDraftFunctionUpload) | **POST** /api/v2/integrations/actions/{actionId}/draft/function/upload | Create upload presigned URL for draft function package file.
 [**postKnowledgeDocumentuploads**](UploadsApi#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](UploadsApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
@@ -68,6 +69,56 @@ apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 ### Return type
 
 **GetUploadSourceUrlJobStatusResponse**
+
+
+## postGamificationContestsUploadsPrizeimages
+
+> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body)
+
+
+POST /api/v2/gamification/contests/uploads/prizeimages
+
+Generates pre-signed URL to upload a prize image for gamification contests
+
+Requires ALL permissions:
+
+* gamification:contestPrizeImage:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UploadsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postGamificationContestsUploadsPrizeimages(body)
+  .then((data) => {
+    console.log(`postGamificationContestsUploadsPrizeimages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationContestsUploadsPrizeimages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**UploadUrlResponse**
 
 
 ## postIntegrationsActionDraftFunctionUpload
@@ -476,4 +527,4 @@ apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body)
 **UploadUrlResponse**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_

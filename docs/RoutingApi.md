@@ -1928,7 +1928,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'excludeStatus': false, // Boolean | Exclude MX record data
-  'filter': "filter_example" // String | Optional search filter
+  'filter': "filter_example" // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
 };
 
 apiInstance.getRoutingEmailDomains(opts)
@@ -1949,7 +1949,7 @@ apiInstance.getRoutingEmailDomains(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **excludeStatus** | **Boolean** | Exclude MX record data | [optional] [default to false] |
- **filter** | **String** | Optional search filter | [optional]  |
+ **filter** | **String** | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
 
 ### Return type
 
@@ -2133,7 +2133,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'filter': "filter_example" // String | Optional search filter
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'filter': "filter_example" // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
 };
 
 apiInstance.getRoutingEmailOutboundDomains(opts)
@@ -2151,7 +2153,9 @@ apiInstance.getRoutingEmailOutboundDomains(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filter** | **String** | Optional search filter | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filter** | **String** | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
 
 ### Return type
 
@@ -3119,7 +3123,7 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **name** | **String** | Filter by queue member name (contains-style search) | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill (contains-style search) | [optional]  |
  **skills** | **[String]** | Filter by skill (contains-style search) | [optional]  |
@@ -3198,7 +3202,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -8397,4 +8401,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@218.1.0_
+_purecloud-platform-client-v2@219.0.0_
