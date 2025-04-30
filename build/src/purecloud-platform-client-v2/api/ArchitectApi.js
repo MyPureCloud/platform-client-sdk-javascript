@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -1400,7 +1400,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to name)
-	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.name Name of the Schedule to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */

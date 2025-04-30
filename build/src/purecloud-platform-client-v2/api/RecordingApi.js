@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -607,7 +607,7 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. Maximum is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobFailedrecordings(jobId, opts) { 
@@ -642,7 +642,7 @@ class RecordingApi {
 	 * @param {Object} opts.state Filter by state
 	 * @param {Boolean} opts.showOnlyMyJobs Show only my jobs
 	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
-	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobs(opts) { 

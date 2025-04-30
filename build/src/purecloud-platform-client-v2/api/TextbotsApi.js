@@ -5,7 +5,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -26,8 +26,8 @@ class TextbotsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.botType Bot types
 	 * @param {String} opts.botName Bot name
-	 * @param {Array.<String>} opts.botId Bot IDs
-	 * @param {Number} opts.pageSize The maximum results to return (default to 25)
+	 * @param {Array.<String>} opts.botId Bot IDs. Maximum of 50
+	 * @param {Number} opts.pageSize The maximum results to return. Maximum of 100 (default to 25)
 	 */
 	getTextbotsBotsSearch(opts) { 
 		opts = opts || {};

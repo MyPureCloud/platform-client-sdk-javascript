@@ -213,6 +213,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsKeyconfigurationsValidate**](ConversationsApi#postConversationsKeyconfigurationsValidate) | **POST** /api/v2/conversations/keyconfigurations/validate | Validate encryption key configurations without saving it
 [**postConversationsMessageCommunicationMessages**](ConversationsApi#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
 [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
+[**postConversationsMessageCommunicationMessagesMediaUploads**](ConversationsApi#postConversationsMessageCommunicationMessagesMediaUploads) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads | Create a URL to upload a message media file
 [**postConversationsMessageCommunicationTyping**](ConversationsApi#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
 [**postConversationsMessageInboundOpenEvent**](ConversationsApi#postConversationsMessageInboundOpenEvent) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message
 [**postConversationsMessageInboundOpenMessage**](ConversationsApi#postConversationsMessageInboundOpenMessage) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message
@@ -11169,6 +11170,9 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
 
 > MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
 
@@ -11219,6 +11223,64 @@ apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, c
 ### Return type
 
 **MessageMediaData**
+
+
+## postConversationsMessageCommunicationMessagesMediaUploads
+
+> MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads
+
+Create a URL to upload a message media file
+
+See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+
+Requires ANY permissions:
+
+* conversation:message:create
+* conversation:webmessaging:create
+* conversation:socialmedia:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | request
+
+apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageCommunicationMessagesMediaUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationMessagesMediaUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | request |  |
+
+### Return type
+
+**MessageMediaUploadData**
 
 
 ## postConversationsMessageCommunicationTyping
@@ -13688,4 +13750,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

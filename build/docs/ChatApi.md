@@ -943,7 +943,7 @@ apiInstance.getChatsUserSettings(userId)
 
 ## getChatsUsersMeSettings
 
-> ChatUserSettings getChatsUsersMeSettings()
+> UserSettingsForChat getChatsUsersMeSettings()
 
 
 GET /api/v2/chats/users/me/settings
@@ -981,7 +981,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**ChatUserSettings**
+**UserSettingsForChat**
 
 
 ## patchChatsRoom
@@ -1252,7 +1252,7 @@ apiInstance.patchChatsUserSettings(userId, body)
 
 ## patchChatsUsersMeSettings
 
-> ChatUserSettings patchChatsUsersMeSettings(body)
+> UserSettingsForChat patchChatsUsersMeSettings(body)
 
 
 PATCH /api/v2/chats/users/me/settings
@@ -1295,7 +1295,7 @@ apiInstance.patchChatsUsersMeSettings(body)
 
 ### Return type
 
-**ChatUserSettings**
+**UserSettingsForChat**
 
 
 ## postChatsRoomMessages
@@ -1717,4 +1717,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

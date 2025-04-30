@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 219.0.0
+ * @version 220.0.0
  */
 class ApiClient {
 	/**
@@ -101,7 +101,7 @@ class ApiClient {
 		/**
 		 * The default HTTP timeout for all API calls.
 		 * @type {Number}
-		 * @default 60000
+		 * @default 16000
 		 */
 		this.timeout = 16000;
 

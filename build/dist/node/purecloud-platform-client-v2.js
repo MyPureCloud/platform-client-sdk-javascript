@@ -690,7 +690,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 219.0.0
+ * @version 220.0.0
  */
 class ApiClient {
 	/**
@@ -785,7 +785,7 @@ class ApiClient {
 		/**
 		 * The default HTTP timeout for all API calls.
 		 * @type {Number}
-		 * @default 60000
+		 * @default 16000
 		 */
 		this.timeout = 16000;
 
@@ -2234,7 +2234,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -2610,7 +2610,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -2686,7 +2686,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -2817,7 +2817,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -3218,7 +3218,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -6039,7 +6039,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -7434,7 +7434,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to name)
-	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.name Name of the Schedule to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
@@ -10332,7 +10332,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -10533,7 +10533,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -12248,7 +12248,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -12328,7 +12328,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -12398,7 +12398,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -13327,7 +13327,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -13904,7 +13904,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -14985,7 +14985,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -21161,6 +21161,7 @@ class ConversationsApi {
 	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
+	 * @deprecated
 	 */
 	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -21180,6 +21181,41 @@ class ConversationsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a URL to upload a message media file
+	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body request
+	 */
+	postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageCommunicationMessagesMediaUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -22567,7 +22603,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -22653,7 +22689,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -22823,7 +22859,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -22875,7 +22911,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -23004,7 +23040,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -23155,7 +23191,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -23251,7 +23287,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -24626,12 +24662,12 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+	 * Look up contacts based on an attribute. Maximum of 25 values returned.
 	 * 
-	 * @param {String} lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+	 * @param {String} lookupVal User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which field, if any, to expand
-	 * @param {String} opts.divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (default to *)
+	 * @param {String} opts.divisionId Specifies which division to lookup contacts in, for the given lookup value (default to *)
 	 */
 	getExternalcontactsReversewhitepageslookup(lookupVal, opts) { 
 		opts = opts || {};
@@ -26454,7 +26490,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -26669,7 +26705,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -26852,7 +26888,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -29359,7 +29395,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -29489,7 +29525,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -29620,7 +29656,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -30075,7 +30111,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -30594,7 +30630,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -31455,7 +31491,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -31622,7 +31658,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -34091,7 +34127,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -36076,7 +36112,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -39949,7 +39985,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -40982,7 +41018,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -41204,7 +41240,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -42233,7 +42269,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -42471,7 +42507,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -42707,7 +42743,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -42907,7 +42943,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -43266,7 +43302,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -43417,7 +43453,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -43650,7 +43686,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -44016,7 +44052,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -44340,7 +44376,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -44457,7 +44493,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -44932,7 +44968,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -46326,7 +46362,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -50948,7 +50984,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -51692,7 +51728,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -51931,7 +51967,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -53718,7 +53754,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -54320,7 +54356,7 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. Maximum is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobFailedrecordings(jobId, opts) { 
@@ -54355,7 +54391,7 @@ class RecordingApi {
 	 * @param {Object} opts.state Filter by state
 	 * @param {Boolean} opts.showOnlyMyJobs Show only my jobs
 	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
-	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobs(opts) { 
@@ -55323,7 +55359,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -55833,7 +55869,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -60138,7 +60174,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -61015,7 +61051,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -61060,7 +61096,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -61251,6 +61287,38 @@ class ScriptsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the published variables
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.input input
+	 * @param {Object} opts.output output
+	 * @param {Object} opts.type type
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	getScriptsPublishedDivisionviewVariables(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedDivisionviewVariables';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews/{scriptId}/variables', 
+			'GET', 
+			{ 'scriptId': scriptId },
+			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
 			{  },
 			{  },
 			null, 
@@ -61504,7 +61572,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -62247,7 +62315,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -62531,7 +62599,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -63819,7 +63887,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -65260,7 +65328,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -65362,7 +65430,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -65501,7 +65569,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -65819,7 +65887,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinHistory(workbinId, opts) { 
 		opts = opts || {};
@@ -65848,7 +65915,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Number} entityVersion Workbin version
-	 * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
 		// verify the required parameter 'workbinId' is set
@@ -65882,7 +65948,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersions(workbinId, opts) { 
 		opts = opts || {};
@@ -65943,7 +66008,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemHistory(workitemId, opts) { 
 		opts = opts || {};
@@ -66009,7 +66073,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Number} entityVersion Workitem version
-	 * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
 		// verify the required parameter 'workitemId' is set
@@ -66043,7 +66106,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersions(workitemId, opts) { 
 		opts = opts || {};
@@ -66659,7 +66721,6 @@ class TaskManagementApi {
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
 	 * @param {Array.<String>} opts.fields Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
-	 * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeHistory(worktypeId, opts) { 
 		opts = opts || {};
@@ -66743,7 +66804,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Number} entityVersion Worktype version
-	 * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
 		// verify the required parameter 'worktypeId' is set
@@ -66777,7 +66837,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersions(worktypeId, opts) { 
 		opts = opts || {};
@@ -67672,7 +67731,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -67977,7 +68036,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -68159,7 +68218,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -71611,7 +71670,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -71632,8 +71691,8 @@ class TextbotsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.botType Bot types
 	 * @param {String} opts.botName Bot name
-	 * @param {Array.<String>} opts.botId Bot IDs
-	 * @param {Number} opts.pageSize The maximum results to return (default to 25)
+	 * @param {Array.<String>} opts.botId Bot IDs. Maximum of 50
+	 * @param {Number} opts.pageSize The maximum results to return. Maximum of 100 (default to 25)
 	 */
 	getTextbotsBotsSearch(opts) { 
 		opts = opts || {};
@@ -71739,7 +71798,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -71893,7 +71952,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -72184,7 +72243,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -72399,7 +72458,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -72614,7 +72673,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -75567,7 +75626,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -75678,7 +75737,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -76400,7 +76459,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -76960,7 +77019,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -77544,7 +77603,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -77590,7 +77649,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -77741,7 +77800,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -85136,7 +85195,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 219.0.0
+ * @version 220.0.0
  */
 class platformClient {
 	constructor() {

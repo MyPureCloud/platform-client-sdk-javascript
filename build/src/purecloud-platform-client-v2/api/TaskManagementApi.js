@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -323,7 +323,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinHistory(workbinId, opts) { 
 		opts = opts || {};
@@ -352,7 +351,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Number} entityVersion Workbin version
-	 * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
 		// verify the required parameter 'workbinId' is set
@@ -386,7 +384,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersions(workbinId, opts) { 
 		opts = opts || {};
@@ -447,7 +444,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemHistory(workitemId, opts) { 
 		opts = opts || {};
@@ -513,7 +509,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Number} entityVersion Workitem version
-	 * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
 		// verify the required parameter 'workitemId' is set
@@ -547,7 +542,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersions(workitemId, opts) { 
 		opts = opts || {};
@@ -1163,7 +1157,6 @@ class TaskManagementApi {
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
 	 * @param {Array.<String>} opts.fields Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
-	 * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeHistory(worktypeId, opts) { 
 		opts = opts || {};
@@ -1247,7 +1240,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Number} entityVersion Worktype version
-	 * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
 		// verify the required parameter 'worktypeId' is set
@@ -1281,7 +1273,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersions(worktypeId, opts) { 
 		opts = opts || {};

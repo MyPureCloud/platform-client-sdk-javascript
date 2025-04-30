@@ -1329,7 +1329,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentI
  **documentVersionId** | **String** | Document version ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
  **documentVariationId** | **String** | Document variation ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
  **appType** | **String** | Application type to filter by. Supported only if onlyCommented=true is set. | [optional] <br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter |
- **queryType** | **String** | Query type to filter by. Supported only if onlyCommented=true is set. | [optional] <br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion |
+ **queryType** | **String** | Query type to filter by. Supported only if onlyCommented=true is set. | [optional] <br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle |
  **userId** | **String** | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. | [optional]  |
  **queueId** | **String** | Queue ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
  **state** | **String** | State to filter by. Supported only if onlyCommented=true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
@@ -6523,4 +6523,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

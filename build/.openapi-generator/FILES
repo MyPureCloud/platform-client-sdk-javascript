@@ -1426,6 +1426,7 @@ docs/getScriptPages-example.txt
 docs/getScripts-example.txt
 docs/getScriptsDivisionviews-example.txt
 docs/getScriptsPublished-example.txt
+docs/getScriptsPublishedDivisionviewVariables-example.txt
 docs/getScriptsPublishedDivisionviews-example.txt
 docs/getScriptsPublishedScriptId-example.txt
 docs/getScriptsPublishedScriptIdPage-example.txt
@@ -2216,6 +2217,7 @@ docs/postConversationsKeyconfigurations-example.txt
 docs/postConversationsKeyconfigurationsValidate-example.txt
 docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
+docs/postConversationsMessageCommunicationMessagesMediaUploads-example.txt
 docs/postConversationsMessageCommunicationTyping-example.txt
 docs/postConversationsMessageInboundOpenEvent-example.txt
 docs/postConversationsMessageInboundOpenMessage-example.txt

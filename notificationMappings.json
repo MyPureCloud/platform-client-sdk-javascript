@@ -405,6 +405,10 @@
       "class": "PublishTopicTopicsDefinitionsJob"
     },
     {
+      "topic": "v2.subscription.updated",
+      "class": "UpdatedTopicSystemMessage"
+    },
+    {
       "topic": "v2.system.no_longer_subscribed.{id}",
       "class": "SystemMessageSystemMessage"
     },

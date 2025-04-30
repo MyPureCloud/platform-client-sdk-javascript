@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -1380,12 +1380,12 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+	 * Look up contacts based on an attribute. Maximum of 25 values returned.
 	 * 
-	 * @param {String} lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+	 * @param {String} lookupVal User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which field, if any, to expand
-	 * @param {String} opts.divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (default to *)
+	 * @param {String} opts.divisionId Specifies which division to lookup contacts in, for the given lookup value (default to *)
 	 */
 	getExternalcontactsReversewhitepageslookup(lookupVal, opts) { 
 		opts = opts || {};

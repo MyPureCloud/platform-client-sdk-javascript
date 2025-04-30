@@ -652,8 +652,6 @@ GET /api/v2/taskmanagement/workbins/{workbinId}/history
 
 Get a listing of a workbin's attribute change history
 
-getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workbin:view
@@ -712,8 +710,6 @@ GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}
 
 Get a version of a workbin
 
-getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workbin:view
@@ -765,8 +761,6 @@ apiInstance.getTaskmanagementWorkbinVersion(workbinId, entityVersion)
 GET /api/v2/taskmanagement/workbins/{workbinId}/versions
 
 Get all versions of a workbin
-
-getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -879,8 +873,6 @@ apiInstance.getTaskmanagementWorkitem(workitemId, opts)
 GET /api/v2/taskmanagement/workitems/{workitemId}/history
 
 Get a listing of a workitem's attribute change history
-
-getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1002,8 +994,6 @@ GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}
 
 Get a version of a workitem
 
-getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitem:view
@@ -1055,8 +1045,6 @@ apiInstance.getTaskmanagementWorkitemVersion(workitemId, entityVersion)
 GET /api/v2/taskmanagement/workitems/{workitemId}/versions
 
 Get all versions of a workitem
-
-getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2249,8 +2237,6 @@ GET /api/v2/taskmanagement/worktypes/{worktypeId}/history
 
 Get a listing of a worktype's attribute change history
 
-getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:worktype:view
@@ -2413,8 +2399,6 @@ GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}
 
 Get a version of a worktype
 
-getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:worktype:view
@@ -2466,8 +2450,6 @@ apiInstance.getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions
 
 Get all versions of a worktype
-
-getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4072,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

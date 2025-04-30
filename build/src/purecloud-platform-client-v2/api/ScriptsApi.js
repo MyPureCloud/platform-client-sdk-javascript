@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -196,6 +196,38 @@ class ScriptsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the published variables
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.input input
+	 * @param {Object} opts.output output
+	 * @param {Object} opts.type type
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	getScriptsPublishedDivisionviewVariables(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedDivisionviewVariables';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews/{scriptId}/variables', 
+			'GET', 
+			{ 'scriptId': scriptId },
+			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
 			{  },
 			{  },
 			null, 

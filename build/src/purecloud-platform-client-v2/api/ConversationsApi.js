@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 219.0.0
+	 * @version 220.0.0
 	 */
 
 	/**
@@ -6181,6 +6181,7 @@ class ConversationsApi {
 	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
+	 * @deprecated
 	 */
 	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -6200,6 +6201,41 @@ class ConversationsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a URL to upload a message media file
+	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body request
+	 */
+	postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageCommunicationMessagesMediaUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

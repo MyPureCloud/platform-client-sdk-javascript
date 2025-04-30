@@ -1,6 +1,6 @@
 {
   "name": "purecloud-platform-client-v2",
-  "version": "219.0.0",
+  "version": "220.0.0",
   "description": "A JavaScript library to interface with the PureCloud Platform API",
   "license": "MIT",
   "main": "dist/node/purecloud-platform-client-v2.js",
@@ -27,7 +27,7 @@
   "author": {
     "name": "Genesys Developer Evangelists",
     "email": "DeveloperEvangelists@genesys.com",
-    "url": "https://developer.mypurecloud.com"
+    "url": "https://developer.genesys.cloud/"
   },
   "dependencies": {
     "axios": "^1.7.4",
