@@ -2866,7 +2866,7 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
-  'sortOrder': "ASC", // String | Sort order
+  'sortOrder': "asc", // String | Sort order
   'name': "name_example", // String | Name of the Schedule to filter by.
   'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
 };
@@ -2889,7 +2889,7 @@ apiInstance.getArchitectSchedules(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
- **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
  **name** | **String** | Name of the Schedule to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
 
@@ -8344,4 +8344,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

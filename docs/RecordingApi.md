@@ -1206,7 +1206,7 @@ let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'pageSize': 25, // Number | Page size. Maximum is 100.
   'pageNumber': 1, // Number | Page number
-  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
 };
 
@@ -1228,7 +1228,7 @@ apiInstance.getRecordingJobFailedrecordings(jobId, opts)
  **jobId** | **String** | jobId |  |
  **pageSize** | **Number** | Page size. Maximum is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+ **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
 
 ### Return type
@@ -1269,7 +1269,7 @@ let opts = {
   'state': "state_example", // String | Filter by state
   'showOnlyMyJobs': true, // Boolean | Show only my jobs
   'jobType': "jobType_example", // String | Job Type (Can be left empty for both)
-  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
 };
 
@@ -1294,7 +1294,7 @@ apiInstance.getRecordingJobs(opts)
  **state** | **String** | Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
  **showOnlyMyJobs** | **Boolean** | Show only my jobs | [optional]  |
  **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
- **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+ **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
 
 ### Return type
@@ -3124,4 +3124,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

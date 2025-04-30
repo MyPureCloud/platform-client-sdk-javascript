@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getScripts**](ScriptsApi#getScripts) | **GET** /api/v2/scripts | Get the list of scripts
 [**getScriptsDivisionviews**](ScriptsApi#getScriptsDivisionviews) | **GET** /api/v2/scripts/divisionviews | Get the metadata for a list of scripts
 [**getScriptsPublished**](ScriptsApi#getScriptsPublished) | **GET** /api/v2/scripts/published | Get the published scripts.
+[**getScriptsPublishedDivisionviewVariables**](ScriptsApi#getScriptsPublishedDivisionviewVariables) | **GET** /api/v2/scripts/published/divisionviews/{scriptId}/variables | Get the published variables
 [**getScriptsPublishedDivisionviews**](ScriptsApi#getScriptsPublishedDivisionviews) | **GET** /api/v2/scripts/published/divisionviews | Get the published scripts metadata.
 [**getScriptsPublishedScriptId**](ScriptsApi#getScriptsPublishedScriptId) | **GET** /api/v2/scripts/published/{scriptId} | Get the published script.
 [**getScriptsPublishedScriptIdPage**](ScriptsApi#getScriptsPublishedScriptIdPage) | **GET** /api/v2/scripts/published/{scriptId}/pages/{pageId} | Get the published page.
@@ -387,6 +388,66 @@ apiInstance.getScriptsPublished(opts)
 ### Return type
 
 **ScriptEntityListing**
+
+
+## getScriptsPublishedDivisionviewVariables
+
+> **Object** getScriptsPublishedDivisionviewVariables(scriptId, opts)
+
+
+GET /api/v2/scripts/published/divisionviews/{scriptId}/variables
+
+Get the published variables
+
+Requires ANY permissions:
+
+* scripter:publishedScript:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ScriptsApi();
+
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
+  'input': "input_example", // String | input
+  'output': "output_example", // String | output
+  'type': "type_example", // String | type
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+
+apiInstance.getScriptsPublishedDivisionviewVariables(scriptId, opts)
+  .then((data) => {
+    console.log(`getScriptsPublishedDivisionviewVariables success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublishedDivisionviewVariables');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scriptId** | **String** | Script ID |  |
+ **input** | **String** | input | [optional] <br />**Values**: true, false |
+ **output** | **String** | output | [optional] <br />**Values**: true, false |
+ **type** | **String** | type | [optional] <br />**Values**: string, number, boolean |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+
+### Return type
+
+**Object**
 
 
 ## getScriptsPublishedDivisionviews
@@ -841,4 +902,4 @@ apiInstance.postScriptsPublished(opts)
 **Script**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

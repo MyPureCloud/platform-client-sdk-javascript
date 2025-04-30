@@ -57,7 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | **GET** /api/v2/externalcontacts/organizations/schemas/coretypes | Get the core types from which all schemas are built.
 [**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | **GET** /api/v2/externalcontacts/organizations/schemas/limits | Get quantitative limits on schemas
 [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
-[**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+[**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts based on an attribute. Maximum of 25 values returned.
 [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
 [**getExternalcontactsScanContactsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/contacts/divisionviews/all | Scan for external contacts using paging
 [**getExternalcontactsScanNotes**](ExternalContactsApi#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
@@ -2836,7 +2836,7 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 
 GET /api/v2/externalcontacts/reversewhitepageslookup
 
-Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+Look up contacts based on an attribute. Maximum of 25 values returned.
 
 Requires ANY permissions:
 
@@ -2855,10 +2855,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
 
-let lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+let lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
 let opts = { 
   'expand': ["expand_example"], // [String] | which field, if any, to expand
-  'divisionId': "*" // String | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value
+  'divisionId': "*" // String | Specifies which division to lookup contacts in, for the given lookup value
 };
 
 apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
@@ -2876,9 +2876,9 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **lookupVal** | **String** | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
+ **lookupVal** | **String** | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
- **divisionId** | **String** | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value | [optional] [default to *] |
+ **divisionId** | **String** | Specifies which division to lookup contacts in, for the given lookup value | [optional] [default to *] |
 
 ### Return type
 
@@ -6370,4 +6370,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

@@ -44,8 +44,8 @@ let apiInstance = new platformClient.TextbotsApi();
 let opts = { 
   'botType': ["botType_example"], // [String] | Bot types
   'botName': "botName_example", // String | Bot name
-  'botId': ["botId_example"], // [String] | Bot IDs
-  'pageSize': 25 // Number | The maximum results to return
+  'botId': ["botId_example"], // [String] | Bot IDs. Maximum of 50
+  'pageSize': 25 // Number | The maximum results to return. Maximum of 100
 };
 
 apiInstance.getTextbotsBotsSearch(opts)
@@ -63,10 +63,10 @@ apiInstance.getTextbotsBotsSearch(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **botType** | **[String]** | Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow |
+ **botType** | **[String]** | Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector |
  **botName** | **String** | Bot name | [optional]  |
- **botId** | **[String]** | Bot IDs | [optional]  |
- **pageSize** | **Number** | The maximum results to return | [optional] [default to 25] |
+ **botId** | **[String]** | Bot IDs. Maximum of 50 | [optional]  |
+ **pageSize** | **Number** | The maximum results to return. Maximum of 100 | [optional] [default to 25] |
 
 ### Return type
 
@@ -231,4 +231,4 @@ apiInstance.postTextbotsBotsExecute(postTextRequest)
 **PostTextResponse**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_

@@ -1675,4 +1675,4 @@ apiInstance.putScimV2User(userId, body, opts)
 **ScimV2User**
 
 
-_purecloud-platform-client-v2@219.0.0_
+_purecloud-platform-client-v2@220.0.0_
