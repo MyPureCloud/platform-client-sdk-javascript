@@ -116,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
+[**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements | Update agent's engagement for the summary.
 [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary.
 [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
 [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
@@ -4278,8 +4279,6 @@ GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{in
 
 Get Facebook messaging integration identity resolution settings
 
-getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * messaging:integration:view
@@ -4331,8 +4330,6 @@ GET /api/v2/conversations/messaging/identityresolution/integrations/open/{integr
 
 Get an open messaging integration Identity Resolution settings
 
-getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * messaging:integration:view
@@ -4383,8 +4380,6 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
 
 Get a whatsApp integration Identity Resolution settings
-
-getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -4529,7 +4524,7 @@ apiInstance.getConversationsMessagingIntegrations(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **[String]** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **[String]** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4589,7 +4584,7 @@ apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4645,7 +4640,7 @@ apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4703,7 +4698,7 @@ apiInstance.getConversationsMessagingIntegrationsInstagram(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4759,7 +4754,7 @@ apiInstance.getConversationsMessagingIntegrationsInstagramIntegrationId(integrat
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4819,7 +4814,7 @@ apiInstance.getConversationsMessagingIntegrationsOpen(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4877,7 +4872,7 @@ apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4935,7 +4930,7 @@ apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4991,7 +4986,7 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -5094,7 +5089,7 @@ apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 
@@ -5150,7 +5145,7 @@ apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -5842,6 +5837,7 @@ Update conversation participant.
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example Usage
 
@@ -5988,6 +5984,62 @@ apiInstance.patchConversationSecureattributes(conversationId, body)
 **&#39;String&#39;**
 
 
+## patchConversationSummaryEngagements
+
+> void patchConversationSummaryEngagements(conversationId, summaryId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements
+
+Update agent's engagement for the summary.
+
+Requires ALL permissions:
+
+* conversation:summaryEngagement:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let summaryId = "summaryId_example"; // String | Summary ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchConversationSummaryEngagements(conversationId, summaryId, opts)
+  .then(() => {
+    console.log('patchConversationSummaryEngagements returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationSummaryEngagements');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **summaryId** | **String** | Summary ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
 ## patchConversationSummaryFeedback
 
 > void patchConversationSummaryFeedback(conversationId, summaryId, opts)
@@ -5996,8 +6048,6 @@ apiInstance.patchConversationSecureattributes(conversationId, body)
 PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback
 
 Update the feedback for the summary.
-
-patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -13277,8 +13327,6 @@ PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{in
 
 Create an identity resolution settings for a Facebook messaging integration
 
-putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * messaging:integration:edit
@@ -13332,8 +13380,6 @@ PUT /api/v2/conversations/messaging/identityresolution/integrations/open/{integr
 
 Update an open messaging integration Identity Resolution settings
 
-putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * messaging:integration:edit
@@ -13386,8 +13432,6 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
 
 Update a whatsApp integration Identity Resolution settings
-
-putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -13750,4 +13794,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

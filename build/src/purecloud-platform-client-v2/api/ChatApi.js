@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -315,8 +315,12 @@ class ChatApi {
 	 * Get room participants in a room
 	 * 
 	 * @param {String} roomJid roomJid
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.notify Whether to get users to notify
 	 */
-	getChatsRoomParticipants(roomJid) { 
+	getChatsRoomParticipants(roomJid, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null) {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipants';
@@ -326,7 +330,7 @@ class ChatApi {
 			'/api/v2/chats/rooms/{roomJid}/participants', 
 			'GET', 
 			{ 'roomJid': roomJid },
-			{  },
+			{ 'notify': opts['notify'] },
 			{  },
 			{  },
 			null, 

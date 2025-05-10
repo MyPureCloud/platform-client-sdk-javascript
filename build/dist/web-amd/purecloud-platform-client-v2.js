@@ -687,7 +687,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 	class ApiClient {
 		/**
@@ -2231,7 +2231,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -2607,7 +2607,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -2683,7 +2683,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -2814,7 +2814,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -3215,7 +3215,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -6036,7 +6036,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -7070,7 +7070,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get an IVR IdentityResolutionConfig.
 		 * 
 		 * @param {String} ivrId IVR id
-		 * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getArchitectIvrIdentityresolution(ivrId) { 
 			// verify the required parameter 'ivrId' is set
@@ -7103,6 +7102,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.name Name of the IVR to filter by.
 		 * @param {String} opts.dnis The phone number of the IVR to filter by.
 		 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
+		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 */
 		getArchitectIvrs(opts) { 
 			opts = opts || {};
@@ -7112,7 +7112,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/architect/ivrs', 
 				'GET', 
 				{  },
-				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -9918,7 +9918,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} ivrId IVR id
 		 * @param {Object} body 
-		 * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putArchitectIvrIdentityresolution(ivrId, body) { 
 			// verify the required parameter 'ivrId' is set
@@ -10329,7 +10328,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -10530,7 +10529,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -12245,7 +12244,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -12259,6 +12258,182 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Get billing contract
+		 * Retrieve a single contract from the system.
+		 * @param {String} contractId The contract number.
+		 * getBillingContract is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBillingContract(contractId) { 
+			// verify the required parameter 'contractId' is set
+			if (contractId === undefined || contractId === null) {
+				throw 'Missing the required parameter "contractId" when calling getBillingContract';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/billing/contracts/{contractId}', 
+				'GET', 
+				{ 'contractId': contractId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get contract billing period
+		 * Fetch the billing information for a given Organization by billing period.
+		 * @param {String} contractId The contract number.
+		 * @param {String} billingPeriodId The Billing Period Id for the Org.
+		 * getBillingContractBillingperiod is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBillingContractBillingperiod(contractId, billingPeriodId) { 
+			// verify the required parameter 'contractId' is set
+			if (contractId === undefined || contractId === null) {
+				throw 'Missing the required parameter "contractId" when calling getBillingContractBillingperiod';
+			}
+			// verify the required parameter 'billingPeriodId' is set
+			if (billingPeriodId === undefined || billingPeriodId === null) {
+				throw 'Missing the required parameter "billingPeriodId" when calling getBillingContractBillingperiod';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/billing/contracts/{contractId}/billingperiods/{billingPeriodId}', 
+				'GET', 
+				{ 'contractId': contractId,'billingPeriodId': billingPeriodId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get billing contracts
+		 * Retrieve a list of contracts stored in the system.
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts.status Filter by the status of contracts
+		 * @param {String} opts.externalNumber Filter by the unique external number.
+		 * getBillingContracts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBillingContracts(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/billing/contracts', 
+				'GET', 
+				{  },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'status': opts['status'],'externalNumber': opts['externalNumber'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get invoice document
+		 * Fetch the document for a specific invoice.
+		 * @param {String} invoiceId invoiceId
+		 * getBillingContractsInvoiceDocument is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBillingContractsInvoiceDocument(invoiceId) { 
+			// verify the required parameter 'invoiceId' is set
+			if (invoiceId === undefined || invoiceId === null) {
+				throw 'Missing the required parameter "invoiceId" when calling getBillingContractsInvoiceDocument';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/billing/contracts/invoices/{invoiceId}/document', 
+				'GET', 
+				{ 'invoiceId': invoiceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get invoice lines
+		 * Fetch a list of all bills for the specified account.
+		 * @param {String} invoiceId invoiceId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * getBillingContractsInvoiceLines is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBillingContractsInvoiceLines(invoiceId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'invoiceId' is set
+			if (invoiceId === undefined || invoiceId === null) {
+				throw 'Missing the required parameter "invoiceId" when calling getBillingContractsInvoiceLines';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/billing/contracts/invoices/{invoiceId}/lines', 
+				'GET', 
+				{ 'invoiceId': invoiceId },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get invoices
+		 * Retrieve a list of invoices stored in the system.
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts.paymentStatus Payment Status
+		 * getBillingContractsInvoices is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBillingContractsInvoices(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/billing/contracts/invoices', 
+				'GET', 
+				{  },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'paymentStatus': opts['paymentStatus'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
 
 		/**
 		 * Get a report of the billable license usages
@@ -12321,11 +12496,925 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	}
 
+	class BusinessRulesApi {
+		/**
+		 * BusinessRules service.
+		 * @module purecloud-platform-client-v2/api/BusinessRulesApi
+		 * @version 221.0.0
+		 */
+
+		/**
+		 * Constructs a new BusinessRulesApi. 
+		 * @alias module:purecloud-platform-client-v2/api/BusinessRulesApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Delete a decision table
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.forceDelete Force delete decision table (under certain conditions) (default to false)
+		 * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteBusinessrulesDecisiontable(tableId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontable';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}', 
+				'DELETE', 
+				{ 'tableId': tableId },
+				{ 'forceDelete': opts['forceDelete'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersion';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling deleteBusinessrulesDecisiontableVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}', 
+				'DELETE', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a decision table row
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {String} rowId Row ID
+		 * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling deleteBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'rowId' is set
+			if (rowId === undefined || rowId === null) {
+				throw 'Missing the required parameter "rowId" when calling deleteBusinessrulesDecisiontableVersionRow';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}', 
+				'DELETE', 
+				{ 'tableId': tableId,'tableVersion': tableVersion,'rowId': rowId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteBusinessrulesSchema(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling deleteBusinessrulesSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas/{schemaId}', 
+				'DELETE', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a decision table
+		 * 
+		 * @param {String} tableId Table ID
+		 * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontable(tableId) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontable';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}', 
+				'GET', 
+				{ 'tableId': tableId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersion';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling getBusinessrulesDecisiontableVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}', 
+				'GET', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a decision table row
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {String} rowId Row ID
+		 * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling getBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'rowId' is set
+			if (rowId === undefined || rowId === null) {
+				throw 'Missing the required parameter "rowId" when calling getBusinessrulesDecisiontableVersionRow';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}', 
+				'GET', 
+				{ 'tableId': tableId,'tableVersion': tableVersion,'rowId': rowId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of decision table rows.
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
+		 * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersionRows';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling getBusinessrulesDecisiontableVersionRows';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows', 
+				'GET', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of decision table versions
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+		 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontableVersions(tableId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions', 
+				'GET', 
+				{ 'tableId': tableId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of decision tables.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+		 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontables(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables', 
+				'GET', 
+				{  },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Search for decision tables.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
+		 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
+		 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesDecisiontablesSearch(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/search', 
+				'GET', 
+				{  },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesSchema(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling getBusinessrulesSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas/{schemaId}', 
+				'GET', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of schemas.
+		 * 
+		 * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesSchemas() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a specific named core type.
+		 * 
+		 * @param {String} coreTypeName The core type's name
+		 * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesSchemasCoretype(coreTypeName) { 
+			// verify the required parameter 'coreTypeName' is set
+			if (coreTypeName === undefined || coreTypeName === null) {
+				throw 'Missing the required parameter "coreTypeName" when calling getBusinessrulesSchemasCoretype';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas/coretypes/{coreTypeName}', 
+				'GET', 
+				{ 'coreTypeName': coreTypeName },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the core types from which all schemas are built.
+		 * 
+		 * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getBusinessrulesSchemasCoretypes() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas/coretypes', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a decision table
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Object} body Decision Table
+		 * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchBusinessrulesDecisiontable(tableId, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontable';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchBusinessrulesDecisiontable';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}', 
+				'PATCH', 
+				{ 'tableId': tableId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {Object} body Decision Table
+		 * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableVersion';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling patchBusinessrulesDecisiontableVersion';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchBusinessrulesDecisiontableVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}', 
+				'PATCH', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a decision table row
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {String} rowId Row ID
+		 * @param {Object} body Update decision table row request
+		 * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling patchBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'rowId' is set
+			if (rowId === undefined || rowId === null) {
+				throw 'Missing the required parameter "rowId" when calling patchBusinessrulesDecisiontableVersionRow';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchBusinessrulesDecisiontableVersionRow';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}', 
+				'PATCH', 
+				{ 'tableId': tableId,'tableVersion': tableVersion,'rowId': rowId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Execute a published decision table
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Object} body Decision Table
+		 * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableExecute(tableId, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableExecute';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableExecute';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/execute', 
+				'POST', 
+				{ 'tableId': tableId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Copy a decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {Object} body Decision Table
+		 * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionCopy';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionCopy';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionCopy';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy', 
+				'POST', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Execute a decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {Object} body Decision Table
+		 * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionExecute';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionExecute';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionExecute';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute', 
+				'POST', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a decision table row
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {Object} body Create decision table row request
+		 * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRows';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRows';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRows';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows', 
+				'POST', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Search for decision table rows
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * @param {Object} body Search decision table rows request
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
+		 * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsSearch';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsSearch';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search', 
+				'POST', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the Business Rules Schema to the latest version for a given decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableVersionSync(tableId, tableVersion) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionSync';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionSync';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync', 
+				'POST', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a new decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontableVersions(tableId) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions', 
+				'POST', 
+				{ 'tableId': tableId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a decision table
+		 * 
+		 * @param {Object} body Decision Table
+		 * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesDecisiontables(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontables';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a schema
+		 * 
+		 * @param {Object} body Schema
+		 * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postBusinessrulesSchemas(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postBusinessrulesSchemas';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Publish a decision table version
+		 * 
+		 * @param {String} tableId Table ID
+		 * @param {Number} tableVersion Table Version
+		 * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion) { 
+			// verify the required parameter 'tableId' is set
+			if (tableId === undefined || tableId === null) {
+				throw 'Missing the required parameter "tableId" when calling putBusinessrulesDecisiontableVersionPublish';
+			}
+			// verify the required parameter 'tableVersion' is set
+			if (tableVersion === undefined || tableVersion === null) {
+				throw 'Missing the required parameter "tableVersion" when calling putBusinessrulesDecisiontableVersionPublish';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish', 
+				'PUT', 
+				{ 'tableId': tableId,'tableVersion': tableVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * @param {Object} body Data Schema
+		 * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putBusinessrulesSchema(schemaId, body) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling putBusinessrulesSchema';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putBusinessrulesSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/businessrules/schemas/{schemaId}', 
+				'PUT', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+	}
+
 	class CarrierServicesApi {
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -12395,7 +13484,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -12705,8 +13794,12 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get room participants in a room
 		 * 
 		 * @param {String} roomJid roomJid
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.notify Whether to get users to notify
 		 */
-		getChatsRoomParticipants(roomJid) { 
+		getChatsRoomParticipants(roomJid, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'roomJid' is set
 			if (roomJid === undefined || roomJid === null) {
 				throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipants';
@@ -12716,7 +13809,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/chats/rooms/{roomJid}/participants', 
 				'GET', 
 				{ 'roomJid': roomJid },
-				{  },
+				{ 'notify': opts['notify'] },
 				{  },
 				{  },
 				null, 
@@ -13324,7 +14417,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -13901,7 +14994,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -14982,7 +16075,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -17188,7 +18281,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get Facebook messaging integration identity resolution settings
 		 * 
 		 * @param {String} integrationId Integration ID
-		 * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId) { 
 			// verify the required parameter 'integrationId' is set
@@ -17214,7 +18306,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get an open messaging integration Identity Resolution settings
 		 * 
 		 * @param {String} integrationId Integration ID
-		 * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId) { 
 			// verify the required parameter 'integrationId' is set
@@ -17240,7 +18331,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a whatsApp integration Identity Resolution settings
 		 * 
 		 * @param {String} integrationId Integration ID
-		 * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId) { 
 			// verify the required parameter 'integrationId' is set
@@ -18071,13 +19161,46 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Update agent's engagement for the summary.
+		 * 
+		 * @param {String} conversationId Conversation ID
+		 * @param {String} summaryId Summary ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 */
+		patchConversationSummaryEngagements(conversationId, summaryId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling patchConversationSummaryEngagements';
+			}
+			// verify the required parameter 'summaryId' is set
+			if (summaryId === undefined || summaryId === null) {
+				throw 'Missing the required parameter "summaryId" when calling patchConversationSummaryEngagements';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements', 
+				'PATCH', 
+				{ 'conversationId': conversationId,'summaryId': summaryId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update the feedback for the summary.
 		 * 
 		 * @param {String} conversationId Conversation ID
 		 * @param {String} summaryId Summary ID
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body 
-		 * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		patchConversationSummaryFeedback(conversationId, summaryId, opts) { 
 			opts = opts || {};
@@ -22340,7 +23463,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} integrationId Integration ID
 		 * @param {Object} body IdentityResolutionConfig
-		 * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body) { 
 			// verify the required parameter 'integrationId' is set
@@ -22371,7 +23493,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} integrationId Integration ID
 		 * @param {Object} body 
-		 * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body) { 
 			// verify the required parameter 'integrationId' is set
@@ -22402,7 +23523,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} integrationId Integration ID
 		 * @param {Object} body 
-		 * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body) { 
 			// verify the required parameter 'integrationId' is set
@@ -22600,7 +23720,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -22686,7 +23806,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataPrivacy service.
 		 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -22856,7 +23976,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -22908,7 +24028,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -23037,7 +24157,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -23188,7 +24308,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -23284,7 +24404,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -24313,7 +25433,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * List the identifiers for an external organization
 		 * 
 		 * @param {String} externalOrganizationId External Organization ID
-		 * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getExternalcontactsOrganizationIdentifiers(externalOrganizationId) { 
 			// verify the required parameter 'externalOrganizationId' is set
@@ -24720,7 +25839,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100
 		 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-		 * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getExternalcontactsScanContactsDivisionviewsAll(opts) { 
 			opts = opts || {};
@@ -24772,7 +25890,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100
 		 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-		 * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getExternalcontactsScanNotesDivisionviewsAll(opts) { 
 			opts = opts || {};
@@ -24824,7 +25941,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100
 		 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-		 * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getExternalcontactsScanOrganizationsDivisionviewsAll(opts) { 
 			opts = opts || {};
@@ -24876,7 +25992,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100
 		 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-		 * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getExternalcontactsScanRelationshipsDivisionviewsAll(opts) { 
 			opts = opts || {};
@@ -24931,7 +26046,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} externalOrganizationId External Organization ID
 		 * @param {Object} body ClaimRequest
-		 * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body) { 
 			// verify the required parameter 'externalOrganizationId' is set
@@ -25011,7 +26125,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Bulk fetch contacts across divisions
 		 * 
 		 * @param {Object} body Contact ids
-		 * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsBulkContactsDivisionviews(body) { 
 			// verify the required parameter 'body' is set
@@ -25039,7 +26152,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body Contact Enrich Requests
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-		 * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsBulkContactsEnrich(body, opts) { 
 			opts = opts || {};
@@ -25292,7 +26404,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Bulk fetch organizations across divisions
 		 * 
 		 * @param {Object} body Organizations ids
-		 * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsBulkOrganizationsDivisionviews(body) { 
 			// verify the required parameter 'body' is set
@@ -25320,7 +26431,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body External Organization Enrich Requests
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-		 * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsBulkOrganizationsEnrich(body, opts) { 
 			opts = opts || {};
@@ -25580,7 +26690,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body ContactEnrichRequest
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-		 * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsContactsEnrich(body, opts) { 
 			opts = opts || {};
@@ -25633,7 +26742,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Merge up to 25 contacts into a new contact record
 		 * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
 		 * @param {Object} body MergeRequest
-		 * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsContactsMerge(body) { 
 			// verify the required parameter 'body' is set
@@ -25741,7 +26849,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} identifier 
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.expand which field, if any, to expand
-		 * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsIdentifierlookupContacts(identifier, opts) { 
 			opts = opts || {};
@@ -25771,7 +26878,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} identifier 
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.expand which field, if any, to expand
-		 * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsIdentifierlookupOrganizations(identifier, opts) { 
 			opts = opts || {};
@@ -26007,7 +27113,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} body ExternalOrgEnrichRequest
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-		 * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postExternalcontactsOrganizationsEnrich(body, opts) { 
 			opts = opts || {};
@@ -26487,7 +27592,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -26702,7 +27807,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -26885,7 +27990,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -29392,7 +30497,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -29522,7 +30627,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -29653,7 +30758,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -30108,7 +31213,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -30627,7 +31732,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -31488,7 +32593,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -31655,7 +32760,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -34124,7 +35229,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -36109,7 +37214,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -39982,7 +41087,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -41015,7 +42120,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -41237,7 +42342,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -42266,7 +43371,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -42504,7 +43609,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -42740,7 +43845,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -42940,7 +44045,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -43299,7 +44404,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -43450,7 +44555,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -43683,7 +44788,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -44049,7 +45154,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -44373,7 +45478,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -44490,7 +45595,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -44965,7 +46070,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -46359,7 +47464,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -50981,7 +52086,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -51725,7 +52830,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -51964,7 +53069,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -53751,7 +54856,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -55356,7 +56461,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -55866,7 +56971,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -56682,8 +57787,12 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} domainName email domain
 		 * @param {String} routeId route ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 */
-		getRoutingEmailDomainRoute(domainName, routeId) { 
+		getRoutingEmailDomainRoute(domainName, routeId, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'domainName' is set
 			if (domainName === undefined || domainName === null) {
 				throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRoute';
@@ -56697,7 +57806,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 				'GET', 
 				{ 'domainName': domainName,'routeId': routeId },
-				{  },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -56712,7 +57821,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} domainName email domain
 		 * @param {String} routeId route ID
-		 * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getRoutingEmailDomainRouteIdentityresolution(domainName, routeId) { 
 			// verify the required parameter 'domainName' is set
@@ -56746,6 +57854,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {String} opts.pattern Filter routes by the route's pattern property
+		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 */
 		getRoutingEmailDomainRoutes(domainName, opts) { 
 			opts = opts || {};
@@ -56759,7 +57868,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/email/domains/{domainName}/routes', 
 				'GET', 
 				{ 'domainName': domainName },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -57159,8 +58268,12 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get details about this queue.
 		 * 
 		 * @param {String} queueId Queue ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 */
-		getRoutingQueue(queueId) { 
+		getRoutingQueue(queueId, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'queueId' is set
 			if (queueId === undefined || queueId === null) {
 				throw 'Missing the required parameter "queueId" when calling getRoutingQueue';
@@ -57170,7 +58283,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/queues/{queueId}', 
 				'GET', 
 				{ 'queueId': queueId },
-				{  },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -57297,7 +58410,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get Queue IdentityResolution Settings.
 		 * 
 		 * @param {String} queueId Queue ID
-		 * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getRoutingQueueIdentityresolution(queueId) { 
 			// verify the required parameter 'queueId' is set
@@ -57476,6 +58588,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Array.<String>} opts.peerId Include only queues with the specified peer ID(s)
 		 * @param {String} opts.cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID
 		 * @param {Boolean} opts.hasPeer Include only queues with a peer ID
+		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 */
 		getRoutingQueues(opts) { 
 			opts = opts || {};
@@ -57485,7 +58598,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/queues', 
 				'GET', 
 				{  },
-				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'cannedResponseLibraryId': opts['cannedResponseLibraryId'],'hasPeer': opts['hasPeer'] },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'cannedResponseLibraryId': opts['cannedResponseLibraryId'],'hasPeer': opts['hasPeer'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -57895,7 +59008,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a SMS identity resolution settings.
 		 * 
 		 * @param {String} addressId Address ID
-		 * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getRoutingSmsIdentityresolutionPhonenumber(addressId) { 
 			// verify the required parameter 'addressId' is set
@@ -57961,6 +59073,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations (default to en-US)
 		 * @param {String} opts.integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to
 		 * @param {String} opts.supportedContentId Filter based on the supported content ID
+		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 */
 		getRoutingSmsPhonenumbers(opts) { 
 			opts = opts || {};
@@ -57970,7 +59083,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/sms/phonenumbers', 
 				'GET', 
 				{  },
-				{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'],'supportedContent.id': opts['supportedContentId'] },
+				{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'],'supportedContent.id': opts['supportedContentId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -59728,7 +60841,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} domainName email domain
 		 * @param {String} routeId route ID
 		 * @param {Object} body 
-		 * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body) { 
 			// verify the required parameter 'domainName' is set
@@ -59848,7 +60960,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} queueId Queue ID
 		 * @param {Object} body 
-		 * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putRoutingQueueIdentityresolution(queueId, body) { 
 			// verify the required parameter 'queueId' is set
@@ -59929,7 +61040,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} addressId Address ID
 		 * @param {Object} body 
-		 * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putRoutingSmsIdentityresolutionPhonenumber(addressId, body) { 
 			// verify the required parameter 'addressId' is set
@@ -60171,7 +61281,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -61048,7 +62158,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ScreenRecording service.
 		 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -61093,7 +62203,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -61569,7 +62679,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -62312,7 +63422,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -62335,6 +63445,26 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/emails/settings/threading', 
+				'DELETE', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete settings
+		 * 
+		 */
+		deleteExternalcontactsSettings() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/externalcontacts/settings', 
 				'DELETE', 
 				{  },
 				{  },
@@ -62400,6 +63530,26 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/emails/settings/threading', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get settings
+		 * 
+		 */
+		getExternalcontactsSettings() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/externalcontacts/settings', 
 				'GET', 
 				{  },
 				{  },
@@ -62561,6 +63711,30 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Set settings
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 */
+		putExternalcontactsSettings(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/externalcontacts/settings', 
+				'PUT', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Set agent auto answer settings
 		 * 
 		 * @param {String} agentId The agent to apply the auto answer settings to
@@ -62596,7 +63770,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SocialMedia service.
 		 * @module purecloud-platform-client-v2/api/SocialMediaApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -63884,7 +65058,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -64786,7 +65960,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
 		 * @param {String} opts.recordingId Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
-		 * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts) { 
 			opts = opts || {};
@@ -64817,7 +65990,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Get supported translation languages
 		 * 
-		 * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getSpeechandtextanalyticsTranslationsLanguages() { 
 
@@ -65325,7 +66497,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -65427,7 +66599,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -65566,7 +66738,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -67728,7 +68900,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -68033,7 +69205,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -68215,7 +69387,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -71667,7 +72839,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -71795,7 +72967,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -71949,7 +73121,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -72240,7 +73412,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -72455,7 +73627,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -72670,7 +73842,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -75623,7 +76795,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -75734,7 +76906,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -76456,7 +77628,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -77016,7 +78188,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -77333,7 +78505,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a deployment identity resolution setting.
 		 * 
 		 * @param {String} deploymentId The deployment ID
-		 * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getWebdeploymentsDeploymentIdentityresolution(deploymentId) { 
 			// verify the required parameter 'deploymentId' is set
@@ -77568,7 +78739,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} deploymentId The deployment ID
 		 * @param {Object} body 
-		 * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putWebdeploymentsDeploymentIdentityresolution(deploymentId, body) { 
 			// verify the required parameter 'deploymentId' is set
@@ -77600,7 +78770,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -77646,7 +78816,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -77797,7 +78967,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 220.0.0
+		 * @version 221.0.0
 		 */
 
 		/**
@@ -85192,7 +86362,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 	class platformClient {
 		constructor() {
@@ -85251,6 +86421,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			 * @property {module:purecloud-platform-client-v2/api/BillingApi}
 			 */
 			this.BillingApi = BillingApi;
+			/**
+			 * The BusinessRulesApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/BusinessRulesApi}
+			 */
+			this.BusinessRulesApi = BusinessRulesApi;
 			/**
 			 * The CarrierServicesApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/CarrierServicesApi}

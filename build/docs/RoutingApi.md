@@ -1735,7 +1735,7 @@ apiInstance.getRoutingEmailDomain(domainId)
 
 ## getRoutingEmailDomainRoute
 
-> InboundRoute getRoutingEmailDomainRoute(domainName, routeId)
+> InboundRoute getRoutingEmailDomainRoute(domainName, routeId, opts)
 
 
 GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}
@@ -1761,8 +1761,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainName = "domainName_example"; // String | email domain
 let routeId = "routeId_example"; // String | route ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
 
-apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
+apiInstance.getRoutingEmailDomainRoute(domainName, routeId, opts)
   .then((data) => {
     console.log(`getRoutingEmailDomainRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1779,6 +1782,7 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -1793,8 +1797,6 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
 GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
 
 Get a route identity resolution setting.
-
-getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1870,7 +1872,8 @@ let domainName = "domainName_example"; // String | email domain
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'pattern': "pattern_example" // String | Filter routes by the route's pattern property
+  'pattern': "pattern_example", // String | Filter routes by the route's pattern property
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
 
 apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
@@ -1892,6 +1895,7 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pattern** | **String** | Filter routes by the route's pattern property | [optional]  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -2690,7 +2694,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 
 ## getRoutingQueue
 
-> Queue getRoutingQueue(queueId)
+> Queue getRoutingQueue(queueId, opts)
 
 
 GET /api/v2/routing/queues/{queueId}
@@ -2715,8 +2719,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
 
-apiInstance.getRoutingQueue(queueId)
+apiInstance.getRoutingQueue(queueId, opts)
   .then((data) => {
     console.log(`getRoutingQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2732,6 +2739,7 @@ apiInstance.getRoutingQueue(queueId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -2958,8 +2966,6 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 GET /api/v2/routing/queues/{queueId}/identityresolution
 
 Get Queue IdentityResolution Settings.
-
-getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3307,7 +3313,8 @@ let opts = {
   'divisionId': ["divisionId_example"], // [String] | Include only queues in the specified division ID(s)
   'peerId': ["peerId_example"], // [String] | Include only queues with the specified peer ID(s)
   'cannedResponseLibraryId': "cannedResponseLibraryId_example", // String | Include only queues explicitly associated with the specified canned response library ID
-  'hasPeer': true // Boolean | Include only queues with a peer ID
+  'hasPeer': true, // Boolean | Include only queues with a peer ID
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
 
 apiInstance.getRoutingQueues(opts)
@@ -3334,6 +3341,7 @@ apiInstance.getRoutingQueues(opts)
  **peerId** | **[String]** | Include only queues with the specified peer ID(s) | [optional]  |
  **cannedResponseLibraryId** | **String** | Include only queues explicitly associated with the specified canned response library ID | [optional]  |
  **hasPeer** | **Boolean** | Include only queues with a peer ID | [optional]  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -4152,8 +4160,6 @@ GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
 
 Get a SMS identity resolution settings.
 
-getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * sms:phoneNumber:view
@@ -4287,7 +4293,8 @@ let opts = {
   'sortOrder': "sortOrder_example", // String | Sort order
   'language': en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations
   'integrationId': "integrationId_example", // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
-  'supportedContentId': "supportedContentId_example" // String | Filter based on the supported content ID
+  'supportedContentId': "supportedContentId_example", // String | Filter based on the supported content ID
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
 
 apiInstance.getRoutingSmsPhonenumbers(opts)
@@ -4316,6 +4323,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
  **language** | **String** | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations | [optional] [default to en-US] |
  **integrationId** | **String** | Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
  **supportedContentId** | **String** | Filter based on the supported content ID | [optional]  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution, supportedContent |
 
 ### Return type
 
@@ -7625,8 +7633,6 @@ PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresoluti
 
 Update identity resolution settings for a route.
 
-putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * routing:email:manage
@@ -7836,8 +7842,6 @@ PUT /api/v2/routing/queues/{queueId}/identityresolution
 
 Update Queue IdentityResolution Settings.
 
-putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * routing:queue:edit
@@ -7990,8 +7994,6 @@ apiInstance.putRoutingSettingsTranscription(body)
 PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
 
 Update an SMS identity resolution settings.
-
-putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -8401,4 +8403,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

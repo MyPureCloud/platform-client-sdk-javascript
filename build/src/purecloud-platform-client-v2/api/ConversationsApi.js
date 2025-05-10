@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -2211,7 +2211,6 @@ class ConversationsApi {
 	 * Get Facebook messaging integration identity resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
-	 * getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
@@ -2237,7 +2236,6 @@ class ConversationsApi {
 	 * Get an open messaging integration Identity Resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
-	 * getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
@@ -2263,7 +2261,6 @@ class ConversationsApi {
 	 * Get a whatsApp integration Identity Resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
-	 * getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
@@ -3094,13 +3091,46 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update agent's engagement for the summary.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} summaryId Summary ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchConversationSummaryEngagements(conversationId, summaryId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationSummaryEngagements';
+		}
+		// verify the required parameter 'summaryId' is set
+		if (summaryId === undefined || summaryId === null) {
+			throw 'Missing the required parameter "summaryId" when calling patchConversationSummaryEngagements';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'summaryId': summaryId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the feedback for the summary.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} summaryId Summary ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchConversationSummaryFeedback(conversationId, summaryId, opts) { 
 		opts = opts || {};
@@ -7363,7 +7393,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body IdentityResolutionConfig
-	 * putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
@@ -7394,7 +7423,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body 
-	 * putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
@@ -7425,7 +7453,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body 
-	 * putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set

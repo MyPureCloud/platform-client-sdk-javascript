@@ -573,7 +573,7 @@ apiInstance.getChatsRoomParticipant(roomJid, participantJid)
 
 ## getChatsRoomParticipants
 
-> RoomParticipantsResponse getChatsRoomParticipants(roomJid)
+> RoomParticipantsResponse getChatsRoomParticipants(roomJid, opts)
 
 
 GET /api/v2/chats/rooms/{roomJid}/participants
@@ -599,8 +599,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
+let opts = { 
+  'notify': true // Boolean | Whether to get users to notify
+};
 
-apiInstance.getChatsRoomParticipants(roomJid)
+apiInstance.getChatsRoomParticipants(roomJid, opts)
   .then((data) => {
     console.log(`getChatsRoomParticipants success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -616,6 +619,7 @@ apiInstance.getChatsRoomParticipants(roomJid)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
+ **notify** | **Boolean** | Whether to get users to notify | [optional]  |
 
 ### Return type
 
@@ -1717,4 +1721,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

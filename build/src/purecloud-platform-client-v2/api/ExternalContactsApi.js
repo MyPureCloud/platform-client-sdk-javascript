@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -1034,7 +1034,6 @@ class ExternalContactsApi {
 	 * List the identifiers for an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
-	 * getExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsOrganizationIdentifiers(externalOrganizationId) { 
 		// verify the required parameter 'externalOrganizationId' is set
@@ -1441,7 +1440,6 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-	 * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsScanContactsDivisionviewsAll(opts) { 
 		opts = opts || {};
@@ -1493,7 +1491,6 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-	 * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsScanNotesDivisionviewsAll(opts) { 
 		opts = opts || {};
@@ -1545,7 +1542,6 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-	 * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsScanOrganizationsDivisionviewsAll(opts) { 
 		opts = opts || {};
@@ -1597,7 +1593,6 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-	 * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsScanRelationshipsDivisionviewsAll(opts) { 
 		opts = opts || {};
@@ -1652,7 +1647,6 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
 	 * @param {Object} body ClaimRequest
-	 * patchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
@@ -1732,7 +1726,6 @@ class ExternalContactsApi {
 	 * Bulk fetch contacts across divisions
 	 * 
 	 * @param {Object} body Contact ids
-	 * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsBulkContactsDivisionviews(body) { 
 		// verify the required parameter 'body' is set
@@ -1760,7 +1753,6 @@ class ExternalContactsApi {
 	 * @param {Object} body Contact Enrich Requests
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-	 * postExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsBulkContactsEnrich(body, opts) { 
 		opts = opts || {};
@@ -2013,7 +2005,6 @@ class ExternalContactsApi {
 	 * Bulk fetch organizations across divisions
 	 * 
 	 * @param {Object} body Organizations ids
-	 * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsBulkOrganizationsDivisionviews(body) { 
 		// verify the required parameter 'body' is set
@@ -2041,7 +2032,6 @@ class ExternalContactsApi {
 	 * @param {Object} body External Organization Enrich Requests
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-	 * postExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsBulkOrganizationsEnrich(body, opts) { 
 		opts = opts || {};
@@ -2301,7 +2291,6 @@ class ExternalContactsApi {
 	 * @param {Object} body ContactEnrichRequest
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-	 * postExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsContactsEnrich(body, opts) { 
 		opts = opts || {};
@@ -2354,7 +2343,6 @@ class ExternalContactsApi {
 	 * Merge up to 25 contacts into a new contact record
 	 * Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
 	 * @param {Object} body MergeRequest
-	 * postExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsContactsMerge(body) { 
 		// verify the required parameter 'body' is set
@@ -2462,7 +2450,6 @@ class ExternalContactsApi {
 	 * @param {Object} identifier 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which field, if any, to expand
-	 * postExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsIdentifierlookupContacts(identifier, opts) { 
 		opts = opts || {};
@@ -2492,7 +2479,6 @@ class ExternalContactsApi {
 	 * @param {Object} identifier 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which field, if any, to expand
-	 * postExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsIdentifierlookupOrganizations(identifier, opts) { 
 		opts = opts || {};
@@ -2728,7 +2714,6 @@ class ExternalContactsApi {
 	 * @param {Object} body ExternalOrgEnrichRequest
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.dryRun If true, the request will not make any modifications, but will show you what the end result *would* be.
-	 * postExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsOrganizationsEnrich(body, opts) { 
 		opts = opts || {};

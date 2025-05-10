@@ -596,8 +596,6 @@ GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
 
 Get a deployment identity resolution setting.
 
-getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * webDeployments:deployment:view
@@ -685,7 +683,7 @@ apiInstance.getWebdeploymentsDeployments(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent, identityresolution |
 
 ### Return type
 
@@ -1048,8 +1046,6 @@ PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
 
 Update identity resolution settings for a deployment.
 
-putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * webDeployments:deployment:edit
@@ -1094,4 +1090,4 @@ apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 **IdentityResolutionConfig**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

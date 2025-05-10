@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -1039,7 +1039,6 @@ class ArchitectApi {
 	 * Get an IVR IdentityResolutionConfig.
 	 * 
 	 * @param {String} ivrId IVR id
-	 * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getArchitectIvrIdentityresolution(ivrId) { 
 		// verify the required parameter 'ivrId' is set
@@ -1072,6 +1071,7 @@ class ArchitectApi {
 	 * @param {String} opts.name Name of the IVR to filter by.
 	 * @param {String} opts.dnis The phone number of the IVR to filter by.
 	 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getArchitectIvrs(opts) { 
 		opts = opts || {};
@@ -1081,7 +1081,7 @@ class ArchitectApi {
 			'/api/v2/architect/ivrs', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -3887,7 +3887,6 @@ class ArchitectApi {
 	 * 
 	 * @param {String} ivrId IVR id
 	 * @param {Object} body 
-	 * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putArchitectIvrIdentityresolution(ivrId, body) { 
 		// verify the required parameter 'ivrId' is set

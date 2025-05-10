@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -821,8 +821,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
-	getRoutingEmailDomainRoute(domainName, routeId) { 
+	getRoutingEmailDomainRoute(domainName, routeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
 		if (domainName === undefined || domainName === null) {
 			throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRoute';
@@ -836,7 +840,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 			'GET', 
 			{ 'domainName': domainName,'routeId': routeId },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -851,7 +855,6 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
-	 * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingEmailDomainRouteIdentityresolution(domainName, routeId) { 
 		// verify the required parameter 'domainName' is set
@@ -885,6 +888,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.pattern Filter routes by the route's pattern property
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getRoutingEmailDomainRoutes(domainName, opts) { 
 		opts = opts || {};
@@ -898,7 +902,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainName}/routes', 
 			'GET', 
 			{ 'domainName': domainName },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1298,8 +1302,12 @@ class RoutingApi {
 	 * Get details about this queue.
 	 * 
 	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
-	getRoutingQueue(queueId) { 
+	getRoutingQueue(queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null) {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueue';
@@ -1309,7 +1317,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}', 
 			'GET', 
 			{ 'queueId': queueId },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1436,7 +1444,6 @@ class RoutingApi {
 	 * Get Queue IdentityResolution Settings.
 	 * 
 	 * @param {String} queueId Queue ID
-	 * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingQueueIdentityresolution(queueId) { 
 		// verify the required parameter 'queueId' is set
@@ -1615,6 +1622,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.peerId Include only queues with the specified peer ID(s)
 	 * @param {String} opts.cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID
 	 * @param {Boolean} opts.hasPeer Include only queues with a peer ID
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getRoutingQueues(opts) { 
 		opts = opts || {};
@@ -1624,7 +1632,7 @@ class RoutingApi {
 			'/api/v2/routing/queues', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'cannedResponseLibraryId': opts['cannedResponseLibraryId'],'hasPeer': opts['hasPeer'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'cannedResponseLibraryId': opts['cannedResponseLibraryId'],'hasPeer': opts['hasPeer'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2034,7 +2042,6 @@ class RoutingApi {
 	 * Get a SMS identity resolution settings.
 	 * 
 	 * @param {String} addressId Address ID
-	 * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingSmsIdentityresolutionPhonenumber(addressId) { 
 		// verify the required parameter 'addressId' is set
@@ -2100,6 +2107,7 @@ class RoutingApi {
 	 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations (default to en-US)
 	 * @param {String} opts.integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to
 	 * @param {String} opts.supportedContentId Filter based on the supported content ID
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getRoutingSmsPhonenumbers(opts) { 
 		opts = opts || {};
@@ -2109,7 +2117,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers', 
 			'GET', 
 			{  },
-			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'],'supportedContent.id': opts['supportedContentId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -3867,7 +3875,6 @@ class RoutingApi {
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
 	 * @param {Object} body 
-	 * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body) { 
 		// verify the required parameter 'domainName' is set
@@ -3987,7 +3994,6 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body 
-	 * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putRoutingQueueIdentityresolution(queueId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -4068,7 +4074,6 @@ class RoutingApi {
 	 * 
 	 * @param {String} addressId Address ID
 	 * @param {Object} body 
-	 * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putRoutingSmsIdentityresolutionPhonenumber(addressId, body) { 
 		// verify the required parameter 'addressId' is set

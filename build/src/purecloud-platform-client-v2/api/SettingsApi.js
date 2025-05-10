@@ -5,7 +5,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -28,6 +28,26 @@ class SettingsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings/threading', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete settings
+	 * 
+	 */
+	deleteExternalcontactsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/settings', 
 			'DELETE', 
 			{  },
 			{  },
@@ -93,6 +113,26 @@ class SettingsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings/threading', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get settings
+	 * 
+	 */
+	getExternalcontactsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/settings', 
 			'GET', 
 			{  },
 			{  },
@@ -247,6 +287,30 @@ class SettingsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set settings
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putExternalcontactsSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/settings', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

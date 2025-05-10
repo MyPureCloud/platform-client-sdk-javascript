@@ -1876,8 +1876,6 @@ GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversat
 
 Translate a single interaction recording (or an email conversation)
 
-getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * speechAndTextAnalytics:translation:view
@@ -1935,8 +1933,6 @@ apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId
 GET /api/v2/speechandtextanalytics/translations/languages
 
 Get supported translation languages
-
-getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -2895,4 +2891,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

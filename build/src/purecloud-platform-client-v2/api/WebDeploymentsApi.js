@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 220.0.0
+	 * @version 221.0.0
 	 */
 
 	/**
@@ -322,7 +322,6 @@ class WebDeploymentsApi {
 	 * Get a deployment identity resolution setting.
 	 * 
 	 * @param {String} deploymentId The deployment ID
-	 * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWebdeploymentsDeploymentIdentityresolution(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -557,7 +556,6 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} deploymentId The deployment ID
 	 * @param {Object} body 
-	 * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putWebdeploymentsDeploymentIdentityresolution(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
