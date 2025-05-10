@@ -7,15 +7,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteEmailsSettingsThreading**](SettingsApi#deleteEmailsSettingsThreading) | **DELETE** /api/v2/emails/settings/threading | Reset email threading settings to default
+[**deleteExternalcontactsSettings**](SettingsApi#deleteExternalcontactsSettings) | **DELETE** /api/v2/externalcontacts/settings | Delete settings
 [**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | **DELETE** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Delete agent auto answer settings
 [**getEmailsSettings**](SettingsApi#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
 [**getEmailsSettingsThreading**](SettingsApi#getEmailsSettingsThreading) | **GET** /api/v2/emails/settings/threading | Get email threading settings
+[**getExternalcontactsSettings**](SettingsApi#getExternalcontactsSettings) | **GET** /api/v2/externalcontacts/settings | Get settings
 [**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | **GET** /api/v2/settings/executiondata | Get the execution history enabled setting.
 [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | **GET** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Get agent auto answer settings
 [**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
 [**patchEmailsSettingsThreading**](SettingsApi#patchEmailsSettingsThreading) | **PATCH** /api/v2/emails/settings/threading | Patch email threading settings
 [**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | **PATCH** /api/v2/settings/executiondata | Edit the execution history on off setting.
 [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PATCH** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Update agent auto answer settings
+[**putExternalcontactsSettings**](SettingsApi#putExternalcontactsSettings) | **PUT** /api/v2/externalcontacts/settings | Set settings
 [**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PUT** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Set agent auto answer settings
 
 
@@ -63,6 +66,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 void (no response body)
+
+
+## deleteExternalcontactsSettings
+
+> UpdatedSettingsResponse deleteExternalcontactsSettings()
+
+
+DELETE /api/v2/externalcontacts/settings
+
+Delete settings
+
+Requires ANY permissions:
+
+* externalContacts:settings:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+apiInstance.deleteExternalcontactsSettings()
+  .then((data) => {
+    console.log(`deleteExternalcontactsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**UpdatedSettingsResponse**
 
 
 ## deleteUsersAgentuiAgentsAutoanswerAgentIdSettings
@@ -203,6 +251,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmailThreadingSettings**
+
+
+## getExternalcontactsSettings
+
+> ExternalContactsSettings getExternalcontactsSettings()
+
+
+GET /api/v2/externalcontacts/settings
+
+Get settings
+
+Requires ANY permissions:
+
+* externalContacts:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+apiInstance.getExternalcontactsSettings()
+  .then((data) => {
+    console.log(`getExternalcontactsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**ExternalContactsSettings**
 
 
 ## getSettingsExecutiondata
@@ -510,6 +603,58 @@ apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 **AutoAnswerSettings**
 
 
+## putExternalcontactsSettings
+
+> UpdatedSettingsResponse putExternalcontactsSettings(opts)
+
+
+PUT /api/v2/externalcontacts/settings
+
+Set settings
+
+Requires ANY permissions:
+
+* externalContacts:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putExternalcontactsSettings(opts)
+  .then((data) => {
+    console.log(`putExternalcontactsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**UpdatedSettingsResponse**
+
+
 ## putUsersAgentuiAgentsAutoanswerAgentIdSettings
 
 > AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
@@ -562,4 +707,4 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

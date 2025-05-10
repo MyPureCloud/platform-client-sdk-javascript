@@ -1,402 +1,559 @@
-Platform API version: 9171
+Platform API version: 9215
 
 
 
 
-# Major Changes (9 changes)
+# Major Changes (8 changes)
 
-**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (1 change)
+**GET /api/v2/chats/rooms/{roomJid}/participants** (1 change)
 
-* Has been deprecated
+* Parameter notify was added
 
-**GET /api/v2/chats/users/me/settings** (1 change)
+**GET /api/v2/routing/queues/{queueId}** (1 change)
 
-* Response 200 type was changed from ChatUserSettings to UserSettingsForChat
+* Parameter expand was added
 
-**PATCH /api/v2/chats/users/me/settings** (1 change)
+**GET /api/v2/routing/queues** (1 change)
 
-* Response 200 type was changed from ChatUserSettings to UserSettingsForChat
+* Parameter expand was added
 
-**ReverseWhitepagesLookupResult** (1 change)
+**GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
 
-* Property externalOrganizations was removed
+* Parameter expand was added
 
-**JourneySegmentRequest** (1 change)
+**GET /api/v2/routing/email/domains/{domainName}/routes** (1 change)
 
-* Property scope was removed
+* Parameter expand was added
 
-**JourneyViewJob** (2 changes)
+**GET /api/v2/routing/sms/phonenumbers** (1 change)
 
-* Required property estimatedCompletionMargin was added
-* Required property userId was added
+* Parameter expand was added
 
-**EvaluationResponse** (2 changes)
+**GET /api/v2/architect/ivrs** (1 change)
 
-* Property calibration was changed from Calibration to AddressableEntityRef
-* calibration has been made readonly
+* Parameter expand was added
+
+**SpeechTextAnalyticsConversationSummary** (1 change)
+
+* Property agentId was removed
 
 
-# Minor Changes (107 changes)
+# Minor Changes (176 changes)
 
-**/api/v2/scripts/published/divisionviews/{scriptId}/variables** (2 changes)
+**/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/externalcontacts/settings** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/billing/contracts/{contractId}/billingperiods/{billingPeriodId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads** (2 changes)
+**/api/v2/billing/contracts/{contractId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/invoices/{invoiceId}/document** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/invoices/{invoiceId}/lines** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/billing/contracts/invoices** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/businessrules/decisiontables/{tableId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/businessrules/decisiontables/{tableId}/execute** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**ADFS** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}** (4 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**CustomerInteractionCenter** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**GSuite** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**GenericSAML** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation PUT was added
 
-**IdentityNow** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**SAMLProvider** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions** (3 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**CustomProvider** (1 change)
+**/api/v2/businessrules/decisiontables** (3 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**Okta** (1 change)
+**/api/v2/businessrules/decisiontables/search** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
 
-**OneLogin** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}** (4 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**PingIdentity** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows** (3 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**PureEngage** (1 change)
+**/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**Salesforce** (1 change)
+**/api/v2/businessrules/schemas/coretypes/{coreTypeName}** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation GET was added
 
-**JourneyAggregateQueryPredicate** (1 change)
+**/api/v2/businessrules/schemas/coretypes** (2 changes)
 
-* Enum value journeySegmentAssignmentState was added to property dimension
+* Path was added
+* Operation GET was added
 
-**JourneyAggregationQuery** (1 change)
+**/api/v2/businessrules/schemas/{schemaId}** (4 changes)
 
-* Enum value journeySegmentAssignmentState was added to property groupBy
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
 
-**KnowledgeAggregateQueryPredicate** (1 change)
+**/api/v2/businessrules/schemas** (3 changes)
 
-* Enum value messageType was added to property dimension
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**KnowledgeAggregationQuery** (1 change)
+**AnalyticsConversationWithoutAttributes** (1 change)
 
-* Enum value messageType was added to property groupBy
+* Optional property originatingSocialMediaPublic was added
 
-**ViewFilter** (2 changes)
+**AnalyticsConversation** (1 change)
 
-* Enum value GoogleBusinessProfile was added to property socialChannels
-* Optional property deliveryPushed was added
+* Optional property originatingSocialMediaPublic was added
+
+**ReportingTurnAction** (5 changes)
+
+* Enum value CallGuideAction was added to property actionType
+* Enum value PromoteExternalContactAction was added to property actionType
+* Enum value TransferUserAction was added to property actionType
+* Enum value TransferGroupAction was added to property actionType
+* Enum value TransferExternalAction was added to property actionType
+
+**BotFlowSession** (6 changes)
+
+* Enum value TransferToUser was added to property botResult
+* Enum value TransferToGroup was added to property botResult
+* Enum value TransferToNumber was added to property botResult
+* Enum value TransferToUserVoicemail was added to property botResult
+* Enum value TransferToGroupVoicemail was added to property botResult
+* Enum value TransferToACDVoicemail was added to property botResult
+
+**ViewFilter** (7 changes)
+
+* Enum value TransferToUser was added to property botResultList
+* Enum value TransferToGroup was added to property botResultList
+* Enum value TransferToNumber was added to property botResultList
+* Enum value TransferToUserVoicemail was added to property botResultList
+* Enum value TransferToGroupVoicemail was added to property botResultList
+* Enum value TransferToACDVoicemail was added to property botResultList
+* Optional property socialRatings was added
+
+**ChartColumn** (1 change)
+
+* Model was added
 
 **ReportingExportJobResponse** (1 change)
 
-* Enum value CONTENT_EXPLORATION_VIEW was added to property viewType
-
-**ReportingExportMetadataJobResponse** (1 change)
-
-* Enum value CONTENT_EXPLORATION_VIEW was added to property viewType
+* Optional property chartColumns was added
 
 **ReportingExportJobRequest** (1 change)
 
-* Enum value CONTENT_EXPLORATION_VIEW was added to property viewType
+* Optional property chartColumns was added
 
-**ConditionalGroupActivation** (1 change)
+**Limit** (1 change)
 
-* Model was added
+* Enum value guides was added to property namespace
 
-**ConditionalGroupActivationCondition** (1 change)
-
-* Model was added
-
-**ConditionalGroupActivationPilotRule** (1 change)
+**UserChatSettings** (1 change)
 
 * Model was added
 
-**ConditionalGroupActivationRule** (1 change)
+**ExternalOrganization** (2 changes)
 
-* Model was added
+* Optional property identifiers was added
+* Optional property externalIds was added
 
-**ConditionalGroupActivationSimpleMetric** (1 change)
-
-* Model was added
-
-**DataSchemaRef** (1 change)
-
-* Model was added
-
-**EvaluationQuestion** (1 change)
-
-* Enum value multipleSelectQuestion was added to property type
-
-**ConversationMessageMetadataContent** (1 change)
-
-* Enum value ListPicker was added to property contentType
-
-**Evaluation** (2 changes)
-
-* Optional property createdDate was added
-* Optional property submittedDate was added
-
-**ConversationContentButtonResponse** (1 change)
-
-* Enum value ListPicker was added to property type
-
-**ConversationContentDatePicker** (1 change)
-
-* Optional property location was added
-
-**ConversationContentListPicker** (1 change)
-
-* Model was added
-
-**ConversationContentListPickerItem** (1 change)
-
-* Model was added
-
-**ConversationContentListPickerSection** (1 change)
-
-* Model was added
-
-**ConversationEventPresence** (3 changes)
-
-* Enum value Authenticate was added to property type
-* Optional property receivedMessage was added
-* Optional property replyMessage was added
-
-**ConversationMessageContent** (2 changes)
-
-* Enum value ListPicker was added to property contentType
-* Optional property reactions was added
-
-**ConversationMessagingChannel** (2 changes)
-
-* Optional property type was added
-* Optional property publicMetadata was added
-
-**ConversationNormalizedMessage** (2 changes)
-
-* Optional property relatedMessages was added
-* Optional property enrichment was added
-
-**ConversationPublicMetadata** (1 change)
-
-* Optional property url was added
-
-**MessageMediaUploadData** (1 change)
-
-* Model was added
-
-**UploadMediaRequest** (1 change)
-
-* Model was added
-
-**DivisionedDomainEntityRef** (1 change)
+**ContactImportJobResponse** (1 change)
 
 * Optional property division was added
 
-**UserSettingsForChat** (1 change)
+**ContactImportJobRequest** (1 change)
+
+* Optional property division was added
+
+**CsvJobRequest** (1 change)
+
+* Optional property division was added
+
+**Campaign** (1 change)
+
+* Optional property diagnosticsSettings was added
+
+**DiagnosticsSettings** (1 change)
+
+* Optional property reportLowMaxCallsPerAgentAlert was added
+
+**RestErrorDetail** (1 change)
+
+* Optional property userParams was added
+
+**ConversationEventPresence** (2 changes)
+
+* Enum value AuthenticateFailure was added to property type
+* Enum value AuthenticateCancel was added to property type
+
+**WhatsAppCallingConfigurationResponse** (1 change)
 
 * Model was added
 
-**KnowledgeDocumentsAnswerFilter** (1 change)
-
-* Enum value ExpandedArticle was added to property queryType
-
-**KnowledgeConversationContext** (1 change)
-
-* Optional property messageType was added
-
-**KnowledgeDocumentCopy** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentPresentation** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**PresentedKnowledgeDocument** (1 change)
-
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentFeedbackResponse** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentFeedback** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentView** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentFeedback** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentPresentation** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentView** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentCopy** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**SurveyQuestion** (1 change)
-
-* Enum value multipleSelectQuestion was added to property type
-
-**InteractiveApplication** (1 change)
+**WhatsAppCallingConfigurationRequest** (1 change)
 
 * Model was added
 
-**RecordingMessagingMessage** (2 changes)
-
-* Enum value InteractiveApplication was added to property contentType
-* Optional property socialVisibility was added
-
-**SocialMediaAsyncDetailQuery** (1 change)
-
-* Optional property topicIds was added
-
-**BotSearchResponse** (1 change)
-
-* Enum value GenesysDigitalBotConnector was added to property botType
-
-**ConversationAppSettings** (1 change)
-
-* Optional property sessionDurationSeconds was added
-
-**NotificationsSettings** (1 change)
-
-* Optional property notificationContentType was added
-
-**WebDeployment** (1 change)
-
-* Optional property pushIntegrations was added
-
-**ExpandableWebDeployment** (1 change)
-
-* Optional property pushIntegrations was added
-
-**TimeOffRequestResponse** (3 changes)
-
-* Enum value BlockedDate was added to property substatus
-* Enum value ManualApproval was added to property substatus
-* Enum value ReviewDate was added to property substatus
-
-**TimeOffRequest** (3 changes)
-
-* Enum value BlockedDate was added to property substatus
-* Enum value ManualApproval was added to property substatus
-* Enum value ReviewDate was added to property substatus
-
-**TimeOffRequestQueryBody** (3 changes)
-
-* Enum value BlockedDate was added to property substatuses
-* Enum value ManualApproval was added to property substatuses
-* Enum value ReviewDate was added to property substatuses
-
-**OverrideDate** (1 change)
+**EngagementRequest** (1 change)
 
 * Model was added
 
-**ListWrapperOverrideDate** (1 change)
+**CampaignDiagnostics** (6 changes)
+
+* Optional property idleAgents was added
+* Optional property effectiveIdleAgents was added
+* Optional property linesUtilization was added
+* Optional property numberOfContactsCalled was added
+* Optional property totalNumberOfContacts was added
+* Optional property campaignErrors was added
+
+**ContactBulkSearchParameters** (1 change)
+
+* Optional property generateDownloadURI was added
+
+**ContactBulkEditRequest** (1 change)
+
+* Optional property generateDownloadURI was added
+
+**ApprovalNamespace** (1 change)
+
+* Enum value guides was added to property namespace
+
+**LimitChangeRequestDetails** (1 change)
+
+* Enum value guides was added to property namespace
+
+**StatusChange** (1 change)
+
+* Enum value guides was added to property namespace
+
+**RecordingMetadata** (1 change)
+
+* Optional property region was added
+
+**UpdatedSettingsResponse** (1 change)
 
 * Model was added
 
-**WorkitemDelta** (3 changes)
+**SocialMediaAsyncAggregationQuery** (1 change)
 
-* Optional property dateAssignmentStateChanged was added
-* Optional property alertTimeoutSeconds was added
-* Optional property scoredAgents was added
+* Enum value nSocialReviewRating was added to property metrics
 
-**WorkitemScoredAgentDelta** (1 change)
+**SocialMediaStatisticalSummary** (1 change)
+
+* Optional property average was added
+
+**SpeechTextAnalyticsConversationSummary** (2 changes)
+
+* Enum value VirtualAgent was added to property summaryType
+* Optional property sourceId was added
+
+**Dependency** (1 change)
+
+* Enum value DIVISION was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value DIVISION was added to property type
+
+**WebMessagingButtonResponse** (1 change)
+
+* Enum value DatePicker was added to property type
+
+**WebMessagingContent** (2 changes)
+
+* Enum value DatePicker was added to property contentType
+* Optional property datePicker was added
+
+**BillingCharge** (1 change)
 
 * Model was added
 
-**WorkitemsAttributeChangeListWorkitemScoredAgentDelta** (1 change)
+**BillingContractPeriodDetail** (1 change)
 
 * Model was added
 
-**WorkitemsAttributeChangeWorkitemRuleSettings** (1 change)
+**BillingProduct** (1 change)
 
 * Model was added
 
-**WorktypeDelta** (3 changes)
+**BillingWallet** (1 change)
 
-* Optional property flowId was added
-* Optional property ruleSettings was added
-* Optional property unassignedDivisionContactsEnabled was added
+* Model was added
 
-**JourneyAsyncAggregationQuery** (1 change)
+**BillingContract** (1 change)
 
-* Enum value journeySegmentAssignmentState was added to property groupBy
+* Model was added
 
-**KnowledgeAsyncAggregationQuery** (1 change)
+**BillingContractPeriod** (1 change)
 
-* Enum value messageType was added to property groupBy
+* Model was added
+
+**BillingPlan** (1 change)
+
+* Model was added
+
+**BillingPlanItem** (1 change)
+
+* Model was added
+
+**Customer** (1 change)
+
+* Model was added
+
+**BillingContractListing** (1 change)
+
+* Model was added
+
+**BillingInvoiceItem** (1 change)
+
+* Model was added
+
+**BillingInvoiceItemListing** (1 change)
+
+* Model was added
+
+**BillingInvoice** (1 change)
+
+* Model was added
+
+**BillingInvoiceListing** (1 change)
+
+* Model was added
+
+**InvoiceAddress** (1 change)
+
+* Model was added
+
+**Contractual** (1 change)
+
+* Model was added
+
+**DecisionTable** (1 change)
+
+* Model was added
+
+**DecisionTableColumnDefaultRowValue** (1 change)
+
+* Model was added
+
+**DecisionTableColumns** (1 change)
+
+* Model was added
+
+**DecisionTableContract** (1 change)
+
+* Model was added
+
+**DecisionTableInputColumn** (1 change)
+
+* Model was added
+
+**DecisionTableInputColumnExpression** (1 change)
+
+* Model was added
+
+**DecisionTableOutputColumn** (1 change)
+
+* Model was added
+
+**DecisionTableVersionEntity** (1 change)
+
+* Model was added
+
+**Definition** (1 change)
+
+* Model was added
+
+**JsonSchemaWithDefinitions** (1 change)
+
+* Model was added
+
+**OutputValue** (1 change)
+
+* Model was added
+
+**PropertyDefinition** (1 change)
+
+* Model was added
+
+**DecisionTableInputColumnRequest** (1 change)
+
+* Model was added
+
+**DecisionTableOutputColumnRequest** (1 change)
+
+* Model was added
+
+**UpdateDecisionTableColumnsRequest** (1 change)
+
+* Model was added
+
+**UpdateDecisionTableRequest** (1 change)
+
+* Model was added
+
+**DecisionTableExecutionResponse** (1 change)
+
+* Model was added
+
+**DecisionTableRowExecutionOutput** (1 change)
+
+* Model was added
+
+**DecisionTableExecutionRequest** (1 change)
+
+* Model was added
+
+**DecisionTableVersion** (1 change)
+
+* Model was added
+
+**UpdateDecisionTableVersionRequest** (1 change)
+
+* Model was added
+
+**UpdateRowIndexRequest** (1 change)
+
+* Model was added
+
+**CopyDecisionTableRequest** (1 change)
+
+* Model was added
+
+**DecisionTableVersionListing** (1 change)
+
+* Model was added
+
+**CreateDecisionTableColumnsRequest** (1 change)
+
+* Model was added
+
+**CreateDecisionTableRequest** (1 change)
+
+* Model was added
+
+**DecisionTableListing** (1 change)
+
+* Model was added
+
+**DecisionTableRow** (1 change)
+
+* Model was added
+
+**DecisionTableRowParameterValue** (1 change)
+
+* Model was added
+
+**Literal** (1 change)
+
+* Model was added
+
+**UpdateDecisionTableRowRequest** (1 change)
+
+* Model was added
+
+**CreateDecisionTableRowRequest** (1 change)
+
+* Model was added
+
+**DecisionTableRowListing** (1 change)
+
+* Model was added
+
+**RowSearchFilter** (1 change)
+
+* Model was added
+
+**RowSearchPredicate** (1 change)
+
+* Model was added
+
+**SearchDecisionTableRowsRequest** (1 change)
+
+* Model was added
 
 
-# Point Changes (7 changes)
-
-**GET /api/v2/externalcontacts/reversewhitepageslookup** (3 changes)
-
-* Summary was changed
-* Description was changed for parameter lookupVal
-* Description was changed for parameter divisionId
-
-**GET /api/v2/recording/jobs/{jobId}/failedrecordings** (1 change)
-
-* Description was changed for parameter includeTotal
-
-**GET /api/v2/recording/jobs** (1 change)
-
-* Description was changed for parameter includeTotal
-
-**GET /api/v2/textbots/bots/search** (2 changes)
-
-* Description was changed for parameter botId
-* Description was changed for parameter pageSize
+# Point Changes (0 changes)

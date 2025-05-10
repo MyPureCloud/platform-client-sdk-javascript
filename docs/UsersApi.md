@@ -4255,7 +4255,7 @@ Requires ANY permissions:
 
 * admin
 * directory:organization:admin
-* directory:userPassword:edit
+* directory:user:setPassword
 
 ### Example Usage
 
@@ -5538,4 +5538,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_

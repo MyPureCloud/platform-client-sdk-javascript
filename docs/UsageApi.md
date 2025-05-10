@@ -395,4 +395,4 @@ apiInstance.postUsageSimplesearch(body)
 **UsageExecutionResult**
 
 
-_purecloud-platform-client-v2@220.0.0_
+_purecloud-platform-client-v2@221.0.0_
