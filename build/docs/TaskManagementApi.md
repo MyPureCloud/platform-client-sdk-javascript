@@ -37,7 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersion) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions | Get all versions of a schema
 [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | **GET** /api/v2/taskmanagement/workitems/schemas | Get a list of schemas.
-[**getTaskmanagementWorkitemsSchemasCoretype**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype) | **GET** /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getTaskmanagementWorkitemsSchemasCoretype**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretype) | **GET** /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName} | Get a specific named core type.
 [**getTaskmanagementWorkitemsSchemasCoretypes**](TaskManagementApi#getTaskmanagementWorkitemsSchemasCoretypes) | **GET** /api/v2/taskmanagement/workitems/schemas/coretypes | Get the core types from which all schemas are built.
 [**getTaskmanagementWorkitemsSchemasLimits**](TaskManagementApi#getTaskmanagementWorkitemsSchemasLimits) | **GET** /api/v2/taskmanagement/workitems/schemas/limits | Get quantitative limits on schemas
 [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId} | Get a worktype
@@ -1717,7 +1717,7 @@ This endpoint does not need any parameter.
 
 GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Requires ANY permissions:
 
@@ -1762,7 +1762,7 @@ apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
 
 ## getTaskmanagementWorkitemsSchemasCoretypes
 
-> Coretype getTaskmanagementWorkitemsSchemasCoretypes()
+> CoretypeListing getTaskmanagementWorkitemsSchemasCoretypes()
 
 
 GET /api/v2/taskmanagement/workitems/schemas/coretypes
@@ -1802,7 +1802,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Coretype**
+**CoretypeListing**
 
 
 ## getTaskmanagementWorkitemsSchemasLimits
@@ -4054,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

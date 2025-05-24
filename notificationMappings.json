@@ -201,6 +201,10 @@
       "class": "GroupGreetingEventGreeting"
     },
     {
+      "topic": "v2.integrations.inbound.webhook.{id}.invocation",
+      "class": "MaestroWebhooksInvocationTopicPublicWebhooksEvent"
+    },
+    {
       "topic": "v2.journey.sessions.{id}.action.events",
       "class": "JourneyWebActionEventsNotificationWebActionEventsNotification"
     },
@@ -547,6 +551,10 @@
     {
       "topic": "v2.users.{id}.conversations.summaries",
       "class": "ConversationSummaryTopicConversationSummaryEvent"
+    },
+    {
+      "topic": "v2.users.{id}.conversations.summaries.settings.preview",
+      "class": "V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage"
     },
     {
       "topic": "v2.users.{id}.conversations.videos",

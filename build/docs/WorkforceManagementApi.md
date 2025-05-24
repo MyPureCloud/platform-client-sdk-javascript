@@ -6294,6 +6294,7 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'evaluateMatches': true, // Boolean | Whether to evaluate the matches for violations
+  'includeCrossWeekShifts': false, // Boolean | Whether to include all shift trades with either the initiating shift or the receiving shift in the week
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
@@ -6315,6 +6316,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
+ **includeCrossWeekShifts** | **Boolean** | Whether to include all shift trades with either the initiating shift or the receiving shift in the week | [optional] [default to false] |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
@@ -13717,4 +13719,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

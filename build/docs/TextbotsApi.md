@@ -45,6 +45,7 @@ let opts = {
   'botType': ["botType_example"], // [String] | Bot types
   'botName': "botName_example", // String | Bot name
   'botId': ["botId_example"], // [String] | Bot IDs. Maximum of 50
+  'virtualAgentEnabled': true, // Boolean | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
   'pageSize': 25 // Number | The maximum results to return. Maximum of 100
 };
 
@@ -66,6 +67,7 @@ apiInstance.getTextbotsBotsSearch(opts)
  **botType** | **[String]** | Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector |
  **botName** | **String** | Bot name | [optional]  |
  **botId** | **[String]** | Bot IDs. Maximum of 50 | [optional]  |
+ **virtualAgentEnabled** | **Boolean** | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows | [optional]  |
  **pageSize** | **Number** | The maximum results to return. Maximum of 100 | [optional] [default to 25] |
 
 ### Return type
@@ -231,4 +233,4 @@ apiInstance.postTextbotsBotsExecute(postTextRequest)
 **PostTextResponse**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

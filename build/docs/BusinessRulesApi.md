@@ -1628,4 +1628,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

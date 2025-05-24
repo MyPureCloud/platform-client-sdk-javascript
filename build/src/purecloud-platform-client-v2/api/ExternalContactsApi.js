@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 221.0.0
+	 * @version 222.0.0
 	 */
 
 	/**
@@ -641,7 +641,7 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Get the core types from which all schemas are built.
+	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName Name of the core type
 	 */
@@ -1285,7 +1285,7 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Get the core types from which all schemas are built.
+	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName Name of the core type
 	 */

@@ -84,7 +84,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
 [**getConversationsMessagingFacebookApp**](ConversationsApi#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
 [**getConversationsMessagingFacebookPermissions**](ConversationsApi#getConversationsMessagingFacebookPermissions) | **GET** /api/v2/conversations/messaging/facebook/permissions | Get a list of Facebook Permissions
+[**getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} | Get Apple messaging integration identity resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Get Facebook messaging integration identity resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Get an Instagram integration identity resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Get an open messaging integration Identity Resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings
 [**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings | Get twitter oauth settings to patch an integration
@@ -252,7 +254,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsEmailRecordingstate**](ConversationsApi#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsKeyconfiguration**](ConversationsApi#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
 [**putConversationsMessageRecordingstate**](ConversationsApi#putConversationsMessageRecordingstate) | **PUT** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} | Create an identity resolution settings for a Apple messaging integration
 [**putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Create an identity resolution settings for a Facebook messaging integration
+[**putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Create identity resolution settings for an Instagram messaging integration
 [**putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Update an open messaging integration Identity Resolution settings
 [**putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Update a whatsApp integration Identity Resolution settings
 [**putConversationsMessagingSettingsDefault**](ConversationsApi#putConversationsMessagingSettingsDefault) | **PUT** /api/v2/conversations/messaging/settings/default | Set the organization's default setting that may be applied to to integrations without settings
@@ -3786,7 +3790,7 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
 };
 
 apiInstance.getConversationsMessageDetails(messageId, opts)
@@ -3805,7 +3809,7 @@ apiInstance.getConversationsMessageDetails(messageId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
@@ -3842,7 +3846,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
 };
 
 apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
@@ -3862,7 +3866,7 @@ apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
@@ -4270,6 +4274,59 @@ This endpoint does not need any parameter.
 **FacebookPermissionEntityListing**
 
 
+## getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
+
+Get Apple messaging integration identity resolution settings
+
+getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionApple:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
 ## getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
 > IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
@@ -4305,6 +4362,57 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookInteg
   })
   .catch((err) => {
     console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
+
+Get an Instagram integration identity resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionInstagram:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId');
     console.error(err);
   });
 ```
@@ -7955,7 +8063,7 @@ PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{inte
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 
-Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 
 Requires ALL permissions:
 
@@ -10651,7 +10759,9 @@ POST /api/v2/conversations/emails/{conversationId}/messages
 
 Send an email reply
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:email:send
 
 ### Example Usage
 
@@ -11164,7 +11274,7 @@ POST /api/v2/conversations/messages/{conversationId}/communications/{communicati
 
 Send message
 
-Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
 
 Requires ANY permissions:
 
@@ -11188,7 +11298,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
 };
 
 apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
@@ -11209,7 +11319,7 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
@@ -11587,7 +11697,7 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | 
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
   'body': ["body_example"] // [String] | messageIds
 };
 
@@ -11607,7 +11717,7 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** |  |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **body** | **[String]** | messageIds | [optional]  |
 
 ### Return type
@@ -13318,6 +13428,61 @@ apiInstance.putConversationsMessageRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
+## putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
+
+Create an identity resolution settings for a Apple messaging integration
+
+putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionApple:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
 ## putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
 > IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
@@ -13354,6 +13519,59 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookInteg
   })
   .catch((err) => {
     console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
+
+Create identity resolution settings for an Instagram messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionInstagram:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId');
     console.error(err);
   });
 ```
@@ -13794,4 +14012,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

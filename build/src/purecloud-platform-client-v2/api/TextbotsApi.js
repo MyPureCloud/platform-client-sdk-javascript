@@ -5,7 +5,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 221.0.0
+	 * @version 222.0.0
 	 */
 
 	/**
@@ -27,6 +27,7 @@ class TextbotsApi {
 	 * @param {Array.<String>} opts.botType Bot types
 	 * @param {String} opts.botName Bot name
 	 * @param {Array.<String>} opts.botId Bot IDs. Maximum of 50
+	 * @param {Boolean} opts.virtualAgentEnabled Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
 	 * @param {Number} opts.pageSize The maximum results to return. Maximum of 100 (default to 25)
 	 */
 	getTextbotsBotsSearch(opts) { 
@@ -37,7 +38,7 @@ class TextbotsApi {
 			'/api/v2/textbots/bots/search', 
 			'GET', 
 			{  },
-			{ 'botType': this.apiClient.buildCollectionParam(opts['botType'], 'multi'),'botName': opts['botName'],'botId': this.apiClient.buildCollectionParam(opts['botId'], 'multi'),'pageSize': opts['pageSize'] },
+			{ 'botType': this.apiClient.buildCollectionParam(opts['botType'], 'multi'),'botName': opts['botName'],'botId': this.apiClient.buildCollectionParam(opts['botId'], 'multi'),'virtualAgentEnabled': opts['virtualAgentEnabled'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 

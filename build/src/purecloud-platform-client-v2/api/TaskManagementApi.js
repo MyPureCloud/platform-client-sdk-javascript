@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 221.0.0
+	 * @version 222.0.0
 	 */
 
 	/**
@@ -875,7 +875,7 @@ class TaskManagementApi {
 	}
 
 	/**
-	 * Get the core types from which all schemas are built.
+	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName Name of the core type
 	 */

@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 221.0.0
+	 * @version 222.0.0
 	 */
 
 	/**
@@ -1935,7 +1935,7 @@ class ConversationsApi {
 	 * 
 	 * @param {String} messageId messageId
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 */
 	getConversationsMessageDetails(messageId, opts) { 
 		opts = opts || {};
@@ -1965,7 +1965,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 */
 	getConversationsMessageMessage(conversationId, messageId, opts) { 
 		opts = opts || {};
@@ -2208,6 +2208,32 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get Apple messaging integration identity resolution settings
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Facebook messaging integration identity resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
@@ -2220,6 +2246,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Instagram integration identity resolution settings
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -4320,7 +4371,7 @@ class ConversationsApi {
 
 	/**
 	 * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-	 * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+	 * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationActivationRequest
 	 */
@@ -6169,12 +6220,12 @@ class ConversationsApi {
 
 	/**
 	 * Send message
-	 * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+	 * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 */
 	postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts) { 
 		opts = opts || {};
@@ -6406,7 +6457,7 @@ class ConversationsApi {
 	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
 	 * @param {String} conversationId 
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 * @param {Array.<String>} opts.body messageIds
 	 */
 	postConversationsMessageMessagesBulk(conversationId, opts) { 
@@ -7389,6 +7440,37 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create an identity resolution settings for a Apple messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body IdentityResolutionConfig
+	 * putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}', 
+			'PUT', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an identity resolution settings for a Facebook messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
@@ -7406,6 +7488,36 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}', 
+			'PUT', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create identity resolution settings for an Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body IdentityResolutionConfig
+	 */
+	putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}', 
 			'PUT', 
 			{ 'integrationId': integrationId },
 			{  },
