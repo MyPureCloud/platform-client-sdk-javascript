@@ -2391,7 +2391,7 @@ let opts = {
   'pageNumber': 1, // Number | The number of the page to return
   'pageSize': 25, // Number | Max number of entities to return
   'interval': 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z, // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
-  'statuses': statuses=Accepted,Executing,Complete,Failed // String | Job statuses to filter for
+  'statuses': statuses=Accepted,Executing,Complete,Failed,Scheduled // String | Job statuses to filter for
 };
 
 apiInstance.getJourneyViewsJobs(opts)
@@ -3832,4 +3832,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

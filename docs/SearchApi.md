@@ -1016,6 +1016,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 
@@ -1408,4 +1409,4 @@ apiInstance.postVoicemailSearch(body)
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_

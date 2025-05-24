@@ -1821,7 +1821,7 @@ apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
  **includeSubcategories** | **Boolean** | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
  **includeDrafts** | **Boolean** | If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |
  **labelIds** | **[String]** | If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
- **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels, variations |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
  **externalIds** | **[String]** | If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
 
 ### Return type
@@ -6523,4 +6523,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@221.0.0_
+_purecloud-platform-client-v2@222.0.0_
