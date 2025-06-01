@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsTopicsGeneral**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneral) | **GET** /api/v2/speechandtextanalytics/topics/general | Get the Speech and Text Analytics general topics for a given dialect
 [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneralStatus) | **GET** /api/v2/speechandtextanalytics/topics/general/status | Get the list of general topics from the org and the system with their current status
 [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsPublishjob) | **GET** /api/v2/speechandtextanalytics/topics/publishjobs/{jobId} | Get a Speech and Text Analytics publish topics job by id
+[**getSpeechandtextanalyticsTopicsTestphraseJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsTestphraseJob) | **GET** /api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId} | Get a Speech and Text Analytics test topics phrase job by id
 [**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | **GET** /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId} | Translate a single interaction recording (or an email conversation)
 [**getSpeechandtextanalyticsTranslationsLanguages**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguages) | **GET** /api/v2/speechandtextanalytics/translations/languages | Get supported translation languages
 [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#patchSpeechandtextanalyticsSettings) | **PATCH** /api/v2/speechandtextanalytics/settings | Patch Speech And Text Analytics Settings
@@ -52,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsSentimentfeedback) | **POST** /api/v2/speechandtextanalytics/sentimentfeedback | Create a Speech and Text Analytics SentimentFeedback
 [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopics) | **POST** /api/v2/speechandtextanalytics/topics | Create new Speech and Text Analytics topic
 [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsPublishjobs) | **POST** /api/v2/speechandtextanalytics/topics/publishjobs | Create new Speech and Text Analytics publish topics job
+[**postSpeechandtextanalyticsTopicsTestphraseJobs**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsTestphraseJobs) | **POST** /api/v2/speechandtextanalytics/topics/testphrase/jobs | Create new Speech and Text Analytics publish topics job
 [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
 [**putSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsCategory) | **PUT** /api/v2/speechandtextanalytics/categories/{categoryId} | Update a Speech and Text Analytics category by ID
 [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | **PUT** /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} | Update existing Speech and Text Analytics dictionary feedback by id
@@ -1867,6 +1869,56 @@ apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId)
 **TopicJob**
 
 
+## getSpeechandtextanalyticsTopicsTestphraseJob
+
+> TestTopicPhraseJob getSpeechandtextanalyticsTopicsTestphraseJob(jobId)
+
+
+GET /api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}
+
+Get a Speech and Text Analytics test topics phrase job by id
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:topic:testPhrase
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let jobId = "jobId_example"; // String | the id of the test topic phrase job
+
+apiInstance.getSpeechandtextanalyticsTopicsTestphraseJob(jobId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTopicsTestphraseJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsTopicsTestphraseJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | the id of the test topic phrase job |  |
+
+### Return type
+
+**TestTopicPhraseJob**
+
+
 ## getSpeechandtextanalyticsTranslationsLanguageConversation
 
 > CommunicationTranslationList getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts)
@@ -2423,6 +2475,56 @@ apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body)
 **TopicJob**
 
 
+## postSpeechandtextanalyticsTopicsTestphraseJobs
+
+> TestTopicPhraseJobs postSpeechandtextanalyticsTopicsTestphraseJobs(body)
+
+
+POST /api/v2/speechandtextanalytics/topics/testphrase/jobs
+
+Create new Speech and Text Analytics publish topics job
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:topic:testPhrase
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let body = {}; // Object | The publish test topic phrase job to create
+
+apiInstance.postSpeechandtextanalyticsTopicsTestphraseJobs(body)
+  .then((data) => {
+    console.log(`postSpeechandtextanalyticsTopicsTestphraseJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSpeechandtextanalyticsTopicsTestphraseJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The publish test topic phrase job to create |  |
+
+### Return type
+
+**TestTopicPhraseJobs**
+
+
 ## postSpeechandtextanalyticsTranscriptsSearch
 
 > JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
@@ -2892,4 +2994,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

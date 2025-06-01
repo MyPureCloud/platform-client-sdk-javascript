@@ -509,7 +509,7 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
   'divisionIds': ["divisionIds_example"] // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 };
 
@@ -530,7 +530,7 @@ apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
  **divisionIds** | **[String]** | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
 
 ### Return type
@@ -568,7 +568,7 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
   'divisionIds': ["divisionIds_example"] // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 };
 
@@ -588,7 +588,7 @@ apiInstance.getBusinessrulesDecisiontables(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
  **divisionIds** | **[String]** | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
 
 ### Return type
@@ -625,9 +625,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
   'schemaId': "schemaId_example", // String | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
   'name': "name_example" // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
 };
@@ -647,9 +646,8 @@ apiInstance.getBusinessrulesDecisiontablesSearch(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
  **schemaId** | **String** | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. | [optional]  |
  **name** | **String** | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. | [optional]  |
 
@@ -1628,4 +1626,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

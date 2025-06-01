@@ -378,4 +378,4 @@ apiInstance.postAuditsQueryRealtimeRelated(body, opts)
 **AuditRealtimeRelatedResultsResponse**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_
