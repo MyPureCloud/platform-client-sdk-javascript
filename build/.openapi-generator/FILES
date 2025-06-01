@@ -1006,6 +1006,9 @@ docs/getIntegrationsActionsCertificates-example.txt
 docs/getIntegrationsActionsCertificatesTruststore-example.txt
 docs/getIntegrationsActionsDrafts-example.txt
 docs/getIntegrationsActionsFunctionsRuntimes-example.txt
+docs/getIntegrationsBotconnectorBot-example.txt
+docs/getIntegrationsBotconnectorBots-example.txt
+docs/getIntegrationsBotconnectorBotsSummaries-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBot-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBotVersions-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBots-example.txt
@@ -1512,6 +1515,7 @@ docs/getSpeechandtextanalyticsTopicsDialects-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneral-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneralStatus-example.txt
 docs/getSpeechandtextanalyticsTopicsPublishjob-example.txt
+docs/getSpeechandtextanalyticsTopicsTestphraseJob-example.txt
 docs/getSpeechandtextanalyticsTranslationsLanguageConversation-example.txt
 docs/getSpeechandtextanalyticsTranslationsLanguages-example.txt
 docs/getStation-example.txt
@@ -2258,6 +2262,7 @@ docs/postConversationsKeyconfigurationsValidate-example.txt
 docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
 docs/postConversationsMessageCommunicationMessagesMediaUploads-example.txt
+docs/postConversationsMessageCommunicationSocialmediaMessages-example.txt
 docs/postConversationsMessageCommunicationTyping-example.txt
 docs/postConversationsMessageInboundOpenEvent-example.txt
 docs/postConversationsMessageInboundOpenMessage-example.txt
@@ -2394,6 +2399,8 @@ docs/postIntegrationsActionExecute-example.txt
 docs/postIntegrationsActionTest-example.txt
 docs/postIntegrationsActions-example.txt
 docs/postIntegrationsActionsDrafts-example.txt
+docs/postIntegrationsBotconnectorsIncomingMessages-example.txt
+docs/postIntegrationsBotconnectorsOutgoingMessages-example.txt
 docs/postIntegrationsCredentials-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs-example.txt
@@ -2622,6 +2629,8 @@ docs/postSocialmediaEscalationrules-example.txt
 docs/postSocialmediaEscalationsMessages-example.txt
 docs/postSocialmediaTopicDataingestionrulesFacebook-example.txt
 docs/postSocialmediaTopicDataingestionrulesOpen-example.txt
+docs/postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk-example.txt
+docs/postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk-example.txt
 docs/postSocialmediaTopicDataingestionrulesTwitter-example.txt
 docs/postSocialmediaTopics-example.txt
 docs/postSocialmediaTwitterHistoricalTweets-example.txt
@@ -2633,6 +2642,7 @@ docs/postSpeechandtextanalyticsProgramsPublishjobs-example.txt
 docs/postSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/postSpeechandtextanalyticsTopics-example.txt
 docs/postSpeechandtextanalyticsTopicsPublishjobs-example.txt
+docs/postSpeechandtextanalyticsTopicsTestphraseJobs-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
 docs/postTaskmanagementWorkbins-example.txt

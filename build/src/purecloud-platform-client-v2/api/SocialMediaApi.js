@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -141,7 +141,6 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
-	 * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -542,7 +541,6 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -578,7 +576,6 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
-	 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, openId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -619,7 +616,6 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, openId, opts) { 
 		opts = opts || {};
@@ -853,7 +849,6 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -1053,7 +1048,6 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postSocialmediaTopicDataingestionrulesOpen(topicId, opts) { 
 		opts = opts || {};
@@ -1071,6 +1065,76 @@ class SocialMediaApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Ingest a list of Open Social Messages
+	 * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+	 * @param {String} topicId Topic ID
+	 * @param {String} ruleId Data Ingestion Rule ID
+	 * @param {Array.<Object>} body NormalizedMessage
+	 */
+	postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body) { 
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null) {
+			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk', 
+			'POST', 
+			{ 'topicId': topicId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Ingest a list of Open Social Reactions
+	 * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+	 * @param {String} topicId Topic ID
+	 * @param {String} ruleId Data Ingestion Rule ID
+	 * @param {Object} body NormalizedEvent
+	 */
+	postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body) { 
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null) {
+			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk', 
+			'POST', 
+			{ 'topicId': topicId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1225,7 +1289,6 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};

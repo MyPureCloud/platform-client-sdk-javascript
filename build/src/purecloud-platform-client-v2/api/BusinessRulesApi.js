@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -278,7 +278,7 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
@@ -309,7 +309,7 @@ class BusinessRulesApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
@@ -335,9 +335,8 @@ class BusinessRulesApi {
 	 * Search for decision tables.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {String} opts.schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
 	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
 	 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -350,7 +349,7 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables/search', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 

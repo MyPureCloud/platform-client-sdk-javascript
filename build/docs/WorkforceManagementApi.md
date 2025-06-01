@@ -7297,7 +7297,7 @@ apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanati
 
 ## patchWorkforcemanagementAlternativeshiftsTrade
 
-> AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(tradeId, opts)
+> AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
 
 
 PATCH /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}
@@ -7322,11 +7322,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, opts)
+apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7342,7 +7340,7 @@ apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **tradeId** | **String** | The ID of the alternative shift trade |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7401,7 +7399,7 @@ apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
 
 ## patchWorkforcemanagementBusinessunit
 
-> BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, opts)
+> BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -7426,11 +7424,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
+apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7446,7 +7442,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7455,7 +7451,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 ## patchWorkforcemanagementBusinessunitActivitycode
 
-> BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
+> BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -7481,11 +7477,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7502,7 +7496,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, act
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7567,7 +7561,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, act
 
 ## patchWorkforcemanagementBusinessunitAlternativeshiftsSettings
 
-> AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts)
+> AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings
@@ -7592,11 +7586,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7612,7 +7604,7 @@ apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(busine
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7621,7 +7613,7 @@ apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(busine
 
 ## patchWorkforcemanagementBusinessunitPlanninggroup
 
-> PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
+> PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -7647,11 +7639,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let planningGroupId = "planningGroupId_example"; // String | The ID of a planning group to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitPlanninggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7668,7 +7658,7 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7677,7 +7667,7 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
 
 ## patchWorkforcemanagementBusinessunitSchedulingRun
 
-> void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
+> void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -7703,11 +7693,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let runId = "runId_example"; // String | The ID of the schedule run
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
   .then(() => {
     console.log('patchWorkforcemanagementBusinessunitSchedulingRun returned successfully.');
   })
@@ -7724,7 +7712,7 @@ apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, ru
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7733,7 +7721,7 @@ void (no response body)
 
 ## patchWorkforcemanagementBusinessunitServicegoaltemplate
 
-> ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
+> ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
@@ -7759,11 +7747,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of a service goal template to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitServicegoaltemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7780,7 +7766,7 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of a service goal template to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7789,7 +7775,7 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 
 ## patchWorkforcemanagementBusinessunitStaffinggroup
 
-> StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
+> StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
@@ -7815,11 +7801,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7836,7 +7820,7 @@ apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, st
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **staffingGroupId** | **String** | The ID of the staffing group to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7845,7 +7829,7 @@ apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, st
 
 ## patchWorkforcemanagementBusinessunitTimeoffplan
 
-> BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
+> BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
@@ -7871,11 +7855,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7892,7 +7874,7 @@ apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, time
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffPlanId** | **String** | The ID of the time-off plan to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -7955,7 +7937,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidI
 
 ## patchWorkforcemanagementBusinessunitWorkplanbidGroup
 
-> WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts)
+> WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
@@ -7982,11 +7964,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitWorkplanbidGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8004,7 +7984,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | Work Plan Bid Group id |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8013,7 +7993,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,
 
 ## patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences
 
-> AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)
+> AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences
@@ -8040,11 +8020,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8062,7 +8040,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(busi
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | The ID of the work plan bid group |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8071,7 +8049,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(busi
 
 ## patchWorkforcemanagementManagementunit
 
-> ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, opts)
+> ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}
@@ -8096,11 +8074,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
+apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8116,7 +8092,7 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8125,7 +8101,7 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
 
 ## patchWorkforcemanagementManagementunitAgents
 
-> void patchWorkforcemanagementManagementunitAgents(managementUnitId, opts)
+> void patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents
@@ -8150,11 +8126,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, opts)
+apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
   .then(() => {
     console.log('patchWorkforcemanagementManagementunitAgents returned successfully.');
   })
@@ -8170,7 +8144,7 @@ apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8179,7 +8153,7 @@ void (no response body)
 
 ## patchWorkforcemanagementManagementunitAgentsWorkplansBulk
 
-> UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, opts)
+> UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk
@@ -8204,11 +8178,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, opts)
+apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitAgentsWorkplansBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8224,7 +8196,7 @@ apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8233,7 +8205,7 @@ apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(management
 
 ## patchWorkforcemanagementManagementunitTimeofflimit
 
-> TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
+> TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -8261,11 +8233,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The id of time off limit object to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
+apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8282,7 +8252,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The id of time off limit object to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8291,7 +8261,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 
 ## patchWorkforcemanagementManagementunitTimeoffplan
 
-> TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
+> TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -8317,11 +8287,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
+apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8338,7 +8306,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8347,7 +8315,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
 
 ## patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus
 
-> UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, opts)
+> UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus
@@ -8374,11 +8342,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request.
 let userId = "userId_example"; // String | The ID of user to whom the time off request belongs.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, opts)
+apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8396,7 +8362,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrations
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffRequestId** | **String** | The ID of the time off request. |  |
  **userId** | **String** | The ID of user to whom the time off request belongs. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8405,7 +8371,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrations
 
 ## patchWorkforcemanagementManagementunitUserTimeoffrequest
 
-> TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
+> TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
@@ -8432,11 +8398,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 let timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
+apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8454,7 +8418,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The id of the user the requested time off request belongs to |  |
  **timeOffRequestId** | **String** | The id of the time off request to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8519,7 +8483,7 @@ apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitI
 
 ## patchWorkforcemanagementManagementunitWorkplan
 
-> WorkPlan patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
+> WorkPlan patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
@@ -8545,12 +8509,12 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
+let body = {}; // Object | body
 let opts = { 
-  'validationMode': "validationMode_example", // String | Allows to update work plan even if validation result is invalid
-  'body': {} // Object | body
+  'validationMode': "validationMode_example" // String | Allows to update work plan even if validation result is invalid
 };
 
-apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
+apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWorkplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8567,8 +8531,8 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to update |  |
+ **body** | **Object** | body |  |
  **validationMode** | **String** | Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -8577,7 +8541,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
 
 ## patchWorkforcemanagementManagementunitWorkplanrotation
 
-> WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
+> WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -8603,11 +8567,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
+apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWorkplanrotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8624,7 +8586,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to update |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8633,7 +8595,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
 
 ## patchWorkforcemanagementTimeoffrequest
 
-> TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+> TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
 
 
 PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
@@ -8658,11 +8620,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8678,7 +8638,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8687,7 +8647,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 ## patchWorkforcemanagementUserWorkplanbidranks
 
-> WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(userId, opts)
+> WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(userId, body)
 
 
 PATCH /api/v2/workforcemanagement/users/{userId}/workplanbidranks
@@ -8712,11 +8672,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, opts)
+apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementUserWorkplanbidranks success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8732,7 +8690,7 @@ apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The userId to whom the work plan bid ranks apply. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -8791,7 +8749,7 @@ apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
 
 ## patchWorkforcemanagementWorkplanbidPreferences
 
-> AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(bidId, opts)
+> AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
 
 
 PATCH /api/v2/workforcemanagement/workplanbids/{bidId}/preferences
@@ -8816,11 +8774,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let bidId = "bidId_example"; // String | The ID of the work plan bid
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, opts)
+apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementWorkplanbidPreferences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8836,7 +8792,7 @@ apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bidId** | **String** | The ID of the work plan bid |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9006,7 +8962,7 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 
 ## postWorkforcemanagementAdherenceHistoricalBulk
 
-> WfmHistoricalAdherenceBulkResponse postWorkforcemanagementAdherenceHistoricalBulk(opts)
+> WfmHistoricalAdherenceBulkResponse postWorkforcemanagementAdherenceHistoricalBulk(body)
 
 
 POST /api/v2/workforcemanagement/adherence/historical/bulk
@@ -9030,11 +8986,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(opts)
+apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAdherenceHistoricalBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9049,7 +9003,7 @@ apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9168,7 +9122,7 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body
 
 ## postWorkforcemanagementAgents
 
-> MoveAgentsResponse postWorkforcemanagementAgents(opts)
+> MoveAgentsResponse postWorkforcemanagementAgents(body)
 
 
 POST /api/v2/workforcemanagement/agents
@@ -9192,11 +9146,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAgents(opts)
+apiInstance.postWorkforcemanagementAgents(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAgents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9211,7 +9163,7 @@ apiInstance.postWorkforcemanagementAgents(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9220,7 +9172,7 @@ apiInstance.postWorkforcemanagementAgents(opts)
 
 ## postWorkforcemanagementAgentsIntegrationsHrisQuery
 
-> AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(opts)
+> AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
 
 
 POST /api/v2/workforcemanagement/agents/integrations/hris/query
@@ -9244,11 +9196,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(opts)
+apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentsIntegrationsHrisQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9263,7 +9213,7 @@ apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9322,7 +9272,7 @@ apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body)
 
 ## postWorkforcemanagementAgentschedulesMine
 
-> BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(opts)
+> BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(body)
 
 
 POST /api/v2/workforcemanagement/agentschedules/mine
@@ -9346,11 +9296,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAgentschedulesMine(opts)
+apiInstance.postWorkforcemanagementAgentschedulesMine(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentschedulesMine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9365,7 +9313,7 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9524,7 +9472,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body)
 
 ## postWorkforcemanagementBusinessunitActivitycodes
 
-> BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
+> BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
@@ -9549,11 +9497,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9569,7 +9515,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9742,7 +9688,7 @@ apiInstance.postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(busine
 
 ## postWorkforcemanagementBusinessunitAgentschedulesSearch
 
-> BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts)
+> BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search
@@ -9768,13 +9714,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitAgentschedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9790,9 +9736,9 @@ apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnit
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -9857,7 +9803,7 @@ apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(bus
 
 ## postWorkforcemanagementBusinessunitIntraday
 
-> AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
+> AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday
@@ -9882,12 +9828,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
 let opts = { 
-  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-  'body': {} // Object | body
+  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitIntraday success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9903,8 +9849,8 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -9913,7 +9859,7 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
 
 ## postWorkforcemanagementBusinessunitPlanninggroups
 
-> PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
+> PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
@@ -9938,11 +9884,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9958,7 +9902,7 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -9967,7 +9911,7 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, op
 
 ## postWorkforcemanagementBusinessunitServicegoaltemplates
 
-> ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
+> ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
@@ -9992,11 +9936,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitServicegoaltemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10012,7 +9954,7 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10021,7 +9963,7 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 
 ## postWorkforcemanagementBusinessunitStaffinggroups
 
-> StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+> StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
@@ -10046,11 +9988,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitStaffinggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10066,7 +10006,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10075,7 +10015,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, op
 
 ## postWorkforcemanagementBusinessunitStaffinggroupsQuery
 
-> UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, opts)
+> UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query
@@ -10100,11 +10040,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitStaffinggroupsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10120,7 +10058,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10129,7 +10067,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitI
 
 ## postWorkforcemanagementBusinessunitTimeofflimits
 
-> BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+> BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
@@ -10154,11 +10092,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10174,7 +10110,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10183,7 +10119,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opt
 
 ## postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery
 
-> BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, opts)
+> BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
@@ -10208,11 +10144,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10228,7 +10162,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(business
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10237,7 +10171,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(business
 
 ## postWorkforcemanagementBusinessunitTimeoffplans
 
-> BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+> BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
@@ -10262,11 +10196,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10282,7 +10214,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10410,7 +10342,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, 
 
 ## postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations
 
-> PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, opts)
+> PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations
@@ -10437,11 +10369,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, opts)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10459,7 +10389,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
  **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
  **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -10468,7 +10398,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
 
 ## postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl
 
-> PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, opts)
+> PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl
@@ -10495,11 +10425,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, opts)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10517,7 +10445,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
  **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
  **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11204,7 +11132,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, b
 
 ## postWorkforcemanagementBusinessunitWorkplanbidGroups
 
-> WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, opts)
+> WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups
@@ -11230,11 +11158,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, opts)
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWorkplanbidGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11251,7 +11177,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11260,7 +11186,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,
 
 ## postWorkforcemanagementBusinessunitWorkplanbids
 
-> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts)
+> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids
@@ -11285,11 +11211,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let opts = { 
-  'body': {} // Object | The work plan bid to be created
-};
+let body = {}; // Object | The work plan bid to be created
 
-apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11305,7 +11229,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | The work plan bid to be created | [optional]  |
+ **body** | **Object** | The work plan bid to be created |  |
 
 ### Return type
 
@@ -11314,7 +11238,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts
 
 ## postWorkforcemanagementBusinessunits
 
-> BusinessUnitResponse postWorkforcemanagementBusinessunits(opts)
+> BusinessUnitResponse postWorkforcemanagementBusinessunits(body)
 
 
 POST /api/v2/workforcemanagement/businessunits
@@ -11340,11 +11264,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunits(opts)
+apiInstance.postWorkforcemanagementBusinessunits(body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11359,7 +11281,7 @@ apiInstance.postWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11421,7 +11343,7 @@ apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
 
 ## postWorkforcemanagementHistoricaldataBulkRemoveJobs
 
-> HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(opts)
+> HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
 
 
 POST /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
@@ -11445,11 +11367,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(opts)
+apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
   .then((data) => {
     console.log(`postWorkforcemanagementHistoricaldataBulkRemoveJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11464,7 +11384,7 @@ apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11523,7 +11443,7 @@ This endpoint does not need any parameter.
 
 ## postWorkforcemanagementHistoricaldataValidate
 
-> ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(opts)
+> ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(body)
 
 
 POST /api/v2/workforcemanagement/historicaldata/validate
@@ -11547,11 +11467,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementHistoricaldataValidate(opts)
+apiInstance.postWorkforcemanagementHistoricaldataValidate(body)
   .then((data) => {
     console.log(`postWorkforcemanagementHistoricaldataValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11566,7 +11484,7 @@ apiInstance.postWorkforcemanagementHistoricaldataValidate(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11625,7 +11543,7 @@ apiInstance.postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrati
 
 ## postWorkforcemanagementManagementunitAgentsWorkplansQuery
 
-> AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, opts)
+> AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query
@@ -11650,12 +11568,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
-  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitAgentsWorkplansQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11671,8 +11589,8 @@ apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -11681,7 +11599,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(management
 
 ## postWorkforcemanagementManagementunitAgentschedulesSearch
 
-> BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
+> BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search
@@ -11707,13 +11625,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitAgentschedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11729,9 +11647,9 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -11740,7 +11658,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 
 ## postWorkforcemanagementManagementunitHistoricaladherencequery
 
-> WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
+> WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery
@@ -11767,11 +11685,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitHistoricaladherencequery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11787,7 +11703,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11796,7 +11712,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 
 ## postWorkforcemanagementManagementunitMove
 
-> MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, opts)
+> MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move
@@ -11823,11 +11739,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitMove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11843,7 +11757,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11852,7 +11766,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 
 ## postWorkforcemanagementManagementunitSchedulesSearch
 
-> UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
+> UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -11881,11 +11795,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11901,7 +11813,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11910,7 +11822,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 
 ## postWorkforcemanagementManagementunitShrinkageJobs
 
-> WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts)
+> WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs
@@ -11937,11 +11849,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11957,7 +11867,7 @@ apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -11966,7 +11876,7 @@ apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,
 
 ## postWorkforcemanagementManagementunitTimeofflimits
 
-> TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
+> TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
@@ -11993,11 +11903,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12013,7 +11921,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12022,7 +11930,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 
 ## postWorkforcemanagementManagementunitTimeofflimitsValuesQuery
 
-> QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts)
+> QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query
@@ -12047,11 +11955,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12067,7 +11973,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12076,7 +11982,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 
 ## postWorkforcemanagementManagementunitTimeoffplans
 
-> TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
+> TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
@@ -12101,11 +12007,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12121,7 +12025,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12130,7 +12034,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 
 ## postWorkforcemanagementManagementunitTimeoffrequests
 
-> TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
+> TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests
@@ -12155,11 +12059,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12175,7 +12077,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12184,7 +12086,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 
 ## postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery
 
-> UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, opts)
+> UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query
@@ -12209,11 +12111,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12229,7 +12129,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatu
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12238,7 +12138,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatu
 
 ## postWorkforcemanagementManagementunitTimeoffrequestsQuery
 
-> TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
+> TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query
@@ -12265,12 +12165,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
-  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12286,8 +12186,8 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -12296,7 +12196,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 
 ## postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery
 
-> WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts)
+> WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query
@@ -12321,11 +12221,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12341,7 +12239,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistposition
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12458,7 +12356,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanc
 
 ## postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate
 
-> EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, opts)
+> EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate
@@ -12484,11 +12382,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let userId = "userId_example"; // String | The id of the user for whom the time off request estimate is requested
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, opts)
+apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12505,7 +12401,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(man
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **userId** | **String** | The id of the user for whom the time off request estimate is requested |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12743,7 +12639,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
 
 ## postWorkforcemanagementManagementunitWorkplanCopy
 
-> WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts)
+> WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy
@@ -12769,11 +12665,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to create a copy
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12790,7 +12684,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to create a copy |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12799,7 +12693,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
 
 ## postWorkforcemanagementManagementunitWorkplanValidate
 
-> ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
+> ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate
@@ -12826,12 +12720,12 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+let body = {}; // Object | body
 let opts = { 
-  'expand': ["expand_example"], // [String] | 
-  'body': {} // Object | body
+  'expand': ["expand_example"] // [String] | 
 };
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12848,8 +12742,8 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. |  |
+ **body** | **Object** | body |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: messages |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -12858,7 +12752,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
 
 ## postWorkforcemanagementManagementunitWorkplanrotationCopy
 
-> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts)
+> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy
@@ -12884,11 +12778,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to create a copy
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanrotationCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12905,7 +12797,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to create a copy |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12914,7 +12806,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
 
 ## postWorkforcemanagementManagementunitWorkplanrotations
 
-> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
+> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations
@@ -12939,11 +12831,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanrotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12959,7 +12849,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUni
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -12968,7 +12858,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUni
 
 ## postWorkforcemanagementManagementunitWorkplans
 
-> WorkPlan postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
+> WorkPlan postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans
@@ -12993,12 +12883,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
-  'validationMode': "validationMode_example", // String | Allows to create work plan even if the validation result is invalid
-  'body': {} // Object | body
+  'validationMode': "validationMode_example" // String | Allows to create work plan even if the validation result is invalid
 };
 
-apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13014,8 +12904,8 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
  **validationMode** | **String** | Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
- **body** | **Object** | body | [optional]  |
 
 ### Return type
 
@@ -13024,7 +12914,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opt
 
 ## postWorkforcemanagementManagementunits
 
-> ManagementUnit postWorkforcemanagementManagementunits(opts)
+> ManagementUnit postWorkforcemanagementManagementunits(body)
 
 
 POST /api/v2/workforcemanagement/managementunits
@@ -13050,11 +12940,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunits(opts)
+apiInstance.postWorkforcemanagementManagementunits(body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13069,7 +12957,7 @@ apiInstance.postWorkforcemanagementManagementunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13078,7 +12966,7 @@ apiInstance.postWorkforcemanagementManagementunits(opts)
 
 ## postWorkforcemanagementNotificationsUpdate
 
-> UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(opts)
+> UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(body)
 
 
 POST /api/v2/workforcemanagement/notifications/update
@@ -13100,11 +12988,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
+apiInstance.postWorkforcemanagementNotificationsUpdate(body)
   .then((data) => {
     console.log(`postWorkforcemanagementNotificationsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13119,7 +13005,7 @@ apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13183,7 +13069,7 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 
 ## postWorkforcemanagementTeamAdherenceHistorical
 
-> WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
+> WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
 
 
 POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical
@@ -13210,11 +13096,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
+apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementTeamAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13230,7 +13114,7 @@ apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13239,7 +13123,7 @@ apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
 
 ## postWorkforcemanagementTeamShrinkageJobs
 
-> WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
+> WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, body)
 
 
 POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs
@@ -13266,11 +13150,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
+apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementTeamShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13286,7 +13168,7 @@ apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13345,7 +13227,7 @@ apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body)
 
 ## postWorkforcemanagementTimeofflimitsAvailableQuery
 
-> AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
+> AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(body)
 
 
 POST /api/v2/workforcemanagement/timeofflimits/available/query
@@ -13369,11 +13251,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
+apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeofflimitsAvailableQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13388,7 +13268,7 @@ apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13397,7 +13277,7 @@ apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
 
 ## postWorkforcemanagementTimeoffrequests
 
-> TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(opts)
+> TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(body)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests
@@ -13421,11 +13301,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeoffrequests(opts)
+apiInstance.postWorkforcemanagementTimeoffrequests(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13440,7 +13318,7 @@ apiInstance.postWorkforcemanagementTimeoffrequests(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13449,7 +13327,7 @@ apiInstance.postWorkforcemanagementTimeoffrequests(opts)
 
 ## postWorkforcemanagementTimeoffrequestsEstimate
 
-> EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(opts)
+> EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(body)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests/estimate
@@ -13473,11 +13351,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(opts)
+apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequestsEstimate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13492,7 +13368,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13501,7 +13377,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(opts)
 
 ## postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery
 
-> TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts)
+> TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query
@@ -13525,11 +13401,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts)
+apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13544,7 +13418,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13605,7 +13479,7 @@ apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body)
 
 ## putWorkforcemanagementBusinessunitTimeofflimitValues
 
-> BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, opts)
+> BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
 
 
 PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
@@ -13633,11 +13507,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set values for
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, opts)
+apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
   .then((data) => {
     console.log(`putWorkforcemanagementBusinessunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13654,7 +13526,7 @@ apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffLimitId** | **String** | The ID of the time-off limit object to set values for |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
@@ -13663,7 +13535,7 @@ apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,
 
 ## putWorkforcemanagementManagementunitTimeofflimitValues
 
-> TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts)
+> TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
 
 
 PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values
@@ -13691,11 +13563,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to set values for
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts)
+apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
   .then((data) => {
     console.log(`putWorkforcemanagementManagementunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13712,11 +13582,11 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to set values for |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

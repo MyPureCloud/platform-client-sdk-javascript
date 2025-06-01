@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -208,6 +208,7 @@ class AgentAssistantsApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Return the assistant by the given name.
+	 * @param {Object} opts.expand Which fields, if any, to expand
 	 */
 	getAssistants(opts) { 
 		opts = opts || {};
@@ -217,7 +218,7 @@ class AgentAssistantsApi {
 			'/api/v2/assistants', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

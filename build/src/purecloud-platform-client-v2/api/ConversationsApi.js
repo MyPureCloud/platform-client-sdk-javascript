@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -6311,6 +6311,41 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a social media message
+	 * Send a social media message on existing conversation/communication.
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body Message
+	 */
+	postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageCommunicationSocialmediaMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages', 
 			'POST', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
 			{  },

@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -900,6 +900,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get a Speech and Text Analytics test topics phrase job by id
+	 * 
+	 * @param {String} jobId the id of the test topic phrase job
+	 */
+	getSpeechandtextanalyticsTopicsTestphraseJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsTestphraseJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Translate a single interaction recording (or an email conversation)
 	 * 
 	 * @param {String} languageId Target translation language
@@ -1167,6 +1192,31 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/publishjobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create new Speech and Text Analytics publish topics job
+	 * 
+	 * @param {Object} body The publish test topic phrase job to create
+	 */
+	postSpeechandtextanalyticsTopicsTestphraseJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsTestphraseJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/testphrase/jobs', 
 			'POST', 
 			{  },
 			{  },

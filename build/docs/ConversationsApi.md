@@ -217,6 +217,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageCommunicationMessages**](ConversationsApi#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
 [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
 [**postConversationsMessageCommunicationMessagesMediaUploads**](ConversationsApi#postConversationsMessageCommunicationMessagesMediaUploads) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads | Create a URL to upload a message media file
+[**postConversationsMessageCommunicationSocialmediaMessages**](ConversationsApi#postConversationsMessageCommunicationSocialmediaMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages | Send a social media message
 [**postConversationsMessageCommunicationTyping**](ConversationsApi#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
 [**postConversationsMessageInboundOpenEvent**](ConversationsApi#postConversationsMessageInboundOpenEvent) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message
 [**postConversationsMessageInboundOpenMessage**](ConversationsApi#postConversationsMessageInboundOpenMessage) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message
@@ -6376,6 +6377,7 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example Usage
 
@@ -6912,6 +6914,7 @@ This endpoint is deprecated. Please see the article https://help.mypurecloud.com
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example Usage
 
@@ -7144,6 +7147,7 @@ This endpoint is deprecated. Please see the article https://help.mypurecloud.com
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example Usage
 
@@ -7426,6 +7430,7 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example Usage
 
@@ -7692,6 +7697,7 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example Usage
 
@@ -11443,6 +11449,62 @@ apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversati
 **MessageMediaUploadData**
 
 
+## postConversationsMessageCommunicationSocialmediaMessages
+
+> SocialMediaMessageData postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages
+
+Send a social media message
+
+Send a social media message on existing conversation/communication.
+
+Requires ANY permissions:
+
+* conversation:socialmedia:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Message
+
+apiInstance.postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageCommunicationSocialmediaMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationSocialmediaMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Message |  |
+
+### Return type
+
+**SocialMediaMessageData**
+
+
 ## postConversationsMessageCommunicationTyping
 
 > void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
@@ -14012,4 +14074,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

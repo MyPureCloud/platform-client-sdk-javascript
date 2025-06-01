@@ -118,7 +118,7 @@ apiInstance.getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
 
 ## getDiagnosticsLogcaptureBrowserUser
 
-> LogCaptureUserConfiguration getDiagnosticsLogcaptureBrowserUser(userId)
+> LogCaptureUserConfigurationResponse getDiagnosticsLogcaptureBrowserUser(userId)
 
 
 GET /api/v2/diagnostics/logcapture/browser/users/{userId}
@@ -163,12 +163,12 @@ apiInstance.getDiagnosticsLogcaptureBrowserUser(userId)
 
 ### Return type
 
-**LogCaptureUserConfiguration**
+**LogCaptureUserConfigurationResponse**
 
 
 ## getDiagnosticsLogcaptureBrowserUsers
 
-> PagelessEntityListing getDiagnosticsLogcaptureBrowserUsers(opts)
+> LogCaptureUserConfigurationListing getDiagnosticsLogcaptureBrowserUsers(opts)
 
 
 GET /api/v2/diagnostics/logcapture/browser/users
@@ -215,7 +215,7 @@ apiInstance.getDiagnosticsLogcaptureBrowserUsers(opts)
 
 ### Return type
 
-**PagelessEntityListing**
+**LogCaptureUserConfigurationListing**
 
 
 ## postDiagnosticsLogcaptureBrowserEntriesDownloadJobs
@@ -297,7 +297,6 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LogCaptureApi();
 
 let opts = { 
-  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'body': {} // Object | 
@@ -318,7 +317,6 @@ apiInstance.postDiagnosticsLogcaptureBrowserEntriesQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **body** | **Object** |  | [optional]  |
@@ -382,4 +380,4 @@ apiInstance.postDiagnosticsLogcaptureBrowserUser(userId, opts)
 **LogCaptureUserConfiguration**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

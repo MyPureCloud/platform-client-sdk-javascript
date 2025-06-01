@@ -5564,7 +5564,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 }).call(this)}).call(this,require("timers").setImmediate,require("timers").clearImmediate)
 },{"process/browser.js":43,"timers":53}],"platformClient":[function(require,module,exports){
 (function (global,Buffer,setImmediate){(function (){
-'use strict';function _callSuper(t,o,e){return o=_getPrototypeOf(o),_possibleConstructorReturn(t,_isNativeReflectConstruct()?Reflect.construct(o,e||[],_getPrototypeOf(t).constructor):o.apply(t,e));}function _possibleConstructorReturn(t,e){if(e&&("object"==_typeof(e)||"function"==typeof e))return e;if(void 0!==e)throw new TypeError("Derived constructors may only return object or undefined");return _assertThisInitialized(t);}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e;}function _isNativeReflectConstruct(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}));}catch(t){}return(_isNativeReflectConstruct=function _isNativeReflectConstruct(){return!!t;})();}function _getPrototypeOf(t){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t);},_getPrototypeOf(t);}function _inherits(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&_setPrototypeOf(t,e);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}function asyncGeneratorStep(n,t,e,r,o,a,c){try{var i=n[a](c),u=i.value;}catch(n){return void e(n);}i.done?t(u):Promise.resolve(u).then(r,o);}function _asyncToGenerator(n){return function(){var t=this,e=arguments;return new Promise(function(r,o){var a=n.apply(t,e);function _next(n){asyncGeneratorStep(a,r,o,_next,_throw,"next",n);}function _throw(n){asyncGeneratorStep(a,r,o,_next,_throw,"throw",n);}_next(void 0);});};}function _regeneratorRuntime(){"use strict";/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */_regeneratorRuntime=function _regeneratorRuntime(){return r;};var t,r={},e=Object.prototype,n=e.hasOwnProperty,o="function"==typeof Symbol?Symbol:{},i=o.iterator||"@@iterator",a=o.asyncIterator||"@@asyncIterator",u=o.toStringTag||"@@toStringTag";function c(t,r,e,n){return Object.defineProperty(t,r,{value:e,enumerable:!n,configurable:!n,writable:!n});}try{c({},"");}catch(t){c=function c(t,r,e){return t[r]=e;};}function h(r,e,n,o){var i=e&&e.prototype instanceof Generator?e:Generator,a=Object.create(i.prototype);return c(a,"_invoke",function(r,e,n){var o=1;return function(i,a){if(3===o)throw Error("Generator is already running");if(4===o){if("throw"===i)throw a;return{value:t,done:!0};}for(n.method=i,n.arg=a;;){var u=n.delegate;if(u){var c=d(u,n);if(c){if(c===f)continue;return c;}}if("next"===n.method)n.sent=n._sent=n.arg;else if("throw"===n.method){if(1===o)throw o=4,n.arg;n.dispatchException(n.arg);}else"return"===n.method&&n.abrupt("return",n.arg);o=3;var h=s(r,e,n);if("normal"===h.type){if(o=n.done?4:2,h.arg===f)continue;return{value:h.arg,done:n.done};}"throw"===h.type&&(o=4,n.method="throw",n.arg=h.arg);}};}(r,n,new Context(o||[])),!0),a;}function s(t,r,e){try{return{type:"normal",arg:t.call(r,e)};}catch(t){return{type:"throw",arg:t};}}r.wrap=h;var f={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var l={};c(l,i,function(){return this;});var p=Object.getPrototypeOf,y=p&&p(p(x([])));y&&y!==e&&n.call(y,i)&&(l=y);var v=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(l);function g(t){["next","throw","return"].forEach(function(r){c(t,r,function(t){return this._invoke(r,t);});});}function AsyncIterator(t,r){function e(o,i,a,u){var c=s(t[o],t,i);if("throw"!==c.type){var h=c.arg,f=h.value;return f&&"object"==_typeof(f)&&n.call(f,"__await")?r.resolve(f.__await).then(function(t){e("next",t,a,u);},function(t){e("throw",t,a,u);}):r.resolve(f).then(function(t){h.value=t,a(h);},function(t){return e("throw",t,a,u);});}u(c.arg);}var o;c(this,"_invoke",function(t,n){function i(){return new r(function(r,o){e(t,n,r,o);});}return o=o?o.then(i,i):i();},!0);}function d(r,e){var n=e.method,o=r.i[n];if(o===t)return e.delegate=null,"throw"===n&&r.i["return"]&&(e.method="return",e.arg=t,d(r,e),"throw"===e.method)||"return"!==n&&(e.method="throw",e.arg=new TypeError("The iterator does not provide a '"+n+"' method")),f;var i=s(o,r.i,e.arg);if("throw"===i.type)return e.method="throw",e.arg=i.arg,e.delegate=null,f;var a=i.arg;return a?a.done?(e[r.r]=a.value,e.next=r.n,"return"!==e.method&&(e.method="next",e.arg=t),e.delegate=null,f):a:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,f);}function w(t){this.tryEntries.push(t);}function m(r){var e=r[4]||{};e.type="normal",e.arg=t,r[4]=e;}function Context(t){this.tryEntries=[[-1]],t.forEach(w,this),this.reset(!0);}function x(r){if(null!=r){var e=r[i];if(e)return e.call(r);if("function"==typeof r.next)return r;if(!isNaN(r.length)){var o=-1,a=function e(){for(;++o<r.length;)if(n.call(r,o))return e.value=r[o],e.done=!1,e;return e.value=t,e.done=!0,e;};return a.next=a;}}throw new TypeError(_typeof(r)+" is not iterable");}return GeneratorFunction.prototype=GeneratorFunctionPrototype,c(v,"constructor",GeneratorFunctionPrototype),c(GeneratorFunctionPrototype,"constructor",GeneratorFunction),GeneratorFunction.displayName=c(GeneratorFunctionPrototype,u,"GeneratorFunction"),r.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name));},r.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,c(t,u,"GeneratorFunction")),t.prototype=Object.create(v),t;},r.awrap=function(t){return{__await:t};},g(AsyncIterator.prototype),c(AsyncIterator.prototype,a,function(){return this;}),r.AsyncIterator=AsyncIterator,r.async=function(t,e,n,o,i){void 0===i&&(i=Promise);var a=new AsyncIterator(h(t,e,n,o),i);return r.isGeneratorFunction(e)?a:a.next().then(function(t){return t.done?t.value:a.next();});},g(v),c(v,u,"Generator"),c(v,i,function(){return this;}),c(v,"toString",function(){return"[object Generator]";}),r.keys=function(t){var r=Object(t),e=[];for(var n in r)e.unshift(n);return function t(){for(;e.length;)if((n=e.pop())in r)return t.value=n,t.done=!1,t;return t.done=!0,t;};},r.values=x,Context.prototype={constructor:Context,reset:function reset(r){if(this.prev=this.next=0,this.sent=this._sent=t,this.done=!1,this.delegate=null,this.method="next",this.arg=t,this.tryEntries.forEach(m),!r)for(var e in this)"t"===e.charAt(0)&&n.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=t);},stop:function stop(){this.done=!0;var t=this.tryEntries[0][4];if("throw"===t.type)throw t.arg;return this.rval;},dispatchException:function dispatchException(r){if(this.done)throw r;var e=this;function n(t){a.type="throw",a.arg=r,e.next=t;}for(var o=e.tryEntries.length-1;o>=0;--o){var i=this.tryEntries[o],a=i[4],u=this.prev,c=i[1],h=i[2];if(-1===i[0])return n("end"),!1;if(!c&&!h)throw Error("try statement without catch or finally");if(null!=i[0]&&i[0]<=u){if(u<c)return this.method="next",this.arg=t,n(c),!0;if(u<h)return n(h),!1;}}},abrupt:function abrupt(t,r){for(var e=this.tryEntries.length-1;e>=0;--e){var n=this.tryEntries[e];if(n[0]>-1&&n[0]<=this.prev&&this.prev<n[2]){var o=n;break;}}o&&("break"===t||"continue"===t)&&o[0]<=r&&r<=o[2]&&(o=null);var i=o?o[4]:{};return i.type=t,i.arg=r,o?(this.method="next",this.next=o[2],f):this.complete(i);},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),f;},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e[2]===t)return this.complete(e[4],e[3]),m(e),f;}},"catch":function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e[0]===t){var n=e[4];if("throw"===n.type){var o=n.arg;m(e);}return o;}}throw Error("illegal catch attempt");},delegateYield:function delegateYield(r,e,n){return this.delegate={i:x(r),r:e,n:n},"next"===this.method&&(this.arg=t),f;}},r;}function _toArray(r){return _arrayWithHoles(r)||_iterableToArray(r)||_unsupportedIterableToArray(r)||_nonIterableRest();}function _toConsumableArray(r){return _arrayWithoutHoles(r)||_iterableToArray(r)||_unsupportedIterableToArray(r)||_nonIterableSpread();}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArray(r){if("undefined"!=typeof Symbol&&null!=r[Symbol.iterator]||null!=r["@@iterator"])return Array.from(r);}function _arrayWithoutHoles(r){if(Array.isArray(r))return _arrayLikeToArray(r);}function _createForOfIteratorHelper(r,e){var t="undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(!t){if(Array.isArray(r)||(t=_unsupportedIterableToArray(r))||e&&r&&"number"==typeof r.length){t&&(r=t);var _n=0,F=function F(){};return{s:F,n:function n(){return _n>=r.length?{done:!0}:{done:!1,value:r[_n++]};},e:function e(r){throw r;},f:F};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var o,a=!0,u=!1;return{s:function s(){t=t.call(r);},n:function n(){var r=t.next();return a=r.done,r;},e:function e(r){u=!0,o=r;},f:function f(){try{a||null==t["return"]||t["return"]();}finally{if(u)throw o;}}};}function ownKeys(e,r){var t=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);r&&(o=o.filter(function(r){return Object.getOwnPropertyDescriptor(e,r).enumerable;})),t.push.apply(t,o);}return t;}function _objectSpread(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{};r%2?ownKeys(Object(t),!0).forEach(function(r){_defineProperty(e,r,t[r]);}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)):ownKeys(Object(t)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(t,r));});}return e;}function _defineProperty(e,r,t){return(r=_toPropertyKey(r))in e?Object.defineProperty(e,r,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[r]=t,e;}function _classCallCheck(a,n){if(!(a instanceof n))throw new TypeError("Cannot call a class as a function");}function _defineProperties(e,r){for(var t=0;t<r.length;t++){var o=r[t];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,_toPropertyKey(o.key),o);}}function _createClass(e,r,t){return r&&_defineProperties(e.prototype,r),t&&_defineProperties(e,t),Object.defineProperty(e,"prototype",{writable:!1}),e;}function _toPropertyKey(t){var i=_toPrimitive(t,"string");return"symbol"==_typeof(i)?i:i+"";}function _toPrimitive(t,r){if("object"!=_typeof(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!=_typeof(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.");}return("string"===r?String:Number)(t);}function _slicedToArray(r,e){return _arrayWithHoles(r)||_iterableToArrayLimit(r,e)||_unsupportedIterableToArray(r,e)||_nonIterableRest();}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(r,a){if(r){if("string"==typeof r)return _arrayLikeToArray(r,a);var t={}.toString.call(r).slice(8,-1);return"Object"===t&&r.constructor&&(t=r.constructor.name),"Map"===t||"Set"===t?Array.from(r):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(r,a):void 0;}}function _arrayLikeToArray(r,a){(null==a||a>r.length)&&(a=r.length);for(var e=0,n=Array(a);e<a;e++)n[e]=r[e];return n;}function _iterableToArrayLimit(r,l){var t=null==r?null:"undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(null!=t){var e,n,i,u,a=[],f=!0,o=!1;try{if(i=(t=t.call(r)).next,0===l){if(Object(t)!==t)return;f=!1;}else for(;!(f=(e=i.call(t)).done)&&(a.push(e.value),a.length!==l);f=!0);}catch(r){o=!0,n=r;}finally{try{if(!f&&null!=t["return"]&&(u=t["return"](),Object(u)!==u))return;}finally{if(o)throw n;}}return a;}}function _arrayWithHoles(r){if(Array.isArray(r))return r;}function _typeof(o){"@babel/helpers - typeof";return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o;}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o;},_typeof(o);}function _wrapAsyncGenerator(e){return function(){return new AsyncGenerator(e.apply(this,arguments));};}function AsyncGenerator(e){var r,t;function resume(r,t){try{var n=e[r](t),o=n.value,u=o instanceof _OverloadYield;Promise.resolve(u?o.v:o).then(function(t){if(u){var i="return"===r?"return":"next";if(!o.k||t.done)return resume(i,t);t=e[i](t).value;}settle(n.done?"return":"normal",t);},function(e){resume("throw",e);});}catch(e){settle("throw",e);}}function settle(e,n){switch(e){case"return":r.resolve({value:n,done:!0});break;case"throw":r.reject(n);break;default:r.resolve({value:n,done:!1});}(r=r.next)?resume(r.key,r.arg):t=null;}this._invoke=function(e,n){return new Promise(function(o,u){var i={key:e,arg:n,resolve:o,reject:u,next:null};t?t=t.next=i:(r=t=i,resume(e,n));});},"function"!=typeof e["return"]&&(this["return"]=void 0);}AsyncGenerator.prototype["function"==typeof Symbol&&Symbol.asyncIterator||"@@asyncIterator"]=function(){return this;},AsyncGenerator.prototype.next=function(e){return this._invoke("next",e);},AsyncGenerator.prototype["throw"]=function(e){return this._invoke("throw",e);},AsyncGenerator.prototype["return"]=function(e){return this._invoke("return",e);};function _awaitAsyncGenerator(e){return new _OverloadYield(e,0);}function _asyncGeneratorDelegate(t){var e={},n=!1;function pump(e,r){return n=!0,r=new Promise(function(n){n(t[e](r));}),{done:!1,value:new _OverloadYield(r,1)};}return e["undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator"]=function(){return this;},e.next=function(t){return n?(n=!1,t):pump("next",t);},"function"==typeof t["throw"]&&(e["throw"]=function(t){if(n)throw n=!1,t;return pump("throw",t);}),"function"==typeof t["return"]&&(e["return"]=function(t){return n?(n=!1,t):pump("return",t);}),e;}function _OverloadYield(e,d){this.v=e,this.k=d;}function _asyncIterator(r){var n,t,o,e=2;for("undefined"!=typeof Symbol&&(t=Symbol.asyncIterator,o=Symbol.iterator);e--;){if(t&&null!=(n=r[t]))return n.call(r);if(o&&null!=(n=r[o]))return new AsyncFromSyncIterator(n.call(r));t="@@asyncIterator",o="@@iterator";}throw new TypeError("Object is not async iterable");}function AsyncFromSyncIterator(r){function AsyncFromSyncIteratorContinuation(r){if(Object(r)!==r)return Promise.reject(new TypeError(r+" is not an object."));var n=r.done;return Promise.resolve(r.value).then(function(r){return{value:r,done:n};});}return AsyncFromSyncIterator=function AsyncFromSyncIterator(r){this.s=r,this.n=r.next;},AsyncFromSyncIterator.prototype={s:null,n:null,next:function next(){return AsyncFromSyncIteratorContinuation(this.n.apply(this.s,arguments));},"return":function _return(r){var n=this.s["return"];return void 0===n?Promise.resolve({value:r,done:!0}):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));},"throw":function _throw(r){var n=this.s["return"];return void 0===n?Promise.reject(r):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));}},new AsyncFromSyncIterator(r);}var qs=require('qs');function _interopDefaultLegacy(e){return e&&_typeof(e)==='object'&&'default'in e?e:{'default':e};}var qs__default=/*#__PURE__*/_interopDefaultLegacy(qs);var PureCloudRegionHosts={us_east_1:'mypurecloud.com',eu_west_1:'mypurecloud.ie',ap_southeast_2:'mypurecloud.com.au',ap_northeast_1:'mypurecloud.jp',eu_central_1:'mypurecloud.de',us_west_2:'usw2.pure.cloud',ca_central_1:'cac1.pure.cloud',ap_northeast_2:'apne2.pure.cloud',eu_west_2:'euw2.pure.cloud',ap_south_1:'aps1.pure.cloud',us_east_2:'use2.us-gov-pure.cloud',sa_east_1:'sae1.pure.cloud',me_central_1:'mec1.pure.cloud',ap_northeast_3:'apne3.pure.cloud',eu_central_2:'euc2.pure.cloud'};var global$1=typeof global!=="undefined"?global:typeof self!=="undefined"?self:typeof window!=="undefined"?window:{};// shim for using process in browser
+'use strict';function _callSuper(t,o,e){return o=_getPrototypeOf(o),_possibleConstructorReturn(t,_isNativeReflectConstruct()?Reflect.construct(o,e||[],_getPrototypeOf(t).constructor):o.apply(t,e));}function _possibleConstructorReturn(t,e){if(e&&("object"==_typeof(e)||"function"==typeof e))return e;if(void 0!==e)throw new TypeError("Derived constructors may only return object or undefined");return _assertThisInitialized(t);}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e;}function _isNativeReflectConstruct(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}));}catch(t){}return(_isNativeReflectConstruct=function _isNativeReflectConstruct(){return!!t;})();}function _getPrototypeOf(t){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t);},_getPrototypeOf(t);}function _inherits(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&_setPrototypeOf(t,e);}function _setPrototypeOf(t,e){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t;},_setPrototypeOf(t,e);}function asyncGeneratorStep(n,t,e,r,o,a,c){try{var i=n[a](c),u=i.value;}catch(n){return void e(n);}i.done?t(u):Promise.resolve(u).then(r,o);}function _asyncToGenerator(n){return function(){var t=this,e=arguments;return new Promise(function(r,o){var a=n.apply(t,e);function _next(n){asyncGeneratorStep(a,r,o,_next,_throw,"next",n);}function _throw(n){asyncGeneratorStep(a,r,o,_next,_throw,"throw",n);}_next(void 0);});};}function _regeneratorValues(e){if(null!=e){var t=e["function"==typeof Symbol&&Symbol.iterator||"@@iterator"],r=0;if(t)return t.call(e);if("function"==typeof e.next)return e;if(!isNaN(e.length))return{next:function next(){return e&&r>=e.length&&(e=void 0),{value:e&&e[r++],done:!e};}};}throw new TypeError(_typeof(e)+" is not iterable");}function _regenerator(){/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */var e,t,r="function"==typeof Symbol?Symbol:{},n=r.iterator||"@@iterator",o=r.toStringTag||"@@toStringTag";function i(r,n,o,i){var c=n&&n.prototype instanceof Generator?n:Generator,u=Object.create(c.prototype);return _regeneratorDefine2(u,"_invoke",function(r,n,o){var i,c,u,f=0,p=o||[],y=!1,G={p:0,n:0,v:e,a:d,f:d.bind(e,4),d:function d(t,r){return i=t,c=0,u=e,G.n=r,a;}};function d(r,n){for(c=r,u=n,t=0;!y&&f&&!o&&t<p.length;t++){var o,i=p[t],d=G.p,l=i[2];r>3?(o=l===n)&&(c=i[4]||3,u=i[5]===e?i[3]:i[5],i[4]=3,i[5]=e):i[0]<=d&&((o=r<2&&d<i[1])?(c=0,G.v=n,G.n=i[1]):d<l&&(o=r<3||i[0]>n||n>l)&&(i[4]=r,i[5]=n,G.n=l,c=0));}if(o||r>1)return a;throw y=!0,n;}return function(o,p,l){if(f>1)throw TypeError("Generator is already running");for(y&&1===p&&d(p,l),c=p,u=l;(t=c<2?e:u)||!y;){i||(c?c<3?(c>1&&(G.n=-1),d(c,u)):G.n=u:G.v=u);try{if(f=2,i){if(c||(o="next"),t=i[o]){if(!(t=t.call(i,u)))throw TypeError("iterator result is not an object");if(!t.done)return t;u=t.value,c<2&&(c=0);}else 1===c&&(t=i["return"])&&t.call(i),c<2&&(u=TypeError("The iterator does not provide a '"+o+"' method"),c=1);i=e;}else if((t=(y=G.n<0)?u:r.call(n,G))!==a)break;}catch(t){i=e,c=1,u=t;}finally{f=1;}}return{value:t,done:y};};}(r,o,i),!0),u;}var a={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}t=Object.getPrototypeOf;var c=[][n]?t(t([][n]())):(_regeneratorDefine2(t={},n,function(){return this;}),t),u=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(c);function f(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,GeneratorFunctionPrototype):(e.__proto__=GeneratorFunctionPrototype,_regeneratorDefine2(e,o,"GeneratorFunction")),e.prototype=Object.create(u),e;}return GeneratorFunction.prototype=GeneratorFunctionPrototype,_regeneratorDefine2(u,"constructor",GeneratorFunctionPrototype),_regeneratorDefine2(GeneratorFunctionPrototype,"constructor",GeneratorFunction),GeneratorFunction.displayName="GeneratorFunction",_regeneratorDefine2(GeneratorFunctionPrototype,o,"GeneratorFunction"),_regeneratorDefine2(u),_regeneratorDefine2(u,o,"Generator"),_regeneratorDefine2(u,n,function(){return this;}),_regeneratorDefine2(u,"toString",function(){return"[object Generator]";}),(_regenerator=function _regenerator(){return{w:i,m:f};})();}function _regeneratorDefine2(e,r,n,t){var i=Object.defineProperty;try{i({},"",{});}catch(e){i=0;}_regeneratorDefine2=function _regeneratorDefine(e,r,n,t){if(r)i?i(e,r,{value:n,enumerable:!t,configurable:!t,writable:!t}):e[r]=n;else{var o=function o(r,n){_regeneratorDefine2(e,r,function(e){return this._invoke(r,n,e);});};o("next",0),o("throw",1),o("return",2);}},_regeneratorDefine2(e,r,n,t);}function _toArray(r){return _arrayWithHoles(r)||_iterableToArray(r)||_unsupportedIterableToArray(r)||_nonIterableRest();}function _toConsumableArray(r){return _arrayWithoutHoles(r)||_iterableToArray(r)||_unsupportedIterableToArray(r)||_nonIterableSpread();}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArray(r){if("undefined"!=typeof Symbol&&null!=r[Symbol.iterator]||null!=r["@@iterator"])return Array.from(r);}function _arrayWithoutHoles(r){if(Array.isArray(r))return _arrayLikeToArray(r);}function _createForOfIteratorHelper(r,e){var t="undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(!t){if(Array.isArray(r)||(t=_unsupportedIterableToArray(r))||e&&r&&"number"==typeof r.length){t&&(r=t);var _n=0,F=function F(){};return{s:F,n:function n(){return _n>=r.length?{done:!0}:{done:!1,value:r[_n++]};},e:function e(r){throw r;},f:F};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var o,a=!0,u=!1;return{s:function s(){t=t.call(r);},n:function n(){var r=t.next();return a=r.done,r;},e:function e(r){u=!0,o=r;},f:function f(){try{a||null==t["return"]||t["return"]();}finally{if(u)throw o;}}};}function ownKeys(e,r){var t=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);r&&(o=o.filter(function(r){return Object.getOwnPropertyDescriptor(e,r).enumerable;})),t.push.apply(t,o);}return t;}function _objectSpread(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{};r%2?ownKeys(Object(t),!0).forEach(function(r){_defineProperty(e,r,t[r]);}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)):ownKeys(Object(t)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(t,r));});}return e;}function _defineProperty(e,r,t){return(r=_toPropertyKey(r))in e?Object.defineProperty(e,r,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[r]=t,e;}function _classCallCheck(a,n){if(!(a instanceof n))throw new TypeError("Cannot call a class as a function");}function _defineProperties(e,r){for(var t=0;t<r.length;t++){var o=r[t];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,_toPropertyKey(o.key),o);}}function _createClass(e,r,t){return r&&_defineProperties(e.prototype,r),t&&_defineProperties(e,t),Object.defineProperty(e,"prototype",{writable:!1}),e;}function _toPropertyKey(t){var i=_toPrimitive(t,"string");return"symbol"==_typeof(i)?i:i+"";}function _toPrimitive(t,r){if("object"!=_typeof(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!=_typeof(i))return i;throw new TypeError("@@toPrimitive must return a primitive value.");}return("string"===r?String:Number)(t);}function _slicedToArray(r,e){return _arrayWithHoles(r)||_iterableToArrayLimit(r,e)||_unsupportedIterableToArray(r,e)||_nonIterableRest();}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(r,a){if(r){if("string"==typeof r)return _arrayLikeToArray(r,a);var t={}.toString.call(r).slice(8,-1);return"Object"===t&&r.constructor&&(t=r.constructor.name),"Map"===t||"Set"===t?Array.from(r):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(r,a):void 0;}}function _arrayLikeToArray(r,a){(null==a||a>r.length)&&(a=r.length);for(var e=0,n=Array(a);e<a;e++)n[e]=r[e];return n;}function _iterableToArrayLimit(r,l){var t=null==r?null:"undefined"!=typeof Symbol&&r[Symbol.iterator]||r["@@iterator"];if(null!=t){var e,n,i,u,a=[],f=!0,o=!1;try{if(i=(t=t.call(r)).next,0===l){if(Object(t)!==t)return;f=!1;}else for(;!(f=(e=i.call(t)).done)&&(a.push(e.value),a.length!==l);f=!0);}catch(r){o=!0,n=r;}finally{try{if(!f&&null!=t["return"]&&(u=t["return"](),Object(u)!==u))return;}finally{if(o)throw n;}}return a;}}function _arrayWithHoles(r){if(Array.isArray(r))return r;}function _typeof(o){"@babel/helpers - typeof";return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o;}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o;},_typeof(o);}function _wrapAsyncGenerator(e){return function(){return new AsyncGenerator(e.apply(this,arguments));};}function AsyncGenerator(e){var r,t;function resume(r,t){try{var n=e[r](t),o=n.value,u=o instanceof _OverloadYield;Promise.resolve(u?o.v:o).then(function(t){if(u){var i="return"===r?"return":"next";if(!o.k||t.done)return resume(i,t);t=e[i](t).value;}settle(n.done?"return":"normal",t);},function(e){resume("throw",e);});}catch(e){settle("throw",e);}}function settle(e,n){switch(e){case"return":r.resolve({value:n,done:!0});break;case"throw":r.reject(n);break;default:r.resolve({value:n,done:!1});}(r=r.next)?resume(r.key,r.arg):t=null;}this._invoke=function(e,n){return new Promise(function(o,u){var i={key:e,arg:n,resolve:o,reject:u,next:null};t?t=t.next=i:(r=t=i,resume(e,n));});},"function"!=typeof e["return"]&&(this["return"]=void 0);}AsyncGenerator.prototype["function"==typeof Symbol&&Symbol.asyncIterator||"@@asyncIterator"]=function(){return this;},AsyncGenerator.prototype.next=function(e){return this._invoke("next",e);},AsyncGenerator.prototype["throw"]=function(e){return this._invoke("throw",e);},AsyncGenerator.prototype["return"]=function(e){return this._invoke("return",e);};function _awaitAsyncGenerator(e){return new _OverloadYield(e,0);}function _asyncGeneratorDelegate(t){var e={},n=!1;function pump(e,r){return n=!0,r=new Promise(function(n){n(t[e](r));}),{done:!1,value:new _OverloadYield(r,1)};}return e["undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator"]=function(){return this;},e.next=function(t){return n?(n=!1,t):pump("next",t);},"function"==typeof t["throw"]&&(e["throw"]=function(t){if(n)throw n=!1,t;return pump("throw",t);}),"function"==typeof t["return"]&&(e["return"]=function(t){return n?(n=!1,t):pump("return",t);}),e;}function _OverloadYield(e,d){this.v=e,this.k=d;}function _asyncIterator(r){var n,t,o,e=2;for("undefined"!=typeof Symbol&&(t=Symbol.asyncIterator,o=Symbol.iterator);e--;){if(t&&null!=(n=r[t]))return n.call(r);if(o&&null!=(n=r[o]))return new AsyncFromSyncIterator(n.call(r));t="@@asyncIterator",o="@@iterator";}throw new TypeError("Object is not async iterable");}function AsyncFromSyncIterator(r){function AsyncFromSyncIteratorContinuation(r){if(Object(r)!==r)return Promise.reject(new TypeError(r+" is not an object."));var n=r.done;return Promise.resolve(r.value).then(function(r){return{value:r,done:n};});}return AsyncFromSyncIterator=function AsyncFromSyncIterator(r){this.s=r,this.n=r.next;},AsyncFromSyncIterator.prototype={s:null,n:null,next:function next(){return AsyncFromSyncIteratorContinuation(this.n.apply(this.s,arguments));},"return":function _return(r){var n=this.s["return"];return void 0===n?Promise.resolve({value:r,done:!0}):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));},"throw":function _throw(r){var n=this.s["return"];return void 0===n?Promise.reject(r):AsyncFromSyncIteratorContinuation(n.apply(this.s,arguments));}},new AsyncFromSyncIterator(r);}var qs=require('qs');function _interopDefaultLegacy(e){return e&&_typeof(e)==='object'&&'default'in e?e:{'default':e};}var qs__default=/*#__PURE__*/_interopDefaultLegacy(qs);var PureCloudRegionHosts={us_east_1:'mypurecloud.com',eu_west_1:'mypurecloud.ie',ap_southeast_2:'mypurecloud.com.au',ap_northeast_1:'mypurecloud.jp',eu_central_1:'mypurecloud.de',us_west_2:'usw2.pure.cloud',ca_central_1:'cac1.pure.cloud',ap_northeast_2:'apne2.pure.cloud',eu_west_2:'euw2.pure.cloud',ap_south_1:'aps1.pure.cloud',us_east_2:'use2.us-gov-pure.cloud',sa_east_1:'sae1.pure.cloud',me_central_1:'mec1.pure.cloud',ap_northeast_3:'apne3.pure.cloud',eu_central_2:'euc2.pure.cloud'};var global$1=typeof global!=="undefined"?global:typeof self!=="undefined"?self:typeof window!=="undefined"?window:{};// shim for using process in browser
 // based off https://github.com/defunctzombie/node-process/blob/master/browser.js
 function defaultSetTimout(){throw new Error('setTimeout has not been defined');}function defaultClearTimeout(){throw new Error('clearTimeout has not been defined');}var cachedSetTimeout=defaultSetTimout;var cachedClearTimeout=defaultClearTimeout;if(typeof global$1.setTimeout==='function'){cachedSetTimeout=setTimeout;}if(typeof global$1.clearTimeout==='function'){cachedClearTimeout=clearTimeout;}function runTimeout(fun){if(cachedSetTimeout===setTimeout){//normal enviroments in sane situations
 return setTimeout(fun,0);}// if setTimeout wasn't available but was latter defined
@@ -6297,10 +6297,10 @@ if(onDownloadProgress){var _progressEventReducer=progressEventReducer(onDownload
 if(onUploadProgress&&request.upload){var _progressEventReducer3=progressEventReducer(onUploadProgress);var _progressEventReducer4=_slicedToArray(_progressEventReducer3,2);uploadThrottled=_progressEventReducer4[0];flushUpload=_progressEventReducer4[1];request.upload.addEventListener('progress',uploadThrottled);request.upload.addEventListener('loadend',flushUpload);}if(_config.cancelToken||_config.signal){// Handle cancellation
 // eslint-disable-next-line func-names
 onCanceled=function onCanceled(cancel){if(!request){return;}reject(!cancel||cancel.type?new CanceledError(null,config,request):cancel);request.abort();request=null;};_config.cancelToken&&_config.cancelToken.subscribe(onCanceled);if(_config.signal){_config.signal.aborted?onCanceled():_config.signal.addEventListener('abort',onCanceled);}}var protocol=parseProtocol(_config.url);if(protocol&&platform.protocols.indexOf(protocol)===-1){reject(new AxiosError('Unsupported protocol '+protocol+':',AxiosError.ERR_BAD_REQUEST,config));return;}// Send the request
-request.send(requestData||null);});};var composeSignals=function composeSignals(signals,timeout){var _signals=signals=signals?signals.filter(Boolean):[],length=_signals.length;if(timeout||length){var controller=new AbortController();var aborted;var onabort=function onabort(reason){if(!aborted){aborted=true;unsubscribe();var err=reason instanceof Error?reason:this.reason;controller.abort(err instanceof AxiosError?err:new CanceledError(err instanceof Error?err.message:err));}};var timer=timeout&&setTimeout(function(){timer=null;onabort(new AxiosError("timeout ".concat(timeout," of ms exceeded"),AxiosError.ETIMEDOUT));},timeout);var unsubscribe=function unsubscribe(){if(signals){timer&&clearTimeout(timer);timer=null;signals.forEach(function(signal){signal.unsubscribe?signal.unsubscribe(onabort):signal.removeEventListener('abort',onabort);});signals=null;}};signals.forEach(function(signal){return signal.addEventListener('abort',onabort);});var signal=controller.signal;signal.unsubscribe=function(){return utils$1.asap(unsubscribe);};return signal;}};var composeSignals$1=composeSignals;var streamChunk=/*#__PURE__*/_regeneratorRuntime().mark(function streamChunk(chunk,chunkSize){var len,pos,end;return _regeneratorRuntime().wrap(function streamChunk$(_context){while(1)switch(_context.prev=_context.next){case 0:len=chunk.byteLength;if(!(!chunkSize||len<chunkSize)){_context.next=5;break;}_context.next=4;return chunk;case 4:return _context.abrupt("return");case 5:pos=0;case 6:if(!(pos<len)){_context.next=13;break;}end=pos+chunkSize;_context.next=10;return chunk.slice(pos,end);case 10:pos=end;_context.next=6;break;case 13:case"end":return _context.stop();}},streamChunk);});var readBytes=/*#__PURE__*/function(){var _ref=_wrapAsyncGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(iterable,chunkSize){var _iteratorAbruptCompletion,_didIteratorError,_iteratorError,_iterator2,_step,chunk;return _regeneratorRuntime().wrap(function _callee$(_context2){while(1)switch(_context2.prev=_context2.next){case 0:_iteratorAbruptCompletion=false;_didIteratorError=false;_context2.prev=2;_iterator2=_asyncIterator(readStream(iterable));case 4:_context2.next=6;return _awaitAsyncGenerator(_iterator2.next());case 6:if(!(_iteratorAbruptCompletion=!(_step=_context2.sent).done)){_context2.next=12;break;}chunk=_step.value;return _context2.delegateYield(_asyncGeneratorDelegate(_asyncIterator(streamChunk(chunk,chunkSize)),_awaitAsyncGenerator),"t0",9);case 9:_iteratorAbruptCompletion=false;_context2.next=4;break;case 12:_context2.next=18;break;case 14:_context2.prev=14;_context2.t1=_context2["catch"](2);_didIteratorError=true;_iteratorError=_context2.t1;case 18:_context2.prev=18;_context2.prev=19;if(!(_iteratorAbruptCompletion&&_iterator2["return"]!=null)){_context2.next=23;break;}_context2.next=23;return _awaitAsyncGenerator(_iterator2["return"]());case 23:_context2.prev=23;if(!_didIteratorError){_context2.next=26;break;}throw _iteratorError;case 26:return _context2.finish(23);case 27:return _context2.finish(18);case 28:case"end":return _context2.stop();}},_callee,null,[[2,14,18,28],[19,,23,27]]);}));return function readBytes(_x,_x2){return _ref.apply(this,arguments);};}();var readStream=/*#__PURE__*/function(){var _ref2=_wrapAsyncGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(stream){var reader,_yield$_awaitAsyncGen,done,value;return _regeneratorRuntime().wrap(function _callee2$(_context3){while(1)switch(_context3.prev=_context3.next){case 0:if(!stream[Symbol.asyncIterator]){_context3.next=3;break;}return _context3.delegateYield(_asyncGeneratorDelegate(_asyncIterator(stream),_awaitAsyncGenerator),"t0",2);case 2:return _context3.abrupt("return");case 3:reader=stream.getReader();_context3.prev=4;case 5:_context3.next=7;return _awaitAsyncGenerator(reader.read());case 7:_yield$_awaitAsyncGen=_context3.sent;done=_yield$_awaitAsyncGen.done;value=_yield$_awaitAsyncGen.value;if(!done){_context3.next=12;break;}return _context3.abrupt("break",16);case 12:_context3.next=14;return value;case 14:_context3.next=5;break;case 16:_context3.prev=16;_context3.next=19;return _awaitAsyncGenerator(reader.cancel());case 19:return _context3.finish(16);case 20:case"end":return _context3.stop();}},_callee2,null,[[4,,16,20]]);}));return function readStream(_x3){return _ref2.apply(this,arguments);};}();var trackStream=function trackStream(stream,chunkSize,onProgress,onFinish){var iterator=readBytes(stream,chunkSize);var bytes=0;var done;var _onFinish=function _onFinish(e){if(!done){done=true;onFinish&&onFinish(e);}};return new ReadableStream({pull:function pull(controller){return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(){var _yield$iterator$next,_done,value,len,loadedBytes;return _regeneratorRuntime().wrap(function _callee3$(_context4){while(1)switch(_context4.prev=_context4.next){case 0:_context4.prev=0;_context4.next=3;return iterator.next();case 3:_yield$iterator$next=_context4.sent;_done=_yield$iterator$next.done;value=_yield$iterator$next.value;if(!_done){_context4.next=10;break;}_onFinish();controller.close();return _context4.abrupt("return");case 10:len=value.byteLength;if(onProgress){loadedBytes=bytes+=len;onProgress(loadedBytes);}controller.enqueue(new Uint8Array(value));_context4.next=19;break;case 15:_context4.prev=15;_context4.t0=_context4["catch"](0);_onFinish(_context4.t0);throw _context4.t0;case 19:case"end":return _context4.stop();}},_callee3,null,[[0,15]]);}))();},cancel:function cancel(reason){_onFinish(reason);return iterator["return"]();}},{highWaterMark:2});};var isFetchSupported=typeof fetch==='function'&&typeof Request==='function'&&typeof Response==='function';var isReadableStreamSupported=isFetchSupported&&typeof ReadableStream==='function';// used only inside the fetch adapter
-var encodeText=isFetchSupported&&(typeof TextEncoder==='function'?function(encoder){return function(str){return encoder.encode(str);};}(new TextEncoder()):(/*#__PURE__*/function(){var _ref11=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee4(str){return _regeneratorRuntime().wrap(function _callee4$(_context5){while(1)switch(_context5.prev=_context5.next){case 0:_context5.t0=Uint8Array;_context5.next=3;return new Response(str).arrayBuffer();case 3:_context5.t1=_context5.sent;return _context5.abrupt("return",new _context5.t0(_context5.t1));case 5:case"end":return _context5.stop();}},_callee4);}));return function(_x4){return _ref11.apply(this,arguments);};}()));var test=function test(fn){try{for(var _len5=arguments.length,args=new Array(_len5>1?_len5-1:0),_key6=1;_key6<_len5;_key6++){args[_key6-1]=arguments[_key6];}return!!fn.apply(void 0,args);}catch(e){return false;}};var supportsRequestStream=isReadableStreamSupported&&test(function(){var duplexAccessed=false;var hasContentType=new Request(platform.origin,{body:new ReadableStream(),method:'POST',get duplex(){duplexAccessed=true;return'half';}}).headers.has('Content-Type');return duplexAccessed&&!hasContentType;});var DEFAULT_CHUNK_SIZE=64*1024;var supportsResponseStream=isReadableStreamSupported&&test(function(){return utils$1.isReadableStream(new Response('').body);});var resolvers={stream:supportsResponseStream&&function(res){return res.body;}};isFetchSupported&&function(res){['text','arrayBuffer','blob','formData','stream'].forEach(function(type){!resolvers[type]&&(resolvers[type]=utils$1.isFunction(res[type])?function(res){return res[type]();}:function(_,config){throw new AxiosError("Response type '".concat(type,"' is not supported"),AxiosError.ERR_NOT_SUPPORT,config);});});}(new Response());var getBodyLength=/*#__PURE__*/function(){var _ref12=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(body){var _request;return _regeneratorRuntime().wrap(function _callee5$(_context6){while(1)switch(_context6.prev=_context6.next){case 0:if(!(body==null)){_context6.next=2;break;}return _context6.abrupt("return",0);case 2:if(!utils$1.isBlob(body)){_context6.next=4;break;}return _context6.abrupt("return",body.size);case 4:if(!utils$1.isSpecCompliantForm(body)){_context6.next=9;break;}_request=new Request(platform.origin,{method:'POST',body:body});_context6.next=8;return _request.arrayBuffer();case 8:return _context6.abrupt("return",_context6.sent.byteLength);case 9:if(!(utils$1.isArrayBufferView(body)||utils$1.isArrayBuffer(body))){_context6.next=11;break;}return _context6.abrupt("return",body.byteLength);case 11:if(utils$1.isURLSearchParams(body)){body=body+'';}if(!utils$1.isString(body)){_context6.next=16;break;}_context6.next=15;return encodeText(body);case 15:return _context6.abrupt("return",_context6.sent.byteLength);case 16:case"end":return _context6.stop();}},_callee5);}));return function getBodyLength(_x5){return _ref12.apply(this,arguments);};}();var resolveBodyLength=/*#__PURE__*/function(){var _ref13=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6(headers,body){var length;return _regeneratorRuntime().wrap(function _callee6$(_context7){while(1)switch(_context7.prev=_context7.next){case 0:length=utils$1.toFiniteNumber(headers.getContentLength());return _context7.abrupt("return",length==null?getBodyLength(body):length);case 2:case"end":return _context7.stop();}},_callee6);}));return function resolveBodyLength(_x6,_x7){return _ref13.apply(this,arguments);};}();var fetchAdapter=isFetchSupported&&(/*#__PURE__*/function(){var _ref14=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee7(config){var _resolveConfig,url,method,data,signal,cancelToken,timeout,onDownloadProgress,onUploadProgress,responseType,headers,_resolveConfig$withCr,withCredentials,fetchOptions,composedSignal,request,unsubscribe,requestContentLength,_request,contentTypeHeader,_progressEventDecorat,_progressEventDecorat2,onProgress,flush,isCredentialsSupported,response,isStreamResponse,options,responseContentLength,_ref15,_ref16,_onProgress,_flush,responseData;return _regeneratorRuntime().wrap(function _callee7$(_context8){while(1)switch(_context8.prev=_context8.next){case 0:_resolveConfig=resolveConfig(config),url=_resolveConfig.url,method=_resolveConfig.method,data=_resolveConfig.data,signal=_resolveConfig.signal,cancelToken=_resolveConfig.cancelToken,timeout=_resolveConfig.timeout,onDownloadProgress=_resolveConfig.onDownloadProgress,onUploadProgress=_resolveConfig.onUploadProgress,responseType=_resolveConfig.responseType,headers=_resolveConfig.headers,_resolveConfig$withCr=_resolveConfig.withCredentials,withCredentials=_resolveConfig$withCr===void 0?'same-origin':_resolveConfig$withCr,fetchOptions=_resolveConfig.fetchOptions;responseType=responseType?(responseType+'').toLowerCase():'text';composedSignal=composeSignals$1([signal,cancelToken&&cancelToken.toAbortSignal()],timeout);unsubscribe=composedSignal&&composedSignal.unsubscribe&&function(){composedSignal.unsubscribe();};_context8.prev=4;_context8.t0=onUploadProgress&&supportsRequestStream&&method!=='get'&&method!=='head';if(!_context8.t0){_context8.next=11;break;}_context8.next=9;return resolveBodyLength(headers,data);case 9:_context8.t1=requestContentLength=_context8.sent;_context8.t0=_context8.t1!==0;case 11:if(!_context8.t0){_context8.next=15;break;}_request=new Request(url,{method:'POST',body:data,duplex:"half"});if(utils$1.isFormData(data)&&(contentTypeHeader=_request.headers.get('content-type'))){headers.setContentType(contentTypeHeader);}if(_request.body){_progressEventDecorat=progressEventDecorator(requestContentLength,progressEventReducer(asyncDecorator(onUploadProgress))),_progressEventDecorat2=_slicedToArray(_progressEventDecorat,2),onProgress=_progressEventDecorat2[0],flush=_progressEventDecorat2[1];data=trackStream(_request.body,DEFAULT_CHUNK_SIZE,onProgress,flush);}case 15:if(!utils$1.isString(withCredentials)){withCredentials=withCredentials?'include':'omit';}// Cloudflare Workers throws when credentials are defined
+request.send(requestData||null);});};var composeSignals=function composeSignals(signals,timeout){var _signals=signals=signals?signals.filter(Boolean):[],length=_signals.length;if(timeout||length){var controller=new AbortController();var aborted;var onabort=function onabort(reason){if(!aborted){aborted=true;unsubscribe();var err=reason instanceof Error?reason:this.reason;controller.abort(err instanceof AxiosError?err:new CanceledError(err instanceof Error?err.message:err));}};var timer=timeout&&setTimeout(function(){timer=null;onabort(new AxiosError("timeout ".concat(timeout," of ms exceeded"),AxiosError.ETIMEDOUT));},timeout);var unsubscribe=function unsubscribe(){if(signals){timer&&clearTimeout(timer);timer=null;signals.forEach(function(signal){signal.unsubscribe?signal.unsubscribe(onabort):signal.removeEventListener('abort',onabort);});signals=null;}};signals.forEach(function(signal){return signal.addEventListener('abort',onabort);});var signal=controller.signal;signal.unsubscribe=function(){return utils$1.asap(unsubscribe);};return signal;}};var composeSignals$1=composeSignals;var streamChunk=/*#__PURE__*/_regenerator().m(function streamChunk(chunk,chunkSize){var len,pos,end;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:len=chunk.byteLength;if(!(!chunkSize||len<chunkSize)){_context.n=2;break;}_context.n=1;return chunk;case 1:return _context.a(2);case 2:pos=0;case 3:if(!(pos<len)){_context.n=5;break;}end=pos+chunkSize;_context.n=4;return chunk.slice(pos,end);case 4:pos=end;_context.n=3;break;case 5:return _context.a(2);}},streamChunk);});var readBytes=/*#__PURE__*/function(){var _ref=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee(iterable,chunkSize){var _iteratorAbruptCompletion,_didIteratorError,_iteratorError,_iterator2,_step,chunk,_t;return _regenerator().w(function(_context2){while(1)switch(_context2.n){case 0:_iteratorAbruptCompletion=false;_didIteratorError=false;_context2.p=1;_iterator2=_asyncIterator(readStream(iterable));case 2:_context2.n=3;return _awaitAsyncGenerator(_iterator2.next());case 3:if(!(_iteratorAbruptCompletion=!(_step=_context2.v).done)){_context2.n=5;break;}chunk=_step.value;return _context2.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(streamChunk(chunk,chunkSize)),_awaitAsyncGenerator)),4);case 4:_iteratorAbruptCompletion=false;_context2.n=2;break;case 5:_context2.n=7;break;case 6:_context2.p=6;_t=_context2.v;_didIteratorError=true;_iteratorError=_t;case 7:_context2.p=7;_context2.p=8;if(!(_iteratorAbruptCompletion&&_iterator2["return"]!=null)){_context2.n=9;break;}_context2.n=9;return _awaitAsyncGenerator(_iterator2["return"]());case 9:_context2.p=9;if(!_didIteratorError){_context2.n=10;break;}throw _iteratorError;case 10:return _context2.f(9);case 11:return _context2.f(7);case 12:return _context2.a(2);}},_callee,null,[[8,,9,11],[1,6,7,12]]);}));return function readBytes(_x,_x2){return _ref.apply(this,arguments);};}();var readStream=/*#__PURE__*/function(){var _ref2=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee2(stream){var reader,_yield$_awaitAsyncGen,done,value;return _regenerator().w(function(_context3){while(1)switch(_context3.n){case 0:if(!stream[Symbol.asyncIterator]){_context3.n=2;break;}return _context3.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(stream),_awaitAsyncGenerator)),1);case 1:return _context3.a(2);case 2:reader=stream.getReader();_context3.p=3;case 4:_context3.n=5;return _awaitAsyncGenerator(reader.read());case 5:_yield$_awaitAsyncGen=_context3.v;done=_yield$_awaitAsyncGen.done;value=_yield$_awaitAsyncGen.value;if(!done){_context3.n=6;break;}return _context3.a(3,8);case 6:_context3.n=7;return value;case 7:_context3.n=4;break;case 8:_context3.p=8;_context3.n=9;return _awaitAsyncGenerator(reader.cancel());case 9:return _context3.f(8);case 10:return _context3.a(2);}},_callee2,null,[[3,,8,10]]);}));return function readStream(_x3){return _ref2.apply(this,arguments);};}();var trackStream=function trackStream(stream,chunkSize,onProgress,onFinish){var iterator=readBytes(stream,chunkSize);var bytes=0;var done;var _onFinish=function _onFinish(e){if(!done){done=true;onFinish&&onFinish(e);}};return new ReadableStream({pull:function pull(controller){return _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(){var _yield$iterator$next,_done,value,len,loadedBytes,_t2;return _regenerator().w(function(_context4){while(1)switch(_context4.n){case 0:_context4.p=0;_context4.n=1;return iterator.next();case 1:_yield$iterator$next=_context4.v;_done=_yield$iterator$next.done;value=_yield$iterator$next.value;if(!_done){_context4.n=2;break;}_onFinish();controller.close();return _context4.a(2);case 2:len=value.byteLength;if(onProgress){loadedBytes=bytes+=len;onProgress(loadedBytes);}controller.enqueue(new Uint8Array(value));_context4.n=4;break;case 3:_context4.p=3;_t2=_context4.v;_onFinish(_t2);throw _t2;case 4:return _context4.a(2);}},_callee3,null,[[0,3]]);}))();},cancel:function cancel(reason){_onFinish(reason);return iterator["return"]();}},{highWaterMark:2});};var isFetchSupported=typeof fetch==='function'&&typeof Request==='function'&&typeof Response==='function';var isReadableStreamSupported=isFetchSupported&&typeof ReadableStream==='function';// used only inside the fetch adapter
+var encodeText=isFetchSupported&&(typeof TextEncoder==='function'?function(encoder){return function(str){return encoder.encode(str);};}(new TextEncoder()):(/*#__PURE__*/function(){var _ref11=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(str){var _t3,_t4;return _regenerator().w(function(_context5){while(1)switch(_context5.n){case 0:_t3=Uint8Array;_context5.n=1;return new Response(str).arrayBuffer();case 1:_t4=_context5.v;return _context5.a(2,new _t3(_t4));}},_callee4);}));return function(_x4){return _ref11.apply(this,arguments);};}()));var test=function test(fn){try{for(var _len5=arguments.length,args=new Array(_len5>1?_len5-1:0),_key6=1;_key6<_len5;_key6++){args[_key6-1]=arguments[_key6];}return!!fn.apply(void 0,args);}catch(e){return false;}};var supportsRequestStream=isReadableStreamSupported&&test(function(){var duplexAccessed=false;var hasContentType=new Request(platform.origin,{body:new ReadableStream(),method:'POST',get duplex(){duplexAccessed=true;return'half';}}).headers.has('Content-Type');return duplexAccessed&&!hasContentType;});var DEFAULT_CHUNK_SIZE=64*1024;var supportsResponseStream=isReadableStreamSupported&&test(function(){return utils$1.isReadableStream(new Response('').body);});var resolvers={stream:supportsResponseStream&&function(res){return res.body;}};isFetchSupported&&function(res){['text','arrayBuffer','blob','formData','stream'].forEach(function(type){!resolvers[type]&&(resolvers[type]=utils$1.isFunction(res[type])?function(res){return res[type]();}:function(_,config){throw new AxiosError("Response type '".concat(type,"' is not supported"),AxiosError.ERR_NOT_SUPPORT,config);});});}(new Response());var getBodyLength=/*#__PURE__*/function(){var _ref12=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(body){var _request;return _regenerator().w(function(_context6){while(1)switch(_context6.n){case 0:if(!(body==null)){_context6.n=1;break;}return _context6.a(2,0);case 1:if(!utils$1.isBlob(body)){_context6.n=2;break;}return _context6.a(2,body.size);case 2:if(!utils$1.isSpecCompliantForm(body)){_context6.n=4;break;}_request=new Request(platform.origin,{method:'POST',body:body});_context6.n=3;return _request.arrayBuffer();case 3:return _context6.a(2,_context6.v.byteLength);case 4:if(!(utils$1.isArrayBufferView(body)||utils$1.isArrayBuffer(body))){_context6.n=5;break;}return _context6.a(2,body.byteLength);case 5:if(utils$1.isURLSearchParams(body)){body=body+'';}if(!utils$1.isString(body)){_context6.n=7;break;}_context6.n=6;return encodeText(body);case 6:return _context6.a(2,_context6.v.byteLength);}},_callee5);}));return function getBodyLength(_x5){return _ref12.apply(this,arguments);};}();var resolveBodyLength=/*#__PURE__*/function(){var _ref13=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(headers,body){var length;return _regenerator().w(function(_context7){while(1)switch(_context7.n){case 0:length=utils$1.toFiniteNumber(headers.getContentLength());return _context7.a(2,length==null?getBodyLength(body):length);}},_callee6);}));return function resolveBodyLength(_x6,_x7){return _ref13.apply(this,arguments);};}();var fetchAdapter=isFetchSupported&&(/*#__PURE__*/function(){var _ref14=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(config){var _resolveConfig,url,method,data,signal,cancelToken,timeout,onDownloadProgress,onUploadProgress,responseType,headers,_resolveConfig$withCr,withCredentials,fetchOptions,composedSignal,request,unsubscribe,requestContentLength,_request,contentTypeHeader,_progressEventDecorat,_progressEventDecorat2,onProgress,flush,isCredentialsSupported,response,isStreamResponse,options,responseContentLength,_ref15,_ref16,_onProgress,_flush,responseData,_t5,_t6,_t7;return _regenerator().w(function(_context8){while(1)switch(_context8.n){case 0:_resolveConfig=resolveConfig(config),url=_resolveConfig.url,method=_resolveConfig.method,data=_resolveConfig.data,signal=_resolveConfig.signal,cancelToken=_resolveConfig.cancelToken,timeout=_resolveConfig.timeout,onDownloadProgress=_resolveConfig.onDownloadProgress,onUploadProgress=_resolveConfig.onUploadProgress,responseType=_resolveConfig.responseType,headers=_resolveConfig.headers,_resolveConfig$withCr=_resolveConfig.withCredentials,withCredentials=_resolveConfig$withCr===void 0?'same-origin':_resolveConfig$withCr,fetchOptions=_resolveConfig.fetchOptions;responseType=responseType?(responseType+'').toLowerCase():'text';composedSignal=composeSignals$1([signal,cancelToken&&cancelToken.toAbortSignal()],timeout);unsubscribe=composedSignal&&composedSignal.unsubscribe&&function(){composedSignal.unsubscribe();};_context8.p=1;_t5=onUploadProgress&&supportsRequestStream&&method!=='get'&&method!=='head';if(!_t5){_context8.n=3;break;}_context8.n=2;return resolveBodyLength(headers,data);case 2:_t6=requestContentLength=_context8.v;_t5=_t6!==0;case 3:if(!_t5){_context8.n=4;break;}_request=new Request(url,{method:'POST',body:data,duplex:"half"});if(utils$1.isFormData(data)&&(contentTypeHeader=_request.headers.get('content-type'))){headers.setContentType(contentTypeHeader);}if(_request.body){_progressEventDecorat=progressEventDecorator(requestContentLength,progressEventReducer(asyncDecorator(onUploadProgress))),_progressEventDecorat2=_slicedToArray(_progressEventDecorat,2),onProgress=_progressEventDecorat2[0],flush=_progressEventDecorat2[1];data=trackStream(_request.body,DEFAULT_CHUNK_SIZE,onProgress,flush);}case 4:if(!utils$1.isString(withCredentials)){withCredentials=withCredentials?'include':'omit';}// Cloudflare Workers throws when credentials are defined
 // see https://github.com/cloudflare/workerd/issues/902
-isCredentialsSupported="credentials"in Request.prototype;request=new Request(url,_objectSpread(_objectSpread({},fetchOptions),{},{signal:composedSignal,method:method.toUpperCase(),headers:headers.normalize().toJSON(),body:data,duplex:"half",credentials:isCredentialsSupported?withCredentials:undefined}));_context8.next=20;return fetch(request);case 20:response=_context8.sent;isStreamResponse=supportsResponseStream&&(responseType==='stream'||responseType==='response');if(supportsResponseStream&&(onDownloadProgress||isStreamResponse&&unsubscribe)){options={};['status','statusText','headers'].forEach(function(prop){options[prop]=response[prop];});responseContentLength=utils$1.toFiniteNumber(response.headers.get('content-length'));_ref15=onDownloadProgress&&progressEventDecorator(responseContentLength,progressEventReducer(asyncDecorator(onDownloadProgress),true))||[],_ref16=_slicedToArray(_ref15,2),_onProgress=_ref16[0],_flush=_ref16[1];response=new Response(trackStream(response.body,DEFAULT_CHUNK_SIZE,_onProgress,function(){_flush&&_flush();unsubscribe&&unsubscribe();}),options);}responseType=responseType||'text';_context8.next=26;return resolvers[utils$1.findKey(resolvers,responseType)||'text'](response,config);case 26:responseData=_context8.sent;!isStreamResponse&&unsubscribe&&unsubscribe();_context8.next=30;return new Promise(function(resolve,reject){settle(resolve,reject,{data:responseData,headers:AxiosHeaders$1.from(response.headers),status:response.status,statusText:response.statusText,config:config,request:request});});case 30:return _context8.abrupt("return",_context8.sent);case 33:_context8.prev=33;_context8.t2=_context8["catch"](4);unsubscribe&&unsubscribe();if(!(_context8.t2&&_context8.t2.name==='TypeError'&&/Load failed|fetch/i.test(_context8.t2.message))){_context8.next=38;break;}throw Object.assign(new AxiosError('Network Error',AxiosError.ERR_NETWORK,config,request),{cause:_context8.t2.cause||_context8.t2});case 38:throw AxiosError.from(_context8.t2,_context8.t2&&_context8.t2.code,config,request);case 39:case"end":return _context8.stop();}},_callee7,null,[[4,33]]);}));return function(_x8){return _ref14.apply(this,arguments);};}());var knownAdapters={http:httpAdapter,xhr:xhrAdapter,fetch:fetchAdapter};utils$1.forEach(knownAdapters,function(fn,value){if(fn){try{Object.defineProperty(fn,'name',{value:value});}catch(e){// eslint-disable-next-line no-empty
+isCredentialsSupported="credentials"in Request.prototype;request=new Request(url,_objectSpread(_objectSpread({},fetchOptions),{},{signal:composedSignal,method:method.toUpperCase(),headers:headers.normalize().toJSON(),body:data,duplex:"half",credentials:isCredentialsSupported?withCredentials:undefined}));_context8.n=5;return fetch(request);case 5:response=_context8.v;isStreamResponse=supportsResponseStream&&(responseType==='stream'||responseType==='response');if(supportsResponseStream&&(onDownloadProgress||isStreamResponse&&unsubscribe)){options={};['status','statusText','headers'].forEach(function(prop){options[prop]=response[prop];});responseContentLength=utils$1.toFiniteNumber(response.headers.get('content-length'));_ref15=onDownloadProgress&&progressEventDecorator(responseContentLength,progressEventReducer(asyncDecorator(onDownloadProgress),true))||[],_ref16=_slicedToArray(_ref15,2),_onProgress=_ref16[0],_flush=_ref16[1];response=new Response(trackStream(response.body,DEFAULT_CHUNK_SIZE,_onProgress,function(){_flush&&_flush();unsubscribe&&unsubscribe();}),options);}responseType=responseType||'text';_context8.n=6;return resolvers[utils$1.findKey(resolvers,responseType)||'text'](response,config);case 6:responseData=_context8.v;!isStreamResponse&&unsubscribe&&unsubscribe();_context8.n=7;return new Promise(function(resolve,reject){settle(resolve,reject,{data:responseData,headers:AxiosHeaders$1.from(response.headers),status:response.status,statusText:response.statusText,config:config,request:request});});case 7:return _context8.a(2,_context8.v);case 8:_context8.p=8;_t7=_context8.v;unsubscribe&&unsubscribe();if(!(_t7&&_t7.name==='TypeError'&&/Load failed|fetch/i.test(_t7.message))){_context8.n=9;break;}throw Object.assign(new AxiosError('Network Error',AxiosError.ERR_NETWORK,config,request),{cause:_t7.cause||_t7});case 9:throw AxiosError.from(_t7,_t7&&_t7.code,config,request);case 10:return _context8.a(2);}},_callee7,null,[[1,8]]);}));return function(_x8){return _ref14.apply(this,arguments);};}());var knownAdapters={http:httpAdapter,xhr:xhrAdapter,fetch:fetchAdapter};utils$1.forEach(knownAdapters,function(fn,value){if(fn){try{Object.defineProperty(fn,'name',{value:value});}catch(e){// eslint-disable-next-line no-empty
 }Object.defineProperty(fn,'adapterName',{value:value});}});var renderReason=function renderReason(reason){return"- ".concat(reason);};var isResolvedHandle=function isResolvedHandle(adapter){return utils$1.isFunction(adapter)||adapter===null||adapter===false;};var adapters={getAdapter:function getAdapter(adapters){adapters=utils$1.isArray(adapters)?adapters:[adapters];var _adapters=adapters,length=_adapters.length;var nameOrAdapter;var adapter;var rejectedReasons={};for(var i=0;i<length;i++){nameOrAdapter=adapters[i];var id=void 0;adapter=nameOrAdapter;if(!isResolvedHandle(nameOrAdapter)){adapter=knownAdapters[(id=String(nameOrAdapter)).toLowerCase()];if(adapter===undefined){throw new AxiosError("Unknown adapter '".concat(id,"'"));}}if(adapter){break;}rejectedReasons[id||'#'+i]=adapter;}if(!adapter){var reasons=Object.entries(rejectedReasons).map(function(_ref17){var _ref18=_slicedToArray(_ref17,2),id=_ref18[0],state=_ref18[1];return"adapter ".concat(id," ")+(state===false?'is not supported by the environment':'is not available in the build');});var s=length?reasons.length>1?'since :\n'+reasons.map(renderReason).join('\n'):' '+renderReason(reasons[0]):'as no adapter specified';throw new AxiosError("There is no suitable adapter to dispatch the request "+s,'ERR_NOT_SUPPORT');}return adapter;},adapters:knownAdapters};/**
  * Throws a `CanceledError` if cancellation has been requested.
  *
@@ -6349,10 +6349,10 @@ console.warn("".concat(opt," is likely a misspelling of ").concat(correctSpellin
    * @param {?Object} config
    *
    * @returns {Promise} The Promise to be fulfilled
-   */return _createClass(Axios,[{key:"request",value:(function(){var _request2=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee8(configOrUrl,config){var dummy,stack;return _regeneratorRuntime().wrap(function _callee8$(_context9){while(1)switch(_context9.prev=_context9.next){case 0:_context9.prev=0;_context9.next=3;return this._request(configOrUrl,config);case 3:return _context9.abrupt("return",_context9.sent);case 6:_context9.prev=6;_context9.t0=_context9["catch"](0);if(_context9.t0 instanceof Error){dummy={};Error.captureStackTrace?Error.captureStackTrace(dummy):dummy=new Error();// slice off the Error: ... line
-stack=dummy.stack?dummy.stack.replace(/^.+\n/,''):'';try{if(!_context9.t0.stack){_context9.t0.stack=stack;// match without the 2 top stack lines
-}else if(stack&&!String(_context9.t0.stack).endsWith(stack.replace(/^.+\n.+\n/,''))){_context9.t0.stack+='\n'+stack;}}catch(e){// ignore the case where "stack" is an un-writable property
-}}throw _context9.t0;case 10:case"end":return _context9.stop();}},_callee8,this,[[0,6]]);}));function request(_x9,_x0){return _request2.apply(this,arguments);}return request;}())},{key:"_request",value:function _request(configOrUrl,config){/*eslint no-param-reassign:0*/// Allow for axios('example/url'[, config]) a la fetch API
+   */return _createClass(Axios,[{key:"request",value:(function(){var _request2=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee8(configOrUrl,config){var dummy,stack,_t8;return _regenerator().w(function(_context9){while(1)switch(_context9.n){case 0:_context9.p=0;_context9.n=1;return this._request(configOrUrl,config);case 1:return _context9.a(2,_context9.v);case 2:_context9.p=2;_t8=_context9.v;if(_t8 instanceof Error){dummy={};Error.captureStackTrace?Error.captureStackTrace(dummy):dummy=new Error();// slice off the Error: ... line
+stack=dummy.stack?dummy.stack.replace(/^.+\n/,''):'';try{if(!_t8.stack){_t8.stack=stack;// match without the 2 top stack lines
+}else if(stack&&!String(_t8.stack).endsWith(stack.replace(/^.+\n.+\n/,''))){_t8.stack+='\n'+stack;}}catch(e){// ignore the case where "stack" is an un-writable property
+}}throw _t8;case 3:return _context9.a(2);}},_callee8,this,[[0,2]]);}));function request(_x9,_x0){return _request2.apply(this,arguments);}return request;}())},{key:"_request",value:function _request(configOrUrl,config){/*eslint no-param-reassign:0*/// Allow for axios('example/url'[, config]) a la fetch API
 if(typeof configOrUrl==='string'){config=config||{};config.url=configOrUrl;}else{config=configOrUrl||{};}config=mergeConfig(this.defaults,config);var _config2=config,transitional=_config2.transitional,paramsSerializer=_config2.paramsSerializer,headers=_config2.headers;if(transitional!==undefined){validator.assertOptions(transitional,{silentJSONParsing:validators.transitional(validators["boolean"]),forcedJSONParsing:validators.transitional(validators["boolean"]),clarifyTimeoutError:validators.transitional(validators["boolean"])},false);}if(paramsSerializer!=null){if(utils$1.isFunction(paramsSerializer)){config.paramsSerializer={serialize:paramsSerializer};}else{validator.assertOptions(paramsSerializer,{encode:validators["function"],serialize:validators["function"]},true);}}// Set config.allowAbsoluteUrls
 if(config.allowAbsoluteUrls!==undefined);else if(this.defaults.allowAbsoluteUrls!==undefined){config.allowAbsoluteUrls=this.defaults.allowAbsoluteUrls;}else{config.allowAbsoluteUrls=true;}validator.assertOptions(config,{baseUrl:validators.spelling('baseURL'),withXsrfToken:validators.spelling('withXSRFToken')},true);// Set config.method
 config.method=(config.method||this.defaults.method||'get').toLowerCase();// Flatten headers
@@ -6431,10 +6431,10 @@ var axios$1=axios;var AbstractHttpClient=/*#__PURE__*/function(){function Abstra
 return _createClass(HttpRequestOptions,[{key:"setUrl",value:function setUrl(url){if(!url)throw new Error("The 'url' property is required");this.url=url;}},{key:"setMethod",value:function setMethod(method){var validMethods=['GET','POST','PUT','DELETE','PATCH','OPTIONS','HEAD'];if(!method||!validMethods.includes(method.toUpperCase())){throw new Error("The 'method' property is invalid or missing");}this.method=method.toUpperCase();}},{key:"setData",value:function setData(data){if(data===undefined||data===null){throw new Error("The 'data' property is required");}this.data=data;}// Optional fields
 },{key:"setParams",value:function setParams(params){if(params&&_typeof(params)!=='object'){throw new Error("The 'params' property must be an object");}this.params=params;}// Optional fields
 },{key:"setHeaders",value:function setHeaders(headers){if(headers&&_typeof(headers)!=='object'){throw new Error("The 'headers' property must be an object");}this.headers=headers;}},{key:"setTimeout",value:function setTimeout(timeout){if(timeout===undefined||timeout===null||typeof timeout!=='number'){throw new Error("The 'timeout' property must be a number");}this.timeout=timeout;}}]);}();// Default client is Axios
-var DefaultHttpClient=/*#__PURE__*/function(_AbstractHttpClient){function DefaultHttpClient(timeout,httpsAgent){var _this2;_classCallCheck(this,DefaultHttpClient);_this2=_callSuper(this,DefaultHttpClient);if(timeout!==null&&timeout!==undefined)_this2.setTimeout(timeout);else _this2.timeout=16000;if(httpsAgent!==null&&httpsAgent!==undefined)_this2.setHttpsAgent(httpsAgent);else _this2.httpsAgent;_this2._axiosInstance=axios$1.create({});return _this2;}_inherits(DefaultHttpClient,_AbstractHttpClient);return _createClass(DefaultHttpClient,[{key:"enableHooks",value:function enableHooks(){var _this3=this;if(this.preHook&&typeof this.preHook==='function'){if(this.requestInterceptorId!==undefined){axios$1.interceptors.request.eject(this.requestInterceptorId);}this.requestInterceptorId=this._axiosInstance.interceptors.request.use(/*#__PURE__*/function(){var _ref21=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee9(config){return _regeneratorRuntime().wrap(function _callee9$(_context0){while(1)switch(_context0.prev=_context0.next){case 0:_context0.next=2;return _this3.preHook(config);case 2:config=_context0.sent;return _context0.abrupt("return",config);case 4:case"end":return _context0.stop();}},_callee9);}));return function(_x1){return _ref21.apply(this,arguments);};}(),function(error){// Handle errors before the request is sent
+var DefaultHttpClient=/*#__PURE__*/function(_AbstractHttpClient){function DefaultHttpClient(timeout,httpsAgent){var _this2;_classCallCheck(this,DefaultHttpClient);_this2=_callSuper(this,DefaultHttpClient);if(timeout!==null&&timeout!==undefined)_this2.setTimeout(timeout);else _this2.timeout=16000;if(httpsAgent!==null&&httpsAgent!==undefined)_this2.setHttpsAgent(httpsAgent);else _this2.httpsAgent;_this2._axiosInstance=axios$1.create({});return _this2;}_inherits(DefaultHttpClient,_AbstractHttpClient);return _createClass(DefaultHttpClient,[{key:"enableHooks",value:function enableHooks(){var _this3=this;if(this.preHook&&typeof this.preHook==='function'){if(this.requestInterceptorId!==undefined){axios$1.interceptors.request.eject(this.requestInterceptorId);}this.requestInterceptorId=this._axiosInstance.interceptors.request.use(/*#__PURE__*/function(){var _ref21=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee9(config){return _regenerator().w(function(_context0){while(1)switch(_context0.n){case 0:_context0.n=1;return _this3.preHook(config);case 1:config=_context0.v;return _context0.a(2,config);}},_callee9);}));return function(_x1){return _ref21.apply(this,arguments);};}(),function(error){// Handle errors before the request is sent
 console.error('Request Pre-Hook Error:',error.message);return Promise.reject(error);});}if(this.postHook&&typeof this.postHook==='function'){// Response interceptor (for post-hooks)
-if(this.responseInterceptorId!==undefined){axios$1.interceptors.response.eject(this.responseInterceptorId);}this.responseInterceptorId=this._axiosInstance.interceptors.response.use(/*#__PURE__*/function(){var _ref22=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee0(response){return _regeneratorRuntime().wrap(function _callee0$(_context1){while(1)switch(_context1.prev=_context1.next){case 0:_context1.next=2;return _this3.postHook(response);case 2:response=_context1.sent;return _context1.abrupt("return",response);case 4:case"end":return _context1.stop();}},_callee0);}));return function(_x10){return _ref22.apply(this,arguments);};}(),/*#__PURE__*/function(){var _ref23=_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee1(error){return _regeneratorRuntime().wrap(function _callee1$(_context10){while(1)switch(_context10.prev=_context10.next){case 0:console.error('Post-Hook: Response Error',error.message);// Optionally call post-hook in case of errors
-return _context10.abrupt("return",Promise.reject(error));case 2:case"end":return _context10.stop();}},_callee1);}));return function(_x11){return _ref23.apply(this,arguments);};}());}}},{key:"request",value:function request(httpRequestOptions){if(!(httpRequestOptions instanceof HttpRequestOptions)){throw new Error("httpRequestOptions must be instance of HttpRequestOptions ");}var config=this.toAxiosConfig(httpRequestOptions);return this._axiosInstance.request(config);}// Method to generate Axios-compatible config
+if(this.responseInterceptorId!==undefined){axios$1.interceptors.response.eject(this.responseInterceptorId);}this.responseInterceptorId=this._axiosInstance.interceptors.response.use(/*#__PURE__*/function(){var _ref22=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee0(response){return _regenerator().w(function(_context1){while(1)switch(_context1.n){case 0:_context1.n=1;return _this3.postHook(response);case 1:response=_context1.v;return _context1.a(2,response);}},_callee0);}));return function(_x10){return _ref22.apply(this,arguments);};}(),/*#__PURE__*/function(){var _ref23=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee1(error){return _regenerator().w(function(_context10){while(1)switch(_context10.n){case 0:console.error('Post-Hook: Response Error',error.message);// Optionally call post-hook in case of errors
+return _context10.a(2,Promise.reject(error));}},_callee1);}));return function(_x11){return _ref23.apply(this,arguments);};}());}}},{key:"request",value:function request(httpRequestOptions){if(!(httpRequestOptions instanceof HttpRequestOptions)){throw new Error("httpRequestOptions must be instance of HttpRequestOptions ");}var config=this.toAxiosConfig(httpRequestOptions);return this._axiosInstance.request(config);}// Method to generate Axios-compatible config
 },{key:"toAxiosConfig",value:function toAxiosConfig(httpRequestOptions){if(!httpRequestOptions.url||!httpRequestOptions.method){throw new Error("Mandatory fields 'url' and 'method' must be set before making a request");}var config={url:httpRequestOptions.url,method:httpRequestOptions.method};if(httpRequestOptions.params)config.params=httpRequestOptions.params;if(httpRequestOptions.headers)config.headers=httpRequestOptions.headers;if(httpRequestOptions.data)config.data=httpRequestOptions.data;if(this.timeout!=null&&this.timeout!=undefined)config.timeout=this.timeout;if(this.httpsAgent)config.httpsAgent=this.httpsAgent;return config;}}]);}(AbstractHttpClient);var logLevelEnum={level:{LNone:'none',LError:'error',LDebug:'debug',LTrace:'trace'}};var logFormatEnum={formats:{JSON:'json',TEXT:'text'}};var Logger=/*#__PURE__*/function(){function Logger(){_classCallCheck(this,Logger);this.log_level=logLevelEnum.level.LNone;this.log_format=logFormatEnum.formats.TEXT;this.log_to_console=true;this.log_file_path;this.log_response_body=false;this.log_request_body=false;this.setLogger();}return _createClass(Logger,[{key:"logLevelEnum",get:function get(){return logLevelEnum;}},{key:"logFormatEnum",get:function get(){return logFormatEnum;}},{key:"setLogger",value:function setLogger(){}},{key:"log",value:function log(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody){var content=this.formatLog(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody);if(typeof window!=='undefined'){var shouldLog=this.calculateLogLevel(level);if(shouldLog>0&&this.log_to_console===true){if(this.log_format===this.logFormatEnum.formats.JSON){console.log(content);}else{console.log("".concat(level.toUpperCase(),": ").concat(content));}}}else{if(this.logger.transports.length>0)this.logger.log(level,content);}}},{key:"calculateLogLevel",value:function calculateLogLevel(level){switch(this.log_level){case this.logLevelEnum.level.LError:if(level!==this.logLevelEnum.level.LError){return-1;}return 1;case this.logLevelEnum.level.LDebug:if(level===this.logLevelEnum.level.LTrace){return-1;}return 1;case this.logLevelEnum.level.LTrace:return 1;default:return-1;}}},{key:"formatLog",value:function formatLog(level,statusCode,method,url,requestHeaders,responseHeaders,requestBody,responseBody){var result;var localRequestHeaders=requestHeaders?JSON.parse(JSON.stringify(requestHeaders)):null;var localResponseHeaders=responseHeaders?JSON.parse(JSON.stringify(responseHeaders)):null;var localRequestBody=requestBody?JSON.parse(JSON.stringify(requestBody)):null;var localResponseBody=responseBody?JSON.parse(JSON.stringify(responseBody)):null;if(requestHeaders)localRequestHeaders['Authorization']='[REDACTED]';if(!this.log_request_body)localRequestBody=undefined;if(!this.log_response_body)localResponseBody=undefined;if(this.log_format&&this.log_format===logFormatEnum.formats.JSON){result={level:level,date:new Date().toISOString(),method:method,url:decodeURIComponent(url),correlationId:localResponseHeaders?localResponseHeaders['inin-correlation-id']?localResponseHeaders['inin-correlation-id']:'':'',statusCode:statusCode};if(localRequestHeaders)result.requestHeaders=localRequestHeaders;if(localResponseHeaders)result.responseHeaders=localResponseHeaders;if(localRequestBody)result.requestBody=localRequestBody;if(localResponseBody)result.responseBody=localResponseBody;}else{result="".concat(new Date().toISOString(),"\n=== REQUEST === \n").concat(this.formatValue('URL',decodeURIComponent(url))).concat(this.formatValue('Method',method)).concat(this.formatValue('Headers',this.formatHeaderString(localRequestHeaders))).concat(this.formatValue('Body',localRequestBody?JSON.stringify(localRequestBody,null,2):''),"\n=== RESPONSE ===\n").concat(this.formatValue('Status',statusCode)).concat(this.formatValue('Headers',this.formatHeaderString(localResponseHeaders))).concat(this.formatValue('CorrelationId',localResponseHeaders?localResponseHeaders['inin-correlation-id']?localResponseHeaders['inin-correlation-id']:'':'')).concat(this.formatValue('Body',localResponseBody?JSON.stringify(localResponseBody,null,2):''));}return result;}},{key:"formatHeaderString",value:function formatHeaderString(headers){var headerString='';if(!headers)return headerString;for(var _i=0,_Object$entries=Object.entries(headers);_i<_Object$entries.length;_i++){var _Object$entries$_i=_slicedToArray(_Object$entries[_i],2),key=_Object$entries$_i[0],value=_Object$entries$_i[1];headerString+="\n\t".concat(key,": ").concat(value);}return headerString;}},{key:"formatValue",value:function formatValue(key,value){if(!value||value===''||value==='{}')return'';return"".concat(key,": ").concat(value,"\n");}},{key:"getLogLevel",value:function getLogLevel(level){switch(level){case'error':return logLevelEnum.level.LError;case'debug':return logLevelEnum.level.LDebug;case'trace':return logLevelEnum.level.LTrace;default:return logLevelEnum.level.LNone;}}},{key:"getLogFormat",value:function getLogFormat(format){switch(format){case'json':return logFormatEnum.formats.JSON;default:return logFormatEnum.formats.TEXT;}}}]);}();var Configuration=/*#__PURE__*/function(){function Configuration(){_classCallCheck(this,Configuration);if(!Configuration.instance){Configuration.instance=this;}if(typeof window!=='undefined'){this.configPath='';}else{var os=require('os');var path=require('path');this.configPath=path.join(os.homedir(),'.genesyscloudjavascript','config');}this.refresh_access_token=true;this.refresh_token_wait_max=10;this.live_reload_config=true;this.host;this.environment;this.basePath;this.authUrl;this.config;this.gateway=undefined;this.logger=new Logger();this.setEnvironment();this.liveLoadConfig();}return _createClass(Configuration,[{key:"instance",get:/**
 	 * Singleton getter
 	 */function get(){return Configuration.instance;}/**
@@ -6458,7 +6458,7 @@ if(env)this.environment=env;else this.environment=this.host?this.host:'mypureclo
 this.environment=this.environment.replace(/\/+$/,'');// Strip protocol and subdomain
 if(this.environment.startsWith('https://'))this.environment=this.environment.substring(8);if(this.environment.startsWith('http://'))this.environment=this.environment.substring(7);if(this.environment.startsWith('api.'))this.environment=this.environment.substring(4);this.basePath="https://api.".concat(this.environment);this.authUrl="https://login.".concat(this.environment);}},{key:"getConfUrl",value:function getConfUrl(pathType,regionUrl){if(!this.gateway)return regionUrl;if(!this.gateway.host)return regionUrl;var url=this.gateway.protocol+'://'+this.gateway.host;if(this.gateway.port>-1)url=url+':'+this.gateway.port.toString();if(pathType==='login'){if(this.gateway.path_params_login){if(this.gateway.path_params_login.startsWith('/'))url=url+this.gateway.path_params_login;else url=url+'/'+this.gateway.path_params_login;}}else{if(this.gateway.path_params_api){if(this.gateway.path_params_api.startsWith('/'))url=url+this.gateway.path_params_api;else url=url+'/'+this.gateway.path_params_api;}}return url;}},{key:"getConfigString",value:function getConfigString(section,key){if(this.config._sections[section])return this.config._sections[section][key];}},{key:"getConfigBoolean",value:function getConfigBoolean(section,key){if(this.config._sections[section]&&this.config._sections[section][key]!==undefined){if(typeof this.config._sections[section][key]==='string'){return this.config._sections[section][key]==='true';}else return this.config._sections[section][key];}}},{key:"getConfigInt",value:function getConfigInt(section,key){if(this.config._sections[section]&&this.config._sections[section][key]){if(typeof this.config._sections[section][key]==='string'){return parseInt(this.config._sections[section][key]);}else return this.config._sections[section][key];}}}]);}();/**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 222.0.0
+ * @version 223.0.0
  */var ApiClient=/*#__PURE__*/function(){/**
 	 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
 	 * application to use this class directly - the *Api and model classes provide the public API for the service. The
@@ -6801,7 +6801,7 @@ resolve(data);})["catch"](function(error){var data=error;if(error.response&&erro
 that.config.logger.log('error',error.response.status,httpMethod,url,request.headers,error.response.headers,bodyParam,error.response.data);data=that.returnExtended===true?{status:error.response.status,statusText:error.response.statusText,headers:error.response.headers,body:error.response.data,text:error.response.text,error:error}:error.response.data?error.response.data:error.response.text;}reject(data);});}});}}]);}();var AgentAssistantsApi=/*#__PURE__*/function(){/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AgentAssistantsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AgentAssistantsApi
@@ -6862,7 +6862,8 @@ if(assistantId===undefined||assistantId===null){throw'Missing the required param
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Return the assistant by the given name.
-	 */},{key:"getAssistants",value:function getAssistants(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/assistants','GET',{},{'before':opts['before'],'after':opts['after'],'limit':opts['limit'],'pageSize':opts['pageSize'],'name':opts['name']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} opts.expand Which fields, if any, to expand
+	 */},{key:"getAssistants",value:function getAssistants(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/assistants','GET',{},{'before':opts['before'],'after':opts['after'],'limit':opts['limit'],'pageSize':opts['pageSize'],'name':opts['name'],'expand':opts['expand']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get all queues assigned to any assistant.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -6902,7 +6903,7 @@ if(queueId===undefined||queueId===null){throw'Missing the required parameter "qu
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantQueue';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/queues/{queueId}','PUT',{'assistantId':assistantId,'queueId':queueId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AgentCopilotApi=/*#__PURE__*/function(){/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AgentCopilotApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AgentCopilotApi
@@ -6924,7 +6925,7 @@ if(assistantId===undefined||assistantId===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantCopilot';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/copilot','PUT',{'assistantId':assistantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AgentUIApi=/*#__PURE__*/function(){/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AgentUIApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AgentUIApi
@@ -6958,7 +6959,7 @@ if(agentId===undefined||agentId===null){throw'Missing the required parameter "ag
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AlertingApi=/*#__PURE__*/function(){/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AlertingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AlertingApi
@@ -7047,7 +7048,7 @@ if(ruleId===undefined||ruleId===null){throw'Missing the required parameter "rule
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAlertingRule';}return this.apiClient.callApi('/api/v2/alerting/rules/{ruleId}','PUT',{'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AnalyticsApi=/*#__PURE__*/function(){/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AnalyticsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AnalyticsApi
@@ -7715,7 +7716,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAnalyticsDataretentionSettings';}return this.apiClient.callApi('/api/v2/analytics/dataretention/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ArchitectApi=/*#__PURE__*/function(){/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ArchitectApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ArchitectApi
@@ -8847,7 +8848,7 @@ if(milestoneId===undefined||milestoneId===null){throw'Missing the required param
 if(flowOutcomeId===undefined||flowOutcomeId===null){throw'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';}return this.apiClient.callApi('/api/v2/flows/outcomes/{flowOutcomeId}','PUT',{'flowOutcomeId':flowOutcomeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AuditApi=/*#__PURE__*/function(){/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AuditApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AuditApi
@@ -8897,7 +8898,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';}return this.apiClient.callApi('/api/v2/audits/query/realtime/related','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AuthorizationApi=/*#__PURE__*/function(){/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new AuthorizationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AuthorizationApi
@@ -9332,7 +9333,7 @@ if(subjectId===undefined||subjectId===null){throw'Missing the required parameter
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoles';}return this.apiClient.callApi('/api/v2/users/{subjectId}/roles','PUT',{'subjectId':subjectId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var BillingApi=/*#__PURE__*/function(){/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new BillingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/BillingApi
@@ -9409,7 +9410,7 @@ if(endDate===undefined||endDate===null){throw'Missing the required parameter "en
 if(trustorOrgId===undefined||trustorOrgId===null){throw'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';}return this.apiClient.callApi('/api/v2/billing/trusteebillingoverview/{trustorOrgId}','GET',{'trustorOrgId':trustorOrgId},{'billingPeriodIndex':opts['billingPeriodIndex']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var BusinessRulesApi=/*#__PURE__*/function(){/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new BusinessRulesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/BusinessRulesApi
@@ -9489,7 +9490,7 @@ if(tableVersion===undefined||tableVersion===null){throw'Missing the required par
 	 * @param {String} tableId Table ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"getBusinessrulesDecisiontableVersions",value:function getBusinessrulesDecisiontableVersions(tableId,opts){opts=opts||{};// verify the required parameter 'tableId' is set
@@ -9498,20 +9499,19 @@ if(tableId===undefined||tableId===null){throw'Missing the required parameter "ta
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"getBusinessrulesDecisiontables",value:function getBusinessrulesDecisiontables(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/businessrules/decisiontables','GET',{},{'after':opts['after'],'pageSize':opts['pageSize'],'divisionIds':this.apiClient.buildCollectionParam(opts['divisionIds'],'multi')},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Search for decision tables.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {String} opts.schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
 	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
 	 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */},{key:"getBusinessrulesDecisiontablesSearch",value:function getBusinessrulesDecisiontablesSearch(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/businessrules/decisiontables/search','GET',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize'],'schemaId':opts['schemaId'],'name':opts['name']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"getBusinessrulesDecisiontablesSearch",value:function getBusinessrulesDecisiontablesSearch(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/businessrules/decisiontables/search','GET',{},{'after':opts['after'],'pageSize':opts['pageSize'],'schemaId':opts['schemaId'],'name':opts['name']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
@@ -9657,7 +9657,7 @@ if(schemaId===undefined||schemaId===null){throw'Missing the required parameter "
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putBusinessrulesSchema';}return this.apiClient.callApi('/api/v2/businessrules/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var CarrierServicesApi=/*#__PURE__*/function(){/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new CarrierServicesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/CarrierServicesApi
@@ -9677,7 +9677,7 @@ if(phoneNumber===undefined||phoneNumber===null){throw'Missing the required param
 	 */},{key:"postCarrierservicesIntegrationsEmergencylocationsMe",value:function postCarrierservicesIntegrationsEmergencylocationsMe(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/carrierservices/integrations/emergencylocations/me','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ChatApi=/*#__PURE__*/function(){/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ChatApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ChatApi
@@ -9897,7 +9897,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putChatsSettings';}return this.apiClient.callApi('/api/v2/chats/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var CoachingApi=/*#__PURE__*/function(){/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new CoachingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/CoachingApi
@@ -10050,7 +10050,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';}return this.apiClient.callApi('/api/v2/coaching/scheduleslots/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ContentManagementApi=/*#__PURE__*/function(){/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ContentManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ContentManagementApi
@@ -10332,7 +10332,7 @@ if(tagId===undefined||tagId===null){throw'Missing the required parameter "tagId"
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';}return this.apiClient.callApi('/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}','PUT',{'workspaceId':workspaceId,'tagId':tagId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ConversationsApi=/*#__PURE__*/function(){/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ConversationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ConversationsApi
@@ -11875,6 +11875,15 @@ if(communicationId===undefined||communicationId===null){throw'Missing the requir
 if(conversationId===undefined||conversationId===null){throw'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';}// verify the required parameter 'communicationId' is set
 if(communicationId===undefined||communicationId===null){throw'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsMessageCommunicationMessagesMediaUploads';}return this.apiClient.callApi('/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads','POST',{'conversationId':conversationId,'communicationId':communicationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Send a social media message
+	 * Send a social media message on existing conversation/communication.
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body Message
+	 */},{key:"postConversationsMessageCommunicationSocialmediaMessages",value:function postConversationsMessageCommunicationSocialmediaMessages(conversationId,communicationId,body){// verify the required parameter 'conversationId' is set
+if(conversationId===undefined||conversationId===null){throw'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationSocialmediaMessages';}// verify the required parameter 'communicationId' is set
+if(communicationId===undefined||communicationId===null){throw'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationSocialmediaMessages';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postConversationsMessageCommunicationSocialmediaMessages';}return this.apiClient.callApi('/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages','POST',{'conversationId':conversationId,'communicationId':communicationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Send message typing event
 	 * Send message typing event for existing conversation/communication.
 	 * @param {String} conversationId conversationId
@@ -12219,7 +12228,7 @@ if(conversationId===undefined||conversationId===null){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/videos/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var DataExtensionsApi=/*#__PURE__*/function(){/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new DataExtensionsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/DataExtensionsApi
@@ -12240,7 +12249,7 @@ if(coretypeName===undefined||coretypeName===null){throw'Missing the required par
 	 */},{key:"getDataextensionsLimits",value:function getDataextensionsLimits(){return this.apiClient.callApi('/api/v2/dataextensions/limits','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var DataPrivacyApi=/*#__PURE__*/function(){/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new DataPrivacyApi. 
 	 * @alias module:purecloud-platform-client-v2/api/DataPrivacyApi
@@ -12280,7 +12289,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';}return this.apiClient.callApi('/api/v2/dataprivacy/maskingrules/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var DownloadsApi=/*#__PURE__*/function(){/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new DownloadsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/DownloadsApi
@@ -12299,7 +12308,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(downloadId===undefined||downloadId===null){throw'Missing the required parameter "downloadId" when calling getDownload';}return this.apiClient.callApi('/api/v2/downloads/{downloadId}','GET',{'downloadId':downloadId},{'contentDisposition':opts['contentDisposition'],'issueRedirect':opts['issueRedirect'],'redirectToAuth':opts['redirectToAuth']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var EmailsApi=/*#__PURE__*/function(){/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new EmailsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/EmailsApi
@@ -12328,7 +12337,7 @@ if(downloadId===undefined||downloadId===null){throw'Missing the required paramet
 	 */},{key:"patchEmailsSettingsThreading",value:function patchEmailsSettingsThreading(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/emails/settings/threading','PATCH',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var EmployeeEngagementApi=/*#__PURE__*/function(){/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new EmployeeEngagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/EmployeeEngagementApi
@@ -12366,7 +12375,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEmployeeengagementRecognitions';}return this.apiClient.callApi('/api/v2/employeeengagement/recognitions','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var EventsApi=/*#__PURE__*/function(){/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new EventsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/EventsApi
@@ -12391,7 +12400,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEventsUsersRoutingstatus';}return this.apiClient.callApi('/api/v2/events/users/routingstatus','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ExternalContactsApi=/*#__PURE__*/function(){/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ExternalContactsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ExternalContactsApi
@@ -13126,7 +13135,7 @@ if(relationshipId===undefined||relationshipId===null){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putExternalcontactsRelationship';}return this.apiClient.callApi('/api/v2/externalcontacts/relationships/{relationshipId}','PUT',{'relationshipId':relationshipId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var FaxApi=/*#__PURE__*/function(){/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new FaxApi. 
 	 * @alias module:purecloud-platform-client-v2/api/FaxApi
@@ -13175,7 +13184,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */},{key:"putFaxSettings",value:function putFaxSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/fax/settings','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var FlowsApi=/*#__PURE__*/function(){/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new FlowsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/FlowsApi
@@ -13223,7 +13232,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';}return this.apiClient.callApi('/api/v2/analytics/flows/observations/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GamificationApi=/*#__PURE__*/function(){/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new GamificationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GamificationApi
@@ -13876,7 +13885,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(status===undefined||status===null){throw'Missing the required parameter "status" when calling putGamificationStatus';}return this.apiClient.callApi('/api/v2/gamification/status','PUT',{},{},{},{},status,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GeneralDataProtectionRegulationApi=/*#__PURE__*/function(){/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new GeneralDataProtectionRegulationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
@@ -13911,7 +13920,7 @@ if(searchValue===undefined||searchValue===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postGdprRequests';}return this.apiClient.callApi('/api/v2/gdpr/requests','POST',{},{'deleteConfirmed':opts['deleteConfirmed']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GeolocationApi=/*#__PURE__*/function(){/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new GeolocationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GeolocationApi
@@ -13945,7 +13954,7 @@ if(clientId===undefined||clientId===null){throw'Missing the required parameter "
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchUserGeolocation';}return this.apiClient.callApi('/api/v2/users/{userId}/geolocations/{clientId}','PATCH',{'userId':userId,'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GreetingsApi=/*#__PURE__*/function(){/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new GreetingsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GreetingsApi
@@ -14052,7 +14061,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserGreetingsDefaults';}return this.apiClient.callApi('/api/v2/users/{userId}/greetings/defaults','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GroupsApi=/*#__PURE__*/function(){/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new GroupsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GroupsApi
@@ -14185,7 +14194,7 @@ if(groupId===undefined||groupId===null){throw'Missing the required parameter "gr
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putGroupDynamicsettings';}return this.apiClient.callApi('/api/v2/groups/{groupId}/dynamicsettings','PUT',{'groupId':groupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var IdentityProviderApi=/*#__PURE__*/function(){/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new IdentityProviderApi. 
 	 * @alias module:purecloud-platform-client-v2/api/IdentityProviderApi
@@ -14341,7 +14350,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';}return this.apiClient.callApi('/api/v2/identityproviders/salesforce','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var InfrastructureAsCodeApi=/*#__PURE__*/function(){/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new InfrastructureAsCodeApi. 
 	 * @alias module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi
@@ -14395,7 +14404,7 @@ if(jobId===undefined||jobId===null){throw'Missing the required parameter "jobId"
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postInfrastructureascodeJobs';}return this.apiClient.callApi('/api/v2/infrastructureascode/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var IntegrationsApi=/*#__PURE__*/function(){/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new IntegrationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/IntegrationsApi
@@ -14568,6 +14577,34 @@ if(fileName===undefined||fileName===null){throw'Missing the required parameter "
 	 * Get action function settings for Action
 	 * 
 	 */},{key:"getIntegrationsActionsFunctionsRuntimes",value:function getIntegrationsActionsFunctionsRuntimes(){return this.apiClient.callApi('/api/v2/integrations/actions/functions/runtimes','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get a specific Bot details
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {String} botId The bot ID for this bot
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.version Specific Version
+	 * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getIntegrationsBotconnectorBot",value:function getIntegrationsBotconnectorBot(integrationId,botId,opts){opts=opts||{};// verify the required parameter 'integrationId' is set
+if(integrationId===undefined||integrationId===null){throw'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBot';}// verify the required parameter 'botId' is set
+if(botId===undefined||botId===null){throw'Missing the required parameter "botId" when calling getIntegrationsBotconnectorBot';}return this.apiClient.callApi('/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}','GET',{'integrationId':integrationId,'botId':botId},{'version':opts['version']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get the list of bots for this integration.
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getIntegrationsBotconnectorBots",value:function getIntegrationsBotconnectorBots(integrationId,opts){opts=opts||{};// verify the required parameter 'integrationId' is set
+if(integrationId===undefined||integrationId===null){throw'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBots';}return this.apiClient.callApi('/api/v2/integrations/botconnectors/{integrationId}/bots','GET',{'integrationId':integrationId},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get the summary list of bots for this integration.
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"getIntegrationsBotconnectorBotsSummaries",value:function getIntegrationsBotconnectorBotsSummaries(integrationId,opts){opts=opts||{};// verify the required parameter 'integrationId' is set
+if(integrationId===undefined||integrationId===null){throw'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBotsSummaries';}return this.apiClient.callApi('/api/v2/integrations/botconnectors/{integrationId}/bots/summaries','GET',{'integrationId':integrationId},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get a specific botConnector bot, plus versions, for this integration
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
@@ -14947,6 +14984,18 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * @param {Object} body Input used to create Action Draft.
 	 */},{key:"postIntegrationsActionsDrafts",value:function postIntegrationsActionsDrafts(body){// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntegrationsActionsDrafts';}return this.apiClient.callApi('/api/v2/integrations/actions/drafts','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Send an incoming message to the bot.
+	 * 
+	 * @param {Object} body Incoming Message Request
+	 * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"postIntegrationsBotconnectorsIncomingMessages",value:function postIntegrationsBotconnectorsIncomingMessages(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntegrationsBotconnectorsIncomingMessages';}return this.apiClient.callApi('/api/v2/integrations/botconnectors/incoming/messages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Send an outgoing message to the end user.
+	 * 
+	 * @param {Object} body Outgoing Message Request
+	 * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */},{key:"postIntegrationsBotconnectorsOutgoingMessages",value:function postIntegrationsBotconnectorsOutgoingMessages(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntegrationsBotconnectorsOutgoingMessages';}return this.apiClient.callApi('/api/v2/integrations/botconnectors/outgoing/messages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a set of credentials
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -15034,7 +15083,7 @@ if(ucIntegrationId===undefined||ucIntegrationId===null){throw'Missing the requir
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';}return this.apiClient.callApi('/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences','PUT',{'ucIntegrationId':ucIntegrationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var JourneyApi=/*#__PURE__*/function(){/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new JourneyApi. 
 	 * @alias module:purecloud-platform-client-v2/api/JourneyApi
@@ -15514,7 +15563,7 @@ if(versionId===undefined||versionId===null){throw'Missing the required parameter
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putJourneyViewVersion';}return this.apiClient.callApi('/api/v2/journey/views/{viewId}/versions/{versionId}','PUT',{'viewId':viewId,'versionId':versionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var KnowledgeApi=/*#__PURE__*/function(){/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new KnowledgeApi. 
 	 * @alias module:purecloud-platform-client-v2/api/KnowledgeApi
@@ -16577,7 +16626,7 @@ if(sourceId===undefined||sourceId===null){throw'Missing the required parameter "
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';}return this.apiClient.callApi('/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}','PUT',{'knowledgeBaseId':knowledgeBaseId,'sourceId':sourceId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LanguageUnderstandingApi=/*#__PURE__*/function(){/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new LanguageUnderstandingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
@@ -16836,7 +16885,7 @@ if(domainVersionId===undefined||domainVersionId===null){throw'Missing the requir
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';}return this.apiClient.callApi('/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}','PUT',{'domainId':domainId,'domainVersionId':domainVersionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LanguagesApi=/*#__PURE__*/function(){/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new LanguagesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LanguagesApi
@@ -16891,7 +16940,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLanguages';}return this.apiClient.callApi('/api/v2/languages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LearningApi=/*#__PURE__*/function(){/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new LearningApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LearningApi
@@ -17162,7 +17211,7 @@ if(moduleId===undefined||moduleId===null){throw'Missing the required parameter "
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLearningModuleRule';}return this.apiClient.callApi('/api/v2/learning/modules/{moduleId}/rule','PUT',{'moduleId':moduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LicenseApi=/*#__PURE__*/function(){/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new LicenseApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LicenseApi
@@ -17216,7 +17265,7 @@ if(featureName===undefined||featureName===null){throw'Missing the required param
 	 */},{key:"postLicenseUsers",value:function postLicenseUsers(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/license/users','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LocationsApi=/*#__PURE__*/function(){/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new LocationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LocationsApi
@@ -17275,7 +17324,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLocationsSearch';}return this.apiClient.callApi('/api/v2/locations/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LogCaptureApi=/*#__PURE__*/function(){/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new LogCaptureApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LogCaptureApi
@@ -17311,11 +17360,10 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 	 * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.body 
-	 */},{key:"postDiagnosticsLogcaptureBrowserEntriesQuery",value:function postDiagnosticsLogcaptureBrowserEntriesQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/entries/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postDiagnosticsLogcaptureBrowserEntriesQuery",value:function postDiagnosticsLogcaptureBrowserEntriesQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/entries/query','POST',{},{'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Enable log capture for a user or update expiration
 	 * 
 	 * @param {String} userId The id of the user to enable browser log capture
@@ -17325,7 +17373,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';}return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/users/{userId}','POST',{'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var MessagingApi=/*#__PURE__*/function(){/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new MessagingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/MessagingApi
@@ -17415,7 +17463,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putMessagingSettingsDefault';}return this.apiClient.callApi('/api/v2/messaging/settings/default','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var MobileDevicesApi=/*#__PURE__*/function(){/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new MobileDevicesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/MobileDevicesApi
@@ -17454,7 +17502,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(deviceId===undefined||deviceId===null){throw'Missing the required parameter "deviceId" when calling putMobiledevice';}return this.apiClient.callApi('/api/v2/mobiledevices/{deviceId}','PUT',{'deviceId':deviceId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var NotificationsApi=/*#__PURE__*/function(){/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new NotificationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/NotificationsApi
@@ -17511,7 +17559,7 @@ if(channelId===undefined||channelId===null){throw'Missing the required parameter
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';}return this.apiClient.callApi('/api/v2/notifications/channels/{channelId}/subscriptions','PUT',{'channelId':channelId},{'ignoreErrors':opts['ignoreErrors']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OAuthApi=/*#__PURE__*/function(){/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new OAuthApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OAuthApi
@@ -17596,7 +17644,7 @@ if(clientId===undefined||clientId===null){throw'Missing the required parameter "
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOauthClient';}return this.apiClient.callApi('/api/v2/oauth/clients/{clientId}','PUT',{'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ObjectsApi=/*#__PURE__*/function(){/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ObjectsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ObjectsApi
@@ -17682,7 +17730,7 @@ if(divisionId===undefined||divisionId===null){throw'Missing the required paramet
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAuthorizationDivision';}return this.apiClient.callApi('/api/v2/authorization/divisions/{divisionId}','PUT',{'divisionId':divisionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OperationalEventsApi=/*#__PURE__*/function(){/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new OperationalEventsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OperationalEventsApi
@@ -17713,7 +17761,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null){throw'Missing the re
 	 */},{key:"postUsageEventsQuery",value:function postUsageEventsQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/usage/events/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OrganizationApi=/*#__PURE__*/function(){/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new OrganizationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OrganizationApi
@@ -17818,7 +17866,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOrganizationsWhitelist';}return this.apiClient.callApi('/api/v2/organizations/whitelist','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OrganizationAuthorizationApi=/*#__PURE__*/function(){/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new OrganizationAuthorizationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi
@@ -18152,7 +18200,7 @@ if(trustorOrgId===undefined||trustorOrgId===null){throw'Missing the required par
 if(trusteeUserId===undefined||trusteeUserId===null){throw'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';}return this.apiClient.callApi('/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}','PUT',{'trustorOrgId':trustorOrgId,'trusteeUserId':trusteeUserId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OutboundApi=/*#__PURE__*/function(){/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new OutboundApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OutboundApi
@@ -19283,7 +19331,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';}return this.apiClient.callApi('/api/v2/outbound/wrapupcodemappings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var PresenceApi=/*#__PURE__*/function(){/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new PresenceApi. 
 	 * @alias module:purecloud-platform-client-v2/api/PresenceApi
@@ -19456,7 +19504,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersPresencesBulk';}return this.apiClient.callApi('/api/v2/users/presences/bulk','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ProcessAutomationApi=/*#__PURE__*/function(){/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ProcessAutomationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ProcessAutomationApi
@@ -19519,7 +19567,7 @@ if(triggerId===undefined||triggerId===null){throw'Missing the required parameter
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putProcessautomationTrigger';}return this.apiClient.callApi('/api/v2/processautomation/triggers/{triggerId}','PUT',{'triggerId':triggerId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var QualityApi=/*#__PURE__*/function(){/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new QualityApi. 
 	 * @alias module:purecloud-platform-client-v2/api/QualityApi
@@ -19997,7 +20045,7 @@ if(customerSurveyUrl===undefined||customerSurveyUrl===null){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putQualitySurveysScorable';}return this.apiClient.callApi('/api/v2/quality/surveys/scorable','PUT',{},{'customerSurveyUrl':customerSurveyUrl},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var RecordingApi=/*#__PURE__*/function(){/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new RecordingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/RecordingApi
@@ -20396,7 +20444,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */},{key:"putRecordingsDeletionprotection",value:function putRecordingsDeletionprotection(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/recordings/deletionprotection','PUT',{},{'protect':opts['protect']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ResponseManagementApi=/*#__PURE__*/function(){/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ResponseManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ResponseManagementApi
@@ -20517,7 +20565,7 @@ if(responseAssetId===undefined||responseAssetId===null){throw'Missing the requir
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putResponsemanagementResponseasset';}return this.apiClient.callApi('/api/v2/responsemanagement/responseassets/{responseAssetId}','PUT',{'responseAssetId':responseAssetId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var RoutingApi=/*#__PURE__*/function(){/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new RoutingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/RoutingApi
@@ -21565,7 +21613,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoutingskillsBulk';}return this.apiClient.callApi('/api/v2/users/{userId}/routingskills/bulk','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SCIMApi=/*#__PURE__*/function(){/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new SCIMApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SCIMApi
@@ -21790,7 +21838,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScimV2User';}return this.apiClient.callApi('/api/v2/scim/v2/users/{userId}','PUT',{'userId':userId},{},{'If-Match':opts['ifMatch']},{},body,['PureCloud OAuth'],['application/scim+json','application/json'],['application/scim+json','application/json']);}}]);}();var ScreenRecordingApi=/*#__PURE__*/function(){/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ScreenRecordingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ScreenRecordingApi
@@ -21805,7 +21853,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */return _createClass(ScreenRecordingApi,[{key:"postScreenrecordingToken",value:function postScreenrecordingToken(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/screenrecording/token','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ScriptsApi=/*#__PURE__*/function(){/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new ScriptsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ScriptsApi
@@ -21951,7 +21999,7 @@ if(scriptId===undefined||scriptId===null){throw'Missing the required parameter "
 	 */},{key:"postScriptsPublished",value:function postScriptsPublished(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/scripts/published','POST',{},{'scriptDataVersion':opts['scriptDataVersion']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SearchApi=/*#__PURE__*/function(){/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new SearchApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SearchApi
@@ -22123,7 +22171,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postVoicemailSearch';}return this.apiClient.callApi('/api/v2/voicemail/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SettingsApi=/*#__PURE__*/function(){/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new SettingsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SettingsApi
@@ -22195,7 +22243,7 @@ if(agentId===undefined||agentId===null){throw'Missing the required parameter "ag
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SocialMediaApi=/*#__PURE__*/function(){/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new SocialMediaApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SocialMediaApi
@@ -22236,7 +22284,6 @@ if(facebookIngestionRuleId===undefined||facebookIngestionRuleId===null){throw'Mi
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
-	 * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"deleteSocialmediaTopicDataingestionrulesOpenOpenId",value:function deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId,openId,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesOpenOpenId';}// verify the required parameter 'openId' is set
 if(openId===undefined||openId===null){throw'Missing the required parameter "openId" when calling deleteSocialmediaTopicDataingestionrulesOpenOpenId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}','DELETE',{'topicId':topicId,'openId':openId},{'hardDelete':opts['hardDelete']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
@@ -22339,7 +22386,6 @@ if(facebookIngestionRuleId===undefined||facebookIngestionRuleId===null){throw'Mi
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"getSocialmediaTopicDataingestionrulesOpenOpenId",value:function getSocialmediaTopicDataingestionrulesOpenOpenId(topicId,openId,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenId';}// verify the required parameter 'openId' is set
 if(openId===undefined||openId===null){throw'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}','GET',{'topicId':topicId,'openId':openId},{'includeDeleted':opts['includeDeleted']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
@@ -22350,7 +22396,6 @@ if(openId===undefined||openId===null){throw'Missing the required parameter "open
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
-	 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"getSocialmediaTopicDataingestionrulesOpenOpenIdVersion",value:function getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId,openId,dataIngestionRuleVersion,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';}// verify the required parameter 'openId' is set
 if(openId===undefined||openId===null){throw'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';}// verify the required parameter 'dataIngestionRuleVersion' is set
@@ -22363,7 +22408,6 @@ if(dataIngestionRuleVersion===undefined||dataIngestionRuleVersion===null){throw'
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-	 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"getSocialmediaTopicDataingestionrulesOpenOpenIdVersions",value:function getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId,openId,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersions';}// verify the required parameter 'openId' is set
 if(openId===undefined||openId===null){throw'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersions';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions','GET',{'topicId':topicId,'openId':openId},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize'],'includeDeleted':opts['includeDeleted']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
@@ -22428,7 +22472,6 @@ if(facebookIngestionRuleId===undefined||facebookIngestionRuleId===null){throw'Mi
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"patchSocialmediaTopicDataingestionrulesOpenOpenId",value:function patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId,openId,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesOpenOpenId';}// verify the required parameter 'openId' is set
 if(openId===undefined||openId===null){throw'Missing the required parameter "openId" when calling patchSocialmediaTopicDataingestionrulesOpenOpenId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}','PATCH',{'topicId':topicId,'openId':openId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
@@ -22475,9 +22518,26 @@ if(topicId===undefined||topicId===null){throw'Missing the required parameter "to
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"postSocialmediaTopicDataingestionrulesOpen",value:function postSocialmediaTopicDataingestionrulesOpen(topicId,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpen';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open','POST',{'topicId':topicId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Ingest a list of Open Social Messages
+	 * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+	 * @param {String} topicId Topic ID
+	 * @param {String} ruleId Data Ingestion Rule ID
+	 * @param {Array.<Object>} body NormalizedMessage
+	 */},{key:"postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk",value:function postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId,ruleId,body){// verify the required parameter 'topicId' is set
+if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';}// verify the required parameter 'ruleId' is set
+if(ruleId===undefined||ruleId===null){throw'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk','POST',{'topicId':topicId,'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Ingest a list of Open Social Reactions
+	 * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+	 * @param {String} topicId Topic ID
+	 * @param {String} ruleId Data Ingestion Rule ID
+	 * @param {Object} body NormalizedEvent
+	 */},{key:"postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk",value:function postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId,ruleId,body){// verify the required parameter 'topicId' is set
+if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';}// verify the required parameter 'ruleId' is set
+if(ruleId===undefined||ruleId===null){throw'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk','POST',{'topicId':topicId,'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create an twitter data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -22517,7 +22577,6 @@ if(facebookIngestionRuleId===undefined||facebookIngestionRuleId===null){throw'Mi
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */},{key:"putSocialmediaTopicDataingestionrulesOpenOpenId",value:function putSocialmediaTopicDataingestionrulesOpenOpenId(topicId,openId,opts){opts=opts||{};// verify the required parameter 'topicId' is set
 if(topicId===undefined||topicId===null){throw'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesOpenOpenId';}// verify the required parameter 'openId' is set
 if(openId===undefined||openId===null){throw'Missing the required parameter "openId" when calling putSocialmediaTopicDataingestionrulesOpenOpenId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}','PUT',{'topicId':topicId,'openId':openId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
@@ -22532,7 +22591,7 @@ if(topicId===undefined||topicId===null){throw'Missing the required parameter "to
 if(twitterIngestionRuleId===undefined||twitterIngestionRuleId===null){throw'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}','PUT',{'topicId':topicId,'twitterIngestionRuleId':twitterIngestionRuleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SpeechTextAnalyticsApi=/*#__PURE__*/function(){/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new SpeechTextAnalyticsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
@@ -22734,6 +22793,11 @@ if(topicId===undefined||topicId===null){throw'Missing the required parameter "to
 	 * @param {String} jobId The id of the publish topics job
 	 */},{key:"getSpeechandtextanalyticsTopicsPublishjob",value:function getSpeechandtextanalyticsTopicsPublishjob(jobId){// verify the required parameter 'jobId' is set
 if(jobId===undefined||jobId===null){throw'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get a Speech and Text Analytics test topics phrase job by id
+	 * 
+	 * @param {String} jobId the id of the test topic phrase job
+	 */},{key:"getSpeechandtextanalyticsTopicsTestphraseJob",value:function getSpeechandtextanalyticsTopicsTestphraseJob(jobId){// verify the required parameter 'jobId' is set
+if(jobId===undefined||jobId===null){throw'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsTestphraseJob';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}','GET',{'jobId':jobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Translate a single interaction recording (or an email conversation)
 	 * 
 	 * @param {String} languageId Target translation language
@@ -22792,6 +22856,11 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * @param {Object} body The publish topics job to create
 	 */},{key:"postSpeechandtextanalyticsTopicsPublishjobs",value:function postSpeechandtextanalyticsTopicsPublishjobs(body){// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsPublishjobs';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/publishjobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Create new Speech and Text Analytics publish topics job
+	 * 
+	 * @param {Object} body The publish test topic phrase job to create
+	 */},{key:"postSpeechandtextanalyticsTopicsTestphraseJobs",value:function postSpeechandtextanalyticsTopicsTestphraseJobs(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsTestphraseJobs';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/testphrase/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
@@ -22853,7 +22922,7 @@ if(topicId===undefined||topicId===null){throw'Missing the required parameter "to
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/{topicId}','PUT',{'topicId':topicId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var StationsApi=/*#__PURE__*/function(){/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new StationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/StationsApi
@@ -22885,7 +22954,7 @@ if(stationId===undefined||stationId===null){throw'Missing the required parameter
 	 */},{key:"getStations",value:function getStations(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/stations','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'sortBy':opts['sortBy'],'name':opts['name'],'userSelectable':opts['userSelectable'],'webRtcUserId':opts['webRtcUserId'],'id':opts['id'],'lineAppearanceId':opts['lineAppearanceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SuggestApi=/*#__PURE__*/function(){/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new SuggestApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SuggestApi
@@ -22925,7 +22994,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSearchSuggest';}return this.apiClient.callApi('/api/v2/search/suggest','POST',{},{'profile':opts['profile']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TaskManagementApi=/*#__PURE__*/function(){/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new TaskManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TaskManagementApi
@@ -23433,7 +23502,7 @@ if(schemaId===undefined||schemaId===null){throw'Missing the required parameter "
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTaskmanagementWorkitemsSchema';}return this.apiClient.callApi('/api/v2/taskmanagement/workitems/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TeamsApi=/*#__PURE__*/function(){/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new TeamsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TeamsApi
@@ -23513,7 +23582,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postTeamsSearch';}return this.apiClient.callApi('/api/v2/teams/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TelephonyApi=/*#__PURE__*/function(){/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new TelephonyApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TelephonyApi
@@ -23560,7 +23629,7 @@ if(downloadId===undefined||downloadId===null){throw'Missing the required paramet
 if(sIPSearchPublicRequest===undefined||sIPSearchPublicRequest===null){throw'Missing the required parameter "sIPSearchPublicRequest" when calling postTelephonySiptracesDownload';}return this.apiClient.callApi('/api/v2/telephony/siptraces/download','POST',{},{},{},{},sIPSearchPublicRequest,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TelephonyProvidersEdgeApi=/*#__PURE__*/function(){/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new TelephonyProvidersEdgeApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
@@ -24396,7 +24465,7 @@ if(trunkBaseSettingsId===undefined||trunkBaseSettingsId===null){throw'Missing th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTrunkbasesetting';}return this.apiClient.callApi('/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}','PUT',{'trunkBaseSettingsId':trunkBaseSettingsId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TextbotsApi=/*#__PURE__*/function(){/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new TextbotsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TextbotsApi
@@ -24432,7 +24501,7 @@ if(launchRequest===undefined||launchRequest===null){throw'Missing the required p
 if(postTextRequest===undefined||postTextRequest===null){throw'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';}return this.apiClient.callApi('/api/v2/textbots/bots/execute','POST',{},{},{},{},postTextRequest,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TokensApi=/*#__PURE__*/function(){/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new TokensApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TokensApi
@@ -24466,7 +24535,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 	 */},{key:"putTokensTimeout",value:function putTokensTimeout(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/tokens/timeout','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UploadsApi=/*#__PURE__*/function(){/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new UploadsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UploadsApi
@@ -24534,7 +24603,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';}return this.apiClient.callApi('/api/v2/uploads/workforcemanagement/historicaldata/csv','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UsageApi=/*#__PURE__*/function(){/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new UsageApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UsageApi
@@ -24588,7 +24657,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsageSimplesearch';}return this.apiClient.callApi('/api/v2/usage/simplesearch','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UserRecordingsApi=/*#__PURE__*/function(){/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new UserRecordingsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UserRecordingsApi
@@ -24645,7 +24714,7 @@ if(recordingId===undefined||recordingId===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserrecording';}return this.apiClient.callApi('/api/v2/userrecordings/{recordingId}','PUT',{'recordingId':recordingId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UsersApi=/*#__PURE__*/function(){/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new UsersApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UsersApi
@@ -25372,7 +25441,7 @@ if(verifierId===undefined||verifierId===null){throw'Missing the required paramet
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserVerifier';}return this.apiClient.callApi('/api/v2/users/{userId}/verifiers/{verifierId}','PUT',{'userId':userId,'verifierId':verifierId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UtilitiesApi=/*#__PURE__*/function(){/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new UtilitiesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UtilitiesApi
@@ -25399,7 +25468,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCertificateDetails';}return this.apiClient.callApi('/api/v2/certificate/details','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var VoicemailApi=/*#__PURE__*/function(){/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new VoicemailApi. 
 	 * @alias module:purecloud-platform-client-v2/api/VoicemailApi
@@ -25561,7 +25630,7 @@ if(userId===undefined||userId===null){throw'Missing the required parameter "user
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putVoicemailUserpolicy';}return this.apiClient.callApi('/api/v2/voicemail/userpolicies/{userId}','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WebChatApi=/*#__PURE__*/function(){/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new WebChatApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WebChatApi
@@ -25705,7 +25774,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebchatSettings';}return this.apiClient.callApi('/api/v2/webchat/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WebDeploymentsApi=/*#__PURE__*/function(){/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new WebDeploymentsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WebDeploymentsApi
@@ -25838,7 +25907,7 @@ if(deploymentId===undefined||deploymentId===null){throw'Missing the required par
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebdeploymentsDeploymentIdentityresolution';}return this.apiClient.callApi('/api/v2/webdeployments/deployments/{deploymentId}/identityresolution','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WebMessagingApi=/*#__PURE__*/function(){/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new WebMessagingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WebMessagingApi
@@ -25854,7 +25923,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */return _createClass(WebMessagingApi,[{key:"getWebmessagingMessages",value:function getWebmessagingMessages(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/webmessaging/messages','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WidgetsApi=/*#__PURE__*/function(){/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new WidgetsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WidgetsApi
@@ -25894,7 +25963,7 @@ if(deploymentId===undefined||deploymentId===null){throw'Missing the required par
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWidgetsDeployment';}return this.apiClient.callApi('/api/v2/widgets/deployments/{deploymentId}','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WorkforceManagementApi=/*#__PURE__*/function(){/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 *//**
 	 * Constructs a new WorkforceManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WorkforceManagementApi
@@ -26772,10 +26841,10 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Update my alternative shifts trade by trade ID
 	 * 
 	 * @param {String} tradeId The ID of the alternative shift trade
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementAlternativeshiftsTrade",value:function patchWorkforcemanagementAlternativeshiftsTrade(tradeId,opts){opts=opts||{};// verify the required parameter 'tradeId' is set
-if(tradeId===undefined||tradeId===null){throw'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}','PATCH',{'tradeId':tradeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementAlternativeshiftsTrade",value:function patchWorkforcemanagementAlternativeshiftsTrade(tradeId,body){// verify the required parameter 'tradeId' is set
+if(tradeId===undefined||tradeId===null){throw'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementAlternativeshiftsTrade';}return this.apiClient.callApi('/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}','PATCH',{'tradeId':tradeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Bulk update alternative shift trade states
 	 * 
 	 * @param {Object} body The request body
@@ -26784,19 +26853,19 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Update business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunit",value:function patchWorkforcemanagementBusinessunit(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}','PATCH',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunit",value:function patchWorkforcemanagementBusinessunit(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update an activity code
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitActivitycode",value:function patchWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitActivitycode",value:function patchWorkforcemanagementBusinessunitActivitycode(businessUnitId,activityCodeId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';}// verify the required parameter 'activityCodeId' is set
-if(activityCodeId===undefined||activityCodeId===null){throw'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}','PATCH',{'businessUnitId':businessUnitId,'activityCodeId':activityCodeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(activityCodeId===undefined||activityCodeId===null){throw'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivitycode';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}','PATCH',{'businessUnitId':businessUnitId,'activityCodeId':activityCodeId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update an activity plan
 	 * If a job associated with the activity plan is in Processing state the activity plan cannot be updated
 	 * @param {String} businessUnitId The ID of the business unit
@@ -26809,55 +26878,55 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Update alternative shifts settings for a business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitAlternativeshiftsSettings",value:function patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitAlternativeshiftsSettings",value:function patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings','PATCH',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates the planning group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} planningGroupId The ID of a planning group to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitPlanninggroup",value:function patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitPlanninggroup",value:function patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId,planningGroupId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}// verify the required parameter 'planningGroupId' is set
-if(planningGroupId===undefined||planningGroupId===null){throw'Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}','PATCH',{'businessUnitId':businessUnitId,'planningGroupId':planningGroupId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(planningGroupId===undefined||planningGroupId===null){throw'Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitPlanninggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}','PATCH',{'businessUnitId':businessUnitId,'planningGroupId':planningGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Mark a schedule run as applied
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} runId The ID of the schedule run
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitSchedulingRun",value:function patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitSchedulingRun",value:function patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId,runId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}// verify the required parameter 'runId' is set
-if(runId===undefined||runId===null){throw'Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}','PATCH',{'businessUnitId':businessUnitId,'runId':runId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(runId===undefined||runId===null){throw'Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulingRun';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}','PATCH',{'businessUnitId':businessUnitId,'runId':runId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates a service goal template
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} serviceGoalTemplateId The ID of a service goal template to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitServicegoaltemplate",value:function patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitServicegoaltemplate",value:function patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId,serviceGoalTemplateId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}// verify the required parameter 'serviceGoalTemplateId' is set
-if(serviceGoalTemplateId===undefined||serviceGoalTemplateId===null){throw'Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}','PATCH',{'businessUnitId':businessUnitId,'serviceGoalTemplateId':serviceGoalTemplateId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(serviceGoalTemplateId===undefined||serviceGoalTemplateId===null){throw'Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}','PATCH',{'businessUnitId':businessUnitId,'serviceGoalTemplateId':serviceGoalTemplateId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates a staffing group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} staffingGroupId The ID of the staffing group to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitStaffinggroup",value:function patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitStaffinggroup",value:function patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId,staffingGroupId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}// verify the required parameter 'staffingGroupId' is set
-if(staffingGroupId===undefined||staffingGroupId===null){throw'Missing the required parameter "staffingGroupId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}','PATCH',{'businessUnitId':businessUnitId,'staffingGroupId':staffingGroupId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(staffingGroupId===undefined||staffingGroupId===null){throw'Missing the required parameter "staffingGroupId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitStaffinggroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}','PATCH',{'businessUnitId':businessUnitId,'staffingGroupId':staffingGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates a time-off plan
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffPlanId The ID of the time-off plan to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitTimeoffplan",value:function patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitTimeoffplan",value:function patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId,timeOffPlanId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
-if(timeOffPlanId===undefined||timeOffPlanId===null){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}','PATCH',{'businessUnitId':businessUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(timeOffPlanId===undefined||timeOffPlanId===null){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}','PATCH',{'businessUnitId':businessUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update work plan bid
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -26872,84 +26941,84 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId Work Plan Bid Group id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroup",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroup",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,bidId,bidGroupId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'bidGroupId' is set
-if(bidGroupId===undefined||bidGroupId===null){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(bidGroupId===undefined||bidGroupId===null){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Overrides the assigned work plan for the specified agents
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId The ID of the work plan bid group
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId,bidId,bidGroupId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences",value:function patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId,bidId,bidGroupId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'bidId' is set
 if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'bidGroupId' is set
-if(bidGroupId===undefined||bidGroupId===null){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(bidGroupId===undefined||bidGroupId===null){throw'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences','PATCH',{'businessUnitId':businessUnitId,'bidId':bidId,'bidGroupId':bidGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update the requested management unit
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunit",value:function patchWorkforcemanagementManagementunit(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}','PATCH',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunit",value:function patchWorkforcemanagementManagementunit(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update agent configurations
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitAgents",value:function patchWorkforcemanagementManagementunitAgents(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents','PATCH',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitAgents",value:function patchWorkforcemanagementManagementunitAgents(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgents';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates agent work plan configuration
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitAgentsWorkplansBulk",value:function patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk','PATCH',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitAgentsWorkplansBulk",value:function patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk','PATCH',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates a time off limit object.
 	 * Updates time off limit object properties, but not daily values.
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The id of time off limit object to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitTimeofflimit",value:function patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitTimeofflimit",value:function patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,timeOffLimitId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'timeOffLimitId' is set
-if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','PATCH',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeofflimit';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}','PATCH',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates a time off plan
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitTimeoffplan",value:function patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitTimeoffplan",value:function patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId,timeOffPlanId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'timeOffPlanId' is set
-if(timeOffPlanId===undefined||timeOffPlanId===null){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','PATCH',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(timeOffPlanId===undefined||timeOffPlanId===null){throw'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeoffplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}','PATCH',{'managementUnitId':managementUnitId,'timeOffPlanId':timeOffPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Set integration status for a time off request.
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffRequestId The ID of the time off request.
 	 * @param {String} userId The ID of user to whom the time off request belongs.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus",value:function patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId,timeOffRequestId,userId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus",value:function patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId,timeOffRequestId,userId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}// verify the required parameter 'timeOffRequestId' is set
 if(timeOffRequestId===undefined||timeOffRequestId===null){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}// verify the required parameter 'userId' is set
-if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus','PATCH',{'managementUnitId':managementUnitId,'timeOffRequestId':timeOffRequestId,'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus','PATCH',{'managementUnitId':managementUnitId,'timeOffRequestId':timeOffRequestId,'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update a time off request
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitUserTimeoffrequest",value:function patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId,userId,timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitUserTimeoffrequest",value:function patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId,userId,timeOffRequestId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'userId' is set
 if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'timeOffRequestId' is set
-if(timeOffRequestId===undefined||timeOffRequestId===null){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}','PATCH',{'managementUnitId':managementUnitId,'userId':userId,'timeOffRequestId':timeOffRequestId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(timeOffRequestId===undefined||timeOffRequestId===null){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}','PATCH',{'managementUnitId':managementUnitId,'userId':userId,'timeOffRequestId':timeOffRequestId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Updates a shift trade. This route can only be called by the initiating agent
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -26965,35 +27034,36 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to update
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitWorkplan",value:function patchWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 */},{key:"patchWorkforcemanagementManagementunitWorkplan",value:function patchWorkforcemanagementManagementunitWorkplan(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplan';}// verify the required parameter 'workPlanId' is set
-if(workPlanId===undefined||workPlanId===null){throw'Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}','PATCH',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'validationMode':opts['validationMode']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(workPlanId===undefined||workPlanId===null){throw'Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWorkplan';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}','PATCH',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'validationMode':opts['validationMode']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update a work plan rotation
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementManagementunitWorkplanrotation",value:function patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementManagementunitWorkplanrotation",value:function patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId,workPlanRotationId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}// verify the required parameter 'workPlanRotationId' is set
-if(workPlanRotationId===undefined||workPlanRotationId===null){throw'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}','PATCH',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(workPlanRotationId===undefined||workPlanRotationId===null){throw'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWorkplanrotation';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}','PATCH',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update a time off request for the current user
 	 * 
 	 * @param {String} timeOffRequestId The ID of the time off request
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementTimeoffrequest",value:function patchWorkforcemanagementTimeoffrequest(timeOffRequestId,opts){opts=opts||{};// verify the required parameter 'timeOffRequestId' is set
-if(timeOffRequestId===undefined||timeOffRequestId===null){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}','PATCH',{'timeOffRequestId':timeOffRequestId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementTimeoffrequest",value:function patchWorkforcemanagementTimeoffrequest(timeOffRequestId,body){// verify the required parameter 'timeOffRequestId' is set
+if(timeOffRequestId===undefined||timeOffRequestId===null){throw'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementTimeoffrequest';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}','PATCH',{'timeOffRequestId':timeOffRequestId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update work plan bid ranks for a user
 	 * 
 	 * @param {String} userId The userId to whom the work plan bid ranks apply.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementUserWorkplanbidranks",value:function patchWorkforcemanagementUserWorkplanbidranks(userId,opts){opts=opts||{};// verify the required parameter 'userId' is set
-if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';}return this.apiClient.callApi('/api/v2/workforcemanagement/users/{userId}/workplanbidranks','PATCH',{'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementUserWorkplanbidranks",value:function patchWorkforcemanagementUserWorkplanbidranks(userId,body){// verify the required parameter 'userId' is set
+if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementUserWorkplanbidranks';}return this.apiClient.callApi('/api/v2/workforcemanagement/users/{userId}/workplanbidranks','PATCH',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
 	 * 
 	 * @param {Array.<Object>} body Users
@@ -27002,10 +27072,10 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Update an agent's work plan bidding preference
 	 * 
 	 * @param {String} bidId The ID of the work plan bid
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"patchWorkforcemanagementWorkplanbidPreferences",value:function patchWorkforcemanagementWorkplanbidPreferences(bidId,opts){opts=opts||{};// verify the required parameter 'bidId' is set
-if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids/{bidId}/preferences','PATCH',{'bidId':bidId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"patchWorkforcemanagementWorkplanbidPreferences",value:function patchWorkforcemanagementWorkplanbidPreferences(bidId,body){// verify the required parameter 'bidId' is set
+if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchWorkforcemanagementWorkplanbidPreferences';}return this.apiClient.callApi('/api/v2/workforcemanagement/workplanbids/{bidId}/preferences','PATCH',{'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Submit an adherence explanation for the current user
 	 * 
 	 * @param {Object} body The request body
@@ -27027,9 +27097,9 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */},{key:"postWorkforcemanagementAdherenceHistorical",value:function postWorkforcemanagementAdherenceHistorical(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/historical','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Request a historical adherence report in bulk
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementAdherenceHistoricalBulk",value:function postWorkforcemanagementAdherenceHistoricalBulk(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/historical/bulk','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementAdherenceHistoricalBulk",value:function postWorkforcemanagementAdherenceHistoricalBulk(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceHistoricalBulk';}return this.apiClient.callApi('/api/v2/workforcemanagement/adherence/historical/bulk','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Add an adherence explanation for the requested user
 	 * 
 	 * @param {String} agentId The ID of the agent to query
@@ -27049,14 +27119,14 @@ if(agentId===undefined||agentId===null){throw'Missing the required parameter "ag
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query','POST',{'agentId':agentId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Move agents in and out of management unit
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementAgents",value:function postWorkforcemanagementAgents(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agents','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementAgents",value:function postWorkforcemanagementAgents(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgents';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Query integrations for agents
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementAgentsIntegrationsHrisQuery",value:function postWorkforcemanagementAgentsIntegrationsHrisQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agents/integrations/hris/query','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementAgentsIntegrationsHrisQuery",value:function postWorkforcemanagementAgentsIntegrationsHrisQuery(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsIntegrationsHrisQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/integrations/hris/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get agent possible work shifts for requested time frame
 	 * 
 	 * @param {Object} body body
@@ -27064,9 +27134,9 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentsMePossibleworkshifts';}return this.apiClient.callApi('/api/v2/workforcemanagement/agents/me/possibleworkshifts','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get published schedule for the current user
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementAgentschedulesMine",value:function postWorkforcemanagementAgentschedulesMine(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/agentschedules/mine','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementAgentschedulesMine",value:function postWorkforcemanagementAgentschedulesMine(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementAgentschedulesMine';}return this.apiClient.callApi('/api/v2/workforcemanagement/agentschedules/mine','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Request a list of alternative shift offers for a given schedule
 	 * 
 	 * @param {Object} body The request body
@@ -27085,10 +27155,10 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Create a new activity code
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitActivitycodes",value:function postWorkforcemanagementBusinessunitActivitycodes(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitActivitycodes",value:function postWorkforcemanagementBusinessunitActivitycodes(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivitycodes';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Run an activity plan manually
 	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 	 * @param {String} businessUnitId The ID of the business unit
@@ -27116,12 +27186,13 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Search published schedules
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitAgentschedulesSearch",value:function postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementBusinessunitAgentschedulesSearch",value:function postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * List alternative shifts trades for a given management unit or agent
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -27134,60 +27205,61 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Get intraday data for the given date for the requested planningGroupIds
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitIntraday",value:function postWorkforcemanagementBusinessunitIntraday(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementBusinessunitIntraday",value:function postWorkforcemanagementBusinessunitIntraday(businessUnitId,body,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitIntraday';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday','POST',{'businessUnitId':businessUnitId},{'forceAsync':opts['forceAsync']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Adds a new planning group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitPlanninggroups",value:function postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitPlanninggroups",value:function postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitPlanninggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Adds a new service goal template
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitServicegoaltemplates",value:function postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitServicegoaltemplates",value:function postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Creates a new staffing group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroups",value:function postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroups",value:function postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Gets staffing group associations for a list of user IDs
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroupsQuery",value:function postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitStaffinggroupsQuery",value:function postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Creates a new time-off limit object
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimits",value:function postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimits",value:function postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Retrieves time-off limit related values based on a given set of filters.
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Creates a new time-off plan
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitTimeoffplans",value:function postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitTimeoffplans",value:function postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Loads agent schedule data from the schedule. Used in combination with the metadata route
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -27218,23 +27290,23 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId,weekId,scheduleId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}// verify the required parameter 'scheduleId' is set
-if(scheduleId===undefined||scheduleId===null){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(scheduleId===undefined||scheduleId===null){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Upload daily activity changes to be able to request a performance prediction recalculation
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId,weekId,scheduleId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl",value:function postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId,weekId,scheduleId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}// verify the required parameter 'weekId' is set
 if(weekId===undefined||weekId===null){throw'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}// verify the required parameter 'scheduleId' is set
-if(scheduleId===undefined||scheduleId===null){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(scheduleId===undefined||scheduleId===null){throw'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl','POST',{'businessUnitId':businessUnitId,'weekId':weekId,'scheduleId':scheduleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Start a rescheduling run
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -27359,23 +27431,23 @@ if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId"
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbidGroups",value:function postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,bidId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbidGroups",value:function postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,bidId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}// verify the required parameter 'bidId' is set
-if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups','POST',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(bidId===undefined||bidId===null){throw'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups','POST',{'businessUnitId':businessUnitId,'bidId':bidId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a new work plan bid
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The work plan bid to be created
-	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbids",value:function postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
-if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids','POST',{'businessUnitId':businessUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body The work plan bid to be created
+	 */},{key:"postWorkforcemanagementBusinessunitWorkplanbids",value:function postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId,body){// verify the required parameter 'businessUnitId' is set
+if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbids';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids','POST',{'businessUnitId':businessUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Add a new business unit
 	 * It may take a minute or two for a new business unit to be available for api operations
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementBusinessunits",value:function postWorkforcemanagementBusinessunits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementBusinessunits",value:function postWorkforcemanagementBusinessunits(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunits';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -27383,18 +27455,18 @@ if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required
 	 */},{key:"postWorkforcemanagementCalendarUrlIcs",value:function postWorkforcemanagementCalendarUrlIcs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/calendar/url/ics','POST',{},{'language':opts['language']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Delete the list of the historical data import entries
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementHistoricaldataBulkRemoveJobs",value:function postWorkforcemanagementHistoricaldataBulkRemoveJobs(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementHistoricaldataBulkRemoveJobs",value:function postWorkforcemanagementHistoricaldataBulkRemoveJobs(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataBulkRemoveJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Delete the entries of the historical data imports in the organization.
 	 * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
 	 * @deprecated
 	 */},{key:"postWorkforcemanagementHistoricaldataDeletejob",value:function postWorkforcemanagementHistoricaldataDeletejob(){return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/deletejob','POST',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Trigger validation process for historical import
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementHistoricaldataValidate",value:function postWorkforcemanagementHistoricaldataValidate(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/validate','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementHistoricaldataValidate",value:function postWorkforcemanagementHistoricaldataValidate(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataValidate';}return this.apiClient.callApi('/api/v2/workforcemanagement/historicaldata/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get list of time off types configured in integration
 	 * 
 	 * @param {String} hrisIntegrationId The ID of the HRIS integration for which time off types are queried.
@@ -27403,99 +27475,102 @@ if(hrisIntegrationId===undefined||hrisIntegrationId===null){throw'Missing the re
 	 * Get agents work plans configuration
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitAgentsWorkplansQuery",value:function postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query','POST',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementManagementunitAgentsWorkplansQuery",value:function postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query','POST',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Query published schedules for given given time range for set of users
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitAgentschedulesSearch",value:function postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search','POST',{'managementUnitId':managementUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementManagementunitAgentschedulesSearch",value:function postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search','POST',{'managementUnitId':managementUnitId},{'forceAsync':opts['forceAsync'],'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Request a historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 	 * @param {String} managementUnitId The ID of the management unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitHistoricaladherencequery",value:function postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitHistoricaladherencequery",value:function postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Move the requested management unit to a new business unit
 	 * Returns status 200 if the management unit is already in the requested business unit
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitMove",value:function postWorkforcemanagementManagementunitMove(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/move','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitMove",value:function postWorkforcemanagementManagementunitMove(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitMove';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/move','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Query published schedules for given given time range for set of users
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body body
 	 * @deprecated
-	 */},{key:"postWorkforcemanagementManagementunitSchedulesSearch",value:function postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementManagementunitSchedulesSearch",value:function postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitSchedulesSearch';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Request a historical shrinkage report
 	 * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
 	 * @param {String} managementUnitId The ID of the management unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitShrinkageJobs",value:function postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitShrinkageJobs",value:function postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Creates a new time off limit object under management unit.
 	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
 	 * @param {String} managementUnitId The ID of the management unit.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeofflimits",value:function postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitTimeofflimits",value:function postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Retrieves time off limit related values based on a given set of filters.
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitTimeofflimitsValuesQuery",value:function postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Creates a new time off plan
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeoffplans",value:function postWorkforcemanagementManagementunitTimeoffplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffplans",value:function postWorkforcemanagementManagementunitTimeoffplans(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a new time off request
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequests",value:function postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequests",value:function postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequests';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Retrieves integration statuses for a list of time off requests
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Fetches time off requests matching the conditions specified in the request body
 	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query','POST',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query','POST',{'managementUnitId':managementUnitId},{'forceDownloadService':opts['forceDownloadService']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Retrieves daily waitlist position for a list of time off requests
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery",value:function postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Query time off balances for a given user for specified activity code and dates
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
@@ -27518,11 +27593,11 @@ if(timeOffRequestId===undefined||timeOffRequestId===null){throw'Missing the requ
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} userId The id of the user for whom the time off request estimate is requested
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate",value:function postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId,userId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate",value:function postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId,userId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}// verify the required parameter 'userId' is set
-if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate','POST',{'managementUnitId':managementUnitId,'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(userId===undefined||userId===null){throw'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate','POST',{'managementUnitId':managementUnitId,'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Matches a shift trade. This route can only be called by the receiving agent
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -27569,55 +27644,57 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to create a copy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitWorkplanCopy",value:function postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanCopy",value:function postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId,workPlanId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';}// verify the required parameter 'workPlanId' is set
-if(workPlanId===undefined||workPlanId===null){throw'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy','POST',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(workPlanId===undefined||workPlanId===null){throw'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy','POST',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Validate Work Plan
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitWorkplanValidate",value:function postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId,workPlanId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanValidate",value:function postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId,workPlanId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanValidate';}// verify the required parameter 'workPlanId' is set
-if(workPlanId===undefined||workPlanId===null){throw'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate','POST',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(workPlanId===undefined||workPlanId===null){throw'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanValidate';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate','POST',{'managementUnitId':managementUnitId,'workPlanId':workPlanId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a copy of work plan rotation
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitWorkplanrotationCopy",value:function postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId,workPlanRotationId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanrotationCopy",value:function postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId,workPlanRotationId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}// verify the required parameter 'workPlanRotationId' is set
-if(workPlanRotationId===undefined||workPlanRotationId===null){throw'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy','POST',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(workPlanRotationId===undefined||workPlanRotationId===null){throw'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy','POST',{'managementUnitId':managementUnitId,'workPlanRotationId':workPlanRotationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a new work plan rotation
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitWorkplanrotations",value:function postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations','POST',{'managementUnitId':managementUnitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunitWorkplanrotations",value:function postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId,body){// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanrotations';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations','POST',{'managementUnitId':managementUnitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a new work plan
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunitWorkplans",value:function postWorkforcemanagementManagementunitWorkplans(managementUnitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
-if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans','POST',{'managementUnitId':managementUnitId},{'validationMode':opts['validationMode']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 */},{key:"postWorkforcemanagementManagementunitWorkplans",value:function postWorkforcemanagementManagementunitWorkplans(managementUnitId,body,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplans';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans','POST',{'managementUnitId':managementUnitId},{'validationMode':opts['validationMode']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Add a management unit
 	 * It may take a minute or two for a new management unit to be available for api operations
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementManagementunits",value:function postWorkforcemanagementManagementunits(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementManagementunits",value:function postWorkforcemanagementManagementunits(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementManagementunits';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Mark a list of notifications as read or unread
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementNotificationsUpdate",value:function postWorkforcemanagementNotificationsUpdate(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/notifications/update','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementNotificationsUpdate",value:function postWorkforcemanagementNotificationsUpdate(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementNotificationsUpdate';}return this.apiClient.callApi('/api/v2/workforcemanagement/notifications/update','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get published schedule for the current user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -27627,17 +27704,17 @@ if(managementUnitId===undefined||managementUnitId===null){throw'Missing the requ
 	 * Request a teams historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 	 * @param {String} teamId The ID of the team
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementTeamAdherenceHistorical",value:function postWorkforcemanagementTeamAdherenceHistorical(teamId,opts){opts=opts||{};// verify the required parameter 'teamId' is set
-if(teamId===undefined||teamId===null){throw'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/adherence/historical','POST',{'teamId':teamId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementTeamAdherenceHistorical",value:function postWorkforcemanagementTeamAdherenceHistorical(teamId,body){// verify the required parameter 'teamId' is set
+if(teamId===undefined||teamId===null){throw'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTeamAdherenceHistorical';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/adherence/historical','POST',{'teamId':teamId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Request a historical shrinkage report
 	 * The maximum supported range for historical shrinkage queries is up to 32 days
 	 * @param {String} teamId The ID of the team
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementTeamShrinkageJobs",value:function postWorkforcemanagementTeamShrinkageJobs(teamId,opts){opts=opts||{};// verify the required parameter 'teamId' is set
-if(teamId===undefined||teamId===null){throw'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs','POST',{'teamId':teamId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementTeamShrinkageJobs",value:function postWorkforcemanagementTeamShrinkageJobs(teamId,body){// verify the required parameter 'teamId' is set
+if(teamId===undefined||teamId===null){throw'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTeamShrinkageJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs','POST',{'teamId':teamId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Query time off balances for the current user for specified activity code and dates
 	 * 
 	 * @param {Object} body The request body
@@ -27645,24 +27722,24 @@ if(teamId===undefined||teamId===null){throw'Missing the required parameter "team
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffbalanceJobs';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffbalance/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Queries available time off for the current user
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementTimeofflimitsAvailableQuery",value:function postWorkforcemanagementTimeofflimitsAvailableQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/timeofflimits/available/query','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementTimeofflimitsAvailableQuery",value:function postWorkforcemanagementTimeofflimitsAvailableQuery(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeofflimitsAvailableQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeofflimits/available/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create a time off request for the current user
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementTimeoffrequests",value:function postWorkforcemanagementTimeoffrequests(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementTimeoffrequests",value:function postWorkforcemanagementTimeoffrequests(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequests';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Estimates available time off for current user
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementTimeoffrequestsEstimate",value:function postWorkforcemanagementTimeoffrequestsEstimate(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/estimate','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementTimeoffrequestsEstimate",value:function postWorkforcemanagementTimeoffrequestsEstimate(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsEstimate';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/estimate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Retrieves integration statuses for a list of current user time off requests
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * @param {Object} body body
+	 */},{key:"postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery",value:function postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body){// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery';}return this.apiClient.callApi('/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update integrations for agent
 	 * 
 	 * @param {String} agentId The ID of the agent
@@ -27674,20 +27751,20 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"putWorkforcemanagementBusinessunitTimeofflimitValues",value:function putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'businessUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"putWorkforcemanagementBusinessunitTimeofflimitValues",value:function putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,timeOffLimitId,body){// verify the required parameter 'businessUnitId' is set
 if(businessUnitId===undefined||businessUnitId===null){throw'Missing the required parameter "businessUnitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}// verify the required parameter 'timeOffLimitId' is set
-if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'businessUnitId':businessUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Sets daily values for a date range of time off limit object
 	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */},{key:"putWorkforcemanagementManagementunitTimeofflimitValues",value:function putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId,timeOffLimitId,opts){opts=opts||{};// verify the required parameter 'managementUnitId' is set
+	 * @param {Object} body body
+	 */},{key:"putWorkforcemanagementManagementunitTimeofflimitValues",value:function putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId,timeOffLimitId,body){// verify the required parameter 'managementUnitId' is set
 if(managementUnitId===undefined||managementUnitId===null){throw'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}// verify the required parameter 'timeOffLimitId' is set
-if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();/**
+if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWorkforcemanagementManagementunitTimeofflimitValues';}return this.apiClient.callApi('/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values','PUT',{'managementUnitId':managementUnitId,'timeOffLimitId':timeOffLimitId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();/**
  * A JavaScript library to interface with the PureCloud Platform API.<br>
  * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
  * <p>
@@ -27716,7 +27793,7 @@ if(timeOffLimitId===undefined||timeOffLimitId===null){throw'Missing the required
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 222.0.0
+ * @version 223.0.0
  */var platformClient=/*#__PURE__*/_createClass(function platformClient(){_classCallCheck(this,platformClient);/**
 		 * The ApiClient constructor.
 		 * @property {module:purecloud-platform-client-v2/ApiClient}

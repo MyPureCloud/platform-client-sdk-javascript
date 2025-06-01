@@ -687,7 +687,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 	class ApiClient {
 		/**
@@ -2231,7 +2231,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -2434,6 +2434,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 		 * @param {String} opts.name Return the assistant by the given name.
+		 * @param {Object} opts.expand Which fields, if any, to expand
 		 */
 		getAssistants(opts) { 
 			opts = opts || {};
@@ -2443,7 +2444,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/assistants', 
 				'GET', 
 				{  },
-				{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] },
+				{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'expand': opts['expand'] },
 				{  },
 				{  },
 				null, 
@@ -2607,7 +2608,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -2683,7 +2684,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -2814,7 +2815,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -3215,7 +3216,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -6036,7 +6037,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -10329,7 +10330,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -10530,7 +10531,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -12245,7 +12246,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -12501,7 +12502,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * BusinessRules service.
 		 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -12774,7 +12775,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} tableId Table ID
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 		 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 		 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
@@ -12805,7 +12806,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 		 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 		 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
@@ -12831,9 +12832,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Search for decision tables.
 		 * 
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 		 * @param {String} opts.schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
 		 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
 		 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -12846,7 +12846,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/businessrules/decisiontables/search', 
 				'GET', 
 				{  },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'] },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'] },
 				{  },
 				{  },
 				null, 
@@ -13415,7 +13415,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -13485,7 +13485,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -14418,7 +14418,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -14995,7 +14995,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -16076,7 +16076,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -22395,6 +22395,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Send a social media message
+		 * Send a social media message on existing conversation/communication.
+		 * @param {String} conversationId conversationId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} body Message
+		 */
+		postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body) { 
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postConversationsMessageCommunicationSocialmediaMessages';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages', 
+				'POST', 
+				{ 'conversationId': conversationId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Send message typing event
 		 * Send message typing event for existing conversation/communication.
 		 * @param {String} conversationId conversationId
@@ -23833,7 +23868,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -23919,7 +23954,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataPrivacy service.
 		 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -24089,7 +24124,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -24141,7 +24176,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -24270,7 +24305,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -24421,7 +24456,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -24517,7 +24552,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -27705,7 +27740,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -27920,7 +27955,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -28103,7 +28138,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -30610,7 +30645,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -30740,7 +30775,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -30871,7 +30906,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -31326,7 +31361,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -31845,7 +31880,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -32706,7 +32741,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -32873,7 +32908,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -33495,6 +33530,103 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a specific Bot details
+		 * 
+		 * @param {String} integrationId The integration ID for this group of bots
+		 * @param {String} botId The bot ID for this bot
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.version Specific Version
+		 * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getIntegrationsBotconnectorBot(integrationId, botId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBot';
+			}
+			// verify the required parameter 'botId' is set
+			if (botId === undefined || botId === null) {
+				throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorBot';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}', 
+				'GET', 
+				{ 'integrationId': integrationId,'botId': botId },
+				{ 'version': opts['version'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the list of bots for this integration.
+		 * 
+		 * @param {String} integrationId The integration ID for this group of bots.
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getIntegrationsBotconnectorBots(integrationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBots';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/botconnectors/{integrationId}/bots', 
+				'GET', 
+				{ 'integrationId': integrationId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the summary list of bots for this integration.
+		 * 
+		 * @param {String} integrationId The integration ID for this group of bots.
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getIntegrationsBotconnectorBotsSummaries(integrationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBotsSummaries';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/botconnectors/{integrationId}/bots/summaries', 
+				'GET', 
+				{ 'integrationId': integrationId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 				{  },
 				{  },
 				null, 
@@ -34984,6 +35116,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Send an incoming message to the bot.
+		 * 
+		 * @param {Object} body Incoming Message Request
+		 * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postIntegrationsBotconnectorsIncomingMessages(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsIncomingMessages';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/botconnectors/incoming/messages', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Send an outgoing message to the end user.
+		 * 
+		 * @param {Object} body Outgoing Message Request
+		 * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postIntegrationsBotconnectorsOutgoingMessages(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsOutgoingMessages';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/botconnectors/outgoing/messages', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Create a set of credentials
 		 * 
 		 * @param {Object} opts Optional parameters
@@ -35342,7 +35526,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -37327,7 +37511,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -41200,7 +41384,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -42233,7 +42417,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -42455,7 +42639,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -43484,7 +43668,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -43722,7 +43906,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -43958,7 +44142,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -44100,7 +44284,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
 		 * 
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 		 * @param {Object} opts.body 
@@ -44113,7 +44296,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/diagnostics/logcapture/browser/entries/query', 
 				'POST', 
 				{  },
-				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 				{  },
 				{  },
 				opts['body'], 
@@ -44158,7 +44341,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -44517,7 +44700,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -44668,7 +44851,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -44901,7 +45084,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -45267,7 +45450,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -45591,7 +45774,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -45708,7 +45891,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -46183,7 +46366,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -47577,7 +47760,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -52199,7 +52382,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -52943,7 +53126,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -53182,7 +53365,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -54969,7 +55152,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -56574,7 +56757,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -57084,7 +57267,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -61394,7 +61577,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -62271,7 +62454,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ScreenRecording service.
 		 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -62316,7 +62499,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -62792,7 +62975,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -63535,7 +63718,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -63883,7 +64066,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SocialMedia service.
 		 * @module purecloud-platform-client-v2/api/SocialMediaApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -64019,7 +64202,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} openId openId
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
-		 * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 			opts = opts || {};
@@ -64420,7 +64602,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} openId openId
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-		 * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 			opts = opts || {};
@@ -64456,7 +64637,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} dataIngestionRuleVersion version
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
-		 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, openId, dataIngestionRuleVersion, opts) { 
 			opts = opts || {};
@@ -64497,7 +64677,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
-		 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, openId, opts) { 
 			opts = opts || {};
@@ -64731,7 +64910,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} openId openId
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body 
-		 * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 			opts = opts || {};
@@ -64931,7 +65109,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} topicId topicId
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body 
-		 * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postSocialmediaTopicDataingestionrulesOpen(topicId, opts) { 
 			opts = opts || {};
@@ -64949,6 +65126,76 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Ingest a list of Open Social Messages
+		 * Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+		 * @param {String} topicId Topic ID
+		 * @param {String} ruleId Data Ingestion Rule ID
+		 * @param {Array.<Object>} body NormalizedMessage
+		 */
+		postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body) { 
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
+			}
+			// verify the required parameter 'ruleId' is set
+			if (ruleId === undefined || ruleId === null) {
+				throw 'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk', 
+				'POST', 
+				{ 'topicId': topicId,'ruleId': ruleId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Ingest a list of Open Social Reactions
+		 * Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+		 * @param {String} topicId Topic ID
+		 * @param {String} ruleId Data Ingestion Rule ID
+		 * @param {Object} body NormalizedEvent
+		 */
+		postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body) { 
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
+			}
+			// verify the required parameter 'ruleId' is set
+			if (ruleId === undefined || ruleId === null) {
+				throw 'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk', 
+				'POST', 
+				{ 'topicId': topicId,'ruleId': ruleId },
+				{  },
+				{  },
+				{  },
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -65103,7 +65350,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} openId openId
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body 
-		 * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		putSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 			opts = opts || {};
@@ -65171,7 +65417,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -66066,6 +66312,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a Speech and Text Analytics test topics phrase job by id
+		 * 
+		 * @param {String} jobId the id of the test topic phrase job
+		 */
+		getSpeechandtextanalyticsTopicsTestphraseJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsTestphraseJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Translate a single interaction recording (or an email conversation)
 		 * 
 		 * @param {String} languageId Target translation language
@@ -66346,6 +66617,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create new Speech and Text Analytics publish topics job
+		 * 
+		 * @param {Object} body The publish test topic phrase job to create
+		 */
+		postSpeechandtextanalyticsTopicsTestphraseJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsTestphraseJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/speechandtextanalytics/topics/testphrase/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search resources.
 		 * 
 		 * @param {Object} body Search request options
@@ -66610,7 +66906,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -66712,7 +67008,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -66851,7 +67147,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -69013,7 +69309,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -69318,7 +69614,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -69500,7 +69796,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -72952,7 +73248,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -73081,7 +73377,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -73235,7 +73531,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -73526,7 +73822,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -73741,7 +74037,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -73956,7 +74252,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -76909,7 +77205,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -77020,7 +77316,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -77742,7 +78038,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -78302,7 +78598,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -78884,7 +79180,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -78930,7 +79226,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -79081,7 +79377,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 222.0.0
+		 * @version 223.0.0
 		 */
 
 		/**
@@ -82803,15 +83099,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update my alternative shifts trade by trade ID
 		 * 
 		 * @param {String} tradeId The ID of the alternative shift trade
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementAlternativeshiftsTrade(tradeId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body) { 
 			// verify the required parameter 'tradeId' is set
 			if (tradeId === undefined || tradeId === null) {
 				throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAlternativeshiftsTrade';
 			}
 
 			return this.apiClient.callApi(
@@ -82821,7 +83118,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -82857,15 +83154,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update business unit
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunit(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunit(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunit';
 			}
 
 			return this.apiClient.callApi(
@@ -82875,7 +83173,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -82887,12 +83185,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 		 * @param {String} activityCodeId The ID of the activity code to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
@@ -82900,6 +83195,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'activityCodeId' is set
 			if (activityCodeId === undefined || activityCodeId === null) {
 				throw 'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivitycode';
 			}
 
 			return this.apiClient.callApi(
@@ -82909,7 +83208,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -82955,15 +83254,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update alternative shifts settings for a business unit
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';
 			}
 
 			return this.apiClient.callApi(
@@ -82973,7 +83273,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -82985,12 +83285,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit.
 		 * @param {String} planningGroupId The ID of a planning group to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
@@ -82998,6 +83295,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'planningGroupId' is set
 			if (planningGroupId === undefined || planningGroupId === null) {
 				throw 'Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
 			}
 
 			return this.apiClient.callApi(
@@ -83007,7 +83308,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83019,12 +83320,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} runId The ID of the schedule run
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
@@ -83032,6 +83330,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'runId' is set
 			if (runId === undefined || runId === null) {
 				throw 'Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
 			}
 
 			return this.apiClient.callApi(
@@ -83041,7 +83343,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83053,12 +83355,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit.
 		 * @param {String} serviceGoalTemplateId The ID of a service goal template to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
@@ -83066,6 +83365,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'serviceGoalTemplateId' is set
 			if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
 				throw 'Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
 			}
 
 			return this.apiClient.callApi(
@@ -83075,7 +83378,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83087,12 +83390,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} staffingGroupId The ID of the staffing group to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
@@ -83100,6 +83400,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'staffingGroupId' is set
 			if (staffingGroupId === undefined || staffingGroupId === null) {
 				throw 'Missing the required parameter "staffingGroupId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
 			}
 
 			return this.apiClient.callApi(
@@ -83109,7 +83413,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83121,12 +83425,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} timeOffPlanId The ID of the time-off plan to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
@@ -83134,6 +83435,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'timeOffPlanId' is set
 			if (timeOffPlanId === undefined || timeOffPlanId === null) {
 				throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
 			}
 
 			return this.apiClient.callApi(
@@ -83143,7 +83448,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83191,12 +83496,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} bidId The work plan bid id of the bid groups
 		 * @param {String} bidGroupId Work Plan Bid Group id
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
@@ -83209,6 +83511,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (bidGroupId === undefined || bidGroupId === null) {
 				throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}', 
@@ -83217,7 +83523,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83230,12 +83536,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} bidId The work plan bid id of the bid groups
 		 * @param {String} bidGroupId The ID of the work plan bid group
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
@@ -83248,6 +83551,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (bidGroupId === undefined || bidGroupId === null) {
 				throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences', 
@@ -83256,7 +83563,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83267,15 +83574,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update the requested management unit
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunit(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunit(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunit';
 			}
 
 			return this.apiClient.callApi(
@@ -83285,7 +83593,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83296,15 +83604,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update agent configurations
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitAgents(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitAgents(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgents';
 			}
 
 			return this.apiClient.callApi(
@@ -83314,7 +83623,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83325,15 +83634,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Updates agent work plan configuration
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';
 			}
 
 			return this.apiClient.callApi(
@@ -83343,7 +83653,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83355,12 +83665,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Updates time off limit object properties, but not daily values.
 		 * @param {String} managementUnitId The ID of the management unit.
 		 * @param {String} timeOffLimitId The id of time off limit object to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
@@ -83368,6 +83675,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'timeOffLimitId' is set
 			if (timeOffLimitId === undefined || timeOffLimitId === null) {
 				throw 'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeofflimit';
 			}
 
 			return this.apiClient.callApi(
@@ -83377,7 +83688,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83389,12 +83700,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit
 		 * @param {String} timeOffPlanId The ID of the time off plan to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
@@ -83402,6 +83710,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'timeOffPlanId' is set
 			if (timeOffPlanId === undefined || timeOffPlanId === null) {
 				throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeoffplan';
 			}
 
 			return this.apiClient.callApi(
@@ -83411,7 +83723,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83424,12 +83736,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} managementUnitId The ID of the management unit.
 		 * @param {String} timeOffRequestId The ID of the time off request.
 		 * @param {String} userId The ID of user to whom the time off request belongs.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
@@ -83442,6 +83751,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (userId === undefined || userId === null) {
 				throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus', 
@@ -83450,7 +83763,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83463,12 +83776,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {String} userId The id of the user the requested time off request belongs to
 		 * @param {String} timeOffRequestId The id of the time off request to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
@@ -83481,6 +83791,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (timeOffRequestId === undefined || timeOffRequestId === null) {
 				throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
@@ -83489,7 +83803,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83541,11 +83855,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {String} workPlanId The ID of the work plan to update
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
-		 * @param {Object} opts.body body
 		 */
-		patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
+		patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'managementUnitId' is set
@@ -83556,6 +83870,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (workPlanId === undefined || workPlanId === null) {
 				throw 'Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWorkplan';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
@@ -83564,7 +83882,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'validationMode': opts['validationMode'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83576,12 +83894,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {String} workPlanRotationId The ID of the work plan rotation to update
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
@@ -83589,6 +83904,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'workPlanRotationId' is set
 			if (workPlanRotationId === undefined || workPlanRotationId === null) {
 				throw 'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
 			}
 
 			return this.apiClient.callApi(
@@ -83598,7 +83917,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83609,15 +83928,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update a time off request for the current user
 		 * 
 		 * @param {String} timeOffRequestId The ID of the time off request
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body) { 
 			// verify the required parameter 'timeOffRequestId' is set
 			if (timeOffRequestId === undefined || timeOffRequestId === null) {
 				throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementTimeoffrequest';
 			}
 
 			return this.apiClient.callApi(
@@ -83627,7 +83947,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83638,15 +83958,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update work plan bid ranks for a user
 		 * 
 		 * @param {String} userId The userId to whom the work plan bid ranks apply.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementUserWorkplanbidranks(userId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementUserWorkplanbidranks(userId, body) { 
 			// verify the required parameter 'userId' is set
 			if (userId === undefined || userId === null) {
 				throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementUserWorkplanbidranks';
 			}
 
 			return this.apiClient.callApi(
@@ -83656,7 +83977,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83692,15 +84013,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update an agent's work plan bidding preference
 		 * 
 		 * @param {String} bidId The ID of the work plan bid
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		patchWorkforcemanagementWorkplanbidPreferences(bidId, opts) { 
-			opts = opts || {};
-			
+		patchWorkforcemanagementWorkplanbidPreferences(bidId, body) { 
 			// verify the required parameter 'bidId' is set
 			if (bidId === undefined || bidId === null) {
 				throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementWorkplanbidPreferences';
 			}
 
 			return this.apiClient.callApi(
@@ -83710,7 +84032,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83800,12 +84122,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Request a historical adherence report in bulk
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementAdherenceHistoricalBulk(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementAdherenceHistoricalBulk(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceHistoricalBulk';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/adherence/historical/bulk', 
@@ -83814,7 +84137,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83889,12 +84212,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Move agents in and out of management unit
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementAgents(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementAgents(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgents';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/agents', 
@@ -83903,7 +84227,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83913,12 +84237,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Query integrations for agents
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementAgentsIntegrationsHrisQuery(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementAgentsIntegrationsHrisQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentsIntegrationsHrisQuery';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/agents/integrations/hris/query', 
@@ -83927,7 +84252,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -83962,12 +84287,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Get published schedule for the current user
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementAgentschedulesMine(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementAgentschedulesMine(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentschedulesMine';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/agentschedules/mine', 
@@ -83976,7 +84302,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84062,15 +84388,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a new activity code
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivitycodes';
 			}
 
 			return this.apiClient.callApi(
@@ -84080,7 +84407,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84186,17 +84513,21 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Search published schedules
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts) { 
+		postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';
 			}
 
 			return this.apiClient.callApi(
@@ -84206,7 +84537,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84251,16 +84582,20 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get intraday data for the given date for the requested planningGroupIds
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts) { 
+		postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitIntraday';
 			}
 
 			return this.apiClient.callApi(
@@ -84270,7 +84605,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'forceAsync': opts['forceAsync'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84281,15 +84616,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Adds a new planning group
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitPlanninggroups';
 			}
 
 			return this.apiClient.callApi(
@@ -84299,7 +84635,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84310,15 +84646,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Adds a new service goal template
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';
 			}
 
 			return this.apiClient.callApi(
@@ -84328,7 +84665,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84339,15 +84676,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Creates a new staffing group
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroups';
 			}
 
 			return this.apiClient.callApi(
@@ -84357,7 +84695,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84368,15 +84706,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Gets staffing group associations for a list of user IDs
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -84386,7 +84725,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84397,15 +84736,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Creates a new time-off limit object
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimits';
 			}
 
 			return this.apiClient.callApi(
@@ -84415,7 +84755,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84426,15 +84766,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Retrieves time-off limit related values based on a given set of filters.
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -84444,7 +84785,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84455,15 +84796,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Creates a new time-off plan
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitTimeoffplans';
 			}
 
 			return this.apiClient.callApi(
@@ -84473,7 +84815,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84571,12 +84913,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
 		 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 		 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
@@ -84589,6 +84928,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (scheduleId === undefined || scheduleId === null) {
 				throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations', 
@@ -84597,7 +84940,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -84610,12 +84953,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
 		 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 		 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
@@ -84628,6 +84968,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (scheduleId === undefined || scheduleId === null) {
 				throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl', 
@@ -84636,7 +84980,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85095,12 +85439,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} bidId The work plan bid id of the bid groups
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
@@ -85108,6 +85449,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'bidId' is set
 			if (bidId === undefined || bidId === null) {
 				throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
 			}
 
 			return this.apiClient.callApi(
@@ -85117,7 +85462,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85128,15 +85473,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a new work plan bid
 		 * 
 		 * @param {String} businessUnitId The ID of the business unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body The work plan bid to be created
+		 * @param {Object} body The work plan bid to be created
 		 */
-		postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbids';
 			}
 
 			return this.apiClient.callApi(
@@ -85146,7 +85492,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85156,12 +85502,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Add a new business unit
 		 * It may take a minute or two for a new business unit to be available for api operations
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementBusinessunits(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementBusinessunits(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunits';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/businessunits', 
@@ -85170,7 +85517,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85204,12 +85551,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Delete the list of the historical data import entries
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementHistoricaldataBulkRemoveJobs(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementHistoricaldataBulkRemoveJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataBulkRemoveJobs';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs', 
@@ -85218,7 +85566,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85249,12 +85597,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Trigger validation process for historical import
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementHistoricaldataValidate(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementHistoricaldataValidate(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataValidate';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/historicaldata/validate', 
@@ -85263,7 +85612,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85299,16 +85648,20 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get agents work plans configuration
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, opts) { 
+		postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -85318,7 +85671,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'forceDownloadService': opts['forceDownloadService'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85329,17 +85682,21 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Query published schedules for given given time range for set of users
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts) { 
+		postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
 			}
 
 			return this.apiClient.callApi(
@@ -85349,7 +85706,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85360,15 +85717,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Request a historical adherence report
 		 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 		 * @param {String} managementUnitId The ID of the management unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
 			}
 
 			return this.apiClient.callApi(
@@ -85378,7 +85736,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85389,15 +85747,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Move the requested management unit to a new business unit
 		 * Returns status 200 if the management unit is already in the requested business unit
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitMove(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitMove(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitMove';
 			}
 
 			return this.apiClient.callApi(
@@ -85407,7 +85766,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85418,16 +85777,17 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Query published schedules for given given time range for set of users
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 * @deprecated
 		 */
-		postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitSchedulesSearch';
 			}
 
 			return this.apiClient.callApi(
@@ -85437,7 +85797,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85448,15 +85808,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Request a historical shrinkage report
 		 * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
 		 * @param {String} managementUnitId The ID of the management unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitShrinkageJobs';
 			}
 
 			return this.apiClient.callApi(
@@ -85466,7 +85827,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85477,15 +85838,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Creates a new time off limit object under management unit.
 		 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
 		 * @param {String} managementUnitId The ID of the management unit.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimits';
 			}
 
 			return this.apiClient.callApi(
@@ -85495,7 +85857,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85506,15 +85868,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Retrieves time off limit related values based on a given set of filters.
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -85524,7 +85887,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85535,15 +85898,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Creates a new time off plan
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffplans';
 			}
 
 			return this.apiClient.callApi(
@@ -85553,7 +85917,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85564,15 +85928,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a new time off request
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequests';
 			}
 
 			return this.apiClient.callApi(
@@ -85582,7 +85947,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85593,15 +85958,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Retrieves integration statuses for a list of time off requests
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -85611,7 +85977,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85622,16 +85988,20 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Fetches time off requests matching the conditions specified in the request body
 		 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts) { 
+		postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -85641,7 +86011,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'forceDownloadService': opts['forceDownloadService'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85652,15 +86022,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Retrieves daily waitlist position for a list of time off requests
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';
 			}
 
 			return this.apiClient.callApi(
@@ -85670,7 +86041,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85752,12 +86123,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit
 		 * @param {String} userId The id of the user for whom the time off request estimate is requested
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
@@ -85765,6 +86133,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'userId' is set
 			if (userId === undefined || userId === null) {
 				throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
 			}
 
 			return this.apiClient.callApi(
@@ -85774,7 +86146,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85939,12 +86311,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {String} workPlanId The ID of the work plan to create a copy
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
@@ -85952,6 +86321,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'workPlanId' is set
 			if (workPlanId === undefined || workPlanId === null) {
 				throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanCopy';
 			}
 
 			return this.apiClient.callApi(
@@ -85961,7 +86334,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -85973,11 +86346,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.expand 
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts) { 
+		postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'managementUnitId' is set
@@ -85988,6 +86361,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			if (workPlanId === undefined || workPlanId === null) {
 				throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
 			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanValidate';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate', 
@@ -85996,7 +86373,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86008,12 +86385,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
@@ -86021,6 +86395,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'workPlanRotationId' is set
 			if (workPlanRotationId === undefined || workPlanRotationId === null) {
 				throw 'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
 			}
 
 			return this.apiClient.callApi(
@@ -86030,7 +86408,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86041,15 +86419,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a new work plan rotation
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplanrotations';
 			}
 
 			return this.apiClient.callApi(
@@ -86059,7 +86438,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86070,16 +86449,20 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a new work plan
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
-		 * @param {Object} opts.body body
 		 */
-		postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
+		postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts) { 
 			opts = opts || {};
 			
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWorkplans';
 			}
 
 			return this.apiClient.callApi(
@@ -86089,7 +86472,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{ 'validationMode': opts['validationMode'] },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86099,12 +86482,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Add a management unit
 		 * It may take a minute or two for a new management unit to be available for api operations
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementManagementunits(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementManagementunits(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunits';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits', 
@@ -86113,7 +86497,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86123,12 +86507,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Mark a list of notifications as read or unread
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementNotificationsUpdate(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementNotificationsUpdate(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementNotificationsUpdate';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/notifications/update', 
@@ -86137,7 +86522,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86173,15 +86558,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Request a teams historical adherence report
 		 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 		 * @param {String} teamId The ID of the team
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementTeamAdherenceHistorical(teamId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementTeamAdherenceHistorical(teamId, body) { 
 			// verify the required parameter 'teamId' is set
 			if (teamId === undefined || teamId === null) {
 				throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementTeamAdherenceHistorical';
 			}
 
 			return this.apiClient.callApi(
@@ -86191,7 +86577,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86202,15 +86588,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Request a historical shrinkage report
 		 * The maximum supported range for historical shrinkage queries is up to 32 days
 		 * @param {String} teamId The ID of the team
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementTeamShrinkageJobs(teamId, opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementTeamShrinkageJobs(teamId, body) { 
 			// verify the required parameter 'teamId' is set
 			if (teamId === undefined || teamId === null) {
 				throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementTeamShrinkageJobs';
 			}
 
 			return this.apiClient.callApi(
@@ -86220,7 +86607,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86255,12 +86642,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Queries available time off for the current user
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementTimeofflimitsAvailableQuery(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementTimeofflimitsAvailableQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeofflimitsAvailableQuery';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/timeofflimits/available/query', 
@@ -86269,7 +86657,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86279,12 +86667,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Create a time off request for the current user
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementTimeoffrequests(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementTimeoffrequests(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequests';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/timeoffrequests', 
@@ -86293,7 +86682,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86303,12 +86692,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Estimates available time off for current user
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementTimeoffrequestsEstimate(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementTimeoffrequestsEstimate(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsEstimate';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/timeoffrequests/estimate', 
@@ -86317,7 +86707,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86327,12 +86717,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Retrieves integration statuses for a list of current user time off requests
 		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts) { 
-			opts = opts || {};
-			
+		postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery';
+			}
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query', 
@@ -86341,7 +86732,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86383,12 +86774,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
 		 * @param {String} businessUnitId The ID of the business unit
 		 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, opts) { 
-			opts = opts || {};
-			
+		putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body) { 
 			// verify the required parameter 'businessUnitId' is set
 			if (businessUnitId === undefined || businessUnitId === null) {
 				throw 'Missing the required parameter "businessUnitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
@@ -86396,6 +86784,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'timeOffLimitId' is set
 			if (timeOffLimitId === undefined || timeOffLimitId === null) {
 				throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
 			}
 
 			return this.apiClient.callApi(
@@ -86405,7 +86797,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86417,12 +86809,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
 		 * @param {String} managementUnitId The ID of the management unit.
 		 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
-		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.body body
+		 * @param {Object} body body
 		 */
-		putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts) { 
-			opts = opts || {};
-			
+		putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body) { 
 			// verify the required parameter 'managementUnitId' is set
 			if (managementUnitId === undefined || managementUnitId === null) {
 				throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
@@ -86430,6 +86819,10 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// verify the required parameter 'timeOffLimitId' is set
 			if (timeOffLimitId === undefined || timeOffLimitId === null) {
 				throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
 			}
 
 			return this.apiClient.callApi(
@@ -86439,7 +86832,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				{  },
-				opts['body'], 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -86477,7 +86870,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 	class platformClient {
 		constructor() {

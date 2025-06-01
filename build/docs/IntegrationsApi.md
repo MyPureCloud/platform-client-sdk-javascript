@@ -28,6 +28,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsActionsCertificatesTruststore**](IntegrationsApi#getIntegrationsActionsCertificatesTruststore) | **GET** /api/v2/integrations/actions/certificates/truststore | Retrieves basic info about trusted root CA certificates
 [**getIntegrationsActionsDrafts**](IntegrationsApi#getIntegrationsActionsDrafts) | **GET** /api/v2/integrations/actions/drafts | Retrieves all action drafts associated with the filters passed in via query param.
 [**getIntegrationsActionsFunctionsRuntimes**](IntegrationsApi#getIntegrationsActionsFunctionsRuntimes) | **GET** /api/v2/integrations/actions/functions/runtimes | Get action function settings for Action
+[**getIntegrationsBotconnectorBot**](IntegrationsApi#getIntegrationsBotconnectorBot) | **GET** /api/v2/integrations/botconnectors/{integrationId}/bots/{botId} | Get a specific Bot details
+[**getIntegrationsBotconnectorBots**](IntegrationsApi#getIntegrationsBotconnectorBots) | **GET** /api/v2/integrations/botconnectors/{integrationId}/bots | Get the list of bots for this integration.
+[**getIntegrationsBotconnectorBotsSummaries**](IntegrationsApi#getIntegrationsBotconnectorBotsSummaries) | **GET** /api/v2/integrations/botconnectors/{integrationId}/bots/summaries | Get the summary list of bots for this integration.
 [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBot) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId} | Get a specific botConnector bot, plus versions, for this integration
 [**getIntegrationsBotconnectorIntegrationIdBotVersions**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBotVersions) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions | Get a list of bot versions for a bot
 [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBots) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration
@@ -80,6 +83,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsActionTest**](IntegrationsApi#postIntegrationsActionTest) | **POST** /api/v2/integrations/actions/{actionId}/test | Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 [**postIntegrationsActions**](IntegrationsApi#postIntegrationsActions) | **POST** /api/v2/integrations/actions | Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
 [**postIntegrationsActionsDrafts**](IntegrationsApi#postIntegrationsActionsDrafts) | **POST** /api/v2/integrations/actions/drafts | Create a new Draft
+[**postIntegrationsBotconnectorsIncomingMessages**](IntegrationsApi#postIntegrationsBotconnectorsIncomingMessages) | **POST** /api/v2/integrations/botconnectors/incoming/messages | Send an incoming message to the bot.
+[**postIntegrationsBotconnectorsOutgoingMessages**](IntegrationsApi#postIntegrationsBotconnectorsOutgoingMessages) | **POST** /api/v2/integrations/botconnectors/outgoing/messages | Send an outgoing message to the end user.
 [**postIntegrationsCredentials**](IntegrationsApi#postIntegrationsCredentials) | **POST** /api/v2/integrations/credentials | Create a set of credentials
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs | Get a Nuance bot in the specified Integration asynchronously
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs | Get a list of Nuance bots in the specified Integration asynchronously
@@ -1312,6 +1317,180 @@ This endpoint does not need any parameter.
 ### Return type
 
 **[FunctionRuntime]**
+
+
+## getIntegrationsBotconnectorBot
+
+> Bot getIntegrationsBotconnectorBot(integrationId, botId, opts)
+
+
+GET /api/v2/integrations/botconnectors/{integrationId}/bots/{botId}
+
+Get a specific Bot details
+
+getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The bot ID for this bot
+let opts = { 
+  'version': "version_example" // String | Specific Version
+};
+
+apiInstance.getIntegrationsBotconnectorBot(integrationId, botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorBot success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorBot');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The bot ID for this bot |  |
+ **version** | **String** | Specific Version | [optional]  |
+
+### Return type
+
+**Bot**
+
+
+## getIntegrationsBotconnectorBots
+
+> BotListing getIntegrationsBotconnectorBots(integrationId, opts)
+
+
+GET /api/v2/integrations/botconnectors/{integrationId}/bots
+
+Get the list of bots for this integration.
+
+getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots.
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getIntegrationsBotconnectorBots(integrationId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorBots success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorBots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots. |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**BotListing**
+
+
+## getIntegrationsBotconnectorBotsSummaries
+
+> BotSummaryEntityListing getIntegrationsBotconnectorBotsSummaries(integrationId, opts)
+
+
+GET /api/v2/integrations/botconnectors/{integrationId}/bots/summaries
+
+Get the summary list of bots for this integration.
+
+getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots.
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getIntegrationsBotconnectorBotsSummaries(integrationId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorBotsSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorBotsSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots. |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**BotSummaryEntityListing**
 
 
 ## getIntegrationsBotconnectorIntegrationIdBot
@@ -4149,6 +4328,110 @@ apiInstance.postIntegrationsActionsDrafts(body)
 **Action**
 
 
+## postIntegrationsBotconnectorsIncomingMessages
+
+> IncomingMessageResponse postIntegrationsBotconnectorsIncomingMessages(body)
+
+
+POST /api/v2/integrations/botconnectors/incoming/messages
+
+Send an incoming message to the bot.
+
+postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integration:botconnector:send
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let body = {}; // Object | Incoming Message Request
+
+apiInstance.postIntegrationsBotconnectorsIncomingMessages(body)
+  .then((data) => {
+    console.log(`postIntegrationsBotconnectorsIncomingMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsBotconnectorsIncomingMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Incoming Message Request |  |
+
+### Return type
+
+**IncomingMessageResponse**
+
+
+## postIntegrationsBotconnectorsOutgoingMessages
+
+> OutgoingMessageResponse postIntegrationsBotconnectorsOutgoingMessages(body)
+
+
+POST /api/v2/integrations/botconnectors/outgoing/messages
+
+Send an outgoing message to the end user.
+
+postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integration:botconnector:send
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let body = {}; // Object | Outgoing Message Request
+
+apiInstance.postIntegrationsBotconnectorsOutgoingMessages(body)
+  .then((data) => {
+    console.log(`postIntegrationsBotconnectorsOutgoingMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsBotconnectorsOutgoingMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Outgoing Message Request |  |
+
+### Return type
+
+**OutgoingMessageResponse**
+
+
 ## postIntegrationsCredentials
 
 > CredentialInfo postIntegrationsCredentials(opts)
@@ -4784,4 +5067,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

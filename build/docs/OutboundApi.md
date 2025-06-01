@@ -1527,6 +1527,7 @@ Delete a dialer campaign schedule.
 Requires ANY permissions:
 
 * outbound:schedule:delete
+* outbound:campaign:deleteSchedule
 
 ### Example Usage
 
@@ -1577,6 +1578,7 @@ Delete an email campaign schedule.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:delete
+* outbound:emailCampaign:deleteSchedule
 
 ### Example Usage
 
@@ -1627,6 +1629,7 @@ Delete a messaging campaign schedule.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:delete
+* outbound:messagingCampaign:deleteSchedule
 
 ### Example Usage
 
@@ -5129,6 +5132,7 @@ Get a dialer campaign schedule.
 Requires ANY permissions:
 
 * outbound:schedule:view
+* outbound:campaign:viewSchedule
 
 ### Example Usage
 
@@ -5179,6 +5183,7 @@ Query for a list of dialer campaign schedules.
 Requires ANY permissions:
 
 * outbound:schedule:view
+* outbound:campaign:viewSchedule
 
 ### Example Usage
 
@@ -5224,6 +5229,7 @@ Get an email campaign schedule.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:view
+* outbound:emailCampaign:viewSchedule
 
 ### Example Usage
 
@@ -5274,6 +5280,7 @@ Query for a list of email campaign schedules.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:view
+* outbound:emailCampaign:viewSchedule
 
 ### Example Usage
 
@@ -5319,6 +5326,7 @@ Get a messaging campaign schedule.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:view
+* outbound:messagingCampaign:viewSchedule
 
 ### Example Usage
 
@@ -5369,6 +5377,7 @@ Query for a list of messaging campaign schedules.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:view
+* outbound:messagingCampaign:viewSchedule
 
 ### Example Usage
 
@@ -8890,6 +8899,7 @@ Update a new campaign schedule.
 Requires ANY permissions:
 
 * outbound:schedule:edit
+* outbound:campaign:editSchedule
 
 ### Example Usage
 
@@ -8942,6 +8952,7 @@ Update an email campaign schedule.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:edit
+* outbound:emailCampaign:editSchedule
 
 ### Example Usage
 
@@ -8994,6 +9005,7 @@ Update a new messaging campaign schedule.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:edit
+* outbound:messagingCampaign:editSchedule
 
 ### Example Usage
 
@@ -9188,4 +9200,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

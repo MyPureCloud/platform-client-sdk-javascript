@@ -5,7 +5,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -147,7 +147,6 @@ class LogCaptureApi {
 	 * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.body 
@@ -160,7 +159,7 @@ class LogCaptureApi {
 			'/api/v2/diagnostics/logcapture/browser/entries/query', 
 			'POST', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			opts['body'], 

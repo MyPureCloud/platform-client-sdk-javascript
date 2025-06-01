@@ -378,7 +378,8 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'name': "name_example" // String | Return the assistant by the given name.
+  'name': "name_example", // String | Return the assistant by the given name.
+  'expand': "expand_example" // String | Which fields, if any, to expand
 };
 
 apiInstance.getAssistants(opts)
@@ -401,6 +402,7 @@ apiInstance.getAssistants(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Return the assistant by the given name. | [optional]  |
+ **expand** | **String** | Which fields, if any, to expand | [optional] <br />**Values**: copilot |
 
 ### Return type
 
@@ -675,4 +677,4 @@ apiInstance.putAssistantQueue(assistantId, queueId, body)
 **AssistantQueue**
 
 
-_purecloud-platform-client-v2@222.0.0_
+_purecloud-platform-client-v2@223.0.0_

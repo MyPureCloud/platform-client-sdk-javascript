@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 222.0.0
+	 * @version 223.0.0
 	 */
 
 	/**
@@ -627,6 +627,103 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific Bot details
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {String} botId The bot ID for this bot
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.version Specific Version
+	 * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsBotconnectorBot(integrationId, botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBot';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorBot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}', 
+			'GET', 
+			{ 'integrationId': integrationId,'botId': botId },
+			{ 'version': opts['version'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of bots for this integration.
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsBotconnectorBots(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBots';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/{integrationId}/bots', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the summary list of bots for this integration.
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsBotconnectorBotsSummaries(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBotsSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/{integrationId}/bots/summaries', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -2103,6 +2200,58 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/drafts', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an incoming message to the bot.
+	 * 
+	 * @param {Object} body Incoming Message Request
+	 * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntegrationsBotconnectorsIncomingMessages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsIncomingMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/incoming/messages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an outgoing message to the end user.
+	 * 
+	 * @param {Object} body Outgoing Message Request
+	 * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntegrationsBotconnectorsOutgoingMessages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsOutgoingMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/outgoing/messages', 
 			'POST', 
 			{  },
 			{  },
