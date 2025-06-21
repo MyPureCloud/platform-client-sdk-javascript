@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -144,7 +144,7 @@ class TeamsApi {
 	 * @param {String} opts.name Return only teams whose names start with this value (case-insensitive matching)
 	 * @param {String} opts.after The cursor that points to the next item in the complete list of teams
 	 * @param {String} opts.before The cursor that points to the previous item in the complete list of teams
-	 * @param {Object} opts.expand Expand the name on each user
+	 * @param {Object} opts.expand Expand the division on each team
 	 */
 	getTeams(opts) { 
 		opts = opts || {};

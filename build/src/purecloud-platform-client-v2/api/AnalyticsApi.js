@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -1578,7 +1578,7 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Count agents by segment type
+	 * Count agents by different groupings
 	 * 
 	 * @param {Object} body query
 	 */

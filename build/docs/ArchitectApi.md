@@ -1838,7 +1838,7 @@ GET /api/v2/architect/emergencygroups/divisionviews
 
 Get a pageable list of basic emergency group objects filterable by query parameters.
 
-This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
 
 Requires ALL permissions:
 
@@ -6019,6 +6019,8 @@ POST /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads
 
 Creates a presigned URL for uploading a user prompt file
 
+postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * architect:userPrompt:edit
@@ -6324,6 +6326,8 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 POST /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads
 
 Creates a presigned URL for uploading a system prompt file
+
+postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -8344,4 +8348,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_

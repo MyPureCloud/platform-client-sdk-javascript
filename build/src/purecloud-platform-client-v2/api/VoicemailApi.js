@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -261,7 +261,7 @@ class VoicemailApi {
 
 	/**
 	 * Get media playback URI for this voicemail message
-	 * 
+	 * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
 	 * @param {String} messageId Message ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)

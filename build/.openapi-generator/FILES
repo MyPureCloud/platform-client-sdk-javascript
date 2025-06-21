@@ -1,5 +1,7 @@
 .openapi-generator-ignore
 README.md
+docs/AIStudioApi.json
+docs/AIStudioApi.md
 docs/AgentAssistantsApi.json
 docs/AgentAssistantsApi.md
 docs/AgentCopilotApi.json
@@ -252,6 +254,7 @@ docs/deleteGreeting-example.txt
 docs/deleteGroup-example.txt
 docs/deleteGroupDynamicsettings-example.txt
 docs/deleteGroupMembers-example.txt
+docs/deleteGuideJobs-example.txt
 docs/deleteIdentityprovider-example.txt
 docs/deleteIdentityprovidersAdfs-example.txt
 docs/deleteIdentityprovidersCic-example.txt
@@ -689,6 +692,8 @@ docs/getContentmanagementWorkspaceTagvalue-example.txt
 docs/getContentmanagementWorkspaceTagvalues-example.txt
 docs/getContentmanagementWorkspaces-example.txt
 docs/getConversation-example.txt
+docs/getConversationCommunicationInternalmessage-example.txt
+docs/getConversationCommunicationInternalmessages-example.txt
 docs/getConversationParticipantSecureivrsession-example.txt
 docs/getConversationParticipantSecureivrsessions-example.txt
 docs/getConversationParticipantWrapup-example.txt
@@ -737,6 +742,8 @@ docs/getConversationsEmailParticipantWrapup-example.txt
 docs/getConversationsEmailParticipantWrapupcodes-example.txt
 docs/getConversationsEmailSettings-example.txt
 docs/getConversationsEmails-example.txt
+docs/getConversationsInternalmessage-example.txt
+docs/getConversationsInternalmessages-example.txt
 docs/getConversationsKeyconfiguration-example.txt
 docs/getConversationsKeyconfigurations-example.txt
 docs/getConversationsMessage-example.txt
@@ -755,6 +762,7 @@ docs/getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId-e
 docs/getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId-example.txt
 docs/getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId-example.txt
 docs/getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId-example.txt
+docs/getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId-example.txt
 docs/getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationTwitterOauthSettings-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
@@ -958,7 +966,10 @@ docs/getGdprRequests-example.txt
 docs/getGdprSubjects-example.txt
 docs/getGeolocationsSettings-example.txt
 docs/getGreeting-example.txt
+docs/getGreetingDownloads-example.txt
+docs/getGreetingGroupsDownloads-example.txt
 docs/getGreetingMedia-example.txt
+docs/getGreetingUsersDownloads-example.txt
 docs/getGreetings-example.txt
 docs/getGreetingsDefaults-example.txt
 docs/getGroup-example.txt
@@ -971,6 +982,12 @@ docs/getGroupProfile-example.txt
 docs/getGroups-example.txt
 docs/getGroupsSearch-example.txt
 docs/getGroupsSearch-example.txt
+docs/getGuide-example.txt
+docs/getGuideJob-example.txt
+docs/getGuideVersion-example.txt
+docs/getGuideVersionJob-example.txt
+docs/getGuides-example.txt
+docs/getGuidesJob-example.txt
 docs/getIdentityprovider-example.txt
 docs/getIdentityproviders-example.txt
 docs/getIdentityprovidersAdfs-example.txt
@@ -1017,6 +1034,7 @@ docs/getIntegrationsClientapps-example.txt
 docs/getIntegrationsClientappsUnifiedcommunications-example.txt
 docs/getIntegrationsCredential-example.txt
 docs/getIntegrationsCredentials-example.txt
+docs/getIntegrationsCredentialsListing-example.txt
 docs/getIntegrationsCredentialsTypes-example.txt
 docs/getIntegrationsSpeechAudioconnector-example.txt
 docs/getIntegrationsSpeechAudioconnectorIntegrationId-example.txt
@@ -1693,6 +1711,7 @@ docs/getUsersExternalidAuthorityNameExternalKey-example.txt
 docs/getUsersMe-example.txt
 docs/getUsersPresenceBulk-example.txt
 docs/getUsersPresencesPurecloudBulk-example.txt
+docs/getUsersQuery-example.txt
 docs/getUsersSearch-example.txt
 docs/getUsersSearch-example.txt
 docs/getVoicemailGroupMailbox-example.txt
@@ -1924,6 +1943,7 @@ docs/patchExternalcontactsOrganizationIdentifiers-example.txt
 docs/patchFlowsInstancesSettingsExecutiondata-example.txt
 docs/patchGamificationContest-example.txt
 docs/patchGeolocationsSettings-example.txt
+docs/patchGuideVersion-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
 docs/patchIntegrationsActionDraft-example.txt
@@ -1980,6 +2000,7 @@ docs/patchRoutingQueueUsers-example.txt
 docs/patchRoutingSettingsContactcenter-example.txt
 docs/patchRoutingSettingsTranscription-example.txt
 docs/patchRoutingSkillgroup-example.txt
+docs/patchRoutingSmsPhonenumber-example.txt
 docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
@@ -2212,9 +2233,11 @@ docs/postContentmanagementWorkspaces-example.txt
 docs/postConversationAssign-example.txt
 docs/postConversationBarge-example.txt
 docs/postConversationCobrowse-example.txt
+docs/postConversationCommunicationInternalmessages-example.txt
 docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
 docs/postConversationParticipantDigits-example.txt
+docs/postConversationParticipantInternalmessagesUsersCommunications-example.txt
 docs/postConversationParticipantReplace-example.txt
 docs/postConversationParticipantReplaceAgent-example.txt
 docs/postConversationParticipantReplaceExternal-example.txt
@@ -2267,6 +2290,7 @@ docs/postConversationsMessageCommunicationTyping-example.txt
 docs/postConversationsMessageInboundOpenEvent-example.txt
 docs/postConversationsMessageInboundOpenMessage-example.txt
 docs/postConversationsMessageInboundOpenReceipt-example.txt
+docs/postConversationsMessageInboundOpenStructuredResponse-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
 docs/postConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/postConversationsMessageParticipantMonitor-example.txt
@@ -2387,6 +2411,10 @@ docs/postGroups-example.txt
 docs/postGroupsDynamicsettingsPreview-example.txt
 docs/postGroupsSearch-example.txt
 docs/postGroupsSearch-example.txt
+docs/postGuideVersionJobs-example.txt
+docs/postGuideVersions-example.txt
+docs/postGuides-example.txt
+docs/postGuidesJobs-example.txt
 docs/postIdentityproviders-example.txt
 docs/postInfrastructureascodeJobs-example.txt
 docs/postIntegrations-example.txt
@@ -2683,6 +2711,7 @@ docs/postTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/postTelephonyProvidersEdgesDidpools-example.txt
 docs/postTelephonyProvidersEdgesEdgegroups-example.txt
 docs/postTelephonyProvidersEdgesExtensionpools-example.txt
+docs/postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource-example.txt
 docs/postTelephonyProvidersEdgesPhoneReboot-example.txt
 docs/postTelephonyProvidersEdgesPhonebasesettings-example.txt
 docs/postTelephonyProvidersEdgesPhones-example.txt
@@ -2845,6 +2874,7 @@ docs/putAuthorizationRoleUsersRemove-example.txt
 docs/putAuthorizationRolesDefault-example.txt
 docs/putAuthorizationRolesSettings-example.txt
 docs/putBusinessrulesDecisiontableVersionPublish-example.txt
+docs/putBusinessrulesDecisiontableVersionRow-example.txt
 docs/putBusinessrulesSchema-example.txt
 docs/putChatsMessageReactions-example.txt
 docs/putChatsSettings-example.txt
@@ -2869,6 +2899,7 @@ docs/putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId-e
 docs/putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId-example.txt
 docs/putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId-example.txt
 docs/putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId-example.txt
+docs/putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId-example.txt
 docs/putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId-example.txt
 docs/putConversationsMessagingSettingsDefault-example.txt
 docs/putConversationsMessagingSupportedcontentDefault-example.txt
@@ -3085,6 +3116,7 @@ rollup-amd.config.js
 rollup-cjs-for-browserify.config.js
 rollup-cjs-for-node.config.js
 src/purecloud-platform-client-v2/ApiClient.js
+src/purecloud-platform-client-v2/api/AIStudioApi.js
 src/purecloud-platform-client-v2/api/AgentAssistantsApi.js
 src/purecloud-platform-client-v2/api/AgentCopilotApi.js
 src/purecloud-platform-client-v2/api/AgentUIApi.js

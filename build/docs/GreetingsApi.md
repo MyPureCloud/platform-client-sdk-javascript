@@ -8,7 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteGreeting**](GreetingsApi#deleteGreeting) | **DELETE** /api/v2/greetings/{greetingId} | Deletes a Greeting with the given GreetingId
 [**getGreeting**](GreetingsApi#getGreeting) | **GET** /api/v2/greetings/{greetingId} | Get a Greeting with the given GreetingId
+[**getGreetingDownloads**](GreetingsApi#getGreetingDownloads) | **GET** /api/v2/greetings/{greetingId}/downloads | Download a organization greeting recording
+[**getGreetingGroupsDownloads**](GreetingsApi#getGreetingGroupsDownloads) | **GET** /api/v2/greetings/{greetingId}/groups/downloads | Download a group greeting recording
 [**getGreetingMedia**](GreetingsApi#getGreetingMedia) | **GET** /api/v2/greetings/{greetingId}/media | Get media playback URI for this greeting
+[**getGreetingUsersDownloads**](GreetingsApi#getGreetingUsersDownloads) | **GET** /api/v2/greetings/{greetingId}/users/downloads | Download a user greeting recording
 [**getGreetings**](GreetingsApi#getGreetings) | **GET** /api/v2/greetings | Gets an Organization's Greetings
 [**getGreetingsDefaults**](GreetingsApi#getGreetingsDefaults) | **GET** /api/v2/greetings/defaults | Get an Organization's DefaultGreetingList
 [**getGroupGreetings**](GreetingsApi#getGroupGreetings) | **GET** /api/v2/groups/{groupId}/greetings | Get a list of the Group's Greetings
@@ -121,6 +124,114 @@ apiInstance.getGreeting(greetingId)
 **Greeting**
 
 
+## getGreetingDownloads
+
+> GreetingMediaInfo getGreetingDownloads(greetingId, opts)
+
+
+GET /api/v2/greetings/{greetingId}/downloads
+
+Download a organization greeting recording
+
+Requires ANY permissions:
+
+* greetings:greeting:download
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GreetingsApi();
+
+let greetingId = "greetingId_example"; // String | Greeting ID
+let opts = { 
+  'formatId': "WAV" // String | The desired media format.
+};
+
+apiInstance.getGreetingDownloads(greetingId, opts)
+  .then((data) => {
+    console.log(`getGreetingDownloads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGreetingDownloads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **greetingId** | **String** | Greeting ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+
+### Return type
+
+**GreetingMediaInfo**
+
+
+## getGreetingGroupsDownloads
+
+> GreetingMediaInfo getGreetingGroupsDownloads(greetingId, opts)
+
+
+GET /api/v2/greetings/{greetingId}/groups/downloads
+
+Download a group greeting recording
+
+Requires ANY permissions:
+
+* greetings:groupGreeting:download
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GreetingsApi();
+
+let greetingId = "greetingId_example"; // String | Greeting ID
+let opts = { 
+  'formatId': "WAV" // String | The desired media format.
+};
+
+apiInstance.getGreetingGroupsDownloads(greetingId, opts)
+  .then((data) => {
+    console.log(`getGreetingGroupsDownloads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGreetingGroupsDownloads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **greetingId** | **String** | Greeting ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+
+### Return type
+
+**GreetingMediaInfo**
+
+
 ## getGreetingMedia
 
 > GreetingMediaInfo getGreetingMedia(greetingId, opts)
@@ -129,6 +240,8 @@ apiInstance.getGreeting(greetingId)
 GET /api/v2/greetings/{greetingId}/media
 
 Get media playback URI for this greeting
+
+API should migrate to use GET api/v2/greetings/{greetingId}/downloads
 
 Requires NO permissions:
 
@@ -156,6 +269,60 @@ apiInstance.getGreetingMedia(greetingId, opts)
   })
   .catch((err) => {
     console.log('There was a failure calling getGreetingMedia');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **greetingId** | **String** | Greeting ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+
+### Return type
+
+**GreetingMediaInfo**
+
+
+## getGreetingUsersDownloads
+
+> GreetingMediaInfo getGreetingUsersDownloads(greetingId, opts)
+
+
+GET /api/v2/greetings/{greetingId}/users/downloads
+
+Download a user greeting recording
+
+Requires ANY permissions:
+
+* greetings:greeting:download
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GreetingsApi();
+
+let greetingId = "greetingId_example"; // String | Greeting ID
+let opts = { 
+  'formatId': "WAV" // String | The desired media format.
+};
+
+apiInstance.getGreetingUsersDownloads(greetingId, opts)
+  .then((data) => {
+    console.log(`getGreetingUsersDownloads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGreetingUsersDownloads');
     console.error(err);
   });
 ```
@@ -818,4 +985,4 @@ apiInstance.putUserGreetingsDefaults(userId, body)
 **DefaultGreetingList**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_

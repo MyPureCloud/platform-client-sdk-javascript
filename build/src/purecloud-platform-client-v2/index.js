@@ -4,6 +4,7 @@ import DefaultHttpClient from './DefaultHttpClient.js';
 import AbstractHttpClient from './AbstractHttpClient.js';
 import HttpRequestOptions from './HttpRequestOptions.js';
 import ApiClient from './ApiClient.js';
+import AIStudioApi from './api/AIStudioApi.js';
 import AgentAssistantsApi from './api/AgentAssistantsApi.js';
 import AgentCopilotApi from './api/AgentCopilotApi.js';
 import AgentUIApi from './api/AgentUIApi.js';
@@ -117,7 +118,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 223.0.0
+ * @version 224.0.0
  */
 class platformClient {
 	constructor() {
@@ -131,6 +132,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/ApiClient}
 		 */
 		this.ApiClientClass = ApiClient;
+		/**
+		 * The AIStudioApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/AIStudioApi}
+		 */
+		this.AIStudioApi = AIStudioApi;
 		/**
 		 * The AgentAssistantsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AgentAssistantsApi}

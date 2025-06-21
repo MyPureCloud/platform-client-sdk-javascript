@@ -28,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getConversation**](ConversationsApi#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message
+[**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication
 [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
 [**getConversationParticipantSecureivrsessions**](ConversationsApi#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
 [**getConversationParticipantWrapup**](ConversationsApi#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
@@ -70,6 +72,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi#getConversationsEmailParticipantWrapupcodes) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsEmailSettings**](ConversationsApi#getConversationsEmailSettings) | **GET** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation
 [**getConversationsEmails**](ConversationsApi#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
+[**getConversationsInternalmessage**](ConversationsApi#getConversationsInternalmessage) | **GET** /api/v2/conversations/internalmessages/{conversationId} | Get internal message conversation
+[**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | **GET** /api/v2/conversations/internalmessages | Get active internal message conversations for the logged in user
 [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | **GET** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations
 [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | **GET** /api/v2/conversations/keyconfigurations | Get a list of key configurations data
 [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
@@ -88,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Get Facebook messaging integration identity resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Get an Instagram integration identity resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Get an open messaging integration Identity Resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} | Get X (Formally Twitter) messaging integration identity resolution settings
 [**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings
 [**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings | Get twitter oauth settings to patch an integration
 [**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
@@ -168,9 +173,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationAssign**](ConversationsApi#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 [**postConversationBarge**](ConversationsApi#postConversationBarge) | **POST** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants.
 [**postConversationCobrowse**](ConversationsApi#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
+[**postConversationCommunicationInternalmessages**](ConversationsApi#postConversationCommunicationInternalmessages) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Send internal message
 [**postConversationDisconnect**](ConversationsApi#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 [**postConversationParticipantCallbacks**](ConversationsApi#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantDigits**](ConversationsApi#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
+[**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications | Setup internal message communication with user
 [**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
 [**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
@@ -222,6 +229,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageInboundOpenEvent**](ConversationsApi#postConversationsMessageInboundOpenEvent) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message
 [**postConversationsMessageInboundOpenMessage**](ConversationsApi#postConversationsMessageInboundOpenMessage) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message
 [**postConversationsMessageInboundOpenReceipt**](ConversationsApi#postConversationsMessageInboundOpenReceipt) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message
+[**postConversationsMessageInboundOpenStructuredResponse**](ConversationsApi#postConversationsMessageInboundOpenStructuredResponse) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response | Send inbound Open Response
 [**postConversationsMessageMessagesBulk**](ConversationsApi#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
@@ -259,6 +267,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Create an identity resolution settings for a Facebook messaging integration
 [**putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Create identity resolution settings for an Instagram messaging integration
 [**putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Update an open messaging integration Identity Resolution settings
+[**putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} | Create an identity resolution settings for an X (Formally Twitter) messaging integration
 [**putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Update a whatsApp integration Identity Resolution settings
 [**putConversationsMessagingSettingsDefault**](ConversationsApi#putConversationsMessagingSettingsDefault) | **PUT** /api/v2/conversations/messaging/settings/default | Set the organization's default setting that may be applied to to integrations without settings
 [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
@@ -1386,6 +1395,122 @@ apiInstance.getConversation(conversationId)
 **Conversation**
 
 
+## getConversationCommunicationInternalmessage
+
+> InternalMessageData getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}
+
+Get message
+
+getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let messageId = "messageId_example"; // String | messageId
+
+apiInstance.getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+  .then((data) => {
+    console.log(`getConversationCommunicationInternalmessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationInternalmessage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **messageId** | **String** | messageId |  |
+
+### Return type
+
+**InternalMessageData**
+
+
+## getConversationCommunicationInternalmessages
+
+> InternalMessageDataEntityListing getConversationCommunicationInternalmessages(conversationId, communicationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
+
+Get messages for communication
+
+getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200.
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationCommunicationInternalmessages(conversationId, communicationId, opts)
+  .then((data) => {
+    console.log(`getConversationCommunicationInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationInternalmessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+
+### Return type
+
+**InternalMessageDataEntityListing**
+
+
 ## getConversationParticipantSecureivrsession
 
 > SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
@@ -1932,7 +2057,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -1953,7 +2078,7 @@ apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -1987,7 +2112,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, opts)
@@ -2007,7 +2132,7 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2140,7 +2265,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2161,7 +2286,7 @@ apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2195,7 +2320,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
@@ -2215,7 +2340,7 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2661,7 +2786,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2682,7 +2807,7 @@ apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2721,7 +2846,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, opts)
@@ -2741,7 +2866,7 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2932,7 +3057,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2953,7 +3078,7 @@ apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conver
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2992,7 +3117,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
@@ -3012,7 +3137,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3339,7 +3464,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -3360,7 +3485,7 @@ apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3394,7 +3519,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
@@ -3414,7 +3539,7 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3560,6 +3685,105 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmailConversationEntityListing**
+
+
+## getConversationsInternalmessage
+
+> InternalMessageConversation getConversationsInternalmessage(conversationId)
+
+
+GET /api/v2/conversations/internalmessages/{conversationId}
+
+Get internal message conversation
+
+getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+
+apiInstance.getConversationsInternalmessage(conversationId)
+  .then((data) => {
+    console.log(`getConversationsInternalmessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsInternalmessage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+
+### Return type
+
+**InternalMessageConversation**
+
+
+## getConversationsInternalmessages
+
+> InternalMessageConversationEntityListing getConversationsInternalmessages()
+
+
+GET /api/v2/conversations/internalmessages
+
+Get active internal message conversations for the logged in user
+
+getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsInternalmessages()
+  .then((data) => {
+    console.log(`getConversationsInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsInternalmessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**InternalMessageConversationEntityListing**
 
 
 ## getConversationsKeyconfiguration
@@ -3902,7 +4126,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -3923,7 +4147,7 @@ apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3957,7 +4181,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
@@ -3977,7 +4201,7 @@ apiInstance.getConversationsMessageParticipantWrapup(conversationId, participant
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -4479,6 +4703,57 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 ### Return type
 
 **OpenMessagingIdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
+
+Get X (Formally Twitter) messaging integration identity resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionX:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration Id
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration Id |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
@@ -5643,7 +5918,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5664,7 +5939,7 @@ apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversati
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -5744,7 +6019,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5765,7 +6040,7 @@ apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId,
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -5852,7 +6127,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5873,7 +6148,7 @@ apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -5947,6 +6222,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -6378,6 +6654,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -6642,6 +6919,8 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -6915,6 +7194,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -7148,6 +7428,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -7431,6 +7712,8 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
+* conversation:email:park
 
 ### Example Usage
 
@@ -7698,6 +7981,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -8794,6 +9078,64 @@ apiInstance.postConversationCobrowse(conversationId)
 **CobrowseWebMessagingSession**
 
 
+## postConversationCommunicationInternalmessages
+
+> InternalMessageData postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
+
+Send internal message
+
+Send a new internal message for an existing communication.
+
+postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Message
+
+apiInstance.postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationCommunicationInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationInternalmessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Message |  |
+
+### Return type
+
+**InternalMessageData**
+
+
 ## postConversationDisconnect
 
 > **&#39;String&#39;** postConversationDisconnect(conversationId)
@@ -8952,6 +9294,64 @@ apiInstance.postConversationParticipantDigits(conversationId, participantId, opt
 ### Return type
 
 void (no response body)
+
+
+## postConversationParticipantInternalmessagesUsersCommunications
+
+> MessagingConferResponse postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications
+
+Setup internal message communication with user
+
+The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+
+postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:setupWithUser
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Confer request
+
+apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationParticipantInternalmessagesUsersCommunications success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantInternalmessagesUsersCommunications');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Confer request |  |
+
+### Return type
+
+**MessagingConferResponse**
 
 
 ## postConversationParticipantReplace
@@ -11728,6 +12128,60 @@ apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body)
 **OpenReceiptNormalizedMessage**
 
 
+## postConversationsMessageInboundOpenStructuredResponse
+
+> OpenStructuredResponseNormalizedMessage postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+
+
+POST /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response
+
+Send inbound Open Response
+
+Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions:
+
+* conversation:message:receive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | integrationId
+let body = {}; // Object | OpenInboundStructuredResponseMessage
+
+apiInstance.postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageInboundOpenStructuredResponse success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageInboundOpenStructuredResponse');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | integrationId |  |
+ **body** | **Object** | OpenInboundStructuredResponseMessage |  |
+
+### Return type
+
+**OpenStructuredResponseNormalizedMessage**
+
+
 ## postConversationsMessageMessagesBulk
 
 > TextMessageListing postConversationsMessageMessagesBulk(conversationId, opts)
@@ -13704,6 +14158,59 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 **OpenMessagingIdentityResolutionConfig**
 
 
+## putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
+
+Create an identity resolution settings for an X (Formally Twitter) messaging integration
+
+Requires ALL permissions:
+
+* messaging:XIntegration:edit
+* messaging:identityResolutionX:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration Id
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration Id |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
 ## putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
 > IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
@@ -14074,4 +14581,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_

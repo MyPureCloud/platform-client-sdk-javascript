@@ -5,7 +5,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -71,8 +71,66 @@ class GreetingsApi {
 	}
 
 	/**
-	 * Get media playback URI for this greeting
+	 * Download a organization greeting recording
 	 * 
+	 * @param {String} greetingId Greeting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 */
+	getGreetingDownloads(greetingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'greetingId' is set
+		if (greetingId === undefined || greetingId === null) {
+			throw 'Missing the required parameter "greetingId" when calling getGreetingDownloads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/greetings/{greetingId}/downloads', 
+			'GET', 
+			{ 'greetingId': greetingId },
+			{ 'formatId': opts['formatId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Download a group greeting recording
+	 * 
+	 * @param {String} greetingId Greeting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 */
+	getGreetingGroupsDownloads(greetingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'greetingId' is set
+		if (greetingId === undefined || greetingId === null) {
+			throw 'Missing the required parameter "greetingId" when calling getGreetingGroupsDownloads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/greetings/{greetingId}/groups/downloads', 
+			'GET', 
+			{ 'greetingId': greetingId },
+			{ 'formatId': opts['formatId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get media playback URI for this greeting
+	 * API should migrate to use GET api/v2/greetings/{greetingId}/downloads
 	 * @param {String} greetingId Greeting ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WAV)
@@ -87,6 +145,35 @@ class GreetingsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/greetings/{greetingId}/media', 
+			'GET', 
+			{ 'greetingId': greetingId },
+			{ 'formatId': opts['formatId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Download a user greeting recording
+	 * 
+	 * @param {String} greetingId Greeting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 */
+	getGreetingUsersDownloads(greetingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'greetingId' is set
+		if (greetingId === undefined || greetingId === null) {
+			throw 'Missing the required parameter "greetingId" when calling getGreetingUsersDownloads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/greetings/{greetingId}/users/downloads', 
 			'GET', 
 			{ 'greetingId': greetingId },
 			{ 'formatId': opts['formatId'] },

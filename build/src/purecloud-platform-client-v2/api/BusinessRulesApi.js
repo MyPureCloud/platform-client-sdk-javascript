@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -339,6 +339,9 @@ class BusinessRulesApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {String} opts.schemaId Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
 	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
+	 * @param {Boolean} opts.withPublishedVersion Filters results to only decision tables that have at least one version in Published status
+	 * @param {Array.<String>} opts.expand Fields to expand in response
+	 * @param {Array.<String>} opts.ids Decision table IDs to search for
 	 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontablesSearch(opts) { 
@@ -349,7 +352,7 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables/search', 
 			'GET', 
 			{  },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'schemaId': opts['schemaId'],'name': opts['name'],'withPublishedVersion': opts['withPublishedVersion'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -521,12 +524,13 @@ class BusinessRulesApi {
 	}
 
 	/**
-	 * Update a decision table row
+	 * Partially update a decision table row. Will be deprecated, we should use PUT request.
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
-	 * @param {Object} body Update decision table row request
+	 * @param {Object} body Partially update decision table row request
+	 * @deprecated
 	 * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
@@ -875,6 +879,47 @@ class BusinessRulesApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Full update a decision table row
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {String} rowId Row ID
+	 * @param {Object} body Full update decision table row request
+	 * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null) {
+			throw 'Missing the required parameter "tableId" when calling putBusinessrulesDecisiontableVersionRow';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling putBusinessrulesDecisiontableVersionRow';
+		}
+		// verify the required parameter 'rowId' is set
+		if (rowId === undefined || rowId === null) {
+			throw 'Missing the required parameter "rowId" when calling putBusinessrulesDecisiontableVersionRow';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putBusinessrulesDecisiontableVersionRow';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}', 
+			'PUT', 
+			{ 'tableId': tableId,'tableVersion': tableVersion,'rowId': rowId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

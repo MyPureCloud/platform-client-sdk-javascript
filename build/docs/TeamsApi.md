@@ -266,7 +266,7 @@ let opts = {
   'name': "name_example", // String | Return only teams whose names start with this value (case-insensitive matching)
   'after': "after_example", // String | The cursor that points to the next item in the complete list of teams
   'before': "before_example", // String | The cursor that points to the previous item in the complete list of teams
-  'expand': "expand_example" // String | Expand the name on each user
+  'expand': "expand_example" // String | Expand the division on each team
 };
 
 apiInstance.getTeams(opts)
@@ -288,7 +288,7 @@ apiInstance.getTeams(opts)
  **name** | **String** | Return only teams whose names start with this value (case-insensitive matching) | [optional]  |
  **after** | **String** | The cursor that points to the next item in the complete list of teams | [optional]  |
  **before** | **String** | The cursor that points to the previous item in the complete list of teams | [optional]  |
- **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities.division |
+ **expand** | **String** | Expand the division on each team | [optional] <br />**Values**: entities.division |
 
 ### Return type
 
@@ -555,4 +555,4 @@ apiInstance.postTeamsSearch(body)
 **TeamsSearchResponse**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_

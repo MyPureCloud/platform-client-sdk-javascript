@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsClientappsUnifiedcommunications**](IntegrationsApi#getIntegrationsClientappsUnifiedcommunications) | **GET** /api/v2/integrations/clientapps/unifiedcommunications | UC integration client application configuration.
 [**getIntegrationsCredential**](IntegrationsApi#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
+[**getIntegrationsCredentialsListing**](IntegrationsApi#getIntegrationsCredentialsListing) | **GET** /api/v2/integrations/credentials/listing | List multiple sets of credentials using cursor-based paging
 [**getIntegrationsCredentialsTypes**](IntegrationsApi#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
 [**getIntegrationsSpeechAudioconnector**](IntegrationsApi#getIntegrationsSpeechAudioconnector) | **GET** /api/v2/integrations/speech/audioconnector | Get a list of Audio Connector integrations
 [**getIntegrationsSpeechAudioconnectorIntegrationId**](IntegrationsApi#getIntegrationsSpeechAudioconnectorIntegrationId) | **GET** /api/v2/integrations/speech/audioconnector/{integrationId} | Get an Audio Connector integration
@@ -1942,6 +1943,62 @@ apiInstance.getIntegrationsCredentials(opts)
 ### Return type
 
 **CredentialInfoListing**
+
+
+## getIntegrationsCredentialsListing
+
+> CredentialInfoCursorListing getIntegrationsCredentialsListing(opts)
+
+
+GET /api/v2/integrations/credentials/listing
+
+List multiple sets of credentials using cursor-based paging
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getIntegrationsCredentialsListing(opts)
+  .then((data) => {
+    console.log(`getIntegrationsCredentialsListing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsCredentialsListing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+**CredentialInfoCursorListing**
 
 
 ## getIntegrationsCredentialsTypes
@@ -5067,4 +5124,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_

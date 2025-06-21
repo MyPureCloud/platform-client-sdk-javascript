@@ -589,7 +589,7 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
 
 ## getWebdeploymentsDeploymentIdentityresolution
 
-> IdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+> DeploymentIdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(deploymentId)
 
 
 GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
@@ -635,7 +635,7 @@ apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**DeploymentIdentityResolutionConfig**
 
 
 ## getWebdeploymentsDeployments
@@ -1039,7 +1039,7 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 
 ## putWebdeploymentsDeploymentIdentityresolution
 
-> IdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+> DeploymentIdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 
 
 PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
@@ -1087,7 +1087,7 @@ apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**DeploymentIdentityResolutionConfig**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_

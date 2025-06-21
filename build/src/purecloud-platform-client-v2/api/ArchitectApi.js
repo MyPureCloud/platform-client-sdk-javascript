@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -891,7 +891,7 @@ class ArchitectApi {
 
 	/**
 	 * Get a pageable list of basic emergency group objects filterable by query parameters.
-	 * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+	 * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -3049,6 +3049,7 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postArchitectPromptResourceUploads(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
@@ -3209,6 +3210,7 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postArchitectSystempromptResourceUploads(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set

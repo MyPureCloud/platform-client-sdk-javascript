@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -2909,6 +2909,36 @@ class RoutingApi {
 			'/api/v2/routing/skillgroups/{skillGroupId}', 
 			'PATCH', 
 			{ 'skillGroupId': skillGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a phone number provisioned for SMS.
+	 * 
+	 * @param {String} phoneNumberId phone number
+	 * @param {Object} body SmsPhoneNumberPatchRequest
+	 */
+	patchRoutingSmsPhonenumber(phoneNumberId, body) { 
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null) {
+			throw 'Missing the required parameter "phoneNumberId" when calling patchRoutingSmsPhonenumber';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSmsPhonenumber';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
+			'PATCH', 
+			{ 'phoneNumberId': phoneNumberId },
 			{  },
 			{  },
 			{  },

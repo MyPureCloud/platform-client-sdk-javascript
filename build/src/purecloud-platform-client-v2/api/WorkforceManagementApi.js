@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 223.0.0
+	 * @version 224.0.0
 	 */
 
 	/**
@@ -1618,6 +1618,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
 	getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1631,7 +1632,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
-			{ 'managementUnitId': opts['managementUnitId'] },
+			{ 'managementUnitId': opts['managementUnitId'],'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			null, 
@@ -5335,8 +5336,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service
 	 */
-	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';
@@ -5350,7 +5355,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
-			{  },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			body, 
@@ -6033,12 +6038,9 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The ID of the work plan bid to copy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body body
 	 */
-	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
@@ -6046,6 +6048,10 @@ class WorkforceManagementApi {
 		// verify the required parameter 'bidId' is set
 		if (bidId === undefined || bidId === null) {
 			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
 		}
 
 		return this.apiClient.callApi(
@@ -6055,7 +6061,7 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
