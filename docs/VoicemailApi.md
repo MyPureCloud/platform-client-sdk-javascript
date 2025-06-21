@@ -524,6 +524,8 @@ GET /api/v2/voicemail/messages/{messageId}/media
 
 Get media playback URI for this voicemail message
 
+API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
+
 Requires NO permissions:
 
 ### Example Usage
@@ -1388,4 +1390,4 @@ apiInstance.putVoicemailUserpolicy(userId, body)
 **VoicemailUserPolicy**
 
 
-_purecloud-platform-client-v2@223.0.0_
+_purecloud-platform-client-v2@224.0.0_
