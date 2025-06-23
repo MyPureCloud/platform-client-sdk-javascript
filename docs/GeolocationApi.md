@@ -210,4 +210,4 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 **Geolocation**
 
 
-_purecloud-platform-client-v2@224.0.0_
+_purecloud-platform-client-v2@225.0.0_
