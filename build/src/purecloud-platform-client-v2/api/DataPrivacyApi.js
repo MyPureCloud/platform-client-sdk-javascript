@@ -5,7 +5,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class DataPrivacyApi {
 	 */
 	deleteDataprivacyMaskingrule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteDataprivacyMaskingrule';
 		}
 
@@ -52,7 +52,7 @@ class DataPrivacyApi {
 	 */
 	getDataprivacyMaskingrule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getDataprivacyMaskingrule';
 		}
 
@@ -101,7 +101,7 @@ class DataPrivacyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling patchDataprivacyMaskingrule';
 		}
 

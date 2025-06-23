@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class LocationsApi {
 	 */
 	deleteLocation(locationId) { 
 		// verify the required parameter 'locationId' is set
-		if (locationId === undefined || locationId === null) {
+		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling deleteLocation';
 		}
 
@@ -56,7 +56,7 @@ class LocationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'locationId' is set
-		if (locationId === undefined || locationId === null) {
+		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling getLocation';
 		}
 
@@ -81,7 +81,7 @@ class LocationsApi {
 	 */
 	getLocationSublocations(locationId) { 
 		// verify the required parameter 'locationId' is set
-		if (locationId === undefined || locationId === null) {
+		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling getLocationSublocations';
 		}
 
@@ -163,7 +163,7 @@ class LocationsApi {
 	 */
 	patchLocation(locationId, body) { 
 		// verify the required parameter 'locationId' is set
-		if (locationId === undefined || locationId === null) {
+		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling patchLocation';
 		}
 		// verify the required parameter 'body' is set

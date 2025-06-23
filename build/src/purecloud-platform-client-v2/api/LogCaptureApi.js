@@ -5,7 +5,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class LogCaptureApi {
 	 */
 	deleteDiagnosticsLogcaptureBrowserUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteDiagnosticsLogcaptureBrowserUser';
 		}
 
@@ -52,7 +52,7 @@ class LogCaptureApi {
 	 */
 	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getDiagnosticsLogcaptureBrowserEntriesDownloadJob';
 		}
 
@@ -77,7 +77,7 @@ class LogCaptureApi {
 	 */
 	getDiagnosticsLogcaptureBrowserUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getDiagnosticsLogcaptureBrowserUser';
 		}
 
@@ -180,7 +180,7 @@ class LogCaptureApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';
 		}
 

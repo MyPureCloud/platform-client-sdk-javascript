@@ -5,7 +5,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class OperationalEventsApi {
 	 */
 	getUsageEventsDefinition(eventDefinitionId) { 
 		// verify the required parameter 'eventDefinitionId' is set
-		if (eventDefinitionId === undefined || eventDefinitionId === null) {
+		if (eventDefinitionId === undefined || eventDefinitionId === null || eventDefinitionId === '') {
 			throw 'Missing the required parameter "eventDefinitionId" when calling getUsageEventsDefinition';
 		}
 

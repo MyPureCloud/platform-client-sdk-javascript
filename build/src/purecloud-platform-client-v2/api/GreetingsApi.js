@@ -5,7 +5,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class GreetingsApi {
 	 */
 	deleteGreeting(greetingId) { 
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling deleteGreeting';
 		}
 
@@ -52,7 +52,7 @@ class GreetingsApi {
 	 */
 	getGreeting(greetingId) { 
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling getGreeting';
 		}
 
@@ -81,7 +81,7 @@ class GreetingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling getGreetingDownloads';
 		}
 
@@ -110,7 +110,7 @@ class GreetingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling getGreetingGroupsDownloads';
 		}
 
@@ -139,7 +139,7 @@ class GreetingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling getGreetingMedia';
 		}
 
@@ -168,7 +168,7 @@ class GreetingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling getGreetingUsersDownloads';
 		}
 
@@ -243,7 +243,7 @@ class GreetingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupGreetings';
 		}
 
@@ -268,7 +268,7 @@ class GreetingsApi {
 	 */
 	getGroupGreetingsDefaults(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupGreetingsDefaults';
 		}
 
@@ -298,7 +298,7 @@ class GreetingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGreetings';
 		}
 
@@ -323,7 +323,7 @@ class GreetingsApi {
 	 */
 	getUserGreetingsDefaults(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGreetingsDefaults';
 		}
 
@@ -374,7 +374,7 @@ class GreetingsApi {
 	 */
 	postGroupGreetings(groupId, body) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling postGroupGreetings';
 		}
 		// verify the required parameter 'body' is set
@@ -404,7 +404,7 @@ class GreetingsApi {
 	 */
 	postUserGreetings(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserGreetings';
 		}
 		// verify the required parameter 'body' is set
@@ -434,7 +434,7 @@ class GreetingsApi {
 	 */
 	putGreeting(greetingId, body) { 
 		// verify the required parameter 'greetingId' is set
-		if (greetingId === undefined || greetingId === null) {
+		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling putGreeting';
 		}
 		// verify the required parameter 'body' is set
@@ -489,7 +489,7 @@ class GreetingsApi {
 	 */
 	putGroupGreetingsDefaults(groupId, body) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putGroupGreetingsDefaults';
 		}
 		// verify the required parameter 'body' is set
@@ -519,7 +519,7 @@ class GreetingsApi {
 	 */
 	putUserGreetingsDefaults(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserGreetingsDefaults';
 		}
 		// verify the required parameter 'body' is set

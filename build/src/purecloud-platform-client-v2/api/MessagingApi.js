@@ -5,7 +5,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class MessagingApi {
 	 */
 	deleteMessagingSetting(messageSettingId) { 
 		// verify the required parameter 'messageSettingId' is set
-		if (messageSettingId === undefined || messageSettingId === null) {
+		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling deleteMessagingSetting';
 		}
 
@@ -75,7 +75,7 @@ class MessagingApi {
 	 */
 	deleteMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
-		if (supportedContentId === undefined || supportedContentId === null) {
+		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling deleteMessagingSupportedcontentSupportedContentId';
 		}
 
@@ -101,7 +101,7 @@ class MessagingApi {
 	 */
 	getMessagingSetting(messageSettingId) { 
 		// verify the required parameter 'messageSettingId' is set
-		if (messageSettingId === undefined || messageSettingId === null) {
+		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling getMessagingSetting';
 		}
 
@@ -200,7 +200,7 @@ class MessagingApi {
 	 */
 	getMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
-		if (supportedContentId === undefined || supportedContentId === null) {
+		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling getMessagingSupportedcontentSupportedContentId';
 		}
 
@@ -227,7 +227,7 @@ class MessagingApi {
 	 */
 	patchMessagingSetting(messageSettingId, body) { 
 		// verify the required parameter 'messageSettingId' is set
-		if (messageSettingId === undefined || messageSettingId === null) {
+		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling patchMessagingSetting';
 		}
 		// verify the required parameter 'body' is set
@@ -258,7 +258,7 @@ class MessagingApi {
 	 */
 	patchMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
 		// verify the required parameter 'supportedContentId' is set
-		if (supportedContentId === undefined || supportedContentId === null) {
+		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling patchMessagingSupportedcontentSupportedContentId';
 		}
 		// verify the required parameter 'body' is set

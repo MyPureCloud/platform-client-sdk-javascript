@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -439,7 +439,7 @@ class SearchApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
 		}
 

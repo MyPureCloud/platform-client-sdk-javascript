@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,11 +28,11 @@ class UsageApi {
 	 */
 	getOauthClientUsageQueryResult(executionId, clientId) { 
 		// verify the required parameter 'executionId' is set
-		if (executionId === undefined || executionId === null) {
+		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageQueryResult';
 		}
 
@@ -61,7 +61,7 @@ class UsageApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageSummary';
 		}
 
@@ -86,7 +86,7 @@ class UsageApi {
 	 */
 	getUsageQueryExecutionIdResults(executionId) { 
 		// verify the required parameter 'executionId' is set
-		if (executionId === undefined || executionId === null) {
+		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getUsageQueryExecutionIdResults';
 		}
 
@@ -116,7 +116,7 @@ class UsageApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'executionId' is set
-		if (executionId === undefined || executionId === null) {
+		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getUsageSimplesearchExecutionIdResults';
 		}
 
@@ -142,7 +142,7 @@ class UsageApi {
 	 */
 	postOauthClientUsageQuery(clientId, body) { 
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
 		}
 		// verify the required parameter 'body' is set

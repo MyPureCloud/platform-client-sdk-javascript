@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class LearningApi {
 	 */
 	deleteLearningAssignment(assignmentId) { 
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling deleteLearningAssignment';
 		}
 
@@ -52,7 +52,7 @@ class LearningApi {
 	 */
 	deleteLearningModule(moduleId) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling deleteLearningModule';
 		}
 
@@ -81,7 +81,7 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling getLearningAssignment';
 		}
 
@@ -113,11 +113,11 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling getLearningAssignmentStep';
 		}
 		// verify the required parameter 'stepId' is set
-		if (stepId === undefined || stepId === null) {
+		if (stepId === undefined || stepId === null || stepId === '') {
 			throw 'Missing the required parameter "stepId" when calling getLearningAssignmentStep';
 		}
 
@@ -221,7 +221,7 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModule';
 		}
 
@@ -247,11 +247,11 @@ class LearningApi {
 	 */
 	getLearningModuleJob(moduleId, jobId) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModuleJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getLearningModuleJob';
 		}
 
@@ -276,7 +276,7 @@ class LearningApi {
 	 */
 	getLearningModulePreview(moduleId) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModulePreview';
 		}
 
@@ -301,7 +301,7 @@ class LearningApi {
 	 */
 	getLearningModuleRule(moduleId) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModuleRule';
 		}
 
@@ -331,11 +331,11 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModuleVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getLearningModuleVersion';
 		}
 
@@ -428,7 +428,7 @@ class LearningApi {
 	 */
 	getLearningModulesCoverartCoverArtId(coverArtId) { 
 		// verify the required parameter 'coverArtId' is set
-		if (coverArtId === undefined || coverArtId === null) {
+		if (coverArtId === undefined || coverArtId === null || coverArtId === '') {
 			throw 'Missing the required parameter "coverArtId" when calling getLearningModulesCoverartCoverArtId';
 		}
 
@@ -453,7 +453,7 @@ class LearningApi {
 	 */
 	getLearningScormScormId(scormId) { 
 		// verify the required parameter 'scormId' is set
-		if (scormId === undefined || scormId === null) {
+		if (scormId === undefined || scormId === null || scormId === '') {
 			throw 'Missing the required parameter "scormId" when calling getLearningScormScormId';
 		}
 
@@ -482,7 +482,7 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignment';
 		}
 
@@ -511,7 +511,7 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignmentReschedule';
 		}
 
@@ -541,11 +541,11 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignmentStep';
 		}
 		// verify the required parameter 'stepId' is set
-		if (stepId === undefined || stepId === null) {
+		if (stepId === undefined || stepId === null || stepId === '') {
 			throw 'Missing the required parameter "stepId" when calling patchLearningAssignmentStep';
 		}
 
@@ -572,11 +572,11 @@ class LearningApi {
 	 */
 	patchLearningModuleUserAssignments(moduleId, userId, body) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling patchLearningModuleUserAssignments';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchLearningModuleUserAssignments';
 		}
 		// verify the required parameter 'body' is set
@@ -630,7 +630,7 @@ class LearningApi {
 	 */
 	postLearningAssignmentReassign(assignmentId) { 
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReassign';
 		}
 
@@ -655,7 +655,7 @@ class LearningApi {
 	 */
 	postLearningAssignmentReset(assignmentId) { 
 		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
+		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReset';
 		}
 
@@ -778,7 +778,7 @@ class LearningApi {
 	 */
 	postLearningModuleJobs(moduleId, body) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling postLearningModuleJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -811,7 +811,7 @@ class LearningApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling postLearningModulePublish';
 		}
 
@@ -946,7 +946,7 @@ class LearningApi {
 	 */
 	putLearningModule(moduleId, body) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling putLearningModule';
 		}
 		// verify the required parameter 'body' is set
@@ -976,7 +976,7 @@ class LearningApi {
 	 */
 	putLearningModulePreview(moduleId, body) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling putLearningModulePreview';
 		}
 		// verify the required parameter 'body' is set
@@ -1006,7 +1006,7 @@ class LearningApi {
 	 */
 	putLearningModuleRule(moduleId, body) { 
 		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling putLearningModuleRule';
 		}
 		// verify the required parameter 'body' is set

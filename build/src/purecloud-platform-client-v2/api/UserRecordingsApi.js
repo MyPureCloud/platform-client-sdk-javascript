@@ -5,7 +5,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class UserRecordingsApi {
 	 */
 	deleteUserrecording(recordingId) { 
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling deleteUserrecording';
 		}
 
@@ -56,7 +56,7 @@ class UserRecordingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getUserrecording';
 		}
 
@@ -87,7 +87,7 @@ class UserRecordingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getUserrecordingMedia';
 		}
 
@@ -116,7 +116,7 @@ class UserRecordingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getUserrecordingTranscoding';
 		}
 
@@ -192,7 +192,7 @@ class UserRecordingsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling putUserrecording';
 		}
 		// verify the required parameter 'body' is set

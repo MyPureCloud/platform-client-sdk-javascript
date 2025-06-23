@@ -84,6 +84,7 @@ declare class Configuration {
 	setEnvironment(environment: string): void;
 	setGateway(gateway: GatewayConfiguration): void;
 	getConfUrl(pathType: string, regionUrl: string): string;
+	setConfigPath(path: string): void;
 }
 
 declare class HttpRequestOptions {
@@ -16459,6 +16460,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationCallEventTopicConversationDivisionMembership>;
 		"recordingState"?: string;
 		"securePause"?: boolean;
@@ -16651,6 +16653,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationCallbackEventTopicConversationDivisionMembership>;
 	}
 	
@@ -16892,6 +16895,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationChatEventTopicConversationDivisionMembership>;
 	}
 	
@@ -17054,6 +17058,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationCobrowseEventTopicConversationDivisionMembership>;
 	}
 	
@@ -17508,6 +17513,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationEmailEventTopicConversationDivisionMembership>;
 	}
 	
@@ -17824,6 +17830,7 @@ declare namespace Models {
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
 		"securePause"?: boolean;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationEventTopicConversationDivisionMembership>;
 	}
 	
@@ -18371,6 +18378,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationMessageEventTopicConversationDivisionMembership>;
 	}
 	
@@ -18898,6 +18906,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationScreenShareEventTopicConversationDivisionMembership>;
 	}
 	
@@ -19079,6 +19088,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationSocialExpressionEventTopicConversationDivisionMembership>;
 	}
 	
@@ -19479,6 +19489,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationVideoEventTopicConversationDivisionMembership>;
 	}
 	
@@ -39035,6 +39046,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationCallEventTopicConversationDivisionMembership>;
 		"recordingState"?: string;
 		"securePause"?: boolean;
@@ -39227,6 +39239,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationCallbackEventTopicConversationDivisionMembership>;
 	}
 	
@@ -39410,6 +39423,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationChatEventTopicConversationDivisionMembership>;
 	}
 	
@@ -39568,6 +39582,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationCobrowseEventTopicConversationDivisionMembership>;
 	}
 	
@@ -39768,6 +39783,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationEmailEventTopicConversationDivisionMembership>;
 	}
 	
@@ -40032,6 +40048,7 @@ declare namespace Models {
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
 		"securePause"?: boolean;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationEventTopicConversationDivisionMembership>;
 	}
 	
@@ -40513,6 +40530,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationMessageEventTopicConversationDivisionMembership>;
 	}
 	
@@ -40728,6 +40746,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationScreenShareEventTopicConversationDivisionMembership>;
 	}
 	
@@ -40930,6 +40949,7 @@ declare namespace Models {
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
 		"securePause"?: boolean;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationSocialExpressionEventTopicConversationDivisionMembership>;
 	}
 	
@@ -41456,6 +41476,7 @@ declare namespace Models {
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
 		"securePause"?: boolean;
+		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationVideoEventTopicConversationDivisionMembership>;
 	}
 	
@@ -50439,18 +50460,69 @@ declare namespace Models {
 		"waitBetweenNotificationMs"?: number;
 	}
 	
+	export interface V2QueueObservationMetricData { 
+		"metric"?: string;
+		"observations"?: Array<Models.V2QueueObservationObservation>;
+		"truncated"?: boolean;
+		"stats"?: Models.V2QueueObservationMetricStats;
+	}
+	
+	export interface V2QueueObservationMetricGroup { 
+		"group"?: { [key: string]: string; };
+		"data"?: Models.V2QueueObservationMetricData;
+	}
+	
+	export interface V2QueueObservationMetricStats { 
+		"count"?: number;
+		"calculatedMetricValue"?: number;
+	}
+	
+	export interface V2QueueObservationObservation { 
+		"observationDate"?: string;
+		"conversationId"?: string;
+		"sessionId"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedLanguageId"?: string;
+		"routingPriority"?: number;
+		"participantName"?: string;
+		"userId"?: string;
+		"direction"?: string;
+		"convertedFrom"?: string;
+		"convertedTo"?: string;
+		"addressFrom"?: string;
+		"addressTo"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"teamId"?: string;
+		"scoredAgents"?: Array<Models.V2QueueObservationScoredAgent>;
+		"requestedRoutings"?: Array<string>;
+		"usedRouting"?: string;
+	}
+	
+	export interface V2QueueObservationObservationNotification { 
+		"results"?: Array<Models.V2QueueObservationMetricGroup>;
+	}
+	
+	export interface V2QueueObservationScoredAgent { 
+		"scoredAgentId"?: string;
+		"agentScore"?: number;
+	}
+	
 	export interface V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction { 
 		"text"?: string;
+		"description"?: string;
 		"score"?: number;
 	}
 	
 	export interface V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage { 
 		"text"?: string;
+		"description"?: string;
 		"score"?: number;
 	}
 	
 	export interface V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage { 
 		"text"?: string;
+		"description"?: string;
 		"score"?: number;
 	}
 	
@@ -50479,6 +50551,29 @@ declare namespace Models {
 		"extractedEntities"?: Array<Models.V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity>;
 		"errorType"?: string;
 		"durationMs"?: number;
+	}
+	
+	export interface V2StaTopicsDetectedTopicParticipant { 
+		"userId"?: string;
+		"queueId"?: string;
+		"divisionId"?: string;
+		"purpose"?: string;
+	}
+	
+	export interface V2StaTopicsDetectedTopicTopicDetected { 
+		"participant"?: string;
+		"topicId"?: string;
+		"topicName"?: string;
+	}
+	
+	export interface V2StaTopicsDetectedTopicTopicsDetectedMessage { 
+		"conversationId"?: string;
+		"communicationId"?: string;
+		"recordingId"?: string;
+		"transcriptId"?: string;
+		"mediaType"?: string;
+		"topics"?: Array<Models.V2StaTopicsDetectedTopicTopicDetected>;
+		"participants"?: Array<Models.V2StaTopicsDetectedTopicParticipant>;
 	}
 	
 	export interface V2WebMessagingUndeliveredMessageTopicMessage { 

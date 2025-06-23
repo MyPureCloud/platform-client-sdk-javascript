@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class BillingApi {
 	 */
 	getBillingContract(contractId) { 
 		// verify the required parameter 'contractId' is set
-		if (contractId === undefined || contractId === null) {
+		if (contractId === undefined || contractId === null || contractId === '') {
 			throw 'Missing the required parameter "contractId" when calling getBillingContract';
 		}
 
@@ -55,11 +55,11 @@ class BillingApi {
 	 */
 	getBillingContractBillingperiod(contractId, billingPeriodId) { 
 		// verify the required parameter 'contractId' is set
-		if (contractId === undefined || contractId === null) {
+		if (contractId === undefined || contractId === null || contractId === '') {
 			throw 'Missing the required parameter "contractId" when calling getBillingContractBillingperiod';
 		}
 		// verify the required parameter 'billingPeriodId' is set
-		if (billingPeriodId === undefined || billingPeriodId === null) {
+		if (billingPeriodId === undefined || billingPeriodId === null || billingPeriodId === '') {
 			throw 'Missing the required parameter "billingPeriodId" when calling getBillingContractBillingperiod';
 		}
 
@@ -116,7 +116,7 @@ class BillingApi {
 	 */
 	getBillingContractsInvoiceDocument(invoiceId) { 
 		// verify the required parameter 'invoiceId' is set
-		if (invoiceId === undefined || invoiceId === null) {
+		if (invoiceId === undefined || invoiceId === null || invoiceId === '') {
 			throw 'Missing the required parameter "invoiceId" when calling getBillingContractsInvoiceDocument';
 		}
 
@@ -148,7 +148,7 @@ class BillingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'invoiceId' is set
-		if (invoiceId === undefined || invoiceId === null) {
+		if (invoiceId === undefined || invoiceId === null || invoiceId === '') {
 			throw 'Missing the required parameter "invoiceId" when calling getBillingContractsInvoiceLines';
 		}
 
@@ -237,7 +237,7 @@ class BillingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';
 		}
 

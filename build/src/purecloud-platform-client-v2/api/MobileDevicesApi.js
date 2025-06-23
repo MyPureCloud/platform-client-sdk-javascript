@@ -5,7 +5,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class MobileDevicesApi {
 	 */
 	deleteMobiledevice(deviceId) { 
 		// verify the required parameter 'deviceId' is set
-		if (deviceId === undefined || deviceId === null) {
+		if (deviceId === undefined || deviceId === null || deviceId === '') {
 			throw 'Missing the required parameter "deviceId" when calling deleteMobiledevice';
 		}
 
@@ -52,7 +52,7 @@ class MobileDevicesApi {
 	 */
 	getMobiledevice(deviceId) { 
 		// verify the required parameter 'deviceId' is set
-		if (deviceId === undefined || deviceId === null) {
+		if (deviceId === undefined || deviceId === null || deviceId === '') {
 			throw 'Missing the required parameter "deviceId" when calling getMobiledevice';
 		}
 
@@ -132,7 +132,7 @@ class MobileDevicesApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'deviceId' is set
-		if (deviceId === undefined || deviceId === null) {
+		if (deviceId === undefined || deviceId === null || deviceId === '') {
 			throw 'Missing the required parameter "deviceId" when calling putMobiledevice';
 		}
 

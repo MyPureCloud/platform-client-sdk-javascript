@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -31,7 +31,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
 		}
 
@@ -58,11 +58,11 @@ class AuthorizationApi {
 	 */
 	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
 		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
+		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
 		}
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
 		}
 
@@ -87,7 +87,7 @@ class AuthorizationApi {
 	 */
 	deleteAuthorizationRole(roleId) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationRole';
 		}
 
@@ -114,15 +114,15 @@ class AuthorizationApi {
 	 */
 	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 
@@ -151,7 +151,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
 		}
 
@@ -181,7 +181,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivisionGrants';
 		}
 
@@ -398,7 +398,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
 		}
 		// verify the required parameter 'permission' is set
@@ -486,7 +486,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesSubjectSubjectId';
 		}
 
@@ -517,7 +517,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
+		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTarget';
 		}
 
@@ -544,11 +544,11 @@ class AuthorizationApi {
 	 */
 	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
 		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
+		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
 		}
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
 		}
 
@@ -595,7 +595,7 @@ class AuthorizationApi {
 	 */
 	getAuthorizationPolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicy';
 		}
 
@@ -621,7 +621,7 @@ class AuthorizationApi {
 	 */
 	getAuthorizationPolicyAttributes(policyId) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicyAttributes';
 		}
 
@@ -671,7 +671,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRole';
 		}
 
@@ -697,11 +697,11 @@ class AuthorizationApi {
 	 */
 	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId) { 
 		// verify the required parameter 'leftRoleId' is set
-		if (leftRoleId === undefined || leftRoleId === null) {
+		if (leftRoleId === undefined || leftRoleId === null || leftRoleId === '') {
 			throw 'Missing the required parameter "leftRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
 		}
 		// verify the required parameter 'rightRoleId' is set
-		if (rightRoleId === undefined || rightRoleId === null) {
+		if (rightRoleId === undefined || rightRoleId === null || rightRoleId === '') {
 			throw 'Missing the required parameter "rightRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
 		}
 
@@ -735,7 +735,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleSubjectgrants';
 		}
 
@@ -765,7 +765,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleUsers';
 		}
 
@@ -868,7 +868,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
 		}
 
@@ -941,7 +941,7 @@ class AuthorizationApi {
 	 */
 	getUserRoles(subjectId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
@@ -967,7 +967,7 @@ class AuthorizationApi {
 	 */
 	patchAuthorizationRole(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling patchAuthorizationRole';
 		}
 		// verify the required parameter 'body' is set
@@ -1023,11 +1023,11 @@ class AuthorizationApi {
 	 */
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'objectType' is set
-		if (objectType === undefined || objectType === null) {
+		if (objectType === undefined || objectType === null || objectType === '') {
 			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'body' is set
@@ -1057,7 +1057,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
 		}
 		// verify the required parameter 'body' is set
@@ -1113,7 +1113,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationPoliciesTarget(targetName, body) { 
 		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
+		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTarget';
 		}
 		// verify the required parameter 'body' is set
@@ -1144,7 +1144,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationPoliciesTargetValidate(targetName, body) { 
 		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
+		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTargetValidate';
 		}
 		// verify the required parameter 'body' is set
@@ -1175,7 +1175,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationPolicySimulate(policyId, body) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling postAuthorizationPolicySimulate';
 		}
 		// verify the required parameter 'body' is set
@@ -1209,7 +1209,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling postAuthorizationRole';
 		}
 		// verify the required parameter 'body' is set
@@ -1240,11 +1240,11 @@ class AuthorizationApi {
 	 */
 	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body) { 
 		// verify the required parameter 'leftRoleId' is set
-		if (leftRoleId === undefined || leftRoleId === null) {
+		if (leftRoleId === undefined || leftRoleId === null || leftRoleId === '') {
 			throw 'Missing the required parameter "leftRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
 		}
 		// verify the required parameter 'rightRoleId' is set
-		if (rightRoleId === undefined || rightRoleId === null) {
+		if (rightRoleId === undefined || rightRoleId === null || rightRoleId === '') {
 			throw 'Missing the required parameter "rightRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
 		}
 		// verify the required parameter 'body' is set
@@ -1327,7 +1327,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
 		}
 		// verify the required parameter 'body' is set
@@ -1357,7 +1357,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationSubjectBulkremove(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
 		}
 		// verify the required parameter 'body' is set
@@ -1391,7 +1391,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
 		}
 		// verify the required parameter 'body' is set
@@ -1426,15 +1426,15 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
 		}
 
@@ -1460,7 +1460,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationDivision(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
 		}
 		// verify the required parameter 'body' is set
@@ -1491,7 +1491,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationPoliciesTarget(targetName, body) { 
 		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
+		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling putAuthorizationPoliciesTarget';
 		}
 		// verify the required parameter 'body' is set
@@ -1522,7 +1522,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationPolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putAuthorizationPolicy';
 		}
 		// verify the required parameter 'body' is set
@@ -1552,7 +1552,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationRole(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRole';
 		}
 		// verify the required parameter 'body' is set
@@ -1582,7 +1582,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationRoleUsersAdd(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersAdd';
 		}
 		// verify the required parameter 'body' is set
@@ -1612,7 +1612,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationRoleUsersRemove(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersRemove';
 		}
 		// verify the required parameter 'body' is set
@@ -1692,7 +1692,7 @@ class AuthorizationApi {
 	 */
 	putUserRoles(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set

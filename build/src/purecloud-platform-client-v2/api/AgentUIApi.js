@@ -5,7 +5,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class AgentUIApi {
 	 */
 	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling deleteUsersAgentuiAgentsAutoanswerAgentIdSettings';
 		}
 
@@ -52,7 +52,7 @@ class AgentUIApi {
 	 */
 	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getUsersAgentuiAgentsAutoanswerAgentIdSettings';
 		}
 
@@ -78,7 +78,7 @@ class AgentUIApi {
 	 */
 	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling patchUsersAgentuiAgentsAutoanswerAgentIdSettings';
 		}
 		// verify the required parameter 'body' is set
@@ -108,7 +108,7 @@ class AgentUIApi {
 	 */
 	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';
 		}
 		// verify the required parameter 'body' is set

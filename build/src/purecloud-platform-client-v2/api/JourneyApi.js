@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class JourneyApi {
 	 */
 	deleteJourneyActionmap(actionMapId) { 
 		// verify the required parameter 'actionMapId' is set
-		if (actionMapId === undefined || actionMapId === null) {
+		if (actionMapId === undefined || actionMapId === null || actionMapId === '') {
 			throw 'Missing the required parameter "actionMapId" when calling deleteJourneyActionmap';
 		}
 
@@ -56,7 +56,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionTemplateId' is set
-		if (actionTemplateId === undefined || actionTemplateId === null) {
+		if (actionTemplateId === undefined || actionTemplateId === null || actionTemplateId === '') {
 			throw 'Missing the required parameter "actionTemplateId" when calling deleteJourneyActiontemplate';
 		}
 
@@ -81,7 +81,7 @@ class JourneyApi {
 	 */
 	deleteJourneyOutcome(outcomeId) { 
 		// verify the required parameter 'outcomeId' is set
-		if (outcomeId === undefined || outcomeId === null) {
+		if (outcomeId === undefined || outcomeId === null || outcomeId === '') {
 			throw 'Missing the required parameter "outcomeId" when calling deleteJourneyOutcome';
 		}
 
@@ -106,7 +106,7 @@ class JourneyApi {
 	 */
 	deleteJourneyOutcomesPredictor(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling deleteJourneyOutcomesPredictor';
 		}
 
@@ -131,7 +131,7 @@ class JourneyApi {
 	 */
 	deleteJourneySegment(segmentId) { 
 		// verify the required parameter 'segmentId' is set
-		if (segmentId === undefined || segmentId === null) {
+		if (segmentId === undefined || segmentId === null || segmentId === '') {
 			throw 'Missing the required parameter "segmentId" when calling deleteJourneySegment';
 		}
 
@@ -156,7 +156,7 @@ class JourneyApi {
 	 */
 	deleteJourneyView(viewId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling deleteJourneyView';
 		}
 
@@ -181,7 +181,7 @@ class JourneyApi {
 	 */
 	deleteJourneyViewSchedules(viewId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling deleteJourneyViewSchedules';
 		}
 
@@ -207,7 +207,7 @@ class JourneyApi {
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
 		}
 
@@ -237,7 +237,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
 		}
 
@@ -268,7 +268,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySessions';
 		}
 
@@ -293,7 +293,7 @@ class JourneyApi {
 	 */
 	getJourneyActionmap(actionMapId) { 
 		// verify the required parameter 'actionMapId' is set
-		if (actionMapId === undefined || actionMapId === null) {
+		if (actionMapId === undefined || actionMapId === null || actionMapId === '') {
 			throw 'Missing the required parameter "actionMapId" when calling getJourneyActionmap';
 		}
 
@@ -349,7 +349,7 @@ class JourneyApi {
 	 */
 	getJourneyActionmapsEstimatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJob';
 		}
 
@@ -374,7 +374,7 @@ class JourneyApi {
 	 */
 	getJourneyActionmapsEstimatesJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJobResults';
 		}
 
@@ -399,7 +399,7 @@ class JourneyApi {
 	 */
 	getJourneyActiontarget(actionTargetId) { 
 		// verify the required parameter 'actionTargetId' is set
-		if (actionTargetId === undefined || actionTargetId === null) {
+		if (actionTargetId === undefined || actionTargetId === null || actionTargetId === '') {
 			throw 'Missing the required parameter "actionTargetId" when calling getJourneyActiontarget';
 		}
 
@@ -449,7 +449,7 @@ class JourneyApi {
 	 */
 	getJourneyActiontemplate(actionTemplateId) { 
 		// verify the required parameter 'actionTemplateId' is set
-		if (actionTemplateId === undefined || actionTemplateId === null) {
+		if (actionTemplateId === undefined || actionTemplateId === null || actionTemplateId === '') {
 			throw 'Missing the required parameter "actionTemplateId" when calling getJourneyActiontemplate';
 		}
 
@@ -513,11 +513,11 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getJourneyDeploymentCustomerPing';
 		}
 		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
+		if (customerCookieId === undefined || customerCookieId === null || customerCookieId === '') {
 			throw 'Missing the required parameter "customerCookieId" when calling getJourneyDeploymentCustomerPing';
 		}
 
@@ -542,7 +542,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcome(outcomeId) { 
 		// verify the required parameter 'outcomeId' is set
-		if (outcomeId === undefined || outcomeId === null) {
+		if (outcomeId === undefined || outcomeId === null || outcomeId === '') {
 			throw 'Missing the required parameter "outcomeId" when calling getJourneyOutcome';
 		}
 
@@ -597,7 +597,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcomesAttributionsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJob';
 		}
 
@@ -623,7 +623,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcomesAttributionsJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJobResults';
 		}
 
@@ -648,7 +648,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcomesPredictor(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getJourneyOutcomesPredictor';
 		}
 
@@ -693,7 +693,7 @@ class JourneyApi {
 	 */
 	getJourneySegment(segmentId) { 
 		// verify the required parameter 'segmentId' is set
-		if (segmentId === undefined || segmentId === null) {
+		if (segmentId === undefined || segmentId === null || segmentId === '') {
 			throw 'Missing the required parameter "segmentId" when calling getJourneySegment';
 		}
 
@@ -748,7 +748,7 @@ class JourneyApi {
 	 */
 	getJourneySession(sessionId) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getJourneySession';
 		}
 
@@ -779,7 +779,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
 		}
 
@@ -804,7 +804,7 @@ class JourneyApi {
 	 */
 	getJourneySessionOutcomescores(sessionId) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getJourneySessionOutcomescores';
 		}
 
@@ -829,7 +829,7 @@ class JourneyApi {
 	 */
 	getJourneyView(viewId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyView';
 		}
 
@@ -854,7 +854,7 @@ class JourneyApi {
 	 */
 	getJourneyViewSchedules(viewId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewSchedules';
 		}
 
@@ -880,11 +880,11 @@ class JourneyApi {
 	 */
 	getJourneyViewVersion(viewId, versionId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getJourneyViewVersion';
 		}
 
@@ -911,15 +911,15 @@ class JourneyApi {
 	 */
 	getJourneyViewVersionChart(viewId, journeyViewVersion, chartId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChart';
 		}
 		// verify the required parameter 'journeyViewVersion' is set
-		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+		if (journeyViewVersion === undefined || journeyViewVersion === null || journeyViewVersion === '') {
 			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChart';
 		}
 		// verify the required parameter 'chartId' is set
-		if (chartId === undefined || chartId === null) {
+		if (chartId === undefined || chartId === null || chartId === '') {
 			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChart';
 		}
 
@@ -947,19 +947,19 @@ class JourneyApi {
 	 */
 	getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChartVersion';
 		}
 		// verify the required parameter 'journeyViewVersion' is set
-		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+		if (journeyViewVersion === undefined || journeyViewVersion === null || journeyViewVersion === '') {
 			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChartVersion';
 		}
 		// verify the required parameter 'chartId' is set
-		if (chartId === undefined || chartId === null) {
+		if (chartId === undefined || chartId === null || chartId === '') {
 			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChartVersion';
 		}
 		// verify the required parameter 'chartVersion' is set
-		if (chartVersion === undefined || chartVersion === null) {
+		if (chartVersion === undefined || chartVersion === null || chartVersion === '') {
 			throw 'Missing the required parameter "chartVersion" when calling getJourneyViewVersionChartVersion';
 		}
 
@@ -986,15 +986,15 @@ class JourneyApi {
 	 */
 	getJourneyViewVersionJob(viewId, journeyVersionId, jobId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJob';
 		}
 		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
 			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJob';
 		}
 
@@ -1021,15 +1021,15 @@ class JourneyApi {
 	 */
 	getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResults';
 		}
 		// verify the required parameter 'journeyViewVersion' is set
-		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+		if (journeyViewVersion === undefined || journeyViewVersion === null || journeyViewVersion === '') {
 			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionJobResults';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResults';
 		}
 
@@ -1057,19 +1057,19 @@ class JourneyApi {
 	 */
 	getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResultsChart';
 		}
 		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
 			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobResultsChart';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResultsChart';
 		}
 		// verify the required parameter 'chartId' is set
-		if (chartId === undefined || chartId === null) {
+		if (chartId === undefined || chartId === null || chartId === '') {
 			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionJobResultsChart';
 		}
 
@@ -1095,11 +1095,11 @@ class JourneyApi {
 	 */
 	getJourneyViewVersionJobsLatest(viewId, journeyVersionId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobsLatest';
 		}
 		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
 			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobsLatest';
 		}
 
@@ -1172,7 +1172,7 @@ class JourneyApi {
 	 */
 	getJourneyViewsEventdefinition(eventDefinitionId) { 
 		// verify the required parameter 'eventDefinitionId' is set
-		if (eventDefinitionId === undefined || eventDefinitionId === null) {
+		if (eventDefinitionId === undefined || eventDefinitionId === null || eventDefinitionId === '') {
 			throw 'Missing the required parameter "eventDefinitionId" when calling getJourneyViewsEventdefinition';
 		}
 
@@ -1273,7 +1273,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionMapId' is set
-		if (actionMapId === undefined || actionMapId === null) {
+		if (actionMapId === undefined || actionMapId === null || actionMapId === '') {
 			throw 'Missing the required parameter "actionMapId" when calling patchJourneyActionmap';
 		}
 
@@ -1302,7 +1302,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionTargetId' is set
-		if (actionTargetId === undefined || actionTargetId === null) {
+		if (actionTargetId === undefined || actionTargetId === null || actionTargetId === '') {
 			throw 'Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';
 		}
 
@@ -1331,7 +1331,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionTemplateId' is set
-		if (actionTemplateId === undefined || actionTemplateId === null) {
+		if (actionTemplateId === undefined || actionTemplateId === null || actionTemplateId === '') {
 			throw 'Missing the required parameter "actionTemplateId" when calling patchJourneyActiontemplate';
 		}
 
@@ -1360,7 +1360,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'outcomeId' is set
-		if (outcomeId === undefined || outcomeId === null) {
+		if (outcomeId === undefined || outcomeId === null || outcomeId === '') {
 			throw 'Missing the required parameter "outcomeId" when calling patchJourneyOutcome';
 		}
 
@@ -1389,7 +1389,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'segmentId' is set
-		if (segmentId === undefined || segmentId === null) {
+		if (segmentId === undefined || segmentId === null || segmentId === '') {
 			throw 'Missing the required parameter "segmentId" when calling patchJourneySegment';
 		}
 
@@ -1417,15 +1417,15 @@ class JourneyApi {
 	 */
 	patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling patchJourneyViewVersionJob';
 		}
 		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
 			throw 'Missing the required parameter "journeyVersionId" when calling patchJourneyViewVersionJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling patchJourneyViewVersionJob';
 		}
 		// verify the required parameter 'body' is set
@@ -1579,7 +1579,7 @@ class JourneyApi {
 	 */
 	postJourneyDeploymentActionevent(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentActionevent';
 		}
 		// verify the required parameter 'body' is set
@@ -1612,7 +1612,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentAppevents';
 		}
 
@@ -1641,7 +1641,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentWebevents';
 		}
 
@@ -1788,7 +1788,7 @@ class JourneyApi {
 	 */
 	postJourneyViewSchedules(viewId, body) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling postJourneyViewSchedules';
 		}
 		// verify the required parameter 'body' is set
@@ -1818,11 +1818,11 @@ class JourneyApi {
 	 */
 	postJourneyViewVersionJobs(viewId, journeyVersionId) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersionJobs';
 		}
 		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
 			throw 'Missing the required parameter "journeyVersionId" when calling postJourneyViewVersionJobs';
 		}
 
@@ -1848,7 +1848,7 @@ class JourneyApi {
 	 */
 	postJourneyViewVersions(viewId, body) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersions';
 		}
 		// verify the required parameter 'body' is set
@@ -1927,7 +1927,7 @@ class JourneyApi {
 	 */
 	putJourneyViewSchedules(viewId, body) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling putJourneyViewSchedules';
 		}
 		// verify the required parameter 'body' is set
@@ -1958,11 +1958,11 @@ class JourneyApi {
 	 */
 	putJourneyViewVersion(viewId, versionId, body) { 
 		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
+		if (viewId === undefined || viewId === null || viewId === '') {
 			throw 'Missing the required parameter "viewId" when calling putJourneyViewVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling putJourneyViewVersion';
 		}
 		// verify the required parameter 'body' is set

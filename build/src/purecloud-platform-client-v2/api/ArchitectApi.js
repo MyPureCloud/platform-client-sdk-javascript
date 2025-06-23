@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class ArchitectApi {
 	 */
 	deleteArchitectEmergencygroup(emergencyGroupId) { 
 		// verify the required parameter 'emergencyGroupId' is set
-		if (emergencyGroupId === undefined || emergencyGroupId === null) {
+		if (emergencyGroupId === undefined || emergencyGroupId === null || emergencyGroupId === '') {
 			throw 'Missing the required parameter "emergencyGroupId" when calling deleteArchitectEmergencygroup';
 		}
 
@@ -52,7 +52,7 @@ class ArchitectApi {
 	 */
 	deleteArchitectGrammar(grammarId) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammar';
 		}
 
@@ -78,11 +78,11 @@ class ArchitectApi {
 	 */
 	deleteArchitectGrammarLanguage(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguage';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguage';
 		}
 
@@ -108,11 +108,11 @@ class ArchitectApi {
 	 */
 	deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesDtmf';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguageFilesDtmf';
 		}
 
@@ -138,11 +138,11 @@ class ArchitectApi {
 	 */
 	deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesVoice';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguageFilesVoice';
 		}
 
@@ -167,7 +167,7 @@ class ArchitectApi {
 	 */
 	deleteArchitectIvr(ivrId) { 
 		// verify the required parameter 'ivrId' is set
-		if (ivrId === undefined || ivrId === null) {
+		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling deleteArchitectIvr';
 		}
 
@@ -196,7 +196,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectPrompt';
 		}
 
@@ -222,11 +222,11 @@ class ArchitectApi {
 	 */
 	deleteArchitectPromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteArchitectPromptResource';
 		}
 
@@ -252,11 +252,11 @@ class ArchitectApi {
 	 */
 	deleteArchitectPromptResourceAudio(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResourceAudio';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteArchitectPromptResourceAudio';
 		}
 
@@ -306,7 +306,7 @@ class ArchitectApi {
 	 */
 	deleteArchitectSchedule(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling deleteArchitectSchedule';
 		}
 
@@ -331,7 +331,7 @@ class ArchitectApi {
 	 */
 	deleteArchitectSchedulegroup(scheduleGroupId) { 
 		// verify the required parameter 'scheduleGroupId' is set
-		if (scheduleGroupId === undefined || scheduleGroupId === null) {
+		if (scheduleGroupId === undefined || scheduleGroupId === null || scheduleGroupId === '') {
 			throw 'Missing the required parameter "scheduleGroupId" when calling deleteArchitectSchedulegroup';
 		}
 
@@ -357,11 +357,11 @@ class ArchitectApi {
 	 */
 	deleteArchitectSystempromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectSystempromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteArchitectSystempromptResource';
 		}
 
@@ -386,7 +386,7 @@ class ArchitectApi {
 	 */
 	deleteFlow(flowId) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling deleteFlow';
 		}
 
@@ -411,7 +411,7 @@ class ArchitectApi {
 	 */
 	deleteFlowInstancesSettingsLoglevels(flowId) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling deleteFlowInstancesSettingsLoglevels';
 		}
 
@@ -465,7 +465,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling deleteFlowsDatatable';
 		}
 
@@ -491,11 +491,11 @@ class ArchitectApi {
 	 */
 	deleteFlowsDatatableRow(datatableId, rowId) { 
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling deleteFlowsDatatableRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling deleteFlowsDatatableRow';
 		}
 
@@ -540,7 +540,7 @@ class ArchitectApi {
 	 */
 	deleteFlowsMilestone(milestoneId) { 
 		// verify the required parameter 'milestoneId' is set
-		if (milestoneId === undefined || milestoneId === null) {
+		if (milestoneId === undefined || milestoneId === null || milestoneId === '') {
 			throw 'Missing the required parameter "milestoneId" when calling deleteFlowsMilestone';
 		}
 
@@ -764,7 +764,7 @@ class ArchitectApi {
 	 */
 	getArchitectDependencytrackingType(typeId) { 
 		// verify the required parameter 'typeId' is set
-		if (typeId === undefined || typeId === null) {
+		if (typeId === undefined || typeId === null || typeId === '') {
 			throw 'Missing the required parameter "typeId" when calling getArchitectDependencytrackingType';
 		}
 
@@ -843,7 +843,7 @@ class ArchitectApi {
 	 */
 	getArchitectEmergencygroup(emergencyGroupId) { 
 		// verify the required parameter 'emergencyGroupId' is set
-		if (emergencyGroupId === undefined || emergencyGroupId === null) {
+		if (emergencyGroupId === undefined || emergencyGroupId === null || emergencyGroupId === '') {
 			throw 'Missing the required parameter "emergencyGroupId" when calling getArchitectEmergencygroup';
 		}
 
@@ -930,7 +930,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammar';
 		}
 
@@ -956,11 +956,11 @@ class ArchitectApi {
 	 */
 	getArchitectGrammarLanguage(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammarLanguage';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getArchitectGrammarLanguage';
 		}
 
@@ -1017,7 +1017,7 @@ class ArchitectApi {
 	 */
 	getArchitectIvr(ivrId) { 
 		// verify the required parameter 'ivrId' is set
-		if (ivrId === undefined || ivrId === null) {
+		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling getArchitectIvr';
 		}
 
@@ -1042,7 +1042,7 @@ class ArchitectApi {
 	 */
 	getArchitectIvrIdentityresolution(ivrId) { 
 		// verify the required parameter 'ivrId' is set
-		if (ivrId === undefined || ivrId === null) {
+		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling getArchitectIvrIdentityresolution';
 		}
 
@@ -1134,7 +1134,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectPrompt';
 		}
 
@@ -1168,11 +1168,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectPromptHistoryHistoryId';
 		}
 		// verify the required parameter 'historyId' is set
-		if (historyId === undefined || historyId === null) {
+		if (historyId === undefined || historyId === null || historyId === '') {
 			throw 'Missing the required parameter "historyId" when calling getArchitectPromptHistoryHistoryId';
 		}
 
@@ -1198,11 +1198,11 @@ class ArchitectApi {
 	 */
 	getArchitectPromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectPromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getArchitectPromptResource';
 		}
 
@@ -1232,7 +1232,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectPromptResources';
 		}
 
@@ -1290,7 +1290,7 @@ class ArchitectApi {
 	 */
 	getArchitectSchedule(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getArchitectSchedule';
 		}
 
@@ -1315,7 +1315,7 @@ class ArchitectApi {
 	 */
 	getArchitectSchedulegroup(scheduleGroupId) { 
 		// verify the required parameter 'scheduleGroupId' is set
-		if (scheduleGroupId === undefined || scheduleGroupId === null) {
+		if (scheduleGroupId === undefined || scheduleGroupId === null || scheduleGroupId === '') {
 			throw 'Missing the required parameter "scheduleGroupId" when calling getArchitectSchedulegroup';
 		}
 
@@ -1465,7 +1465,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectSystemprompt';
 		}
 
@@ -1499,11 +1499,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptHistoryHistoryId';
 		}
 		// verify the required parameter 'historyId' is set
-		if (historyId === undefined || historyId === null) {
+		if (historyId === undefined || historyId === null || historyId === '') {
 			throw 'Missing the required parameter "historyId" when calling getArchitectSystempromptHistoryHistoryId';
 		}
 
@@ -1529,11 +1529,11 @@ class ArchitectApi {
 	 */
 	getArchitectSystempromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getArchitectSystempromptResource';
 		}
 
@@ -1565,7 +1565,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptResources';
 		}
 
@@ -1627,7 +1627,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlow';
 		}
 
@@ -1661,11 +1661,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowHistoryHistoryId';
 		}
 		// verify the required parameter 'historyId' is set
-		if (historyId === undefined || historyId === null) {
+		if (historyId === undefined || historyId === null || historyId === '') {
 			throw 'Missing the required parameter "historyId" when calling getFlowHistoryHistoryId';
 		}
 
@@ -1694,7 +1694,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowInstancesSettingsLoglevels';
 		}
 
@@ -1723,7 +1723,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowLatestconfiguration';
 		}
 
@@ -1753,11 +1753,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getFlowVersion';
 		}
 
@@ -1787,11 +1787,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersionConfiguration';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getFlowVersionConfiguration';
 		}
 
@@ -1821,11 +1821,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersionHealth';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getFlowVersionHealth';
 		}
 
@@ -1853,15 +1853,15 @@ class ArchitectApi {
 	 */
 	getFlowVersionIntentHealth(flowId, versionId, intentId, language) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersionIntentHealth';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getFlowVersionIntentHealth';
 		}
 		// verify the required parameter 'intentId' is set
-		if (intentId === undefined || intentId === null) {
+		if (intentId === undefined || intentId === null || intentId === '') {
 			throw 'Missing the required parameter "intentId" when calling getFlowVersionIntentHealth';
 		}
 		// verify the required parameter 'language' is set
@@ -1894,19 +1894,19 @@ class ArchitectApi {
 	 */
 	getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersionIntentUtteranceHealth';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getFlowVersionIntentUtteranceHealth';
 		}
 		// verify the required parameter 'intentId' is set
-		if (intentId === undefined || intentId === null) {
+		if (intentId === undefined || intentId === null || intentId === '') {
 			throw 'Missing the required parameter "intentId" when calling getFlowVersionIntentUtteranceHealth';
 		}
 		// verify the required parameter 'utteranceId' is set
-		if (utteranceId === undefined || utteranceId === null) {
+		if (utteranceId === undefined || utteranceId === null || utteranceId === '') {
 			throw 'Missing the required parameter "utteranceId" when calling getFlowVersionIntentUtteranceHealth';
 		}
 		// verify the required parameter 'language' is set
@@ -1941,7 +1941,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersions';
 		}
 
@@ -2013,7 +2013,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatable';
 		}
 
@@ -2039,11 +2039,11 @@ class ArchitectApi {
 	 */
 	getFlowsDatatableExportJob(datatableId, exportJobId) { 
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableExportJob';
 		}
 		// verify the required parameter 'exportJobId' is set
-		if (exportJobId === undefined || exportJobId === null) {
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
 			throw 'Missing the required parameter "exportJobId" when calling getFlowsDatatableExportJob';
 		}
 
@@ -2069,11 +2069,11 @@ class ArchitectApi {
 	 */
 	getFlowsDatatableImportJob(datatableId, importJobId) { 
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
 		}
 
@@ -2103,7 +2103,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJobs';
 		}
 
@@ -2133,11 +2133,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling getFlowsDatatableRow';
 		}
 
@@ -2169,7 +2169,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableRows';
 		}
 
@@ -2228,7 +2228,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatablesDivisionview';
 		}
 
@@ -2318,7 +2318,7 @@ class ArchitectApi {
 	 */
 	getFlowsExecution(flowExecutionId) { 
 		// verify the required parameter 'flowExecutionId' is set
-		if (flowExecutionId === undefined || flowExecutionId === null) {
+		if (flowExecutionId === undefined || flowExecutionId === null || flowExecutionId === '') {
 			throw 'Missing the required parameter "flowExecutionId" when calling getFlowsExecution';
 		}
 
@@ -2347,7 +2347,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getFlowsExportJob';
 		}
 
@@ -2376,7 +2376,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'instanceId' is set
-		if (instanceId === undefined || instanceId === null) {
+		if (instanceId === undefined || instanceId === null || instanceId === '') {
 			throw 'Missing the required parameter "instanceId" when calling getFlowsInstance';
 		}
 
@@ -2401,7 +2401,7 @@ class ArchitectApi {
 	 */
 	getFlowsInstancesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getFlowsInstancesJob';
 		}
 
@@ -2544,7 +2544,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getFlowsJob';
 		}
 
@@ -2569,7 +2569,7 @@ class ArchitectApi {
 	 */
 	getFlowsMilestone(milestoneId) { 
 		// verify the required parameter 'milestoneId' is set
-		if (milestoneId === undefined || milestoneId === null) {
+		if (milestoneId === undefined || milestoneId === null || milestoneId === '') {
 			throw 'Missing the required parameter "milestoneId" when calling getFlowsMilestone';
 		}
 
@@ -2656,7 +2656,7 @@ class ArchitectApi {
 	 */
 	getFlowsOutcome(flowOutcomeId) { 
 		// verify the required parameter 'flowOutcomeId' is set
-		if (flowOutcomeId === undefined || flowOutcomeId === null) {
+		if (flowOutcomeId === undefined || flowOutcomeId === null || flowOutcomeId === '') {
 			throw 'Missing the required parameter "flowOutcomeId" when calling getFlowsOutcome';
 		}
 
@@ -2747,7 +2747,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling patchArchitectGrammar';
 		}
 
@@ -2777,11 +2777,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling patchArchitectGrammarLanguage';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchArchitectGrammarLanguage';
 		}
 
@@ -2878,11 +2878,11 @@ class ArchitectApi {
 	 */
 	postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesDtmf';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postArchitectGrammarLanguageFilesDtmf';
 		}
 		// verify the required parameter 'body' is set
@@ -2913,11 +2913,11 @@ class ArchitectApi {
 	 */
 	postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesVoice';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postArchitectGrammarLanguageFilesVoice';
 		}
 		// verify the required parameter 'body' is set
@@ -2947,7 +2947,7 @@ class ArchitectApi {
 	 */
 	postArchitectGrammarLanguages(grammarId, body) { 
 		// verify the required parameter 'grammarId' is set
-		if (grammarId === undefined || grammarId === null) {
+		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguages';
 		}
 		// verify the required parameter 'body' is set
@@ -3026,7 +3026,7 @@ class ArchitectApi {
 	 */
 	postArchitectPromptHistory(promptId) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectPromptHistory';
 		}
 
@@ -3053,11 +3053,11 @@ class ArchitectApi {
 	 */
 	postArchitectPromptResourceUploads(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectPromptResourceUploads';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postArchitectPromptResourceUploads';
 		}
 
@@ -3083,7 +3083,7 @@ class ArchitectApi {
 	 */
 	postArchitectPromptResources(promptId, body) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectPromptResources';
 		}
 		// verify the required parameter 'body' is set
@@ -3187,7 +3187,7 @@ class ArchitectApi {
 	 */
 	postArchitectSystempromptHistory(promptId) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptHistory';
 		}
 
@@ -3214,11 +3214,11 @@ class ArchitectApi {
 	 */
 	postArchitectSystempromptResourceUploads(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptResourceUploads';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postArchitectSystempromptResourceUploads';
 		}
 
@@ -3244,7 +3244,7 @@ class ArchitectApi {
 	 */
 	postArchitectSystempromptResources(promptId, body) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptResources';
 		}
 		// verify the required parameter 'body' is set
@@ -3273,7 +3273,7 @@ class ArchitectApi {
 	 */
 	postFlowHistory(flowId) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling postFlowHistory';
 		}
 
@@ -3303,7 +3303,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling postFlowInstancesSettingsLoglevels';
 		}
 		// verify the required parameter 'body' is set
@@ -3333,7 +3333,7 @@ class ArchitectApi {
 	 */
 	postFlowVersions(flowId, body) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling postFlowVersions';
 		}
 		// verify the required parameter 'body' is set
@@ -3545,7 +3545,7 @@ class ArchitectApi {
 	 */
 	postFlowsDatatableExportJobs(datatableId) { 
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableExportJobs';
 		}
 
@@ -3571,7 +3571,7 @@ class ArchitectApi {
 	 */
 	postFlowsDatatableImportJobs(datatableId, body) { 
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableImportJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -3601,7 +3601,7 @@ class ArchitectApi {
 	 */
 	postFlowsDatatableRows(datatableId, dataTableRow) { 
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableRows';
 		}
 		// verify the required parameter 'dataTableRow' is set
@@ -3833,7 +3833,7 @@ class ArchitectApi {
 	 */
 	putArchitectEmergencygroup(emergencyGroupId, body) { 
 		// verify the required parameter 'emergencyGroupId' is set
-		if (emergencyGroupId === undefined || emergencyGroupId === null) {
+		if (emergencyGroupId === undefined || emergencyGroupId === null || emergencyGroupId === '') {
 			throw 'Missing the required parameter "emergencyGroupId" when calling putArchitectEmergencygroup';
 		}
 		// verify the required parameter 'body' is set
@@ -3863,7 +3863,7 @@ class ArchitectApi {
 	 */
 	putArchitectIvr(ivrId, body) { 
 		// verify the required parameter 'ivrId' is set
-		if (ivrId === undefined || ivrId === null) {
+		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling putArchitectIvr';
 		}
 		// verify the required parameter 'body' is set
@@ -3893,7 +3893,7 @@ class ArchitectApi {
 	 */
 	putArchitectIvrIdentityresolution(ivrId, body) { 
 		// verify the required parameter 'ivrId' is set
-		if (ivrId === undefined || ivrId === null) {
+		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling putArchitectIvrIdentityresolution';
 		}
 		// verify the required parameter 'body' is set
@@ -3923,7 +3923,7 @@ class ArchitectApi {
 	 */
 	putArchitectPrompt(promptId, body) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling putArchitectPrompt';
 		}
 		// verify the required parameter 'body' is set
@@ -3954,11 +3954,11 @@ class ArchitectApi {
 	 */
 	putArchitectPromptResource(promptId, languageCode, body) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling putArchitectPromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling putArchitectPromptResource';
 		}
 		// verify the required parameter 'body' is set
@@ -3988,7 +3988,7 @@ class ArchitectApi {
 	 */
 	putArchitectSchedule(scheduleId, body) { 
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling putArchitectSchedule';
 		}
 		// verify the required parameter 'body' is set
@@ -4018,7 +4018,7 @@ class ArchitectApi {
 	 */
 	putArchitectSchedulegroup(scheduleGroupId, body) { 
 		// verify the required parameter 'scheduleGroupId' is set
-		if (scheduleGroupId === undefined || scheduleGroupId === null) {
+		if (scheduleGroupId === undefined || scheduleGroupId === null || scheduleGroupId === '') {
 			throw 'Missing the required parameter "scheduleGroupId" when calling putArchitectSchedulegroup';
 		}
 		// verify the required parameter 'body' is set
@@ -4049,11 +4049,11 @@ class ArchitectApi {
 	 */
 	putArchitectSystempromptResource(promptId, languageCode, body) { 
 		// verify the required parameter 'promptId' is set
-		if (promptId === undefined || promptId === null) {
+		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling putArchitectSystempromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling putArchitectSystempromptResource';
 		}
 		// verify the required parameter 'body' is set
@@ -4083,7 +4083,7 @@ class ArchitectApi {
 	 */
 	putFlow(flowId, body) { 
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling putFlow';
 		}
 		// verify the required parameter 'body' is set
@@ -4117,7 +4117,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
+		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling putFlowInstancesSettingsLoglevels';
 		}
 		// verify the required parameter 'body' is set
@@ -4151,7 +4151,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling putFlowsDatatable';
 		}
 		// verify the required parameter 'body' is set
@@ -4185,11 +4185,11 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling putFlowsDatatableRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling putFlowsDatatableRow';
 		}
 
@@ -4247,7 +4247,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'milestoneId' is set
-		if (milestoneId === undefined || milestoneId === null) {
+		if (milestoneId === undefined || milestoneId === null || milestoneId === '') {
 			throw 'Missing the required parameter "milestoneId" when calling putFlowsMilestone';
 		}
 
@@ -4276,7 +4276,7 @@ class ArchitectApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'flowOutcomeId' is set
-		if (flowOutcomeId === undefined || flowOutcomeId === null) {
+		if (flowOutcomeId === undefined || flowOutcomeId === null || flowOutcomeId === '') {
 			throw 'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';
 		}
 

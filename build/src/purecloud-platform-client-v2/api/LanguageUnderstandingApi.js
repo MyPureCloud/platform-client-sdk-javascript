@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class LanguageUnderstandingApi {
 	 */
 	deleteLanguageunderstandingDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomain';
 		}
 
@@ -53,11 +53,11 @@ class LanguageUnderstandingApi {
 	 */
 	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
+		if (feedbackId === undefined || feedbackId === null || feedbackId === '') {
 			throw 'Missing the required parameter "feedbackId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 
@@ -83,11 +83,11 @@ class LanguageUnderstandingApi {
 	 */
 	deleteLanguageunderstandingDomainVersion(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling deleteLanguageunderstandingDomainVersion';
 		}
 
@@ -112,7 +112,7 @@ class LanguageUnderstandingApi {
 	 */
 	deleteLanguageunderstandingMiner(minerId) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMiner';
 		}
 
@@ -138,11 +138,11 @@ class LanguageUnderstandingApi {
 	 */
 	deleteLanguageunderstandingMinerDraft(minerId, draftId) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMinerDraft';
 		}
 		// verify the required parameter 'draftId' is set
-		if (draftId === undefined || draftId === null) {
+		if (draftId === undefined || draftId === null || draftId === '') {
 			throw 'Missing the required parameter "draftId" when calling deleteLanguageunderstandingMinerDraft';
 		}
 
@@ -167,7 +167,7 @@ class LanguageUnderstandingApi {
 	 */
 	getLanguageunderstandingDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomain';
 		}
 
@@ -207,7 +207,7 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedback';
 		}
 
@@ -237,11 +237,11 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
+		if (feedbackId === undefined || feedbackId === null || feedbackId === '') {
 			throw 'Missing the required parameter "feedbackId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 
@@ -271,11 +271,11 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersion';
 		}
 
@@ -301,11 +301,11 @@ class LanguageUnderstandingApi {
 	 */
 	getLanguageunderstandingDomainVersionReport(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersionReport';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersionReport';
 		}
 
@@ -336,7 +336,7 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersions';
 		}
 
@@ -386,7 +386,7 @@ class LanguageUnderstandingApi {
 	 */
 	getLanguageunderstandingMiner(minerId) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMiner';
 		}
 
@@ -417,11 +417,11 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDraft';
 		}
 		// verify the required parameter 'draftId' is set
-		if (draftId === undefined || draftId === null) {
+		if (draftId === undefined || draftId === null || draftId === '') {
 			throw 'Missing the required parameter "draftId" when calling getLanguageunderstandingMinerDraft';
 		}
 
@@ -446,7 +446,7 @@ class LanguageUnderstandingApi {
 	 */
 	getLanguageunderstandingMinerDrafts(minerId) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDrafts';
 		}
 
@@ -476,11 +476,11 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntent';
 		}
 		// verify the required parameter 'intentId' is set
-		if (intentId === undefined || intentId === null) {
+		if (intentId === undefined || intentId === null || intentId === '') {
 			throw 'Missing the required parameter "intentId" when calling getLanguageunderstandingMinerIntent';
 		}
 
@@ -509,7 +509,7 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntents';
 		}
 
@@ -539,11 +539,11 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopic';
 		}
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getLanguageunderstandingMinerTopic';
 		}
 
@@ -570,15 +570,15 @@ class LanguageUnderstandingApi {
 	 */
 	getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopicPhrase';
 		}
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getLanguageunderstandingMinerTopicPhrase';
 		}
 		// verify the required parameter 'phraseId' is set
-		if (phraseId === undefined || phraseId === null) {
+		if (phraseId === undefined || phraseId === null || phraseId === '') {
 			throw 'Missing the required parameter "phraseId" when calling getLanguageunderstandingMinerTopicPhrase';
 		}
 
@@ -603,7 +603,7 @@ class LanguageUnderstandingApi {
 	 */
 	getLanguageunderstandingMinerTopics(minerId) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopics';
 		}
 
@@ -673,7 +673,7 @@ class LanguageUnderstandingApi {
 	 */
 	patchLanguageunderstandingDomain(domainId, body) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
 		}
 		// verify the required parameter 'body' is set
@@ -707,11 +707,11 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling patchLanguageunderstandingMinerDraft';
 		}
 		// verify the required parameter 'draftId' is set
-		if (draftId === undefined || draftId === null) {
+		if (draftId === undefined || draftId === null || draftId === '') {
 			throw 'Missing the required parameter "draftId" when calling patchLanguageunderstandingMinerDraft';
 		}
 
@@ -737,7 +737,7 @@ class LanguageUnderstandingApi {
 	 */
 	postLanguageunderstandingDomainFeedback(domainId, body) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
 		}
 		// verify the required parameter 'body' is set
@@ -768,11 +768,11 @@ class LanguageUnderstandingApi {
 	 */
 	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 		// verify the required parameter 'body' is set
@@ -802,11 +802,11 @@ class LanguageUnderstandingApi {
 	 */
 	postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionPublish';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionPublish';
 		}
 
@@ -832,11 +832,11 @@ class LanguageUnderstandingApi {
 	 */
 	postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionTrain';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionTrain';
 		}
 
@@ -866,7 +866,7 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersions';
 		}
 		// verify the required parameter 'body' is set
@@ -921,7 +921,7 @@ class LanguageUnderstandingApi {
 	 */
 	postLanguageunderstandingMinerDrafts(minerId, body) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerDrafts';
 		}
 		// verify the required parameter 'body' is set
@@ -954,7 +954,7 @@ class LanguageUnderstandingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerExecute';
 		}
 
@@ -1006,11 +1006,11 @@ class LanguageUnderstandingApi {
 	 */
 	putLanguageunderstandingDomainVersion(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'domainVersionId' is set
-		if (domainVersionId === undefined || domainVersionId === null) {
+		if (domainVersionId === undefined || domainVersionId === null || domainVersionId === '') {
 			throw 'Missing the required parameter "domainVersionId" when calling putLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'body' is set

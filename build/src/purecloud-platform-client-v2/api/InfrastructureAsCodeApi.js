@@ -5,7 +5,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -31,7 +31,7 @@ class InfrastructureAsCodeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'acceleratorId' is set
-		if (acceleratorId === undefined || acceleratorId === null) {
+		if (acceleratorId === undefined || acceleratorId === null || acceleratorId === '') {
 			throw 'Missing the required parameter "acceleratorId" when calling getInfrastructureascodeAccelerator';
 		}
 
@@ -93,7 +93,7 @@ class InfrastructureAsCodeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getInfrastructureascodeJob';
 		}
 

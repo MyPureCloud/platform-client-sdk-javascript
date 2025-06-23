@@ -5,7 +5,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class EmployeeEngagementApi {
 	 */
 	deleteEmployeeengagementCelebration(celebrationId) { 
 		// verify the required parameter 'celebrationId' is set
-		if (celebrationId === undefined || celebrationId === null) {
+		if (celebrationId === undefined || celebrationId === null || celebrationId === '') {
 			throw 'Missing the required parameter "celebrationId" when calling deleteEmployeeengagementCelebration';
 		}
 
@@ -77,7 +77,7 @@ class EmployeeEngagementApi {
 	 */
 	getEmployeeengagementRecognition(recognitionId) { 
 		// verify the required parameter 'recognitionId' is set
-		if (recognitionId === undefined || recognitionId === null) {
+		if (recognitionId === undefined || recognitionId === null || recognitionId === '') {
 			throw 'Missing the required parameter "recognitionId" when calling getEmployeeengagementRecognition';
 		}
 
@@ -103,7 +103,7 @@ class EmployeeEngagementApi {
 	 */
 	patchEmployeeengagementCelebration(celebrationId, body) { 
 		// verify the required parameter 'celebrationId' is set
-		if (celebrationId === undefined || celebrationId === null) {
+		if (celebrationId === undefined || celebrationId === null || celebrationId === '') {
 			throw 'Missing the required parameter "celebrationId" when calling patchEmployeeengagementCelebration';
 		}
 		// verify the required parameter 'body' is set

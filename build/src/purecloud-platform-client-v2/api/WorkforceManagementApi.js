@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunit(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunit';
 		}
 
@@ -53,11 +53,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'activityCodeId' is set
-		if (activityCodeId === undefined || activityCodeId === null) {
+		if (activityCodeId === undefined || activityCodeId === null || activityCodeId === '') {
 			throw 'Missing the required parameter "activityCodeId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
 
@@ -83,11 +83,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'planningGroupId' is set
-		if (planningGroupId === undefined || planningGroupId === null) {
+		if (planningGroupId === undefined || planningGroupId === null || planningGroupId === '') {
 			throw 'Missing the required parameter "planningGroupId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
 		}
 
@@ -113,11 +113,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
+		if (runId === undefined || runId === null || runId === '') {
 			throw 'Missing the required parameter "runId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
 		}
 
@@ -143,11 +143,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'serviceGoalTemplateId' is set
-		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
+		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null || serviceGoalTemplateId === '') {
 			throw 'Missing the required parameter "serviceGoalTemplateId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 
@@ -173,11 +173,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';
 		}
 		// verify the required parameter 'staffingGroupId' is set
-		if (staffingGroupId === undefined || staffingGroupId === null) {
+		if (staffingGroupId === undefined || staffingGroupId === null || staffingGroupId === '') {
 			throw 'Missing the required parameter "staffingGroupId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';
 		}
 
@@ -203,11 +203,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';
 		}
 
@@ -233,11 +233,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';
 		}
 		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+		if (timeOffPlanId === undefined || timeOffPlanId === null || timeOffPlanId === '') {
 			throw 'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';
 		}
 
@@ -264,7 +264,7 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'weekId' is set
@@ -272,7 +272,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
 		}
 
@@ -299,7 +299,7 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -307,7 +307,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 
@@ -333,11 +333,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';
 		}
 
@@ -364,15 +364,15 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'bidGroupId' is set
-		if (bidGroupId === undefined || bidGroupId === null) {
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
 			throw 'Missing the required parameter "bidGroupId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 
@@ -417,7 +417,7 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementManagementunit(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
 		}
 
@@ -443,11 +443,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
 		}
 
@@ -473,11 +473,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
 		}
 		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+		if (timeOffPlanId === undefined || timeOffPlanId === null || timeOffPlanId === '') {
 			throw 'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
 		}
 
@@ -503,11 +503,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'workPlanId' is set
-		if (workPlanId === undefined || workPlanId === null) {
+		if (workPlanId === undefined || workPlanId === null || workPlanId === '') {
 			throw 'Missing the required parameter "workPlanId" when calling deleteWorkforcemanagementManagementunitWorkplan';
 		}
 
@@ -533,11 +533,11 @@ class WorkforceManagementApi {
 	 */
 	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
-		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+		if (workPlanRotationId === undefined || workPlanRotationId === null || workPlanRotationId === '') {
 			throw 'Missing the required parameter "workPlanRotationId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
 		}
 
@@ -587,7 +587,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAdherenceExplanation(explanationId) { 
 		// verify the required parameter 'explanationId' is set
-		if (explanationId === undefined || explanationId === null) {
+		if (explanationId === undefined || explanationId === null || explanationId === '') {
 			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAdherenceExplanation';
 		}
 
@@ -612,7 +612,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAdherenceExplanationsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceExplanationsJob';
 		}
 
@@ -637,7 +637,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalBulkJob';
 		}
 
@@ -662,7 +662,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAdherenceHistoricalJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalJob';
 		}
 
@@ -688,11 +688,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceExplanation';
 		}
 		// verify the required parameter 'explanationId' is set
-		if (explanationId === undefined || explanationId === null) {
+		if (explanationId === undefined || explanationId === null || explanationId === '') {
 			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAgentAdherenceExplanation';
 		}
 
@@ -717,7 +717,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAgentManagementunit(agentId) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentManagementunit';
 		}
 
@@ -762,7 +762,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAlternativeshiftsOffersJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersJob';
 		}
 
@@ -787,7 +787,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersSearchJob';
 		}
 
@@ -832,7 +832,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAlternativeshiftsTrade(tradeId) { 
 		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementAlternativeshiftsTrade';
 		}
 
@@ -881,7 +881,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAlternativeshiftsTradesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesJob';
 		}
 
@@ -906,7 +906,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesStateJob';
 		}
 
@@ -935,7 +935,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunit';
 		}
 
@@ -961,11 +961,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'activityCodeId' is set
-		if (activityCodeId === undefined || activityCodeId === null) {
+		if (activityCodeId === undefined || activityCodeId === null || activityCodeId === '') {
 			throw 'Missing the required parameter "activityCodeId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
 
@@ -994,7 +994,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
 		}
 
@@ -1020,11 +1020,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplan';
 		}
 		// verify the required parameter 'activityPlanId' is set
-		if (activityPlanId === undefined || activityPlanId === null) {
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
 			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplan';
 		}
 
@@ -1051,15 +1051,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
 		}
 		// verify the required parameter 'activityPlanId' is set
-		if (activityPlanId === undefined || activityPlanId === null) {
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
 			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
 		}
 
@@ -1088,7 +1088,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplans';
 		}
 
@@ -1113,7 +1113,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplansJobs';
 		}
 
@@ -1138,7 +1138,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsSettings';
 		}
 
@@ -1164,11 +1164,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';
 		}
 		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';
 		}
 
@@ -1194,11 +1194,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';
 		}
 
@@ -1224,7 +1224,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';
 		}
 		// verify the required parameter '_date' is set
@@ -1254,7 +1254,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession';
 		}
 
@@ -1281,11 +1281,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId';
 		}
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId';
 		}
 
@@ -1313,15 +1313,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';
 		}
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';
 		}
 		// verify the required parameter 'snapshotId' is set
-		if (snapshotId === undefined || snapshotId === null) {
+		if (snapshotId === undefined || snapshotId === null || snapshotId === '') {
 			throw 'Missing the required parameter "snapshotId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';
 		}
 
@@ -1351,7 +1351,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitManagementunits';
 		}
 
@@ -1377,11 +1377,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'planningGroupId' is set
-		if (planningGroupId === undefined || planningGroupId === null) {
+		if (planningGroupId === undefined || planningGroupId === null || planningGroupId === '') {
 			throw 'Missing the required parameter "planningGroupId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
 		}
 
@@ -1406,7 +1406,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroups';
 		}
 
@@ -1432,11 +1432,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
+		if (runId === undefined || runId === null || runId === '') {
 			throw 'Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
 		}
 
@@ -1464,11 +1464,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
 		}
 		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
+		if (runId === undefined || runId === null || runId === '') {
 			throw 'Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
 		}
 		// verify the required parameter 'managementUnitIds' is set
@@ -1501,7 +1501,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRuns';
 		}
 
@@ -1531,11 +1531,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'serviceGoalTemplateId' is set
-		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
+		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null || serviceGoalTemplateId === '') {
 			throw 'Missing the required parameter "serviceGoalTemplateId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 
@@ -1564,7 +1564,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplates';
 		}
 
@@ -1590,11 +1590,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroup';
 		}
 		// verify the required parameter 'staffingGroupId' is set
-		if (staffingGroupId === undefined || staffingGroupId === null) {
+		if (staffingGroupId === undefined || staffingGroupId === null || staffingGroupId === '') {
 			throw 'Missing the required parameter "staffingGroupId" when calling getWorkforcemanagementBusinessunitStaffinggroup';
 		}
 
@@ -1624,7 +1624,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroups';
 		}
 
@@ -1650,11 +1650,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';
 		}
 
@@ -1683,7 +1683,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimits';
 		}
 
@@ -1709,11 +1709,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplan';
 		}
 		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+		if (timeOffPlanId === undefined || timeOffPlanId === null || timeOffPlanId === '') {
 			throw 'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementBusinessunitTimeoffplan';
 		}
 
@@ -1743,7 +1743,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplans';
 		}
 
@@ -1774,7 +1774,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'weekId' is set
@@ -1782,7 +1782,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
 		}
 
@@ -1809,7 +1809,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
 		}
 		// verify the required parameter 'weekId' is set
@@ -1817,7 +1817,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
 		}
 
@@ -1848,7 +1848,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
 		}
 		// verify the required parameter 'weekId' is set
@@ -1856,7 +1856,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
 		}
 
@@ -1884,7 +1884,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 		// verify the required parameter 'weekId' is set
@@ -1892,11 +1892,11 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 
@@ -1923,15 +1923,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
 		}
 
@@ -1959,19 +1959,19 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
 		}
 		// verify the required parameter 'recalculationId' is set
-		if (recalculationId === undefined || recalculationId === null) {
+		if (recalculationId === undefined || recalculationId === null || recalculationId === '') {
 			throw 'Missing the required parameter "recalculationId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
 		}
 
@@ -2002,11 +2002,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedules';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedules';
 		}
 
@@ -2037,7 +2037,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -2045,7 +2045,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 
@@ -2077,7 +2077,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -2085,7 +2085,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
 		}
 
@@ -2112,7 +2112,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -2120,7 +2120,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
 		}
 
@@ -2151,7 +2151,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -2159,7 +2159,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
 		}
 
@@ -2186,7 +2186,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -2194,7 +2194,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
 		}
 
@@ -2225,7 +2225,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -2233,7 +2233,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';
 		}
 
@@ -2259,11 +2259,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
 		}
 		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
+		if (weekDateId === undefined || weekDateId === null || weekDateId === '') {
 			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
 		}
 
@@ -2289,11 +2289,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbid';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbid';
 		}
 
@@ -2320,15 +2320,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'bidGroupId' is set
-		if (bidGroupId === undefined || bidGroupId === null) {
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
 			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 
@@ -2355,15 +2355,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 		}
 		// verify the required parameter 'bidGroupId' is set
-		if (bidGroupId === undefined || bidGroupId === null) {
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
 			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 		}
 
@@ -2389,11 +2389,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';
 		}
 
@@ -2418,7 +2418,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbids';
 		}
 
@@ -2537,7 +2537,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataBulkRemoveJob';
 		}
 
@@ -2623,7 +2623,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementHistoricaldataImportstatusJobId(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataImportstatusJobId';
 		}
 
@@ -2668,7 +2668,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementIntegrationsHrisTimeofftypesJob';
 		}
 
@@ -2697,7 +2697,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
 		}
 
@@ -2723,7 +2723,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';
 		}
 
@@ -2752,7 +2752,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAdherence';
 		}
 
@@ -2783,11 +2783,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgent';
 		}
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgent';
 		}
 
@@ -2813,11 +2813,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
 		}
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
 		}
 
@@ -2842,7 +2842,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
 		}
 
@@ -2867,7 +2867,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
 		}
 
@@ -2893,11 +2893,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
 		}
 
@@ -2922,7 +2922,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimits';
 		}
 
@@ -2948,11 +2948,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplan';
 		}
 		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+		if (timeOffPlanId === undefined || timeOffPlanId === null || timeOffPlanId === '') {
 			throw 'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementManagementunitTimeoffplan';
 		}
 
@@ -2977,7 +2977,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplans';
 		}
 
@@ -3004,15 +3004,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 
@@ -3039,15 +3039,15 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
 		}
 
@@ -3073,11 +3073,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
 		}
 
@@ -3102,7 +3102,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';
 		}
 
@@ -3135,15 +3135,15 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedule';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedule';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementManagementunitWeekSchedule';
 		}
 
@@ -3176,11 +3176,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedules';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedules';
 		}
 
@@ -3212,7 +3212,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -3246,11 +3246,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'workPlanId' is set
-		if (workPlanId === undefined || workPlanId === null) {
+		if (workPlanId === undefined || workPlanId === null || workPlanId === '') {
 			throw 'Missing the required parameter "workPlanId" when calling getWorkforcemanagementManagementunitWorkplan';
 		}
 
@@ -3276,11 +3276,11 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
-		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+		if (workPlanRotationId === undefined || workPlanRotationId === null || workPlanRotationId === '') {
 			throw 'Missing the required parameter "workPlanRotationId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
 		}
 
@@ -3309,7 +3309,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotations';
 		}
 
@@ -3339,7 +3339,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplans';
 		}
 
@@ -3436,7 +3436,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementSchedulingjob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementSchedulingjob';
 		}
 
@@ -3481,7 +3481,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementShrinkageJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShrinkageJob';
 		}
 
@@ -3506,7 +3506,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementTimeoffbalanceJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementTimeoffbalanceJob';
 		}
 
@@ -3531,7 +3531,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementTimeoffrequest(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequest';
 		}
 
@@ -3556,7 +3556,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequestWaitlistpositions';
 		}
 
@@ -3601,7 +3601,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementUserWorkplanbidranks(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementUserWorkplanbidranks';
 		}
 
@@ -3626,7 +3626,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementWorkplanbidPreferences(bidId) { 
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidPreferences';
 		}
 
@@ -3651,7 +3651,7 @@ class WorkforceManagementApi {
 	 */
 	getWorkforcemanagementWorkplanbidWorkplans(bidId) { 
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidWorkplans';
 		}
 
@@ -3698,11 +3698,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
 		}
 		// verify the required parameter 'explanationId' is set
-		if (explanationId === undefined || explanationId === null) {
+		if (explanationId === undefined || explanationId === null || explanationId === '') {
 			throw 'Missing the required parameter "explanationId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
 		}
 		// verify the required parameter 'body' is set
@@ -3732,7 +3732,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body) { 
 		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';
 		}
 		// verify the required parameter 'body' is set
@@ -3787,7 +3787,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunit(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';
 		}
 		// verify the required parameter 'body' is set
@@ -3818,11 +3818,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'activityCodeId' is set
-		if (activityCodeId === undefined || activityCodeId === null) {
+		if (activityCodeId === undefined || activityCodeId === null || activityCodeId === '') {
 			throw 'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'body' is set
@@ -3853,11 +3853,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivityplan';
 		}
 		// verify the required parameter 'activityPlanId' is set
-		if (activityPlanId === undefined || activityPlanId === null) {
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
 			throw 'Missing the required parameter "activityPlanId" when calling patchWorkforcemanagementBusinessunitActivityplan';
 		}
 		// verify the required parameter 'body' is set
@@ -3887,7 +3887,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';
 		}
 		// verify the required parameter 'body' is set
@@ -3918,11 +3918,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'planningGroupId' is set
-		if (planningGroupId === undefined || planningGroupId === null) {
+		if (planningGroupId === undefined || planningGroupId === null || planningGroupId === '') {
 			throw 'Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'body' is set
@@ -3953,11 +3953,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
+		if (runId === undefined || runId === null || runId === '') {
 			throw 'Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'body' is set
@@ -3988,11 +3988,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'serviceGoalTemplateId' is set
-		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
+		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null || serviceGoalTemplateId === '') {
 			throw 'Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'body' is set
@@ -4023,11 +4023,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
 		}
 		// verify the required parameter 'staffingGroupId' is set
-		if (staffingGroupId === undefined || staffingGroupId === null) {
+		if (staffingGroupId === undefined || staffingGroupId === null || staffingGroupId === '') {
 			throw 'Missing the required parameter "staffingGroupId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
 		}
 		// verify the required parameter 'body' is set
@@ -4058,11 +4058,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
 		}
 		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+		if (timeOffPlanId === undefined || timeOffPlanId === null || timeOffPlanId === '') {
 			throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
 		}
 		// verify the required parameter 'body' is set
@@ -4093,11 +4093,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';
 		}
 		// verify the required parameter 'body' is set
@@ -4129,15 +4129,15 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'bidGroupId' is set
-		if (bidGroupId === undefined || bidGroupId === null) {
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
 			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
 		}
 		// verify the required parameter 'body' is set
@@ -4169,15 +4169,15 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 		}
 		// verify the required parameter 'bidGroupId' is set
-		if (bidGroupId === undefined || bidGroupId === null) {
+		if (bidGroupId === undefined || bidGroupId === null || bidGroupId === '') {
 			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
 		}
 		// verify the required parameter 'body' is set
@@ -4207,7 +4207,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunit(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
 		}
 		// verify the required parameter 'body' is set
@@ -4237,7 +4237,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitAgents(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';
 		}
 		// verify the required parameter 'body' is set
@@ -4267,7 +4267,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -4298,11 +4298,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
 		}
 		// verify the required parameter 'body' is set
@@ -4333,11 +4333,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
 		}
 		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+		if (timeOffPlanId === undefined || timeOffPlanId === null || timeOffPlanId === '') {
 			throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
 		}
 		// verify the required parameter 'body' is set
@@ -4369,15 +4369,15 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
 		}
 		// verify the required parameter 'body' is set
@@ -4409,15 +4409,15 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'body' is set
@@ -4449,7 +4449,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -4457,7 +4457,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 		// verify the required parameter 'body' is set
@@ -4492,11 +4492,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'workPlanId' is set
-		if (workPlanId === undefined || workPlanId === null) {
+		if (workPlanId === undefined || workPlanId === null || workPlanId === '') {
 			throw 'Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'body' is set
@@ -4527,11 +4527,11 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
-		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+		if (workPlanRotationId === undefined || workPlanRotationId === null || workPlanRotationId === '') {
 			throw 'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'body' is set
@@ -4561,7 +4561,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body) { 
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';
 		}
 		// verify the required parameter 'body' is set
@@ -4591,7 +4591,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementUserWorkplanbidranks(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';
 		}
 		// verify the required parameter 'body' is set
@@ -4646,7 +4646,7 @@ class WorkforceManagementApi {
 	 */
 	patchWorkforcemanagementWorkplanbidPreferences(bidId, body) { 
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';
 		}
 		// verify the required parameter 'body' is set
@@ -4781,7 +4781,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementAgentAdherenceExplanations(agentId, body) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanations';
 		}
 		// verify the required parameter 'body' is set
@@ -4816,7 +4816,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -5021,7 +5021,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
 		}
 		// verify the required parameter 'body' is set
@@ -5051,11 +5051,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';
 		}
 		// verify the required parameter 'activityPlanId' is set
-		if (activityPlanId === undefined || activityPlanId === null) {
+		if (activityPlanId === undefined || activityPlanId === null || activityPlanId === '') {
 			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';
 		}
 
@@ -5081,7 +5081,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplans';
 		}
 		// verify the required parameter 'body' is set
@@ -5116,7 +5116,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -5151,7 +5151,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';
 		}
 		// verify the required parameter 'body' is set
@@ -5185,7 +5185,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch';
 		}
 		// verify the required parameter 'body' is set
@@ -5219,7 +5219,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';
 		}
 		// verify the required parameter 'body' is set
@@ -5249,7 +5249,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';
 		}
 		// verify the required parameter 'body' is set
@@ -5279,7 +5279,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';
 		}
 		// verify the required parameter 'body' is set
@@ -5309,7 +5309,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';
 		}
 		// verify the required parameter 'body' is set
@@ -5343,7 +5343,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -5373,7 +5373,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';
 		}
 		// verify the required parameter 'body' is set
@@ -5403,7 +5403,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -5433,7 +5433,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';
 		}
 		// verify the required parameter 'body' is set
@@ -5470,7 +5470,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5478,7 +5478,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -5510,7 +5510,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5518,7 +5518,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 		// verify the required parameter 'body' is set
@@ -5550,15 +5550,15 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
 		}
 		// verify the required parameter 'body' is set
@@ -5590,15 +5590,15 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
 		}
 		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
+		if (weekId === undefined || weekId === null || weekId === '') {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
 		}
 		// verify the required parameter 'body' is set
@@ -5630,7 +5630,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5638,7 +5638,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 		// verify the required parameter 'body' is set
@@ -5670,7 +5670,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5678,7 +5678,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
 		}
 		// verify the required parameter 'body' is set
@@ -5710,7 +5710,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5718,7 +5718,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
 		}
 		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
+		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
 		}
 		// verify the required parameter 'body' is set
@@ -5749,7 +5749,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedules';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5784,7 +5784,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5819,7 +5819,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5854,7 +5854,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
 		}
 		// verify the required parameter 'weekId' is set
@@ -5894,7 +5894,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -5902,7 +5902,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
 			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 		// verify the required parameter 'body' is set
@@ -5937,7 +5937,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -5972,7 +5972,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -6007,7 +6007,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -6042,11 +6042,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
 		}
 		// verify the required parameter 'body' is set
@@ -6077,11 +6077,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
 		}
 		// verify the required parameter 'bidId' is set
-		if (bidId === undefined || bidId === null) {
+		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
 		}
 		// verify the required parameter 'body' is set
@@ -6111,7 +6111,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';
 		}
 		// verify the required parameter 'body' is set
@@ -6260,7 +6260,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId) { 
 		// verify the required parameter 'hrisIntegrationId' is set
-		if (hrisIntegrationId === undefined || hrisIntegrationId === null) {
+		if (hrisIntegrationId === undefined || hrisIntegrationId === null || hrisIntegrationId === '') {
 			throw 'Missing the required parameter "hrisIntegrationId" when calling postWorkforcemanagementIntegrationsHriTimeofftypesJobs';
 		}
 
@@ -6290,7 +6290,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -6325,7 +6325,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
 		}
 		// verify the required parameter 'body' is set
@@ -6355,7 +6355,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
 		}
 		// verify the required parameter 'body' is set
@@ -6385,7 +6385,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitMove(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
 		}
 		// verify the required parameter 'body' is set
@@ -6416,7 +6416,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
 		}
 		// verify the required parameter 'body' is set
@@ -6446,7 +6446,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -6476,7 +6476,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';
 		}
 		// verify the required parameter 'body' is set
@@ -6506,7 +6506,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -6536,7 +6536,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';
 		}
 		// verify the required parameter 'body' is set
@@ -6566,7 +6566,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
 		}
 		// verify the required parameter 'body' is set
@@ -6596,7 +6596,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -6630,7 +6630,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -6660,7 +6660,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -6691,11 +6691,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -6726,15 +6726,15 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
-		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
 		}
 
@@ -6761,11 +6761,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
 		}
 		// verify the required parameter 'body' is set
@@ -6797,7 +6797,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -6805,7 +6805,7 @@ class WorkforceManagementApi {
 			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 		// verify the required parameter 'body' is set
@@ -6836,7 +6836,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -6875,7 +6875,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -6914,7 +6914,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
 		}
 		// verify the required parameter 'weekDateId' is set
@@ -6949,11 +6949,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
 		}
 		// verify the required parameter 'workPlanId' is set
-		if (workPlanId === undefined || workPlanId === null) {
+		if (workPlanId === undefined || workPlanId === null || workPlanId === '') {
 			throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
 		}
 		// verify the required parameter 'body' is set
@@ -6988,11 +6988,11 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
 		}
 		// verify the required parameter 'workPlanId' is set
-		if (workPlanId === undefined || workPlanId === null) {
+		if (workPlanId === undefined || workPlanId === null || workPlanId === '') {
 			throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
 		}
 		// verify the required parameter 'body' is set
@@ -7023,11 +7023,11 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
-		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+		if (workPlanRotationId === undefined || workPlanRotationId === null || workPlanRotationId === '') {
 			throw 'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
 		}
 		// verify the required parameter 'body' is set
@@ -7057,7 +7057,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';
 		}
 		// verify the required parameter 'body' is set
@@ -7091,7 +7091,7 @@ class WorkforceManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';
 		}
 		// verify the required parameter 'body' is set
@@ -7196,7 +7196,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementTeamAdherenceHistorical(teamId, body) { 
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';
 		}
 		// verify the required parameter 'body' is set
@@ -7226,7 +7226,7 @@ class WorkforceManagementApi {
 	 */
 	postWorkforcemanagementTeamShrinkageJobs(teamId, body) { 
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -7381,7 +7381,7 @@ class WorkforceManagementApi {
 	 */
 	putWorkforcemanagementAgentIntegrationsHris(agentId, body) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling putWorkforcemanagementAgentIntegrationsHris';
 		}
 		// verify the required parameter 'body' is set
@@ -7412,11 +7412,11 @@ class WorkforceManagementApi {
 	 */
 	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
 		}
 		// verify the required parameter 'body' is set
@@ -7447,11 +7447,11 @@ class WorkforceManagementApi {
 	 */
 	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body) { 
 		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
 		}
 		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+		if (timeOffLimitId === undefined || timeOffLimitId === null || timeOffLimitId === '') {
 			throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
 		}
 		// verify the required parameter 'body' is set

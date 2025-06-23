@@ -5,7 +5,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -33,7 +33,7 @@ class DownloadsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'downloadId' is set
-		if (downloadId === undefined || downloadId === null) {
+		if (downloadId === undefined || downloadId === null || downloadId === '') {
 			throw 'Missing the required parameter "downloadId" when calling getDownload';
 		}
 

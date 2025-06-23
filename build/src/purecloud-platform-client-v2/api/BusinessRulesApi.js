@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -32,7 +32,7 @@ class BusinessRulesApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontable';
 		}
 
@@ -59,7 +59,7 @@ class BusinessRulesApi {
 	 */
 	deleteBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersion';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -91,7 +91,7 @@ class BusinessRulesApi {
 	 */
 	deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -99,7 +99,7 @@ class BusinessRulesApi {
 			throw 'Missing the required parameter "tableVersion" when calling deleteBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling deleteBusinessrulesDecisiontableVersionRow';
 		}
 
@@ -125,7 +125,7 @@ class BusinessRulesApi {
 	 */
 	deleteBusinessrulesSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteBusinessrulesSchema';
 		}
 
@@ -151,7 +151,7 @@ class BusinessRulesApi {
 	 */
 	getBusinessrulesDecisiontable(tableId) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontable';
 		}
 
@@ -178,7 +178,7 @@ class BusinessRulesApi {
 	 */
 	getBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersion';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -210,7 +210,7 @@ class BusinessRulesApi {
 	 */
 	getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -218,7 +218,7 @@ class BusinessRulesApi {
 			throw 'Missing the required parameter "tableVersion" when calling getBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling getBusinessrulesDecisiontableVersionRow';
 		}
 
@@ -250,7 +250,7 @@ class BusinessRulesApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersionRows';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -286,7 +286,7 @@ class BusinessRulesApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersions';
 		}
 
@@ -370,7 +370,7 @@ class BusinessRulesApi {
 	 */
 	getBusinessrulesSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getBusinessrulesSchema';
 		}
 
@@ -417,7 +417,7 @@ class BusinessRulesApi {
 	 */
 	getBusinessrulesSchemasCoretype(coreTypeName) { 
 		// verify the required parameter 'coreTypeName' is set
-		if (coreTypeName === undefined || coreTypeName === null) {
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getBusinessrulesSchemasCoretype';
 		}
 
@@ -465,7 +465,7 @@ class BusinessRulesApi {
 	 */
 	patchBusinessrulesDecisiontable(tableId, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontable';
 		}
 		// verify the required parameter 'body' is set
@@ -497,7 +497,7 @@ class BusinessRulesApi {
 	 */
 	patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableVersion';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -535,7 +535,7 @@ class BusinessRulesApi {
 	 */
 	patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -543,7 +543,7 @@ class BusinessRulesApi {
 			throw 'Missing the required parameter "tableVersion" when calling patchBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling patchBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'body' is set
@@ -574,7 +574,7 @@ class BusinessRulesApi {
 	 */
 	postBusinessrulesDecisiontableExecute(tableId, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableExecute';
 		}
 		// verify the required parameter 'body' is set
@@ -606,7 +606,7 @@ class BusinessRulesApi {
 	 */
 	postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionCopy';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -642,7 +642,7 @@ class BusinessRulesApi {
 	 */
 	postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionExecute';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -678,7 +678,7 @@ class BusinessRulesApi {
 	 */
 	postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRows';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -719,7 +719,7 @@ class BusinessRulesApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsSearch';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -754,7 +754,7 @@ class BusinessRulesApi {
 	 */
 	postBusinessrulesDecisiontableVersionSync(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionSync';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -784,7 +784,7 @@ class BusinessRulesApi {
 	 */
 	postBusinessrulesDecisiontableVersions(tableId) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersions';
 		}
 
@@ -863,7 +863,7 @@ class BusinessRulesApi {
 	 */
 	putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling putBusinessrulesDecisiontableVersionPublish';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -896,7 +896,7 @@ class BusinessRulesApi {
 	 */
 	putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
 		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null) {
+		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling putBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'tableVersion' is set
@@ -904,7 +904,7 @@ class BusinessRulesApi {
 			throw 'Missing the required parameter "tableVersion" when calling putBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null) {
+		if (rowId === undefined || rowId === null || rowId === '') {
 			throw 'Missing the required parameter "rowId" when calling putBusinessrulesDecisiontableVersionRow';
 		}
 		// verify the required parameter 'body' is set
@@ -935,7 +935,7 @@ class BusinessRulesApi {
 	 */
 	putBusinessrulesSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putBusinessrulesSchema';
 		}
 		// verify the required parameter 'body' is set

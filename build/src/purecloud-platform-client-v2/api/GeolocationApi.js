@@ -5,7 +5,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -48,11 +48,11 @@ class GeolocationApi {
 	 */
 	getUserGeolocation(userId, clientId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getUserGeolocation';
 		}
 
@@ -104,11 +104,11 @@ class GeolocationApi {
 	 */
 	patchUserGeolocation(userId, clientId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'body' is set

@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class LanguagesApi {
 	 */
 	deleteLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling deleteLanguage';
 		}
 
@@ -54,7 +54,7 @@ class LanguagesApi {
 	 */
 	getLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling getLanguage';
 		}
 
@@ -177,7 +177,7 @@ class LanguagesApi {
 	 */
 	getLanguagesTranslationsUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getLanguagesTranslationsUser';
 		}
 

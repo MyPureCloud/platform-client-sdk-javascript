@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class AnalyticsApi {
 	 */
 	deleteAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
 		}
 
@@ -52,7 +52,7 @@ class AnalyticsApi {
 	 */
 	deleteAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
 		}
 
@@ -78,7 +78,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsActionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsActionsAggregatesJob';
 		}
 
@@ -108,7 +108,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsActionsAggregatesJobResults';
 		}
 
@@ -133,7 +133,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsAgentStatus(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getAnalyticsAgentStatus';
 		}
 
@@ -159,7 +159,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsAgentcopilotsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsAgentcopilotsAggregatesJob';
 		}
 
@@ -189,7 +189,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsAgentcopilotsAggregatesJobResults';
 		}
 
@@ -224,7 +224,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'botFlowId' is set
-		if (botFlowId === undefined || botFlowId === null) {
+		if (botFlowId === undefined || botFlowId === null || botFlowId === '') {
 			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowDivisionsReportingturns';
 		}
 
@@ -260,7 +260,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'botFlowId' is set
-		if (botFlowId === undefined || botFlowId === null) {
+		if (botFlowId === undefined || botFlowId === null || botFlowId === '') {
 			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowReportingturns';
 		}
 
@@ -293,7 +293,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'botFlowId' is set
-		if (botFlowId === undefined || botFlowId === null) {
+		if (botFlowId === undefined || botFlowId === null || botFlowId === '') {
 			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowSessions';
 		}
 
@@ -319,7 +319,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsBotsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsBotsAggregatesJob';
 		}
 
@@ -349,7 +349,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsBotsAggregatesJobResults';
 		}
 
@@ -374,7 +374,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsConversationDetails(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails';
 		}
 
@@ -400,7 +400,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
 		}
 
@@ -430,7 +430,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJobResults';
 		}
 
@@ -479,7 +479,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
 		}
 
@@ -509,7 +509,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults';
 		}
 
@@ -575,7 +575,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
 		}
 
@@ -605,7 +605,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJobResults';
 		}
 
@@ -631,7 +631,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsFlowexecutionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowexecutionsAggregatesJob';
 		}
 
@@ -661,7 +661,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowexecutionsAggregatesJobResults';
 		}
 
@@ -687,7 +687,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJob';
 		}
 
@@ -717,7 +717,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJobResults';
 		}
 
@@ -743,7 +743,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
 		}
 
@@ -773,7 +773,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
 		}
 
@@ -799,7 +799,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsKnowledgeAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsKnowledgeAggregatesJob';
 		}
 
@@ -829,7 +829,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsKnowledgeAggregatesJobResults';
 		}
 
@@ -854,7 +854,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsReportingDashboardsUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingDashboardsUser';
 		}
 
@@ -1021,7 +1021,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingSettingsUserDashboards';
 		}
 
@@ -1047,7 +1047,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsResolutionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsResolutionsAggregatesJob';
 		}
 
@@ -1077,7 +1077,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsResolutionsAggregatesJobResults';
 		}
 
@@ -1103,7 +1103,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsSummariesAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSummariesAggregatesJob';
 		}
 
@@ -1133,7 +1133,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSummariesAggregatesJobResults';
 		}
 
@@ -1159,7 +1159,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
 		}
 
@@ -1189,7 +1189,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJobResults';
 		}
 
@@ -1215,7 +1215,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsTaskmanagementAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsTaskmanagementAggregatesJob';
 		}
 
@@ -1245,7 +1245,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsTaskmanagementAggregatesJobResults';
 		}
 
@@ -1271,7 +1271,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsTranscriptsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsTranscriptsAggregatesJob';
 		}
 
@@ -1301,7 +1301,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsTranscriptsAggregatesJobResults';
 		}
 
@@ -1327,7 +1327,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsUsersAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
 		}
 
@@ -1357,7 +1357,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJobResults';
 		}
 
@@ -1382,7 +1382,7 @@ class AnalyticsApi {
 	 */
 	getAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
 		}
 
@@ -1412,7 +1412,7 @@ class AnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
 		}
 
@@ -1686,7 +1686,7 @@ class AnalyticsApi {
 	 */
 	postAnalyticsConversationDetailsProperties(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties';
 		}
 		// verify the required parameter 'body' is set

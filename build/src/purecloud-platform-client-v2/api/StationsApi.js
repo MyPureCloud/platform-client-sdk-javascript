@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class StationsApi {
 	 */
 	deleteStationAssociateduser(stationId) { 
 		// verify the required parameter 'stationId' is set
-		if (stationId === undefined || stationId === null) {
+		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling deleteStationAssociateduser';
 		}
 
@@ -52,7 +52,7 @@ class StationsApi {
 	 */
 	getStation(stationId) { 
 		// verify the required parameter 'stationId' is set
-		if (stationId === undefined || stationId === null) {
+		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling getStation';
 		}
 

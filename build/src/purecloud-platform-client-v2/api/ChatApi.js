@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,11 +28,11 @@ class ChatApi {
 	 */
 	deleteChatsRoomMessage(roomJid, messageId) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling deleteChatsRoomMessage';
 		}
 
@@ -58,11 +58,11 @@ class ChatApi {
 	 */
 	deleteChatsRoomMessagesPin(roomJid, pinnedMessageId) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomMessagesPin';
 		}
 		// verify the required parameter 'pinnedMessageId' is set
-		if (pinnedMessageId === undefined || pinnedMessageId === null) {
+		if (pinnedMessageId === undefined || pinnedMessageId === null || pinnedMessageId === '') {
 			throw 'Missing the required parameter "pinnedMessageId" when calling deleteChatsRoomMessagesPin';
 		}
 
@@ -88,11 +88,11 @@ class ChatApi {
 	 */
 	deleteChatsRoomParticipant(roomJid, userId) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomParticipant';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteChatsRoomParticipant';
 		}
 
@@ -118,11 +118,11 @@ class ChatApi {
 	 */
 	deleteChatsUserMessage(userId, messageId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteChatsUserMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling deleteChatsUserMessage';
 		}
 
@@ -148,11 +148,11 @@ class ChatApi {
 	 */
 	deleteChatsUserMessagesPin(userId, pinnedMessageId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteChatsUserMessagesPin';
 		}
 		// verify the required parameter 'pinnedMessageId' is set
-		if (pinnedMessageId === undefined || pinnedMessageId === null) {
+		if (pinnedMessageId === undefined || pinnedMessageId === null || pinnedMessageId === '') {
 			throw 'Missing the required parameter "pinnedMessageId" when calling deleteChatsUserMessagesPin';
 		}
 
@@ -177,7 +177,7 @@ class ChatApi {
 	 */
 	getChatsMessage(messageId) { 
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getChatsMessage';
 		}
 
@@ -202,7 +202,7 @@ class ChatApi {
 	 */
 	getChatsRoom(roomJid) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoom';
 		}
 
@@ -228,11 +228,11 @@ class ChatApi {
 	 */
 	getChatsRoomMessage(roomJid, messageIds) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomMessage';
 		}
 		// verify the required parameter 'messageIds' is set
-		if (messageIds === undefined || messageIds === null) {
+		if (messageIds === undefined || messageIds === null || messageIds === '') {
 			throw 'Missing the required parameter "messageIds" when calling getChatsRoomMessage';
 		}
 
@@ -263,7 +263,7 @@ class ChatApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomMessages';
 		}
 
@@ -289,11 +289,11 @@ class ChatApi {
 	 */
 	getChatsRoomParticipant(roomJid, participantJid) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipant';
 		}
 		// verify the required parameter 'participantJid' is set
-		if (participantJid === undefined || participantJid === null) {
+		if (participantJid === undefined || participantJid === null || participantJid === '') {
 			throw 'Missing the required parameter "participantJid" when calling getChatsRoomParticipant';
 		}
 
@@ -322,7 +322,7 @@ class ChatApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipants';
 		}
 
@@ -373,7 +373,7 @@ class ChatApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'threadId' is set
-		if (threadId === undefined || threadId === null) {
+		if (threadId === undefined || threadId === null || threadId === '') {
 			throw 'Missing the required parameter "threadId" when calling getChatsThreadMessages';
 		}
 
@@ -398,7 +398,7 @@ class ChatApi {
 	 */
 	getChatsUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUser';
 		}
 
@@ -424,11 +424,11 @@ class ChatApi {
 	 */
 	getChatsUserMessage(userId, messageIds) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUserMessage';
 		}
 		// verify the required parameter 'messageIds' is set
-		if (messageIds === undefined || messageIds === null) {
+		if (messageIds === undefined || messageIds === null || messageIds === '') {
 			throw 'Missing the required parameter "messageIds" when calling getChatsUserMessage';
 		}
 
@@ -459,7 +459,7 @@ class ChatApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUserMessages';
 		}
 
@@ -484,7 +484,7 @@ class ChatApi {
 	 */
 	getChatsUserSettings(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUserSettings';
 		}
 
@@ -530,7 +530,7 @@ class ChatApi {
 	 */
 	patchChatsRoom(roomJid, body) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling patchChatsRoom';
 		}
 		// verify the required parameter 'body' is set
@@ -561,11 +561,11 @@ class ChatApi {
 	 */
 	patchChatsRoomMessage(roomJid, messageId, body) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling patchChatsRoomMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling patchChatsRoomMessage';
 		}
 		// verify the required parameter 'body' is set
@@ -621,11 +621,11 @@ class ChatApi {
 	 */
 	patchChatsUserMessage(userId, messageId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchChatsUserMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling patchChatsUserMessage';
 		}
 		// verify the required parameter 'body' is set
@@ -655,7 +655,7 @@ class ChatApi {
 	 */
 	patchChatsUserSettings(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchChatsUserSettings';
 		}
 		// verify the required parameter 'body' is set
@@ -710,7 +710,7 @@ class ChatApi {
 	 */
 	postChatsRoomMessages(roomJid, body) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling postChatsRoomMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -740,7 +740,7 @@ class ChatApi {
 	 */
 	postChatsRoomMessagesPins(roomJid, body) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling postChatsRoomMessagesPins';
 		}
 		// verify the required parameter 'body' is set
@@ -770,11 +770,11 @@ class ChatApi {
 	 */
 	postChatsRoomParticipant(roomJid, userId) { 
 		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
+		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling postChatsRoomParticipant';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postChatsRoomParticipant';
 		}
 
@@ -825,7 +825,7 @@ class ChatApi {
 	 */
 	postChatsUserMessages(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postChatsUserMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -855,7 +855,7 @@ class ChatApi {
 	 */
 	postChatsUserMessagesPins(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postChatsUserMessagesPins';
 		}
 		// verify the required parameter 'body' is set
@@ -885,7 +885,7 @@ class ChatApi {
 	 */
 	putChatsMessageReactions(messageId, body) { 
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling putChatsMessageReactions';
 		}
 		// verify the required parameter 'body' is set

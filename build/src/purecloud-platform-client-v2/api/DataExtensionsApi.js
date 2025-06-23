@@ -5,7 +5,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class DataExtensionsApi {
 	 */
 	getDataextensionsCoretype(coretypeName) { 
 		// verify the required parameter 'coretypeName' is set
-		if (coretypeName === undefined || coretypeName === null) {
+		if (coretypeName === undefined || coretypeName === null || coretypeName === '') {
 			throw 'Missing the required parameter "coretypeName" when calling getDataextensionsCoretype';
 		}
 

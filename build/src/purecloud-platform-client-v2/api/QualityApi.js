@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class QualityApi {
 	 */
 	deleteQualityCalibration(calibrationId, calibratorId) { 
 		// verify the required parameter 'calibrationId' is set
-		if (calibrationId === undefined || calibrationId === null) {
+		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling deleteQualityCalibration';
 		}
 		// verify the required parameter 'calibratorId' is set
@@ -62,11 +62,11 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
-		if (evaluationId === undefined || evaluationId === null) {
+		if (evaluationId === undefined || evaluationId === null || evaluationId === '') {
 			throw 'Missing the required parameter "evaluationId" when calling deleteQualityConversationEvaluation';
 		}
 
@@ -92,7 +92,7 @@ class QualityApi {
 	 */
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityForm';
 		}
 
@@ -117,7 +117,7 @@ class QualityApi {
 	 */
 	deleteQualityFormsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityFormsEvaluation';
 		}
 
@@ -142,7 +142,7 @@ class QualityApi {
 	 */
 	deleteQualityFormsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityFormsSurvey';
 		}
 
@@ -168,7 +168,7 @@ class QualityApi {
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
 		}
 
@@ -198,7 +198,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJobResults';
 		}
 
@@ -224,7 +224,7 @@ class QualityApi {
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
 		}
 
@@ -254,7 +254,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJobResults';
 		}
 
@@ -322,7 +322,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'calibrationId' is set
-		if (calibrationId === undefined || calibrationId === null) {
+		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling getQualityCalibration';
 		}
 
@@ -389,11 +389,11 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
-		if (evaluationId === undefined || evaluationId === null) {
+		if (evaluationId === undefined || evaluationId === null || evaluationId === '') {
 			throw 'Missing the required parameter "evaluationId" when calling getQualityConversationEvaluation';
 		}
 
@@ -418,7 +418,7 @@ class QualityApi {
 	 */
 	getQualityConversationSurveys(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getQualityConversationSurveys';
 		}
 
@@ -443,7 +443,7 @@ class QualityApi {
 	 */
 	getQualityConversationsAuditsQueryTransactionId(transactionId) { 
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionId';
 		}
 
@@ -474,7 +474,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionIdResults';
 		}
 
@@ -578,7 +578,7 @@ class QualityApi {
 	 */
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityForm';
 		}
 
@@ -609,7 +609,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormVersions';
 		}
 
@@ -666,7 +666,7 @@ class QualityApi {
 	 */
 	getQualityFormsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluation';
 		}
 
@@ -697,7 +697,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluationVersions';
 		}
 
@@ -778,7 +778,7 @@ class QualityApi {
 	 */
 	getQualityFormsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsSurvey';
 		}
 
@@ -808,7 +808,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsSurveyVersions';
 		}
 
@@ -919,7 +919,7 @@ class QualityApi {
 	 */
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedform';
 		}
 
@@ -972,7 +972,7 @@ class QualityApi {
 	 */
 	getQualityPublishedformsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsEvaluation';
 		}
 
@@ -1024,7 +1024,7 @@ class QualityApi {
 	 */
 	getQualityPublishedformsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsSurvey';
 		}
 
@@ -1076,7 +1076,7 @@ class QualityApi {
 	 */
 	getQualitySurvey(surveyId) { 
 		// verify the required parameter 'surveyId' is set
-		if (surveyId === undefined || surveyId === null) {
+		if (surveyId === undefined || surveyId === null || surveyId === '') {
 			throw 'Missing the required parameter "surveyId" when calling getQualitySurvey';
 		}
 
@@ -1127,7 +1127,7 @@ class QualityApi {
 	 */
 	patchQualityFormsSurvey(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling patchQualityFormsSurvey';
 		}
 		// verify the required parameter 'body' is set
@@ -1292,7 +1292,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postQualityConversationEvaluations';
 		}
 		// verify the required parameter 'body' is set
@@ -1574,7 +1574,7 @@ class QualityApi {
 	 */
 	putQualityCalibration(calibrationId, body) { 
 		// verify the required parameter 'calibrationId' is set
-		if (calibrationId === undefined || calibrationId === null) {
+		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling putQualityCalibration';
 		}
 		// verify the required parameter 'body' is set
@@ -1609,11 +1609,11 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
-		if (evaluationId === undefined || evaluationId === null) {
+		if (evaluationId === undefined || evaluationId === null || evaluationId === '') {
 			throw 'Missing the required parameter "evaluationId" when calling putQualityConversationEvaluation';
 		}
 		// verify the required parameter 'body' is set
@@ -1644,7 +1644,7 @@ class QualityApi {
 	 */
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityForm';
 		}
 		// verify the required parameter 'body' is set
@@ -1674,7 +1674,7 @@ class QualityApi {
 	 */
 	putQualityFormsEvaluation(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluation';
 		}
 		// verify the required parameter 'body' is set
@@ -1704,7 +1704,7 @@ class QualityApi {
 	 */
 	putQualityFormsEvaluationAiscoringSettings(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluationAiscoringSettings';
 		}
 		// verify the required parameter 'body' is set
@@ -1734,7 +1734,7 @@ class QualityApi {
 	 */
 	putQualityFormsSurvey(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsSurvey';
 		}
 		// verify the required parameter 'body' is set

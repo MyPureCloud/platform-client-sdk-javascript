@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class SocialMediaApi {
 	 */
 	deleteSocialmediaEscalationrule(escalationRuleId) { 
 		// verify the required parameter 'escalationRuleId' is set
-		if (escalationRuleId === undefined || escalationRuleId === null) {
+		if (escalationRuleId === undefined || escalationRuleId === null || escalationRuleId === '') {
 			throw 'Missing the required parameter "escalationRuleId" when calling deleteSocialmediaEscalationrule';
 		}
 
@@ -53,7 +53,7 @@ class SocialMediaApi {
 	 */
 	deleteSocialmediaMessage(messageId) { 
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling deleteSocialmediaMessage';
 		}
 
@@ -82,7 +82,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopic';
 		}
 
@@ -112,11 +112,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 		// verify the required parameter 'facebookIngestionRuleId' is set
-		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null || facebookIngestionRuleId === '') {
 			throw 'Missing the required parameter "facebookIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 
@@ -146,11 +146,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 		// verify the required parameter 'openId' is set
-		if (openId === undefined || openId === null) {
+		if (openId === undefined || openId === null || openId === '') {
 			throw 'Missing the required parameter "openId" when calling deleteSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 
@@ -180,11 +180,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 		// verify the required parameter 'twitterIngestionRuleId' is set
-		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null || twitterIngestionRuleId === '') {
 			throw 'Missing the required parameter "twitterIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 
@@ -209,7 +209,7 @@ class SocialMediaApi {
 	 */
 	getSocialmediaAnalyticsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsAggregatesJob';
 		}
 
@@ -238,7 +238,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsAggregatesJobResults';
 		}
 
@@ -263,7 +263,7 @@ class SocialMediaApi {
 	 */
 	getSocialmediaAnalyticsMessagesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsMessagesJob';
 		}
 
@@ -292,7 +292,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsMessagesJobResults';
 		}
 
@@ -317,7 +317,7 @@ class SocialMediaApi {
 	 */
 	getSocialmediaEscalationrule(escalationRuleId) { 
 		// verify the required parameter 'escalationRuleId' is set
-		if (escalationRuleId === undefined || escalationRuleId === null) {
+		if (escalationRuleId === undefined || escalationRuleId === null || escalationRuleId === '') {
 			throw 'Missing the required parameter "escalationRuleId" when calling getSocialmediaEscalationrule';
 		}
 
@@ -376,7 +376,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopic';
 		}
 
@@ -407,7 +407,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrules';
 		}
 
@@ -437,11 +437,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 		// verify the required parameter 'facebookIngestionRuleId' is set
-		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null || facebookIngestionRuleId === '') {
 			throw 'Missing the required parameter "facebookIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 
@@ -472,15 +472,15 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion';
 		}
 		// verify the required parameter 'facebookIngestionRuleId' is set
-		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null || facebookIngestionRuleId === '') {
 			throw 'Missing the required parameter "facebookIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion';
 		}
 		// verify the required parameter 'dataIngestionRuleVersion' is set
-		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null) {
+		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
 			throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion';
 		}
 
@@ -512,11 +512,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions';
 		}
 		// verify the required parameter 'facebookIngestionRuleId' is set
-		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null || facebookIngestionRuleId === '') {
 			throw 'Missing the required parameter "facebookIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions';
 		}
 
@@ -546,11 +546,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 		// verify the required parameter 'openId' is set
-		if (openId === undefined || openId === null) {
+		if (openId === undefined || openId === null || openId === '') {
 			throw 'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 
@@ -581,15 +581,15 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';
 		}
 		// verify the required parameter 'openId' is set
-		if (openId === undefined || openId === null) {
+		if (openId === undefined || openId === null || openId === '') {
 			throw 'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';
 		}
 		// verify the required parameter 'dataIngestionRuleVersion' is set
-		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null) {
+		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
 			throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';
 		}
 
@@ -621,11 +621,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersions';
 		}
 		// verify the required parameter 'openId' is set
-		if (openId === undefined || openId === null) {
+		if (openId === undefined || openId === null || openId === '') {
 			throw 'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersions';
 		}
 
@@ -655,11 +655,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 		// verify the required parameter 'twitterIngestionRuleId' is set
-		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null || twitterIngestionRuleId === '') {
 			throw 'Missing the required parameter "twitterIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 
@@ -690,15 +690,15 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion';
 		}
 		// verify the required parameter 'twitterIngestionRuleId' is set
-		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null || twitterIngestionRuleId === '') {
 			throw 'Missing the required parameter "twitterIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion';
 		}
 		// verify the required parameter 'dataIngestionRuleVersion' is set
-		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null) {
+		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
 			throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion';
 		}
 
@@ -730,11 +730,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions';
 		}
 		// verify the required parameter 'twitterIngestionRuleId' is set
-		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null || twitterIngestionRuleId === '') {
 			throw 'Missing the required parameter "twitterIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions';
 		}
 
@@ -790,7 +790,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopic';
 		}
 
@@ -820,11 +820,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 		// verify the required parameter 'facebookIngestionRuleId' is set
-		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null || facebookIngestionRuleId === '') {
 			throw 'Missing the required parameter "facebookIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 
@@ -854,11 +854,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 		// verify the required parameter 'openId' is set
-		if (openId === undefined || openId === null) {
+		if (openId === undefined || openId === null || openId === '') {
 			throw 'Missing the required parameter "openId" when calling patchSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 
@@ -888,11 +888,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 		// verify the required parameter 'twitterIngestionRuleId' is set
-		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null || twitterIngestionRuleId === '') {
 			throw 'Missing the required parameter "twitterIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 
@@ -1024,7 +1024,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesFacebook';
 		}
 
@@ -1053,7 +1053,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpen';
 		}
 
@@ -1080,11 +1080,11 @@ class SocialMediaApi {
 	 */
 	postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -1115,11 +1115,11 @@ class SocialMediaApi {
 	 */
 	postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -1152,7 +1152,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesTwitter';
 		}
 
@@ -1230,7 +1230,7 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'escalationRuleId' is set
-		if (escalationRuleId === undefined || escalationRuleId === null) {
+		if (escalationRuleId === undefined || escalationRuleId === null || escalationRuleId === '') {
 			throw 'Missing the required parameter "escalationRuleId" when calling putSocialmediaEscalationrule';
 		}
 
@@ -1260,11 +1260,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 		// verify the required parameter 'facebookIngestionRuleId' is set
-		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+		if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null || facebookIngestionRuleId === '') {
 			throw 'Missing the required parameter "facebookIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
 		}
 
@@ -1294,11 +1294,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 		// verify the required parameter 'openId' is set
-		if (openId === undefined || openId === null) {
+		if (openId === undefined || openId === null || openId === '') {
 			throw 'Missing the required parameter "openId" when calling putSocialmediaTopicDataingestionrulesOpenOpenId';
 		}
 
@@ -1328,11 +1328,11 @@ class SocialMediaApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 		// verify the required parameter 'twitterIngestionRuleId' is set
-		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+		if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null || twitterIngestionRuleId === '') {
 			throw 'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
 		}
 

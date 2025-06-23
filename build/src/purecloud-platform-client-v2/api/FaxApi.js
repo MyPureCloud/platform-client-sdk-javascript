@@ -5,7 +5,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class FaxApi {
 	 */
 	deleteFaxDocument(documentId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteFaxDocument';
 		}
 
@@ -52,7 +52,7 @@ class FaxApi {
 	 */
 	getFaxDocument(documentId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getFaxDocument';
 		}
 
@@ -77,7 +77,7 @@ class FaxApi {
 	 */
 	getFaxDocumentContent(documentId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getFaxDocumentContent';
 		}
 
@@ -168,7 +168,7 @@ class FaxApi {
 	 */
 	putFaxDocument(documentId, body) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling putFaxDocument';
 		}
 		// verify the required parameter 'body' is set

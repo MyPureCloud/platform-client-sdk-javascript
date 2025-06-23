@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class AIStudioApi {
 	 */
 	deleteGuideJobs(guideId) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling deleteGuideJobs';
 		}
 
@@ -54,7 +54,7 @@ class AIStudioApi {
 	 */
 	getGuide(guideId) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuide';
 		}
 
@@ -81,11 +81,11 @@ class AIStudioApi {
 	 */
 	getGuideJob(guideId, jobId) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getGuideJob';
 		}
 
@@ -112,11 +112,11 @@ class AIStudioApi {
 	 */
 	getGuideVersion(guideId, versionId) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getGuideVersion';
 		}
 
@@ -144,15 +144,15 @@ class AIStudioApi {
 	 */
 	getGuideVersionJob(guideId, versionId, jobId) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideVersionJob';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getGuideVersionJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getGuideVersionJob';
 		}
 
@@ -209,7 +209,7 @@ class AIStudioApi {
 	 */
 	getGuidesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getGuidesJob';
 		}
 
@@ -237,11 +237,11 @@ class AIStudioApi {
 	 */
 	patchGuideVersion(guideId, versionId, body) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling patchGuideVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling patchGuideVersion';
 		}
 		// verify the required parameter 'body' is set
@@ -273,11 +273,11 @@ class AIStudioApi {
 	 */
 	postGuideVersionJobs(guideId, versionId, body) { 
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling postGuideVersionJobs';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling postGuideVersionJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -311,7 +311,7 @@ class AIStudioApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'guideId' is set
-		if (guideId === undefined || guideId === null) {
+		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling postGuideVersions';
 		}
 

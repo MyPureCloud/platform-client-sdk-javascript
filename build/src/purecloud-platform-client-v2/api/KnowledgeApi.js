@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebase(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebase';
 		}
 
@@ -53,11 +53,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseCategory';
 		}
 
@@ -83,11 +83,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseDocument';
 		}
 
@@ -114,15 +114,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId) { 
 		// verify the required parameter 'documentVariationId' is set
-		if (documentVariationId === undefined || documentVariationId === null) {
+		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
 		}
 
@@ -148,11 +148,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseExportJob';
 		}
 		// verify the required parameter 'exportJobId' is set
-		if (exportJobId === undefined || exportJobId === null) {
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
 			throw 'Missing the required parameter "exportJobId" when calling deleteKnowledgeKnowledgebaseExportJob';
 		}
 
@@ -178,11 +178,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling deleteKnowledgeKnowledgebaseImportJob';
 		}
 
@@ -208,11 +208,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
+		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling deleteKnowledgeKnowledgebaseLabel';
 		}
 
@@ -240,15 +240,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 
@@ -276,15 +276,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 
@@ -312,15 +312,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null) {
+		if (importId === undefined || importId === null || importId === '') {
 			throw 'Missing the required parameter "importId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
@@ -346,11 +346,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
 		}
 
@@ -376,11 +376,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
 		}
 
@@ -406,11 +406,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
 		}
 		// verify the required parameter 'syncJobId' is set
-		if (syncJobId === undefined || syncJobId === null) {
+		if (syncJobId === undefined || syncJobId === null || syncJobId === '') {
 			throw 'Missing the required parameter "syncJobId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
 		}
 
@@ -447,7 +447,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionCategories';
 		}
 
@@ -473,11 +473,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeGuestSessionDocument(sessionId, documentId) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeGuestSessionDocument';
 		}
 
@@ -507,7 +507,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocuments';
 		}
 
@@ -536,7 +536,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getKnowledgeIntegrationOptions';
 		}
 
@@ -561,7 +561,7 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebase(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebase';
 		}
 
@@ -598,7 +598,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseCategories';
 		}
 
@@ -624,11 +624,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseCategory';
 		}
 
@@ -659,11 +659,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocument';
 		}
 
@@ -703,11 +703,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentFeedback';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentFeedback';
 		}
 
@@ -734,15 +734,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
+		if (feedbackId === undefined || feedbackId === null || feedbackId === '') {
 			throw 'Missing the required parameter "feedbackId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 
@@ -774,15 +774,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'documentVariationId' is set
-		if (documentVariationId === undefined || documentVariationId === null) {
+		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling getKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVariation';
 		}
 
@@ -816,11 +816,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVariations';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVariations';
 		}
 
@@ -851,15 +851,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersion';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getKnowledgeKnowledgebaseDocumentVersion';
 		}
 
@@ -887,19 +887,19 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 		// verify the required parameter 'variationId' is set
-		if (variationId === undefined || variationId === null) {
+		if (variationId === undefined || variationId === null || variationId === '') {
 			throw 'Missing the required parameter "variationId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 
@@ -932,15 +932,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersionVariations';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersionVariations';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getKnowledgeKnowledgebaseDocumentVersionVariations';
 		}
 
@@ -973,11 +973,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersions';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersions';
 		}
 
@@ -1016,7 +1016,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocuments';
 		}
 
@@ -1042,11 +1042,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseExportJob';
 		}
 		// verify the required parameter 'exportJobId' is set
-		if (exportJobId === undefined || exportJobId === null) {
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
 			throw 'Missing the required parameter "exportJobId" when calling getKnowledgeKnowledgebaseExportJob';
 		}
 
@@ -1076,11 +1076,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling getKnowledgeKnowledgebaseImportJob';
 		}
 
@@ -1106,11 +1106,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
+		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling getKnowledgeKnowledgebaseLabel';
 		}
 
@@ -1143,7 +1143,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLabels';
 		}
 
@@ -1178,11 +1178,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategories';
 		}
 
@@ -1210,15 +1210,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 
@@ -1246,15 +1246,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 
@@ -1283,19 +1283,19 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 		// verify the required parameter 'uploadId' is set
-		if (uploadId === undefined || uploadId === null) {
+		if (uploadId === undefined || uploadId === null || uploadId === '') {
 			throw 'Missing the required parameter "uploadId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 
@@ -1334,11 +1334,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocuments';
 		}
 
@@ -1366,15 +1366,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null) {
+		if (importId === undefined || importId === null || importId === '') {
 			throw 'Missing the required parameter "importId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
@@ -1402,15 +1402,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 		// verify the required parameter 'trainingId' is set
-		if (trainingId === undefined || trainingId === null) {
+		if (trainingId === undefined || trainingId === null || trainingId === '') {
 			throw 'Missing the required parameter "trainingId" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 
@@ -1445,11 +1445,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTrainings';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTrainings';
 		}
 
@@ -1485,7 +1485,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperations';
 		}
 
@@ -1510,7 +1510,7 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperationsUsersQuery';
 		}
 
@@ -1540,11 +1540,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseParseJob';
 		}
 		// verify the required parameter 'parseJobId' is set
-		if (parseJobId === undefined || parseJobId === null) {
+		if (parseJobId === undefined || parseJobId === null || parseJobId === '') {
 			throw 'Missing the required parameter "parseJobId" when calling getKnowledgeKnowledgebaseParseJob';
 		}
 
@@ -1575,7 +1575,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSources';
 		}
 
@@ -1605,11 +1605,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
 		}
 
@@ -1639,11 +1639,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
 		}
 
@@ -1669,11 +1669,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
 		}
 		// verify the required parameter 'syncJobId' is set
-		if (syncJobId === undefined || syncJobId === null) {
+		if (syncJobId === undefined || syncJobId === null || syncJobId === '') {
 			throw 'Missing the required parameter "syncJobId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
 		}
 
@@ -1705,11 +1705,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUnansweredGroup';
 		}
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getKnowledgeKnowledgebaseUnansweredGroup';
 		}
 
@@ -1742,15 +1742,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'phraseGroupId' is set
-		if (phraseGroupId === undefined || phraseGroupId === null) {
+		if (phraseGroupId === undefined || phraseGroupId === null || phraseGroupId === '') {
 			throw 'Missing the required parameter "phraseGroupId" when calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 
@@ -1781,7 +1781,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUnansweredGroups';
 		}
 
@@ -1807,11 +1807,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
 		}
 
@@ -1870,11 +1870,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling patchKnowledgeGuestSessionDocumentsSearchSearchId';
 		}
 		// verify the required parameter 'searchId' is set
-		if (searchId === undefined || searchId === null) {
+		if (searchId === undefined || searchId === null || searchId === '') {
 			throw 'Missing the required parameter "searchId" when calling patchKnowledgeGuestSessionDocumentsSearchSearchId';
 		}
 		// verify the required parameter 'body' is set
@@ -1904,7 +1904,7 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebase(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebase';
 		}
 		// verify the required parameter 'body' is set
@@ -1935,11 +1935,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'body' is set
@@ -1970,11 +1970,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'body' is set
@@ -2009,15 +2009,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
+		if (feedbackId === undefined || feedbackId === null || feedbackId === '') {
 			throw 'Missing the required parameter "feedbackId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 
@@ -2045,15 +2045,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body) { 
 		// verify the required parameter 'documentVariationId' is set
-		if (documentVariationId === undefined || documentVariationId === null) {
+		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'body' is set
@@ -2087,11 +2087,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentsSearchSearchId';
 		}
 		// verify the required parameter 'searchId' is set
-		if (searchId === undefined || searchId === null) {
+		if (searchId === undefined || searchId === null || searchId === '') {
 			throw 'Missing the required parameter "searchId" when calling patchKnowledgeKnowledgebaseDocumentsSearchSearchId';
 		}
 
@@ -2118,11 +2118,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling patchKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'body' is set
@@ -2153,11 +2153,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
+		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling patchKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'body' is set
@@ -2190,15 +2190,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'body' is set
@@ -2231,15 +2231,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'body' is set
@@ -2271,11 +2271,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'body' is set
@@ -2308,15 +2308,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null) {
+		if (importId === undefined || importId === null || importId === '') {
 			throw 'Missing the required parameter "importId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'body' is set
@@ -2347,11 +2347,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseParseJob';
 		}
 		// verify the required parameter 'parseJobId' is set
-		if (parseJobId === undefined || parseJobId === null) {
+		if (parseJobId === undefined || parseJobId === null || parseJobId === '') {
 			throw 'Missing the required parameter "parseJobId" when calling patchKnowledgeKnowledgebaseParseJob';
 		}
 		// verify the required parameter 'body' is set
@@ -2382,11 +2382,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
 		}
 		// verify the required parameter 'syncJobId' is set
-		if (syncJobId === undefined || syncJobId === null) {
+		if (syncJobId === undefined || syncJobId === null || syncJobId === '') {
 			throw 'Missing the required parameter "syncJobId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
 		}
 		// verify the required parameter 'body' is set
@@ -2418,15 +2418,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'phraseGroupId' is set
-		if (phraseGroupId === undefined || phraseGroupId === null) {
+		if (phraseGroupId === undefined || phraseGroupId === null || phraseGroupId === '') {
 			throw 'Missing the required parameter "phraseGroupId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'body' is set
@@ -2485,11 +2485,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentCopies';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentCopies';
 		}
 
@@ -2519,11 +2519,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentFeedback';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentFeedback';
 		}
 
@@ -2553,11 +2553,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentViews';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentViews';
 		}
 
@@ -2583,7 +2583,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeGuestSessionDocumentsAnswers(sessionId, body) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsAnswers';
 		}
 		// verify the required parameter 'body' is set
@@ -2616,7 +2616,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsPresentations';
 		}
 
@@ -2646,7 +2646,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsSearch';
 		}
 
@@ -2675,7 +2675,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsSearchSuggestions';
 		}
 
@@ -2726,7 +2726,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseCategories';
 		}
 		// verify the required parameter 'body' is set
@@ -2760,11 +2760,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentCopies';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentCopies';
 		}
 
@@ -2794,11 +2794,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentFeedback';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentFeedback';
 		}
 
@@ -2825,11 +2825,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentVariations';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentVariations';
 		}
 		// verify the required parameter 'body' is set
@@ -2860,11 +2860,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentVersions';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentVersions';
 		}
 		// verify the required parameter 'body' is set
@@ -2898,11 +2898,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentViews';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentViews';
 		}
 
@@ -2928,7 +2928,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocuments';
 		}
 		// verify the required parameter 'body' is set
@@ -2958,7 +2958,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsAnswers';
 		}
 		// verify the required parameter 'body' is set
@@ -2988,7 +2988,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
 		}
 		// verify the required parameter 'body' is set
@@ -3018,7 +3018,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
 		}
 		// verify the required parameter 'body' is set
@@ -3051,7 +3051,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsPresentations';
 		}
 
@@ -3081,7 +3081,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsQuery';
 		}
 
@@ -3111,7 +3111,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsSearch';
 		}
 
@@ -3140,7 +3140,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsSearchSuggestions';
 		}
 
@@ -3166,7 +3166,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
 		}
 		// verify the required parameter 'body' is set
@@ -3196,7 +3196,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseExportJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -3226,7 +3226,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseImportJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -3256,7 +3256,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLabels';
 		}
 		// verify the required parameter 'body' is set
@@ -3288,11 +3288,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'body' is set
@@ -3325,15 +3325,15 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
 		}
 		// verify the required parameter 'body' is set
@@ -3365,11 +3365,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'body' is set
@@ -3401,11 +3401,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 		// verify the required parameter 'body' is set
@@ -3437,15 +3437,15 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 		// verify the required parameter 'trainingId' is set
-		if (trainingId === undefined || trainingId === null) {
+		if (trainingId === undefined || trainingId === null || trainingId === '') {
 			throw 'Missing the required parameter "trainingId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 
@@ -3472,11 +3472,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainings';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainings';
 		}
 
@@ -3503,11 +3503,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobImport';
 		}
 		// verify the required parameter 'parseJobId' is set
-		if (parseJobId === undefined || parseJobId === null) {
+		if (parseJobId === undefined || parseJobId === null || parseJobId === '') {
 			throw 'Missing the required parameter "parseJobId" when calling postKnowledgeKnowledgebaseParseJobImport';
 		}
 		// verify the required parameter 'body' is set
@@ -3537,7 +3537,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -3571,7 +3571,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
 		}
 
@@ -3597,7 +3597,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
 		}
 		// verify the required parameter 'body' is set
@@ -3631,11 +3631,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
 		}
 
@@ -3661,7 +3661,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenow';
 		}
 		// verify the required parameter 'body' is set
@@ -3695,11 +3695,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
 		}
 
@@ -3725,7 +3725,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -3755,7 +3755,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -3811,11 +3811,11 @@ class KnowledgeApi {
 	 */
 	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
 		}
 		// verify the required parameter 'body' is set
@@ -3846,11 +3846,11 @@ class KnowledgeApi {
 	 */
 	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
 		}
 		// verify the required parameter 'body' is set

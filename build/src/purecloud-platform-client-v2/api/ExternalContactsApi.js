@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsContact(contactId) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling deleteExternalcontactsContact';
 		}
 
@@ -53,11 +53,11 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsContactNote(contactId, noteId) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling deleteExternalcontactsContactNote';
 		}
 		// verify the required parameter 'noteId' is set
-		if (noteId === undefined || noteId === null) {
+		if (noteId === undefined || noteId === null || noteId === '') {
 			throw 'Missing the required parameter "noteId" when calling deleteExternalcontactsContactNote';
 		}
 
@@ -82,7 +82,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsContactsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
 		}
 
@@ -107,7 +107,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsExternalsource(externalSourceId) { 
 		// verify the required parameter 'externalSourceId' is set
-		if (externalSourceId === undefined || externalSourceId === null) {
+		if (externalSourceId === undefined || externalSourceId === null || externalSourceId === '') {
 			throw 'Missing the required parameter "externalSourceId" when calling deleteExternalcontactsExternalsource';
 		}
 
@@ -132,7 +132,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsImportCsvSetting(settingsId) { 
 		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
+		if (settingsId === undefined || settingsId === null || settingsId === '') {
 			throw 'Missing the required parameter "settingsId" when calling deleteExternalcontactsImportCsvSetting';
 		}
 
@@ -157,7 +157,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsImportSetting(settingsId) { 
 		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
+		if (settingsId === undefined || settingsId === null || settingsId === '') {
 			throw 'Missing the required parameter "settingsId" when calling deleteExternalcontactsImportSetting';
 		}
 
@@ -182,7 +182,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsOrganization(externalOrganizationId) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganization';
 		}
 
@@ -208,11 +208,11 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'noteId' is set
-		if (noteId === undefined || noteId === null) {
+		if (noteId === undefined || noteId === null || noteId === '') {
 			throw 'Missing the required parameter "noteId" when calling deleteExternalcontactsOrganizationNote';
 		}
 
@@ -237,7 +237,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsOrganizationTrustor(externalOrganizationId) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganizationTrustor';
 		}
 
@@ -262,7 +262,7 @@ class ExternalContactsApi {
 	 */
 	deleteExternalcontactsRelationship(relationshipId) { 
 		// verify the required parameter 'relationshipId' is set
-		if (relationshipId === undefined || relationshipId === null) {
+		if (relationshipId === undefined || relationshipId === null || relationshipId === '') {
 			throw 'Missing the required parameter "relationshipId" when calling deleteExternalcontactsRelationship';
 		}
 
@@ -291,7 +291,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContact';
 		}
 
@@ -316,7 +316,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsContactIdentifiers(contactId) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactIdentifiers';
 		}
 
@@ -347,7 +347,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySessions';
 		}
 
@@ -377,11 +377,11 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactNote';
 		}
 		// verify the required parameter 'noteId' is set
-		if (noteId === undefined || noteId === null) {
+		if (noteId === undefined || noteId === null || noteId === '') {
 			throw 'Missing the required parameter "noteId" when calling getExternalcontactsContactNote';
 		}
 
@@ -413,7 +413,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactNotes';
 		}
 
@@ -442,7 +442,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactUnresolved';
 		}
 
@@ -496,7 +496,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsContactsExport(exportId) { 
 		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
+		if (exportId === undefined || exportId === null || exportId === '') {
 			throw 'Missing the required parameter "exportId" when calling getExternalcontactsContactsExport';
 		}
 
@@ -547,7 +547,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsContactsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchema';
 		}
 
@@ -573,11 +573,11 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsContactsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getExternalcontactsContactsSchemaVersion';
 		}
 
@@ -602,7 +602,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsContactsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersions';
 		}
 
@@ -647,7 +647,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsContactsSchemasCoretype(coreTypeName) { 
 		// verify the required parameter 'coreTypeName' is set
-		if (coreTypeName === undefined || coreTypeName === null) {
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getExternalcontactsContactsSchemasCoretype';
 		}
 
@@ -712,7 +712,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsExternalsource(externalSourceId) { 
 		// verify the required parameter 'externalSourceId' is set
-		if (externalSourceId === undefined || externalSourceId === null) {
+		if (externalSourceId === undefined || externalSourceId === null || externalSourceId === '') {
 			throw 'Missing the required parameter "externalSourceId" when calling getExternalcontactsExternalsource';
 		}
 
@@ -764,7 +764,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsImportCsvSetting(settingsId) { 
 		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
+		if (settingsId === undefined || settingsId === null || settingsId === '') {
 			throw 'Missing the required parameter "settingsId" when calling getExternalcontactsImportCsvSetting';
 		}
 
@@ -815,7 +815,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsImportCsvUploadDetails(uploadId) { 
 		// verify the required parameter 'uploadId' is set
-		if (uploadId === undefined || uploadId === null) {
+		if (uploadId === undefined || uploadId === null || uploadId === '') {
 			throw 'Missing the required parameter "uploadId" when calling getExternalcontactsImportCsvUploadDetails';
 		}
 
@@ -840,7 +840,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsImportCsvUploadPreview(uploadId) { 
 		// verify the required parameter 'uploadId' is set
-		if (uploadId === undefined || uploadId === null) {
+		if (uploadId === undefined || uploadId === null || uploadId === '') {
 			throw 'Missing the required parameter "uploadId" when calling getExternalcontactsImportCsvUploadPreview';
 		}
 
@@ -869,7 +869,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getExternalcontactsImportJob';
 		}
 
@@ -922,7 +922,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsImportSetting(settingsId) { 
 		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
+		if (settingsId === undefined || settingsId === null || settingsId === '') {
 			throw 'Missing the required parameter "settingsId" when calling getExternalcontactsImportSetting';
 		}
 
@@ -979,7 +979,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganization';
 		}
 
@@ -1012,7 +1012,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationContacts';
 		}
 
@@ -1037,7 +1037,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsOrganizationIdentifiers(externalOrganizationId) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationIdentifiers';
 		}
 
@@ -1067,11 +1067,11 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'noteId' is set
-		if (noteId === undefined || noteId === null) {
+		if (noteId === undefined || noteId === null || noteId === '') {
 			throw 'Missing the required parameter "noteId" when calling getExternalcontactsOrganizationNote';
 		}
 
@@ -1103,7 +1103,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationNotes';
 		}
 
@@ -1135,7 +1135,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationRelationships';
 		}
 
@@ -1191,7 +1191,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsOrganizationsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchema';
 		}
 
@@ -1217,11 +1217,11 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getExternalcontactsOrganizationsSchemaVersion';
 		}
 
@@ -1246,7 +1246,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsOrganizationsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersions';
 		}
 
@@ -1291,7 +1291,7 @@ class ExternalContactsApi {
 	 */
 	getExternalcontactsOrganizationsSchemasCoretype(coreTypeName) { 
 		// verify the required parameter 'coreTypeName' is set
-		if (coreTypeName === undefined || coreTypeName === null) {
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getExternalcontactsOrganizationsSchemasCoretype';
 		}
 
@@ -1360,7 +1360,7 @@ class ExternalContactsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'relationshipId' is set
-		if (relationshipId === undefined || relationshipId === null) {
+		if (relationshipId === undefined || relationshipId === null || relationshipId === '') {
 			throw 'Missing the required parameter "relationshipId" when calling getExternalcontactsRelationship';
 		}
 
@@ -1620,7 +1620,7 @@ class ExternalContactsApi {
 	 */
 	patchExternalcontactsContactIdentifiers(contactId, body) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling patchExternalcontactsContactIdentifiers';
 		}
 		// verify the required parameter 'body' is set
@@ -1650,7 +1650,7 @@ class ExternalContactsApi {
 	 */
 	patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling patchExternalcontactsOrganizationIdentifiers';
 		}
 		// verify the required parameter 'body' is set
@@ -2213,7 +2213,7 @@ class ExternalContactsApi {
 	 */
 	postExternalcontactsContactNotes(contactId, body) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactNotes';
 		}
 		// verify the required parameter 'body' is set
@@ -2242,7 +2242,7 @@ class ExternalContactsApi {
 	 */
 	postExternalcontactsContactPromotion(contactId) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactPromotion';
 		}
 
@@ -2661,7 +2661,7 @@ class ExternalContactsApi {
 	 */
 	postExternalcontactsOrganizationNotes(externalOrganizationId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling postExternalcontactsOrganizationNotes';
 		}
 		// verify the required parameter 'body' is set
@@ -2795,7 +2795,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsContact(contactId, body) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling putExternalcontactsContact';
 		}
 		// verify the required parameter 'body' is set
@@ -2826,11 +2826,11 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsContactNote(contactId, noteId, body) { 
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling putExternalcontactsContactNote';
 		}
 		// verify the required parameter 'noteId' is set
-		if (noteId === undefined || noteId === null) {
+		if (noteId === undefined || noteId === null || noteId === '') {
 			throw 'Missing the required parameter "noteId" when calling putExternalcontactsContactNote';
 		}
 		// verify the required parameter 'body' is set
@@ -2860,7 +2860,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsContactsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsContactsSchema';
 		}
 		// verify the required parameter 'body' is set
@@ -2890,7 +2890,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsConversation(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putExternalcontactsConversation';
 		}
 		// verify the required parameter 'body' is set
@@ -2920,7 +2920,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsExternalsource(externalSourceId, body) { 
 		// verify the required parameter 'externalSourceId' is set
-		if (externalSourceId === undefined || externalSourceId === null) {
+		if (externalSourceId === undefined || externalSourceId === null || externalSourceId === '') {
 			throw 'Missing the required parameter "externalSourceId" when calling putExternalcontactsExternalsource';
 		}
 		// verify the required parameter 'body' is set
@@ -2950,7 +2950,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsImportCsvSetting(settingsId, body) { 
 		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
+		if (settingsId === undefined || settingsId === null || settingsId === '') {
 			throw 'Missing the required parameter "settingsId" when calling putExternalcontactsImportCsvSetting';
 		}
 		// verify the required parameter 'body' is set
@@ -2980,7 +2980,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsImportJob(jobId, body) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling putExternalcontactsImportJob';
 		}
 		// verify the required parameter 'body' is set
@@ -3010,7 +3010,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsImportSetting(settingsId, body) { 
 		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
+		if (settingsId === undefined || settingsId === null || settingsId === '') {
 			throw 'Missing the required parameter "settingsId" when calling putExternalcontactsImportSetting';
 		}
 		// verify the required parameter 'body' is set
@@ -3040,7 +3040,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsOrganization(externalOrganizationId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganization';
 		}
 		// verify the required parameter 'body' is set
@@ -3071,11 +3071,11 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'noteId' is set
-		if (noteId === undefined || noteId === null) {
+		if (noteId === undefined || noteId === null || noteId === '') {
 			throw 'Missing the required parameter "noteId" when calling putExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'body' is set
@@ -3105,11 +3105,11 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId) { 
 		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+		if (externalOrganizationId === undefined || externalOrganizationId === null || externalOrganizationId === '') {
 			throw 'Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganizationTrustorTrustorId';
 		}
 		// verify the required parameter 'trustorId' is set
-		if (trustorId === undefined || trustorId === null) {
+		if (trustorId === undefined || trustorId === null || trustorId === '') {
 			throw 'Missing the required parameter "trustorId" when calling putExternalcontactsOrganizationTrustorTrustorId';
 		}
 
@@ -3135,7 +3135,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsOrganizationsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsOrganizationsSchema';
 		}
 		// verify the required parameter 'body' is set
@@ -3165,7 +3165,7 @@ class ExternalContactsApi {
 	 */
 	putExternalcontactsRelationship(relationshipId, body) { 
 		// verify the required parameter 'relationshipId' is set
-		if (relationshipId === undefined || relationshipId === null) {
+		if (relationshipId === undefined || relationshipId === null || relationshipId === '') {
 			throw 'Missing the required parameter "relationshipId" when calling putExternalcontactsRelationship';
 		}
 		// verify the required parameter 'body' is set

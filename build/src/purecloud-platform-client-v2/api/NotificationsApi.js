@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class NotificationsApi {
 	 */
 	deleteNotificationsChannelSubscriptions(channelId) { 
 		// verify the required parameter 'channelId' is set
-		if (channelId === undefined || channelId === null) {
+		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling deleteNotificationsChannelSubscriptions';
 		}
 
@@ -77,7 +77,7 @@ class NotificationsApi {
 	 */
 	getNotificationsChannelSubscriptions(channelId) { 
 		// verify the required parameter 'channelId' is set
-		if (channelId === undefined || channelId === null) {
+		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling getNotificationsChannelSubscriptions';
 		}
 
@@ -126,7 +126,7 @@ class NotificationsApi {
 	 */
 	headNotificationsChannel(channelId) { 
 		// verify the required parameter 'channelId' is set
-		if (channelId === undefined || channelId === null) {
+		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling headNotificationsChannel';
 		}
 
@@ -156,7 +156,7 @@ class NotificationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'channelId' is set
-		if (channelId === undefined || channelId === null) {
+		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling postNotificationsChannelSubscriptions';
 		}
 		// verify the required parameter 'body' is set
@@ -210,7 +210,7 @@ class NotificationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'channelId' is set
-		if (channelId === undefined || channelId === null) {
+		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling putNotificationsChannelSubscriptions';
 		}
 		// verify the required parameter 'body' is set

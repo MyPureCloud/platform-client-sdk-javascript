@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,11 +28,11 @@ class UploadsApi {
 	 */
 	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
 		}
 
@@ -83,7 +83,7 @@ class UploadsApi {
 	 */
 	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftFunctionUpload';
 		}
 		// verify the required parameter 'body' is set
@@ -138,7 +138,7 @@ class UploadsApi {
 	 */
 	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -168,7 +168,7 @@ class UploadsApi {
 	 */
 	postLanguageunderstandingMinerUploads(minerId, body) { 
 		// verify the required parameter 'minerId' is set
-		if (minerId === undefined || minerId === null) {
+		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerUploads';
 		}
 		// verify the required parameter 'body' is set

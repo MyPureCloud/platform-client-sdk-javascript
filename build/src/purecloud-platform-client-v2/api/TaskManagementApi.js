@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling deleteTaskmanagementWorkbin';
 		}
 
@@ -52,7 +52,7 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorkitem(workitemId) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling deleteTaskmanagementWorkitem';
 		}
 
@@ -77,7 +77,7 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkAddJob';
 		}
 
@@ -102,7 +102,7 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkTerminateJob';
 		}
 
@@ -127,7 +127,7 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteTaskmanagementWorkitemsSchema';
 		}
 
@@ -152,7 +152,7 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorktype(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktype';
 		}
 
@@ -178,11 +178,11 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
 		}
 
@@ -208,11 +208,11 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
 		}
 
@@ -238,11 +238,11 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
 		}
 
@@ -268,11 +268,11 @@ class TaskManagementApi {
 	 */
 	deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling deleteTaskmanagementWorktypeStatus';
 		}
 
@@ -297,7 +297,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbin';
 		}
 
@@ -328,7 +328,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinHistory';
 		}
 
@@ -354,7 +354,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersion';
 		}
 		// verify the required parameter 'entityVersion' is set
@@ -389,7 +389,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersions';
 		}
 
@@ -418,7 +418,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitem';
 		}
 
@@ -449,7 +449,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemHistory';
 		}
 
@@ -482,11 +482,11 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemUserWrapups';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getTaskmanagementWorkitemUserWrapups';
 		}
 
@@ -512,7 +512,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersion';
 		}
 		// verify the required parameter 'entityVersion' is set
@@ -547,7 +547,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersions';
 		}
 
@@ -579,7 +579,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemWrapups';
 		}
 
@@ -604,7 +604,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJob';
 		}
 
@@ -629,7 +629,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJobResults';
 		}
 
@@ -681,7 +681,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJob';
 		}
 
@@ -706,7 +706,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJobResults';
 		}
 
@@ -731,7 +731,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsQueryJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJob';
 		}
 
@@ -756,7 +756,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsQueryJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJobResults';
 		}
 
@@ -781,7 +781,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchema';
 		}
 
@@ -807,11 +807,11 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getTaskmanagementWorkitemsSchemaVersion';
 		}
 
@@ -836,7 +836,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersions';
 		}
 
@@ -881,7 +881,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorkitemsSchemasCoretype(coreTypeName) { 
 		// verify the required parameter 'coreTypeName' is set
-		if (coreTypeName === undefined || coreTypeName === null) {
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getTaskmanagementWorkitemsSchemasCoretype';
 		}
 
@@ -950,7 +950,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktype';
 		}
 
@@ -976,11 +976,11 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
 		}
 
@@ -1010,7 +1010,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRules';
 		}
 
@@ -1036,11 +1036,11 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
 		}
 
@@ -1070,7 +1070,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRules';
 		}
 
@@ -1096,11 +1096,11 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
 		}
 
@@ -1130,7 +1130,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRules';
 		}
 
@@ -1162,7 +1162,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeHistory';
 		}
 
@@ -1188,11 +1188,11 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling getTaskmanagementWorktypeStatus';
 		}
 
@@ -1217,7 +1217,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorktypeStatuses(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatuses';
 		}
 
@@ -1243,7 +1243,7 @@ class TaskManagementApi {
 	 */
 	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersion';
 		}
 		// verify the required parameter 'entityVersion' is set
@@ -1278,7 +1278,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersions';
 		}
 
@@ -1304,7 +1304,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkbin(workbinId, body) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling patchTaskmanagementWorkbin';
 		}
 		// verify the required parameter 'body' is set
@@ -1334,7 +1334,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkitem(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitem';
 		}
 		// verify the required parameter 'body' is set
@@ -1364,7 +1364,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkitemAssignment(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemAssignment';
 		}
 		// verify the required parameter 'body' is set
@@ -1395,11 +1395,11 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUserWrapups';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchTaskmanagementWorkitemUserWrapups';
 		}
 		// verify the required parameter 'body' is set
@@ -1429,7 +1429,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUsersMeWrapups';
 		}
 		// verify the required parameter 'body' is set
@@ -1459,7 +1459,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkAddJob';
 		}
 		// verify the required parameter 'body' is set
@@ -1489,7 +1489,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body) { 
 		// verify the required parameter 'bulkJobId' is set
-		if (bulkJobId === undefined || bulkJobId === null) {
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkTerminateJob';
 		}
 		// verify the required parameter 'body' is set
@@ -1519,7 +1519,7 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorktype(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktype';
 		}
 		// verify the required parameter 'body' is set
@@ -1550,11 +1550,11 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
 		}
 		// verify the required parameter 'body' is set
@@ -1585,11 +1585,11 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
 		}
 		// verify the required parameter 'body' is set
@@ -1620,11 +1620,11 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
 		}
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
 		}
 		// verify the required parameter 'body' is set
@@ -1655,11 +1655,11 @@ class TaskManagementApi {
 	 */
 	patchTaskmanagementWorktypeStatus(worktypeId, statusId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling patchTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'body' is set
@@ -1738,7 +1738,7 @@ class TaskManagementApi {
 	 */
 	postTaskmanagementWorkitemAcdCancel(workitemId) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemAcdCancel';
 		}
 
@@ -1763,7 +1763,7 @@ class TaskManagementApi {
 	 */
 	postTaskmanagementWorkitemDisconnect(workitemId) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemDisconnect';
 		}
 
@@ -1792,7 +1792,7 @@ class TaskManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemTerminate';
 		}
 
@@ -1969,7 +1969,7 @@ class TaskManagementApi {
 	 */
 	postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsDatebasedRules';
 		}
 		// verify the required parameter 'body' is set
@@ -1999,7 +1999,7 @@ class TaskManagementApi {
 	 */
 	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
 		}
 		// verify the required parameter 'body' is set
@@ -2029,7 +2029,7 @@ class TaskManagementApi {
 	 */
 	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOncreateRules';
 		}
 		// verify the required parameter 'body' is set
@@ -2059,7 +2059,7 @@ class TaskManagementApi {
 	 */
 	postTaskmanagementWorktypeStatuses(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeStatuses';
 		}
 		// verify the required parameter 'body' is set
@@ -2139,7 +2139,7 @@ class TaskManagementApi {
 	 */
 	putTaskmanagementWorkitemsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putTaskmanagementWorkitemsSchema';
 		}
 		// verify the required parameter 'body' is set

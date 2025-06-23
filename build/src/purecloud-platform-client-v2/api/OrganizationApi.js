@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -115,7 +115,7 @@ class OrganizationApi {
 	 */
 	getOrganizationsLimitsChangerequest(requestId) { 
 		// verify the required parameter 'requestId' is set
-		if (requestId === undefined || requestId === null) {
+		if (requestId === undefined || requestId === null || requestId === '') {
 			throw 'Missing the required parameter "requestId" when calling getOrganizationsLimitsChangerequest';
 		}
 
@@ -208,7 +208,7 @@ class OrganizationApi {
 	 */
 	getOrganizationsLimitsNamespace(namespaceName) { 
 		// verify the required parameter 'namespaceName' is set
-		if (namespaceName === undefined || namespaceName === null) {
+		if (namespaceName === undefined || namespaceName === null || namespaceName === '') {
 			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespace';
 		}
 
@@ -233,7 +233,7 @@ class OrganizationApi {
 	 */
 	getOrganizationsLimitsNamespaceDefaults(namespaceName) { 
 		// verify the required parameter 'namespaceName' is set
-		if (namespaceName === undefined || namespaceName === null) {
+		if (namespaceName === undefined || namespaceName === null || namespaceName === '') {
 			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceDefaults';
 		}
 
@@ -350,7 +350,7 @@ class OrganizationApi {
 	 */
 	patchOrganizationsFeature(featureName, enabled) { 
 		// verify the required parameter 'featureName' is set
-		if (featureName === undefined || featureName === null) {
+		if (featureName === undefined || featureName === null || featureName === '') {
 			throw 'Missing the required parameter "featureName" when calling patchOrganizationsFeature';
 		}
 		// verify the required parameter 'enabled' is set

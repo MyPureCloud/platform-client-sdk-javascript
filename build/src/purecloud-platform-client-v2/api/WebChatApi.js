@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class WebChatApi {
 	 */
 	deleteWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';
 		}
 
@@ -55,11 +55,11 @@ class WebChatApi {
 	 */
 	deleteWebchatGuestConversationMember(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling deleteWebchatGuestConversationMember';
 		}
 
@@ -105,7 +105,7 @@ class WebChatApi {
 	 */
 	getWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebchatDeployment';
 		}
 
@@ -153,11 +153,11 @@ class WebChatApi {
 	 */
 	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
+		if (mediaRequestId === undefined || mediaRequestId === null || mediaRequestId === '') {
 			throw 'Missing the required parameter "mediaRequestId" when calling getWebchatGuestConversationMediarequest';
 		}
 
@@ -183,7 +183,7 @@ class WebChatApi {
 	 */
 	getWebchatGuestConversationMediarequests(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';
 		}
 
@@ -210,11 +210,11 @@ class WebChatApi {
 	 */
 	getWebchatGuestConversationMember(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling getWebchatGuestConversationMember';
 		}
 
@@ -246,7 +246,7 @@ class WebChatApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMembers';
 		}
 
@@ -273,11 +273,11 @@ class WebChatApi {
 	 */
 	getWebchatGuestConversationMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getWebchatGuestConversationMessage';
 		}
 
@@ -310,7 +310,7 @@ class WebChatApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessages';
 		}
 
@@ -358,11 +358,11 @@ class WebChatApi {
 	 */
 	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
+		if (mediaRequestId === undefined || mediaRequestId === null || mediaRequestId === '') {
 			throw 'Missing the required parameter "mediaRequestId" when calling patchWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'body' is set
@@ -420,11 +420,11 @@ class WebChatApi {
 	 */
 	postWebchatGuestConversationMemberMessages(conversationId, memberId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -455,11 +455,11 @@ class WebChatApi {
 	 */
 	postWebchatGuestConversationMemberTyping(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberTyping';
 		}
 
@@ -512,7 +512,7 @@ class WebChatApi {
 	 */
 	putWebchatDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebchatDeployment';
 		}
 		// verify the required parameter 'body' is set

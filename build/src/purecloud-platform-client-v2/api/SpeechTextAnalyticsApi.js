@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	deleteSpeechandtextanalyticsCategory(categoryId) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteSpeechandtextanalyticsCategory';
 		}
 
@@ -52,7 +52,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
 		// verify the required parameter 'dictionaryFeedbackId' is set
-		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null) {
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
 			throw 'Missing the required parameter "dictionaryFeedbackId" when calling deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
 		}
 
@@ -81,7 +81,7 @@ class SpeechTextAnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling deleteSpeechandtextanalyticsProgram';
 		}
 
@@ -126,7 +126,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId) { 
 		// verify the required parameter 'sentimentFeedbackId' is set
-		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null) {
+		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null || sentimentFeedbackId === '') {
 			throw 'Missing the required parameter "sentimentFeedbackId" when calling deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId';
 		}
 
@@ -151,7 +151,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	deleteSpeechandtextanalyticsTopic(topicId) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSpeechandtextanalyticsTopic';
 		}
 
@@ -205,7 +205,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsCategory(categoryId) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getSpeechandtextanalyticsCategory';
 		}
 
@@ -230,7 +230,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversation';
 		}
 
@@ -260,7 +260,7 @@ class SpeechTextAnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCategories';
 		}
 
@@ -286,11 +286,11 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
 		}
 
@@ -316,11 +316,11 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
 		}
 
@@ -345,7 +345,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsConversationSummaries(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSummaries';
 		}
 
@@ -396,7 +396,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
 		// verify the required parameter 'dictionaryFeedbackId' is set
-		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null) {
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
 			throw 'Missing the required parameter "dictionaryFeedbackId" when calling getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
 		}
 
@@ -421,7 +421,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgram(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
 		}
 
@@ -446,7 +446,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramMappings(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramMappings';
 		}
 
@@ -471,7 +471,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramSettingsInsights(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsInsights';
 		}
 
@@ -496,7 +496,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramTranscriptionengines(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramTranscriptionengines';
 		}
 
@@ -547,7 +547,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramsGeneralJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsGeneralJob';
 		}
 
@@ -597,7 +597,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramsPublishjob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsPublishjob';
 		}
 
@@ -757,7 +757,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsTopic(topicId) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
 		}
 
@@ -881,7 +881,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsTopicsPublishjob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';
 		}
 
@@ -906,7 +906,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsTopicsTestphraseJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsTestphraseJob';
 		}
 
@@ -937,11 +937,11 @@ class SpeechTextAnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
 		}
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
 		}
 
@@ -1262,7 +1262,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsCategory(categoryId, body) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling putSpeechandtextanalyticsCategory';
 		}
 		// verify the required parameter 'body' is set
@@ -1295,7 +1295,7 @@ class SpeechTextAnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dictionaryFeedbackId' is set
-		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null) {
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
 			throw 'Missing the required parameter "dictionaryFeedbackId" when calling putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
 		}
 
@@ -1321,7 +1321,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgram(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgram';
 		}
 		// verify the required parameter 'body' is set
@@ -1351,7 +1351,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgramMappings(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramMappings';
 		}
 		// verify the required parameter 'body' is set
@@ -1381,7 +1381,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgramSettingsInsights(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramSettingsInsights';
 		}
 		// verify the required parameter 'body' is set
@@ -1411,7 +1411,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgramTranscriptionengines(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
 		}
 		// verify the required parameter 'body' is set
@@ -1466,7 +1466,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsTopic(topicId, body) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling putSpeechandtextanalyticsTopic';
 		}
 		// verify the required parameter 'body' is set

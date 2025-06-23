@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class WebDeploymentsApi {
 	 */
 	deleteWebdeploymentsConfiguration(configurationId) { 
 		// verify the required parameter 'configurationId' is set
-		if (configurationId === undefined || configurationId === null) {
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling deleteWebdeploymentsConfiguration';
 		}
 
@@ -52,7 +52,7 @@ class WebDeploymentsApi {
 	 */
 	deleteWebdeploymentsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeployment';
 		}
 
@@ -78,11 +78,11 @@ class WebDeploymentsApi {
 	 */
 	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
 		}
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
 		}
 
@@ -133,11 +133,11 @@ class WebDeploymentsApi {
 	 */
 	getWebdeploymentsConfigurationVersion(configurationId, versionId) { 
 		// verify the required parameter 'configurationId' is set
-		if (configurationId === undefined || configurationId === null) {
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getWebdeploymentsConfigurationVersion';
 		}
 
@@ -162,7 +162,7 @@ class WebDeploymentsApi {
 	 */
 	getWebdeploymentsConfigurationVersions(configurationId) { 
 		// verify the required parameter 'configurationId' is set
-		if (configurationId === undefined || configurationId === null) {
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersions';
 		}
 
@@ -187,7 +187,7 @@ class WebDeploymentsApi {
 	 */
 	getWebdeploymentsConfigurationVersionsDraft(configurationId) { 
 		// verify the required parameter 'configurationId' is set
-		if (configurationId === undefined || configurationId === null) {
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersionsDraft';
 		}
 
@@ -240,7 +240,7 @@ class WebDeploymentsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeployment';
 		}
 
@@ -266,11 +266,11 @@ class WebDeploymentsApi {
 	 */
 	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
 		}
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
 		}
 
@@ -300,7 +300,7 @@ class WebDeploymentsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentConfigurations';
 		}
 
@@ -325,7 +325,7 @@ class WebDeploymentsApi {
 	 */
 	getWebdeploymentsDeploymentIdentityresolution(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentIdentityresolution';
 		}
 
@@ -374,7 +374,7 @@ class WebDeploymentsApi {
 	 */
 	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId) { 
 		// verify the required parameter 'configurationId' is set
-		if (configurationId === undefined || configurationId === null) {
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling postWebdeploymentsConfigurationVersionsDraftPublish';
 		}
 
@@ -499,7 +499,7 @@ class WebDeploymentsApi {
 	 */
 	putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion) { 
 		// verify the required parameter 'configurationId' is set
-		if (configurationId === undefined || configurationId === null) {
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling putWebdeploymentsConfigurationVersionsDraft';
 		}
 		// verify the required parameter 'configurationVersion' is set
@@ -529,7 +529,7 @@ class WebDeploymentsApi {
 	 */
 	putWebdeploymentsDeployment(deploymentId, deployment) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebdeploymentsDeployment';
 		}
 		// verify the required parameter 'deployment' is set
@@ -559,7 +559,7 @@ class WebDeploymentsApi {
 	 */
 	putWebdeploymentsDeploymentIdentityresolution(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebdeploymentsDeploymentIdentityresolution';
 		}
 		// verify the required parameter 'body' is set

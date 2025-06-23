@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -31,7 +31,7 @@ class ObjectsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
 		}
 
@@ -60,7 +60,7 @@ class ObjectsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
 		}
 
@@ -212,11 +212,11 @@ class ObjectsApi {
 	 */
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'objectType' is set
-		if (objectType === undefined || objectType === null) {
+		if (objectType === undefined || objectType === null || objectType === '') {
 			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'body' is set
@@ -246,7 +246,7 @@ class ObjectsApi {
 	 */
 	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
 		}
 		// verify the required parameter 'body' is set
@@ -301,7 +301,7 @@ class ObjectsApi {
 	 */
 	putAuthorizationDivision(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
 		}
 		// verify the required parameter 'body' is set

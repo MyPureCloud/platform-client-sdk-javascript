@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -67,7 +67,7 @@ class AuditApi {
 	 */
 	getAuditsQueryTransactionId(transactionId) { 
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionId';
 		}
 
@@ -99,7 +99,7 @@ class AuditApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionIdResults';
 		}
 

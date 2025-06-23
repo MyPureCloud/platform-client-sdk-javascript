@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class CoachingApi {
 	 */
 	deleteCoachingAppointment(appointmentId) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointment';
 		}
 
@@ -53,11 +53,11 @@ class CoachingApi {
 	 */
 	deleteCoachingAppointmentAnnotation(appointmentId, annotationId) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
-		if (annotationId === undefined || annotationId === null) {
+		if (annotationId === undefined || annotationId === null || annotationId === '') {
 			throw 'Missing the required parameter "annotationId" when calling deleteCoachingAppointmentAnnotation';
 		}
 
@@ -82,7 +82,7 @@ class CoachingApi {
 	 */
 	getCoachingAppointment(appointmentId) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointment';
 		}
 
@@ -108,11 +108,11 @@ class CoachingApi {
 	 */
 	getCoachingAppointmentAnnotation(appointmentId, annotationId) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
-		if (annotationId === undefined || annotationId === null) {
+		if (annotationId === undefined || annotationId === null || annotationId === '') {
 			throw 'Missing the required parameter "annotationId" when calling getCoachingAppointmentAnnotation';
 		}
 
@@ -142,7 +142,7 @@ class CoachingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotations';
 		}
 
@@ -172,7 +172,7 @@ class CoachingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentStatuses';
 		}
 
@@ -272,7 +272,7 @@ class CoachingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'notificationId' is set
-		if (notificationId === undefined || notificationId === null) {
+		if (notificationId === undefined || notificationId === null || notificationId === '') {
 			throw 'Missing the required parameter "notificationId" when calling getCoachingNotification';
 		}
 
@@ -324,7 +324,7 @@ class CoachingApi {
 	 */
 	patchCoachingAppointment(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointment';
 		}
 		// verify the required parameter 'body' is set
@@ -355,11 +355,11 @@ class CoachingApi {
 	 */
 	patchCoachingAppointmentAnnotation(appointmentId, annotationId, body) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
-		if (annotationId === undefined || annotationId === null) {
+		if (annotationId === undefined || annotationId === null || annotationId === '') {
 			throw 'Missing the required parameter "annotationId" when calling patchCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'body' is set
@@ -389,7 +389,7 @@ class CoachingApi {
 	 */
 	patchCoachingAppointmentStatus(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentStatus';
 		}
 		// verify the required parameter 'body' is set
@@ -419,7 +419,7 @@ class CoachingApi {
 	 */
 	patchCoachingNotification(notificationId, body) { 
 		// verify the required parameter 'notificationId' is set
-		if (notificationId === undefined || notificationId === null) {
+		if (notificationId === undefined || notificationId === null || notificationId === '') {
 			throw 'Missing the required parameter "notificationId" when calling patchCoachingNotification';
 		}
 		// verify the required parameter 'body' is set
@@ -449,7 +449,7 @@ class CoachingApi {
 	 */
 	postCoachingAppointmentAnnotations(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentAnnotations';
 		}
 		// verify the required parameter 'body' is set
@@ -479,7 +479,7 @@ class CoachingApi {
 	 */
 	postCoachingAppointmentConversations(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
-		if (appointmentId === undefined || appointmentId === null) {
+		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentConversations';
 		}
 		// verify the required parameter 'body' is set

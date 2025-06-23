@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdge(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdge';
 		}
 
@@ -53,11 +53,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdgeLogicalinterface';
 		}
 		// verify the required parameter 'interfaceId' is set
-		if (interfaceId === undefined || interfaceId === null) {
+		if (interfaceId === undefined || interfaceId === null || interfaceId === '') {
 			throw 'Missing the required parameter "interfaceId" when calling deleteTelephonyProvidersEdgeLogicalinterface';
 		}
 
@@ -82,7 +82,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgeSoftwareupdate(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdgeSoftwareupdate';
 		}
 
@@ -127,7 +127,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesCertificateauthority(certificateId) { 
 		// verify the required parameter 'certificateId' is set
-		if (certificateId === undefined || certificateId === null) {
+		if (certificateId === undefined || certificateId === null || certificateId === '') {
 			throw 'Missing the required parameter "certificateId" when calling deleteTelephonyProvidersEdgesCertificateauthority';
 		}
 
@@ -152,7 +152,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesDidpool(didPoolId) { 
 		// verify the required parameter 'didPoolId' is set
-		if (didPoolId === undefined || didPoolId === null) {
+		if (didPoolId === undefined || didPoolId === null || didPoolId === '') {
 			throw 'Missing the required parameter "didPoolId" when calling deleteTelephonyProvidersEdgesDidpool';
 		}
 
@@ -177,7 +177,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId) { 
 		// verify the required parameter 'edgeGroupId' is set
-		if (edgeGroupId === undefined || edgeGroupId === null) {
+		if (edgeGroupId === undefined || edgeGroupId === null || edgeGroupId === '') {
 			throw 'Missing the required parameter "edgeGroupId" when calling deleteTelephonyProvidersEdgesEdgegroup';
 		}
 
@@ -202,7 +202,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId) { 
 		// verify the required parameter 'extensionPoolId' is set
-		if (extensionPoolId === undefined || extensionPoolId === null) {
+		if (extensionPoolId === undefined || extensionPoolId === null || extensionPoolId === '') {
 			throw 'Missing the required parameter "extensionPoolId" when calling deleteTelephonyProvidersEdgesExtensionpool';
 		}
 
@@ -227,7 +227,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesPhone(phoneId) { 
 		// verify the required parameter 'phoneId' is set
-		if (phoneId === undefined || phoneId === null) {
+		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling deleteTelephonyProvidersEdgesPhone';
 		}
 
@@ -252,7 +252,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId) { 
 		// verify the required parameter 'phoneBaseId' is set
-		if (phoneBaseId === undefined || phoneBaseId === null) {
+		if (phoneBaseId === undefined || phoneBaseId === null || phoneBaseId === '') {
 			throw 'Missing the required parameter "phoneBaseId" when calling deleteTelephonyProvidersEdgesPhonebasesetting';
 		}
 
@@ -277,7 +277,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesSite(siteId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling deleteTelephonyProvidersEdgesSite';
 		}
 
@@ -303,11 +303,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling deleteTelephonyProvidersEdgesSiteOutboundroute';
 		}
 		// verify the required parameter 'outboundRouteId' is set
-		if (outboundRouteId === undefined || outboundRouteId === null) {
+		if (outboundRouteId === undefined || outboundRouteId === null || outboundRouteId === '') {
 			throw 'Missing the required parameter "outboundRouteId" when calling deleteTelephonyProvidersEdgesSiteOutboundroute';
 		}
 
@@ -332,7 +332,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId) { 
 		// verify the required parameter 'trunkBaseSettingsId' is set
-		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null) {
+		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null || trunkBaseSettingsId === '') {
 			throw 'Missing the required parameter "trunkBaseSettingsId" when calling deleteTelephonyProvidersEdgesTrunkbasesetting';
 		}
 
@@ -361,7 +361,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdge';
 		}
 
@@ -386,7 +386,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeDiagnosticNslookup(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticNslookup';
 		}
 
@@ -411,7 +411,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeDiagnosticPing(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticPing';
 		}
 
@@ -436,7 +436,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeDiagnosticRoute(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticRoute';
 		}
 
@@ -461,7 +461,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeDiagnosticTracepath(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticTracepath';
 		}
 
@@ -491,11 +491,11 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeLogicalinterface';
 		}
 		// verify the required parameter 'interfaceId' is set
-		if (interfaceId === undefined || interfaceId === null) {
+		if (interfaceId === undefined || interfaceId === null || interfaceId === '') {
 			throw 'Missing the required parameter "interfaceId" when calling getTelephonyProvidersEdgeLogicalinterface';
 		}
 
@@ -524,7 +524,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeLogicalinterfaces';
 		}
 
@@ -550,11 +550,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeLogsJob(edgeId, jobId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeLogsJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getTelephonyProvidersEdgeLogsJob';
 		}
 
@@ -579,7 +579,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeMetrics(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeMetrics';
 		}
 
@@ -605,11 +605,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgePhysicalinterface';
 		}
 		// verify the required parameter 'interfaceId' is set
-		if (interfaceId === undefined || interfaceId === null) {
+		if (interfaceId === undefined || interfaceId === null || interfaceId === '') {
 			throw 'Missing the required parameter "interfaceId" when calling getTelephonyProvidersEdgePhysicalinterface';
 		}
 
@@ -634,7 +634,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgePhysicalinterfaces(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgePhysicalinterfaces';
 		}
 
@@ -659,7 +659,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeSetuppackage(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeSetuppackage';
 		}
 
@@ -684,7 +684,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeSoftwareupdate(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeSoftwareupdate';
 		}
 
@@ -709,7 +709,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgeSoftwareversions(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeSoftwareversions';
 		}
 
@@ -743,7 +743,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeTrunks';
 		}
 
@@ -843,7 +843,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesCertificateauthority(certificateId) { 
 		// verify the required parameter 'certificateId' is set
-		if (certificateId === undefined || certificateId === null) {
+		if (certificateId === undefined || certificateId === null || certificateId === '') {
 			throw 'Missing the required parameter "certificateId" when calling getTelephonyProvidersEdgesCertificateauthority';
 		}
 
@@ -868,7 +868,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesDid(didId) { 
 		// verify the required parameter 'didId' is set
-		if (didId === undefined || didId === null) {
+		if (didId === undefined || didId === null || didId === '') {
 			throw 'Missing the required parameter "didId" when calling getTelephonyProvidersEdgesDid';
 		}
 
@@ -893,7 +893,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesDidpool(didPoolId) { 
 		// verify the required parameter 'didPoolId' is set
-		if (didPoolId === undefined || didPoolId === null) {
+		if (didPoolId === undefined || didPoolId === null || didPoolId === '') {
 			throw 'Missing the required parameter "didPoolId" when calling getTelephonyProvidersEdgesDidpool';
 		}
 
@@ -1013,7 +1013,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeGroupId' is set
-		if (edgeGroupId === undefined || edgeGroupId === null) {
+		if (edgeGroupId === undefined || edgeGroupId === null || edgeGroupId === '') {
 			throw 'Missing the required parameter "edgeGroupId" when calling getTelephonyProvidersEdgesEdgegroup';
 		}
 
@@ -1039,11 +1039,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId) { 
 		// verify the required parameter 'edgegroupId' is set
-		if (edgegroupId === undefined || edgegroupId === null) {
+		if (edgegroupId === undefined || edgegroupId === null || edgegroupId === '') {
 			throw 'Missing the required parameter "edgegroupId" when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase';
 		}
 		// verify the required parameter 'edgetrunkbaseId' is set
-		if (edgetrunkbaseId === undefined || edgetrunkbaseId === null) {
+		if (edgetrunkbaseId === undefined || edgetrunkbaseId === null || edgetrunkbaseId === '') {
 			throw 'Missing the required parameter "edgetrunkbaseId" when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase';
 		}
 
@@ -1136,7 +1136,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesExtension(extensionId) { 
 		// verify the required parameter 'extensionId' is set
-		if (extensionId === undefined || extensionId === null) {
+		if (extensionId === undefined || extensionId === null || extensionId === '') {
 			throw 'Missing the required parameter "extensionId" when calling getTelephonyProvidersEdgesExtension';
 		}
 
@@ -1161,7 +1161,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesExtensionpool(extensionPoolId) { 
 		// verify the required parameter 'extensionPoolId' is set
-		if (extensionPoolId === undefined || extensionPoolId === null) {
+		if (extensionPoolId === undefined || extensionPoolId === null || extensionPoolId === '') {
 			throw 'Missing the required parameter "extensionPoolId" when calling getTelephonyProvidersEdgesExtensionpool';
 		}
 
@@ -1272,7 +1272,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesLine(lineId) { 
 		// verify the required parameter 'lineId' is set
-		if (lineId === undefined || lineId === null) {
+		if (lineId === undefined || lineId === null || lineId === '') {
 			throw 'Missing the required parameter "lineId" when calling getTelephonyProvidersEdgesLine';
 		}
 
@@ -1297,7 +1297,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesLinebasesetting(lineBaseId) { 
 		// verify the required parameter 'lineBaseId' is set
-		if (lineBaseId === undefined || lineBaseId === null) {
+		if (lineBaseId === undefined || lineBaseId === null || lineBaseId === '') {
 			throw 'Missing the required parameter "lineBaseId" when calling getTelephonyProvidersEdgesLinebasesetting';
 		}
 
@@ -1433,7 +1433,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonyProvidersEdgesMediastatisticsConversation';
 		}
 
@@ -1460,11 +1460,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication';
 		}
 
@@ -1543,7 +1543,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesPhone(phoneId) { 
 		// verify the required parameter 'phoneId' is set
-		if (phoneId === undefined || phoneId === null) {
+		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling getTelephonyProvidersEdgesPhone';
 		}
 
@@ -1568,7 +1568,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId) { 
 		// verify the required parameter 'phoneBaseId' is set
-		if (phoneBaseId === undefined || phoneBaseId === null) {
+		if (phoneBaseId === undefined || phoneBaseId === null || phoneBaseId === '') {
 			throw 'Missing the required parameter "phoneBaseId" when calling getTelephonyProvidersEdgesPhonebasesetting';
 		}
 
@@ -1762,7 +1762,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesSite(siteId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSite';
 		}
 
@@ -1788,11 +1788,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteNumberplan';
 		}
 		// verify the required parameter 'numberPlanId' is set
-		if (numberPlanId === undefined || numberPlanId === null) {
+		if (numberPlanId === undefined || numberPlanId === null || numberPlanId === '') {
 			throw 'Missing the required parameter "numberPlanId" when calling getTelephonyProvidersEdgesSiteNumberplan';
 		}
 
@@ -1817,7 +1817,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesSiteNumberplans(siteId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteNumberplans';
 		}
 
@@ -1846,7 +1846,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteNumberplansClassifications';
 		}
 
@@ -1872,11 +1872,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteOutboundroute';
 		}
 		// verify the required parameter 'outboundRouteId' is set
-		if (outboundRouteId === undefined || outboundRouteId === null) {
+		if (outboundRouteId === undefined || outboundRouteId === null || outboundRouteId === '') {
 			throw 'Missing the required parameter "outboundRouteId" when calling getTelephonyProvidersEdgesSiteOutboundroute';
 		}
 
@@ -1909,7 +1909,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteOutboundroutes';
 		}
 
@@ -1934,7 +1934,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesSiteSiteconnections(siteId) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteSiteconnections';
 		}
 
@@ -2044,7 +2044,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesTrunk(trunkId) { 
 		// verify the required parameter 'trunkId' is set
-		if (trunkId === undefined || trunkId === null) {
+		if (trunkId === undefined || trunkId === null || trunkId === '') {
 			throw 'Missing the required parameter "trunkId" when calling getTelephonyProvidersEdgesTrunk';
 		}
 
@@ -2069,7 +2069,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	getTelephonyProvidersEdgesTrunkMetrics(trunkId) { 
 		// verify the required parameter 'trunkId' is set
-		if (trunkId === undefined || trunkId === null) {
+		if (trunkId === undefined || trunkId === null || trunkId === '') {
 			throw 'Missing the required parameter "trunkId" when calling getTelephonyProvidersEdgesTrunkMetrics';
 		}
 
@@ -2098,7 +2098,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'trunkBaseSettingsId' is set
-		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null) {
+		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null || trunkBaseSettingsId === '') {
 			throw 'Missing the required parameter "trunkBaseSettingsId" when calling getTelephonyProvidersEdgesTrunkbasesetting';
 		}
 
@@ -2286,7 +2286,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
 		}
 		// verify the required parameter 'body' is set
@@ -2316,7 +2316,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticNslookup';
 		}
 		// verify the required parameter 'body' is set
@@ -2346,7 +2346,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeDiagnosticPing(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticPing';
 		}
 		// verify the required parameter 'body' is set
@@ -2376,7 +2376,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticRoute';
 		}
 		// verify the required parameter 'body' is set
@@ -2406,7 +2406,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticTracepath';
 		}
 		// verify the required parameter 'body' is set
@@ -2436,7 +2436,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeLogicalinterfaces';
 		}
 		// verify the required parameter 'body' is set
@@ -2467,11 +2467,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeLogsJobUpload';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling postTelephonyProvidersEdgeLogsJobUpload';
 		}
 		// verify the required parameter 'body' is set
@@ -2501,7 +2501,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeLogsJobs(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeLogsJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -2534,7 +2534,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeReboot';
 		}
 
@@ -2560,7 +2560,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeSoftwareupdate(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeSoftwareupdate';
 		}
 		// verify the required parameter 'body' is set
@@ -2593,7 +2593,7 @@ class TelephonyProvidersEdgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeStatuscode';
 		}
 
@@ -2618,7 +2618,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgeUnpair(edgeId) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeUnpair';
 		}
 
@@ -2797,15 +2797,15 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
 		}
 		// verify the required parameter 'mediaResourceId' is set
-		if (mediaResourceId === undefined || mediaResourceId === null) {
+		if (mediaResourceId === undefined || mediaResourceId === null || mediaResourceId === '') {
 			throw 'Missing the required parameter "mediaResourceId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
 		}
 		// verify the required parameter 'body' is set
@@ -2834,7 +2834,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgesPhoneReboot(phoneId) { 
 		// verify the required parameter 'phoneId' is set
-		if (phoneId === undefined || phoneId === null) {
+		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling postTelephonyProvidersEdgesPhoneReboot';
 		}
 
@@ -2935,7 +2935,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteOutboundroutes';
 		}
 		// verify the required parameter 'body' is set
@@ -3040,7 +3040,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdge(edgeId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling putTelephonyProvidersEdge';
 		}
 		// verify the required parameter 'body' is set
@@ -3071,11 +3071,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body) { 
 		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
+		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling putTelephonyProvidersEdgeLogicalinterface';
 		}
 		// verify the required parameter 'interfaceId' is set
-		if (interfaceId === undefined || interfaceId === null) {
+		if (interfaceId === undefined || interfaceId === null || interfaceId === '') {
 			throw 'Missing the required parameter "interfaceId" when calling putTelephonyProvidersEdgeLogicalinterface';
 		}
 		// verify the required parameter 'body' is set
@@ -3130,7 +3130,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesCertificateauthority(certificateId, body) { 
 		// verify the required parameter 'certificateId' is set
-		if (certificateId === undefined || certificateId === null) {
+		if (certificateId === undefined || certificateId === null || certificateId === '') {
 			throw 'Missing the required parameter "certificateId" when calling putTelephonyProvidersEdgesCertificateauthority';
 		}
 		// verify the required parameter 'body' is set
@@ -3160,7 +3160,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesDidpool(didPoolId, body) { 
 		// verify the required parameter 'didPoolId' is set
-		if (didPoolId === undefined || didPoolId === null) {
+		if (didPoolId === undefined || didPoolId === null || didPoolId === '') {
 			throw 'Missing the required parameter "didPoolId" when calling putTelephonyProvidersEdgesDidpool';
 		}
 		// verify the required parameter 'body' is set
@@ -3190,7 +3190,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body) { 
 		// verify the required parameter 'edgeGroupId' is set
-		if (edgeGroupId === undefined || edgeGroupId === null) {
+		if (edgeGroupId === undefined || edgeGroupId === null || edgeGroupId === '') {
 			throw 'Missing the required parameter "edgeGroupId" when calling putTelephonyProvidersEdgesEdgegroup';
 		}
 		// verify the required parameter 'body' is set
@@ -3221,11 +3221,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body) { 
 		// verify the required parameter 'edgegroupId' is set
-		if (edgegroupId === undefined || edgegroupId === null) {
+		if (edgegroupId === undefined || edgegroupId === null || edgegroupId === '') {
 			throw 'Missing the required parameter "edgegroupId" when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase';
 		}
 		// verify the required parameter 'edgetrunkbaseId' is set
-		if (edgetrunkbaseId === undefined || edgetrunkbaseId === null) {
+		if (edgetrunkbaseId === undefined || edgetrunkbaseId === null || edgetrunkbaseId === '') {
 			throw 'Missing the required parameter "edgetrunkbaseId" when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase';
 		}
 		// verify the required parameter 'body' is set
@@ -3255,7 +3255,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body) { 
 		// verify the required parameter 'extensionPoolId' is set
-		if (extensionPoolId === undefined || extensionPoolId === null) {
+		if (extensionPoolId === undefined || extensionPoolId === null || extensionPoolId === '') {
 			throw 'Missing the required parameter "extensionPoolId" when calling putTelephonyProvidersEdgesExtensionpool';
 		}
 		// verify the required parameter 'body' is set
@@ -3285,7 +3285,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesPhone(phoneId, body) { 
 		// verify the required parameter 'phoneId' is set
-		if (phoneId === undefined || phoneId === null) {
+		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling putTelephonyProvidersEdgesPhone';
 		}
 		// verify the required parameter 'body' is set
@@ -3315,7 +3315,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body) { 
 		// verify the required parameter 'phoneBaseId' is set
-		if (phoneBaseId === undefined || phoneBaseId === null) {
+		if (phoneBaseId === undefined || phoneBaseId === null || phoneBaseId === '') {
 			throw 'Missing the required parameter "phoneBaseId" when calling putTelephonyProvidersEdgesPhonebasesetting';
 		}
 		// verify the required parameter 'body' is set
@@ -3345,7 +3345,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesSite(siteId, body) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSite';
 		}
 		// verify the required parameter 'body' is set
@@ -3375,7 +3375,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesSiteNumberplans(siteId, body) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteNumberplans';
 		}
 		// verify the required parameter 'body' is set
@@ -3406,11 +3406,11 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteOutboundroute';
 		}
 		// verify the required parameter 'outboundRouteId' is set
-		if (outboundRouteId === undefined || outboundRouteId === null) {
+		if (outboundRouteId === undefined || outboundRouteId === null || outboundRouteId === '') {
 			throw 'Missing the required parameter "outboundRouteId" when calling putTelephonyProvidersEdgesSiteOutboundroute';
 		}
 		// verify the required parameter 'body' is set
@@ -3440,7 +3440,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
 		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
+		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteSiteconnections';
 		}
 		// verify the required parameter 'body' is set
@@ -3470,7 +3470,7 @@ class TelephonyProvidersEdgeApi {
 	 */
 	putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body) { 
 		// verify the required parameter 'trunkBaseSettingsId' is set
-		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null) {
+		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null || trunkBaseSettingsId === '') {
 			throw 'Missing the required parameter "trunkBaseSettingsId" when calling putTelephonyProvidersEdgesTrunkbasesetting';
 		}
 		// verify the required parameter 'body' is set

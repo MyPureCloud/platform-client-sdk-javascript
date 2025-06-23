@@ -27,9 +27,10 @@ class Configuration {
 			const path = require('path');
 			this.configPath = path.join(os.homedir(), '.genesyscloudjavascript', 'config');
 		}
+		this.watchedConfigPath;
 		this.refresh_access_token = true;
 		this.refresh_token_wait_max = 10;
-		this.live_reload_config = true;
+		this._live_reload_config = true;
 		this.host;
 		this.environment;
 		this.basePath;
@@ -41,6 +42,39 @@ class Configuration {
 		this.liveLoadConfig();
 	}
 
+	/**
+	 * live_reload_config getter
+	 */
+	get live_reload_config() {
+		return this._live_reload_config;
+	}
+
+	/**
+	 * live_reload_config setter
+	 */
+	set live_reload_config(value) {
+		if (typeof window === 'undefined') {
+			const fs = require('fs');
+			if (value !== null && value !== undefined) {
+				if (this.live_reload_config !== value) {
+					this._live_reload_config = value;
+					// Stop existing listener (if already started)
+					if (this.watchedConfigPath) {
+						fs.unwatchFile(this.watchedConfigPath);
+						this.watchedConfigPath = null;
+					}
+					// Start listener if requested
+					if (value === true) {
+						this.liveLoadConfig();
+					}
+				}
+			}
+			return;
+		}
+		// If in browser, don't read config file, use default values
+		this._live_reload_config = false;
+	}
+
 	liveLoadConfig() {
 		if (typeof window === 'undefined') {
 			// Please don't remove the typeof window === 'undefined' check here!
@@ -48,17 +82,22 @@ class Configuration {
 			// available in node environment.
 			this.updateConfigFromFile();
 
-			if (this.live_reload_config && this.live_reload_config === true) {
+			if (this.live_reload_config && this.live_reload_config === true && this.configPath) {
 				try {
 					const fs = require('fs');
-					fs.watchFile(this.configPath, { persistent: false }, (eventType, filename) => {
+					this.watchedConfigPath = this.configPath;
+					fs.watchFile(this.watchedConfigPath, { persistent: false }, (eventType, filename) => {
 						this.updateConfigFromFile();
 						if (!this.live_reload_config) {
-							fs.unwatchFile(this.configPath);
+							if (this.watchedConfigPath) {
+								fs.unwatchFile(this.watchedConfigPath);
+								this.watchedConfigPath = null;
+							}
 						}
 					});
 				} catch (err) {
 					// do nothing
+					this.watchedConfigPath = null;
 				}
 			}
 			return;
@@ -68,10 +107,26 @@ class Configuration {
 	}
 
 	setConfigPath(path) {
-		if (path && path !== this.configPath) {
-			this.configPath = path;
-			this.liveLoadConfig();
+		if (typeof window === 'undefined') {
+			const fs = require('fs');
+			if (path && path !== this.configPath) {
+				this.configPath = path;
+				if (this.watchedConfigPath) {
+					fs.unwatchFile(this.watchedConfigPath);
+					this.watchedConfigPath = null;
+				}
+				this.liveLoadConfig();
+			} else if (!path && this.configPath) {
+				this.configPath = '';
+				if (this.watchedConfigPath) {
+					fs.unwatchFile(this.watchedConfigPath);
+					this.watchedConfigPath = null;
+				};
+			}
+			return;
 		}
+		// If in browser, don't read config file, use default values
+		this.configPath = '';
 	}
 
 	updateConfigFromFile() {
@@ -79,24 +134,26 @@ class Configuration {
 			// Please don't remove the typeof window === 'undefined' check here!
 			// This safeguards the browser environment from using `fs`, which is only
 			// available in node environment.
-			const ConfigParser = require('configparser');
+			if (this.configPath) {
+				const ConfigParser = require('configparser');
 
-			try {
-				var configparser = new ConfigParser();
-				configparser.read(this.configPath); // If no error catched, indicates it's INI format
-				this.config = configparser;
-			} catch (error) {
-				if (error.name && error.name === 'MissingSectionHeaderError') {
-					// Not INI format, see if it's JSON format
-					const fs = require('fs');
-					var configData = fs.readFileSync(this.configPath, 'utf8');
-					this.config = {
-						_sections: JSON.parse(configData), // To match INI data format
-					};
+				try {
+					var configparser = new ConfigParser();
+					configparser.read(this.configPath); // If no error catched, indicates it's INI format
+					this.config = configparser;
+				} catch (error) {
+					if (error.name && error.name === 'MissingSectionHeaderError') {
+						// Not INI format, see if it's JSON format
+						const fs = require('fs');
+						var configData = fs.readFileSync(this.configPath, 'utf8');
+						this.config = {
+							_sections: JSON.parse(configData), // To match INI data format
+						};
+					}
 				}
-			}
 
-			if (this.config) this.updateConfigValues();
+				if (this.config) this.updateConfigValues();
+			}
 		}
 	}
 

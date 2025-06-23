@@ -5,7 +5,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class ProcessAutomationApi {
 	 */
 	deleteProcessautomationTrigger(triggerId) { 
 		// verify the required parameter 'triggerId' is set
-		if (triggerId === undefined || triggerId === null) {
+		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling deleteProcessautomationTrigger';
 		}
 
@@ -52,7 +52,7 @@ class ProcessAutomationApi {
 	 */
 	getProcessautomationTrigger(triggerId) { 
 		// verify the required parameter 'triggerId' is set
-		if (triggerId === undefined || triggerId === null) {
+		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling getProcessautomationTrigger';
 		}
 
@@ -136,7 +136,7 @@ class ProcessAutomationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'triggerId' is set
-		if (triggerId === undefined || triggerId === null) {
+		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling postProcessautomationTriggerTest';
 		}
 
@@ -190,7 +190,7 @@ class ProcessAutomationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'topicName' is set
-		if (topicName === undefined || topicName === null) {
+		if (topicName === undefined || topicName === null || topicName === '') {
 			throw 'Missing the required parameter "topicName" when calling postProcessautomationTriggersTopicTest';
 		}
 
@@ -216,7 +216,7 @@ class ProcessAutomationApi {
 	 */
 	putProcessautomationTrigger(triggerId, body) { 
 		// verify the required parameter 'triggerId' is set
-		if (triggerId === undefined || triggerId === null) {
+		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling putProcessautomationTrigger';
 		}
 		// verify the required parameter 'body' is set

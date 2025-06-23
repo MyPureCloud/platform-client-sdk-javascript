@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class UsersApi {
 	 */
 	deleteAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
 		}
 
@@ -54,15 +54,15 @@ class UsersApi {
 	 */
 	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 
@@ -107,7 +107,7 @@ class UsersApi {
 	 */
 	deleteRoutingUserDirectroutingbackupSettings(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
 		}
 
@@ -132,7 +132,7 @@ class UsersApi {
 	 */
 	deleteRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
 		}
 
@@ -157,7 +157,7 @@ class UsersApi {
 	 */
 	deleteUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUser';
 		}
 
@@ -184,15 +184,15 @@ class UsersApi {
 	 */
 	deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserExternalidAuthorityNameExternalKey';
 		}
 		// verify the required parameter 'authorityName' is set
-		if (authorityName === undefined || authorityName === null) {
+		if (authorityName === undefined || authorityName === null || authorityName === '') {
 			throw 'Missing the required parameter "authorityName" when calling deleteUserExternalidAuthorityNameExternalKey';
 		}
 		// verify the required parameter 'externalKey' is set
-		if (externalKey === undefined || externalKey === null) {
+		if (externalKey === undefined || externalKey === null || externalKey === '') {
 			throw 'Missing the required parameter "externalKey" when calling deleteUserExternalidAuthorityNameExternalKey';
 		}
 
@@ -218,11 +218,11 @@ class UsersApi {
 	 */
 	deleteUserRoutinglanguage(userId, languageId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling deleteUserRoutinglanguage';
 		}
 
@@ -248,11 +248,11 @@ class UsersApi {
 	 */
 	deleteUserRoutingskill(userId, skillId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling deleteUserRoutingskill';
 		}
 
@@ -277,7 +277,7 @@ class UsersApi {
 	 */
 	deleteUserStationAssociatedstation(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserStationAssociatedstation';
 		}
 
@@ -302,7 +302,7 @@ class UsersApi {
 	 */
 	deleteUserStationDefaultstation(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserStationDefaultstation';
 		}
 
@@ -328,11 +328,11 @@ class UsersApi {
 	 */
 	deleteUserVerifier(userId, verifierId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserVerifier';
 		}
 		// verify the required parameter 'verifierId' is set
-		if (verifierId === undefined || verifierId === null) {
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
 			throw 'Missing the required parameter "verifierId" when calling deleteUserVerifier';
 		}
 
@@ -358,7 +358,7 @@ class UsersApi {
 	 */
 	getAnalyticsUsersAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
 		}
 
@@ -388,7 +388,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJobResults';
 		}
 
@@ -413,7 +413,7 @@ class UsersApi {
 	 */
 	getAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
 		}
 
@@ -443,7 +443,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
 		}
 
@@ -555,7 +555,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
 		}
 		// verify the required parameter 'permission' is set
@@ -588,7 +588,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
 		}
 
@@ -714,7 +714,7 @@ class UsersApi {
 	 */
 	getRoutingUserDirectroutingbackupSettings(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
 		}
 
@@ -739,7 +739,7 @@ class UsersApi {
 	 */
 	getRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
 		}
 
@@ -770,7 +770,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUser';
 		}
 
@@ -799,7 +799,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserAdjacents';
 		}
 
@@ -824,7 +824,7 @@ class UsersApi {
 	 */
 	getUserCallforwarding(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserCallforwarding';
 		}
 
@@ -853,7 +853,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserDirectreports';
 		}
 
@@ -878,7 +878,7 @@ class UsersApi {
 	 */
 	getUserExternalid(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserExternalid';
 		}
 
@@ -904,11 +904,11 @@ class UsersApi {
 	 */
 	getUserExternalidAuthorityName(userId, authorityName) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserExternalidAuthorityName';
 		}
 		// verify the required parameter 'authorityName' is set
-		if (authorityName === undefined || authorityName === null) {
+		if (authorityName === undefined || authorityName === null || authorityName === '') {
 			throw 'Missing the required parameter "authorityName" when calling getUserExternalidAuthorityName';
 		}
 
@@ -941,7 +941,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserFavorites';
 		}
 
@@ -967,11 +967,11 @@ class UsersApi {
 	 */
 	getUserGeolocation(userId, clientId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getUserGeolocation';
 		}
 
@@ -996,7 +996,7 @@ class UsersApi {
 	 */
 	getUserOutofoffice(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserOutofoffice';
 		}
 
@@ -1027,7 +1027,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserProfile';
 		}
 
@@ -1052,7 +1052,7 @@ class UsersApi {
 	 */
 	getUserProfileskills(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserProfileskills';
 		}
 
@@ -1084,7 +1084,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserQueues';
 		}
 
@@ -1109,7 +1109,7 @@ class UsersApi {
 	 */
 	getUserRoles(subjectId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
@@ -1140,7 +1140,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutinglanguages';
 		}
 
@@ -1171,7 +1171,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutingskills';
 		}
 
@@ -1196,7 +1196,7 @@ class UsersApi {
 	 */
 	getUserRoutingstatus(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutingstatus';
 		}
 
@@ -1227,7 +1227,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserSkillgroups';
 		}
 
@@ -1252,7 +1252,7 @@ class UsersApi {
 	 */
 	getUserState(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserState';
 		}
 
@@ -1277,7 +1277,7 @@ class UsersApi {
 	 */
 	getUserStation(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserStation';
 		}
 
@@ -1306,7 +1306,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserSuperiors';
 		}
 
@@ -1336,7 +1336,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserTrustors';
 		}
 
@@ -1361,7 +1361,7 @@ class UsersApi {
 	 */
 	getUserVerifiers(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserVerifiers';
 		}
 
@@ -1513,7 +1513,7 @@ class UsersApi {
 	 */
 	getUsersDevelopmentActivity(activityId, type) { 
 		// verify the required parameter 'activityId' is set
-		if (activityId === undefined || activityId === null) {
+		if (activityId === undefined || activityId === null || activityId === '') {
 			throw 'Missing the required parameter "activityId" when calling getUsersDevelopmentActivity';
 		}
 		// verify the required parameter 'type' is set
@@ -1547,11 +1547,11 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'authorityName' is set
-		if (authorityName === undefined || authorityName === null) {
+		if (authorityName === undefined || authorityName === null || authorityName === '') {
 			throw 'Missing the required parameter "authorityName" when calling getUsersExternalidAuthorityNameExternalKey';
 		}
 		// verify the required parameter 'externalKey' is set
-		if (externalKey === undefined || externalKey === null) {
+		if (externalKey === undefined || externalKey === null || externalKey === '') {
 			throw 'Missing the required parameter "externalKey" when calling getUsersExternalidAuthorityNameExternalKey';
 		}
 
@@ -1662,7 +1662,7 @@ class UsersApi {
 	 */
 	patchUser(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUser';
 		}
 		// verify the required parameter 'body' is set
@@ -1692,7 +1692,7 @@ class UsersApi {
 	 */
 	patchUserCallforwarding(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserCallforwarding';
 		}
 		// verify the required parameter 'body' is set
@@ -1723,11 +1723,11 @@ class UsersApi {
 	 */
 	patchUserGeolocation(userId, clientId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'body' is set
@@ -1758,11 +1758,11 @@ class UsersApi {
 	 */
 	patchUserQueue(queueId, userId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'body' is set
@@ -1796,7 +1796,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserQueues';
 		}
 		// verify the required parameter 'body' is set
@@ -1827,11 +1827,11 @@ class UsersApi {
 	 */
 	patchUserRoutinglanguage(userId, languageId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'body' is set
@@ -1861,7 +1861,7 @@ class UsersApi {
 	 */
 	patchUserRoutinglanguagesBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -1891,7 +1891,7 @@ class UsersApi {
 	 */
 	patchUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -2106,7 +2106,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
 		}
 		// verify the required parameter 'body' is set
@@ -2136,7 +2136,7 @@ class UsersApi {
 	 */
 	postAuthorizationSubjectBulkremove(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
 		}
 		// verify the required parameter 'body' is set
@@ -2170,7 +2170,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
 		}
 		// verify the required parameter 'body' is set
@@ -2205,15 +2205,15 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
 		}
 
@@ -2239,7 +2239,7 @@ class UsersApi {
 	 */
 	postUserExternalid(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserExternalid';
 		}
 		// verify the required parameter 'body' is set
@@ -2272,7 +2272,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserInvite';
 		}
 
@@ -2298,7 +2298,7 @@ class UsersApi {
 	 */
 	postUserPassword(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserPassword';
 		}
 		// verify the required parameter 'body' is set
@@ -2328,7 +2328,7 @@ class UsersApi {
 	 */
 	postUserRoutinglanguages(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutinglanguages';
 		}
 		// verify the required parameter 'body' is set
@@ -2358,7 +2358,7 @@ class UsersApi {
 	 */
 	postUserRoutingskills(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutingskills';
 		}
 		// verify the required parameter 'body' is set
@@ -2590,7 +2590,7 @@ class UsersApi {
 	 */
 	putRoutingUserDirectroutingbackupSettings(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
 		}
 		// verify the required parameter 'body' is set
@@ -2620,7 +2620,7 @@ class UsersApi {
 	 */
 	putRoutingUserUtilization(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
 		}
 		// verify the required parameter 'body' is set
@@ -2650,7 +2650,7 @@ class UsersApi {
 	 */
 	putUserCallforwarding(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserCallforwarding';
 		}
 		// verify the required parameter 'body' is set
@@ -2680,7 +2680,7 @@ class UsersApi {
 	 */
 	putUserOutofoffice(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserOutofoffice';
 		}
 		// verify the required parameter 'body' is set
@@ -2710,7 +2710,7 @@ class UsersApi {
 	 */
 	putUserProfileskills(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserProfileskills';
 		}
 		// verify the required parameter 'body' is set
@@ -2740,7 +2740,7 @@ class UsersApi {
 	 */
 	putUserRoles(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set
@@ -2771,11 +2771,11 @@ class UsersApi {
 	 */
 	putUserRoutingskill(userId, skillId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'body' is set
@@ -2805,7 +2805,7 @@ class UsersApi {
 	 */
 	putUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -2835,7 +2835,7 @@ class UsersApi {
 	 */
 	putUserRoutingstatus(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingstatus';
 		}
 		// verify the required parameter 'body' is set
@@ -2865,7 +2865,7 @@ class UsersApi {
 	 */
 	putUserState(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserState';
 		}
 		// verify the required parameter 'body' is set
@@ -2895,11 +2895,11 @@ class UsersApi {
 	 */
 	putUserStationAssociatedstationStationId(userId, stationId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserStationAssociatedstationStationId';
 		}
 		// verify the required parameter 'stationId' is set
-		if (stationId === undefined || stationId === null) {
+		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling putUserStationAssociatedstationStationId';
 		}
 
@@ -2925,11 +2925,11 @@ class UsersApi {
 	 */
 	putUserStationDefaultstationStationId(userId, stationId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserStationDefaultstationStationId';
 		}
 		// verify the required parameter 'stationId' is set
-		if (stationId === undefined || stationId === null) {
+		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling putUserStationDefaultstationStationId';
 		}
 
@@ -2956,11 +2956,11 @@ class UsersApi {
 	 */
 	putUserVerifier(userId, verifierId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserVerifier';
 		}
 		// verify the required parameter 'verifierId' is set
-		if (verifierId === undefined || verifierId === null) {
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
 			throw 'Missing the required parameter "verifierId" when calling putUserVerifier';
 		}
 		// verify the required parameter 'body' is set

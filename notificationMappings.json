@@ -21,6 +21,10 @@
       "class": "StatEventFlowOutcomeTopicStatsNotification"
     },
     {
+      "topic": "v2.analytics.queues.{id}.activity",
+      "class": "V2QueueObservationObservationNotification"
+    },
+    {
       "topic": "v2.analytics.queues.{id}.observations",
       "class": "StatEventQueueTopicStatsNotification"
     },
@@ -391,6 +395,10 @@
     {
       "topic": "v2.routing.queues.{id}.users",
       "class": "QueueUserEventTopicQueueMember"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.conversation.{id}.topics",
+      "class": "V2StaTopicsDetectedTopicTopicsDetectedMessage"
     },
     {
       "topic": "v2.speechandtextanalytics.programs.general.jobs.{id}",

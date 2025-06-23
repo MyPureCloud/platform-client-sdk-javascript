@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class ResponseManagementApi {
 	 */
 	deleteResponsemanagementLibrary(libraryId) { 
 		// verify the required parameter 'libraryId' is set
-		if (libraryId === undefined || libraryId === null) {
+		if (libraryId === undefined || libraryId === null || libraryId === '') {
 			throw 'Missing the required parameter "libraryId" when calling deleteResponsemanagementLibrary';
 		}
 
@@ -52,7 +52,7 @@ class ResponseManagementApi {
 	 */
 	deleteResponsemanagementResponse(responseId) { 
 		// verify the required parameter 'responseId' is set
-		if (responseId === undefined || responseId === null) {
+		if (responseId === undefined || responseId === null || responseId === '') {
 			throw 'Missing the required parameter "responseId" when calling deleteResponsemanagementResponse';
 		}
 
@@ -77,7 +77,7 @@ class ResponseManagementApi {
 	 */
 	deleteResponsemanagementResponseasset(responseAssetId) { 
 		// verify the required parameter 'responseAssetId' is set
-		if (responseAssetId === undefined || responseAssetId === null) {
+		if (responseAssetId === undefined || responseAssetId === null || responseAssetId === '') {
 			throw 'Missing the required parameter "responseAssetId" when calling deleteResponsemanagementResponseasset';
 		}
 
@@ -129,7 +129,7 @@ class ResponseManagementApi {
 	 */
 	getResponsemanagementLibrary(libraryId) { 
 		// verify the required parameter 'libraryId' is set
-		if (libraryId === undefined || libraryId === null) {
+		if (libraryId === undefined || libraryId === null || libraryId === '') {
 			throw 'Missing the required parameter "libraryId" when calling getResponsemanagementLibrary';
 		}
 
@@ -158,7 +158,7 @@ class ResponseManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'responseId' is set
-		if (responseId === undefined || responseId === null) {
+		if (responseId === undefined || responseId === null || responseId === '') {
 			throw 'Missing the required parameter "responseId" when calling getResponsemanagementResponse';
 		}
 
@@ -183,7 +183,7 @@ class ResponseManagementApi {
 	 */
 	getResponsemanagementResponseasset(responseAssetId) { 
 		// verify the required parameter 'responseAssetId' is set
-		if (responseAssetId === undefined || responseAssetId === null) {
+		if (responseAssetId === undefined || responseAssetId === null || responseAssetId === '') {
 			throw 'Missing the required parameter "responseAssetId" when calling getResponsemanagementResponseasset';
 		}
 
@@ -208,7 +208,7 @@ class ResponseManagementApi {
 	 */
 	getResponsemanagementResponseassetsStatusStatusId(statusId) { 
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling getResponsemanagementResponseassetsStatusStatusId';
 		}
 
@@ -423,7 +423,7 @@ class ResponseManagementApi {
 	 */
 	putResponsemanagementLibrary(libraryId, body) { 
 		// verify the required parameter 'libraryId' is set
-		if (libraryId === undefined || libraryId === null) {
+		if (libraryId === undefined || libraryId === null || libraryId === '') {
 			throw 'Missing the required parameter "libraryId" when calling putResponsemanagementLibrary';
 		}
 		// verify the required parameter 'body' is set
@@ -457,7 +457,7 @@ class ResponseManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'responseId' is set
-		if (responseId === undefined || responseId === null) {
+		if (responseId === undefined || responseId === null || responseId === '') {
 			throw 'Missing the required parameter "responseId" when calling putResponsemanagementResponse';
 		}
 		// verify the required parameter 'body' is set
@@ -487,7 +487,7 @@ class ResponseManagementApi {
 	 */
 	putResponsemanagementResponseasset(responseAssetId, body) { 
 		// verify the required parameter 'responseAssetId' is set
-		if (responseAssetId === undefined || responseAssetId === null) {
+		if (responseAssetId === undefined || responseAssetId === null || responseAssetId === '') {
 			throw 'Missing the required parameter "responseAssetId" when calling putResponsemanagementResponseasset';
 		}
 		// verify the required parameter 'body' is set

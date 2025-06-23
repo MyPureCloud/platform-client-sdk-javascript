@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class GroupsApi {
 	 */
 	deleteGroup(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling deleteGroup';
 		}
 
@@ -53,7 +53,7 @@ class GroupsApi {
 	 */
 	deleteGroupDynamicsettings(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling deleteGroupDynamicsettings';
 		}
 
@@ -79,7 +79,7 @@ class GroupsApi {
 	 */
 	deleteGroupMembers(groupId, ids) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling deleteGroupMembers';
 		}
 		// verify the required parameter 'ids' is set
@@ -134,7 +134,7 @@ class GroupsApi {
 	 */
 	getGroup(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroup';
 		}
 
@@ -160,7 +160,7 @@ class GroupsApi {
 	 */
 	getGroupDynamicsettings(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupDynamicsettings';
 		}
 
@@ -185,7 +185,7 @@ class GroupsApi {
 	 */
 	getGroupIndividuals(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupIndividuals';
 		}
 
@@ -217,7 +217,7 @@ class GroupsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupMembers';
 		}
 
@@ -247,7 +247,7 @@ class GroupsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupProfile';
 		}
 
@@ -359,7 +359,7 @@ class GroupsApi {
 	 */
 	postGroupMembers(groupId, body) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling postGroupMembers';
 		}
 		// verify the required parameter 'body' is set
@@ -469,7 +469,7 @@ class GroupsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putGroup';
 		}
 
@@ -496,7 +496,7 @@ class GroupsApi {
 	 */
 	putGroupDynamicsettings(groupId, body) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putGroupDynamicsettings';
 		}
 		// verify the required parameter 'body' is set

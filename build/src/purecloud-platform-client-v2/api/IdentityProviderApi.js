@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class IdentityProviderApi {
 	 */
 	deleteIdentityprovider(providerId) { 
 		// verify the required parameter 'providerId' is set
-		if (providerId === undefined || providerId === null) {
+		if (providerId === undefined || providerId === null || providerId === '') {
 			throw 'Missing the required parameter "providerId" when calling deleteIdentityprovider';
 		}
 
@@ -272,7 +272,7 @@ class IdentityProviderApi {
 	 */
 	getIdentityprovider(providerId) { 
 		// verify the required parameter 'providerId' is set
-		if (providerId === undefined || providerId === null) {
+		if (providerId === undefined || providerId === null || providerId === '') {
 			throw 'Missing the required parameter "providerId" when calling getIdentityprovider';
 		}
 
@@ -563,7 +563,7 @@ class IdentityProviderApi {
 	 */
 	putIdentityprovider(providerId, body) { 
 		// verify the required parameter 'providerId' is set
-		if (providerId === undefined || providerId === null) {
+		if (providerId === undefined || providerId === null || providerId === '') {
 			throw 'Missing the required parameter "providerId" when calling putIdentityprovider';
 		}
 		// verify the required parameter 'body' is set

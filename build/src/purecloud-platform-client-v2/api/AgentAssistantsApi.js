@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class AgentAssistantsApi {
 	 */
 	deleteAssistant(assistantId) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling deleteAssistant';
 		}
 
@@ -53,11 +53,11 @@ class AgentAssistantsApi {
 	 */
 	deleteAssistantQueue(assistantId, queueId) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling deleteAssistantQueue';
 		}
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteAssistantQueue';
 		}
 
@@ -86,7 +86,7 @@ class AgentAssistantsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling deleteAssistantQueues';
 		}
 
@@ -115,7 +115,7 @@ class AgentAssistantsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistant';
 		}
 
@@ -145,11 +145,11 @@ class AgentAssistantsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantQueue';
 		}
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getAssistantQueue';
 		}
 
@@ -181,7 +181,7 @@ class AgentAssistantsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantQueues';
 		}
 
@@ -264,7 +264,7 @@ class AgentAssistantsApi {
 	 */
 	patchAssistant(assistantId, body) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling patchAssistant';
 		}
 		// verify the required parameter 'body' is set
@@ -294,7 +294,7 @@ class AgentAssistantsApi {
 	 */
 	patchAssistantQueues(assistantId, body) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling patchAssistantQueues';
 		}
 		// verify the required parameter 'body' is set
@@ -350,11 +350,11 @@ class AgentAssistantsApi {
 	 */
 	putAssistantQueue(assistantId, queueId, body) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling putAssistantQueue';
 		}
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling putAssistantQueue';
 		}
 		// verify the required parameter 'body' is set

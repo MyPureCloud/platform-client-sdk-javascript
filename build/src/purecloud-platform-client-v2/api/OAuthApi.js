@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class OAuthApi {
 	 */
 	deleteOauthClient(clientId) { 
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling deleteOauthClient';
 		}
 
@@ -56,7 +56,7 @@ class OAuthApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthAuthorization';
 		}
 
@@ -105,7 +105,7 @@ class OAuthApi {
 	 */
 	getOauthClient(clientId) { 
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthClient';
 		}
 
@@ -131,11 +131,11 @@ class OAuthApi {
 	 */
 	getOauthClientUsageQueryResult(executionId, clientId) { 
 		// verify the required parameter 'executionId' is set
-		if (executionId === undefined || executionId === null) {
+		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageQueryResult';
 		}
 
@@ -164,7 +164,7 @@ class OAuthApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageSummary';
 		}
 
@@ -213,7 +213,7 @@ class OAuthApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scopeId' is set
-		if (scopeId === undefined || scopeId === null) {
+		if (scopeId === undefined || scopeId === null || scopeId === '') {
 			throw 'Missing the required parameter "scopeId" when calling getOauthScope';
 		}
 
@@ -262,7 +262,7 @@ class OAuthApi {
 	 */
 	postOauthClientSecret(clientId) { 
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postOauthClientSecret';
 		}
 
@@ -288,7 +288,7 @@ class OAuthApi {
 	 */
 	postOauthClientUsageQuery(clientId, body) { 
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -343,7 +343,7 @@ class OAuthApi {
 	 */
 	putOauthClient(clientId, body) { 
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling putOauthClient';
 		}
 		// verify the required parameter 'body' is set

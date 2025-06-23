@@ -5,7 +5,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class AgentCopilotApi {
 	 */
 	getAssistantCopilot(assistantId) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantCopilot';
 		}
 
@@ -53,7 +53,7 @@ class AgentCopilotApi {
 	 */
 	putAssistantCopilot(assistantId, body) { 
 		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling putAssistantCopilot';
 		}
 		// verify the required parameter 'body' is set

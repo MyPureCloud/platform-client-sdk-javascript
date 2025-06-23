@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -31,7 +31,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteScimUser';
 		}
 
@@ -60,7 +60,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteScimV2User';
 		}
 
@@ -91,7 +91,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getScimGroup';
 		}
 
@@ -144,7 +144,7 @@ class SCIMApi {
 	 */
 	getScimResourcetype(resourceType) { 
 		// verify the required parameter 'resourceType' is set
-		if (resourceType === undefined || resourceType === null) {
+		if (resourceType === undefined || resourceType === null || resourceType === '') {
 			throw 'Missing the required parameter "resourceType" when calling getScimResourcetype';
 		}
 
@@ -189,7 +189,7 @@ class SCIMApi {
 	 */
 	getScimSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getScimSchema';
 		}
 
@@ -268,7 +268,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getScimUser';
 		}
 
@@ -327,7 +327,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getScimV2Group';
 		}
 
@@ -384,7 +384,7 @@ class SCIMApi {
 	 */
 	getScimV2Resourcetype(resourceType) { 
 		// verify the required parameter 'resourceType' is set
-		if (resourceType === undefined || resourceType === null) {
+		if (resourceType === undefined || resourceType === null || resourceType === '') {
 			throw 'Missing the required parameter "resourceType" when calling getScimV2Resourcetype';
 		}
 
@@ -429,7 +429,7 @@ class SCIMApi {
 	 */
 	getScimV2Schema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getScimV2Schema';
 		}
 
@@ -508,7 +508,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getScimV2User';
 		}
 
@@ -566,7 +566,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling patchScimGroup';
 		}
 		// verify the required parameter 'body' is set
@@ -600,7 +600,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchScimUser';
 		}
 		// verify the required parameter 'body' is set
@@ -634,7 +634,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling patchScimV2Group';
 		}
 		// verify the required parameter 'body' is set
@@ -668,7 +668,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchScimV2User';
 		}
 		// verify the required parameter 'body' is set
@@ -752,7 +752,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putScimGroup';
 		}
 		// verify the required parameter 'body' is set
@@ -786,7 +786,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putScimUser';
 		}
 		// verify the required parameter 'body' is set
@@ -820,7 +820,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putScimV2Group';
 		}
 		// verify the required parameter 'body' is set
@@ -854,7 +854,7 @@ class SCIMApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putScimV2User';
 		}
 		// verify the required parameter 'body' is set

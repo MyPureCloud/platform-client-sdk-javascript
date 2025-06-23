@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class ConversationsApi {
 	 */
 	deleteAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
 		}
 
@@ -54,15 +54,15 @@ class ConversationsApi {
 	 */
 	deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantCode';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling deleteConversationParticipantCode';
 		}
 		// verify the required parameter 'addCommunicationCode' is set
-		if (addCommunicationCode === undefined || addCommunicationCode === null) {
+		if (addCommunicationCode === undefined || addCommunicationCode === null || addCommunicationCode === '') {
 			throw 'Missing the required parameter "addCommunicationCode" when calling deleteConversationParticipantCode';
 		}
 
@@ -88,11 +88,11 @@ class ConversationsApi {
 	 */
 	deleteConversationParticipantFlaggedreason(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantFlaggedreason';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling deleteConversationParticipantFlaggedreason';
 		}
 
@@ -118,11 +118,11 @@ class ConversationsApi {
 	 */
 	deleteConversationsCallParticipantConsult(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling deleteConversationsCallParticipantConsult';
 		}
 
@@ -148,11 +148,11 @@ class ConversationsApi {
 	 */
 	deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationsEmailMessagesDraftAttachment';
 		}
 		// verify the required parameter 'attachmentId' is set
-		if (attachmentId === undefined || attachmentId === null) {
+		if (attachmentId === undefined || attachmentId === null || attachmentId === '') {
 			throw 'Missing the required parameter "attachmentId" when calling deleteConversationsEmailMessagesDraftAttachment';
 		}
 
@@ -177,7 +177,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
 		// verify the required parameter 'cachedMediaItemId' is set
-		if (cachedMediaItemId === undefined || cachedMediaItemId === null) {
+		if (cachedMediaItemId === undefined || cachedMediaItemId === null || cachedMediaItemId === '') {
 			throw 'Missing the required parameter "cachedMediaItemId" when calling deleteConversationsMessagesCachedmediaCachedMediaItemId';
 		}
 
@@ -202,7 +202,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 
@@ -227,7 +227,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsInstagramIntegrationId';
 		}
 
@@ -252,7 +252,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 
@@ -277,7 +277,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 
@@ -302,7 +302,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 
@@ -327,7 +327,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingSetting(messageSettingId) { 
 		// verify the required parameter 'messageSettingId' is set
-		if (messageSettingId === undefined || messageSettingId === null) {
+		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling deleteConversationsMessagingSetting';
 		}
 
@@ -372,7 +372,7 @@ class ConversationsApi {
 	 */
 	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
-		if (supportedContentId === undefined || supportedContentId === null) {
+		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling deleteConversationsMessagingSupportedcontentSupportedContentId';
 		}
 
@@ -397,7 +397,7 @@ class ConversationsApi {
 	 */
 	getAnalyticsConversationDetails(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails';
 		}
 
@@ -423,7 +423,7 @@ class ConversationsApi {
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
 		}
 
@@ -453,7 +453,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJobResults';
 		}
 
@@ -502,7 +502,7 @@ class ConversationsApi {
 	 */
 	getAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
 		}
 
@@ -532,7 +532,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults';
 		}
 
@@ -577,7 +577,7 @@ class ConversationsApi {
 	 */
 	getConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversation';
 		}
 
@@ -605,15 +605,15 @@ class ConversationsApi {
 	 */
 	getConversationCommunicationInternalmessage(conversationId, communicationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationInternalmessage';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationCommunicationInternalmessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getConversationCommunicationInternalmessage';
 		}
 
@@ -645,11 +645,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationInternalmessages';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationCommunicationInternalmessages';
 		}
 
@@ -676,15 +676,15 @@ class ConversationsApi {
 	 */
 	getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsession';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationParticipantSecureivrsession';
 		}
 		// verify the required parameter 'secureSessionId' is set
-		if (secureSessionId === undefined || secureSessionId === null) {
+		if (secureSessionId === undefined || secureSessionId === null || secureSessionId === '') {
 			throw 'Missing the required parameter "secureSessionId" when calling getConversationParticipantSecureivrsession';
 		}
 
@@ -710,11 +710,11 @@ class ConversationsApi {
 	 */
 	getConversationParticipantSecureivrsessions(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsessions';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationParticipantSecureivrsessions';
 		}
 
@@ -744,11 +744,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationParticipantWrapup';
 		}
 
@@ -774,11 +774,11 @@ class ConversationsApi {
 	 */
 	getConversationParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationParticipantWrapupcodes';
 		}
 
@@ -803,7 +803,7 @@ class ConversationsApi {
 	 */
 	getConversationSecureattributes(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSecureattributes';
 		}
 
@@ -829,11 +829,11 @@ class ConversationsApi {
 	 */
 	getConversationSuggestion(conversationId, suggestionId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestion';
 		}
 		// verify the required parameter 'suggestionId' is set
-		if (suggestionId === undefined || suggestionId === null) {
+		if (suggestionId === undefined || suggestionId === null || suggestionId === '') {
 			throw 'Missing the required parameter "suggestionId" when calling getConversationSuggestion';
 		}
 
@@ -866,7 +866,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestions';
 		}
 
@@ -891,7 +891,7 @@ class ConversationsApi {
 	 */
 	getConversationSummaries(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSummaries';
 		}
 
@@ -940,7 +940,7 @@ class ConversationsApi {
 	 */
 	getConversationsCall(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCall';
 		}
 
@@ -971,15 +971,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsCallParticipantCommunicationWrapup';
 		}
 
@@ -1009,11 +1009,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantWrapup';
 		}
 
@@ -1039,11 +1039,11 @@ class ConversationsApi {
 	 */
 	getConversationsCallParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantWrapupcodes';
 		}
 
@@ -1068,7 +1068,7 @@ class ConversationsApi {
 	 */
 	getConversationsCallback(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallback';
 		}
 
@@ -1099,15 +1099,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsCallbackParticipantCommunicationWrapup';
 		}
 
@@ -1137,11 +1137,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantWrapup';
 		}
 
@@ -1167,11 +1167,11 @@ class ConversationsApi {
 	 */
 	getConversationsCallbackParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantWrapupcodes';
 		}
 
@@ -1284,7 +1284,7 @@ class ConversationsApi {
 	 */
 	getConversationsChat(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChat';
 		}
 
@@ -1311,11 +1311,11 @@ class ConversationsApi {
 	 */
 	getConversationsChatMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getConversationsChatMessage';
 		}
 
@@ -1348,7 +1348,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessages';
 		}
 
@@ -1380,15 +1380,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsChatParticipantCommunicationWrapup';
 		}
 
@@ -1419,11 +1419,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapup';
 		}
 
@@ -1450,11 +1450,11 @@ class ConversationsApi {
 	 */
 	getConversationsChatParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapupcodes';
 		}
 
@@ -1500,7 +1500,7 @@ class ConversationsApi {
 	 */
 	getConversationsCobrowsesession(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesession';
 		}
 
@@ -1532,15 +1532,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
 		}
 
@@ -1571,11 +1571,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantWrapup';
 		}
 
@@ -1602,11 +1602,11 @@ class ConversationsApi {
 	 */
 	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
 		}
 
@@ -1651,7 +1651,7 @@ class ConversationsApi {
 	 */
 	getConversationsEmail(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmail';
 		}
 
@@ -1677,11 +1677,11 @@ class ConversationsApi {
 	 */
 	getConversationsEmailMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getConversationsEmailMessage';
 		}
 
@@ -1706,7 +1706,7 @@ class ConversationsApi {
 	 */
 	getConversationsEmailMessages(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessages';
 		}
 
@@ -1731,7 +1731,7 @@ class ConversationsApi {
 	 */
 	getConversationsEmailMessagesDraft(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessagesDraft';
 		}
 
@@ -1762,15 +1762,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsEmailParticipantCommunicationWrapup';
 		}
 
@@ -1800,11 +1800,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantWrapup';
 		}
 
@@ -1830,11 +1830,11 @@ class ConversationsApi {
 	 */
 	getConversationsEmailParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantWrapupcodes';
 		}
 
@@ -1859,7 +1859,7 @@ class ConversationsApi {
 	 */
 	getConversationsEmailSettings(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailSettings';
 		}
 
@@ -1905,7 +1905,7 @@ class ConversationsApi {
 	 */
 	getConversationsInternalmessage(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsInternalmessage';
 		}
 
@@ -1951,7 +1951,7 @@ class ConversationsApi {
 	 */
 	getConversationsKeyconfiguration(keyconfigurationsId) { 
 		// verify the required parameter 'keyconfigurationsId' is set
-		if (keyconfigurationsId === undefined || keyconfigurationsId === null) {
+		if (keyconfigurationsId === undefined || keyconfigurationsId === null || keyconfigurationsId === '') {
 			throw 'Missing the required parameter "keyconfigurationsId" when calling getConversationsKeyconfiguration';
 		}
 
@@ -1996,7 +1996,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessage(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessage';
 		}
 
@@ -2023,15 +2023,15 @@ class ConversationsApi {
 	 */
 	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
 		}
 		// verify the required parameter 'mediaId' is set
-		if (mediaId === undefined || mediaId === null) {
+		if (mediaId === undefined || mediaId === null || mediaId === '') {
 			throw 'Missing the required parameter "mediaId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
 		}
 
@@ -2060,7 +2060,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getConversationsMessageDetails';
 		}
 
@@ -2090,11 +2090,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getConversationsMessageMessage';
 		}
 
@@ -2125,15 +2125,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsMessageParticipantCommunicationWrapup';
 		}
 
@@ -2163,11 +2163,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantWrapup';
 		}
 
@@ -2193,11 +2193,11 @@ class ConversationsApi {
 	 */
 	getConversationsMessageParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantWrapupcodes';
 		}
 
@@ -2268,7 +2268,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
 		// verify the required parameter 'cachedMediaItemId' is set
-		if (cachedMediaItemId === undefined || cachedMediaItemId === null) {
+		if (cachedMediaItemId === undefined || cachedMediaItemId === null || cachedMediaItemId === '') {
 			throw 'Missing the required parameter "cachedMediaItemId" when calling getConversationsMessagesCachedmediaCachedMediaItemId';
 		}
 
@@ -2334,7 +2334,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
 		}
 
@@ -2359,7 +2359,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId';
 		}
 
@@ -2384,7 +2384,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
 		}
 
@@ -2409,7 +2409,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId';
 		}
 
@@ -2434,7 +2434,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId';
 		}
 
@@ -2459,7 +2459,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId';
 		}
 
@@ -2484,7 +2484,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingIntegrationTwitterOauthSettings(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationTwitterOauthSettings';
 		}
 
@@ -2569,7 +2569,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 
@@ -2626,7 +2626,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsInstagramIntegrationId';
 		}
 
@@ -2683,7 +2683,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 
@@ -2740,7 +2740,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 
@@ -2817,7 +2817,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 
@@ -2842,7 +2842,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingSetting(messageSettingId) { 
 		// verify the required parameter 'messageSettingId' is set
-		if (messageSettingId === undefined || messageSettingId === null) {
+		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling getConversationsMessagingSetting';
 		}
 
@@ -2957,7 +2957,7 @@ class ConversationsApi {
 	 */
 	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
-		if (supportedContentId === undefined || supportedContentId === null) {
+		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling getConversationsMessagingSupportedcontentSupportedContentId';
 		}
 
@@ -3009,15 +3009,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
 		}
 
@@ -3068,15 +3068,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsSocialParticipantCommunicationWrapup';
 		}
 
@@ -3102,7 +3102,7 @@ class ConversationsApi {
 	 */
 	getConversationsVideoDetails(conferenceId) { 
 		// verify the required parameter 'conferenceId' is set
-		if (conferenceId === undefined || conferenceId === null) {
+		if (conferenceId === undefined || conferenceId === null || conferenceId === '') {
 			throw 'Missing the required parameter "conferenceId" when calling getConversationsVideoDetails';
 		}
 
@@ -3133,15 +3133,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getConversationsVideoParticipantCommunicationWrapup';
 		}
 
@@ -3167,7 +3167,7 @@ class ConversationsApi {
 	 */
 	getConversationsVideosMeeting(meetingId) { 
 		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
+		if (meetingId === undefined || meetingId === null || meetingId === '') {
 			throw 'Missing the required parameter "meetingId" when calling getConversationsVideosMeeting';
 		}
 
@@ -3194,11 +3194,11 @@ class ConversationsApi {
 	 */
 	patchConversationParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationParticipant';
 		}
 		// verify the required parameter 'body' is set
@@ -3229,11 +3229,11 @@ class ConversationsApi {
 	 */
 	patchConversationParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
@@ -3263,7 +3263,7 @@ class ConversationsApi {
 	 */
 	patchConversationSecureattributes(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationSecureattributes';
 		}
 		// verify the required parameter 'body' is set
@@ -3297,11 +3297,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationSummaryEngagements';
 		}
 		// verify the required parameter 'summaryId' is set
-		if (summaryId === undefined || summaryId === null) {
+		if (summaryId === undefined || summaryId === null || summaryId === '') {
 			throw 'Missing the required parameter "summaryId" when calling patchConversationSummaryEngagements';
 		}
 
@@ -3331,11 +3331,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationSummaryFeedback';
 		}
 		// verify the required parameter 'summaryId' is set
-		if (summaryId === undefined || summaryId === null) {
+		if (summaryId === undefined || summaryId === null || summaryId === '') {
 			throw 'Missing the required parameter "summaryId" when calling patchConversationSummaryFeedback';
 		}
 
@@ -3361,7 +3361,7 @@ class ConversationsApi {
 	 */
 	patchConversationUtilizationlabel(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationUtilizationlabel';
 		}
 		// verify the required parameter 'body' is set
@@ -3393,15 +3393,15 @@ class ConversationsApi {
 	 */
 	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -3431,7 +3431,7 @@ class ConversationsApi {
 	 */
 	patchConversationsCall(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCall';
 		}
 		// verify the required parameter 'body' is set
@@ -3462,11 +3462,11 @@ class ConversationsApi {
 	 */
 	patchConversationsCallParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipant';
 		}
 		// verify the required parameter 'body' is set
@@ -3497,11 +3497,11 @@ class ConversationsApi {
 	 */
 	patchConversationsCallParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
@@ -3533,15 +3533,15 @@ class ConversationsApi {
 	 */
 	patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsCallParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -3572,11 +3572,11 @@ class ConversationsApi {
 	 */
 	patchConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'body' is set
@@ -3606,7 +3606,7 @@ class ConversationsApi {
 	 */
 	patchConversationsCallback(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallback';
 		}
 		// verify the required parameter 'body' is set
@@ -3637,11 +3637,11 @@ class ConversationsApi {
 	 */
 	patchConversationsCallbackParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallbackParticipant';
 		}
 		// verify the required parameter 'body' is set
@@ -3672,11 +3672,11 @@ class ConversationsApi {
 	 */
 	patchConversationsCallbackParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallbackParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
@@ -3708,15 +3708,15 @@ class ConversationsApi {
 	 */
 	patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCallbackParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsCallbackParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -3772,7 +3772,7 @@ class ConversationsApi {
 	 */
 	patchConversationsChat(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChat';
 		}
 		// verify the required parameter 'body' is set
@@ -3804,11 +3804,11 @@ class ConversationsApi {
 	 */
 	patchConversationsChatParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipant';
 		}
 		// verify the required parameter 'body' is set
@@ -3840,11 +3840,11 @@ class ConversationsApi {
 	 */
 	patchConversationsChatParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
@@ -3877,15 +3877,15 @@ class ConversationsApi {
 	 */
 	patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsChatParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -3916,7 +3916,7 @@ class ConversationsApi {
 	 */
 	patchConversationsCobrowsesession(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesession';
 		}
 		// verify the required parameter 'body' is set
@@ -3951,11 +3951,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipant';
 		}
 
@@ -3986,11 +3986,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipantAttributes';
 		}
 
@@ -4019,15 +4019,15 @@ class ConversationsApi {
 	 */
 	patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -4057,7 +4057,7 @@ class ConversationsApi {
 	 */
 	patchConversationsEmail(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmail';
 		}
 		// verify the required parameter 'body' is set
@@ -4092,7 +4092,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailMessagesDraft';
 		}
 
@@ -4119,11 +4119,11 @@ class ConversationsApi {
 	 */
 	patchConversationsEmailParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipant';
 		}
 		// verify the required parameter 'body' is set
@@ -4154,11 +4154,11 @@ class ConversationsApi {
 	 */
 	patchConversationsEmailParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
@@ -4190,15 +4190,15 @@ class ConversationsApi {
 	 */
 	patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsEmailParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -4229,11 +4229,11 @@ class ConversationsApi {
 	 */
 	patchConversationsEmailParticipantParkingstate(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantParkingstate';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipantParkingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -4263,7 +4263,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessage(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessage';
 		}
 		// verify the required parameter 'body' is set
@@ -4297,11 +4297,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipant';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipant';
 		}
 
@@ -4331,11 +4331,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipantAttributes';
 		}
 
@@ -4363,15 +4363,15 @@ class ConversationsApi {
 	 */
 	patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling patchConversationsMessageParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
@@ -4401,7 +4401,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -4431,7 +4431,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsInstagramIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -4461,7 +4461,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -4491,7 +4491,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -4521,7 +4521,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -4551,7 +4551,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -4581,7 +4581,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingSetting(messageSettingId, body) { 
 		// verify the required parameter 'messageSettingId' is set
-		if (messageSettingId === undefined || messageSettingId === null) {
+		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling patchConversationsMessagingSetting';
 		}
 		// verify the required parameter 'body' is set
@@ -4611,7 +4611,7 @@ class ConversationsApi {
 	 */
 	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
 		// verify the required parameter 'supportedContentId' is set
-		if (supportedContentId === undefined || supportedContentId === null) {
+		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling patchConversationsMessagingSupportedcontentSupportedContentId';
 		}
 		// verify the required parameter 'body' is set
@@ -4666,7 +4666,7 @@ class ConversationsApi {
 	 */
 	postAnalyticsConversationDetailsProperties(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties';
 		}
 		// verify the required parameter 'body' is set
@@ -4827,7 +4827,7 @@ class ConversationsApi {
 	 */
 	postConversationAssign(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationAssign';
 		}
 		// verify the required parameter 'body' is set
@@ -4856,7 +4856,7 @@ class ConversationsApi {
 	 */
 	postConversationBarge(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationBarge';
 		}
 
@@ -4881,7 +4881,7 @@ class ConversationsApi {
 	 */
 	postConversationCobrowse(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCobrowse';
 		}
 
@@ -4909,11 +4909,11 @@ class ConversationsApi {
 	 */
 	postConversationCommunicationInternalmessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationInternalmessages';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationCommunicationInternalmessages';
 		}
 		// verify the required parameter 'body' is set
@@ -4942,7 +4942,7 @@ class ConversationsApi {
 	 */
 	postConversationDisconnect(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationDisconnect';
 		}
 
@@ -4972,11 +4972,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantCallbacks';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantCallbacks';
 		}
 
@@ -5006,11 +5006,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantDigits';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantDigits';
 		}
 
@@ -5038,11 +5038,11 @@ class ConversationsApi {
 	 */
 	postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantInternalmessagesUsersCommunications';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantInternalmessagesUsersCommunications';
 		}
 		// verify the required parameter 'body' is set
@@ -5073,11 +5073,11 @@ class ConversationsApi {
 	 */
 	postConversationParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
@@ -5108,11 +5108,11 @@ class ConversationsApi {
 	 */
 	postConversationParticipantReplaceAgent(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceAgent';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceAgent';
 		}
 		// verify the required parameter 'body' is set
@@ -5143,11 +5143,11 @@ class ConversationsApi {
 	 */
 	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceExternal';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceExternal';
 		}
 		// verify the required parameter 'body' is set
@@ -5178,11 +5178,11 @@ class ConversationsApi {
 	 */
 	postConversationParticipantReplaceQueue(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceQueue';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceQueue';
 		}
 		// verify the required parameter 'body' is set
@@ -5216,11 +5216,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantSecureivrsessions';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationParticipantSecureivrsessions';
 		}
 
@@ -5247,11 +5247,11 @@ class ConversationsApi {
 	 */
 	postConversationSuggestionEngagement(conversationId, suggestionId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionEngagement';
 		}
 		// verify the required parameter 'suggestionId' is set
-		if (suggestionId === undefined || suggestionId === null) {
+		if (suggestionId === undefined || suggestionId === null || suggestionId === '') {
 			throw 'Missing the required parameter "suggestionId" when calling postConversationSuggestionEngagement';
 		}
 		// verify the required parameter 'body' is set
@@ -5282,7 +5282,7 @@ class ConversationsApi {
 	 */
 	postConversationSuggestionsFeedback(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionsFeedback';
 		}
 		// verify the required parameter 'body' is set
@@ -5316,11 +5316,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationSummaryFeedback';
 		}
 		// verify the required parameter 'summaryId' is set
-		if (summaryId === undefined || summaryId === null) {
+		if (summaryId === undefined || summaryId === null || summaryId === '') {
 			throw 'Missing the required parameter "summaryId" when calling postConversationSummaryFeedback';
 		}
 
@@ -5346,7 +5346,7 @@ class ConversationsApi {
 	 */
 	postConversationsCall(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCall';
 		}
 		// verify the required parameter 'body' is set
@@ -5376,11 +5376,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantBarge(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantBarge';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantBarge';
 		}
 
@@ -5406,11 +5406,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantCoach(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCoach';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCoach';
 		}
 
@@ -5441,15 +5441,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsCallParticipantCommunicationWrapup';
 		}
 
@@ -5476,11 +5476,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'body' is set
@@ -5511,11 +5511,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantConsultAgent(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultAgent';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultAgent';
 		}
 		// verify the required parameter 'body' is set
@@ -5546,11 +5546,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultExternal';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultExternal';
 		}
 		// verify the required parameter 'body' is set
@@ -5581,11 +5581,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantConsultQueue(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultQueue';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultQueue';
 		}
 		// verify the required parameter 'body' is set
@@ -5615,11 +5615,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantMonitor(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantMonitor';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantMonitor';
 		}
 
@@ -5646,11 +5646,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
@@ -5680,7 +5680,7 @@ class ConversationsApi {
 	 */
 	postConversationsCallParticipants(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipants';
 		}
 		// verify the required parameter 'body' is set
@@ -5715,15 +5715,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallbackParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsCallbackParticipantCommunicationWrapup';
 		}
 
@@ -5750,11 +5750,11 @@ class ConversationsApi {
 	 */
 	postConversationsCallbackParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCallbackParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
@@ -5886,11 +5886,11 @@ class ConversationsApi {
 	 */
 	postConversationsChatCommunicationMessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -5921,11 +5921,11 @@ class ConversationsApi {
 	 */
 	postConversationsChatCommunicationTyping(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';
 		}
 
@@ -5957,15 +5957,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsChatParticipantCommunicationWrapup';
 		}
 
@@ -5993,11 +5993,11 @@ class ConversationsApi {
 	 */
 	postConversationsChatParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
@@ -6059,15 +6059,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
 		}
 
@@ -6098,11 +6098,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCobrowsesessionParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsCobrowsesessionParticipantReplace';
 		}
 
@@ -6128,7 +6128,7 @@ class ConversationsApi {
 	 */
 	postConversationsEmailInboundmessages(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailInboundmessages';
 		}
 		// verify the required parameter 'body' is set
@@ -6158,7 +6158,7 @@ class ConversationsApi {
 	 */
 	postConversationsEmailMessages(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -6188,7 +6188,7 @@ class ConversationsApi {
 	 */
 	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
 		}
 		// verify the required parameter 'body' is set
@@ -6223,15 +6223,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsEmailParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsEmailParticipantCommunicationWrapup';
 		}
 
@@ -6258,11 +6258,11 @@ class ConversationsApi {
 	 */
 	postConversationsEmailParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsEmailParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
@@ -6291,7 +6291,7 @@ class ConversationsApi {
 	 */
 	postConversationsEmailReconnect(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailReconnect';
 		}
 
@@ -6447,11 +6447,11 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessages';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -6482,11 +6482,11 @@ class ConversationsApi {
 	 */
 	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMedia';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMedia';
 		}
 
@@ -6513,11 +6513,11 @@ class ConversationsApi {
 	 */
 	postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
 		}
 		// verify the required parameter 'body' is set
@@ -6548,11 +6548,11 @@ class ConversationsApi {
 	 */
 	postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -6583,11 +6583,11 @@ class ConversationsApi {
 	 */
 	postConversationsMessageCommunicationTyping(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationTyping';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationTyping';
 		}
 		// verify the required parameter 'body' is set
@@ -6617,7 +6617,7 @@ class ConversationsApi {
 	 */
 	postConversationsMessageInboundOpenEvent(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenEvent';
 		}
 		// verify the required parameter 'body' is set
@@ -6651,7 +6651,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenMessage';
 		}
 		// verify the required parameter 'body' is set
@@ -6681,7 +6681,7 @@ class ConversationsApi {
 	 */
 	postConversationsMessageInboundOpenReceipt(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenReceipt';
 		}
 		// verify the required parameter 'body' is set
@@ -6711,7 +6711,7 @@ class ConversationsApi {
 	 */
 	postConversationsMessageInboundOpenStructuredResponse(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenStructuredResponse';
 		}
 		// verify the required parameter 'body' is set
@@ -6745,7 +6745,7 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageMessagesBulk';
 		}
 
@@ -6776,15 +6776,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageParticipantCommunicationWrapup';
 		}
 
@@ -6810,11 +6810,11 @@ class ConversationsApi {
 	 */
 	postConversationsMessageParticipantMonitor(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantMonitor';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantMonitor';
 		}
 
@@ -6841,11 +6841,11 @@ class ConversationsApi {
 	 */
 	postConversationsMessageParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
@@ -7187,15 +7187,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
 		}
 
@@ -7226,15 +7226,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsSocialParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsSocialParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsSocialParticipantCommunicationWrapup';
 		}
 
@@ -7261,11 +7261,11 @@ class ConversationsApi {
 	 */
 	postConversationsVideoAgentconferenceCommunication(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoAgentconferenceCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsVideoAgentconferenceCommunication';
 		}
 
@@ -7296,15 +7296,15 @@ class ConversationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantCommunicationWrapup';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling postConversationsVideoParticipantCommunicationWrapup';
 		}
 
@@ -7356,11 +7356,11 @@ class ConversationsApi {
 	 */
 	putConversationParticipantFlaggedreason(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationParticipantFlaggedreason';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling putConversationParticipantFlaggedreason';
 		}
 
@@ -7386,7 +7386,7 @@ class ConversationsApi {
 	 */
 	putConversationSecureattributes(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationSecureattributes';
 		}
 		// verify the required parameter 'body' is set
@@ -7416,7 +7416,7 @@ class ConversationsApi {
 	 */
 	putConversationTags(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationTags';
 		}
 		// verify the required parameter 'body' is set
@@ -7448,15 +7448,15 @@ class ConversationsApi {
 	 */
 	putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
+		if (participantId === undefined || participantId === null || participantId === '') {
 			throw 'Missing the required parameter "participantId" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 		// verify the required parameter 'body' is set
@@ -7486,7 +7486,7 @@ class ConversationsApi {
 	 */
 	putConversationsCallRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCallRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -7516,7 +7516,7 @@ class ConversationsApi {
 	 */
 	putConversationsCallbackRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCallbackRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -7547,7 +7547,7 @@ class ConversationsApi {
 	 */
 	putConversationsChatRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsChatRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -7578,7 +7578,7 @@ class ConversationsApi {
 	 */
 	putConversationsCobrowsesessionRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCobrowsesessionRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -7608,7 +7608,7 @@ class ConversationsApi {
 	 */
 	putConversationsEmailMessagesDraft(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailMessagesDraft';
 		}
 		// verify the required parameter 'body' is set
@@ -7638,7 +7638,7 @@ class ConversationsApi {
 	 */
 	putConversationsEmailRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -7668,7 +7668,7 @@ class ConversationsApi {
 	 */
 	putConversationsKeyconfiguration(keyconfigurationsId, body) { 
 		// verify the required parameter 'keyconfigurationsId' is set
-		if (keyconfigurationsId === undefined || keyconfigurationsId === null) {
+		if (keyconfigurationsId === undefined || keyconfigurationsId === null || keyconfigurationsId === '') {
 			throw 'Missing the required parameter "keyconfigurationsId" when calling putConversationsKeyconfiguration';
 		}
 		// verify the required parameter 'body' is set
@@ -7698,7 +7698,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessageRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsMessageRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -7729,7 +7729,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -7759,7 +7759,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -7789,7 +7789,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -7819,7 +7819,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -7849,7 +7849,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -7879,7 +7879,7 @@ class ConversationsApi {
 	 */
 	putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId';
 		}
 		// verify the required parameter 'body' is set
@@ -7985,7 +7985,7 @@ class ConversationsApi {
 	 */
 	putConversationsScreenshareRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsScreenshareRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -8015,7 +8015,7 @@ class ConversationsApi {
 	 */
 	putConversationsSocialRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsSocialRecordingstate';
 		}
 		// verify the required parameter 'body' is set
@@ -8045,7 +8045,7 @@ class ConversationsApi {
 	 */
 	putConversationsVideoRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsVideoRecordingstate';
 		}
 		// verify the required parameter 'body' is set

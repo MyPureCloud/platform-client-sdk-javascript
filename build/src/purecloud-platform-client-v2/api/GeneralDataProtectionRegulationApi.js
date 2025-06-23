@@ -5,7 +5,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class GeneralDataProtectionRegulationApi {
 	 */
 	getGdprRequest(requestId) { 
 		// verify the required parameter 'requestId' is set
-		if (requestId === undefined || requestId === null) {
+		if (requestId === undefined || requestId === null || requestId === '') {
 			throw 'Missing the required parameter "requestId" when calling getGdprRequest';
 		}
 

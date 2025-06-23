@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class LicenseApi {
 	 */
 	getLicenseDefinition(licenseId) { 
 		// verify the required parameter 'licenseId' is set
-		if (licenseId === undefined || licenseId === null) {
+		if (licenseId === undefined || licenseId === null || licenseId === '') {
 			throw 'Missing the required parameter "licenseId" when calling getLicenseDefinition';
 		}
 
@@ -72,7 +72,7 @@ class LicenseApi {
 	 */
 	getLicenseToggle(featureName) { 
 		// verify the required parameter 'featureName' is set
-		if (featureName === undefined || featureName === null) {
+		if (featureName === undefined || featureName === null || featureName === '') {
 			throw 'Missing the required parameter "featureName" when calling getLicenseToggle';
 		}
 
@@ -97,7 +97,7 @@ class LicenseApi {
 	 */
 	getLicenseUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getLicenseUser';
 		}
 
@@ -195,7 +195,7 @@ class LicenseApi {
 	 */
 	postLicenseToggle(featureName) { 
 		// verify the required parameter 'featureName' is set
-		if (featureName === undefined || featureName === null) {
+		if (featureName === undefined || featureName === null || featureName === '') {
 			throw 'Missing the required parameter "featureName" when calling postLicenseToggle';
 		}
 

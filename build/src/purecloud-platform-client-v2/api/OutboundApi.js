@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class OutboundApi {
 	 */
 	deleteOutboundAttemptlimit(attemptLimitsId) { 
 		// verify the required parameter 'attemptLimitsId' is set
-		if (attemptLimitsId === undefined || attemptLimitsId === null) {
+		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling deleteOutboundAttemptlimit';
 		}
 
@@ -52,7 +52,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCallabletimeset(callableTimeSetId) { 
 		// verify the required parameter 'callableTimeSetId' is set
-		if (callableTimeSetId === undefined || callableTimeSetId === null) {
+		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling deleteOutboundCallabletimeset';
 		}
 
@@ -77,7 +77,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCallanalysisresponseset(callAnalysisSetId) { 
 		// verify the required parameter 'callAnalysisSetId' is set
-		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
+		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling deleteOutboundCallanalysisresponseset';
 		}
 
@@ -102,7 +102,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaign';
 		}
 
@@ -127,7 +127,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCampaignProgress(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaignProgress';
 		}
 
@@ -152,7 +152,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCampaignrule(campaignRuleId) { 
 		// verify the required parameter 'campaignRuleId' is set
-		if (campaignRuleId === undefined || campaignRuleId === null) {
+		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling deleteOutboundCampaignrule';
 		}
 
@@ -177,7 +177,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlist(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlist';
 		}
 
@@ -203,11 +203,11 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlistContact(contactListId, contactId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling deleteOutboundContactlistContact';
 		}
 
@@ -233,7 +233,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlistContacts(contactListId, contactIds) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContacts';
 		}
 		// verify the required parameter 'contactIds' is set
@@ -262,7 +262,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlistfilter(contactListFilterId) { 
 		// verify the required parameter 'contactListFilterId' is set
-		if (contactListFilterId === undefined || contactListFilterId === null) {
+		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling deleteOutboundContactlistfilter';
 		}
 
@@ -312,7 +312,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlisttemplate(contactListTemplateId) { 
 		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
+		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
 			throw 'Missing the required parameter "contactListTemplateId" when calling deleteOutboundContactlisttemplate';
 		}
 
@@ -362,7 +362,7 @@ class OutboundApi {
 	 */
 	deleteOutboundDigitalruleset(digitalRuleSetId) { 
 		// verify the required parameter 'digitalRuleSetId' is set
-		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling deleteOutboundDigitalruleset';
 		}
 
@@ -387,7 +387,7 @@ class OutboundApi {
 	 */
 	deleteOutboundDnclist(dncListId) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclist';
 		}
 
@@ -416,7 +416,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistCustomexclusioncolumns';
 		}
 
@@ -445,7 +445,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistEmailaddresses';
 		}
 
@@ -474,7 +474,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistPhonenumbers';
 		}
 
@@ -503,7 +503,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistWhatsappnumbers';
 		}
 
@@ -528,7 +528,7 @@ class OutboundApi {
 	 */
 	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
 		// verify the required parameter 'fileSpecificationTemplateId' is set
-		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null) {
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
 			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling deleteOutboundFilespecificationtemplate';
 		}
 
@@ -578,7 +578,7 @@ class OutboundApi {
 	 */
 	deleteOutboundImporttemplate(importTemplateId) { 
 		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
 			throw 'Missing the required parameter "importTemplateId" when calling deleteOutboundImporttemplate';
 		}
 
@@ -628,7 +628,7 @@ class OutboundApi {
 	 */
 	deleteOutboundMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
 		}
 
@@ -653,7 +653,7 @@ class OutboundApi {
 	 */
 	deleteOutboundMessagingcampaignProgress(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaignProgress';
 		}
 
@@ -678,7 +678,7 @@ class OutboundApi {
 	 */
 	deleteOutboundRuleset(ruleSetId) { 
 		// verify the required parameter 'ruleSetId' is set
-		if (ruleSetId === undefined || ruleSetId === null) {
+		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling deleteOutboundRuleset';
 		}
 
@@ -703,7 +703,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundSchedulesCampaign';
 		}
 
@@ -728,7 +728,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesEmailcampaign(emailCampaignId) { 
 		// verify the required parameter 'emailCampaignId' is set
-		if (emailCampaignId === undefined || emailCampaignId === null) {
+		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling deleteOutboundSchedulesEmailcampaign';
 		}
 
@@ -753,7 +753,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundSchedulesMessagingcampaign';
 		}
 
@@ -778,7 +778,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSchedulesSequence';
 		}
 
@@ -803,7 +803,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSequence';
 		}
 
@@ -828,7 +828,7 @@ class OutboundApi {
 	 */
 	getOutboundAttemptlimit(attemptLimitsId) { 
 		// verify the required parameter 'attemptLimitsId' is set
-		if (attemptLimitsId === undefined || attemptLimitsId === null) {
+		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling getOutboundAttemptlimit';
 		}
 
@@ -883,7 +883,7 @@ class OutboundApi {
 	 */
 	getOutboundCallabletimeset(callableTimeSetId) { 
 		// verify the required parameter 'callableTimeSetId' is set
-		if (callableTimeSetId === undefined || callableTimeSetId === null) {
+		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling getOutboundCallabletimeset';
 		}
 
@@ -938,7 +938,7 @@ class OutboundApi {
 	 */
 	getOutboundCallanalysisresponseset(callAnalysisSetId) { 
 		// verify the required parameter 'callAnalysisSetId' is set
-		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
+		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling getOutboundCallanalysisresponseset';
 		}
 
@@ -993,7 +993,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaign';
 		}
 
@@ -1018,7 +1018,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignAgentownedmappingpreviewResults(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
 		}
 
@@ -1043,7 +1043,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignDiagnostics(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignDiagnostics';
 		}
 
@@ -1068,7 +1068,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignInteractions(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignInteractions';
 		}
 
@@ -1102,7 +1102,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignLinedistribution';
 		}
 
@@ -1127,7 +1127,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignProgress(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignProgress';
 		}
 
@@ -1157,7 +1157,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignSkillcombinations';
 		}
 
@@ -1182,7 +1182,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignStats(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignStats';
 		}
 
@@ -1207,7 +1207,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignrule(campaignRuleId) { 
 		// verify the required parameter 'campaignRuleId' is set
-		if (campaignRuleId === undefined || campaignRuleId === null) {
+		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling getOutboundCampaignrule';
 		}
 
@@ -1358,7 +1358,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignsDivisionview(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
 		}
 
@@ -1418,7 +1418,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlist';
 		}
 
@@ -1444,11 +1444,11 @@ class OutboundApi {
 	 */
 	getOutboundContactlistContact(contactListId, contactId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getOutboundContactlistContact';
 		}
 
@@ -1474,11 +1474,11 @@ class OutboundApi {
 	 */
 	getOutboundContactlistContactsBulkJob(contactListId, jobId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getOutboundContactlistContactsBulkJob';
 		}
 
@@ -1503,7 +1503,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistContactsBulkJobs(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJobs';
 		}
 
@@ -1532,7 +1532,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistExport';
 		}
 
@@ -1557,7 +1557,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistImportstatus(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistImportstatus';
 		}
 
@@ -1582,7 +1582,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistTimezonemappingpreview(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistTimezonemappingpreview';
 		}
 
@@ -1607,7 +1607,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistfilter(contactListFilterId) { 
 		// verify the required parameter 'contactListFilterId' is set
-		if (contactListFilterId === undefined || contactListFilterId === null) {
+		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling getOutboundContactlistfilter';
 		}
 
@@ -1702,7 +1702,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistsDivisionview';
 		}
 
@@ -1759,7 +1759,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlisttemplate(contactListTemplateId) { 
 		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
+		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
 			throw 'Missing the required parameter "contactListTemplateId" when calling getOutboundContactlisttemplate';
 		}
 
@@ -1814,7 +1814,7 @@ class OutboundApi {
 	 */
 	getOutboundDigitalruleset(digitalRuleSetId) { 
 		// verify the required parameter 'digitalRuleSetId' is set
-		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling getOutboundDigitalruleset';
 		}
 
@@ -1873,7 +1873,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclist';
 		}
 
@@ -1902,7 +1902,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistExport';
 		}
 
@@ -1927,7 +1927,7 @@ class OutboundApi {
 	 */
 	getOutboundDnclistImportstatus(dncListId) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistImportstatus';
 		}
 
@@ -1991,7 +1991,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistsDivisionview';
 		}
 
@@ -2049,7 +2049,7 @@ class OutboundApi {
 	 */
 	getOutboundEvent(eventId) { 
 		// verify the required parameter 'eventId' is set
-		if (eventId === undefined || eventId === null) {
+		if (eventId === undefined || eventId === null || eventId === '') {
 			throw 'Missing the required parameter "eventId" when calling getOutboundEvent';
 		}
 
@@ -2104,7 +2104,7 @@ class OutboundApi {
 	 */
 	getOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
 		// verify the required parameter 'fileSpecificationTemplateId' is set
-		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null) {
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
 			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling getOutboundFilespecificationtemplate';
 		}
 
@@ -2163,7 +2163,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
 			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplate';
 		}
 
@@ -2192,7 +2192,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
 			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplateImportstatus';
 		}
 
@@ -2249,7 +2249,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
 		}
 
@@ -2274,7 +2274,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaignDiagnostics(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignDiagnostics';
 		}
 
@@ -2299,7 +2299,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaignProgress(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
 		}
 
@@ -2359,7 +2359,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaignsDivisionview(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
 		}
 
@@ -2416,7 +2416,7 @@ class OutboundApi {
 	 */
 	getOutboundRuleset(ruleSetId) { 
 		// verify the required parameter 'ruleSetId' is set
-		if (ruleSetId === undefined || ruleSetId === null) {
+		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling getOutboundRuleset';
 		}
 
@@ -2471,7 +2471,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundSchedulesCampaign';
 		}
 
@@ -2516,7 +2516,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesEmailcampaign(emailCampaignId) { 
 		// verify the required parameter 'emailCampaignId' is set
-		if (emailCampaignId === undefined || emailCampaignId === null) {
+		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling getOutboundSchedulesEmailcampaign';
 		}
 
@@ -2561,7 +2561,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundSchedulesMessagingcampaign';
 		}
 
@@ -2606,7 +2606,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling getOutboundSchedulesSequence';
 		}
 
@@ -2651,7 +2651,7 @@ class OutboundApi {
 	 */
 	getOutboundSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling getOutboundSequence';
 		}
 
@@ -2747,7 +2747,7 @@ class OutboundApi {
 	 */
 	patchOutboundCampaign(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling patchOutboundCampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -2777,7 +2777,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistCustomexclusioncolumns(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistCustomexclusioncolumns';
 		}
 		// verify the required parameter 'body' is set
@@ -2807,7 +2807,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistEmailaddresses(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistEmailaddresses';
 		}
 		// verify the required parameter 'body' is set
@@ -2837,7 +2837,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistPhonenumbers(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistPhonenumbers';
 		}
 		// verify the required parameter 'body' is set
@@ -2867,7 +2867,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistWhatsappnumbers(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistWhatsappnumbers';
 		}
 		// verify the required parameter 'body' is set
@@ -3000,7 +3000,7 @@ class OutboundApi {
 	 */
 	postOutboundCampaignAgentownedmappingpreview(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
 		}
 
@@ -3027,7 +3027,7 @@ class OutboundApi {
 	 */
 	postOutboundCampaignCallbackSchedule(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignCallbackSchedule';
 		}
 		// verify the required parameter 'body' is set
@@ -3056,7 +3056,7 @@ class OutboundApi {
 	 */
 	postOutboundCampaignStart(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStart';
 		}
 
@@ -3081,7 +3081,7 @@ class OutboundApi {
 	 */
 	postOutboundCampaignStop(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStop';
 		}
 
@@ -3185,7 +3185,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistClear(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
 		}
 
@@ -3217,7 +3217,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContacts';
 		}
 		// verify the required parameter 'body' is set
@@ -3247,7 +3247,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistContactsBulk(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -3277,7 +3277,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistContactsBulkRemove(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkRemove';
 		}
 		// verify the required parameter 'body' is set
@@ -3307,7 +3307,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistContactsBulkUpdate(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkUpdate';
 		}
 		// verify the required parameter 'body' is set
@@ -3337,7 +3337,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistContactsSearch(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsSearch';
 		}
 		// verify the required parameter 'body' is set
@@ -3370,7 +3370,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistExport';
 		}
 
@@ -3570,7 +3570,7 @@ class OutboundApi {
 	 */
 	postOutboundConversationDnc(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postOutboundConversationDnc';
 		}
 
@@ -3621,7 +3621,7 @@ class OutboundApi {
 	 */
 	postOutboundDnclistEmailaddresses(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistEmailaddresses';
 		}
 		// verify the required parameter 'body' is set
@@ -3650,7 +3650,7 @@ class OutboundApi {
 	 */
 	postOutboundDnclistExport(dncListId) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistExport';
 		}
 
@@ -3680,7 +3680,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistPhonenumbers';
 		}
 		// verify the required parameter 'body' is set
@@ -3809,7 +3809,7 @@ class OutboundApi {
 	 */
 	postOutboundMessagingcampaignStart(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStart';
 		}
 
@@ -3834,7 +3834,7 @@ class OutboundApi {
 	 */
 	postOutboundMessagingcampaignStop(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStop';
 		}
 
@@ -3960,7 +3960,7 @@ class OutboundApi {
 	 */
 	putOutboundAttemptlimit(attemptLimitsId, body) { 
 		// verify the required parameter 'attemptLimitsId' is set
-		if (attemptLimitsId === undefined || attemptLimitsId === null) {
+		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling putOutboundAttemptlimit';
 		}
 		// verify the required parameter 'body' is set
@@ -3990,7 +3990,7 @@ class OutboundApi {
 	 */
 	putOutboundCallabletimeset(callableTimeSetId, body) { 
 		// verify the required parameter 'callableTimeSetId' is set
-		if (callableTimeSetId === undefined || callableTimeSetId === null) {
+		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling putOutboundCallabletimeset';
 		}
 		// verify the required parameter 'body' is set
@@ -4020,7 +4020,7 @@ class OutboundApi {
 	 */
 	putOutboundCallanalysisresponseset(callAnalysisSetId, body) { 
 		// verify the required parameter 'callAnalysisSetId' is set
-		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
+		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling putOutboundCallanalysisresponseset';
 		}
 		// verify the required parameter 'body' is set
@@ -4054,7 +4054,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -4085,11 +4085,11 @@ class OutboundApi {
 	 */
 	putOutboundCampaignAgent(campaignId, userId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaignAgent';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putOutboundCampaignAgent';
 		}
 		// verify the required parameter 'body' is set
@@ -4119,7 +4119,7 @@ class OutboundApi {
 	 */
 	putOutboundCampaignrule(campaignRuleId, body) { 
 		// verify the required parameter 'campaignRuleId' is set
-		if (campaignRuleId === undefined || campaignRuleId === null) {
+		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling putOutboundCampaignrule';
 		}
 		// verify the required parameter 'body' is set
@@ -4149,7 +4149,7 @@ class OutboundApi {
 	 */
 	putOutboundContactlist(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlist';
 		}
 		// verify the required parameter 'body' is set
@@ -4180,11 +4180,11 @@ class OutboundApi {
 	 */
 	putOutboundContactlistContact(contactListId, contactId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling putOutboundContactlistContact';
 		}
 		// verify the required parameter 'body' is set
@@ -4214,7 +4214,7 @@ class OutboundApi {
 	 */
 	putOutboundContactlistfilter(contactListFilterId, body) { 
 		// verify the required parameter 'contactListFilterId' is set
-		if (contactListFilterId === undefined || contactListFilterId === null) {
+		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling putOutboundContactlistfilter';
 		}
 		// verify the required parameter 'body' is set
@@ -4244,7 +4244,7 @@ class OutboundApi {
 	 */
 	putOutboundContactlisttemplate(contactListTemplateId, body) { 
 		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
+		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
 			throw 'Missing the required parameter "contactListTemplateId" when calling putOutboundContactlisttemplate';
 		}
 		// verify the required parameter 'body' is set
@@ -4274,7 +4274,7 @@ class OutboundApi {
 	 */
 	putOutboundDigitalruleset(digitalRuleSetId, body) { 
 		// verify the required parameter 'digitalRuleSetId' is set
-		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling putOutboundDigitalruleset';
 		}
 		// verify the required parameter 'body' is set
@@ -4304,7 +4304,7 @@ class OutboundApi {
 	 */
 	putOutboundDnclist(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling putOutboundDnclist';
 		}
 		// verify the required parameter 'body' is set
@@ -4334,7 +4334,7 @@ class OutboundApi {
 	 */
 	putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body) { 
 		// verify the required parameter 'fileSpecificationTemplateId' is set
-		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null) {
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
 			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling putOutboundFilespecificationtemplate';
 		}
 		// verify the required parameter 'body' is set
@@ -4364,7 +4364,7 @@ class OutboundApi {
 	 */
 	putOutboundImporttemplate(importTemplateId, body) { 
 		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
 			throw 'Missing the required parameter "importTemplateId" when calling putOutboundImporttemplate';
 		}
 		// verify the required parameter 'body' is set
@@ -4394,7 +4394,7 @@ class OutboundApi {
 	 */
 	putOutboundMessagingcampaign(messagingCampaignId, body) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -4424,7 +4424,7 @@ class OutboundApi {
 	 */
 	putOutboundRuleset(ruleSetId, body) { 
 		// verify the required parameter 'ruleSetId' is set
-		if (ruleSetId === undefined || ruleSetId === null) {
+		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling putOutboundRuleset';
 		}
 		// verify the required parameter 'body' is set
@@ -4454,7 +4454,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesCampaign(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundSchedulesCampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -4484,7 +4484,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesEmailcampaign(emailCampaignId, body) { 
 		// verify the required parameter 'emailCampaignId' is set
-		if (emailCampaignId === undefined || emailCampaignId === null) {
+		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling putOutboundSchedulesEmailcampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -4514,7 +4514,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesMessagingcampaign(messagingCampaignId, body) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundSchedulesMessagingcampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -4544,7 +4544,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesSequence(sequenceId, body) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling putOutboundSchedulesSequence';
 		}
 		// verify the required parameter 'body' is set
@@ -4574,7 +4574,7 @@ class OutboundApi {
 	 */
 	putOutboundSequence(sequenceId, body) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling putOutboundSequence';
 		}
 		// verify the required parameter 'body' is set

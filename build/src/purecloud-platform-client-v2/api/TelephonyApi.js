@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -47,7 +47,7 @@ class TelephonyApi {
 	 */
 	getTelephonySipmessagesConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversation';
 		}
 
@@ -76,7 +76,7 @@ class TelephonyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversationHeaders';
 		}
 
@@ -138,7 +138,7 @@ class TelephonyApi {
 	 */
 	getTelephonySiptracesDownloadDownloadId(downloadId) { 
 		// verify the required parameter 'downloadId' is set
-		if (downloadId === undefined || downloadId === null) {
+		if (downloadId === undefined || downloadId === null || downloadId === '') {
 			throw 'Missing the required parameter "downloadId" when calling getTelephonySiptracesDownloadDownloadId';
 		}
 

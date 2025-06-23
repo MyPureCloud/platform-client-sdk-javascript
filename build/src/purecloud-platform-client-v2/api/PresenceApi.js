@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class PresenceApi {
 	 */
 	deletePresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
-		if (definitionId === undefined || definitionId === null) {
+		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition0';
 		}
 
@@ -52,7 +52,7 @@ class PresenceApi {
 	 */
 	deletePresenceSource(sourceId) { 
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling deletePresenceSource';
 		}
 
@@ -78,7 +78,7 @@ class PresenceApi {
 	 */
 	deletePresencedefinition(presenceId) { 
 		// verify the required parameter 'presenceId' is set
-		if (presenceId === undefined || presenceId === null) {
+		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling deletePresencedefinition';
 		}
 
@@ -107,7 +107,7 @@ class PresenceApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'definitionId' is set
-		if (definitionId === undefined || definitionId === null) {
+		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition0';
 		}
 
@@ -178,7 +178,7 @@ class PresenceApi {
 	 */
 	getPresenceSource(sourceId) { 
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getPresenceSource';
 		}
 
@@ -227,7 +227,7 @@ class PresenceApi {
 	 */
 	getPresenceUserPrimarysource(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getPresenceUserPrimarysource';
 		}
 
@@ -257,7 +257,7 @@ class PresenceApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'presenceId' is set
-		if (presenceId === undefined || presenceId === null) {
+		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling getPresencedefinition';
 		}
 
@@ -331,11 +331,11 @@ class PresenceApi {
 	 */
 	getUserPresence(userId, sourceId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserPresence';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getUserPresence';
 		}
 
@@ -360,7 +360,7 @@ class PresenceApi {
 	 */
 	getUserPresencesPurecloud(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserPresencesPurecloud';
 		}
 
@@ -389,7 +389,7 @@ class PresenceApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getUsersPresenceBulk';
 		}
 
@@ -440,11 +440,11 @@ class PresenceApi {
 	 */
 	patchUserPresence(userId, sourceId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserPresence';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling patchUserPresence';
 		}
 		// verify the required parameter 'body' is set
@@ -474,7 +474,7 @@ class PresenceApi {
 	 */
 	patchUserPresencesPurecloud(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserPresencesPurecloud';
 		}
 		// verify the required parameter 'body' is set
@@ -580,7 +580,7 @@ class PresenceApi {
 	 */
 	putPresenceDefinition0(definitionId, body) { 
 		// verify the required parameter 'definitionId' is set
-		if (definitionId === undefined || definitionId === null) {
+		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition0';
 		}
 		// verify the required parameter 'body' is set
@@ -635,7 +635,7 @@ class PresenceApi {
 	 */
 	putPresenceSource(sourceId, body) { 
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling putPresenceSource';
 		}
 		// verify the required parameter 'body' is set
@@ -665,7 +665,7 @@ class PresenceApi {
 	 */
 	putPresenceUserPrimarysource(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putPresenceUserPrimarysource';
 		}
 		// verify the required parameter 'body' is set
@@ -696,7 +696,7 @@ class PresenceApi {
 	 */
 	putPresencedefinition(presenceId, body) { 
 		// verify the required parameter 'presenceId' is set
-		if (presenceId === undefined || presenceId === null) {
+		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling putPresencedefinition';
 		}
 		// verify the required parameter 'body' is set

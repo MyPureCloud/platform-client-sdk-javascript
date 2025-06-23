@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class AlertingApi {
 	 */
 	deleteAlertingAlert(alertId) { 
 		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
+		if (alertId === undefined || alertId === null || alertId === '') {
 			throw 'Missing the required parameter "alertId" when calling deleteAlertingAlert';
 		}
 
@@ -72,7 +72,7 @@ class AlertingApi {
 	 */
 	deleteAlertingRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteAlertingRule';
 		}
 
@@ -97,7 +97,7 @@ class AlertingApi {
 	 */
 	getAlertingAlert(alertId) { 
 		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
+		if (alertId === undefined || alertId === null || alertId === '') {
 			throw 'Missing the required parameter "alertId" when calling getAlertingAlert';
 		}
 
@@ -122,7 +122,7 @@ class AlertingApi {
 	 */
 	getAlertingRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getAlertingRule';
 		}
 
@@ -151,7 +151,7 @@ class AlertingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
+		if (alertId === undefined || alertId === null || alertId === '') {
 			throw 'Missing the required parameter "alertId" when calling patchAlertingAlert';
 		}
 
@@ -352,7 +352,7 @@ class AlertingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
+		if (alertId === undefined || alertId === null || alertId === '') {
 			throw 'Missing the required parameter "alertId" when calling putAlertingAlert';
 		}
 
@@ -378,7 +378,7 @@ class AlertingApi {
 	 */
 	putAlertingRule(ruleId, body) { 
 		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling putAlertingRule';
 		}
 		// verify the required parameter 'body' is set

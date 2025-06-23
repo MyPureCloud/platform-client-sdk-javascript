@@ -5,7 +5,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class WidgetsApi {
 	 */
 	deleteWidgetsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';
 		}
 
@@ -54,7 +54,7 @@ class WidgetsApi {
 	 */
 	getWidgetsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWidgetsDeployment';
 		}
 
@@ -128,7 +128,7 @@ class WidgetsApi {
 	 */
 	putWidgetsDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWidgetsDeployment';
 		}
 		// verify the required parameter 'body' is set

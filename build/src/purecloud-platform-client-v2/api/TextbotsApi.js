@@ -5,7 +5,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 224.0.0
+	 * @version 225.0.0
 	 */
 
 	/**
@@ -56,7 +56,7 @@ class TextbotsApi {
 	 */
 	postTextbotsBotflowsSessionTurns(sessionId, turnRequest) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postTextbotsBotflowsSessionTurns';
 		}
 		// verify the required parameter 'turnRequest' is set
