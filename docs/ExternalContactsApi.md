@@ -6340,4 +6340,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@225.0.0_
+_purecloud-platform-client-v2@226.0.0_

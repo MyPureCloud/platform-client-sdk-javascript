@@ -3252,7 +3252,8 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'name': "name_example" // String | Wrapup code's name (trailing asterisks allowed)
 };
 
 apiInstance.getRoutingQueueWrapupcodes(queueId, opts)
@@ -3273,6 +3274,7 @@ apiInstance.getRoutingQueueWrapupcodes(queueId, opts)
  **queueId** | **String** | Queue ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Wrapup code's name (trailing asterisks allowed) | [optional]  |
 
 ### Return type
 
@@ -8456,4 +8458,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@225.0.0_
+_purecloud-platform-client-v2@226.0.0_

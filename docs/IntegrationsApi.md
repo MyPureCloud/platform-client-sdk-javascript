@@ -1895,10 +1895,15 @@ apiInstance.getIntegrationsCredential(credentialId)
 
 > CredentialInfoListing getIntegrationsCredentials(opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/integrations/credentials
 
 List multiple sets of credentials
+
+This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
 
 Requires ANY permissions:
 
@@ -5124,4 +5129,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@225.0.0_
+_purecloud-platform-client-v2@226.0.0_
