@@ -92,7 +92,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarUrlIcs) | **GET** /api/v2/workforcemanagement/calendar/url/ics | Get existing calendar link for the current user
 [**getWorkforcemanagementHistoricaldataBulkRemoveJob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJob) | **GET** /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId} | Retrieves delete job status for historical data imports associated with the job id
 [**getWorkforcemanagementHistoricaldataBulkRemoveJobs**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJobs) | **GET** /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs | Retrieves all delete job status for historical data
-[**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataDeletejob) | **GET** /api/v2/workforcemanagement/historicaldata/deletejob | Retrieves delete job status for historical data imports of the organization.
 [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatus) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus | Retrieves status of the historical data imports of the organization
 [**getWorkforcemanagementHistoricaldataImportstatusJobId**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatusJobId) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus/{jobId} | Retrieves status of the historical data imports associated with job id
 [**getWorkforcemanagementIntegrationsHris**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHris) | **GET** /api/v2/workforcemanagement/integrations/hris | Get integrations
@@ -210,7 +209,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi#postWorkforcemanagementBusinessunits) | **POST** /api/v2/workforcemanagement/businessunits | Add a new business unit
 [**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#postWorkforcemanagementCalendarUrlIcs) | **POST** /api/v2/workforcemanagement/calendar/url/ics | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
 [**postWorkforcemanagementHistoricaldataBulkRemoveJobs**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataBulkRemoveJobs) | **POST** /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs | Delete the list of the historical data import entries
-[**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataDeletejob) | **POST** /api/v2/workforcemanagement/historicaldata/deletejob | Delete the entries of the historical data imports in the organization.
 [**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataValidate) | **POST** /api/v2/workforcemanagement/historicaldata/validate | Trigger validation process for historical import
 [**postWorkforcemanagementIntegrationsHriTimeofftypesJobs**](WorkforceManagementApi#postWorkforcemanagementIntegrationsHriTimeofftypesJobs) | **POST** /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs | Get list of time off types configured in integration
 [**postWorkforcemanagementManagementunitAgentsWorkplansQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitAgentsWorkplansQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query | Get agents work plans configuration
@@ -4991,56 +4989,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **HistoricalImportOverallDeleteStatusResponse**
-
-
-## getWorkforcemanagementHistoricaldataDeletejob
-
-> HistoricalImportDeleteJobResponse getWorkforcemanagementHistoricaldataDeletejob()
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/workforcemanagement/historicaldata/deletejob
-
-Retrieves delete job status for historical data imports of the organization.
-
-Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-
-Requires ALL permissions:
-
-* wfm:historicalData:upload
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.WorkforceManagementApi();
-
-apiInstance.getWorkforcemanagementHistoricaldataDeletejob()
-  .then((data) => {
-    console.log(`getWorkforcemanagementHistoricaldataDeletejob success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getWorkforcemanagementHistoricaldataDeletejob');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**HistoricalImportDeleteJobResponse**
 
 
 ## getWorkforcemanagementHistoricaldataImportstatus
@@ -11395,56 +11343,6 @@ apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
 **HistoricalImportDeleteFilesJobResponse**
 
 
-## postWorkforcemanagementHistoricaldataDeletejob
-
-> HistoricalImportDeleteJobResponse postWorkforcemanagementHistoricaldataDeletejob()
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-POST /api/v2/workforcemanagement/historicaldata/deletejob
-
-Delete the entries of the historical data imports in the organization.
-
-Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-
-Requires ALL permissions:
-
-* wfm:historicalData:upload
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.WorkforceManagementApi();
-
-apiInstance.postWorkforcemanagementHistoricaldataDeletejob()
-  .then((data) => {
-    console.log(`postWorkforcemanagementHistoricaldataDeletejob success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postWorkforcemanagementHistoricaldataDeletejob');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**HistoricalImportDeleteJobResponse**
-
-
 ## postWorkforcemanagementHistoricaldataValidate
 
 > ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(body)
@@ -13593,4 +13491,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@225.0.0_
+_purecloud-platform-client-v2@226.0.0_

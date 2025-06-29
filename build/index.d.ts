@@ -1849,9 +1849,11 @@ declare class ConversationsApi {
   	postConversationParticipantInternalmessagesUsersCommunications(conversationId: string, participantId: string, body: Models.MessagingConferWithUserRequest): Promise<Models.MessagingConferResponse>;
   	postConversationParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
   	postConversationParticipantReplaceAgent(conversationId: string, participantId: string, body: Models.TransferToAgentRequest): Promise<void>;
+  	postConversationParticipantReplaceContactExternal(conversationId: string, participantId: string, body: Models.TransferToExternalContactRequest): Promise<void>;
   	postConversationParticipantReplaceExternal(conversationId: string, participantId: string, body: Models.TransferToExternalRequest): Promise<void>;
   	postConversationParticipantReplaceQueue(conversationId: string, participantId: string, body: Models.TransferToQueueRequest): Promise<void>;
   	postConversationParticipantSecureivrsessions(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantSecureivrsessionsOptions): Promise<Models.SecureSession>;
+  	postConversationParticipantTransfer(conversationId: string, participantId: string, body: Models.TransferToAddressRequest): Promise<void>;
   	postConversationSuggestionEngagement(conversationId: string, suggestionId: string, body: Models.SuggestionEngagement): Promise<Models.SuggestionEngagement>;
   	postConversationSuggestionsFeedback(conversationId: string, body: Models.Feedback): Promise<void>;
   	postConversationSummaryFeedback(conversationId: string, summaryId: string, opts?: ConversationsApi.postConversationSummaryFeedbackOptions): Promise<void>;
@@ -1861,10 +1863,12 @@ declare class ConversationsApi {
   	postConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallParticipantCommunicationWrapupOptions): Promise<void>;
   	postConversationsCallParticipantConsult(conversationId: string, participantId: string, body: Models.ConsultTransfer): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipantConsultAgent(conversationId: string, participantId: string, body: Models.ConsultTransferToAgent): Promise<Models.ConsultTransferResponse>;
+  	postConversationsCallParticipantConsultContactExternal(conversationId: string, participantId: string, body: Models.ConsultTransferToExternalContact): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipantConsultExternal(conversationId: string, participantId: string, body: Models.ConsultTransferToExternal): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipantConsultQueue(conversationId: string, participantId: string, body: Models.ConsultTransferToQueue): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipantMonitor(conversationId: string, participantId: string): Promise<void>;
   	postConversationsCallParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationsCallParticipantVoiceConsult(conversationId: string, participantId: string, body: Models.ConsultTransferToAddress): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipants(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
   	postConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallbackParticipantCommunicationWrapupOptions): Promise<void>;
   	postConversationsCallbackParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
@@ -5848,6 +5852,7 @@ declare namespace RoutingApi {
 	export interface getRoutingQueueWrapupcodesOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"name"?: string;
 	}
 	export interface getRoutingQueuesOptions { 
 		"pageNumber"?: number;
@@ -7892,7 +7897,6 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementCalendarUrlIcs(): Promise<Models.CalendarUrlResponse>;
   	getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId: string): Promise<Models.HistoricalImportDeleteFilesJobResponse>;
   	getWorkforcemanagementHistoricaldataBulkRemoveJobs(): Promise<Models.HistoricalImportOverallDeleteStatusResponse>;
-  	getWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>;
   	getWorkforcemanagementHistoricaldataImportstatus(): Promise<Models.HistoricalImportStatusListing>;
   	getWorkforcemanagementHistoricaldataImportstatusJobId(jobId: string): Promise<Models.HistoricalImportStatusJobResponse>;
   	getWorkforcemanagementIntegrationsHris(): Promise<Models.WfmIntegrationListing>;
@@ -8010,7 +8014,6 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunits(body: Models.CreateBusinessUnitRequest): Promise<Models.BusinessUnitResponse>;
   	postWorkforcemanagementCalendarUrlIcs(opts?: WorkforceManagementApi.postWorkforcemanagementCalendarUrlIcsOptions): Promise<Models.CalendarUrlResponse>;
   	postWorkforcemanagementHistoricaldataBulkRemoveJobs(body: Models.HistoricalImportDeleteFilesJobRequest): Promise<Models.HistoricalImportDeleteFilesJobResponse>;
-  	postWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>;
   	postWorkforcemanagementHistoricaldataValidate(body: Models.ValidationServiceRequest): Promise<Models.ValidationServiceAsyncResponse>;
   	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId: string): Promise<Models.HrisTimeOffTypesResponse>;
   	postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId: string, body: Models.GetAgentsWorkPlansRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentsWorkplansQueryOptions): Promise<Models.AgentsWorkPlansResponse>;
@@ -9873,6 +9876,7 @@ declare namespace Models {
 		"customerParticipation"?: boolean;
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
+		"inactivityTimeout"?: string;
 		"knowledgeBaseIds"?: Array<string>;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
@@ -9934,6 +9938,7 @@ declare namespace Models {
 		"customerParticipation"?: boolean;
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
+		"inactivityTimeout"?: string;
 		"knowledgeBaseIds"?: Array<string>;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
@@ -13099,6 +13104,7 @@ declare namespace Models {
 		"text"?: string;
 		"payload"?: string;
 		"messageType"?: string;
+		"originatingMessageId"?: string;
 	}
 	
 	export interface CachedMediaItem { 
@@ -15198,6 +15204,12 @@ declare namespace Models {
 		"destinationParticipantId": string;
 	}
 	
+	export interface ConsultTransferToAddress { 
+		"speakTo": string;
+		"consultingUserId"?: string;
+		"address"?: string;
+	}
+	
 	export interface ConsultTransferToAgent { 
 		"speakTo": string;
 		"consultingUserId"?: string;
@@ -15209,6 +15221,13 @@ declare namespace Models {
 		"speakTo": string;
 		"consultingUserId"?: string;
 		"address"?: string;
+	}
+	
+	export interface ConsultTransferToExternalContact { 
+		"speakTo": string;
+		"consultingUserId"?: string;
+		"contactId": string;
+		"phoneType": string;
 	}
 	
 	export interface ConsultTransferToQueue { 
@@ -15744,17 +15763,6 @@ declare namespace Models {
 		"textback"?: string;
 	}
 	
-	export interface ContentAttachment { 
-		"id"?: string;
-		"mediaType": string;
-		"url"?: string;
-		"mime"?: string;
-		"text"?: string;
-		"sha256"?: string;
-		"filename"?: string;
-		"contentSizeBytes"?: number;
-	}
-	
 	export interface ContentButtonResponse { 
 		"id"?: string;
 		"type": string;
@@ -15814,33 +15822,6 @@ declare namespace Models {
 		"type"?: string;
 		"operator"?: string;
 		"values"?: Array<string>;
-	}
-	
-	export interface ContentGeneric { 
-		"title"?: string;
-		"description"?: string;
-		"image"?: string;
-		"video"?: string;
-		"actions"?: Models.ContentActions;
-		"components"?: Array<Models.ButtonComponent>;
-	}
-	
-	export interface ContentList { 
-		"id"?: string;
-		"listType"?: string;
-		"title"?: string;
-		"description"?: string;
-		"submitLabel"?: string;
-		"actions"?: Models.ContentActions;
-		"components"?: Array<Models.ListItemComponent>;
-	}
-	
-	export interface ContentLocation { 
-		"url"?: string;
-		"address"?: string;
-		"text"?: string;
-		"latitude"?: number;
-		"longitude"?: number;
 	}
 	
 	export interface ContentManagementSingleDocumentTopicDocumentDataV2 { 
@@ -15907,15 +15888,6 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
-	export interface ContentNotificationTemplate { 
-		"id"?: string;
-		"language"?: string;
-		"header"?: Models.NotificationTemplateHeader;
-		"body": Models.NotificationTemplateBody;
-		"buttons"?: Array<Models.NotificationTemplateButton>;
-		"footer"?: Models.NotificationTemplateFooter;
-	}
-	
 	export interface ContentOffer { 
 		"imageUrl"?: string;
 		"displayMode": string;
@@ -15950,25 +15922,6 @@ declare namespace Models {
 		"right"?: string;
 	}
 	
-	export interface ContentPostback { 
-		"id"?: string;
-		"text"?: string;
-		"payload": string;
-	}
-	
-	export interface ContentQuickReply { 
-		"id"?: string;
-		"text": string;
-		"payload": string;
-		"image"?: string;
-		"action"?: string;
-	}
-	
-	export interface ContentQuickReplyV2 { 
-		"title": string;
-		"actions": Array<Models.ContentQuickReply>;
-	}
-	
 	export interface ContentReaction { 
 		"reactionType": string;
 		"count": number;
@@ -15976,17 +15929,6 @@ declare namespace Models {
 	
 	export interface ContentSetting { 
 		"story"?: Models.StorySetting;
-	}
-	
-	export interface ContentStory { 
-		"type": string;
-		"url": string;
-		"replyToId"?: string;
-	}
-	
-	export interface ContentText { 
-		"type"?: string;
-		"body": string;
 	}
 	
 	export interface ContestCompleteData { 
@@ -16130,11 +16072,13 @@ declare namespace Models {
 	export interface ContestUserRank { 
 		"id"?: string;
 		"rank"?: number;
+		"score"?: number;
 		"selfUri"?: string;
 	}
 	
 	export interface ContestWinners { 
 		"tier"?: number;
+		"winnersCount"?: number;
 		"users"?: Array<Models.ContestUserRank>;
 	}
 	
@@ -17400,6 +17344,14 @@ declare namespace Models {
 	
 	export interface ConversationContentRequiredContactField { 
 		"contactField": string;
+	}
+	
+	export interface ConversationContentRoadsideAssistance { 
+		"text"?: string;
+		"phoneNumber"?: string;
+		"isDevicePhoneNumber"?: boolean;
+		"location"?: Models.ConversationContentLocation;
+		"messageNumber"?: number;
 	}
 	
 	export interface ConversationContentStory { 
@@ -21028,9 +20980,11 @@ declare namespace Models {
 	}
 	
 	export interface DatePicker { 
+		"id"?: string;
 		"title"?: string;
 		"subtitle"?: string;
 		"datePickerAvailableDateTimes": Array<Models.DatePickerAvailableDateTime>;
+		"dateSelected"?: string;
 	}
 	
 	export interface DatePickerAvailableDateTime { 
@@ -23319,8 +23273,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -23334,8 +23288,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -23349,8 +23303,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -28555,13 +28509,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface HistoricalImportDeleteJobResponse { 
-		"id"?: string;
-		"name"?: string;
-		"status"?: string;
-		"selfUri"?: string;
-	}
-	
 	export interface HistoricalImportOverallDeleteStatusResponse { 
 		"entities"?: Array<Models.HistoricalDataJobEntityStatus>;
 		"status"?: string;
@@ -32731,6 +32678,16 @@ declare namespace Models {
 		"archivalMode"?: string;
 	}
 	
+	export interface LearningModuleAutoAssignRequest { 
+		"ruleId": string;
+		"enabled": boolean;
+	}
+	
+	export interface LearningModuleAutoAssignResponse { 
+		"rule": Models.UsersRulesRuleReference;
+		"enabled": boolean;
+	}
+	
 	export interface LearningModuleCoverArtRequest { 
 		"id": string;
 	}
@@ -33351,17 +33308,8 @@ declare namespace Models {
 		"result"?: Models.AlternativeShiftTradeListing;
 	}
 	
-	export interface ListItemComponent { 
-		"id"?: string;
-		"rmid"?: string;
-		"type"?: string;
-		"image"?: string;
-		"title"?: string;
-		"description"?: string;
-		"actions"?: Models.ContentActions;
-	}
-	
 	export interface ListPicker { 
+		"id"?: string;
 		"title"?: string;
 		"subtitle"?: string;
 		"sections": Array<Models.ListPickerSection>;
@@ -34118,26 +34066,6 @@ declare namespace Models {
 		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 	}
 	
-	export interface MessageContent { 
-		"contentType": string;
-		"attachment"?: Models.ContentAttachment;
-		"quickReply"?: Models.ContentQuickReply;
-		"buttonResponse"?: Models.ContentButtonResponse;
-		"generic"?: Models.ContentGeneric;
-		"list"?: Models.ContentList;
-		"template"?: Models.ContentNotificationTemplate;
-		"reactions"?: Array<Models.ContentReaction>;
-		"mention"?: Models.MessagingRecipient;
-		"postback"?: Models.ContentPostback;
-		"story"?: Models.ContentStory;
-		"card"?: Models.ContentCard;
-		"carousel"?: Models.ContentCarousel;
-		"text"?: Models.ContentText;
-		"quickReplyV2"?: Models.ContentQuickReplyV2;
-		"datePicker"?: Models.ContentDatePicker;
-		"location"?: Models.ContentLocation;
-	}
-	
 	export interface MessageConversation { 
 		"id"?: string;
 		"name"?: string;
@@ -34574,18 +34502,6 @@ declare namespace Models {
 		"commandId": string;
 		"objectCommunicationId": string;
 		"destinationCommunicationId": string;
-	}
-	
-	export interface MessagingRecipient { 
-		"nickname"?: string;
-		"id": string;
-		"idType"?: string;
-		"image"?: string;
-		"firstName"?: string;
-		"lastName"?: string;
-		"email"?: string;
-		"externalContactId"?: string;
-		"additionalIds"?: Array<Models.RecipientAdditionalIdentifier>;
 	}
 	
 	export interface MessagingRoutingEstablishedEvent { 
@@ -35330,36 +35246,6 @@ declare namespace Models {
 		"previousUri"?: string;
 		"nextUri"?: string;
 		"pageCount"?: number;
-	}
-	
-	export interface NotificationTemplateBody { 
-		"text"?: string;
-		"parameters": Array<Models.NotificationTemplateParameter>;
-	}
-	
-	export interface NotificationTemplateButton { 
-		"type": string;
-		"text"?: string;
-		"index": number;
-		"phoneNumber"?: string;
-		"url"?: string;
-		"parameters"?: Array<Models.NotificationTemplateParameter>;
-	}
-	
-	export interface NotificationTemplateFooter { 
-		"text"?: string;
-	}
-	
-	export interface NotificationTemplateHeader { 
-		"type": string;
-		"text"?: string;
-		"media"?: Models.ContentAttachment;
-		"parameters"?: Array<Models.NotificationTemplateParameter>;
-	}
-	
-	export interface NotificationTemplateParameter { 
-		"name"?: string;
-		"text": string;
 	}
 	
 	export interface NotificationsResponse { 
@@ -42124,6 +42010,11 @@ declare namespace Models {
 		"minutesBetweenAttempts"?: number;
 	}
 	
+	export interface ReceivedReplyMessage { 
+		"title"?: string;
+		"subtitle"?: string;
+	}
+	
 	export interface Recipient { 
 		"id"?: string;
 		"name"?: string;
@@ -42337,6 +42228,52 @@ declare namespace Models {
 		"actualTranscodeTimeMs"?: number;
 	}
 	
+	export interface RecordingForm { 
+		"introduction"?: Models.RecordingIntroduction;
+		"formPages"?: Array<Models.RecordingFormPage>;
+		"receivedMessage"?: Models.ReceivedReplyMessage;
+		"replyMessage"?: Models.ReceivedReplyMessage;
+		"response"?: Array<Models.RecordingFormResponseComponent>;
+		"originatingMessageId"?: string;
+		"cannedResponseId"?: string;
+	}
+	
+	export interface RecordingFormPage { 
+		"title"?: string;
+		"subtitle"?: string;
+		"pageComponents"?: Array<Models.RecordingFormPageComponent>;
+	}
+	
+	export interface RecordingFormPageComponent { 
+		"formComponentType"?: string;
+		"datePicker"?: Models.DatePicker;
+		"wheelPicker"?: Models.RecordingWheelPicker;
+		"listPicker"?: Models.ListPicker;
+		"input"?: Models.RecordingInput;
+	}
+	
+	export interface RecordingFormResponseComponent { 
+		"id"?: string;
+		"component"?: Models.RecordingFormResponseContent;
+	}
+	
+	export interface RecordingFormResponseContent { 
+		"contentType"?: string;
+		"buttonResponse"?: Models.ButtonResponse;
+	}
+	
+	export interface RecordingInput { 
+		"id"?: string;
+		"title"?: string;
+		"subtitle"?: string;
+		"responseText"?: string;
+	}
+	
+	export interface RecordingIntroduction { 
+		"title"?: string;
+		"subtitle"?: string;
+	}
+	
 	export interface RecordingJob { 
 		"id"?: string;
 		"state": string;
@@ -42520,6 +42457,18 @@ declare namespace Models {
 	export interface RecordingUploadReportRequest { 
 		"dateSince": string;
 		"uploadStatus"?: string;
+	}
+	
+	export interface RecordingWheelPicker { 
+		"id"?: string;
+		"items"?: Array<Models.RecordingWheelPickerItem>;
+	}
+	
+	export interface RecordingWheelPickerItem { 
+		"id"?: string;
+		"title"?: string;
+		"value"?: string;
+		"isSelected"?: boolean;
 	}
 	
 	export interface RecurrenceEndSettings { 
@@ -47026,7 +46975,7 @@ declare namespace Models {
 		"text": string;
 		"type": string;
 		"format"?: Models.Format;
-		"content"?: Array<Models.MessageContent>;
+		"content"?: Array<Models.ConversationMessageContent>;
 	}
 	
 	export interface TextBotTextModeConstraints { 
@@ -47709,6 +47658,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface TransferToAddressRequest { 
+		"transferType"?: string;
+		"keepInternalMessageAlive"?: boolean;
+		"address"?: string;
+	}
+	
 	export interface TransferToAgentRequest { 
 		"transferType"?: string;
 		"keepInternalMessageAlive"?: boolean;
@@ -47716,6 +47671,13 @@ declare namespace Models {
 		"userName"?: string;
 		"userDisplayName"?: string;
 		"voicemail"?: boolean;
+	}
+	
+	export interface TransferToExternalContactRequest { 
+		"transferType"?: string;
+		"keepInternalMessageAlive"?: boolean;
+		"contactId": string;
+		"phoneType": string;
 	}
 	
 	export interface TransferToExternalRequest { 
@@ -50044,6 +50006,11 @@ declare namespace Models {
 		"allowScreenShare"?: boolean;
 	}
 	
+	export interface UsersRulesRuleReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface UsersSearchResponse { 
 		"total": number;
 		"pageCount": number;
@@ -51111,6 +51078,8 @@ declare namespace Models {
 	}
 	
 	export interface VoicemailMailboxInfo { 
+		"id"?: string;
+		"ownerType"?: string;
 		"usageSizeBytes"?: number;
 		"totalCount"?: number;
 		"unreadCount"?: number;
@@ -51121,6 +51090,7 @@ declare namespace Models {
 		"oldestUnreadDate"?: string;
 		"newestReadDate"?: string;
 		"oldestReadDate"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface VoicemailMediaInfo { 

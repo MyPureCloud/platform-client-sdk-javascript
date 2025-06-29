@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 225.0.0
+	 * @version 226.0.0
 	 */
 
 	/**
@@ -1586,6 +1586,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Wrapup code's name (trailing asterisks allowed)
 	 */
 	getRoutingQueueWrapupcodes(queueId, opts) { 
 		opts = opts || {};
@@ -1599,7 +1600,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 			'GET', 
 			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 

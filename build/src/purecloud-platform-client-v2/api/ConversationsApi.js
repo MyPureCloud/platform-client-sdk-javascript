@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 225.0.0
+	 * @version 226.0.0
 	 */
 
 	/**
@@ -5140,6 +5140,42 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationParticipantReplaceContactExternal(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceContactExternal';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceContactExternal';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceContactExternal';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the an external contact
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
 	 */
 	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5232,6 +5268,42 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant by another one using the address of the destination.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationParticipantTransfer(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantTransfer';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantTransfer';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantTransfer';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/transfer', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -5543,6 +5615,42 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultContactExternal';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultContactExternal';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultContactExternal';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to an external contact
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination address and initial speak to
 	 */
 	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5660,6 +5768,42 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate voice consult transfer
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination address and initial speak to
+	 * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantVoiceConsult(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantVoiceConsult';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantVoiceConsult';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantVoiceConsult';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },

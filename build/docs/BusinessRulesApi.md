@@ -877,6 +877,7 @@ Requires ALL permissions:
 
 * businessrules:decisionTable:edit
 * businessrules:businessRulesSchema:view
+* routing:queue:view
 
 ### Example Usage
 
@@ -1441,6 +1442,7 @@ Requires ALL permissions:
 
 * businessrules:decisionTable:add
 * businessrules:businessRulesSchema:view
+* routing:queue:view
 
 ### Example Usage
 
@@ -1698,4 +1700,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@225.0.0_
+_purecloud-platform-client-v2@226.0.0_

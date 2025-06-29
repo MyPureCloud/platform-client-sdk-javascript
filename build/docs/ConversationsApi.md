@@ -180,9 +180,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications | Setup internal message communication with user
 [**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
+[**postConversationParticipantReplaceContactExternal**](ConversationsApi#postConversationParticipantReplaceContactExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external | Replace this participant with the an external contact
 [**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
 [**postConversationParticipantReplaceQueue**](ConversationsApi#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
 [**postConversationParticipantSecureivrsessions**](ConversationsApi#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+[**postConversationParticipantTransfer**](ConversationsApi#postConversationParticipantTransfer) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/transfer | Replace this participant by another one using the address of the destination.
 [**postConversationSuggestionEngagement**](ConversationsApi#postConversationSuggestionEngagement) | **POST** /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement | Save an engagement on the suggestion.
 [**postConversationSuggestionsFeedback**](ConversationsApi#postConversationSuggestionsFeedback) | **POST** /api/v2/conversations/{conversationId}/suggestions/feedback | Suggestion feedback.
 [**postConversationSummaryFeedback**](ConversationsApi#postConversationSummaryFeedback) | **POST** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Submit feedback for the summary.
@@ -192,10 +194,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
 [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
+[**postConversationsCallParticipantConsultContactExternal**](ConversationsApi#postConversationsCallParticipantConsultContactExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external | Initiate a consult transfer to an external contact
 [**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact
 [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
 [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer
 [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
 [**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallbackParticipantReplace**](ConversationsApi#postConversationsCallbackParticipantReplace) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
@@ -9463,6 +9467,63 @@ apiInstance.postConversationParticipantReplaceAgent(conversationId, participantI
 void (no response body)
 
 
+## postConversationParticipantReplaceContactExternal
+
+> void postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external
+
+Replace this participant with the an external contact
+
+postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternalContact
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantReplaceContactExternal returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantReplaceContactExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+
+### Return type
+
+void (no response body)
+
+
 ## postConversationParticipantReplaceExternal
 
 > void postConversationParticipantReplaceExternal(conversationId, participantId, body)
@@ -9625,6 +9686,62 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
 ### Return type
 
 **SecureSession**
+
+
+## postConversationParticipantTransfer
+
+> void postConversationParticipantTransfer(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer
+
+Replace this participant by another one using the address of the destination.
+
+postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantTransfer(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantTransfer returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantTransfer');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+
+### Return type
+
+void (no response body)
 
 
 ## postConversationSuggestionEngagement
@@ -10115,6 +10232,63 @@ apiInstance.postConversationsCallParticipantConsultAgent(conversationId, partici
 **ConsultTransferResponse**
 
 
+## postConversationsCallParticipantConsultContactExternal
+
+> ConsultTransferResponse postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external
+
+Initiate a consult transfer to an external contact
+
+postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternalContact
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination address and initial speak to
+
+apiInstance.postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantConsultContactExternal success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantConsultContactExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination address and initial speak to |  |
+
+### Return type
+
+**ConsultTransferResponse**
+
+
 ## postConversationsCallParticipantConsultExternal
 
 > ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
@@ -10329,6 +10503,62 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
 ### Return type
 
 void (no response body)
+
+
+## postConversationsCallParticipantVoiceConsult
+
+> ConsultTransferResponse postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult
+
+Initiate voice consult transfer
+
+postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination address and initial speak to
+
+apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantVoiceConsult success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantVoiceConsult');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination address and initial speak to |  |
+
+### Return type
+
+**ConsultTransferResponse**
 
 
 ## postConversationsCallParticipants
@@ -14581,4 +14811,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@225.0.0_
+_purecloud-platform-client-v2@226.0.0_

@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 225.0.0
+	 * @version 226.0.0
 	 */
 
 	/**
@@ -2563,27 +2563,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves delete job status for historical data imports of the organization.
-	 * Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-	 * @deprecated
-	 */
-	getWorkforcemanagementHistoricaldataDeletejob() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/historicaldata/deletejob', 
 			'GET', 
 			{  },
 			{  },
@@ -6201,27 +6180,6 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete the entries of the historical data imports in the organization.
-	 * Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
-	 * @deprecated
-	 */
-	postWorkforcemanagementHistoricaldataDeletejob() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/historicaldata/deletejob', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

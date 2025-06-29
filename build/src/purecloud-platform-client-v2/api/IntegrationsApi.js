@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 225.0.0
+	 * @version 226.0.0
 	 */
 
 	/**
@@ -943,10 +943,11 @@ class IntegrationsApi {
 
 	/**
 	 * List multiple sets of credentials
-	 * 
+	 * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @deprecated
 	 */
 	getIntegrationsCredentials(opts) { 
 		opts = opts || {};
