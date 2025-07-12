@@ -124,6 +124,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | **GET** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job
 [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
 [**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi#getWorkforcemanagementShrinkageJob) | **GET** /api/v2/workforcemanagement/shrinkage/jobs/{jobId} | Request to fetch the status of the historical shrinkage query
+[**getWorkforcemanagementTeamAdherence**](WorkforceManagementApi#getWorkforcemanagementTeamAdherence) | **GET** /api/v2/workforcemanagement/teams/{teamId}/adherence | Get a list of user schedule adherence records for the requested team
 [**getWorkforcemanagementTimeoffbalanceJob**](WorkforceManagementApi#getWorkforcemanagementTimeoffbalanceJob) | **GET** /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId} | Query the results of time off types job
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequestWaitlistpositions) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions | Get the daily waitlist positions of a time off request for the current user
@@ -6799,6 +6800,56 @@ apiInstance.getWorkforcemanagementShrinkageJob(jobId)
 ### Return type
 
 **WfmHistoricalShrinkageResponse**
+
+
+## getWorkforcemanagementTeamAdherence
+
+> UserScheduleAdherenceListing getWorkforcemanagementTeamAdherence(teamId)
+
+
+GET /api/v2/workforcemanagement/teams/{teamId}/adherence
+
+Get a list of user schedule adherence records for the requested team
+
+Requires ANY permissions:
+
+* wfm:realtimeAdherence:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let teamId = "teamId_example"; // String | The ID of the team
+
+apiInstance.getWorkforcemanagementTeamAdherence(teamId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementTeamAdherence success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementTeamAdherence');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | The ID of the team |  |
+
+### Return type
+
+**UserScheduleAdherenceListing**
 
 
 ## getWorkforcemanagementTimeoffbalanceJob
@@ -13491,4 +13542,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@226.0.0_
+_purecloud-platform-client-v2@227.0.0_

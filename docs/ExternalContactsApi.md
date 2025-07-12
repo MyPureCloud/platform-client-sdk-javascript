@@ -1246,7 +1246,7 @@ apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 
 ## getExternalcontactsContactsSchemaVersions
 
-> DataSchema getExternalcontactsContactsSchemaVersions(schemaId)
+> DataSchemaListing getExternalcontactsContactsSchemaVersions(schemaId)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions
@@ -1291,7 +1291,7 @@ apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
 
 ### Return type
 
-**DataSchema**
+**DataSchemaListing**
 
 
 ## getExternalcontactsContactsSchemas
@@ -2539,7 +2539,7 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 
 ## getExternalcontactsOrganizationsSchemaVersions
 
-> DataSchema getExternalcontactsOrganizationsSchemaVersions(schemaId)
+> DataSchemaListing getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions
@@ -2584,7 +2584,7 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 ### Return type
 
-**DataSchema**
+**DataSchemaListing**
 
 
 ## getExternalcontactsOrganizationsSchemas
@@ -6340,4 +6340,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@226.0.0_
+_purecloud-platform-client-v2@227.0.0_

@@ -679,4 +679,4 @@ apiInstance.postGuidesJobs(body)
 **GuideContentGenerationJob**
 
 
-_purecloud-platform-client-v2@226.0.0_
+_purecloud-platform-client-v2@227.0.0_
