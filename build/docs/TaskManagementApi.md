@@ -1617,7 +1617,7 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
 
 ## getTaskmanagementWorkitemsSchemaVersions
 
-> DataSchema getTaskmanagementWorkitemsSchemaVersions(schemaId)
+> DataSchemaListing getTaskmanagementWorkitemsSchemaVersions(schemaId)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions
@@ -1662,7 +1662,7 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId)
 
 ### Return type
 
-**DataSchema**
+**DataSchemaListing**
 
 
 ## getTaskmanagementWorkitemsSchemas
@@ -4054,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@226.0.0_
+_purecloud-platform-client-v2@227.0.0_

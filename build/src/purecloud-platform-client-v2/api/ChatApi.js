@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 226.0.0
+	 * @version 227.0.0
 	 */
 
 	/**
@@ -160,6 +160,26 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}', 
 			'DELETE', 
 			{ 'userId': userId,'pinnedMessageId': pinnedMessageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a user's chat settings
+	 * 
+	 */
+	deleteChatsUsersMeSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/me/settings', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -867,6 +887,31 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages/pins', 
 			'POST', 
 			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a user's chat settings
+	 * 
+	 * @param {Object} body 
+	 */
+	postChatsUsersMeSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsUsersMeSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/me/settings', 
+			'POST', 
+			{  },
 			{  },
 			{  },
 			{  },

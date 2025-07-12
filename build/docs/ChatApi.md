@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteChatsRoomParticipant**](ChatApi#deleteChatsRoomParticipant) | **DELETE** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Remove a user from a room.
 [**deleteChatsUserMessage**](ChatApi#deleteChatsUserMessage) | **DELETE** /api/v2/chats/users/{userId}/messages/{messageId} | Delete a message to a user
 [**deleteChatsUserMessagesPin**](ChatApi#deleteChatsUserMessagesPin) | **DELETE** /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId} | Remove a pinned message from a 1on1
+[**deleteChatsUsersMeSettings**](ChatApi#deleteChatsUsersMeSettings) | **DELETE** /api/v2/chats/users/me/settings | Delete a user's chat settings
 [**getChatsMessage**](ChatApi#getChatsMessage) | **GET** /api/v2/chats/messages/{messageId} | Get a message
 [**getChatsRoom**](ChatApi#getChatsRoom) | **GET** /api/v2/chats/rooms/{roomJid} | Get a room
 [**getChatsRoomMessage**](ChatApi#getChatsRoomMessage) | **GET** /api/v2/chats/rooms/{roomJid}/messages/{messageIds} | Get messages by id(s) from a room
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postChatsRooms**](ChatApi#postChatsRooms) | **POST** /api/v2/chats/rooms | Create an adhoc room
 [**postChatsUserMessages**](ChatApi#postChatsUserMessages) | **POST** /api/v2/chats/users/{userId}/messages | Send a message to a user
 [**postChatsUserMessagesPins**](ChatApi#postChatsUserMessagesPins) | **POST** /api/v2/chats/users/{userId}/messages/pins | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+[**postChatsUsersMeSettings**](ChatApi#postChatsUsersMeSettings) | **POST** /api/v2/chats/users/me/settings | Create a user's chat settings
 [**putChatsMessageReactions**](ChatApi#putChatsMessageReactions) | **PUT** /api/v2/chats/messages/{messageId}/reactions | Update reactions to a message
 [**putChatsSettings**](ChatApi#putChatsSettings) | **PUT** /api/v2/chats/settings | Update Chat Settings.
 
@@ -300,6 +302,49 @@ apiInstance.deleteChatsUserMessagesPin(userId, pinnedMessageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **pinnedMessageId** | **String** | pinnedMessageId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteChatsUsersMeSettings
+
+> void deleteChatsUsersMeSettings()
+
+
+DELETE /api/v2/chats/users/me/settings
+
+Delete a user's chat settings
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+apiInstance.deleteChatsUsersMeSettings()
+  .then(() => {
+    console.log('deleteChatsUsersMeSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteChatsUsersMeSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1618,6 +1663,54 @@ apiInstance.postChatsUserMessagesPins(userId, body)
 void (no response body)
 
 
+## postChatsUsersMeSettings
+
+> void postChatsUsersMeSettings(body)
+
+
+POST /api/v2/chats/users/me/settings
+
+Create a user's chat settings
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+let body = {}; // Object | 
+
+apiInstance.postChatsUsersMeSettings(body)
+  .then(() => {
+    console.log('postChatsUsersMeSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postChatsUsersMeSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+void (no response body)
+
+
 ## putChatsMessageReactions
 
 > void putChatsMessageReactions(messageId, body)
@@ -1721,4 +1814,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@226.0.0_
+_purecloud-platform-client-v2@227.0.0_

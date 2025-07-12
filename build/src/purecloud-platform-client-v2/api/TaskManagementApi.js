@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 226.0.0
+	 * @version 227.0.0
 	 */
 
 	/**

@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 226.0.0
+	 * @version 227.0.0
 	 */
 
 	/**
@@ -3468,6 +3468,31 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/shrinkage/jobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of user schedule adherence records for the requested team
+	 * 
+	 * @param {String} teamId The ID of the team
+	 */
+	getWorkforcemanagementTeamAdherence(teamId) { 
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null || teamId === '') {
+			throw 'Missing the required parameter "teamId" when calling getWorkforcemanagementTeamAdherence';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/teams/{teamId}/adherence', 
+			'GET', 
+			{ 'teamId': teamId },
 			{  },
 			{  },
 			{  },

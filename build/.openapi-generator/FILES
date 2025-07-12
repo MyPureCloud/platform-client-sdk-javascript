@@ -202,6 +202,7 @@ docs/deleteChatsRoomMessagesPin-example.txt
 docs/deleteChatsRoomParticipant-example.txt
 docs/deleteChatsUserMessage-example.txt
 docs/deleteChatsUserMessagesPin-example.txt
+docs/deleteChatsUsersMeSettings-example.txt
 docs/deleteCoachingAppointment-example.txt
 docs/deleteCoachingAppointmentAnnotation-example.txt
 docs/deleteContentmanagementDocument-example.txt
@@ -1852,6 +1853,7 @@ docs/getWorkforcemanagementNotifications-example.txt
 docs/getWorkforcemanagementSchedulingjob-example.txt
 docs/getWorkforcemanagementShifttrades-example.txt
 docs/getWorkforcemanagementShrinkageJob-example.txt
+docs/getWorkforcemanagementTeamAdherence-example.txt
 docs/getWorkforcemanagementTimeoffbalanceJob-example.txt
 docs/getWorkforcemanagementTimeoffrequest-example.txt
 docs/getWorkforcemanagementTimeoffrequestWaitlistpositions-example.txt
@@ -2216,6 +2218,7 @@ docs/postChatsRoomParticipant-example.txt
 docs/postChatsRooms-example.txt
 docs/postChatsUserMessages-example.txt
 docs/postChatsUserMessagesPins-example.txt
+docs/postChatsUsersMeSettings-example.txt
 docs/postCoachingAppointmentAnnotations-example.txt
 docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
