@@ -1,8 +1,8 @@
 [
+  "AIStudioApi.md",
   "AgentAssistantsApi.md",
   "AgentCopilotApi.md",
   "AgentUIApi.md",
-  "AIStudioApi.md",
   "AlertingApi.md",
   "AnalyticsApi.md",
   "ArchitectApi.md",
@@ -30,13 +30,12 @@
   "GreetingsApi.md",
   "GroupsApi.md",
   "IdentityProviderApi.md",
-  "index.md",
   "InfrastructureAsCodeApi.md",
   "IntegrationsApi.md",
   "JourneyApi.md",
   "KnowledgeApi.md",
-  "LanguagesApi.md",
   "LanguageUnderstandingApi.md",
+  "LanguagesApi.md",
   "LearningApi.md",
   "LicenseApi.md",
   "LocationsApi.md",
@@ -54,7 +53,6 @@
   "ProcessAutomationApi.md",
   "QualityApi.md",
   "RecordingApi.md",
-  "releaseNotes.md",
   "ResponseManagementApi.md",
   "RoutingApi.md",
   "SCIMApi.md",
@@ -82,5 +80,7 @@
   "WebDeploymentsApi.md",
   "WebMessagingApi.md",
   "WidgetsApi.md",
-  "WorkforceManagementApi.md"
+  "WorkforceManagementApi.md",
+  "index.md",
+  "releaseNotes.md"
 ]
