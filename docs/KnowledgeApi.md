@@ -86,6 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi#postKnowledgeGuestSessionDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
 [**postKnowledgeGuestSessions**](KnowledgeApi#postKnowledgeGuestSessions) | **POST** /api/v2/knowledge/guest/sessions | Create guest session
 [**postKnowledgeKnowledgebaseCategories**](KnowledgeApi#postKnowledgeKnowledgebaseCategories) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories | Create new category
+[**postKnowledgeKnowledgebaseChunksSearch**](KnowledgeApi#postKnowledgeKnowledgebaseChunksSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search | Search for chunks in a knowledge base
 [**postKnowledgeKnowledgebaseDocumentCopies**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentCopies) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentFeedback) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback | Give feedback on a document
 [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentVariations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations | Create a variation for a document.
@@ -4626,6 +4627,60 @@ apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
 **CategoryResponse**
 
 
+## postKnowledgeKnowledgebaseChunksSearch
+
+> KnowledgeDocumentChunkResponse postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search
+
+Search for chunks in a knowledge base
+
+Requires ALL permissions:
+
+* knowledge:knowledgebase:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseChunksSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseChunksSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge Base ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**KnowledgeDocumentChunkResponse**
+
+
 ## postKnowledgeKnowledgebaseDocumentCopies
 
 > void postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts)
@@ -5214,7 +5269,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge Base ID |  |
- **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+ **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks |
  **body** | **Object** |  | [optional]  |
 
 ### Return type
@@ -5270,7 +5325,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | The ID of knowledge base containing the documents to query. |  |
- **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+ **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks |
  **body** | **Object** |  | [optional]  |
 
 ### Return type
@@ -6523,4 +6578,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

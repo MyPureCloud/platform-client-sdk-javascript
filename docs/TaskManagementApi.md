@@ -925,7 +925,7 @@ apiInstance.getTaskmanagementWorkitemHistory(workitemId, opts)
 
 ## getTaskmanagementWorkitemUserWrapups
 
-> WorkitemWrapup getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
+> WorkitemWrapupEntityListing getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
@@ -982,7 +982,7 @@ apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
 
 ### Return type
 
-**WorkitemWrapup**
+**WorkitemWrapupEntityListing**
 
 
 ## getTaskmanagementWorkitemVersion
@@ -4054,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

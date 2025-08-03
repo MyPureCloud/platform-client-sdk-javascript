@@ -6,13 +6,116 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**getTelephonyAgentGreetings**](TelephonyApi#getTelephonyAgentGreetings) | **GET** /api/v2/telephony/agents/{agentId}/greetings | Get an agent's greetings.
+[**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | **GET** /api/v2/telephony/agents/greetings/me | Get the agent's own greetings.
 [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | **GET** /api/v2/telephony/mediaregions | Retrieve the list of AWS regions media can stream through.
 [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId} | Get a SIP message.
 [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId}/headers | Get SIP headers.
 [**getTelephonySiptraces**](TelephonyApi#getTelephonySiptraces) | **GET** /api/v2/telephony/siptraces | Fetch SIP metadata
 [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi#getTelephonySiptracesDownloadDownloadId) | **GET** /api/v2/telephony/siptraces/download/{downloadId} | Get signed S3 URL for a pcap download
 [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | **POST** /api/v2/telephony/siptraces/download | Request a download of a pcap file to S3
+[**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | **PUT** /api/v2/telephony/agents/{agentId}/greetings | Updates an agent's greetings.
+[**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | **PUT** /api/v2/telephony/agents/greetings/me | Updates the agent's own greetings.
 
+
+
+## getTelephonyAgentGreetings
+
+> AgentGreeting getTelephonyAgentGreetings(agentId)
+
+
+GET /api/v2/telephony/agents/{agentId}/greetings
+
+Get an agent's greetings.
+
+getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* telephony:otherAgentGreeting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let agentId = "agentId_example"; // String | User ID
+
+apiInstance.getTelephonyAgentGreetings(agentId)
+  .then((data) => {
+    console.log(`getTelephonyAgentGreetings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyAgentGreetings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | User ID |  |
+
+### Return type
+
+**AgentGreeting**
+
+
+## getTelephonyAgentsGreetingsMe
+
+> SelfAgentGreeting getTelephonyAgentsGreetingsMe()
+
+
+GET /api/v2/telephony/agents/greetings/me
+
+Get the agent's own greetings.
+
+getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* telephony:selfAgentGreeting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+apiInstance.getTelephonyAgentsGreetingsMe()
+  .then((data) => {
+    console.log(`getTelephonyAgentsGreetingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyAgentsGreetingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**SelfAgentGreeting**
 
 
 ## getTelephonyMediaregions
@@ -332,4 +435,110 @@ apiInstance.postTelephonySiptracesDownload(sIPSearchPublicRequest)
 **SipDownloadResponse**
 
 
-_purecloud-platform-client-v2@227.0.0_
+## putTelephonyAgentGreetings
+
+> AgentGreeting putTelephonyAgentGreetings(agentId, body)
+
+
+PUT /api/v2/telephony/agents/{agentId}/greetings
+
+Updates an agent's greetings.
+
+putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* telephony:otherAgentGreeting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let agentId = "agentId_example"; // String | User ID
+let body = {}; // Object | Agent Greeting
+
+apiInstance.putTelephonyAgentGreetings(agentId, body)
+  .then((data) => {
+    console.log(`putTelephonyAgentGreetings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyAgentGreetings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | User ID |  |
+ **body** | **Object** | Agent Greeting |  |
+
+### Return type
+
+**AgentGreeting**
+
+
+## putTelephonyAgentsGreetingsMe
+
+> SelfAgentGreeting putTelephonyAgentsGreetingsMe(body)
+
+
+PUT /api/v2/telephony/agents/greetings/me
+
+Updates the agent's own greetings.
+
+putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* telephony:selfAgentGreeting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let body = {}; // Object | Agent Greeting
+
+apiInstance.putTelephonyAgentsGreetingsMe(body)
+  .then((data) => {
+    console.log(`putTelephonyAgentsGreetingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyAgentsGreetingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Agent Greeting |  |
+
+### Return type
+
+**SelfAgentGreeting**
+
+
+_purecloud-platform-client-v2@228.0.0_

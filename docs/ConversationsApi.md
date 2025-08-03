@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
 [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
 [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
@@ -130,7 +131,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCall**](ConversationsApi#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 [**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 [**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
 [**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsCallbackParticipant**](ConversationsApi#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
@@ -140,7 +141,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsChat**](ConversationsApi#patchConversationsChat) | **PATCH** /api/v2/conversations/chats/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsChatParticipant**](ConversationsApi#patchConversationsChatParticipant) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsChatParticipantAttributes**](ConversationsApi#patchConversationsChatParticipantAttributes) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsChatParticipantCommunication**](ConversationsApi#patchConversationsChatParticipantCommunication) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsChatParticipantCommunication**](ConversationsApi#patchConversationsChatParticipantCommunication) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 [**patchConversationsCobrowsesession**](ConversationsApi#patchConversationsCobrowsesession) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsCobrowsesessionParticipant**](ConversationsApi#patchConversationsCobrowsesessionParticipant) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi#patchConversationsCobrowsesessionParticipantAttributes) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -149,12 +150,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsEmailMessagesDraft**](ConversationsApi#patchConversationsEmailMessagesDraft) | **PATCH** /api/v2/conversations/emails/{conversationId}/messages/draft | Reset conversation draft to its initial state and/or auto-fill draft content
 [**patchConversationsEmailParticipant**](ConversationsApi#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsEmailParticipantAttributes**](ConversationsApi#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsEmailParticipantCommunication**](ConversationsApi#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsEmailParticipantCommunication**](ConversationsApi#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 [**patchConversationsEmailParticipantParkingstate**](ConversationsApi#patchConversationsEmailParticipantParkingstate) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate | Update conversation by setting its parking state
 [**patchConversationsMessage**](ConversationsApi#patchConversationsMessage) | **PATCH** /api/v2/conversations/messages/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsMessageParticipant**](ConversationsApi#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsMessageParticipantCommunication**](ConversationsApi#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsMessageParticipantCommunication**](ConversationsApi#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
@@ -280,6 +281,58 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsSocialRecordingstate**](ConversationsApi#putConversationsSocialRecordingstate) | **PUT** /api/v2/conversations/socials/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsVideoRecordingstate**](ConversationsApi#putConversationsVideoRecordingstate) | **PUT** /api/v2/conversations/videos/{conversationId}/recordingstate | Update a conversation by setting its recording state
 
+
+
+## deleteAnalyticsConversationsAggregatesJob
+
+> void deleteAnalyticsConversationsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for conversation aggregates
+
+deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsConversationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsConversationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteAnalyticsConversationsDetailsJob
@@ -2598,7 +2651,7 @@ GET /api/v2/conversations/chats/{conversationId}
 
 Get chat conversation
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2651,7 +2704,7 @@ GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}
 
 Get a web chat conversation message
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
 Requires NO permissions:
 
@@ -2706,7 +2759,7 @@ GET /api/v2/conversations/chats/{conversationId}/messages
 
 Get the messages of a chat conversation.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
 Requires NO permissions:
 
@@ -2769,7 +2822,7 @@ GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/co
 
 Get the wrap-up for this conversation communication. 
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2830,7 +2883,7 @@ GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wr
 
 Get the wrap-up for this conversation participant. 
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2889,7 +2942,7 @@ GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wr
 
 Get list of wrapup codes for this conversation participant
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2944,7 +2997,7 @@ GET /api/v2/conversations/chats
 
 Get active chat conversations for the logged in user
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -3040,7 +3093,7 @@ GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{partic
 
 Get the wrap-up for this conversation communication. 
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -3101,7 +3154,7 @@ GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{partic
 
 Get the wrap-up for this conversation participant. 
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -3160,7 +3213,7 @@ GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{partic
 
 Get list of wrapup codes for this conversation participant
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -5901,7 +5954,7 @@ GET /api/v2/conversations/screenshares/{conversationId}/participants/{participan
 
 Get the wrap-up for this conversation communication. 
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -6760,7 +6813,7 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
 Requires NO permissions:
 
@@ -7135,7 +7188,7 @@ PATCH /api/v2/conversations/chats/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -7192,7 +7245,7 @@ PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -7253,7 +7306,7 @@ PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/
 
 Update the attributes on a conversation participant.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -7308,9 +7361,9 @@ This resource has been deprecated
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -7369,7 +7422,7 @@ PATCH /api/v2/conversations/cobrowsesessions/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -7426,7 +7479,7 @@ PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{part
 
 Update conversation participant
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -7489,7 +7542,7 @@ PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{part
 
 Update the attributes on a conversation participant.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -7548,7 +7601,7 @@ PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{part
 
 Update conversation participant's communication by disconnecting it.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -7819,7 +7872,7 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
 Requires NO permissions:
 
@@ -8091,7 +8144,7 @@ apiInstance.patchConversationsMessageParticipantAttributes(conversationId, parti
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
 Requires NO permissions:
 
@@ -10935,7 +10988,7 @@ POST /api/v2/conversations/chats/{conversationId}/communications/{communicationI
 
 Send a message on behalf of a communication in a chat conversation.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -10992,7 +11045,7 @@ POST /api/v2/conversations/chats/{conversationId}/communications/{communicationI
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -11047,7 +11100,7 @@ POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/c
 
 Apply wrap-up for this conversation communication
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -11110,7 +11163,7 @@ POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/r
 
 Replace this participant with the specified user and/or address
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -11169,7 +11222,7 @@ POST /api/v2/conversations/chats
 
 Create a web chat conversation
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ALL permissions:
 
@@ -11224,7 +11277,7 @@ POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{parti
 
 Apply wrap-up for this conversation communication
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -11287,7 +11340,7 @@ POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{parti
 
 Replace this participant with the specified user and/or address
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -13269,7 +13322,7 @@ POST /api/v2/conversations/screenshares/{conversationId}/participants/{participa
 
 Apply wrap-up for this conversation communication
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -13866,7 +13919,7 @@ PUT /api/v2/conversations/chats/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -13923,7 +13976,7 @@ PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -14662,7 +14715,7 @@ PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -14811,4 +14864,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

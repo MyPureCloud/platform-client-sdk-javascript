@@ -23,7 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | **GET** /api/v2/businessrules/schemas/coretypes | Get the core types from which all schemas are built.
 [**patchBusinessrulesDecisiontable**](BusinessRulesApi#patchBusinessrulesDecisiontable) | **PATCH** /api/v2/businessrules/decisiontables/{tableId} | Update a decision table
 [**patchBusinessrulesDecisiontableVersion**](BusinessRulesApi#patchBusinessrulesDecisiontableVersion) | **PATCH** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} | Update a decision table version
-[**patchBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#patchBusinessrulesDecisiontableVersionRow) | **PATCH** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} | Partially update a decision table row. Will be deprecated, we should use PUT request.
 [**postBusinessrulesDecisiontableExecute**](BusinessRulesApi#postBusinessrulesDecisiontableExecute) | **POST** /api/v2/businessrules/decisiontables/{tableId}/execute | Execute a published decision table
 [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy | Copy a decision table version
 [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute | Execute a decision table version
@@ -511,8 +510,7 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
-  'divisionIds': ["divisionIds_example"] // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 100.
 };
 
 apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
@@ -533,7 +531,6 @@ apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
  **tableId** | **String** | Table ID |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
- **divisionIds** | **[String]** | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
 
 ### Return type
 
@@ -571,7 +568,8 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
-  'divisionIds': ["divisionIds_example"] // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+  'divisionIds': ["divisionIds_example"], // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+  'name': "name_example" // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
 };
 
 apiInstance.getBusinessrulesDecisiontables(opts)
@@ -592,6 +590,7 @@ apiInstance.getBusinessrulesDecisiontables(opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
  **divisionIds** | **[String]** | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
+ **name** | **String** | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. | [optional]  |
 
 ### Return type
 
@@ -972,68 +971,6 @@ apiInstance.patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body)
 ### Return type
 
 **DecisionTableVersion**
-
-
-## patchBusinessrulesDecisiontableVersionRow
-
-> DecisionTableRow patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}
-
-Partially update a decision table row. Will be deprecated, we should use PUT request.
-
-patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions:
-
-* businessrules:decisionTableRow:edit
-* routing:queue:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.BusinessRulesApi();
-
-let tableId = "tableId_example"; // String | Table ID
-let tableVersion = 3.4; // Number | Table Version
-let rowId = "rowId_example"; // String | Row ID
-let body = {}; // Object | Partially update decision table row request
-
-apiInstance.patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
-  .then((data) => {
-    console.log(`patchBusinessrulesDecisiontableVersionRow success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchBusinessrulesDecisiontableVersionRow');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **tableId** | **String** | Table ID |  |
- **tableVersion** | **Number** | Table Version |  |
- **rowId** | **String** | Row ID |  |
- **body** | **Object** | Partially update decision table row request |  |
-
-### Return type
-
-**DecisionTableRow**
 
 
 ## postBusinessrulesDecisiontableExecute
@@ -1700,4 +1637,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAnalyticsUsersAggregatesJob**](UsersApi#deleteAnalyticsUsersAggregatesJob) | **DELETE** /api/v2/analytics/users/aggregates/jobs/{jobId} | Delete/cancel an async request for user aggregates
 [**deleteAnalyticsUsersDetailsJob**](UsersApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteAuthorizationSubjectDivisionRole**](UsersApi#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
 [**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
@@ -110,6 +111,58 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
 [**putUserVerifier**](UsersApi#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 
+
+
+## deleteAnalyticsUsersAggregatesJob
+
+> void deleteAnalyticsUsersAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for user aggregates
+
+deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsUsersAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsUsersAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteAnalyticsUsersDetailsJob
@@ -5603,4 +5656,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

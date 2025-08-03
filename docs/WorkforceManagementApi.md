@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Delete business unit
 [**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Deletes an activity code
+[**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory | Delete staffing group allocations history created for a capacity plan before the given date
 [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
 [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulingRun) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Cancel a scheduling run
 [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
@@ -49,6 +50,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Get alternative shifts settings for a business unit
 [**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId} | Get an alternative shifts trade in a business unit for a given trade ID
 [**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId} | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} | Get a capacity plan
+[**getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations | Get a capacity plan's staffing group allocations
+[**getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements | Get a capacity plan's staffing requirements
+[**getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId} | Get the latest long term staffing requirements for a business unit
+[**getWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans | Get list of capacity plans for a business unit
 [**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups | Get intraday planning groups for the given date
 [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session | Get the latest session for the business unit ID
 [**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId} | Get the session details for the session ID
@@ -140,6 +146,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Update an activity code
 [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Update an activity plan
 [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Update alternative shifts settings for a business unit
+[**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} | Update a capacity plan configuration
 [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
 [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
 [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
@@ -181,10 +188,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query | Query adherence explanations across an entire business unit for the requested period
 [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search | Search published schedules
 [**postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search | List alternative shifts trades for a given management unit or agent
+[**postWorkforcemanagementBusinessunitCapacityplanCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy | Copy a capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate | Regenerate requirements for capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations | Create staffing group allocations for a capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query | Query staffing groups allocations history for a capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate | Force regenerate the latest long term staffing requirements for a business unit
+[**postWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans | Create a new capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplansBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove | Delete capacity plans in a business unit
 [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
 [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
 [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#postWorkforcemanagementBusinessunitServicegoaltemplates) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Adds a new service goal template
 [**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Creates a new staffing group
+[**postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query | Gets a list of planning group to staffing groups list association
 [**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query | Gets staffing group associations for a list of user IDs
 [**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Creates a new time-off limit object
 [**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query | Retrieves time-off limit related values based on a given set of filters.
@@ -351,6 +366,62 @@ apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, ac
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory
+
+> void deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory
+
+Delete staffing group allocations history created for a capacity plan before the given date
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let opts = { 
+  'beforeDateId': "beforeDateId_example" // String | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+};
+
+apiInstance.deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **beforeDateId** | **String** | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 
 ### Return type
 
@@ -2105,7 +2176,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the business unit
+  'expand': ["expand_example"], // [String] | Include to access additional data on the business unit
+  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
 };
 
 apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
@@ -2125,6 +2197,7 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **expand** | **[String]** | Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching |
+ **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
@@ -2659,6 +2732,266 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(b
 ### Return type
 
 **BuAlternativeShiftJobResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplan
+
+> CapacityPlanResponse getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}
+
+Get a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
+
+> CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations
+
+Get a capacity plan's staffing group allocations
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanStaffingGroupAllocationsResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements
+
+> CapacityPlanStaffingRequirementResult getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements
+
+Get a capacity plan's staffing requirements
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanStaffingRequirementResult**
+
+
+## getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast
+
+> LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}
+
+Get the latest long term staffing requirements for a business unit
+
+Requires ANY permissions:
+
+* wfm:longTermStaffing:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | forecastId of forecast
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+ **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **forecastId** | **String** | forecastId of forecast |  |
+
+### Return type
+
+**LongTermRequirementsResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplans
+
+> CapacityPlansListResponse getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
+
+Get list of capacity plans for a business unit
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+
+### Return type
+
+**CapacityPlansListResponse**
 
 
 ## getWorkforcemanagementBusinessunitIntradayPlanninggroups
@@ -7400,7 +7733,7 @@ apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
 
 ## patchWorkforcemanagementBusinessunit
 
-> BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, body)
+> BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -7426,8 +7759,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
+};
 
-apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body)
+apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7444,6 +7780,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
@@ -7610,6 +7947,60 @@ apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(busine
 ### Return type
 
 **AlternativeShiftBuSettingsResponse**
+
+
+## patchWorkforcemanagementBusinessunitCapacityplan
+
+> CapacityPlanResponse patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}
+
+Update a capacity plan configuration
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitCapacityplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**CapacityPlanResponse**
 
 
 ## patchWorkforcemanagementBusinessunitPlanninggroup
@@ -9802,6 +10193,378 @@ apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(bus
 **BuListAlternativeShiftTradesResponse**
 
 
+## postWorkforcemanagementBusinessunitCapacityplanCopy
+
+> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy
+
+Copy a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanCopy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate
+
+> CapacityPlanStaffingRequirementResult postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate
+
+Regenerate requirements for capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanStaffingRequirementResult**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
+
+> CapacityPlanStaffingGroupMetricChangeResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations
+
+Create staffing group allocations for a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | 
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**CapacityPlanStaffingGroupMetricChangeResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery
+
+> CapacityPlanStaffingGroupMetricChangeHistoryListResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query
+
+Query staffing groups allocations history for a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | 
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**CapacityPlanStaffingGroupMetricChangeHistoryListResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate
+
+> LongTermRequirementsResponse postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate
+
+Force regenerate the latest long term staffing requirements for a business unit
+
+Requires ANY permissions:
+
+* wfm:longTermStaffing:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | forecastId of forecast
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+ **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **forecastId** | **String** | forecastId of forecast |  |
+
+### Return type
+
+**LongTermRequirementsResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplans
+
+> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
+
+Create a new capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplansBulkRemove
+
+> void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove
+
+Delete capacity plans in a business unit
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+  .then(() => {
+    console.log('postWorkforcemanagementBusinessunitCapacityplansBulkRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+void (no response body)
+
+
 ## postWorkforcemanagementBusinessunitIntraday
 
 > AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts)
@@ -10012,6 +10775,58 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, bo
 ### Return type
 
 **StaffingGroupResponse**
+
+
+## postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery
+
+> PlanningGroupToStaffingGroupsListing postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query
+
+Gets a list of planning group to staffing groups list association
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**PlanningGroupToStaffingGroupsListing**
 
 
 ## postWorkforcemanagementBusinessunitStaffinggroupsQuery
@@ -11241,7 +12056,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body
 
 ## postWorkforcemanagementBusinessunits
 
-> BusinessUnitResponse postWorkforcemanagementBusinessunits(body)
+> BusinessUnitResponse postWorkforcemanagementBusinessunits(body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits
@@ -11268,8 +12083,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
+};
 
-apiInstance.postWorkforcemanagementBusinessunits(body)
+apiInstance.postWorkforcemanagementBusinessunits(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11285,6 +12103,7 @@ apiInstance.postWorkforcemanagementBusinessunits(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
@@ -13542,4 +14361,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

@@ -6,6 +6,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAnalyticsEvaluationsAggregatesJob**](QualityApi#deleteAnalyticsEvaluationsAggregatesJob) | **DELETE** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Delete/cancel an async request for evaluation aggregates
+[**deleteAnalyticsSurveysAggregatesJob**](QualityApi#deleteAnalyticsSurveysAggregatesJob) | **DELETE** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Delete/cancel an async request for survey aggregates
 [**deleteQualityCalibration**](QualityApi#deleteQualityCalibration) | **DELETE** /api/v2/quality/calibrations/{calibrationId} | Delete a calibration by id.
 [**deleteQualityConversationEvaluation**](QualityApi#deleteQualityConversationEvaluation) | **DELETE** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Delete an evaluation
 [**deleteQualityForm**](QualityApi#deleteQualityForm) | **DELETE** /api/v2/quality/forms/{formId} | Delete an evaluation form.
@@ -69,6 +71,110 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putQualityFormsSurvey**](QualityApi#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
 [**putQualitySurveysScorable**](QualityApi#putQualitySurveysScorable) | **PUT** /api/v2/quality/surveys/scorable | Update a survey as an end-customer, for the purposes of scoring it.
 
+
+
+## deleteAnalyticsEvaluationsAggregatesJob
+
+> void deleteAnalyticsEvaluationsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for evaluation aggregates
+
+deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:evaluationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsEvaluationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsEvaluationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsSurveysAggregatesJob
+
+> void deleteAnalyticsSurveysAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for survey aggregates
+
+deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:surveyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsSurveysAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsSurveysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteQualityCalibration
@@ -3486,4 +3592,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_
