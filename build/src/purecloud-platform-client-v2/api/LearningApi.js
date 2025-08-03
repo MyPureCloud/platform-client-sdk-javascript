@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**

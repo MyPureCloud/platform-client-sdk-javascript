@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -786,6 +786,31 @@ class OutboundApi {
 			'/api/v2/outbound/schedules/sequences/{sequenceId}', 
 			'DELETE', 
 			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a WhatsApp campaign schedule.
+	 * 
+	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 */
+	deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId) { 
+		// verify the required parameter 'whatsAppCampaignId' is set
+		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
+			throw 'Missing the required parameter "whatsAppCampaignId" when calling deleteOutboundSchedulesWhatsappcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}', 
+			'DELETE', 
+			{ 'whatsAppCampaignId': whatsAppCampaignId },
 			{  },
 			{  },
 			{  },
@@ -2632,6 +2657,51 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/sequences', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a WhatsApp campaign schedule.
+	 * 
+	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 */
+	getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId) { 
+		// verify the required parameter 'whatsAppCampaignId' is set
+		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
+			throw 'Missing the required parameter "whatsAppCampaignId" when calling getOutboundSchedulesWhatsappcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}', 
+			'GET', 
+			{ 'whatsAppCampaignId': whatsAppCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for a list of WhatsApp campaign schedules.
+	 * 
+	 */
+	getOutboundSchedulesWhatsappcampaigns() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns', 
 			'GET', 
 			{  },
 			{  },
@@ -4556,6 +4626,36 @@ class OutboundApi {
 			'/api/v2/outbound/schedules/sequences/{sequenceId}', 
 			'PUT', 
 			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a WhatsApp campaign schedule.
+	 * 
+	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 * @param {Object} body WhatsAppCampaignSchedule
+	 */
+	putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body) { 
+		// verify the required parameter 'whatsAppCampaignId' is set
+		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
+			throw 'Missing the required parameter "whatsAppCampaignId" when calling putOutboundSchedulesWhatsappcampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundSchedulesWhatsappcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}', 
+			'PUT', 
+			{ 'whatsAppCampaignId': whatsAppCampaignId },
 			{  },
 			{  },
 			{  },

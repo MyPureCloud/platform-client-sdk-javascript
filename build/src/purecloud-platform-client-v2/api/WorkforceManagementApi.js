@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -66,6 +66,40 @@ class WorkforceManagementApi {
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete staffing group allocations history created for a capacity plan before the given date
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.beforeDateId The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{ 'beforeDateId': opts['beforeDateId'] },
 			{  },
 			{  },
 			null, 
@@ -930,6 +964,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the business unit
+	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
 	 */
 	getWorkforcemanagementBusinessunit(businessUnitId, opts) { 
 		opts = opts || {};
@@ -943,7 +978,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeSchedulingDefaultMessageSeverities': opts['includeSchedulingDefaultMessageSeverities'] },
 			{  },
 			{  },
 			null, 
@@ -1206,6 +1241,156 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 */
+	getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplan';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a capacity plan's staffing group allocations
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 */
+	getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a capacity plan's staffing requirements
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 */
+	getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the latest long term staffing requirements for a business unit
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId forecastId of forecast
+	 */
+	getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';
+		}
+		// verify the required parameter 'forecastId' is set
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
+			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of capacity plans for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 */
+	getWorkforcemanagementBusinessunitCapacityplans(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
 			{  },
 			{  },
 			{  },
@@ -3788,8 +3973,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
 	 */
-	patchWorkforcemanagementBusinessunit(businessUnitId, body) { 
+	patchWorkforcemanagementBusinessunit(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';
@@ -3803,7 +3992,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId },
-			{  },
+			{ 'includeSchedulingDefaultMessageSeverities': opts['includeSchedulingDefaultMessageSeverities'] },
 			{  },
 			{  },
 			body, 
@@ -3903,6 +4092,41 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a capacity plan configuration
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body body
+	 */
+	patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitCapacityplan';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling patchWorkforcemanagementBusinessunitCapacityplan';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitCapacityplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
 			{  },
 			{  },
 			{  },
@@ -5212,6 +5436,236 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Copy a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Regenerate requirements for capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 */
+	postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create staffing group allocations for a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body 
+	 */
+	postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query staffing groups allocations history for a capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} body 
+	 */
+	postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';
+		}
+		// verify the required parameter 'capacityPlanId' is set
+		if (capacityPlanId === undefined || capacityPlanId === null || capacityPlanId === '') {
+			throw 'Missing the required parameter "capacityPlanId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Force regenerate the latest long term staffing requirements for a business unit
+	 * 
+	 * @param {String} businessUnitId 
+	 * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId forecastId of forecast
+	 */
+	postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';
+		}
+		// verify the required parameter 'forecastId' is set
+		if (forecastId === undefined || forecastId === null || forecastId === '') {
+			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new capacity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplans';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete capacity plans in a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get intraday data for the given date for the requested planningGroupIds
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -5323,6 +5777,36 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a list of planning group to staffing groups list association
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -6141,8 +6625,12 @@ class WorkforceManagementApi {
 	 * Add a new business unit
 	 * It may take a minute or two for a new business unit to be available for api operations
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
 	 */
-	postWorkforcemanagementBusinessunits(body) { 
+	postWorkforcemanagementBusinessunits(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunits';
@@ -6152,7 +6640,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits', 
 			'POST', 
 			{  },
-			{  },
+			{ 'includeSchedulingDefaultMessageSeverities': opts['includeSchedulingDefaultMessageSeverities'] },
 			{  },
 			{  },
 			body, 

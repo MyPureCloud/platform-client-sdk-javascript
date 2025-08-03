@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -19,6 +19,53 @@ class TelephonyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Get an agent's greetings.
+	 * 
+	 * @param {String} agentId User ID
+	 * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonyAgentGreetings(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling getTelephonyAgentGreetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/{agentId}/greetings', 
+			'GET', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the agent's own greetings.
+	 * 
+	 * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonyAgentsGreetingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/greetings/me', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Retrieve the list of AWS regions media can stream through.
@@ -175,6 +222,63 @@ class TelephonyApi {
 			{  },
 			{  },
 			sIPSearchPublicRequest, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates an agent's greetings.
+	 * 
+	 * @param {String} agentId User ID
+	 * @param {Object} body Agent Greeting
+	 * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putTelephonyAgentGreetings(agentId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling putTelephonyAgentGreetings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyAgentGreetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/{agentId}/greetings', 
+			'PUT', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates the agent's own greetings.
+	 * 
+	 * @param {Object} body Agent Greeting
+	 * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putTelephonyAgentsGreetingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyAgentsGreetingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/greetings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -19,6 +19,58 @@ class QualityApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete/cancel an async request for evaluation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsEvaluationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsEvaluationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for survey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsSurveysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsSurveysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/surveys/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a calibration by id.

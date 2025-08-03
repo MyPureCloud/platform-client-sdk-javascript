@@ -6,7 +6,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAnalyticsActionsAggregatesJob**](AnalyticsApi#deleteAnalyticsActionsAggregatesJob) | **DELETE** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Delete/cancel an async request for action aggregates
+[**deleteAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob) | **DELETE** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Delete/cancel an async request for agent copilot aggregates
+[**deleteAnalyticsBotsAggregatesJob**](AnalyticsApi#deleteAnalyticsBotsAggregatesJob) | **DELETE** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Delete/cancel an async request for bot aggregates
+[**deleteAnalyticsConversationsAggregatesJob**](AnalyticsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
 [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#deleteAnalyticsEvaluationsAggregatesJob) | **DELETE** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Delete/cancel an async request for evaluation aggregates
+[**deleteAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowexecutionsAggregatesJob) | **DELETE** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} | Delete/cancel an async request for flow execution aggregates
+[**deleteAnalyticsFlowsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowsAggregatesJob) | **DELETE** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Delete/cancel an async request for flow aggregates
+[**deleteAnalyticsJourneysAggregatesJob**](AnalyticsApi#deleteAnalyticsJourneysAggregatesJob) | **DELETE** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Delete/cancel an async request for journey aggregates
+[**deleteAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#deleteAnalyticsKnowledgeAggregatesJob) | **DELETE** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Delete/cancel an async request for knowledge aggregates
+[**deleteAnalyticsResolutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsResolutionsAggregatesJob) | **DELETE** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Delete/cancel an async request for resolution aggregates
+[**deleteAnalyticsSummariesAggregatesJob**](AnalyticsApi#deleteAnalyticsSummariesAggregatesJob) | **DELETE** /api/v2/analytics/summaries/aggregates/jobs/{jobId} | Delete/cancel an async request for summary aggregates
+[**deleteAnalyticsSurveysAggregatesJob**](AnalyticsApi#deleteAnalyticsSurveysAggregatesJob) | **DELETE** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Delete/cancel an async request for survey aggregates
+[**deleteAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsTaskmanagementAggregatesJob) | **DELETE** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Delete/cancel an async request for task management aggregates
+[**deleteAnalyticsTranscriptsAggregatesJob**](AnalyticsApi#deleteAnalyticsTranscriptsAggregatesJob) | **DELETE** /api/v2/analytics/transcripts/aggregates/jobs/{jobId} | Delete/cancel an async request for transcript aggregates
+[**deleteAnalyticsUsersAggregatesJob**](AnalyticsApi#deleteAnalyticsUsersAggregatesJob) | **DELETE** /api/v2/analytics/users/aggregates/jobs/{jobId} | Delete/cancel an async request for user aggregates
 [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**getAnalyticsActionsAggregatesJob**](AnalyticsApi#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
 [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
@@ -73,7 +88,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
-[**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
 [**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
 [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs) | **POST** /api/v2/analytics/flowexecutions/aggregates/jobs | Query for flow execution aggregates asynchronously
@@ -114,6 +128,215 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
+## deleteAnalyticsActionsAggregatesJob
+
+> void deleteAnalyticsActionsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/actions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for action aggregates
+
+deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsActionsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsActionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsActionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsAgentcopilotsAggregatesJob
+
+> void deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for agent copilot aggregates
+
+deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsAgentcopilotsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsAgentcopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsBotsAggregatesJob
+
+> void deleteAnalyticsBotsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/bots/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for bot aggregates
+
+deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:botAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsBotsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsBotsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsBotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsConversationsAggregatesJob
+
+> void deleteAnalyticsConversationsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for conversation aggregates
+
+deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsConversationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsConversationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
 ## deleteAnalyticsConversationsDetailsJob
 
 > void deleteAnalyticsConversationsDetailsJob(jobId)
@@ -149,6 +372,578 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteAnalyticsConversationsDetailsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsEvaluationsAggregatesJob
+
+> void deleteAnalyticsEvaluationsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for evaluation aggregates
+
+deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:evaluationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsEvaluationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsEvaluationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsFlowexecutionsAggregatesJob
+
+> void deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for flow execution aggregates
+
+deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowExecutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsFlowexecutionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsFlowexecutionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsFlowsAggregatesJob
+
+> void deleteAnalyticsFlowsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for flow aggregates
+
+deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsFlowsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsFlowsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsJourneysAggregatesJob
+
+> void deleteAnalyticsJourneysAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for journey aggregates
+
+deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:journeyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsJourneysAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsJourneysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsKnowledgeAggregatesJob
+
+> void deleteAnalyticsKnowledgeAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for knowledge aggregates
+
+deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:knowledgeAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsKnowledgeAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsKnowledgeAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsResolutionsAggregatesJob
+
+> void deleteAnalyticsResolutionsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for resolution aggregates
+
+deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:resolutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsResolutionsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsResolutionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsResolutionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsSummariesAggregatesJob
+
+> void deleteAnalyticsSummariesAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/summaries/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for summary aggregates
+
+deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsSummariesAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsSummariesAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsSummariesAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsSurveysAggregatesJob
+
+> void deleteAnalyticsSurveysAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for survey aggregates
+
+deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:surveyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsSurveysAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsSurveysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsTaskmanagementAggregatesJob
+
+> void deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for task management aggregates
+
+deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:taskManagementAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsTaskmanagementAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsTaskmanagementAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsTranscriptsAggregatesJob
+
+> void deleteAnalyticsTranscriptsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for transcript aggregates
+
+deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsTranscriptsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsTranscriptsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsTranscriptsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsUsersAggregatesJob
+
+> void deleteAnalyticsUsersAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for user aggregates
+
+deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsUsersAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsUsersAggregatesJob');
     console.error(err);
   });
 ```
@@ -3697,56 +4492,6 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 **AnalyticsConversationQueryResponse**
 
 
-## postAnalyticsConversationsTranscriptsQuery
-
-> AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
-
-
-POST /api/v2/analytics/conversations/transcripts/query
-
-Search resources.
-
-Requires ANY permissions:
-
-* analytics:conversationDetail:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let body = {}; // Object | Search request options
-
-apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
-  .then((data) => {
-    console.log(`postAnalyticsConversationsTranscriptsQuery success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsConversationsTranscriptsQuery');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Search request options |  |
-
-### Return type
-
-**AnalyticsConversationWithoutAttributesMultiGetResponse**
-
-
 ## postAnalyticsEvaluationsAggregatesJobs
 
 > AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
@@ -5648,4 +6393,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

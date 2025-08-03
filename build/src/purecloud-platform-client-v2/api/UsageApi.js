@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -70,6 +70,71 @@ class UsageApi {
 			'GET', 
 			{ 'clientId': clientId },
 			{ 'days': opts['days'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status and results of the usage query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size of the results. Max is 1000. (default to 100)
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 */
+	getUsageAggregatesQueryJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getUsageAggregatesQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/aggregates/query/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status and results of the usage query
+	 * 
+	 * @param {String} clientId clientId
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size of the results. Max is 1000. (default to 100)
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 */
+	getUsageClientClientIdAggregatesQueryJob(clientId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null || clientId === '') {
+			throw 'Missing the required parameter "clientId" when calling getUsageClientClientIdAggregatesQueryJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getUsageClientClientIdAggregatesQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId}', 
+			'GET', 
+			{ 'clientId': clientId,'jobId': jobId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -152,6 +217,61 @@ class UsageApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}/usage/query', 
+			'POST', 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query your organization's public api usage.
+	 * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+	 * @param {Object} body Query
+	 */
+	postUsageAggregatesQueryJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsageAggregatesQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/aggregates/query/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query your client's public api usage.
+	 * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+	 * @param {String} clientId clientId
+	 * @param {Object} body Query
+	 */
+	postUsageClientClientIdAggregatesQueryJobs(clientId, body) { 
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null || clientId === '') {
+			throw 'Missing the required parameter "clientId" when calling postUsageClientClientIdAggregatesQueryJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsageClientClientIdAggregatesQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/client/{clientId}/aggregates/query/jobs', 
 			'POST', 
 			{ 'clientId': clientId },
 			{  },

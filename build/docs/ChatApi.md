@@ -538,7 +538,8 @@ let roomJid = "roomJid_example"; // String | roomJid
 let opts = { 
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
-  'after': "after_example" // String | The beginning date for messages to retrieve
+  'after': "after_example", // String | The beginning date for messages to retrieve
+  'excludeMetadata': true // Boolean | Whether to exclude metadata for messages
 };
 
 apiInstance.getChatsRoomMessages(roomJid, opts)
@@ -560,6 +561,7 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
+ **excludeMetadata** | **Boolean** | Whether to exclude metadata for messages | [optional]  |
 
 ### Return type
 
@@ -748,7 +750,8 @@ let threadId = "threadId_example"; // String | threadId
 let opts = { 
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
-  'after': "after_example" // String | The beginning date for messages to retrieve
+  'after': "after_example", // String | The beginning date for messages to retrieve
+  'excludeMetadata': true // Boolean | Whether to exclude metadata for messages
 };
 
 apiInstance.getChatsThreadMessages(threadId, opts)
@@ -770,6 +773,7 @@ apiInstance.getChatsThreadMessages(threadId, opts)
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
+ **excludeMetadata** | **Boolean** | Whether to exclude metadata for messages | [optional]  |
 
 ### Return type
 
@@ -911,7 +915,8 @@ let userId = "userId_example"; // String | userId
 let opts = { 
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
-  'after': "after_example" // String | The beginning date for messages to retrieve
+  'after': "after_example", // String | The beginning date for messages to retrieve
+  'excludeMetadata': true // Boolean | Whether to exclude metadata for messages
 };
 
 apiInstance.getChatsUserMessages(userId, opts)
@@ -933,6 +938,7 @@ apiInstance.getChatsUserMessages(userId, opts)
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
+ **excludeMetadata** | **Boolean** | Whether to exclude metadata for messages | [optional]  |
 
 ### Return type
 
@@ -1814,4 +1820,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

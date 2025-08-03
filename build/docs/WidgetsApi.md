@@ -26,7 +26,7 @@ DELETE /api/v2/widgets/deployments/{deploymentId}
 
 Delete a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -82,7 +82,7 @@ GET /api/v2/widgets/deployments/{deploymentId}
 
 Get a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -138,7 +138,7 @@ GET /api/v2/widgets/deployments
 
 List Widget deployments
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -189,7 +189,7 @@ POST /api/v2/widgets/deployments
 
 Create Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -245,7 +245,7 @@ PUT /api/v2/widgets/deployments/{deploymentId}
 
 Update a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -291,4 +291,4 @@ apiInstance.putWidgetsDeployment(deploymentId, body)
 **WidgetDeployment**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

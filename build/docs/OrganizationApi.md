@@ -974,4 +974,4 @@ apiInstance.putOrganizationsWhitelist(body)
 **OrgWhitelistSettings**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

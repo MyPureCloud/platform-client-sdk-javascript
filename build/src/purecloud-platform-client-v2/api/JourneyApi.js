@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -19,6 +19,32 @@ class JourneyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete/cancel an async request for journey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsJourneysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsJourneysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete single action map.
@@ -246,6 +272,36 @@ class JourneyApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve segment assignments by external contact ID.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+	 * @param {Number} opts.limit Number of entities to return. Default of 25, maximum of 500.
+	 */
+	getExternalcontactsContactJourneySegments(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null || contactId === '') {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'] },
 			{  },
 			{  },
 			null, 
@@ -1492,6 +1548,35 @@ class JourneyApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postExternalcontactsContactJourneySegments(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null || contactId === '') {
+			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactJourneySegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
+			'POST', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -5,7 +5,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -19,6 +19,32 @@ class FlowsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete/cancel an async request for flow aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsFlowsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsFlowsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flows/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get status for async query for Flow aggregates

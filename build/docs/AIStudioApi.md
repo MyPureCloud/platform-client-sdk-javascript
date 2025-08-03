@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGuideVersionJob**](AIStudioApi#getGuideVersionJob) | **GET** /api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId} | Get the status of the publishing job for this guide version.
 [**getGuides**](AIStudioApi#getGuides) | **GET** /api/v2/guides | Get all guides.
 [**getGuidesJob**](AIStudioApi#getGuidesJob) | **GET** /api/v2/guides/jobs/{jobId} | Get the status of the guide content generation job.
+[**patchGuide**](AIStudioApi#patchGuide) | **PATCH** /api/v2/guides/{guideId} | Update a guide.
 [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | **PATCH** /api/v2/guides/{guideId}/versions/{versionId} | Update a guide version.
 [**postGuideVersionJobs**](AIStudioApi#postGuideVersionJobs) | **POST** /api/v2/guides/{guideId}/versions/{versionId}/jobs | Start the publishing of a guide version.
 [**postGuideVersions**](AIStudioApi#postGuideVersions) | **POST** /api/v2/guides/{guideId}/versions | Create a guide version.
@@ -407,6 +408,60 @@ apiInstance.getGuidesJob(jobId)
 **GuideContentGenerationJob**
 
 
+## patchGuide
+
+> Guide patchGuide(guideId, body)
+
+
+PATCH /api/v2/guides/{guideId}
+
+Update a guide.
+
+patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* aiStudio:guide:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let guideId = "guideId_example"; // String | Guide ID
+let body = {}; // Object | 
+
+apiInstance.patchGuide(guideId, body)
+  .then((data) => {
+    console.log(`patchGuide success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchGuide');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **guideId** | **String** | Guide ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**Guide**
+
+
 ## patchGuideVersion
 
 > GuideVersion patchGuideVersion(guideId, versionId, body)
@@ -679,4 +734,4 @@ apiInstance.postGuidesJobs(body)
 **GuideContentGenerationJob**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

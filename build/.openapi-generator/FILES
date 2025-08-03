@@ -167,8 +167,29 @@ docs/WorkforceManagementApi.md
 docs/deleteAlertingAlert-example.txt
 docs/deleteAlertingAlertsAll-example.txt
 docs/deleteAlertingRule-example.txt
+docs/deleteAnalyticsActionsAggregatesJob-example.txt
+docs/deleteAnalyticsAgentcopilotsAggregatesJob-example.txt
+docs/deleteAnalyticsBotsAggregatesJob-example.txt
+docs/deleteAnalyticsConversationsAggregatesJob-example.txt
+docs/deleteAnalyticsConversationsAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
+docs/deleteAnalyticsEvaluationsAggregatesJob-example.txt
+docs/deleteAnalyticsEvaluationsAggregatesJob-example.txt
+docs/deleteAnalyticsFlowexecutionsAggregatesJob-example.txt
+docs/deleteAnalyticsFlowsAggregatesJob-example.txt
+docs/deleteAnalyticsFlowsAggregatesJob-example.txt
+docs/deleteAnalyticsJourneysAggregatesJob-example.txt
+docs/deleteAnalyticsJourneysAggregatesJob-example.txt
+docs/deleteAnalyticsKnowledgeAggregatesJob-example.txt
+docs/deleteAnalyticsResolutionsAggregatesJob-example.txt
+docs/deleteAnalyticsSummariesAggregatesJob-example.txt
+docs/deleteAnalyticsSurveysAggregatesJob-example.txt
+docs/deleteAnalyticsSurveysAggregatesJob-example.txt
+docs/deleteAnalyticsTaskmanagementAggregatesJob-example.txt
+docs/deleteAnalyticsTranscriptsAggregatesJob-example.txt
+docs/deleteAnalyticsUsersAggregatesJob-example.txt
+docs/deleteAnalyticsUsersAggregatesJob-example.txt
 docs/deleteAnalyticsUsersDetailsJob-example.txt
 docs/deleteAnalyticsUsersDetailsJob-example.txt
 docs/deleteArchitectEmergencygroup-example.txt
@@ -350,6 +371,7 @@ docs/deleteOutboundSchedulesCampaign-example.txt
 docs/deleteOutboundSchedulesEmailcampaign-example.txt
 docs/deleteOutboundSchedulesMessagingcampaign-example.txt
 docs/deleteOutboundSchedulesSequence-example.txt
+docs/deleteOutboundSchedulesWhatsappcampaign-example.txt
 docs/deleteOutboundSequence-example.txt
 docs/deletePresenceDefinition0-example.txt
 docs/deletePresenceSource-example.txt
@@ -404,6 +426,7 @@ docs/deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-examp
 docs/deleteSpeechandtextanalyticsCategory-example.txt
 docs/deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsProgram-example.txt
+docs/deleteSpeechandtextanalyticsReprocessingJob-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsTopic-example.txt
@@ -459,6 +482,7 @@ docs/deleteWebdeploymentsTokenRevoke-example.txt
 docs/deleteWidgetsDeployment-example.txt
 docs/deleteWorkforcemanagementBusinessunit-example.txt
 docs/deleteWorkforcemanagementBusinessunitActivitycode-example.txt
+docs/deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory-example.txt
 docs/deleteWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/deleteWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/deleteWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
@@ -813,6 +837,8 @@ docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
 docs/getExternalcontactsContactIdentifiers-example.txt
+docs/getExternalcontactsContactJourneySegments-example.txt
+docs/getExternalcontactsContactJourneySegments-example.txt
 docs/getExternalcontactsContactJourneySessions-example.txt
 docs/getExternalcontactsContactJourneySessions-example.txt
 docs/getExternalcontactsContactNote-example.txt
@@ -1313,6 +1339,8 @@ docs/getOutboundSchedulesMessagingcampaign-example.txt
 docs/getOutboundSchedulesMessagingcampaigns-example.txt
 docs/getOutboundSchedulesSequence-example.txt
 docs/getOutboundSchedulesSequences-example.txt
+docs/getOutboundSchedulesWhatsappcampaign-example.txt
+docs/getOutboundSchedulesWhatsappcampaigns-example.txt
 docs/getOutboundSequence-example.txt
 docs/getOutboundSequences-example.txt
 docs/getOutboundSettings-example.txt
@@ -1511,6 +1539,7 @@ docs/getSpeechandtextanalyticsConversation-example.txt
 docs/getSpeechandtextanalyticsConversationCategories-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturls-example.txt
+docs/getSpeechandtextanalyticsConversationSentiments-example.txt
 docs/getSpeechandtextanalyticsConversationSummaries-example.txt
 docs/getSpeechandtextanalyticsDictionaryfeedback-example.txt
 docs/getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
@@ -1525,6 +1554,9 @@ docs/getSpeechandtextanalyticsProgramsPublishjob-example.txt
 docs/getSpeechandtextanalyticsProgramsSettingsInsights-example.txt
 docs/getSpeechandtextanalyticsProgramsTranscriptionenginesDialects-example.txt
 docs/getSpeechandtextanalyticsProgramsUnpublished-example.txt
+docs/getSpeechandtextanalyticsReprocessingJob-example.txt
+docs/getSpeechandtextanalyticsReprocessingJobInteractions-example.txt
+docs/getSpeechandtextanalyticsReprocessingJobs-example.txt
 docs/getSpeechandtextanalyticsSentimentDialects-example.txt
 docs/getSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/getSpeechandtextanalyticsSettings-example.txt
@@ -1579,6 +1611,8 @@ docs/getTaskmanagementWorktypeVersions-example.txt
 docs/getTeam-example.txt
 docs/getTeamMembers-example.txt
 docs/getTeams-example.txt
+docs/getTelephonyAgentGreetings-example.txt
+docs/getTelephonyAgentsGreetingsMe-example.txt
 docs/getTelephonyMediaregions-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
@@ -1660,6 +1694,8 @@ docs/getTextbotsBotsSearch-example.txt
 docs/getTimezones-example.txt
 docs/getTokensMe-example.txt
 docs/getTokensTimeout-example.txt
+docs/getUsageAggregatesQueryJob-example.txt
+docs/getUsageClientClientIdAggregatesQueryJob-example.txt
 docs/getUsageEventsDefinition-example.txt
 docs/getUsageEventsDefinitions-example.txt
 docs/getUsageQueryExecutionIdResults-example.txt
@@ -1778,6 +1814,11 @@ docs/getWorkforcemanagementBusinessunitActivityplansJobs-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsTrade-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob-example.txt
+docs/getWorkforcemanagementBusinessunitCapacityplan-example.txt
+docs/getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations-example.txt
+docs/getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements-example.txt
+docs/getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast-example.txt
+docs/getWorkforcemanagementBusinessunitCapacityplans-example.txt
 docs/getWorkforcemanagementBusinessunitIntradayPlanninggroups-example.txt
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession-example.txt
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId-example.txt
@@ -1877,7 +1918,6 @@ docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchBusinessrulesDecisiontable-example.txt
 docs/patchBusinessrulesDecisiontableVersion-example.txt
-docs/patchBusinessrulesDecisiontableVersionRow-example.txt
 docs/patchChatsRoom-example.txt
 docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
@@ -1944,6 +1984,7 @@ docs/patchExternalcontactsOrganizationIdentifiers-example.txt
 docs/patchFlowsInstancesSettingsExecutiondata-example.txt
 docs/patchGamificationContest-example.txt
 docs/patchGeolocationsSettings-example.txt
+docs/patchGuide-example.txt
 docs/patchGuideVersion-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
@@ -2057,6 +2098,7 @@ docs/patchWorkforcemanagementBusinessunit-example.txt
 docs/patchWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/patchWorkforcemanagementBusinessunitActivityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
+docs/patchWorkforcemanagementBusinessunitCapacityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/patchWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
@@ -2103,8 +2145,6 @@ docs/postAnalyticsConversationsDetailsJobs-example.txt
 docs/postAnalyticsConversationsDetailsJobs-example.txt
 docs/postAnalyticsConversationsDetailsQuery-example.txt
 docs/postAnalyticsConversationsDetailsQuery-example.txt
-docs/postAnalyticsConversationsTranscriptsQuery-example.txt
-docs/postAnalyticsConversationsTranscriptsQuery-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesQuery-example.txt
@@ -2354,6 +2394,8 @@ docs/postExternalcontactsBulkRelationships-example.txt
 docs/postExternalcontactsBulkRelationshipsAdd-example.txt
 docs/postExternalcontactsBulkRelationshipsRemove-example.txt
 docs/postExternalcontactsBulkRelationshipsUpdate-example.txt
+docs/postExternalcontactsContactJourneySegments-example.txt
+docs/postExternalcontactsContactJourneySegments-example.txt
 docs/postExternalcontactsContactNotes-example.txt
 docs/postExternalcontactsContactPromotion-example.txt
 docs/postExternalcontactsContacts-example.txt
@@ -2467,6 +2509,7 @@ docs/postKnowledgeGuestSessionDocumentsSearch-example.txt
 docs/postKnowledgeGuestSessionDocumentsSearchSuggestions-example.txt
 docs/postKnowledgeGuestSessions-example.txt
 docs/postKnowledgeKnowledgebaseCategories-example.txt
+docs/postKnowledgeKnowledgebaseChunksSearch-example.txt
 docs/postKnowledgeKnowledgebaseDocumentCopies-example.txt
 docs/postKnowledgeKnowledgebaseDocumentFeedback-example.txt
 docs/postKnowledgeKnowledgebaseDocumentVariations-example.txt
@@ -2673,6 +2716,7 @@ docs/postSpeechandtextanalyticsDictionaryfeedback-example.txt
 docs/postSpeechandtextanalyticsPrograms-example.txt
 docs/postSpeechandtextanalyticsProgramsGeneralJobs-example.txt
 docs/postSpeechandtextanalyticsProgramsPublishjobs-example.txt
+docs/postSpeechandtextanalyticsReprocessingJobs-example.txt
 docs/postSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/postSpeechandtextanalyticsTopics-example.txt
 docs/postSpeechandtextanalyticsTopicsPublishjobs-example.txt
@@ -2735,6 +2779,8 @@ docs/postUploadsLearningCoverart-example.txt
 docs/postUploadsPublicassetsImages-example.txt
 docs/postUploadsRecordings-example.txt
 docs/postUploadsWorkforcemanagementHistoricaldataCsv-example.txt
+docs/postUsageAggregatesQueryJobs-example.txt
+docs/postUsageClientClientIdAggregatesQueryJobs-example.txt
 docs/postUsageEventsAggregatesQuery-example.txt
 docs/postUsageEventsQuery-example.txt
 docs/postUsageQuery-example.txt
@@ -2790,10 +2836,18 @@ docs/postWorkforcemanagementBusinessunitActivityplans-example.txt
 docs/postWorkforcemanagementBusinessunitAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplanCopy-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplans-example.txt
+docs/postWorkforcemanagementBusinessunitCapacityplansBulkRemove-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
 docs/postWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroups-example.txt
+docs/postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroupsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitTimeofflimits-example.txt
 docs/postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery-example.txt
@@ -3008,6 +3062,7 @@ docs/putOutboundSchedulesCampaign-example.txt
 docs/putOutboundSchedulesEmailcampaign-example.txt
 docs/putOutboundSchedulesMessagingcampaign-example.txt
 docs/putOutboundSchedulesSequence-example.txt
+docs/putOutboundSchedulesWhatsappcampaign-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
 docs/putPresenceDefinition0-example.txt
@@ -3068,6 +3123,8 @@ docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/putSpeechandtextanalyticsSettings-example.txt
 docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTaskmanagementWorkitemsSchema-example.txt
+docs/putTelephonyAgentGreetings-example.txt
+docs/putTelephonyAgentsGreetingsMe-example.txt
 docs/putTelephonyProvidersEdge-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/putTelephonyProvidersEdgesAlertablepresences-example.txt

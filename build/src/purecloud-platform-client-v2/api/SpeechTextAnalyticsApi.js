@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -90,6 +90,32 @@ class SpeechTextAnalyticsApi {
 			'DELETE', 
 			{ 'programId': programId },
 			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech and Text Analytics Reprocessing job by Id
+	 * 
+	 * @param {String} jobId The Id of the Reprocessing job
+	 * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteSpeechandtextanalyticsReprocessingJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteSpeechandtextanalyticsReprocessingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -328,6 +354,31 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls', 
 			'GET', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get sentiment data
+	 * 
+	 * @param {String} conversationId The conversation ID of the sentiment data
+	 */
+	getSpeechandtextanalyticsConversationSentiments(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSentiments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments', 
+			'GET', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -677,6 +728,86 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{  },
 			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics reprocess job by id
+	 * 
+	 * @param {String} jobId The Id of the Reprocessing job
+	 * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsReprocessingJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsReprocessingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics Reprocessing interactions statuses by job id
+	 * 
+	 * @param {String} jobId The Id of the Reprocessing job
+	 * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsReprocessingJobInteractions(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsReprocessingJobInteractions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics reprocess jobs
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. Default is 25.
+	 * @param {Number} opts.pageNumber The page number for the listing. Defaults to 1.
+	 * @param {Object} opts.sortOrder Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc).
+	 * @param {String} opts.name Case insensitive partial name to filter by.
+	 * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsReprocessingJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1117,6 +1248,32 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/publishjobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Speech and Text Analytics reprocess job.
+	 * 
+	 * @param {Object} body The ReprocessJob to create
+	 * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postSpeechandtextanalyticsReprocessingJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsReprocessingJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs', 
 			'POST', 
 			{  },
 			{  },

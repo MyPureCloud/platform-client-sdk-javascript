@@ -5,7 +5,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -22,7 +22,7 @@ class WidgetsApi {
 
 	/**
 	 * Delete a Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {String} deploymentId Widget Config Id
 	 * @deprecated
 	 */
@@ -48,7 +48,7 @@ class WidgetsApi {
 
 	/**
 	 * Get a Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {String} deploymentId Widget Config Id
 	 * @deprecated
 	 */
@@ -74,7 +74,7 @@ class WidgetsApi {
 
 	/**
 	 * List Widget deployments
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @deprecated
 	 */
 	getWidgetsDeployments() { 
@@ -95,7 +95,7 @@ class WidgetsApi {
 
 	/**
 	 * Create Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {Object} body Deployment
 	 * @deprecated
 	 */
@@ -121,7 +121,7 @@ class WidgetsApi {
 
 	/**
 	 * Update a Widget deployment
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {String} deploymentId Widget Config Id
 	 * @param {Object} body Deployment
 	 * @deprecated

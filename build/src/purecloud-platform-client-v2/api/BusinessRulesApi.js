@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -279,7 +279,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
-	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersions(tableId, opts) { 
@@ -294,7 +293,7 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables/{tableId}/versions', 
 			'GET', 
 			{ 'tableId': tableId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -311,6 +310,7 @@ class BusinessRulesApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
 	 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontables(opts) { 
@@ -321,7 +321,7 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables', 
 			'GET', 
 			{  },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -513,48 +513,6 @@ class BusinessRulesApi {
 			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}', 
 			'PATCH', 
 			{ 'tableId': tableId,'tableVersion': tableVersion },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Partially update a decision table row. Will be deprecated, we should use PUT request.
-	 * 
-	 * @param {String} tableId Table ID
-	 * @param {Number} tableVersion Table Version
-	 * @param {String} rowId Row ID
-	 * @param {Object} body Partially update decision table row request
-	 * @deprecated
-	 * patchBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	patchBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
-		// verify the required parameter 'tableId' is set
-		if (tableId === undefined || tableId === null || tableId === '') {
-			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableVersionRow';
-		}
-		// verify the required parameter 'tableVersion' is set
-		if (tableVersion === undefined || tableVersion === null) {
-			throw 'Missing the required parameter "tableVersion" when calling patchBusinessrulesDecisiontableVersionRow';
-		}
-		// verify the required parameter 'rowId' is set
-		if (rowId === undefined || rowId === null || rowId === '') {
-			throw 'Missing the required parameter "rowId" when calling patchBusinessrulesDecisiontableVersionRow';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchBusinessrulesDecisiontableVersionRow';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}', 
-			'PATCH', 
-			{ 'tableId': tableId,'tableVersion': tableVersion,'rowId': rowId },
 			{  },
 			{  },
 			{  },

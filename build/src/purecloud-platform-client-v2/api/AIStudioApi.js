@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -221,6 +221,37 @@ class AIStudioApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a guide.
+	 * 
+	 * @param {String} guideId Guide ID
+	 * @param {Object} body 
+	 * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchGuide(guideId, body) { 
+		// verify the required parameter 'guideId' is set
+		if (guideId === undefined || guideId === null || guideId === '') {
+			throw 'Missing the required parameter "guideId" when calling patchGuide';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchGuide';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/{guideId}', 
+			'PATCH', 
+			{ 'guideId': guideId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

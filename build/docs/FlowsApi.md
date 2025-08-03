@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAnalyticsFlowsAggregatesJob**](FlowsApi#deleteAnalyticsFlowsAggregatesJob) | **DELETE** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Delete/cancel an async request for flow aggregates
 [**getAnalyticsFlowsAggregatesJob**](FlowsApi#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
 [**getAnalyticsFlowsAggregatesJobResults**](FlowsApi#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**postAnalyticsFlowsActivityQuery**](FlowsApi#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
@@ -13,6 +14,58 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsFlowsAggregatesQuery**](FlowsApi#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
 [**postAnalyticsFlowsObservationsQuery**](FlowsApi#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
 
+
+
+## deleteAnalyticsFlowsAggregatesJob
+
+> void deleteAnalyticsFlowsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for flow aggregates
+
+deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.FlowsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsFlowsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsFlowsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
 
 
 ## getAnalyticsFlowsAggregatesJob
@@ -331,4 +384,4 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 **FlowObservationQueryResponse**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_

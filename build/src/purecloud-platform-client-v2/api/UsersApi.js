@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -19,6 +19,32 @@ class UsersApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete/cancel an async request for user aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsUsersAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete/cancel an async request

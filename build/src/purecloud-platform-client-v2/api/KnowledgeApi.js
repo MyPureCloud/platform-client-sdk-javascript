@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -2742,6 +2742,35 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search for chunks in a knowledge base
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseChunksSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

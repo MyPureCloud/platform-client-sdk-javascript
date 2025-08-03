@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -278,6 +278,7 @@ class ChatApi {
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
+	 * @param {Boolean} opts.excludeMetadata Whether to exclude metadata for messages
 	 */
 	getChatsRoomMessages(roomJid, opts) { 
 		opts = opts || {};
@@ -291,7 +292,7 @@ class ChatApi {
 			'/api/v2/chats/rooms/{roomJid}/messages', 
 			'GET', 
 			{ 'roomJid': roomJid },
-			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'],'excludeMetadata': opts['excludeMetadata'] },
 			{  },
 			{  },
 			null, 
@@ -388,6 +389,7 @@ class ChatApi {
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
+	 * @param {Boolean} opts.excludeMetadata Whether to exclude metadata for messages
 	 */
 	getChatsThreadMessages(threadId, opts) { 
 		opts = opts || {};
@@ -401,7 +403,7 @@ class ChatApi {
 			'/api/v2/chats/threads/{threadId}/messages', 
 			'GET', 
 			{ 'threadId': threadId },
-			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'],'excludeMetadata': opts['excludeMetadata'] },
 			{  },
 			{  },
 			null, 
@@ -474,6 +476,7 @@ class ChatApi {
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
+	 * @param {Boolean} opts.excludeMetadata Whether to exclude metadata for messages
 	 */
 	getChatsUserMessages(userId, opts) { 
 		opts = opts || {};
@@ -487,7 +490,7 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages', 
 			'GET', 
 			{ 'userId': userId },
-			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'],'excludeMetadata': opts['excludeMetadata'] },
 			{  },
 			{  },
 			null, 

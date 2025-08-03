@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 227.0.0
+	 * @version 228.0.0
 	 */
 
 	/**
@@ -21,6 +21,110 @@ class AnalyticsApi {
 
 
 	/**
+	 * Delete/cancel an async request for action aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsActionsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsActionsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/actions/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for agent copilot aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsAgentcopilotsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsAgentcopilotsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for bot aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsBotsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsBotsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/bots/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for conversation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsConversationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete/cancel an async details job
 	 * 
 	 * @param {String} jobId jobId
@@ -33,6 +137,292 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for evaluation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsEvaluationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsEvaluationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for flow execution aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsFlowexecutionsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsFlowexecutionsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for flow aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsFlowsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsFlowsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flows/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for journey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsJourneysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsJourneysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for knowledge aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsKnowledgeAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsKnowledgeAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/knowledge/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for resolution aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsResolutionsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsResolutionsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/resolutions/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for summary aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsSummariesAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsSummariesAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/summaries/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for survey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsSurveysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsSurveysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/surveys/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for task management aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsTaskmanagementAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsTaskmanagementAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for transcript aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsTranscriptsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsTranscriptsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/transcripts/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for user aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsUsersAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/aggregates/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
 			{  },
@@ -1827,31 +2217,6 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/query', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search resources.
-	 * 
-	 * @param {Object} body Search request options
-	 */
-	postAnalyticsConversationsTranscriptsQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/conversations/transcripts/query', 
 			'POST', 
 			{  },
 			{  },

@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesSitesSearch**](SearchApi#getTelephonyProvidersEdgesSitesSearch) | **GET** /api/v2/telephony/providers/edges/sites/search | Search sites using the q64 value returned from a previous search
 [**getUsersSearch**](SearchApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
-[**postAnalyticsConversationsTranscriptsQuery**](SearchApi#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
 [**postConversationsParticipantsAttributesSearch**](SearchApi#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**postDocumentationAllSearch**](SearchApi#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
 [**postDocumentationGknSearch**](SearchApi#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
@@ -503,56 +502,6 @@ apiInstance.getVoicemailSearch(q64, opts)
 ### Return type
 
 **VoicemailsSearchResponse**
-
-
-## postAnalyticsConversationsTranscriptsQuery
-
-> AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
-
-
-POST /api/v2/analytics/conversations/transcripts/query
-
-Search resources.
-
-Requires ANY permissions:
-
-* analytics:conversationDetail:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.SearchApi();
-
-let body = {}; // Object | Search request options
-
-apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
-  .then((data) => {
-    console.log(`postAnalyticsConversationsTranscriptsQuery success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsConversationsTranscriptsQuery');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Search request options |  |
-
-### Return type
-
-**AnalyticsConversationWithoutAttributesMultiGetResponse**
 
 
 ## postConversationsParticipantsAttributesSearch
@@ -1409,4 +1358,4 @@ apiInstance.postVoicemailSearch(body)
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@227.0.0_
+_purecloud-platform-client-v2@228.0.0_
