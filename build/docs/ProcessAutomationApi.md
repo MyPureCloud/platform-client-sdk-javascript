@@ -448,4 +448,4 @@ apiInstance.putProcessautomationTrigger(triggerId, body)
 **Trigger**
 
 
-_purecloud-platform-client-v2@228.0.0_
+_purecloud-platform-client-v2@229.0.0_
