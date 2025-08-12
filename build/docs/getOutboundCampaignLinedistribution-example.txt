@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  "includeOnlyActiveCampaigns": true, // Boolean | If true will return only active Campaigns
+  "edgeGroupId": "edgeGroupId_example", // String | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+  "siteId": "siteId_example", // String | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+  "useWeight": true, // Boolean | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+  "relativeWeight": 3.4, // Number | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+  "outboundLineCount": 3.4 // Number | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+};
+
+// Get line distribution information for campaigns using same Edge Group or Site as given campaign
+apiInstance.getOutboundCampaignLinedistribution(campaignId, opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignLinedistribution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getOutboundCampaignLinedistribution");
+    console.error(err);
+  });

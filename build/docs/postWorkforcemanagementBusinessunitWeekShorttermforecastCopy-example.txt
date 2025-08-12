@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | The ID of the forecast to copy
+let body = {}; // Object | body
+let opts = { 
+  "forceAsync": true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+};
+
+// Copy a short term forecast
+apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastCopy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy");
+    console.error(err);
+  });

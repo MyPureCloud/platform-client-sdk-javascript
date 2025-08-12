@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | ContactList ID
+let opts = { 
+  "body": {} // Object | Export information to get
+};
+
+// Initiate the export of a contact list.
+apiInstance.postOutboundContactlistExport(contactListId, opts)
+  .then((data) => {
+    console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postOutboundContactlistExport");
+    console.error(err);
+  });

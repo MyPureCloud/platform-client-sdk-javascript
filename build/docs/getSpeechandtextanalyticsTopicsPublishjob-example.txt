@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let jobId = "jobId_example"; // String | The id of the publish topics job
+
+// Get a Speech and Text Analytics publish topics job by id
+apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTopicsPublishjob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSpeechandtextanalyticsTopicsPublishjob");
+    console.error(err);
+  });

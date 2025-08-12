@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let divisionId = "divisionId_example"; // String | One division ID
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25 // Number | Page size
+};
+
+// Retrieve all escalation rules for a division.
+apiInstance.getSocialmediaEscalationrules(divisionId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaEscalationrules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSocialmediaEscalationrules");
+    console.error(err);
+  });

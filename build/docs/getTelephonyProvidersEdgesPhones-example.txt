@@ -1,0 +1,39 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "sortBy": "name", // String | The field to sort by
+  "sortOrder": "ASC", // String | Sort order
+  "siteId": "siteId_example", // String | Filter by site.id
+  "webRtcUserId": "webRtcUserId_example", // String | Filter by webRtcUser.id
+  "phoneBaseSettingsId": "phoneBaseSettingsId_example", // String | Filter by phoneBaseSettings.id
+  "linesLoggedInUserId": "linesLoggedInUserId_example", // String | Filter by lines.loggedInUser.id
+  "linesDefaultForUserId": "linesDefaultForUserId_example", // String | Filter by lines.defaultForUser.id
+  "phoneHardwareId": "phoneHardwareId_example", // String | Filter by phone_hardwareId
+  "linesId": "linesId_example", // String | Filter by lines.id
+  "linesName": "linesName_example", // String | Filter by lines.name
+  "name": "name_example", // String | Name of the Phone to filter by, comma-separated
+  "statusOperationalStatus": "statusOperationalStatus_example", // String | The primary status to filter by
+  "secondaryStatusOperationalStatus": "secondaryStatusOperationalStatus_example", // String | The secondary status to filter by
+  "expand": ["expand_example"], // [String] | Fields to expand in the response, comma-separated
+  "fields": ["fields_example"] // [String] | Fields and properties to get, comma-separated
+};
+
+// Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
+apiInstance.getTelephonyProvidersEdgesPhones(opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTelephonyProvidersEdgesPhones");
+    console.error(err);
+  });

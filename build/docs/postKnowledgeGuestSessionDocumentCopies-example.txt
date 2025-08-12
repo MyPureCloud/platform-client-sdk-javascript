@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  "body": {} // Object | 
+};
+
+// Indicate that the document was copied by the user.
+apiInstance.postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
+  .then(() => {
+    console.log("postKnowledgeGuestSessionDocumentCopies returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postKnowledgeGuestSessionDocumentCopies");
+    console.error(err);
+  });

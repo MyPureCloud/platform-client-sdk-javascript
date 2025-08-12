@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let rowId = "rowId_example"; // String | Row ID
+let body = {}; // Object | Full update decision table row request
+
+// Full update a decision table row
+apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
+  .then((data) => {
+    console.log(`putBusinessrulesDecisiontableVersionRow success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling putBusinessrulesDecisiontableVersionRow");
+    console.error(err);
+  });

@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+let body = {}; // Object | 
+
+// Updates a schedule group by ID
+apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
+  .then((data) => {
+    console.log(`putArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling putArchitectSchedulegroup");
+    console.error(err);
+  });

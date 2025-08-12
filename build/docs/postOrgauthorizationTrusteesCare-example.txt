@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let opts = { 
+  "assignDefaultRole": true, // Boolean | Assign Admin role to default pairing with Customer Care
+  "autoExpire": true, // Boolean | Automatically expire pairing after 30 days
+  "assignFullAccess": true, // Boolean | Grant Customer Care full access to the organization
+  "allowTrustedUserAccess": true // Boolean | Make Customer Care a Trusted User
+};
+
+// Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+apiInstance.postOrgauthorizationTrusteesCare(opts)
+  .then((data) => {
+    console.log(`postOrgauthorizationTrusteesCare success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postOrgauthorizationTrusteesCare");
+    console.error(err);
+  });

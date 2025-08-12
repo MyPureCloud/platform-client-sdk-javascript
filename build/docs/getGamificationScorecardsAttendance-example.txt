@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+// Attendance status metrics of the requesting user
+apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsAttendance success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationScorecardsAttendance");
+    console.error(err);
+  });

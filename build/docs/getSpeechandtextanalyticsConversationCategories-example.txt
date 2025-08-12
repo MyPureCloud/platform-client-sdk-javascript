@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let conversationId = "conversationId_example"; // String | The id of the conversation
+let opts = { 
+  "pageSize": 25, // Number | The page size for the listing. The max that will be returned is 50.
+  "pageNumber": 1 // Number | The page number for the listing
+};
+
+// Get the list of detected Speech and Text Analytics categories of conversation
+apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsConversationCategories success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSpeechandtextanalyticsConversationCategories");
+    console.error(err);
+  });

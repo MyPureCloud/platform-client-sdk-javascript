@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let rowId = "rowId_example"; // String | the key for the row
+
+// Delete a row entry
+apiInstance.deleteFlowsDatatableRow(datatableId, rowId)
+  .then(() => {
+    console.log("deleteFlowsDatatableRow returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteFlowsDatatableRow");
+    console.error(err);
+  });

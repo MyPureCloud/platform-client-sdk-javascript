@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let body = {}; // Object | CampaignPatchRequest
+
+// Update a campaign.
+apiInstance.patchOutboundCampaign(campaignId, body)
+  .then(() => {
+    console.log("patchOutboundCampaign returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchOutboundCampaign");
+    console.error(err);
+  });

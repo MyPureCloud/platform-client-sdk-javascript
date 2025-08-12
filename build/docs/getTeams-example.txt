@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TeamsApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "name": "name_example", // String | Return only teams whose names start with this value (case-insensitive matching)
+  "after": "after_example", // String | The cursor that points to the next item in the complete list of teams
+  "before": "before_example", // String | The cursor that points to the previous item in the complete list of teams
+  "expand": "expand_example" // String | Expand the division on each team
+};
+
+// Get Team listing
+apiInstance.getTeams(opts)
+  .then((data) => {
+    console.log(`getTeams success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTeams");
+    console.error(err);
+  });

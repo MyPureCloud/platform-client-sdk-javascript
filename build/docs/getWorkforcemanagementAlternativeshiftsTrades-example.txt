@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let opts = { 
+  "forceAsync": true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+};
+
+// Get a list of my alternative shifts trades
+apiInstance.getWorkforcemanagementAlternativeshiftsTrades(opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsTrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getWorkforcemanagementAlternativeshiftsTrades");
+    console.error(err);
+  });

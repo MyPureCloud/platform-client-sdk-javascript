@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.UsersApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let body = {}; // Object | Pairs of role and division IDs
+
+// Bulk-remove grants from a subject.
+apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
+  .then(() => {
+    console.log("postAuthorizationSubjectBulkremove returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postAuthorizationSubjectBulkremove");
+    console.error(err);
+  });

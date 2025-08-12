@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+
+// Get settings for CSV import
+apiInstance.getExternalcontactsImportCsvSetting(settingsId)
+  .then((data) => {
+    console.log(`getExternalcontactsImportCsvSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsImportCsvSetting");
+    console.error(err);
+  });

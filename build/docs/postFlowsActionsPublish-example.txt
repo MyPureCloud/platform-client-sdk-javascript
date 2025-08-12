@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  "version": "version_example" // String | version
+};
+
+// Publish flow
+apiInstance.postFlowsActionsPublish(flow, opts)
+  .then((data) => {
+    console.log(`postFlowsActionsPublish success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postFlowsActionsPublish");
+    console.error(err);
+  });

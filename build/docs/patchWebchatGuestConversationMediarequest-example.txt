@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Configure API key authorization: Guest Chat JWT
+let Guest Chat JWT = client.authentications["Guest Chat JWT"];
+Guest Chat JWT.apiKey = "YOUR API KEY";
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to void)
+//Guest Chat JWT.apiKeyPrefix = "Token";
+
+let apiInstance = new platformClient.WebChatApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let mediaRequestId = "mediaRequestId_example"; // String | mediaRequestId
+let body = {}; // Object | Request
+
+// Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
+apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
+  .then((data) => {
+    console.log(`patchWebchatGuestConversationMediarequest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchWebchatGuestConversationMediarequest");
+    console.error(err);
+  });

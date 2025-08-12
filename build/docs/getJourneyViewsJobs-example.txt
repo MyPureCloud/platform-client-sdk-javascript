@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  "pageNumber": 1, // Number | The number of the page to return
+  "pageSize": 25, // Number | Max number of entities to return
+  "interval": 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z, // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+  "statuses": statuses=Accepted,Executing,Complete,Failed,Scheduled // String | Job statuses to filter for
+};
+
+// Get the jobs for an organization.
+apiInstance.getJourneyViewsJobs(opts)
+  .then((data) => {
+    console.log(`getJourneyViewsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getJourneyViewsJobs");
+    console.error(err);
+  });

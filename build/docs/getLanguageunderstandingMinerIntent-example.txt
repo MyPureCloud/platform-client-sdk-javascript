@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let intentId = "intentId_example"; // String | The ID of the intent to be retrieved.
+let opts = { 
+  "expand": "expand_example" // String | Option to fetch utterances
+};
+
+// Get information about a mined intent
+apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerIntent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getLanguageunderstandingMinerIntent");
+    console.error(err);
+  });

@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to delete
+
+// Deletes a staffing group
+apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+  .then(() => {
+    console.log("deleteWorkforcemanagementBusinessunitStaffinggroup returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteWorkforcemanagementBusinessunitStaffinggroup");
+    console.error(err);
+  });

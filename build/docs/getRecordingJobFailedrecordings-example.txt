@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  "pageSize": 25, // Number | Page size. Maximum is 100.
+  "pageNumber": 1, // Number | Page number
+  "includeTotal": true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
+  "cursor": "cursor_example" // String | Indicates where to resume query results (not required for first page)
+};
+
+// Get IDs of recordings that the bulk job failed for
+apiInstance.getRecordingJobFailedrecordings(jobId, opts)
+  .then((data) => {
+    console.log(`getRecordingJobFailedrecordings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRecordingJobFailedrecordings");
+    console.error(err);
+  });

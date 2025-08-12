@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let conversationId = "conversationId_example"; // String | Identifier of the conversation
+let communicationId = "communicationId_example"; // String | Identifier of the media session
+let mediaResourceId = "mediaResourceId_example"; // String | Identifier of the media resource of the endpoint
+let body = {}; // Object | MediaStatisticsPostRequest
+
+// Post media endpoint statistics event.
+apiInstance.postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource");
+    console.error(err);
+  });

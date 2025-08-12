@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
+let opts = { 
+  "expand": ["expand_example"], // [String] | which field, if any, to expand
+  "divisionId": "*" // String | Specifies which division to lookup contacts in, for the given lookup value
+};
+
+// Look up contacts based on an attribute. Maximum of 25 values returned.
+apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsReversewhitepageslookup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsReversewhitepageslookup");
+    console.error(err);
+  });

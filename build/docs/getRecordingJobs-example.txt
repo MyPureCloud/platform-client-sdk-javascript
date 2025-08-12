@@ -1,0 +1,30 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortBy": "userId", // String | Sort by
+  "state": "state_example", // String | Filter by state
+  "showOnlyMyJobs": true, // Boolean | Show only my jobs
+  "jobType": "jobType_example", // String | Job Type (Can be left empty for both)
+  "includeTotal": true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
+  "cursor": "cursor_example" // String | Indicates where to resume query results (not required for first page)
+};
+
+// Get the status of all jobs within the user's organization
+apiInstance.getRecordingJobs(opts)
+  .then((data) => {
+    console.log(`getRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRecordingJobs");
+    console.error(err);
+  });

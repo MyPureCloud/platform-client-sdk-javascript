@@ -1,0 +1,30 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  "sortBy": "asc", // String | 
+  "pageNumber": 1, // Number | 
+  "pageSize": 50, // Number | 
+  "publicOnly": true, // Boolean | If true, retrieve only public dashboards
+  "favoriteOnly": true, // Boolean | If true, retrieve only favorite dashboards
+  "deletedOnly": true, // Boolean | If true, retrieve only deleted dashboards that are still recoverable
+  "name": "name_example" // String | retrieve dashboards that match with given name
+};
+
+// Get list of dashboards for an user
+apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsReportingSettingsUserDashboards success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAnalyticsReportingSettingsUserDashboards");
+    console.error(err);
+  });

@@ -1,0 +1,33 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LearningApi();
+
+let opts = { 
+  "isArchived": false, // Boolean | Archive status
+  "types": ["types_example"], // [String] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortOrder": "ascending", // String | Sort order
+  "sortBy": "name", // String | Sort by
+  "searchTerm": "searchTerm_example", // String | Search Term (searchable by name)
+  "expand": ["expand_example"], // [String] | Fields to expand in response(case insensitive)
+  "isPublished": "Any", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
+  "statuses": ["statuses_example"], // [String] | Specifies the module statuses to filter by
+  "externalIds": ["externalIds_example"] // [String] | Specifies the module external IDs to filter by. Only one ID is allowed
+};
+
+// Get all learning modules of an organization
+apiInstance.getLearningModules(opts)
+  .then((data) => {
+    console.log(`getLearningModules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getLearningModules");
+    console.error(err);
+  });

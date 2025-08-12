@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  "body": {} // Object | 
+};
+
+// Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
+  .then((data) => {
+    console.log(`postLanguageunderstandingMinerExecute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postLanguageunderstandingMinerExecute");
+    console.error(err);
+  });

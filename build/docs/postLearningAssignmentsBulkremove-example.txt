@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LearningApi();
+
+let opts = { 
+  "body": ["body_example"] // [String] | The IDs of the learning assignments to be removed
+};
+
+// Remove multiple Learning Assignments
+apiInstance.postLearningAssignmentsBulkremove(opts)
+  .then((data) => {
+    console.log(`postLearningAssignmentsBulkremove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postLearningAssignmentsBulkremove");
+    console.error(err);
+  });

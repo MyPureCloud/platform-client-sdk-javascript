@@ -1,0 +1,34 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  "type": ["type_example"], // [String] | Type
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "sortBy": "id", // String | Sort by
+  "sortOrder": "asc", // String | Sort order
+  "id": ["id_example"], // [String] | ID
+  "name": "name_example", // String | Name
+  "publishVersionId": "publishVersionId_example", // String | Publish version ID
+  "publishedAfter": 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published after
+  "publishedBefore": 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published before
+  "divisionId": ["divisionId_example"], // [String] | division ID(s)
+  "includeSchemas": false // Boolean | Include variable schemas
+};
+
+// Get a pageable list of basic flow information objects filterable by query parameters.
+apiInstance.getFlowsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getFlowsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getFlowsDivisionviews");
+    console.error(err);
+  });

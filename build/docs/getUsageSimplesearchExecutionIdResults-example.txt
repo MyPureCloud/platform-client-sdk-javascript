@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.UsageApi();
+
+let executionId = "executionId_example"; // String | ID of the search execution
+let opts = { 
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned
+  "pageSize": 3.4 // Number | The max number of entities to be returned per request. Maximum page size of 1000
+};
+
+// Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
+apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
+  .then((data) => {
+    console.log(`getUsageSimplesearchExecutionIdResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getUsageSimplesearchExecutionIdResults");
+    console.error(err);
+  });

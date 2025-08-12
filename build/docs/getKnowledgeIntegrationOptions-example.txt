@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  "knowledgeBaseIds": ["knowledgeBaseIds_example"] // [String] | Narrowing down filtering option results by knowledge base.
+};
+
+// Get sync options available for a knowledge-connect integration
+apiInstance.getKnowledgeIntegrationOptions(integrationId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeIntegrationOptions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getKnowledgeIntegrationOptions");
+    console.error(err);
+  });

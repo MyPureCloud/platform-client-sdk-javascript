@@ -1,0 +1,31 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let orphanId = "orphanId_example"; // String | Orphan ID
+let opts = { 
+  "formatId": "WEBM", // String | The desired media format.
+  "emailFormatId": "EML", // String | The desired media format when downloading an email recording.
+  "chatFormatId": "ZIP", // String | The desired media format when downloading a chat recording.
+  "messageFormatId": "ZIP", // String | The desired media format when downloading a message recording.
+  "download": false, // Boolean | requesting a download format of the recording
+  "fileName": "fileName_example", // String | the name of the downloaded fileName
+  "locale": "locale_example", // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  "mediaFormats": ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+};
+
+// Gets the media of a single orphan recording
+apiInstance.getOrphanrecordingMedia(orphanId, opts)
+  .then((data) => {
+    console.log(`getOrphanrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getOrphanrecordingMedia");
+    console.error(err);
+  });

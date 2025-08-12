@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | Topic ID
+let ruleId = "ruleId_example"; // String | Data Ingestion Rule ID
+let body = [{}]; // Object | NormalizedMessage
+
+// Ingest a list of Open Social Messages
+apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body)
+  .then((data) => {
+    console.log(`postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk");
+    console.error(err);
+  });

@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.UsersApi();
+
+let opts = { 
+  "cursor": "cursor_example", // String | Cursor token to retrieve next page
+  "pageSize": 25, // Number | Page size
+  "sortOrder": "ASC", // String | Ascending or descending sort order
+  "expand": ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
+  "integrationPresenceSource": "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+  "state": "active" // String | Only list users of this state
+};
+
+// Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+apiInstance.getUsersQuery(opts)
+  .then((data) => {
+    console.log(`getUsersQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getUsersQuery");
+    console.error(err);
+  });

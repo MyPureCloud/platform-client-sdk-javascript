@@ -1,0 +1,30 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "sortBy": "sortBy_example", // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
+  "filterField": "filterField_example", // String | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
+  "filterValue": "filterValue_example", // String | Value to filter by. Requires 'filterValue' to also be set.
+  "actionMapIds": ["actionMapIds_example"], // [String] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
+  "queryFields": ["queryFields_example"], // [String] | Action Map field(s) to query on. Requires 'queryValue' to also be set.
+  "queryValue": "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
+};
+
+// Retrieve all action maps.
+apiInstance.getJourneyActionmaps(opts)
+  .then((data) => {
+    console.log(`getJourneyActionmaps success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getJourneyActionmaps");
+    console.error(err);
+  });

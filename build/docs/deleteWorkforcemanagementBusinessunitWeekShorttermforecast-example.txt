@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | The ID of the forecast
+
+// Delete a short term forecast
+apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
+  .then(() => {
+    console.log("deleteWorkforcemanagementBusinessunitWeekShorttermforecast returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast");
+    console.error(err);
+  });

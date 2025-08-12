@@ -1,0 +1,19 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let tokenId = "tokenId_example"; // String | The token of the webhook to be invoked
+let body = null; // {String: Object} | Webhook Invocation Payload
+
+// Invoke Webhook
+apiInstance.postIntegrationsWebhookEvents(tokenId, body)
+  .then((data) => {
+    console.log(`postIntegrationsWebhookEvents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postIntegrationsWebhookEvents");
+    console.error(err);
+  });

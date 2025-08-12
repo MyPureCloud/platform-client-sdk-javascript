@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | queueId
+let mediaType = "mediaType_example"; // String | mediaType
+let opts = { 
+  "labelId": "labelId_example" // String | Unique id that represents the interaction label used with media type for EWT calculation
+};
+
+// Get Estimated Wait Time
+apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts)
+  .then((data) => {
+    console.log(`getRoutingQueueMediatypeEstimatedwaittime success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRoutingQueueMediatypeEstimatedwaittime");
+    console.error(err);
+  });

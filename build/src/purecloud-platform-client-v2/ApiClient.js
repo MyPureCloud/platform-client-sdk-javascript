@@ -72,6 +72,8 @@ class ApiClient {
 			MULTI: 'multi'
 		};
 
+		this.useLegacyParameterFilter = true;
+
 		/**
 		 * @description Value is `true` if local storage exists. Otherwise, false.
 		 */
@@ -1191,11 +1193,34 @@ class ApiClient {
 	}
 
 	/**
+	 * @description If set to `true`, the ApiClient will continue to use its legacy approach for filtering method parameters (mapped to an API Endpoint's query parameter). This is option is meant to facilitate transition from legacy to current and accurate parameters filtering.
+	 * @param {boolean} useLegacyParameterFilter - `false` to use modern/accurate approach (default value), `true` to use legacy approach (i.e. parameters of boolean type and equal to false are ignored/filtered, parameters of type integer/number and equal to 0 are ignored/filtered)
+	 */
+	setUseLegacyParameterFilter(useLegacyParameterFilter) {
+		this.useLegacyParameterFilter = useLegacyParameterFilter;
+	}
+
+	getUseLegacyParameterFilter() {
+		return this.useLegacyParameterFilter;
+	}
+
+	/**
 	 * Returns a string representation for an actual parameter.
 	 * @param param The actual parameter.
 	 * @returns {String} The string representation of <code>param</code>.
 	 */
 	paramToString(param) {
+		if (this.useLegacyParameterFilter !== true) {
+			if (param !== null && param !== undefined) {
+				if (typeof param === "boolean") {
+					return param.toString().toLowerCase();
+				} else if (param instanceof Boolean) {
+					return param.toString().toLowerCase();
+				} else if (typeof param === "number") {
+					return param.toString();
+				}
+			}
+		}
 		if (!param) {
 			return '';
 		}
@@ -1359,16 +1384,16 @@ class ApiClient {
 
 		switch (collectionFormat) {
 			case 'csv':
-				return param.map(this.paramToString).join(',');
+				return param.map((x) => this.paramToString(x)).join(',');
 			case 'ssv':
-				return param.map(this.paramToString).join(' ');
+				return param.map((x) => this.paramToString(x)).join(' ');
 			case 'tsv':
-				return param.map(this.paramToString).join('\t');
+				return param.map((x) => this.paramToString(x)).join('\t');
 			case 'pipes':
-				return param.map(this.paramToString).join('|');
+				return param.map((x) => this.paramToString(x)).join('|');
 			case 'multi':
 				// return the array directly as axios will handle it as expected
-				return param.map(this.paramToString);
+				return param.map((x) => this.paramToString(x));
 			default:
 				throw new Error(`Unknown collection format: ${collectionFormat}`);
 		}

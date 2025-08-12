@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "access": ["access_example"], // [String] | Requested access level.
+  "expand": ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+// Get a list of workspaces.
+apiInstance.getContentmanagementWorkspaces(opts)
+  .then((data) => {
+    console.log(`getContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getContentmanagementWorkspaces");
+    console.error(err);
+  });

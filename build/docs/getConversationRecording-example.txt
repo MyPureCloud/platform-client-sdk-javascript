@@ -1,0 +1,32 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let recordingId = "recordingId_example"; // String | Recording ID
+let opts = { 
+  "formatId": "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE
+  "emailFormatId": "EML", // String | The desired media format when downloading an email recording. Valid values:EML,NONE
+  "chatFormatId": "ZIP", // String | The desired media format when downloading a chat recording. Valid values:ZIP,NONE 
+  "messageFormatId": "ZIP", // String | The desired media format when downloading a message recording. Valid values:ZIP,NONE
+  "download": false, // Boolean | requesting a download format of the recording. Valid values:true,false
+  "fileName": "fileName_example", // String | the name of the downloaded fileName
+  "locale": "locale_example", // String | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
+  "mediaFormats": ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+};
+
+// Gets a specific recording.
+apiInstance.getConversationRecording(conversationId, recordingId, opts)
+  .then((data) => {
+    console.log(`getConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getConversationRecording");
+    console.error(err);
+  });

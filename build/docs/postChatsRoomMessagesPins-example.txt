@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ChatApi();
+
+let roomJid = "roomJid_example"; // String | roomJid
+let body = {}; // Object | Pinned Message Ids
+
+// Add pinned messages for a room, up to a maximum of 5 pinned messages
+apiInstance.postChatsRoomMessagesPins(roomJid, body)
+  .then(() => {
+    console.log("postChatsRoomMessagesPins returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postChatsRoomMessagesPins");
+    console.error(err);
+  });

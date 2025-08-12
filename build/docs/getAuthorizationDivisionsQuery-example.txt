@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let opts = { 
+  "before": "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  "id": ["id_example"], // [String] | Optionally request specific divisions by their IDs
+  "name": "name_example" // String | Optionally request specific divisions by division name
+};
+
+// Retrieve a list of all divisions defined for the organization with cursor
+apiInstance.getAuthorizationDivisionsQuery(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAuthorizationDivisionsQuery");
+    console.error(err);
+  });

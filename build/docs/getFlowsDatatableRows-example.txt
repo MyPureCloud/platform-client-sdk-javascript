@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "showbrief": true, // Boolean | If true returns just the key value of the row
+  "sortOrder": "ascending" // String | Sort order
+};
+
+// Returns the rows for the datatable with the given id
+apiInstance.getFlowsDatatableRows(datatableId, opts)
+  .then((data) => {
+    console.log(`getFlowsDatatableRows success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getFlowsDatatableRows");
+    console.error(err);
+  });

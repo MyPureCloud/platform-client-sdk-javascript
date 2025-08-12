@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let keyConfigurationId = "keyConfigurationId_example"; // String | Key Configurations Id
+
+// Get the encryption key configurations
+apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
+  .then((data) => {
+    console.log(`getRecordingKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRecordingKeyconfiguration");
+    console.error(err);
+  });

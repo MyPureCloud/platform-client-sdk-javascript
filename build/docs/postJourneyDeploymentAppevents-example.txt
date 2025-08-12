@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.JourneyApi();
+
+let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the app event.
+let opts = { 
+  "body": {} // Object | 
+};
+
+// Send a journey app event, used for tracking customer activity on an application.
+apiInstance.postJourneyDeploymentAppevents(deploymentId, opts)
+  .then((data) => {
+    console.log(`postJourneyDeploymentAppevents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postJourneyDeploymentAppevents");
+    console.error(err);
+  });

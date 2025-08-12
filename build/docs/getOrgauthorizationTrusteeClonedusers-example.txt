@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+
+// The list of cloned users from the trustee organization (i.e. users with a native user record).
+apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
+  .then((data) => {
+    console.log(`getOrgauthorizationTrusteeClonedusers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getOrgauthorizationTrusteeClonedusers");
+    console.error(err);
+  });

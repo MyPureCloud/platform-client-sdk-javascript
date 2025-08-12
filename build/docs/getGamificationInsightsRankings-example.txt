@@ -1,0 +1,31 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type.
+let granularity = "granularity_example"; // String | Granularity
+let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let sortKey = "sortKey_example"; // String | Sort key
+let opts = { 
+  "sortMetricId": "sortMetricId_example", // String | Sort Metric Id
+  "sectionSize": 3.4, // Number | The number of top and bottom users to return before ties
+  "userIds": "userIds_example" // String | A list of up to 100 comma-separated user Ids
+};
+
+// Get insights rankings
+apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts)
+  .then((data) => {
+    console.log(`getGamificationInsightsRankings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationInsightsRankings");
+    console.error(err);
+  });

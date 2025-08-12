@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+let body = {}; // Object | query
+
+// Creates a presigned URL for uploading a grammar voice mode file
+apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+  .then((data) => {
+    console.log(`postArchitectGrammarLanguageFilesVoice success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postArchitectGrammarLanguageFilesVoice");
+    console.error(err);
+  });

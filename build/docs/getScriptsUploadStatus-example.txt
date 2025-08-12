@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ScriptsApi();
+
+let uploadId = "uploadId_example"; // String | Upload ID
+let opts = { 
+  "longPoll": false // Boolean | Enable longPolling endpoint
+};
+
+// Get the upload status of an imported script
+apiInstance.getScriptsUploadStatus(uploadId, opts)
+  .then((data) => {
+    console.log(`getScriptsUploadStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getScriptsUploadStatus");
+    console.error(err);
+  });

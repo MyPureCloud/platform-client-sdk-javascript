@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let actionId = "actionId_example"; // String | actionId
+let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this draft.
+let opts = { 
+  "flatten": false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+};
+
+// Retrieve schema for a Draft based on filename.
+apiInstance.getIntegrationsActionDraftSchema(actionId, fileName, opts)
+  .then((data) => {
+    console.log(`getIntegrationsActionDraftSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getIntegrationsActionDraftSchema");
+    console.error(err);
+  });

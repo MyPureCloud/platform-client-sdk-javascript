@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let opts = { 
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example" // String | Number of entities to return. Maximum of 100.
+};
+
+// Get a list of decision table versions
+apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesDecisiontableVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getBusinessrulesDecisiontableVersions");
+    console.error(err);
+  });

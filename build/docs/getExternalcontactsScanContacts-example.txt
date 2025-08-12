@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  "limit": 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100
+  "cursor": "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  "divisionId": "*" // String | The division to scan over
+};
+
+// Scan for external contacts using paging
+apiInstance.getExternalcontactsScanContacts(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsScanContacts");
+    console.error(err);
+  });

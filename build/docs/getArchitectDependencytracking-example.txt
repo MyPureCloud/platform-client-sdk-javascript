@@ -1,0 +1,30 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let name = "name_example"; // String | Object name to search for
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "objectType": ["objectType_example"], // [String] | Object type(s) to search for
+  "consumedResources": true, // Boolean | Include resources each result item consumes
+  "consumingResources": true, // Boolean | Include resources that consume each result item
+  "consumedResourceType": ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
+  "consumingResourceType": ["consumingResourceType_example"] // [String] | Types of consuming resources to return, if consuming resources are requested
+};
+
+// Get Dependency Tracking objects that have a given display name
+apiInstance.getArchitectDependencytracking(name, opts)
+  .then((data) => {
+    console.log(`getArchitectDependencytracking success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getArchitectDependencytracking");
+    console.error(err);
+  });

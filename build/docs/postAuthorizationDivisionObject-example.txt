@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let divisionId = "divisionId_example"; // String | Division ID
+let objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
+let body = ["body_example"]; // [String] | Object Id List
+
+// Assign a list of objects to a division
+apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
+  .then(() => {
+    console.log("postAuthorizationDivisionObject returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postAuthorizationDivisionObject");
+    console.error(err);
+  });

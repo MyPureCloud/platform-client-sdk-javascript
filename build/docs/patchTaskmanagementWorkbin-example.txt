@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let workbinId = "workbinId_example"; // String | Workbin ID
+let body = {}; // Object | Json with attributes and their new values: {description:new description, name:new name}.
+
+// Update the attributes of a workbin
+apiInstance.patchTaskmanagementWorkbin(workbinId, body)
+  .then((data) => {
+    console.log(`patchTaskmanagementWorkbin success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchTaskmanagementWorkbin");
+    console.error(err);
+  });

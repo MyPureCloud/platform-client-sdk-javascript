@@ -28,6 +28,9 @@ declare class ApiClientClass {
 	setReturnExtendedResponses(returnExtended: boolean): void;
 	setStorageKey(storageKey: string): void;
 	setProxyAgent(agent: any): void;
+	getUseLegacyParameterFilter(): boolean;
+	setUseLegacyParameterFilter(useLegacyParameterFilter: boolean): void;
+	buildCollectionParam(param: any, collectionFormat: string): any;
 
 	setHttpClient(httpClient: AbstractHttpClient): void;
 	getHttpClient(): AbstractHttpClient;

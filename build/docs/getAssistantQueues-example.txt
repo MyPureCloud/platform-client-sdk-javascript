@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let assistantId = "assistantId_example"; // String | Assistant ID
+let opts = { 
+  "before": "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  "expand": "expand_example" // String | Which fields, if any, to expand.
+};
+
+// Get all the queues associated with an assistant.
+apiInstance.getAssistantQueues(assistantId, opts)
+  .then((data) => {
+    console.log(`getAssistantQueues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAssistantQueues");
+    console.error(err);
+  });

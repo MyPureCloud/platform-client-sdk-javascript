@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  "state": "state_example" // String | Optionally filter by activity plan state
+};
+
+// Get activity plans
+apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getWorkforcemanagementBusinessunitActivityplans");
+    console.error(err);
+  });

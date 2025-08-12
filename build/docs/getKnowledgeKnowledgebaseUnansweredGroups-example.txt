@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  "app": "app_example", // String | The app value to be used for filtering phrases.
+  "dateStart": "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  "dateEnd": "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+};
+
+// Get knowledge base unanswered groups
+apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseUnansweredGroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getKnowledgeKnowledgebaseUnansweredGroups");
+    console.error(err);
+  });

@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  "pageNumber": 1, // Number | 
+  "pageSize": 25, // Number | 
+  "workday": "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  "returnsView": "All" // String | Desired response results (Supervisor Only)
+};
+
+// Get Contest Scores for the requesting Agent/Supervisor
+apiInstance.getGamificationContestAgentsScoresMe(contestId, opts)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationContestAgentsScoresMe");
+    console.error(err);
+  });
