@@ -1,0 +1,30 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "sortBy": "name", // String | Sort by
+  "sortOrder": "ASC", // String | Sort order
+  "name": "name_example", // String | Name of the IVR to filter by.
+  "dnis": "dnis_example", // String | The phone number of the IVR to filter by.
+  "scheduleGroup": "scheduleGroup_example", // String | The Schedule Group of the IVR to filter by.
+  "expand": ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+// Get IVR configs.
+apiInstance.getArchitectIvrs(opts)
+  .then((data) => {
+    console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getArchitectIvrs");
+    console.error(err);
+  });

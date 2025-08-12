@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let draftId = "draftId_example"; // String | Draft ID
+let opts = { 
+  "body": {} // Object | 
+};
+
+// Save information for the draft. Either topic draft or intent draft should be sent.
+apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
+  .then((data) => {
+    console.log(`patchLanguageunderstandingMinerDraft success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchLanguageunderstandingMinerDraft");
+    console.error(err);
+  });

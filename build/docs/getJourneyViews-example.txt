@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "nameOrCreatedBy": "nameOrCreatedBy_example", // String | Journey View Name or Created By
+  "expand": "expand_example", // String | Parameter to request additional data to return in Journey payload
+  "id": "id_example" // String | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
+};
+
+// Get a list of Journey Views
+apiInstance.getJourneyViews(opts)
+  .then((data) => {
+    console.log(`getJourneyViews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getJourneyViews");
+    console.error(err);
+  });

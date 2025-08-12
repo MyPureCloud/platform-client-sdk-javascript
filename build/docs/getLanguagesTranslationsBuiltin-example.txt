@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguagesApi();
+
+let language = "language_example"; // String | The language of the builtin translation to retrieve
+
+// Get the builtin translation for a language
+apiInstance.getLanguagesTranslationsBuiltin(language)
+  .then((data) => {
+    console.log(`getLanguagesTranslationsBuiltin success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getLanguagesTranslationsBuiltin");
+    console.error(err);
+  });

@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let opts = { 
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 100.
+  "divisionIds": ["divisionIds_example"], // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+  "name": "name_example" // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
+};
+
+// Get a list of decision tables.
+apiInstance.getBusinessrulesDecisiontables(opts)
+  .then((data) => {
+    console.log(`getBusinessrulesDecisiontables success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getBusinessrulesDecisiontables");
+    console.error(err);
+  });

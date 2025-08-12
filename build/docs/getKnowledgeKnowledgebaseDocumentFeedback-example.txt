@@ -1,0 +1,35 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let documentId = "documentId_example"; // String | Document ID.
+let opts = { 
+  "before": "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  "onlyCommented": true, // Boolean | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.
+  "documentVersionId": "documentVersionId_example", // String | Document version ID to filter by. Supported only if onlyCommented=true is set.
+  "documentVariationId": "documentVariationId_example", // String | Document variation ID to filter by. Supported only if onlyCommented=true is set.
+  "appType": "appType_example", // String | Application type to filter by. Supported only if onlyCommented=true is set.
+  "queryType": "queryType_example", // String | Query type to filter by. Supported only if onlyCommented=true is set.
+  "userId": "userId_example", // String | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
+  "queueId": "queueId_example", // String | Queue ID to filter by. Supported only if onlyCommented=true is set.
+  "state": "state_example" // String | State to filter by. Supported only if onlyCommented=true is set. Default: Final
+};
+
+// Get a list of feedback records given on a document
+apiInstance.getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseDocumentFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getKnowledgeKnowledgebaseDocumentFeedback");
+    console.error(err);
+  });

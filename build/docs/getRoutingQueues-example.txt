@@ -1,0 +1,32 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "sortOrder": "asc", // String | Note: results are sorted by name.
+  "name": "name_example", // String | Include only queues with the given name (leading and trailing asterisks allowed)
+  "id": ["id_example"], // [String] | Include only queues with the specified ID(s)
+  "divisionId": ["divisionId_example"], // [String] | Include only queues in the specified division ID(s)
+  "peerId": ["peerId_example"], // [String] | Include only queues with the specified peer ID(s)
+  "cannedResponseLibraryId": "cannedResponseLibraryId_example", // String | Include only queues explicitly associated with the specified canned response library ID
+  "hasPeer": true, // Boolean | Include only queues with a peer ID
+  "expand": ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+// Get list of queues.
+apiInstance.getRoutingQueues(opts)
+  .then((data) => {
+    console.log(`getRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRoutingQueues");
+    console.error(err);
+  });

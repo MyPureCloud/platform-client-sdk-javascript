@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let body = {}; // Object | Search decision table rows request
+let opts = { 
+  "pageNumber": "pageNumber_example", // String | Page number of the entities to return. Defaults to 1.
+  "pageSize": "pageSize_example" // String | Number of entities to return. Maximum of 100. Defaults to 25.
+};
+
+// Search for decision table rows
+apiInstance.postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableVersionRowsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postBusinessrulesDecisiontableVersionRowsSearch");
+    console.error(err);
+  });

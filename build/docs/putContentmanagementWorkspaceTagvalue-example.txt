@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let tagId = "tagId_example"; // String | Tag ID
+let body = {}; // Object | Workspace
+
+// Update a workspace tag. Will update all documents with the new tag value.
+apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
+  .then((data) => {
+    console.log(`putContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling putContentmanagementWorkspaceTagvalue");
+    console.error(err);
+  });

@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let promptId = "promptId_example"; // String | Prompt ID
+let opts = { 
+  "includeMediaUris": true, // Boolean | Include the media URIs for each resource
+  "includeResources": true, // Boolean | Include the resources for each system prompt
+  "language": ["language_example"] // [String] | Filter the resources down to the provided languages
+};
+
+// Get specified user prompt
+apiInstance.getArchitectPrompt(promptId, opts)
+  .then((data) => {
+    console.log(`getArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getArchitectPrompt");
+    console.error(err);
+  });

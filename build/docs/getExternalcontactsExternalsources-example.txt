@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  "cursor": "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  "limit": 3.4, // Number | The number of ExternalSources per page; must be between 10 and 200, default is 100
+  "name": "name_example", // String | Filter by external source name. Filtering is prefix filtering and not an exact match
+  "active": true // Boolean | Filter by active status of external source
+};
+
+// Fetch a list of External Sources
+apiInstance.getExternalcontactsExternalsources(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsExternalsources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsExternalsources");
+    console.error(err);
+  });

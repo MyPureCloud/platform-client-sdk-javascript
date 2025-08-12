@@ -1,0 +1,19 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
+let sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+
+// Deletes a cobrowse session
+apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+  .then((data) => {
+    console.log(`deleteWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteWebdeploymentsDeploymentCobrowseSessionId");
+    console.error(err);
+  });

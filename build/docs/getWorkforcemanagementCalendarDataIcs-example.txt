@@ -1,0 +1,18 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let calendarId = "calendarId_example"; // String | The id of the ics-formatted calendar
+
+// Get ics formatted calendar based on shareable link
+apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementCalendarDataIcs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getWorkforcemanagementCalendarDataIcs");
+    console.error(err);
+  });

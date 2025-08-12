@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.JourneyApi();
+
+let viewId = "viewId_example"; // String | Journey View Id
+let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+let jobId = "jobId_example"; // String | JobId
+let chartId = "chartId_example"; // String | ChartId
+
+// Get the chart result associated with a journey view job.
+apiInstance.getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId)
+  .then((data) => {
+    console.log(`getJourneyViewVersionJobResultsChart success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getJourneyViewVersionJobResultsChart");
+    console.error(err);
+  });

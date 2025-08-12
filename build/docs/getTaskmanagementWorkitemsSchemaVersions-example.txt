@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+// Get all versions of a schema
+apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTaskmanagementWorkitemsSchemaVersions");
+    console.error(err);
+  });

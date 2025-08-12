@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let opts = { 
+  "hardDelete": true // Boolean | Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+};
+
+// Delete a social topic.
+apiInstance.deleteSocialmediaTopic(topicId, opts)
+  .then(() => {
+    console.log("deleteSocialmediaTopic returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteSocialmediaTopic");
+    console.error(err);
+  });

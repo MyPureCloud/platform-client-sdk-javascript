@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.UsersApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let opts = { 
+  "includeDuplicates": false // Boolean | Include multiple entries with the same role and division but different subjects
+};
+
+// Returns a listing of roles and permissions for a user.
+apiInstance.getAuthorizationSubject(subjectId, opts)
+  .then((data) => {
+    console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAuthorizationSubject");
+    console.error(err);
+  });

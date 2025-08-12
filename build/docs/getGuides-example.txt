@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let opts = { 
+  "name": "name_example", // String | Filter by matching name - case insensitive.
+  "nameContains": "nameContains_example", // String | Filter by name contains - case insensitive.
+  "status": "status_example", // String | Filter by status.
+  "sortBy": "dateModified", // String | Sort by. Default value dateModified.
+  "sortOrder": "desc", // String | Sort Order. Default value desc.
+  "pageNumber": 1, // Number | Page number.
+  "pageSize": 25 // Number | Page size. The maximum page size is 100.
+};
+
+// Get all guides.
+apiInstance.getGuides(opts)
+  .then((data) => {
+    console.log(`getGuides success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGuides");
+    console.error(err);
+  });

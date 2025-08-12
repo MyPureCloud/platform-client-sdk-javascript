@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.InfrastructureAsCodeApi();
+
+let opts = { 
+  "maxResults": 1, // Number | Number of jobs to show
+  "includeErrors": false, // Boolean | Include error messages
+  "sortBy": "dateSubmitted", // String | Sort by
+  "sortOrder": "desc", // String | Sort order
+  "acceleratorId": "acceleratorId_example", // String | Find only jobs associated with this accelerator
+  "submittedBy": "submittedBy_example", // String | Find only jobs submitted by this user
+  "status": "status_example" // String | Find only jobs in this state
+};
+
+// Get job history
+apiInstance.getInfrastructureascodeJobs(opts)
+  .then((data) => {
+    console.log(`getInfrastructureascodeJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getInfrastructureascodeJobs");
+    console.error(err);
+  });

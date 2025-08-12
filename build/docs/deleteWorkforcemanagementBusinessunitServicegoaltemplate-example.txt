@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
+let serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of the service goal template to delete
+
+// Delete a service goal template
+apiInstance.deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
+  .then(() => {
+    console.log("deleteWorkforcemanagementBusinessunitServicegoaltemplate returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteWorkforcemanagementBusinessunitServicegoaltemplate");
+    console.error(err);
+  });

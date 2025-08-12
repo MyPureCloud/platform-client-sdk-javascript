@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  "after": "after_example", // String | If specified, get the messages chronologically after the id of this message
+  "before": "before_example", // String | If specified, get the messages chronologically before the id of this message
+  "sortOrder": "ascending", // String | Sort order
+  "maxResults": 100 // Number | Limit the returned number of messages, up to a maximum of 100
+};
+
+// Get the messages of a chat conversation.
+apiInstance.getConversationsChatMessages(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationsChatMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getConversationsChatMessages");
+    console.error(err);
+  });

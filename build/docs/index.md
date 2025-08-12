@@ -428,6 +428,24 @@ const client = platformClient.ApiClient.instance;
 client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
 ```
 
+## Filtering of Query Parameters
+
+The SDK is implemented so that when one of its API method is invoked, it filters out null or undefined method parameters (mapped to an API Endpoint's query parameter).
+- In its legacy state, the SDK will also filter parameters of boolean type and equal to false, and parameters of type integer/number and equal to 0.
+- In its modern state, the SDK will keep and send such parameters.
+
+A new ApiClient property (accessed using getUseLegacyParameterFilter and setUseLegacyParameterFilter) is introduced to control the method used to filter out such parameters.
+
+When UseLegacyParameterFilter is true, the SDK will use the legacy filter method.
+
+*The UseLegacyParameterFilter default value is currently equal to true.* You will need to change the UseLegacyParameterFilter value so that the SDK uses modern filter method.
+This choice of default value has been made to facilitate the transition from legacy to modern and accurate parameter filtering, without running the risk to affect existing applications with a change of behavior.
+
+```javascript
+const client = platformClient.ApiClient.instance;
+client.setUseLegacyParameterFilter(true);
+```
+
 ### Setting an intermediate Gateway
 
 The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).

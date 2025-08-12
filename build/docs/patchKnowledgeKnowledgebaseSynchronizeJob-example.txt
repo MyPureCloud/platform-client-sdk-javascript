@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let syncJobId = "syncJobId_example"; // String | Synchronization job ID
+let body = {}; // Object | 
+
+// Update synchronization job
+apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
+  .then((data) => {
+    console.log(`patchKnowledgeKnowledgebaseSynchronizeJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchKnowledgeKnowledgebaseSynchronizeJob");
+    console.error(err);
+  });

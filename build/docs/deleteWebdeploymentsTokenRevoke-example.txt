@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let opts = { 
+  "xJourneySessionId": "xJourneySessionId_example", // String | The Customer's journey sessionId.
+  "xJourneySessionType": "xJourneySessionType_example" // String | The Customer's journey session type.
+};
+
+// Invalidate JWT
+apiInstance.deleteWebdeploymentsTokenRevoke(opts)
+  .then(() => {
+    console.log("deleteWebdeploymentsTokenRevoke returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteWebdeploymentsTokenRevoke");
+    console.error(err);
+  });

@@ -1,0 +1,34 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  "phoneNumber": "phoneNumber_example", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
+  "phoneNumberType": ["phoneNumberType_example"], // [String] | Filter on phone number type
+  "phoneNumberStatus": ["phoneNumberStatus_example"], // [String] | Filter on phone number status
+  "countryCode": ["countryCode_example"], // [String] | Filter on country code
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortBy": "sortBy_example", // String | Optional field to sort results
+  "sortOrder": "sortOrder_example", // String | Sort order
+  "language": en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations
+  "integrationId": "integrationId_example", // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
+  "supportedContentId": "supportedContentId_example", // String | Filter based on the supported content ID
+  "expand": ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+// Get a list of provisioned phone numbers.
+apiInstance.getRoutingSmsPhonenumbers(opts)
+  .then((data) => {
+    console.log(`getRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRoutingSmsPhonenumbers");
+    console.error(err);
+  });

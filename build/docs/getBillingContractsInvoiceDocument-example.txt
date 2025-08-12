@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.BillingApi();
+
+let invoiceId = "invoiceId_example"; // String | invoiceId
+
+// Get invoice document
+apiInstance.getBillingContractsInvoiceDocument(invoiceId)
+  .then((data) => {
+    console.log(`getBillingContractsInvoiceDocument success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getBillingContractsInvoiceDocument");
+    console.error(err);
+  });

@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let phoneNumberId = "phoneNumberId_example"; // String | phone number
+let body = {}; // Object | SmsPhoneNumberPatchRequest
+
+// Update a phone number provisioned for SMS.
+apiInstance.patchRoutingSmsPhonenumber(phoneNumberId, body)
+  .then((data) => {
+    console.log(`patchRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchRoutingSmsPhonenumber");
+    console.error(err);
+  });

@@ -1,0 +1,30 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.StationsApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortBy": "name", // String | Sort by
+  "name": "name_example", // String | Name
+  "userSelectable": "userSelectable_example", // String | True for stations that the user can select otherwise false
+  "webRtcUserId": "webRtcUserId_example", // String | Filter for the webRtc station of the webRtcUserId
+  "id": "id_example", // String | Comma separated list of stationIds
+  "lineAppearanceId": "lineAppearanceId_example" // String | lineAppearanceId
+};
+
+// Get the list of available stations.
+apiInstance.getStations(opts)
+  .then((data) => {
+    console.log(`getStations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getStations");
+    console.error(err);
+  });

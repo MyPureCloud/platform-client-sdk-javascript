@@ -1,0 +1,33 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let opts = { 
+  "pageSize": 25, // Number | The total page size requested
+  "pageNumber": 1, // Number | The page number requested
+  "sortBy": "sortBy_example", // String | variable name requested to sort by
+  "expand": ["expand_example"], // [String] | variable name requested by expand list
+  "nextPage": "nextPage_example", // String | next page token
+  "previousPage": "previousPage_example", // String | Previous page token
+  "name": "name_example", // String | 
+  "permission": ["permission_example"], // [String] | 
+  "defaultRoleId": ["defaultRoleId_example"], // [String] | 
+  "userCount": true, // Boolean | 
+  "id": ["id_example"] // [String] | id
+};
+
+// Retrieve a list of all roles defined for the organization
+apiInstance.getAuthorizationRoles(opts)
+  .then((data) => {
+    console.log(`getAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAuthorizationRoles");
+    console.error(err);
+  });

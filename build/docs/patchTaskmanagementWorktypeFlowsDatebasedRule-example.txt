@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+let body = {}; // Object | Rule
+
+// Update the attributes of a date based rule
+apiInstance.patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body)
+  .then((data) => {
+    console.log(`patchTaskmanagementWorktypeFlowsDatebasedRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchTaskmanagementWorktypeFlowsDatebasedRule");
+    console.error(err);
+  });

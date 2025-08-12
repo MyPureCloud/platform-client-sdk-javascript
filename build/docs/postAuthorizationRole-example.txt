@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let roleId = "roleId_example"; // String | Role ID
+let body = {}; // Object | Subjects and Divisions
+let opts = { 
+  "subjectType": "PC_USER" // String | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+};
+
+// Bulk-grant subjects and divisions with an organization role.
+apiInstance.postAuthorizationRole(roleId, body, opts)
+  .then(() => {
+    console.log("postAuthorizationRole returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postAuthorizationRole");
+    console.error(err);
+  });

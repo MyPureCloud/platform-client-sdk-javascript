@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let body = {}; // Object | Update skill groups
+
+// Update skill group definition
+apiInstance.patchRoutingSkillgroup(skillGroupId, body)
+  .then((data) => {
+    console.log(`patchRoutingSkillgroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchRoutingSkillgroup");
+    console.error(err);
+  });

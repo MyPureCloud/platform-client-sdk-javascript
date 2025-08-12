@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  "divisionIds": ["divisionIds_example"], // [String] | Division IDs of entities
+  "after": "after_example", // String | The cursor that points to the end of the set of entities
+  "pageSize": 3.4 // Number | Number of entities to return
+};
+
+// List exports for organization
+apiInstance.getExternalcontactsContactsExports(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsContactsExports");
+    console.error(err);
+  });

@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let profileId = "profileId_example"; // String | Performance Profile Id
+let opts = { 
+  "workday": "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+};
+
+// All metrics for a given performance profile with objective details such as order and maxPoints
+apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
+  .then((data) => {
+    console.log(`getGamificationProfileMetricsObjectivedetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationProfileMetricsObjectivedetails");
+    console.error(err);
+  });

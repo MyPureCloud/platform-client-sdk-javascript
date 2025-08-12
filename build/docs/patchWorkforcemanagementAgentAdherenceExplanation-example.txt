@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent to query
+let explanationId = "explanationId_example"; // String | The ID of the explanation to update
+let body = {}; // Object | The request body
+
+// Update an adherence explanation
+apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAgentAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchWorkforcemanagementAgentAdherenceExplanation");
+    console.error(err);
+  });

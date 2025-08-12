@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+// Delete/cancel an async request for conversation aggregates
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+  .then(() => {
+    console.log("deleteAnalyticsConversationsAggregatesJob returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteAnalyticsConversationsAggregatesJob");
+    console.error(err);
+  });

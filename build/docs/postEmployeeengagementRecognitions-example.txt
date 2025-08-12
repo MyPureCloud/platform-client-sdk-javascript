@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.EmployeeEngagementApi();
+
+let body = {}; // Object | Create Recognition
+
+// Creates a recognition
+apiInstance.postEmployeeengagementRecognitions(body)
+  .then((data) => {
+    console.log(`postEmployeeengagementRecognitions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postEmployeeengagementRecognitions");
+    console.error(err);
+  });

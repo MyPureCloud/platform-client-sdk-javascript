@@ -1,0 +1,42 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  "pageSize": 25, // Number | The total page size requested
+  "pageNumber": 1, // Number | The page number requested
+  "expand": ["expand_example"], // [String] | variable name requested by expand list
+  "previousPage": "previousPage_example", // String | Previous page token
+  "conversationId": "conversationId_example", // String | conversationId specified
+  "agentUserId": "agentUserId_example", // String | user id of the agent
+  "agentTeamId": "agentTeamId_example", // String | team id of the agent
+  "evaluatorUserId": "evaluatorUserId_example", // String | evaluator user id
+  "assigneeUserId": "assigneeUserId_example", // String | assignee user id
+  "queueId": "queueId_example", // String | queue id
+  "startTime": "startTime_example", // String | start time of the evaluation query
+  "endTime": "endTime_example", // String | end time of the evaluation query
+  "formContextId": "formContextId_example", // String | shared id between form versions
+  "evaluationState": ["evaluationState_example"], // [String] | 
+  "isReleased": true, // Boolean | the evaluation has been released
+  "agentHasRead": true, // Boolean | agent has the evaluation
+  "expandAnswerTotalScores": true, // Boolean | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
+  "maximum": 3.4, // Number | the maximum number of results to return
+  "sortOrder": "sortOrder_example", // String | NOTE: Does not work when conversationId is supplied.
+  "includeDeletedUsers": false // Boolean | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
+};
+
+// Queries Evaluations and returns a paged list
+apiInstance.getQualityEvaluationsQuery(opts)
+  .then((data) => {
+    console.log(`getQualityEvaluationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getQualityEvaluationsQuery");
+    console.error(err);
+  });

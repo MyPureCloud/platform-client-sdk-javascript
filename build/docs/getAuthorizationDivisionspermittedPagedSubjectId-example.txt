@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.UsersApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+let opts = { 
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25 // Number | Page size
+};
+
+// Returns which divisions the specified user has the given permission in.
+apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionspermittedPagedSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAuthorizationDivisionspermittedPagedSubjectId");
+    console.error(err);
+  });

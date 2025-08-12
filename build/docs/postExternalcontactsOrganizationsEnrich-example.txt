@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | ExternalOrgEnrichRequest
+let opts = { 
+  "dryRun": true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+};
+
+// Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+apiInstance.postExternalcontactsOrganizationsEnrich(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsOrganizationsEnrich success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postExternalcontactsOrganizationsEnrich");
+    console.error(err);
+  });

@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let id = "id_example"; // String | Consuming object ID
+let version = "version_example"; // String | Consuming object version
+let objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
+let opts = { 
+  "resourceType": ["resourceType_example"], // [String] | Types of consumed resources to show
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25 // Number | Page size
+};
+
+// Get resources that are consumed by a given Dependency Tracking object
+apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
+  .then((data) => {
+    console.log(`getArchitectDependencytrackingConsumedresources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getArchitectDependencytrackingConsumedresources");
+    console.error(err);
+  });

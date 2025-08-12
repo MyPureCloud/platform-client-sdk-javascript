@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  "expiredOnly": false // Boolean | Set to true to only remove DNC whatsApp numbers that are expired
+};
+
+// Deletes all or expired whatsApp numbers from a DNC list.
+apiInstance.deleteOutboundDnclistWhatsappnumbers(dncListId, opts)
+  .then(() => {
+    console.log("deleteOutboundDnclistWhatsappnumbers returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteOutboundDnclistWhatsappnumbers");
+    console.error(err);
+  });

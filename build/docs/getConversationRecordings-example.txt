@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  "maxWaitMs": 5000, // Number | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
+  "formatId": "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+  "mediaFormats": ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+  "locale": "locale_example", // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+  "includePauseAnnotationsForScreenRecordings": false // Boolean | Include applicable Secure Pause annotations from all audio recordings to all screen recordings
+};
+
+// Get all of a Conversation's Recordings.
+apiInstance.getConversationRecordings(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationRecordings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getConversationRecordings");
+    console.error(err);
+  });

@@ -1,0 +1,34 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size. The max that will be returned is 100.
+  "pageNumber": 1, // Number | Page number
+  "sortBy": "name", // String | The field to sort by
+  "sortOrder": "ascending", // String | The direction to sort
+  "name": "name_example", // String | Name
+  "contactListId": "contactListId_example", // String | Contact List ID
+  "divisionId": ["divisionId_example"], // [String] | Division ID(s)
+  "type": "type_example", // String | Campaign Type
+  "senderSmsPhoneNumber": "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
+  "id": ["id_example"], // [String] | A list of messaging campaign ids to bulk fetch
+  "contentTemplateId": "contentTemplateId_example", // String | Content template ID
+  "campaignStatus": "campaignStatus_example" // String | Campaign Status
+};
+
+// Query a list of Messaging Campaigns
+apiInstance.getOutboundMessagingcampaigns(opts)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getOutboundMessagingcampaigns");
+    console.error(err);
+  });
