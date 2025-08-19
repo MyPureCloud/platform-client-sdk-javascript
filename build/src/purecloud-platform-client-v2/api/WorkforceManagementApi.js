@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 229.1.0
+	 * @version 229.2.0
 	 */
 
 	/**

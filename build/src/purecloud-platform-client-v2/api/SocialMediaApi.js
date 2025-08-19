@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 229.1.0
+	 * @version 229.2.0
 	 */
 
 	/**

@@ -2408,4 +2408,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@229.2.0_
