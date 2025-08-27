@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**

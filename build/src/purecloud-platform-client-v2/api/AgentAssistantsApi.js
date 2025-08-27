@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -307,6 +307,115 @@ class AgentAssistantsApi {
 			'PATCH', 
 			{ 'assistantId': assistantId },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk add users to assistant-queue (requires manual assignment mode).
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 */
+	postAssistantQueueUsersBulkAdd(assistantId, queueId, body) { 
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersBulkAdd';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersBulkAdd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove users from assistant-queue (requires manual assignment mode).
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 */
+	postAssistantQueueUsersBulkRemove(assistantId, queueId, body) { 
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersBulkRemove';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for users in the assistant-queue (requires manual assignment mode).
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand with.
+	 */
+	postAssistantQueueUsersQuery(assistantId, queueId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersQuery';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/query', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			body, 

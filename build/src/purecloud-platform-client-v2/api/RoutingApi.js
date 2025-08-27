@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -977,31 +977,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/outbound/domains/{domainId}/activation', 
-			'GET', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search a domain across organizations
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	getRoutingEmailOutboundDomainSearch(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null || domainId === '') {
-			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/outbound/domains/{domainId}/search', 
 			'GET', 
 			{ 'domainId': domainId },
 			{  },
@@ -3248,8 +3223,8 @@ class RoutingApi {
 	}
 
 	/**
-	 * Tests the custom SMTP server integration connection set on this domain
-	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+	 * Tests the custom SMTP server integration connection set on this ACD domain
+	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
 	 * @param {String} domainId domain ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body TestMessage

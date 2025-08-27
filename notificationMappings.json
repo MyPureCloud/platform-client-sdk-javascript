@@ -77,6 +77,10 @@
       "class": "ContentManagementWorkspaceDocumentsTopicDocumentDataV2"
     },
     {
+      "topic": "v2.conversations.{id}.agentchecklist",
+      "class": "ConversationChecklistTopicAgentChecklistRuntimeEventBody"
+    },
+    {
       "topic": "v2.conversations.{id}.transcription",
       "class": "TranscriptionTopicTranscriptionMessage"
     },

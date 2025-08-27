@@ -746,7 +746,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 229.2.0
+ * @version 230.0.0
  */
 class ApiClient {
 	/**
@@ -2290,7 +2290,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -2703,7 +2703,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -3015,6 +3015,115 @@ class AgentAssistantsApi {
 	}
 
 	/**
+	 * Bulk add users to assistant-queue (requires manual assignment mode).
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 */
+	postAssistantQueueUsersBulkAdd(assistantId, queueId, body) { 
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersBulkAdd';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersBulkAdd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove users from assistant-queue (requires manual assignment mode).
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 */
+	postAssistantQueueUsersBulkRemove(assistantId, queueId, body) { 
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersBulkRemove';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for users in the assistant-queue (requires manual assignment mode).
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand with.
+	 */
+	postAssistantQueueUsersQuery(assistantId, queueId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersQuery';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/query', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an Assistant.
 	 * 
 	 * @param {Object} body 
@@ -3080,7 +3189,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -3156,7 +3265,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -3287,7 +3396,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -3688,7 +3797,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -6874,7 +6983,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -11169,7 +11278,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -11370,7 +11479,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -13085,7 +13194,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -13341,7 +13450,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -14257,7 +14366,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -14327,7 +14436,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -15308,7 +15417,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -15885,7 +15994,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -16966,7 +17075,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -17022,6 +17131,31 @@ class ConversationsApi {
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by disconnecting all of the participants
+	 * 
+	 * @param {String} conversationId conversation ID
+	 */
+	deleteConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling deleteConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}', 
+			'DELETE', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -20243,6 +20377,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body SetRecordingState
+	 */
+	patchConversationRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/recordingstate', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the secure attributes on a conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -20428,6 +20592,36 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by merging in other conversations to create a conference
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body UpdateConferenceRequest
+	 */
+	patchConversationsCallConference(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallConference';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallConference';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/conference', 
 			'PATCH', 
 			{ 'conversationId': conversationId },
 			{  },
@@ -25204,7 +25398,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -25290,7 +25484,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -25460,7 +25654,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -25512,7 +25706,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -25641,7 +25835,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -25792,7 +25986,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -25888,7 +26082,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -29135,7 +29329,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -29350,7 +29544,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -29559,7 +29753,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -32066,7 +32260,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -32196,7 +32390,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -32327,7 +32521,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -32869,7 +33063,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -33388,7 +33582,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -34249,7 +34443,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -34416,7 +34610,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -37061,7 +37255,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -39131,7 +39325,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -43033,7 +43227,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -44066,7 +44260,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -44288,7 +44482,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -45317,7 +45511,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -45555,7 +45749,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -45791,7 +45985,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -45990,7 +46184,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -46349,7 +46543,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -46500,7 +46694,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -46733,7 +46927,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -47099,7 +47293,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -47423,7 +47617,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -47540,7 +47734,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -48015,7 +48209,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -49409,7 +49603,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -54131,7 +54325,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -54875,7 +55069,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -55114,7 +55308,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -56953,7 +57147,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -58006,7 +58200,7 @@ class RecordingApi {
 
 	/**
 	 * Create a recording bulk job.
-	 * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+	 * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected. It is recommended to query over smaller time periods so your request does not time out.
 	 * @param {Object} body query
 	 */
 	postRecordingJobs(body) { 
@@ -58558,7 +58752,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -59068,7 +59262,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -60040,31 +60234,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/outbound/domains/{domainId}/activation', 
-			'GET', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search a domain across organizations
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	getRoutingEmailOutboundDomainSearch(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null || domainId === '') {
-			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/outbound/domains/{domainId}/search', 
 			'GET', 
 			{ 'domainId': domainId },
 			{  },
@@ -62311,8 +62480,8 @@ class RoutingApi {
 	}
 
 	/**
-	 * Tests the custom SMTP server integration connection set on this domain
-	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+	 * Tests the custom SMTP server integration connection set on this ACD domain
+	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
 	 * @param {String} domainId domain ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body TestMessage
@@ -63409,7 +63578,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -64286,7 +64455,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -64331,7 +64500,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -64807,7 +64976,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -65525,7 +65694,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -65873,7 +66042,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -67224,7 +67393,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -68870,7 +69039,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -68972,7 +69141,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -69111,7 +69280,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -71273,7 +71442,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -71578,7 +71747,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -71864,7 +72033,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -75357,7 +75526,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -75486,7 +75655,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -75640,7 +75809,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -75931,7 +76100,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -76266,7 +76435,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -76481,7 +76650,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -79490,7 +79659,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -79601,7 +79770,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -80323,7 +80492,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -80883,7 +81052,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -81465,7 +81634,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -81479,6 +81648,36 @@ class WebMessagingApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete device information
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment id
+	 * @param {String} tokenId Device token id or cookie id
+	 */
+	deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
+			throw 'Missing the required parameter "deploymentId" when calling deleteWebmessagingDeploymentPushdevice';
+		}
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling deleteWebmessagingDeploymentPushdevice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}', 
+			'DELETE', 
+			{ 'deploymentId': deploymentId,'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get the messages for a web messaging session.
@@ -81505,13 +81704,83 @@ class WebMessagingApi {
 		);
 	}
 
+	/**
+	 * Edit device information
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment id
+	 * @param {String} tokenId Device token id or cookie id
+	 * @param {Object} body Request body
+	 */
+	patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
+			throw 'Missing the required parameter "deploymentId" when calling patchWebmessagingDeploymentPushdevice';
+		}
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling patchWebmessagingDeploymentPushdevice';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWebmessagingDeploymentPushdevice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}', 
+			'PATCH', 
+			{ 'deploymentId': deploymentId,'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a new device information
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment id
+	 * @param {String} tokenId Device token id or cookie id
+	 * @param {Object} body Request body
+	 */
+	postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
+			throw 'Missing the required parameter "deploymentId" when calling postWebmessagingDeploymentPushdevice';
+		}
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling postWebmessagingDeploymentPushdevice';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWebmessagingDeploymentPushdevice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}', 
+			'POST', 
+			{ 'deploymentId': deploymentId,'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
 }
 
 class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -81662,7 +81931,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -89632,7 +89901,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 229.2.0
+ * @version 230.0.0
  */
 class platformClient {
 	constructor() {

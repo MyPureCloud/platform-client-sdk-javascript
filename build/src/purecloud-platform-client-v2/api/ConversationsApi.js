@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 229.2.0
+	 * @version 230.0.0
 	 */
 
 	/**
@@ -61,6 +61,31 @@ class ConversationsApi {
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by disconnecting all of the participants
+	 * 
+	 * @param {String} conversationId conversation ID
+	 */
+	deleteConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling deleteConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}', 
+			'DELETE', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -3282,6 +3307,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body SetRecordingState
+	 */
+	patchConversationRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/recordingstate', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the secure attributes on a conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -3467,6 +3522,36 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by merging in other conversations to create a conference
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body UpdateConferenceRequest
+	 */
+	patchConversationsCallConference(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallConference';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallConference';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/conference', 
 			'PATCH', 
 			{ 'conversationId': conversationId },
 			{  },

@@ -834,7 +834,7 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
 
 ## getAuthorizationPermissions
 
-> PermissionCollectionEntityListing getAuthorizationPermissions(opts)
+> DomainPermissionEntityListing getAuthorizationPermissions(opts)
 
 
 GET /api/v2/authorization/permissions
@@ -887,7 +887,7 @@ apiInstance.getAuthorizationPermissions(opts)
 
 ### Return type
 
-**PermissionCollectionEntityListing**
+**DomainPermissionEntityListing**
 
 
 ## getAuthorizationPolicies
@@ -3257,4 +3257,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@229.2.0_
+_purecloud-platform-client-v2@230.0.0_

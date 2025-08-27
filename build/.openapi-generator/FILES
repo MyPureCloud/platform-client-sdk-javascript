@@ -232,6 +232,7 @@ docs/deleteContentmanagementStatusStatusId-example.txt
 docs/deleteContentmanagementWorkspace-example.txt
 docs/deleteContentmanagementWorkspaceMember-example.txt
 docs/deleteContentmanagementWorkspaceTagvalue-example.txt
+docs/deleteConversation-example.txt
 docs/deleteConversationParticipantCode-example.txt
 docs/deleteConversationParticipantFlaggedreason-example.txt
 docs/deleteConversationRecordingAnnotation-example.txt
@@ -479,6 +480,7 @@ docs/deleteWebdeploymentsConfiguration-example.txt
 docs/deleteWebdeploymentsDeployment-example.txt
 docs/deleteWebdeploymentsDeploymentCobrowseSessionId-example.txt
 docs/deleteWebdeploymentsTokenRevoke-example.txt
+docs/deleteWebmessagingDeploymentPushdevice-example.txt
 docs/deleteWidgetsDeployment-example.txt
 docs/deleteWorkforcemanagementBusinessunit-example.txt
 docs/deleteWorkforcemanagementBusinessunitActivitycode-example.txt
@@ -1423,7 +1425,6 @@ docs/getRoutingEmailDomainRoutes-example.txt
 docs/getRoutingEmailDomains-example.txt
 docs/getRoutingEmailOutboundDomain-example.txt
 docs/getRoutingEmailOutboundDomainActivation-example.txt
-docs/getRoutingEmailOutboundDomainSearch-example.txt
 docs/getRoutingEmailOutboundDomains-example.txt
 docs/getRoutingEmailSetup-example.txt
 docs/getRoutingLanguage-example.txt
@@ -1930,12 +1931,14 @@ docs/patchCoachingAppointmentStatus-example.txt
 docs/patchCoachingNotification-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
+docs/patchConversationRecordingstate-example.txt
 docs/patchConversationSecureattributes-example.txt
 docs/patchConversationSummaryEngagements-example.txt
 docs/patchConversationSummaryFeedback-example.txt
 docs/patchConversationUtilizationlabel-example.txt
 docs/patchConversationsAftercallworkConversationIdParticipantCommunication-example.txt
 docs/patchConversationsCall-example.txt
+docs/patchConversationsCallConference-example.txt
 docs/patchConversationsCallParticipant-example.txt
 docs/patchConversationsCallParticipantAttributes-example.txt
 docs/patchConversationsCallParticipantCommunication-example.txt
@@ -2091,6 +2094,7 @@ docs/patchVoicemailMePolicy-example.txt
 docs/patchVoicemailMessage-example.txt
 docs/patchVoicemailUserpolicy-example.txt
 docs/patchWebchatGuestConversationMediarequest-example.txt
+docs/patchWebmessagingDeploymentPushdevice-example.txt
 docs/patchWorkforcemanagementAgentAdherenceExplanation-example.txt
 docs/patchWorkforcemanagementAlternativeshiftsTrade-example.txt
 docs/patchWorkforcemanagementAlternativeshiftsTradesStateJobs-example.txt
@@ -2216,6 +2220,9 @@ docs/postArchitectSchedules-example.txt
 docs/postArchitectSystempromptHistory-example.txt
 docs/postArchitectSystempromptResourceUploads-example.txt
 docs/postArchitectSystempromptResources-example.txt
+docs/postAssistantQueueUsersBulkAdd-example.txt
+docs/postAssistantQueueUsersBulkRemove-example.txt
+docs/postAssistantQueueUsersQuery-example.txt
 docs/postAssistants-example.txt
 docs/postAuditsQuery-example.txt
 docs/postAuditsQueryRealtime-example.txt
@@ -2816,6 +2823,7 @@ docs/postWebdeploymentsConfigurations-example.txt
 docs/postWebdeploymentsDeployments-example.txt
 docs/postWebdeploymentsTokenOauthcodegrantjwtexchange-example.txt
 docs/postWebdeploymentsTokenRefresh-example.txt
+docs/postWebmessagingDeploymentPushdevice-example.txt
 docs/postWidgetsDeployments-example.txt
 docs/postWorkforcemanagementAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAdherenceExplanationsQuery-example.txt

@@ -43,7 +43,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | **GET** /api/v2/routing/email/domains | Get domains
 [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | **GET** /api/v2/routing/email/outbound/domains/{domainId} | Get domain
 [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/activation | Get activation status (cname + dkim) of an outbound domain
-[**getRoutingEmailOutboundDomainSearch**](RoutingApi#getRoutingEmailOutboundDomainSearch) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/search | Search a domain across organizations
 [**getRoutingEmailOutboundDomains**](RoutingApi#getRoutingEmailOutboundDomains) | **GET** /api/v2/routing/email/outbound/domains | Get outbound domains
 [**getRoutingEmailSetup**](RoutingApi#getRoutingEmailSetup) | **GET** /api/v2/routing/email/setup | Get email setup
 [**getRoutingLanguage**](RoutingApi#getRoutingLanguage) | **GET** /api/v2/routing/languages/{languageId} | Get a routing language
@@ -123,7 +122,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingAssessments**](RoutingApi#postRoutingAssessments) | **POST** /api/v2/routing/assessments | Create a benefit assessment.
 [**postRoutingAssessmentsJobs**](RoutingApi#postRoutingAssessmentsJobs) | **POST** /api/v2/routing/assessments/jobs | Create a benefit assessment job.
 [**postRoutingEmailDomainRoutes**](RoutingApi#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
-[**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this domain
+[**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this ACD domain
 [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
 [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | **POST** /api/v2/routing/email/outbound/domains | Create a domain
 [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
@@ -2059,56 +2058,6 @@ apiInstance.getRoutingEmailOutboundDomainActivation(domainId)
 ### Return type
 
 **EmailOutboundDomainResult**
-
-
-## getRoutingEmailOutboundDomainSearch
-
-> OutboundDomain getRoutingEmailOutboundDomainSearch(domainId)
-
-
-GET /api/v2/routing/email/outbound/domains/{domainId}/search
-
-Search a domain across organizations
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-
-apiInstance.getRoutingEmailOutboundDomainSearch(domainId)
-  .then((data) => {
-    console.log(`getRoutingEmailOutboundDomainSearch success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingEmailOutboundDomainSearch');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
-
-### Return type
-
-**OutboundDomain**
 
 
 ## getRoutingEmailOutboundDomains
@@ -6441,9 +6390,9 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 
 POST /api/v2/routing/email/domains/{domainId}/testconnection
 
-Tests the custom SMTP server integration connection set on this domain
+Tests the custom SMTP server integration connection set on this ACD domain
 
-The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
 
 Requires ALL permissions:
 
@@ -8458,4 +8407,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@229.2.0_
+_purecloud-platform-client-v2@230.0.0_
