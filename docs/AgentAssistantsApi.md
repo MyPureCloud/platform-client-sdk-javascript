@@ -16,6 +16,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAssistantsQueues**](AgentAssistantsApi#getAssistantsQueues) | **GET** /api/v2/assistants/queues | Get all queues assigned to any assistant.
 [**patchAssistant**](AgentAssistantsApi#patchAssistant) | **PATCH** /api/v2/assistants/{assistantId} | Update an assistant.
 [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | **PATCH** /api/v2/assistants/{assistantId}/queues | Update Queues for an Assistant.
+[**postAssistantQueueUsersBulkAdd**](AgentAssistantsApi#postAssistantQueueUsersBulkAdd) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add | Bulk add users to assistant-queue (requires manual assignment mode).
+[**postAssistantQueueUsersBulkRemove**](AgentAssistantsApi#postAssistantQueueUsersBulkRemove) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove | Bulk remove users from assistant-queue (requires manual assignment mode).
+[**postAssistantQueueUsersQuery**](AgentAssistantsApi#postAssistantQueueUsersQuery) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/query | Query for users in the assistant-queue (requires manual assignment mode).
 [**postAssistants**](AgentAssistantsApi#postAssistants) | **POST** /api/v2/assistants | Create an Assistant.
 [**putAssistantQueue**](AgentAssistantsApi#putAssistantQueue) | **PUT** /api/v2/assistants/{assistantId}/queues/{queueId} | Create a queue assistant association.
 
@@ -573,6 +576,172 @@ apiInstance.patchAssistantQueues(assistantId, body)
 **AssistantQueueListing**
 
 
+## postAssistantQueueUsersBulkAdd
+
+> BulkResponse postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
+
+
+POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add
+
+Bulk add users to assistant-queue (requires manual assignment mode).
+
+Requires ANY permissions:
+
+* assistants:queueUserAssignment:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let assistantId = "assistantId_example"; // String | Assistant ID
+let queueId = "queueId_example"; // String | Queue ID
+let body = {}; // Object | 
+
+apiInstance.postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
+  .then((data) => {
+    console.log(`postAssistantQueueUsersBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAssistantQueueUsersBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assistantId** | **String** | Assistant ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**BulkResponse**
+
+
+## postAssistantQueueUsersBulkRemove
+
+> BulkResponse postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
+
+
+POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove
+
+Bulk remove users from assistant-queue (requires manual assignment mode).
+
+Requires ANY permissions:
+
+* assistants:queueUserAssignment:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let assistantId = "assistantId_example"; // String | Assistant ID
+let queueId = "queueId_example"; // String | Queue ID
+let body = {}; // Object | 
+
+apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
+  .then((data) => {
+    console.log(`postAssistantQueueUsersBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAssistantQueueUsersBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assistantId** | **String** | Assistant ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**BulkResponse**
+
+
+## postAssistantQueueUsersQuery
+
+> AssistantQueueUsersQueryResponse postAssistantQueueUsersQuery(assistantId, queueId, body, opts)
+
+
+POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/query
+
+Query for users in the assistant-queue (requires manual assignment mode).
+
+Requires ANY permissions:
+
+* assistants:queueUserAssignment:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let assistantId = "assistantId_example"; // String | Assistant ID
+let queueId = "queueId_example"; // String | Queue ID
+let body = {}; // Object | 
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand with.
+};
+
+apiInstance.postAssistantQueueUsersQuery(assistantId, queueId, body, opts)
+  .then((data) => {
+    console.log(`postAssistantQueueUsersQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAssistantQueueUsersQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assistantId** | **String** | Assistant ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** |  |  |
+ **expand** | **[String]** | Which fields, if any, to expand with. | [optional] <br />**Values**: assistant, copilot |
+
+### Return type
+
+**AssistantQueueUsersQueryResponse**
+
+
 ## postAssistants
 
 > Assistant postAssistants(body)
@@ -677,4 +846,4 @@ apiInstance.putAssistantQueue(assistantId, queueId, body)
 **AssistantQueue**
 
 
-_purecloud-platform-client-v2@229.2.0_
+_purecloud-platform-client-v2@230.0.0_

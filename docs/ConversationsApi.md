@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
 [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteConversation**](ConversationsApi#deleteConversation) | **DELETE** /api/v2/conversations/{conversationId} | Update a conversation by disconnecting all of the participants
 [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
@@ -123,12 +124,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsVideosMeeting**](ConversationsApi#getConversationsVideosMeeting) | **GET** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId
 [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | **PATCH** /api/v2/conversations/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
 [**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements | Update agent's engagement for the summary.
 [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary.
 [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
 [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
 [**patchConversationsCall**](ConversationsApi#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+[**patchConversationsCallConference**](ConversationsApi#patchConversationsCallConference) | **PATCH** /api/v2/conversations/calls/{conversationId}/conference | Update a conversation by merging in other conversations to create a conference
 [**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
@@ -380,6 +383,56 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversation
+
+> void deleteConversation(conversationId)
+
+
+DELETE /api/v2/conversations/{conversationId}
+
+Update a conversation by disconnecting all of the participants
+
+Requires ANY permissions:
+
+* conversation:communication:disconnect
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+
+apiInstance.deleteConversation(conversationId)
+  .then(() => {
+    console.log('deleteConversation returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
 
 ### Return type
 
@@ -6374,6 +6427,58 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
 void (no response body)
 
 
+## patchConversationRecordingstate
+
+> void patchConversationRecordingstate(conversationId, body)
+
+
+PATCH /api/v2/conversations/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | SetRecordingState
+
+apiInstance.patchConversationRecordingstate(conversationId, body)
+  .then(() => {
+    console.log('patchConversationRecordingstate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | SetRecordingState |  |
+
+### Return type
+
+void (no response body)
+
+
 ## patchConversationSecureattributes
 
 > **&#39;String&#39;** patchConversationSecureattributes(conversationId, body)
@@ -6696,6 +6801,58 @@ apiInstance.patchConversationsCall(conversationId, body)
 ### Return type
 
 **Conversation**
+
+
+## patchConversationsCallConference
+
+> void patchConversationsCallConference(conversationId, body)
+
+
+PATCH /api/v2/conversations/calls/{conversationId}/conference
+
+Update a conversation by merging in other conversations to create a conference
+
+Requires ANY permissions:
+
+* conversation:conference:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | UpdateConferenceRequest
+
+apiInstance.patchConversationsCallConference(conversationId, body)
+  .then(() => {
+    console.log('patchConversationsCallConference returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallConference');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | UpdateConferenceRequest |  |
+
+### Return type
+
+void (no response body)
 
 
 ## patchConversationsCallParticipant
@@ -14864,4 +15021,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@229.2.0_
+_purecloud-platform-client-v2@230.0.0_
