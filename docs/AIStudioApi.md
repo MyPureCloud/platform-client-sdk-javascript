@@ -6,7 +6,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteConversationsSummariesSetting**](AIStudioApi#deleteConversationsSummariesSetting) | **DELETE** /api/v2/conversations/summaries/settings/{summarySettingId} | Delete a summary setting.
 [**deleteGuideJobs**](AIStudioApi#deleteGuideJobs) | **DELETE** /api/v2/guides/{guideId}/jobs | Start the deletion of a guide.
+[**getConversationsSummariesSetting**](AIStudioApi#getConversationsSummariesSetting) | **GET** /api/v2/conversations/summaries/settings/{summarySettingId} | Receive a summary setting.
+[**getConversationsSummariesSettings**](AIStudioApi#getConversationsSummariesSettings) | **GET** /api/v2/conversations/summaries/settings | Get all summary settings.
 [**getGuide**](AIStudioApi#getGuide) | **GET** /api/v2/guides/{guideId} | Get guide.
 [**getGuideJob**](AIStudioApi#getGuideJob) | **GET** /api/v2/guides/{guideId}/jobs/{jobId} | Get the specified guide deletion job.
 [**getGuideVersion**](AIStudioApi#getGuideVersion) | **GET** /api/v2/guides/{guideId}/versions/{versionId} | Get a guide version.
@@ -15,11 +18,64 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGuidesJob**](AIStudioApi#getGuidesJob) | **GET** /api/v2/guides/jobs/{jobId} | Get the status of the guide content generation job.
 [**patchGuide**](AIStudioApi#patchGuide) | **PATCH** /api/v2/guides/{guideId} | Update a guide.
 [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | **PATCH** /api/v2/guides/{guideId}/versions/{versionId} | Update a guide version.
+[**postConversationsSummariesPreview**](AIStudioApi#postConversationsSummariesPreview) | **POST** /api/v2/conversations/summaries/preview | Trigger summary preview event generation.
+[**postConversationsSummariesSettings**](AIStudioApi#postConversationsSummariesSettings) | **POST** /api/v2/conversations/summaries/settings | Create a summary setting.
 [**postGuideVersionJobs**](AIStudioApi#postGuideVersionJobs) | **POST** /api/v2/guides/{guideId}/versions/{versionId}/jobs | Start the publishing of a guide version.
 [**postGuideVersions**](AIStudioApi#postGuideVersions) | **POST** /api/v2/guides/{guideId}/versions | Create a guide version.
 [**postGuides**](AIStudioApi#postGuides) | **POST** /api/v2/guides | Create a guide.
 [**postGuidesJobs**](AIStudioApi#postGuidesJobs) | **POST** /api/v2/guides/jobs | Start a guide content generation job.
+[**putConversationsSummariesSetting**](AIStudioApi#putConversationsSummariesSetting) | **PUT** /api/v2/conversations/summaries/settings/{summarySettingId} | Update a summary setting.
 
+
+
+## deleteConversationsSummariesSetting
+
+> void deleteConversationsSummariesSetting(summarySettingId)
+
+
+DELETE /api/v2/conversations/summaries/settings/{summarySettingId}
+
+Delete a summary setting.
+
+Requires ALL permissions:
+
+* aiStudio:summaryConfig:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let summarySettingId = "summarySettingId_example"; // String | Summary setting id
+
+apiInstance.deleteConversationsSummariesSetting(summarySettingId)
+  .then(() => {
+    console.log('deleteConversationsSummariesSetting returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsSummariesSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **summarySettingId** | **String** | Summary setting id |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteGuideJobs
@@ -72,6 +128,118 @@ apiInstance.deleteGuideJobs(guideId)
 ### Return type
 
 **GuideJob**
+
+
+## getConversationsSummariesSetting
+
+> SummarySetting getConversationsSummariesSetting(summarySettingId)
+
+
+GET /api/v2/conversations/summaries/settings/{summarySettingId}
+
+Receive a summary setting.
+
+Requires ALL permissions:
+
+* aiStudio:summaryConfig:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let summarySettingId = "summarySettingId_example"; // String | Summary setting id
+
+apiInstance.getConversationsSummariesSetting(summarySettingId)
+  .then((data) => {
+    console.log(`getConversationsSummariesSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsSummariesSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **summarySettingId** | **String** | Summary setting id |  |
+
+### Return type
+
+**SummarySetting**
+
+
+## getConversationsSummariesSettings
+
+> SummarySettingEntityListing getConversationsSummariesSettings(opts)
+
+
+GET /api/v2/conversations/summaries/settings
+
+Get all summary settings.
+
+Requires ALL permissions:
+
+* aiStudio:summaryConfig:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let opts = { 
+  'language': "language_example", // String | Filter by matching language - case insensitive.
+  'name': "name_example", // String | Filter by partially matching name - case insensitive.
+  'sortBy': "dateModified", // String | Sort by. Default value dateModified.
+  'sortOrder': "desc", // String | Sort Order. Default value desc.
+  'pageNumber': 1, // Number | Page number.
+  'pageSize': 25 // Number | Page size. The maximum page size is 100.
+};
+
+apiInstance.getConversationsSummariesSettings(opts)
+  .then((data) => {
+    console.log(`getConversationsSummariesSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsSummariesSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **language** | **String** | Filter by matching language - case insensitive. | [optional]  |
+ **name** | **String** | Filter by partially matching name - case insensitive. | [optional]  |
+ **sortBy** | **String** | Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name |
+ **sortOrder** | **String** | Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc |
+ **pageNumber** | **Number** | Page number. | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size. The maximum page size is 100. | [optional] [default to 25] |
+
+### Return type
+
+**SummarySettingEntityListing**
 
 
 ## getGuide
@@ -518,6 +686,106 @@ apiInstance.patchGuideVersion(guideId, versionId, body)
 **GuideVersion**
 
 
+## postConversationsSummariesPreview
+
+> void postConversationsSummariesPreview(body)
+
+
+POST /api/v2/conversations/summaries/preview
+
+Trigger summary preview event generation.
+
+Requires ALL permissions:
+
+* aiStudio:summaryPreview:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let body = {}; // Object | 
+
+apiInstance.postConversationsSummariesPreview(body)
+  .then(() => {
+    console.log('postConversationsSummariesPreview returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsSummariesPreview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+void (no response body)
+
+
+## postConversationsSummariesSettings
+
+> SummarySetting postConversationsSummariesSettings(body)
+
+
+POST /api/v2/conversations/summaries/settings
+
+Create a summary setting.
+
+Requires ALL permissions:
+
+* aiStudio:summaryConfig:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let body = {}; // Object | 
+
+apiInstance.postConversationsSummariesSettings(body)
+  .then((data) => {
+    console.log(`postConversationsSummariesSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsSummariesSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**SummarySetting**
+
+
 ## postGuideVersionJobs
 
 > GuideVersionPublishJob postGuideVersionJobs(guideId, versionId, body)
@@ -734,4 +1002,56 @@ apiInstance.postGuidesJobs(body)
 **GuideContentGenerationJob**
 
 
-_purecloud-platform-client-v2@230.0.0_
+## putConversationsSummariesSetting
+
+> SummarySetting putConversationsSummariesSetting(summarySettingId, body)
+
+
+PUT /api/v2/conversations/summaries/settings/{summarySettingId}
+
+Update a summary setting.
+
+Requires ALL permissions:
+
+* aiStudio:summaryConfig:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let summarySettingId = "summarySettingId_example"; // String | Summary setting id
+let body = {}; // Object | 
+
+apiInstance.putConversationsSummariesSetting(summarySettingId, body)
+  .then((data) => {
+    console.log(`putConversationsSummariesSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsSummariesSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **summarySettingId** | **String** | Summary setting id |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**SummarySetting**
+
+
+_purecloud-platform-client-v2@231.0.0_

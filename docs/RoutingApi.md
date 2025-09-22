@@ -1685,7 +1685,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingEmailDomain
 
-> InboundDomain getRoutingEmailDomain(domainId)
+> InboundDomain getRoutingEmailDomain(domainId, opts)
 
 
 GET /api/v2/routing/email/domains/{domainId}
@@ -1710,8 +1710,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'expand': "expand_example" // String | Expand options. Valid values: settings
+};
 
-apiInstance.getRoutingEmailDomain(domainId)
+apiInstance.getRoutingEmailDomain(domainId, opts)
   .then((data) => {
     console.log(`getRoutingEmailDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1727,6 +1730,7 @@ apiInstance.getRoutingEmailDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -1932,7 +1936,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'excludeStatus': false, // Boolean | Exclude MX record data
-  'filter': "filter_example" // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+  'filter': "filter_example", // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+  'expand': "expand_example" // String | Expand options. Valid values: settings
 };
 
 apiInstance.getRoutingEmailDomains(opts)
@@ -1954,6 +1959,7 @@ apiInstance.getRoutingEmailDomains(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **excludeStatus** | **Boolean** | Exclude MX record data | [optional] [default to false] |
  **filter** | **String** | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
+ **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -1962,7 +1968,7 @@ apiInstance.getRoutingEmailDomains(opts)
 
 ## getRoutingEmailOutboundDomain
 
-> OutboundDomain getRoutingEmailOutboundDomain(domainId)
+> OutboundDomain getRoutingEmailOutboundDomain(domainId, opts)
 
 
 GET /api/v2/routing/email/outbound/domains/{domainId}
@@ -1987,8 +1993,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'expand': "expand_example" // String | Expand options. Valid values: settings
+};
 
-apiInstance.getRoutingEmailOutboundDomain(domainId)
+apiInstance.getRoutingEmailOutboundDomain(domainId, opts)
   .then((data) => {
     console.log(`getRoutingEmailOutboundDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2004,6 +2013,7 @@ apiInstance.getRoutingEmailOutboundDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -2089,7 +2099,8 @@ let apiInstance = new platformClient.RoutingApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'filter': "filter_example" // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+  'filter': "filter_example", // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+  'expand': "expand_example" // String | Expand options. Valid values: settings
 };
 
 apiInstance.getRoutingEmailOutboundDomains(opts)
@@ -2110,6 +2121,7 @@ apiInstance.getRoutingEmailOutboundDomains(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filter** | **String** | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
+ **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -8407,4 +8419,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

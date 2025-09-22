@@ -52,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
 [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
 [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | **GET** /api/v2/journey/views/jobs | Get the jobs for an organization.
+[**getJourneyViewsJobsMe**](JourneyApi#getJourneyViewsJobsMe) | **GET** /api/v2/journey/views/jobs/me | Get my jobs
 [**getJourneyViewsSchedules**](JourneyApi#getJourneyViewsSchedules) | **GET** /api/v2/journey/views/schedules | Get the journey schedules for an organization.
 [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
@@ -2530,6 +2531,64 @@ apiInstance.getJourneyViewsJobs(opts)
 **JourneyViewJobListing**
 
 
+## getJourneyViewsJobsMe
+
+> JourneyViewJobListing getJourneyViewsJobsMe(opts)
+
+
+GET /api/v2/journey/views/jobs/me
+
+Get my jobs
+
+Requires ALL permissions:
+
+* journey:viewsJobs:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | The number of the page to return
+  'pageSize': 25, // Number | Max number of entities to return
+  'interval': 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z, // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+  'statuses': statuses=Accepted,Executing,Complete,Failed,Scheduled // String | Job statuses to filter for
+};
+
+apiInstance.getJourneyViewsJobsMe(opts)
+  .then((data) => {
+    console.log(`getJourneyViewsJobsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsJobsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | The number of the page to return | [optional] [default to 1] |
+ **pageSize** | **Number** | Max number of entities to return | [optional] [default to 25] |
+ **interval** | **String** | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
+ **statuses** | **String** | Job statuses to filter for | [optional]  |
+
+### Return type
+
+**JourneyViewJobListing**
+
+
 ## getJourneyViewsSchedules
 
 > JourneyViewScheduleListing getJourneyViewsSchedules(opts)
@@ -3998,4 +4057,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

@@ -205,12 +205,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer
 [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
+[**postConversationsCallParticipantsUserUserId**](ConversationsApi#postConversationsCallParticipantsUserUserId) | **POST** /api/v2/conversations/calls/{conversationId}/participants/user/{userId} | Add participants to a conversation without a user context
 [**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallbackParticipantReplace**](ConversationsApi#postConversationsCallbackParticipantReplace) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCallbacks**](ConversationsApi#postConversationsCallbacks) | **POST** /api/v2/conversations/callbacks | Create a Callback
 [**postConversationsCallbacksBulkDisconnect**](ConversationsApi#postConversationsCallbacksBulkDisconnect) | **POST** /api/v2/conversations/callbacks/bulk/disconnect | Disconnect multiple scheduled callbacks
 [**postConversationsCallbacksBulkUpdate**](ConversationsApi#postConversationsCallbacksBulkUpdate) | **POST** /api/v2/conversations/callbacks/bulk/update | Update multiple scheduled callbacks
 [**postConversationsCalls**](ConversationsApi#postConversationsCalls) | **POST** /api/v2/conversations/calls | Create a call conversation
+[**postConversationsCallsUserUserId**](ConversationsApi#postConversationsCallsUserUserId) | **POST** /api/v2/conversations/calls/user/{userId} | Create a call conversation on behalf of a user
 [**postConversationsChatCommunicationMessages**](ConversationsApi#postConversationsChatCommunicationMessages) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages | Send a message on behalf of a communication in a chat conversation.
 [**postConversationsChatCommunicationTyping**](ConversationsApi#postConversationsChatCommunicationTyping) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing | Send a typing-indicator on behalf of a communication in a chat conversation.
 [**postConversationsChatParticipantCommunicationWrapup**](ConversationsApi#postConversationsChatParticipantCommunicationWrapup) | **POST** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
@@ -8142,6 +8144,7 @@ Update a conversation by disconnecting all of the participants
 Requires ANY permissions:
 
 * conversation:communication:disconnect
+* conversation:message:park
 
 ### Example Usage
 
@@ -10821,6 +10824,60 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 **Conversation**
 
 
+## postConversationsCallParticipantsUserUserId
+
+> Conversation postConversationsCallParticipantsUserUserId(conversationId, userId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/user/{userId}
+
+Add participants to a conversation without a user context
+
+Requires ANY permissions:
+
+* conversation:agentlessCall:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let userId = "userId_example"; // String | userId
+let body = {}; // Object | Conversation
+
+apiInstance.postConversationsCallParticipantsUserUserId(conversationId, userId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantsUserUserId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantsUserUserId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **userId** | **String** | userId |  |
+ **body** | **Object** | Conversation |  |
+
+### Return type
+
+**Conversation**
+
+
 ## postConversationsCallbackParticipantCommunicationWrapup
 
 > void postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -11126,6 +11183,59 @@ apiInstance.postConversationsCalls(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Call request |  |
+
+### Return type
+
+**CreateCallResponse**
+
+
+## postConversationsCallsUserUserId
+
+> CreateCallResponse postConversationsCallsUserUserId(userId, body)
+
+
+POST /api/v2/conversations/calls/user/{userId}
+
+Create a call conversation on behalf of a user
+
+Requires ANY permissions:
+
+* conversation:agentlessCall:add
+* conversation:call:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let userId = "userId_example"; // String | userId
+let body = {}; // Object | Call request
+
+apiInstance.postConversationsCallsUserUserId(userId, body)
+  .then((data) => {
+    console.log(`postConversationsCallsUserUserId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallsUserUserId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
  **body** | **Object** | Call request |  |
 
 ### Return type
@@ -11818,6 +11928,8 @@ void (no response body)
 POST /api/v2/conversations/emails/{conversationId}/reconnect
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+This request is not valid when using the Client Credentials OAuth grant.
 
 Requires ANY permissions:
 
@@ -15021,4 +15133,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

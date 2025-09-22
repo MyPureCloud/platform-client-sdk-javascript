@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLanguageunderstandingDomainVersionReport**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersionReport) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report | Retrieved quality report for the specified NLU Domain Version
 [**getLanguageunderstandingDomainVersions**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersions) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions | Get all NLU Domain Versions for a given Domain.
 [**getLanguageunderstandingDomains**](LanguageUnderstandingApi#getLanguageunderstandingDomains) | **GET** /api/v2/languageunderstanding/domains | Get all NLU Domains.
+[**getLanguageunderstandingIgnorephrase**](LanguageUnderstandingApi#getLanguageunderstandingIgnorephrase) | **GET** /api/v2/languageunderstanding/ignorephrases/{languageCode} | Get list of all ignored phrases of the specified language code
+[**getLanguageunderstandingIgnoretopic**](LanguageUnderstandingApi#getLanguageunderstandingIgnoretopic) | **GET** /api/v2/languageunderstanding/ignoretopics/{languageCode} | Get list of all ignored topics of the specified language code
 [**getLanguageunderstandingMiner**](LanguageUnderstandingApi#getLanguageunderstandingMiner) | **GET** /api/v2/languageunderstanding/miners/{minerId} | Get information about a miner.
 [**getLanguageunderstandingMinerDraft**](LanguageUnderstandingApi#getLanguageunderstandingMinerDraft) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Get information about a draft.
 [**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi#getLanguageunderstandingMinerDrafts) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts | Retrieve the list of drafts created.
@@ -36,6 +38,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersionTrain) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train | Train the draft NLU Domain Version.
 [**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersions) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions | Create an NLU Domain Version.
 [**postLanguageunderstandingDomains**](LanguageUnderstandingApi#postLanguageunderstandingDomains) | **POST** /api/v2/languageunderstanding/domains | Create an NLU Domain.
+[**postLanguageunderstandingIgnorephrase**](LanguageUnderstandingApi#postLanguageunderstandingIgnorephrase) | **POST** /api/v2/languageunderstanding/ignorephrases/{languageCode} | Add phrases to the ignored phrases list
+[**postLanguageunderstandingIgnorephraseRemove**](LanguageUnderstandingApi#postLanguageunderstandingIgnorephraseRemove) | **POST** /api/v2/languageunderstanding/ignorephrases/{languageCode}/remove | Delete ignored phrases
+[**postLanguageunderstandingIgnoretopic**](LanguageUnderstandingApi#postLanguageunderstandingIgnoretopic) | **POST** /api/v2/languageunderstanding/ignoretopics/{languageCode} | Add topics to the ignored topics list
+[**postLanguageunderstandingIgnoretopicRemove**](LanguageUnderstandingApi#postLanguageunderstandingIgnoretopicRemove) | **POST** /api/v2/languageunderstanding/ignoretopics/{languageCode}/remove | Delete ignored topics
 [**postLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi#postLanguageunderstandingMinerDrafts) | **POST** /api/v2/languageunderstanding/miners/{minerId}/drafts | Create a new draft resource.
 [**postLanguageunderstandingMinerExecute**](LanguageUnderstandingApi#postLanguageunderstandingMinerExecute) | **POST** /api/v2/languageunderstanding/miners/{minerId}/execute | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
 [**postLanguageunderstandingMiners**](LanguageUnderstandingApi#postLanguageunderstandingMiners) | **POST** /api/v2/languageunderstanding/miners | Create a unique miner.
@@ -709,6 +715,130 @@ apiInstance.getLanguageunderstandingDomains(opts)
 ### Return type
 
 **NluDomainListing**
+
+
+## getLanguageunderstandingIgnorephrase
+
+> IgnoredMinedPhraseListing getLanguageunderstandingIgnorephrase(languageCode, opts)
+
+
+GET /api/v2/languageunderstanding/ignorephrases/{languageCode}
+
+Get list of all ignored phrases of the specified language code
+
+Requires ALL permissions:
+
+* languageUnderstanding:ignoredPhrase:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let languageCode = "languageCode_example"; // String | Language Code
+let opts = { 
+  'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 200.
+  'pageNumber': 1, // Number | The page number for the listing
+  'text': "text_example", // String | The phrase text filter applied to the listing
+  'sortOrder': "desc", // String | The sort order for the listing
+  'sortBy': "dateModified" // String | The field to sort by for the listing
+};
+
+apiInstance.getLanguageunderstandingIgnorephrase(languageCode, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingIgnorephrase success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingIgnorephrase');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageCode** | **String** | Language Code |  |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 200. | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+ **text** | **String** | The phrase text filter applied to the listing | [optional]  |
+ **sortOrder** | **String** | The sort order for the listing | [optional] [default to desc]<br />**Values**: asc, desc |
+ **sortBy** | **String** | The field to sort by for the listing | [optional] [default to dateModified]<br />**Values**: dateModified, text |
+
+### Return type
+
+**IgnoredMinedPhraseListing**
+
+
+## getLanguageunderstandingIgnoretopic
+
+> IgnoredMinedTopicListing getLanguageunderstandingIgnoretopic(languageCode, opts)
+
+
+GET /api/v2/languageunderstanding/ignoretopics/{languageCode}
+
+Get list of all ignored topics of the specified language code
+
+Requires ALL permissions:
+
+* languageUnderstanding:ignoredTopic:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let languageCode = "languageCode_example"; // String | Language Code
+let opts = { 
+  'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 200.
+  'pageNumber': 1, // Number | The page number for the listing
+  'text': "text_example", // String | The topic text filter applied to the listing
+  'sortOrder': "desc", // String | The sort order for the listing
+  'sortBy': "dateModified" // String | The field to sort by for the listing
+};
+
+apiInstance.getLanguageunderstandingIgnoretopic(languageCode, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingIgnoretopic success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingIgnoretopic');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageCode** | **String** | Language Code |  |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 200. | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+ **text** | **String** | The topic text filter applied to the listing | [optional]  |
+ **sortOrder** | **String** | The sort order for the listing | [optional] [default to desc]<br />**Values**: asc, desc |
+ **sortBy** | **String** | The field to sort by for the listing | [optional] [default to dateModified]<br />**Values**: dateModified, text |
+
+### Return type
+
+**IgnoredMinedTopicListing**
 
 
 ## getLanguageunderstandingMiner
@@ -1667,6 +1797,214 @@ apiInstance.postLanguageunderstandingDomains(body)
 **NluDomain**
 
 
+## postLanguageunderstandingIgnorephrase
+
+> IgnorePhrasesResponse postLanguageunderstandingIgnorephrase(languageCode, body)
+
+
+POST /api/v2/languageunderstanding/ignorephrases/{languageCode}
+
+Add phrases to the ignored phrases list
+
+Requires ALL permissions:
+
+* languageUnderstanding:ignoredPhrase:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let languageCode = "languageCode_example"; // String | Language Code
+let body = {}; // Object | Request body containing phrases to be ignored
+
+apiInstance.postLanguageunderstandingIgnorephrase(languageCode, body)
+  .then((data) => {
+    console.log(`postLanguageunderstandingIgnorephrase success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingIgnorephrase');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageCode** | **String** | Language Code |  |
+ **body** | **Object** | Request body containing phrases to be ignored |  |
+
+### Return type
+
+**IgnorePhrasesResponse**
+
+
+## postLanguageunderstandingIgnorephraseRemove
+
+> void postLanguageunderstandingIgnorephraseRemove(languageCode, body)
+
+
+POST /api/v2/languageunderstanding/ignorephrases/{languageCode}/remove
+
+Delete ignored phrases
+
+Requires ALL permissions:
+
+* languageUnderstanding:ignoredPhrase:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let languageCode = "languageCode_example"; // String | Language Code
+let body = {}; // Object | Request body containing entities to be removed
+
+apiInstance.postLanguageunderstandingIgnorephraseRemove(languageCode, body)
+  .then(() => {
+    console.log('postLanguageunderstandingIgnorephraseRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingIgnorephraseRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageCode** | **String** | Language Code |  |
+ **body** | **Object** | Request body containing entities to be removed |  |
+
+### Return type
+
+void (no response body)
+
+
+## postLanguageunderstandingIgnoretopic
+
+> IgnoreTopicsResponse postLanguageunderstandingIgnoretopic(languageCode, body)
+
+
+POST /api/v2/languageunderstanding/ignoretopics/{languageCode}
+
+Add topics to the ignored topics list
+
+Requires ALL permissions:
+
+* languageUnderstanding:ignoredTopic:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let languageCode = "languageCode_example"; // String | Language Code
+let body = {}; // Object | Request body containing topics to be ignored
+
+apiInstance.postLanguageunderstandingIgnoretopic(languageCode, body)
+  .then((data) => {
+    console.log(`postLanguageunderstandingIgnoretopic success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingIgnoretopic');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageCode** | **String** | Language Code |  |
+ **body** | **Object** | Request body containing topics to be ignored |  |
+
+### Return type
+
+**IgnoreTopicsResponse**
+
+
+## postLanguageunderstandingIgnoretopicRemove
+
+> void postLanguageunderstandingIgnoretopicRemove(languageCode, body)
+
+
+POST /api/v2/languageunderstanding/ignoretopics/{languageCode}/remove
+
+Delete ignored topics
+
+Requires ALL permissions:
+
+* languageUnderstanding:ignoredTopic:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let languageCode = "languageCode_example"; // String | Language Code
+let body = {}; // Object | Request body containing entities to be removed
+
+apiInstance.postLanguageunderstandingIgnoretopicRemove(languageCode, body)
+  .then(() => {
+    console.log('postLanguageunderstandingIgnoretopicRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingIgnoretopicRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageCode** | **String** | Language Code |  |
+ **body** | **Object** | Request body containing entities to be removed |  |
+
+### Return type
+
+void (no response body)
+
+
 ## postLanguageunderstandingMinerDrafts
 
 > Draft postLanguageunderstandingMinerDrafts(minerId, body)
@@ -1878,4 +2216,4 @@ apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, bod
 **NluDomainVersion**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

@@ -8,7 +8,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteUserrecording**](UserRecordingsApi#deleteUserrecording) | **DELETE** /api/v2/userrecordings/{recordingId} | Delete a user recording.
 [**getUserrecording**](UserRecordingsApi#getUserrecording) | **GET** /api/v2/userrecordings/{recordingId} | Get a user recording.
-[**getUserrecordingMedia**](UserRecordingsApi#getUserrecordingMedia) | **GET** /api/v2/userrecordings/{recordingId}/media | Download a user recording.
 [**getUserrecordingTranscoding**](UserRecordingsApi#getUserrecordingTranscoding) | **GET** /api/v2/userrecordings/{recordingId}/transcoding | Download a user recording.
 [**getUserrecordings**](UserRecordingsApi#getUserrecordings) | **GET** /api/v2/userrecordings | Get a list of user recordings.
 [**getUserrecordingsSummary**](UserRecordingsApi#getUserrecordingsSummary) | **GET** /api/v2/userrecordings/summary | Get user recording summary
@@ -114,65 +113,6 @@ apiInstance.getUserrecording(recordingId, opts)
 ### Return type
 
 **UserRecording**
-
-
-## getUserrecordingMedia
-
-> DownloadResponse getUserrecordingMedia(recordingId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/userrecordings/{recordingId}/media
-
-Download a user recording.
-
-API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.UserRecordingsApi();
-
-let recordingId = "recordingId_example"; // String | User Recording ID
-let opts = { 
-  'formatId': "WEBM", // String | The desired media format.
-  'async': true // Boolean | When set to true, api will return 202 response until the recording is ready for download
-};
-
-apiInstance.getUserrecordingMedia(recordingId, opts)
-  .then((data) => {
-    console.log(`getUserrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getUserrecordingMedia');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **recordingId** | **String** | User Recording ID |  |
- **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
- **async** | **Boolean** | When set to true, api will return 202 response until the recording is ready for download | [optional]  |
-
-### Return type
-
-**DownloadResponse**
 
 
 ## getUserrecordingTranscoding
@@ -380,4 +320,4 @@ apiInstance.putUserrecording(recordingId, body, opts)
 **UserRecording**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

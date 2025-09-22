@@ -40,6 +40,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
+[**getAnalyticsDataextractionDownload**](AnalyticsApi#getAnalyticsDataextractionDownload) | **GET** /api/v2/analytics/dataextraction/downloads/{downloadId} | Get analytics data warehouse file download
+[**getAnalyticsDataextractionDownloadsMetadata**](AnalyticsApi#getAnalyticsDataextractionDownloadsMetadata) | **GET** /api/v2/analytics/dataextraction/downloads/metadata | Get metadata on files available for extraction
 [**getAnalyticsDataretentionSettings**](AnalyticsApi#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
 [**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
 [**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
@@ -88,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
+[**postAnalyticsDataextractionDownloadsBulk**](AnalyticsApi#postAnalyticsDataextractionDownloadsBulk) | **POST** /api/v2/analytics/dataextraction/downloads/bulk | Get download URLs for analytics data warehouse files
 [**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
 [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs) | **POST** /api/v2/analytics/flowexecutions/aggregates/jobs | Query for flow execution aggregates asynchronously
@@ -1952,6 +1955,122 @@ This endpoint does not need any parameter.
 ### Return type
 
 **DataAvailabilityResponse**
+
+
+## getAnalyticsDataextractionDownload
+
+> void getAnalyticsDataextractionDownload(downloadId)
+
+
+GET /api/v2/analytics/dataextraction/downloads/{downloadId}
+
+Get analytics data warehouse file download
+
+getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:datawarehouse:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let downloadId = "downloadId_example"; // String | Unique file Id to download
+
+apiInstance.getAnalyticsDataextractionDownload(downloadId)
+  .then(() => {
+    console.log('getAnalyticsDataextractionDownload returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsDataextractionDownload');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **downloadId** | **String** | Unique file Id to download |  |
+
+### Return type
+
+void (no response body)
+
+
+## getAnalyticsDataextractionDownloadsMetadata
+
+> DataExtractionFileSchemaListing getAnalyticsDataextractionDownloadsMetadata(opts)
+
+
+GET /api/v2/analytics/dataextraction/downloads/metadata
+
+Get metadata on files available for extraction
+
+getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:datawarehouse:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'dataSchema': "dataSchema_example", // String | Data schema like conversations
+  'dateStart': new Date("2013-10-20T19:20:30+01:00"), // Date | Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'dateEnd': new Date("2013-10-20T19:20:30+01:00") // Date | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+};
+
+apiInstance.getAnalyticsDataextractionDownloadsMetadata(opts)
+  .then((data) => {
+    console.log(`getAnalyticsDataextractionDownloadsMetadata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsDataextractionDownloadsMetadata');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **dataSchema** | **String** | Data schema like conversations | [optional]  |
+ **dateStart** | **Date** | Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **dateEnd** | **Date** | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+
+### Return type
+
+**DataExtractionFileSchemaListing**
 
 
 ## getAnalyticsDataretentionSettings
@@ -4492,6 +4611,58 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 **AnalyticsConversationQueryResponse**
 
 
+## postAnalyticsDataextractionDownloadsBulk
+
+> DataExtractionFileUrlListing postAnalyticsDataextractionDownloadsBulk(body)
+
+
+POST /api/v2/analytics/dataextraction/downloads/bulk
+
+Get download URLs for analytics data warehouse files
+
+postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:datawarehouse:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | request
+
+apiInstance.postAnalyticsDataextractionDownloadsBulk(body)
+  .then((data) => {
+    console.log(`postAnalyticsDataextractionDownloadsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsDataextractionDownloadsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | request |  |
+
+### Return type
+
+**DataExtractionFileUrlListing**
+
+
 ## postAnalyticsEvaluationsAggregatesJobs
 
 > AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
@@ -6393,4 +6564,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

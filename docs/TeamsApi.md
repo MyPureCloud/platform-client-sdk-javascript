@@ -555,4 +555,4 @@ apiInstance.postTeamsSearch(body)
 **TeamsSearchResponse**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_
