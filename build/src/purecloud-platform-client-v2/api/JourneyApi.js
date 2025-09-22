@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -1281,6 +1281,33 @@ class JourneyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/views/jobs', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'interval': opts['interval'],'statuses': opts['statuses'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get my jobs
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber The number of the page to return (default to 1)
+	 * @param {Number} opts.pageSize Max number of entities to return (default to 25)
+	 * @param {String} opts.interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+	 * @param {String} opts.statuses Job statuses to filter for
+	 */
+	getJourneyViewsJobsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/jobs/me', 
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'interval': opts['interval'],'statuses': opts['statuses'] },

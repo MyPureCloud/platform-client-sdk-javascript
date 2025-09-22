@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -124,6 +124,40 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
 			'DELETE', 
 			{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Instagram data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 */
+	deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+		// verify the required parameter 'instagramIngestionRuleId' is set
+		if (instagramIngestionRuleId === undefined || instagramIngestionRuleId === null || instagramIngestionRuleId === '') {
+			throw 'Missing the required parameter "instagramIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}', 
+			'DELETE', 
+			{ 'topicId': topicId,'instagramIngestionRuleId': instagramIngestionRuleId },
 			{ 'hardDelete': opts['hardDelete'] },
 			{  },
 			{  },
@@ -535,6 +569,115 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Get a single Instagram data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 */
+	getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+		// verify the required parameter 'instagramIngestionRuleId' is set
+		if (instagramIngestionRuleId === undefined || instagramIngestionRuleId === null || instagramIngestionRuleId === '') {
+			throw 'Missing the required parameter "instagramIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}', 
+			'GET', 
+			{ 'topicId': topicId,'instagramIngestionRuleId': instagramIngestionRuleId },
+			{ 'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a single Instagram data ingestion rule version.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
+	 * @param {String} dataIngestionRuleVersion version
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 */
+	getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion';
+		}
+		// verify the required parameter 'instagramIngestionRuleId' is set
+		if (instagramIngestionRuleId === undefined || instagramIngestionRuleId === null || instagramIngestionRuleId === '') {
+			throw 'Missing the required parameter "instagramIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion';
+		}
+		// verify the required parameter 'dataIngestionRuleVersion' is set
+		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
+			throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion}', 
+			'GET', 
+			{ 'topicId': topicId,'instagramIngestionRuleId': instagramIngestionRuleId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+			{ 'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the Instagram data ingestion rule versions.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 */
+	getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(topicId, instagramIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions';
+		}
+		// verify the required parameter 'instagramIngestionRuleId' is set
+		if (instagramIngestionRuleId === undefined || instagramIngestionRuleId === null || instagramIngestionRuleId === '') {
+			throw 'Missing the required parameter "instagramIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions', 
+			'GET', 
+			{ 'topicId': topicId,'instagramIngestionRuleId': instagramIngestionRuleId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a single open data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -843,6 +986,40 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Update the status of a Instagram data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+		// verify the required parameter 'instagramIngestionRuleId' is set
+		if (instagramIngestionRuleId === undefined || instagramIngestionRuleId === null || instagramIngestionRuleId === '') {
+			throw 'Missing the required parameter "instagramIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}', 
+			'PATCH', 
+			{ 'topicId': topicId,'instagramIngestionRuleId': instagramIngestionRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the status of a open data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -1030,6 +1207,35 @@ class SocialMediaApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook', 
+			'POST', 
+			{ 'topicId': topicId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an Instagram data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postSocialmediaTopicDataingestionrulesInstagram(topicId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesInstagram';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram', 
 			'POST', 
 			{ 'topicId': topicId },
 			{  },
@@ -1272,6 +1478,40 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
 			'PUT', 
 			{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the Instagram data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+		// verify the required parameter 'instagramIngestionRuleId' is set
+		if (instagramIngestionRuleId === undefined || instagramIngestionRuleId === null || instagramIngestionRuleId === '') {
+			throw 'Missing the required parameter "instagramIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}', 
+			'PUT', 
+			{ 'topicId': topicId,'instagramIngestionRuleId': instagramIngestionRuleId },
 			{  },
 			{  },
 			{  },

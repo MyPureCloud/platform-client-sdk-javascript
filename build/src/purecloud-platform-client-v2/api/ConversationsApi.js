@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -5958,6 +5958,41 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Add participants to a conversation without a user context
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} userId userId
+	 * @param {Object} body Conversation
+	 */
+	postConversationsCallParticipantsUserUserId(conversationId, userId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantsUserUserId';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling postConversationsCallParticipantsUserUserId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantsUserUserId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/user/{userId}', 
+			'POST', 
+			{ 'conversationId': conversationId,'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -6121,6 +6156,36 @@ class ConversationsApi {
 			'/api/v2/conversations/calls', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a call conversation on behalf of a user
+	 * 
+	 * @param {String} userId userId
+	 * @param {Object} body Call request
+	 */
+	postConversationsCallsUserUserId(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling postConversationsCallsUserUserId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallsUserUserId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/user/{userId}', 
+			'POST', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -6541,7 +6606,7 @@ class ConversationsApi {
 
 	/**
 	 * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
-	 * 
+	 * This request is not valid when using the Client Credentials OAuth grant.
 	 * @param {String} conversationId conversationId
 	 */
 	postConversationsEmailReconnect(conversationId) { 

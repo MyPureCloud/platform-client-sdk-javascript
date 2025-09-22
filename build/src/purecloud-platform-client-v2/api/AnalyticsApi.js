@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -928,6 +928,62 @@ class AnalyticsApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get analytics data warehouse file download
+	 * 
+	 * @param {String} downloadId Unique file Id to download
+	 * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsDataextractionDownload(downloadId) { 
+		// verify the required parameter 'downloadId' is set
+		if (downloadId === undefined || downloadId === null || downloadId === '') {
+			throw 'Missing the required parameter "downloadId" when calling getAnalyticsDataextractionDownload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/dataextraction/downloads/{downloadId}', 
+			'GET', 
+			{ 'downloadId': downloadId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get metadata on files available for extraction
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.dataSchema Data schema like conversations
+	 * @param {Date} opts.dateStart Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Date} opts.dateEnd End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsDataextractionDownloadsMetadata(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/dataextraction/downloads/metadata', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'dataSchema': opts['dataSchema'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
 			{  },
 			{  },
 			null, 
@@ -2217,6 +2273,32 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get download URLs for analytics data warehouse files
+	 * 
+	 * @param {Object} body request
+	 * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsDataextractionDownloadsBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsDataextractionDownloadsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/dataextraction/downloads/bulk', 
 			'POST', 
 			{  },
 			{  },

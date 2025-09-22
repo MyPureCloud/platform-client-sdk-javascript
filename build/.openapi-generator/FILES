@@ -247,6 +247,7 @@ docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSetting-example.txt
 docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteConversationsSummariesSetting-example.txt
 docs/deleteDataprivacyMaskingrule-example.txt
 docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
 docs/deleteEmailsSettingsThreading-example.txt
@@ -422,6 +423,7 @@ docs/deleteSocialmediaEscalationrule-example.txt
 docs/deleteSocialmediaMessage-example.txt
 docs/deleteSocialmediaTopic-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
 docs/deleteSpeechandtextanalyticsCategory-example.txt
@@ -527,6 +529,8 @@ docs/getAnalyticsConversationsDetailsJobResults-example.txt
 docs/getAnalyticsConversationsDetailsJobResults-example.txt
 docs/getAnalyticsConversationsDetailsJobsAvailability-example.txt
 docs/getAnalyticsConversationsDetailsJobsAvailability-example.txt
+docs/getAnalyticsDataextractionDownload-example.txt
+docs/getAnalyticsDataextractionDownloadsMetadata-example.txt
 docs/getAnalyticsDataretentionSettings-example.txt
 docs/getAnalyticsEvaluationsAggregatesJob-example.txt
 docs/getAnalyticsEvaluationsAggregatesJob-example.txt
@@ -814,6 +818,8 @@ docs/getConversationsMessagingThreadingtimeline-example.txt
 docs/getConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/getConversationsSettings-example.txt
 docs/getConversationsSocialParticipantCommunicationWrapup-example.txt
+docs/getConversationsSummariesSetting-example.txt
+docs/getConversationsSummariesSettings-example.txt
 docs/getConversationsVideoDetails-example.txt
 docs/getConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/getConversationsVideosMeeting-example.txt
@@ -1131,6 +1137,7 @@ docs/getJourneyViewsDataDetails-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
 docs/getJourneyViewsEventdefinitions-example.txt
 docs/getJourneyViewsJobs-example.txt
+docs/getJourneyViewsJobsMe-example.txt
 docs/getJourneyViewsSchedules-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
@@ -1187,6 +1194,8 @@ docs/getLanguageunderstandingDomainVersion-example.txt
 docs/getLanguageunderstandingDomainVersionReport-example.txt
 docs/getLanguageunderstandingDomainVersions-example.txt
 docs/getLanguageunderstandingDomains-example.txt
+docs/getLanguageunderstandingIgnorephrase-example.txt
+docs/getLanguageunderstandingIgnoretopic-example.txt
 docs/getLanguageunderstandingMiner-example.txt
 docs/getLanguageunderstandingMinerDraft-example.txt
 docs/getLanguageunderstandingMinerDrafts-example.txt
@@ -1385,8 +1394,12 @@ docs/getQualityPublishedform-example.txt
 docs/getQualityPublishedforms-example.txt
 docs/getQualityPublishedformsEvaluation-example.txt
 docs/getQualityPublishedformsEvaluations-example.txt
+docs/getQualityPublishedformsEvaluationsDivisionview-example.txt
+docs/getQualityPublishedformsEvaluationsDivisionviews-example.txt
 docs/getQualityPublishedformsSurvey-example.txt
 docs/getQualityPublishedformsSurveys-example.txt
+docs/getQualityPublishedformsSurveysDivisionview-example.txt
+docs/getQualityPublishedformsSurveysDivisionviews-example.txt
 docs/getQualitySurvey-example.txt
 docs/getQualitySurveysScorable-example.txt
 docs/getRecordingBatchrequest-example.txt
@@ -1527,6 +1540,9 @@ docs/getSocialmediaTopicDataingestionrules-example.txt
 docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
 docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion-example.txt
 docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions-example.txt
+docs/getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
+docs/getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion-example.txt
+docs/getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions-example.txt
 docs/getSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/getSocialmediaTopicDataingestionrulesOpenOpenIdVersion-example.txt
 docs/getSocialmediaTopicDataingestionrulesOpenOpenIdVersions-example.txt
@@ -1734,7 +1750,6 @@ docs/getUserSuperiors-example.txt
 docs/getUserTrustors-example.txt
 docs/getUserVerifiers-example.txt
 docs/getUserrecording-example.txt
-docs/getUserrecordingMedia-example.txt
 docs/getUserrecordingTranscoding-example.txt
 docs/getUserrecordings-example.txt
 docs/getUserrecordingsSummary-example.txt
@@ -2053,6 +2068,7 @@ docs/patchScimV2User-example.txt
 docs/patchSettingsExecutiondata-example.txt
 docs/patchSocialmediaTopic-example.txt
 docs/patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/patchSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
 docs/patchSpeechandtextanalyticsSettings-example.txt
@@ -2149,6 +2165,7 @@ docs/postAnalyticsConversationsDetailsJobs-example.txt
 docs/postAnalyticsConversationsDetailsJobs-example.txt
 docs/postAnalyticsConversationsDetailsQuery-example.txt
 docs/postAnalyticsConversationsDetailsQuery-example.txt
+docs/postAnalyticsDataextractionDownloadsBulk-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesQuery-example.txt
@@ -2311,12 +2328,14 @@ docs/postConversationsCallParticipantMonitor-example.txt
 docs/postConversationsCallParticipantReplace-example.txt
 docs/postConversationsCallParticipantVoiceConsult-example.txt
 docs/postConversationsCallParticipants-example.txt
+docs/postConversationsCallParticipantsUserUserId-example.txt
 docs/postConversationsCallbackParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallbackParticipantReplace-example.txt
 docs/postConversationsCallbacks-example.txt
 docs/postConversationsCallbacksBulkDisconnect-example.txt
 docs/postConversationsCallbacksBulkUpdate-example.txt
 docs/postConversationsCalls-example.txt
+docs/postConversationsCallsUserUserId-example.txt
 docs/postConversationsChatCommunicationMessages-example.txt
 docs/postConversationsChatCommunicationTyping-example.txt
 docs/postConversationsChatParticipantCommunicationWrapup-example.txt
@@ -2363,6 +2382,8 @@ docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
+docs/postConversationsSummariesPreview-example.txt
+docs/postConversationsSummariesSettings-example.txt
 docs/postConversationsVideoAgentconferenceCommunication-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideosMeetings-example.txt
@@ -2559,6 +2580,10 @@ docs/postLanguageunderstandingDomainVersionPublish-example.txt
 docs/postLanguageunderstandingDomainVersionTrain-example.txt
 docs/postLanguageunderstandingDomainVersions-example.txt
 docs/postLanguageunderstandingDomains-example.txt
+docs/postLanguageunderstandingIgnorephrase-example.txt
+docs/postLanguageunderstandingIgnorephraseRemove-example.txt
+docs/postLanguageunderstandingIgnoretopic-example.txt
+docs/postLanguageunderstandingIgnoretopicRemove-example.txt
 docs/postLanguageunderstandingMinerDrafts-example.txt
 docs/postLanguageunderstandingMinerExecute-example.txt
 docs/postLanguageunderstandingMinerUploads-example.txt
@@ -2712,6 +2737,7 @@ docs/postSocialmediaAnalyticsMessagesJobs-example.txt
 docs/postSocialmediaEscalationrules-example.txt
 docs/postSocialmediaEscalationsMessages-example.txt
 docs/postSocialmediaTopicDataingestionrulesFacebook-example.txt
+docs/postSocialmediaTopicDataingestionrulesInstagram-example.txt
 docs/postSocialmediaTopicDataingestionrulesOpen-example.txt
 docs/postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk-example.txt
 docs/postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk-example.txt
@@ -2973,6 +2999,7 @@ docs/putConversationsMessagingSupportedcontentDefault-example.txt
 docs/putConversationsMessagingThreadingtimeline-example.txt
 docs/putConversationsScreenshareRecordingstate-example.txt
 docs/putConversationsSocialRecordingstate-example.txt
+docs/putConversationsSummariesSetting-example.txt
 docs/putConversationsVideoRecordingstate-example.txt
 docs/putExternalcontactsContact-example.txt
 docs/putExternalcontactsContactNote-example.txt
@@ -3120,6 +3147,7 @@ docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
 docs/putSocialmediaEscalationrule-example.txt
 docs/putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId-example.txt
 docs/putSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
 docs/putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
 docs/putSpeechandtextanalyticsCategory-example.txt

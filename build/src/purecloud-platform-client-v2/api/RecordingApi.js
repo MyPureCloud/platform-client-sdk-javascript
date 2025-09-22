@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -1441,7 +1441,7 @@ class RecordingApi {
 
 	/**
 	 * Execute the recording bulk job.
-	 * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
+	 * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
 	 * @param {String} jobId jobId
 	 * @param {Object} body query
 	 */
@@ -1501,7 +1501,7 @@ class RecordingApi {
 
 	/**
 	 * Update a media retention policy
-	 * Policy does not work retroactively
+	 * Policy does not work retroactively. In the conditions.forUsers section, each user object can include the id field containing the users unique identifier. Example: [{"id":"<userId>"}].
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */

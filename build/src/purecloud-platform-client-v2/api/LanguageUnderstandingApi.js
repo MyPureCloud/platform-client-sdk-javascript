@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -370,6 +370,72 @@ class LanguageUnderstandingApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of all ignored phrases of the specified language code
+	 * 
+	 * @param {String} languageCode Language Code
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 200. (default to 25)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {String} opts.text The phrase text filter applied to the listing
+	 * @param {Object} opts.sortOrder The sort order for the listing (default to desc)
+	 * @param {Object} opts.sortBy The field to sort by for the listing (default to dateModified)
+	 */
+	getLanguageunderstandingIgnorephrase(languageCode, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
+			throw 'Missing the required parameter "languageCode" when calling getLanguageunderstandingIgnorephrase';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/ignorephrases/{languageCode}', 
+			'GET', 
+			{ 'languageCode': languageCode },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'text': opts['text'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of all ignored topics of the specified language code
+	 * 
+	 * @param {String} languageCode Language Code
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 200. (default to 25)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {String} opts.text The topic text filter applied to the listing
+	 * @param {Object} opts.sortOrder The sort order for the listing (default to desc)
+	 * @param {Object} opts.sortBy The field to sort by for the listing (default to dateModified)
+	 */
+	getLanguageunderstandingIgnoretopic(languageCode, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
+			throw 'Missing the required parameter "languageCode" when calling getLanguageunderstandingIgnoretopic';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/ignoretopics/{languageCode}', 
+			'GET', 
+			{ 'languageCode': languageCode },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'text': opts['text'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'] },
 			{  },
 			{  },
 			null, 
@@ -903,6 +969,126 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add phrases to the ignored phrases list
+	 * 
+	 * @param {String} languageCode Language Code
+	 * @param {Object} body Request body containing phrases to be ignored
+	 */
+	postLanguageunderstandingIgnorephrase(languageCode, body) { 
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
+			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnorephrase';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingIgnorephrase';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/ignorephrases/{languageCode}', 
+			'POST', 
+			{ 'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete ignored phrases
+	 * 
+	 * @param {String} languageCode Language Code
+	 * @param {Object} body Request body containing entities to be removed
+	 */
+	postLanguageunderstandingIgnorephraseRemove(languageCode, body) { 
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
+			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnorephraseRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingIgnorephraseRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/ignorephrases/{languageCode}/remove', 
+			'POST', 
+			{ 'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add topics to the ignored topics list
+	 * 
+	 * @param {String} languageCode Language Code
+	 * @param {Object} body Request body containing topics to be ignored
+	 */
+	postLanguageunderstandingIgnoretopic(languageCode, body) { 
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
+			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnoretopic';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingIgnoretopic';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/ignoretopics/{languageCode}', 
+			'POST', 
+			{ 'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete ignored topics
+	 * 
+	 * @param {String} languageCode Language Code
+	 * @param {Object} body Request body containing entities to be removed
+	 */
+	postLanguageunderstandingIgnoretopicRemove(languageCode, body) { 
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
+			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnoretopicRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingIgnoretopicRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/ignoretopics/{languageCode}/remove', 
+			'POST', 
+			{ 'languageCode': languageCode },
 			{  },
 			{  },
 			{  },

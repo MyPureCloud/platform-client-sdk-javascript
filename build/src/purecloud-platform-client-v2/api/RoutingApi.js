@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -795,8 +795,12 @@ class RoutingApi {
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand options. Valid values: settings
 	 */
-	getRoutingEmailDomain(domainId) { 
+	getRoutingEmailDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomain';
@@ -806,7 +810,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainId}', 
 			'GET', 
 			{ 'domainId': domainId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -920,6 +924,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.excludeStatus Exclude MX record data (default to false)
 	 * @param {String} opts.filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+	 * @param {Object} opts.expand Expand options. Valid values: settings
 	 */
 	getRoutingEmailDomains(opts) { 
 		opts = opts || {};
@@ -929,7 +934,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'],'filter': opts['filter'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'],'filter': opts['filter'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -943,8 +948,12 @@ class RoutingApi {
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand options. Valid values: settings
 	 */
-	getRoutingEmailOutboundDomain(domainId) { 
+	getRoutingEmailOutboundDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomain';
@@ -954,7 +963,7 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'GET', 
 			{ 'domainId': domainId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -996,6 +1005,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+	 * @param {Object} opts.expand Expand options. Valid values: settings
 	 */
 	getRoutingEmailOutboundDomains(opts) { 
 		opts = opts || {};
@@ -1005,7 +1015,7 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filter': opts['filter'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filter': opts['filter'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

@@ -42,8 +42,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityPublishedforms**](QualityApi#getQualityPublishedforms) | **GET** /api/v2/quality/publishedforms | Get the published evaluation forms.
 [**getQualityPublishedformsEvaluation**](QualityApi#getQualityPublishedformsEvaluation) | **GET** /api/v2/quality/publishedforms/evaluations/{formId} | Get the most recent published version of an evaluation form.
 [**getQualityPublishedformsEvaluations**](QualityApi#getQualityPublishedformsEvaluations) | **GET** /api/v2/quality/publishedforms/evaluations | Get the published evaluation forms.
+[**getQualityPublishedformsEvaluationsDivisionview**](QualityApi#getQualityPublishedformsEvaluationsDivisionview) | **GET** /api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId} | Get the most recent published version of an evaluation form across any division.
+[**getQualityPublishedformsEvaluationsDivisionviews**](QualityApi#getQualityPublishedformsEvaluationsDivisionviews) | **GET** /api/v2/quality/publishedforms/evaluations/divisionviews | Get the published evaluation forms across any division.
 [**getQualityPublishedformsSurvey**](QualityApi#getQualityPublishedformsSurvey) | **GET** /api/v2/quality/publishedforms/surveys/{formId} | Get the most recent published version of a survey form.
 [**getQualityPublishedformsSurveys**](QualityApi#getQualityPublishedformsSurveys) | **GET** /api/v2/quality/publishedforms/surveys | Get the published survey forms.
+[**getQualityPublishedformsSurveysDivisionview**](QualityApi#getQualityPublishedformsSurveysDivisionview) | **GET** /api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId} | Get the most recent published version of an enabled survey form across any division.
+[**getQualityPublishedformsSurveysDivisionviews**](QualityApi#getQualityPublishedformsSurveysDivisionviews) | **GET** /api/v2/quality/publishedforms/surveys/divisionviews | Get the published and enabled survey forms across any division.
 [**getQualitySurvey**](QualityApi#getQualitySurvey) | **GET** /api/v2/quality/surveys/{surveyId} | Get a survey for a conversation
 [**getQualitySurveysScorable**](QualityApi#getQualitySurveysScorable) | **GET** /api/v2/quality/surveys/scorable | Get a survey as an end-customer, for the purposes of scoring it.
 [**patchQualityFormsSurvey**](QualityApi#patchQualityFormsSurvey) | **PATCH** /api/v2/quality/forms/surveys/{formId} | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
@@ -2151,6 +2155,116 @@ apiInstance.getQualityPublishedformsEvaluations(opts)
 **EvaluationFormResponseEntityListing**
 
 
+## getQualityPublishedformsEvaluationsDivisionview
+
+> EvaluationFormDivisionView getQualityPublishedformsEvaluationsDivisionview(evaluationFormId)
+
+
+GET /api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}
+
+Get the most recent published version of an evaluation form across any division.
+
+getQualityPublishedformsEvaluationsDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* quality:evaluationForm:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let evaluationFormId = "evaluationFormId_example"; // String | Evaluation Form ID
+
+apiInstance.getQualityPublishedformsEvaluationsDivisionview(evaluationFormId)
+  .then((data) => {
+    console.log(`getQualityPublishedformsEvaluationsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsEvaluationsDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **evaluationFormId** | **String** | Evaluation Form ID |  |
+
+### Return type
+
+**EvaluationFormDivisionView**
+
+
+## getQualityPublishedformsEvaluationsDivisionviews
+
+> EvaluationFormDivisionViewListing getQualityPublishedformsEvaluationsDivisionviews(opts)
+
+
+GET /api/v2/quality/publishedforms/evaluations/divisionviews
+
+Get the published evaluation forms across any division.
+
+getQualityPublishedformsEvaluationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* quality:evaluationForm:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'name': "name_example" // String | Name
+};
+
+apiInstance.getQualityPublishedformsEvaluationsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getQualityPublishedformsEvaluationsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsEvaluationsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+
+### Return type
+
+**EvaluationFormDivisionViewListing**
+
+
 ## getQualityPublishedformsSurvey
 
 > SurveyForm getQualityPublishedformsSurvey(formId)
@@ -2257,6 +2371,116 @@ apiInstance.getQualityPublishedformsSurveys(opts)
 ### Return type
 
 **SurveyFormEntityListing**
+
+
+## getQualityPublishedformsSurveysDivisionview
+
+> SurveyFormDivisionView getQualityPublishedformsSurveysDivisionview(surveyFormId)
+
+
+GET /api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}
+
+Get the most recent published version of an enabled survey form across any division.
+
+getQualityPublishedformsSurveysDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* quality:surveyForm:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let surveyFormId = "surveyFormId_example"; // String | Survey Form ID
+
+apiInstance.getQualityPublishedformsSurveysDivisionview(surveyFormId)
+  .then((data) => {
+    console.log(`getQualityPublishedformsSurveysDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsSurveysDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **surveyFormId** | **String** | Survey Form ID |  |
+
+### Return type
+
+**SurveyFormDivisionView**
+
+
+## getQualityPublishedformsSurveysDivisionviews
+
+> SurveyFormDivisionViewListing getQualityPublishedformsSurveysDivisionviews(opts)
+
+
+GET /api/v2/quality/publishedforms/surveys/divisionviews
+
+Get the published and enabled survey forms across any division.
+
+getQualityPublishedformsSurveysDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* quality:surveyForm:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'name': "name_example" // String | Name
+};
+
+apiInstance.getQualityPublishedformsSurveysDivisionviews(opts)
+  .then((data) => {
+    console.log(`getQualityPublishedformsSurveysDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsSurveysDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+
+### Return type
+
+**SurveyFormDivisionViewListing**
 
 
 ## getQualitySurvey
@@ -3592,4 +3816,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@230.0.0_
+_purecloud-platform-client-v2@231.0.0_

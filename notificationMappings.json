@@ -81,6 +81,26 @@
       "class": "ConversationChecklistTopicAgentChecklistRuntimeEventBody"
     },
     {
+      "topic": "v2.conversations.{id}.suggestions.intent",
+      "class": "ConversationIntentSuggestionsTopicIntentSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.knowledge.article",
+      "class": "ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.knowledge.search",
+      "class": "ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.response",
+      "class": "ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.script",
+      "class": "ConversationScriptSuggestionsTopicScriptSuggestionEvent"
+    },
+    {
       "topic": "v2.conversations.{id}.transcription",
       "class": "TranscriptionTopicTranscriptionMessage"
     },

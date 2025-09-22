@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 230.0.0
+	 * @version 231.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class AIStudioApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a summary setting.
+	 * 
+	 * @param {String} summarySettingId Summary setting id
+	 */
+	deleteConversationsSummariesSetting(summarySettingId) { 
+		// verify the required parameter 'summarySettingId' is set
+		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
+			throw 'Missing the required parameter "summarySettingId" when calling deleteConversationsSummariesSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings/{summarySettingId}', 
+			'DELETE', 
+			{ 'summarySettingId': summarySettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Start the deletion of a guide.
@@ -37,6 +62,60 @@ class AIStudioApi {
 			'DELETE', 
 			{ 'guideId': guideId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Receive a summary setting.
+	 * 
+	 * @param {String} summarySettingId Summary setting id
+	 */
+	getConversationsSummariesSetting(summarySettingId) { 
+		// verify the required parameter 'summarySettingId' is set
+		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
+			throw 'Missing the required parameter "summarySettingId" when calling getConversationsSummariesSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings/{summarySettingId}', 
+			'GET', 
+			{ 'summarySettingId': summarySettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all summary settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.language Filter by matching language - case insensitive.
+	 * @param {String} opts.name Filter by partially matching name - case insensitive.
+	 * @param {Object} opts.sortBy Sort by. Default value dateModified. (default to dateModified)
+	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
+	 * @param {Number} opts.pageNumber Page number. (default to 1)
+	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
+	 */
+	getConversationsSummariesSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings', 
+			'GET', 
+			{  },
+			{ 'language': opts['language'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -295,6 +374,56 @@ class AIStudioApi {
 	}
 
 	/**
+	 * Trigger summary preview event generation.
+	 * 
+	 * @param {Object} body 
+	 */
+	postConversationsSummariesPreview(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsSummariesPreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/preview', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a summary setting.
+	 * 
+	 * @param {Object} body 
+	 */
+	postConversationsSummariesSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsSummariesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Start the publishing of a guide version.
 	 * 
 	 * @param {String} guideId Guide ID
@@ -402,6 +531,36 @@ class AIStudioApi {
 			'/api/v2/guides/jobs', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a summary setting.
+	 * 
+	 * @param {String} summarySettingId Summary setting id
+	 * @param {Object} body 
+	 */
+	putConversationsSummariesSetting(summarySettingId, body) { 
+		// verify the required parameter 'summarySettingId' is set
+		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
+			throw 'Missing the required parameter "summarySettingId" when calling putConversationsSummariesSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsSummariesSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings/{summarySettingId}', 
+			'PUT', 
+			{ 'summarySettingId': summarySettingId },
 			{  },
 			{  },
 			{  },
