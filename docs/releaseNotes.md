@@ -1,493 +1,367 @@
-Platform API version: 9591
+Platform API version: 9635
 
 
+## Release Notes
+The Platform API SDK for JavaScript was ignoring (filtering out) query parameters of type boolean when the value is false, and query parameters of type integer/number when the value is 0.
+API endpoints with a boolean query parameter whose default value is not false (or has no default specified) are impacted.
+Examples:
+    Impacted: getDownload – issueRedirect default value is true
+    Not impacted: getOutboundDnclistExport – download default value is false
+This behavior will be corrected in future versions of the Platform API SDK for JavaScript.
 
+Given that this issue has existed for a long time and could affect applications that rely on such parameters (set to false or 0), the following approach is being taken:
+The SDK will initially continue the legacy filtering behavior (ignoring boolean false and integer/number 0 values).
+A new property is introduced at the ApiClient level to control this behavior.
+When UseLegacyParameterFilter is true (default), the SDK applies the legacy filter.
+This default facilitates a safe transition to modern, accurate filtering without risking unintended behavior changes in existing applications.
+To enable accurate filtering, set UseLegacyParameterFilter to false.
 
 # Major Changes (13 changes)
 
-**/api/v2/userrecordings/{recordingId}/media** (1 change)
+**GET /api/v2/authorization/permissions** (1 change)
 
-* Path /api/v2/userrecordings/{recordingId}/media was removed
+* Response 200 type was changed from DomainPermissionEntityListing to PermissionCollectionEntityListing
 
-**GET /api/v2/routing/email/domains/{domainId}** (1 change)
+**GET /api/v2/integrations** (3 changes)
 
-* Parameter expand was added
+* Parameter ids was added
+* Parameter integrationType was added
+* Parameter reportedState was added
 
-**GET /api/v2/routing/email/domains** (1 change)
+**GET /api/v2/routing/predictors** (2 changes)
 
-* Parameter expand was added
+* Parameter kpiId was added
+* Parameter state was added
 
-**GET /api/v2/routing/email/outbound/domains/{domainId}** (1 change)
+**GET /api/v2/routing/queues/{queueId}/assistant** (1 change)
 
-* Parameter expand was added
+* Parameter expand was changed from string to array
 
-**GET /api/v2/routing/email/outbound/domains** (1 change)
+**GET /api/v2/webchat/settings** (1 change)
 
-* Parameter expand was added
+* Has been deprecated
 
-**OutboundDomainRequest** (1 change)
+**PUT /api/v2/webchat/settings** (1 change)
 
-* Model OutboundDomainRequest was removed
+* Has been deprecated
 
-**CallMediaPolicyConditions** (1 change)
+**DELETE /api/v2/webchat/settings** (1 change)
 
-* Property forUsers was changed from User[] to PolicyUser[]
+* Has been deprecated
 
-**ChatMediaPolicyConditions** (1 change)
+**PUT /api/v2/learning/modules/{moduleId}/rule** (1 change)
 
-* Property forUsers was changed from User[] to PolicyUser[]
+* Parameter assign was added
 
-**EmailMediaPolicyConditions** (1 change)
+**DomainPermissionCollectionDomainPermission** (1 change)
 
-* Property forUsers was changed from User[] to PolicyUser[]
+* Model DomainPermissionCollectionDomainPermission was removed
 
-**MessageMediaPolicyConditions** (1 change)
+**DomainPermissionEntityListing** (1 change)
 
-* Property forUsers was changed from User[] to PolicyUser[]
-
-**PolicyConditions** (1 change)
-
-* Property forUsers was changed from User[] to PolicyUser[]
-
-**UserRecording** (1 change)
-
-* Property contentUri was removed
-
-**MediaStatisticsPostRequest** (1 change)
-
-* Required property dateCreated was added
+* Model DomainPermissionEntityListing was removed
 
 
-# Minor Changes (159 changes)
+# Minor Changes (93 changes)
 
-**/api/v2/conversations/calls/user/{userId}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/calls/{conversationId}/participants/user/{userId}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/summaries/preview** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/summaries/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/conversations/summaries/settings/{summarySettingId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/journey/views/jobs/me** (2 changes)
+**/api/v2/assistants/copilot/featuresupport** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/languageunderstanding/ignorephrases/{languageCode}** (3 changes)
+**/api/v2/conversations/messaging/integrations/apple/{integrationId}** (4 changes)
 
 * Path was added
 * Operation GET was added
-* Operation POST was added
-
-**/api/v2/languageunderstanding/ignorephrases/{languageCode}/remove** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/languageunderstanding/ignoretopics/{languageCode}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/languageunderstanding/ignoretopics/{languageCode}/remove** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
 * Operation DELETE was added
 * Operation PATCH was added
 
-**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion}** (2 changes)
+**/api/v2/conversations/messaging/integrations/apple** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/conversations/messaging/oauth/apple/callback** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram** (2 changes)
+**/api/v2/workforcemanagement/agentschedules/managementunits/mine** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/analytics/dataextraction/downloads/metadata** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/dataextraction/downloads/{downloadId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/dataextraction/downloads/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/quality/publishedforms/evaluations/divisionviews** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/quality/publishedforms/surveys/divisionviews** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**ReportingTurnAction** (2 changes)
-
-* Enum value CallBotFlowAction was added to property actionType
-* Enum value CallDigitalBotFlowAction was added to property actionType
-
-**ReportingExportJobResponse** (6 changes)
-
-* Enum value QUEUE_WORKITEM_ACTIVITY_SUMMARY_VIEW was added to property viewType
-* Enum value QUEUE_WORKITEM_ACTIVITY_DETAIL_VIEW was added to property viewType
-* Enum value DIGITAL_ADOPTION_VIEW was added to property viewType
-* Enum value DIGITAL_INTENT_VIEW was added to property viewType
-* Enum value DIGITAL_PERFORMANCE_VIEW was added to property viewType
-* Enum value COPILOT_USAGE_VIEW was added to property viewType
-
-**ReportingExportMetadataJobResponse** (6 changes)
-
-* Enum value QUEUE_WORKITEM_ACTIVITY_SUMMARY_VIEW was added to property viewType
-* Enum value QUEUE_WORKITEM_ACTIVITY_DETAIL_VIEW was added to property viewType
-* Enum value DIGITAL_ADOPTION_VIEW was added to property viewType
-* Enum value DIGITAL_INTENT_VIEW was added to property viewType
-* Enum value DIGITAL_PERFORMANCE_VIEW was added to property viewType
-* Enum value COPILOT_USAGE_VIEW was added to property viewType
-
-**ReportingExportJobRequest** (6 changes)
-
-* Enum value QUEUE_WORKITEM_ACTIVITY_SUMMARY_VIEW was added to property viewType
-* Enum value QUEUE_WORKITEM_ACTIVITY_DETAIL_VIEW was added to property viewType
-* Enum value DIGITAL_ADOPTION_VIEW was added to property viewType
-* Enum value DIGITAL_INTENT_VIEW was added to property viewType
-* Enum value DIGITAL_PERFORMANCE_VIEW was added to property viewType
-* Enum value COPILOT_USAGE_VIEW was added to property viewType
-
-**AutoSearchConfig** (1 change)
+**DomainPermissionCollection** (1 change)
 
 * Model was added
 
-**ManualSearchConfig** (1 change)
+**PermissionCollectionEntityListing** (1 change)
 
 * Model was added
 
-**DataSchema** (1 change)
+**AnalyticsConversationSegment** (1 change)
 
-* Enum value USER_CUSTOM_ATTRIBUTES was added to property appliesTo
+* Enum value sessionExpired was added to property disconnectType
 
-**PolicyUser** (1 change)
+**AnalyticsSession** (1 change)
 
-* Model was added
+* Optional property engagementSource was added
 
-**AiScoring** (1 change)
+**ConversationDetailQueryPredicate** (1 change)
 
-* Enum value DuplicateAutomatedFormWithCopiedScore was added to property failureType
+* Enum value nConversations was added to property metric
 
-**ConversationReason** (1 change)
+**SegmentDetailQueryPredicate** (1 change)
 
-* Enum value DataFiltered was added to property code
+* Enum value engagementSource was added to property dimension
 
-**SummarySetting** (1 change)
+**ConversationAggregationQuery** (1 change)
 
-* Model was added
+* Enum value nConversations was added to property metrics
 
-**SummarySettingCustomEntity** (1 change)
+**ConversationAggregationView** (1 change)
 
-* Model was added
+* Enum value nConversations was added to property target
 
-**SummarySettingPII** (1 change)
+**ViewFilter** (1 change)
 
-* Model was added
+* Optional property contentModerationFlags was added
 
-**SummarySettingParticipantLabels** (1 change)
+**Limit** (2 changes)
 
-* Model was added
+* Enum value audiohook.monitor was added to property namespace
+* Enum value screen.monitoring was added to property namespace
 
-**SummarySettingWithTranscript** (1 change)
+**KnowledgeBaseWithDialectReference** (2 changes)
 
-* Model was added
+* Enum value cs-CZ was added to property languageCode
+* Enum value hu-HU was added to property languageCode
 
-**SummarySettingEntityListing** (1 change)
-
-* Model was added
-
-**CampaignRuleWarning** (2 changes)
-
-* Enum value ConditionsWaitingForLinesOnlyPreviewOrExternal was added to property code
-* Enum value ConditionsWaitingForAgentsOnlyAgentless was added to property code
-
-**NluDomainVersion** (1 change)
-
-* Optional property languageVersions was added
-
-**Miner** (2 changes)
-
-* Enum value ja-jp was added to property language
-* Enum value ko-kr was added to property language
-
-**IgnoredMinedEntity** (1 change)
+**FeatureSupport** (1 change)
 
 * Model was added
 
-**IgnoredMinedPhraseListing** (1 change)
+**LanguageSupportInfoRecord** (1 change)
 
 * Model was added
 
-**RemoveEntitiesRequest** (1 change)
+**LanguageSupportResponse** (1 change)
 
 * Model was added
 
-**RemoveEntity** (1 change)
+**Session** (1 change)
+
+* Enum value SessionExpired was added to property lastUserDisconnectType
+
+**Disposition** (2 changes)
+
+* Optional property amdTimeout was added
+* Optional property silentCallTimeout was added
+
+**DispositionAmdTimeout** (1 change)
 
 * Model was added
 
-**IgnorePhrasesResponse** (1 change)
+**DispositionSilentCallTimeout** (1 change)
 
 * Model was added
 
-**IgnorePhrase** (1 change)
+**Message** (4 changes)
+
+* Enum value parked was added to property state
+* Enum value parked was added to property initialState
+* Enum value session.expired was added to property disconnectType
+* Optional property engagementSource was added
+
+**CallMediaParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**CallHistoryParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**CallbackMediaParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**ChatMediaParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**CobrowseMediaParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**EmailMediaParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**ConversationMessageContent** (6 changes)
+
+* Optional property datePicker was added
+* Optional property interactiveApplication was added
+* Optional property listPicker was added
+* Optional property paymentRequest was added
+* Optional property paymentResponse was added
+* Optional property form was added
+
+**MessageMediaParticipant** (1 change)
+
+* Enum value session.expired was added to property disconnectType
+
+**AppleAuthentication** (1 change)
 
 * Model was added
 
-**IgnorePhrasesRequest** (1 change)
+**AppleIMessageApp** (1 change)
 
 * Model was added
 
-**IgnoredMinedTopicListing** (1 change)
+**AppleIntegration** (1 change)
 
 * Model was added
 
-**IgnoreTopicsResponse** (1 change)
+**ApplePay** (1 change)
 
 * Model was added
 
-**IgnoreTopic** (1 change)
+**AppleIntegrationUpdateRequest** (1 change)
 
 * Model was added
 
-**IgnoreTopicsRequest** (1 change)
+**AppleIntegrationEntityListing** (1 change)
 
 * Model was added
 
-**Reason** (1 change)
-
-* Enum value DataFiltered was added to property code
-
-**IpAddressRange** (1 change)
-
-* Enum value byo-smpp was added to property service
-
-**Recording** (1 change)
-
-* Enum value Snippet was added to property mediaSubtype
-
-**OrphanRecording** (2 changes)
-
-* Enum value Snippet was added to property mediaSubtype
-* Enum value mx-central-1 was added to property region
-
-**RecordingMetadata** (2 changes)
-
-* Enum value Snippet was added to property mediaSubtype
-* Enum value mx-central-1 was added to property region
-
-**AuthorizedDomains** (1 change)
+**AppleIntegrationRequest** (1 change)
 
 * Model was added
 
-**Domains** (1 change)
+**MaskingRule** (1 change)
+
+* Optional property direction was added
+
+**DocumentChunkReference** (1 change)
+
+* Optional property selfUri was added
+
+**SearchUpdateRequest** (1 change)
+
+* Optional property selectedAnswers was added
+
+**Miner** (8 changes)
+
+* Enum value hi-in was added to property language
+* Enum value ar-001 was added to property language
+* Enum value ar-ae was added to property language
+* Enum value ar-bh was added to property language
+* Enum value ar-eg was added to property language
+* Enum value ar-il was added to property language
+* Enum value ar-sa was added to property language
+* Enum value ar-tn was added to property language
+
+**ApprovalNamespace** (2 changes)
+
+* Enum value audiohook.monitor was added to property namespace
+* Enum value screen.monitoring was added to property namespace
+
+**LimitChangeRequestDetails** (2 changes)
+
+* Enum value audiohook.monitor was added to property namespace
+* Enum value screen.monitoring was added to property namespace
+
+**StatusChange** (2 changes)
+
+* Enum value audiohook.monitor was added to property namespace
+* Enum value screen.monitoring was added to property namespace
+
+**OAuthAppleAuthorizationResponse** (1 change)
 
 * Model was added
 
-**EmailSetting** (1 change)
+**OAuthAppleAuthorizationResponseError** (1 change)
 
 * Model was added
 
-**InboundDomain** (1 change)
+**RecordingMessagingMessage** (1 change)
 
-* Optional property emailSetting was added
-
-**EmailSettingReference** (1 change)
-
-* Model was added
-
-**InboundDomainPatchRequest** (1 change)
-
-* Optional property emailSetting was added
-
-**InboundDomainCreateRequest** (1 change)
-
-* Model was added
-
-**OutboundDomain** (1 change)
-
-* Optional property emailSetting was added
-
-**EmailOutboundDomainResult** (1 change)
-
-* Optional property emailSetting was added
-
-**OutboundDomainCreateRequest** (1 change)
-
-* Model was added
+* Optional property interactiveApplication was added
 
 **ContentModeration** (1 change)
 
-* Model was added
+* Optional property categories was added
 
-**SocialMediaDetailMessageContainer** (1 change)
+**GeneralProgramJobRequest** (3 changes)
 
-* Optional property contentModeration was added
+* Enum value zh-CN was added to property dialect
+* Enum value zh-HK was added to property dialect
+* Enum value zh-TW was added to property dialect
 
-**InstagramDataIngestionRuleResponse** (1 change)
+**Topic** (1 change)
 
-* Model was added
+* Optional property matchingType was added
 
-**InstagramDataIngestionRuleRequest** (1 change)
+**ListedTopic** (1 change)
 
-* Model was added
+* Optional property matchingType was added
 
-**InstagramDataIngestionRuleVersionResponse** (1 change)
-
-* Model was added
-
-**InstagramDataIngestionRuleVersionResponseEntityListing** (1 change)
+**AgentMuQueryResponse** (1 change)
 
 * Model was added
 
-**Phone** (1 change)
-
-* Optional property standAlone was added
-
-**SchedulerMessageTypeSeverity** (10 changes)
-
-* Enum value UnableToScheduleMaxActivityLengthFromShiftEndFromDst was added to property type
-* Enum value UnableToScheduleMaxActivityLengthFromShiftEndFromTimeOff was added to property type
-* Enum value UnableToScheduleMaxShiftStartAndPaidDurationVarianceFromTimeOff was added to property type
-* Enum value UnableToScheduleMaxShiftStartTimeVarianceFromDst was added to property type
-* Enum value UnableToScheduleMaxShiftStartTimeVarianceFromTimeOff was added to property type
-* Enum value UnableToScheduleMinActivityLengthFromShiftEndFromDst was added to property type
-* Enum value UnableToScheduleMinActivityLengthFromShiftStartFromDst was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxShiftStartAndPaidDurationVarianceFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromDst was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromTimeOff was added to property type
-
-**ScheduleGenerationMessage** (10 changes)
-
-* Enum value UnableToScheduleMaxActivityLengthFromShiftEndFromDst was added to property type
-* Enum value UnableToScheduleMaxActivityLengthFromShiftEndFromTimeOff was added to property type
-* Enum value UnableToScheduleMaxShiftStartAndPaidDurationVarianceFromTimeOff was added to property type
-* Enum value UnableToScheduleMaxShiftStartTimeVarianceFromDst was added to property type
-* Enum value UnableToScheduleMaxShiftStartTimeVarianceFromTimeOff was added to property type
-* Enum value UnableToScheduleMinActivityLengthFromShiftEndFromDst was added to property type
-* Enum value UnableToScheduleMinActivityLengthFromShiftStartFromDst was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxShiftStartAndPaidDurationVarianceFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromDst was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxShiftStartTimeVarianceFromTimeOff was added to property type
-
-**DataExtractionFileSchema** (1 change)
+**AgentMuScheduleItem** (1 change)
 
 * Model was added
 
-**DataExtractionFileSchemaListing** (1 change)
+**AgentMuScheduleResult** (1 change)
 
 * Model was added
 
-**DataExtractionFileUrl** (1 change)
+**AgentMuScheduleShift** (1 change)
 
 * Model was added
 
-**DataExtractionFileUrlListing** (1 change)
+**AgentScheduleShiftActivity** (1 change)
 
 * Model was added
 
-**DownloadServiceRequest** (1 change)
+**AgentMuScheduleQuery** (1 change)
 
 * Model was added
 
-**DecisionTableInputColumnExpression** (6 changes)
+**ConversationAsyncAggregationQuery** (1 change)
 
-* Enum value ContainsSequence was added to property comparator
-* Enum value NotContainsSequence was added to property comparator
-* Enum value IsSubset was added to property comparator
-* Enum value NotIsSubset was added to property comparator
-* Enum value IsSubsequence was added to property comparator
-* Enum value NotIsSubsequence was added to property comparator
+* Enum value nConversations was added to property metrics
 
-**EvaluationFormDivisionView** (1 change)
+**RowSearchPredicate** (1 change)
 
-* Model was added
+* Enum value ContainsItem was added to property operator
 
-**EvaluationFormDivisionViewListing** (1 change)
+**InternalMessageMediaParticipant** (1 change)
 
-* Model was added
-
-**SurveyFormDivisionView** (1 change)
-
-* Model was added
-
-**SurveyFormDivisionViewListing** (1 change)
-
-* Model was added
-
-**MediaEndpointStatistics** (2 changes)
-
-* Optional property dateCreated was added
-* Optional property dateProcessed was added
+* Enum value session.expired was added to property disconnectType
 
 
-# Point Changes (3 changes)
+# Point Changes (5 changes)
 
-**PUT /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
+**POST /api/v2/conversations/calls/{conversationId}/participants/user/{userId}** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/quality/evaluators/activity** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/webchat/settings** (1 change)
 
 * Description was changed
 
-**POST /api/v2/conversations/emails/{conversationId}/reconnect** (1 change)
+**PUT /api/v2/webchat/settings** (1 change)
 
 * Description was changed
 
-**PUT /api/v2/recording/jobs/{jobId}** (1 change)
+**DELETE /api/v2/webchat/settings** (1 change)
 
 * Description was changed

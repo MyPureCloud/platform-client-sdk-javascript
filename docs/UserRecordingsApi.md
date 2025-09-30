@@ -320,4 +320,4 @@ apiInstance.putUserrecording(recordingId, body, opts)
 **UserRecording**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

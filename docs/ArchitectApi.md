@@ -2135,7 +2135,7 @@ Get an IVR IdentityResolutionConfig.
 Requires ALL permissions:
 
 * routing:callRoute:view
-* routing:identityResolution:view
+* routing:identityResolutionIvr:view
 
 ### Example Usage
 
@@ -7650,7 +7650,7 @@ Update an IVR IdentityResolutionConfig.
 Requires ALL permissions:
 
 * routing:callRoute:edit
-* routing:identityResolution:edit
+* routing:identityResolutionIvr:edit
 
 ### Example Usage
 
@@ -8348,4 +8348,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

@@ -178,6 +178,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementAgents**](WorkforceManagementApi#postWorkforcemanagementAgents) | **POST** /api/v2/workforcemanagement/agents | Move agents in and out of management unit
 [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery) | **POST** /api/v2/workforcemanagement/agents/integrations/hris/query | Query integrations for agents
 [**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi#postWorkforcemanagementAgentsMePossibleworkshifts) | **POST** /api/v2/workforcemanagement/agents/me/possibleworkshifts | Get agent possible work shifts for requested time frame
+[**postWorkforcemanagementAgentschedulesManagementunitsMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesManagementunitsMine) | **POST** /api/v2/workforcemanagement/agentschedules/managementunits/mine | Fetch agent schedules for the logged in user's management unit
 [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesMine) | **POST** /api/v2/workforcemanagement/agentschedules/mine | Get published schedule for the current user
 [**postWorkforcemanagementAlternativeshiftsOffersJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersJobs) | **POST** /api/v2/workforcemanagement/alternativeshifts/offers/jobs | Request a list of alternative shift offers for a given schedule
 [**postWorkforcemanagementAlternativeshiftsOffersSearchJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersSearchJobs) | **POST** /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs | Request a search of alternative shift offers for a given shift
@@ -9662,6 +9663,62 @@ apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body)
 **AgentPossibleWorkShiftsResponse**
 
 
+## postWorkforcemanagementAgentschedulesManagementunitsMine
+
+> AgentMuQueryResponse postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts)
+
+
+POST /api/v2/workforcemanagement/agentschedules/managementunits/mine
+
+Fetch agent schedules for the logged in user's management unit
+
+Requires ANY permissions:
+
+* wfm:agentManagementUnitSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | body
+let opts = { 
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAgentschedulesManagementunitsMine success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAgentschedulesManagementunitsMine');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body |  |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+**AgentMuQueryResponse**
+
+
 ## postWorkforcemanagementAgentschedulesMine
 
 > BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(body)
@@ -14361,4 +14418,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_
