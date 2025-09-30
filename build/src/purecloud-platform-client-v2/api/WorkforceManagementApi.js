@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -5132,6 +5132,36 @@ class WorkforceManagementApi {
 			'POST', 
 			{  },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch agent schedules for the logged in user's management unit
+	 * 
+	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentschedulesManagementunitsMine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agentschedules/managementunits/mine', 
+			'POST', 
+			{  },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			body, 

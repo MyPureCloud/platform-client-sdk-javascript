@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -79,7 +79,8 @@ class WebChatApi {
 
 	/**
 	 * Remove WebChat deployment settings
-	 * 
+	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
+	 * @deprecated
 	 */
 	deleteWebchatSettings() { 
 
@@ -330,7 +331,8 @@ class WebChatApi {
 
 	/**
 	 * Get WebChat deployment settings
-	 * 
+	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
+	 * @deprecated
 	 */
 	getWebchatSettings() { 
 
@@ -536,8 +538,9 @@ class WebChatApi {
 
 	/**
 	 * Update WebChat deployment settings
-	 * 
+	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 	 * @param {Object} body webChatSettings
+	 * @deprecated
 	 */
 	putWebchatSettings(body) { 
 		// verify the required parameter 'body' is set

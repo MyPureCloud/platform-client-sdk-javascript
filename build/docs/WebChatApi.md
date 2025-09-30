@@ -143,10 +143,15 @@ void (no response body)
 
 > void deleteWebchatSettings()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/webchat/settings
 
 Remove WebChat deployment settings
+
+This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
 Requires ANY permissions:
 
@@ -649,10 +654,15 @@ apiInstance.getWebchatGuestConversationMessages(conversationId, opts)
 
 > WebChatSettings getWebchatSettings()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/settings
 
 Get WebChat deployment settings
+
+This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
 Requires ANY permissions:
 
@@ -1030,10 +1040,15 @@ apiInstance.putWebchatDeployment(deploymentId, body)
 
 > WebChatSettings putWebchatSettings(body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/webchat/settings
 
 Update WebChat deployment settings
+
+This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
 Requires ANY permissions:
 
@@ -1076,4 +1091,4 @@ apiInstance.putWebchatSettings(body)
 **WebChatSettings**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

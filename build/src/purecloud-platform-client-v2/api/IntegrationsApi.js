@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -189,6 +189,9 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Array.<String>} opts.ids Comma-separated list of integration IDs to filter by (max 100)
+	 * @param {String} opts.integrationType Filter integrations by integration type ID
+	 * @param {Object} opts.reportedState Filter integrations by reported state (case-insensitive)
 	 */
 	getIntegrations(opts) { 
 		opts = opts || {};
@@ -198,7 +201,7 @@ class IntegrationsApi {
 			'/api/v2/integrations', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'integrationType': opts['integrationType'],'reportedState': opts['reportedState'] },
 			{  },
 			{  },
 			null, 

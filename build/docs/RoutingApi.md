@@ -1692,9 +1692,10 @@ GET /api/v2/routing/email/domains/{domainId}
 
 Get domain
 
-Requires ALL permissions:
+Requires ANY permissions:
 
 * routing:email:manage
+* routing:email:view
 
 ### Example Usage
 
@@ -1805,7 +1806,7 @@ Get a route identity resolution setting.
 Requires ALL permissions:
 
 * routing:email:manage
-* routing:identityResolution:view
+* routing:identityResolutionEmail:view
 
 ### Example Usage
 
@@ -1975,9 +1976,10 @@ GET /api/v2/routing/email/outbound/domains/{domainId}
 
 Get domain
 
-Requires ALL permissions:
+Requires ANY permissions:
 
 * routing:email:manage
+* routing:email:view
 
 ### Example Usage
 
@@ -2571,7 +2573,9 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'queueId': ["queueId_example"] // [String] | Comma-separated list of queue Ids to filter by.
+  'queueId': ["queueId_example"], // [String] | Comma-separated list of queue Ids to filter by.
+  'kpiId': "kpiId_example", // String | Standard or custom KPI id used to filter predictors.
+  'state': "state_example" // String | The state used to filter predictors.
 };
 
 apiInstance.getRoutingPredictors(opts)
@@ -2594,6 +2598,8 @@ apiInstance.getRoutingPredictors(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **queueId** | **[String]** | Comma-separated list of queue Ids to filter by. | [optional]  |
+ **kpiId** | **String** | Standard or custom KPI id used to filter predictors. | [optional]  |
+ **state** | **String** | The state used to filter predictors. | [optional] <br />**Values**: Created, Error, Active |
 
 ### Return type
 
@@ -2736,7 +2742,7 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'expand': "expand_example" // String | Which fields, if any, to expand.
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
 
 apiInstance.getRoutingQueueAssistant(queueId, opts)
@@ -2755,7 +2761,7 @@ apiInstance.getRoutingQueueAssistant(queueId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant, copilot |
 
 ### Return type
 
@@ -2932,7 +2938,7 @@ Get Queue IdentityResolution Settings.
 Requires ALL permissions:
 
 * routing:queue:view
-* routing:identityResolution:view
+* queue:identityResolution:view
 
 ### Example Usage
 
@@ -4127,7 +4133,7 @@ Get a SMS identity resolution settings.
 Requires ALL permissions:
 
 * sms:phoneNumber:view
-* routing:identityResolution:view
+* sms:identityResolution:view
 
 ### Example Usage
 
@@ -7652,7 +7658,7 @@ Update identity resolution settings for a route.
 Requires ALL permissions:
 
 * routing:email:manage
-* routing:identityResolution:edit
+* routing:identityResolutionEmail:edit
 
 ### Example Usage
 
@@ -7861,7 +7867,7 @@ Update Queue IdentityResolution Settings.
 Requires ALL permissions:
 
 * routing:queue:edit
-* routing:identityResolution:edit
+* queue:identityResolution:edit
 
 ### Example Usage
 
@@ -8014,7 +8020,7 @@ Update an SMS identity resolution settings.
 Requires ALL permissions:
 
 * sms:phoneNumber:edit
-* routing:identityResolution:edit
+* sms:identityResolution:edit
 
 ### Example Usage
 
@@ -8419,4 +8425,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

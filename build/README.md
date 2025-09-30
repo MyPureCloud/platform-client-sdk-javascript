@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@231.0.0
+Documentation version purecloud-platform-client-v2@232.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/231.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/232.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/231.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/232.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -426,6 +426,25 @@ If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. my
 ```javascript
 const client = platformClient.ApiClient.instance;
 client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
+```
+
+## Filtering of Query Parameters
+
+The SDK is implemented so that when one of its API method is invoked, it filters out null or undefined method parameters (mapped to an API Endpoint's query parameter).
+- In its legacy state, the SDK will also filter parameters of boolean type and equal to false, and parameters of type integer/number and equal to 0.
+- In its modern state, the SDK will keep and send such parameters.
+
+A new ApiClient property (accessed using getUseLegacyParameterFilter and setUseLegacyParameterFilter) is introduced to control the method used to filter out such parameters.
+
+When UseLegacyParameterFilter is true, the SDK will use the legacy filter method.
+
+*The UseLegacyParameterFilter default value is currently equal to true.* You will need to change the UseLegacyParameterFilter value so that the SDK uses modern filter method.
+This choice of default value has been made to facilitate the transition from legacy to modern and accurate parameter filtering, without running the risk to affect existing applications with a change of behavior.
+
+```javascript
+const client = platformClient.ApiClient.instance;
+// To use modern and accurate parameter filtering, set UseLegacyParameterFilter to false
+client.setUseLegacyParameterFilter(false);
 ```
 
 ### Setting an intermediate Gateway

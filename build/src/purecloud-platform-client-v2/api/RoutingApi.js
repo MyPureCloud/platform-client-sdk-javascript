@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -1239,6 +1239,8 @@ class RoutingApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Comma-separated list of queue Ids to filter by.
+	 * @param {String} opts.kpiId Standard or custom KPI id used to filter predictors.
+	 * @param {Object} opts.state The state used to filter predictors.
 	 */
 	getRoutingPredictors(opts) { 
 		opts = opts || {};
@@ -1248,7 +1250,7 @@ class RoutingApi {
 			'/api/v2/routing/predictors', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi'),'kpiId': opts['kpiId'],'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -1317,7 +1319,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 */
 	getRoutingQueueAssistant(queueId, opts) { 
 		opts = opts || {};
@@ -1331,7 +1333,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/assistant', 
 			'GET', 
 			{ 'queueId': queueId },
-			{ 'expand': opts['expand'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

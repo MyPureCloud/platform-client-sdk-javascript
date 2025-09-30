@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -588,7 +588,7 @@ class QualityApi {
 	}
 
 	/**
-	 * Get an evaluator activity
+	 * Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)

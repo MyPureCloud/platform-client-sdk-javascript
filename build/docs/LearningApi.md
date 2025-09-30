@@ -1929,7 +1929,7 @@ apiInstance.putLearningModulePreview(moduleId, body)
 
 ## putLearningModuleRule
 
-> LearningModuleRule putLearningModuleRule(moduleId, body)
+> LearningModuleRule putLearningModuleRule(moduleId, body, opts)
 
 
 PUT /api/v2/learning/modules/{moduleId}/rule
@@ -1957,8 +1957,11 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let body = {}; // Object | The learning module rule to be updated
+let opts = { 
+  'assign': true // Boolean | Whether to assign the module to users or not
+};
 
-apiInstance.putLearningModuleRule(moduleId, body)
+apiInstance.putLearningModuleRule(moduleId, body, opts)
   .then((data) => {
     console.log(`putLearningModuleRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1975,10 +1978,11 @@ apiInstance.putLearningModuleRule(moduleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **body** | **Object** | The learning module rule to be updated |  |
+ **assign** | **Boolean** | Whether to assign the module to users or not | [optional] [default to true] |
 
 ### Return type
 
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

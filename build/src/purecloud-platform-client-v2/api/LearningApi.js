@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -1003,8 +1003,12 @@ class LearningApi {
 	 * This will update a learning module rule with the specified fields.
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {Object} body The learning module rule to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.assign Whether to assign the module to users or not (default to true)
 	 */
-	putLearningModuleRule(moduleId, body) { 
+	putLearningModuleRule(moduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling putLearningModuleRule';
@@ -1018,7 +1022,7 @@ class LearningApi {
 			'/api/v2/learning/modules/{moduleId}/rule', 
 			'PUT', 
 			{ 'moduleId': moduleId },
-			{  },
+			{ 'assign': opts['assign'] },
 			{  },
 			{  },
 			body, 

@@ -447,7 +447,10 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'ids': 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376, // [String] | Comma-separated list of integration IDs to filter by (max 100)
+  'integrationType': webhook, // String | Filter integrations by integration type ID
+  'reportedState': ACTIVE // String | Filter integrations by reported state (case-insensitive)
 };
 
 apiInstance.getIntegrations(opts)
@@ -471,6 +474,9 @@ apiInstance.getIntegrations(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **ids** | **[String]** | Comma-separated list of integration IDs to filter by (max 100) | [optional]  |
+ **integrationType** | **String** | Filter integrations by integration type ID | [optional]  |
+ **reportedState** | **String** | Filter integrations by reported state (case-insensitive) | [optional] <br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR |
 
 ### Return type
 
@@ -5129,4 +5135,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

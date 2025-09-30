@@ -5,7 +5,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 231.0.0
+	 * @version 232.0.0
 	 */
 
 	/**
@@ -36,6 +36,30 @@ class AgentCopilotApi {
 			'GET', 
 			{ 'assistantId': assistantId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information about the support of features for all the languages or only for a certain language.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.language Which language are the features supported for
+	 */
+	getAssistantsCopilotFeaturesupport(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/copilot/featuresupport', 
+			'GET', 
+			{  },
+			{ 'language': opts['language'] },
 			{  },
 			{  },
 			null, 

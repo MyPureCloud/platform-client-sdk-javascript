@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getAssistantCopilot**](AgentCopilotApi#getAssistantCopilot) | **GET** /api/v2/assistants/{assistantId}/copilot | Get copilot configuration of an assistant.
+[**getAssistantsCopilotFeaturesupport**](AgentCopilotApi#getAssistantsCopilotFeaturesupport) | **GET** /api/v2/assistants/copilot/featuresupport | Get information about the support of features for all the languages or only for a certain language.
 [**putAssistantCopilot**](AgentCopilotApi#putAssistantCopilot) | **PUT** /api/v2/assistants/{assistantId}/copilot | Update agent copilot configuration
 
 
@@ -61,6 +62,58 @@ apiInstance.getAssistantCopilot(assistantId)
 **Copilot**
 
 
+## getAssistantsCopilotFeaturesupport
+
+> LanguageSupportResponse getAssistantsCopilotFeaturesupport(opts)
+
+
+GET /api/v2/assistants/copilot/featuresupport
+
+Get information about the support of features for all the languages or only for a certain language.
+
+Requires ALL permissions:
+
+* assistants:copilot:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentCopilotApi();
+
+let opts = { 
+  'language': "language_example" // String | Which language are the features supported for
+};
+
+apiInstance.getAssistantsCopilotFeaturesupport(opts)
+  .then((data) => {
+    console.log(`getAssistantsCopilotFeaturesupport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAssistantsCopilotFeaturesupport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **language** | **String** | Which language are the features supported for | [optional]  |
+
+### Return type
+
+**LanguageSupportResponse**
+
+
 ## putAssistantCopilot
 
 > Copilot putAssistantCopilot(assistantId, body)
@@ -113,4 +166,4 @@ apiInstance.putAssistantCopilot(assistantId, body)
 **Copilot**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_

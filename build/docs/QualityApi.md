@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityConversationsAuditsQueryTransactionId**](QualityApi#getQualityConversationsAuditsQueryTransactionId) | **GET** /api/v2/quality/conversations/audits/query/{transactionId} | Get status of audit query execution
 [**getQualityConversationsAuditsQueryTransactionIdResults**](QualityApi#getQualityConversationsAuditsQueryTransactionIdResults) | **GET** /api/v2/quality/conversations/audits/query/{transactionId}/results | Get results of audit query
 [**getQualityEvaluationsQuery**](QualityApi#getQualityEvaluationsQuery) | **GET** /api/v2/quality/evaluations/query | Queries Evaluations and returns a paged list
-[**getQualityEvaluatorsActivity**](QualityApi#getQualityEvaluatorsActivity) | **GET** /api/v2/quality/evaluators/activity | Get an evaluator activity
+[**getQualityEvaluatorsActivity**](QualityApi#getQualityEvaluatorsActivity) | **GET** /api/v2/quality/evaluators/activity | Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 [**getQualityForm**](QualityApi#getQualityForm) | **GET** /api/v2/quality/forms/{formId} | Get an evaluation form
 [**getQualityFormVersions**](QualityApi#getQualityFormVersions) | **GET** /api/v2/quality/forms/{formId}/versions | Gets all the revisions for a specific evaluation.
 [**getQualityForms**](QualityApi#getQualityForms) | **GET** /api/v2/quality/forms | Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.
@@ -1183,7 +1183,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
 
 GET /api/v2/quality/evaluators/activity
 
-Get an evaluator activity
+Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 Requires ANY permissions:
 
@@ -3816,4 +3816,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@231.0.0_
+_purecloud-platform-client-v2@232.0.0_
