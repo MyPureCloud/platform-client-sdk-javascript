@@ -781,7 +781,8 @@ let opts = {
   'sortKey': "sortKey_example", // String | Sort key
   'sortMetricId': "sortMetricId_example", // String | Sort Metric Id
   'sortOrder': "asc", // String | Sort order
-  'userIds': "userIds_example" // String | A list of up to 100 comma-separated user Ids
+  'userIds': "userIds_example", // String | A list of up to 100 comma-separated user Ids
+  'reportsTo': "reportsTo_example" // String | The reportsTo used by ABAC policies.
 };
 
 apiInstance.getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
@@ -810,6 +811,7 @@ apiInstance.getGamificationInsights(filterType, filterId, granularity, comparati
  **sortMetricId** | **String** | Sort Metric Id | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
  **userIds** | **String** | A list of up to 100 comma-separated user Ids | [optional]  |
+ **reportsTo** | **String** | The reportsTo used by ABAC policies. | [optional]  |
 
 ### Return type
 
@@ -1000,7 +1002,7 @@ apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granula
 
 ## getGamificationInsightsMembers
 
-> InsightsAgents getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
+> InsightsAgents getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, opts)
 
 
 GET /api/v2/gamification/insights/members
@@ -1028,8 +1030,11 @@ let filterType = "filterType_example"; // String | Filter type for the query req
 let filterId = "filterId_example"; // String | ID for the filter type.
 let granularity = "granularity_example"; // String | Granularity
 let startWorkday = "startWorkday_example"; // String | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'reportsTo': "reportsTo_example" // String | The reportsTo used by ABAC policies.
+};
 
-apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
+apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1048,6 +1053,7 @@ apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, st
  **filterId** | **String** | ID for the filter type. |  |
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **startWorkday** | **String** | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **reportsTo** | **String** | The reportsTo used by ABAC policies. | [optional]  |
 
 ### Return type
 
@@ -1089,7 +1095,8 @@ let sortKey = "sortKey_example"; // String | Sort key
 let opts = { 
   'sortMetricId': "sortMetricId_example", // String | Sort Metric Id
   'sectionSize': 3.4, // Number | The number of top and bottom users to return before ties
-  'userIds': "userIds_example" // String | A list of up to 100 comma-separated user Ids
+  'userIds': "userIds_example", // String | A list of up to 100 comma-separated user Ids
+  'reportsTo': "reportsTo_example" // String | The reportsTo used by ABAC policies.
 };
 
 apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts)
@@ -1116,6 +1123,7 @@ apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, c
  **sortMetricId** | **String** | Sort Metric Id | [optional]  |
  **sectionSize** | **Number** | The number of top and bottom users to return before ties | [optional]  |
  **userIds** | **String** | A list of up to 100 comma-separated user Ids | [optional]  |
+ **reportsTo** | **String** | The reportsTo used by ABAC policies. | [optional]  |
 
 ### Return type
 
@@ -4288,4 +4296,4 @@ apiInstance.putGamificationStatus(status)
 **GamificationStatus**
 
 
-_purecloud-platform-client-v2@232.0.0_
+_purecloud-platform-client-v2@233.0.0_

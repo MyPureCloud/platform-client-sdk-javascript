@@ -8348,4 +8348,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@232.0.0_
+_purecloud-platform-client-v2@233.0.0_
