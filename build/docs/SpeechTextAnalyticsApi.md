@@ -1910,6 +1910,7 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 20, // Number | The page size for the listing. The max that will be returned is 500.
+  'pageNumber': 3.4, // Number | The page number for the listing
   'state': "state_example", // String | Topic state. Defaults to latest
   'name': "name_example", // String | Case insensitive partial name to filter by
   'ids': ["ids_example"], // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
@@ -1935,6 +1936,7 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] |
+ **pageNumber** | **Number** | The page number for the listing | [optional]  |
  **state** | **String** | Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
  **ids** | **[String]** | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
@@ -3321,4 +3323,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@232.0.0_
+_purecloud-platform-client-v2@233.0.0_

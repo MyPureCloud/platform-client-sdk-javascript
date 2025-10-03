@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 232.0.0
+	 * @version 233.0.0
 	 */
 
 	/**
@@ -365,6 +365,7 @@ class GamificationApi {
 	 * @param {String} opts.sortMetricId Sort Metric Id
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
+	 * @param {String} opts.reportsTo The reportsTo used by ABAC policies.
 	 */
 	getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts) { 
 		opts = opts || {};
@@ -394,7 +395,7 @@ class GamificationApi {
 			'/api/v2/gamification/insights', 
 			'GET', 
 			{  },
-			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortKey': opts['sortKey'],'sortMetricId': opts['sortMetricId'],'sortOrder': opts['sortOrder'],'userIds': opts['userIds'] },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortKey': opts['sortKey'],'sortMetricId': opts['sortMetricId'],'sortOrder': opts['sortOrder'],'userIds': opts['userIds'],'reportsTo': opts['reportsTo'] },
 			{  },
 			{  },
 			null, 
@@ -566,8 +567,12 @@ class GamificationApi {
 	 * @param {String} filterId ID for the filter type.
 	 * @param {Object} granularity Granularity
 	 * @param {String} startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.reportsTo The reportsTo used by ABAC policies.
 	 */
-	getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday) { 
+	getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsMembers';
@@ -589,7 +594,7 @@ class GamificationApi {
 			'/api/v2/gamification/insights/members', 
 			'GET', 
 			{  },
-			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday,'reportsTo': opts['reportsTo'] },
 			{  },
 			{  },
 			null, 
@@ -612,6 +617,7 @@ class GamificationApi {
 	 * @param {String} opts.sortMetricId Sort Metric Id
 	 * @param {Number} opts.sectionSize The number of top and bottom users to return before ties
 	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
+	 * @param {String} opts.reportsTo The reportsTo used by ABAC policies.
 	 */
 	getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts) { 
 		opts = opts || {};
@@ -645,7 +651,7 @@ class GamificationApi {
 			'/api/v2/gamification/insights/rankings', 
 			'GET', 
 			{  },
-			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'sortKey': sortKey,'sortMetricId': opts['sortMetricId'],'sectionSize': opts['sectionSize'],'userIds': opts['userIds'] },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'sortKey': sortKey,'sortMetricId': opts['sortMetricId'],'sectionSize': opts['sectionSize'],'userIds': opts['userIds'],'reportsTo': opts['reportsTo'] },
 			{  },
 			{  },
 			null, 

@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 232.0.0
+	 * @version 233.0.0
 	 */
 
 	/**
@@ -789,7 +789,7 @@ class BusinessRulesApi {
 	/**
 	 * Create a schema
 	 * 
-	 * @param {Object} body Schema
+	 * @param {Object} body Business Rules Schema Create Request
 	 * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesSchemas(body) { 
@@ -888,7 +888,7 @@ class BusinessRulesApi {
 	 * Update a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * @param {Object} body Data Schema
+	 * @param {Object} body Business Rules Schema Update Request
 	 * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesSchema(schemaId, body) { 

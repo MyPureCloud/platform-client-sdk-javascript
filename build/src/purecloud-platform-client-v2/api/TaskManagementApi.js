@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 232.0.0
+	 * @version 233.0.0
 	 */
 
 	/**
@@ -412,7 +412,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Which fields to expand. Comma separated if more than one.
+	 * @param {Array.<String>} opts.expands Which fields to expand. Comma separated if more than one.
 	 */
 	getTaskmanagementWorkitem(workitemId, opts) { 
 		opts = opts || {};
@@ -426,7 +426,7 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/workitems/{workitemId}', 
 			'GET', 
 			{ 'workitemId': workitemId },
-			{ 'expands': opts['expands'] },
+			{ 'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
 			{  },
 			{  },
 			null, 

@@ -665,7 +665,7 @@ apiInstance.getBusinessrulesDecisiontablesSearch(opts)
 
 ## getBusinessrulesSchema
 
-> DataSchema getBusinessrulesSchema(schemaId)
+> BusinessRulesDataSchema getBusinessrulesSchema(schemaId)
 
 
 GET /api/v2/businessrules/schemas/{schemaId}
@@ -712,12 +712,12 @@ apiInstance.getBusinessrulesSchema(schemaId)
 
 ### Return type
 
-**DataSchema**
+**BusinessRulesDataSchema**
 
 
 ## getBusinessrulesSchemas
 
-> DataSchemaListing getBusinessrulesSchemas()
+> BusinessRulesDataSchemaListing getBusinessrulesSchemas()
 
 
 GET /api/v2/businessrules/schemas
@@ -759,7 +759,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**DataSchemaListing**
+**BusinessRulesDataSchemaListing**
 
 
 ## getBusinessrulesSchemasCoretype
@@ -1420,7 +1420,7 @@ apiInstance.postBusinessrulesDecisiontables(body)
 
 ## postBusinessrulesSchemas
 
-> DataSchema postBusinessrulesSchemas(body)
+> BusinessRulesDataSchema postBusinessrulesSchemas(body)
 
 
 POST /api/v2/businessrules/schemas
@@ -1446,7 +1446,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.BusinessRulesApi();
 
-let body = {}; // Object | Schema
+let body = {}; // Object | Business Rules Schema Create Request
 
 apiInstance.postBusinessrulesSchemas(body)
   .then((data) => {
@@ -1463,11 +1463,11 @@ apiInstance.postBusinessrulesSchemas(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Schema |  |
+ **body** | **Object** | Business Rules Schema Create Request |  |
 
 ### Return type
 
-**DataSchema**
+**BusinessRulesDataSchema**
 
 
 ## putBusinessrulesDecisiontableVersionPublish
@@ -1585,7 +1585,7 @@ apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId
 
 ## putBusinessrulesSchema
 
-> DataSchema putBusinessrulesSchema(schemaId, body)
+> BusinessRulesDataSchema putBusinessrulesSchema(schemaId, body)
 
 
 PUT /api/v2/businessrules/schemas/{schemaId}
@@ -1612,7 +1612,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
-let body = {}; // Object | Data Schema
+let body = {}; // Object | Business Rules Schema Update Request
 
 apiInstance.putBusinessrulesSchema(schemaId, body)
   .then((data) => {
@@ -1630,11 +1630,11 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
- **body** | **Object** | Data Schema |  |
+ **body** | **Object** | Business Rules Schema Update Request |  |
 
 ### Return type
 
-**DataSchema**
+**BusinessRulesDataSchema**
 
 
-_purecloud-platform-client-v2@232.0.0_
+_purecloud-platform-client-v2@233.0.0_

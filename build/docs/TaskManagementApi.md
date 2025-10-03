@@ -839,7 +839,7 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
 let opts = { 
-  'expands': "expands_example" // String | Which fields to expand. Comma separated if more than one.
+  'expands': ["expands_example"] // [String] | Which fields to expand. Comma separated if more than one.
 };
 
 apiInstance.getTaskmanagementWorkitem(workitemId, opts)
@@ -858,7 +858,7 @@ apiInstance.getTaskmanagementWorkitem(workitemId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
- **expands** | **String** | Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
+ **expands** | **[String]** | Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
 
 ### Return type
 
@@ -4054,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@232.0.0_
+_purecloud-platform-client-v2@233.0.0_
