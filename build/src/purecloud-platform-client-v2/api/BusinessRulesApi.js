@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26,7 +26,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Force delete decision table (under certain conditions) (default to false)
-	 * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesDecisiontable(tableId, opts) { 
 		opts = opts || {};
@@ -55,7 +54,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -87,7 +85,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
-	 * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
 		// verify the required parameter 'tableId' is set
@@ -121,7 +118,6 @@ class BusinessRulesApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -147,7 +143,6 @@ class BusinessRulesApi {
 	 * Get a decision table
 	 * 
 	 * @param {String} tableId Table ID
-	 * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontable(tableId) { 
 		// verify the required parameter 'tableId' is set
@@ -174,7 +169,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -206,7 +200,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
-	 * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
 		// verify the required parameter 'tableId' is set
@@ -244,7 +237,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
-	 * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, opts) { 
 		opts = opts || {};
@@ -279,7 +271,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
-	 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersions(tableId, opts) { 
 		opts = opts || {};
@@ -311,7 +302,6 @@ class BusinessRulesApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
-	 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontables(opts) { 
 		opts = opts || {};
@@ -342,7 +332,6 @@ class BusinessRulesApi {
 	 * @param {Boolean} opts.withPublishedVersion Filters results to only decision tables that have at least one version in Published status
 	 * @param {Array.<String>} opts.expand Fields to expand in response
 	 * @param {Array.<String>} opts.ids Decision table IDs to search for
-	 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontablesSearch(opts) { 
 		opts = opts || {};
@@ -366,7 +355,6 @@ class BusinessRulesApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -391,7 +379,6 @@ class BusinessRulesApi {
 	/**
 	 * Get a list of schemas.
 	 * 
-	 * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchemas() { 
 
@@ -413,7 +400,6 @@ class BusinessRulesApi {
 	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName The core type's name
-	 * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchemasCoretype(coreTypeName) { 
 		// verify the required parameter 'coreTypeName' is set
@@ -438,7 +424,6 @@ class BusinessRulesApi {
 	/**
 	 * Get the core types from which all schemas are built.
 	 * 
-	 * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchemasCoretypes() { 
 
@@ -461,7 +446,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
-	 * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchBusinessrulesDecisiontable(tableId, body) { 
 		// verify the required parameter 'tableId' is set
@@ -493,7 +477,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
-	 * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -528,7 +511,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableExecute(tableId, body) { 
 		// verify the required parameter 'tableId' is set
@@ -560,7 +542,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -596,7 +577,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -632,7 +612,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Create decision table row request
-	 * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -671,7 +650,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
-	 * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, opts) { 
 		opts = opts || {};
@@ -708,7 +686,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionSync(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -738,7 +715,6 @@ class BusinessRulesApi {
 	 * Create a new decision table version
 	 * 
 	 * @param {String} tableId Table ID
-	 * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersions(tableId) { 
 		// verify the required parameter 'tableId' is set
@@ -764,7 +740,6 @@ class BusinessRulesApi {
 	 * Create a decision table
 	 * 
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontables(body) { 
 		// verify the required parameter 'body' is set
@@ -790,7 +765,6 @@ class BusinessRulesApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Business Rules Schema Create Request
-	 * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesSchemas(body) { 
 		// verify the required parameter 'body' is set
@@ -817,7 +791,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -850,7 +823,6 @@ class BusinessRulesApi {
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
 	 * @param {Object} body Full update decision table row request
-	 * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
 		// verify the required parameter 'tableId' is set
@@ -889,7 +861,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Business Rules Schema Update Request
-	 * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set

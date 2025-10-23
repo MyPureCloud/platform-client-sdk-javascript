@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -348,8 +348,12 @@ class SocialMediaApi {
 	 * Get a single escalation rule.
 	 * 
 	 * @param {String} escalationRuleId escalationRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand which fields, if any, to expand
 	 */
-	getSocialmediaEscalationrule(escalationRuleId) { 
+	getSocialmediaEscalationrule(escalationRuleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'escalationRuleId' is set
 		if (escalationRuleId === undefined || escalationRuleId === null || escalationRuleId === '') {
 			throw 'Missing the required parameter "escalationRuleId" when calling getSocialmediaEscalationrule';
@@ -359,7 +363,7 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/escalationrules/{escalationRuleId}', 
 			'GET', 
 			{ 'escalationRuleId': escalationRuleId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

@@ -140,6 +140,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 [**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
+[**patchConversationsCallParticipantUserUserId**](ConversationsApi#patchConversationsCallParticipantUserUserId) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId} | Update conversation participant on behalf of a user
 [**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsCallbackParticipant**](ConversationsApi#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallbackParticipantAttributes**](ConversationsApi#patchConversationsCallbackParticipantAttributes) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -4669,7 +4670,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+> AppleIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
@@ -4715,12 +4716,12 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrat
 
 ### Return type
 
-**IdentityResolutionConfig**
+**AppleIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+> FacebookIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
@@ -4766,12 +4767,12 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookInteg
 
 ### Return type
 
-**IdentityResolutionConfig**
+**FacebookIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+> InstagramIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
@@ -4817,7 +4818,7 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramInte
 
 ### Return type
 
-**IdentityResolutionConfig**
+**InstagramIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
@@ -4873,7 +4874,7 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 
 ## getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+> TwitterIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
@@ -4919,12 +4920,12 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegr
 
 ### Return type
 
-**IdentityResolutionConfig**
+**TwitterIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+> WhatsAppIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
@@ -4970,7 +4971,7 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappInteg
 
 ### Return type
 
-**IdentityResolutionConfig**
+**WhatsAppIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIntegrationTwitterOauthSettings
@@ -7288,6 +7289,65 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
 ### Return type
 
 **ConsultTransferResponse**
+
+
+## patchConversationsCallParticipantUserUserId
+
+> void patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body)
+
+
+PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId}
+
+Update conversation participant on behalf of a user
+
+Requires ANY permissions:
+
+* conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
+* conversation:agentlessCall:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let userId = "userId_example"; // String | userId
+let body = {}; // Object | Participant request
+
+apiInstance.patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body)
+  .then(() => {
+    console.log('patchConversationsCallParticipantUserUserId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantUserUserId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **userId** | **String** | userId |  |
+ **body** | **Object** | Participant request |  |
+
+### Return type
+
+void (no response body)
 
 
 ## patchConversationsCallback
@@ -14819,7 +14879,7 @@ apiInstance.putConversationsMessageRecordingstate(conversationId, body)
 
 ## putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
+> AppleIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
@@ -14867,12 +14927,12 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrat
 
 ### Return type
 
-**IdentityResolutionConfig**
+**AppleIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+> FacebookIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
@@ -14920,12 +14980,12 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookInteg
 
 ### Return type
 
-**IdentityResolutionConfig**
+**FacebookIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+> InstagramIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
@@ -14973,7 +15033,7 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramInte
 
 ### Return type
 
-**IdentityResolutionConfig**
+**InstagramIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
@@ -15031,7 +15091,7 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 
 ## putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+> TwitterIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
@@ -15079,12 +15139,12 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegr
 
 ### Return type
 
-**IdentityResolutionConfig**
+**TwitterIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+> WhatsAppIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
@@ -15132,7 +15192,7 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappInteg
 
 ### Return type
 
-**IdentityResolutionConfig**
+**WhatsAppIdentityResolutionConfig**
 
 
 ## putConversationsMessagingSettingsDefault
@@ -15452,4 +15512,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

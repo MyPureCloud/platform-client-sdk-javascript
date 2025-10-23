@@ -2125,7 +2125,7 @@ apiInstance.getArchitectIvr(ivrId)
 
 ## getArchitectIvrIdentityresolution
 
-> IdentityResolutionConfig getArchitectIvrIdentityresolution(ivrId)
+> IVRIdentityResolutionConfig getArchitectIvrIdentityresolution(ivrId)
 
 
 GET /api/v2/architect/ivrs/{ivrId}/identityresolution
@@ -2171,7 +2171,7 @@ apiInstance.getArchitectIvrIdentityresolution(ivrId)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**IVRIdentityResolutionConfig**
 
 
 ## getArchitectIvrs
@@ -7640,7 +7640,7 @@ apiInstance.putArchitectIvr(ivrId, body)
 
 ## putArchitectIvrIdentityresolution
 
-> IdentityResolutionConfig putArchitectIvrIdentityresolution(ivrId, body)
+> IVRIdentityResolutionConfig putArchitectIvrIdentityresolution(ivrId, body)
 
 
 PUT /api/v2/architect/ivrs/{ivrId}/identityresolution
@@ -7688,7 +7688,7 @@ apiInstance.putArchitectIvrIdentityresolution(ivrId, body)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**IVRIdentityResolutionConfig**
 
 
 ## putArchitectPrompt
@@ -8348,4 +8348,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

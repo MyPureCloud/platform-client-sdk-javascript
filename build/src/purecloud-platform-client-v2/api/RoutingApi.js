@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -821,6 +821,56 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get domain dkim settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainDkim(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainMailfrom(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a route
 	 * 
 	 * @param {String} domainName email domain
@@ -907,6 +957,31 @@ class RoutingApi {
 			'GET', 
 			{ 'domainName': domainName },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain verification settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainVerification(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3205,6 +3280,61 @@ class RoutingApi {
 	}
 
 	/**
+	 * Restart domain dkim
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	postRoutingEmailDomainDkim(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Mail From Settings
+	 */
+	postRoutingEmailDomainMailfrom(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainMailfrom';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a route
 	 * 
 	 * @param {String} domainName email domain
@@ -3257,6 +3387,31 @@ class RoutingApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Restart domain verification
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	postRoutingEmailDomainVerification(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

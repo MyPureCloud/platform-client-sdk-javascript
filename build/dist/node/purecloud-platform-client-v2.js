@@ -748,7 +748,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 233.0.0
+ * @version 234.0.0
  */
 class ApiClient {
 	/**
@@ -2317,7 +2317,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -2889,7 +2889,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -3375,7 +3375,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -3475,7 +3475,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -3606,7 +3606,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -4007,7 +4007,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -7275,7 +7275,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -11570,7 +11570,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -11771,7 +11771,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -13486,7 +13486,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -13742,7 +13742,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -13763,7 +13763,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Force delete decision table (under certain conditions) (default to false)
-	 * deleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesDecisiontable(tableId, opts) { 
 		opts = opts || {};
@@ -13792,7 +13791,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * deleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -13824,7 +13822,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
-	 * deleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
 		// verify the required parameter 'tableId' is set
@@ -13858,7 +13855,6 @@ class BusinessRulesApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * deleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteBusinessrulesSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -13884,7 +13880,6 @@ class BusinessRulesApi {
 	 * Get a decision table
 	 * 
 	 * @param {String} tableId Table ID
-	 * getBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontable(tableId) { 
 		// verify the required parameter 'tableId' is set
@@ -13911,7 +13906,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * getBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -13943,7 +13937,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
-	 * getBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
 		// verify the required parameter 'tableId' is set
@@ -13981,7 +13974,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
-	 * getBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, opts) { 
 		opts = opts || {};
@@ -14016,7 +14008,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
-	 * getBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontableVersions(tableId, opts) { 
 		opts = opts || {};
@@ -14048,7 +14039,6 @@ class BusinessRulesApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
-	 * getBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontables(opts) { 
 		opts = opts || {};
@@ -14079,7 +14069,6 @@ class BusinessRulesApi {
 	 * @param {Boolean} opts.withPublishedVersion Filters results to only decision tables that have at least one version in Published status
 	 * @param {Array.<String>} opts.expand Fields to expand in response
 	 * @param {Array.<String>} opts.ids Decision table IDs to search for
-	 * getBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesDecisiontablesSearch(opts) { 
 		opts = opts || {};
@@ -14103,7 +14092,6 @@ class BusinessRulesApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * getBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -14128,7 +14116,6 @@ class BusinessRulesApi {
 	/**
 	 * Get a list of schemas.
 	 * 
-	 * getBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchemas() { 
 
@@ -14150,7 +14137,6 @@ class BusinessRulesApi {
 	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName The core type's name
-	 * getBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchemasCoretype(coreTypeName) { 
 		// verify the required parameter 'coreTypeName' is set
@@ -14175,7 +14161,6 @@ class BusinessRulesApi {
 	/**
 	 * Get the core types from which all schemas are built.
 	 * 
-	 * getBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBusinessrulesSchemasCoretypes() { 
 
@@ -14198,7 +14183,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
-	 * patchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchBusinessrulesDecisiontable(tableId, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14230,7 +14214,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
-	 * patchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14265,7 +14248,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableExecute(tableId, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14297,7 +14279,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14333,7 +14314,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14369,7 +14349,6 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Create decision table row request
-	 * postBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14408,7 +14387,6 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
-	 * postBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, opts) { 
 		opts = opts || {};
@@ -14445,7 +14423,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * postBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersionSync(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -14475,7 +14452,6 @@ class BusinessRulesApi {
 	 * Create a new decision table version
 	 * 
 	 * @param {String} tableId Table ID
-	 * postBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontableVersions(tableId) { 
 		// verify the required parameter 'tableId' is set
@@ -14501,7 +14477,6 @@ class BusinessRulesApi {
 	 * Create a decision table
 	 * 
 	 * @param {Object} body Decision Table
-	 * postBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesDecisiontables(body) { 
 		// verify the required parameter 'body' is set
@@ -14527,7 +14502,6 @@ class BusinessRulesApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Business Rules Schema Create Request
-	 * postBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postBusinessrulesSchemas(body) { 
 		// verify the required parameter 'body' is set
@@ -14554,7 +14528,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
-	 * putBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion) { 
 		// verify the required parameter 'tableId' is set
@@ -14587,7 +14560,6 @@ class BusinessRulesApi {
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
 	 * @param {Object} body Full update decision table row request
-	 * putBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
 		// verify the required parameter 'tableId' is set
@@ -14626,7 +14598,6 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Business Rules Schema Update Request
-	 * putBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putBusinessrulesSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
@@ -14658,7 +14629,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -14728,7 +14699,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -15709,7 +15680,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -16286,7 +16257,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -17367,7 +17338,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -21176,6 +21147,46 @@ class ConversationsApi {
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'PATCH', 
 			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update conversation participant on behalf of a user
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} userId userId
+	 * @param {Object} body Participant request
+	 */
+	patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantUserUserId';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantUserUserId';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling patchConversationsCallParticipantUserUserId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallParticipantUserUserId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'participantId': participantId,'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -25924,7 +25935,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26010,7 +26021,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26180,7 +26191,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26232,7 +26243,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26361,7 +26372,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26512,7 +26523,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -26608,7 +26619,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -29855,7 +29866,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -30070,7 +30081,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -30279,7 +30290,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -32792,7 +32803,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -32922,7 +32933,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -33053,7 +33064,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -33595,7 +33606,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -34114,7 +34125,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -34975,7 +34986,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -35142,7 +35153,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -37790,7 +37801,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -39887,7 +39898,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -40102,114 +40113,6 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}', 
 			'DELETE', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'labelId': labelId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete category
-	 * 
-	 * @param {String} categoryId Category ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @deprecated
-	 */
-	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
-		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null || categoryId === '') {
-			throw 'Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}', 
-			'DELETE', 
-			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete document
-	 * 
-	 * @param {String} documentId Document ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @deprecated
-	 */
-	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null || documentId === '') {
-			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
-			'DELETE', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete import operation
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {String} importId Import ID
-	 * @deprecated
-	 */
-	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null || importId === '') {
-			throw 'Missing the required parameter "importId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
-			'DELETE', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
 			{  },
 			{  },
 			{  },
@@ -41044,312 +40947,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Get categories
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategories';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategories';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get category
-	 * 
-	 * @param {String} categoryId Category ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
-		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null || categoryId === '') {
-			throw 'Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}', 
-			'GET', 
-			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get document
-	 * 
-	 * @param {String} documentId Document ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null || documentId === '') {
-			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocument';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
-			'GET', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get document content upload status
-	 * 
-	 * @param {String} documentId Document ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {String} uploadId UploadId
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null || documentId === '') {
-			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
-		}
-		// verify the required parameter 'uploadId' is set
-		if (uploadId === undefined || uploadId === null || uploadId === '') {
-			throw 'Missing the required parameter "uploadId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}', 
-			'GET', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'uploadId': uploadId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get documents
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.categories Filter by categories ids, comma separated values expected.
-	 * @param {String} opts.title Filter by document title.
-	 * @param {Object} opts.sortBy Sort by.
-	 * @param {Object} opts.sortOrder Sort Order.
-	 * @param {Array.<String>} opts.documentIds Comma-separated list of document identifiers to fetch by.
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocuments';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocuments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'categories': opts['categories'],'title': opts['title'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'documentIds': this.apiClient.buildCollectionParam(opts['documentIds'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get import operation report
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {String} importId Import ID
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null || importId === '') {
-			throw 'Missing the required parameter "importId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get training detail
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {String} trainingId Training ID
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTraining';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTraining';
-		}
-		// verify the required parameter 'trainingId' is set
-		if (trainingId === undefined || trainingId === null || trainingId === '') {
-			throw 'Missing the required parameter "trainingId" when calling getKnowledgeKnowledgebaseLanguageTraining';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'trainingId': trainingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all trainings information for a knowledgebase
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTrainings';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTrainings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'knowledgeDocumentsState': opts['knowledgeDocumentsState'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get operations
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -42051,165 +41648,6 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}', 
 			'PATCH', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'labelId': labelId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update category
-	 * 
-	 * @param {String} categoryId Category ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null || categoryId === '') {
-			throw 'Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageCategory';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}', 
-			'PATCH', 
-			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update document
-	 * 
-	 * @param {String} documentId Document ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null || documentId === '') {
-			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocument';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocument';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
-			'PATCH', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update documents collection
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Array.<Object>} body 
-	 * @deprecated
-	 */
-	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start import operation
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {String} importId Import ID
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null || importId === '') {
-			throw 'Missing the required parameter "importId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
 			{  },
 			{  },
 			{  },
@@ -43190,222 +42628,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Create new category
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageCategories';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageCategories';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageCategories';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Upload Article Content
-	 * 
-	 * @param {String} documentId Document ID
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null || documentId === '') {
-			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
-		}
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads', 
-			'POST', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create document
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocuments';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocuments';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocuments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create import operation
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {Object} body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Promote trained documents from draft state to active.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @param {String} trainingId Training ID
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
-		}
-		// verify the required parameter 'trainingId' is set
-		if (trainingId === undefined || trainingId === null || trainingId === '') {
-			throw 'Missing the required parameter "trainingId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'trainingId': trainingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Trigger training
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainings';
-		}
-		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null || languageCode === '') {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Import the parsed articles
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -43464,36 +42686,6 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search Documents
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -43789,7 +42981,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -45008,7 +44200,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -45230,7 +44422,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -46263,7 +45455,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -46501,7 +45693,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -46737,7 +45929,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -46936,7 +46128,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -47295,7 +46487,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -47446,7 +46638,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -47679,7 +46871,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -48045,7 +47237,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -48369,7 +47561,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -48486,7 +47678,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -48961,7 +48153,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -50355,7 +49547,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -53574,6 +52766,31 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get performance data for a list of campaigns
+	 * 
+	 * @param {Array.<String>} body Campaign IDs. Maximum of 50 IDs allowed.
+	 */
+	postOutboundCampaignsPerformanceQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundCampaignsPerformanceQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/performance/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get progress for a list of campaigns
 	 * 
 	 * @param {Array.<String>} body Campaign IDs
@@ -55077,7 +54294,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -55821,7 +55038,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -56060,7 +55277,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -58005,7 +57222,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -59610,7 +58827,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -60120,7 +59337,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -60936,6 +60153,56 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get domain dkim settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainDkim(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainMailfrom(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a route
 	 * 
 	 * @param {String} domainName email domain
@@ -61022,6 +60289,31 @@ class RoutingApi {
 			'GET', 
 			{ 'domainName': domainName },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain verification settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainVerification(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -63320,6 +62612,61 @@ class RoutingApi {
 	}
 
 	/**
+	 * Restart domain dkim
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	postRoutingEmailDomainDkim(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Mail From Settings
+	 */
+	postRoutingEmailDomainMailfrom(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainMailfrom';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a route
 	 * 
 	 * @param {String} domainName email domain
@@ -63372,6 +62719,31 @@ class RoutingApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Restart domain verification
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	postRoutingEmailDomainVerification(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -64448,7 +63820,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -65325,7 +64697,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -65370,7 +64742,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -65846,7 +65218,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -66244,36 +65616,6 @@ class SearchApi {
 	}
 
 	/**
-	 * Search Documents
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Search locations
 	 * 
 	 * @param {Object} body Search request options
@@ -66564,7 +65906,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -66912,7 +66254,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -67255,8 +66597,12 @@ class SocialMediaApi {
 	 * Get a single escalation rule.
 	 * 
 	 * @param {String} escalationRuleId escalationRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand which fields, if any, to expand
 	 */
-	getSocialmediaEscalationrule(escalationRuleId) { 
+	getSocialmediaEscalationrule(escalationRuleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'escalationRuleId' is set
 		if (escalationRuleId === undefined || escalationRuleId === null || escalationRuleId === '') {
 			throw 'Missing the required parameter "escalationRuleId" when calling getSocialmediaEscalationrule';
@@ -67266,7 +66612,7 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/escalationrules/{escalationRuleId}', 
 			'GET', 
 			{ 'escalationRuleId': escalationRuleId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -68503,7 +67849,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -70150,7 +69496,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -70252,7 +69598,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -70391,7 +69737,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -72553,7 +71899,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -72858,7 +72204,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -73144,7 +72490,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -76637,7 +75983,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -76766,7 +76112,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -76920,7 +76266,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -77211,7 +76557,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -77546,7 +76892,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -77730,7 +77076,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -80739,7 +80085,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -80850,7 +80196,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -81572,7 +80918,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -82135,7 +81481,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -82573,7 +81919,7 @@ class WebDeploymentsApi {
 	}
 
 	/**
-	 * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+	 * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 	 * 
 	 * @param {Object} body webDeploymentsOAuthExchangeRequest
 	 */
@@ -82717,7 +82063,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -82863,7 +82209,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -83014,7 +82360,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -91014,7 +90360,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 233.0.0
+ * @version 234.0.0
  */
 class platformClient {
 	constructor() {

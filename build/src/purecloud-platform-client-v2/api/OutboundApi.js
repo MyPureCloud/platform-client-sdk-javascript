@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -3214,6 +3214,31 @@ class OutboundApi {
 			'POST', 
 			{  },
 			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get performance data for a list of campaigns
+	 * 
+	 * @param {Array.<String>} body Campaign IDs. Maximum of 50 IDs allowed.
+	 */
+	postOutboundCampaignsPerformanceQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundCampaignsPerformanceQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/performance/query', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

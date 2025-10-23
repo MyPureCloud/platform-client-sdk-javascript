@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 233.0.0
+	 * @version 234.0.0
 	 */
 
 	/**
@@ -3814,6 +3814,46 @@ class ConversationsApi {
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'PATCH', 
 			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update conversation participant on behalf of a user
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} userId userId
+	 * @param {Object} body Participant request
+	 */
+	patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantUserUserId';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantUserUserId';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling patchConversationsCallParticipantUserUserId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallParticipantUserUserId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'participantId': participantId,'userId': userId },
 			{  },
 			{  },
 			{  },

@@ -37,9 +37,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingAvailablemediatypes**](RoutingApi#getRoutingAvailablemediatypes) | **GET** /api/v2/routing/availablemediatypes | Get available media types
 [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
 [**getRoutingEmailDomain**](RoutingApi#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
+[**getRoutingEmailDomainDkim**](RoutingApi#getRoutingEmailDomainDkim) | **GET** /api/v2/routing/email/domains/{domainId}/dkim | Get domain dkim settings
+[**getRoutingEmailDomainMailfrom**](RoutingApi#getRoutingEmailDomainMailfrom) | **GET** /api/v2/routing/email/domains/{domainId}/mailfrom | Get domain mail from settings
 [**getRoutingEmailDomainRoute**](RoutingApi#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
 [**getRoutingEmailDomainRouteIdentityresolution**](RoutingApi#getRoutingEmailDomainRouteIdentityresolution) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution | Get a route identity resolution setting.
 [**getRoutingEmailDomainRoutes**](RoutingApi#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
+[**getRoutingEmailDomainVerification**](RoutingApi#getRoutingEmailDomainVerification) | **GET** /api/v2/routing/email/domains/{domainId}/verification | Get domain verification settings
 [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | **GET** /api/v2/routing/email/domains | Get domains
 [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | **GET** /api/v2/routing/email/outbound/domains/{domainId} | Get domain
 [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/activation | Get activation status (cname + dkim) of an outbound domain
@@ -121,8 +124,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsRoutingActivityQuery**](RoutingApi#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
 [**postRoutingAssessments**](RoutingApi#postRoutingAssessments) | **POST** /api/v2/routing/assessments | Create a benefit assessment.
 [**postRoutingAssessmentsJobs**](RoutingApi#postRoutingAssessmentsJobs) | **POST** /api/v2/routing/assessments/jobs | Create a benefit assessment job.
+[**postRoutingEmailDomainDkim**](RoutingApi#postRoutingEmailDomainDkim) | **POST** /api/v2/routing/email/domains/{domainId}/dkim | Restart domain dkim
+[**postRoutingEmailDomainMailfrom**](RoutingApi#postRoutingEmailDomainMailfrom) | **POST** /api/v2/routing/email/domains/{domainId}/mailfrom | Set domain mail from settings
 [**postRoutingEmailDomainRoutes**](RoutingApi#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this ACD domain
+[**postRoutingEmailDomainVerification**](RoutingApi#postRoutingEmailDomainVerification) | **POST** /api/v2/routing/email/domains/{domainId}/verification | Restart domain verification
 [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
 [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | **POST** /api/v2/routing/email/outbound/domains | Create a domain
 [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
@@ -1738,6 +1744,106 @@ apiInstance.getRoutingEmailDomain(domainId, opts)
 **InboundDomain**
 
 
+## getRoutingEmailDomainDkim
+
+> VerificationResult getRoutingEmailDomainDkim(domainId)
+
+
+GET /api/v2/routing/email/domains/{domainId}/dkim
+
+Get domain dkim settings
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.getRoutingEmailDomainDkim(domainId)
+  .then((data) => {
+    console.log(`getRoutingEmailDomainDkim success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomainDkim');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+
+### Return type
+
+**VerificationResult**
+
+
+## getRoutingEmailDomainMailfrom
+
+> MailFromResult getRoutingEmailDomainMailfrom(domainId)
+
+
+GET /api/v2/routing/email/domains/{domainId}/mailfrom
+
+Get domain mail from settings
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.getRoutingEmailDomainMailfrom(domainId)
+  .then((data) => {
+    console.log(`getRoutingEmailDomainMailfrom success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomainMailfrom');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+
+### Return type
+
+**MailFromResult**
+
+
 ## getRoutingEmailDomainRoute
 
 > InboundRoute getRoutingEmailDomainRoute(domainName, routeId, opts)
@@ -1796,7 +1902,7 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId, opts)
 
 ## getRoutingEmailDomainRouteIdentityresolution
 
-> IdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+> RouteIdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
 
 
 GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
@@ -1844,7 +1950,7 @@ apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**RouteIdentityResolutionConfig**
 
 
 ## getRoutingEmailDomainRoutes
@@ -1905,6 +2011,56 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 ### Return type
 
 **InboundRouteEntityListing**
+
+
+## getRoutingEmailDomainVerification
+
+> VerificationResult getRoutingEmailDomainVerification(domainId)
+
+
+GET /api/v2/routing/email/domains/{domainId}/verification
+
+Get domain verification settings
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.getRoutingEmailDomainVerification(domainId)
+  .then((data) => {
+    console.log(`getRoutingEmailDomainVerification success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomainVerification');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+
+### Return type
+
+**VerificationResult**
 
 
 ## getRoutingEmailDomains
@@ -4123,7 +4279,7 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
 
 ## getRoutingSmsIdentityresolutionPhonenumber
 
-> IdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(addressId)
+> SmsIdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(addressId)
 
 
 GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
@@ -4169,7 +4325,7 @@ apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**SmsIdentityResolutionConfig**
 
 
 ## getRoutingSmsPhonenumber
@@ -6349,6 +6505,108 @@ apiInstance.postRoutingAssessmentsJobs(opts)
 **BenefitAssessmentJob**
 
 
+## postRoutingEmailDomainDkim
+
+> VerificationResult postRoutingEmailDomainDkim(domainId)
+
+
+POST /api/v2/routing/email/domains/{domainId}/dkim
+
+Restart domain dkim
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.postRoutingEmailDomainDkim(domainId)
+  .then((data) => {
+    console.log(`postRoutingEmailDomainDkim success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailDomainDkim');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+
+### Return type
+
+**VerificationResult**
+
+
+## postRoutingEmailDomainMailfrom
+
+> MailFromResult postRoutingEmailDomainMailfrom(domainId, body)
+
+
+POST /api/v2/routing/email/domains/{domainId}/mailfrom
+
+Set domain mail from settings
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+let body = {}; // Object | Mail From Settings
+
+apiInstance.postRoutingEmailDomainMailfrom(domainId, body)
+  .then((data) => {
+    console.log(`postRoutingEmailDomainMailfrom success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailDomainMailfrom');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+ **body** | **Object** | Mail From Settings |  |
+
+### Return type
+
+**MailFromResult**
+
+
 ## postRoutingEmailDomainRoutes
 
 > InboundRoute postRoutingEmailDomainRoutes(domainName, body)
@@ -6455,6 +6713,56 @@ apiInstance.postRoutingEmailDomainTestconnection(domainId, opts)
 ### Return type
 
 **TestMessage**
+
+
+## postRoutingEmailDomainVerification
+
+> VerificationResult postRoutingEmailDomainVerification(domainId)
+
+
+POST /api/v2/routing/email/domains/{domainId}/verification
+
+Restart domain verification
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.postRoutingEmailDomainVerification(domainId)
+  .then((data) => {
+    console.log(`postRoutingEmailDomainVerification success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailDomainVerification');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+
+### Return type
+
+**VerificationResult**
 
 
 ## postRoutingEmailDomains
@@ -7648,7 +7956,7 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 
 ## putRoutingEmailDomainRouteIdentityresolution
 
-> IdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+> RouteIdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
 
 
 PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
@@ -7698,7 +8006,7 @@ apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, bo
 
 ### Return type
 
-**IdentityResolutionConfig**
+**RouteIdentityResolutionConfig**
 
 
 ## putRoutingEmailOutboundDomainActivation
@@ -8010,7 +8318,7 @@ apiInstance.putRoutingSettingsTranscription(body)
 
 ## putRoutingSmsIdentityresolutionPhonenumber
 
-> IdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+> SmsIdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
 
 
 PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
@@ -8058,7 +8366,7 @@ apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
 
 ### Return type
 
-**IdentityResolutionConfig**
+**SmsIdentityResolutionConfig**
 
 
 ## putRoutingUserDirectroutingbackupSettings
@@ -8425,4 +8733,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

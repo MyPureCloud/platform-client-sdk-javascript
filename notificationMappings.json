@@ -22,7 +22,7 @@
     },
     {
       "topic": "v2.analytics.queues.{id}.activity",
-      "class": "V2QueueObservationObservationNotification"
+      "class": "V2QueueObservationObservationCountNotification"
     },
     {
       "topic": "v2.analytics.queues.{id}.observations",
@@ -461,6 +461,10 @@
       "class": "V2StaTopicsDetectedTopicTopicsDetectedMessage"
     },
     {
+      "topic": "v2.speechandtextanalytics.conversations.{id}.categories",
+      "class": "V2StaConversationCategoriesStaConversationCategoriesMessage"
+    },
+    {
       "topic": "v2.speechandtextanalytics.programs.general.jobs.{id}",
       "class": "CreateGeneralProgramTopicsDefinitionsJob"
     },
@@ -479,6 +483,10 @@
     {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
       "class": "PublishTopicTopicsDefinitionsJob"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.topics.testphrase.jobs.{id}",
+      "class": "TestTopicPhraseTopicsDefinitionsJob"
     },
     {
       "topic": "v2.subscription.updated",
