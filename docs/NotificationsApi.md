@@ -418,4 +418,4 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body, opts)
 **ChannelTopicEntityListing**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

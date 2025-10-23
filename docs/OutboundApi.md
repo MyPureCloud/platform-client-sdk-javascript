@@ -125,6 +125,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundCampaignStop**](OutboundApi#postOutboundCampaignStop) | **POST** /api/v2/outbound/campaigns/{campaignId}/stop | Stop the campaign
 [**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
+[**postOutboundCampaignsPerformanceQuery**](OutboundApi#postOutboundCampaignsPerformanceQuery) | **POST** /api/v2/outbound/campaigns/performance/query | Get performance data for a list of campaigns
 [**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
 [**postOutboundContactlistClear**](OutboundApi#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 [**postOutboundContactlistContacts**](OutboundApi#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
@@ -6648,6 +6649,57 @@ apiInstance.postOutboundCampaigns(body, opts)
 **Campaign**
 
 
+## postOutboundCampaignsPerformanceQuery
+
+> CampaignPerformanceDataListing postOutboundCampaignsPerformanceQuery(body)
+
+
+POST /api/v2/outbound/campaigns/performance/query
+
+Get performance data for a list of campaigns
+
+Requires ANY permissions:
+
+* outbound:performance:view
+* outbound:campaign:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = ["body_example"]; // [String] | Campaign IDs. Maximum of 50 IDs allowed.
+
+apiInstance.postOutboundCampaignsPerformanceQuery(body)
+  .then((data) => {
+    console.log(`postOutboundCampaignsPerformanceQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignsPerformanceQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **[String]** | Campaign IDs. Maximum of 50 IDs allowed. |  |
+
+### Return type
+
+**CampaignPerformanceDataListing**
+
+
 ## postOutboundCampaignsProgress
 
 > [CampaignProgress] postOutboundCampaignsProgress(body)
@@ -9409,4 +9461,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

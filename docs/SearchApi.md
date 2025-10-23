@@ -20,7 +20,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postDocumentationGknSearch**](SearchApi#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
-[**postKnowledgeKnowledgebaseSearch**](SearchApi#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
 [**postLocationsSearch**](SearchApi#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
 [**postSearch**](SearchApi#postSearch) | **POST** /api/v2/search | Search resources.
 [**postSearchSuggest**](SearchApi#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
@@ -739,63 +738,6 @@ apiInstance.postGroupsSearch(body)
 **GroupsSearchResponse**
 
 
-## postKnowledgeKnowledgebaseSearch
-
-> KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
-
-Search Documents
-
-Requires ALL permissions:
-
-* knowledge:knowledgebase:search
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.SearchApi();
-
-let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
-  .then((data) => {
-    console.log(`postKnowledgeKnowledgebaseSearch success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postKnowledgeKnowledgebaseSearch');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **body** | **Object** |  | [optional]  |
-
-### Return type
-
-**KnowledgeSearchResponse**
-
-
 ## postLocationsSearch
 
 > LocationsSearchResponse postLocationsSearch(body)
@@ -1358,4 +1300,4 @@ apiInstance.postVoicemailSearch(body)
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

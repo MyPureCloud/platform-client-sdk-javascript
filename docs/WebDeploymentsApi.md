@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi#postWebdeploymentsConfigurationVersionsDraftPublish) | **POST** /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish | Publish the configuration draft and create a new version
 [**postWebdeploymentsConfigurations**](WebDeploymentsApi#postWebdeploymentsConfigurations) | **POST** /api/v2/webdeployments/configurations | Create a configuration draft
 [**postWebdeploymentsDeployments**](WebDeploymentsApi#postWebdeploymentsDeployments) | **POST** /api/v2/webdeployments/deployments | Create a deployment
-[**postWebdeploymentsTokenOauthcodegrantjwtexchange**](WebDeploymentsApi#postWebdeploymentsTokenOauthcodegrantjwtexchange) | **POST** /api/v2/webdeployments/token/oauthcodegrantjwtexchange | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+[**postWebdeploymentsTokenOauthcodegrantjwtexchange**](WebDeploymentsApi#postWebdeploymentsTokenOauthcodegrantjwtexchange) | **POST** /api/v2/webdeployments/token/oauthcodegrantjwtexchange | Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 [**postWebdeploymentsTokenRefresh**](WebDeploymentsApi#postWebdeploymentsTokenRefresh) | **POST** /api/v2/webdeployments/token/refresh | Refresh a JWT.
 [**putWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi#putWebdeploymentsConfigurationVersionsDraft) | **PUT** /api/v2/webdeployments/configurations/{configurationId}/versions/draft | Update the configuration draft
 [**putWebdeploymentsDeployment**](WebDeploymentsApi#putWebdeploymentsDeployment) | **PUT** /api/v2/webdeployments/deployments/{deploymentId} | Update a deployment
@@ -848,7 +848,7 @@ apiInstance.postWebdeploymentsDeployments(deployment)
 
 POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange
 
-Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 
 Requires NO permissions:
 
@@ -1090,4 +1090,4 @@ apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 **DeploymentIdentityResolutionConfig**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_

@@ -649,7 +649,7 @@ apiInstance.getSocialmediaAnalyticsMessagesJobResults(jobId, opts)
 
 ## getSocialmediaEscalationrule
 
-> EscalationRuleResponse getSocialmediaEscalationrule(escalationRuleId)
+> EscalationRuleResponse getSocialmediaEscalationrule(escalationRuleId, opts)
 
 
 GET /api/v2/socialmedia/escalationrules/{escalationRuleId}
@@ -674,8 +674,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
+let opts = { 
+  'expand': "expand_example" // String | which fields, if any, to expand
+};
 
-apiInstance.getSocialmediaEscalationrule(escalationRuleId)
+apiInstance.getSocialmediaEscalationrule(escalationRuleId, opts)
   .then((data) => {
     console.log(`getSocialmediaEscalationrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -691,6 +694,7 @@ apiInstance.getSocialmediaEscalationrule(escalationRuleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **escalationRuleId** | **String** | escalationRuleId |  |
+ **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: dataIngestionRule |
 
 ### Return type
 
@@ -2811,4 +2815,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@233.0.0_
+_purecloud-platform-client-v2@234.0.0_
