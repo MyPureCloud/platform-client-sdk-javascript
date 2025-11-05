@@ -161,7 +161,7 @@ apiInstance.getGdprSubjects(searchType, searchValue)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **searchType** | **String** | Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER, INSTAGRAM, FACEBOOK |
+ **searchType** | **String** | Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER, INSTAGRAM, FACEBOOK, APPLE_MESSAGES, EXTERNAL_ID |
  **searchValue** | **String** | Search Value |  |
 
 ### Return type
@@ -223,4 +223,4 @@ apiInstance.postGdprRequests(body, opts)
 **GDPRRequest**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_

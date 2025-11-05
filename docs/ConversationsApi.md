@@ -1573,8 +1573,6 @@ GET /api/v2/conversations/{conversationId}/communications/{communicationId}/inte
 
 Get message
 
-getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:internalMessaging:view
@@ -1628,8 +1626,6 @@ apiInstance.getConversationCommunicationInternalmessage(conversationId, communic
 GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
 
 Get messages for communication
-
-getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2042,7 +2038,7 @@ apiInstance.getConversationSuggestions(conversationId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
+ **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer |
  **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
 
 ### Return type
@@ -3865,8 +3861,6 @@ GET /api/v2/conversations/internalmessages/{conversationId}
 
 Get internal message conversation
 
-getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:internalMessaging:view
@@ -3916,8 +3910,6 @@ apiInstance.getConversationsInternalmessage(conversationId)
 GET /api/v2/conversations/internalmessages
 
 Get active internal message conversations for the logged in user
-
-getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -9637,8 +9629,6 @@ Send internal message
 
 Send a new internal message for an existing communication.
 
-postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:internalMessaging:create
@@ -9854,8 +9844,6 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/interna
 Setup internal message communication with user
 
 The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-
-postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -13074,7 +13062,7 @@ POST /api/v2/conversations/messages/{conversationId}/messages/bulk
 
 Get messages in batch
 
-The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 
 Requires ANY permissions:
 
@@ -15512,4 +15500,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_

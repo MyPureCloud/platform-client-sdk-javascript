@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModules**](LearningApi#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
 [**getLearningModulesAssignments**](LearningApi#getLearningModulesAssignments) | **GET** /api/v2/learning/modules/assignments | Get all learning modules of an organization including assignments for a specific user
 [**getLearningModulesCoverartCoverArtId**](LearningApi#getLearningModulesCoverartCoverArtId) | **GET** /api/v2/learning/modules/coverart/{coverArtId} | Get a specific Learning Module cover art using ID
+[**getLearningScheduleslotsJob**](LearningApi#getLearningScheduleslotsJob) | **GET** /api/v2/learning/scheduleslots/jobs/{jobId} | Retrieve the status of the job for the slots where a learning activity can be scheduled.
 [**getLearningScormScormId**](LearningApi#getLearningScormScormId) | **GET** /api/v2/learning/scorm/{scormId} | Get Learning SCORM Result
 [**patchLearningAssignment**](LearningApi#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**patchLearningAssignmentReschedule**](LearningApi#patchLearningAssignmentReschedule) | **PATCH** /api/v2/learning/assignments/{assignmentId}/reschedule | Reschedule Learning Assignment
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLearningModulePublish**](LearningApi#postLearningModulePublish) | **POST** /api/v2/learning/modules/{moduleId}/publish | Publish a Learning module
 [**postLearningModules**](LearningApi#postLearningModules) | **POST** /api/v2/learning/modules | Create a new learning module
 [**postLearningRulesQuery**](LearningApi#postLearningRulesQuery) | **POST** /api/v2/learning/rules/query | Get users for learning module rule
+[**postLearningScheduleslotsJobs**](LearningApi#postLearningScheduleslotsJobs) | **POST** /api/v2/learning/scheduleslots/jobs | Start job to retrieve slots where a learning activity can be scheduled.
 [**postLearningScheduleslotsQuery**](LearningApi#postLearningScheduleslotsQuery) | **POST** /api/v2/learning/scheduleslots/query | Get list of possible slots where a learning activity can be scheduled.
 [**postLearningScorm**](LearningApi#postLearningScorm) | **POST** /api/v2/learning/scorm | Create a SCORM package upload request
 [**putLearningModule**](LearningApi#putLearningModule) | **PUT** /api/v2/learning/modules/{moduleId} | Update a learning module
@@ -869,6 +871,56 @@ apiInstance.getLearningModulesCoverartCoverArtId(coverArtId)
 ### Return type
 
 **LearningModuleCoverArtResponse**
+
+
+## getLearningScheduleslotsJob
+
+> LearningScheduleSlotsJobResponse getLearningScheduleslotsJob(jobId)
+
+
+GET /api/v2/learning/scheduleslots/jobs/{jobId}
+
+Retrieve the status of the job for the slots where a learning activity can be scheduled.
+
+Requires ANY permissions:
+
+* learning:scheduleSlotJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getLearningScheduleslotsJob(jobId)
+  .then((data) => {
+    console.log(`getLearningScheduleslotsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningScheduleslotsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of the job |  |
+
+### Return type
+
+**LearningScheduleSlotsJobResponse**
 
 
 ## getLearningScormScormId
@@ -1717,6 +1769,56 @@ apiInstance.postLearningRulesQuery(pageSize, pageNumber, body)
 **LearningAssignmentUserListing**
 
 
+## postLearningScheduleslotsJobs
+
+> LearningScheduleSlotsJobResponse postLearningScheduleslotsJobs(body)
+
+
+POST /api/v2/learning/scheduleslots/jobs
+
+Start job to retrieve slots where a learning activity can be scheduled.
+
+Requires ANY permissions:
+
+* learning:scheduleSlotJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let body = {}; // Object | The slots search request
+
+apiInstance.postLearningScheduleslotsJobs(body)
+  .then((data) => {
+    console.log(`postLearningScheduleslotsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningScheduleslotsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The slots search request |  |
+
+### Return type
+
+**LearningScheduleSlotsJobResponse**
+
+
 ## postLearningScheduleslotsQuery
 
 > LearningScheduleSlotsQueryResponse postLearningScheduleslotsQuery(body)
@@ -1985,4 +2087,4 @@ apiInstance.putLearningModuleRule(moduleId, body, opts)
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_
