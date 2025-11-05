@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 234.0.0
+ * @version 235.0.0
  */
 class ApiClient {
 	/**
@@ -208,6 +208,50 @@ class ApiClient {
 	setEnvironment(environment) {
 		this.config.setEnvironment(environment);
 	}
+
+	/**
+     * @description Sets the optional http headers used by the client
+     * @param {object} newHeaders - default headers to be used
+     */
+	setDefaultHeaders(newHeaders) {
+        if (!newHeaders || !(typeof newHeaders === 'object')) {
+            throw new Error("default headers must be a map");
+        }
+        this.defaultHeaders = newHeaders;
+    }
+
+	/**
+     * @description Gets the default http headers used by the client
+     */
+	getDefaultHeaders() {
+		return this.defaultHeaders;
+    }
+
+	/**
+     * @description Sets the optional Genesys-App http header used by the client
+     * @param {string} headerValue - value for the Genesys-App header
+     */
+	setGenesysAppHeader(headerValue) {
+		if (!headerValue || !(typeof headerValue === 'string')) throw new Error("headerValue must be a non empty string");
+        if (!this.defaultHeaders) {
+			this.defaultHeaders = {
+				"Genesys-App": headerValue
+			};
+		} else {
+			this.defaultHeaders["Genesys-App"] = headerValue;
+		}
+    }
+
+	/**
+     * @description Gets the Genesys-App http header used by the client
+     */
+	getGenesysAppHeader() {
+		if (this.defaultHeaders && this.defaultHeaders["Genesys-App"]) {
+			return this.defaultHeaders["Genesys-App"];
+		} else {
+			return null;
+		}
+    }
 
     /**
      * @description Sets the dynamic HttpClient used by the client

@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**
@@ -551,6 +551,51 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query managers in a profile during a period of time
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 100)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsManagers';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsManagers';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsManagers';
+		}
+		// verify the required parameter 'startWorkday' is set
+		if (startWorkday === undefined || startWorkday === null) {
+			throw 'Missing the required parameter "startWorkday" when calling getGamificationInsightsManagers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/managers', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday,'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 

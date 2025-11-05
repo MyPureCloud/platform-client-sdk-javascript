@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**

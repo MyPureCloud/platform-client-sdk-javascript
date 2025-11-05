@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**
@@ -317,6 +317,31 @@ class CoachingApi {
 	}
 
 	/**
+	 * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+	 * 
+	 * @param {String} jobId The ID of job
+	 */
+	getCoachingScheduleslotsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getCoachingScheduleslotsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/scheduleslots/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an existing appointment
 	 * Permission not required if you are the creator or facilitator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
@@ -539,6 +564,31 @@ class CoachingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start job to retrieve the slots where a coaching appointment can be scheduled.
+	 * 
+	 * @param {Object} body The slots search request
+	 */
+	postCoachingScheduleslotsJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingScheduleslotsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/scheduleslots/jobs', 
 			'POST', 
 			{  },
 			{  },

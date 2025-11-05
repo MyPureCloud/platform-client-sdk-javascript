@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**
@@ -1070,59 +1070,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Get the most recent published version of an evaluation form across any division.
-	 * 
-	 * @param {String} evaluationFormId Evaluation Form ID
-	 * getQualityPublishedformsEvaluationsDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getQualityPublishedformsEvaluationsDivisionview(evaluationFormId) { 
-		// verify the required parameter 'evaluationFormId' is set
-		if (evaluationFormId === undefined || evaluationFormId === null || evaluationFormId === '') {
-			throw 'Missing the required parameter "evaluationFormId" when calling getQualityPublishedformsEvaluationsDivisionview';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}', 
-			'GET', 
-			{ 'evaluationFormId': evaluationFormId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the published evaluation forms across any division.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.name Name
-	 * getQualityPublishedformsEvaluationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getQualityPublishedformsEvaluationsDivisionviews(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/publishedforms/evaluations/divisionviews', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the most recent published version of a survey form.
 	 * 
 	 * @param {String} formId Form ID
@@ -1165,59 +1112,6 @@ class QualityApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestEnabledPerContext': opts['onlyLatestEnabledPerContext'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the most recent published version of an enabled survey form across any division.
-	 * 
-	 * @param {String} surveyFormId Survey Form ID
-	 * getQualityPublishedformsSurveysDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getQualityPublishedformsSurveysDivisionview(surveyFormId) { 
-		// verify the required parameter 'surveyFormId' is set
-		if (surveyFormId === undefined || surveyFormId === null || surveyFormId === '') {
-			throw 'Missing the required parameter "surveyFormId" when calling getQualityPublishedformsSurveysDivisionview';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}', 
-			'GET', 
-			{ 'surveyFormId': surveyFormId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the published and enabled survey forms across any division.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.name Name
-	 * getQualityPublishedformsSurveysDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getQualityPublishedformsSurveysDivisionviews(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/publishedforms/surveys/divisionviews', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 

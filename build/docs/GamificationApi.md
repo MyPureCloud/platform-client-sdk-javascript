@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationInsightsDetails**](GamificationApi#getGamificationInsightsDetails) | **GET** /api/v2/gamification/insights/details | Get insights details for the current user
 [**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | **GET** /api/v2/gamification/insights/groups/trends | Get insights overall trend for the current user
 [**getGamificationInsightsGroupsTrendsAll**](GamificationApi#getGamificationInsightsGroupsTrendsAll) | **GET** /api/v2/gamification/insights/groups/trends/all | Get insights overall trend
+[**getGamificationInsightsManagers**](GamificationApi#getGamificationInsightsManagers) | **GET** /api/v2/gamification/insights/managers | Query managers in a profile during a period of time
 [**getGamificationInsightsMembers**](GamificationApi#getGamificationInsightsMembers) | **GET** /api/v2/gamification/insights/members | Query users in a profile during a period of time
 [**getGamificationInsightsRankings**](GamificationApi#getGamificationInsightsRankings) | **GET** /api/v2/gamification/insights/rankings | Get insights rankings
 [**getGamificationInsightsTrends**](GamificationApi#getGamificationInsightsTrends) | **GET** /api/v2/gamification/insights/trends | Get insights user trend for the current user
@@ -998,6 +999,68 @@ apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granula
 ### Return type
 
 **InsightsTrend**
+
+
+## getGamificationInsightsManagers
+
+> InsightsAgents getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, opts)
+
+
+GET /api/v2/gamification/insights/managers
+
+Query managers in a profile during a period of time
+
+Requires ANY permissions:
+
+* gamification:insights:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type.
+let granularity = "granularity_example"; // String | Granularity
+let startWorkday = "startWorkday_example"; // String | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'pageSize': 100, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationInsightsManagers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationInsightsManagers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+ **filterId** | **String** | ID for the filter type. |  |
+ **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
+ **startWorkday** | **String** | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 100] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+
+### Return type
+
+**InsightsAgents**
 
 
 ## getGamificationInsightsMembers
@@ -4296,4 +4359,4 @@ apiInstance.putGamificationStatus(status)
 **GamificationStatus**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_

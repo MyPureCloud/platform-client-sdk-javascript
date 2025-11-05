@@ -4691,7 +4691,8 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
-  'weekNumbers': ["weekNumbers_example"] // [String] | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+  'weekNumbers': ["weekNumbers_example"], // [String] | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+  'expand': ["expand_example"] // [String] | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts)
@@ -4713,6 +4714,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequi
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **weekNumbers** | **[String]** | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
+ **expand** | **[String]** | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) | [optional] <br />**Values**: results.planningGroupStaffingRequirements.minimumStaffPerInterval, results.planningGroupStaffingRequirements.effectiveStaffPerInterval |
 
 ### Return type
 
@@ -14418,4 +14420,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_

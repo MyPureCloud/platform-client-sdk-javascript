@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**
@@ -2405,6 +2405,7 @@ class WorkforceManagementApi {
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+	 * @param {Array.<String>} opts.expand Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -2426,7 +2427,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{ 'weekNumbers': this.apiClient.buildCollectionParam(opts['weekNumbers'], 'multi') },
+			{ 'weekNumbers': this.apiClient.buildCollectionParam(opts['weekNumbers'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

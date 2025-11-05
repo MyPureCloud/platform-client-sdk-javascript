@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**
@@ -677,7 +677,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {String} messageId messageId
-	 * getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationCommunicationInternalmessage(conversationId, communicationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
@@ -715,7 +714,6 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationCommunicationInternalmessages(conversationId, communicationId, opts) { 
 		opts = opts || {};
@@ -1977,7 +1975,6 @@ class ConversationsApi {
 	 * Get internal message conversation
 	 * 
 	 * @param {String} conversationId conversationId
-	 * getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsInternalmessage(conversationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -2002,7 +1999,6 @@ class ConversationsApi {
 	/**
 	 * Get active internal message conversations for the logged in user
 	 * 
-	 * getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsInternalmessages() { 
 
@@ -5201,7 +5197,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
-	 * postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationCommunicationInternalmessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5330,7 +5325,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Confer request
-	 * postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -7240,7 +7234,7 @@ class ConversationsApi {
 
 	/**
 	 * Get messages in batch
-	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
+	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 	 * @param {String} conversationId 
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)

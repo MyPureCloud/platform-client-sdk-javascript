@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**
@@ -436,6 +436,31 @@ class LearningApi {
 			'/api/v2/learning/modules/coverart/{coverArtId}', 
 			'GET', 
 			{ 'coverArtId': coverArtId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the status of the job for the slots where a learning activity can be scheduled.
+	 * 
+	 * @param {String} jobId The ID of the job
+	 */
+	getLearningScheduleslotsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getLearningScheduleslotsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/scheduleslots/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -880,6 +905,31 @@ class LearningApi {
 			'POST', 
 			{  },
 			{ 'pageSize': pageSize,'pageNumber': pageNumber },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start job to retrieve slots where a learning activity can be scheduled.
+	 * 
+	 * @param {Object} body The slots search request
+	 */
+	postLearningScheduleslotsJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningScheduleslotsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/scheduleslots/jobs', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

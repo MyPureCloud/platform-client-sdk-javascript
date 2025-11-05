@@ -702,6 +702,7 @@ docs/getCoachingAppointments-example.txt
 docs/getCoachingAppointmentsMe-example.txt
 docs/getCoachingNotification-example.txt
 docs/getCoachingNotifications-example.txt
+docs/getCoachingScheduleslotsJob-example.txt
 docs/getContentmanagementDocument-example.txt
 docs/getContentmanagementDocumentContent-example.txt
 docs/getContentmanagementDocuments-example.txt
@@ -956,6 +957,7 @@ docs/getGamificationInsights-example.txt
 docs/getGamificationInsightsDetails-example.txt
 docs/getGamificationInsightsGroupsTrends-example.txt
 docs/getGamificationInsightsGroupsTrendsAll-example.txt
+docs/getGamificationInsightsManagers-example.txt
 docs/getGamificationInsightsMembers-example.txt
 docs/getGamificationInsightsRankings-example.txt
 docs/getGamificationInsightsTrends-example.txt
@@ -1212,6 +1214,7 @@ docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
 docs/getLearningModulesAssignments-example.txt
 docs/getLearningModulesCoverartCoverArtId-example.txt
+docs/getLearningScheduleslotsJob-example.txt
 docs/getLearningScormScormId-example.txt
 docs/getLicenseDefinition-example.txt
 docs/getLicenseDefinitions-example.txt
@@ -1388,12 +1391,8 @@ docs/getQualityPublishedform-example.txt
 docs/getQualityPublishedforms-example.txt
 docs/getQualityPublishedformsEvaluation-example.txt
 docs/getQualityPublishedformsEvaluations-example.txt
-docs/getQualityPublishedformsEvaluationsDivisionview-example.txt
-docs/getQualityPublishedformsEvaluationsDivisionviews-example.txt
 docs/getQualityPublishedformsSurvey-example.txt
 docs/getQualityPublishedformsSurveys-example.txt
-docs/getQualityPublishedformsSurveysDivisionview-example.txt
-docs/getQualityPublishedformsSurveysDivisionviews-example.txt
 docs/getQualitySurvey-example.txt
 docs/getQualitySurveysScorable-example.txt
 docs/getRecordingBatchrequest-example.txt
@@ -2282,6 +2281,7 @@ docs/postCoachingAppointmentAnnotations-example.txt
 docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
 docs/postCoachingAppointmentsAggregatesQuery-example.txt
+docs/postCoachingScheduleslotsJobs-example.txt
 docs/postCoachingScheduleslotsQuery-example.txt
 docs/postContentmanagementDocument-example.txt
 docs/postContentmanagementDocumentContent-example.txt
@@ -2587,6 +2587,7 @@ docs/postLearningModuleJobs-example.txt
 docs/postLearningModulePublish-example.txt
 docs/postLearningModules-example.txt
 docs/postLearningRulesQuery-example.txt
+docs/postLearningScheduleslotsJobs-example.txt
 docs/postLearningScheduleslotsQuery-example.txt
 docs/postLearningScorm-example.txt
 docs/postLicenseInfer-example.txt

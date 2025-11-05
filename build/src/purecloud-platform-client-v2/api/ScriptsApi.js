@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 234.0.0
+	 * @version 235.0.0
 	 */
 
 	/**

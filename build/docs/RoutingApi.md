@@ -3253,7 +3253,7 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **name** | **String** | Filter by queue member name (contains-style search) | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill (contains-style search) | [optional]  |
  **skills** | **[String]** | Filter by skill (contains-style search) | [optional]  |
@@ -3332,7 +3332,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -8733,4 +8733,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_

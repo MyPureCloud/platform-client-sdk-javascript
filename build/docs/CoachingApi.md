@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getCoachingAppointmentsMe**](CoachingApi#getCoachingAppointmentsMe) | **GET** /api/v2/coaching/appointments/me | Get my appointments for a given date range
 [**getCoachingNotification**](CoachingApi#getCoachingNotification) | **GET** /api/v2/coaching/notifications/{notificationId} | Get an existing notification
 [**getCoachingNotifications**](CoachingApi#getCoachingNotifications) | **GET** /api/v2/coaching/notifications | Retrieve the list of your notifications.
+[**getCoachingScheduleslotsJob**](CoachingApi#getCoachingScheduleslotsJob) | **GET** /api/v2/coaching/scheduleslots/jobs/{jobId} | Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
 [**patchCoachingAppointment**](CoachingApi#patchCoachingAppointment) | **PATCH** /api/v2/coaching/appointments/{appointmentId} | Update an existing appointment
 [**patchCoachingAppointmentAnnotation**](CoachingApi#patchCoachingAppointmentAnnotation) | **PATCH** /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId} | Update an existing annotation.
 [**patchCoachingAppointmentStatus**](CoachingApi#patchCoachingAppointmentStatus) | **PATCH** /api/v2/coaching/appointments/{appointmentId}/status | Update the status of a coaching appointment
@@ -24,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postCoachingAppointmentConversations**](CoachingApi#postCoachingAppointmentConversations) | **POST** /api/v2/coaching/appointments/{appointmentId}/conversations | Add a conversation to an appointment
 [**postCoachingAppointments**](CoachingApi#postCoachingAppointments) | **POST** /api/v2/coaching/appointments | Create a new appointment
 [**postCoachingAppointmentsAggregatesQuery**](CoachingApi#postCoachingAppointmentsAggregatesQuery) | **POST** /api/v2/coaching/appointments/aggregates/query | Retrieve aggregated appointment data
+[**postCoachingScheduleslotsJobs**](CoachingApi#postCoachingScheduleslotsJobs) | **POST** /api/v2/coaching/scheduleslots/jobs | Start job to retrieve the slots where a coaching appointment can be scheduled.
 [**postCoachingScheduleslotsQuery**](CoachingApi#postCoachingScheduleslotsQuery) | **POST** /api/v2/coaching/scheduleslots/query | Get list of possible slots where a coaching appointment can be scheduled.
 
 
@@ -609,6 +611,56 @@ apiInstance.getCoachingNotifications(opts)
 **CoachingNotificationList**
 
 
+## getCoachingScheduleslotsJob
+
+> CoachingScheduleSlotsJobResponse getCoachingScheduleslotsJob(jobId)
+
+
+GET /api/v2/coaching/scheduleslots/jobs/{jobId}
+
+Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+
+Requires ANY permissions:
+
+* coaching:scheduleSlotJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CoachingApi();
+
+let jobId = "jobId_example"; // String | The ID of job
+
+apiInstance.getCoachingScheduleslotsJob(jobId)
+  .then((data) => {
+    console.log(`getCoachingScheduleslotsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getCoachingScheduleslotsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of job |  |
+
+### Return type
+
+**CoachingScheduleSlotsJobResponse**
+
+
 ## patchCoachingAppointment
 
 > CoachingAppointmentResponse patchCoachingAppointment(appointmentId, body)
@@ -1036,6 +1088,56 @@ apiInstance.postCoachingAppointmentsAggregatesQuery(body)
 **CoachingAppointmentAggregateResponse**
 
 
+## postCoachingScheduleslotsJobs
+
+> CoachingScheduleSlotsJobResponse postCoachingScheduleslotsJobs(body)
+
+
+POST /api/v2/coaching/scheduleslots/jobs
+
+Start job to retrieve the slots where a coaching appointment can be scheduled.
+
+Requires ANY permissions:
+
+* coaching:scheduleSlotJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CoachingApi();
+
+let body = {}; // Object | The slots search request
+
+apiInstance.postCoachingScheduleslotsJobs(body)
+  .then((data) => {
+    console.log(`postCoachingScheduleslotsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCoachingScheduleslotsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The slots search request |  |
+
+### Return type
+
+**CoachingScheduleSlotsJobResponse**
+
+
 ## postCoachingScheduleslotsQuery
 
 > CoachingSlotsResponse postCoachingScheduleslotsQuery(body)
@@ -1086,4 +1188,4 @@ apiInstance.postCoachingScheduleslotsQuery(body)
 **CoachingSlotsResponse**
 
 
-_purecloud-platform-client-v2@234.0.0_
+_purecloud-platform-client-v2@235.0.0_
