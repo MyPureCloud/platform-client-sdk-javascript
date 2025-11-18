@@ -80,6 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | **GET** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations
 [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | **GET** /api/v2/conversations/keyconfigurations | Get a list of key configurations data
 [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
+[**getConversationsMessageCommunicationMessagesMedia**](ConversationsApi#getConversationsMessageCommunicationMessagesMedia) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Get message media list by status
 [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi#getConversationsMessageCommunicationMessagesMediaMediaId) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} | Get media
 [**getConversationsMessageDetails**](ConversationsApi#getConversationsMessageDetails) | **GET** /api/v2/conversations/messages/{messageId}/details | Get message
 [**getConversationsMessageMessage**](ConversationsApi#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get conversation message
@@ -4088,6 +4089,66 @@ apiInstance.getConversationsMessage(conversationId)
 ### Return type
 
 **MessageConversation**
+
+
+## getConversationsMessageCommunicationMessagesMedia
+
+> MessageMediaListing getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
+
+
+GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
+
+Get message media list by status
+
+Requires ANY permissions:
+
+* conversation:messageMedia:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'status': "status_example", // String | The status on which to filter the response.
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessageCommunicationMessagesMedia success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageCommunicationMessagesMedia');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **status** | **String** | The status on which to filter the response. | [optional] <br />**Values**: uploading, valid, invalid |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**MessageMediaListing**
 
 
 ## getConversationsMessageCommunicationMessagesMediaMediaId
@@ -15500,4 +15561,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@235.0.0_
+_purecloud-platform-client-v2@236.0.0_
