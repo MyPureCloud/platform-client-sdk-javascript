@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 235.0.0
+	 * @version 236.0.0
 	 */
 
 	/**
@@ -181,7 +181,7 @@ class ObjectsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Page size (max 200, default 25) (default to 25)
 	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Optionally request specific divisions by division name
 	 */

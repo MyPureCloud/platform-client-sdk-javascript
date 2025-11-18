@@ -105,6 +105,10 @@
       "class": "TranscriptionTopicTranscriptionMessage"
     },
     {
+      "topic": "v2.detail.events.agent.{id}.state",
+      "class": "AgentStateEventTopicAgentStateEventNotification"
+    },
+    {
       "topic": "v2.detail.events.collaboratechat.adhoc.{id}.messages",
       "class": "CollaborateChatAdhocMessageEventTopicCollaborateChatMessage"
     },
@@ -251,6 +255,10 @@
     {
       "topic": "v2.journey.sessions.{id}.web.events",
       "class": "JourneyWebEventsNotificationWebEventsNotification"
+    },
+    {
+      "topic": "v2.journey.views.jobs.{id}.notification",
+      "class": "JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2"
     },
     {
       "topic": "v2.managementunits.{id}.workforcemanagement.intraday",

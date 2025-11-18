@@ -629,7 +629,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'pageSize': "25", // String | Page size (max 200, default 25)
   'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
   'name': "name_example" // String | Optionally request specific divisions by division name
 };
@@ -651,7 +651,7 @@ apiInstance.getAuthorizationDivisionsQuery(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **pageSize** | **String** | Page size (max 200, default 25) | [optional] [default to 25] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Optionally request specific divisions by division name | [optional]  |
 
@@ -3257,4 +3257,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@235.0.0_
+_purecloud-platform-client-v2@236.0.0_

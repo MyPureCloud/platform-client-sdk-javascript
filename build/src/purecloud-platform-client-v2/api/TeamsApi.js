@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 235.0.0
+	 * @version 236.0.0
 	 */
 
 	/**

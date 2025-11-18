@@ -778,6 +778,7 @@ docs/getConversationsInternalmessages-example.txt
 docs/getConversationsKeyconfiguration-example.txt
 docs/getConversationsKeyconfigurations-example.txt
 docs/getConversationsMessage-example.txt
+docs/getConversationsMessageCommunicationMessagesMedia-example.txt
 docs/getConversationsMessageCommunicationMessagesMediaMediaId-example.txt
 docs/getConversationsMessageDetails-example.txt
 docs/getConversationsMessageMessage-example.txt

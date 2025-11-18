@@ -8733,4 +8733,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@235.0.0_
+_purecloud-platform-client-v2@236.0.0_

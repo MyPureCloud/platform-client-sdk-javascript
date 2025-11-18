@@ -688,7 +688,7 @@ apiInstance.getLearningModuleVersion(moduleId, versionId, opts)
 
 ## getLearningModules
 
-> LearningModulesDomainEntityListing getLearningModules(opts)
+> LearningModuleList getLearningModules(opts)
 
 
 GET /api/v2/learning/modules
@@ -755,7 +755,7 @@ apiInstance.getLearningModules(opts)
 
 ### Return type
 
-**LearningModulesDomainEntityListing**
+**LearningModuleList**
 
 
 ## getLearningModulesAssignments
@@ -2087,4 +2087,4 @@ apiInstance.putLearningModuleRule(moduleId, body, opts)
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@235.0.0_
+_purecloud-platform-client-v2@236.0.0_

@@ -5,7 +5,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 235.0.0
+	 * @version 236.0.0
 	 */
 
 	/**

@@ -2660,7 +2660,7 @@ void (no response body)
 
 ## patchTaskmanagementWorkitemUserWrapups
 
-> WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
+> void patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
@@ -2689,8 +2689,8 @@ let userId = "userId_example"; // String | The ID of the user
 let body = {}; // Object | Request body to add/remove a wrapup code for a workitem
 
 apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
-  .then((data) => {
-    console.log(`patchTaskmanagementWorkitemUserWrapups success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('patchTaskmanagementWorkitemUserWrapups returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling patchTaskmanagementWorkitemUserWrapups');
@@ -2709,12 +2709,12 @@ apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
 
 ### Return type
 
-**WorkitemWrapup**
+void (no response body)
 
 
 ## patchTaskmanagementWorkitemUsersMeWrapups
 
-> WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
+> void patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups
@@ -2742,8 +2742,8 @@ let workitemId = "workitemId_example"; // String | The ID of the Workitem.
 let body = {}; // Object | Request body to add/remove the wrapup code for workitem
 
 apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
-  .then((data) => {
-    console.log(`patchTaskmanagementWorkitemUsersMeWrapups success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('patchTaskmanagementWorkitemUsersMeWrapups returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling patchTaskmanagementWorkitemUsersMeWrapups');
@@ -2761,7 +2761,7 @@ apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 
 ### Return type
 
-**WorkitemWrapup**
+void (no response body)
 
 
 ## patchTaskmanagementWorkitemsBulkAddJob
@@ -4054,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@235.0.0_
+_purecloud-platform-client-v2@236.0.0_

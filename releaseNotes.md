@@ -1,291 +1,202 @@
-Platform API version: 9727
+Platform API version: 9766
 
 
 
 
-# Major Changes (17 changes)
+# Major Changes (5 changes)
 
-**/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}** (1 change)
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups** (1 change)
 
-* Path /api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId} was removed
+* Response 200 was removed
 
-**/api/v2/quality/publishedforms/evaluations/divisionviews** (1 change)
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups** (1 change)
 
-* Path /api/v2/quality/publishedforms/evaluations/divisionviews was removed
+* Response 200 was removed
 
-**/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}** (1 change)
+**GET /api/v2/learning/modules** (1 change)
 
-* Path /api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId} was removed
+* Response 200 type was changed from LearningModulesDomainEntityListing to LearningModuleList
 
-**/api/v2/quality/publishedforms/surveys/divisionviews** (1 change)
+**LearningModulesDomainEntityListing** (1 change)
 
-* Path /api/v2/quality/publishedforms/surveys/divisionviews was removed
+* Model LearningModulesDomainEntityListing was removed
 
-**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement** (1 change)
+**WebMessagingButtonResponse** (1 change)
 
-* Parameter expand was added
-
-**EvaluationFormDivisionView** (1 change)
-
-* Model EvaluationFormDivisionView was removed
-
-**EvaluationFormDivisionViewListing** (1 change)
-
-* Model EvaluationFormDivisionViewListing was removed
-
-**SurveyFormDivisionView** (1 change)
-
-* Model SurveyFormDivisionView was removed
-
-**SurveyFormDivisionViewListing** (1 change)
-
-* Model SurveyFormDivisionViewListing was removed
-
-**RecordingEmailMessage** (1 change)
-
-* Property replyTo was removed
-
-**BillingCharge** (4 changes)
-
-* Property getprepaidQuantity was removed
-* Property getfairuseQuantity was removed
-* Property getactualQuantity was removed
-* Property getoverageQuantity was removed
-
-**BillingContract** (1 change)
-
-* Property getpurchaseOrderNumbers was removed
-
-**InvoiceAddress** (2 changes)
-
-* Property getdateEffective was removed
-* Property getcitySubdivision1 was removed
+* Required property originatingMessageId was added
 
 
-# Minor Changes (72 changes)
+# Minor Changes (46 changes)
 
-**/api/v2/gamification/insights/managers** (2 changes)
+**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (1 change)
 
-* Path was added
-* Operation GET was added
+* Operation get was added. Summary: Get message media list by status
 
-**/api/v2/coaching/scheduleslots/jobs/{jobId}** (2 changes)
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 204 was added
 
-**/api/v2/coaching/scheduleslots/jobs** (2 changes)
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups** (1 change)
 
-* Path was added
-* Operation POST was added
+* Response 204 was added
 
-**/api/v2/learning/scheduleslots/jobs/{jobId}** (2 changes)
+**AnalyticsSession** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value OpenMessaging was added to property engagementSource
 
-**/api/v2/learning/scheduleslots/jobs** (2 changes)
+**ViewFilter** (2 changes)
 
-* Path was added
-* Operation POST was added
+* Optional property sessionExpired was added
+* Optional property engagementSource was added
 
-**CopilotAction** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Enum value ThirdPartyAction was added to property actionType
+* Enum value PREDICTIVE_ROUTING_THROUGHPUT_VIEW was added to property viewType
 
-**CopilotFallbackAction** (1 change)
+**ReportingExportMetadataJobResponse** (1 change)
 
-* Enum value ThirdPartyAction was added to property actionType
+* Enum value PREDICTIVE_ROUTING_THROUGHPUT_VIEW was added to property viewType
 
-**ConversationAttributeFilter** (1 change)
+**ReportingExportJobRequest** (1 change)
+
+* Enum value PREDICTIVE_ROUTING_THROUGHPUT_VIEW was added to property viewType
+
+**JourneyCaseAssociation** (1 change)
 
 * Model was added
 
-**ConversationSchemaAttribute** (1 change)
+**Session** (2 changes)
+
+* externalContact is no longer readonly
+* conversation is no longer readonly
+
+**ConversationMessageMetadataContent** (1 change)
+
+* Enum value RichLink was added to property contentType
+
+**Message** (1 change)
+
+* Enum value OpenMessaging was added to property engagementSource
+
+**ConversationContentInput** (2 changes)
+
+* Optional property keyboardType was added
+* Optional property autoCompleteType was added
+
+**ConversationContentReceivedReplyMessage** (2 changes)
+
+* Optional property header was added
+* Optional property buttonLabel was added
+
+**ConversationContentRichLink** (1 change)
 
 * Model was added
 
-**ConversationSchemaData** (1 change)
+**ConversationContentRichLinkHeader** (1 change)
 
 * Model was added
 
-**ConversationSchemaReference** (1 change)
+**ConversationMessageContent** (1 change)
+
+* Enum value RichLink was added to property contentType
+
+**MessageMediaData** (2 changes)
+
+* Optional property conversationId was added
+* Optional property communicationId was added
+
+**MessageMediaListing** (1 change)
 
 * Model was added
 
-**KnowledgeSetting** (1 change)
+**SetWhatsAppIntegrationActionSettings** (1 change)
 
 * Model was added
 
-**KnowledgeSuggestionConfig** (1 change)
+**IpAddressRange** (1 change)
 
-* Enum value GenesysKnowledgeV3 was added to property vendorName
+* Enum value encryption was added to property service
 
-**UserCustomAttributes** (1 change)
+**ChannelTopic** (1 change)
 
-* Model was added
+* Optional property missingPermissions was added
 
-**EvaluationQuestion** (1 change)
+**RecordingMessagingMessage** (2 changes)
 
-* Optional property defaultAnswer was added
+* Optional property form was added
+* Optional property roadsideAssistance was added
 
-**EvaluationQuestionGroup** (1 change)
-
-* Optional property defaultAnswersTo was added
-
-**EvaluationSource** (1 change)
-
-* Enum value Program was added to property type
-
-**PhoneNumberColumn** (1 change)
-
-* Optional property callableTimeColumnName was added
-
-**SuggestedSearchChunk** (1 change)
+**ExternalPageMetadata** (1 change)
 
 * Model was added
 
-**Suggestion** (1 change)
+**SchedulerMessageTypeSeverity** (1 change)
 
-* Enum value SuggestedKnowledgeAnswer was added to property type
+* Enum value UnableToScheduleMinCoverageForPlanningGroup was added to property type
 
-**SuggestionGeneratedKnowledgeAnswer** (1 change)
+**AdherenceSettings** (1 change)
 
-* Model was added
+* Optional property ignoredActivityCodeIds was added
 
-**ReplacementTerm** (2 changes)
+**ShiftTradeExternalActivityRule** (1 change)
 
-* Enum value APPLE_MESSAGES was added to property type
-* Enum value EXTERNAL_ID was added to property type
+* Enum value Opportunity was added to property externalActivityType
 
-**SocialHandle** (1 change)
+**ShiftTradeActivityPreviewResponse** (1 change)
 
-* Enum value APPLE_MESSAGES was added to property type
+* Enum value Opportunity was added to property externalActivityType
 
-**DependencyStatus** (1 change)
+**BuAgentScheduleActivity** (1 change)
 
-* Enum value BUILDQUEUED was added to property status
+* Enum value Opportunity was added to property externalActivityType
 
-**IpFilter** (2 changes)
+**AvailableTimeOffRange** (1 change)
 
-* Optional property ipAddress was added
-* Optional property name was added
+* Enum value FifteenMinutes was added to property granularity
 
-**TrackingSettings** (4 changes)
+**ScheduleGenerationMessage** (1 change)
 
-* Optional property excludedQueryParameters was added
-* Optional property shouldKeepUrlFragment was added
-* Optional property searchQueryParameters was added
-* Optional property ipFilters was added
+* Enum value UnableToScheduleMinCoverageForPlanningGroup was added to property type
 
-**DeploymentIdentityResolutionConfig** (2 changes)
+**SchedulerMessageArgument** (1 change)
 
-* Optional property externalSource was added
-* Optional property automerge was added
+* Enum value PlanningGroupId was added to property type
 
-**StaffingRequirementsPlanningGroupData** (2 changes)
+**BuTimeOffLimitValueRange** (1 change)
 
-* Optional property minimumStaffPerInterval was added
-* Optional property effectiveStaffPerInterval was added
+* Enum value FifteenMinutes was added to property granularity
 
-**TimeOffSettingsResponse** (2 changes)
+**TimeOffLimit** (1 change)
 
-* Optional property submissionRangeType was added
-* Optional property submissionLatestDate was added
+* Enum value FifteenMinutes was added to property granularity
 
-**TimeOffSettingsRequest** (2 changes)
+**CreateTimeOffLimitRequest** (1 change)
 
-* Optional property submissionRangeType was added
-* Optional property submissionLatestDate was added
+* Enum value FifteenMinutes was added to property granularity
 
-**CapacityPlanStaffingGroupMetricChangeResponse** (2 changes)
+**TimeOffLimitRange** (1 change)
 
-* Enum value TransfersFullTimeEquivalentCount was added to property metric
-* Enum value ExtraTimeUnderTimeFullTimeEquivalentCount was added to property metric
+* Enum value FifteenMinutes was added to property granularity
 
-**TransfersFullTimeEquivalent** (1 change)
+**TimeOffLimitValueRange** (1 change)
+
+* Enum value FifteenMinutes was added to property granularity
+
+**ScheduleActivity** (1 change)
+
+* Enum value Opportunity was added to property externalActivityType
+
+**LearningModuleList** (1 change)
 
 * Model was added
 
-**CreateCapacityPlanStaffingGroupMetricChangeRequest** (2 changes)
+**LearningSlotScheduleActivity** (1 change)
 
-* Enum value TransfersFullTimeEquivalentCount was added to property metric
-* Enum value ExtraTimeUnderTimeFullTimeEquivalentCount was added to property metric
-
-**StaffingGroupMetricChangeResponse** (2 changes)
-
-* Enum value TransfersFullTimeEquivalentCount was added to property metric
-* Enum value ExtraTimeUnderTimeFullTimeEquivalentCount was added to property metric
-
-**CoachingScheduleSlotsJobResponse** (1 change)
-
-* Model was added
-
-**CoachingScheduleSlotsJobResult** (1 change)
-
-* Model was added
-
-**CoachingScheduleSlotsJobSchedule** (1 change)
-
-* Model was added
-
-**CoachingScheduleSlotsJobSlot** (1 change)
-
-* Model was added
-
-**CoachingScheduleSlotsJobRequest** (1 change)
-
-* Model was added
-
-**LearningScheduleSlotsJobResponse** (1 change)
-
-* Model was added
-
-**LearningScheduleSlotsJobResult** (1 change)
-
-* Model was added
-
-**LearningScheduleSlotsJobSchedule** (1 change)
-
-* Model was added
-
-**LearningScheduleSlotsJobSlot** (1 change)
-
-* Model was added
-
-**LearningScheduleSlotsJobRequest** (1 change)
-
-* Model was added
-
-**BillingCharge** (4 changes)
-
-* Optional property prepaidQuantity was added
-* Optional property fairuseQuantity was added
-* Optional property actualQuantity was added
-* Optional property overageQuantity was added
-
-**BillingContract** (1 change)
-
-* Optional property purchaseOrderNumbers was added
-
-**InvoiceAddress** (2 changes)
-
-* Optional property dateEffective was added
-* Optional property citySubdivision1 was added
-
-**AgentGreeting** (2 changes)
-
-* Optional property inboundPromptDefaultLanguage was added
-* Optional property outboundPromptDefaultLanguage was added
-
-**SelfAgentGreeting** (2 changes)
-
-* Optional property inboundPromptDefaultLanguage was added
-* Optional property outboundPromptDefaultLanguage was added
+* Enum value Opportunity was added to property externalActivityType
 
 
 # Point Changes (1 change)
 
-**POST /api/v2/conversations/messages/{conversationId}/messages/bulk** (1 change)
+**GET /api/v2/authorization/divisions/query** (1 change)
 
-* Description was changed
+* Description was changed for parameter pageSize

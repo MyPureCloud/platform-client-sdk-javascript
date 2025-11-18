@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 235.0.0
+	 * @version 236.0.0
 	 */
 
 	/**
@@ -2077,6 +2077,42 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get message media list by status
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.status The status on which to filter the response.
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageCommunicationMessagesMedia';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsMessageCommunicationMessagesMedia';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{ 'status': opts['status'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
