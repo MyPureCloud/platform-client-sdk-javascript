@@ -101,6 +101,10 @@
       "class": "ConversationScriptSuggestionsTopicScriptSuggestionEvent"
     },
     {
+      "topic": "v2.conversations.{id}.suggestions.thirdpartyaction",
+      "class": "ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent"
+    },
+    {
       "topic": "v2.conversations.{id}.transcription",
       "class": "TranscriptionTopicTranscriptionMessage"
     },
@@ -563,22 +567,6 @@
     {
       "topic": "v2.users.{id}.alerting.alerts",
       "class": "V2MobiusAlertsTopicAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.heartbeat.alerts",
-      "class": "KlaxonHeartBeatAlertsTopicHeartBeatAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.heartbeat.rules",
-      "class": "KlaxonHeartBeatRulesTopicHeartBeatRule"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.interactionstats.alerts",
-      "class": "KlaxonInteractionStatsAlertsTopicInteractionStatAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.interactionstats.rules",
-      "class": "KlaxonInteractionStatsRulesTopicInteractionStatRule"
     },
     {
       "topic": "v2.users.{id}.alerting.rules",

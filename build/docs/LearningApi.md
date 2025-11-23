@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLearningAssignmentsBulkremove**](LearningApi#postLearningAssignmentsBulkremove) | **POST** /api/v2/learning/assignments/bulkremove | Remove multiple Learning Assignments
 [**postLearningModuleJobs**](LearningApi#postLearningModuleJobs) | **POST** /api/v2/learning/modules/{moduleId}/jobs | Starts a specified operation on learning module
 [**postLearningModulePublish**](LearningApi#postLearningModulePublish) | **POST** /api/v2/learning/modules/{moduleId}/publish | Publish a Learning module
+[**postLearningModuleRuleMigrate**](LearningApi#postLearningModuleRuleMigrate) | **POST** /api/v2/learning/modules/{moduleId}/rule/migrate | Migrate a legacy learning module rule to a users rule.
 [**postLearningModules**](LearningApi#postLearningModules) | **POST** /api/v2/learning/modules | Create a new learning module
 [**postLearningRulesQuery**](LearningApi#postLearningRulesQuery) | **POST** /api/v2/learning/rules/query | Get users for learning module rule
 [**postLearningScheduleslotsJobs**](LearningApi#postLearningScheduleslotsJobs) | **POST** /api/v2/learning/scheduleslots/jobs | Start job to retrieve slots where a learning activity can be scheduled.
@@ -1661,6 +1662,58 @@ apiInstance.postLearningModulePublish(moduleId, opts)
 **LearningModulePublishResponse**
 
 
+## postLearningModuleRuleMigrate
+
+> LearningModuleMigrateResponse postLearningModuleRuleMigrate(moduleId)
+
+
+POST /api/v2/learning/modules/{moduleId}/rule/migrate
+
+Migrate a legacy learning module rule to a users rule.
+
+postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* learning:module:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | The ID of the learning module
+
+apiInstance.postLearningModuleRuleMigrate(moduleId)
+  .then((data) => {
+    console.log(`postLearningModuleRuleMigrate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningModuleRuleMigrate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | The ID of the learning module |  |
+
+### Return type
+
+**LearningModuleMigrateResponse**
+
+
 ## postLearningModules
 
 > LearningModule postLearningModules(body)
@@ -2087,4 +2140,4 @@ apiInstance.putLearningModuleRule(moduleId, body, opts)
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@236.0.0_
+_purecloud-platform-client-v2@237.0.0_

@@ -6549,8 +6549,6 @@ GET /api/v2/conversations/videos/meetings/{meetingId}
 
 Gets a record for a given meetingId
 
-getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * video:video:access
@@ -14251,8 +14249,6 @@ POST /api/v2/conversations/videos/meetings
 
 Generate a meetingId for a given conferenceId
 
-postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * video:video:access
@@ -15561,4 +15557,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@236.0.0_
+_purecloud-platform-client-v2@237.0.0_

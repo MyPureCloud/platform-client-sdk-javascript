@@ -4054,4 +4054,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@236.0.0_
+_purecloud-platform-client-v2@237.0.0_

@@ -150,6 +150,8 @@ docs/UserRecordingsApi.json
 docs/UserRecordingsApi.md
 docs/UsersApi.json
 docs/UsersApi.md
+docs/UsersRulesApi.json
+docs/UsersRulesApi.md
 docs/UtilitiesApi.json
 docs/UtilitiesApi.md
 docs/VoicemailApi.json
@@ -471,6 +473,7 @@ docs/deleteUserVerifier-example.txt
 docs/deleteUserrecording-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/deleteUsersRule-example.txt
 docs/deleteVoicemailMessage-example.txt
 docs/deleteVoicemailMessages-example.txt
 docs/deleteWebchatDeployment-example.txt
@@ -1762,6 +1765,11 @@ docs/getUsersMe-example.txt
 docs/getUsersPresenceBulk-example.txt
 docs/getUsersPresencesPurecloudBulk-example.txt
 docs/getUsersQuery-example.txt
+docs/getUsersRule-example.txt
+docs/getUsersRuleDependentTypeId-example.txt
+docs/getUsersRuleDependents-example.txt
+docs/getUsersRules-example.txt
+docs/getUsersRulesSetting-example.txt
 docs/getUsersSearch-example.txt
 docs/getUsersSearch-example.txt
 docs/getVoicemailGroupMailbox-example.txt
@@ -1809,6 +1817,7 @@ docs/getWorkforcemanagementAdherenceHistoricalBulkJob-example.txt
 docs/getWorkforcemanagementAdherenceHistoricalJob-example.txt
 docs/getWorkforcemanagementAgentAdherenceExplanation-example.txt
 docs/getWorkforcemanagementAgentManagementunit-example.txt
+docs/getWorkforcemanagementAgentsMeAdherenceHistoricalJob-example.txt
 docs/getWorkforcemanagementAgentsMeManagementunit-example.txt
 docs/getWorkforcemanagementAlternativeshiftsOffersJob-example.txt
 docs/getWorkforcemanagementAlternativeshiftsOffersSearchJob-example.txt
@@ -2100,6 +2109,7 @@ docs/patchUserRoutingskillsBulk-example.txt
 docs/patchUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/patchUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/patchUsersBulk-example.txt
+docs/patchUsersRule-example.txt
 docs/patchVoicemailGroupPolicy-example.txt
 docs/patchVoicemailMePolicy-example.txt
 docs/patchVoicemailMessage-example.txt
@@ -2586,6 +2596,7 @@ docs/postLearningAssignmentsBulkadd-example.txt
 docs/postLearningAssignmentsBulkremove-example.txt
 docs/postLearningModuleJobs-example.txt
 docs/postLearningModulePublish-example.txt
+docs/postLearningModuleRuleMigrate-example.txt
 docs/postLearningModules-example.txt
 docs/postLearningRulesQuery-example.txt
 docs/postLearningScheduleslotsJobs-example.txt
@@ -2823,6 +2834,8 @@ docs/postUserRoutingskills-example.txt
 docs/postUsers-example.txt
 docs/postUsersDevelopmentActivitiesAggregatesQuery-example.txt
 docs/postUsersMePassword-example.txt
+docs/postUsersRules-example.txt
+docs/postUsersRulesQuery-example.txt
 docs/postUsersSearch-example.txt
 docs/postUsersSearch-example.txt
 docs/postUsersSearchConversationTarget-example.txt
@@ -2853,6 +2866,7 @@ docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementAgents-example.txt
 docs/postWorkforcemanagementAgentsIntegrationsHrisQuery-example.txt
+docs/postWorkforcemanagementAgentsMeAdherenceHistoricalJobs-example.txt
 docs/postWorkforcemanagementAgentsMePossibleworkshifts-example.txt
 docs/postWorkforcemanagementAgentschedulesManagementunitsMine-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
@@ -3284,6 +3298,7 @@ src/purecloud-platform-client-v2/api/UploadsApi.js
 src/purecloud-platform-client-v2/api/UsageApi.js
 src/purecloud-platform-client-v2/api/UserRecordingsApi.js
 src/purecloud-platform-client-v2/api/UsersApi.js
+src/purecloud-platform-client-v2/api/UsersRulesApi.js
 src/purecloud-platform-client-v2/api/UtilitiesApi.js
 src/purecloud-platform-client-v2/api/VoicemailApi.js
 src/purecloud-platform-client-v2/api/WebChatApi.js

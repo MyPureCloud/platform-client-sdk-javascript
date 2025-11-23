@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 236.0.0
+	 * @version 237.0.0
 	 */
 
 	/**
@@ -3361,7 +3361,6 @@ class ConversationsApi {
 	 * Gets a record for a given meetingId
 	 * 
 	 * @param {String} meetingId meetingId
-	 * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsVideosMeeting(meetingId) { 
 		// verify the required parameter 'meetingId' is set
@@ -7886,7 +7885,6 @@ class ConversationsApi {
 	 * Generate a meetingId for a given conferenceId
 	 * 
 	 * @param {Object} body MeetingIdRequest
-	 * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsVideosMeetings(body) { 
 		// verify the required parameter 'body' is set

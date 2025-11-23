@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 236.0.0
+	 * @version 237.0.0
 	 */
 
 	/**
@@ -848,6 +848,32 @@ class LearningApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Migrate a legacy learning module rule to a users rule.
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postLearningModuleRuleMigrate(moduleId) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null || moduleId === '') {
+			throw 'Missing the required parameter "moduleId" when calling postLearningModuleRuleMigrate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/rule/migrate', 
+			'POST', 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
