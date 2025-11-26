@@ -270,4 +270,4 @@ apiInstance.postEmployeeengagementRecognitions(body)
 **RecognitionBase**
 
 
-_purecloud-platform-client-v2@237.0.0_
+_purecloud-platform-client-v2@238.0.0_

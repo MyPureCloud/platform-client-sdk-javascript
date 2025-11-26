@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 237.0.0
+ * @version 238.0.0
  */
 class ApiClient {
 	/**
@@ -727,7 +727,7 @@ class ApiClient {
 			const utf8 = new TextEncoder().encode(code);
 			return new Promise((resolve, reject) => {
 				window.crypto.subtle.digest("SHA-256", utf8).then((hashBuffer) => {
-					const hashBase64 = Buffer.from(hashBuffer).toString('base64');
+					const hashBase64 = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
 					let hashBase64Url = hashBase64.replaceAll("+", "-").replaceAll("/", "_");
 					hashBase64Url = hashBase64Url.split("=")[0];
 					resolve(hashBase64Url);
