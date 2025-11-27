@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteEmployeeengagementCelebration**](EmployeeEngagementApi#deleteEmployeeengagementCelebration) | **DELETE** /api/v2/employeeengagement/celebrations/{celebrationId} | Deletes a celebration
 [**getEmployeeengagementCelebrations**](EmployeeEngagementApi#getEmployeeengagementCelebrations) | **GET** /api/v2/employeeengagement/celebrations | Get all celebrations
 [**getEmployeeengagementRecognition**](EmployeeEngagementApi#getEmployeeengagementRecognition) | **GET** /api/v2/employeeengagement/recognitions/{recognitionId} | Gets a single recognition
+[**getEmployeeengagementRecognitions**](EmployeeEngagementApi#getEmployeeengagementRecognitions) | **GET** /api/v2/employeeengagement/recognitions | Gets sent recognitions
 [**patchEmployeeengagementCelebration**](EmployeeEngagementApi#patchEmployeeengagementCelebration) | **PATCH** /api/v2/employeeengagement/celebrations/{celebrationId} | Set a state for a celebration
 [**postEmployeeengagementRecognitions**](EmployeeEngagementApi#postEmployeeengagementRecognitions) | **POST** /api/v2/employeeengagement/recognitions | Creates a recognition
 
@@ -168,6 +169,68 @@ apiInstance.getEmployeeengagementRecognition(recognitionId)
 **Recognition**
 
 
+## getEmployeeengagementRecognitions
+
+> Recognitions getEmployeeengagementRecognitions(opts)
+
+
+GET /api/v2/employeeengagement/recognitions
+
+Gets sent recognitions
+
+Requires ANY permissions:
+
+* engagement:recognition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.EmployeeEngagementApi();
+
+let opts = { 
+  'direction': "received", // String | The direction of the recognitions.
+  'recipient': "recipient_example", // String | The ID of the recipient (when direction is sent).
+  'dateStart': new Date("2013-10-20T19:20:30+01:00"), // Date | The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'dateEnd': new Date("2013-10-20T19:20:30+01:00"), // Date | The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'pageSize': 100, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getEmployeeengagementRecognitions(opts)
+  .then((data) => {
+    console.log(`getEmployeeengagementRecognitions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEmployeeengagementRecognitions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **direction** | **String** | The direction of the recognitions. | [optional] [default to received]<br />**Values**: sent, received |
+ **recipient** | **String** | The ID of the recipient (when direction is sent). | [optional]  |
+ **dateStart** | **Date** | The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **dateEnd** | **Date** | The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 100] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+
+### Return type
+
+**Recognitions**
+
+
 ## patchEmployeeengagementCelebration
 
 > void patchEmployeeengagementCelebration(celebrationId, body)
@@ -270,4 +333,4 @@ apiInstance.postEmployeeengagementRecognitions(body)
 **RecognitionBase**
 
 
-_purecloud-platform-client-v2@238.0.0_
+_purecloud-platform-client-v2@239.0.0_

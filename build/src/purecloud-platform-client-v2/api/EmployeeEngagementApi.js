@@ -5,7 +5,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 238.0.0
+	 * @version 239.0.0
 	 */
 
 	/**
@@ -86,6 +86,35 @@ class EmployeeEngagementApi {
 			'GET', 
 			{ 'recognitionId': recognitionId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets sent recognitions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.direction The direction of the recognitions. (default to received)
+	 * @param {String} opts.recipient The ID of the recipient (when direction is sent).
+	 * @param {Date} opts.dateStart The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Date} opts.dateEnd The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Number} opts.pageSize Page size (default to 100)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getEmployeeengagementRecognitions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeengagement/recognitions', 
+			'GET', 
+			{  },
+			{ 'direction': opts['direction'],'recipient': opts['recipient'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 

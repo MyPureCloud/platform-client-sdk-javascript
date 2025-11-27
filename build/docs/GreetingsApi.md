@@ -985,4 +985,4 @@ apiInstance.putUserGreetingsDefaults(userId, body)
 **DefaultGreetingList**
 
 
-_purecloud-platform-client-v2@238.0.0_
+_purecloud-platform-client-v2@239.0.0_

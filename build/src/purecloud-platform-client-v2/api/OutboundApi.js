@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 238.0.0
+	 * @version 239.0.0
 	 */
 
 	/**
@@ -2358,6 +2358,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
 	 * @param {String} opts.contentTemplateId Content template ID
 	 * @param {Object} opts.campaignStatus Campaign Status
+	 * @param {Array.<String>} opts.ruleSetIds Ruleset ID(s)
 	 */
 	getOutboundMessagingcampaigns(opts) { 
 		opts = opts || {};
@@ -2367,7 +2368,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'],'ruleSetIds': this.apiClient.buildCollectionParam(opts['ruleSetIds'], 'multi') },
 			{  },
 			{  },
 			null, 
