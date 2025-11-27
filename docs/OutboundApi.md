@@ -4901,7 +4901,8 @@ let opts = {
   'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
   'id': ["id_example"], // [String] | A list of messaging campaign ids to bulk fetch
   'contentTemplateId': "contentTemplateId_example", // String | Content template ID
-  'campaignStatus': "campaignStatus_example" // String | Campaign Status
+  'campaignStatus': "campaignStatus_example", // String | Campaign Status
+  'ruleSetIds': ["ruleSetIds_example"] // [String] | Ruleset ID(s)
 };
 
 apiInstance.getOutboundMessagingcampaigns(opts)
@@ -4931,6 +4932,7 @@ apiInstance.getOutboundMessagingcampaigns(opts)
  **id** | **[String]** | A list of messaging campaign ids to bulk fetch | [optional]  |
  **contentTemplateId** | **String** | Content template ID | [optional]  |
  **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
+ **ruleSetIds** | **[String]** | Ruleset ID(s) | [optional]  |
 
 ### Return type
 
@@ -9461,4 +9463,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@238.0.0_
+_purecloud-platform-client-v2@239.0.0_
