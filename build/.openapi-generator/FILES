@@ -172,6 +172,7 @@ docs/deleteAlertingRule-example.txt
 docs/deleteAnalyticsActionsAggregatesJob-example.txt
 docs/deleteAnalyticsAgentcopilotsAggregatesJob-example.txt
 docs/deleteAnalyticsBotsAggregatesJob-example.txt
+docs/deleteAnalyticsCasemanagementAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
@@ -210,6 +211,7 @@ docs/deleteArchitectSystempromptResource-example.txt
 docs/deleteAssistant-example.txt
 docs/deleteAssistantQueue-example.txt
 docs/deleteAssistantQueues-example.txt
+docs/deleteAssistantsAgentchecklist-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationPoliciesTargetSubjectSubjectId-example.txt
@@ -400,6 +402,7 @@ docs/deleteRoutingEmailDomainRoute-example.txt
 docs/deleteRoutingEmailOutboundDomain-example.txt
 docs/deleteRoutingLanguage-example.txt
 docs/deleteRoutingPredictor-example.txt
+docs/deleteRoutingPredictorsKeyperformanceindicator-example.txt
 docs/deleteRoutingQueue-example.txt
 docs/deleteRoutingQueueMember-example.txt
 docs/deleteRoutingQueueUser-example.txt
@@ -516,6 +519,8 @@ docs/getAnalyticsBotflowReportingturns-example.txt
 docs/getAnalyticsBotflowSessions-example.txt
 docs/getAnalyticsBotsAggregatesJob-example.txt
 docs/getAnalyticsBotsAggregatesJobResults-example.txt
+docs/getAnalyticsCasemanagementAggregatesJob-example.txt
+docs/getAnalyticsCasemanagementAggregatesJobResults-example.txt
 docs/getAnalyticsConversationDetails-example.txt
 docs/getAnalyticsConversationDetails-example.txt
 docs/getAnalyticsConversationsAggregatesJob-example.txt
@@ -618,6 +623,9 @@ docs/getAssistantCopilot-example.txt
 docs/getAssistantQueue-example.txt
 docs/getAssistantQueues-example.txt
 docs/getAssistants-example.txt
+docs/getAssistantsAgentchecklist-example.txt
+docs/getAssistantsAgentchecklists-example.txt
+docs/getAssistantsAgentchecklistsLanguages-example.txt
 docs/getAssistantsCopilotFeaturesupport-example.txt
 docs/getAssistantsQueues-example.txt
 docs/getAuditsQueryRealtimeServicemapping-example.txt
@@ -726,6 +734,9 @@ docs/getContentmanagementWorkspaceTagvalue-example.txt
 docs/getContentmanagementWorkspaceTagvalues-example.txt
 docs/getContentmanagementWorkspaces-example.txt
 docs/getConversation-example.txt
+docs/getConversationCommunicationAgentchecklist-example.txt
+docs/getConversationCommunicationAgentchecklistJob-example.txt
+docs/getConversationCommunicationAgentchecklists-example.txt
 docs/getConversationCommunicationInternalmessage-example.txt
 docs/getConversationCommunicationInternalmessages-example.txt
 docs/getConversationParticipantSecureivrsession-example.txt
@@ -1449,7 +1460,9 @@ docs/getRoutingPredictor-example.txt
 docs/getRoutingPredictorModelFeatures-example.txt
 docs/getRoutingPredictorModels-example.txt
 docs/getRoutingPredictors-example.txt
+docs/getRoutingPredictorsKeyperformanceindicator-example.txt
 docs/getRoutingPredictorsKeyperformanceindicators-example.txt
+docs/getRoutingPredictorsKeyperformanceindicatortypes-example.txt
 docs/getRoutingQueue-example.txt
 docs/getRoutingQueueAssistant-example.txt
 docs/getRoutingQueueComparisonperiod-example.txt
@@ -2058,6 +2071,7 @@ docs/patchRoutingConversation-example.txt
 docs/patchRoutingEmailDomain-example.txt
 docs/patchRoutingEmailDomainValidate-example.txt
 docs/patchRoutingPredictor-example.txt
+docs/patchRoutingPredictorsKeyperformanceindicator-example.txt
 docs/patchRoutingQueueMember-example.txt
 docs/patchRoutingQueueMembers-example.txt
 docs/patchRoutingQueueUser-example.txt
@@ -2159,6 +2173,8 @@ docs/postAnalyticsAgentsStatusCounts-example.txt
 docs/postAnalyticsAgentsStatusQuery-example.txt
 docs/postAnalyticsBotsAggregatesJobs-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
+docs/postAnalyticsCasemanagementAggregatesJobs-example.txt
+docs/postAnalyticsCasemanagementAggregatesQuery-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
 docs/postAnalyticsConversationsActivityQuery-example.txt
@@ -2247,6 +2263,7 @@ docs/postAssistantQueueUsersBulkAdd-example.txt
 docs/postAssistantQueueUsersBulkRemove-example.txt
 docs/postAssistantQueueUsersQuery-example.txt
 docs/postAssistants-example.txt
+docs/postAssistantsAgentchecklists-example.txt
 docs/postAuditsQuery-example.txt
 docs/postAuditsQueryRealtime-example.txt
 docs/postAuditsQueryRealtimeRelated-example.txt
@@ -2306,6 +2323,10 @@ docs/postContentmanagementWorkspaces-example.txt
 docs/postConversationAssign-example.txt
 docs/postConversationBarge-example.txt
 docs/postConversationCobrowse-example.txt
+docs/postConversationCommunicationAgentchecklist-example.txt
+docs/postConversationCommunicationAgentchecklistAgentaction-example.txt
+docs/postConversationCommunicationAgentchecklistJobs-example.txt
+docs/postConversationCommunicationAgentchecklistsFinalize-example.txt
 docs/postConversationCommunicationInternalmessages-example.txt
 docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
@@ -2495,6 +2516,7 @@ docs/postGroups-example.txt
 docs/postGroupsDynamicsettingsPreview-example.txt
 docs/postGroupsSearch-example.txt
 docs/postGroupsSearch-example.txt
+docs/postGuideSessionTurns-example.txt
 docs/postGuideVersionJobs-example.txt
 docs/postGuideVersions-example.txt
 docs/postGuides-example.txt
@@ -2715,6 +2737,7 @@ docs/postRoutingEmailOutboundDomains-example.txt
 docs/postRoutingEmailOutboundDomainsSimulated-example.txt
 docs/postRoutingLanguages-example.txt
 docs/postRoutingPredictors-example.txt
+docs/postRoutingPredictorsKeyperformanceindicators-example.txt
 docs/postRoutingQueueMembers-example.txt
 docs/postRoutingQueueUsers-example.txt
 docs/postRoutingQueueWrapupcodes-example.txt
@@ -2967,6 +2990,7 @@ docs/putArchitectSchedulegroup-example.txt
 docs/putArchitectSystempromptResource-example.txt
 docs/putAssistantCopilot-example.txt
 docs/putAssistantQueue-example.txt
+docs/putAssistantsAgentchecklist-example.txt
 docs/putAuthorizationDivision-example.txt
 docs/putAuthorizationDivision-example.txt
 docs/putAuthorizationPoliciesTarget-example.txt

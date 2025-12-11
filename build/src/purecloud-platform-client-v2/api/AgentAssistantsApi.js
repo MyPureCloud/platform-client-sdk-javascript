@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 239.0.0
+	 * @version 240.0.0
 	 */
 
 	/**
@@ -95,6 +95,31 @@ class AgentAssistantsApi {
 			'DELETE', 
 			{ 'assistantId': assistantId },
 			{ 'queueIds': opts['queueIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an agent checklist
+	 * 
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 */
+	deleteAssistantsAgentchecklist(agentChecklistId) { 
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling deleteAssistantsAgentchecklist';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/agentchecklists/{agentChecklistId}', 
+			'DELETE', 
+			{ 'agentChecklistId': agentChecklistId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -219,6 +244,81 @@ class AgentAssistantsApi {
 			'GET', 
 			{  },
 			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an agent checklist
+	 * 
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 */
+	getAssistantsAgentchecklist(agentChecklistId) { 
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling getAssistantsAgentchecklist';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/agentchecklists/{agentChecklistId}', 
+			'GET', 
+			{ 'agentChecklistId': agentChecklistId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of agent checklists
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 25)
+	 * @param {String} opts.namePrefix The agent checklist name prefix filter applied to the listing.
+	 * @param {String} opts.language The agent checklist language filter applied to the listing.
+	 * @param {Object} opts.sortOrder The sort order for the listing
+	 * @param {Object} opts.sortBy The field to sort by for the listing.
+	 */
+	getAssistantsAgentchecklists(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/agentchecklists', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'namePrefix': opts['namePrefix'],'language': opts['language'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of supported languages
+	 * 
+	 */
+	getAssistantsAgentchecklistsLanguages() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/agentchecklists/languages', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -451,6 +551,31 @@ class AgentAssistantsApi {
 	}
 
 	/**
+	 * Create an agent checklist
+	 * 
+	 * @param {Object} body Request body containing details of checklist to be added
+	 */
+	postAssistantsAgentchecklists(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantsAgentchecklists';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/agentchecklists', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a queue assistant association.
 	 * 
 	 * @param {String} assistantId Assistant ID
@@ -475,6 +600,36 @@ class AgentAssistantsApi {
 			'/api/v2/assistants/{assistantId}/queues/{queueId}', 
 			'PUT', 
 			{ 'assistantId': assistantId,'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an agent checklist
+	 * 
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} body Request body containing details of checklist to be updated
+	 */
+	putAssistantsAgentchecklist(agentChecklistId, body) { 
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling putAssistantsAgentchecklist';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAssistantsAgentchecklist';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/agentchecklists/{agentChecklistId}', 
+			'PUT', 
+			{ 'agentChecklistId': agentChecklistId },
 			{  },
 			{  },
 			{  },

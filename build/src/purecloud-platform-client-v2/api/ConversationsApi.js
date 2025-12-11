@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 239.0.0
+	 * @version 240.0.0
 	 */
 
 	/**
@@ -661,6 +661,111 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}', 
 			'GET', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get checklist info for a single checklist.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 */
+	getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationAgentchecklist';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling getConversationCommunicationAgentchecklist';
+		}
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling getConversationCommunicationAgentchecklist';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'agentChecklistId': agentChecklistId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get inference job status
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {String} jobId Inference Job ID
+	 */
+	getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationAgentchecklistJob';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling getConversationCommunicationAgentchecklistJob';
+		}
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling getConversationCommunicationAgentchecklistJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getConversationCommunicationAgentchecklistJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'agentChecklistId': agentChecklistId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information of all checklists associated with a conversation.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 */
+	getConversationCommunicationAgentchecklists(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationAgentchecklists';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling getConversationCommunicationAgentchecklists';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
 			{  },
 			{  },
 			{  },
@@ -5227,6 +5332,161 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Agent Checklist activation API
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} body Agent checklist activation payload
+	 */
+	postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklist';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling postConversationCommunicationAgentchecklist';
+		}
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling postConversationCommunicationAgentchecklist';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationCommunicationAgentchecklist';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'agentChecklistId': agentChecklistId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * API invoked to capture an agent action.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} body Agent action payload
+	 */
+	postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklistAgentaction';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling postConversationCommunicationAgentchecklistAgentaction';
+		}
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling postConversationCommunicationAgentchecklistAgentaction';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationCommunicationAgentchecklistAgentaction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'agentChecklistId': agentChecklistId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create inference job
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} body Agent checklist inference job payload
+	 */
+	postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklistJobs';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling postConversationCommunicationAgentchecklistJobs';
+		}
+		// verify the required parameter 'agentChecklistId' is set
+		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
+			throw 'Missing the required parameter "agentChecklistId" when calling postConversationCommunicationAgentchecklistJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationCommunicationAgentchecklistJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'agentChecklistId': agentChecklistId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * API invoked to finalize agent checklist evaluation.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 * @param {Object} body Agent checklist finalize payload
+	 */
+	postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklistsFinalize';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
+			throw 'Missing the required parameter "communicationId" when calling postConversationCommunicationAgentchecklistsFinalize';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationCommunicationAgentchecklistsFinalize';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Send internal message
 	 * Send a new internal message for an existing communication.
 	 * @param {String} conversationId conversationId
@@ -5390,11 +5650,12 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
+	 * Replace this participant (Deprecated)
+	 * This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5465,7 +5726,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
-	 * postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceContactExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5496,11 +5756,12 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Replace this participant with the an external contact
-	 * 
+	 * Replace this participant with the an external contact (Deprecated)
+	 * This endpoint is deprecated. Use /replace/contact/external endpoint instead.
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5605,7 +5866,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
-	 * postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantTransfer(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5865,11 +6125,12 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Initiate and update consult transfer
-	 * 
+	 * Initiate and update consult transfer (Deprecated)
+	 * This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @deprecated
 	 */
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5940,7 +6201,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
-	 * postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5971,11 +6231,12 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Initiate a consult transfer to an external contact
-	 * 
+	 * Initiate a consult transfer to an external contact (Deprecated)
+	 * This endpoint is deprecated. Use /consult/contact/external endpoints instead.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @deprecated
 	 */
 	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -6111,7 +6372,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
-	 * postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantVoiceConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set

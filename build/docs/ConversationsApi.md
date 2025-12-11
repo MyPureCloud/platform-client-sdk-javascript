@@ -31,6 +31,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getConversation**](ConversationsApi#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Get checklist info for a single checklist.
+[**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId} | Get inference job status
+[**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists | Get information of all checklists associated with a conversation.
 [**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message
 [**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication
 [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
@@ -184,15 +187,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationAssign**](ConversationsApi#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 [**postConversationBarge**](ConversationsApi#postConversationBarge) | **POST** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants.
 [**postConversationCobrowse**](ConversationsApi#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
+[**postConversationCommunicationAgentchecklist**](ConversationsApi#postConversationCommunicationAgentchecklist) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Agent Checklist activation API
+[**postConversationCommunicationAgentchecklistAgentaction**](ConversationsApi#postConversationCommunicationAgentchecklistAgentaction) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction | API invoked to capture an agent action.
+[**postConversationCommunicationAgentchecklistJobs**](ConversationsApi#postConversationCommunicationAgentchecklistJobs) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs | Create inference job
+[**postConversationCommunicationAgentchecklistsFinalize**](ConversationsApi#postConversationCommunicationAgentchecklistsFinalize) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize | API invoked to finalize agent checklist evaluation.
 [**postConversationCommunicationInternalmessages**](ConversationsApi#postConversationCommunicationInternalmessages) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Send internal message
 [**postConversationDisconnect**](ConversationsApi#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 [**postConversationParticipantCallbacks**](ConversationsApi#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantDigits**](ConversationsApi#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
 [**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications | Setup internal message communication with user
-[**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant (Deprecated)
 [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
 [**postConversationParticipantReplaceContactExternal**](ConversationsApi#postConversationParticipantReplaceContactExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external | Replace this participant with the an external contact
-[**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
+[**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact (Deprecated)
 [**postConversationParticipantReplaceQueue**](ConversationsApi#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
 [**postConversationParticipantSecureivrsessions**](ConversationsApi#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 [**postConversationParticipantTransfer**](ConversationsApi#postConversationParticipantTransfer) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/transfer | Replace this participant by another one using the address of the destination.
@@ -203,10 +210,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCallParticipantBarge**](ConversationsApi#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
 [**postConversationsCallParticipantCoach**](ConversationsApi#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
 [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
+[**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer (Deprecated)
 [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
 [**postConversationsCallParticipantConsultContactExternal**](ConversationsApi#postConversationsCallParticipantConsultContactExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external | Initiate a consult transfer to an external contact
-[**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact
+[**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact (Deprecated)
 [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
 [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
@@ -1563,6 +1570,168 @@ apiInstance.getConversation(conversationId)
 ### Return type
 
 **Conversation**
+
+
+## getConversationCommunicationAgentchecklist
+
+> AgentChecklistResponse getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}
+
+Get checklist info for a single checklist.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+
+apiInstance.getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId)
+  .then((data) => {
+    console.log(`getConversationCommunicationAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+
+### Return type
+
+**AgentChecklistResponse**
+
+
+## getConversationCommunicationAgentchecklistJob
+
+> ChecklistInferenceJobResponse getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}
+
+Get inference job status
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let jobId = "jobId_example"; // String | Inference Job ID
+
+apiInstance.getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId)
+  .then((data) => {
+    console.log(`getConversationCommunicationAgentchecklistJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationAgentchecklistJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **jobId** | **String** | Inference Job ID |  |
+
+### Return type
+
+**ChecklistInferenceJobResponse**
+
+
+## getConversationCommunicationAgentchecklists
+
+> AgentChecklistResponseList getConversationCommunicationAgentchecklists(conversationId, communicationId)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists
+
+Get information of all checklists associated with a conversation.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+
+apiInstance.getConversationCommunicationAgentchecklists(conversationId, communicationId)
+  .then((data) => {
+    console.log(`getConversationCommunicationAgentchecklists success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationAgentchecklists');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+
+### Return type
+
+**AgentChecklistResponseList**
 
 
 ## getConversationCommunicationInternalmessage
@@ -9677,6 +9846,228 @@ apiInstance.postConversationCobrowse(conversationId)
 **CobrowseWebMessagingSession**
 
 
+## postConversationCommunicationAgentchecklist
+
+> AgentChecklistResponse postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}
+
+Agent Checklist activation API
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Agent checklist activation payload
+
+apiInstance.postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Agent checklist activation payload |  |
+
+### Return type
+
+**AgentChecklistResponse**
+
+
+## postConversationCommunicationAgentchecklistAgentaction
+
+> AgentChecklistResponse postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction
+
+API invoked to capture an agent action.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Agent action payload
+
+apiInstance.postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklistAgentaction success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklistAgentaction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Agent action payload |  |
+
+### Return type
+
+**AgentChecklistResponse**
+
+
+## postConversationCommunicationAgentchecklistJobs
+
+> ChecklistInferenceJobCreationResponse postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs
+
+Create inference job
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Agent checklist inference job payload
+
+apiInstance.postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklistJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklistJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Agent checklist inference job payload |  |
+
+### Return type
+
+**ChecklistInferenceJobCreationResponse**
+
+
+## postConversationCommunicationAgentchecklistsFinalize
+
+> AgentChecklistResponseList postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize
+
+API invoked to finalize agent checklist evaluation.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let body = {}; // Object | Agent checklist finalize payload
+
+apiInstance.postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklistsFinalize success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklistsFinalize');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **body** | **Object** | Agent checklist finalize payload |  |
+
+### Return type
+
+**AgentChecklistResponseList**
+
+
 ## postConversationCommunicationInternalmessages
 
 > InternalMessageData postConversationCommunicationInternalmessages(conversationId, communicationId, body)
@@ -9953,10 +10344,15 @@ apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conve
 
 > void postConversationParticipantReplace(conversationId, participantId, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
-Replace this participant with the specified user and/or address
+Replace this participant (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
 
 Requires ANY permissions:
 
@@ -10067,8 +10463,6 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the an external contact
 
-postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:communication:blindTransfer
@@ -10119,10 +10513,15 @@ void (no response body)
 
 > void postConversationParticipantReplaceExternal(conversationId, participantId, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external
 
-Replace this participant with the an external contact
+Replace this participant with the an external contact (Deprecated)
+
+This endpoint is deprecated. Use /replace/contact/external endpoint instead.
 
 Requires ANY permissions:
 
@@ -10287,8 +10686,6 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer
 
 Replace this participant by another one using the address of the destination.
-
-postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10718,10 +11115,15 @@ void (no response body)
 
 > ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
-Initiate and update consult transfer
+Initiate and update consult transfer (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
 
 Requires ANY permissions:
 
@@ -10832,8 +11234,6 @@ POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/c
 
 Initiate a consult transfer to an external contact
 
-postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:communication:consultTransfer
@@ -10884,10 +11284,15 @@ apiInstance.postConversationsCallParticipantConsultContactExternal(conversationI
 
 > ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external
 
-Initiate a consult transfer to an external contact
+Initiate a consult transfer to an external contact (Deprecated)
+
+This endpoint is deprecated. Use /consult/contact/external endpoints instead.
 
 Requires ANY permissions:
 
@@ -11104,8 +11509,6 @@ void (no response body)
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult
 
 Initiate voice consult transfer
-
-postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -15557,4 +15960,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@240.0.0_

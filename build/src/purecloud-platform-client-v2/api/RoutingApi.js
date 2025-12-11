@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 239.0.0
+	 * @version 240.0.0
 	 */
 
 	/**
@@ -185,6 +185,32 @@ class RoutingApi {
 			'/api/v2/routing/predictors/{predictorId}', 
 			'DELETE', 
 			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a custom Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteRoutingPredictorsKeyperformanceindicator(kpiId) { 
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null || kpiId === '') {
+			throw 'Missing the required parameter "kpiId" when calling deleteRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'DELETE', 
+			{ 'kpiId': kpiId },
 			{  },
 			{  },
 			{  },
@@ -1336,6 +1362,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Retrieve a single Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
+	 * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null || kpiId === '') {
+			throw 'Missing the required parameter "kpiId" when calling getRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'GET', 
+			{ 'kpiId': kpiId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Key Performance Indicators
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1351,6 +1407,27 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'kpiGroup': opts['kpiGroup'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Key Performance Indicators Types available.
+	 * 
+	 * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingPredictorsKeyperformanceindicatortypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicatortypes', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -2771,6 +2848,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update a custom Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null || kpiId === '') {
+			throw 'Missing the required parameter "kpiId" when calling patchRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'PATCH', 
+			{ 'kpiId': kpiId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the ring number OR joined status for a queue member.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -3536,6 +3643,32 @@ class RoutingApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a custom Key Performance Indicator.
+	 * 
+	 * @param {Object} body request
+	 * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postRoutingPredictorsKeyperformanceindicators(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingPredictorsKeyperformanceindicators';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

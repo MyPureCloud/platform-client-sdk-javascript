@@ -798,7 +798,7 @@ let opts = {
   'filterValue': "filterValue_example", // String | Value to filter by. Requires 'filterValue' to also be set.
   'actionMapIds': ["actionMapIds_example"], // [String] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Action Map field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneyActionmaps(opts)
@@ -823,7 +823,7 @@ apiInstance.getJourneyActionmaps(opts)
  **filterValue** | **String** | Value to filter by. Requires 'filterValue' to also be set. | [optional]  |
  **actionMapIds** | **[String]** | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Action Map field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
 
 ### Return type
 
@@ -1117,7 +1117,7 @@ let opts = {
   'mediaType': "mediaType_example", // String | Media type
   'state': "state_example", // String | Action template state.
   'queryFields': ["queryFields_example"], // [String] | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneyActiontemplates(opts)
@@ -1141,7 +1141,7 @@ apiInstance.getJourneyActiontemplates(opts)
  **mediaType** | **String** | Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
  **state** | **String** | Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
  **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
 
 ### Return type
 
@@ -1289,7 +1289,7 @@ let opts = {
   'sortBy': "sortBy_example", // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
   'outcomeIds': ["outcomeIds_example"], // [String] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Outcome field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneyOutcomes(opts)
@@ -1312,7 +1312,7 @@ apiInstance.getJourneyOutcomes(opts)
  **sortBy** | **String** | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
  **outcomeIds** | **[String]** | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Outcome field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
 
 ### Return type
 
@@ -1601,7 +1601,7 @@ let opts = {
   'isActive': true, // Boolean | Determines whether or not to show only active segments.
   'segmentIds': ["segmentIds_example"], // [String] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Segment field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneySegments(opts)
@@ -1625,7 +1625,7 @@ apiInstance.getJourneySegments(opts)
  **isActive** | **Boolean** | Determines whether or not to show only active segments. | [optional]  |
  **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Segment field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
 
 ### Return type
 
@@ -4057,4 +4057,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@240.0.0_

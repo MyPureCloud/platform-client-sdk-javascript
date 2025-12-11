@@ -78,6 +78,9 @@ Delete annotation
 Requires ANY permissions:
 
 * recording:annotation:delete
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -437,6 +440,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -507,6 +511,9 @@ Get annotation
 Requires ANY permissions:
 
 * recording:annotation:view
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -561,6 +568,9 @@ Get annotations for recording
 Requires ANY permissions:
 
 * recording:annotation:view
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -614,6 +624,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -665,6 +676,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -718,6 +730,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -1937,6 +1950,9 @@ Create annotation
 Requires ANY permissions:
 
 * recording:annotation:add
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -1992,6 +2008,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -2591,6 +2608,8 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recording:editRetention
 * recording:screenRecording:editRetention
+* recording:snippetRecording:view
+* recording:snippetRecording:editRetention
 
 ### Example Usage
 
@@ -2651,6 +2670,7 @@ Requires ANY permissions:
 * recording:annotation:edit
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
 
 ### Example Usage
 
@@ -2821,6 +2841,7 @@ Requires ALL permissions:
 * recording:job:edit
 * recording:recording:editRetention
 * recording:screenRecording:editRetention
+* recording:snippetRecording:editRetention
 
 ### Example Usage
 
@@ -3124,4 +3145,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@240.0.0_

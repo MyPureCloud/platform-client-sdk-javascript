@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 239.0.0
+	 * @version 240.0.0
 	 */
 
 	/**
@@ -413,6 +413,41 @@ class AIStudioApi {
 			'/api/v2/conversations/summaries/settings', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a turn to a guide session.
+	 * Creates a new turn in the specified guide session with the provided request data. If the session ID doesnt exist, a new session will be created automatically.
+	 * @param {String} guideId Guide ID
+	 * @param {String} guideSessionId Guide Session ID
+	 * @param {Object} body 
+	 */
+	postGuideSessionTurns(guideId, guideSessionId, body) { 
+		// verify the required parameter 'guideId' is set
+		if (guideId === undefined || guideId === null || guideId === '') {
+			throw 'Missing the required parameter "guideId" when calling postGuideSessionTurns';
+		}
+		// verify the required parameter 'guideSessionId' is set
+		if (guideSessionId === undefined || guideSessionId === null || guideSessionId === '') {
+			throw 'Missing the required parameter "guideSessionId" when calling postGuideSessionTurns';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuideSessionTurns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/{guideId}/sessions/{guideSessionId}/turns', 
+			'POST', 
+			{ 'guideId': guideId,'guideSessionId': guideSessionId },
 			{  },
 			{  },
 			{  },

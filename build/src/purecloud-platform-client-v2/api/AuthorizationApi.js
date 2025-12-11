@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 239.0.0
+	 * @version 240.0.0
 	 */
 
 	/**
@@ -54,7 +54,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy is applied
 	 * @param {String} subjectId The ID of the subject to which the policy is applied
-	 * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
 		// verify the required parameter 'targetName' is set
@@ -453,7 +452,6 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPolicies(opts) { 
 		opts = opts || {};
@@ -480,7 +478,6 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPoliciesSubjectSubjectId(subjectId, opts) { 
 		opts = opts || {};
@@ -511,7 +508,6 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPoliciesTarget(targetName, opts) { 
 		opts = opts || {};
@@ -540,7 +536,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action resource target to which the policy is applied
 	 * @param {String} subjectId The ID of the subject to which the policy is applied
-	 * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
 		// verify the required parameter 'targetName' is set
@@ -569,7 +564,6 @@ class AuthorizationApi {
 	/**
 	 * Get a map of policy targets to valid attributes for those targets
 	 * 
-	 * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPoliciesTargets() { 
 
@@ -591,7 +585,6 @@ class AuthorizationApi {
 	 * Get an access control policy with the specified policy ID
 	 * 
 	 * @param {String} policyId The ID of the policy to retrieve
-	 * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
@@ -617,7 +610,6 @@ class AuthorizationApi {
 	 * Get the list of attributes used to evaluate an access control policy with the specified policy ID
 	 * 
 	 * @param {String} policyId The ID of the policy to retrieve attributes
-	 * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAuthorizationPolicyAttributes(policyId) { 
 		// verify the required parameter 'policyId' is set
@@ -1109,7 +1101,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
-	 * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAuthorizationPoliciesTarget(targetName, body) { 
 		// verify the required parameter 'targetName' is set
@@ -1140,7 +1131,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
-	 * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAuthorizationPoliciesTargetValidate(targetName, body) { 
 		// verify the required parameter 'targetName' is set
@@ -1171,7 +1161,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} policyId The ID of the policy to test the simulated data against
 	 * @param {Object} body A map of attribute names to type and simulated data value
-	 * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAuthorizationPolicySimulate(policyId, body) { 
 		// verify the required parameter 'policyId' is set
@@ -1487,7 +1476,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
-	 * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putAuthorizationPoliciesTarget(targetName, body) { 
 		// verify the required parameter 'targetName' is set
@@ -1518,7 +1506,6 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} policyId The ID of the policy to update
 	 * @param {Object} body Access control policy
-	 * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putAuthorizationPolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set

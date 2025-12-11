@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 239.0.0
+	 * @version 240.0.0
 	 */
 
 	/**
@@ -378,7 +378,7 @@ class JourneyApi {
 	 * @param {String} opts.filterValue Value to filter by. Requires 'filterValue' to also be set.
 	 * @param {Array.<String>} opts.actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
 	 * @param {Array.<String>} opts.queryFields Action Map field(s) to query on. Requires 'queryValue' to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
+	 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 	 */
 	getJourneyActionmaps(opts) { 
 		opts = opts || {};
@@ -533,7 +533,7 @@ class JourneyApi {
 	 * @param {Object} opts.mediaType Media type
 	 * @param {Object} opts.state Action template state.
 	 * @param {Array.<String>} opts.queryFields ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
+	 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 	 */
 	getJourneyActiontemplates(opts) { 
 		opts = opts || {};
@@ -625,7 +625,7 @@ class JourneyApi {
 	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
 	 * @param {Array.<String>} opts.outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
 	 * @param {Array.<String>} opts.queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
+	 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 	 */
 	getJourneyOutcomes(opts) { 
 		opts = opts || {};
@@ -777,7 +777,7 @@ class JourneyApi {
 	 * @param {Boolean} opts.isActive Determines whether or not to show only active segments.
 	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
 	 * @param {Array.<String>} opts.queryFields Segment field(s) to query on. Requires 'queryValue' to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
+	 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 	 */
 	getJourneySegments(opts) { 
 		opts = opts || {};

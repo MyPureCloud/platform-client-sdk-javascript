@@ -9,10 +9,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAssistant**](AgentAssistantsApi#deleteAssistant) | **DELETE** /api/v2/assistants/{assistantId} | Delete an assistant.
 [**deleteAssistantQueue**](AgentAssistantsApi#deleteAssistantQueue) | **DELETE** /api/v2/assistants/{assistantId}/queues/{queueId} | Disassociate a queue from an assistant.
 [**deleteAssistantQueues**](AgentAssistantsApi#deleteAssistantQueues) | **DELETE** /api/v2/assistants/{assistantId}/queues | Disassociate the queues from an assistant for the given assistant ID and queue IDs.
+[**deleteAssistantsAgentchecklist**](AgentAssistantsApi#deleteAssistantsAgentchecklist) | **DELETE** /api/v2/assistants/agentchecklists/{agentChecklistId} | Delete an agent checklist
 [**getAssistant**](AgentAssistantsApi#getAssistant) | **GET** /api/v2/assistants/{assistantId} | Get an assistant.
 [**getAssistantQueue**](AgentAssistantsApi#getAssistantQueue) | **GET** /api/v2/assistants/{assistantId}/queues/{queueId} | Get queue Information for an assistant.
 [**getAssistantQueues**](AgentAssistantsApi#getAssistantQueues) | **GET** /api/v2/assistants/{assistantId}/queues | Get all the queues associated with an assistant.
 [**getAssistants**](AgentAssistantsApi#getAssistants) | **GET** /api/v2/assistants | Get all assistants.
+[**getAssistantsAgentchecklist**](AgentAssistantsApi#getAssistantsAgentchecklist) | **GET** /api/v2/assistants/agentchecklists/{agentChecklistId} | Get an agent checklist
+[**getAssistantsAgentchecklists**](AgentAssistantsApi#getAssistantsAgentchecklists) | **GET** /api/v2/assistants/agentchecklists | Get the list of agent checklists
+[**getAssistantsAgentchecklistsLanguages**](AgentAssistantsApi#getAssistantsAgentchecklistsLanguages) | **GET** /api/v2/assistants/agentchecklists/languages | Get the list of supported languages
 [**getAssistantsQueues**](AgentAssistantsApi#getAssistantsQueues) | **GET** /api/v2/assistants/queues | Get all queues assigned to any assistant.
 [**patchAssistant**](AgentAssistantsApi#patchAssistant) | **PATCH** /api/v2/assistants/{assistantId} | Update an assistant.
 [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | **PATCH** /api/v2/assistants/{assistantId}/queues | Update Queues for an Assistant.
@@ -20,7 +24,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAssistantQueueUsersBulkRemove**](AgentAssistantsApi#postAssistantQueueUsersBulkRemove) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove | Bulk remove users from assistant-queue (requires manual assignment mode).
 [**postAssistantQueueUsersQuery**](AgentAssistantsApi#postAssistantQueueUsersQuery) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/query | Query for users in the assistant-queue (requires manual assignment mode).
 [**postAssistants**](AgentAssistantsApi#postAssistants) | **POST** /api/v2/assistants | Create an Assistant.
+[**postAssistantsAgentchecklists**](AgentAssistantsApi#postAssistantsAgentchecklists) | **POST** /api/v2/assistants/agentchecklists | Create an agent checklist
 [**putAssistantQueue**](AgentAssistantsApi#putAssistantQueue) | **PUT** /api/v2/assistants/{assistantId}/queues/{queueId} | Create a queue assistant association.
+[**putAssistantsAgentchecklist**](AgentAssistantsApi#putAssistantsAgentchecklist) | **PUT** /api/v2/assistants/agentchecklists/{agentChecklistId} | Update an agent checklist
 
 
 
@@ -174,6 +180,56 @@ apiInstance.deleteAssistantQueues(assistantId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **queueIds** | **String** | Comma-separated identifiers of the queues that need to be deleted. | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAssistantsAgentchecklist
+
+> void deleteAssistantsAgentchecklist(agentChecklistId)
+
+
+DELETE /api/v2/assistants/agentchecklists/{agentChecklistId}
+
+Delete an agent checklist
+
+Requires ALL permissions:
+
+* assistants:agentchecklist:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+
+apiInstance.deleteAssistantsAgentchecklist(agentChecklistId)
+  .then(() => {
+    console.log('deleteAssistantsAgentchecklist returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAssistantsAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
 
 ### Return type
 
@@ -410,6 +466,165 @@ apiInstance.getAssistants(opts)
 ### Return type
 
 **AssistantListing**
+
+
+## getAssistantsAgentchecklist
+
+> AgentChecklist getAssistantsAgentchecklist(agentChecklistId)
+
+
+GET /api/v2/assistants/agentchecklists/{agentChecklistId}
+
+Get an agent checklist
+
+Requires ALL permissions:
+
+* assistants:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+
+apiInstance.getAssistantsAgentchecklist(agentChecklistId)
+  .then((data) => {
+    console.log(`getAssistantsAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAssistantsAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+
+### Return type
+
+**AgentChecklist**
+
+
+## getAssistantsAgentchecklists
+
+> AgentChecklistListing getAssistantsAgentchecklists(opts)
+
+
+GET /api/v2/assistants/agentchecklists
+
+Get the list of agent checklists
+
+Requires ALL permissions:
+
+* assistants:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "25", // String | The page size for the listing. The max that will be returned is 100.
+  'namePrefix': "namePrefix_example", // String | The agent checklist name prefix filter applied to the listing.
+  'language': "language_example", // String | The agent checklist language filter applied to the listing.
+  'sortOrder': "sortOrder_example", // String | The sort order for the listing
+  'sortBy': "sortBy_example" // String | The field to sort by for the listing.
+};
+
+apiInstance.getAssistantsAgentchecklists(opts)
+  .then((data) => {
+    console.log(`getAssistantsAgentchecklists success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAssistantsAgentchecklists');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | The page size for the listing. The max that will be returned is 100. | [optional] [default to 25] |
+ **namePrefix** | **String** | The agent checklist name prefix filter applied to the listing. | [optional]  |
+ **language** | **String** | The agent checklist language filter applied to the listing. | [optional]  |
+ **sortOrder** | **String** | The sort order for the listing | [optional] <br />**Values**: asc, desc |
+ **sortBy** | **String** | The field to sort by for the listing. | [optional] <br />**Values**: dateModified, language, name |
+
+### Return type
+
+**AgentChecklistListing**
+
+
+## getAssistantsAgentchecklistsLanguages
+
+> EntityListing getAssistantsAgentchecklistsLanguages()
+
+
+GET /api/v2/assistants/agentchecklists/languages
+
+Get the list of supported languages
+
+Requires ALL permissions:
+
+* assistants:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+apiInstance.getAssistantsAgentchecklistsLanguages()
+  .then((data) => {
+    console.log(`getAssistantsAgentchecklistsLanguages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAssistantsAgentchecklistsLanguages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**EntityListing**
 
 
 ## getAssistantsQueues
@@ -792,6 +1007,56 @@ apiInstance.postAssistants(body)
 **Assistant**
 
 
+## postAssistantsAgentchecklists
+
+> AgentChecklist postAssistantsAgentchecklists(body)
+
+
+POST /api/v2/assistants/agentchecklists
+
+Create an agent checklist
+
+Requires ALL permissions:
+
+* assistants:agentchecklist:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let body = {}; // Object | Request body containing details of checklist to be added
+
+apiInstance.postAssistantsAgentchecklists(body)
+  .then((data) => {
+    console.log(`postAssistantsAgentchecklists success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAssistantsAgentchecklists');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Request body containing details of checklist to be added |  |
+
+### Return type
+
+**AgentChecklist**
+
+
 ## putAssistantQueue
 
 > AssistantQueue putAssistantQueue(assistantId, queueId, body)
@@ -846,4 +1111,56 @@ apiInstance.putAssistantQueue(assistantId, queueId, body)
 **AssistantQueue**
 
 
-_purecloud-platform-client-v2@239.0.0_
+## putAssistantsAgentchecklist
+
+> AgentChecklist putAssistantsAgentchecklist(agentChecklistId, body)
+
+
+PUT /api/v2/assistants/agentchecklists/{agentChecklistId}
+
+Update an agent checklist
+
+Requires ALL permissions:
+
+* assistants:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Request body containing details of checklist to be updated
+
+apiInstance.putAssistantsAgentchecklist(agentChecklistId, body)
+  .then((data) => {
+    console.log(`putAssistantsAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAssistantsAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Request body containing details of checklist to be updated |  |
+
+### Return type
+
+**AgentChecklist**
+
+
+_purecloud-platform-client-v2@240.0.0_

@@ -733,6 +733,10 @@
       "class": "WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.adherence.historical.agent",
+      "class": "WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceAgentCalculationsCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.adherence.historical.bulk",
       "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
     },
