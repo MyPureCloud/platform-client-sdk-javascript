@@ -2545,7 +2545,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **limit** | **String** | Number of entities to return. Maximum of 100. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
  **name** | **String** | Filter by Name. | [optional]  |
- **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA, cs-CZ |
+ **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA, cs-CZ, fil-PH, ms-MY, he-IL, el-GR |
  **published** | **Boolean** | Filter by published status. | [optional]  |
  **sortBy** | **String** | Sort by. | [optional] <br />**Values**: Name, Date |
  **sortOrder** | **String** | Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
@@ -5255,4 +5255,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@241.0.0_

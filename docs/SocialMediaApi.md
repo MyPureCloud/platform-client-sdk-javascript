@@ -759,7 +759,7 @@ apiInstance.getSocialmediaEscalationrules(divisionId, opts)
 
 ## getSocialmediaTopic
 
-> SocialTopicResponse getSocialmediaTopic(topicId, opts)
+> SocialTopicWithDataIngestionRuleMetadataResponse getSocialmediaTopic(topicId, opts)
 
 
 GET /api/v2/socialmedia/topics/{topicId}
@@ -808,7 +808,7 @@ apiInstance.getSocialmediaTopic(topicId, opts)
 
 ### Return type
 
-**SocialTopicResponse**
+**SocialTopicWithDataIngestionRuleMetadataResponse**
 
 
 ## getSocialmediaTopicDataingestionrules
@@ -1595,7 +1595,8 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'divisionIds': ["divisionIds_example"], // [String] | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'name': "name_example" // String | Search for topic by name that contains the given search string, search is case insensitive
 };
 
 apiInstance.getSocialmediaTopics(opts)
@@ -1617,6 +1618,7 @@ apiInstance.getSocialmediaTopics(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **divisionIds** | **[String]** | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. | [optional]  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **name** | **String** | Search for topic by name that contains the given search string, search is case insensitive | [optional]  |
 
 ### Return type
 
@@ -2815,4 +2817,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@241.0.0_

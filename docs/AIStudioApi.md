@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchGuideVersion**](AIStudioApi#patchGuideVersion) | **PATCH** /api/v2/guides/{guideId}/versions/{versionId} | Update a guide version.
 [**postConversationsSummariesPreview**](AIStudioApi#postConversationsSummariesPreview) | **POST** /api/v2/conversations/summaries/preview | Trigger summary preview event generation.
 [**postConversationsSummariesSettings**](AIStudioApi#postConversationsSummariesSettings) | **POST** /api/v2/conversations/summaries/settings | Create a summary setting.
+[**postGuideSessionTurns**](AIStudioApi#postGuideSessionTurns) | **POST** /api/v2/guides/{guideId}/sessions/{guideSessionId}/turns | Add a turn to a guide session.
 [**postGuideVersionJobs**](AIStudioApi#postGuideVersionJobs) | **POST** /api/v2/guides/{guideId}/versions/{versionId}/jobs | Start the publishing of a guide version.
 [**postGuideVersions**](AIStudioApi#postGuideVersions) | **POST** /api/v2/guides/{guideId}/versions | Create a guide version.
 [**postGuides**](AIStudioApi#postGuides) | **POST** /api/v2/guides | Create a guide.
@@ -786,6 +787,62 @@ apiInstance.postConversationsSummariesSettings(body)
 **SummarySetting**
 
 
+## postGuideSessionTurns
+
+> GuideSessionTurnResponse postGuideSessionTurns(guideId, guideSessionId, body)
+
+
+POST /api/v2/guides/{guideId}/sessions/{guideSessionId}/turns
+
+Add a turn to a guide session.
+
+Creates a new turn in the specified guide session with the provided request data. If the session ID doesnt exist, a new session will be created automatically.
+
+Requires ALL permissions:
+
+* aiStudio:guideSessionTurn:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let guideId = "guideId_example"; // String | Guide ID
+let guideSessionId = "guideSessionId_example"; // String | Guide Session ID
+let body = {}; // Object | 
+
+apiInstance.postGuideSessionTurns(guideId, guideSessionId, body)
+  .then((data) => {
+    console.log(`postGuideSessionTurns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGuideSessionTurns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **guideId** | **String** | Guide ID |  |
+ **guideSessionId** | **String** | Guide Session ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**GuideSessionTurnResponse**
+
+
 ## postGuideVersionJobs
 
 > GuideVersionPublishJob postGuideVersionJobs(guideId, versionId, body)
@@ -1054,4 +1111,4 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body)
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@241.0.0_

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingEmailOutboundDomain**](RoutingApi#deleteRoutingEmailOutboundDomain) | **DELETE** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain
 [**deleteRoutingLanguage**](RoutingApi#deleteRoutingLanguage) | **DELETE** /api/v2/routing/languages/{languageId} | Delete a routing language
 [**deleteRoutingPredictor**](RoutingApi#deleteRoutingPredictor) | **DELETE** /api/v2/routing/predictors/{predictorId} | Delete single predictor.
+[**deleteRoutingPredictorsKeyperformanceindicator**](RoutingApi#deleteRoutingPredictorsKeyperformanceindicator) | **DELETE** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Delete a custom Key Performance Indicator.
 [**deleteRoutingQueue**](RoutingApi#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
 [**deleteRoutingQueueMember**](RoutingApi#deleteRoutingQueueMember) | **DELETE** /api/v2/routing/queues/{queueId}/members/{memberId} | Delete a queue member.
 [**deleteRoutingQueueUser**](RoutingApi#deleteRoutingQueueUser) | **DELETE** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
@@ -56,7 +57,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingPredictorModelFeatures**](RoutingApi#getRoutingPredictorModelFeatures) | **GET** /api/v2/routing/predictors/{predictorId}/models/{modelId}/features | Retrieve Predictor Model Features.
 [**getRoutingPredictorModels**](RoutingApi#getRoutingPredictorModels) | **GET** /api/v2/routing/predictors/{predictorId}/models | Retrieve Predictor Models and Top Features.
 [**getRoutingPredictors**](RoutingApi#getRoutingPredictors) | **GET** /api/v2/routing/predictors | Retrieve all predictors.
+[**getRoutingPredictorsKeyperformanceindicator**](RoutingApi#getRoutingPredictorsKeyperformanceindicator) | **GET** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Retrieve a single Key Performance Indicator.
 [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators
+[**getRoutingPredictorsKeyperformanceindicatortypes**](RoutingApi#getRoutingPredictorsKeyperformanceindicatortypes) | **GET** /api/v2/routing/predictors/keyperformanceindicatortypes | Get a list of Key Performance Indicators Types available.
 [**getRoutingQueue**](RoutingApi#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
 [**getRoutingQueueAssistant**](RoutingApi#getRoutingQueueAssistant) | **GET** /api/v2/routing/queues/{queueId}/assistant | Get an assistant associated with a queue.
 [**getRoutingQueueComparisonperiod**](RoutingApi#getRoutingQueueComparisonperiod) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} | Get a Comparison Period.
@@ -107,6 +110,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
 [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
+[**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi#patchRoutingPredictorsKeyperformanceindicator) | **PATCH** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Update a custom Key Performance Indicator.
 [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
 [**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of up to 100 users for a queue
 [**patchRoutingQueueUser**](RoutingApi#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
@@ -134,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
 [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
 [**postRoutingPredictors**](RoutingApi#postRoutingPredictors) | **POST** /api/v2/routing/predictors | Create a predictor.
+[**postRoutingPredictorsKeyperformanceindicators**](RoutingApi#postRoutingPredictorsKeyperformanceindicators) | **POST** /api/v2/routing/predictors/keyperformanceindicators | Create a custom Key Performance Indicator.
 [**postRoutingQueueMembers**](RoutingApi#postRoutingQueueMembers) | **POST** /api/v2/routing/queues/{queueId}/members | Bulk add or delete up to 100 queue members
 [**postRoutingQueueUsers**](RoutingApi#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 [**postRoutingQueueWrapupcodes**](RoutingApi#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
@@ -512,6 +517,58 @@ apiInstance.deleteRoutingPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteRoutingPredictorsKeyperformanceindicator
+
+> void deleteRoutingPredictorsKeyperformanceindicator(kpiId)
+
+
+DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
+
+Delete a custom Key Performance Indicator.
+
+deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:keyPerformanceIndicator:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+
+apiInstance.deleteRoutingPredictorsKeyperformanceindicator(kpiId)
+  .then(() => {
+    console.log('deleteRoutingPredictorsKeyperformanceindicator returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingPredictorsKeyperformanceindicator');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **kpiId** | **String** | Key Performance Indicator ID |  |
 
 ### Return type
 
@@ -2762,6 +2819,62 @@ apiInstance.getRoutingPredictors(opts)
 **PredictorListing**
 
 
+## getRoutingPredictorsKeyperformanceindicator
+
+> KeyPerformanceIndicator getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
+
+
+GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
+
+Retrieve a single Key Performance Indicator.
+
+getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:keyPerformanceIndicator:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Parameter to request additional data to return in KPI payload
+};
+
+apiInstance.getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
+  .then((data) => {
+    console.log(`getRoutingPredictorsKeyperformanceindicator success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictorsKeyperformanceindicator');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **kpiId** | **String** | Key Performance Indicator ID |  |
+ **expand** | **[String]** | Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
+
+### Return type
+
+**KeyPerformanceIndicator**
+
+
 ## getRoutingPredictorsKeyperformanceindicators
 
 > [KeyPerformanceIndicator] getRoutingPredictorsKeyperformanceindicators(opts)
@@ -2814,6 +2927,53 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 ### Return type
 
 **[KeyPerformanceIndicator]**
+
+
+## getRoutingPredictorsKeyperformanceindicatortypes
+
+> [KeyPerformanceIndicatorType] getRoutingPredictorsKeyperformanceindicatortypes()
+
+
+GET /api/v2/routing/predictors/keyperformanceindicatortypes
+
+Get a list of Key Performance Indicators Types available.
+
+getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:keyPerformanceIndicator:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingPredictorsKeyperformanceindicatortypes()
+  .then((data) => {
+    console.log(`getRoutingPredictorsKeyperformanceindicatortypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictorsKeyperformanceindicatortypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**[KeyPerformanceIndicatorType]**
 
 
 ## getRoutingQueue
@@ -5596,6 +5756,62 @@ apiInstance.patchRoutingPredictor(predictorId, opts)
 **Predictor**
 
 
+## patchRoutingPredictorsKeyperformanceindicator
+
+> KeyPerformanceIndicator patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
+
+
+PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
+
+Update a custom Key Performance Indicator.
+
+patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:keyPerformanceIndicator:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
+  .then((data) => {
+    console.log(`patchRoutingPredictorsKeyperformanceindicator success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingPredictorsKeyperformanceindicator');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **kpiId** | **String** | Key Performance Indicator ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**KeyPerformanceIndicator**
+
+
 ## patchRoutingQueueMember
 
 > void patchRoutingQueueMember(queueId, memberId, body)
@@ -7016,6 +7232,58 @@ apiInstance.postRoutingPredictors(opts)
 ### Return type
 
 **Predictor**
+
+
+## postRoutingPredictorsKeyperformanceindicators
+
+> KeyPerformanceIndicator postRoutingPredictorsKeyperformanceindicators(body)
+
+
+POST /api/v2/routing/predictors/keyperformanceindicators
+
+Create a custom Key Performance Indicator.
+
+postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:keyPerformanceIndicator:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | request
+
+apiInstance.postRoutingPredictorsKeyperformanceindicators(body)
+  .then((data) => {
+    console.log(`postRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingPredictorsKeyperformanceindicators');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | request |  |
+
+### Return type
+
+**KeyPerformanceIndicator**
 
 
 ## postRoutingQueueMembers
@@ -8733,4 +9001,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@239.0.0_
+_purecloud-platform-client-v2@241.0.0_
