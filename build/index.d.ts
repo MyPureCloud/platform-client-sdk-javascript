@@ -44,12 +44,16 @@ declare class ApiClientClass {
 
 declare class LoginImplicitGrantOptions {
 	state?: string;
+	org?: string;
+	provider?: string;
+	prompt?: string;
 }
 
 declare class LoginPKCEGrantOptions {
 	state?: string;
 	org?: string;
 	provider?: string;
+	prompt?: string;
 }
 
 declare class AuthData {
