@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 241.0.0
+ * @version 241.1.0
  */
 class ApiClient {
 	/**
@@ -199,6 +199,41 @@ class ApiClient {
 			this.authData = JSON.parse(this.authData);
 		if (this.authData.accessToken) this.setAccessToken(this.authData.accessToken);
 		this.authData.state = tempState;
+	}
+
+	/**
+	 * @description Clears the auth token from local storage, if enabled.
+	 */
+	_clearSettings() {
+		try {
+			if (this.authData && this.authData.accessToken) this.authData.accessToken = null;
+			if (this.authentications['PureCloud OAuth'] && this.authentications['PureCloud OAuth'].accessToken) this.authentications['PureCloud OAuth'].accessToken = null;
+
+			if (this.authData && this.authData.state) this.authData.state = null;
+
+			if (this.authData && this.authData.error) this.authData.error = null;
+			if (this.authData && this.authData.error_description) this.authData.error_description = null;
+
+			if (this.authData && this.authData.tokenExpiryTime) this.authData.tokenExpiryTime = 0;
+			if (this.authData && this.authData.tokenExpiryTimeString) this.authData.tokenExpiryTimeString = null;
+
+			// Don't save settings if we aren't supposed to be persisting them
+			if (this.persistSettings !== true) return;
+
+			// Ensure we can access local storage
+			if (!this.hasLocalStorage) {
+				return;
+			}
+
+			// Remove state from data so it's not persisted
+			let tempData = JSON.parse(JSON.stringify(this.authData));
+			delete tempData.state;
+
+			// Save updated auth data
+			localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
+		} catch (e) {
+			console.error(e);
+		}
 	}
 
 	/**
@@ -1191,6 +1226,13 @@ class ApiClient {
 	 */
 	setAccessToken(token) {
 		this._saveSettings({ accessToken: token });
+	}
+
+	/**
+	 * @description Clears the access token to be used with requests
+	 */
+	clearAccessToken() {
+		this._clearSettings();
 	}
 
 	/**

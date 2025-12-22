@@ -22,6 +22,7 @@ declare class ApiClientClass {
 	authorizePKCEGrant(clientId: string, codeVerifier: string, authCode: string, redirectUri: string): Promise<AuthData>;
 	logout(logoutRedirectUri: string): void;
 	setAccessToken(token: string): void;
+	clearAccessToken(): void;
 	setEnvironment(environment: string): void;
 	setDefaultHeaders(newHeaders: Record<string, string>): void;
 	getDefaultHeaders(): Record<string, string>;
@@ -39095,6 +39096,7 @@ declare namespace Models {
 		"isRightPartyContact"?: boolean;
 		"callAnalysisDisposition"?: string;
 		"agentId"?: string;
+		"isPreviewAutoEnded"?: boolean;
 	}
 	
 	export interface OutboundPreviewCampaignPostContactVoiceAttributes { 
@@ -57882,6 +57884,7 @@ declare namespace Models {
 		"divisionId"?: string;
 		"scoredAgents"?: Array<Models.WorkitemsEventsNotificationScoredAgent>;
 		"utilizationLabelId"?: string;
+		"caseId"?: string;
 	}
 	
 	export interface WorkitemsEventsNotificationWrapup { 
@@ -57971,6 +57974,7 @@ declare namespace Models {
 		"divisionId"?: string;
 		"scoredAgents"?: Array<Models.WorkitemsQueueEventsNotificationScoredAgent>;
 		"utilizationLabelId"?: string;
+		"caseId"?: string;
 	}
 	
 	export interface WorkitemsQueueEventsNotificationWrapup { 
@@ -58060,6 +58064,7 @@ declare namespace Models {
 		"divisionId"?: string;
 		"scoredAgents"?: Array<Models.WorkitemsUserEventsNotificationScoredAgent>;
 		"utilizationLabelId"?: string;
+		"caseId"?: string;
 	}
 	
 	export interface WorkitemsUserEventsNotificationWrapup { 
