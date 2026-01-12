@@ -28,8 +28,6 @@ GET /api/v2/telephony/agents/{agentId}/greetings
 
 Get an agent's greetings.
 
-getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * telephony:otherAgentGreeting:view
@@ -79,8 +77,6 @@ apiInstance.getTelephonyAgentGreetings(agentId)
 GET /api/v2/telephony/agents/greetings/me
 
 Get the agent's own greetings.
-
-getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -444,8 +440,6 @@ PUT /api/v2/telephony/agents/{agentId}/greetings
 
 Updates an agent's greetings.
 
-putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * telephony:otherAgentGreeting:edit
@@ -498,8 +492,6 @@ PUT /api/v2/telephony/agents/greetings/me
 
 Updates the agent's own greetings.
 
-putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * telephony:selfAgentGreeting:edit
@@ -541,4 +533,4 @@ apiInstance.putTelephonyAgentsGreetingsMe(body)
 **SelfAgentGreeting**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_

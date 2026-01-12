@@ -4264,7 +4264,7 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
 
 ## postAnalyticsAgentsStatusCounts
 
-> AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(body)
+> AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(body, opts)
 
 
 POST /api/v2/analytics/agents/status/counts
@@ -4289,8 +4289,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'groupBy': ["groupBy_example"] // [String] | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType
+};
 
-apiInstance.postAnalyticsAgentsStatusCounts(body)
+apiInstance.postAnalyticsAgentsStatusCounts(body, opts)
   .then((data) => {
     console.log(`postAnalyticsAgentsStatusCounts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4306,6 +4309,7 @@ apiInstance.postAnalyticsAgentsStatusCounts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **groupBy** | **[String]** | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType | [optional] <br />**Values**: segmentType, presence, routingStatus, isOutOfOffice |
 
 ### Return type
 
@@ -6833,4 +6837,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_

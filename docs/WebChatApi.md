@@ -1091,4 +1091,4 @@ apiInstance.putWebchatSettings(body)
 **WebChatSettings**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_

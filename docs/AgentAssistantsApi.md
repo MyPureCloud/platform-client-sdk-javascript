@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAssistantsAgentchecklist**](AgentAssistantsApi#deleteAssistantsAgentchecklist) | **DELETE** /api/v2/assistants/agentchecklists/{agentChecklistId} | Delete an agent checklist
 [**getAssistant**](AgentAssistantsApi#getAssistant) | **GET** /api/v2/assistants/{assistantId} | Get an assistant.
 [**getAssistantQueue**](AgentAssistantsApi#getAssistantQueue) | **GET** /api/v2/assistants/{assistantId}/queues/{queueId} | Get queue Information for an assistant.
+[**getAssistantQueueUsersJob**](AgentAssistantsApi#getAssistantQueueUsersJob) | **GET** /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId} | Get job details.
 [**getAssistantQueues**](AgentAssistantsApi#getAssistantQueues) | **GET** /api/v2/assistants/{assistantId}/queues | Get all the queues associated with an assistant.
 [**getAssistants**](AgentAssistantsApi#getAssistants) | **GET** /api/v2/assistants | Get all assistants.
 [**getAssistantsAgentchecklist**](AgentAssistantsApi#getAssistantsAgentchecklist) | **GET** /api/v2/assistants/agentchecklists/{agentChecklistId} | Get an agent checklist
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | **PATCH** /api/v2/assistants/{assistantId}/queues | Update Queues for an Assistant.
 [**postAssistantQueueUsersBulkAdd**](AgentAssistantsApi#postAssistantQueueUsersBulkAdd) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add | Bulk add users to assistant-queue (requires manual assignment mode).
 [**postAssistantQueueUsersBulkRemove**](AgentAssistantsApi#postAssistantQueueUsersBulkRemove) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove | Bulk remove users from assistant-queue (requires manual assignment mode).
+[**postAssistantQueueUsersJobs**](AgentAssistantsApi#postAssistantQueueUsersJobs) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs | Start a new job to assistant-queue.
 [**postAssistantQueueUsersQuery**](AgentAssistantsApi#postAssistantQueueUsersQuery) | **POST** /api/v2/assistants/{assistantId}/queues/{queueId}/users/query | Query for users in the assistant-queue (requires manual assignment mode).
 [**postAssistants**](AgentAssistantsApi#postAssistants) | **POST** /api/v2/assistants | Create an Assistant.
 [**postAssistantsAgentchecklists**](AgentAssistantsApi#postAssistantsAgentchecklists) | **POST** /api/v2/assistants/agentchecklists | Create an agent checklist
@@ -344,6 +346,60 @@ apiInstance.getAssistantQueue(assistantId, queueId, opts)
 ### Return type
 
 **AssistantQueue**
+
+
+## getAssistantQueueUsersJob
+
+> AssistantQueueUsersJobsResponse getAssistantQueueUsersJob(assistantId, queueId, jobId)
+
+
+GET /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId}
+
+Get job details.
+
+Requires ANY permissions:
+
+* assistants:queueUserJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let assistantId = "assistantId_example"; // String | Assistant ID
+let queueId = "queueId_example"; // String | Queue ID
+let jobId = "jobId_example"; // String | Job ID
+
+apiInstance.getAssistantQueueUsersJob(assistantId, queueId, jobId)
+  .then((data) => {
+    console.log(`getAssistantQueueUsersJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAssistantQueueUsersJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assistantId** | **String** | Assistant ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **jobId** | **String** | Job ID |  |
+
+### Return type
+
+**AssistantQueueUsersJobsResponse**
 
 
 ## getAssistantQueues
@@ -899,6 +955,60 @@ apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
 **BulkResponse**
 
 
+## postAssistantQueueUsersJobs
+
+> AssistantQueueUsersJobsResponse postAssistantQueueUsersJobs(assistantId, queueId, body)
+
+
+POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs
+
+Start a new job to assistant-queue.
+
+Requires ANY permissions:
+
+* assistants:queueUserJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AgentAssistantsApi();
+
+let assistantId = "assistantId_example"; // String | Assistant ID
+let queueId = "queueId_example"; // String | Queue ID
+let body = {}; // Object | 
+
+apiInstance.postAssistantQueueUsersJobs(assistantId, queueId, body)
+  .then((data) => {
+    console.log(`postAssistantQueueUsersJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAssistantQueueUsersJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assistantId** | **String** | Assistant ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**AssistantQueueUsersJobsResponse**
+
+
 ## postAssistantQueueUsersQuery
 
 > AssistantQueueUsersQueryResponse postAssistantQueueUsersQuery(assistantId, queueId, body, opts)
@@ -1163,4 +1273,4 @@ apiInstance.putAssistantsAgentchecklist(agentChecklistId, body)
 **AgentChecklist**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_
