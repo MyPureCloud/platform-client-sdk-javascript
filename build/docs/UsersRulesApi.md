@@ -290,7 +290,7 @@ apiInstance.getUsersRules(types, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **types** | **[String]** | The types of the rule | <br />**Values**: Learning |
+ **types** | **[String]** | The types of the rule | <br />**Values**: Learning, ActivityPlan |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Number of results per page | [optional] [default to 25] |
  **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: criteria |
@@ -347,7 +347,7 @@ apiInstance.getUsersRulesSetting(ruleType)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleType** | **String** | The type of the rule | <br />**Values**: Learning |
+ **ruleType** | **String** | The type of the rule | <br />**Values**: Learning, ActivityPlan |
 
 ### Return type
 
@@ -524,4 +524,4 @@ apiInstance.postUsersRulesQuery(body, opts)
 **UsersRulesQueryResponse**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_

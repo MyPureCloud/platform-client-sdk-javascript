@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 241.1.0
+	 * @version 242.0.0
 	 */
 
 	/**
@@ -24,7 +24,6 @@ class TelephonyApi {
 	 * Get an agent's greetings.
 	 * 
 	 * @param {String} agentId User ID
-	 * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonyAgentGreetings(agentId) { 
 		// verify the required parameter 'agentId' is set
@@ -49,7 +48,6 @@ class TelephonyApi {
 	/**
 	 * Get the agent's own greetings.
 	 * 
-	 * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonyAgentsGreetingsMe() { 
 
@@ -233,7 +231,6 @@ class TelephonyApi {
 	 * 
 	 * @param {String} agentId User ID
 	 * @param {Object} body Agent Greeting
-	 * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTelephonyAgentGreetings(agentId, body) { 
 		// verify the required parameter 'agentId' is set
@@ -263,7 +260,6 @@ class TelephonyApi {
 	 * Updates the agent's own greetings.
 	 * 
 	 * @param {Object} body Agent Greeting
-	 * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTelephonyAgentsGreetingsMe(body) { 
 		// verify the required parameter 'body' is set

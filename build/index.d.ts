@@ -212,6 +212,7 @@ declare class AgentAssistantsApi {
   	deleteAssistantsAgentchecklist(agentChecklistId: string): Promise<void>;
   	getAssistant(assistantId: string, opts?: AgentAssistantsApi.getAssistantOptions): Promise<Models.Assistant>;
   	getAssistantQueue(assistantId: string, queueId: string, opts?: AgentAssistantsApi.getAssistantQueueOptions): Promise<Models.AssistantQueue>;
+  	getAssistantQueueUsersJob(assistantId: string, queueId: string, jobId: string): Promise<Models.AssistantQueueUsersJobsResponse>;
   	getAssistantQueues(assistantId: string, opts?: AgentAssistantsApi.getAssistantQueuesOptions): Promise<Models.AssistantQueueListing>;
   	getAssistants(opts?: AgentAssistantsApi.getAssistantsOptions): Promise<Models.AssistantListing>;
   	getAssistantsAgentchecklist(agentChecklistId: string): Promise<Models.AgentChecklist>;
@@ -222,6 +223,7 @@ declare class AgentAssistantsApi {
   	patchAssistantQueues(assistantId: string, body: Array<Models.AssistantQueue>): Promise<Models.AssistantQueueListing>;
   	postAssistantQueueUsersBulkAdd(assistantId: string, queueId: string, body: Models.AssistantQueueUsersBulkAddRequest): Promise<Models.BulkResponse>;
   	postAssistantQueueUsersBulkRemove(assistantId: string, queueId: string, body: Models.AssistantQueueUsersBulkRemoveRequest): Promise<Models.BulkResponse>;
+  	postAssistantQueueUsersJobs(assistantId: string, queueId: string, body: Models.AssistantQueueUsersJobsRequest): Promise<Models.AssistantQueueUsersJobsResponse>;
   	postAssistantQueueUsersQuery(assistantId: string, queueId: string, body: Models.AssistantQueueUsersQueryRequest, opts?: AgentAssistantsApi.postAssistantQueueUsersQueryOptions): Promise<Models.AssistantQueueUsersQueryResponse>;
   	postAssistants(body: Models.Assistant): Promise<Models.Assistant>;
   	postAssistantsAgentchecklists(body: Models.AgentChecklist): Promise<Models.AgentChecklist>;
@@ -414,7 +416,7 @@ declare class AnalyticsApi {
   	postAnalyticsActionsAggregatesQuery(body: Models.ActionAggregationQuery): Promise<Models.ActionAggregateQueryResponse>;
   	postAnalyticsAgentcopilotsAggregatesJobs(body: Models.AgentCopilotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsAgentcopilotsAggregatesQuery(body: Models.AgentCopilotAggregationQuery): Promise<Models.AgentCopilotAggregateQueryResponse>;
-  	postAnalyticsAgentsStatusCounts(body: Models.AgentStateCountsRequest): Promise<Models.AnalyticsAgentStateCountsResponse>;
+  	postAnalyticsAgentsStatusCounts(body: Models.AgentStateCountsRequest, opts?: AnalyticsApi.postAnalyticsAgentsStatusCountsOptions): Promise<Models.AnalyticsAgentStateCountsResponse>;
   	postAnalyticsAgentsStatusQuery(body: Models.AgentStateQueryRequest): Promise<Models.AnalyticsAgentStateQueryResponse>;
   	postAnalyticsBotsAggregatesJobs(body: Models.BotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>;
@@ -586,6 +588,9 @@ declare namespace AnalyticsApi {
 	export interface getAnalyticsUsersDetailsJobResultsOptions { 
 		"cursor"?: string;
 		"pageSize"?: number;
+	}
+	export interface postAnalyticsAgentsStatusCountsOptions { 
+		"groupBy"?: Array<string>;
 	}
 	export interface postAnalyticsConversationsActivityQueryOptions { 
 		"pageSize"?: number;
@@ -3540,6 +3545,55 @@ declare namespace IntegrationsApi {
 	}
 }
 
+declare class IntentsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteIntentsCategory(categoryId: string): Promise<void>;
+  	deleteIntentsCustomerintent(customerIntentId: string): Promise<void>;
+  	getIntentsAssignmentsExternalcontact(externalContactId: string, opts?: IntentsApi.getIntentsAssignmentsExternalcontactOptions): Promise<Models.CustomerIntentAssignmentListing>;
+  	getIntentsCategories(opts?: IntentsApi.getIntentsCategoriesOptions): Promise<Models.IntentsCategoryListing>;
+  	getIntentsCategory(categoryId: string): Promise<Models.IntentsCategory>;
+  	getIntentsCustomerintent(customerIntentId: string): Promise<Models.CustomerIntentResponse>;
+  	getIntentsCustomerintentSourceintents(customerIntentId: string, opts?: IntentsApi.getIntentsCustomerintentSourceintentsOptions): Promise<Models.CustomerSourceIntentListing>;
+  	getIntentsCustomerintents(opts?: IntentsApi.getIntentsCustomerintentsOptions): Promise<Models.CustomerIntentListing>;
+  	getIntentsSourceintents(opts?: IntentsApi.getIntentsSourceintentsOptions): Promise<Models.CustomerSourceIntentListing>;
+  	patchIntentsCategory(categoryId: string, body: Models.IntentsCategoryPatch): Promise<Models.IntentsCategory>;
+  	patchIntentsCustomerintent(customerIntentId: string, body: Models.CustomerIntentPatch): Promise<Models.CustomerIntentResponse>;
+  	postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId: string, customerIntentId: string, body: Models.CustomerIntentAssignmentRequest): Promise<Models.CustomerIntentAssignmentResponse>;
+  	postIntentsCategories(body: Models.IntentsCategory): Promise<Models.IntentsCategory>;
+  	postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId: string, body: Models.BulkAddSourceIntentsRequest): Promise<Models.BulkSourceIntentsResponse>;
+  	postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId: string, body: Models.BulkRemoveSourceIntentsRequest): Promise<Models.BulkSourceIntentsResponse>;
+  	postIntentsCustomerintents(body: Models.CustomerIntent): Promise<Models.CustomerIntentResponse>;
+}
+
+declare namespace IntentsApi { 
+	export interface getIntentsAssignmentsExternalcontactOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface getIntentsCategoriesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"queryValue"?: string;
+	}
+	export interface getIntentsCustomerintentSourceintentsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"queryValue"?: string;
+	}
+	export interface getIntentsCustomerintentsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"queryValue"?: string;
+		"categoryId"?: string;
+	}
+	export interface getIntentsSourceintentsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"type"?: string;
+		"sourceId"?: string;
+	}
+}
+
 declare class JourneyApi {
 	constructor(apiClient?: ApiClientClass);
   	deleteAnalyticsJourneysAggregatesJob(jobId: string): Promise<void>;
@@ -5322,6 +5376,7 @@ declare class QualityApi {
   	deleteQualityForm(formId: string): Promise<void>;
   	deleteQualityFormsEvaluation(formId: string): Promise<void>;
   	deleteQualityFormsSurvey(formId: string): Promise<void>;
+  	deleteQualityProgramAgentscoringrule(programId: string, ruleId: string): Promise<void>;
   	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>;
   	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
@@ -5347,6 +5402,8 @@ declare class QualityApi {
   	getQualityFormsSurveys(opts?: QualityApi.getQualityFormsSurveysOptions): Promise<Models.SurveyFormEntityListing>;
   	getQualityFormsSurveysBulk(id: Array<string>): Promise<Models.SurveyFormEntityListing>;
   	getQualityFormsSurveysBulkContexts(contextId: Array<string>, opts?: QualityApi.getQualityFormsSurveysBulkContextsOptions): Promise<Array<Models.SurveyForm>>;
+  	getQualityProgramAgentscoringrule(programId: string, ruleId: string): Promise<Models.AgentScoringRule>;
+  	getQualityProgramAgentscoringrules(programId: string): Promise<Models.AgentScoringRuleEntityListing>;
   	getQualityPublishedform(formId: string): Promise<Models.EvaluationFormResponse>;
   	getQualityPublishedforms(opts?: QualityApi.getQualityPublishedformsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
   	getQualityPublishedformsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>;
@@ -5368,6 +5425,7 @@ declare class QualityApi {
   	postQualityForms(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
   	postQualityFormsEvaluations(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
   	postQualityFormsSurveys(body: Models.SurveyForm): Promise<Models.SurveyForm>;
+  	postQualityProgramAgentscoringrules(programId: string, body: Models.AgentScoringRule): Promise<Models.AgentScoringRule>;
   	postQualityPublishedforms(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>;
   	postQualityPublishedformsEvaluations(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>;
   	postQualityPublishedformsSurveys(body: Models.PublishForm): Promise<Models.SurveyForm>;
@@ -5378,6 +5436,7 @@ declare class QualityApi {
   	putQualityFormsEvaluation(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
   	putQualityFormsEvaluationAiscoringSettings(formId: string, body: Models.AiScoringSettings): Promise<Models.AiScoringSettings>;
   	putQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>;
+  	putQualityProgramAgentscoringrule(programId: string, ruleId: string, body: Models.AgentScoringRule): Promise<Models.AgentScoringRule>;
   	putQualitySurveysScorable(customerSurveyUrl: string, body: Models.ScorableSurvey): Promise<Models.ScorableSurvey>;
 }
 
@@ -5470,6 +5529,7 @@ declare namespace QualityApi {
 	export interface getQualityFormVersionsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"sortOrder"?: string;
 	}
 	export interface getQualityFormsOptions { 
 		"pageSize"?: number;
@@ -6685,6 +6745,7 @@ declare namespace SocialMediaApi {
 		"divisionIds"?: Array<string>;
 		"includeDeleted"?: boolean;
 		"name"?: string;
+		"ids"?: Array<string>;
 	}
 	export interface patchSocialmediaTopicOptions { 
 		"body"?: Models.SocialTopicPatchRequest;
@@ -8224,6 +8285,8 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>;
   	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>;
   	getWorkforcemanagementTimeoffrequests(): Promise<Models.TimeOffRequestList>;
+  	getWorkforcemanagementUnavailabletimesSettings(): Promise<Models.ManagementUnitAvailabilitySettingsResponse>;
+  	getWorkforcemanagementUnavailabletimesValidationJob(jobId: string): Promise<Models.QueryAgentUnavailableTimesValidationJobResponse>;
   	getWorkforcemanagementUserWorkplanbidranks(userId: string): Promise<Models.WorkPlanBidRanks>;
   	getWorkforcemanagementWorkplanbidPreferences(bidId: string): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>;
   	getWorkforcemanagementWorkplanbidWorkplans(bidId: string): Promise<Models.AgentWorkPlanListResponse>;
@@ -8250,11 +8313,13 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string, body: Models.UpdateTimeOffLimitRequest): Promise<Models.TimeOffLimit>;
   	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string, body: Models.UpdateTimeOffPlanRequest): Promise<Models.TimeOffPlan>;
   	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId: string, timeOffRequestId: string, userId: string, body: Models.SetTimeOffIntegrationStatusRequest): Promise<Models.UserTimeOffIntegrationStatusResponse>;
+  	patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId: string, body: Models.UpdateManagementUnitsSettingsRequest): Promise<Models.ManagementUnitAvailabilitySettingsResponse>;
   	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string, body: Models.AdminTimeOffRequestPatch): Promise<Models.TimeOffRequestResponse>;
   	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId: string, weekDateId: string, tradeId: string, body: Models.PatchShiftTradeRequest): Promise<Models.ShiftTradeResponse>;
   	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, body: Models.WorkPlan, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>;
   	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string, body: Models.UpdateWorkPlanRotationRequest): Promise<Models.WorkPlanRotationResponse>;
   	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, body: Models.AgentTimeOffRequestPatch): Promise<Models.TimeOffRequestResponse>;
+  	patchWorkforcemanagementUnavailabletimes(body: Models.UpdateUnavailableTimesRequest): Promise<Models.UnavailableTimeListing>;
   	patchWorkforcemanagementUserWorkplanbidranks(userId: string, body: Models.WorkPlanBidRanks): Promise<Models.WorkPlanBidRanks>;
   	patchWorkforcemanagementUsersWorkplanbidranksBulk(body: Array<Models.WorkPlanBidRanks>): Promise<Models.EntityListing>;
   	patchWorkforcemanagementWorkplanbidPreferences(bidId: string, body: Models.UpdateAgentWorkPlanBiddingPreference): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>;
@@ -8264,6 +8329,7 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementAdherenceHistoricalBulk(body: Models.WfmHistoricalAdherenceBulkQuery): Promise<Models.WfmHistoricalAdherenceBulkResponse>;
   	postWorkforcemanagementAgentAdherenceExplanations(agentId: string, body: Models.AddAdherenceExplanationAdminRequest): Promise<Models.AdherenceExplanationAsyncResponse>;
   	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId: string, body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAgentAdherenceExplanationsQueryOptions): Promise<Models.AgentQueryAdherenceExplanationsResponse>;
+  	postWorkforcemanagementAgentUnavailabletimesQuery(agentId: string, body: Models.QueryAgentUnavailableTimesRequest): Promise<Models.UnavailableTimeListing>;
   	postWorkforcemanagementAgents(body: Models.MoveAgentsRequest): Promise<Models.MoveAgentsResponse>;
   	postWorkforcemanagementAgentsIntegrationsHrisQuery(body: Models.QueryAgentsIntegrationsRequest): Promise<Models.AgentsIntegrationsListing>;
   	postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts?: WorkforceManagementApi.postWorkforcemanagementAgentsMeAdherenceHistoricalJobsOptions): Promise<Models.WfmAgentHistoricalAdherenceResponse>;
@@ -8295,6 +8361,8 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId: string, body: Models.BuCreateTimeOffLimitRequest): Promise<Models.BuTimeOffLimitResponse>;
   	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId: string, body: Models.QueryTimeOffLimitValuesRequest): Promise<Models.BuTimeOffLimitValuesResponse>;
   	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId: string, body: Models.BuCreateTimeOffPlanRequest): Promise<Models.BuTimeOffPlanResponse>;
+  	postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId: string, body: Models.QueryAgentScheduleUnavailableTimesRequest): Promise<Models.QueryAgentScheduleUnavailableTimesResponse>;
+  	postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId: string, body: Models.QueryAvailabilityManagementUnitsSettingsRequest): Promise<Models.QueryAvailabilityManagementUnitsSettingsResponse>;
   	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuQueryAgentSchedulesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryOptions): Promise<Models.BuAsyncAgentSchedulesQueryResponse>;
   	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuCopyScheduleRequest): Promise<Models.BuAsyncScheduleResponse>;
   	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId: string, weekId: string, scheduleId: string, body: Models.WfmProcessUploadRequest): Promise<Models.PerformancePredictionRecalculationResponse>;
@@ -8353,6 +8421,8 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementTimeoffrequests(body: Models.CreateAgentTimeOffRequest): Promise<Models.TimeOffRequestResponse>;
   	postWorkforcemanagementTimeoffrequestsEstimate(body: Models.EstimateAvailableTimeOffRequest): Promise<Models.EstimateAvailableTimeOffResponse>;
   	postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body: Models.CurrentUserTimeOffIntegrationStatusRequest): Promise<Models.TimeOffIntegrationStatusResponseListing>;
+  	postWorkforcemanagementUnavailabletimesQuery(body: Models.QueryAgentUnavailableTimesRequest): Promise<Models.UnavailableTimeListing>;
+  	postWorkforcemanagementUnavailabletimesValidationJobs(body: Models.ValidateAgentUnavailableTimesRequest): Promise<Models.ValidateAgentUnavailableTimesResponse>;
   	putWorkforcemanagementAgentIntegrationsHris(agentId: string, body: Models.AgentIntegrationsRequest): Promise<Models.AgentIntegrationsResponse>;
   	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId: string, timeOffLimitId: string, body: Models.BuSetTimeOffLimitValuesRequest): Promise<Models.BuTimeOffLimitResponse>;
   	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId: string, timeOffLimitId: string, body: Models.SetTimeOffLimitValuesRequest): Promise<Models.TimeOffLimit>;
@@ -9864,6 +9934,39 @@ declare namespace Models {
 		"lengthMinutes": number;
 	}
 	
+	export interface AgentScheduleUnavailableTime { 
+		"timeSpan": Models.UnavailableTimesTimeSpan;
+		"notes"?: string;
+	}
+	
+	export interface AgentScoringRule { 
+		"id"?: string;
+		"programId"?: string;
+		"samplingType": string;
+		"samplingPercentage"?: number;
+		"submissionType": string;
+		"evaluationFormContextId": string;
+		"enabled": boolean;
+		"published"?: boolean;
+		"evaluator"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface AgentScoringRuleEntityListing { 
+		"entities"?: Array<Models.AgentScoringRule>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"previousUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface AgentStateAgentQueryClause { 
 		"type": string;
 		"predicates": Array<Models.AgentStateAgentQueryPredicate>;
@@ -10345,6 +10448,12 @@ declare namespace Models {
 		"managerId"?: string;
 		"sessionCount"?: number;
 		"sessions"?: Array<Models.AnalyticsAgentStateAgentSessionResult>;
+		"systemPresence"?: string;
+		"organizationPresenceId"?: string;
+		"presenceDate"?: string;
+		"routingStatus"?: string;
+		"routingStatusDate"?: string;
+		"isOutOfOffice"?: boolean;
 	}
 	
 	export interface AnalyticsAgentStateAgentSessionResult { 
@@ -10362,6 +10471,9 @@ declare namespace Models {
 	
 	export interface AnalyticsAgentStateCountsResponse { 
 		"segmentCounts"?: Array<Models.AgentStateSegmentTypeCount>;
+		"presenceCounts"?: Array<Models.AgentStatePresenceCount>;
+		"routingStatusCounts"?: Array<Models.AgentStateRoutingStatusCount>;
+		"isOutOfOfficeCounts"?: Array<Models.AgentStateIsOutOfOfficeCount>;
 	}
 	
 	export interface AnalyticsAgentStateQueryResponse { 
@@ -10669,6 +10781,7 @@ declare namespace Models {
 		"sessionId"?: string;
 		"sharingScreen"?: boolean;
 		"skipEnabled"?: boolean;
+		"snippetRecording"?: boolean;
 		"timeoutSeconds"?: number;
 		"usedRouting"?: string;
 		"videoAddressSelf"?: string;
@@ -11467,6 +11580,22 @@ declare namespace Models {
 	
 	export interface AssistantQueueUsersBulkRemoveRequest { 
 		"entities": Array<Models.AssistantQueueUser>;
+	}
+	
+	export interface AssistantQueueUsersJobErrorInfo { 
+		"message"?: string;
+		"code"?: string;
+	}
+	
+	export interface AssistantQueueUsersJobsRequest { 
+		"action": string;
+	}
+	
+	export interface AssistantQueueUsersJobsResponse { 
+		"id"?: string;
+		"selfUri"?: string;
+		"status"?: string;
+		"errorInfo"?: Models.AssistantQueueUsersJobErrorInfo;
 	}
 	
 	export interface AssistantQueueUsersQueryRequest { 
@@ -12484,6 +12613,7 @@ declare namespace Models {
 	export interface BotFlowSession { 
 		"id"?: string;
 		"flow"?: Models.Entity;
+		"conversation"?: Models.AddressableEntityRef;
 		"channel"?: Models.BotChannel;
 		"language"?: string;
 		"endLanguage"?: string;
@@ -12491,7 +12621,6 @@ declare namespace Models {
 		"botResultCategory"?: string;
 		"dateCreated"?: string;
 		"dateCompleted"?: string;
-		"conversation"?: Models.AddressableEntityRef;
 	}
 	
 	export interface BotIntent { 
@@ -13012,6 +13141,7 @@ declare namespace Models {
 		"doNotChangeManuallyEditedShifts": boolean;
 		"activitySmoothingType"?: string;
 		"induceScheduleVariability"?: boolean;
+		"useUnavailableTimesSnapshot"?: boolean;
 	}
 	
 	export interface BuRescheduleResult { 
@@ -13293,6 +13423,10 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface BulkAddSourceIntentsRequest { 
+		"items": Array<Models.SourceIntent>;
+	}
+	
 	export interface BulkCallbackDisconnectRequest { 
 		"callbackDisconnectIdentifiers": Array<Models.CallbackDisconnectIdentifier>;
 	}
@@ -13552,6 +13686,10 @@ declare namespace Models {
 		"errorIndexes"?: Array<number>;
 	}
 	
+	export interface BulkRemoveSourceIntentsRequest { 
+		"items": Array<string>;
+	}
+	
 	export interface BulkResponse { 
 		"results"?: Array<Models.BulkResult>;
 		"errorCount"?: number;
@@ -13651,8 +13789,19 @@ declare namespace Models {
 		"entity"?: object;
 	}
 	
+	export interface BulkResults { 
+		"id"?: string;
+		"success"?: boolean;
+	}
+	
 	export interface BulkShiftTradeStateUpdateRequest { 
 		"entities": Array<Models.BulkUpdateShiftTradeStateRequestItem>;
+	}
+	
+	export interface BulkSourceIntentsResponse { 
+		"results"?: Array<Models.BulkResults>;
+		"errorCount"?: number;
+		"errorResultIds"?: Array<string>;
 	}
 	
 	export interface BulkUpdateShiftTradeStateRequestItem { 
@@ -15032,6 +15181,11 @@ declare namespace Models {
 		"pageSize"?: number;
 	}
 	
+	export interface CaseReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface CategoriesEntityListing { 
 		"entities"?: Array<Models.StaCategory>;
 		"pageSize"?: number;
@@ -15157,8 +15311,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface ChangeMyPasswordRequest { 
@@ -17299,43 +17453,6 @@ declare namespace Models {
 		"files"?: Models.SnapshotFiles;
 	}
 	
-	export interface ContractDefinition { 
-		"name"?: string;
-		"title"?: string;
-		"description"?: string;
-		"type"?: Array<string>;
-		"pattern"?: string;
-		"items"?: Models.ContractItems;
-		"selfUri"?: string;
-	}
-	
-	export interface ContractItems { 
-		"type"?: Array<string>;
-		"pattern"?: string;
-	}
-	
-	export interface ContractJsonSchema { 
-		"id"?: string;
-		"$schema"?: string;
-		"title"?: string;
-		"description"?: string;
-		"type"?: string;
-		"required"?: Array<string>;
-		"properties"?: { [key: string]: object; };
-		"additionalProperties"?: object;
-		"definitions"?: { [key: string]: Models.ContractDefinition; };
-	}
-	
-	export interface ContractPropertyDefinition { 
-		"title"?: string;
-		"description"?: string;
-		"type"?: Array<string>;
-		"pattern"?: string;
-		"format"?: string;
-		"items"?: Models.ContractItems;
-		"properties"?: { [key: string]: Models.ContractPropertyDefinition; };
-	}
-	
 	export interface Contractual { 
 		"schemaPropertyKey": string;
 		"contractual"?: Models.Contractual;
@@ -19303,6 +19420,7 @@ declare namespace Models {
 		"emails"?: Array<Models.ConversationEventTopicEmail>;
 		"messages"?: Array<Models.ConversationEventTopicMessage>;
 		"internalMessages"?: Array<Models.ConversationEventTopicInternalMessage>;
+		"screenMonitorings"?: Array<Models.ConversationEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.ConversationEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.ConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.ConversationEventTopicVideo>;
@@ -19331,6 +19449,20 @@ declare namespace Models {
 	export interface ConversationEventTopicScoredAgent { 
 		"agent"?: Models.ConversationEventTopicUriReference;
 		"score"?: number;
+	}
+	
+	export interface ConversationEventTopicScreenMonitoring { 
+		"id"?: string;
+		"state"?: string;
+		"initialState"?: string;
+		"provider"?: string;
+		"disconnectType"?: string;
+		"connectedTime"?: string;
+		"disconnectedTime"?: string;
+		"targetUserId"?: string;
+		"screenMonitoringId"?: string;
+		"monitoringType"?: string;
+		"count"?: number;
 	}
 	
 	export interface ConversationEventTopicScreenShare { 
@@ -20498,7 +20630,9 @@ declare namespace Models {
 	}
 	
 	export interface ConversationSessionSummary { 
+		"id"?: string;
 		"text"?: string;
+		"confidence"?: number;
 		"status"?: string;
 		"mediaType"?: string;
 		"language"?: string;
@@ -20508,10 +20642,8 @@ declare namespace Models {
 		"followup"?: Models.ConversationSummaryFollowup;
 		"resolution"?: Models.ConversationSummaryResolution;
 		"dateCreated"?: string;
-		"id"?: string;
-		"confidence"?: number;
-		"participants"?: Array<Models.AddressableEntityRef>;
 		"communication"?: Models.Entity;
+		"participants"?: Array<Models.AddressableEntityRef>;
 	}
 	
 	export interface ConversationSocialExpressionEventTopicConversationDivisionMembership { 
@@ -20682,7 +20814,9 @@ declare namespace Models {
 	}
 	
 	export interface ConversationSummary { 
+		"id"?: string;
 		"text"?: string;
+		"confidence"?: number;
 		"status"?: string;
 		"mediaType"?: string;
 		"language"?: string;
@@ -20692,8 +20826,6 @@ declare namespace Models {
 		"followup"?: Models.ConversationSummaryFollowup;
 		"resolution"?: Models.ConversationSummaryResolution;
 		"dateCreated"?: string;
-		"id"?: string;
-		"confidence"?: number;
 		"participants"?: Array<Models.AddressableEntityRef>;
 	}
 	
@@ -20703,21 +20835,21 @@ declare namespace Models {
 	}
 	
 	export interface ConversationSummaryFollowup { 
+		"confidence"?: number;
 		"text"?: string;
 		"description"?: string;
-		"confidence"?: number;
 	}
 	
 	export interface ConversationSummaryReason { 
+		"confidence"?: number;
 		"text"?: string;
 		"description"?: string;
-		"confidence"?: number;
 	}
 	
 	export interface ConversationSummaryResolution { 
+		"confidence"?: number;
 		"text"?: string;
 		"description"?: string;
-		"confidence"?: number;
 		"outcome"?: string;
 	}
 	
@@ -20874,11 +21006,11 @@ declare namespace Models {
 	}
 	
 	export interface ConversationSummaryWrapupCode { 
+		"id"?: string;
 		"name"?: string;
 		"description"?: string;
-		"selfUri"?: string;
-		"id"?: string;
 		"confidence"?: number;
+		"selfUri"?: string;
 	}
 	
 	export interface ConversationTagsUpdate { 
@@ -22269,6 +22401,73 @@ declare namespace Models {
 		"divisionId"?: string;
 	}
 	
+	export interface CustomerIntent { 
+		"id"?: string;
+		"name": string;
+		"description": string;
+		"expiryTime": number;
+		"categoryId": string;
+		"selfUri"?: string;
+	}
+	
+	export interface CustomerIntentAssignmentListing { 
+		"entities"?: Array<Models.CustomerIntentAssignmentResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"previousUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface CustomerIntentAssignmentRequest { 
+		"sourceId"?: string;
+		"sessionId"?: string;
+		"conversationId"?: string;
+		"sourceType"?: string;
+	}
+	
+	export interface CustomerIntentAssignmentResponse { 
+		"customerIntent"?: Models.DomainEntityRef;
+		"category"?: Models.AddressableEntityRef;
+		"dateMostRecentlyAssigned"?: string;
+	}
+	
+	export interface CustomerIntentListing { 
+		"entities"?: Array<Models.CustomerIntentResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"previousUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface CustomerIntentPatch { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"expiryTime"?: number;
+		"categoryId"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface CustomerIntentResponse { 
+		"id"?: string;
+		"name": string;
+		"description": string;
+		"expiryTime": number;
+		"category"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface CustomerInteractionCenter { 
 		"id"?: string;
 		"name"?: string;
@@ -22288,6 +22487,24 @@ declare namespace Models {
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface CustomerSourceIntent { 
+		"sourceIntent"?: Models.SourceIntent;
+		"customerIntent"?: Models.DomainEntityRef;
+	}
+	
+	export interface CustomerSourceIntentListing { 
+		"entities"?: Array<Models.CustomerSourceIntent>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"previousUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface CustomerStartDetailEventTopicCustomerStartEvent { 
@@ -22748,9 +22965,9 @@ declare namespace Models {
 	
 	export interface DecisionTableContract { 
 		"parentSchema"?: Models.DomainEntityRef;
-		"rowAuthoringSchema"?: Models.ContractJsonSchema;
-		"executionInputSchema"?: Models.ContractJsonSchema;
-		"executionOutputSchema"?: Models.ContractJsonSchema;
+		"rowAuthoringSchema"?: Models.JsonSchemaDocument;
+		"executionInputSchema"?: Models.JsonSchemaDocument;
+		"executionOutputSchema"?: Models.JsonSchemaDocument;
 	}
 	
 	export interface DecisionTableExecutionRequest { 
@@ -26861,6 +27078,7 @@ declare namespace Models {
 		"evaluationForm"?: Models.EvaluationFormResponse;
 		"evaluator"?: Models.User;
 		"agent"?: Models.User;
+		"calibration"?: Models.AddressableEntityRef;
 		"status"?: string;
 		"answers"?: Models.EvaluationScoringSet;
 		"agentHasRead"?: boolean;
@@ -26887,7 +27105,6 @@ declare namespace Models {
 		"evaluationSource"?: Models.EvaluationSource;
 		"aiScoring"?: Models.AiScoring;
 		"selfUri"?: string;
-		"calibration"?: Models.AddressableEntityRef;
 	}
 	
 	export interface EvaluationScoringSet { 
@@ -29167,16 +29384,16 @@ declare namespace Models {
 		"type": string;
 		"count": number;
 		"flows": Array<Models.FlowPathsFlowDetails>;
-		"flowOutcomeValue"?: string;
 		"flowMilestone"?: Models.AddressableEntityRef;
 		"flowOutcome"?: Models.AddressableEntityRef;
+		"flowOutcomeValue"?: string;
 	}
 	
 	export interface FlowPathsFlowDetails { 
+		"flow": Models.AddressableEntityRef;
 		"version": string;
 		"type": string;
 		"count": number;
-		"flow": Models.AddressableEntityRef;
 	}
 	
 	export interface FlowPathsFlowFilter { 
@@ -30123,7 +30340,7 @@ declare namespace Models {
 	
 	export interface GroupMembersUpdate { 
 		"memberIds": Array<string>;
-		"version": number;
+		"version"?: number;
 	}
 	
 	export interface GroupProfile { 
@@ -31175,6 +31392,8 @@ declare namespace Models {
 		"placeholderText"?: string;
 		"isMultipleLine": boolean;
 		"isRequired": boolean;
+		"keyboardType"?: string;
+		"autoCompleteType"?: string;
 	}
 	
 	export interface InputMessage { 
@@ -31580,6 +31799,34 @@ declare namespace Models {
 	export interface IntentReference { 
 		"id"?: string;
 		"name": string;
+	}
+	
+	export interface IntentsCategory { 
+		"id"?: string;
+		"name": string;
+		"description": string;
+		"dateCreated"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface IntentsCategoryListing { 
+		"entities"?: Array<Models.IntentsCategory>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"previousUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface IntentsCategoryPatch { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface InteractiveApplication { 
@@ -35736,11 +35983,11 @@ declare namespace Models {
 	
 	export interface LogCaptureDownloadExecutionResponse { 
 		"id": string;
+		"user": Models.AddressableEntityRef;
 		"state": string;
 		"dateStart": string;
 		"fileUrl": string;
 		"selfUri"?: string;
-		"user": Models.AddressableEntityRef;
 	}
 	
 	export interface LogCaptureQueryRequest { 
@@ -35875,10 +36122,14 @@ declare namespace Models {
 		"settings"?: Models.ManagementUnitSettingsResponse;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"division"?: Models.DivisionReference;
+		"modifiedBy"?: Models.UserReference;
 		"version"?: number;
 		"dateModified"?: string;
-		"modifiedBy"?: Models.UserReference;
 		"selfUri"?: string;
+	}
+	
+	export interface ManagementUnitAvailabilitySettingsResponse { 
+		"enabled": boolean;
 	}
 	
 	export interface ManagementUnitListing { 
@@ -38375,6 +38626,7 @@ declare namespace Models {
 		"thirdPartyOrgName"?: string;
 		"thirdPartyURI"?: string;
 		"domain"?: string;
+		"features"?: { [key: string]: boolean; };
 		"version": number;
 		"state"?: string;
 		"defaultSiteId"?: string;
@@ -38382,7 +38634,6 @@ declare namespace Models {
 		"voicemailEnabled"?: boolean;
 		"productPlatform"?: string;
 		"selfUri"?: string;
-		"features"?: { [key: string]: boolean; };
 	}
 	
 	export interface OrganizationFeatures { 
@@ -39609,6 +39860,8 @@ declare namespace Models {
 		"cobrowsesessions"?: Array<Models.Cobrowsesession>;
 		"emails"?: Array<Models.Email>;
 		"messages"?: Array<Models.Message>;
+		"internalMessages"?: Array<Models.InternalMessage>;
+		"screenMonitorings"?: Array<Models.ScreenMonitoring>;
 		"screenshares"?: Array<Models.Screenshare>;
 		"socialExpressions"?: Array<Models.SocialExpression>;
 		"videos"?: Array<Models.Video>;
@@ -39617,7 +39870,6 @@ declare namespace Models {
 		"flaggedReason"?: string;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
-		"internalMessages"?: Array<Models.InternalMessage>;
 		"bargedParticipantId"?: string;
 	}
 	
@@ -39665,6 +39917,8 @@ declare namespace Models {
 		"cobrowsesessions"?: Array<Models.Cobrowsesession>;
 		"emails"?: Array<Models.Email>;
 		"messages"?: Array<Models.Message>;
+		"internalMessages"?: Array<Models.InternalMessage>;
+		"screenMonitorings"?: Array<Models.ScreenMonitoring>;
 		"screenshares"?: Array<Models.Screenshare>;
 		"socialExpressions"?: Array<Models.SocialExpression>;
 		"videos"?: Array<Models.Video>;
@@ -39673,7 +39927,6 @@ declare namespace Models {
 		"flaggedReason"?: string;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
-		"internalMessages"?: Array<Models.InternalMessage>;
 		"bargedParticipantId"?: string;
 	}
 	
@@ -40359,7 +40612,6 @@ declare namespace Models {
 		"text": string;
 		"strictness"?: string;
 		"sentiment"?: string;
-		"isAIGenerated"?: boolean;
 	}
 	
 	export interface PhraseAssociations { 
@@ -41314,8 +41566,40 @@ declare namespace Models {
 		"downloadUrl"?: string;
 	}
 	
+	export interface QueryAgentScheduleUnavailableTimesRequest { 
+		"agentId": string;
+		"schedule": Models.BuScheduleReference;
+	}
+	
+	export interface QueryAgentScheduleUnavailableTimesResponse { 
+		"consideredInScheduleGeneration": boolean;
+		"scheduleGenerationUnavailableTimes": Array<Models.AgentScheduleUnavailableTime>;
+	}
+	
+	export interface QueryAgentUnavailableTimesRequest { 
+		"startDate": string;
+		"endDate": string;
+	}
+	
+	export interface QueryAgentUnavailableTimesValidationJobResponse { 
+		"id"?: string;
+		"agent": Models.UserReference;
+		"status": string;
+		"result"?: Models.UnavailableTimesValidationResult;
+		"error"?: Models.ErrorBody;
+		"selfUri"?: string;
+	}
+	
 	export interface QueryAgentsIntegrationsRequest { 
 		"agentIds": Array<string>;
+	}
+	
+	export interface QueryAvailabilityManagementUnitsSettingsRequest { 
+		"managementUnitIds": Array<string>;
+	}
+	
+	export interface QueryAvailabilityManagementUnitsSettingsResponse { 
+		"managementUnits": Array<Models.UnavailableTimesManagementUnitSettings>;
 	}
 	
 	export interface QueryCapacityPlanStaffingGroupMetricChangeHistory { 
@@ -42784,6 +43068,7 @@ declare namespace Models {
 		"emails"?: Array<Models.QueueConversationEventTopicEmail>;
 		"messages"?: Array<Models.QueueConversationEventTopicMessage>;
 		"internalMessages"?: Array<Models.QueueConversationEventTopicInternalMessage>;
+		"screenMonitorings"?: Array<Models.QueueConversationEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.QueueConversationEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.QueueConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationEventTopicVideo>;
@@ -42812,6 +43097,20 @@ declare namespace Models {
 	export interface QueueConversationEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationEventTopicUriReference;
 		"score"?: number;
+	}
+	
+	export interface QueueConversationEventTopicScreenMonitoring { 
+		"id"?: string;
+		"state"?: string;
+		"initialState"?: string;
+		"provider"?: string;
+		"disconnectType"?: string;
+		"connectedTime"?: string;
+		"disconnectedTime"?: string;
+		"targetUserId"?: string;
+		"screenMonitoringId"?: string;
+		"monitoringType"?: string;
+		"count"?: number;
 	}
 	
 	export interface QueueConversationEventTopicScreenShare { 
@@ -43714,6 +44013,7 @@ declare namespace Models {
 		"emails"?: Array<Models.QueueConversationSocialExpressionEventTopicEmail>;
 		"messages"?: Array<Models.QueueConversationSocialExpressionEventTopicMessage>;
 		"internalMessages"?: Array<Models.QueueConversationSocialExpressionEventTopicInternalMessage>;
+		"screenMonitorings"?: Array<Models.QueueConversationSocialExpressionEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.QueueConversationSocialExpressionEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.QueueConversationSocialExpressionEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationSocialExpressionEventTopicVideo>;
@@ -43742,6 +44042,20 @@ declare namespace Models {
 	export interface QueueConversationSocialExpressionEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationSocialExpressionEventTopicUriReference;
 		"score"?: number;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicScreenMonitoring { 
+		"id"?: string;
+		"state"?: string;
+		"initialState"?: string;
+		"provider"?: string;
+		"disconnectType"?: string;
+		"connectedTime"?: string;
+		"disconnectedTime"?: string;
+		"targetUserId"?: string;
+		"screenMonitoringId"?: string;
+		"monitoringType"?: string;
+		"count"?: number;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicScreenShare { 
@@ -44269,6 +44583,7 @@ declare namespace Models {
 		"emails"?: Array<Models.QueueConversationVideoEventTopicEmail>;
 		"messages"?: Array<Models.QueueConversationVideoEventTopicMessage>;
 		"internalMessages"?: Array<Models.QueueConversationVideoEventTopicInternalMessage>;
+		"screenMonitorings"?: Array<Models.QueueConversationVideoEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.QueueConversationVideoEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.QueueConversationVideoEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationVideoEventTopicVideo>;
@@ -44297,6 +44612,20 @@ declare namespace Models {
 	export interface QueueConversationVideoEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationVideoEventTopicUriReference;
 		"score"?: number;
+	}
+	
+	export interface QueueConversationVideoEventTopicScreenMonitoring { 
+		"id"?: string;
+		"state"?: string;
+		"initialState"?: string;
+		"provider"?: string;
+		"disconnectType"?: string;
+		"connectedTime"?: string;
+		"disconnectedTime"?: string;
+		"targetUserId"?: string;
+		"screenMonitoringId"?: string;
+		"monitoringType"?: string;
+		"count"?: number;
 	}
 	
 	export interface QueueConversationVideoEventTopicScreenShare { 
@@ -44951,6 +45280,7 @@ declare namespace Models {
 	
 	export interface RecordingJob { 
 		"id"?: string;
+		"user"?: Models.AddressableEntityRef;
 		"state": string;
 		"recordingJobsQuery"?: Models.RecordingJobsQuery;
 		"dateCreated"?: string;
@@ -44963,7 +45293,6 @@ declare namespace Models {
 		"errorMessage"?: string;
 		"failedRecordings"?: string;
 		"selfUri"?: string;
-		"user"?: Models.AddressableEntityRef;
 	}
 	
 	export interface RecordingJobEntityListing { 
@@ -45129,6 +45458,16 @@ declare namespace Models {
 		"phoneNumber"?: string;
 		"url"?: string;
 		"isSelected"?: boolean;
+	}
+	
+	export interface RecordingTemplateCard { 
+		"header"?: Models.RecordingTemplateHeader;
+		"body"?: Models.RecordingTemplateBody;
+		"buttons"?: Array<Models.RecordingTemplateButton>;
+	}
+	
+	export interface RecordingTemplateCarousel { 
+		"cards"?: Array<Models.RecordingTemplateCard>;
 	}
 	
 	export interface RecordingTemplateFooter { 
@@ -45440,6 +45779,7 @@ declare namespace Models {
 		"userInput"?: string;
 		"botPrompts"?: Array<string>;
 		"sessionId"?: string;
+		"conversation"?: Models.AddressableEntityRef;
 		"askAction"?: Models.ReportingTurnAction;
 		"intent"?: Models.ReportingTurnIntent;
 		"knowledge"?: Models.ReportingTurnKnowledge;
@@ -45448,7 +45788,6 @@ declare namespace Models {
 		"dateCompleted"?: string;
 		"askActionResult"?: string;
 		"sessionEndDetails"?: Models.SessionEndDetails;
-		"conversation"?: Models.AddressableEntityRef;
 	}
 	
 	export interface ReportingTurnAction { 
@@ -45976,6 +46315,21 @@ declare namespace Models {
 	export interface ReviewAssessmentResults { 
 		"byAssignees"?: boolean;
 		"byViewers"?: boolean;
+	}
+	
+	export interface RichLink { 
+		"id"?: string;
+		"header"?: Models.RichLinkHeader;
+		"footer"?: string;
+		"text"?: string;
+		"url"?: string;
+		"urlLabel"?: string;
+	}
+	
+	export interface RichLinkHeader { 
+		"type"?: string;
+		"value"?: string;
+		"url"?: string;
 	}
 	
 	export interface Ring { 
@@ -46873,6 +47227,21 @@ declare namespace Models {
 		"score"?: number;
 	}
 	
+	export interface ScreenMonitoring { 
+		"id"?: string;
+		"initialState"?: string;
+		"state"?: string;
+		"segments"?: Array<Models.Segment>;
+		"disconnectType"?: string;
+		"provider"?: string;
+		"targetUser"?: Models.AddressableEntityRef;
+		"screenMonitoring"?: Models.AddressableEntityRef;
+		"monitoringType"?: string;
+		"count"?: number;
+		"connectedTime"?: string;
+		"disconnectedTime"?: string;
+	}
+	
 	export interface ScreenRecordingActiveSessions { 
 		"count"?: number;
 	}
@@ -47092,8 +47461,8 @@ declare namespace Models {
 		"dateAssigned": string;
 		"dateForUnassignment": string;
 		"segment": Models.SegmentAssignmentSegment;
-		"session"?: Models.SegmentAssignmentSession;
 		"externalContact": Models.AddressableEntityRef;
+		"session"?: Models.SegmentAssignmentSession;
 	}
 	
 	export interface SegmentAssignmentEvent { 
@@ -47225,8 +47594,8 @@ declare namespace Models {
 		"useExistingActiveConversation"?: boolean;
 		"message"?: Models.MessageData;
 		"timestamp"?: string;
-		"selfUri"?: string;
 		"user"?: Models.AddressableEntityRef;
+		"selfUri"?: string;
 	}
 	
 	export interface SendMessageBody { 
@@ -48401,6 +48770,14 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface SourceIntent { 
+		"sourceIntentId"?: string;
+		"sourceIntentName"?: string;
+		"sourceType"?: string;
+		"sourceId"?: string;
+		"sourceName"?: string;
+	}
+	
 	export interface SourceLastSync { 
 		"state"?: string;
 		"dateStarted"?: string;
@@ -48822,6 +49199,8 @@ declare namespace Models {
 	
 	export interface Suggestion { 
 		"id"?: string;
+		"conversation"?: Models.AddressableEntityRef;
+		"assistant"?: Models.AddressableEntityRef;
 		"type"?: string;
 		"faq"?: Models.Faq;
 		"article"?: Models.Article;
@@ -48835,8 +49214,6 @@ declare namespace Models {
 		"cannedResponse"?: Models.SuggestionCannedResponse;
 		"script"?: Models.SuggestionScript;
 		"selfUri"?: string;
-		"conversation"?: Models.AddressableEntityRef;
-		"assistant"?: Models.AddressableEntityRef;
 	}
 	
 	export interface SuggestionCannedResponse { 
@@ -51518,6 +51895,37 @@ declare namespace Models {
 		"group"?: Models.UnansweredGroup;
 	}
 	
+	export interface UnavailableTime { 
+		"id"?: string;
+		"timeSpan": Models.UnavailableTimesTimeSpan;
+		"notes"?: string;
+	}
+	
+	export interface UnavailableTimeListing { 
+		"entities"?: Array<Models.UnavailableTime>;
+	}
+	
+	export interface UnavailableTimesManagementUnitSettings { 
+		"managementUnit": Models.ManagementUnitReference;
+		"enabled": boolean;
+	}
+	
+	export interface UnavailableTimesTimeSpan { 
+		"startDate": string;
+		"lengthMinutes": number;
+	}
+	
+	export interface UnavailableTimesValidationResult { 
+		"valid": boolean;
+		"invalidWorkPlans": Array<Models.WorkPlanReference>;
+		"workPlanConstraintsViolationMessage"?: Models.WorkPlanConstraintsViolationMessage;
+	}
+	
+	export interface UnavailableTimesViolationMessageArgument { 
+		"type": string;
+		"value": string;
+	}
+	
 	export interface UnifiedCommunicationsIntegration { 
 		"id"?: string;
 		"name"?: string;
@@ -51725,6 +52133,10 @@ declare namespace Models {
 		"settings"?: Models.ManagementUnitSettingsRequest;
 	}
 	
+	export interface UpdateManagementUnitsSettingsRequest { 
+		"enabled"?: boolean;
+	}
+	
 	export interface UpdateMuAgentRequest { 
 		"schedulable"?: boolean;
 		"userId": string;
@@ -51855,6 +52267,17 @@ declare namespace Models {
 		"eventTTLSeconds"?: number;
 		"delayBySeconds"?: number;
 		"description"?: string;
+	}
+	
+	export interface UpdateUnavailableTime { 
+		"id"?: string;
+		"timeSpan"?: Models.UnavailableTimesTimeSpan;
+		"notes"?: string;
+		"delete"?: boolean;
+	}
+	
+	export interface UpdateUnavailableTimesRequest { 
+		"entities": Array<Models.UpdateUnavailableTime>;
 	}
 	
 	export interface UpdateUser { 
@@ -53211,6 +53634,7 @@ declare namespace Models {
 		"name"?: string;
 		"description"?: string;
 		"criteria"?: Array<Models.UsersRulesCriteria>;
+		"lockedCriteria"?: Array<Models.UsersRulesCriteria>;
 	}
 	
 	export interface UsersRulesValue { 
@@ -53837,6 +54261,17 @@ declare namespace Models {
 	export interface ValidateAddressResponse { 
 		"valid": boolean;
 		"response"?: Models.SubscriberResponse;
+	}
+	
+	export interface ValidateAgentUnavailableTimesRequest { 
+		"validationWeekDate": string;
+		"unavailableTimes": Array<Models.UpdateUnavailableTime>;
+	}
+	
+	export interface ValidateAgentUnavailableTimesResponse { 
+		"id"?: string;
+		"status": string;
+		"result"?: Models.UnavailableTimesValidationResult;
 	}
 	
 	export interface ValidateAssignUsers { 
@@ -56873,6 +57308,16 @@ declare namespace Models {
 	export interface WorkPlanConstraintMessage { 
 		"type"?: string;
 		"arguments"?: Array<Models.WorkPlanValidationMessageArgument>;
+	}
+	
+	export interface WorkPlanConstraintViolationMessage { 
+		"type": string;
+		"arguments": Array<Models.UnavailableTimesViolationMessageArgument>;
+	}
+	
+	export interface WorkPlanConstraintsViolationMessage { 
+		"type": string;
+		"fixableConstraintsMessages": Array<Models.WorkPlanConstraintViolationMessage>;
 	}
 	
 	export interface WorkPlanListItemResponse { 

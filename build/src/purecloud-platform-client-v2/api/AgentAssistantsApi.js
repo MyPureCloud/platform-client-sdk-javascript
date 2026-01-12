@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 241.1.0
+	 * @version 242.0.0
 	 */
 
 	/**
@@ -183,6 +183,41 @@ class AgentAssistantsApi {
 			'GET', 
 			{ 'assistantId': assistantId,'queueId': queueId },
 			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get job details.
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {String} jobId Job ID
+	 */
+	getAssistantQueueUsersJob(assistantId, queueId, jobId) { 
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling getAssistantQueueUsersJob';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling getAssistantQueueUsersJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAssistantQueueUsersJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId}', 
+			'GET', 
+			{ 'assistantId': assistantId,'queueId': queueId,'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -474,6 +509,41 @@ class AgentAssistantsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove', 
+			'POST', 
+			{ 'assistantId': assistantId,'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start a new job to assistant-queue.
+	 * 
+	 * @param {String} assistantId Assistant ID
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 */
+	postAssistantQueueUsersJobs(assistantId, queueId, body) { 
+		// verify the required parameter 'assistantId' is set
+		if (assistantId === undefined || assistantId === null || assistantId === '') {
+			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersJobs';
+		}
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling postAssistantQueueUsersJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAssistantQueueUsersJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs', 
 			'POST', 
 			{ 'assistantId': assistantId,'queueId': queueId },
 			{  },

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteQualityForm**](QualityApi#deleteQualityForm) | **DELETE** /api/v2/quality/forms/{formId} | Delete an evaluation form.
 [**deleteQualityFormsEvaluation**](QualityApi#deleteQualityFormsEvaluation) | **DELETE** /api/v2/quality/forms/evaluations/{formId} | Delete an evaluation form.
 [**deleteQualityFormsSurvey**](QualityApi#deleteQualityFormsSurvey) | **DELETE** /api/v2/quality/forms/surveys/{formId} | Delete a survey form.
+[**deleteQualityProgramAgentscoringrule**](QualityApi#deleteQualityProgramAgentscoringrule) | **DELETE** /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId} | Delete an Agent Scoring Rule
 [**getAnalyticsEvaluationsAggregatesJob**](QualityApi#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
 [**getAnalyticsEvaluationsAggregatesJobResults**](QualityApi#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsSurveysAggregatesJob**](QualityApi#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
@@ -38,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityFormsSurveys**](QualityApi#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.
 [**getQualityFormsSurveysBulk**](QualityApi#getQualityFormsSurveysBulk) | **GET** /api/v2/quality/forms/surveys/bulk | Retrieve a list of survey forms by their ids
 [**getQualityFormsSurveysBulkContexts**](QualityApi#getQualityFormsSurveysBulkContexts) | **GET** /api/v2/quality/forms/surveys/bulk/contexts | Retrieve a list of the latest form versions by context ids
+[**getQualityProgramAgentscoringrule**](QualityApi#getQualityProgramAgentscoringrule) | **GET** /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId} | Get an Agent Scoring Rule
+[**getQualityProgramAgentscoringrules**](QualityApi#getQualityProgramAgentscoringrules) | **GET** /api/v2/quality/programs/{programId}/agentscoringrules | Get Agent Scoring Rules for a program
 [**getQualityPublishedform**](QualityApi#getQualityPublishedform) | **GET** /api/v2/quality/publishedforms/{formId} | Get the published evaluation forms.
 [**getQualityPublishedforms**](QualityApi#getQualityPublishedforms) | **GET** /api/v2/quality/publishedforms | Get the published evaluation forms.
 [**getQualityPublishedformsEvaluation**](QualityApi#getQualityPublishedformsEvaluation) | **GET** /api/v2/quality/publishedforms/evaluations/{formId} | Get the most recent published version of an evaluation form.
@@ -59,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityForms**](QualityApi#postQualityForms) | **POST** /api/v2/quality/forms | Create an evaluation form.
 [**postQualityFormsEvaluations**](QualityApi#postQualityFormsEvaluations) | **POST** /api/v2/quality/forms/evaluations | Create an evaluation form.
 [**postQualityFormsSurveys**](QualityApi#postQualityFormsSurveys) | **POST** /api/v2/quality/forms/surveys | Create a survey form.
+[**postQualityProgramAgentscoringrules**](QualityApi#postQualityProgramAgentscoringrules) | **POST** /api/v2/quality/programs/{programId}/agentscoringrules | Create an Agent Scoring Rule
 [**postQualityPublishedforms**](QualityApi#postQualityPublishedforms) | **POST** /api/v2/quality/publishedforms | Publish an evaluation form.
 [**postQualityPublishedformsEvaluations**](QualityApi#postQualityPublishedformsEvaluations) | **POST** /api/v2/quality/publishedforms/evaluations | Publish an evaluation form.
 [**postQualityPublishedformsSurveys**](QualityApi#postQualityPublishedformsSurveys) | **POST** /api/v2/quality/publishedforms/surveys | Publish a survey form.
@@ -69,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putQualityFormsEvaluation**](QualityApi#putQualityFormsEvaluation) | **PUT** /api/v2/quality/forms/evaluations/{formId} | Update an evaluation form.
 [**putQualityFormsEvaluationAiscoringSettings**](QualityApi#putQualityFormsEvaluationAiscoringSettings) | **PUT** /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings | Update the AI Scoring settings of an evaluation form.
 [**putQualityFormsSurvey**](QualityApi#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
+[**putQualityProgramAgentscoringrule**](QualityApi#putQualityProgramAgentscoringrule) | **PUT** /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId} | Update an Agent Scoring Rule
 [**putQualitySurveysScorable**](QualityApi#putQualitySurveysScorable) | **PUT** /api/v2/quality/surveys/scorable | Update a survey as an end-customer, for the purposes of scoring it.
 
 
@@ -432,6 +437,58 @@ apiInstance.deleteQualityFormsSurvey(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteQualityProgramAgentscoringrule
+
+> void deleteQualityProgramAgentscoringrule(programId, ruleId)
+
+
+DELETE /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}
+
+Delete an Agent Scoring Rule
+
+Requires ANY permissions:
+
+* quality:scoringRule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+let ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+
+apiInstance.deleteQualityProgramAgentscoringrule(programId, ruleId)
+  .then(() => {
+    console.log('deleteQualityProgramAgentscoringrule returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityProgramAgentscoringrule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | Program ID from Speech and Text Analytics |  |
+ **ruleId** | **String** | Agent Scoring Rule ID |  |
 
 ### Return type
 
@@ -1331,7 +1388,8 @@ let apiInstance = new platformClient.QualityApi();
 let formId = "formId_example"; // String | Form ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "asc" // String | Sort order
 };
 
 apiInstance.getQualityFormVersions(formId, opts)
@@ -1352,6 +1410,7 @@ apiInstance.getQualityFormVersions(formId, opts)
  **formId** | **String** | Form ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
 
 ### Return type
 
@@ -1927,6 +1986,108 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 ### Return type
 
 **[SurveyForm]**
+
+
+## getQualityProgramAgentscoringrule
+
+> AgentScoringRule getQualityProgramAgentscoringrule(programId, ruleId)
+
+
+GET /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}
+
+Get an Agent Scoring Rule
+
+Requires ANY permissions:
+
+* quality:scoringRule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+let ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+
+apiInstance.getQualityProgramAgentscoringrule(programId, ruleId)
+  .then((data) => {
+    console.log(`getQualityProgramAgentscoringrule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityProgramAgentscoringrule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | Program ID from Speech and Text Analytics |  |
+ **ruleId** | **String** | Agent Scoring Rule ID |  |
+
+### Return type
+
+**AgentScoringRule**
+
+
+## getQualityProgramAgentscoringrules
+
+> AgentScoringRuleEntityListing getQualityProgramAgentscoringrules(programId)
+
+
+GET /api/v2/quality/programs/{programId}/agentscoringrules
+
+Get Agent Scoring Rules for a program
+
+Requires ANY permissions:
+
+* quality:scoringRule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+
+apiInstance.getQualityProgramAgentscoringrules(programId)
+  .then((data) => {
+    console.log(`getQualityProgramAgentscoringrules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityProgramAgentscoringrules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | Program ID from Speech and Text Analytics |  |
+
+### Return type
+
+**AgentScoringRuleEntityListing**
 
 
 ## getQualityPublishedform
@@ -3019,6 +3180,60 @@ apiInstance.postQualityFormsSurveys(body)
 **SurveyForm**
 
 
+## postQualityProgramAgentscoringrules
+
+> AgentScoringRule postQualityProgramAgentscoringrules(programId, body)
+
+
+POST /api/v2/quality/programs/{programId}/agentscoringrules
+
+Create an Agent Scoring Rule
+
+Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+
+Requires ANY permissions:
+
+* quality:scoringRule:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+let body = {}; // Object | Agent Scoring Rule
+
+apiInstance.postQualityProgramAgentscoringrules(programId, body)
+  .then((data) => {
+    console.log(`postQualityProgramAgentscoringrules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postQualityProgramAgentscoringrules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | Program ID from Speech and Text Analytics |  |
+ **body** | **Object** | Agent Scoring Rule |  |
+
+### Return type
+
+**AgentScoringRule**
+
+
 ## postQualityPublishedforms
 
 > EvaluationFormResponse postQualityPublishedforms(body)
@@ -3545,6 +3760,60 @@ apiInstance.putQualityFormsSurvey(formId, body)
 **SurveyForm**
 
 
+## putQualityProgramAgentscoringrule
+
+> AgentScoringRule putQualityProgramAgentscoringrule(programId, ruleId, body)
+
+
+PUT /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}
+
+Update an Agent Scoring Rule
+
+Requires ANY permissions:
+
+* quality:scoringRule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+let ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+let body = {}; // Object | Agent Scoring Rule
+
+apiInstance.putQualityProgramAgentscoringrule(programId, ruleId, body)
+  .then((data) => {
+    console.log(`putQualityProgramAgentscoringrule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putQualityProgramAgentscoringrule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | Program ID from Speech and Text Analytics |  |
+ **ruleId** | **String** | Agent Scoring Rule ID |  |
+ **body** | **Object** | Agent Scoring Rule |  |
+
+### Return type
+
+**AgentScoringRule**
+
+
 ## putQualitySurveysScorable
 
 > ScorableSurvey putQualitySurveysScorable(customerSurveyUrl, body)
@@ -3592,4 +3861,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_

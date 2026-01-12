@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 241.1.0
+	 * @version 242.0.0
 	 */
 
 	/**
@@ -202,6 +202,36 @@ class QualityApi {
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'DELETE', 
 			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an Agent Scoring Rule
+	 * 
+	 * @param {String} programId Program ID from Speech and Text Analytics
+	 * @param {String} ruleId Agent Scoring Rule ID
+	 */
+	deleteQualityProgramAgentscoringrule(programId, ruleId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling deleteQualityProgramAgentscoringrule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling deleteQualityProgramAgentscoringrule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}', 
+			'DELETE', 
+			{ 'programId': programId,'ruleId': ruleId },
 			{  },
 			{  },
 			{  },
@@ -655,6 +685,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
 	 * @deprecated
 	 */
 	getQualityFormVersions(formId, opts) { 
@@ -669,7 +700,7 @@ class QualityApi {
 			'/api/v2/quality/forms/{formId}/versions', 
 			'GET', 
 			{ 'formId': formId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -954,6 +985,61 @@ class QualityApi {
 			'GET', 
 			{  },
 			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi'),'published': opts['published'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Agent Scoring Rule
+	 * 
+	 * @param {String} programId Program ID from Speech and Text Analytics
+	 * @param {String} ruleId Agent Scoring Rule ID
+	 */
+	getQualityProgramAgentscoringrule(programId, ruleId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling getQualityProgramAgentscoringrule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling getQualityProgramAgentscoringrule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}', 
+			'GET', 
+			{ 'programId': programId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Agent Scoring Rules for a program
+	 * 
+	 * @param {String} programId Program ID from Speech and Text Analytics
+	 */
+	getQualityProgramAgentscoringrules(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling getQualityProgramAgentscoringrules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/programs/{programId}/agentscoringrules', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1518,6 +1604,36 @@ class QualityApi {
 	}
 
 	/**
+	 * Create an Agent Scoring Rule
+	 * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+	 * @param {String} programId Program ID from Speech and Text Analytics
+	 * @param {Object} body Agent Scoring Rule
+	 */
+	postQualityProgramAgentscoringrules(programId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling postQualityProgramAgentscoringrules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postQualityProgramAgentscoringrules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/programs/{programId}/agentscoringrules', 
+			'POST', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
@@ -1798,6 +1914,41 @@ class QualityApi {
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'PUT', 
 			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an Agent Scoring Rule
+	 * 
+	 * @param {String} programId Program ID from Speech and Text Analytics
+	 * @param {String} ruleId Agent Scoring Rule ID
+	 * @param {Object} body Agent Scoring Rule
+	 */
+	putQualityProgramAgentscoringrule(programId, ruleId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling putQualityProgramAgentscoringrule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling putQualityProgramAgentscoringrule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putQualityProgramAgentscoringrule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}', 
+			'PUT', 
+			{ 'programId': programId,'ruleId': ruleId },
 			{  },
 			{  },
 			{  },

@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 241.1.0
+	 * @version 242.0.0
 	 */
 
 	/**
@@ -2109,8 +2109,12 @@ class AnalyticsApi {
 	 * Count agents by different groupings
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.groupBy Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType
 	 */
-	postAnalyticsAgentsStatusCounts(body) { 
+	postAnalyticsAgentsStatusCounts(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsAgentsStatusCounts';
@@ -2120,7 +2124,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/agents/status/counts', 
 			'POST', 
 			{  },
-			{  },
+			{ 'groupBy': this.apiClient.buildCollectionParam(opts['groupBy'], 'multi') },
 			{  },
 			{  },
 			body, 

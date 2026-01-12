@@ -66,6 +66,8 @@ docs/InfrastructureAsCodeApi.json
 docs/InfrastructureAsCodeApi.md
 docs/IntegrationsApi.json
 docs/IntegrationsApi.md
+docs/IntentsApi.json
+docs/IntentsApi.md
 docs/JourneyApi.json
 docs/JourneyApi.md
 docs/KnowledgeApi.json
@@ -300,6 +302,8 @@ docs/deleteIntegration-example.txt
 docs/deleteIntegrationsAction-example.txt
 docs/deleteIntegrationsActionDraft-example.txt
 docs/deleteIntegrationsCredential-example.txt
+docs/deleteIntentsCategory-example.txt
+docs/deleteIntentsCustomerintent-example.txt
 docs/deleteJourneyActionmap-example.txt
 docs/deleteJourneyActiontemplate-example.txt
 docs/deleteJourneyOutcome-example.txt
@@ -386,6 +390,7 @@ docs/deleteQualityConversationEvaluation-example.txt
 docs/deleteQualityForm-example.txt
 docs/deleteQualityFormsEvaluation-example.txt
 docs/deleteQualityFormsSurvey-example.txt
+docs/deleteQualityProgramAgentscoringrule-example.txt
 docs/deleteRecordingCrossplatformMediaretentionpolicies-example.txt
 docs/deleteRecordingCrossplatformMediaretentionpolicy-example.txt
 docs/deleteRecordingJob-example.txt
@@ -621,6 +626,7 @@ docs/getArchitectSystemprompts-example.txt
 docs/getAssistant-example.txt
 docs/getAssistantCopilot-example.txt
 docs/getAssistantQueue-example.txt
+docs/getAssistantQueueUsersJob-example.txt
 docs/getAssistantQueues-example.txt
 docs/getAssistants-example.txt
 docs/getAssistantsAgentchecklist-example.txt
@@ -1122,6 +1128,13 @@ docs/getIntegrationsTypes-example.txt
 docs/getIntegrationsUnifiedcommunicationsClientapp-example.txt
 docs/getIntegrationsUnifiedcommunicationsClientapps-example.txt
 docs/getIntegrationsUserapps-example.txt
+docs/getIntentsAssignmentsExternalcontact-example.txt
+docs/getIntentsCategories-example.txt
+docs/getIntentsCategory-example.txt
+docs/getIntentsCustomerintent-example.txt
+docs/getIntentsCustomerintentSourceintents-example.txt
+docs/getIntentsCustomerintents-example.txt
+docs/getIntentsSourceintents-example.txt
 docs/getIpranges-example.txt
 docs/getJourneyActionmap-example.txt
 docs/getJourneyActionmaps-example.txt
@@ -1403,6 +1416,8 @@ docs/getQualityFormsSurveyVersions-example.txt
 docs/getQualityFormsSurveys-example.txt
 docs/getQualityFormsSurveysBulk-example.txt
 docs/getQualityFormsSurveysBulkContexts-example.txt
+docs/getQualityProgramAgentscoringrule-example.txt
+docs/getQualityProgramAgentscoringrules-example.txt
 docs/getQualityPublishedform-example.txt
 docs/getQualityPublishedforms-example.txt
 docs/getQualityPublishedformsEvaluation-example.txt
@@ -1935,6 +1950,8 @@ docs/getWorkforcemanagementTimeoffbalanceJob-example.txt
 docs/getWorkforcemanagementTimeoffrequest-example.txt
 docs/getWorkforcemanagementTimeoffrequestWaitlistpositions-example.txt
 docs/getWorkforcemanagementTimeoffrequests-example.txt
+docs/getWorkforcemanagementUnavailabletimesSettings-example.txt
+docs/getWorkforcemanagementUnavailabletimesValidationJob-example.txt
 docs/getWorkforcemanagementUserWorkplanbidranks-example.txt
 docs/getWorkforcemanagementWorkplanbidPreferences-example.txt
 docs/getWorkforcemanagementWorkplanbidWorkplans-example.txt
@@ -2029,6 +2046,8 @@ docs/patchGuideVersion-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
 docs/patchIntegrationsActionDraft-example.txt
+docs/patchIntentsCategory-example.txt
+docs/patchIntentsCustomerintent-example.txt
 docs/patchJourneyActionmap-example.txt
 docs/patchJourneyActiontarget-example.txt
 docs/patchJourneyActiontemplate-example.txt
@@ -2153,11 +2172,13 @@ docs/patchWorkforcemanagementManagementunitAgentsWorkplansBulk-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus-example.txt
+docs/patchWorkforcemanagementManagementunitUnavailabletimesSettings-example.txt
 docs/patchWorkforcemanagementManagementunitUserTimeoffrequest-example.txt
 docs/patchWorkforcemanagementManagementunitWeekShifttrade-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplan-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplanrotation-example.txt
 docs/patchWorkforcemanagementTimeoffrequest-example.txt
+docs/patchWorkforcemanagementUnavailabletimes-example.txt
 docs/patchWorkforcemanagementUserWorkplanbidranks-example.txt
 docs/patchWorkforcemanagementUsersWorkplanbidranksBulk-example.txt
 docs/patchWorkforcemanagementWorkplanbidPreferences-example.txt
@@ -2261,6 +2282,7 @@ docs/postArchitectSystempromptResourceUploads-example.txt
 docs/postArchitectSystempromptResources-example.txt
 docs/postAssistantQueueUsersBulkAdd-example.txt
 docs/postAssistantQueueUsersBulkRemove-example.txt
+docs/postAssistantQueueUsersJobs-example.txt
 docs/postAssistantQueueUsersQuery-example.txt
 docs/postAssistants-example.txt
 docs/postAssistantsAgentchecklists-example.txt
@@ -2540,6 +2562,11 @@ docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs-example.txt
 docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate-example.txt
 docs/postIntegrationsWebhookEvents-example.txt
+docs/postIntentsAssignmentsExternalcontactCustomerintentAssignment-example.txt
+docs/postIntentsCategories-example.txt
+docs/postIntentsCustomerintentSourceintentsBulkAdd-example.txt
+docs/postIntentsCustomerintentSourceintentsBulkRemove-example.txt
+docs/postIntentsCustomerintents-example.txt
 docs/postJourneyActionmaps-example.txt
 docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
@@ -2703,6 +2730,7 @@ docs/postQualityEvaluationsScoring-example.txt
 docs/postQualityForms-example.txt
 docs/postQualityFormsEvaluations-example.txt
 docs/postQualityFormsSurveys-example.txt
+docs/postQualityProgramAgentscoringrules-example.txt
 docs/postQualityPublishedforms-example.txt
 docs/postQualityPublishedformsEvaluations-example.txt
 docs/postQualityPublishedformsSurveys-example.txt
@@ -2888,6 +2916,7 @@ docs/postWorkforcemanagementAdherenceHistorical-example.txt
 docs/postWorkforcemanagementAdherenceHistoricalBulk-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
+docs/postWorkforcemanagementAgentUnavailabletimesQuery-example.txt
 docs/postWorkforcemanagementAgents-example.txt
 docs/postWorkforcemanagementAgentsIntegrationsHrisQuery-example.txt
 docs/postWorkforcemanagementAgentsMeAdherenceHistoricalJobs-example.txt
@@ -2919,6 +2948,8 @@ docs/postWorkforcemanagementBusinessunitStaffinggroupsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitTimeofflimits-example.txt
 docs/postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitTimeoffplans-example.txt
+docs/postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery-example.txt
+docs/postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitWeekScheduleCopy-example.txt
 docs/postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations-example.txt
@@ -2977,6 +3008,8 @@ docs/postWorkforcemanagementTimeofflimitsAvailableQuery-example.txt
 docs/postWorkforcemanagementTimeoffrequests-example.txt
 docs/postWorkforcemanagementTimeoffrequestsEstimate-example.txt
 docs/postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery-example.txt
+docs/postWorkforcemanagementUnavailabletimesQuery-example.txt
+docs/postWorkforcemanagementUnavailabletimesValidationJobs-example.txt
 docs/putAlertingAlert-example.txt
 docs/putAlertingRule-example.txt
 docs/putAnalyticsDataretentionSettings-example.txt
@@ -3146,6 +3179,7 @@ docs/putQualityForm-example.txt
 docs/putQualityFormsEvaluation-example.txt
 docs/putQualityFormsEvaluationAiscoringSettings-example.txt
 docs/putQualityFormsSurvey-example.txt
+docs/putQualityProgramAgentscoringrule-example.txt
 docs/putQualitySurveysScorable-example.txt
 docs/putRecordingCrossplatformMediaretentionpolicy-example.txt
 docs/putRecordingJob-example.txt
@@ -3281,6 +3315,7 @@ src/purecloud-platform-client-v2/api/GroupsApi.js
 src/purecloud-platform-client-v2/api/IdentityProviderApi.js
 src/purecloud-platform-client-v2/api/InfrastructureAsCodeApi.js
 src/purecloud-platform-client-v2/api/IntegrationsApi.js
+src/purecloud-platform-client-v2/api/IntentsApi.js
 src/purecloud-platform-client-v2/api/JourneyApi.js
 src/purecloud-platform-client-v2/api/KnowledgeApi.js
 src/purecloud-platform-client-v2/api/LanguageUnderstandingApi.js

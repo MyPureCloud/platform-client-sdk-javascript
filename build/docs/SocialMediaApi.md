@@ -1596,7 +1596,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'divisionIds': ["divisionIds_example"], // [String] | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
   'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
-  'name': "name_example" // String | Search for topic by name that contains the given search string, search is case insensitive
+  'name': "name_example", // String | Search for topic by name that contains the given search string, search is case insensitive
+  'ids': ["ids_example"] // [String] | One or more topic IDs to search through the topics.
 };
 
 apiInstance.getSocialmediaTopics(opts)
@@ -1619,6 +1620,7 @@ apiInstance.getSocialmediaTopics(opts)
  **divisionIds** | **[String]** | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. | [optional]  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
  **name** | **String** | Search for topic by name that contains the given search string, search is case insensitive | [optional]  |
+ **ids** | **[String]** | One or more topic IDs to search through the topics. | [optional]  |
 
 ### Return type
 
@@ -2817,4 +2819,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@241.1.0_
+_purecloud-platform-client-v2@242.0.0_

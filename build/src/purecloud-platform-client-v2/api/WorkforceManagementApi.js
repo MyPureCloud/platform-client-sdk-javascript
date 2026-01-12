@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 241.1.0
+	 * @version 242.0.0
 	 */
 
 	/**
@@ -3810,6 +3810,51 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get availability management unit's settings for agent
+	 * 
+	 */
+	getWorkforcemanagementUnavailabletimesSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/unavailabletimes/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query agent unavailable times validation job
+	 * 
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementUnavailabletimesValidationJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementUnavailabletimesValidationJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/unavailabletimes/validation/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get work plan bid ranks for a user
 	 * 
 	 * @param {String} userId The userId to whom the work plan bid ranks apply.
@@ -4654,6 +4699,36 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update management unit availability settings
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} body body
+	 */
+	patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUnavailabletimesSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitUnavailabletimesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a time off request
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -4827,6 +4902,31 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
 			'PATCH', 
 			{ 'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update agent unavailable times
+	 * 
+	 * @param {Object} body body
+	 */
+	patchWorkforcemanagementUnavailabletimes(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementUnavailabletimes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/unavailabletimes', 
+			'PATCH', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -5083,6 +5183,36 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'agentId': agentId },
 			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get agent unavailable times
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentUnavailabletimesQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentUnavailabletimesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query', 
+			'POST', 
+			{ 'agentId': agentId },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -6012,6 +6142,66 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get agent schedule generation unavailable times
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query availability management units settings
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -7913,6 +8103,56 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get agent unavailable times
+	 * 
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementUnavailabletimesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementUnavailabletimesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/unavailabletimes/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+	 * 
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementUnavailabletimesValidationJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementUnavailabletimesValidationJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/unavailabletimes/validation/jobs', 
 			'POST', 
 			{  },
 			{  },
