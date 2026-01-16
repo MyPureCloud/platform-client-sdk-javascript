@@ -25,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGuideVersions**](AIStudioApi#postGuideVersions) | **POST** /api/v2/guides/{guideId}/versions | Create a guide version.
 [**postGuides**](AIStudioApi#postGuides) | **POST** /api/v2/guides | Create a guide.
 [**postGuidesJobs**](AIStudioApi#postGuidesJobs) | **POST** /api/v2/guides/jobs | Start a guide content generation job.
+[**postGuidesUploads**](AIStudioApi#postGuidesUploads) | **POST** /api/v2/guides/uploads | Generate presigned URL for uploading a file content to generate guide
 [**putConversationsSummariesSetting**](AIStudioApi#putConversationsSummariesSetting) | **PUT** /api/v2/conversations/summaries/settings/{summarySettingId} | Update a summary setting.
 
 
@@ -87,8 +88,6 @@ void (no response body)
 DELETE /api/v2/guides/{guideId}/jobs
 
 Start the deletion of a guide.
-
-deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -252,8 +251,6 @@ GET /api/v2/guides/{guideId}
 
 Get guide.
 
-getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * aiStudio:guide:view
@@ -303,8 +300,6 @@ apiInstance.getGuide(guideId)
 GET /api/v2/guides/{guideId}/jobs/{jobId}
 
 Get the specified guide deletion job.
-
-getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -358,8 +353,6 @@ GET /api/v2/guides/{guideId}/versions/{versionId}
 
 Get a guide version.
 
-getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * aiStudio:guideVersion:view
@@ -411,8 +404,6 @@ apiInstance.getGuideVersion(guideId, versionId)
 GET /api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}
 
 Get the status of the publishing job for this guide version.
-
-getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -467,8 +458,6 @@ apiInstance.getGuideVersionJob(guideId, versionId, jobId)
 GET /api/v2/guides
 
 Get all guides.
-
-getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -534,8 +523,6 @@ GET /api/v2/guides/jobs/{jobId}
 
 Get the status of the guide content generation job.
 
-getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * aiStudio:guideJob:view
@@ -585,8 +572,6 @@ apiInstance.getGuidesJob(jobId)
 PATCH /api/v2/guides/{guideId}
 
 Update a guide.
-
-patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -639,8 +624,6 @@ apiInstance.patchGuide(guideId, body)
 PATCH /api/v2/guides/{guideId}/versions/{versionId}
 
 Update a guide version.
-
-patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -852,8 +835,6 @@ POST /api/v2/guides/{guideId}/versions/{versionId}/jobs
 
 Start the publishing of a guide version.
 
-postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * aiStudio:guideVersionJob:add
@@ -907,8 +888,6 @@ apiInstance.postGuideVersionJobs(guideId, versionId, body)
 POST /api/v2/guides/{guideId}/versions
 
 Create a guide version.
-
-postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -964,8 +943,6 @@ POST /api/v2/guides
 
 Create a guide.
 
-postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * aiStudio:guide:add
@@ -1016,8 +993,6 @@ POST /api/v2/guides/jobs
 
 Start a guide content generation job.
 
-postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * aiStudio:guideJob:add
@@ -1057,6 +1032,56 @@ apiInstance.postGuidesJobs(body)
 ### Return type
 
 **GuideContentGenerationJob**
+
+
+## postGuidesUploads
+
+> UploadUrlResponse postGuidesUploads(body)
+
+
+POST /api/v2/guides/uploads
+
+Generate presigned URL for uploading a file content to generate guide
+
+Requires ALL permissions:
+
+* aiStudio:guide:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AIStudioApi();
+
+let body = {}; // Object | query
+
+apiInstance.postGuidesUploads(body)
+  .then((data) => {
+    console.log(`postGuidesUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGuidesUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**UploadUrlResponse**
 
 
 ## putConversationsSummariesSetting
@@ -1111,4 +1136,4 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body)
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_

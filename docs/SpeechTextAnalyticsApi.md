@@ -1011,7 +1011,7 @@ apiInstance.getSpeechandtextanalyticsProgram(programId)
 
 ## getSpeechandtextanalyticsProgramMappings
 
-> ProgramMappings getSpeechandtextanalyticsProgramMappings(programId)
+> TopicsDefinitionsProgramMappings getSpeechandtextanalyticsProgramMappings(programId)
 
 
 GET /api/v2/speechandtextanalytics/programs/{programId}/mappings
@@ -1056,7 +1056,7 @@ apiInstance.getSpeechandtextanalyticsProgramMappings(programId)
 
 ### Return type
 
-**ProgramMappings**
+**TopicsDefinitionsProgramMappings**
 
 
 ## getSpeechandtextanalyticsProgramSettingsInsights
@@ -1271,7 +1271,7 @@ apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId)
 
 ## getSpeechandtextanalyticsProgramsMappings
 
-> ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(opts)
+> TopicsDefinitionsProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/mappings
@@ -1320,7 +1320,7 @@ apiInstance.getSpeechandtextanalyticsProgramsMappings(opts)
 
 ### Return type
 
-**ProgramsMappingsEntityListing**
+**TopicsDefinitionsProgramsMappingsEntityListing**
 
 
 ## getSpeechandtextanalyticsProgramsPublishjob
@@ -3066,7 +3066,7 @@ apiInstance.putSpeechandtextanalyticsProgram(programId, body)
 
 ## putSpeechandtextanalyticsProgramMappings
 
-> ProgramMappings putSpeechandtextanalyticsProgramMappings(programId, body)
+> TopicsDefinitionsProgramMappings putSpeechandtextanalyticsProgramMappings(programId, body)
 
 
 PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings
@@ -3113,7 +3113,7 @@ apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body)
 
 ### Return type
 
-**ProgramMappings**
+**TopicsDefinitionsProgramMappings**
 
 
 ## putSpeechandtextanalyticsProgramSettingsInsights
@@ -3323,4 +3323,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_

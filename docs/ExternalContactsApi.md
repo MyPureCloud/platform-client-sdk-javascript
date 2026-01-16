@@ -943,7 +943,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact Id
 let opts = { 
-  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
@@ -965,7 +965,7 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
@@ -6453,4 +6453,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_

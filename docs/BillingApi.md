@@ -488,4 +488,4 @@ apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 **TrusteeBillingOverview**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_
