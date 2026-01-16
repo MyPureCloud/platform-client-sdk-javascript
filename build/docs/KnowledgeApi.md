@@ -52,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} | Update search result.
 [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
 [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Update category
+[**patchKnowledgeKnowledgebaseChunksSearchSearchId**](KnowledgeApi#patchKnowledgeKnowledgebaseChunksSearchSearchId) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId} | Register chunk search result.
 [**patchKnowledgeKnowledgebaseDocument**](KnowledgeApi#patchKnowledgeKnowledgebaseDocument) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} | Update document.
 [**patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId} | Update feedback on a document
 [**patchKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentVariation) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId} | Update a variation for a document.
@@ -2710,6 +2711,62 @@ apiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, bod
 **CategoryResponse**
 
 
+## patchKnowledgeKnowledgebaseChunksSearchSearchId
+
+> void patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, opts)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}
+
+Register chunk search result.
+
+Requires ALL permissions:
+
+* knowledge:knowledgebase:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+let searchId = "searchId_example"; // String | Unique identifier of search request
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, opts)
+  .then(() => {
+    console.log('patchKnowledgeKnowledgebaseChunksSearchSearchId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseChunksSearchSearchId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge Base ID |  |
+ **searchId** | **String** | Unique identifier of search request |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
 ## patchKnowledgeKnowledgebaseDocument
 
 > KnowledgeDocumentResponse patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
@@ -5255,4 +5312,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 242.0.0
+	 * @version 243.0.0
 	 */
 
 	/**
@@ -1541,6 +1541,40 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Register chunk search result.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge Base ID
+	 * @param {String} searchId Unique identifier of search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseChunksSearchSearchId';
+		}
+		// verify the required parameter 'searchId' is set
+		if (searchId === undefined || searchId === null || searchId === '') {
+			throw 'Missing the required parameter "searchId" when calling patchKnowledgeKnowledgebaseChunksSearchSearchId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'searchId': searchId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

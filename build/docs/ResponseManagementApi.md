@@ -560,7 +560,7 @@ POST /api/v2/responsemanagement/libraries/bulk
 
 Get response libraries.
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * responses:library:view
 
@@ -820,7 +820,7 @@ Update an existing response library.
 
 Fields that can be updated: name. The most recent version is required for updates.
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * responses:library:edit
 
@@ -973,4 +973,4 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body)
 **ResponseAsset**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_

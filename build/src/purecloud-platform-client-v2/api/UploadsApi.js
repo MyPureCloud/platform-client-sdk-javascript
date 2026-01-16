@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 242.0.0
+	 * @version 243.0.0
 	 */
 
 	/**
@@ -63,6 +63,31 @@ class UploadsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/contests/uploads/prizeimages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate presigned URL for uploading a file content to generate guide
+	 * 
+	 * @param {Object} body query
+	 */
+	postGuidesUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuidesUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/uploads', 
 			'POST', 
 			{  },
 			{  },

@@ -2057,6 +2057,7 @@ docs/patchJourneyViewVersionJob-example.txt
 docs/patchKnowledgeGuestSessionDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebase-example.txt
 docs/patchKnowledgeKnowledgebaseCategory-example.txt
+docs/patchKnowledgeKnowledgebaseChunksSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebaseDocument-example.txt
 docs/patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId-example.txt
 docs/patchKnowledgeKnowledgebaseDocumentVariation-example.txt
@@ -2543,6 +2544,8 @@ docs/postGuideVersionJobs-example.txt
 docs/postGuideVersions-example.txt
 docs/postGuides-example.txt
 docs/postGuidesJobs-example.txt
+docs/postGuidesUploads-example.txt
+docs/postGuidesUploads-example.txt
 docs/postIdentityproviders-example.txt
 docs/postInfrastructureascodeJobs-example.txt
 docs/postIntegrations-example.txt

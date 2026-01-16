@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 242.0.0
+	 * @version 243.0.0
 	 */
 
 	/**

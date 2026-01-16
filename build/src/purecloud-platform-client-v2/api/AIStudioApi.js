@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 242.0.0
+	 * @version 243.0.0
 	 */
 
 	/**
@@ -49,7 +49,6 @@ class AIStudioApi {
 	 * Start the deletion of a guide.
 	 * 
 	 * @param {String} guideId Guide ID
-	 * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteGuideJobs(guideId) { 
 		// verify the required parameter 'guideId' is set
@@ -129,7 +128,6 @@ class AIStudioApi {
 	 * Get guide.
 	 * 
 	 * @param {String} guideId Guide ID
-	 * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGuide(guideId) { 
 		// verify the required parameter 'guideId' is set
@@ -156,7 +154,6 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {String} jobId jobId
-	 * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGuideJob(guideId, jobId) { 
 		// verify the required parameter 'guideId' is set
@@ -187,7 +184,6 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
-	 * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGuideVersion(guideId, versionId) { 
 		// verify the required parameter 'guideId' is set
@@ -219,7 +215,6 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {String} jobId jobId
-	 * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGuideVersionJob(guideId, versionId, jobId) { 
 		// verify the required parameter 'guideId' is set
@@ -260,7 +255,6 @@ class AIStudioApi {
 	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
 	 * @param {Number} opts.pageNumber Page number. (default to 1)
 	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
-	 * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGuides(opts) { 
 		opts = opts || {};
@@ -284,7 +278,6 @@ class AIStudioApi {
 	 * Get the status of the guide content generation job.
 	 * 
 	 * @param {String} jobId jobId
-	 * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGuidesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -311,7 +304,6 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {Object} body 
-	 * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchGuide(guideId, body) { 
 		// verify the required parameter 'guideId' is set
@@ -343,7 +335,6 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} body 
-	 * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchGuideVersion(guideId, versionId, body) { 
 		// verify the required parameter 'guideId' is set
@@ -464,7 +455,6 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} body 
-	 * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postGuideVersionJobs(guideId, versionId, body) { 
 		// verify the required parameter 'guideId' is set
@@ -500,7 +490,6 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postGuideVersions(guideId, opts) { 
 		opts = opts || {};
@@ -528,7 +517,6 @@ class AIStudioApi {
 	 * Create a guide.
 	 * 
 	 * @param {Object} body 
-	 * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postGuides(body) { 
 		// verify the required parameter 'body' is set
@@ -554,7 +542,6 @@ class AIStudioApi {
 	 * Start a guide content generation job.
 	 * 
 	 * @param {Object} body 
-	 * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postGuidesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -564,6 +551,31 @@ class AIStudioApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/guides/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate presigned URL for uploading a file content to generate guide
+	 * 
+	 * @param {Object} body query
+	 */
+	postGuidesUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuidesUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/uploads', 
 			'POST', 
 			{  },
 			{  },

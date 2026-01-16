@@ -178,6 +178,7 @@ declare class AIStudioApi {
   	postGuideVersions(guideId: string, opts?: AIStudioApi.postGuideVersionsOptions): Promise<Models.GuideVersion>;
   	postGuides(body: Models.CreateGuide): Promise<Models.Guide>;
   	postGuidesJobs(body: Models.GenerateGuideContentRequest): Promise<Models.GuideContentGenerationJob>;
+  	postGuidesUploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	putConversationsSummariesSetting(summarySettingId: string, body: Models.SummarySetting): Promise<Models.SummarySetting>;
 }
 
@@ -3862,6 +3863,7 @@ declare class KnowledgeApi {
   	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest): Promise<void>;
   	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBaseUpdateRequest): Promise<Models.KnowledgeBase>;
   	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string, body: Models.CategoryUpdateRequest): Promise<Models.CategoryResponse>;
+  	patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId: string, searchId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseChunksSearchSearchIdOptions): Promise<void>;
   	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>;
   	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId: string, documentId: string, feedbackId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdOptions): Promise<Models.KnowledgeDocumentFeedbackResponse>;
   	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, body: Models.DocumentVariationRequest): Promise<Models.DocumentVariationResponse>;
@@ -4056,6 +4058,9 @@ declare namespace KnowledgeApi {
 		"published"?: boolean;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+	}
+	export interface patchKnowledgeKnowledgebaseChunksSearchSearchIdOptions { 
+		"body"?: Models.ChunkSearchRegisterRequest;
 	}
 	export interface patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdOptions { 
 		"body"?: Models.KnowledgeDocumentFeedbackUpdateRequest;
@@ -6633,7 +6638,7 @@ declare class SocialMediaApi {
   	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions): Promise<Models.TwitterDataIngestionRuleResponse>;
   	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId: string, twitterIngestionRuleId: string, dataIngestionRuleVersion: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersionOptions): Promise<Models.TwitterDataIngestionRuleVersionResponse>;
   	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersionsOptions): Promise<Models.TwitterDataIngestionRuleVersionResponseEntityListing>;
-  	getSocialmediaTopics(opts?: SocialMediaApi.getSocialmediaTopicsOptions): Promise<Models.SocialTopicResponseEntityListing>;
+  	getSocialmediaTopics(opts?: SocialMediaApi.getSocialmediaTopicsOptions): Promise<Models.SocialTopicWithDataIngestionRuleMetadataResponseEntityListing>;
   	patchSocialmediaTopic(topicId: string, opts?: SocialMediaApi.patchSocialmediaTopicOptions): Promise<Models.SocialTopicResponse>;
   	patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions): Promise<Models.FacebookDataIngestionRuleResponse>;
   	patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId: string, instagramIngestionRuleId: string, opts?: SocialMediaApi.patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdOptions): Promise<Models.InstagramDataIngestionRuleResponse>;
@@ -6820,12 +6825,12 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsDictionaryfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsDictionaryfeedbackOptions): Promise<Models.DictionaryFeedbackEntityListing>;
   	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string): Promise<Models.DictionaryFeedback>;
   	getSpeechandtextanalyticsProgram(programId: string): Promise<Models.Program>;
-  	getSpeechandtextanalyticsProgramMappings(programId: string): Promise<Models.ProgramMappings>;
+  	getSpeechandtextanalyticsProgramMappings(programId: string): Promise<Models.TopicsDefinitionsProgramMappings>;
   	getSpeechandtextanalyticsProgramSettingsInsights(programId: string): Promise<Models.ProgramInsightsSettings>;
   	getSpeechandtextanalyticsProgramTranscriptionengines(programId: string): Promise<Models.ProgramTranscriptionEngines>;
   	getSpeechandtextanalyticsPrograms(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsOptions): Promise<Models.ProgramsEntityListing>;
   	getSpeechandtextanalyticsProgramsGeneralJob(jobId: string): Promise<Models.GeneralProgramJob>;
-  	getSpeechandtextanalyticsProgramsMappings(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsMappingsOptions): Promise<Models.ProgramsMappingsEntityListing>;
+  	getSpeechandtextanalyticsProgramsMappings(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsMappingsOptions): Promise<Models.TopicsDefinitionsProgramsMappingsEntityListing>;
   	getSpeechandtextanalyticsProgramsPublishjob(jobId: string): Promise<Models.ProgramJob>;
   	getSpeechandtextanalyticsProgramsSettingsInsights(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsSettingsInsightsOptions): Promise<Models.ProgramInsightsSettingsEntityListing>;
   	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(): Promise<Models.SupportedDialectsEntityListing>;
@@ -6860,7 +6865,7 @@ declare class SpeechTextAnalyticsApi {
   	putSpeechandtextanalyticsCategory(categoryId: string, body: Models.CategoryRequest): Promise<Models.StaCategory>;
   	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string, opts?: SpeechTextAnalyticsApi.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdOptions): Promise<Models.DictionaryFeedback>;
   	putSpeechandtextanalyticsProgram(programId: string, body: Models.ProgramRequest): Promise<Models.Program>;
-  	putSpeechandtextanalyticsProgramMappings(programId: string, body: Models.ProgramMappingsRequest): Promise<Models.ProgramMappings>;
+  	putSpeechandtextanalyticsProgramMappings(programId: string, body: Models.ProgramMappingsRequest): Promise<Models.TopicsDefinitionsProgramMappings>;
   	putSpeechandtextanalyticsProgramSettingsInsights(programId: string, body: Models.InsightsSettingsRequest): Promise<Models.ProgramInsightsSettings>;
   	putSpeechandtextanalyticsProgramTranscriptionengines(programId: string, body: Models.TranscriptionEnginesRequest): Promise<Models.ProgramTranscriptionEngines>;
   	putSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>;
@@ -7582,6 +7587,7 @@ declare class UploadsApi {
 	constructor(apiClient?: ApiClientClass);
   	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>;
   	postGamificationContestsUploadsPrizeimages(body: Models.GamificationContestPrizeImageUploadUrlRequest): Promise<Models.UploadUrlResponse>;
+  	postGuidesUploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>;
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>;
@@ -11545,6 +11551,7 @@ declare namespace Models {
 		"state"?: string;
 		"copilot"?: Models.Copilot;
 		"selfUri"?: string;
+		"variationParent"?: Models.AddressableEntityRef;
 	}
 	
 	export interface AssistantListing { 
@@ -11941,6 +11948,13 @@ declare namespace Models {
 		"enabled": boolean;
 		"integrationId": string;
 		"allowSessionUpgrade"?: boolean;
+	}
+	
+	export interface AuthoringKnowledgeSettings { 
+		"knowledgeId"?: string;
+		"description"?: string;
+		"knowledgeType"?: string;
+		"inheritFromExternal"?: boolean;
 	}
 	
 	export interface AuthorizationPolicy { 
@@ -13330,7 +13344,7 @@ declare namespace Models {
 	
 	export interface BuTimeOffLimitRange { 
 		"startDate": string;
-		"limitMinutesPerDay": Array<number>;
+		"limitMinutesPerDay"?: Array<number>;
 	}
 	
 	export interface BuTimeOffLimitReference { 
@@ -15102,9 +15116,18 @@ declare namespace Models {
 		"isSelected"?: boolean;
 	}
 	
+	export interface CardBodyText { 
+	}
+	
 	export interface CardParameters { 
 		"bodyParameters"?: Array<Models.TemplateParameter>;
 		"buttonUrlParameters"?: Array<Models.TemplateParameter>;
+	}
+	
+	export interface Carousel { 
+	}
+	
+	export interface CarouselCard { 
 	}
 	
 	export interface CarouselParameters { 
@@ -15621,6 +15644,12 @@ declare namespace Models {
 		"dateLastModifiedByAgent"?: string;
 		"lastModifiedInAcw"?: boolean;
 		"selfUri"?: string;
+	}
+	
+	export interface ChunkSearchRegisterRequest { 
+		"sessionId"?: string;
+		"answered": boolean;
+		"selectedAnswers"?: Array<Models.SelectedAnswer>;
 	}
 	
 	export interface ClientApp { 
@@ -19420,7 +19449,6 @@ declare namespace Models {
 		"emails"?: Array<Models.ConversationEventTopicEmail>;
 		"messages"?: Array<Models.ConversationEventTopicMessage>;
 		"internalMessages"?: Array<Models.ConversationEventTopicInternalMessage>;
-		"screenMonitorings"?: Array<Models.ConversationEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.ConversationEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.ConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.ConversationEventTopicVideo>;
@@ -19449,20 +19477,6 @@ declare namespace Models {
 	export interface ConversationEventTopicScoredAgent { 
 		"agent"?: Models.ConversationEventTopicUriReference;
 		"score"?: number;
-	}
-	
-	export interface ConversationEventTopicScreenMonitoring { 
-		"id"?: string;
-		"state"?: string;
-		"initialState"?: string;
-		"provider"?: string;
-		"disconnectType"?: string;
-		"connectedTime"?: string;
-		"disconnectedTime"?: string;
-		"targetUserId"?: string;
-		"screenMonitoringId"?: string;
-		"monitoringType"?: string;
-		"count"?: number;
 	}
 	
 	export interface ConversationEventTopicScreenShare { 
@@ -21629,6 +21643,7 @@ declare namespace Models {
 		"instruction": string;
 		"variables"?: Array<Models.Variable>;
 		"resources"?: Models.GuideVersionResources;
+		"knowledgeSettings"?: Models.AuthoringKnowledgeSettings;
 	}
 	
 	export interface CreateIntegrationRequest { 
@@ -21995,6 +22010,7 @@ declare namespace Models {
 		"maximumWorkingWeekendsPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
 		"shiftStartVarianceType"?: string;
+		"shiftStartVariancePeriod"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.CreateWorkPlanShift>;
 		"agents"?: Array<Models.UserReference>;
@@ -22014,6 +22030,7 @@ declare namespace Models {
 		"countsAsContiguousWorkTime"?: boolean;
 		"minimumLengthFromShiftStartMinutes"?: number;
 		"minimumLengthFromShiftEndMinutes"?: number;
+		"maximumLengthFromShiftEndMinutes"?: number;
 	}
 	
 	export interface CreateWorkPlanBid { 
@@ -28034,8 +28051,8 @@ declare namespace Models {
 	}
 	
 	export interface ExternalId { 
-		"externalSource"?: Models.ExternalSource;
-		"value"?: string;
+		"externalSource": Models.ExternalSource;
+		"value": string;
 	}
 	
 	export interface ExternalMetricDataItem { 
@@ -28275,7 +28292,7 @@ declare namespace Models {
 	}
 	
 	export interface FacebookId { 
-		"ids"?: Array<Models.FacebookScopedId>;
+		"ids": Array<Models.FacebookScopedId>;
 		"displayName"?: string;
 	}
 	
@@ -28353,7 +28370,7 @@ declare namespace Models {
 	}
 	
 	export interface FacebookScopedId { 
-		"scopedId"?: string;
+		"scopedId": string;
 	}
 	
 	export interface Facet { 
@@ -30530,6 +30547,7 @@ declare namespace Models {
 		"languageCode": string;
 		"version": string;
 		"inputVariables"?: Array<Models.GuideSessionVariable>;
+		"knowledgeSettings"?: Models.KnowledgeSettings;
 	}
 	
 	export interface GuideSessionTurnResponse { 
@@ -30560,6 +30578,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"variables"?: Array<Models.Variable>;
 		"resources"?: Models.GuideVersionResources;
+		"knowledgeSettings"?: Models.AuthoringKnowledgeSettings;
 	}
 	
 	export interface GuideVersionPublish { 
@@ -31597,7 +31616,7 @@ declare namespace Models {
 	}
 	
 	export interface InstagramId { 
-		"ids"?: Array<Models.InstagramScopedId>;
+		"ids": Array<Models.InstagramScopedId>;
 		"displayName"?: string;
 		"handle"?: string;
 	}
@@ -31669,7 +31688,7 @@ declare namespace Models {
 	}
 	
 	export interface InstagramScopedId { 
-		"scopedId"?: string;
+		"scopedId": string;
 	}
 	
 	export interface Integration { 
@@ -34516,6 +34535,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeSettings { 
+		"knowledgeId"?: string;
+		"description"?: string;
+		"knowledgeType"?: string;
+	}
+	
 	export interface KnowledgeSuggestionConfig { 
 		"vendorName": string;
 		"knowledgeBase"?: Models.KnowledgeBaseReference;
@@ -35664,7 +35689,7 @@ declare namespace Models {
 	}
 	
 	export interface LineId { 
-		"ids"?: Array<Models.LineUserId>;
+		"ids": Array<Models.LineUserId>;
 		"displayName"?: string;
 	}
 	
@@ -35677,11 +35702,11 @@ declare namespace Models {
 	}
 	
 	export interface LineUserId { 
-		"userId"?: string;
+		"userId": string;
 	}
 	
 	export interface LinkConfiguration { 
-		"uriTemplate"?: string;
+		"uriTemplate": string;
 	}
 	
 	export interface ListAlternativeShiftTradesResponse { 
@@ -41158,14 +41183,6 @@ declare namespace Models {
 		"programIds": Array<string>;
 	}
 	
-	export interface ProgramMappings { 
-		"program"?: Models.BaseProgramEntity;
-		"queues"?: Array<Models.AddressableEntityRef>;
-		"flows"?: Array<Models.AddressableEntityRef>;
-		"modifiedBy"?: Models.AddressableEntityRef;
-		"dateModified"?: string;
-	}
-	
 	export interface ProgramMappingsRequest { 
 		"queueIds": Array<string>;
 		"flowIds": Array<string>;
@@ -41223,14 +41240,6 @@ declare namespace Models {
 	
 	export interface ProgramsEntityListing { 
 		"entities"?: Array<Models.ListedProgram>;
-		"pageSize"?: number;
-		"nextUri"?: string;
-		"selfUri"?: string;
-		"pageCount"?: number;
-	}
-	
-	export interface ProgramsMappingsEntityListing { 
-		"entities"?: Array<Models.ProgramMappings>;
 		"pageSize"?: number;
 		"nextUri"?: string;
 		"selfUri"?: string;
@@ -43068,7 +43077,6 @@ declare namespace Models {
 		"emails"?: Array<Models.QueueConversationEventTopicEmail>;
 		"messages"?: Array<Models.QueueConversationEventTopicMessage>;
 		"internalMessages"?: Array<Models.QueueConversationEventTopicInternalMessage>;
-		"screenMonitorings"?: Array<Models.QueueConversationEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.QueueConversationEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.QueueConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationEventTopicVideo>;
@@ -43097,20 +43105,6 @@ declare namespace Models {
 	export interface QueueConversationEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationEventTopicUriReference;
 		"score"?: number;
-	}
-	
-	export interface QueueConversationEventTopicScreenMonitoring { 
-		"id"?: string;
-		"state"?: string;
-		"initialState"?: string;
-		"provider"?: string;
-		"disconnectType"?: string;
-		"connectedTime"?: string;
-		"disconnectedTime"?: string;
-		"targetUserId"?: string;
-		"screenMonitoringId"?: string;
-		"monitoringType"?: string;
-		"count"?: number;
 	}
 	
 	export interface QueueConversationEventTopicScreenShare { 
@@ -44013,7 +44007,6 @@ declare namespace Models {
 		"emails"?: Array<Models.QueueConversationSocialExpressionEventTopicEmail>;
 		"messages"?: Array<Models.QueueConversationSocialExpressionEventTopicMessage>;
 		"internalMessages"?: Array<Models.QueueConversationSocialExpressionEventTopicInternalMessage>;
-		"screenMonitorings"?: Array<Models.QueueConversationSocialExpressionEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.QueueConversationSocialExpressionEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.QueueConversationSocialExpressionEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationSocialExpressionEventTopicVideo>;
@@ -44042,20 +44035,6 @@ declare namespace Models {
 	export interface QueueConversationSocialExpressionEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationSocialExpressionEventTopicUriReference;
 		"score"?: number;
-	}
-	
-	export interface QueueConversationSocialExpressionEventTopicScreenMonitoring { 
-		"id"?: string;
-		"state"?: string;
-		"initialState"?: string;
-		"provider"?: string;
-		"disconnectType"?: string;
-		"connectedTime"?: string;
-		"disconnectedTime"?: string;
-		"targetUserId"?: string;
-		"screenMonitoringId"?: string;
-		"monitoringType"?: string;
-		"count"?: number;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicScreenShare { 
@@ -44583,7 +44562,6 @@ declare namespace Models {
 		"emails"?: Array<Models.QueueConversationVideoEventTopicEmail>;
 		"messages"?: Array<Models.QueueConversationVideoEventTopicMessage>;
 		"internalMessages"?: Array<Models.QueueConversationVideoEventTopicInternalMessage>;
-		"screenMonitorings"?: Array<Models.QueueConversationVideoEventTopicScreenMonitoring>;
 		"screenshares"?: Array<Models.QueueConversationVideoEventTopicScreenShare>;
 		"socialExpressions"?: Array<Models.QueueConversationVideoEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationVideoEventTopicVideo>;
@@ -44612,20 +44590,6 @@ declare namespace Models {
 	export interface QueueConversationVideoEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationVideoEventTopicUriReference;
 		"score"?: number;
-	}
-	
-	export interface QueueConversationVideoEventTopicScreenMonitoring { 
-		"id"?: string;
-		"state"?: string;
-		"initialState"?: string;
-		"provider"?: string;
-		"disconnectType"?: string;
-		"connectedTime"?: string;
-		"disconnectedTime"?: string;
-		"targetUserId"?: string;
-		"screenMonitoringId"?: string;
-		"monitoringType"?: string;
-		"count"?: number;
 	}
 	
 	export interface QueueConversationVideoEventTopicScreenShare { 
@@ -45195,6 +45159,7 @@ declare namespace Models {
 		"cc"?: Array<Models.EmailAddress>;
 		"bcc"?: Array<Models.EmailAddress>;
 		"from"?: Models.EmailAddress;
+		"replyTo"?: Models.EmailAddress;
 		"subject"?: string;
 		"attachments"?: Array<Models.EmailAttachment>;
 		"time"?: string;
@@ -48700,19 +48665,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface SocialTopicResponseEntityListing { 
-		"entities"?: Array<Models.SocialTopicResponse>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"previousUri"?: string;
-		"nextUri"?: string;
-		"lastUri"?: string;
-		"selfUri"?: string;
-		"pageCount"?: number;
-	}
-	
 	export interface SocialTopicWithDataIngestionRuleMetadataResponse { 
 		"id"?: string;
 		"name"?: string;
@@ -48723,6 +48675,19 @@ declare namespace Models {
 		"status"?: string;
 		"dataIngestionRulesMetadata"?: Array<Models.DataIngestionRulesMetadata>;
 		"selfUri"?: string;
+	}
+	
+	export interface SocialTopicWithDataIngestionRuleMetadataResponseEntityListing { 
+		"entities"?: Array<Models.SocialTopicWithDataIngestionRuleMetadataResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"previousUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface SortItem { 
@@ -49072,6 +49037,9 @@ declare namespace Models {
 		"namespace"?: string;
 		"message"?: string;
 		"rejectReason"?: string;
+	}
+	
+	export interface StatusInfo { 
 	}
 	
 	export interface StopSettings { 
@@ -50773,6 +50741,22 @@ declare namespace Models {
 		"phrases"?: Array<Models.Phrase>;
 	}
 	
+	export interface TopicsDefinitionsProgramMappings { 
+		"program"?: Models.BaseProgramEntity;
+		"queues"?: Array<Models.AddressableEntityRef>;
+		"flows"?: Array<Models.AddressableEntityRef>;
+		"modifiedBy"?: Models.AddressableEntityRef;
+		"dateModified"?: string;
+	}
+	
+	export interface TopicsDefinitionsProgramsMappingsEntityListing { 
+		"entities"?: Array<Models.TopicsDefinitionsProgramMappings>;
+		"pageSize"?: number;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface TopicsEntityListing { 
 		"entities"?: Array<Models.ListedTopic>;
 		"pageSize"?: number;
@@ -52119,6 +52103,7 @@ declare namespace Models {
 		"instruction"?: string;
 		"variables"?: Array<Models.Variable>;
 		"resources"?: Models.GuideVersionResources;
+		"knowledgeSettings"?: Models.AuthoringKnowledgeSettings;
 	}
 	
 	export interface UpdateKpiRequest { 
@@ -54735,6 +54720,7 @@ declare namespace Models {
 		"groupAlertType"?: string;
 		"interactiveResponsePromptId"?: string;
 		"interactiveResponseRequired"?: boolean;
+		"includeGroupNumberInUserCallerIdLists"?: boolean;
 	}
 	
 	export interface VoicemailMailboxInfo { 
@@ -56997,7 +56983,7 @@ declare namespace Models {
 	}
 	
 	export interface WhatsAppId { 
-		"phoneNumber"?: Models.PhoneNumber;
+		"phoneNumber": Models.PhoneNumber;
 		"displayName"?: string;
 	}
 	
@@ -57176,6 +57162,7 @@ declare namespace Models {
 		"maximumWorkingWeekendsPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
 		"shiftStartVarianceType"?: string;
+		"shiftStartVariancePeriod"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.WorkPlanShift>;
 		"agents"?: Array<Models.DeletableUserReference>;
@@ -57198,6 +57185,7 @@ declare namespace Models {
 		"countsAsContiguousWorkTime"?: boolean;
 		"minimumLengthFromShiftStartMinutes"?: number;
 		"minimumLengthFromShiftEndMinutes"?: number;
+		"maximumLengthFromShiftEndMinutes"?: number;
 		"id"?: string;
 		"delete"?: boolean;
 		"validationId"?: string;
@@ -57350,6 +57338,7 @@ declare namespace Models {
 		"maximumWorkingWeekendsPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
 		"shiftStartVarianceType"?: string;
+		"shiftStartVariancePeriod"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.WorkPlanShift>;
 		"agents"?: Array<Models.DeletableUserReference>;
@@ -57485,6 +57474,7 @@ declare namespace Models {
 		"maximumWorkingWeekendsPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
 		"shiftStartVarianceType"?: string;
+		"shiftStartVariancePeriod"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.WorkPlanShift>;
 		"agents"?: Array<Models.DeletableUserReference>;
@@ -58903,13 +58893,6 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"selfUri"?: string;
-	}
-	
-	export interface YearMonth { 
-		"year"?: number;
-		"month"?: string;
-		"monthValue"?: number;
-		"leapYear"?: boolean;
 	}
 	
 }

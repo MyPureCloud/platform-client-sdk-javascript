@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 242.0.0
+	 * @version 243.0.0
 	 */
 
 	/**
@@ -434,7 +434,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} contactId ExternalContact Id
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand

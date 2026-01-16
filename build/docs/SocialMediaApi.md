@@ -1567,7 +1567,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVe
 
 ## getSocialmediaTopics
 
-> SocialTopicResponseEntityListing getSocialmediaTopics(opts)
+> SocialTopicWithDataIngestionRuleMetadataResponseEntityListing getSocialmediaTopics(opts)
 
 
 GET /api/v2/socialmedia/topics
@@ -1624,7 +1624,7 @@ apiInstance.getSocialmediaTopics(opts)
 
 ### Return type
 
-**SocialTopicResponseEntityListing**
+**SocialTopicWithDataIngestionRuleMetadataResponseEntityListing**
 
 
 ## patchSocialmediaTopic
@@ -2819,4 +2819,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@242.0.0_
+_purecloud-platform-client-v2@243.0.0_
