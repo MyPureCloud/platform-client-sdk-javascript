@@ -271,6 +271,7 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Number of results per page
   'expand': ["expand_example"], // [String] | Fields to expand in response
+  'enabled': true, // Boolean | Whether to list enabled or disabled rules
   'searchTerm': "searchTerm_example", // String | a search term for finding a rule by name
   'sortOrder': "ascending" // String | sort rules by name, ascending, descending
 };
@@ -294,6 +295,7 @@ apiInstance.getUsersRules(types, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Number of results per page | [optional] [default to 25] |
  **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: criteria |
+ **enabled** | **Boolean** | Whether to list enabled or disabled rules | [optional]  |
  **searchTerm** | **String** | a search term for finding a rule by name | [optional]  |
  **sortOrder** | **String** | sort rules by name, ascending, descending | [optional] [default to ascending]<br />**Values**: ascending, descending |
 
@@ -524,4 +526,4 @@ apiInstance.postUsersRulesQuery(body, opts)
 **UsersRulesQueryResponse**
 
 
-_purecloud-platform-client-v2@243.0.0_
+_purecloud-platform-client-v2@244.0.0_

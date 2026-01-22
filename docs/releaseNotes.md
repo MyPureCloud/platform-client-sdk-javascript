@@ -1,154 +1,177 @@
-Platform API version: 9928
+Platform API version: 9959
 
 
 
 
-# Major Changes (8 changes)
+# Major Changes (5 changes)
 
-**GET /api/v2/socialmedia/topics** (1 change)
+**GET /api/v2/speechandtextanalytics/dictionaryfeedback** (1 change)
 
-* Response 200 type was changed from SocialTopicResponseEntityListing to SocialTopicWithDataIngestionRuleMetadataResponseEntityListing
+* Parameter transcriptionEngine was added
 
-**GET /api/v2/speechandtextanalytics/programs/{programId}/mappings** (1 change)
+**GET /api/v2/speechandtextanalytics/programs** (3 changes)
 
-* Response 200 type was changed from ProgramMappings to TopicsDefinitionsProgramMappings
+* Parameter name was added
+* Parameter sortBy was added
+* Parameter sortOrder was added
 
-**PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings** (1 change)
+**GET /api/v2/users/rules** (1 change)
 
-* Response 200 type was changed from ProgramMappings to TopicsDefinitionsProgramMappings
-
-**GET /api/v2/speechandtextanalytics/programs/mappings** (1 change)
-
-* Response 200 type was changed from ProgramsMappingsEntityListing to TopicsDefinitionsProgramsMappingsEntityListing
-
-**SocialTopicResponseEntityListing** (1 change)
-
-* Model SocialTopicResponseEntityListing was removed
-
-**ProgramMappings** (1 change)
-
-* Model ProgramMappings was removed
-
-**ProgramsMappingsEntityListing** (1 change)
-
-* Model ProgramsMappingsEntityListing was removed
-
-**YearMonth** (1 change)
-
-* Model YearMonth was removed
+* Parameter enabled was added
 
 
-# Minor Changes (28 changes)
+# Minor Changes (45 changes)
 
-**/api/v2/guides/uploads** (2 changes)
+**/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction** (3 changes)
+
+* Path was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/quality/forms/evaluations/bulk** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/quality/evaluations/search** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}** (2 changes)
+**/api/v2/quality/surveys** (2 changes)
 
 * Path was added
-* Operation PATCH was added
+* Operation POST was added
 
-**Assistant** (1 change)
+**EvaluationForm** (1 change)
 
-* Optional property variationParent was added
+* Optional property latestVersionFormName was added
 
-**GuideSessionTurnRequest** (1 change)
-
-* Optional property knowledgeSettings was added
-
-**KnowledgeSettings** (1 change)
+**MandatoryPostCallActionInput** (1 change)
 
 * Model was added
 
-**AuthoringKnowledgeSettings** (1 change)
+**ConversationRecipientAdditionalIdentifier** (1 change)
+
+* Enum value PhoneNumber was added to property type
+
+**EvaluationFormResponse** (1 change)
+
+* Optional property latestVersionFormName was added
+
+**EvaluationResponse** (3 changes)
+
+* Optional property createdDate was added
+* Optional property submittedDate was added
+* Optional property divisionIds was added
+
+**EvaluationSearchAggregationBucket** (1 change)
 
 * Model was added
 
-**GuideVersion** (1 change)
-
-* Optional property knowledgeSettings was added
-
-**UpdateGuideVersion** (1 change)
-
-* Optional property knowledgeSettings was added
-
-**CreateGuideVersion** (1 change)
-
-* Optional property knowledgeSettings was added
-
-**ChunkSearchRegisterRequest** (1 change)
+**EvaluationSearchAggregationResponse** (1 change)
 
 * Model was added
 
-**QualityAuditLogMessage** (1 change)
-
-* Enum value ScreenMonitoring was added to property entityType
-
-**RecordingEmailMessage** (1 change)
-
-* Optional property replyTo was added
-
-**CardBodyText** (1 change)
+**EvaluationSearchResponse** (1 change)
 
 * Model was added
 
-**Carousel** (1 change)
+**EvaluationSearchAggregationDTO** (1 change)
 
 * Model was added
 
-**CarouselCard** (1 change)
+**EvaluationSearchCriteriaDTO** (1 change)
 
 * Model was added
 
-**StatusInfo** (1 change)
+**EvaluationSearchRequestDTO** (1 change)
 
 * Model was added
 
-**SocialTopicWithDataIngestionRuleMetadataResponseEntityListing** (1 change)
+**EvaluationSearchSubAggregationDTO** (1 change)
 
 * Model was added
 
-**TopicsDefinitionsProgramMappings** (1 change)
+**QueryApiSearchAggregationRange** (1 change)
 
 * Model was added
 
-**TopicsDefinitionsProgramsMappingsEntityListing** (1 change)
+**CreateSurveyRequest** (1 change)
 
 * Model was added
 
-**VoicemailGroupPolicy** (1 change)
+**AlertRequest** (1 change)
 
-* Optional property includeGroupNumberInUserCallerIdLists was added
+* Enum value Close was added to property type
 
-**WorkPlanActivity** (1 change)
+**CommonAlertBulkUpdateRequest** (1 change)
 
-* Optional property maximumLengthFromShiftEndMinutes was added
+* Enum value Close was added to property type
 
-**WorkPlanValidationRequest** (1 change)
+**CommonAllAlertUpdateRequest** (1 change)
 
-* Optional property shiftStartVariancePeriod was added
+* Enum value Close was added to property type
 
-**WorkPlan** (1 change)
+**CreateRoutingSkill** (1 change)
 
-* Optional property shiftStartVariancePeriod was added
+* Model was added
 
-**CreateWorkPlan** (1 change)
+**OpenSocialMediaRecipientAdditionalIdentifier** (1 change)
 
-* Optional property shiftStartVariancePeriod was added
+* Enum value PhoneNumber was added to property type
 
-**CreateWorkPlanActivity** (1 change)
+**DictionaryFeedback** (3 changes)
 
-* Optional property maximumLengthFromShiftEndMinutes was added
+* Optional property transcriptionEngine was added
+* Optional property status was added
+* Optional property displayAs was added
 
-**WorkPlanListItemResponse** (1 change)
+**ListedDictionaryFeedback** (3 changes)
 
-* Optional property shiftStartVariancePeriod was added
+* Optional property transcriptionEngine was added
+* Optional property status was added
+* Optional property displayAs was added
+
+**BuCopyScheduleRequest** (1 change)
+
+* Optional property includeForecast was added
+
+**UpdateCoachingAppointmentRequest** (1 change)
+
+* Optional property addToSchedule was added
+
+**CreateCoachingAppointmentRequest** (1 change)
+
+* Optional property addToSchedule was added
+
+**LearningModule** (1 change)
+
+* Optional property autoAssign was added
+
+**LearningAssignmentCreate** (1 change)
+
+* Optional property addToSchedule was added
+
+**LearningAssignmentReschedule** (1 change)
+
+* Optional property addToSchedule was added
+
+**LearningAssignmentReassign** (1 change)
+
+* Optional property addToSchedule was added
+
+**AssignedLearningModule** (1 change)
+
+* Optional property autoAssign was added
+
+**LearningModuleRequest** (1 change)
+
+* Optional property autoAssign was added
 
 
 # Point Changes (1 change)
 
 **GET /api/v2/externalcontacts/contacts/{contactId}/notes** (1 change)
 
-* Description was changed for parameter pageSize
+* Description was changed for parameter expand

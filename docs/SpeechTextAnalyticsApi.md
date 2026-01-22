@@ -881,6 +881,7 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'dialect': en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'transcriptionEngine': "transcriptionEngine_example", // String | Filter by transcription engine
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 500 // Number | The page size for the listing
 };
@@ -901,6 +902,7 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dialect** | **String** | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
+ **transcriptionEngine** | **String** | Filter by transcription engine | [optional] <br />**Values**: Genesys, GenesysExtended |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 500] |
 
@@ -1189,7 +1191,10 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 20, // Number | The page size for the listing
-  'state': "state_example" // String | Program state. Defaults to Latest
+  'state': "state_example", // String | Program state. Defaults to Latest
+  'name': "name_example", // String | Case insensitive partial name to filter by
+  'sortBy': "sortBy_example", // String | Sort results by. Defaults to name
+  'sortOrder': "sortOrder_example" // String | Sort order. Defaults to asc
 };
 
 apiInstance.getSpeechandtextanalyticsPrograms(opts)
@@ -1210,6 +1215,9 @@ apiInstance.getSpeechandtextanalyticsPrograms(opts)
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
  **state** | **String** | Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
+ **name** | **String** | Case insensitive partial name to filter by | [optional]  |
+ **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name |
+ **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 
 ### Return type
 
@@ -3323,4 +3331,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@243.0.0_
+_purecloud-platform-client-v2@244.0.0_

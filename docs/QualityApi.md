@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityFormsEvaluation**](QualityApi#getQualityFormsEvaluation) | **GET** /api/v2/quality/forms/evaluations/{formId} | Get an evaluation form
 [**getQualityFormsEvaluationVersions**](QualityApi#getQualityFormsEvaluationVersions) | **GET** /api/v2/quality/forms/evaluations/{formId}/versions | Gets all the revisions for a specific evaluation.
 [**getQualityFormsEvaluations**](QualityApi#getQualityFormsEvaluations) | **GET** /api/v2/quality/forms/evaluations | Get the list of evaluation forms
+[**getQualityFormsEvaluationsBulk**](QualityApi#getQualityFormsEvaluationsBulk) | **GET** /api/v2/quality/forms/evaluations/bulk | Retrieve a list of evaluation forms by their ids
 [**getQualityFormsEvaluationsBulkContexts**](QualityApi#getQualityFormsEvaluationsBulkContexts) | **GET** /api/v2/quality/forms/evaluations/bulk/contexts | Retrieve a list of the latest published evaluation form versions by context ids
 [**getQualityFormsSurvey**](QualityApi#getQualityFormsSurvey) | **GET** /api/v2/quality/forms/surveys/{formId} | Get a survey form
 [**getQualityFormsSurveyVersions**](QualityApi#getQualityFormsSurveyVersions) | **GET** /api/v2/quality/forms/surveys/{formId}/versions | Gets all the revisions for a specific survey.
@@ -59,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityConversationsAuditsQuery**](QualityApi#postQualityConversationsAuditsQuery) | **POST** /api/v2/quality/conversations/audits/query | Create audit query execution
 [**postQualityEvaluationsAggregatesQueryMe**](QualityApi#postQualityEvaluationsAggregatesQueryMe) | **POST** /api/v2/quality/evaluations/aggregates/query/me | Query for evaluation aggregates for the current user
 [**postQualityEvaluationsScoring**](QualityApi#postQualityEvaluationsScoring) | **POST** /api/v2/quality/evaluations/scoring | Score evaluation
+[**postQualityEvaluationsSearch**](QualityApi#postQualityEvaluationsSearch) | **POST** /api/v2/quality/evaluations/search | Search evaluations based along specified criteria
 [**postQualityForms**](QualityApi#postQualityForms) | **POST** /api/v2/quality/forms | Create an evaluation form.
 [**postQualityFormsEvaluations**](QualityApi#postQualityFormsEvaluations) | **POST** /api/v2/quality/forms/evaluations | Create an evaluation form.
 [**postQualityFormsSurveys**](QualityApi#postQualityFormsSurveys) | **POST** /api/v2/quality/forms/surveys | Create a survey form.
@@ -66,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityPublishedforms**](QualityApi#postQualityPublishedforms) | **POST** /api/v2/quality/publishedforms | Publish an evaluation form.
 [**postQualityPublishedformsEvaluations**](QualityApi#postQualityPublishedformsEvaluations) | **POST** /api/v2/quality/publishedforms/evaluations | Publish an evaluation form.
 [**postQualityPublishedformsSurveys**](QualityApi#postQualityPublishedformsSurveys) | **POST** /api/v2/quality/publishedforms/surveys | Publish a survey form.
+[**postQualitySurveys**](QualityApi#postQualitySurveys) | **POST** /api/v2/quality/surveys | Create a survey for a conversation
 [**postQualitySurveysScoring**](QualityApi#postQualitySurveysScoring) | **POST** /api/v2/quality/surveys/scoring | Score survey
 [**putQualityCalibration**](QualityApi#putQualityCalibration) | **PUT** /api/v2/quality/calibrations/{calibrationId} | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 [**putQualityConversationEvaluation**](QualityApi#putQualityConversationEvaluation) | **PUT** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Update an evaluation
@@ -1662,6 +1665,60 @@ apiInstance.getQualityFormsEvaluations(opts)
 **EvaluationFormResponseEntityListing**
 
 
+## getQualityFormsEvaluationsBulk
+
+> EvaluationFormResponseEntityListing getQualityFormsEvaluationsBulk(id, opts)
+
+
+GET /api/v2/quality/forms/evaluations/bulk
+
+Retrieve a list of evaluation forms by their ids
+
+Requires ANY permissions:
+
+* quality:evaluationForm:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let id = ["id_example"]; // [String] | A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100
+let opts = { 
+  'includeLatestVersionFormName': false // Boolean | Whether to include the name of the form's most recently published version
+};
+
+apiInstance.getQualityFormsEvaluationsBulk(id, opts)
+  .then((data) => {
+    console.log(`getQualityFormsEvaluationsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsEvaluationsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100 |  |
+ **includeLatestVersionFormName** | **Boolean** | Whether to include the name of the form's most recently published version | [optional] [default to false] |
+
+### Return type
+
+**EvaluationFormResponseEntityListing**
+
+
 ## getQualityFormsEvaluationsBulkContexts
 
 > [EvaluationFormResponse] getQualityFormsEvaluationsBulkContexts(contextId)
@@ -3027,6 +3084,58 @@ apiInstance.postQualityEvaluationsScoring(body)
 **EvaluationScoringSet**
 
 
+## postQualityEvaluationsSearch
+
+> EvaluationSearchResponse postQualityEvaluationsSearch(body)
+
+
+POST /api/v2/quality/evaluations/search
+
+Search evaluations based along specified criteria
+
+Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing questionGroup in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing question in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+
+Requires ANY permissions:
+
+* quality:evaluation:searchAny
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let body = {}; // Object | Evaluation search request
+
+apiInstance.postQualityEvaluationsSearch(body)
+  .then((data) => {
+    console.log(`postQualityEvaluationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postQualityEvaluationsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Evaluation search request |  |
+
+### Return type
+
+**EvaluationSearchResponse**
+
+
 ## postQualityForms
 
 > EvaluationFormResponse postQualityForms(body)
@@ -3385,6 +3494,56 @@ apiInstance.postQualityPublishedformsSurveys(body)
 ### Return type
 
 **SurveyForm**
+
+
+## postQualitySurveys
+
+> Survey postQualitySurveys(body)
+
+
+POST /api/v2/quality/surveys
+
+Create a survey for a conversation
+
+Requires ANY permissions:
+
+* quality:survey:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let body = {}; // Object | Survey creation request
+
+apiInstance.postQualitySurveys(body)
+  .then((data) => {
+    console.log(`postQualitySurveys success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postQualitySurveys');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Survey creation request |  |
+
+### Return type
+
+**Survey**
 
 
 ## postQualitySurveysScoring
@@ -3861,4 +4020,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@243.0.0_
+_purecloud-platform-client-v2@244.0.0_

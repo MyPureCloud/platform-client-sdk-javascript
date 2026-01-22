@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversation**](ConversationsApi#deleteConversation) | **DELETE** /api/v2/conversations/{conversationId} | Update a conversation by disconnecting all of the participants
 [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
+[**deleteConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Remove mandatory post call actions.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
 [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#deleteConversationsMessagesCachedmediaCachedMediaItemId) | **DELETE** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously
@@ -143,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#patchConversationsCallParticipantCommunicationPostflowaction) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Set mandatory post call actions.  If both values are null or blank error will occur.
 [**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
 [**patchConversationsCallParticipantUserUserId**](ConversationsApi#patchConversationsCallParticipantUserUserId) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId} | Update conversation participant on behalf of a user
 [**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
@@ -552,6 +554,60 @@ apiInstance.deleteConversationParticipantFlaggedreason(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsCallParticipantCommunicationPostflowaction
+
+> void deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId)
+
+
+DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction
+
+Remove mandatory post call actions.
+
+Requires ANY permissions:
+
+* conversation:call:deleteMandatoryPostFlowAction
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+
+apiInstance.deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId)
+  .then(() => {
+    console.log('deleteConversationsCallParticipantCommunicationPostflowaction returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsCallParticipantCommunicationPostflowaction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
 
 ### Return type
 
@@ -7457,6 +7513,64 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
 ### Return type
 
 **Object**
+
+
+## patchConversationsCallParticipantCommunicationPostflowaction
+
+> void patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts)
+
+
+PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction
+
+Set mandatory post call actions.  If both values are null or blank error will occur.
+
+Requires ANY permissions:
+
+* conversation:call:setMandatoryPostFlowAction
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'body': {} // Object | Action
+};
+
+apiInstance.patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts)
+  .then(() => {
+    console.log('patchConversationsCallParticipantCommunicationPostflowaction returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantCommunicationPostflowaction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Action | [optional]  |
+
+### Return type
+
+void (no response body)
 
 
 ## patchConversationsCallParticipantConsult
@@ -15960,4 +16074,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@243.0.0_
+_purecloud-platform-client-v2@244.0.0_

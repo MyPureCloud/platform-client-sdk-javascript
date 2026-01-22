@@ -844,9 +844,10 @@ DELETE /api/v2/routing/skills/{skillId}
 
 Delete Routing Skill
 
-Requires ALL permissions:
+Requires ANY permissions:
 
 * routing:skill:manage
+* routing:skill:delete
 
 ### Example Usage
 
@@ -7621,6 +7622,7 @@ Create Skill
 Requires ANY permissions:
 
 * routing:skill:manage
+* routing:skill:create
 
 ### Example Usage
 
@@ -9001,4 +9003,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@243.0.0_
+_purecloud-platform-client-v2@244.0.0_
