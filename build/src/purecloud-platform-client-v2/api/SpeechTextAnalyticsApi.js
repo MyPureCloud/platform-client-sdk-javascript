@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 243.0.0
+	 * @version 244.0.0
 	 */
 
 	/**
@@ -419,6 +419,7 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 * @param {Object} opts.transcriptionEngine Filter by transcription engine
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 500)
 	 */
@@ -430,7 +431,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/dictionaryfeedback', 
 			'GET', 
 			{  },
-			{ 'dialect': opts['dialect'],'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{ 'dialect': opts['dialect'],'transcriptionEngine': opts['transcriptionEngine'],'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -572,6 +573,9 @@ class SpeechTextAnalyticsApi {
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
 	 * @param {Object} opts.state Program state. Defaults to Latest
+	 * @param {String} opts.name Case insensitive partial name to filter by
+	 * @param {Object} opts.sortBy Sort results by. Defaults to name
+	 * @param {Object} opts.sortOrder Sort order. Defaults to asc
 	 */
 	getSpeechandtextanalyticsPrograms(opts) { 
 		opts = opts || {};
@@ -581,7 +585,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/programs', 
 			'GET', 
 			{  },
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'] },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 

@@ -242,6 +242,7 @@ docs/deleteConversation-example.txt
 docs/deleteConversationParticipantCode-example.txt
 docs/deleteConversationParticipantFlaggedreason-example.txt
 docs/deleteConversationRecordingAnnotation-example.txt
+docs/deleteConversationsCallParticipantCommunicationPostflowaction-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
 docs/deleteConversationsEmailMessagesDraftAttachment-example.txt
 docs/deleteConversationsMessagesCachedmediaCachedMediaItemId-example.txt
@@ -1410,6 +1411,7 @@ docs/getQualityForms-example.txt
 docs/getQualityFormsEvaluation-example.txt
 docs/getQualityFormsEvaluationVersions-example.txt
 docs/getQualityFormsEvaluations-example.txt
+docs/getQualityFormsEvaluationsBulk-example.txt
 docs/getQualityFormsEvaluationsBulkContexts-example.txt
 docs/getQualityFormsSurvey-example.txt
 docs/getQualityFormsSurveyVersions-example.txt
@@ -1994,6 +1996,7 @@ docs/patchConversationsCallConference-example.txt
 docs/patchConversationsCallParticipant-example.txt
 docs/patchConversationsCallParticipantAttributes-example.txt
 docs/patchConversationsCallParticipantCommunication-example.txt
+docs/patchConversationsCallParticipantCommunicationPostflowaction-example.txt
 docs/patchConversationsCallParticipantConsult-example.txt
 docs/patchConversationsCallParticipantUserUserId-example.txt
 docs/patchConversationsCallback-example.txt
@@ -2730,6 +2733,7 @@ docs/postQualityConversationEvaluations-example.txt
 docs/postQualityConversationsAuditsQuery-example.txt
 docs/postQualityEvaluationsAggregatesQueryMe-example.txt
 docs/postQualityEvaluationsScoring-example.txt
+docs/postQualityEvaluationsSearch-example.txt
 docs/postQualityForms-example.txt
 docs/postQualityFormsEvaluations-example.txt
 docs/postQualityFormsSurveys-example.txt
@@ -2737,6 +2741,7 @@ docs/postQualityProgramAgentscoringrules-example.txt
 docs/postQualityPublishedforms-example.txt
 docs/postQualityPublishedformsEvaluations-example.txt
 docs/postQualityPublishedformsSurveys-example.txt
+docs/postQualitySurveys-example.txt
 docs/postQualitySurveysScoring-example.txt
 docs/postRecordingBatchrequests-example.txt
 docs/postRecordingCrossplatformMediaretentionpolicies-example.txt

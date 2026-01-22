@@ -5,7 +5,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 243.0.0
+	 * @version 244.0.0
 	 */
 
 	/**
@@ -148,6 +148,7 @@ class UsersRulesApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
 	 * @param {Array.<String>} opts.expand Fields to expand in response
+	 * @param {Boolean} opts.enabled Whether to list enabled or disabled rules
 	 * @param {String} opts.searchTerm a search term for finding a rule by name
 	 * @param {Object} opts.sortOrder sort rules by name, ascending, descending (default to ascending)
 	 * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -164,7 +165,7 @@ class UsersRulesApi {
 			'/api/v2/users/rules', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'types': this.apiClient.buildCollectionParam(types, 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'searchTerm': opts['searchTerm'],'sortOrder': opts['sortOrder'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'types': this.apiClient.buildCollectionParam(types, 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'enabled': opts['enabled'],'searchTerm': opts['searchTerm'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
