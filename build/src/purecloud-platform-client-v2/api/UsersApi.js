@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 244.0.0
+	 * @version 245.0.0
 	 */
 
 	/**
@@ -202,6 +202,37 @@ class UsersApi {
 	}
 
 	/**
+	 * Delete a custom attributes record.
+	 * 
+	 * @param {String} userId user ID
+	 * @param {String} schemaId schemaId
+	 * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteUserCustomattribute(userId, schemaId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling deleteUserCustomattribute';
+		}
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling deleteUserCustomattribute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/customattributes/{schemaId}', 
+			'DELETE', 
+			{ 'userId': userId,'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete the external identifier for user.
 	 * 
 	 * @param {String} userId User ID
@@ -366,6 +397,32 @@ class UsersApi {
 			'/api/v2/users/{userId}/verifiers/{verifierId}', 
 			'DELETE', 
 			{ 'userId': userId,'verifierId': verifierId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteUsersCustomattributesSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling deleteUsersCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/{schemaId}', 
+			'DELETE', 
+			{ 'schemaId': schemaId },
 			{  },
 			{  },
 			{  },
@@ -859,6 +916,68 @@ class UsersApi {
 			'GET', 
 			{ 'userId': userId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get custom attributes by schema id
+	 * 
+	 * @param {String} userId user ID
+	 * @param {String} schemaId schemaId
+	 * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUserCustomattribute(userId, schemaId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getUserCustomattribute';
+		}
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getUserCustomattribute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/customattributes/{schemaId}', 
+			'GET', 
+			{ 'userId': userId,'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get multiple custom attributes records by schema ids
+	 * 
+	 * @param {String} userId user ID
+	 * @param {Array.<String>} schemaIds 
+	 * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUserCustomattributesBulk(userId, schemaIds) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getUserCustomattributesBulk';
+		}
+		// verify the required parameter 'schemaIds' is set
+		if (schemaIds === undefined || schemaIds === null) {
+			throw 'Missing the required parameter "schemaIds" when calling getUserCustomattributesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/customattributes/bulk', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'schemaIds': this.apiClient.buildCollectionParam(schemaIds, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1463,6 +1582,178 @@ class UsersApi {
 	}
 
 	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getUsersCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchemaVersion(schemaId, versionId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getUsersCustomattributesSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getUsersCustomattributesSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all versions of a user schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchemaVersions(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getUsersCustomattributesSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchemas() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+			throw 'Missing the required parameter "coreTypeName" when calling getUsersCustomattributesSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of core types enabled for a specific namespace.
+	 * 
+	 * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersCustomattributesSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get list of Development Activities
 	 * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
 	 * @param {Object} opts Optional parameters
@@ -1741,6 +2032,68 @@ class UsersApi {
 	}
 
 	/**
+	 * Update a single custom attributes record by amending the data with only the provided fields.
+	 * 
+	 * @param {String} userId user ID
+	 * @param {Object} userCustomAttributes 
+	 * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchUserCustomattributes(userId, userCustomAttributes) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling patchUserCustomattributes';
+		}
+		// verify the required parameter 'userCustomAttributes' is set
+		if (userCustomAttributes === undefined || userCustomAttributes === null) {
+			throw 'Missing the required parameter "userCustomAttributes" when calling patchUserCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/customattributes', 
+			'PATCH', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			userCustomAttributes, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update multiple custom attributes records by amending the data with only the provided fields.
+	 * 
+	 * @param {String} userId user ID
+	 * @param {Array.<Object>} userCustomAttributesList 
+	 * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchUserCustomattributesBulk(userId, userCustomAttributesList) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling patchUserCustomattributesBulk';
+		}
+		// verify the required parameter 'userCustomAttributesList' is set
+		if (userCustomAttributesList === undefined || userCustomAttributesList === null) {
+			throw 'Missing the required parameter "userCustomAttributesList" when calling patchUserCustomattributesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/customattributes/bulk', 
+			'PATCH', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			userCustomAttributesList, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch a user's Geolocation
 	 * The geolocation object can be patched one of three ways. Option 1: Set the primary property to true. This will set the client as the users primary geolocation source.  Option 2: Provide the latitude and longitude values.  This will enqueue an asynchronous update of the city, region, and country, generating a notification. A subsequent GET operation will include the new values for city, region and country.  Option 3:  Provide the city, region, country values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 	 * @param {String} userId user Id
@@ -1812,7 +2165,7 @@ class UsersApi {
 
 	/**
 	 * Join or unjoin a set of queues for a user
-	 * 
+	 * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body User Queues
 	 * @param {Object} opts Optional parameters
@@ -2432,6 +2785,32 @@ class UsersApi {
 	}
 
 	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema
+	 * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postUsersCustomattributesSchemas(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersCustomattributesSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve aggregated development activity data
 	 * Results are filtered based on the applicable permissions.
 	 * @param {Object} body Aggregate Request
@@ -2692,6 +3071,37 @@ class UsersApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+	 * 
+	 * @param {String} userId user ID
+	 * @param {Object} userCustomAttributes 
+	 * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putUserCustomattributes(userId, userCustomAttributes) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling putUserCustomattributes';
+		}
+		// verify the required parameter 'userCustomAttributes' is set
+		if (userCustomAttributes === undefined || userCustomAttributes === null) {
+			throw 'Missing the required parameter "userCustomAttributes" when calling putUserCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/customattributes', 
+			'PUT', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			userCustomAttributes, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2998,6 +3408,37 @@ class UsersApi {
 			'/api/v2/users/{userId}/verifiers/{verifierId}', 
 			'PUT', 
 			{ 'userId': userId,'verifierId': verifierId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Data Schema
+	 * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putUsersCustomattributesSchema(schemaId, body) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling putUsersCustomattributesSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUsersCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/customattributes/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId },
 			{  },
 			{  },
 			{  },

@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsMappings) | **GET** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech and Text Analytics programs mappings to queues and flows
 [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsPublishjob) | **GET** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech and Text Analytics publish programs job by id
 [**getSpeechandtextanalyticsProgramsSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsInsights) | **GET** /api/v2/speechandtextanalytics/programs/settings/insights | Get the list of program AI Insights settings for the organization
+[**getSpeechandtextanalyticsProgramsTopiclinksJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTopiclinksJob) | **GET** /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId} | Get a Speech and Text Analytics program-topic links job by id
 [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | **GET** /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects | Get supported dialects for each transcription engine
 [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished) | **GET** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech and Text Analytics unpublished programs
 [**getSpeechandtextanalyticsReprocessingJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJob) | **GET** /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId} | Get a Speech and Text Analytics reprocess job by id
@@ -881,7 +882,7 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'dialect': en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
-  'transcriptionEngine': "transcriptionEngine_example", // String | Filter by transcription engine
+  'transcriptionEngine': "transcriptionEngine_example", // String | Filter by transcription engine, If not provided, all transcription engines will be considered
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 500 // Number | The page size for the listing
 };
@@ -902,7 +903,7 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dialect** | **String** | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
- **transcriptionEngine** | **String** | Filter by transcription engine | [optional] <br />**Values**: Genesys, GenesysExtended |
+ **transcriptionEngine** | **String** | Filter by transcription engine, If not provided, all transcription engines will be considered | [optional] <br />**Values**: Genesys, GenesysExtended |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 500] |
 
@@ -1436,6 +1437,56 @@ apiInstance.getSpeechandtextanalyticsProgramsSettingsInsights(opts)
 ### Return type
 
 **ProgramInsightsSettingsEntityListing**
+
+
+## getSpeechandtextanalyticsProgramsTopiclinksJob
+
+> ProgramTopicLinksJob getSpeechandtextanalyticsProgramsTopiclinksJob(jobId)
+
+
+GET /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}
+
+Get a Speech and Text Analytics program-topic links job by id
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let jobId = "jobId_example"; // String | The id of the program-topic links job
+
+apiInstance.getSpeechandtextanalyticsProgramsTopiclinksJob(jobId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramsTopiclinksJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramsTopiclinksJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The id of the program-topic links job |  |
+
+### Return type
+
+**ProgramTopicLinksJob**
 
 
 ## getSpeechandtextanalyticsProgramsTranscriptionenginesDialects
@@ -3331,4 +3382,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_

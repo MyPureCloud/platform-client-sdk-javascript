@@ -14,10 +14,14 @@ docs/AnalyticsApi.json
 docs/AnalyticsApi.md
 docs/ArchitectApi.json
 docs/ArchitectApi.md
+docs/AssistantCopilotVariationsApi.json
+docs/AssistantCopilotVariationsApi.md
 docs/AuditApi.json
 docs/AuditApi.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
+docs/BackgroundAssistantApi.json
+docs/BackgroundAssistantApi.md
 docs/BillingApi.json
 docs/BillingApi.md
 docs/BusinessRulesApi.json
@@ -116,8 +120,6 @@ docs/RoutingApi.json
 docs/RoutingApi.md
 docs/SCIMApi.json
 docs/SCIMApi.md
-docs/ScreenRecordingApi.json
-docs/ScreenRecordingApi.md
 docs/ScriptsApi.json
 docs/ScriptsApi.md
 docs/SearchApi.json
@@ -213,6 +215,7 @@ docs/deleteArchitectSystempromptResource-example.txt
 docs/deleteAssistant-example.txt
 docs/deleteAssistantQueue-example.txt
 docs/deleteAssistantQueues-example.txt
+docs/deleteAssistantVariation-example.txt
 docs/deleteAssistantsAgentchecklist-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationDivision-example.txt
@@ -471,6 +474,7 @@ docs/deleteTelephonyProvidersEdgesTrunkbasesetting-example.txt
 docs/deleteToken-example.txt
 docs/deleteTokensMe-example.txt
 docs/deleteUser-example.txt
+docs/deleteUserCustomattribute-example.txt
 docs/deleteUserExternalidAuthorityNameExternalKey-example.txt
 docs/deleteUserRoutinglanguage-example.txt
 docs/deleteUserRoutinglanguage-example.txt
@@ -482,6 +486,7 @@ docs/deleteUserVerifier-example.txt
 docs/deleteUserrecording-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/deleteUsersCustomattributesSchema-example.txt
 docs/deleteUsersRule-example.txt
 docs/deleteVoicemailMessage-example.txt
 docs/deleteVoicemailMessages-example.txt
@@ -629,6 +634,8 @@ docs/getAssistantCopilot-example.txt
 docs/getAssistantQueue-example.txt
 docs/getAssistantQueueUsersJob-example.txt
 docs/getAssistantQueues-example.txt
+docs/getAssistantVariation-example.txt
+docs/getAssistantVariations-example.txt
 docs/getAssistants-example.txt
 docs/getAssistantsAgentchecklist-example.txt
 docs/getAssistantsAgentchecklists-example.txt
@@ -1600,6 +1607,7 @@ docs/getSpeechandtextanalyticsProgramsGeneralJob-example.txt
 docs/getSpeechandtextanalyticsProgramsMappings-example.txt
 docs/getSpeechandtextanalyticsProgramsPublishjob-example.txt
 docs/getSpeechandtextanalyticsProgramsSettingsInsights-example.txt
+docs/getSpeechandtextanalyticsProgramsTopiclinksJob-example.txt
 docs/getSpeechandtextanalyticsProgramsTranscriptionenginesDialects-example.txt
 docs/getSpeechandtextanalyticsProgramsUnpublished-example.txt
 docs/getSpeechandtextanalyticsReprocessingJob-example.txt
@@ -1751,6 +1759,8 @@ docs/getUsageSimplesearchExecutionIdResults-example.txt
 docs/getUser-example.txt
 docs/getUserAdjacents-example.txt
 docs/getUserCallforwarding-example.txt
+docs/getUserCustomattribute-example.txt
+docs/getUserCustomattributesBulk-example.txt
 docs/getUserDirectreports-example.txt
 docs/getUserExternalid-example.txt
 docs/getUserExternalidAuthorityName-example.txt
@@ -1788,6 +1798,13 @@ docs/getUsers-example.txt
 docs/getUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/getUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/getUsersChatsMe-example.txt
+docs/getUsersCustomattributesSchema-example.txt
+docs/getUsersCustomattributesSchemaVersion-example.txt
+docs/getUsersCustomattributesSchemaVersions-example.txt
+docs/getUsersCustomattributesSchemas-example.txt
+docs/getUsersCustomattributesSchemasCoretype-example.txt
+docs/getUsersCustomattributesSchemasCoretypes-example.txt
+docs/getUsersCustomattributesSchemasLimits-example.txt
 docs/getUsersDevelopmentActivities-example.txt
 docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
@@ -2093,6 +2110,7 @@ docs/patchRecordingMediaretentionpolicy-example.txt
 docs/patchRoutingConversation-example.txt
 docs/patchRoutingEmailDomain-example.txt
 docs/patchRoutingEmailDomainValidate-example.txt
+docs/patchRoutingEmailOutboundDomain-example.txt
 docs/patchRoutingPredictor-example.txt
 docs/patchRoutingPredictorsKeyperformanceindicator-example.txt
 docs/patchRoutingQueueMember-example.txt
@@ -2130,6 +2148,8 @@ docs/patchTeam-example.txt
 docs/patchTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/patchUser-example.txt
 docs/patchUserCallforwarding-example.txt
+docs/patchUserCustomattributes-example.txt
+docs/patchUserCustomattributesBulk-example.txt
 docs/patchUserGeolocation-example.txt
 docs/patchUserGeolocation-example.txt
 docs/patchUserPresence-example.txt
@@ -2252,6 +2272,7 @@ docs/postAnalyticsSurveysAggregatesQuery-example.txt
 docs/postAnalyticsSurveysAggregatesQuery-example.txt
 docs/postAnalyticsTaskmanagementAggregatesJobs-example.txt
 docs/postAnalyticsTaskmanagementAggregatesQuery-example.txt
+docs/postAnalyticsTaskmanagementMetricsQuery-example.txt
 docs/postAnalyticsTeamsActivityQuery-example.txt
 docs/postAnalyticsTeamsActivityQuery-example.txt
 docs/postAnalyticsTranscriptsAggregatesJobs-example.txt
@@ -2288,6 +2309,7 @@ docs/postAssistantQueueUsersBulkAdd-example.txt
 docs/postAssistantQueueUsersBulkRemove-example.txt
 docs/postAssistantQueueUsersJobs-example.txt
 docs/postAssistantQueueUsersQuery-example.txt
+docs/postAssistantVariations-example.txt
 docs/postAssistants-example.txt
 docs/postAssistantsAgentchecklists-example.txt
 docs/postAuditsQuery-example.txt
@@ -2314,6 +2336,7 @@ docs/postAuthorizationSubjectBulkreplace-example.txt
 docs/postAuthorizationSubjectBulkreplace-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
+docs/postBackgroundassistantToken-example.txt
 docs/postBusinessrulesDecisiontableExecute-example.txt
 docs/postBusinessrulesDecisiontableVersionCopy-example.txt
 docs/postBusinessrulesDecisiontableVersionExecute-example.txt
@@ -2704,6 +2727,7 @@ docs/postOutboundContactlistfilters-example.txt
 docs/postOutboundContactlistfiltersBulkRetrieve-example.txt
 docs/postOutboundContactlistfiltersPreview-example.txt
 docs/postOutboundContactlists-example.txt
+docs/postOutboundContactlistsUploads-example.txt
 docs/postOutboundContactlisttemplates-example.txt
 docs/postOutboundContactlisttemplatesBulkAdd-example.txt
 docs/postOutboundContactlisttemplatesBulkRetrieve-example.txt
@@ -2713,6 +2737,7 @@ docs/postOutboundDnclistEmailaddresses-example.txt
 docs/postOutboundDnclistExport-example.txt
 docs/postOutboundDnclistPhonenumbers-example.txt
 docs/postOutboundDnclists-example.txt
+docs/postOutboundDnclistsUploads-example.txt
 docs/postOutboundFilespecificationtemplates-example.txt
 docs/postOutboundImporttemplates-example.txt
 docs/postOutboundImporttemplatesBulkAdd-example.txt
@@ -2769,6 +2794,7 @@ docs/postRoutingEmailDomainRoutes-example.txt
 docs/postRoutingEmailDomainTestconnection-example.txt
 docs/postRoutingEmailDomainVerification-example.txt
 docs/postRoutingEmailDomains-example.txt
+docs/postRoutingEmailOutboundDomainTestconnection-example.txt
 docs/postRoutingEmailOutboundDomains-example.txt
 docs/postRoutingEmailOutboundDomainsSimulated-example.txt
 docs/postRoutingLanguages-example.txt
@@ -2892,6 +2918,7 @@ docs/postUserRoutinglanguages-example.txt
 docs/postUserRoutingskills-example.txt
 docs/postUserRoutingskills-example.txt
 docs/postUsers-example.txt
+docs/postUsersCustomattributesSchemas-example.txt
 docs/postUsersDevelopmentActivitiesAggregatesQuery-example.txt
 docs/postUsersMePassword-example.txt
 docs/postUsersRules-example.txt
@@ -3031,6 +3058,7 @@ docs/putArchitectSchedulegroup-example.txt
 docs/putArchitectSystempromptResource-example.txt
 docs/putAssistantCopilot-example.txt
 docs/putAssistantQueue-example.txt
+docs/putAssistantVariation-example.txt
 docs/putAssistantsAgentchecklist-example.txt
 docs/putAuthorizationDivision-example.txt
 docs/putAuthorizationDivision-example.txt
@@ -3254,6 +3282,7 @@ docs/putTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/putTelephonyProvidersEdgesTrunkbasesetting-example.txt
 docs/putTokensTimeout-example.txt
 docs/putUserCallforwarding-example.txt
+docs/putUserCustomattributes-example.txt
 docs/putUserGreetingsDefaults-example.txt
 docs/putUserOutofoffice-example.txt
 docs/putUserProfileskills-example.txt
@@ -3271,6 +3300,7 @@ docs/putUserVerifier-example.txt
 docs/putUserrecording-example.txt
 docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/putUsersCustomattributesSchema-example.txt
 docs/putUsersPresencesBulk-example.txt
 docs/putVoicemailMessage-example.txt
 docs/putVoicemailPolicy-example.txt
@@ -3297,8 +3327,10 @@ src/purecloud-platform-client-v2/api/AgentUIApi.js
 src/purecloud-platform-client-v2/api/AlertingApi.js
 src/purecloud-platform-client-v2/api/AnalyticsApi.js
 src/purecloud-platform-client-v2/api/ArchitectApi.js
+src/purecloud-platform-client-v2/api/AssistantCopilotVariationsApi.js
 src/purecloud-platform-client-v2/api/AuditApi.js
 src/purecloud-platform-client-v2/api/AuthorizationApi.js
+src/purecloud-platform-client-v2/api/BackgroundAssistantApi.js
 src/purecloud-platform-client-v2/api/BillingApi.js
 src/purecloud-platform-client-v2/api/BusinessRulesApi.js
 src/purecloud-platform-client-v2/api/CarrierServicesApi.js
@@ -3348,7 +3380,6 @@ src/purecloud-platform-client-v2/api/RecordingApi.js
 src/purecloud-platform-client-v2/api/ResponseManagementApi.js
 src/purecloud-platform-client-v2/api/RoutingApi.js
 src/purecloud-platform-client-v2/api/SCIMApi.js
-src/purecloud-platform-client-v2/api/ScreenRecordingApi.js
 src/purecloud-platform-client-v2/api/ScriptsApi.js
 src/purecloud-platform-client-v2/api/SearchApi.js
 src/purecloud-platform-client-v2/api/SettingsApi.js

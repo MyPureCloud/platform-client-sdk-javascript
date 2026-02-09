@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 244.0.0
+	 * @version 245.0.0
 	 */
 
 	/**
@@ -1101,8 +1101,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (default to false)
 	 */
-	postAuthorizationPoliciesTarget(targetName, body) { 
+	postAuthorizationPoliciesTarget(targetName, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTarget';
@@ -1116,7 +1120,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/policies/targets/{targetName}', 
 			'POST', 
 			{ 'targetName': targetName },
-			{  },
+			{ 'skipLockoutCheck': opts['skipLockoutCheck'] },
 			{  },
 			{  },
 			body, 
@@ -1476,8 +1480,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (default to false)
 	 */
-	putAuthorizationPoliciesTarget(targetName, body) { 
+	putAuthorizationPoliciesTarget(targetName, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling putAuthorizationPoliciesTarget';
@@ -1491,7 +1499,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/policies/targets/{targetName}', 
 			'PUT', 
 			{ 'targetName': targetName },
-			{  },
+			{ 'skipLockoutCheck': opts['skipLockoutCheck'] },
 			{  },
 			{  },
 			body, 
@@ -1506,8 +1514,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} policyId The ID of the policy to update
 	 * @param {Object} body Access control policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (default to false)
 	 */
-	putAuthorizationPolicy(policyId, body) { 
+	putAuthorizationPolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putAuthorizationPolicy';
@@ -1521,7 +1533,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/policies/{policyId}', 
 			'PUT', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'skipLockoutCheck': opts['skipLockoutCheck'] },
 			{  },
 			{  },
 			body, 

@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 244.0.0
+	 * @version 245.0.0
 	 */
 
 	/**
@@ -135,6 +135,8 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 * @param {String} opts.languageVariation Language variation
+	 * @param {Boolean} opts.fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found
 	 */
 	getAssistant(assistantId, opts) { 
 		opts = opts || {};
@@ -148,7 +150,7 @@ class AgentAssistantsApi {
 			'/api/v2/assistants/{assistantId}', 
 			'GET', 
 			{ 'assistantId': assistantId },
-			{ 'expand': opts['expand'] },
+			{ 'expand': opts['expand'],'languageVariation': opts['languageVariation'],'fallbackToPrimaryAssistant': opts['fallbackToPrimaryAssistant'] },
 			{  },
 			{  },
 			null, 

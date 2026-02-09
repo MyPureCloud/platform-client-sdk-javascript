@@ -11,8 +11,10 @@ import AgentUIApi from './api/AgentUIApi.js';
 import AlertingApi from './api/AlertingApi.js';
 import AnalyticsApi from './api/AnalyticsApi.js';
 import ArchitectApi from './api/ArchitectApi.js';
+import AssistantCopilotVariationsApi from './api/AssistantCopilotVariationsApi.js';
 import AuditApi from './api/AuditApi.js';
 import AuthorizationApi from './api/AuthorizationApi.js';
+import BackgroundAssistantApi from './api/BackgroundAssistantApi.js';
 import BillingApi from './api/BillingApi.js';
 import BusinessRulesApi from './api/BusinessRulesApi.js';
 import CarrierServicesApi from './api/CarrierServicesApi.js';
@@ -62,7 +64,6 @@ import RecordingApi from './api/RecordingApi.js';
 import ResponseManagementApi from './api/ResponseManagementApi.js';
 import RoutingApi from './api/RoutingApi.js';
 import SCIMApi from './api/SCIMApi.js';
-import ScreenRecordingApi from './api/ScreenRecordingApi.js';
 import ScriptsApi from './api/ScriptsApi.js';
 import SearchApi from './api/SearchApi.js';
 import SettingsApi from './api/SettingsApi.js';
@@ -120,7 +121,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 244.0.0
+ * @version 245.0.0
  */
 class platformClient {
 	constructor() {
@@ -170,6 +171,11 @@ class platformClient {
 		 */
 		this.ArchitectApi = ArchitectApi;
 		/**
+		 * The AssistantCopilotVariationsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/AssistantCopilotVariationsApi}
+		 */
+		this.AssistantCopilotVariationsApi = AssistantCopilotVariationsApi;
+		/**
 		 * The AuditApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AuditApi}
 		 */
@@ -179,6 +185,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/AuthorizationApi}
 		 */
 		this.AuthorizationApi = AuthorizationApi;
+		/**
+		 * The BackgroundAssistantApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/BackgroundAssistantApi}
+		 */
+		this.BackgroundAssistantApi = BackgroundAssistantApi;
 		/**
 		 * The BillingApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/BillingApi}
@@ -424,11 +435,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SCIMApi}
 		 */
 		this.SCIMApi = SCIMApi;
-		/**
-		 * The ScreenRecordingApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/ScreenRecordingApi}
-		 */
-		this.ScreenRecordingApi = ScreenRecordingApi;
 		/**
 		 * The ScriptsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ScriptsApi}

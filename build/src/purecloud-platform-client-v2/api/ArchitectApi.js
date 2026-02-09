@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 244.0.0
+	 * @version 245.0.0
 	 */
 
 	/**
@@ -620,7 +620,7 @@ class ArchitectApi {
 	 * @param {String} version Consuming object version
 	 * @param {Object} objectType Consuming object type.  Only versioned types are allowed here.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.resourceType Types of consumed resources to show
+	 * @param {Array.<String>} opts.resourceType Types of consumed resources to show.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 */

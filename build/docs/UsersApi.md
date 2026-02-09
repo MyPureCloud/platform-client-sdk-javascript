@@ -13,12 +13,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingUserDirectroutingbackupSettings**](UsersApi#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](UsersApi#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteUser**](UsersApi#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
+[**deleteUserCustomattribute**](UsersApi#deleteUserCustomattribute) | **DELETE** /api/v2/users/{userId}/customattributes/{schemaId} | Delete a custom attributes record.
 [**deleteUserExternalidAuthorityNameExternalKey**](UsersApi#deleteUserExternalidAuthorityNameExternalKey) | **DELETE** /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} | Delete the external identifier for user.
 [**deleteUserRoutinglanguage**](UsersApi#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove a routing language from a user
 [**deleteUserRoutingskill**](UsersApi#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove a routing skill from a user
 [**deleteUserStationAssociatedstation**](UsersApi#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
 [**deleteUserVerifier**](UsersApi#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
+[**deleteUsersCustomattributesSchema**](UsersApi#deleteUsersCustomattributesSchema) | **DELETE** /api/v2/users/customattributes/schemas/{schemaId} | Delete a schema
 [**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
 [**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsUsersDetailsJob**](UsersApi#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
@@ -37,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUser**](UsersApi#getUser) | **GET** /api/v2/users/{userId} | Get user.
 [**getUserAdjacents**](UsersApi#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
 [**getUserCallforwarding**](UsersApi#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
+[**getUserCustomattribute**](UsersApi#getUserCustomattribute) | **GET** /api/v2/users/{userId}/customattributes/{schemaId} | Get custom attributes by schema id
+[**getUserCustomattributesBulk**](UsersApi#getUserCustomattributesBulk) | **GET** /api/v2/users/{userId}/customattributes/bulk | Get multiple custom attributes records by schema ids
 [**getUserDirectreports**](UsersApi#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
 [**getUserExternalid**](UsersApi#getUserExternalid) | **GET** /api/v2/users/{userId}/externalid | Get the external identifiers for a user.
 [**getUserExternalidAuthorityName**](UsersApi#getUserExternalidAuthorityName) | **GET** /api/v2/users/{userId}/externalid/{authorityName} | Get the external identifier of user for an authority.
@@ -58,6 +62,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserVerifiers**](UsersApi#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
 [**getUsers**](UsersApi#getUsers) | **GET** /api/v2/users | Get the list of available users.
 [**getUsersChatsMe**](UsersApi#getUsersChatsMe) | **GET** /api/v2/users/chats/me | Get chats for a user
+[**getUsersCustomattributesSchema**](UsersApi#getUsersCustomattributesSchema) | **GET** /api/v2/users/customattributes/schemas/{schemaId} | Get a schema
+[**getUsersCustomattributesSchemaVersion**](UsersApi#getUsersCustomattributesSchemaVersion) | **GET** /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getUsersCustomattributesSchemaVersions**](UsersApi#getUsersCustomattributesSchemaVersions) | **GET** /api/v2/users/customattributes/schemas/{schemaId}/versions | Get all versions of a user schema
+[**getUsersCustomattributesSchemas**](UsersApi#getUsersCustomattributesSchemas) | **GET** /api/v2/users/customattributes/schemas | Get a list of schemas.
+[**getUsersCustomattributesSchemasCoretype**](UsersApi#getUsersCustomattributesSchemasCoretype) | **GET** /api/v2/users/customattributes/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getUsersCustomattributesSchemasCoretypes**](UsersApi#getUsersCustomattributesSchemasCoretypes) | **GET** /api/v2/users/customattributes/schemas/coretypes | Get the list of core types enabled for a specific namespace.
+[**getUsersCustomattributesSchemasLimits**](UsersApi#getUsersCustomattributesSchemasLimits) | **GET** /api/v2/users/customattributes/schemas/limits | Get quantitative limits on schemas
 [**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
 [**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
 [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
@@ -67,6 +78,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**patchUser**](UsersApi#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
 [**patchUserCallforwarding**](UsersApi#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
+[**patchUserCustomattributes**](UsersApi#patchUserCustomattributes) | **PATCH** /api/v2/users/{userId}/customattributes | Update a single custom attributes record by amending the data with only the provided fields.
+[**patchUserCustomattributesBulk**](UsersApi#patchUserCustomattributesBulk) | **PATCH** /api/v2/users/{userId}/customattributes/bulk | Update multiple custom attributes records by amending the data with only the provided fields.
 [**patchUserGeolocation**](UsersApi#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
 [**patchUserQueue**](UsersApi#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](UsersApi#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
@@ -90,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUserRoutinglanguages**](UsersApi#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Assign a routing language to a user
 [**postUserRoutingskills**](UsersApi#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Assign a routing skill to a user
 [**postUsers**](UsersApi#postUsers) | **POST** /api/v2/users | Create user
+[**postUsersCustomattributesSchemas**](UsersApi#postUsersCustomattributesSchemas) | **POST** /api/v2/users/customattributes/schemas | Create a schema
 [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
 [**postUsersMePassword**](UsersApi#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
 [**postUsersSearch**](UsersApi#postUsersSearch) | **POST** /api/v2/users/search | Search users
@@ -100,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingUserDirectroutingbackupSettings**](UsersApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putUserCallforwarding**](UsersApi#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
+[**putUserCustomattributes**](UsersApi#putUserCustomattributes) | **PUT** /api/v2/users/{userId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields.
 [**putUserOutofoffice**](UsersApi#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
 [**putUserProfileskills**](UsersApi#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
 [**putUserRoles**](UsersApi#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
@@ -110,6 +125,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserStationAssociatedstationStationId**](UsersApi#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
 [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
 [**putUserVerifier**](UsersApi#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
+[**putUsersCustomattributesSchema**](UsersApi#putUsersCustomattributesSchema) | **PUT** /api/v2/users/customattributes/schemas/{schemaId} | Update a schema
 
 
 
@@ -466,6 +482,60 @@ apiInstance.deleteUser(userId)
 **Object**
 
 
+## deleteUserCustomattribute
+
+> void deleteUserCustomattribute(userId, schemaId)
+
+
+DELETE /api/v2/users/{userId}/customattributes/{schemaId}
+
+Delete a custom attributes record.
+
+deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | user ID
+let schemaId = "schemaId_example"; // String | schemaId
+
+apiInstance.deleteUserCustomattribute(userId, schemaId)
+  .then(() => {
+    console.log('deleteUserCustomattribute returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserCustomattribute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user ID |  |
+ **schemaId** | **String** | schemaId |  |
+
+### Return type
+
+void (no response body)
+
+
 ## deleteUserExternalidAuthorityNameExternalKey
 
 > void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
@@ -770,6 +840,58 @@ apiInstance.deleteUserVerifier(userId, verifierId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **verifierId** | **String** | Verifier ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteUsersCustomattributesSchema
+
+> void deleteUsersCustomattributesSchema(schemaId)
+
+
+DELETE /api/v2/users/customattributes/schemas/{schemaId}
+
+Delete a schema
+
+deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.deleteUsersCustomattributesSchema(schemaId)
+  .then(() => {
+    console.log('deleteUsersCustomattributesSchema returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUsersCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
 
 ### Return type
 
@@ -1729,6 +1851,114 @@ apiInstance.getUserCallforwarding(userId)
 ### Return type
 
 **CallForwarding**
+
+
+## getUserCustomattribute
+
+> UserCustomAttributes getUserCustomattribute(userId, schemaId)
+
+
+GET /api/v2/users/{userId}/customattributes/{schemaId}
+
+Get custom attributes by schema id
+
+getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | user ID
+let schemaId = "schemaId_example"; // String | schemaId
+
+apiInstance.getUserCustomattribute(userId, schemaId)
+  .then((data) => {
+    console.log(`getUserCustomattribute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserCustomattribute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user ID |  |
+ **schemaId** | **String** | schemaId |  |
+
+### Return type
+
+**UserCustomAttributes**
+
+
+## getUserCustomattributesBulk
+
+> **[Object]** getUserCustomattributesBulk(userId, schemaIds)
+
+
+GET /api/v2/users/{userId}/customattributes/bulk
+
+Get multiple custom attributes records by schema ids
+
+getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | user ID
+let schemaIds = ["schemaIds_example"]; // [String] | 
+
+apiInstance.getUserCustomattributesBulk(userId, schemaIds)
+  .then((data) => {
+    console.log(`getUserCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserCustomattributesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user ID |  |
+ **schemaIds** | **[String]** |  |  |
+
+### Return type
+
+**[Object]**
 
 
 ## getUserDirectreports
@@ -2856,6 +3086,357 @@ apiInstance.getUsersChatsMe(opts)
 **ChatItemCursorListing**
 
 
+## getUsersCustomattributesSchema
+
+> DataSchema getUsersCustomattributesSchema(schemaId)
+
+
+GET /api/v2/users/customattributes/schemas/{schemaId}
+
+Get a schema
+
+getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getUsersCustomattributesSchema(schemaId)
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+
+### Return type
+
+**DataSchema**
+
+
+## getUsersCustomattributesSchemaVersion
+
+> DataSchema getUsersCustomattributesSchemaVersion(schemaId, versionId)
+
+
+GET /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}
+
+Get a specific version of a schema
+
+getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let versionId = "versionId_example"; // String | Schema version
+
+apiInstance.getUsersCustomattributesSchemaVersion(schemaId, versionId)
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **versionId** | **String** | Schema version |  |
+
+### Return type
+
+**DataSchema**
+
+
+## getUsersCustomattributesSchemaVersions
+
+> DataSchemaListing getUsersCustomattributesSchemaVersions(schemaId)
+
+
+GET /api/v2/users/customattributes/schemas/{schemaId}/versions
+
+Get all versions of a user schema
+
+getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getUsersCustomattributesSchemaVersions(schemaId)
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+
+### Return type
+
+**DataSchemaListing**
+
+
+## getUsersCustomattributesSchemas
+
+> DataSchemaListing getUsersCustomattributesSchemas()
+
+
+GET /api/v2/users/customattributes/schemas
+
+Get a list of schemas.
+
+getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getUsersCustomattributesSchemas()
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**DataSchemaListing**
+
+
+## getUsersCustomattributesSchemasCoretype
+
+> Coretype getUsersCustomattributesSchemasCoretype(coreTypeName)
+
+
+GET /api/v2/users/customattributes/schemas/coretypes/{coreTypeName}
+
+Get the core types from which all schemas are built.
+
+getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+
+apiInstance.getUsersCustomattributesSchemasCoretype(coreTypeName)
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of the core type |  |
+
+### Return type
+
+**Coretype**
+
+
+## getUsersCustomattributesSchemasCoretypes
+
+> CoretypeListing getUsersCustomattributesSchemasCoretypes()
+
+
+GET /api/v2/users/customattributes/schemas/coretypes
+
+Get the list of core types enabled for a specific namespace.
+
+getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getUsersCustomattributesSchemasCoretypes()
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**CoretypeListing**
+
+
+## getUsersCustomattributesSchemasLimits
+
+> SchemaQuantityLimits getUsersCustomattributesSchemasLimits()
+
+
+GET /api/v2/users/customattributes/schemas/limits
+
+Get quantitative limits on schemas
+
+getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getUsersCustomattributesSchemasLimits()
+  .then((data) => {
+    console.log(`getUsersCustomattributesSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersCustomattributesSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**SchemaQuantityLimits**
+
+
 ## getUsersDevelopmentActivities
 
 > DevelopmentActivityListing getUsersDevelopmentActivities(opts)
@@ -3396,6 +3977,114 @@ apiInstance.patchUserCallforwarding(userId, body)
 **CallForwarding**
 
 
+## patchUserCustomattributes
+
+> UserCustomAttributes patchUserCustomattributes(userId, userCustomAttributes)
+
+
+PATCH /api/v2/users/{userId}/customattributes
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | user ID
+let userCustomAttributes = {}; // Object | 
+
+apiInstance.patchUserCustomattributes(userId, userCustomAttributes)
+  .then((data) => {
+    console.log(`patchUserCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchUserCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user ID |  |
+ **userCustomAttributes** | **Object** |  |  |
+
+### Return type
+
+**UserCustomAttributes**
+
+
+## patchUserCustomattributesBulk
+
+> UserCustomAttributes patchUserCustomattributesBulk(userId, userCustomAttributesList)
+
+
+PATCH /api/v2/users/{userId}/customattributes/bulk
+
+Update multiple custom attributes records by amending the data with only the provided fields.
+
+patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | user ID
+let userCustomAttributesList = [{}]; // Object | 
+
+apiInstance.patchUserCustomattributesBulk(userId, userCustomAttributesList)
+  .then((data) => {
+    console.log(`patchUserCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchUserCustomattributesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user ID |  |
+ **userCustomAttributesList** | **Object** |  |  |
+
+### Return type
+
+**UserCustomAttributes**
+
+
 ## patchUserGeolocation
 
 > Geolocation patchUserGeolocation(userId, clientId, body)
@@ -3513,6 +4202,8 @@ apiInstance.patchUserQueue(queueId, userId, body)
 PATCH /api/v2/users/{userId}/queues
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Requires ANY permissions:
 
@@ -4625,6 +5316,58 @@ apiInstance.postUsers(body)
 **User**
 
 
+## postUsersCustomattributesSchemas
+
+> DataSchema postUsersCustomattributesSchemas(body)
+
+
+POST /api/v2/users/customattributes/schemas
+
+Create a schema
+
+postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Schema
+
+apiInstance.postUsersCustomattributesSchemas(body)
+  .then((data) => {
+    console.log(`postUsersCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersCustomattributesSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Schema |  |
+
+### Return type
+
+**DataSchema**
+
+
 ## postUsersDevelopmentActivitiesAggregatesQuery
 
 > DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
@@ -5135,6 +5878,60 @@ apiInstance.putUserCallforwarding(userId, body)
 ### Return type
 
 **CallForwarding**
+
+
+## putUserCustomattributes
+
+> UserCustomAttributes putUserCustomattributes(userId, userCustomAttributes)
+
+
+PUT /api/v2/users/{userId}/customattributes
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | user ID
+let userCustomAttributes = {}; // Object | 
+
+apiInstance.putUserCustomattributes(userId, userCustomAttributes)
+  .then((data) => {
+    console.log(`putUserCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUserCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user ID |  |
+ **userCustomAttributes** | **Object** |  |  |
+
+### Return type
+
+**UserCustomAttributes**
 
 
 ## putUserOutofoffice
@@ -5656,4 +6453,58 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@244.0.0_
+## putUsersCustomattributesSchema
+
+> DataSchema putUsersCustomattributesSchema(schemaId, body)
+
+
+PUT /api/v2/users/customattributes/schemas/{schemaId}
+
+Update a schema
+
+putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* users:customAttributesSchema:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let body = {}; // Object | Data Schema
+
+apiInstance.putUsersCustomattributesSchema(schemaId, body)
+  .then((data) => {
+    console.log(`putUsersCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUsersCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **body** | **Object** | Data Schema |  |
+
+### Return type
+
+**DataSchema**
+
+
+_purecloud-platform-client-v2@245.0.0_

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 244.0.0
+	 * @version 245.0.0
 	 */
 
 	/**
@@ -1472,6 +1472,8 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {String} opts.languageVariation Language variation
+	 * @param {Boolean} opts.fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found
 	 */
 	getRoutingQueueAssistant(queueId, opts) { 
 		opts = opts || {};
@@ -1485,7 +1487,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/assistant', 
 			'GET', 
 			{ 'queueId': queueId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'languageVariation': opts['languageVariation'],'fallbackToPrimaryAssistant': opts['fallbackToPrimaryAssistant'] },
 			{  },
 			{  },
 			null, 
@@ -2730,7 +2732,7 @@ class RoutingApi {
 
 	/**
 	 * Update attributes of an in-queue conversation
-	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body Conversation Attributes
 	 */
@@ -2806,6 +2808,36 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}/validate', 
+			'PATCH', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Domain settings
+	 */
+	patchRoutingEmailOutboundDomain(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailOutboundDomain';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailOutboundDomain';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'PATCH', 
 			{ 'domainId': domainId },
 			{  },
@@ -2914,7 +2946,7 @@ class RoutingApi {
 
 	/**
 	 * Join or unjoin a set of up to 100 users for a queue
-	 * 
+	 * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
 	 */
@@ -3156,7 +3188,7 @@ class RoutingApi {
 
 	/**
 	 * Join or unjoin a set of queues for a user
-	 * 
+	 * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body User Queues
 	 * @param {Object} opts Optional parameters
@@ -3544,6 +3576,35 @@ class RoutingApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Tests the custom SMTP server integration connection set on this outbound domain
+	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body TestMessage
+	 */
+	postRoutingEmailOutboundDomainTestconnection(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailOutboundDomainTestconnection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}/testconnection', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

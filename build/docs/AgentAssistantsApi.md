@@ -266,7 +266,9 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let opts = { 
-  'expand': "expand_example" // String | Which fields, if any, to expand.
+  'expand': "expand_example", // String | Which fields, if any, to expand.
+  'languageVariation': "languageVariation_example", // String | Language variation
+  'fallbackToPrimaryAssistant': true // Boolean | Fall back to primary assistant if specified variation is not found
 };
 
 apiInstance.getAssistant(assistantId, opts)
@@ -286,6 +288,8 @@ apiInstance.getAssistant(assistantId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: copilot |
+ **languageVariation** | **String** | Language variation | [optional]  |
+ **fallbackToPrimaryAssistant** | **Boolean** | Fall back to primary assistant if specified variation is not found | [optional]  |
 
 ### Return type
 
@@ -1273,4 +1277,4 @@ apiInstance.putAssistantsAgentchecklist(agentChecklistId, body)
 **AgentChecklist**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_

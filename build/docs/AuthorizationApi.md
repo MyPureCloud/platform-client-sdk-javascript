@@ -2053,7 +2053,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
+ **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT, LIBRARY |
  **body** | **[String]** | Object Id List |  |
 
 ### Return type
@@ -2166,7 +2166,7 @@ apiInstance.postAuthorizationDivisions(body)
 
 ## postAuthorizationPoliciesTarget
 
-> AuthorizationPolicy postAuthorizationPoliciesTarget(targetName, body)
+> AuthorizationPolicy postAuthorizationPoliciesTarget(targetName, body, opts)
 
 
 POST /api/v2/authorization/policies/targets/{targetName}
@@ -2192,8 +2192,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 let body = {}; // Object | Access control policy
+let opts = { 
+  'skipLockoutCheck': false // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+};
 
-apiInstance.postAuthorizationPoliciesTarget(targetName, body)
+apiInstance.postAuthorizationPoliciesTarget(targetName, body, opts)
   .then((data) => {
     console.log(`postAuthorizationPoliciesTarget success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2210,6 +2213,7 @@ apiInstance.postAuthorizationPoliciesTarget(targetName, body)
 | ------------- | ------------- | ------------- | ------------- |
  **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
  **body** | **Object** | Access control policy |  |
+ **skipLockoutCheck** | **Boolean** | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] |
 
 ### Return type
 
@@ -2815,7 +2819,7 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 
 ## putAuthorizationPoliciesTarget
 
-> AuthorizationPolicy putAuthorizationPoliciesTarget(targetName, body)
+> AuthorizationPolicy putAuthorizationPoliciesTarget(targetName, body, opts)
 
 
 PUT /api/v2/authorization/policies/targets/{targetName}
@@ -2842,8 +2846,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 let body = {}; // Object | Access control policy
+let opts = { 
+  'skipLockoutCheck': false // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+};
 
-apiInstance.putAuthorizationPoliciesTarget(targetName, body)
+apiInstance.putAuthorizationPoliciesTarget(targetName, body, opts)
   .then((data) => {
     console.log(`putAuthorizationPoliciesTarget success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2860,6 +2867,7 @@ apiInstance.putAuthorizationPoliciesTarget(targetName, body)
 | ------------- | ------------- | ------------- | ------------- |
  **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
  **body** | **Object** | Access control policy |  |
+ **skipLockoutCheck** | **Boolean** | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] |
 
 ### Return type
 
@@ -2868,7 +2876,7 @@ apiInstance.putAuthorizationPoliciesTarget(targetName, body)
 
 ## putAuthorizationPolicy
 
-> AuthorizationPolicy putAuthorizationPolicy(policyId, body)
+> AuthorizationPolicy putAuthorizationPolicy(policyId, body, opts)
 
 
 PUT /api/v2/authorization/policies/{policyId}
@@ -2894,8 +2902,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let policyId = "policyId_example"; // String | The ID of the policy to update
 let body = {}; // Object | Access control policy
+let opts = { 
+  'skipLockoutCheck': false // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+};
 
-apiInstance.putAuthorizationPolicy(policyId, body)
+apiInstance.putAuthorizationPolicy(policyId, body, opts)
   .then((data) => {
     console.log(`putAuthorizationPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2912,6 +2923,7 @@ apiInstance.putAuthorizationPolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | The ID of the policy to update |  |
  **body** | **Object** | Access control policy |  |
+ **skipLockoutCheck** | **Boolean** | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] |
 
 ### Return type
 
@@ -3231,4 +3243,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_

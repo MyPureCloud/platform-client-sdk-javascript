@@ -3052,6 +3052,7 @@ Requires ANY permissions:
 * recording:settings:editScreenRecordings
 * recording:settings:editRegionalStorage
 * recording:settings:editUrlExpiration
+* recording:settings:editConferenceRecording
 
 ### Example Usage
 
@@ -3145,4 +3146,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_

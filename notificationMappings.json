@@ -829,6 +829,18 @@
       "class": "WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification"
     },
     {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.forecast",
+      "class": "V2WfmMainForecastExportForecastEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.historical",
+      "class": "V2WfmMainForecastExportHistoricalEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.snapshot",
+      "class": "V2WfmMainForecastExportSnapshotEventMainForecastExportNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.businessunits.{id}.schedules",
       "class": "WfmBuScheduleTopicBuScheduleNotification"
     },

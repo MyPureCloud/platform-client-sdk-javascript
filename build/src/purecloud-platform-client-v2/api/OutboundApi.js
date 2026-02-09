@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 244.0.0
+	 * @version 245.0.0
 	 */
 
 	/**
@@ -3585,6 +3585,31 @@ class OutboundApi {
 	}
 
 	/**
+	 * Generate presigned upload URL for contact list.
+	 * 
+	 * @param {Object} body contactListUploadUrlRequest
+	 */
+	postOutboundContactlistsUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistsUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/uploads', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Contact List Template
 	 * 
 	 * @param {Object} body ContactListTemplate
@@ -3811,6 +3836,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate presigned upload URL for dnc list.
+	 * 
+	 * @param {Object} body dncListUploadUrlRequest
+	 */
+	postOutboundDnclistsUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundDnclistsUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/uploads', 
 			'POST', 
 			{  },
 			{  },

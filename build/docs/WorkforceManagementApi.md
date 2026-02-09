@@ -13447,7 +13447,7 @@ POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffreque
 
 Fetches time off requests matching the conditions specified in the request body
 
-Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
 
 Requires ANY permissions:
 
@@ -14991,4 +14991,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_
