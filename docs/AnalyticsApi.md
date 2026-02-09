@@ -123,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
 [**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesJobs) | **POST** /api/v2/analytics/taskmanagement/aggregates/jobs | Query for task management aggregates asynchronously
 [**postAnalyticsTaskmanagementAggregatesQuery**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesQuery) | **POST** /api/v2/analytics/taskmanagement/aggregates/query | Query for task management aggregates
+[**postAnalyticsTaskmanagementMetricsQuery**](AnalyticsApi#postAnalyticsTaskmanagementMetricsQuery) | **POST** /api/v2/analytics/taskmanagement/metrics/query | Query for task management observations
 [**postAnalyticsTeamsActivityQuery**](AnalyticsApi#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
 [**postAnalyticsTranscriptsAggregatesJobs**](AnalyticsApi#postAnalyticsTranscriptsAggregatesJobs) | **POST** /api/v2/analytics/transcripts/aggregates/jobs | Query for transcript aggregates asynchronously
 [**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
@@ -6321,6 +6322,64 @@ apiInstance.postAnalyticsTaskmanagementAggregatesQuery(body)
 **TaskManagementAggregateQueryResponse**
 
 
+## postAnalyticsTaskmanagementMetricsQuery
+
+> TaskManagementObservationQueryResponse postAnalyticsTaskmanagementMetricsQuery(body, opts)
+
+
+POST /api/v2/analytics/taskmanagement/metrics/query
+
+Query for task management observations
+
+postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* analytics:taskManagementObservation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned. Used for pagination.
+  'pageSize': 3.4 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+};
+
+apiInstance.postAnalyticsTaskmanagementMetricsQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsTaskmanagementMetricsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsTaskmanagementMetricsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. Used for pagination. | [optional]  |
+ **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional]  |
+
+### Return type
+
+**TaskManagementObservationQueryResponse**
+
+
 ## postAnalyticsTeamsActivityQuery
 
 > TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
@@ -6837,4 +6896,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_

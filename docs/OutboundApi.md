@@ -138,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | **POST** /api/v2/outbound/contactlistfilters/bulk/retrieve | Retrieve multiple contact list filters
 [**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
+[**postOutboundContactlistsUploads**](OutboundApi#postOutboundContactlistsUploads) | **POST** /api/v2/outbound/contactlists/uploads | Generate presigned upload URL for contact list.
 [**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
 [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | **POST** /api/v2/outbound/contactlisttemplates/bulk/add | Add multiple contact list templates
 [**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi#postOutboundContactlisttemplatesBulkRetrieve) | **POST** /api/v2/outbound/contactlisttemplates/bulk/retrieve | Get multiple contact list templates
@@ -147,6 +148,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundDnclistExport**](OutboundApi#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
 [**postOutboundDnclists**](OutboundApi#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
+[**postOutboundDnclistsUploads**](OutboundApi#postOutboundDnclistsUploads) | **POST** /api/v2/outbound/dnclists/uploads | Generate presigned upload URL for dnc list.
 [**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | **POST** /api/v2/outbound/filespecificationtemplates | Create File Specification Template
 [**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | **POST** /api/v2/outbound/importtemplates | Create Import Template
 [**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | **POST** /api/v2/outbound/importtemplates/bulk/add | Add multiple import templates
@@ -7327,6 +7329,56 @@ apiInstance.postOutboundContactlists(body)
 **ContactList**
 
 
+## postOutboundContactlistsUploads
+
+> UploadUrlResponse postOutboundContactlistsUploads(body)
+
+
+POST /api/v2/outbound/contactlists/uploads
+
+Generate presigned upload URL for contact list.
+
+Requires ANY permissions:
+
+* outbound:contactList:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | contactListUploadUrlRequest
+
+apiInstance.postOutboundContactlistsUploads(body)
+  .then((data) => {
+    console.log(`postOutboundContactlistsUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistsUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | contactListUploadUrlRequest |  |
+
+### Return type
+
+**UploadUrlResponse**
+
+
 ## postOutboundContactlisttemplates
 
 > ContactListTemplate postOutboundContactlisttemplates(body)
@@ -7790,6 +7842,56 @@ apiInstance.postOutboundDnclists(body)
 ### Return type
 
 **DncList**
+
+
+## postOutboundDnclistsUploads
+
+> UploadUrlResponse postOutboundDnclistsUploads(body)
+
+
+POST /api/v2/outbound/dnclists/uploads
+
+Generate presigned upload URL for dnc list.
+
+Requires ANY permissions:
+
+* outbound:dncList:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | dncListUploadUrlRequest
+
+apiInstance.postOutboundDnclistsUploads(body)
+  .then((data) => {
+    console.log(`postOutboundDnclistsUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundDnclistsUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | dncListUploadUrlRequest |  |
+
+### Return type
+
+**UploadUrlResponse**
 
 
 ## postOutboundFilespecificationtemplates
@@ -9463,4 +9565,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_

@@ -109,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingConversation**](RoutingApi#patchRoutingConversation) | **PATCH** /api/v2/routing/conversations/{conversationId} | Update attributes of an in-queue conversation
 [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
+[**patchRoutingEmailOutboundDomain**](RoutingApi#patchRoutingEmailOutboundDomain) | **PATCH** /api/v2/routing/email/outbound/domains/{domainId} | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
 [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
 [**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi#patchRoutingPredictorsKeyperformanceindicator) | **PATCH** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Update a custom Key Performance Indicator.
 [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
@@ -134,6 +135,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this ACD domain
 [**postRoutingEmailDomainVerification**](RoutingApi#postRoutingEmailDomainVerification) | **POST** /api/v2/routing/email/domains/{domainId}/verification | Restart domain verification
 [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
+[**postRoutingEmailOutboundDomainTestconnection**](RoutingApi#postRoutingEmailOutboundDomainTestconnection) | **POST** /api/v2/routing/email/outbound/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this outbound domain
 [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | **POST** /api/v2/routing/email/outbound/domains | Create a domain
 [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
 [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
@@ -3059,7 +3061,9 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'languageVariation': "languageVariation_example", // String | Language variation
+  'fallbackToPrimaryAssistant': true // Boolean | Fall back to primary assistant if specified variation is not found
 };
 
 apiInstance.getRoutingQueueAssistant(queueId, opts)
@@ -3079,6 +3083,8 @@ apiInstance.getRoutingQueueAssistant(queueId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant, copilot |
+ **languageVariation** | **String** | Language variation | [optional]  |
+ **fallbackToPrimaryAssistant** | **Boolean** | Fall back to primary assistant if specified variation is not found | [optional]  |
 
 ### Return type
 
@@ -5553,7 +5559,7 @@ PATCH /api/v2/routing/conversations/{conversationId}
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 
 Requires ANY permissions:
 
@@ -5700,6 +5706,58 @@ apiInstance.patchRoutingEmailDomainValidate(domainId, body)
 ### Return type
 
 **InboundDomain**
+
+
+## patchRoutingEmailOutboundDomain
+
+> OutboundDomain patchRoutingEmailOutboundDomain(domainId, body)
+
+
+PATCH /api/v2/routing/email/outbound/domains/{domainId}
+
+Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+let body = {}; // Object | Domain settings
+
+apiInstance.patchRoutingEmailOutboundDomain(domainId, body)
+  .then((data) => {
+    console.log(`patchRoutingEmailOutboundDomain success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingEmailOutboundDomain');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+ **body** | **Object** | Domain settings |  |
+
+### Return type
+
+**OutboundDomain**
 
 
 ## patchRoutingPredictor
@@ -5876,6 +5934,8 @@ void (no response body)
 PATCH /api/v2/routing/queues/{queueId}/members
 
 Join or unjoin a set of up to 100 users for a queue
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Requires ANY permissions:
 
@@ -6302,6 +6362,8 @@ apiInstance.patchUserQueue(queueId, userId, body)
 PATCH /api/v2/users/{userId}/queues
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Requires ANY permissions:
 
@@ -7030,6 +7092,62 @@ apiInstance.postRoutingEmailDomains(body)
 ### Return type
 
 **InboundDomain**
+
+
+## postRoutingEmailOutboundDomainTestconnection
+
+> TestMessage postRoutingEmailOutboundDomainTestconnection(domainId, opts)
+
+
+POST /api/v2/routing/email/outbound/domains/{domainId}/testconnection
+
+Tests the custom SMTP server integration connection set on this outbound domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'body': {} // Object | TestMessage
+};
+
+apiInstance.postRoutingEmailOutboundDomainTestconnection(domainId, opts)
+  .then((data) => {
+    console.log(`postRoutingEmailOutboundDomainTestconnection success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailOutboundDomainTestconnection');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+ **body** | **Object** | TestMessage | [optional]  |
+
+### Return type
+
+**TestMessage**
 
 
 ## postRoutingEmailOutboundDomains
@@ -9003,4 +9121,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@244.0.0_
+_purecloud-platform-client-v2@245.0.0_
