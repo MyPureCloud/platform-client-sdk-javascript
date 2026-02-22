@@ -3498,7 +3498,7 @@ apiInstance.postQualityPublishedformsSurveys(body)
 
 ## postQualitySurveys
 
-> Survey postQualitySurveys(body)
+> CreateSurveyResponse postQualitySurveys(body)
 
 
 POST /api/v2/quality/surveys
@@ -3543,7 +3543,7 @@ apiInstance.postQualitySurveys(body)
 
 ### Return type
 
-**Survey**
+**CreateSurveyResponse**
 
 
 ## postQualitySurveysScoring
@@ -4020,4 +4020,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_

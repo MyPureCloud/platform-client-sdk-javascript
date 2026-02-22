@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteSocialmediaMessage**](SocialMediaApi#deleteSocialmediaMessage) | **DELETE** /api/v2/socialmedia/messages/{messageId} | Delete a social media message.
 [**deleteSocialmediaTopic**](SocialMediaApi#deleteSocialmediaTopic) | **DELETE** /api/v2/socialmedia/topics/{topicId} | Delete a social topic.
 [**deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Delete a Facebook data ingestion rule.
+[**deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId} | Delete a Google Business Profile data ingestion rule.
 [**deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} | Delete a Instagram data ingestion rule.
 [**deleteSocialmediaTopicDataingestionrulesOpenOpenId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesOpenOpenId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} | Delete a open data ingestion rule.
 [**deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId**](SocialMediaApi#deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId) | **DELETE** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} | Delete a X (formally Twitter) data ingestion rule.
@@ -24,6 +25,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Get a single Facebook data ingestion rule.
 [**getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion**](SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion} | Get a single Facebook data ingestion rule version.
 [**getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions**](SocialMediaApi#getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions | Get the Facebook data ingestion rule versions.
+[**getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId**](SocialMediaApi#getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId} | Get a single Google Business Profile data ingestion rule.
+[**getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion**](SocialMediaApi#getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion} | Get a single Google Business Profile data ingestion rule version.
+[**getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions**](SocialMediaApi#getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions | Get the Google Business Profile data ingestion rule versions.
 [**getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId**](SocialMediaApi#getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} | Get a single Instagram data ingestion rule.
 [**getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion**](SocialMediaApi#getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion} | Get a single Instagram data ingestion rule version.
 [**getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions**](SocialMediaApi#getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions) | **GET** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions | Get the Instagram data ingestion rule versions.
@@ -36,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSocialmediaTopics**](SocialMediaApi#getSocialmediaTopics) | **GET** /api/v2/socialmedia/topics | Retrieve all social topics.
 [**patchSocialmediaTopic**](SocialMediaApi#patchSocialmediaTopic) | **PATCH** /api/v2/socialmedia/topics/{topicId} | Update a social topic.
 [**patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Update the status of a Facebook data ingestion rule.
+[**patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId} | Update the status of a Google Business Profile data ingestion rule.
 [**patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} | Update the status of a Instagram data ingestion rule.
 [**patchSocialmediaTopicDataingestionrulesOpenOpenId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesOpenOpenId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} | Update the status of a open data ingestion rule.
 [**patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId**](SocialMediaApi#patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId) | **PATCH** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} | Update the status of a X (formally Twitter) data ingestion rule.
@@ -44,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSocialmediaEscalationrules**](SocialMediaApi#postSocialmediaEscalationrules) | **POST** /api/v2/socialmedia/escalationrules | Create an escalation rule.
 [**postSocialmediaEscalationsMessages**](SocialMediaApi#postSocialmediaEscalationsMessages) | **POST** /api/v2/socialmedia/escalations/messages | Escalate message to a conversation manually
 [**postSocialmediaTopicDataingestionrulesFacebook**](SocialMediaApi#postSocialmediaTopicDataingestionrulesFacebook) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook | Create an Facebook data ingestion rule.
+[**postSocialmediaTopicDataingestionrulesGooglebusinessprofile**](SocialMediaApi#postSocialmediaTopicDataingestionrulesGooglebusinessprofile) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile | Create a Google Business Profile data ingestion rule.
 [**postSocialmediaTopicDataingestionrulesInstagram**](SocialMediaApi#postSocialmediaTopicDataingestionrulesInstagram) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram | Create an Instagram data ingestion rule.
 [**postSocialmediaTopicDataingestionrulesOpen**](SocialMediaApi#postSocialmediaTopicDataingestionrulesOpen) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open | Create an open data ingestion rule.
 [**postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk**](SocialMediaApi#postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk) | **POST** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk | Ingest a list of Open Social Messages
@@ -53,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSocialmediaTwitterHistoricalTweets**](SocialMediaApi#postSocialmediaTwitterHistoricalTweets) | **POST** /api/v2/socialmedia/twitter/historical/tweets | Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
 [**putSocialmediaEscalationrule**](SocialMediaApi#putSocialmediaEscalationrule) | **PUT** /api/v2/socialmedia/escalationrules/{escalationRuleId} | Update the escalation rule.
 [**putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} | Update the Facebook data ingestion rule.
+[**putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId} | Update the Google Business Profile data ingestion rule.
 [**putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} | Update the Instagram data ingestion rule.
 [**putSocialmediaTopicDataingestionrulesOpenOpenId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesOpenOpenId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} | Update the open data ingestion rule.
 [**putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId**](SocialMediaApi#putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId) | **PUT** /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} | Update the X (formally Twitter) data ingestion rule.
@@ -265,6 +272,64 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRul
  **topicId** | **String** | topicId |  |
  **facebookIngestionRuleId** | **String** | facebookIngestionRuleId |  |
  **hardDelete** | **Boolean** | Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId
+
+> void deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+
+
+DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}
+
+Delete a Google Business Profile data ingestion rule.
+
+deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
+let opts = { 
+  'hardDelete': false // Boolean | Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+};
+
+apiInstance.deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+  .then(() => {
+    console.log('deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
+ **hardDelete** | **Boolean** | Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
 
 ### Return type
 
@@ -1043,6 +1108,186 @@ apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
 **FacebookDataIngestionRuleVersionResponseEntityListing**
 
 
+## getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId
+
+> GoogleBusinessProfileDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+
+
+GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}
+
+Get a single Google Business Profile data ingestion rule.
+
+getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
+let opts = { 
+  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+};
+
+apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
+ **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+
+### Return type
+
+**GoogleBusinessProfileDataIngestionRuleResponse**
+
+
+## getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion
+
+> GoogleBusinessProfileDataIngestionRuleVersionResponse getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts)
+
+
+GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}
+
+Get a single Google Business Profile data ingestion rule version.
+
+getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
+let dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
+let opts = { 
+  'includeDeleted': true // Boolean | Determines whether to include soft-deleted item in the result.
+};
+
+apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts)
+  .then((data) => {
+    console.log(`getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
+ **dataIngestionRuleVersion** | **String** | version |  |
+ **includeDeleted** | **Boolean** | Determines whether to include soft-deleted item in the result. | [optional]  |
+
+### Return type
+
+**GoogleBusinessProfileDataIngestionRuleVersionResponse**
+
+
+## getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions
+
+> GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts)
+
+
+GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions
+
+Get the Google Business Profile data ingestion rule versions.
+
+getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+};
+
+apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts)
+  .then((data) => {
+    console.log(`getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+
+### Return type
+
+**GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing**
+
+
 ## getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId
 
 > InstagramDataIngestionRuleResponse getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -1737,6 +1982,64 @@ apiInstance.patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRule
 **FacebookDataIngestionRuleResponse**
 
 
+## patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId
+
+> GoogleBusinessProfileDataIngestionRuleResponse patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+
+
+PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}
+
+Update the status of a Google Business Profile data ingestion rule.
+
+patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+  .then((data) => {
+    console.log(`patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**GoogleBusinessProfileDataIngestionRuleResponse**
+
+
 ## patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId
 
 > InstagramDataIngestionRuleResponse patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -2163,6 +2466,62 @@ apiInstance.postSocialmediaTopicDataingestionrulesFacebook(topicId, opts)
 ### Return type
 
 **FacebookDataIngestionRuleResponse**
+
+
+## postSocialmediaTopicDataingestionrulesGooglebusinessprofile
+
+> GoogleBusinessProfileDataIngestionRuleResponse postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts)
+
+
+POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile
+
+Create a Google Business Profile data ingestion rule.
+
+postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts)
+  .then((data) => {
+    console.log(`postSocialmediaTopicDataingestionrulesGooglebusinessprofile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSocialmediaTopicDataingestionrulesGooglebusinessprofile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**GoogleBusinessProfileDataIngestionRuleResponse**
 
 
 ## postSocialmediaTopicDataingestionrulesInstagram
@@ -2651,6 +3010,64 @@ apiInstance.putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
 **FacebookDataIngestionRuleResponse**
 
 
+## putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId
+
+> GoogleBusinessProfileDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+
+
+PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}
+
+Update the Google Business Profile data ingestion rule.
+
+putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* socialmedia:googleBusinessProfileDataIngestionRule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SocialMediaApi();
+
+let topicId = "topicId_example"; // String | topicId
+let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
+  .then((data) => {
+    console.log(`putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **topicId** | **String** | topicId |  |
+ **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**GoogleBusinessProfileDataIngestionRuleResponse**
+
+
 ## putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId
 
 > InstagramDataIngestionRuleResponse putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -2819,4 +3236,4 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_

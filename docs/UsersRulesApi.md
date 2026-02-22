@@ -27,8 +27,6 @@ DELETE /api/v2/users/rules/{ruleId}
 
 Delete an existing users rule
 
-deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:rules:delete
@@ -79,8 +77,6 @@ GET /api/v2/users/rules/{ruleId}
 
 Get a users rule
 
-getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:rules:view
@@ -130,8 +126,6 @@ apiInstance.getUsersRule(ruleId)
 GET /api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}
 
 Get dependent of a users rule
-
-getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -186,8 +180,6 @@ apiInstance.getUsersRuleDependentTypeId(ruleId, ruleType, typeId)
 GET /api/v2/users/rules/{ruleId}/dependents
 
 Get dependents for a users rule
-
-getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -246,8 +238,6 @@ apiInstance.getUsersRuleDependents(ruleId, opts)
 GET /api/v2/users/rules
 
 Get the list of users rules
-
-getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -313,8 +303,6 @@ GET /api/v2/users/rules/settings/{ruleType}
 
 Get the settings for a specific users rule type
 
-getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:rules:view
@@ -366,8 +354,6 @@ PATCH /api/v2/users/rules/{ruleId}
 Update an existing users rule
 
 This will update an existing users rule with the specified fields.
-
-patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -423,8 +409,6 @@ Create a new rule
 
 This will create a new rule with the specified fields.
 
-postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:rules:add
@@ -477,8 +461,6 @@ Query the result of a users rule
 
 This will query the result of a rule.
 
-postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:ruleUsers:view
@@ -526,4 +508,4 @@ apiInstance.postUsersRulesQuery(body, opts)
 **UsersRulesQueryResponse**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_
