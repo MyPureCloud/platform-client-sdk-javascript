@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 245.1.0
+ * @version 246.0.0
  */
 class ApiClient {
 	/**
@@ -1518,12 +1518,17 @@ class ApiClient {
 							request.headers =  this.addHeaders(request.headers, data);
 						} else {
 							request.setParams(this.serialize(data));
+							request.headers =  this.addHeaders(request.headers, {});
 						}
+					} else {
+						request.headers =  this.addHeaders(request.headers, {});
 					}
 					break;
 				case 'oauth2':
 					if (auth.accessToken) {
 						request.headers =  this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
+					} else {
+						request.headers =  this.addHeaders(request.headers, {});
 					}
 					break;
 				default:

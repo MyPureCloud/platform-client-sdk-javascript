@@ -745,7 +745,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 	class ApiClient {
 		/**
@@ -2257,12 +2257,17 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 								request.headers =  this.addHeaders(request.headers, data);
 							} else {
 								request.setParams(this.serialize(data));
+								request.headers =  this.addHeaders(request.headers, {});
 							}
+						} else {
+							request.headers =  this.addHeaders(request.headers, {});
 						}
 						break;
 					case 'oauth2':
 						if (auth.accessToken) {
 							request.headers =  this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
+						} else {
+							request.headers =  this.addHeaders(request.headers, {});
 						}
 						break;
 					default:
@@ -2404,7 +2409,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AIStudio service.
 		 * @module purecloud-platform-client-v2/api/AIStudioApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -3023,7 +3028,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -3736,7 +3741,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -3836,7 +3841,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -3967,7 +3972,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -4368,7 +4373,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -7805,7 +7810,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -12100,7 +12105,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AssistantCopilotVariations service.
 		 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -12271,7 +12276,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -12472,7 +12477,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -14186,7 +14191,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * BackgroundAssistant service.
 		 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -14256,7 +14261,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -14512,7 +14517,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * BusinessRules service.
 		 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -15399,7 +15404,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -15469,7 +15474,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -16450,7 +16455,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -17077,7 +17082,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -18158,7 +18163,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -18239,6 +18244,36 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/conversations/{conversationId}', 
 				'DELETE', 
 				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a custom attributes record.
+		 * 
+		 * @param {String} conversationId conversation ID
+		 * @param {String} attributesId attributesId
+		 */
+		deleteConversationCustomattribute(conversationId, attributesId) { 
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling deleteConversationCustomattribute';
+			}
+			// verify the required parameter 'attributesId' is set
+			if (attributesId === undefined || attributesId === null || attributesId === '') {
+				throw 'Missing the required parameter "attributesId" when calling deleteConversationCustomattribute';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes/{attributesId}', 
+				'DELETE', 
+				{ 'conversationId': conversationId,'attributesId': attributesId },
 				{  },
 				{  },
 				{  },
@@ -18497,6 +18532,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+				'DELETE', 
+				{ 'integrationId': integrationId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete an Open messaging integration with the Google Business Profile extension
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {String} integrationId Integration ID
+		 * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null || integrationId === '') {
+				throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
 				'DELETE', 
 				{ 'integrationId': integrationId },
 				{  },
@@ -19025,6 +19086,61 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId,'communicationId': communicationId },
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get custom attributes by id
+		 * 
+		 * @param {String} conversationId conversation ID
+		 * @param {String} attributesId attributesId
+		 */
+		getConversationCustomattribute(conversationId, attributesId) { 
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling getConversationCustomattribute';
+			}
+			// verify the required parameter 'attributesId' is set
+			if (attributesId === undefined || attributesId === null || attributesId === '') {
+				throw 'Missing the required parameter "attributesId" when calling getConversationCustomattribute';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes/{attributesId}', 
+				'GET', 
+				{ 'conversationId': conversationId,'attributesId': attributesId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of custom attributes for a conversation.
+		 * 
+		 * @param {String} conversationId conversation ID
+		 */
+		getConversationCustomattributes(conversationId) { 
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling getConversationCustomattributes';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes', 
+				'GET', 
+				{ 'conversationId': conversationId },
+				{  },
 				{  },
 				{  },
 				null, 
@@ -20012,6 +20128,171 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 */
+		getConversationsCustomattributesSchema(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null || schemaId === '') {
+				throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/{schemaId}', 
+				'GET', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a specific version of a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * @param {String} versionId Schema version
+		 */
+		getConversationsCustomattributesSchemaVersion(schemaId, versionId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null || schemaId === '') {
+				throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersion';
+			}
+			// verify the required parameter 'versionId' is set
+			if (versionId === undefined || versionId === null || versionId === '') {
+				throw 'Missing the required parameter "versionId" when calling getConversationsCustomattributesSchemaVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}', 
+				'GET', 
+				{ 'schemaId': schemaId,'versionId': versionId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all versions of a CCA schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 */
+		getConversationsCustomattributesSchemaVersions(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null || schemaId === '') {
+				throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/{schemaId}/versions', 
+				'GET', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of schemas.
+		 * 
+		 */
+		getConversationsCustomattributesSchemas() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the core types from which all schemas are built.
+		 * 
+		 * @param {String} coreTypeName Name of the core type
+		 */
+		getConversationsCustomattributesSchemasCoretype(coreTypeName) { 
+			// verify the required parameter 'coreTypeName' is set
+			if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+				throw 'Missing the required parameter "coreTypeName" when calling getConversationsCustomattributesSchemasCoretype';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}', 
+				'GET', 
+				{ 'coreTypeName': coreTypeName },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the list of core types enabled for a specific namespace.
+		 * 
+		 */
+		getConversationsCustomattributesSchemasCoretypes() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/coretypes', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get quantitative limits on schemas
+		 * 
+		 */
+		getConversationsCustomattributesSchemasLimits() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/limits', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get email conversation
 		 * 
 		 * @param {String} conversationId conversationId
@@ -20417,7 +20698,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Get media
-		 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+		 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 		 * @param {String} conversationId conversationId
 		 * @param {String} communicationId communicationId
 		 * @param {String} mediaId mediaId
@@ -21130,6 +21411,109 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get an Open messaging integration with the Google Business Profile extension
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {String} integrationId Integration ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.expand Expand instructions for the return value.
+		 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null || integrationId === '') {
+				throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
+				'GET', 
+				{ 'integrationId': integrationId },
+				{ 'expand': opts['expand'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get Google Business Profile OAuth 2 settings
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a Google Auth Token
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {String} tokenId Token ID
+		 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId) { 
+			// verify the required parameter 'tokenId' is set
+			if (tokenId === undefined || tokenId === null || tokenId === '') {
+				throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}', 
+				'GET', 
+				{ 'tokenId': tokenId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get Google Business Profile accounts
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {String} tokenId Token ID
+		 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId) { 
+			// verify the required parameter 'tokenId' is set
+			if (tokenId === undefined || tokenId === null || tokenId === '') {
+				throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts', 
+				'GET', 
+				{ 'tokenId': tokenId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get an Open messaging integration
 		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 		 * @param {String} integrationId Integration ID
@@ -21669,6 +22053,64 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a single custom attributes record by amending the data with only the provided fields.
+		 * 
+		 * @param {String} conversationId conversation ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 */
+		patchConversationCustomattributes(conversationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling patchConversationCustomattributes';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes', 
+				'PATCH', 
+				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a list of custom attributes record by amending the data with only the provided fields.
+		 * 
+		 * @param {String} conversationId conversation ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<Object>} opts.body 
+		 */
+		patchConversationCustomattributesBulk(conversationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling patchConversationCustomattributesBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes/bulk', 
+				'PATCH', 
+				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -23100,6 +23542,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+				'PATCH', 
+				{ 'integrationId': integrationId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update an Open messaging integration with the Google Business Profile extension
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {String} integrationId Integration ID
+		 * @param {Object} body GoogleBusinessProfileOpenIntegrationUpdateRequest
+		 * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null || integrationId === '') {
+				throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
 				'PATCH', 
 				{ 'integrationId': integrationId },
 				{  },
@@ -25142,6 +25615,56 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create a schema
+		 * 
+		 * @param {Object} body Schema create request body
+		 */
+		postConversationsCustomattributesSchemas(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSchemas';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Search resources.
+		 * 
+		 * @param {Object} body Search request options
+		 */
+		postConversationsCustomattributesSearch(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/search', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 		 * 
 		 * @param {String} conversationId conversationId
@@ -25527,7 +26050,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Create a URL to upload a message media file
-		 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+		 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 		 * @param {String} conversationId conversationId
 		 * @param {String} communicationId communicationId
 		 * @param {Object} body request
@@ -26069,6 +26592,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create an Open messaging integration with the Google Business Profile extension
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {Object} body GoogleBusinessProfileOpenIntegrationRequest
+		 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+		 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+		 * @param {Object} body GoogleAuthTokenRequest
+		 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Create Twitter Integration
 		 * 
 		 * @param {Object} body TwitterIntegrationRequest
@@ -26394,6 +26969,64 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+		 * 
+		 * @param {String} conversationId conversation ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 */
+		putConversationCustomattributes(conversationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling putConversationCustomattributes';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes', 
+				'PUT', 
+				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+		 * 
+		 * @param {String} conversationId conversation ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<Object>} opts.body 
+		 */
+		putConversationCustomattributesBulk(conversationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null || conversationId === '') {
+				throw 'Missing the required parameter "conversationId" when calling putConversationCustomattributesBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/customattributes/bulk', 
+				'PUT', 
+				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Set flagged reason on conversation participant to indicate bad conversation quality.
 		 * 
 		 * @param {String} conversationId conversation ID
@@ -26635,6 +27268,36 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate', 
 				'PUT', 
 				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * @param {Object} body Schema update request body
+		 */
+		putConversationsCustomattributesSchema(schemaId, body) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null || schemaId === '') {
+				throw 'Missing the required parameter "schemaId" when calling putConversationsCustomattributesSchema';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putConversationsCustomattributesSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/schemas/{schemaId}', 
+				'PUT', 
+				{ 'schemaId': schemaId },
 				{  },
 				{  },
 				{  },
@@ -27117,7 +27780,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -27203,7 +27866,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataPrivacy service.
 		 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -27373,7 +28036,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -27425,7 +28088,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -27554,7 +28217,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -27734,7 +28397,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -27830,7 +28493,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -31077,7 +31740,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -31292,7 +31955,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -31501,7 +32164,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -34059,7 +34722,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -34189,7 +34852,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -34320,7 +34983,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -34862,7 +35525,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -35381,7 +36044,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -36242,7 +36905,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -36409,7 +37072,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -39059,7 +39722,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Intents service.
 		 * @module purecloud-platform-client-v2/api/IntentsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -39526,7 +40189,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -41623,7 +42286,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -44740,7 +45403,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -45959,7 +46622,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -46181,7 +46844,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -47290,7 +47953,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -47528,7 +48191,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -47764,7 +48427,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -47963,7 +48626,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -48322,7 +48985,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -48473,7 +49136,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -48706,7 +49369,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -49072,7 +49735,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -49396,7 +50059,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -49513,7 +50176,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -49988,7 +50651,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -51382,7 +52045,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -56180,7 +56843,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -56924,7 +57587,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -57163,7 +57826,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -59232,7 +59895,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -60837,7 +61500,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -61347,7 +62010,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -64434,6 +65097,36 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Update Routing Skill Division
+		 * 
+		 * @param {String} skillId Skill ID
+		 * @param {Object} body updateSkillDivisionRequest
+		 */
+		patchRoutingSkill(skillId, body) { 
+			// verify the required parameter 'skillId' is set
+			if (skillId === undefined || skillId === null || skillId === '') {
+				throw 'Missing the required parameter "skillId" when calling patchRoutingSkill';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchRoutingSkill';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/skills/{skillId}', 
+				'PATCH', 
+				{ 'skillId': skillId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update skill group definition
 		 * 
 		 * @param {String} skillGroupId Skill Group ID
@@ -66024,7 +66717,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -66901,7 +67594,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -67377,7 +68070,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -67642,6 +68335,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Search resources.
+		 * 
+		 * @param {Object} body Search request options
+		 */
+		postConversationsCustomattributesSearch(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/customattributes/search', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -68065,7 +68783,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -68413,7 +69131,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SocialMedia service.
 		 * @module purecloud-platform-client-v2/api/SocialMediaApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -68532,6 +69250,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
 				'DELETE', 
 				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+				{ 'hardDelete': opts['hardDelete'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a Google Business Profile data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.hardDelete Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+		 * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+			// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+			if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+				throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+				'DELETE', 
+				{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
 				{ 'hardDelete': opts['hardDelete'] },
 				{  },
 				{  },
@@ -68981,6 +69734,118 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a single Google Business Profile data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+			// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+			if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+				throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+				'GET', 
+				{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single Google Business Profile data ingestion rule version.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+		 * @param {String} dataIngestionRuleVersion version
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+		 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+			}
+			// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+			if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+				throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+			}
+			// verify the required parameter 'dataIngestionRuleVersion' is set
+			if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
+				throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}', 
+				'GET', 
+				{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the Google Business Profile data ingestion rule versions.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions';
+			}
+			// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+			if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+				throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions', 
+				'GET', 
+				{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get a single Instagram data ingestion rule.
 		 * 
 		 * @param {String} topicId topicId
@@ -69400,6 +70265,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Update the status of a Google Business Profile data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+			// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+			if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+				throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+				'PATCH', 
+				{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update the status of a Instagram data ingestion rule.
 		 * 
 		 * @param {String} topicId topicId
@@ -69621,6 +70521,36 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook', 
+				'POST', 
+				{ 'topicId': topicId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a Google Business Profile data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesGooglebusinessprofile';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile', 
 				'POST', 
 				{ 'topicId': topicId },
 				{  },
@@ -69903,6 +70833,41 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Update the Google Business Profile data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null || topicId === '') {
+				throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+			// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+			if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+				throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+				'PUT', 
+				{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update the Instagram data ingestion rule.
 		 * 
 		 * @param {String} topicId topicId
@@ -70010,7 +70975,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -71686,7 +72651,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -71788,7 +72753,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -71927,7 +72892,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -74089,7 +75054,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -74394,7 +75359,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -74676,7 +75641,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -78169,7 +79134,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -78298,7 +79263,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -78452,7 +79417,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -78768,7 +79733,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -79103,7 +80068,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -79287,7 +80252,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -82737,7 +83702,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UsersRules service.
 		 * @module purecloud-platform-client-v2/api/UsersRulesApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -82756,7 +83721,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Delete an existing users rule
 		 * 
 		 * @param {String} ruleId The id of the rule
-		 * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		deleteUsersRule(ruleId) { 
 			// verify the required parameter 'ruleId' is set
@@ -82782,7 +83746,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a users rule
 		 * 
 		 * @param {String} ruleId The ID of the rule to retrieve
-		 * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getUsersRule(ruleId) { 
 			// verify the required parameter 'ruleId' is set
@@ -82810,7 +83773,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} ruleId The ID of the rule for which to retrieve dependents
 		 * @param {Object} ruleType The type of the dependent
 		 * @param {String} typeId The type ID of the dependent
-		 * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getUsersRuleDependentTypeId(ruleId, ruleType, typeId) { 
 			// verify the required parameter 'ruleId' is set
@@ -82848,7 +83810,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageSize Number of results per page (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Object} opts.sortOrder Sort order for dependents (by last run date, then created date) (default to descending)
-		 * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getUsersRuleDependents(ruleId, opts) { 
 			opts = opts || {};
@@ -82883,7 +83844,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Boolean} opts.enabled Whether to list enabled or disabled rules
 		 * @param {String} opts.searchTerm a search term for finding a rule by name
 		 * @param {Object} opts.sortOrder sort rules by name, ascending, descending (default to ascending)
-		 * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getUsersRules(types, opts) { 
 			opts = opts || {};
@@ -82911,7 +83871,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get the settings for a specific users rule type
 		 * 
 		 * @param {Object} ruleType The type of the rule
-		 * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getUsersRulesSetting(ruleType) { 
 			// verify the required parameter 'ruleType' is set
@@ -82938,7 +83897,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * This will update an existing users rule with the specified fields.
 		 * @param {String} ruleId The ID of the rule to update
 		 * @param {Object} body updateRuleRequest
-		 * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		patchUsersRule(ruleId, body) { 
 			// verify the required parameter 'ruleId' is set
@@ -82968,7 +83926,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a new rule
 		 * This will create a new rule with the specified fields.
 		 * @param {Object} body usersRulesCreateRuleRequest
-		 * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postUsersRules(body) { 
 			// verify the required parameter 'body' is set
@@ -82997,7 +83954,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Number} opts.pageSize Number of results per page (default to 25)
-		 * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postUsersRulesQuery(body, opts) { 
 			opts = opts || {};
@@ -83027,7 +83983,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -83138,7 +84094,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -83860,7 +84816,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -84423,7 +85379,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -84575,10 +85531,16 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Get the versions of a configuration
-		 * This returns the 50 most recent versions for this configuration
+		 * 
 		 * @param {String} configurationId The configuration version ID
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 		 */
-		getWebdeploymentsConfigurationVersions(configurationId) { 
+		getWebdeploymentsConfigurationVersions(configurationId, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'configurationId' is set
 			if (configurationId === undefined || configurationId === null || configurationId === '') {
 				throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersions';
@@ -84588,7 +85550,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/webdeployments/configurations/{configurationId}/versions', 
 				'GET', 
 				{ 'configurationId': configurationId },
-				{  },
+				{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'] },
 				{  },
 				{  },
 				null, 
@@ -84627,6 +85589,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * View configuration drafts
 		 * 
 		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 		 * @param {Boolean} opts.showOnlyPublished Filter by published status.
 		 */
 		getWebdeploymentsConfigurations(opts) { 
@@ -84637,7 +85602,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/webdeployments/configurations', 
 				'GET', 
 				{  },
-				{ 'showOnlyPublished': opts['showOnlyPublished'] },
+				{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'showOnlyPublished': opts['showOnlyPublished'] },
 				{  },
 				{  },
 				null, 
@@ -84765,6 +85730,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get deployments
 		 * 
 		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 		 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 		 */
 		getWebdeploymentsDeployments(opts) { 
@@ -84775,7 +85743,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/webdeployments/deployments', 
 				'GET', 
 				{  },
-				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+				{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -85005,7 +85973,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -85151,7 +86119,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -85302,7 +86270,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 245.1.0
+		 * @version 246.0.0
 		 */
 
 		/**
@@ -93593,7 +94561,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 	class platformClient {
 		constructor() {

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -3081,6 +3081,36 @@ class RoutingApi {
 			'/api/v2/routing/settings/transcription', 
 			'PATCH', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Routing Skill Division
+	 * 
+	 * @param {String} skillId Skill ID
+	 * @param {Object} body updateSkillDivisionRequest
+	 */
+	patchRoutingSkill(skillId, body) { 
+		// verify the required parameter 'skillId' is set
+		if (skillId === undefined || skillId === null || skillId === '') {
+			throw 'Missing the required parameter "skillId" when calling patchRoutingSkill';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSkill';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skills/{skillId}', 
+			'PATCH', 
+			{ 'skillId': skillId },
 			{  },
 			{  },
 			{  },

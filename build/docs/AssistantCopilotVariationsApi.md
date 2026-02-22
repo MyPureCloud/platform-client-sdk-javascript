@@ -274,4 +274,4 @@ apiInstance.putAssistantVariation(assistantId, variationId, body)
 **AssistantCopilotVariation**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_

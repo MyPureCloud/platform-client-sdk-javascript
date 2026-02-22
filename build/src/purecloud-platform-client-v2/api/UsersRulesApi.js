@@ -5,7 +5,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -24,7 +24,6 @@ class UsersRulesApi {
 	 * Delete an existing users rule
 	 * 
 	 * @param {String} ruleId The id of the rule
-	 * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteUsersRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
@@ -50,7 +49,6 @@ class UsersRulesApi {
 	 * Get a users rule
 	 * 
 	 * @param {String} ruleId The ID of the rule to retrieve
-	 * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
@@ -78,7 +76,6 @@ class UsersRulesApi {
 	 * @param {String} ruleId The ID of the rule for which to retrieve dependents
 	 * @param {Object} ruleType The type of the dependent
 	 * @param {String} typeId The type ID of the dependent
-	 * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRuleDependentTypeId(ruleId, ruleType, typeId) { 
 		// verify the required parameter 'ruleId' is set
@@ -116,7 +113,6 @@ class UsersRulesApi {
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order for dependents (by last run date, then created date) (default to descending)
-	 * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRuleDependents(ruleId, opts) { 
 		opts = opts || {};
@@ -151,7 +147,6 @@ class UsersRulesApi {
 	 * @param {Boolean} opts.enabled Whether to list enabled or disabled rules
 	 * @param {String} opts.searchTerm a search term for finding a rule by name
 	 * @param {Object} opts.sortOrder sort rules by name, ascending, descending (default to ascending)
-	 * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRules(types, opts) { 
 		opts = opts || {};
@@ -179,7 +174,6 @@ class UsersRulesApi {
 	 * Get the settings for a specific users rule type
 	 * 
 	 * @param {Object} ruleType The type of the rule
-	 * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRulesSetting(ruleType) { 
 		// verify the required parameter 'ruleType' is set
@@ -206,7 +200,6 @@ class UsersRulesApi {
 	 * This will update an existing users rule with the specified fields.
 	 * @param {String} ruleId The ID of the rule to update
 	 * @param {Object} body updateRuleRequest
-	 * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchUsersRule(ruleId, body) { 
 		// verify the required parameter 'ruleId' is set
@@ -236,7 +229,6 @@ class UsersRulesApi {
 	 * Create a new rule
 	 * This will create a new rule with the specified fields.
 	 * @param {Object} body usersRulesCreateRuleRequest
-	 * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersRules(body) { 
 		// verify the required parameter 'body' is set
@@ -265,7 +257,6 @@ class UsersRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
-	 * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersRulesQuery(body, opts) { 
 		opts = opts || {};

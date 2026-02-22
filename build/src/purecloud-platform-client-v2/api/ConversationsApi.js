@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -86,6 +86,36 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}', 
 			'DELETE', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a custom attributes record.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} attributesId attributesId
+	 */
+	deleteConversationCustomattribute(conversationId, attributesId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling deleteConversationCustomattribute';
+		}
+		// verify the required parameter 'attributesId' is set
+		if (attributesId === undefined || attributesId === null || attributesId === '') {
+			throw 'Missing the required parameter "attributesId" when calling deleteConversationCustomattribute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/{attributesId}', 
+			'DELETE', 
+			{ 'conversationId': conversationId,'attributesId': attributesId },
 			{  },
 			{  },
 			{  },
@@ -344,6 +374,32 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -872,6 +928,61 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get custom attributes by id
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} attributesId attributesId
+	 */
+	getConversationCustomattribute(conversationId, attributesId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCustomattribute';
+		}
+		// verify the required parameter 'attributesId' is set
+		if (attributesId === undefined || attributesId === null || attributesId === '') {
+			throw 'Missing the required parameter "attributesId" when calling getConversationCustomattribute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/{attributesId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'attributesId': attributesId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of custom attributes for a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 */
+	getConversationCustomattributes(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1859,6 +1970,171 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getConversationsCustomattributesSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 */
+	getConversationsCustomattributesSchemaVersion(schemaId, versionId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getConversationsCustomattributesSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all versions of a CCA schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getConversationsCustomattributesSchemaVersions(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 */
+	getConversationsCustomattributesSchemas() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 */
+	getConversationsCustomattributesSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+			throw 'Missing the required parameter "coreTypeName" when calling getConversationsCustomattributesSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of core types enabled for a specific namespace.
+	 * 
+	 */
+	getConversationsCustomattributesSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 */
+	getConversationsCustomattributesSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get email conversation
 	 * 
 	 * @param {String} conversationId conversationId
@@ -2264,7 +2540,7 @@ class ConversationsApi {
 
 	/**
 	 * Get media
-	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+	 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {String} mediaId mediaId
@@ -2977,6 +3253,109 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Google Business Profile OAuth 2 settings
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Google Auth Token
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} tokenId Token ID
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}', 
+			'GET', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Google Business Profile accounts
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} tokenId Token ID
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts', 
+			'GET', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
@@ -3516,6 +3895,64 @@ class ConversationsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a single custom attributes record by amending the data with only the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchConversationCustomattributes(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a list of custom attributes record by amending the data with only the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 */
+	patchConversationCustomattributesBulk(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationCustomattributesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/bulk', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -4947,6 +5384,37 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body GoogleBusinessProfileOpenIntegrationUpdateRequest
+	 * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -6989,6 +7457,56 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema create request body
+	 */
+	postConversationsCustomattributesSchemas(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postConversationsCustomattributesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 	 * 
 	 * @param {String} conversationId conversationId
@@ -7374,7 +7892,7 @@ class ConversationsApi {
 
 	/**
 	 * Create a URL to upload a message media file
-	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+	 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body request
@@ -7916,6 +8434,58 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} body GoogleBusinessProfileOpenIntegrationRequest
+	 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} body GoogleAuthTokenRequest
+	 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Twitter Integration
 	 * 
 	 * @param {Object} body TwitterIntegrationRequest
@@ -8241,6 +8811,64 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putConversationCustomattributes(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling putConversationCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 */
+	putConversationCustomattributesBulk(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling putConversationCustomattributesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/bulk', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set flagged reason on conversation participant to indicate bad conversation quality.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -8482,6 +9110,36 @@ class ConversationsApi {
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate', 
 			'PUT', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Schema update request body
+	 */
+	putConversationsCustomattributesSchema(schemaId, body) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling putConversationsCustomattributesSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId },
 			{  },
 			{  },
 			{  },

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
 [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
 [**deleteConversation**](ConversationsApi#deleteConversation) | **DELETE** /api/v2/conversations/{conversationId} | Update a conversation by disconnecting all of the participants
+[**deleteConversationCustomattribute**](ConversationsApi#deleteConversationCustomattribute) | **DELETE** /api/v2/conversations/{conversationId}/customattributes/{attributesId} | Delete a custom attributes record.
 [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
 [**deleteConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Remove mandatory post call actions.
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsAppleIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Delete an Apple messaging integration
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
 [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
+[**deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Delete an Open messaging integration with the Google Business Profile extension
 [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete Twitter messaging integration
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
@@ -37,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists | Get information of all checklists associated with a conversation.
 [**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message
 [**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication
+[**getConversationCustomattribute**](ConversationsApi#getConversationCustomattribute) | **GET** /api/v2/conversations/{conversationId}/customattributes/{attributesId} | Get custom attributes by id
+[**getConversationCustomattributes**](ConversationsApi#getConversationCustomattributes) | **GET** /api/v2/conversations/{conversationId}/customattributes | Get a list of custom attributes for a conversation.
 [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
 [**getConversationParticipantSecureivrsessions**](ConversationsApi#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
 [**getConversationParticipantWrapup**](ConversationsApi#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
@@ -70,6 +74,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapupcodes) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsCobrowsesessions**](ConversationsApi#getConversationsCobrowsesessions) | **GET** /api/v2/conversations/cobrowsesessions | Get active cobrowse conversations for the logged in user
+[**getConversationsCustomattributesSchema**](ConversationsApi#getConversationsCustomattributesSchema) | **GET** /api/v2/conversations/customattributes/schemas/{schemaId} | Get a schema
+[**getConversationsCustomattributesSchemaVersion**](ConversationsApi#getConversationsCustomattributesSchemaVersion) | **GET** /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getConversationsCustomattributesSchemaVersions**](ConversationsApi#getConversationsCustomattributesSchemaVersions) | **GET** /api/v2/conversations/customattributes/schemas/{schemaId}/versions | Get all versions of a CCA schema
+[**getConversationsCustomattributesSchemas**](ConversationsApi#getConversationsCustomattributesSchemas) | **GET** /api/v2/conversations/customattributes/schemas | Get a list of schemas.
+[**getConversationsCustomattributesSchemasCoretype**](ConversationsApi#getConversationsCustomattributesSchemasCoretype) | **GET** /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getConversationsCustomattributesSchemasCoretypes**](ConversationsApi#getConversationsCustomattributesSchemasCoretypes) | **GET** /api/v2/conversations/customattributes/schemas/coretypes | Get the list of core types enabled for a specific namespace.
+[**getConversationsCustomattributesSchemasLimits**](ConversationsApi#getConversationsCustomattributesSchemasLimits) | **GET** /api/v2/conversations/customattributes/schemas/limits | Get quantitative limits on schemas
 [**getConversationsEmail**](ConversationsApi#getConversationsEmail) | **GET** /api/v2/conversations/emails/{conversationId} | Get email conversation
 [**getConversationsEmailMessage**](ConversationsApi#getConversationsEmailMessage) | **GET** /api/v2/conversations/emails/{conversationId}/messages/{messageId} | Get conversation message
 [**getConversationsEmailMessages**](ConversationsApi#getConversationsEmailMessages) | **GET** /api/v2/conversations/emails/{conversationId}/messages | Get conversation messages
@@ -111,6 +122,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsInstagram**](ConversationsApi#getConversationsMessagingIntegrationsInstagram) | **GET** /api/v2/conversations/messaging/integrations/instagram | Get a list of Instagram Integrations
 [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration
 [**getConversationsMessagingIntegrationsOpen**](ConversationsApi#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Get an Open messaging integration with the Google Business Profile extension
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings | Get Google Business Profile OAuth 2 settings
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId} | Get a Google Auth Token
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts | Get Google Business Profile accounts
 [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration
 [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
 [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get Twitter messaging integration
@@ -131,6 +146,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsVideoDetails**](ConversationsApi#getConversationsVideoDetails) | **GET** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants).
 [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#getConversationsVideoParticipantCommunicationWrapup) | **GET** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsVideosMeeting**](ConversationsApi#getConversationsVideosMeeting) | **GET** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId
+[**patchConversationCustomattributes**](ConversationsApi#patchConversationCustomattributes) | **PATCH** /api/v2/conversations/{conversationId}/customattributes | Update a single custom attributes record by amending the data with only the provided fields.
+[**patchConversationCustomattributesBulk**](ConversationsApi#patchConversationCustomattributesBulk) | **PATCH** /api/v2/conversations/{conversationId}/customattributes/bulk | Update a list of custom attributes record by amending the data with only the provided fields.
 [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | **PATCH** /api/v2/conversations/{conversationId}/recordingstate | Update a conversation by setting its recording state
@@ -173,6 +190,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsAppleIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Update an Apple messaging integration
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
+[**patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Update an Open messaging integration with the Google Business Profile extension
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update a Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
@@ -236,6 +254,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsChats**](ConversationsApi#postConversationsChats) | **POST** /api/v2/conversations/chats | Create a web chat conversation
 [**postConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi#postConversationsCobrowsesessionParticipantCommunicationWrapup) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi#postConversationsCobrowsesessionParticipantReplace) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCustomattributesSchemas**](ConversationsApi#postConversationsCustomattributesSchemas) | **POST** /api/v2/conversations/customattributes/schemas | Create a schema
+[**postConversationsCustomattributesSearch**](ConversationsApi#postConversationsCustomattributesSearch) | **POST** /api/v2/conversations/customattributes/search | Search resources.
 [**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | **POST** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 [**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | **POST** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply
 [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
@@ -267,6 +287,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
 [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi#postConversationsMessagingIntegrationsInstagram) | **POST** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration
 [**postConversationsMessagingIntegrationsOpen**](ConversationsApi#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
+[**postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile**](ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile) | **POST** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile | Create an Open messaging integration with the Google Business Profile extension
+[**postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens**](ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens) | **POST** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens | Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 [**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | **POST** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup | Create a WhatsApp Integration using the WhatsApp embedded signup flow
@@ -278,6 +300,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | **POST** /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} | Create an Agent-Type video conference and assign an agent to it
 [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
+[**putConversationCustomattributes**](ConversationsApi#putConversationCustomattributes) | **PUT** /api/v2/conversations/{conversationId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+[**putConversationCustomattributesBulk**](ConversationsApi#putConversationCustomattributesBulk) | **PUT** /api/v2/conversations/{conversationId}/customattributes/bulk | Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
 [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationSecureattributes**](ConversationsApi#putConversationSecureattributes) | **PUT** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation.
 [**putConversationTags**](ConversationsApi#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
@@ -286,6 +310,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsCallbackRecordingstate**](ConversationsApi#putConversationsCallbackRecordingstate) | **PUT** /api/v2/conversations/callbacks/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsChatRecordingstate**](ConversationsApi#putConversationsChatRecordingstate) | **PUT** /api/v2/conversations/chats/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsCobrowsesessionRecordingstate**](ConversationsApi#putConversationsCobrowsesessionRecordingstate) | **PUT** /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsCustomattributesSchema**](ConversationsApi#putConversationsCustomattributesSchema) | **PUT** /api/v2/conversations/customattributes/schemas/{schemaId} | Update a schema
 [**putConversationsEmailMessagesDraft**](ConversationsApi#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsEmailRecordingstate**](ConversationsApi#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsKeyconfiguration**](ConversationsApi#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
@@ -452,6 +477,58 @@ apiInstance.deleteConversation(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationCustomattribute
+
+> void deleteConversationCustomattribute(conversationId, attributesId)
+
+
+DELETE /api/v2/conversations/{conversationId}/customattributes/{attributesId}
+
+Delete a custom attributes record.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let attributesId = "attributesId_example"; // String | attributesId
+
+apiInstance.deleteConversationCustomattribute(conversationId, attributesId)
+  .then(() => {
+    console.log('deleteConversationCustomattribute returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationCustomattribute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **attributesId** | **String** | attributesId |  |
 
 ### Return type
 
@@ -898,6 +975,60 @@ apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integ
   })
   .catch((err) => {
     console.log('There was a failure calling deleteConversationsMessagingIntegrationsInstagramIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> void deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId)
+
+
+DELETE /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}
+
+Delete an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId');
     console.error(err);
   });
 ```
@@ -1900,6 +2031,108 @@ apiInstance.getConversationCommunicationInternalmessages(conversationId, communi
 ### Return type
 
 **InternalMessageDataEntityListing**
+
+
+## getConversationCustomattribute
+
+> CustomAttributes getConversationCustomattribute(conversationId, attributesId)
+
+
+GET /api/v2/conversations/{conversationId}/customattributes/{attributesId}
+
+Get custom attributes by id
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let attributesId = "attributesId_example"; // String | attributesId
+
+apiInstance.getConversationCustomattribute(conversationId, attributesId)
+  .then((data) => {
+    console.log(`getConversationCustomattribute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCustomattribute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **attributesId** | **String** | attributesId |  |
+
+### Return type
+
+**CustomAttributes**
+
+
+## getConversationCustomattributes
+
+> CustomAttributesListing getConversationCustomattributes(conversationId)
+
+
+GET /api/v2/conversations/{conversationId}/customattributes
+
+Get a list of custom attributes for a conversation.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+
+apiInstance.getConversationCustomattributes(conversationId)
+  .then((data) => {
+    console.log(`getConversationCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+
+### Return type
+
+**CustomAttributesListing**
 
 
 ## getConversationParticipantSecureivrsession
@@ -3633,6 +3866,343 @@ This endpoint does not need any parameter.
 **CobrowseConversationEntityListing**
 
 
+## getConversationsCustomattributesSchema
+
+> ConversationDataSchema getConversationsCustomattributesSchema(schemaId)
+
+
+GET /api/v2/conversations/customattributes/schemas/{schemaId}
+
+Get a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getConversationsCustomattributesSchema(schemaId)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+
+### Return type
+
+**ConversationDataSchema**
+
+
+## getConversationsCustomattributesSchemaVersion
+
+> ConversationDataSchema getConversationsCustomattributesSchemaVersion(schemaId, versionId)
+
+
+GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}
+
+Get a specific version of a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let versionId = "versionId_example"; // String | Schema version
+
+apiInstance.getConversationsCustomattributesSchemaVersion(schemaId, versionId)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **versionId** | **String** | Schema version |  |
+
+### Return type
+
+**ConversationDataSchema**
+
+
+## getConversationsCustomattributesSchemaVersions
+
+> ConversationDataSchemaListing getConversationsCustomattributesSchemaVersions(schemaId)
+
+
+GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions
+
+Get all versions of a CCA schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getConversationsCustomattributesSchemaVersions(schemaId)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+
+### Return type
+
+**ConversationDataSchemaListing**
+
+
+## getConversationsCustomattributesSchemas
+
+> ConversationDataSchemaListing getConversationsCustomattributesSchemas()
+
+
+GET /api/v2/conversations/customattributes/schemas
+
+Get a list of schemas.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsCustomattributesSchemas()
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**ConversationDataSchemaListing**
+
+
+## getConversationsCustomattributesSchemasCoretype
+
+> Coretype getConversationsCustomattributesSchemasCoretype(coreTypeName)
+
+
+GET /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+
+apiInstance.getConversationsCustomattributesSchemasCoretype(coreTypeName)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of the core type |  |
+
+### Return type
+
+**Coretype**
+
+
+## getConversationsCustomattributesSchemasCoretypes
+
+> CoretypeListing getConversationsCustomattributesSchemasCoretypes()
+
+
+GET /api/v2/conversations/customattributes/schemas/coretypes
+
+Get the list of core types enabled for a specific namespace.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsCustomattributesSchemasCoretypes()
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**CoretypeListing**
+
+
+## getConversationsCustomattributesSchemasLimits
+
+> SchemaQuantityLimits getConversationsCustomattributesSchemasLimits()
+
+
+GET /api/v2/conversations/customattributes/schemas/limits
+
+Get quantitative limits on schemas
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsCustomattributesSchemasLimits()
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**SchemaQuantityLimits**
+
+
 ## getConversationsEmail
 
 > EmailConversation getConversationsEmail(conversationId)
@@ -4385,7 +4955,7 @@ GET /api/v2/conversations/messages/{conversationId}/communications/{communicatio
 
 Get media
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Requires ANY permissions:
 
@@ -5766,6 +6336,221 @@ apiInstance.getConversationsMessagingIntegrationsOpen(opts)
 **OpenIntegrationEntityListing**
 
 
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> GoogleBusinessProfileOpenIntegration getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}
+
+Get an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'expand': "expand_example" // String | Expand instructions for the return value.
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+
+### Return type
+
+**GoogleBusinessProfileOpenIntegration**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings
+
+> GoogleOAuthSettingsResponse getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings()
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings
+
+Get Google Business Profile OAuth 2 settings
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileOAuthSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings()
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**GoogleOAuthSettingsResponse**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken
+
+> GoogleAuthToken getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}
+
+Get a Google Auth Token
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileToken:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let tokenId = "tokenId_example"; // String | Token ID
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tokenId** | **String** | Token ID |  |
+
+### Return type
+
+**GoogleAuthToken**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts
+
+> GoogleBusinessProfileAccountListing getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts
+
+Get Google Business Profile accounts
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileAccount:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let tokenId = "tokenId_example"; // String | Token ID
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tokenId** | **String** | Token ID |  |
+
+### Return type
+
+**GoogleBusinessProfileAccountListing**
+
+
 ## getConversationsMessagingIntegrationsOpenIntegrationId
 
 > OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
@@ -6813,6 +7598,114 @@ apiInstance.getConversationsVideosMeeting(meetingId)
 ### Return type
 
 **MeetingIdRecord**
+
+
+## patchConversationCustomattributes
+
+> void patchConversationCustomattributes(conversationId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/customattributes
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchConversationCustomattributes(conversationId, opts)
+  .then(() => {
+    console.log('patchConversationCustomattributes returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationCustomattributesBulk
+
+> CustomAttributesBulkUpdateResponseMap patchConversationCustomattributesBulk(conversationId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/customattributes/bulk
+
+Update a list of custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': [{}] // Object | 
+};
+
+apiInstance.patchConversationCustomattributesBulk(conversationId, opts)
+  .then((data) => {
+    console.log(`patchConversationCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationCustomattributesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**CustomAttributesBulkUpdateResponseMap**
 
 
 ## patchConversationParticipant
@@ -9118,6 +10011,62 @@ apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integr
 ### Return type
 
 **InstagramIntegration**
+
+
+## patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> GoogleBusinessProfileOpenIntegration patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body)
+
+
+PATCH /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}
+
+Update an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:googleBusinessProfileIntegration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | GoogleBusinessProfileOpenIntegrationUpdateRequest
+
+apiInstance.patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | GoogleBusinessProfileOpenIntegrationUpdateRequest |  |
+
+### Return type
+
+**GoogleBusinessProfileOpenIntegration**
 
 
 ## patchConversationsMessagingIntegrationsOpenIntegrationId
@@ -12551,6 +13500,106 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
 void (no response body)
 
 
+## postConversationsCustomattributesSchemas
+
+> ConversationDataSchema postConversationsCustomattributesSchemas(body)
+
+
+POST /api/v2/conversations/customattributes/schemas
+
+Create a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaAdd
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Schema create request body
+
+apiInstance.postConversationsCustomattributesSchemas(body)
+  .then((data) => {
+    console.log(`postConversationsCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCustomattributesSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Schema create request body |  |
+
+### Return type
+
+**ConversationDataSchema**
+
+
+## postConversationsCustomattributesSearch
+
+> JsonSearchResponse postConversationsCustomattributesSearch(body)
+
+
+POST /api/v2/conversations/customattributes/search
+
+Search resources.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postConversationsCustomattributesSearch(body)
+  .then((data) => {
+    console.log(`postConversationsCustomattributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCustomattributesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+
+### Return type
+
+**JsonSearchResponse**
+
+
 ## postConversationsEmailInboundmessages
 
 > EmailConversation postConversationsEmailInboundmessages(conversationId, body)
@@ -13247,7 +14296,7 @@ POST /api/v2/conversations/messages/{conversationId}/communications/{communicati
 
 Create a URL to upload a message media file
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Requires ANY permissions:
 
@@ -14217,6 +15266,114 @@ apiInstance.postConversationsMessagingIntegrationsOpen(body)
 **OpenIntegration**
 
 
+## postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile
+
+> GoogleBusinessProfileOpenIntegration postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body)
+
+
+POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile
+
+Create an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:googleBusinessProfileIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | GoogleBusinessProfileOpenIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | GoogleBusinessProfileOpenIntegrationRequest |  |
+
+### Return type
+
+**GoogleBusinessProfileOpenIntegration**
+
+
+## postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens
+
+> GoogleAuthToken postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body)
+
+
+POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens
+
+Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileToken:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | GoogleAuthTokenRequest
+
+apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | GoogleAuthTokenRequest |  |
+
+### Return type
+
+**GoogleAuthToken**
+
+
 ## postConversationsMessagingIntegrationsTwitter
 
 > TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
@@ -14807,6 +15964,114 @@ apiInstance.postConversationsVideosMeetings(body)
 **MeetingIdRecord**
 
 
+## putConversationCustomattributes
+
+> CustomAttributesIdResponse putConversationCustomattributes(conversationId, opts)
+
+
+PUT /api/v2/conversations/{conversationId}/customattributes
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putConversationCustomattributes(conversationId, opts)
+  .then((data) => {
+    console.log(`putConversationCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**CustomAttributesIdResponse**
+
+
+## putConversationCustomattributesBulk
+
+> CustomAttributesBulkUpdateResponseMap putConversationCustomattributesBulk(conversationId, opts)
+
+
+PUT /api/v2/conversations/{conversationId}/customattributes/bulk
+
+Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': [{}] // Object | 
+};
+
+apiInstance.putConversationCustomattributesBulk(conversationId, opts)
+  .then((data) => {
+    console.log(`putConversationCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationCustomattributesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**CustomAttributesBulkUpdateResponseMap**
+
+
 ## putConversationParticipantFlaggedreason
 
 > void putConversationParticipantFlaggedreason(conversationId, participantId)
@@ -15231,6 +16496,58 @@ apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body)
 ### Return type
 
 **&#39;String&#39;**
+
+
+## putConversationsCustomattributesSchema
+
+> ConversationDataSchema putConversationsCustomattributesSchema(schemaId, body)
+
+
+PUT /api/v2/conversations/customattributes/schemas/{schemaId}
+
+Update a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaEdit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let body = {}; // Object | Schema update request body
+
+apiInstance.putConversationsCustomattributesSchema(schemaId, body)
+  .then((data) => {
+    console.log(`putConversationsCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **body** | **Object** | Schema update request body |  |
+
+### Return type
+
+**ConversationDataSchema**
 
 
 ## putConversationsEmailMessagesDraft
@@ -16074,4 +17391,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_

@@ -748,7 +748,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 245.1.0
+ * @version 246.0.0
  */
 class ApiClient {
 	/**
@@ -2260,12 +2260,17 @@ class ApiClient {
 							request.headers =  this.addHeaders(request.headers, data);
 						} else {
 							request.setParams(this.serialize(data));
+							request.headers =  this.addHeaders(request.headers, {});
 						}
+					} else {
+						request.headers =  this.addHeaders(request.headers, {});
 					}
 					break;
 				case 'oauth2':
 					if (auth.accessToken) {
 						request.headers =  this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
+					} else {
+						request.headers =  this.addHeaders(request.headers, {});
 					}
 					break;
 				default:
@@ -2407,7 +2412,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -3026,7 +3031,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -3739,7 +3744,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -3839,7 +3844,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -3970,7 +3975,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -4371,7 +4376,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -7808,7 +7813,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -12103,7 +12108,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -12274,7 +12279,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -12475,7 +12480,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -14189,7 +14194,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -14259,7 +14264,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -14515,7 +14520,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -15402,7 +15407,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -15472,7 +15477,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -16453,7 +16458,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -17080,7 +17085,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -18161,7 +18166,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -18242,6 +18247,36 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}', 
 			'DELETE', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a custom attributes record.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} attributesId attributesId
+	 */
+	deleteConversationCustomattribute(conversationId, attributesId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling deleteConversationCustomattribute';
+		}
+		// verify the required parameter 'attributesId' is set
+		if (attributesId === undefined || attributesId === null || attributesId === '') {
+			throw 'Missing the required parameter "attributesId" when calling deleteConversationCustomattribute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/{attributesId}', 
+			'DELETE', 
+			{ 'conversationId': conversationId,'attributesId': attributesId },
 			{  },
 			{  },
 			{  },
@@ -18500,6 +18535,32 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -19028,6 +19089,61 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get custom attributes by id
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} attributesId attributesId
+	 */
+	getConversationCustomattribute(conversationId, attributesId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCustomattribute';
+		}
+		// verify the required parameter 'attributesId' is set
+		if (attributesId === undefined || attributesId === null || attributesId === '') {
+			throw 'Missing the required parameter "attributesId" when calling getConversationCustomattribute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/{attributesId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'attributesId': attributesId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of custom attributes for a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 */
+	getConversationCustomattributes(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -20015,6 +20131,171 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getConversationsCustomattributesSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 */
+	getConversationsCustomattributesSchemaVersion(schemaId, versionId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getConversationsCustomattributesSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all versions of a CCA schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getConversationsCustomattributesSchemaVersions(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 */
+	getConversationsCustomattributesSchemas() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 */
+	getConversationsCustomattributesSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+			throw 'Missing the required parameter "coreTypeName" when calling getConversationsCustomattributesSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of core types enabled for a specific namespace.
+	 * 
+	 */
+	getConversationsCustomattributesSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 */
+	getConversationsCustomattributesSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get email conversation
 	 * 
 	 * @param {String} conversationId conversationId
@@ -20420,7 +20701,7 @@ class ConversationsApi {
 
 	/**
 	 * Get media
-	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+	 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {String} mediaId mediaId
@@ -21133,6 +21414,109 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Google Business Profile OAuth 2 settings
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Google Auth Token
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} tokenId Token ID
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}', 
+			'GET', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Google Business Profile accounts
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} tokenId Token ID
+	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts', 
+			'GET', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
@@ -21672,6 +22056,64 @@ class ConversationsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a single custom attributes record by amending the data with only the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchConversationCustomattributes(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a list of custom attributes record by amending the data with only the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 */
+	patchConversationCustomattributesBulk(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationCustomattributesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/bulk', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -23103,6 +23545,37 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body GoogleBusinessProfileOpenIntegrationUpdateRequest
+	 * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -25145,6 +25618,56 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema create request body
+	 */
+	postConversationsCustomattributesSchemas(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postConversationsCustomattributesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 	 * 
 	 * @param {String} conversationId conversationId
@@ -25530,7 +26053,7 @@ class ConversationsApi {
 
 	/**
 	 * Create a URL to upload a message media file
-	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+	 * See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body request
@@ -26072,6 +26595,58 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create an Open messaging integration with the Google Business Profile extension
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} body GoogleBusinessProfileOpenIntegrationRequest
+	 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} body GoogleAuthTokenRequest
+	 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Twitter Integration
 	 * 
 	 * @param {Object} body TwitterIntegrationRequest
@@ -26397,6 +26972,64 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putConversationCustomattributes(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling putConversationCustomattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 */
+	putConversationCustomattributesBulk(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling putConversationCustomattributesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/customattributes/bulk', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set flagged reason on conversation participant to indicate bad conversation quality.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -26638,6 +27271,36 @@ class ConversationsApi {
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate', 
 			'PUT', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Schema update request body
+	 */
+	putConversationsCustomattributesSchema(schemaId, body) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling putConversationsCustomattributesSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCustomattributesSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId },
 			{  },
 			{  },
 			{  },
@@ -27120,7 +27783,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -27206,7 +27869,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -27376,7 +28039,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -27428,7 +28091,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -27557,7 +28220,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -27737,7 +28400,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -27833,7 +28496,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -31080,7 +31743,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -31295,7 +31958,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -31504,7 +32167,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -34062,7 +34725,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -34192,7 +34855,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -34323,7 +34986,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -34865,7 +35528,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -35384,7 +36047,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -36245,7 +36908,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -36412,7 +37075,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -39062,7 +39725,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -39529,7 +40192,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -41626,7 +42289,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -44743,7 +45406,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -45962,7 +46625,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -46184,7 +46847,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -47293,7 +47956,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -47531,7 +48194,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -47767,7 +48430,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -47966,7 +48629,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -48325,7 +48988,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -48476,7 +49139,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -48709,7 +49372,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -49075,7 +49738,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -49399,7 +50062,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -49516,7 +50179,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -49991,7 +50654,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -51385,7 +52048,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -56183,7 +56846,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -56927,7 +57590,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -57166,7 +57829,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -59235,7 +59898,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -60840,7 +61503,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -61350,7 +62013,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -64437,6 +65100,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update Routing Skill Division
+	 * 
+	 * @param {String} skillId Skill ID
+	 * @param {Object} body updateSkillDivisionRequest
+	 */
+	patchRoutingSkill(skillId, body) { 
+		// verify the required parameter 'skillId' is set
+		if (skillId === undefined || skillId === null || skillId === '') {
+			throw 'Missing the required parameter "skillId" when calling patchRoutingSkill';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSkill';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skills/{skillId}', 
+			'PATCH', 
+			{ 'skillId': skillId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update skill group definition
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
@@ -66027,7 +66720,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -66904,7 +67597,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -67380,7 +68073,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -67645,6 +68338,31 @@ class SearchApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postConversationsCustomattributesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/customattributes/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -68068,7 +68786,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -68416,7 +69134,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -68535,6 +69253,41 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
 			'DELETE', 
 			{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'DELETE', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
 			{ 'hardDelete': opts['hardDelete'] },
 			{  },
 			{  },
@@ -68984,6 +69737,118 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Get a single Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'GET', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{ 'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a single Google Business Profile data ingestion rule version.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {String} dataIngestionRuleVersion version
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+		}
+		// verify the required parameter 'dataIngestionRuleVersion' is set
+		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
+			throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}', 
+			'GET', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+			{ 'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the Google Business Profile data ingestion rule versions.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions', 
+			'GET', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a single Instagram data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -69403,6 +70268,41 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Update the status of a Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'PATCH', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the status of a Instagram data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -69624,6 +70524,36 @@ class SocialMediaApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook', 
+			'POST', 
+			{ 'topicId': topicId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesGooglebusinessprofile';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile', 
 			'POST', 
 			{ 'topicId': topicId },
 			{  },
@@ -69906,6 +70836,41 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Update the Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'PUT', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the Instagram data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -70013,7 +70978,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -71689,7 +72654,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -71791,7 +72756,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -71930,7 +72895,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -74092,7 +75057,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -74397,7 +75362,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -74679,7 +75644,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -78172,7 +79137,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -78301,7 +79266,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -78455,7 +79420,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -78771,7 +79736,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -79106,7 +80071,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -79290,7 +80255,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -82740,7 +83705,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -82759,7 +83724,6 @@ class UsersRulesApi {
 	 * Delete an existing users rule
 	 * 
 	 * @param {String} ruleId The id of the rule
-	 * deleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteUsersRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
@@ -82785,7 +83749,6 @@ class UsersRulesApi {
 	 * Get a users rule
 	 * 
 	 * @param {String} ruleId The ID of the rule to retrieve
-	 * getUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
@@ -82813,7 +83776,6 @@ class UsersRulesApi {
 	 * @param {String} ruleId The ID of the rule for which to retrieve dependents
 	 * @param {Object} ruleType The type of the dependent
 	 * @param {String} typeId The type ID of the dependent
-	 * getUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRuleDependentTypeId(ruleId, ruleType, typeId) { 
 		// verify the required parameter 'ruleId' is set
@@ -82851,7 +83813,6 @@ class UsersRulesApi {
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order for dependents (by last run date, then created date) (default to descending)
-	 * getUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRuleDependents(ruleId, opts) { 
 		opts = opts || {};
@@ -82886,7 +83847,6 @@ class UsersRulesApi {
 	 * @param {Boolean} opts.enabled Whether to list enabled or disabled rules
 	 * @param {String} opts.searchTerm a search term for finding a rule by name
 	 * @param {Object} opts.sortOrder sort rules by name, ascending, descending (default to ascending)
-	 * getUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRules(types, opts) { 
 		opts = opts || {};
@@ -82914,7 +83874,6 @@ class UsersRulesApi {
 	 * Get the settings for a specific users rule type
 	 * 
 	 * @param {Object} ruleType The type of the rule
-	 * getUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersRulesSetting(ruleType) { 
 		// verify the required parameter 'ruleType' is set
@@ -82941,7 +83900,6 @@ class UsersRulesApi {
 	 * This will update an existing users rule with the specified fields.
 	 * @param {String} ruleId The ID of the rule to update
 	 * @param {Object} body updateRuleRequest
-	 * patchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchUsersRule(ruleId, body) { 
 		// verify the required parameter 'ruleId' is set
@@ -82971,7 +83929,6 @@ class UsersRulesApi {
 	 * Create a new rule
 	 * This will create a new rule with the specified fields.
 	 * @param {Object} body usersRulesCreateRuleRequest
-	 * postUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersRules(body) { 
 		// verify the required parameter 'body' is set
@@ -83000,7 +83957,6 @@ class UsersRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
-	 * postUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersRulesQuery(body, opts) { 
 		opts = opts || {};
@@ -83030,7 +83986,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -83141,7 +84097,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -83863,7 +84819,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -84426,7 +85382,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -84578,10 +85534,16 @@ class WebDeploymentsApi {
 
 	/**
 	 * Get the versions of a configuration
-	 * This returns the 50 most recent versions for this configuration
+	 * 
 	 * @param {String} configurationId The configuration version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 */
-	getWebdeploymentsConfigurationVersions(configurationId) { 
+	getWebdeploymentsConfigurationVersions(configurationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersions';
@@ -84591,7 +85553,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/configurations/{configurationId}/versions', 
 			'GET', 
 			{ 'configurationId': configurationId },
-			{  },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -84630,6 +85592,9 @@ class WebDeploymentsApi {
 	 * View configuration drafts
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Boolean} opts.showOnlyPublished Filter by published status.
 	 */
 	getWebdeploymentsConfigurations(opts) { 
@@ -84640,7 +85605,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/configurations', 
 			'GET', 
 			{  },
-			{ 'showOnlyPublished': opts['showOnlyPublished'] },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'showOnlyPublished': opts['showOnlyPublished'] },
 			{  },
 			{  },
 			null, 
@@ -84768,6 +85733,9 @@ class WebDeploymentsApi {
 	 * Get deployments
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 	 */
 	getWebdeploymentsDeployments(opts) { 
@@ -84778,7 +85746,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments', 
 			'GET', 
 			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -85008,7 +85976,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -85154,7 +86122,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -85305,7 +86273,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -93596,7 +94564,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 245.1.0
+ * @version 246.0.0
  */
 class platformClient {
 	constructor() {

@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -124,6 +124,41 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
 			'DELETE', 
 			{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'DELETE', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
 			{ 'hardDelete': opts['hardDelete'] },
 			{  },
 			{  },
@@ -573,6 +608,118 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Get a single Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'GET', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{ 'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a single Google Business Profile data ingestion rule version.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {String} dataIngestionRuleVersion version
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+		}
+		// verify the required parameter 'dataIngestionRuleVersion' is set
+		if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null || dataIngestionRuleVersion === '') {
+			throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}', 
+			'GET', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+			{ 'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the Google Business Profile data ingestion rule versions.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions', 
+			'GET', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a single Instagram data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -992,6 +1139,41 @@ class SocialMediaApi {
 	}
 
 	/**
+	 * Update the status of a Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'PATCH', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the status of a Instagram data ingestion rule.
 	 * 
 	 * @param {String} topicId topicId
@@ -1213,6 +1395,36 @@ class SocialMediaApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook', 
+			'POST', 
+			{ 'topicId': topicId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesGooglebusinessprofile';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile', 
 			'POST', 
 			{ 'topicId': topicId },
 			{  },
@@ -1484,6 +1696,41 @@ class SocialMediaApi {
 			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
 			'PUT', 
 			{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the Google Business Profile data ingestion rule.
+	 * 
+	 * @param {String} topicId topicId
+	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null || topicId === '') {
+			throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+		// verify the required parameter 'googleBusinessProfileIngestionRuleId' is set
+		if (googleBusinessProfileIngestionRuleId === undefined || googleBusinessProfileIngestionRuleId === null || googleBusinessProfileIngestionRuleId === '') {
+			throw 'Missing the required parameter "googleBusinessProfileIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}', 
+			'PUT', 
+			{ 'topicId': topicId,'googleBusinessProfileIngestionRuleId': googleBusinessProfileIngestionRuleId },
 			{  },
 			{  },
 			{  },

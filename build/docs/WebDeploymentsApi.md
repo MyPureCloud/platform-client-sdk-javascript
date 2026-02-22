@@ -280,14 +280,12 @@ apiInstance.getWebdeploymentsConfigurationVersion(configurationId, versionId)
 
 ## getWebdeploymentsConfigurationVersions
 
-> WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurationVersions(configurationId)
+> WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurationVersions(configurationId, opts)
 
 
 GET /api/v2/webdeployments/configurations/{configurationId}/versions
 
 Get the versions of a configuration
-
-This returns the 50 most recent versions for this configuration
 
 Requires ALL permissions:
 
@@ -307,8 +305,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationId = "configurationId_example"; // String | The configuration version ID
+let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Defaults to 300.
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+};
 
-apiInstance.getWebdeploymentsConfigurationVersions(configurationId)
+apiInstance.getWebdeploymentsConfigurationVersions(configurationId, opts)
   .then((data) => {
     console.log(`getWebdeploymentsConfigurationVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -324,6 +327,9 @@ apiInstance.getWebdeploymentsConfigurationVersions(configurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **configurationId** | **String** | The configuration version ID |  |
+ **pageSize** | **String** | Number of entities to return. Defaults to 300. | [optional]  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 
 ### Return type
 
@@ -407,6 +413,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Defaults to 300.
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'showOnlyPublished': true // Boolean | Filter by published status.
 };
 
@@ -425,6 +434,9 @@ apiInstance.getWebdeploymentsConfigurations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **String** | Number of entities to return. Defaults to 300. | [optional]  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **showOnlyPublished** | **Boolean** | Filter by published status. | [optional]  |
 
 ### Return type
@@ -665,6 +677,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Defaults to 300.
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. 
 };
 
@@ -683,6 +698,9 @@ apiInstance.getWebdeploymentsDeployments(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **String** | Number of entities to return. Defaults to 300. | [optional]  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent, identityresolution |
 
 ### Return type
@@ -1090,4 +1108,4 @@ apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 **DeploymentIdentityResolutionConfig**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_

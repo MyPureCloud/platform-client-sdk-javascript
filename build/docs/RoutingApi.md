@@ -118,6 +118,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingQueueUsers**](RoutingApi#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 [**patchRoutingSettingsContactcenter**](RoutingApi#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
 [**patchRoutingSettingsTranscription**](RoutingApi#patchRoutingSettingsTranscription) | **PATCH** /api/v2/routing/settings/transcription | Patch Transcription Settings
+[**patchRoutingSkill**](RoutingApi#patchRoutingSkill) | **PATCH** /api/v2/routing/skills/{skillId} | Update Routing Skill Division
 [**patchRoutingSkillgroup**](RoutingApi#patchRoutingSkillgroup) | **PATCH** /api/v2/routing/skillgroups/{skillGroupId} | Update skill group definition
 [**patchRoutingSmsPhonenumber**](RoutingApi#patchRoutingSmsPhonenumber) | **PATCH** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Update a phone number provisioned for SMS.
 [**patchUserQueue**](RoutingApi#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
@@ -6195,6 +6196,58 @@ apiInstance.patchRoutingSettingsTranscription(body)
 **TranscriptionSettings**
 
 
+## patchRoutingSkill
+
+> RoutingSkill patchRoutingSkill(skillId, body)
+
+
+PATCH /api/v2/routing/skills/{skillId}
+
+Update Routing Skill Division
+
+Requires ANY permissions:
+
+* routing:skill:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillId = "skillId_example"; // String | Skill ID
+let body = {}; // Object | updateSkillDivisionRequest
+
+apiInstance.patchRoutingSkill(skillId, body)
+  .then((data) => {
+    console.log(`patchRoutingSkill success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingSkill');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillId** | **String** | Skill ID |  |
+ **body** | **Object** | updateSkillDivisionRequest |  |
+
+### Return type
+
+**RoutingSkill**
+
+
 ## patchRoutingSkillgroup
 
 > SkillGroup patchRoutingSkillgroup(skillGroupId, body)
@@ -9121,4 +9174,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@245.1.0_
+_purecloud-platform-client-v2@246.0.0_

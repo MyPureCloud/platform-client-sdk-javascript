@@ -5,7 +5,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**

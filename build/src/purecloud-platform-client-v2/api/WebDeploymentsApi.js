@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 245.1.0
+	 * @version 246.0.0
 	 */
 
 	/**
@@ -157,10 +157,16 @@ class WebDeploymentsApi {
 
 	/**
 	 * Get the versions of a configuration
-	 * This returns the 50 most recent versions for this configuration
+	 * 
 	 * @param {String} configurationId The configuration version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 */
-	getWebdeploymentsConfigurationVersions(configurationId) { 
+	getWebdeploymentsConfigurationVersions(configurationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersions';
@@ -170,7 +176,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/configurations/{configurationId}/versions', 
 			'GET', 
 			{ 'configurationId': configurationId },
-			{  },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -209,6 +215,9 @@ class WebDeploymentsApi {
 	 * View configuration drafts
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Boolean} opts.showOnlyPublished Filter by published status.
 	 */
 	getWebdeploymentsConfigurations(opts) { 
@@ -219,7 +228,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/configurations', 
 			'GET', 
 			{  },
-			{ 'showOnlyPublished': opts['showOnlyPublished'] },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'showOnlyPublished': opts['showOnlyPublished'] },
 			{  },
 			{  },
 			null, 
@@ -347,6 +356,9 @@ class WebDeploymentsApi {
 	 * Get deployments
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 	 */
 	getWebdeploymentsDeployments(opts) { 
@@ -357,7 +369,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments', 
 			'GET', 
 			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
