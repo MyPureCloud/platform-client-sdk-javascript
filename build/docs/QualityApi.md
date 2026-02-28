@@ -2911,6 +2911,7 @@ let apiInstance = new platformClient.QualityApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | evaluation
 let opts = { 
+  'idempotencyKey': "idempotencyKey_example", // String | Idempotency key for request deduplication
   'expand': "expand_example" // String | evaluatorId
 };
 
@@ -2931,6 +2932,7 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | evaluation |  |
+ **idempotencyKey** | **String** | Idempotency key for request deduplication | [optional]  |
  **expand** | **String** | evaluatorId | [optional]  |
 
 ### Return type
@@ -4020,4 +4022,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@246.0.0_
+_purecloud-platform-client-v2@247.0.0_

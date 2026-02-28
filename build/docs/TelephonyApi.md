@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**getTelephonyAgentGreetings**](TelephonyApi#getTelephonyAgentGreetings) | **GET** /api/v2/telephony/agents/{agentId}/greetings | Get an agent's greetings.
 [**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | **GET** /api/v2/telephony/agents/greetings/me | Get the agent's own greetings.
+[**getTelephonyCallsMetrics**](TelephonyApi#getTelephonyCallsMetrics) | **GET** /api/v2/telephony/calls/metrics | Get the concurrent call metrics for a given organization.
 [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | **GET** /api/v2/telephony/mediaregions | Retrieve the list of AWS regions media can stream through.
 [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId} | Get a SIP message.
 [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId}/headers | Get SIP headers.
@@ -112,6 +113,58 @@ This endpoint does not need any parameter.
 ### Return type
 
 **SelfAgentGreeting**
+
+
+## getTelephonyCallsMetrics
+
+> OrganizationCallMetrics getTelephonyCallsMetrics(opts)
+
+
+GET /api/v2/telephony/calls/metrics
+
+Get the concurrent call metrics for a given organization.
+
+Requires ANY permissions:
+
+* telephony:callMetrics:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let opts = { 
+  'metricType': "cloud" // String | Flag to indicate metric type to fetch.
+};
+
+apiInstance.getTelephonyCallsMetrics(opts)
+  .then((data) => {
+    console.log(`getTelephonyCallsMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyCallsMetrics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricType** | **String** | Flag to indicate metric type to fetch. | [optional] [default to cloud]<br />**Values**: cloud, premises |
+
+### Return type
+
+**OrganizationCallMetrics**
 
 
 ## getTelephonyMediaregions
@@ -533,4 +586,4 @@ apiInstance.putTelephonyAgentsGreetingsMe(body)
 **SelfAgentGreeting**
 
 
-_purecloud-platform-client-v2@246.0.0_
+_purecloud-platform-client-v2@247.0.0_

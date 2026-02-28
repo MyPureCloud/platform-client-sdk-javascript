@@ -327,6 +327,7 @@ docs/deleteKnowledgeKnowledgebaseLabel-example.txt
 docs/deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/deleteKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/deleteKnowledgeKnowledgebaseSynchronizeJob-example.txt
+docs/deleteKnowledgeSetting-example.txt
 docs/deleteLanguage-example.txt
 docs/deleteLanguageunderstandingDomain-example.txt
 docs/deleteLanguageunderstandingDomainFeedbackFeedbackId-example.txt
@@ -1230,6 +1231,8 @@ docs/getKnowledgeKnowledgebaseUnansweredGroups-example.txt
 docs/getKnowledgeKnowledgebaseUploadsUrlsJob-example.txt
 docs/getKnowledgeKnowledgebaseUploadsUrlsJob-example.txt
 docs/getKnowledgeKnowledgebases-example.txt
+docs/getKnowledgeSetting-example.txt
+docs/getKnowledgeSettings-example.txt
 docs/getLanguage-example.txt
 docs/getLanguages-example.txt
 docs/getLanguagesTranslations-example.txt
@@ -1688,6 +1691,7 @@ docs/getTeamMembers-example.txt
 docs/getTeams-example.txt
 docs/getTelephonyAgentGreetings-example.txt
 docs/getTelephonyAgentsGreetingsMe-example.txt
+docs/getTelephonyCallsMetrics-example.txt
 docs/getTelephonyMediaregions-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
@@ -2109,6 +2113,7 @@ docs/patchKnowledgeKnowledgebaseLabel-example.txt
 docs/patchKnowledgeKnowledgebaseParseJob-example.txt
 docs/patchKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
+docs/patchKnowledgeSetting-example.txt
 docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
 docs/patchLearningAssignment-example.txt
@@ -2680,6 +2685,8 @@ docs/postKnowledgeKnowledgebaseSynchronizeJobs-example.txt
 docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebases-example.txt
+docs/postKnowledgeSearchPreview-example.txt
+docs/postKnowledgeSettings-example.txt
 docs/postLanguages-example.txt
 docs/postLanguageunderstandingDomainFeedback-example.txt
 docs/postLanguageunderstandingDomainVersionDetect-example.txt

@@ -5720,7 +5720,7 @@ var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeO
  * @param {*} val The value to test
  *
  * @returns {boolean} True if the value is undefined, otherwise false
- */var isUndefined=typeOfTest("undefined");/**
+ */var isUndefined=typeOfTest('undefined');/**
  * Determine if a value is a Buffer
  *
  * @param {*} val The value to test
@@ -5732,36 +5732,36 @@ var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeO
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is an ArrayBuffer, otherwise false
- */var isArrayBuffer=kindOfTest("ArrayBuffer");/**
+ */var isArrayBuffer=kindOfTest('ArrayBuffer');/**
  * Determine if a value is a view on an ArrayBuffer
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */function isArrayBufferView(val){var result;if(typeof ArrayBuffer!=="undefined"&&ArrayBuffer.isView){result=ArrayBuffer.isView(val);}else{result=val&&val.buffer&&isArrayBuffer(val.buffer);}return result;}/**
+ */function isArrayBufferView(val){var result;if(typeof ArrayBuffer!=='undefined'&&ArrayBuffer.isView){result=ArrayBuffer.isView(val);}else{result=val&&val.buffer&&isArrayBuffer(val.buffer);}return result;}/**
  * Determine if a value is a String
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a String, otherwise false
- */var isString=typeOfTest("string");/**
+ */var isString=typeOfTest('string');/**
  * Determine if a value is a Function
  *
  * @param {*} val The value to test
  * @returns {boolean} True if value is a Function, otherwise false
- */var isFunction$1=typeOfTest("function");/**
+ */var isFunction$1=typeOfTest('function');/**
  * Determine if a value is a Number
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a Number, otherwise false
- */var isNumber=typeOfTest("number");/**
+ */var isNumber=typeOfTest('number');/**
  * Determine if a value is an Object
  *
  * @param {*} thing The value to test
  *
  * @returns {boolean} True if value is an Object, otherwise false
- */var isObject=function isObject(thing){return thing!==null&&_typeof(thing)==="object";};/**
+ */var isObject=function isObject(thing){return thing!==null&&_typeof(thing)==='object';};/**
  * Determine if a value is a Boolean
  *
  * @param {*} thing The value to test
@@ -5772,7 +5772,7 @@ var toString$1=Object.prototype.toString;var getPrototypeOf=Object.getPrototypeO
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a plain Object, otherwise false
- */var isPlainObject=function isPlainObject(val){if(kindOf(val)!=="object"){return false;}var prototype=getPrototypeOf(val);return(prototype===null||prototype===Object.prototype||Object.getPrototypeOf(prototype)===null)&&!(toStringTag in val)&&!(iterator in val);};/**
+ */var isPlainObject=function isPlainObject(val){if(kindOf(val)!=='object'){return false;}var prototype=getPrototypeOf(val);return(prototype===null||prototype===Object.prototype||Object.getPrototypeOf(prototype)===null)&&!(toStringTag in val)&&!(iterator in val);};/**
  * Determine if a value is an empty object (safely handles Buffers)
  *
  * @param {*} val The value to test
@@ -5786,25 +5786,42 @@ return false;}};/**
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a Date, otherwise false
- */var isDate=kindOfTest("Date");/**
+ */var isDate=kindOfTest('Date');/**
  * Determine if a value is a File
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a File, otherwise false
- */var isFile=kindOfTest("File");/**
+ */var isFile=kindOfTest('File');/**
+ * Determine if a value is a React Native Blob
+ * React Native "blob": an object with a `uri` attribute. Optionally, it can
+ * also have a `name` and `type` attribute to specify filename and content type
+ *
+ * @see https://github.com/facebook/react-native/blob/26684cf3adf4094eb6c405d345a75bf8c7c0bf88/Libraries/Network/FormData.js#L68-L71
+ * 
+ * @param {*} value The value to test
+ * 
+ * @returns {boolean} True if value is a React Native Blob, otherwise false
+ */var isReactNativeBlob=function isReactNativeBlob(value){return!!(value&&typeof value.uri!=='undefined');};/**
+ * Determine if environment is React Native
+ * ReactNative `FormData` has a non-standard `getParts()` method
+ * 
+ * @param {*} formData The formData to test
+ * 
+ * @returns {boolean} True if environment is React Native, otherwise false
+ */var isReactNative=function isReactNative(formData){return formData&&typeof formData.getParts!=='undefined';};/**
  * Determine if a value is a Blob
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a Blob, otherwise false
- */var isBlob=kindOfTest("Blob");/**
+ */var isBlob=kindOfTest('Blob');/**
  * Determine if a value is a FileList
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a File, otherwise false
- */var isFileList=kindOfTest("FileList");/**
+ */var isFileList=kindOfTest('FileList');/**
  * Determine if a value is a Stream
  *
  * @param {*} val The value to test
@@ -5816,20 +5833,20 @@ return false;}};/**
  * @param {*} thing The value to test
  *
  * @returns {boolean} True if value is an FormData, otherwise false
- */var isFormData=function isFormData(thing){var kind;return thing&&(typeof FormData==="function"&&thing instanceof FormData||isFunction$1(thing.append)&&((kind=kindOf(thing))==="formdata"||// detect form-data instance
-kind==="object"&&isFunction$1(thing.toString)&&thing.toString()==="[object FormData]"));};/**
+ */function getGlobal(){if(typeof globalThis!=='undefined')return globalThis;if(typeof self!=='undefined')return self;if(typeof window!=='undefined')return window;if(typeof global$1!=='undefined')return global$1;return{};}var G=getGlobal();var FormDataCtor=typeof G.FormData!=='undefined'?G.FormData:undefined;var isFormData=function isFormData(thing){var kind;return thing&&(FormDataCtor&&thing instanceof FormDataCtor||isFunction$1(thing.append)&&((kind=kindOf(thing))==='formdata'||// detect form-data instance
+kind==='object'&&isFunction$1(thing.toString)&&thing.toString()==='[object FormData]'));};/**
  * Determine if a value is a URLSearchParams object
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a URLSearchParams object, otherwise false
- */var isURLSearchParams=kindOfTest("URLSearchParams");var _map=["ReadableStream","Request","Response","Headers"].map(kindOfTest),_map2=_slicedToArray(_map,4),isReadableStream=_map2[0],isRequest=_map2[1],isResponse=_map2[2],isHeaders=_map2[3];/**
+ */var isURLSearchParams=kindOfTest('URLSearchParams');var _map=['ReadableStream','Request','Response','Headers'].map(kindOfTest),_map2=_slicedToArray(_map,4),isReadableStream=_map2[0],isRequest=_map2[1],isResponse=_map2[2],isHeaders=_map2[3];/**
  * Trim excess whitespace off the beginning and end of a string
  *
  * @param {String} str The String to trim
  *
  * @returns {String} The String freed of excess whitespace
- */var trim=function trim(str){return str.trim?str.trim():str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,"");};/**
+ */var trim=function trim(str){return str.trim?str.trim():str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,'');};/**
  * Iterate over an Array or an Object invoking a function for each item.
  *
  * If `obj` is an Array callback will be called passing
@@ -5845,11 +5862,18 @@ kind==="object"&&isFunction$1(thing.toString)&&thing.toString()==="[object FormD
  * @param {Boolean} [options.allOwnKeys = false]
  * @returns {any}
  */function forEach(obj,fn){var _ref3=arguments.length>2&&arguments[2]!==undefined?arguments[2]:{},_ref3$allOwnKeys=_ref3.allOwnKeys,allOwnKeys=_ref3$allOwnKeys===void 0?false:_ref3$allOwnKeys;// Don't bother if no value provided
-if(obj===null||typeof obj==="undefined"){return;}var i;var l;// Force an array if not already something iterable
-if(_typeof(obj)!=="object"){/*eslint no-param-reassign:0*/obj=[obj];}if(isArray$1(obj)){// Iterate over array values
+if(obj===null||typeof obj==='undefined'){return;}var i;var l;// Force an array if not already something iterable
+if(_typeof(obj)!=='object'){/*eslint no-param-reassign:0*/obj=[obj];}if(isArray$1(obj)){// Iterate over array values
 for(i=0,l=obj.length;i<l;i++){fn.call(null,obj[i],i,obj);}}else{// Buffer check
 if(isBuffer$1(obj)){return;}// Iterate over object keys
-var keys=allOwnKeys?Object.getOwnPropertyNames(obj):Object.keys(obj);var len=keys.length;var key;for(i=0;i<len;i++){key=keys[i];fn.call(null,obj[key],key,obj);}}}function findKey(obj,key){if(isBuffer$1(obj)){return null;}key=key.toLowerCase();var keys=Object.keys(obj);var i=keys.length;var _key;while(i-->0){_key=keys[i];if(key===_key.toLowerCase()){return _key;}}return null;}var _global=function(){/*eslint no-undef:0*/if(typeof globalThis!=="undefined")return globalThis;return typeof self!=="undefined"?self:typeof window!=="undefined"?window:global$1;}();var isContextDefined=function isContextDefined(context){return!isUndefined(context)&&context!==_global;};/**
+var keys=allOwnKeys?Object.getOwnPropertyNames(obj):Object.keys(obj);var len=keys.length;var key;for(i=0;i<len;i++){key=keys[i];fn.call(null,obj[key],key,obj);}}}/**
+ * Finds a key in an object, case-insensitive, returning the actual key name.
+ * Returns null if the object is a Buffer or if no match is found.
+ *
+ * @param {Object} obj - The object to search.
+ * @param {string} key - The key to find (case-insensitive).
+ * @returns {?string} The actual key name if found, otherwise null.
+ */function findKey(obj,key){if(isBuffer$1(obj)){return null;}key=key.toLowerCase();var keys=Object.keys(obj);var i=keys.length;var _key;while(i-->0){_key=keys[i];if(key===_key.toLowerCase()){return _key;}}return null;}var _global=function(){/*eslint no-undef:0*/if(typeof globalThis!=='undefined')return globalThis;return typeof self!=='undefined'?self:typeof window!=='undefined'?window:global$1;}();var isContextDefined=function isContextDefined(context){return!isUndefined(context)&&context!==_global;};/**
  * Accepts varargs expecting each argument to be an object, then
  * immutably merges the properties of each object and returns result.
  *
@@ -5867,7 +5891,7 @@ var keys=allOwnKeys?Object.getOwnPropertyNames(obj):Object.keys(obj);var len=key
  *
  * @returns {Object} Result of all merge properties
  */function merge(/* obj1, obj2, obj3, ... */){var _ref4=isContextDefined(this)&&this||{},caseless=_ref4.caseless,skipUndefined=_ref4.skipUndefined;var result={};var assignValue=function assignValue(val,key){// Skip dangerous property names to prevent prototype pollution
-if(key==="__proto__"||key==="constructor"||key==="prototype"){return;}var targetKey=caseless&&findKey(result,key)||key;if(isPlainObject(result[targetKey])&&isPlainObject(val)){result[targetKey]=merge(result[targetKey],val);}else if(isPlainObject(val)){result[targetKey]=merge({},val);}else if(isArray$1(val)){result[targetKey]=val.slice();}else if(!skipUndefined||!isUndefined(val)){result[targetKey]=val;}};for(var i=0,l=arguments.length;i<l;i++){arguments[i]&&forEach(arguments[i],assignValue);}return result;}/**
+if(key==='__proto__'||key==='constructor'||key==='prototype'){return;}var targetKey=caseless&&findKey(result,key)||key;if(isPlainObject(result[targetKey])&&isPlainObject(val)){result[targetKey]=merge(result[targetKey],val);}else if(isPlainObject(val)){result[targetKey]=merge({},val);}else if(isArray$1(val)){result[targetKey]=val.slice();}else if(!skipUndefined||!isUndefined(val)){result[targetKey]=val;}};for(var i=0,l=arguments.length;i<l;i++){arguments[i]&&forEach(arguments[i],assignValue);}return result;}/**
  * Extends object a by mutably adding to it the properties of object b.
  *
  * @param {Object} a The object to be extended
@@ -5891,7 +5915,7 @@ if(key==="__proto__"||key==="constructor"||key==="prototype"){return;}var target
  * @param {object} [descriptors]
  *
  * @returns {void}
- */var inherits=function inherits(constructor,superConstructor,props,descriptors){constructor.prototype=Object.create(superConstructor.prototype,descriptors);Object.defineProperty(constructor.prototype,"constructor",{value:constructor,writable:true,enumerable:false,configurable:true});Object.defineProperty(constructor,"super",{value:superConstructor.prototype});props&&Object.assign(constructor.prototype,props);};/**
+ */var inherits=function inherits(constructor,superConstructor,props,descriptors){constructor.prototype=Object.create(superConstructor.prototype,descriptors);Object.defineProperty(constructor.prototype,'constructor',{value:constructor,writable:true,enumerable:false,configurable:true});Object.defineProperty(constructor,'super',{value:superConstructor.prototype});props&&Object.assign(constructor.prototype,props);};/**
  * Resolve object with deep prototype chain to a flat object
  * @param {Object} sourceObj source object
  * @param {Object} [destObj]
@@ -5923,7 +5947,7 @@ if(sourceObj==null)return destObj;do{props=Object.getOwnPropertyNames(sourceObj)
  * @returns {Array}
  */// eslint-disable-next-line func-names
 var isTypedArray=function(TypedArray){// eslint-disable-next-line func-names
-return function(thing){return TypedArray&&thing instanceof TypedArray;};}(typeof Uint8Array!=="undefined"&&getPrototypeOf(Uint8Array));/**
+return function(thing){return TypedArray&&thing instanceof TypedArray;};}(typeof Uint8Array!=='undefined'&&getPrototypeOf(Uint8Array));/**
  * For each entry in the object, call the function with the key and value.
  *
  * @param {Object<any, any>} obj - The object to iterate over.
@@ -5937,27 +5961,61 @@ return function(thing){return TypedArray&&thing instanceof TypedArray;};}(typeof
  * @param {string} str - The string to search.
  *
  * @returns {Array<boolean>}
- */var matchAll=function matchAll(regExp,str){var matches;var arr=[];while((matches=regExp.exec(str))!==null){arr.push(matches);}return arr;};/* Checking if the kindOfTest function returns true when passed an HTMLFormElement. */var isHTMLForm=kindOfTest("HTMLFormElement");var toCamelCase=function toCamelCase(str){return str.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g,function replacer(m,p1,p2){return p1.toUpperCase()+p2;});};/* Creating a function that will check if an object has a property. */var hasOwnProperty=function(_ref6){var hasOwnProperty=_ref6.hasOwnProperty;return function(obj,prop){return hasOwnProperty.call(obj,prop);};}(Object.prototype);/**
+ */var matchAll=function matchAll(regExp,str){var matches;var arr=[];while((matches=regExp.exec(str))!==null){arr.push(matches);}return arr;};/* Checking if the kindOfTest function returns true when passed an HTMLFormElement. */var isHTMLForm=kindOfTest('HTMLFormElement');var toCamelCase=function toCamelCase(str){return str.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g,function replacer(m,p1,p2){return p1.toUpperCase()+p2;});};/* Creating a function that will check if an object has a property. */var hasOwnProperty=function(_ref6){var hasOwnProperty=_ref6.hasOwnProperty;return function(obj,prop){return hasOwnProperty.call(obj,prop);};}(Object.prototype);/**
  * Determine if a value is a RegExp object
  *
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a RegExp object, otherwise false
- */var isRegExp=kindOfTest("RegExp");var reduceDescriptors=function reduceDescriptors(obj,reducer){var descriptors=Object.getOwnPropertyDescriptors(obj);var reducedDescriptors={};forEach(descriptors,function(descriptor,name){var ret;if((ret=reducer(descriptor,name,obj))!==false){reducedDescriptors[name]=ret||descriptor;}});Object.defineProperties(obj,reducedDescriptors);};/**
+ */var isRegExp=kindOfTest('RegExp');var reduceDescriptors=function reduceDescriptors(obj,reducer){var descriptors=Object.getOwnPropertyDescriptors(obj);var reducedDescriptors={};forEach(descriptors,function(descriptor,name){var ret;if((ret=reducer(descriptor,name,obj))!==false){reducedDescriptors[name]=ret||descriptor;}});Object.defineProperties(obj,reducedDescriptors);};/**
  * Makes all methods read-only
  * @param {Object} obj
  */var freezeMethods=function freezeMethods(obj){reduceDescriptors(obj,function(descriptor,name){// skip restricted props in strict mode
-if(isFunction$1(obj)&&["arguments","caller","callee"].indexOf(name)!==-1){return false;}var value=obj[name];if(!isFunction$1(value))return;descriptor.enumerable=false;if("writable"in descriptor){descriptor.writable=false;return;}if(!descriptor.set){descriptor.set=function(){throw Error("Can not rewrite read-only method '"+name+"'");};}});};var toObjectSet=function toObjectSet(arrayOrString,delimiter){var obj={};var define=function define(arr){arr.forEach(function(value){obj[value]=true;});};isArray$1(arrayOrString)?define(arrayOrString):define(String(arrayOrString).split(delimiter));return obj;};var noop=function noop(){};var toFiniteNumber=function toFiniteNumber(value,defaultValue){return value!=null&&Number.isFinite(value=+value)?value:defaultValue;};/**
+if(isFunction$1(obj)&&['arguments','caller','callee'].indexOf(name)!==-1){return false;}var value=obj[name];if(!isFunction$1(value))return;descriptor.enumerable=false;if('writable'in descriptor){descriptor.writable=false;return;}if(!descriptor.set){descriptor.set=function(){throw Error("Can not rewrite read-only method '"+name+"'");};}});};/**
+ * Converts an array or a delimited string into an object set with values as keys and true as values.
+ * Useful for fast membership checks.
+ *
+ * @param {Array|string} arrayOrString - The array or string to convert.
+ * @param {string} delimiter - The delimiter to use if input is a string.
+ * @returns {Object} An object with keys from the array or string, values set to true.
+ */var toObjectSet=function toObjectSet(arrayOrString,delimiter){var obj={};var define=function define(arr){arr.forEach(function(value){obj[value]=true;});};isArray$1(arrayOrString)?define(arrayOrString):define(String(arrayOrString).split(delimiter));return obj;};var noop=function noop(){};var toFiniteNumber=function toFiniteNumber(value,defaultValue){return value!=null&&Number.isFinite(value=+value)?value:defaultValue;};/**
  * If the thing is a FormData object, return true, otherwise return false.
  *
  * @param {unknown} thing - The thing to check.
  *
  * @returns {boolean}
- */function isSpecCompliantForm(thing){return!!(thing&&isFunction$1(thing.append)&&thing[toStringTag]==="FormData"&&thing[iterator]);}var toJSONObject=function toJSONObject(obj){var stack=new Array(10);var _visit=function visit(source,i){if(isObject(source)){if(stack.indexOf(source)>=0){return;}//Buffer check
-if(isBuffer$1(source)){return source;}if(!("toJSON"in source)){stack[i]=source;var target=isArray$1(source)?[]:{};forEach(source,function(value,key){var reducedValue=_visit(value,i+1);!isUndefined(reducedValue)&&(target[key]=reducedValue);});stack[i]=undefined;return target;}}return source;};return _visit(obj,0);};var isAsyncFn=kindOfTest("AsyncFunction");var isThenable=function isThenable(thing){return thing&&(isObject(thing)||isFunction$1(thing))&&isFunction$1(thing.then)&&isFunction$1(thing["catch"]);};// original code
+ */function isSpecCompliantForm(thing){return!!(thing&&isFunction$1(thing.append)&&thing[toStringTag]==='FormData'&&thing[iterator]);}/**
+ * Recursively converts an object to a JSON-compatible object, handling circular references and Buffers.
+ *
+ * @param {Object} obj - The object to convert.
+ * @returns {Object} The JSON-compatible object.
+ */var toJSONObject=function toJSONObject(obj){var stack=new Array(10);var _visit=function visit(source,i){if(isObject(source)){if(stack.indexOf(source)>=0){return;}//Buffer check
+if(isBuffer$1(source)){return source;}if(!('toJSON'in source)){stack[i]=source;var target=isArray$1(source)?[]:{};forEach(source,function(value,key){var reducedValue=_visit(value,i+1);!isUndefined(reducedValue)&&(target[key]=reducedValue);});stack[i]=undefined;return target;}}return source;};return _visit(obj,0);};/**
+ * Determines if a value is an async function.
+ *
+ * @param {*} thing - The value to test.
+ * @returns {boolean} True if value is an async function, otherwise false.
+ */var isAsyncFn=kindOfTest('AsyncFunction');/**
+ * Determines if a value is thenable (has then and catch methods).
+ *
+ * @param {*} thing - The value to test.
+ * @returns {boolean} True if value is thenable, otherwise false.
+ */var isThenable=function isThenable(thing){return thing&&(isObject(thing)||isFunction$1(thing))&&isFunction$1(thing.then)&&isFunction$1(thing["catch"]);};// original code
 // https://github.com/DigitalBrainJS/AxiosPromise/blob/16deab13710ec09779922131f3fa5954320f83ab/lib/utils.js#L11-L34
-var _setImmediate=function(setImmediateSupported,postMessageSupported){if(setImmediateSupported){return setImmediate;}return postMessageSupported?function(token,callbacks){_global.addEventListener("message",function(_ref7){var source=_ref7.source,data=_ref7.data;if(source===_global&&data===token){callbacks.length&&callbacks.shift()();}},false);return function(cb){callbacks.push(cb);_global.postMessage(token,"*");};}("axios@".concat(Math.random()),[]):function(cb){return setTimeout(cb);};}(typeof setImmediate==="function",isFunction$1(_global.postMessage));var asap=typeof queueMicrotask!=="undefined"?queueMicrotask.bind(_global):typeof process!=="undefined"&&nextTick||_setImmediate;// *********************
-var isIterable=function isIterable(thing){return thing!=null&&isFunction$1(thing[iterator]);};var utils$1={isArray:isArray$1,isArrayBuffer:isArrayBuffer,isBuffer:isBuffer$1,isFormData:isFormData,isArrayBufferView:isArrayBufferView,isString:isString,isNumber:isNumber,isBoolean:isBoolean,isObject:isObject,isPlainObject:isPlainObject,isEmptyObject:isEmptyObject,isReadableStream:isReadableStream,isRequest:isRequest,isResponse:isResponse,isHeaders:isHeaders,isUndefined:isUndefined,isDate:isDate,isFile:isFile,isBlob:isBlob,isRegExp:isRegExp,isFunction:isFunction$1,isStream:isStream,isURLSearchParams:isURLSearchParams,isTypedArray:isTypedArray,isFileList:isFileList,forEach:forEach,merge:merge,extend:extend,trim:trim,stripBOM:stripBOM,inherits:inherits,toFlatObject:toFlatObject,kindOf:kindOf,kindOfTest:kindOfTest,endsWith:endsWith,toArray:toArray,forEachEntry:forEachEntry,matchAll:matchAll,isHTMLForm:isHTMLForm,hasOwnProperty:hasOwnProperty,hasOwnProp:hasOwnProperty,// an alias to avoid ESLint no-prototype-builtins detection
+/**
+ * Provides a cross-platform setImmediate implementation.
+ * Uses native setImmediate if available, otherwise falls back to postMessage or setTimeout.
+ *
+ * @param {boolean} setImmediateSupported - Whether setImmediate is supported.
+ * @param {boolean} postMessageSupported - Whether postMessage is supported.
+ * @returns {Function} A function to schedule a callback asynchronously.
+ */var _setImmediate=function(setImmediateSupported,postMessageSupported){if(setImmediateSupported){return setImmediate;}return postMessageSupported?function(token,callbacks){_global.addEventListener('message',function(_ref7){var source=_ref7.source,data=_ref7.data;if(source===_global&&data===token){callbacks.length&&callbacks.shift()();}},false);return function(cb){callbacks.push(cb);_global.postMessage(token,'*');};}("axios@".concat(Math.random()),[]):function(cb){return setTimeout(cb);};}(typeof setImmediate==='function',isFunction$1(_global.postMessage));/**
+ * Schedules a microtask or asynchronous callback as soon as possible.
+ * Uses queueMicrotask if available, otherwise falls back to process.nextTick or _setImmediate.
+ *
+ * @type {Function}
+ */var asap=typeof queueMicrotask!=='undefined'?queueMicrotask.bind(_global):typeof process!=='undefined'&&nextTick||_setImmediate;// *********************
+var isIterable=function isIterable(thing){return thing!=null&&isFunction$1(thing[iterator]);};var utils$1={isArray:isArray$1,isArrayBuffer:isArrayBuffer,isBuffer:isBuffer$1,isFormData:isFormData,isArrayBufferView:isArrayBufferView,isString:isString,isNumber:isNumber,isBoolean:isBoolean,isObject:isObject,isPlainObject:isPlainObject,isEmptyObject:isEmptyObject,isReadableStream:isReadableStream,isRequest:isRequest,isResponse:isResponse,isHeaders:isHeaders,isUndefined:isUndefined,isDate:isDate,isFile:isFile,isReactNativeBlob:isReactNativeBlob,isReactNative:isReactNative,isBlob:isBlob,isRegExp:isRegExp,isFunction:isFunction$1,isStream:isStream,isURLSearchParams:isURLSearchParams,isTypedArray:isTypedArray,isFileList:isFileList,forEach:forEach,merge:merge,extend:extend,trim:trim,stripBOM:stripBOM,inherits:inherits,toFlatObject:toFlatObject,kindOf:kindOf,kindOfTest:kindOfTest,endsWith:endsWith,toArray:toArray,forEachEntry:forEachEntry,matchAll:matchAll,isHTMLForm:isHTMLForm,hasOwnProperty:hasOwnProperty,hasOwnProp:hasOwnProperty,// an alias to avoid ESLint no-prototype-builtins detection
 reduceDescriptors:reduceDescriptors,freezeMethods:freezeMethods,toObjectSet:toObjectSet,toCamelCase:toCamelCase,noop:noop,toFiniteNumber:toFiniteNumber,findKey:findKey,global:_global,isContextDefined:isContextDefined,isSpecCompliantForm:isSpecCompliantForm,toJSONObject:toJSONObject,isAsyncFn:isAsyncFn,isThenable:isThenable,setImmediate:_setImmediate,asap:asap,isIterable:isIterable};var lookup=[];var revLookup=[];var Arr=typeof Uint8Array!=='undefined'?Uint8Array:Array;var inited=false;function init(){inited=true;var code='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';for(var i=0,len=code.length;i<len;++i){lookup[i]=code[i];revLookup[code.charCodeAt(i)]=i;}revLookup['-'.charCodeAt(0)]=62;revLookup['_'.charCodeAt(0)]=63;}function toByteArray(b64){if(!inited){init();}var i,j,l,tmp,placeHolders,arr;var len=b64.length;if(len%4>0){throw new Error('Invalid string. Length must be a multiple of 4');}// the number of equal signs (place holders)
 // if there are two placeholders, than the two characters before it
 // represent one byte
@@ -6122,11 +6180,15 @@ function isSlowBuffer(obj){return typeof obj.readFloatLE==='function'&&typeof ob
      * @param {Object} [response] The response.
      *
      * @returns {Error} The created error.
-     */function AxiosError(message,code,config,request,response){var _this;_classCallCheck(this,AxiosError);_this=_callSuper(this,AxiosError,[message]);_this.name='AxiosError';_this.isAxiosError=true;code&&(_this.code=code);config&&(_this.config=config);request&&(_this.request=request);if(response){_this.response=response;_this.status=response.status;}return _this;}_inherits(AxiosError,_Error);return _createClass(AxiosError,[{key:"toJSON",value:function toJSON(){return{// Standard
+     */function AxiosError(message,code,config,request,response){var _this;_classCallCheck(this,AxiosError);_this=_callSuper(this,AxiosError,[message]);// Make message enumerable to maintain backward compatibility
+// The native Error constructor sets message as non-enumerable,
+// but axios < v1.13.3 had it as enumerable
+Object.defineProperty(_this,'message',{value:message,enumerable:true,writable:true,configurable:true});_this.name='AxiosError';_this.isAxiosError=true;code&&(_this.code=code);config&&(_this.config=config);request&&(_this.request=request);if(response){_this.response=response;_this.status=response.status;}return _this;}_inherits(AxiosError,_Error);return _createClass(AxiosError,[{key:"toJSON",value:function toJSON(){return{// Standard
 message:this.message,name:this.name,// Microsoft
 description:this.description,number:this.number,// Mozilla
 fileName:this.fileName,lineNumber:this.lineNumber,columnNumber:this.columnNumber,stack:this.stack,// Axios
-config:utils$1.toJSONObject(this.config),code:this.code,status:this.status};}}],[{key:"from",value:function from(error,code,config,request,response,customProps){var axiosError=new AxiosError(error.message,code||error.code,config,request,response);axiosError.cause=error;axiosError.name=error.name;customProps&&Object.assign(axiosError,customProps);return axiosError;}}]);}(/*#__PURE__*/_wrapNativeSuper(Error));// This can be changed to static properties as soon as the parser options in .eslint.cjs are updated.
+config:utils$1.toJSONObject(this.config),code:this.code,status:this.status};}}],[{key:"from",value:function from(error,code,config,request,response,customProps){var axiosError=new AxiosError(error.message,code||error.code,config,request,response);axiosError.cause=error;axiosError.name=error.name;// Preserve status from the original error if not already set from response
+if(error.status!=null&&axiosError.status==null){axiosError.status=error.status;}customProps&&Object.assign(axiosError,customProps);return axiosError;}}]);}(/*#__PURE__*/_wrapNativeSuper(Error));// This can be changed to static properties as soon as the parser options in .eslint.cjs are updated.
 AxiosError.ERR_BAD_OPTION_VALUE='ERR_BAD_OPTION_VALUE';AxiosError.ERR_BAD_OPTION='ERR_BAD_OPTION';AxiosError.ECONNABORTED='ECONNABORTED';AxiosError.ETIMEDOUT='ETIMEDOUT';AxiosError.ERR_NETWORK='ERR_NETWORK';AxiosError.ERR_FR_TOO_MANY_REDIRECTS='ERR_FR_TOO_MANY_REDIRECTS';AxiosError.ERR_DEPRECATED='ERR_DEPRECATED';AxiosError.ERR_BAD_RESPONSE='ERR_BAD_RESPONSE';AxiosError.ERR_BAD_REQUEST='ERR_BAD_REQUEST';AxiosError.ERR_CANCELED='ERR_CANCELED';AxiosError.ERR_NOT_SUPPORT='ERR_NOT_SUPPORT';AxiosError.ERR_INVALID_URL='ERR_INVALID_URL';var AxiosError$1=AxiosError;// eslint-disable-next-line strict
 var httpAdapter=null;/**
  * Determines if the given thing is a array or js object.
@@ -6188,7 +6250,7 @@ var visitor=options.visitor||defaultVisitor;var dots=options.dots;var indexes=op
    * @this {FormData}
    *
    * @returns {boolean} return true to visit the each prop of the value recursively
-   */function defaultVisitor(value,key,path){var arr=value;if(value&&!path&&_typeof(value)==='object'){if(utils$1.endsWith(key,'{}')){// eslint-disable-next-line no-param-reassign
+   */function defaultVisitor(value,key,path){var arr=value;if(utils$1.isReactNative(formData)&&utils$1.isReactNativeBlob(value)){formData.append(renderKey(path,key,dots),convertValue(value));return false;}if(value&&!path&&_typeof(value)==='object'){if(utils$1.endsWith(key,'{}')){// eslint-disable-next-line no-param-reassign
 key=metaTokens?key:key.slice(0,-2);// eslint-disable-next-line no-param-reassign
 value=JSON.stringify(value);}else if(utils$1.isArray(value)&&isFlatArray(value)||(utils$1.isFileList(value)||utils$1.endsWith(key,'[]'))&&(arr=utils$1.toArray(value))){// eslint-disable-next-line no-param-reassign
 key=removeBrackets(key);arr.forEach(function each(el,index){!(utils$1.isUndefined(el)||el===null)&&formData.append(// eslint-disable-next-line no-nested-ternary
@@ -6221,7 +6283,7 @@ indexes===true?renderKey([key],index,dots):indexes===null?key:key+'[]',convertVa
  * @param {?(object|Function)} options
  *
  * @returns {string} The formatted url
- */function buildURL(url,params,options){if(!params){return url;}var _encode=options&&options.encode||encode;var _options=utils$1.isFunction(options)?{serialize:options}:options;var serializeFn=_options&&_options.serialize;var serializedParams;if(serializeFn){serializedParams=serializeFn(params,_options);}else{serializedParams=utils$1.isURLSearchParams(params)?params.toString():new AxiosURLSearchParams(params,_options).toString(_encode);}if(serializedParams){var hashmarkIndex=url.indexOf("#");if(hashmarkIndex!==-1){url=url.slice(0,hashmarkIndex);}url+=(url.indexOf('?')===-1?'?':'&')+serializedParams;}return url;}var InterceptorManager=/*#__PURE__*/function(){function InterceptorManager(){_classCallCheck(this,InterceptorManager);this.handlers=[];}/**
+ */function buildURL(url,params,options){if(!params){return url;}var _encode=options&&options.encode||encode;var _options=utils$1.isFunction(options)?{serialize:options}:options;var serializeFn=_options&&_options.serialize;var serializedParams;if(serializeFn){serializedParams=serializeFn(params,_options);}else{serializedParams=utils$1.isURLSearchParams(params)?params.toString():new AxiosURLSearchParams(params,_options).toString(_encode);}if(serializedParams){var hashmarkIndex=url.indexOf('#');if(hashmarkIndex!==-1){url=url.slice(0,hashmarkIndex);}url+=(url.indexOf('?')===-1?'?':'&')+serializedParams;}return url;}var InterceptorManager=/*#__PURE__*/function(){function InterceptorManager(){_classCallCheck(this,InterceptorManager);this.handlers=[];}/**
    * Add a new interceptor to the stack
    *
    * @param {Function} fulfilled The function to handle `then` for a `Promise`
@@ -6307,7 +6369,7 @@ return utils$1.matchAll(/\w+|\[(\w*)]/g,name).map(function(match){return match[0
  */function stringifySafely(rawValue,parser,encoder){if(utils$1.isString(rawValue)){try{(parser||JSON.parse)(rawValue);return utils$1.trim(rawValue);}catch(e){if(e.name!=='SyntaxError'){throw e;}}}return(encoder||JSON.stringify)(rawValue);}var defaults={transitional:transitionalDefaults,adapter:['xhr','http','fetch'],transformRequest:[function transformRequest(data,headers){var contentType=headers.getContentType()||'';var hasJSONContentType=contentType.indexOf('application/json')>-1;var isObjectPayload=utils$1.isObject(data);if(isObjectPayload&&utils$1.isHTMLForm(data)){data=new FormData(data);}var isFormData=utils$1.isFormData(data);if(isFormData){return hasJSONContentType?JSON.stringify(formDataToJSON(data)):data;}if(utils$1.isArrayBuffer(data)||utils$1.isBuffer(data)||utils$1.isStream(data)||utils$1.isFile(data)||utils$1.isBlob(data)||utils$1.isReadableStream(data)){return data;}if(utils$1.isArrayBufferView(data)){return data.buffer;}if(utils$1.isURLSearchParams(data)){headers.setContentType('application/x-www-form-urlencoded;charset=utf-8',false);return data.toString();}var isFileList;if(isObjectPayload){if(contentType.indexOf('application/x-www-form-urlencoded')>-1){return toURLEncodedForm(data,this.formSerializer).toString();}if((isFileList=utils$1.isFileList(data))||contentType.indexOf('multipart/form-data')>-1){var _FormData=this.env&&this.env.FormData;return toFormData(isFileList?{'files[]':data}:data,_FormData&&new _FormData(),this.formSerializer);}}if(isObjectPayload||hasJSONContentType){headers.setContentType('application/json',false);return stringifySafely(data);}return data;}],transformResponse:[function transformResponse(data){var transitional=this.transitional||defaults.transitional;var forcedJSONParsing=transitional&&transitional.forcedJSONParsing;var JSONRequested=this.responseType==='json';if(utils$1.isResponse(data)||utils$1.isReadableStream(data)){return data;}if(data&&utils$1.isString(data)&&(forcedJSONParsing&&!this.responseType||JSONRequested)){var silentJSONParsing=transitional&&transitional.silentJSONParsing;var strictJSONParsing=!silentJSONParsing&&JSONRequested;try{return JSON.parse(data,this.parseReviver);}catch(e){if(strictJSONParsing){if(e.name==='SyntaxError'){throw AxiosError$1.from(e,AxiosError$1.ERR_BAD_RESPONSE,this,null,this.response);}throw e;}}}return data;}],/**
    * A timeout in milliseconds to abort a request. If set to 0 (default) a
    * timeout is not created.
-   */timeout:0,xsrfCookieName:'XSRF-TOKEN',xsrfHeaderName:'X-XSRF-TOKEN',maxContentLength:-1,maxBodyLength:-1,env:{FormData:platform.classes.FormData,Blob:platform.classes.Blob},validateStatus:function validateStatus(status){return status>=200&&status<300;},headers:{common:{'Accept':'application/json, text/plain, */*','Content-Type':undefined}}};utils$1.forEach(['delete','get','head','post','put','patch'],function(method){defaults.headers[method]={};});var defaults$1=defaults;// RawAxiosHeaders whose duplicates are ignored by node
+   */timeout:0,xsrfCookieName:'XSRF-TOKEN',xsrfHeaderName:'X-XSRF-TOKEN',maxContentLength:-1,maxBodyLength:-1,env:{FormData:platform.classes.FormData,Blob:platform.classes.Blob},validateStatus:function validateStatus(status){return status>=200&&status<300;},headers:{common:{Accept:'application/json, text/plain, */*','Content-Type':undefined}}};utils$1.forEach(['delete','get','head','post','put','patch'],function(method){defaults.headers[method]={};});var defaults$1=defaults;// RawAxiosHeaders whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
 var ignoreDuplicateOf=utils$1.toObjectSet(['age','authorization','content-length','content-type','etag','expires','from','host','if-modified-since','if-unmodified-since','last-modified','location','max-forwards','proxy-authorization','referer','retry-after','user-agent']);/**
  * Parse headers into an object
@@ -6322,7 +6384,7 @@ var ignoreDuplicateOf=utils$1.toObjectSet(['age','authorization','content-length
  * @param {String} rawHeaders Headers needing to be parsed
  *
  * @returns {Object} Headers parsed into an object
- */var parseHeaders=function parseHeaders(rawHeaders){var parsed={};var key;var val;var i;rawHeaders&&rawHeaders.split('\n').forEach(function parser(line){i=line.indexOf(':');key=line.substring(0,i).trim().toLowerCase();val=line.substring(i+1).trim();if(!key||parsed[key]&&ignoreDuplicateOf[key]){return;}if(key==='set-cookie'){if(parsed[key]){parsed[key].push(val);}else{parsed[key]=[val];}}else{parsed[key]=parsed[key]?parsed[key]+', '+val:val;}});return parsed;};var $internals=Symbol('internals');function normalizeHeader(header){return header&&String(header).trim().toLowerCase();}function normalizeValue(value){if(value===false||value==null){return value;}return utils$1.isArray(value)?value.map(normalizeValue):String(value);}function parseTokens(str){var tokens=Object.create(null);var tokensRE=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;var match;while(match=tokensRE.exec(str)){tokens[match[1]]=match[2];}return tokens;}var isValidHeaderName=function isValidHeaderName(str){return /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(str.trim());};function matchHeaderValue(context,value,header,filter,isHeaderNameFilter){if(utils$1.isFunction(filter)){return filter.call(this,value,header);}if(isHeaderNameFilter){value=header;}if(!utils$1.isString(value))return;if(utils$1.isString(filter)){return value.indexOf(filter)!==-1;}if(utils$1.isRegExp(filter)){return filter.test(value);}}function formatHeader(header){return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,function(w,_char,str){return _char.toUpperCase()+str;});}function buildAccessors(obj,header){var accessorName=utils$1.toCamelCase(' '+header);['get','set','has'].forEach(function(methodName){Object.defineProperty(obj,methodName+accessorName,{value:function value(arg1,arg2,arg3){return this[methodName].call(this,header,arg1,arg2,arg3);},configurable:true});});}var AxiosHeaders=/*#__PURE__*/function(){function AxiosHeaders(headers){_classCallCheck(this,AxiosHeaders);headers&&this.set(headers);}return _createClass(AxiosHeaders,[{key:"set",value:function set(header,valueOrRewrite,rewrite){var self=this;function setHeader(_value,_header,_rewrite){var lHeader=normalizeHeader(_header);if(!lHeader){throw new Error('header name must be a non-empty string');}var key=utils$1.findKey(self,lHeader);if(!key||self[key]===undefined||_rewrite===true||_rewrite===undefined&&self[key]!==false){self[key||_header]=normalizeValue(_value);}}var setHeaders=function setHeaders(headers,_rewrite){return utils$1.forEach(headers,function(_value,_header){return setHeader(_value,_header,_rewrite);});};if(utils$1.isPlainObject(header)||header instanceof this.constructor){setHeaders(header,valueOrRewrite);}else if(utils$1.isString(header)&&(header=header.trim())&&!isValidHeaderName(header)){setHeaders(parseHeaders(header),valueOrRewrite);}else if(utils$1.isObject(header)&&utils$1.isIterable(header)){var obj={},dest,key;var _iterator3=_createForOfIteratorHelper(header),_step2;try{for(_iterator3.s();!(_step2=_iterator3.n()).done;){var entry=_step2.value;if(!utils$1.isArray(entry)){throw TypeError('Object iterator must return a key-value pair');}obj[key=entry[0]]=(dest=obj[key])?utils$1.isArray(dest)?[].concat(_toConsumableArray(dest),[entry[1]]):[dest,entry[1]]:entry[1];}}catch(err){_iterator3.e(err);}finally{_iterator3.f();}setHeaders(obj,valueOrRewrite);}else{header!=null&&setHeader(valueOrRewrite,header,rewrite);}return this;}},{key:"get",value:function get(header,parser){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);if(key){var value=this[key];if(!parser){return value;}if(parser===true){return parseTokens(value);}if(utils$1.isFunction(parser)){return parser.call(this,value,key);}if(utils$1.isRegExp(parser)){return parser.exec(value);}throw new TypeError('parser must be boolean|regexp|function');}}}},{key:"has",value:function has(header,matcher){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);return!!(key&&this[key]!==undefined&&(!matcher||matchHeaderValue(this,this[key],key,matcher)));}return false;}},{key:"delete",value:function _delete(header,matcher){var self=this;var deleted=false;function deleteHeader(_header){_header=normalizeHeader(_header);if(_header){var key=utils$1.findKey(self,_header);if(key&&(!matcher||matchHeaderValue(self,self[key],key,matcher))){delete self[key];deleted=true;}}}if(utils$1.isArray(header)){header.forEach(deleteHeader);}else{deleteHeader(header);}return deleted;}},{key:"clear",value:function clear(matcher){var keys=Object.keys(this);var i=keys.length;var deleted=false;while(i--){var key=keys[i];if(!matcher||matchHeaderValue(this,this[key],key,matcher,true)){delete this[key];deleted=true;}}return deleted;}},{key:"normalize",value:function normalize(format){var self=this;var headers={};utils$1.forEach(this,function(value,header){var key=utils$1.findKey(headers,header);if(key){self[key]=normalizeValue(value);delete self[header];return;}var normalized=format?formatHeader(header):String(header).trim();if(normalized!==header){delete self[header];}self[normalized]=normalizeValue(value);headers[normalized]=true;});return this;}},{key:"concat",value:function concat(){var _this$constructor;for(var _len=arguments.length,targets=new Array(_len),_key2=0;_key2<_len;_key2++){targets[_key2]=arguments[_key2];}return(_this$constructor=this.constructor).concat.apply(_this$constructor,[this].concat(targets));}},{key:"toJSON",value:function toJSON(asStrings){var obj=Object.create(null);utils$1.forEach(this,function(value,header){value!=null&&value!==false&&(obj[header]=asStrings&&utils$1.isArray(value)?value.join(', '):value);});return obj;}},{key:Symbol.iterator,value:function value(){return Object.entries(this.toJSON())[Symbol.iterator]();}},{key:"toString",value:function toString(){return Object.entries(this.toJSON()).map(function(_ref8){var _ref9=_slicedToArray(_ref8,2),header=_ref9[0],value=_ref9[1];return header+': '+value;}).join('\n');}},{key:"getSetCookie",value:function getSetCookie(){return this.get("set-cookie")||[];}},{key:Symbol.toStringTag,get:function get(){return'AxiosHeaders';}}],[{key:"from",value:function from(thing){return thing instanceof this?thing:new this(thing);}},{key:"concat",value:function concat(first){var computed=new this(first);for(var _len2=arguments.length,targets=new Array(_len2>1?_len2-1:0),_key3=1;_key3<_len2;_key3++){targets[_key3-1]=arguments[_key3];}targets.forEach(function(target){return computed.set(target);});return computed;}},{key:"accessor",value:function accessor(header){var internals=this[$internals]=this[$internals]={accessors:{}};var accessors=internals.accessors;var prototype=this.prototype;function defineAccessor(_header){var lHeader=normalizeHeader(_header);if(!accessors[lHeader]){buildAccessors(prototype,_header);accessors[lHeader]=true;}}utils$1.isArray(header)?header.forEach(defineAccessor):defineAccessor(header);return this;}}]);}();AxiosHeaders.accessor(['Content-Type','Content-Length','Accept','Accept-Encoding','User-Agent','Authorization']);// reserved names hotfix
+ */var parseHeaders=function parseHeaders(rawHeaders){var parsed={};var key;var val;var i;rawHeaders&&rawHeaders.split('\n').forEach(function parser(line){i=line.indexOf(':');key=line.substring(0,i).trim().toLowerCase();val=line.substring(i+1).trim();if(!key||parsed[key]&&ignoreDuplicateOf[key]){return;}if(key==='set-cookie'){if(parsed[key]){parsed[key].push(val);}else{parsed[key]=[val];}}else{parsed[key]=parsed[key]?parsed[key]+', '+val:val;}});return parsed;};var $internals=Symbol('internals');function normalizeHeader(header){return header&&String(header).trim().toLowerCase();}function normalizeValue(value){if(value===false||value==null){return value;}return utils$1.isArray(value)?value.map(normalizeValue):String(value);}function parseTokens(str){var tokens=Object.create(null);var tokensRE=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;var match;while(match=tokensRE.exec(str)){tokens[match[1]]=match[2];}return tokens;}var isValidHeaderName=function isValidHeaderName(str){return /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(str.trim());};function matchHeaderValue(context,value,header,filter,isHeaderNameFilter){if(utils$1.isFunction(filter)){return filter.call(this,value,header);}if(isHeaderNameFilter){value=header;}if(!utils$1.isString(value))return;if(utils$1.isString(filter)){return value.indexOf(filter)!==-1;}if(utils$1.isRegExp(filter)){return filter.test(value);}}function formatHeader(header){return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,function(w,_char,str){return _char.toUpperCase()+str;});}function buildAccessors(obj,header){var accessorName=utils$1.toCamelCase(' '+header);['get','set','has'].forEach(function(methodName){Object.defineProperty(obj,methodName+accessorName,{value:function value(arg1,arg2,arg3){return this[methodName].call(this,header,arg1,arg2,arg3);},configurable:true});});}var AxiosHeaders=/*#__PURE__*/function(){function AxiosHeaders(headers){_classCallCheck(this,AxiosHeaders);headers&&this.set(headers);}return _createClass(AxiosHeaders,[{key:"set",value:function set(header,valueOrRewrite,rewrite){var self=this;function setHeader(_value,_header,_rewrite){var lHeader=normalizeHeader(_header);if(!lHeader){throw new Error('header name must be a non-empty string');}var key=utils$1.findKey(self,lHeader);if(!key||self[key]===undefined||_rewrite===true||_rewrite===undefined&&self[key]!==false){self[key||_header]=normalizeValue(_value);}}var setHeaders=function setHeaders(headers,_rewrite){return utils$1.forEach(headers,function(_value,_header){return setHeader(_value,_header,_rewrite);});};if(utils$1.isPlainObject(header)||header instanceof this.constructor){setHeaders(header,valueOrRewrite);}else if(utils$1.isString(header)&&(header=header.trim())&&!isValidHeaderName(header)){setHeaders(parseHeaders(header),valueOrRewrite);}else if(utils$1.isObject(header)&&utils$1.isIterable(header)){var obj={},dest,key;var _iterator3=_createForOfIteratorHelper(header),_step2;try{for(_iterator3.s();!(_step2=_iterator3.n()).done;){var entry=_step2.value;if(!utils$1.isArray(entry)){throw TypeError('Object iterator must return a key-value pair');}obj[key=entry[0]]=(dest=obj[key])?utils$1.isArray(dest)?[].concat(_toConsumableArray(dest),[entry[1]]):[dest,entry[1]]:entry[1];}}catch(err){_iterator3.e(err);}finally{_iterator3.f();}setHeaders(obj,valueOrRewrite);}else{header!=null&&setHeader(valueOrRewrite,header,rewrite);}return this;}},{key:"get",value:function get(header,parser){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);if(key){var value=this[key];if(!parser){return value;}if(parser===true){return parseTokens(value);}if(utils$1.isFunction(parser)){return parser.call(this,value,key);}if(utils$1.isRegExp(parser)){return parser.exec(value);}throw new TypeError('parser must be boolean|regexp|function');}}}},{key:"has",value:function has(header,matcher){header=normalizeHeader(header);if(header){var key=utils$1.findKey(this,header);return!!(key&&this[key]!==undefined&&(!matcher||matchHeaderValue(this,this[key],key,matcher)));}return false;}},{key:"delete",value:function _delete(header,matcher){var self=this;var deleted=false;function deleteHeader(_header){_header=normalizeHeader(_header);if(_header){var key=utils$1.findKey(self,_header);if(key&&(!matcher||matchHeaderValue(self,self[key],key,matcher))){delete self[key];deleted=true;}}}if(utils$1.isArray(header)){header.forEach(deleteHeader);}else{deleteHeader(header);}return deleted;}},{key:"clear",value:function clear(matcher){var keys=Object.keys(this);var i=keys.length;var deleted=false;while(i--){var key=keys[i];if(!matcher||matchHeaderValue(this,this[key],key,matcher,true)){delete this[key];deleted=true;}}return deleted;}},{key:"normalize",value:function normalize(format){var self=this;var headers={};utils$1.forEach(this,function(value,header){var key=utils$1.findKey(headers,header);if(key){self[key]=normalizeValue(value);delete self[header];return;}var normalized=format?formatHeader(header):String(header).trim();if(normalized!==header){delete self[header];}self[normalized]=normalizeValue(value);headers[normalized]=true;});return this;}},{key:"concat",value:function concat(){var _this$constructor;for(var _len=arguments.length,targets=new Array(_len),_key2=0;_key2<_len;_key2++){targets[_key2]=arguments[_key2];}return(_this$constructor=this.constructor).concat.apply(_this$constructor,[this].concat(targets));}},{key:"toJSON",value:function toJSON(asStrings){var obj=Object.create(null);utils$1.forEach(this,function(value,header){value!=null&&value!==false&&(obj[header]=asStrings&&utils$1.isArray(value)?value.join(', '):value);});return obj;}},{key:Symbol.iterator,value:function value(){return Object.entries(this.toJSON())[Symbol.iterator]();}},{key:"toString",value:function toString(){return Object.entries(this.toJSON()).map(function(_ref8){var _ref9=_slicedToArray(_ref8,2),header=_ref9[0],value=_ref9[1];return header+': '+value;}).join('\n');}},{key:"getSetCookie",value:function getSetCookie(){return this.get('set-cookie')||[];}},{key:Symbol.toStringTag,get:function get(){return'AxiosHeaders';}}],[{key:"from",value:function from(thing){return thing instanceof this?thing:new this(thing);}},{key:"concat",value:function concat(first){var computed=new this(first);for(var _len2=arguments.length,targets=new Array(_len2>1?_len2-1:0),_key3=1;_key3<_len2;_key3++){targets[_key3-1]=arguments[_key3];}targets.forEach(function(target){return computed.set(target);});return computed;}},{key:"accessor",value:function accessor(header){var internals=this[$internals]=this[$internals]={accessors:{}};var accessors=internals.accessors;var prototype=this.prototype;function defineAccessor(_header){var lHeader=normalizeHeader(_header);if(!accessors[lHeader]){buildAccessors(prototype,_header);accessors[lHeader]=true;}}utils$1.isArray(header)?header.forEach(defineAccessor):defineAccessor(header);return this;}}]);}();AxiosHeaders.accessor(['Content-Type','Content-Length','Accept','Accept-Encoding','User-Agent','Authorization']);// reserved names hotfix
 utils$1.reduceDescriptors(AxiosHeaders.prototype,function(_ref0,key){var value=_ref0.value;var mapped=key[0].toUpperCase()+key.slice(1);// map `set` => `Set`
 return{get:function get(){return value;},set:function set(headerValue){this[mapped]=headerValue;}};});utils$1.freezeMethods(AxiosHeaders);var AxiosHeaders$1=AxiosHeaders;/**
  * Transform the data for a request or a response
@@ -6396,7 +6458,7 @@ if(typeof url!=='string'){return false;}return /^([a-z][a-z\d+\-.]*:)?\/\//i.tes
 config2=config2||{};var config={};function getMergedValue(target,source,prop,caseless){if(utils$1.isPlainObject(target)&&utils$1.isPlainObject(source)){return utils$1.merge.call({caseless:caseless},target,source);}else if(utils$1.isPlainObject(source)){return utils$1.merge({},source);}else if(utils$1.isArray(source)){return source.slice();}return source;}function mergeDeepProperties(a,b,prop,caseless){if(!utils$1.isUndefined(b)){return getMergedValue(a,b,prop,caseless);}else if(!utils$1.isUndefined(a)){return getMergedValue(undefined,a,prop,caseless);}}// eslint-disable-next-line consistent-return
 function valueFromConfig2(a,b){if(!utils$1.isUndefined(b)){return getMergedValue(undefined,b);}}// eslint-disable-next-line consistent-return
 function defaultToConfig2(a,b){if(!utils$1.isUndefined(b)){return getMergedValue(undefined,b);}else if(!utils$1.isUndefined(a)){return getMergedValue(undefined,a);}}// eslint-disable-next-line consistent-return
-function mergeDirectKeys(a,b,prop){if(prop in config2){return getMergedValue(a,b);}else if(prop in config1){return getMergedValue(undefined,a);}}var mergeMap={url:valueFromConfig2,method:valueFromConfig2,data:valueFromConfig2,baseURL:defaultToConfig2,transformRequest:defaultToConfig2,transformResponse:defaultToConfig2,paramsSerializer:defaultToConfig2,timeout:defaultToConfig2,timeoutMessage:defaultToConfig2,withCredentials:defaultToConfig2,withXSRFToken:defaultToConfig2,adapter:defaultToConfig2,responseType:defaultToConfig2,xsrfCookieName:defaultToConfig2,xsrfHeaderName:defaultToConfig2,onUploadProgress:defaultToConfig2,onDownloadProgress:defaultToConfig2,decompress:defaultToConfig2,maxContentLength:defaultToConfig2,maxBodyLength:defaultToConfig2,beforeRedirect:defaultToConfig2,transport:defaultToConfig2,httpAgent:defaultToConfig2,httpsAgent:defaultToConfig2,cancelToken:defaultToConfig2,socketPath:defaultToConfig2,responseEncoding:defaultToConfig2,validateStatus:mergeDirectKeys,headers:function headers(a,b,prop){return mergeDeepProperties(headersToObject(a),headersToObject(b),prop,true);}};utils$1.forEach(Object.keys(_objectSpread(_objectSpread({},config1),config2)),function computeConfigValue(prop){if(prop==="__proto__"||prop==="constructor"||prop==="prototype")return;var merge=utils$1.hasOwnProp(mergeMap,prop)?mergeMap[prop]:mergeDeepProperties;var configValue=merge(config1[prop],config2[prop],prop);utils$1.isUndefined(configValue)&&merge!==mergeDirectKeys||(config[prop]=configValue);});return config;}var resolveConfig=function resolveConfig(config){var newConfig=mergeConfig({},config);var data=newConfig.data,withXSRFToken=newConfig.withXSRFToken,xsrfHeaderName=newConfig.xsrfHeaderName,xsrfCookieName=newConfig.xsrfCookieName,headers=newConfig.headers,auth=newConfig.auth;newConfig.headers=headers=AxiosHeaders$1.from(headers);newConfig.url=buildURL(buildFullPath(newConfig.baseURL,newConfig.url,newConfig.allowAbsoluteUrls),config.params,config.paramsSerializer);// HTTP basic authentication
+function mergeDirectKeys(a,b,prop){if(prop in config2){return getMergedValue(a,b);}else if(prop in config1){return getMergedValue(undefined,a);}}var mergeMap={url:valueFromConfig2,method:valueFromConfig2,data:valueFromConfig2,baseURL:defaultToConfig2,transformRequest:defaultToConfig2,transformResponse:defaultToConfig2,paramsSerializer:defaultToConfig2,timeout:defaultToConfig2,timeoutMessage:defaultToConfig2,withCredentials:defaultToConfig2,withXSRFToken:defaultToConfig2,adapter:defaultToConfig2,responseType:defaultToConfig2,xsrfCookieName:defaultToConfig2,xsrfHeaderName:defaultToConfig2,onUploadProgress:defaultToConfig2,onDownloadProgress:defaultToConfig2,decompress:defaultToConfig2,maxContentLength:defaultToConfig2,maxBodyLength:defaultToConfig2,beforeRedirect:defaultToConfig2,transport:defaultToConfig2,httpAgent:defaultToConfig2,httpsAgent:defaultToConfig2,cancelToken:defaultToConfig2,socketPath:defaultToConfig2,responseEncoding:defaultToConfig2,validateStatus:mergeDirectKeys,headers:function headers(a,b,prop){return mergeDeepProperties(headersToObject(a),headersToObject(b),prop,true);}};utils$1.forEach(Object.keys(_objectSpread(_objectSpread({},config1),config2)),function computeConfigValue(prop){if(prop==='__proto__'||prop==='constructor'||prop==='prototype')return;var merge=utils$1.hasOwnProp(mergeMap,prop)?mergeMap[prop]:mergeDeepProperties;var configValue=merge(config1[prop],config2[prop],prop);utils$1.isUndefined(configValue)&&merge!==mergeDirectKeys||(config[prop]=configValue);});return config;}var resolveConfig=function resolveConfig(config){var newConfig=mergeConfig({},config);var data=newConfig.data,withXSRFToken=newConfig.withXSRFToken,xsrfHeaderName=newConfig.xsrfHeaderName,xsrfCookieName=newConfig.xsrfCookieName,headers=newConfig.headers,auth=newConfig.auth;newConfig.headers=headers=AxiosHeaders$1.from(headers);newConfig.url=buildURL(buildFullPath(newConfig.baseURL,newConfig.url,newConfig.allowAbsoluteUrls),config.params,config.paramsSerializer);// HTTP basic authentication
 if(auth){headers.set('Authorization','Basic '+btoa((auth.username||'')+':'+(auth.password?unescape(encodeURIComponent(auth.password)):'')));}if(utils$1.isFormData(data)){if(platform.hasStandardBrowserEnv||platform.hasStandardBrowserWebWorkerEnv){headers.setContentType(undefined);// browser handles it
 }else if(utils$1.isFunction(data.getHeaders)){// Node.js FormData (like form-data package)
 var formHeaders=data.getHeaders();// Only set safe headers to avoid overwriting security headers
@@ -6435,33 +6497,33 @@ if(onDownloadProgress){var _progressEventReducer=progressEventReducer(onDownload
 if(onUploadProgress&&request.upload){var _progressEventReducer3=progressEventReducer(onUploadProgress);var _progressEventReducer4=_slicedToArray(_progressEventReducer3,2);uploadThrottled=_progressEventReducer4[0];flushUpload=_progressEventReducer4[1];request.upload.addEventListener('progress',uploadThrottled);request.upload.addEventListener('loadend',flushUpload);}if(_config.cancelToken||_config.signal){// Handle cancellation
 // eslint-disable-next-line func-names
 onCanceled=function onCanceled(cancel){if(!request){return;}reject(!cancel||cancel.type?new CanceledError$1(null,config,request):cancel);request.abort();request=null;};_config.cancelToken&&_config.cancelToken.subscribe(onCanceled);if(_config.signal){_config.signal.aborted?onCanceled():_config.signal.addEventListener('abort',onCanceled);}}var protocol=parseProtocol(_config.url);if(protocol&&platform.protocols.indexOf(protocol)===-1){reject(new AxiosError$1('Unsupported protocol '+protocol+':',AxiosError$1.ERR_BAD_REQUEST,config));return;}// Send the request
-request.send(requestData||null);});};var composeSignals=function composeSignals(signals,timeout){var _signals=signals=signals?signals.filter(Boolean):[],length=_signals.length;if(timeout||length){var controller=new AbortController();var aborted;var onabort=function onabort(reason){if(!aborted){aborted=true;unsubscribe();var err=reason instanceof Error?reason:this.reason;controller.abort(err instanceof AxiosError$1?err:new CanceledError$1(err instanceof Error?err.message:err));}};var timer=timeout&&setTimeout(function(){timer=null;onabort(new AxiosError$1("timeout of ".concat(timeout,"ms exceeded"),AxiosError$1.ETIMEDOUT));},timeout);var unsubscribe=function unsubscribe(){if(signals){timer&&clearTimeout(timer);timer=null;signals.forEach(function(signal){signal.unsubscribe?signal.unsubscribe(onabort):signal.removeEventListener('abort',onabort);});signals=null;}};signals.forEach(function(signal){return signal.addEventListener('abort',onabort);});var signal=controller.signal;signal.unsubscribe=function(){return utils$1.asap(unsubscribe);};return signal;}};var composeSignals$1=composeSignals;var streamChunk=/*#__PURE__*/_regenerator().m(function streamChunk(chunk,chunkSize){var len,pos,end;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:len=chunk.byteLength;if(!(!chunkSize||len<chunkSize)){_context.n=2;break;}_context.n=1;return chunk;case 1:return _context.a(2);case 2:pos=0;case 3:if(!(pos<len)){_context.n=5;break;}end=pos+chunkSize;_context.n=4;return chunk.slice(pos,end);case 4:pos=end;_context.n=3;break;case 5:return _context.a(2);}},streamChunk);});var readBytes=/*#__PURE__*/function(){var _ref=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee(iterable,chunkSize){var _iteratorAbruptCompletion,_didIteratorError,_iteratorError,_iterator2,_step,chunk,_t;return _regenerator().w(function(_context2){while(1)switch(_context2.p=_context2.n){case 0:_iteratorAbruptCompletion=false;_didIteratorError=false;_context2.p=1;_iterator2=_asyncIterator(readStream(iterable));case 2:_context2.n=3;return _awaitAsyncGenerator(_iterator2.next());case 3:if(!(_iteratorAbruptCompletion=!(_step=_context2.v).done)){_context2.n=5;break;}chunk=_step.value;return _context2.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(streamChunk(chunk,chunkSize)),_awaitAsyncGenerator)),4);case 4:_iteratorAbruptCompletion=false;_context2.n=2;break;case 5:_context2.n=7;break;case 6:_context2.p=6;_t=_context2.v;_didIteratorError=true;_iteratorError=_t;case 7:_context2.p=7;_context2.p=8;if(!(_iteratorAbruptCompletion&&_iterator2["return"]!=null)){_context2.n=9;break;}_context2.n=9;return _awaitAsyncGenerator(_iterator2["return"]());case 9:_context2.p=9;if(!_didIteratorError){_context2.n=10;break;}throw _iteratorError;case 10:return _context2.f(9);case 11:return _context2.f(7);case 12:return _context2.a(2);}},_callee,null,[[8,,9,11],[1,6,7,12]]);}));return function readBytes(_x,_x2){return _ref.apply(this,arguments);};}();var readStream=/*#__PURE__*/function(){var _ref2=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee2(stream){var reader,_yield$_awaitAsyncGen,done,value;return _regenerator().w(function(_context3){while(1)switch(_context3.p=_context3.n){case 0:if(!stream[Symbol.asyncIterator]){_context3.n=2;break;}return _context3.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(stream),_awaitAsyncGenerator)),1);case 1:return _context3.a(2);case 2:reader=stream.getReader();_context3.p=3;case 4:_context3.n=5;return _awaitAsyncGenerator(reader.read());case 5:_yield$_awaitAsyncGen=_context3.v;done=_yield$_awaitAsyncGen.done;value=_yield$_awaitAsyncGen.value;if(!done){_context3.n=6;break;}return _context3.a(3,8);case 6:_context3.n=7;return value;case 7:_context3.n=4;break;case 8:_context3.p=8;_context3.n=9;return _awaitAsyncGenerator(reader.cancel());case 9:return _context3.f(8);case 10:return _context3.a(2);}},_callee2,null,[[3,,8,10]]);}));return function readStream(_x3){return _ref2.apply(this,arguments);};}();var trackStream=function trackStream(stream,chunkSize,onProgress,onFinish){var iterator=readBytes(stream,chunkSize);var bytes=0;var done;var _onFinish=function _onFinish(e){if(!done){done=true;onFinish&&onFinish(e);}};return new ReadableStream({pull:function pull(controller){return _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(){var _yield$iterator$next,_done,value,len,loadedBytes,_t2;return _regenerator().w(function(_context4){while(1)switch(_context4.p=_context4.n){case 0:_context4.p=0;_context4.n=1;return iterator.next();case 1:_yield$iterator$next=_context4.v;_done=_yield$iterator$next.done;value=_yield$iterator$next.value;if(!_done){_context4.n=2;break;}_onFinish();controller.close();return _context4.a(2);case 2:len=value.byteLength;if(onProgress){loadedBytes=bytes+=len;onProgress(loadedBytes);}controller.enqueue(new Uint8Array(value));_context4.n=4;break;case 3:_context4.p=3;_t2=_context4.v;_onFinish(_t2);throw _t2;case 4:return _context4.a(2);}},_callee3,null,[[0,3]]);}))();},cancel:function cancel(reason){_onFinish(reason);return iterator["return"]();}},{highWaterMark:2});};var DEFAULT_CHUNK_SIZE=64*1024;var isFunction=utils$1.isFunction;var globalFetchAPI=function(_ref11){var Request=_ref11.Request,Response=_ref11.Response;return{Request:Request,Response:Response};}(utils$1.global);var _utils$1$global=utils$1.global,ReadableStream$1=_utils$1$global.ReadableStream,TextEncoder$1=_utils$1$global.TextEncoder;var test=function test(fn){try{for(var _len5=arguments.length,args=new Array(_len5>1?_len5-1:0),_key6=1;_key6<_len5;_key6++){args[_key6-1]=arguments[_key6];}return!!fn.apply(void 0,args);}catch(e){return false;}};var factory=function factory(env){env=utils$1.merge.call({skipUndefined:true},globalFetchAPI,env);var _env=env,envFetch=_env.fetch,Request=_env.Request,Response=_env.Response;var isFetchSupported=envFetch?isFunction(envFetch):typeof fetch==='function';var isRequestSupported=isFunction(Request);var isResponseSupported=isFunction(Response);if(!isFetchSupported){return false;}var isReadableStreamSupported=isFetchSupported&&isFunction(ReadableStream$1);var encodeText=isFetchSupported&&(typeof TextEncoder$1==='function'?function(encoder){return function(str){return encoder.encode(str);};}(new TextEncoder$1()):(/*#__PURE__*/function(){var _ref12=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(str){var _t3,_t4;return _regenerator().w(function(_context5){while(1)switch(_context5.n){case 0:_t3=Uint8Array;_context5.n=1;return new Request(str).arrayBuffer();case 1:_t4=_context5.v;return _context5.a(2,new _t3(_t4));}},_callee4);}));return function(_x4){return _ref12.apply(this,arguments);};}()));var supportsRequestStream=isRequestSupported&&isReadableStreamSupported&&test(function(){var duplexAccessed=false;var hasContentType=new Request(platform.origin,{body:new ReadableStream$1(),method:'POST',get duplex(){duplexAccessed=true;return'half';}}).headers.has('Content-Type');return duplexAccessed&&!hasContentType;});var supportsResponseStream=isResponseSupported&&isReadableStreamSupported&&test(function(){return utils$1.isReadableStream(new Response('').body);});var resolvers={stream:supportsResponseStream&&function(res){return res.body;}};isFetchSupported&&function(){['text','arrayBuffer','blob','formData','stream'].forEach(function(type){!resolvers[type]&&(resolvers[type]=function(res,config){var method=res&&res[type];if(method){return method.call(res);}throw new AxiosError$1("Response type '".concat(type,"' is not supported"),AxiosError$1.ERR_NOT_SUPPORT,config);});});}();var getBodyLength=/*#__PURE__*/function(){var _ref13=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(body){var _request;return _regenerator().w(function(_context6){while(1)switch(_context6.n){case 0:if(!(body==null)){_context6.n=1;break;}return _context6.a(2,0);case 1:if(!utils$1.isBlob(body)){_context6.n=2;break;}return _context6.a(2,body.size);case 2:if(!utils$1.isSpecCompliantForm(body)){_context6.n=4;break;}_request=new Request(platform.origin,{method:'POST',body:body});_context6.n=3;return _request.arrayBuffer();case 3:return _context6.a(2,_context6.v.byteLength);case 4:if(!(utils$1.isArrayBufferView(body)||utils$1.isArrayBuffer(body))){_context6.n=5;break;}return _context6.a(2,body.byteLength);case 5:if(utils$1.isURLSearchParams(body)){body=body+'';}if(!utils$1.isString(body)){_context6.n=7;break;}_context6.n=6;return encodeText(body);case 6:return _context6.a(2,_context6.v.byteLength);case 7:return _context6.a(2);}},_callee5);}));return function getBodyLength(_x5){return _ref13.apply(this,arguments);};}();var resolveBodyLength=/*#__PURE__*/function(){var _ref14=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(headers,body){var length;return _regenerator().w(function(_context7){while(1)switch(_context7.n){case 0:length=utils$1.toFiniteNumber(headers.getContentLength());return _context7.a(2,length==null?getBodyLength(body):length);}},_callee6);}));return function resolveBodyLength(_x6,_x7){return _ref14.apply(this,arguments);};}();return/*#__PURE__*/function(){var _ref15=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(config){var _resolveConfig,url,method,data,signal,cancelToken,timeout,onDownloadProgress,onUploadProgress,responseType,headers,_resolveConfig$withCr,withCredentials,fetchOptions,_fetch,composedSignal,request,unsubscribe,requestContentLength,_request,contentTypeHeader,_progressEventDecorat,_progressEventDecorat2,onProgress,flush,isCredentialsSupported,resolvedOptions,response,isStreamResponse,options,responseContentLength,_ref16,_ref17,_onProgress,_flush,responseData,_t5,_t6,_t7;return _regenerator().w(function(_context8){while(1)switch(_context8.p=_context8.n){case 0:_resolveConfig=resolveConfig(config),url=_resolveConfig.url,method=_resolveConfig.method,data=_resolveConfig.data,signal=_resolveConfig.signal,cancelToken=_resolveConfig.cancelToken,timeout=_resolveConfig.timeout,onDownloadProgress=_resolveConfig.onDownloadProgress,onUploadProgress=_resolveConfig.onUploadProgress,responseType=_resolveConfig.responseType,headers=_resolveConfig.headers,_resolveConfig$withCr=_resolveConfig.withCredentials,withCredentials=_resolveConfig$withCr===void 0?'same-origin':_resolveConfig$withCr,fetchOptions=_resolveConfig.fetchOptions;_fetch=envFetch||fetch;responseType=responseType?(responseType+'').toLowerCase():'text';composedSignal=composeSignals$1([signal,cancelToken&&cancelToken.toAbortSignal()],timeout);request=null;unsubscribe=composedSignal&&composedSignal.unsubscribe&&function(){composedSignal.unsubscribe();};_context8.p=1;_t5=onUploadProgress&&supportsRequestStream&&method!=='get'&&method!=='head';if(!_t5){_context8.n=3;break;}_context8.n=2;return resolveBodyLength(headers,data);case 2:_t6=requestContentLength=_context8.v;_t5=_t6!==0;case 3:if(!_t5){_context8.n=4;break;}_request=new Request(url,{method:'POST',body:data,duplex:"half"});if(utils$1.isFormData(data)&&(contentTypeHeader=_request.headers.get('content-type'))){headers.setContentType(contentTypeHeader);}if(_request.body){_progressEventDecorat=progressEventDecorator(requestContentLength,progressEventReducer(asyncDecorator(onUploadProgress))),_progressEventDecorat2=_slicedToArray(_progressEventDecorat,2),onProgress=_progressEventDecorat2[0],flush=_progressEventDecorat2[1];data=trackStream(_request.body,DEFAULT_CHUNK_SIZE,onProgress,flush);}case 4:if(!utils$1.isString(withCredentials)){withCredentials=withCredentials?'include':'omit';}// Cloudflare Workers throws when credentials are defined
+request.send(requestData||null);});};var composeSignals=function composeSignals(signals,timeout){var _signals=signals=signals?signals.filter(Boolean):[],length=_signals.length;if(timeout||length){var controller=new AbortController();var aborted;var onabort=function onabort(reason){if(!aborted){aborted=true;unsubscribe();var err=reason instanceof Error?reason:this.reason;controller.abort(err instanceof AxiosError$1?err:new CanceledError$1(err instanceof Error?err.message:err));}};var timer=timeout&&setTimeout(function(){timer=null;onabort(new AxiosError$1("timeout of ".concat(timeout,"ms exceeded"),AxiosError$1.ETIMEDOUT));},timeout);var unsubscribe=function unsubscribe(){if(signals){timer&&clearTimeout(timer);timer=null;signals.forEach(function(signal){signal.unsubscribe?signal.unsubscribe(onabort):signal.removeEventListener('abort',onabort);});signals=null;}};signals.forEach(function(signal){return signal.addEventListener('abort',onabort);});var signal=controller.signal;signal.unsubscribe=function(){return utils$1.asap(unsubscribe);};return signal;}};var composeSignals$1=composeSignals;var streamChunk=/*#__PURE__*/_regenerator().m(function streamChunk(chunk,chunkSize){var len,pos,end;return _regenerator().w(function(_context){while(1)switch(_context.n){case 0:len=chunk.byteLength;if(!(!chunkSize||len<chunkSize)){_context.n=2;break;}_context.n=1;return chunk;case 1:return _context.a(2);case 2:pos=0;case 3:if(!(pos<len)){_context.n=5;break;}end=pos+chunkSize;_context.n=4;return chunk.slice(pos,end);case 4:pos=end;_context.n=3;break;case 5:return _context.a(2);}},streamChunk);});var readBytes=/*#__PURE__*/function(){var _ref=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee(iterable,chunkSize){var _iteratorAbruptCompletion,_didIteratorError,_iteratorError,_iterator2,_step,chunk,_t;return _regenerator().w(function(_context2){while(1)switch(_context2.p=_context2.n){case 0:_iteratorAbruptCompletion=false;_didIteratorError=false;_context2.p=1;_iterator2=_asyncIterator(readStream(iterable));case 2:_context2.n=3;return _awaitAsyncGenerator(_iterator2.next());case 3:if(!(_iteratorAbruptCompletion=!(_step=_context2.v).done)){_context2.n=5;break;}chunk=_step.value;return _context2.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(streamChunk(chunk,chunkSize)),_awaitAsyncGenerator)),4);case 4:_iteratorAbruptCompletion=false;_context2.n=2;break;case 5:_context2.n=7;break;case 6:_context2.p=6;_t=_context2.v;_didIteratorError=true;_iteratorError=_t;case 7:_context2.p=7;_context2.p=8;if(!(_iteratorAbruptCompletion&&_iterator2["return"]!=null)){_context2.n=9;break;}_context2.n=9;return _awaitAsyncGenerator(_iterator2["return"]());case 9:_context2.p=9;if(!_didIteratorError){_context2.n=10;break;}throw _iteratorError;case 10:return _context2.f(9);case 11:return _context2.f(7);case 12:return _context2.a(2);}},_callee,null,[[8,,9,11],[1,6,7,12]]);}));return function readBytes(_x,_x2){return _ref.apply(this,arguments);};}();var readStream=/*#__PURE__*/function(){var _ref2=_wrapAsyncGenerator(/*#__PURE__*/_regenerator().m(function _callee2(stream){var reader,_yield$_awaitAsyncGen,done,value;return _regenerator().w(function(_context3){while(1)switch(_context3.p=_context3.n){case 0:if(!stream[Symbol.asyncIterator]){_context3.n=2;break;}return _context3.d(_regeneratorValues(_asyncGeneratorDelegate(_asyncIterator(stream),_awaitAsyncGenerator)),1);case 1:return _context3.a(2);case 2:reader=stream.getReader();_context3.p=3;case 4:_context3.n=5;return _awaitAsyncGenerator(reader.read());case 5:_yield$_awaitAsyncGen=_context3.v;done=_yield$_awaitAsyncGen.done;value=_yield$_awaitAsyncGen.value;if(!done){_context3.n=6;break;}return _context3.a(3,8);case 6:_context3.n=7;return value;case 7:_context3.n=4;break;case 8:_context3.p=8;_context3.n=9;return _awaitAsyncGenerator(reader.cancel());case 9:return _context3.f(8);case 10:return _context3.a(2);}},_callee2,null,[[3,,8,10]]);}));return function readStream(_x3){return _ref2.apply(this,arguments);};}();var trackStream=function trackStream(stream,chunkSize,onProgress,onFinish){var iterator=readBytes(stream,chunkSize);var bytes=0;var done;var _onFinish=function _onFinish(e){if(!done){done=true;onFinish&&onFinish(e);}};return new ReadableStream({pull:function pull(controller){return _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(){var _yield$iterator$next,_done,value,len,loadedBytes,_t2;return _regenerator().w(function(_context4){while(1)switch(_context4.p=_context4.n){case 0:_context4.p=0;_context4.n=1;return iterator.next();case 1:_yield$iterator$next=_context4.v;_done=_yield$iterator$next.done;value=_yield$iterator$next.value;if(!_done){_context4.n=2;break;}_onFinish();controller.close();return _context4.a(2);case 2:len=value.byteLength;if(onProgress){loadedBytes=bytes+=len;onProgress(loadedBytes);}controller.enqueue(new Uint8Array(value));_context4.n=4;break;case 3:_context4.p=3;_t2=_context4.v;_onFinish(_t2);throw _t2;case 4:return _context4.a(2);}},_callee3,null,[[0,3]]);}))();},cancel:function cancel(reason){_onFinish(reason);return iterator["return"]();}},{highWaterMark:2});};var DEFAULT_CHUNK_SIZE=64*1024;var isFunction=utils$1.isFunction;var globalFetchAPI=function(_ref11){var Request=_ref11.Request,Response=_ref11.Response;return{Request:Request,Response:Response};}(utils$1.global);var _utils$1$global=utils$1.global,ReadableStream$1=_utils$1$global.ReadableStream,TextEncoder$1=_utils$1$global.TextEncoder;var test=function test(fn){try{for(var _len5=arguments.length,args=new Array(_len5>1?_len5-1:0),_key6=1;_key6<_len5;_key6++){args[_key6-1]=arguments[_key6];}return!!fn.apply(void 0,args);}catch(e){return false;}};var factory=function factory(env){env=utils$1.merge.call({skipUndefined:true},globalFetchAPI,env);var _env=env,envFetch=_env.fetch,Request=_env.Request,Response=_env.Response;var isFetchSupported=envFetch?isFunction(envFetch):typeof fetch==='function';var isRequestSupported=isFunction(Request);var isResponseSupported=isFunction(Response);if(!isFetchSupported){return false;}var isReadableStreamSupported=isFetchSupported&&isFunction(ReadableStream$1);var encodeText=isFetchSupported&&(typeof TextEncoder$1==='function'?function(encoder){return function(str){return encoder.encode(str);};}(new TextEncoder$1()):(/*#__PURE__*/function(){var _ref12=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(str){var _t3,_t4;return _regenerator().w(function(_context5){while(1)switch(_context5.n){case 0:_t3=Uint8Array;_context5.n=1;return new Request(str).arrayBuffer();case 1:_t4=_context5.v;return _context5.a(2,new _t3(_t4));}},_callee4);}));return function(_x4){return _ref12.apply(this,arguments);};}()));var supportsRequestStream=isRequestSupported&&isReadableStreamSupported&&test(function(){var duplexAccessed=false;var hasContentType=new Request(platform.origin,{body:new ReadableStream$1(),method:'POST',get duplex(){duplexAccessed=true;return'half';}}).headers.has('Content-Type');return duplexAccessed&&!hasContentType;});var supportsResponseStream=isResponseSupported&&isReadableStreamSupported&&test(function(){return utils$1.isReadableStream(new Response('').body);});var resolvers={stream:supportsResponseStream&&function(res){return res.body;}};isFetchSupported&&function(){['text','arrayBuffer','blob','formData','stream'].forEach(function(type){!resolvers[type]&&(resolvers[type]=function(res,config){var method=res&&res[type];if(method){return method.call(res);}throw new AxiosError$1("Response type '".concat(type,"' is not supported"),AxiosError$1.ERR_NOT_SUPPORT,config);});});}();var getBodyLength=/*#__PURE__*/function(){var _ref13=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(body){var _request;return _regenerator().w(function(_context6){while(1)switch(_context6.n){case 0:if(!(body==null)){_context6.n=1;break;}return _context6.a(2,0);case 1:if(!utils$1.isBlob(body)){_context6.n=2;break;}return _context6.a(2,body.size);case 2:if(!utils$1.isSpecCompliantForm(body)){_context6.n=4;break;}_request=new Request(platform.origin,{method:'POST',body:body});_context6.n=3;return _request.arrayBuffer();case 3:return _context6.a(2,_context6.v.byteLength);case 4:if(!(utils$1.isArrayBufferView(body)||utils$1.isArrayBuffer(body))){_context6.n=5;break;}return _context6.a(2,body.byteLength);case 5:if(utils$1.isURLSearchParams(body)){body=body+'';}if(!utils$1.isString(body)){_context6.n=7;break;}_context6.n=6;return encodeText(body);case 6:return _context6.a(2,_context6.v.byteLength);case 7:return _context6.a(2);}},_callee5);}));return function getBodyLength(_x5){return _ref13.apply(this,arguments);};}();var resolveBodyLength=/*#__PURE__*/function(){var _ref14=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(headers,body){var length;return _regenerator().w(function(_context7){while(1)switch(_context7.n){case 0:length=utils$1.toFiniteNumber(headers.getContentLength());return _context7.a(2,length==null?getBodyLength(body):length);}},_callee6);}));return function resolveBodyLength(_x6,_x7){return _ref14.apply(this,arguments);};}();return/*#__PURE__*/function(){var _ref15=_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(config){var _resolveConfig,url,method,data,signal,cancelToken,timeout,onDownloadProgress,onUploadProgress,responseType,headers,_resolveConfig$withCr,withCredentials,fetchOptions,_fetch,composedSignal,request,unsubscribe,requestContentLength,_request,contentTypeHeader,_progressEventDecorat,_progressEventDecorat2,onProgress,flush,isCredentialsSupported,resolvedOptions,response,isStreamResponse,options,responseContentLength,_ref16,_ref17,_onProgress,_flush,responseData,_t5,_t6,_t7;return _regenerator().w(function(_context8){while(1)switch(_context8.p=_context8.n){case 0:_resolveConfig=resolveConfig(config),url=_resolveConfig.url,method=_resolveConfig.method,data=_resolveConfig.data,signal=_resolveConfig.signal,cancelToken=_resolveConfig.cancelToken,timeout=_resolveConfig.timeout,onDownloadProgress=_resolveConfig.onDownloadProgress,onUploadProgress=_resolveConfig.onUploadProgress,responseType=_resolveConfig.responseType,headers=_resolveConfig.headers,_resolveConfig$withCr=_resolveConfig.withCredentials,withCredentials=_resolveConfig$withCr===void 0?'same-origin':_resolveConfig$withCr,fetchOptions=_resolveConfig.fetchOptions;_fetch=envFetch||fetch;responseType=responseType?(responseType+'').toLowerCase():'text';composedSignal=composeSignals$1([signal,cancelToken&&cancelToken.toAbortSignal()],timeout);request=null;unsubscribe=composedSignal&&composedSignal.unsubscribe&&function(){composedSignal.unsubscribe();};_context8.p=1;_t5=onUploadProgress&&supportsRequestStream&&method!=='get'&&method!=='head';if(!_t5){_context8.n=3;break;}_context8.n=2;return resolveBodyLength(headers,data);case 2:_t6=requestContentLength=_context8.v;_t5=_t6!==0;case 3:if(!_t5){_context8.n=4;break;}_request=new Request(url,{method:'POST',body:data,duplex:'half'});if(utils$1.isFormData(data)&&(contentTypeHeader=_request.headers.get('content-type'))){headers.setContentType(contentTypeHeader);}if(_request.body){_progressEventDecorat=progressEventDecorator(requestContentLength,progressEventReducer(asyncDecorator(onUploadProgress))),_progressEventDecorat2=_slicedToArray(_progressEventDecorat,2),onProgress=_progressEventDecorat2[0],flush=_progressEventDecorat2[1];data=trackStream(_request.body,DEFAULT_CHUNK_SIZE,onProgress,flush);}case 4:if(!utils$1.isString(withCredentials)){withCredentials=withCredentials?'include':'omit';}// Cloudflare Workers throws when credentials are defined
 // see https://github.com/cloudflare/workerd/issues/902
-isCredentialsSupported=isRequestSupported&&"credentials"in Request.prototype;resolvedOptions=_objectSpread(_objectSpread({},fetchOptions),{},{signal:composedSignal,method:method.toUpperCase(),headers:headers.normalize().toJSON(),body:data,duplex:"half",credentials:isCredentialsSupported?withCredentials:undefined});request=isRequestSupported&&new Request(url,resolvedOptions);_context8.n=5;return isRequestSupported?_fetch(request,fetchOptions):_fetch(url,resolvedOptions);case 5:response=_context8.v;isStreamResponse=supportsResponseStream&&(responseType==='stream'||responseType==='response');if(supportsResponseStream&&(onDownloadProgress||isStreamResponse&&unsubscribe)){options={};['status','statusText','headers'].forEach(function(prop){options[prop]=response[prop];});responseContentLength=utils$1.toFiniteNumber(response.headers.get('content-length'));_ref16=onDownloadProgress&&progressEventDecorator(responseContentLength,progressEventReducer(asyncDecorator(onDownloadProgress),true))||[],_ref17=_slicedToArray(_ref16,2),_onProgress=_ref17[0],_flush=_ref17[1];response=new Response(trackStream(response.body,DEFAULT_CHUNK_SIZE,_onProgress,function(){_flush&&_flush();unsubscribe&&unsubscribe();}),options);}responseType=responseType||'text';_context8.n=6;return resolvers[utils$1.findKey(resolvers,responseType)||'text'](response,config);case 6:responseData=_context8.v;!isStreamResponse&&unsubscribe&&unsubscribe();_context8.n=7;return new Promise(function(resolve,reject){settle(resolve,reject,{data:responseData,headers:AxiosHeaders$1.from(response.headers),status:response.status,statusText:response.statusText,config:config,request:request});});case 7:return _context8.a(2,_context8.v);case 8:_context8.p=8;_t7=_context8.v;unsubscribe&&unsubscribe();if(!(_t7&&_t7.name==='TypeError'&&/Load failed|fetch/i.test(_t7.message))){_context8.n=9;break;}throw Object.assign(new AxiosError$1('Network Error',AxiosError$1.ERR_NETWORK,config,request,_t7&&_t7.response),{cause:_t7.cause||_t7});case 9:throw AxiosError$1.from(_t7,_t7&&_t7.code,config,request,_t7&&_t7.response);case 10:return _context8.a(2);}},_callee7,null,[[1,8]]);}));return function(_x8){return _ref15.apply(this,arguments);};}();};var seedCache=new Map();var getFetch=function getFetch(config){var env=config&&config.env||{};var fetch=env.fetch,Request=env.Request,Response=env.Response;var seeds=[Request,Response,fetch];var len=seeds.length,i=len,seed,target,map=seedCache;while(i--){seed=seeds[i];target=map.get(seed);target===undefined&&map.set(seed,target=i?new Map():factory(env));map=target;}return target;};getFetch();/**
+isCredentialsSupported=isRequestSupported&&'credentials'in Request.prototype;resolvedOptions=_objectSpread(_objectSpread({},fetchOptions),{},{signal:composedSignal,method:method.toUpperCase(),headers:headers.normalize().toJSON(),body:data,duplex:'half',credentials:isCredentialsSupported?withCredentials:undefined});request=isRequestSupported&&new Request(url,resolvedOptions);_context8.n=5;return isRequestSupported?_fetch(request,fetchOptions):_fetch(url,resolvedOptions);case 5:response=_context8.v;isStreamResponse=supportsResponseStream&&(responseType==='stream'||responseType==='response');if(supportsResponseStream&&(onDownloadProgress||isStreamResponse&&unsubscribe)){options={};['status','statusText','headers'].forEach(function(prop){options[prop]=response[prop];});responseContentLength=utils$1.toFiniteNumber(response.headers.get('content-length'));_ref16=onDownloadProgress&&progressEventDecorator(responseContentLength,progressEventReducer(asyncDecorator(onDownloadProgress),true))||[],_ref17=_slicedToArray(_ref16,2),_onProgress=_ref17[0],_flush=_ref17[1];response=new Response(trackStream(response.body,DEFAULT_CHUNK_SIZE,_onProgress,function(){_flush&&_flush();unsubscribe&&unsubscribe();}),options);}responseType=responseType||'text';_context8.n=6;return resolvers[utils$1.findKey(resolvers,responseType)||'text'](response,config);case 6:responseData=_context8.v;!isStreamResponse&&unsubscribe&&unsubscribe();_context8.n=7;return new Promise(function(resolve,reject){settle(resolve,reject,{data:responseData,headers:AxiosHeaders$1.from(response.headers),status:response.status,statusText:response.statusText,config:config,request:request});});case 7:return _context8.a(2,_context8.v);case 8:_context8.p=8;_t7=_context8.v;unsubscribe&&unsubscribe();if(!(_t7&&_t7.name==='TypeError'&&/Load failed|fetch/i.test(_t7.message))){_context8.n=9;break;}throw Object.assign(new AxiosError$1('Network Error',AxiosError$1.ERR_NETWORK,config,request,_t7&&_t7.response),{cause:_t7.cause||_t7});case 9:throw AxiosError$1.from(_t7,_t7&&_t7.code,config,request,_t7&&_t7.response);case 10:return _context8.a(2);}},_callee7,null,[[1,8]]);}));return function(_x8){return _ref15.apply(this,arguments);};}();};var seedCache=new Map();var getFetch=function getFetch(config){var env=config&&config.env||{};var fetch=env.fetch,Request=env.Request,Response=env.Response;var seeds=[Request,Response,fetch];var len=seeds.length,i=len,seed,target,map=seedCache;while(i--){seed=seeds[i];target=map.get(seed);target===undefined&&map.set(seed,target=i?new Map():factory(env));map=target;}return target;};getFetch();/**
  * Known adapters mapping.
  * Provides environment-specific adapters for Axios:
  * - `http` for Node.js
  * - `xhr` for browsers
  * - `fetch` for fetch API-based requests
- * 
+ *
  * @type {Object<string, Function|Object>}
  */var knownAdapters={http:httpAdapter,xhr:xhrAdapter,fetch:{get:getFetch}};// Assign adapter names for easier debugging and identification
 utils$1.forEach(knownAdapters,function(fn,value){if(fn){try{Object.defineProperty(fn,'name',{value:value});}catch(e){// eslint-disable-next-line no-empty
 }Object.defineProperty(fn,'adapterName',{value:value});}});/**
  * Render a rejection reason string for unknown or unsupported adapters
- * 
+ *
  * @param {string} reason
  * @returns {string}
  */var renderReason=function renderReason(reason){return"- ".concat(reason);};/**
  * Check if the adapter is resolved (function, null, or false)
- * 
+ *
  * @param {Function|null|false} adapter
  * @returns {boolean}
  */var isResolvedHandle=function isResolvedHandle(adapter){return utils$1.isFunction(adapter)||adapter===null||adapter===false;};/**
  * Get the first suitable adapter from the provided list.
  * Tries each adapter in order until a supported one is found.
  * Throws an AxiosError if no adapter is suitable.
- * 
+ *
  * @param {Array<string|Function>|string|Function} adapters - Adapter(s) by name or function.
  * @param {Object} config - Axios request configuration
  * @throws {AxiosError} If no suitable adapter is available
@@ -6489,7 +6551,7 @@ utils$1.forEach(knownAdapters,function(fn,value){if(fn){try{Object.definePropert
  */function dispatchRequest(config){throwIfCancellationRequested(config);config.headers=AxiosHeaders$1.from(config.headers);// Transform request data
 config.data=transformData.call(config,config.transformRequest);if(['post','put','patch'].indexOf(config.method)!==-1){config.headers.setContentType('application/x-www-form-urlencoded',false);}var adapter=adapters.getAdapter(config.adapter||defaults$1.adapter,config);return adapter(config).then(function onAdapterResolution(response){throwIfCancellationRequested(config);// Transform response data
 response.data=transformData.call(config,config.transformResponse,response);response.headers=AxiosHeaders$1.from(response.headers);return response;},function onAdapterRejection(reason){if(!isCancel(reason)){throwIfCancellationRequested(config);// Transform response data
-if(reason&&reason.response){reason.response.data=transformData.call(config,config.transformResponse,reason.response);reason.response.headers=AxiosHeaders$1.from(reason.response.headers);}}return Promise.reject(reason);});}var VERSION="1.13.5";var validators$1={};// eslint-disable-next-line func-names
+if(reason&&reason.response){reason.response.data=transformData.call(config,config.transformResponse,reason.response);reason.response.headers=AxiosHeaders$1.from(reason.response.headers);}}return Promise.reject(reason);});}var VERSION="1.13.6";var validators$1={};// eslint-disable-next-line func-names
 ['object','boolean','number','function','string','symbol'].forEach(function(type,i){validators$1[type]=function validator(thing){return _typeof(thing)===type||'a'+(i<1?'n ':' ')+type;};});var deprecatedWarnings={};/**
  * Transitional option validator
  *
@@ -6498,7 +6560,7 @@ if(reason&&reason.response){reason.response.data=transformData.call(config,confi
  * @param {string?} message - some message with additional info
  *
  * @returns {function}
- */validators$1.transitional=function transitional(validator,version,message){function formatMessage(opt,desc){return'[Axios v'+VERSION+'] Transitional option \''+opt+'\''+desc+(message?'. '+message:'');}// eslint-disable-next-line func-names
+ */validators$1.transitional=function transitional(validator,version,message){function formatMessage(opt,desc){return'[Axios v'+VERSION+"] Transitional option '"+opt+"'"+desc+(message?'. '+message:'');}// eslint-disable-next-line func-names
 return function(value,opt,opts){if(validator===false){throw new AxiosError$1(formatMessage(opt,' has been removed'+(version?' in '+version:'')),AxiosError$1.ERR_DEPRECATED);}if(version&&!deprecatedWarnings[opt]){deprecatedWarnings[opt]=true;// eslint-disable-next-line no-console
 console.warn(formatMessage(opt,' has been deprecated since v'+version+' and will be removed in the near future'));}return validator?validator(value,opt,opts):true;};};validators$1.spelling=function spelling(correctSpelling){return function(value,opt){// eslint-disable-next-line no-console
 console.warn("".concat(opt," is likely a misspelling of ").concat(correctSpelling));return true;};};/**
@@ -6637,7 +6699,7 @@ if(env)this.environment=env;else this.environment=this.host?this.host:'mypureclo
 this.environment=this.environment.replace(/\/+$/,'');// Strip protocol and subdomain
 if(this.environment.startsWith('https://'))this.environment=this.environment.substring(8);if(this.environment.startsWith('http://'))this.environment=this.environment.substring(7);if(this.environment.startsWith('api.'))this.environment=this.environment.substring(4);this.basePath="https://api.".concat(this.environment);this.authUrl="https://login.".concat(this.environment);}},{key:"getConfUrl",value:function getConfUrl(pathType,regionUrl){if(!this.gateway)return regionUrl;if(!this.gateway.host)return regionUrl;var url=this.gateway.protocol+'://'+this.gateway.host;if(this.gateway.port>-1)url=url+':'+this.gateway.port.toString();if(pathType==='login'){if(this.gateway.path_params_login){if(this.gateway.path_params_login.startsWith('/'))url=url+this.gateway.path_params_login;else url=url+'/'+this.gateway.path_params_login;}}else{if(this.gateway.path_params_api){if(this.gateway.path_params_api.startsWith('/'))url=url+this.gateway.path_params_api;else url=url+'/'+this.gateway.path_params_api;}}return url;}},{key:"getConfigString",value:function getConfigString(section,key){if(this.config._sections[section])return this.config._sections[section][key];}},{key:"getConfigBoolean",value:function getConfigBoolean(section,key){if(this.config._sections[section]&&this.config._sections[section][key]!==undefined){if(typeof this.config._sections[section][key]==='string'){return this.config._sections[section][key]==='true';}else return this.config._sections[section][key];}}},{key:"getConfigInt",value:function getConfigInt(section,key){if(this.config._sections[section]&&this.config._sections[section][key]){if(typeof this.config._sections[section][key]==='string'){return parseInt(this.config._sections[section][key]);}else return this.config._sections[section][key];}}}]);}();/**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 246.0.0
+ * @version 247.0.0
  */var ApiClient=/*#__PURE__*/function(){/**
 	 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
 	 * application to use this class directly - the *Api and model classes provide the public API for the service. The
@@ -7003,7 +7065,7 @@ resolve(data);})["catch"](function(error){var data=error;if(error.response&&erro
 that.config.logger.log('error',error.response.status,httpMethod,url,request.headers,error.response.headers,bodyParam,error.response.data);data=that.returnExtended===true?{status:error.response.status,statusText:error.response.statusText,headers:error.response.headers,body:error.response.data,text:error.response.text,error:error}:error.response.data?error.response.data:error.response.text;}reject(data);});}});}}]);}();var AIStudioApi=/*#__PURE__*/function(){/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AIStudioApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AIStudioApi
@@ -7155,7 +7217,7 @@ if(summarySettingId===undefined||summarySettingId===null||summarySettingId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsSummariesSetting';}return this.apiClient.callApi('/api/v2/conversations/summaries/settings/{summarySettingId}','PUT',{'summarySettingId':summarySettingId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AgentAssistantsApi=/*#__PURE__*/function(){/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AgentAssistantsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AgentAssistantsApi
@@ -7342,7 +7404,7 @@ if(agentChecklistId===undefined||agentChecklistId===null||agentChecklistId==='')
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantsAgentchecklist';}return this.apiClient.callApi('/api/v2/assistants/agentchecklists/{agentChecklistId}','PUT',{'agentChecklistId':agentChecklistId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AgentCopilotApi=/*#__PURE__*/function(){/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AgentCopilotApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AgentCopilotApi
@@ -7369,7 +7431,7 @@ if(assistantId===undefined||assistantId===null||assistantId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantCopilot';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/copilot','PUT',{'assistantId':assistantId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AgentUIApi=/*#__PURE__*/function(){/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AgentUIApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AgentUIApi
@@ -7403,7 +7465,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AlertingApi=/*#__PURE__*/function(){/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AlertingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AlertingApi
@@ -7492,7 +7554,7 @@ if(ruleId===undefined||ruleId===null||ruleId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAlertingRule';}return this.apiClient.callApi('/api/v2/alerting/rules/{ruleId}','PUT',{'ruleId':ruleId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AnalyticsApi=/*#__PURE__*/function(){/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AnalyticsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AnalyticsApi
@@ -8311,7 +8373,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAnalyticsDataretentionSettings';}return this.apiClient.callApi('/api/v2/analytics/dataretention/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ArchitectApi=/*#__PURE__*/function(){/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ArchitectApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ArchitectApi
@@ -9445,7 +9507,7 @@ if(milestoneId===undefined||milestoneId===null||milestoneId===''){throw'Missing 
 if(flowOutcomeId===undefined||flowOutcomeId===null||flowOutcomeId===''){throw'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';}return this.apiClient.callApi('/api/v2/flows/outcomes/{flowOutcomeId}','PUT',{'flowOutcomeId':flowOutcomeId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AssistantCopilotVariationsApi=/*#__PURE__*/function(){/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AssistantCopilotVariationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
@@ -9490,7 +9552,7 @@ if(variationId===undefined||variationId===null||variationId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAssistantVariation';}return this.apiClient.callApi('/api/v2/assistants/{assistantId}/variations/{variationId}','PUT',{'assistantId':assistantId,'variationId':variationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AuditApi=/*#__PURE__*/function(){/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AuditApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AuditApi
@@ -9540,7 +9602,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';}return this.apiClient.callApi('/api/v2/audits/query/realtime/related','POST',{},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var AuthorizationApi=/*#__PURE__*/function(){/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new AuthorizationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/AuthorizationApi
@@ -9968,7 +10030,7 @@ if(subjectId===undefined||subjectId===null||subjectId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoles';}return this.apiClient.callApi('/api/v2/users/{subjectId}/roles','PUT',{'subjectId':subjectId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var BackgroundAssistantApi=/*#__PURE__*/function(){/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new BackgroundAssistantApi. 
 	 * @alias module:purecloud-platform-client-v2/api/BackgroundAssistantApi
@@ -9989,7 +10051,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */},{key:"postScreenrecordingToken",value:function postScreenrecordingToken(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/screenrecording/token','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var BillingApi=/*#__PURE__*/function(){/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new BillingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/BillingApi
@@ -10066,7 +10128,7 @@ if(endDate===undefined||endDate===null){throw'Missing the required parameter "en
 if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';}return this.apiClient.callApi('/api/v2/billing/trusteebillingoverview/{trustorOrgId}','GET',{'trustorOrgId':trustorOrgId},{'billingPeriodIndex':opts['billingPeriodIndex']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var BusinessRulesApi=/*#__PURE__*/function(){/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new BusinessRulesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/BusinessRulesApi
@@ -10287,7 +10349,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putBusinessrulesSchema';}return this.apiClient.callApi('/api/v2/businessrules/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var CarrierServicesApi=/*#__PURE__*/function(){/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new CarrierServicesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/CarrierServicesApi
@@ -10307,7 +10369,7 @@ if(phoneNumber===undefined||phoneNumber===null){throw'Missing the required param
 	 */},{key:"postCarrierservicesIntegrationsEmergencylocationsMe",value:function postCarrierservicesIntegrationsEmergencylocationsMe(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/carrierservices/integrations/emergencylocations/me','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ChatApi=/*#__PURE__*/function(){/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ChatApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ChatApi
@@ -10538,7 +10600,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putChatsSettings';}return this.apiClient.callApi('/api/v2/chats/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var CoachingApi=/*#__PURE__*/function(){/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new CoachingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/CoachingApi
@@ -10701,7 +10763,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';}return this.apiClient.callApi('/api/v2/coaching/scheduleslots/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ContentManagementApi=/*#__PURE__*/function(){/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ContentManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ContentManagementApi
@@ -10983,7 +11045,7 @@ if(tagId===undefined||tagId===null||tagId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';}return this.apiClient.callApi('/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}','PUT',{'workspaceId':workspaceId,'tagId':tagId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ConversationsApi=/*#__PURE__*/function(){/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ConversationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ConversationsApi
@@ -13318,7 +13380,7 @@ if(conversationId===undefined||conversationId===null||conversationId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';}return this.apiClient.callApi('/api/v2/conversations/videos/{conversationId}/recordingstate','PUT',{'conversationId':conversationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var DataExtensionsApi=/*#__PURE__*/function(){/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new DataExtensionsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/DataExtensionsApi
@@ -13339,7 +13401,7 @@ if(coretypeName===undefined||coretypeName===null||coretypeName===''){throw'Missi
 	 */},{key:"getDataextensionsLimits",value:function getDataextensionsLimits(){return this.apiClient.callApi('/api/v2/dataextensions/limits','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var DataPrivacyApi=/*#__PURE__*/function(){/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new DataPrivacyApi. 
 	 * @alias module:purecloud-platform-client-v2/api/DataPrivacyApi
@@ -13379,7 +13441,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';}return this.apiClient.callApi('/api/v2/dataprivacy/maskingrules/validate','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var DownloadsApi=/*#__PURE__*/function(){/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new DownloadsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/DownloadsApi
@@ -13398,7 +13460,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the required parameter "downloadId" when calling getDownload';}return this.apiClient.callApi('/api/v2/downloads/{downloadId}','GET',{'downloadId':downloadId},{'contentDisposition':opts['contentDisposition'],'issueRedirect':opts['issueRedirect'],'redirectToAuth':opts['redirectToAuth']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var EmailsApi=/*#__PURE__*/function(){/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new EmailsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/EmailsApi
@@ -13427,7 +13489,7 @@ if(downloadId===undefined||downloadId===null||downloadId===''){throw'Missing the
 	 */},{key:"patchEmailsSettingsThreading",value:function patchEmailsSettingsThreading(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/emails/settings/threading','PATCH',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var EmployeeEngagementApi=/*#__PURE__*/function(){/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new EmployeeEngagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/EmployeeEngagementApi
@@ -13475,7 +13537,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEmployeeengagementRecognitions';}return this.apiClient.callApi('/api/v2/employeeengagement/recognitions','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var EventsApi=/*#__PURE__*/function(){/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new EventsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/EventsApi
@@ -13500,7 +13562,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postEventsUsersRoutingstatus';}return this.apiClient.callApi('/api/v2/events/users/routingstatus','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ExternalContactsApi=/*#__PURE__*/function(){/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ExternalContactsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ExternalContactsApi
@@ -14250,7 +14312,7 @@ if(relationshipId===undefined||relationshipId===null||relationshipId===''){throw
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putExternalcontactsRelationship';}return this.apiClient.callApi('/api/v2/externalcontacts/relationships/{relationshipId}','PUT',{'relationshipId':relationshipId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var FaxApi=/*#__PURE__*/function(){/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new FaxApi. 
 	 * @alias module:purecloud-platform-client-v2/api/FaxApi
@@ -14299,7 +14361,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */},{key:"putFaxSettings",value:function putFaxSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/fax/settings','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var FlowsApi=/*#__PURE__*/function(){/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new FlowsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/FlowsApi
@@ -14353,7 +14415,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';}return this.apiClient.callApi('/api/v2/analytics/flows/observations/query','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GamificationApi=/*#__PURE__*/function(){/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new GamificationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GamificationApi
@@ -15024,7 +15086,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(status===undefined||status===null){throw'Missing the required parameter "status" when calling putGamificationStatus';}return this.apiClient.callApi('/api/v2/gamification/status','PUT',{},{},{},{},status,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GeneralDataProtectionRegulationApi=/*#__PURE__*/function(){/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new GeneralDataProtectionRegulationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
@@ -15059,7 +15121,7 @@ if(searchValue===undefined||searchValue===null){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postGdprRequests';}return this.apiClient.callApi('/api/v2/gdpr/requests','POST',{},{'deleteConfirmed':opts['deleteConfirmed']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GeolocationApi=/*#__PURE__*/function(){/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new GeolocationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GeolocationApi
@@ -15093,7 +15155,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchUserGeolocation';}return this.apiClient.callApi('/api/v2/users/{userId}/geolocations/{clientId}','PATCH',{'userId':userId,'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GreetingsApi=/*#__PURE__*/function(){/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new GreetingsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GreetingsApi
@@ -15221,7 +15283,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserGreetingsDefaults';}return this.apiClient.callApi('/api/v2/users/{userId}/greetings/defaults','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var GroupsApi=/*#__PURE__*/function(){/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new GroupsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/GroupsApi
@@ -15354,7 +15416,7 @@ if(groupId===undefined||groupId===null||groupId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putGroupDynamicsettings';}return this.apiClient.callApi('/api/v2/groups/{groupId}/dynamicsettings','PUT',{'groupId':groupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var IdentityProviderApi=/*#__PURE__*/function(){/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new IdentityProviderApi. 
 	 * @alias module:purecloud-platform-client-v2/api/IdentityProviderApi
@@ -15510,7 +15572,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';}return this.apiClient.callApi('/api/v2/identityproviders/salesforce','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var InfrastructureAsCodeApi=/*#__PURE__*/function(){/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new InfrastructureAsCodeApi. 
 	 * @alias module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi
@@ -15564,7 +15626,7 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postInfrastructureascodeJobs';}return this.apiClient.callApi('/api/v2/infrastructureascode/jobs','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var IntegrationsApi=/*#__PURE__*/function(){/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new IntegrationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/IntegrationsApi
@@ -16256,7 +16318,7 @@ if(ucIntegrationId===undefined||ucIntegrationId===null||ucIntegrationId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';}return this.apiClient.callApi('/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences','PUT',{'ucIntegrationId':ucIntegrationId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var IntentsApi=/*#__PURE__*/function(){/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new IntentsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/IntentsApi
@@ -16373,7 +16435,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postIntentsCustomerintents';}return this.apiClient.callApi('/api/v2/intents/customerintents','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var JourneyApi=/*#__PURE__*/function(){/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new JourneyApi. 
 	 * @alias module:purecloud-platform-client-v2/api/JourneyApi
@@ -16882,7 +16944,7 @@ if(versionId===undefined||versionId===null||versionId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putJourneyViewVersion';}return this.apiClient.callApi('/api/v2/journey/views/{viewId}/versions/{versionId}','PUT',{'viewId':viewId,'versionId':versionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var KnowledgeApi=/*#__PURE__*/function(){/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new KnowledgeApi. 
 	 * @alias module:purecloud-platform-client-v2/api/KnowledgeApi
@@ -16960,6 +17022,11 @@ if(sourceId===undefined||sourceId===null||sourceId===''){throw'Missing the requi
 	 */},{key:"deleteKnowledgeKnowledgebaseSynchronizeJob",value:function deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId,syncJobId){// verify the required parameter 'knowledgeBaseId' is set
 if(knowledgeBaseId===undefined||knowledgeBaseId===null||knowledgeBaseId===''){throw'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';}// verify the required parameter 'syncJobId' is set
 if(syncJobId===undefined||syncJobId===null||syncJobId===''){throw'Missing the required parameter "syncJobId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';}return this.apiClient.callApi('/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}','DELETE',{'knowledgeBaseId':knowledgeBaseId,'syncJobId':syncJobId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Delete Knowledge setting.
+	 * 
+	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 */},{key:"deleteKnowledgeSetting",value:function deleteKnowledgeSetting(knowledgeSettingId){// verify the required parameter 'knowledgeSettingId' is set
+if(knowledgeSettingId===undefined||knowledgeSettingId===null||knowledgeSettingId===''){throw'Missing the required parameter "knowledgeSettingId" when calling deleteKnowledgeSetting';}return this.apiClient.callApi('/api/v2/knowledge/settings/{knowledgeSettingId}','DELETE',{'knowledgeSettingId':knowledgeSettingId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Get categories
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -17300,6 +17367,22 @@ if(jobId===undefined||jobId===null||jobId===''){throw'Missing the required param
 	 * @param {Object} opts.sortBy Sort by.
 	 * @param {Object} opts.sortOrder Sort Order.
 	 */},{key:"getKnowledgeKnowledgebases",value:function getKnowledgeKnowledgebases(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/knowledge/knowledgebases','GET',{},{'before':opts['before'],'after':opts['after'],'limit':opts['limit'],'pageSize':opts['pageSize'],'name':opts['name'],'coreLanguage':opts['coreLanguage'],'published':opts['published'],'sortBy':opts['sortBy'],'sortOrder':opts['sortOrder']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get Knowledge setting.
+	 * 
+	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 */},{key:"getKnowledgeSetting",value:function getKnowledgeSetting(knowledgeSettingId){// verify the required parameter 'knowledgeSettingId' is set
+if(knowledgeSettingId===undefined||knowledgeSettingId===null||knowledgeSettingId===''){throw'Missing the required parameter "knowledgeSettingId" when calling getKnowledgeSetting';}return this.apiClient.callApi('/api/v2/knowledge/settings/{knowledgeSettingId}','GET',{'knowledgeSettingId':knowledgeSettingId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get Knowledge settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.name Knowledge setting name to search upon.
+	 * @param {String} opts.sourceId Source ID to filter knowledge settings by.
+	 * @param {Object} opts.sortBy Field to sort the knowledge settings on.
+	 * @param {Object} opts.sortOrder Sorting order for knowledge settings.
+	 */},{key:"getKnowledgeSettings",value:function getKnowledgeSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/knowledge/settings','GET',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize'],'name':opts['name'],'sourceId':opts['sourceId'],'sortBy':opts['sortBy'],'sortOrder':opts['sortOrder']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update search result.
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -17421,6 +17504,13 @@ if(knowledgeBaseId===undefined||knowledgeBaseId===null||knowledgeBaseId===''){th
 if(groupId===undefined||groupId===null||groupId===''){throw'Missing the required parameter "groupId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';}// verify the required parameter 'phraseGroupId' is set
 if(phraseGroupId===undefined||phraseGroupId===null||phraseGroupId===''){throw'Missing the required parameter "phraseGroupId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';}// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';}return this.apiClient.callApi('/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}','PATCH',{'knowledgeBaseId':knowledgeBaseId,'groupId':groupId,'phraseGroupId':phraseGroupId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Update Knowledge setting.
+	 * 
+	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 * @param {Object} body 
+	 */},{key:"patchKnowledgeSetting",value:function patchKnowledgeSetting(knowledgeSettingId,body){// verify the required parameter 'knowledgeSettingId' is set
+if(knowledgeSettingId===undefined||knowledgeSettingId===null||knowledgeSettingId===''){throw'Missing the required parameter "knowledgeSettingId" when calling patchKnowledgeSetting';}// verify the required parameter 'body' is set
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling patchKnowledgeSetting';}return this.apiClient.callApi('/api/v2/knowledge/settings/{knowledgeSettingId}','PATCH',{'knowledgeSettingId':knowledgeSettingId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
 	 * 
 	 * @param {Object} body query
@@ -17699,6 +17789,16 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * @param {Object} body 
 	 */},{key:"postKnowledgeKnowledgebases",value:function postKnowledgeKnowledgebases(body){// verify the required parameter 'body' is set
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postKnowledgeKnowledgebases';}return this.apiClient.callApi('/api/v2/knowledge/knowledgebases','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get Knowledge Search Preview
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */},{key:"postKnowledgeSearchPreview",value:function postKnowledgeSearchPreview(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/knowledge/search/preview','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Create Knowledge setting.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */},{key:"postKnowledgeSettings",value:function postKnowledgeSettings(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/knowledge/settings','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Update Salesforce Knowledge integration source
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -17719,7 +17819,7 @@ if(sourceId===undefined||sourceId===null||sourceId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';}return this.apiClient.callApi('/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}','PUT',{'knowledgeBaseId':knowledgeBaseId,'sourceId':sourceId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LanguageUnderstandingApi=/*#__PURE__*/function(){/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new LanguageUnderstandingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
@@ -18028,7 +18128,7 @@ if(domainVersionId===undefined||domainVersionId===null||domainVersionId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';}return this.apiClient.callApi('/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}','PUT',{'domainId':domainId,'domainVersionId':domainVersionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LanguagesApi=/*#__PURE__*/function(){/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new LanguagesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LanguagesApi
@@ -18083,7 +18183,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLanguages';}return this.apiClient.callApi('/api/v2/languages','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LearningApi=/*#__PURE__*/function(){/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new LearningApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LearningApi
@@ -18372,7 +18472,7 @@ if(moduleId===undefined||moduleId===null||moduleId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putLearningModuleRule';}return this.apiClient.callApi('/api/v2/learning/modules/{moduleId}/rule','PUT',{'moduleId':moduleId},{'assign':opts['assign']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LicenseApi=/*#__PURE__*/function(){/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new LicenseApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LicenseApi
@@ -18426,7 +18526,7 @@ if(featureName===undefined||featureName===null||featureName===''){throw'Missing 
 	 */},{key:"postLicenseUsers",value:function postLicenseUsers(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/license/users','POST',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LocationsApi=/*#__PURE__*/function(){/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new LocationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LocationsApi
@@ -18485,7 +18585,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postLocationsSearch';}return this.apiClient.callApi('/api/v2/locations/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var LogCaptureApi=/*#__PURE__*/function(){/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new LogCaptureApi. 
 	 * @alias module:purecloud-platform-client-v2/api/LogCaptureApi
@@ -18534,7 +18634,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(userId===undefined||userId===null||userId===''){throw'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';}return this.apiClient.callApi('/api/v2/diagnostics/logcapture/browser/users/{userId}','POST',{'userId':userId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var MessagingApi=/*#__PURE__*/function(){/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new MessagingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/MessagingApi
@@ -18624,7 +18724,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putMessagingSettingsDefault';}return this.apiClient.callApi('/api/v2/messaging/settings/default','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var MobileDevicesApi=/*#__PURE__*/function(){/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new MobileDevicesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/MobileDevicesApi
@@ -18663,7 +18763,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(deviceId===undefined||deviceId===null||deviceId===''){throw'Missing the required parameter "deviceId" when calling putMobiledevice';}return this.apiClient.callApi('/api/v2/mobiledevices/{deviceId}','PUT',{'deviceId':deviceId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var NotificationsApi=/*#__PURE__*/function(){/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new NotificationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/NotificationsApi
@@ -18720,7 +18820,7 @@ if(channelId===undefined||channelId===null||channelId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';}return this.apiClient.callApi('/api/v2/notifications/channels/{channelId}/subscriptions','PUT',{'channelId':channelId},{'ignoreErrors':opts['ignoreErrors']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OAuthApi=/*#__PURE__*/function(){/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new OAuthApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OAuthApi
@@ -18805,7 +18905,7 @@ if(clientId===undefined||clientId===null||clientId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOauthClient';}return this.apiClient.callApi('/api/v2/oauth/clients/{clientId}','PUT',{'clientId':clientId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ObjectsApi=/*#__PURE__*/function(){/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ObjectsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ObjectsApi
@@ -18891,7 +18991,7 @@ if(divisionId===undefined||divisionId===null||divisionId===''){throw'Missing the
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putAuthorizationDivision';}return this.apiClient.callApi('/api/v2/authorization/divisions/{divisionId}','PUT',{'divisionId':divisionId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OperationalEventsApi=/*#__PURE__*/function(){/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new OperationalEventsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OperationalEventsApi
@@ -18922,7 +19022,7 @@ if(eventDefinitionId===undefined||eventDefinitionId===null||eventDefinitionId===
 	 */},{key:"postUsageEventsQuery",value:function postUsageEventsQuery(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/usage/events/query','POST',{},{'before':opts['before'],'after':opts['after'],'pageSize':opts['pageSize']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OrganizationApi=/*#__PURE__*/function(){/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new OrganizationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OrganizationApi
@@ -19027,7 +19127,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOrganizationsWhitelist';}return this.apiClient.callApi('/api/v2/organizations/whitelist','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OrganizationAuthorizationApi=/*#__PURE__*/function(){/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new OrganizationAuthorizationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi
@@ -19361,7 +19461,7 @@ if(trustorOrgId===undefined||trustorOrgId===null||trustorOrgId===''){throw'Missi
 if(trusteeUserId===undefined||trusteeUserId===null||trusteeUserId===''){throw'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';}return this.apiClient.callApi('/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}','PUT',{'trustorOrgId':trustorOrgId,'trusteeUserId':trusteeUserId},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var OutboundApi=/*#__PURE__*/function(){/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new OutboundApi. 
 	 * @alias module:purecloud-platform-client-v2/api/OutboundApi
@@ -20528,7 +20628,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';}return this.apiClient.callApi('/api/v2/outbound/wrapupcodemappings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var PresenceApi=/*#__PURE__*/function(){/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new PresenceApi. 
 	 * @alias module:purecloud-platform-client-v2/api/PresenceApi
@@ -20701,7 +20801,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersPresencesBulk';}return this.apiClient.callApi('/api/v2/users/presences/bulk','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ProcessAutomationApi=/*#__PURE__*/function(){/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ProcessAutomationApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ProcessAutomationApi
@@ -20764,7 +20864,7 @@ if(triggerId===undefined||triggerId===null||triggerId===''){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putProcessautomationTrigger';}return this.apiClient.callApi('/api/v2/processautomation/triggers/{triggerId}','PUT',{'triggerId':triggerId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var QualityApi=/*#__PURE__*/function(){/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new QualityApi. 
 	 * @alias module:purecloud-platform-client-v2/api/QualityApi
@@ -21169,10 +21269,11 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body evaluation
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.idempotencyKey Idempotency key for request deduplication
 	 * @param {String} opts.expand evaluatorId
 	 */},{key:"postQualityConversationEvaluations",value:function postQualityConversationEvaluations(conversationId,body,opts){opts=opts||{};// verify the required parameter 'conversationId' is set
 if(conversationId===undefined||conversationId===null||conversationId===''){throw'Missing the required parameter "conversationId" when calling postQualityConversationEvaluations';}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postQualityConversationEvaluations';}return this.apiClient.callApi('/api/v2/quality/conversations/{conversationId}/evaluations','POST',{'conversationId':conversationId},{'expand':opts['expand']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postQualityConversationEvaluations';}return this.apiClient.callApi('/api/v2/quality/conversations/{conversationId}/evaluations','POST',{'conversationId':conversationId},{'expand':opts['expand']},{'Idempotency-Key':opts['idempotencyKey']},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Create audit query execution
 	 * 
 	 * @param {Object} body query
@@ -21307,7 +21408,7 @@ if(customerSurveyUrl===undefined||customerSurveyUrl===null){throw'Missing the re
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putQualitySurveysScorable';}return this.apiClient.callApi('/api/v2/quality/surveys/scorable','PUT',{},{'customerSurveyUrl':customerSurveyUrl},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var RecordingApi=/*#__PURE__*/function(){/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new RecordingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/RecordingApi
@@ -21706,7 +21807,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 	 */},{key:"putRecordingsDeletionprotection",value:function putRecordingsDeletionprotection(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/recordings/deletionprotection','PUT',{},{'protect':opts['protect']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var ResponseManagementApi=/*#__PURE__*/function(){/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ResponseManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ResponseManagementApi
@@ -21827,7 +21928,7 @@ if(responseAssetId===undefined||responseAssetId===null||responseAssetId===''){th
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putResponsemanagementResponseasset';}return this.apiClient.callApi('/api/v2/responsemanagement/responseassets/{responseAssetId}','PUT',{'responseAssetId':responseAssetId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var RoutingApi=/*#__PURE__*/function(){/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new RoutingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/RoutingApi
@@ -22973,7 +23074,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserRoutingskillsBulk';}return this.apiClient.callApi('/api/v2/users/{userId}/routingskills/bulk','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SCIMApi=/*#__PURE__*/function(){/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new SCIMApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SCIMApi
@@ -23198,7 +23299,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putScimV2User';}return this.apiClient.callApi('/api/v2/scim/v2/users/{userId}','PUT',{'userId':userId},{},{'If-Match':opts['ifMatch']},{},body,['PureCloud OAuth'],['application/scim+json','application/json'],['application/scim+json','application/json']);}}]);}();var ScriptsApi=/*#__PURE__*/function(){/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new ScriptsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/ScriptsApi
@@ -23344,7 +23445,7 @@ if(scriptId===undefined||scriptId===null||scriptId===''){throw'Missing the requi
 	 */},{key:"postScriptsPublished",value:function postScriptsPublished(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/scripts/published','POST',{},{'scriptDataVersion':opts['scriptDataVersion']},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SearchApi=/*#__PURE__*/function(){/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new SearchApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SearchApi
@@ -23508,7 +23609,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postVoicemailSearch';}return this.apiClient.callApi('/api/v2/voicemail/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SettingsApi=/*#__PURE__*/function(){/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new SettingsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SettingsApi
@@ -23580,7 +23681,7 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';}return this.apiClient.callApi('/api/v2/users/agentui/agents/autoanswer/{agentId}/settings','PUT',{'agentId':agentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SocialMediaApi=/*#__PURE__*/function(){/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new SocialMediaApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SocialMediaApi
@@ -24069,7 +24170,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(twitterIngestionRuleId===undefined||twitterIngestionRuleId===null||twitterIngestionRuleId===''){throw'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';}return this.apiClient.callApi('/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}','PUT',{'topicId':topicId,'twitterIngestionRuleId':twitterIngestionRuleId},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SpeechTextAnalyticsApi=/*#__PURE__*/function(){/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new SpeechTextAnalyticsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
@@ -24448,7 +24549,7 @@ if(topicId===undefined||topicId===null||topicId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';}return this.apiClient.callApi('/api/v2/speechandtextanalytics/topics/{topicId}','PUT',{'topicId':topicId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var StationsApi=/*#__PURE__*/function(){/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new StationsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/StationsApi
@@ -24480,7 +24581,7 @@ if(stationId===undefined||stationId===null||stationId===''){throw'Missing the re
 	 */},{key:"getStations",value:function getStations(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/stations','GET',{},{'pageSize':opts['pageSize'],'pageNumber':opts['pageNumber'],'sortBy':opts['sortBy'],'name':opts['name'],'userSelectable':opts['userSelectable'],'webRtcUserId':opts['webRtcUserId'],'id':opts['id'],'lineAppearanceId':opts['lineAppearanceId']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var SuggestApi=/*#__PURE__*/function(){/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new SuggestApi. 
 	 * @alias module:purecloud-platform-client-v2/api/SuggestApi
@@ -24520,7 +24621,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postSearchSuggest';}return this.apiClient.callApi('/api/v2/search/suggest','POST',{},{'profile':opts['profile']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TaskManagementApi=/*#__PURE__*/function(){/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new TaskManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TaskManagementApi
@@ -25028,7 +25129,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTaskmanagementWorkitemsSchema';}return this.apiClient.callApi('/api/v2/taskmanagement/workitems/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TeamsApi=/*#__PURE__*/function(){/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new TeamsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TeamsApi
@@ -25108,7 +25209,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postTeamsSearch';}return this.apiClient.callApi('/api/v2/teams/search','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TelephonyApi=/*#__PURE__*/function(){/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new TelephonyApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TelephonyApi
@@ -25124,6 +25225,11 @@ if(agentId===undefined||agentId===null||agentId===''){throw'Missing the required
 	 * Get the agent's own greetings.
 	 * 
 	 */},{key:"getTelephonyAgentsGreetingsMe",value:function getTelephonyAgentsGreetingsMe(){return this.apiClient.callApi('/api/v2/telephony/agents/greetings/me','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
+	 * Get the concurrent call metrics for a given organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.metricType Flag to indicate metric type to fetch. (default to cloud)
+	 */},{key:"getTelephonyCallsMetrics",value:function getTelephonyCallsMetrics(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/telephony/calls/metrics','GET',{},{'metricType':opts['metricType']},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
 	 * Retrieve the list of AWS regions media can stream through.
 	 * 
 	 */},{key:"getTelephonyMediaregions",value:function getTelephonyMediaregions(){return this.apiClient.callApi('/api/v2/telephony/mediaregions','GET',{},{},{},{},null,['PureCloud OAuth'],['application/json'],['application/json']);}/**
@@ -25175,7 +25281,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonyAgentsGreetingsMe';}return this.apiClient.callApi('/api/v2/telephony/agents/greetings/me','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TelephonyProvidersEdgeApi=/*#__PURE__*/function(){/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new TelephonyProvidersEdgeApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
@@ -26023,7 +26129,7 @@ if(trunkBaseSettingsId===undefined||trunkBaseSettingsId===null||trunkBaseSetting
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTrunkbasesetting';}return this.apiClient.callApi('/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}','PUT',{'trunkBaseSettingsId':trunkBaseSettingsId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TextbotsApi=/*#__PURE__*/function(){/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new TextbotsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TextbotsApi
@@ -26059,7 +26165,7 @@ if(launchRequest===undefined||launchRequest===null){throw'Missing the required p
 if(postTextRequest===undefined||postTextRequest===null){throw'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';}return this.apiClient.callApi('/api/v2/textbots/bots/execute','POST',{},{},{},{},postTextRequest,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var TokensApi=/*#__PURE__*/function(){/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new TokensApi. 
 	 * @alias module:purecloud-platform-client-v2/api/TokensApi
@@ -26093,7 +26199,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 	 */},{key:"putTokensTimeout",value:function putTokensTimeout(opts){opts=opts||{};return this.apiClient.callApi('/api/v2/tokens/timeout','PUT',{},{},{},{},opts['body'],['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UploadsApi=/*#__PURE__*/function(){/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new UploadsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UploadsApi
@@ -26166,7 +26272,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';}return this.apiClient.callApi('/api/v2/uploads/workforcemanagement/historicaldata/csv','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UsageApi=/*#__PURE__*/function(){/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new UsageApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UsageApi
@@ -26250,7 +26356,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsageSimplesearch';}return this.apiClient.callApi('/api/v2/usage/simplesearch','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UserRecordingsApi=/*#__PURE__*/function(){/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new UserRecordingsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UserRecordingsApi
@@ -26298,7 +26404,7 @@ if(recordingId===undefined||recordingId===null||recordingId===''){throw'Missing 
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUserrecording';}return this.apiClient.callApi('/api/v2/userrecordings/{recordingId}','PUT',{'recordingId':recordingId},{'expand':this.apiClient.buildCollectionParam(opts['expand'],'multi')},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UsersApi=/*#__PURE__*/function(){/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new UsersApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UsersApi
@@ -27148,7 +27254,7 @@ if(schemaId===undefined||schemaId===null||schemaId===''){throw'Missing the requi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putUsersCustomattributesSchema';}return this.apiClient.callApi('/api/v2/users/customattributes/schemas/{schemaId}','PUT',{'schemaId':schemaId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UsersRulesApi=/*#__PURE__*/function(){/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new UsersRulesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UsersRulesApi
@@ -27223,7 +27329,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postUsersRulesQuery';}return this.apiClient.callApi('/api/v2/users/rules/query','POST',{},{'pageNumber':opts['pageNumber'],'pageSize':opts['pageSize']},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var UtilitiesApi=/*#__PURE__*/function(){/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new UtilitiesApi. 
 	 * @alias module:purecloud-platform-client-v2/api/UtilitiesApi
@@ -27250,7 +27356,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postCertificateDetails';}return this.apiClient.callApi('/api/v2/certificate/details','POST',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var VoicemailApi=/*#__PURE__*/function(){/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new VoicemailApi. 
 	 * @alias module:purecloud-platform-client-v2/api/VoicemailApi
@@ -27412,7 +27518,7 @@ if(userId===undefined||userId===null||userId===''){throw'Missing the required pa
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putVoicemailUserpolicy';}return this.apiClient.callApi('/api/v2/voicemail/userpolicies/{userId}','PUT',{'userId':userId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WebChatApi=/*#__PURE__*/function(){/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new WebChatApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WebChatApi
@@ -27559,7 +27665,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebchatSettings';}return this.apiClient.callApi('/api/v2/webchat/settings','PUT',{},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WebDeploymentsApi=/*#__PURE__*/function(){/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new WebDeploymentsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WebDeploymentsApi
@@ -27702,7 +27808,7 @@ if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWebdeploymentsDeploymentIdentityresolution';}return this.apiClient.callApi('/api/v2/webdeployments/deployments/{deploymentId}/identityresolution','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WebMessagingApi=/*#__PURE__*/function(){/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new WebMessagingApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WebMessagingApi
@@ -27743,7 +27849,7 @@ if(tokenId===undefined||tokenId===null||tokenId===''){throw'Missing the required
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling postWebmessagingDeploymentPushdevice';}return this.apiClient.callApi('/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}','POST',{'deploymentId':deploymentId,'tokenId':tokenId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WidgetsApi=/*#__PURE__*/function(){/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new WidgetsApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WidgetsApi
@@ -27783,7 +27889,7 @@ if(deploymentId===undefined||deploymentId===null||deploymentId===''){throw'Missi
 if(body===undefined||body===null){throw'Missing the required parameter "body" when calling putWidgetsDeployment';}return this.apiClient.callApi('/api/v2/widgets/deployments/{deploymentId}','PUT',{'deploymentId':deploymentId},{},{},{},body,['PureCloud OAuth'],['application/json'],['application/json']);}}]);}();var WorkforceManagementApi=/*#__PURE__*/function(){/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 *//**
 	 * Constructs a new WorkforceManagementApi. 
 	 * @alias module:purecloud-platform-client-v2/api/WorkforceManagementApi
@@ -29806,7 +29912,7 @@ if(body===undefined||body===null){throw'Missing the required parameter "body" wh
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 246.0.0
+ * @version 247.0.0
  */var platformClient=/*#__PURE__*/_createClass(function platformClient(){_classCallCheck(this,platformClient);/**
 		 * The ApiClient constructor.
 		 * @property {module:purecloud-platform-client-v2/ApiClient}

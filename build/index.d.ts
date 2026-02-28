@@ -3917,6 +3917,7 @@ declare class KnowledgeApi {
   	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>;
   	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>;
   	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<void>;
+  	deleteKnowledgeSetting(knowledgeSettingId: string): Promise<void>;
   	getKnowledgeGuestSessionCategories(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionCategoriesOptions): Promise<Models.GuestCategoryResponseListing>;
   	getKnowledgeGuestSessionDocument(sessionId: string, documentId: string): Promise<Models.KnowledgeGuestDocumentResponse>;
   	getKnowledgeGuestSessionDocuments(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionDocumentsOptions): Promise<Models.KnowledgeGuestDocumentResponseListing>;
@@ -3950,6 +3951,8 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupsOptions): Promise<Models.UnansweredGroups>;
   	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>;
   	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>;
+  	getKnowledgeSetting(knowledgeSettingId: string): Promise<Models.KnowledgeSettingsResponse>;
+  	getKnowledgeSettings(opts?: KnowledgeApi.getKnowledgeSettingsOptions): Promise<Models.KnowledgeSettingListing>;
   	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest): Promise<void>;
   	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBaseUpdateRequest): Promise<Models.KnowledgeBase>;
   	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string, body: Models.CategoryUpdateRequest): Promise<Models.CategoryResponse>;
@@ -3963,6 +3966,7 @@ declare class KnowledgeApi {
   	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestPatch): Promise<void>;
   	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string, body: Models.SyncStatusRequest): Promise<Models.KnowledgeSyncJobResponse>;
   	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>;
+  	patchKnowledgeSetting(knowledgeSettingId: string, body: Models.KnowledgeSettingsRequest): Promise<Models.KnowledgeSettingsResponse>;
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postKnowledgeGuestSessionDocumentCopies(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentCopiesOptions): Promise<void>;
   	postKnowledgeGuestSessionDocumentFeedback(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentFeedbackOptions): Promise<Models.KnowledgeGuestDocumentFeedback>;
@@ -4000,6 +4004,8 @@ declare class KnowledgeApi {
   	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId: string, body: Models.KnowledgeSyncJobRequest): Promise<Models.KnowledgeSyncJobResponse>;
   	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>;
   	postKnowledgeKnowledgebases(body: Models.KnowledgeBaseCreateRequest): Promise<Models.KnowledgeBase>;
+  	postKnowledgeSearchPreview(opts?: KnowledgeApi.postKnowledgeSearchPreviewOptions): Promise<Models.KnowledgeSearchPreviewResponse>;
+  	postKnowledgeSettings(opts?: KnowledgeApi.postKnowledgeSettingsOptions): Promise<Models.KnowledgeSettingsResponse>;
   	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, body: Models.SalesforceSourceRequest): Promise<Models.SalesforceSourceResponse>;
   	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string, body: Models.ServiceNowSourceRequest): Promise<Models.ServiceNowSourceResponse>;
 }
@@ -4149,6 +4155,15 @@ declare namespace KnowledgeApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 	}
+	export interface getKnowledgeSettingsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"name"?: string;
+		"sourceId"?: string;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+	}
 	export interface patchKnowledgeKnowledgebaseChunksSearchSearchIdOptions { 
 		"body"?: Models.ChunkSearchRegisterRequest;
 	}
@@ -4208,6 +4223,12 @@ declare namespace KnowledgeApi {
 	}
 	export interface postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncOptions { 
 		"body"?: object;
+	}
+	export interface postKnowledgeSearchPreviewOptions { 
+		"body"?: Models.KnowledgeSearchPreviewRequest;
+	}
+	export interface postKnowledgeSettingsOptions { 
+		"body"?: Models.KnowledgeSettingsRequest;
 	}
 }
 
@@ -5698,6 +5719,7 @@ declare namespace QualityApi {
 		"expand"?: string;
 	}
 	export interface postQualityConversationEvaluationsOptions { 
+		"idempotencyKey"?: string;
 		"expand"?: string;
 	}
 	export interface putQualityConversationEvaluationOptions { 
@@ -7316,6 +7338,7 @@ declare class TelephonyApi {
 	constructor(apiClient?: ApiClientClass);
   	getTelephonyAgentGreetings(agentId: string): Promise<Models.AgentGreeting>;
   	getTelephonyAgentsGreetingsMe(): Promise<Models.SelfAgentGreeting>;
+  	getTelephonyCallsMetrics(opts?: TelephonyApi.getTelephonyCallsMetricsOptions): Promise<Models.OrganizationCallMetrics>;
   	getTelephonyMediaregions(): Promise<Models.MediaRegions>;
   	getTelephonySipmessagesConversation(conversationId: string): Promise<Models.Callmessage>;
   	getTelephonySipmessagesConversationHeaders(conversationId: string, opts?: TelephonyApi.getTelephonySipmessagesConversationHeadersOptions): Promise<Models.Callheader>;
@@ -7327,6 +7350,9 @@ declare class TelephonyApi {
 }
 
 declare namespace TelephonyApi { 
+	export interface getTelephonyCallsMetricsOptions { 
+		"metricType"?: string;
+	}
 	export interface getTelephonySipmessagesConversationHeadersOptions { 
 		"keys"?: Array<string>;
 	}
@@ -17878,8 +17904,9 @@ declare namespace Models {
 		"pageSize"?: number;
 	}
 	
-	export interface ConversationAttributeFilter { 
-		"schemas"?: Array<Models.ConversationSchemaData>;
+	export interface ConversationAttributeProperties { 
+		"schema": Models.ConversationSchemaReference;
+		"name": string;
 	}
 	
 	export interface ConversationBasic { 
@@ -20682,19 +20709,8 @@ declare namespace Models {
 		"label"?: string;
 	}
 	
-	export interface ConversationSchemaAttribute { 
-		"name": string;
-	}
-	
-	export interface ConversationSchemaData { 
-		"schema": Models.ConversationSchemaReference;
-		"attributes": Array<Models.ConversationSchemaAttribute>;
-		"operator"?: string;
-	}
-	
 	export interface ConversationSchemaReference { 
 		"id": string;
-		"version": number;
 		"selfUri"?: string;
 	}
 	
@@ -21580,6 +21596,7 @@ declare namespace Models {
 		"name": string;
 		"type": string;
 		"participantDataProperties"?: Models.ParticipantDataProperties;
+		"conversationAttributeProperties"?: Models.ConversationAttributeProperties;
 	}
 	
 	export interface CopilotFallbackAction { 
@@ -25709,17 +25726,8 @@ declare namespace Models {
 		"id"?: string;
 		"name": string;
 		"description"?: string;
-		"defaultRoleId"?: string;
 		"permissions"?: Array<string>;
-		"unusedPermissions"?: Array<string>;
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
-		"userCount"?: number;
-		"roleNeedsUpdate"?: boolean;
-		"baseLicense"?: string;
-		"addonLicenses"?: Array<string>;
-		"dateLicenseLastUpdated"?: string;
-		"base"?: boolean;
-		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -34318,6 +34326,11 @@ declare namespace Models {
 		"mediaType"?: string;
 	}
 	
+	export interface KnowledgeConversationTurn { 
+		"participant"?: string;
+		"text"?: string;
+	}
+	
 	export interface KnowledgeDocumentAlternative { 
 		"phrase": string;
 		"autocomplete": boolean;
@@ -34785,6 +34798,11 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeGenerationSetting { 
+		"answerGeneration": boolean;
+		"generationLanguage"?: string;
+	}
+	
 	export interface KnowledgeGroupStatistics { 
 		"unlinkedPhraseCount"?: number;
 		"unlinkedPhraseHitCount"?: number;
@@ -35109,6 +35127,13 @@ declare namespace Models {
 		"body"?: Models.DocumentBody;
 	}
 	
+	export interface KnowledgeRetrievedReference { 
+		"confidence"?: number;
+		"text"?: string;
+		"fileName"?: string;
+		"url"?: string;
+	}
+	
 	export interface KnowledgeSearchClientApplication { 
 		"type": string;
 		"deployment"?: Models.AddressableEntityRef;
@@ -35142,15 +35167,63 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeSearchPreviewRequest { 
+		"query": string;
+		"sources": Array<Models.V3SourceRef>;
+		"generationSetting": Models.KnowledgeGenerationSetting;
+		"stateful"?: boolean;
+		"conversationTurns"?: Array<Models.KnowledgeConversationTurn>;
+	}
+	
+	export interface KnowledgeSearchPreviewResponse { 
+		"query"?: string;
+		"searchId"?: string;
+		"sessionId"?: string;
+		"result"?: Models.KnowledgeSearchResult;
+	}
+	
+	export interface KnowledgeSearchResult { 
+		"generatedAnswer"?: string;
+		"retrievedReferences"?: Array<Models.KnowledgeRetrievedReference>;
+	}
+	
 	export interface KnowledgeSetting { 
 		"id": string;
 		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeSettingListing { 
+		"entities"?: Array<Models.KnowledgeSettingsResponse>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface KnowledgeSettings { 
 		"knowledgeId"?: string;
 		"description"?: string;
 		"knowledgeType"?: string;
+	}
+	
+	export interface KnowledgeSettingsRequest { 
+		"name": string;
+		"description"?: string;
+		"sources": Array<Models.V3SourceRef>;
+		"generationSetting"?: Models.KnowledgeGenerationSetting;
+		"stateful"?: boolean;
+	}
+	
+	export interface KnowledgeSettingsResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"sources"?: Array<Models.V3SourceRef>;
+		"generationSetting"?: Models.KnowledgeGenerationSetting;
+		"stateful"?: boolean;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"selfUri"?: string;
 	}
 	
 	export interface KnowledgeSuggestionConfig { 
@@ -38072,6 +38145,7 @@ declare namespace Models {
 		"sourceId"?: string;
 		"primary"?: boolean;
 		"presenceDefinition"?: Models.PresenceDefinition;
+		"futurePresenceDefinition"?: Models.PresenceDefinition;
 		"message"?: string;
 		"modifiedDate"?: string;
 		"selfUri"?: string;
@@ -39267,6 +39341,18 @@ declare namespace Models {
 		"voicemailEnabled"?: boolean;
 		"productPlatform"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface OrganizationCallMetrics { 
+		"usage": number;
+		"autoScalingTriggerPercentage": number;
+		"cpuIntensity": string;
+		"memoryIntensity": string;
+		"concurrentCallCount": number;
+		"concurrentCallSessionCount": number;
+		"maxCallCapacity": number;
+		"maxCallSessionCapacity": number;
+		"autoScaleInProgress": string;
 	}
 	
 	export interface OrganizationFeatures { 
@@ -46020,6 +46106,7 @@ declare namespace Models {
 		"paymentResponse"?: Models.PaymentResponse;
 		"form"?: Models.RecordingForm;
 		"roadsideAssistance"?: Models.RecordingRoadsideAssistance;
+		"richLink"?: Models.RichLink;
 		"messageReceipts"?: Array<Models.RecordingMessageReceipt>;
 	}
 	
@@ -53755,6 +53842,7 @@ declare namespace Models {
 		"sourceId"?: string;
 		"primary"?: boolean;
 		"presenceDefinition"?: Models.PresenceDefinition;
+		"futurePresenceDefinition"?: Models.PresenceDefinition;
 		"message"?: string;
 		"modifiedDate"?: string;
 		"selfUri"?: string;
@@ -55050,6 +55138,11 @@ declare namespace Models {
 		"status"?: string;
 		"downloadUrl"?: string;
 		"error"?: Models.V2WfmMainForecastExportSnapshotEventMainForecastErrorBody;
+	}
+	
+	export interface V3SourceRef { 
+		"id": string;
+		"selfUri"?: string;
 	}
 	
 	export interface ValidateAddressRequest { 

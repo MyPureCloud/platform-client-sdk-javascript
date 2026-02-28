@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 */
 
 	/**
@@ -1453,6 +1453,7 @@ class QualityApi {
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body evaluation
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.idempotencyKey Idempotency key for request deduplication
 	 * @param {String} opts.expand evaluatorId
 	 */
 	postQualityConversationEvaluations(conversationId, body, opts) { 
@@ -1472,7 +1473,7 @@ class QualityApi {
 			'POST', 
 			{ 'conversationId': conversationId },
 			{ 'expand': opts['expand'] },
-			{  },
+			{ 'Idempotency-Key': opts['idempotencyKey'] },
 			{  },
 			body, 
 			['PureCloud OAuth'], 

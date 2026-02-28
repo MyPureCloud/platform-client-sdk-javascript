@@ -1914,8 +1914,9 @@ GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
 Get a route
 
-Requires ALL permissions:
+Requires ANY permissions:
 
+* routing:email:view
 * routing:email:manage
 
 ### Example Usage
@@ -2023,8 +2024,9 @@ GET /api/v2/routing/email/domains/{domainName}/routes
 
 Get routes
 
-Requires ALL permissions:
+Requires ANY permissions:
 
+* routing:email:view
 * routing:email:manage
 
 ### Example Usage
@@ -9174,4 +9176,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@246.0.0_
+_purecloud-platform-client-v2@247.0.0_

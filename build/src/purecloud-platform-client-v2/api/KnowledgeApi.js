@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 */
 
 	/**
@@ -310,6 +310,31 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
 			'DELETE', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Knowledge setting.
+	 * 
+	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 */
+	deleteKnowledgeSetting(knowledgeSettingId) { 
+		// verify the required parameter 'knowledgeSettingId' is set
+		if (knowledgeSettingId === undefined || knowledgeSettingId === null || knowledgeSettingId === '') {
+			throw 'Missing the required parameter "knowledgeSettingId" when calling deleteKnowledgeSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/settings/{knowledgeSettingId}', 
+			'DELETE', 
+			{ 'knowledgeSettingId': knowledgeSettingId },
 			{  },
 			{  },
 			{  },
@@ -1448,6 +1473,61 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get Knowledge setting.
+	 * 
+	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 */
+	getKnowledgeSetting(knowledgeSettingId) { 
+		// verify the required parameter 'knowledgeSettingId' is set
+		if (knowledgeSettingId === undefined || knowledgeSettingId === null || knowledgeSettingId === '') {
+			throw 'Missing the required parameter "knowledgeSettingId" when calling getKnowledgeSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/settings/{knowledgeSettingId}', 
+			'GET', 
+			{ 'knowledgeSettingId': knowledgeSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Knowledge settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.name Knowledge setting name to search upon.
+	 * @param {String} opts.sourceId Source ID to filter knowledge settings by.
+	 * @param {Object} opts.sortBy Field to sort the knowledge settings on.
+	 * @param {Object} opts.sortOrder Sorting order for knowledge settings.
+	 */
+	getKnowledgeSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/settings', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'name': opts['name'],'sourceId': opts['sourceId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update search result.
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -1899,6 +1979,36 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}', 
 			'PATCH', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'groupId': groupId,'phraseGroupId': phraseGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Knowledge setting.
+	 * 
+	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 * @param {Object} body 
+	 */
+	patchKnowledgeSetting(knowledgeSettingId, body) { 
+		// verify the required parameter 'knowledgeSettingId' is set
+		if (knowledgeSettingId === undefined || knowledgeSettingId === null || knowledgeSettingId === '') {
+			throw 'Missing the required parameter "knowledgeSettingId" when calling patchKnowledgeSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/settings/{knowledgeSettingId}', 
+			'PATCH', 
+			{ 'knowledgeSettingId': knowledgeSettingId },
 			{  },
 			{  },
 			{  },
@@ -3040,6 +3150,54 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Knowledge Search Preview
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeSearchPreview(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/search/preview', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Knowledge setting.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/settings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

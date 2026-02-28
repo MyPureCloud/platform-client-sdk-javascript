@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 246.0.0
+	 * @version 247.0.0
 	 */
 
 	/**
@@ -56,6 +56,30 @@ class TelephonyApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the concurrent call metrics for a given organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.metricType Flag to indicate metric type to fetch. (default to cloud)
+	 */
+	getTelephonyCallsMetrics(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/calls/metrics', 
+			'GET', 
+			{  },
+			{ 'metricType': opts['metricType'] },
 			{  },
 			{  },
 			null, 
