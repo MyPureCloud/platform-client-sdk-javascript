@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Delete Salesforce Knowledge integration source
 [**deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Delete ServiceNow Knowledge integration source
 [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Delete synchronization job
+[**deleteKnowledgeSetting**](KnowledgeApi#deleteKnowledgeSetting) | **DELETE** /api/v2/knowledge/settings/{knowledgeSettingId} | Delete Knowledge setting.
 [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/categories | Get categories
 [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId} | Get a knowledge document by ID.
 [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/documents | Get documents.
@@ -49,6 +50,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroups) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups | Get knowledge base unanswered groups
 [**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
 [**getKnowledgeKnowledgebases**](KnowledgeApi#getKnowledgeKnowledgebases) | **GET** /api/v2/knowledge/knowledgebases | Get knowledge bases
+[**getKnowledgeSetting**](KnowledgeApi#getKnowledgeSetting) | **GET** /api/v2/knowledge/settings/{knowledgeSettingId} | Get Knowledge setting.
+[**getKnowledgeSettings**](KnowledgeApi#getKnowledgeSettings) | **GET** /api/v2/knowledge/settings | Get Knowledge settings.
 [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} | Update search result.
 [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
 [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Update category
@@ -62,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi#patchKnowledgeKnowledgebaseParseJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Send update to the parse operation
 [**patchKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Update synchronization job
 [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Update a Knowledge base unanswered phrase group
+[**patchKnowledgeSetting**](KnowledgeApi#patchKnowledgeSetting) | **PATCH** /api/v2/knowledge/settings/{knowledgeSettingId} | Update Knowledge setting.
 [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi#postKnowledgeGuestSessionDocumentFeedback) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback | Give feedback on a document
@@ -99,6 +103,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseSynchronizeJobs**](KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs | Create synchronization job
 [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
 [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | **POST** /api/v2/knowledge/knowledgebases | Create new knowledge base
+[**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | **POST** /api/v2/knowledge/search/preview | Get Knowledge Search Preview
+[**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | **POST** /api/v2/knowledge/settings | Create Knowledge setting.
 [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Update Salesforce Knowledge integration source
 [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Update ServiceNow Knowledge integration source
 
@@ -619,6 +625,56 @@ apiInstance.deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobI
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **syncJobId** | **String** | Synchronization job ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteKnowledgeSetting
+
+> void deleteKnowledgeSetting(knowledgeSettingId)
+
+
+DELETE /api/v2/knowledge/settings/{knowledgeSettingId}
+
+Delete Knowledge setting.
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+
+apiInstance.deleteKnowledgeSetting(knowledgeSettingId)
+  .then(() => {
+    console.log('deleteKnowledgeSetting returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeSettingId** | **String** | Knowledge Setting ID. |  |
 
 ### Return type
 
@@ -2556,6 +2612,120 @@ apiInstance.getKnowledgeKnowledgebases(opts)
 **KnowledgeBaseListing**
 
 
+## getKnowledgeSetting
+
+> KnowledgeSettingsResponse getKnowledgeSetting(knowledgeSettingId)
+
+
+GET /api/v2/knowledge/settings/{knowledgeSettingId}
+
+Get Knowledge setting.
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+
+apiInstance.getKnowledgeSetting(knowledgeSettingId)
+  .then((data) => {
+    console.log(`getKnowledgeSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeSettingId** | **String** | Knowledge Setting ID. |  |
+
+### Return type
+
+**KnowledgeSettingsResponse**
+
+
+## getKnowledgeSettings
+
+> KnowledgeSettingListing getKnowledgeSettings(opts)
+
+
+GET /api/v2/knowledge/settings
+
+Get Knowledge settings.
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'name': "name_example", // String | Knowledge setting name to search upon.
+  'sourceId': "sourceId_example", // String | Source ID to filter knowledge settings by.
+  'sortBy': "sortBy_example", // String | Field to sort the knowledge settings on.
+  'sortOrder': "sortOrder_example" // String | Sorting order for knowledge settings.
+};
+
+apiInstance.getKnowledgeSettings(opts)
+  .then((data) => {
+    console.log(`getKnowledgeSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **name** | **String** | Knowledge setting name to search upon. | [optional]  |
+ **sourceId** | **String** | Source ID to filter knowledge settings by. | [optional]  |
+ **sortBy** | **String** | Field to sort the knowledge settings on. | [optional] <br />**Values**: dateModified, name |
+ **sortOrder** | **String** | Sorting order for knowledge settings. | [optional] <br />**Values**: Asc, Desc |
+
+### Return type
+
+**KnowledgeSettingListing**
+
+
 ## patchKnowledgeGuestSessionDocumentsSearchSearchId
 
 > void patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
@@ -3262,6 +3432,58 @@ apiInstance.patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseI
 ### Return type
 
 **UnansweredPhraseGroupUpdateResponse**
+
+
+## patchKnowledgeSetting
+
+> KnowledgeSettingsResponse patchKnowledgeSetting(knowledgeSettingId, body)
+
+
+PATCH /api/v2/knowledge/settings/{knowledgeSettingId}
+
+Update Knowledge setting.
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+let body = {}; // Object | 
+
+apiInstance.patchKnowledgeSetting(knowledgeSettingId, body)
+  .then((data) => {
+    console.log(`patchKnowledgeSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeSettingId** | **String** | Knowledge Setting ID. |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**KnowledgeSettingsResponse**
 
 
 ## postKnowledgeDocumentuploads
@@ -5204,6 +5426,110 @@ apiInstance.postKnowledgeKnowledgebases(body)
 **KnowledgeBase**
 
 
+## postKnowledgeSearchPreview
+
+> KnowledgeSearchPreviewResponse postKnowledgeSearchPreview(opts)
+
+
+POST /api/v2/knowledge/search/preview
+
+Get Knowledge Search Preview
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:searchPreview
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeSearchPreview(opts)
+  .then((data) => {
+    console.log(`postKnowledgeSearchPreview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSearchPreview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**KnowledgeSearchPreviewResponse**
+
+
+## postKnowledgeSettings
+
+> KnowledgeSettingsResponse postKnowledgeSettings(opts)
+
+
+POST /api/v2/knowledge/settings
+
+Create Knowledge setting.
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeSettings(opts)
+  .then((data) => {
+    console.log(`postKnowledgeSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**KnowledgeSettingsResponse**
+
+
 ## putKnowledgeKnowledgebaseSourcesSalesforceSourceId
 
 > SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
@@ -5312,4 +5638,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@246.0.0_
+_purecloud-platform-client-v2@247.0.0_
