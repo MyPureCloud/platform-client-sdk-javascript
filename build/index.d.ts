@@ -26395,6 +26395,71 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface EmailCampaignScheduleConfigChangeAlteration { 
+		"type"?: string;
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeEmailCampaignSchedule { 
+		"intervals"?: Array<Models.EmailCampaignScheduleConfigChangeScheduleInterval>;
+		"recurrences"?: Array<Models.EmailCampaignScheduleConfigChangeScheduleRecurrence>;
+		"timeZone"?: string;
+		"emailCampaign"?: Models.EmailCampaignScheduleConfigChangeUriReference;
+		"additionalProperties"?: { [key: string]: object; };
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeObject { 
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeRecurrencePattern { 
+		"type"?: string;
+		"interval"?: number;
+		"daysOfWeek"?: Array<string>;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeRecurrenceRange { 
+		"type"?: string;
+		"end"?: string;
+		"numberOfOccurrences"?: number;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeScheduleInterval { 
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeScheduleRecurrence { 
+		"id"?: string;
+		"start"?: string;
+		"end"?: string;
+		"timeZone"?: string;
+		"range"?: Models.EmailCampaignScheduleConfigChangeRecurrenceRange;
+		"pattern"?: Models.EmailCampaignScheduleConfigChangeRecurrencePattern;
+		"alterations"?: Array<Models.EmailCampaignScheduleConfigChangeAlteration>;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface EmailCampaignScheduleConfigChangeUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface EmailCampaignScheduleEntityListing { 
 		"entities"?: Array<Models.EmailCampaignSchedule>;
 		"pageSize"?: number;
@@ -37521,6 +37586,71 @@ declare namespace Models {
 		"timeZone"?: string;
 		"messagingCampaign": Models.DivisionedDomainEntityRef;
 		"selfUri"?: string;
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeAlteration { 
+		"type"?: string;
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule { 
+		"intervals"?: Array<Models.MessagingCampaignScheduleConfigChangeScheduleInterval>;
+		"recurrences"?: Array<Models.MessagingCampaignScheduleConfigChangeScheduleRecurrence>;
+		"timeZone"?: string;
+		"messagingCampaign"?: Models.MessagingCampaignScheduleConfigChangeUriReference;
+		"additionalProperties"?: { [key: string]: object; };
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeObject { 
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeRecurrencePattern { 
+		"type"?: string;
+		"interval"?: number;
+		"daysOfWeek"?: Array<string>;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeRecurrenceRange { 
+		"type"?: string;
+		"end"?: string;
+		"numberOfOccurrences"?: number;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeScheduleInterval { 
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeScheduleRecurrence { 
+		"id"?: string;
+		"start"?: string;
+		"end"?: string;
+		"timeZone"?: string;
+		"range"?: Models.MessagingCampaignScheduleConfigChangeRecurrenceRange;
+		"pattern"?: Models.MessagingCampaignScheduleConfigChangeRecurrencePattern;
+		"alterations"?: Array<Models.MessagingCampaignScheduleConfigChangeAlteration>;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface MessagingCampaignScheduleConfigChangeUriReference { 
+		"id"?: string;
+		"name"?: string;
 	}
 	
 	export interface MessagingCampaignScheduleEntityListing { 
@@ -57952,6 +58082,71 @@ declare namespace Models {
 		"supportedContent"?: Models.SupportedContentReference;
 		"messagingSetting"?: Models.MessagingSettingRequestReference;
 		"selfUri"?: string;
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeAlteration { 
+		"type"?: string;
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeObject { 
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeRecurrencePattern { 
+		"type"?: string;
+		"interval"?: number;
+		"daysOfWeek"?: Array<string>;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeRecurrenceRange { 
+		"type"?: string;
+		"end"?: string;
+		"numberOfOccurrences"?: number;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeScheduleInterval { 
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeScheduleRecurrence { 
+		"id"?: string;
+		"start"?: string;
+		"end"?: string;
+		"timeZone"?: string;
+		"range"?: Models.WhatsappCampaignScheduleConfigChangeRecurrenceRange;
+		"pattern"?: Models.WhatsappCampaignScheduleConfigChangeRecurrencePattern;
+		"alterations"?: Array<Models.WhatsappCampaignScheduleConfigChangeAlteration>;
+		"additionalProperties"?: { [key: string]: object; };
+		"getAdditionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface WhatsappCampaignScheduleConfigChangeWhatsAppCampaignSchedule { 
+		"intervals"?: Array<Models.WhatsappCampaignScheduleConfigChangeScheduleInterval>;
+		"recurrences"?: Array<Models.WhatsappCampaignScheduleConfigChangeScheduleRecurrence>;
+		"timeZone"?: string;
+		"whatsAppCampaign"?: Models.WhatsappCampaignScheduleConfigChangeUriReference;
+		"additionalProperties"?: { [key: string]: object; };
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"getAdditionalProperties"?: { [key: string]: object; };
 	}
 	
 	export interface WheelPicker { 

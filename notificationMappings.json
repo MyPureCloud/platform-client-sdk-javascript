@@ -373,8 +373,20 @@
       "class": "DialerCampaignScheduleConfigChangeCampaignSchedule"
     },
     {
+      "topic": "v2.outbound.schedules.emailcampaigns.{id}",
+      "class": "EmailCampaignScheduleConfigChangeEmailCampaignSchedule"
+    },
+    {
+      "topic": "v2.outbound.schedules.messagingcampaigns.{id}",
+      "class": "MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule"
+    },
+    {
       "topic": "v2.outbound.schedules.sequences.{id}",
       "class": "DialerSequenceScheduleConfigChangeSequenceSchedule"
+    },
+    {
+      "topic": "v2.outbound.schedules.whatsappcampaigns.{id}",
+      "class": "WhatsappCampaignScheduleConfigChangeWhatsAppCampaignSchedule"
     },
     {
       "topic": "v2.outbound.sequences.{id}",
