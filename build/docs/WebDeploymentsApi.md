@@ -1108,4 +1108,4 @@ apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 **DeploymentIdentityResolutionConfig**
 
 
-_purecloud-platform-client-v2@247.1.0_
+_purecloud-platform-client-v2@248.0.0_

@@ -58,8 +58,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallbackParticipantCommunicationWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsCallbackParticipantWrapup**](ConversationsApi#getConversationsCallbackParticipantWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi#getConversationsCallbackParticipantWrapupcodes) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get active callback conversations for the logged in user
-[**getConversationsCalls**](ConversationsApi#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get active call conversations for the logged in user
+[**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get the logged-in user's active conversations and their Callback participants state.
+[**getConversationsCalls**](ConversationsApi#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get the logged-in user's active conversations and their Call participants state.
 [**getConversationsCallsHistory**](ConversationsApi#getConversationsCallsHistory) | **GET** /api/v2/conversations/calls/history | Get call history
 [**getConversationsCallsMaximumconferenceparties**](ConversationsApi#getConversationsCallsMaximumconferenceparties) | **GET** /api/v2/conversations/calls/maximumconferenceparties | Get the maximum number of participants that this user can have on a conference
 [**getConversationsChat**](ConversationsApi#getConversationsChat) | **GET** /api/v2/conversations/chats/{conversationId} | Get chat conversation
@@ -89,9 +89,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsEmailParticipantWrapup**](ConversationsApi#getConversationsEmailParticipantWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi#getConversationsEmailParticipantWrapupcodes) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsEmailSettings**](ConversationsApi#getConversationsEmailSettings) | **GET** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation
-[**getConversationsEmails**](ConversationsApi#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
+[**getConversationsEmails**](ConversationsApi#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get the logged-in user's active conversations and their Email participants state.
 [**getConversationsInternalmessage**](ConversationsApi#getConversationsInternalmessage) | **GET** /api/v2/conversations/internalmessages/{conversationId} | Get internal message conversation
-[**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | **GET** /api/v2/conversations/internalmessages | Get active internal message conversations for the logged in user
+[**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | **GET** /api/v2/conversations/internalmessages | Get the logged-in user's active conversations and their InternalMessage participants state.
 [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | **GET** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations
 [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | **GET** /api/v2/conversations/keyconfigurations | Get a list of key configurations data
 [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
@@ -102,7 +102,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#getConversationsMessageParticipantCommunicationWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsMessageParticipantWrapup**](ConversationsApi#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsMessages**](ConversationsApi#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
+[**getConversationsMessages**](ConversationsApi#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get the logged-in user's active conversations and their Message participants state.
 [**getConversationsMessagesCachedmedia**](ConversationsApi#getConversationsMessagesCachedmedia) | **GET** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items
 [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
 [**getConversationsMessagingFacebookApp**](ConversationsApi#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
@@ -3028,7 +3028,9 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 
 GET /api/v2/conversations/callbacks
 
-Get active callback conversations for the logged in user
+Get the logged-in user's active conversations and their Callback participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
 
 Requires NO permissions:
 
@@ -3071,7 +3073,9 @@ This endpoint does not need any parameter.
 
 GET /api/v2/conversations/calls
 
-Get active call conversations for the logged in user
+Get the logged-in user's active conversations and their Call participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
 
 Requires NO permissions:
 
@@ -4612,7 +4616,9 @@ apiInstance.getConversationsEmailSettings(conversationId)
 
 GET /api/v2/conversations/emails
 
-Get active email conversations for the logged in user
+Get the logged-in user's active conversations and their Email participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
 
 Requires NO permissions:
 
@@ -4705,7 +4711,9 @@ apiInstance.getConversationsInternalmessage(conversationId)
 
 GET /api/v2/conversations/internalmessages
 
-Get active internal message conversations for the logged in user
+Get the logged-in user's active conversations and their InternalMessage participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
 
 Requires ANY permissions:
 
@@ -5282,7 +5290,9 @@ apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, partic
 
 GET /api/v2/conversations/messages
 
-Get active message conversations for the logged in user
+Get the logged-in user's active conversations and their Message participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
 
 Requires NO permissions:
 
@@ -17391,4 +17401,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@247.1.0_
+_purecloud-platform-client-v2@248.0.0_

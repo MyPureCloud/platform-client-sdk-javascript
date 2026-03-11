@@ -2850,7 +2850,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capac
 
 ## getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
 
-> CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+> CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations
@@ -2876,8 +2876,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let opts = { 
+  'granularity': "granularity_example" // String | Granularity to access staffing group data, defaults to weekly
+};
 
-apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2894,6 +2897,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocatio
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **granularity** | **String** | Granularity to access staffing group data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
 
 ### Return type
 
@@ -2954,7 +2958,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(b
 
 ## getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast
 
-> LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+> LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}
@@ -2981,8 +2985,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | 
 let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | forecastId of forecast
+let opts = { 
+  'granularity': "granularity_example" // String | Granularity to access staffing requirements data, defaults to weekly
+};
 
-apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3000,6 +3007,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequiremen
  **businessUnitId** | **String** |  |  |
  **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | forecastId of forecast |  |
+ **granularity** | **String** | Granularity to access staffing requirements data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
 
 ### Return type
 
@@ -14991,4 +14999,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@247.1.0_
+_purecloud-platform-client-v2@248.0.0_

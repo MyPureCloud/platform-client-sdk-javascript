@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 247.1.0
+	 * @version 248.0.0
 	 */
 
 	/**
@@ -1311,8 +1311,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.granularity Granularity to access staffing group data, defaults to weekly
 	 */
-	getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId) { 
+	getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
@@ -1326,7 +1330,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'capacityPlanId': capacityPlanId },
-			{  },
+			{ 'granularity': opts['granularity'] },
 			{  },
 			{  },
 			null, 
@@ -1372,8 +1376,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId 
 	 * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId forecastId of forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.granularity Granularity to access staffing requirements data, defaults to weekly
 	 */
-	getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId) { 
+	getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast';
@@ -1391,7 +1399,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{  },
+			{ 'granularity': opts['granularity'] },
 			{  },
 			{  },
 			null, 

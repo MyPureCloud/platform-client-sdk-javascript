@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 247.1.0
+	 * @version 248.0.0
 	 */
 
 	/**
@@ -1887,9 +1887,8 @@ class TaskManagementApi {
 
 	/**
 	 * Query for workitems
-	 * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+	 * This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
 	 * @param {Object} body WorkitemQueryPostRequest
-	 * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsQuery(body) { 
 		// verify the required parameter 'body' is set
