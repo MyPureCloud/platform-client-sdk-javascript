@@ -103,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseSynchronizeJobs**](KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs | Create synchronization job
 [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
 [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | **POST** /api/v2/knowledge/knowledgebases | Create new knowledge base
+[**postKnowledgeSearch**](KnowledgeApi#postKnowledgeSearch) | **POST** /api/v2/knowledge/search | Get Knowledge Search
 [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | **POST** /api/v2/knowledge/search/preview | Get Knowledge Search Preview
 [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | **POST** /api/v2/knowledge/settings | Create Knowledge setting.
 [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Update Salesforce Knowledge integration source
@@ -5426,6 +5427,58 @@ apiInstance.postKnowledgeKnowledgebases(body)
 **KnowledgeBase**
 
 
+## postKnowledgeSearch
+
+> KnowledgeSourcesSearchResponse postKnowledgeSearch(opts)
+
+
+POST /api/v2/knowledge/search
+
+Get Knowledge Search
+
+Requires ALL permissions:
+
+* knowledge:knowledgeSetting:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeSearch(opts)
+  .then((data) => {
+    console.log(`postKnowledgeSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**KnowledgeSourcesSearchResponse**
+
+
 ## postKnowledgeSearchPreview
 
 > KnowledgeSearchPreviewResponse postKnowledgeSearchPreview(opts)
@@ -5638,4 +5691,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@247.1.0_
+_purecloud-platform-client-v2@248.0.0_

@@ -242,8 +242,7 @@ Get a group's voicemail policy
 
 Requires ANY permissions:
 
-* directory:group:add
-* directory:group:edit
+* voicemail:groupPolicy:view
 
 ### Example Usage
 
@@ -942,8 +941,7 @@ Update a group's voicemail policy
 
 Requires ANY permissions:
 
-* directory:group:add
-* directory:group:edit
+* voicemail:groupPolicy:edit
 
 ### Example Usage
 
@@ -1390,4 +1388,4 @@ apiInstance.putVoicemailUserpolicy(userId, body)
 **VoicemailUserPolicy**
 
 
-_purecloud-platform-client-v2@247.1.0_
+_purecloud-platform-client-v2@248.0.0_

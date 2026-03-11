@@ -3549,9 +3549,7 @@ POST /api/v2/taskmanagement/workitems/query
 
 Query for workitems
 
-This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-
-postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
 
 Requires ANY permissions:
 
@@ -4054,4 +4052,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@247.1.0_
+_purecloud-platform-client-v2@248.0.0_
