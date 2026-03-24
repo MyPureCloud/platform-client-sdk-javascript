@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -1588,6 +1588,31 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get minimum staffing settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 */
+	getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMinimumstaffingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a planning group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
@@ -1630,6 +1655,31 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get scheduler settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 */
+	getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulerSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -1970,6 +2020,35 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{ 'managementUnitId': opts['managementUnitId'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get users in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.managementUnitIds The IDs of the management units for which to retrieve users
+	 */
+	getWorkforcemanagementBusinessunitUsers(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitUsers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/users', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'managementUnitIds': this.apiClient.buildCollectionParam(opts['managementUnitIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -4217,6 +4296,36 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update minimum staffing settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitMinimumstaffingSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitMinimumstaffingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates the planning group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
@@ -4241,6 +4350,36 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update scheduler settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 */
+	patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulerSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitSchedulerSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
 			{  },
 			{  },
 			{  },

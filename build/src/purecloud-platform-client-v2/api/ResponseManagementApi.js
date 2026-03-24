@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -295,6 +295,62 @@ class ResponseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries/bulk', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+	 * 
+	 * @param {Object} body Query criteria
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postResponsemanagementLibrariesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementLibrariesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/query', 
+			'POST', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get response assets.
+	 * 
+	 * @param {Object} body Asset IDs (max allowed 50)
+	 */
+	postResponsemanagementResponseassetsBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/bulk', 
 			'POST', 
 			{  },
 			{  },

@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -97,6 +97,26 @@ class TelephonyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/mediaregions', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the global telephony configuration.
+	 * 
+	 */
+	getTelephonySettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/settings', 
 			'GET', 
 			{  },
 			{  },
@@ -293,6 +313,31 @@ class TelephonyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/agents/greetings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the global telephony configuration.
+	 * 
+	 * @param {Object} body Telephony
+	 */
+	putTelephonySettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonySettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/settings', 
 			'PUT', 
 			{  },
 			{  },

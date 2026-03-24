@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanOrganizationsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanOrganizationsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/organizations/divisionviews/all | Scan for external organizations using paging
 [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
 [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships
+[**patchExternalcontactsContact**](ExternalContactsApi#patchExternalcontactsContact) | **PATCH** /api/v2/externalcontacts/contacts/{contactId} | Update specific fields of an external contact
 [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
 [**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | Claim or release identifiers for an external organization
 [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
@@ -3385,6 +3386,58 @@ apiInstance.getExternalcontactsScanRelationshipsDivisionviewsAll(opts)
 **CursorRelationshipListing**
 
 
+## patchExternalcontactsContact
+
+> ExternalContact patchExternalcontactsContact(contactId, body)
+
+
+PATCH /api/v2/externalcontacts/contacts/{contactId}
+
+Update specific fields of an external contact
+
+Requires ANY permissions:
+
+* externalContacts:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let body = {}; // Object | Contact fields to update
+
+apiInstance.patchExternalcontactsContact(contactId, body)
+  .then((data) => {
+    console.log(`patchExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsContact');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **body** | **Object** | Contact fields to update |  |
+
+### Return type
+
+**ExternalContact**
+
+
 ## patchExternalcontactsContactIdentifiers
 
 > ContactIdentifier patchExternalcontactsContactIdentifiers(contactId, body)
@@ -6453,4 +6506,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

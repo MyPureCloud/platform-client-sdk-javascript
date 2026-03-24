@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -81,7 +81,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Delete a decision table row
-	 * 
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
@@ -443,7 +443,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Update a decision table
-	 * 
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
 	 */
@@ -608,7 +608,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Create a decision table row
-	 * 
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Create decision table row request
@@ -738,7 +738,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Create a decision table
-	 * 
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {Object} body Decision Table
 	 */
 	postBusinessrulesDecisiontables(body) { 
@@ -818,7 +818,7 @@ class BusinessRulesApi {
 
 	/**
 	 * Full update a decision table row
-	 * 
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID

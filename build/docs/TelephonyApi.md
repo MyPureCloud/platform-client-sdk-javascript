@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyAgentsGreetingsMe**](TelephonyApi#getTelephonyAgentsGreetingsMe) | **GET** /api/v2/telephony/agents/greetings/me | Get the agent's own greetings.
 [**getTelephonyCallsMetrics**](TelephonyApi#getTelephonyCallsMetrics) | **GET** /api/v2/telephony/calls/metrics | Get the concurrent call metrics for a given organization.
 [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | **GET** /api/v2/telephony/mediaregions | Retrieve the list of AWS regions media can stream through.
+[**getTelephonySettings**](TelephonyApi#getTelephonySettings) | **GET** /api/v2/telephony/settings | Get the global telephony configuration.
 [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId} | Get a SIP message.
 [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId}/headers | Get SIP headers.
 [**getTelephonySiptraces**](TelephonyApi#getTelephonySiptraces) | **GET** /api/v2/telephony/siptraces | Fetch SIP metadata
@@ -17,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | **POST** /api/v2/telephony/siptraces/download | Request a download of a pcap file to S3
 [**putTelephonyAgentGreetings**](TelephonyApi#putTelephonyAgentGreetings) | **PUT** /api/v2/telephony/agents/{agentId}/greetings | Updates an agent's greetings.
 [**putTelephonyAgentsGreetingsMe**](TelephonyApi#putTelephonyAgentsGreetingsMe) | **PUT** /api/v2/telephony/agents/greetings/me | Updates the agent's own greetings.
+[**putTelephonySettings**](TelephonyApi#putTelephonySettings) | **PUT** /api/v2/telephony/settings | Update the global telephony configuration.
 
 
 
@@ -210,6 +212,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 **MediaRegions**
+
+
+## getTelephonySettings
+
+> TelephonySettings getTelephonySettings()
+
+
+GET /api/v2/telephony/settings
+
+Get the global telephony configuration.
+
+Requires ANY permissions:
+
+* telephony:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+apiInstance.getTelephonySettings()
+  .then((data) => {
+    console.log(`getTelephonySettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonySettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**TelephonySettings**
 
 
 ## getTelephonySipmessagesConversation
@@ -586,4 +633,54 @@ apiInstance.putTelephonyAgentsGreetingsMe(body)
 **SelfAgentGreeting**
 
 
-_purecloud-platform-client-v2@248.0.0_
+## putTelephonySettings
+
+> TelephonySettings putTelephonySettings(body)
+
+
+PUT /api/v2/telephony/settings
+
+Update the global telephony configuration.
+
+Requires ANY permissions:
+
+* telephony:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let body = {}; // Object | Telephony
+
+apiInstance.putTelephonySettings(body)
+  .then((data) => {
+    console.log(`putTelephonySettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonySettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Telephony |  |
+
+### Return type
+
+**TelephonySettings**
+
+
+_purecloud-platform-client-v2@249.0.0_

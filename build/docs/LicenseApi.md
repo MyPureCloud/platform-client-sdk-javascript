@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLicenseUser**](LicenseApi#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
 [**getLicenseUsers**](LicenseApi#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
 [**postLicenseInfer**](LicenseApi#postLicenseInfer) | **POST** /api/v2/license/infer | Get a list of licenses inferred based on a list of roleIds
+[**postLicenseInferPermissions**](LicenseApi#postLicenseInferPermissions) | **POST** /api/v2/license/infer/permissions | Get a list of licenses inferred based on a list of permissions
 [**postLicenseOrganization**](LicenseApi#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization's license assignments in a batch.
 [**postLicenseToggle**](LicenseApi#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Deprecated. No alternative required - this endpoint has no effect
 [**postLicenseUsers**](LicenseApi#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
@@ -318,6 +319,61 @@ apiInstance.postLicenseInfer(opts)
 **[&#39;String&#39;]**
 
 
+## postLicenseInferPermissions
+
+> **[&#39;String&#39;]** postLicenseInferPermissions(opts)
+
+
+POST /api/v2/license/infer/permissions
+
+Get a list of licenses inferred based on a list of permissions
+
+postLicenseInferPermissions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:grant:add
+* authorization:license:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LicenseApi();
+
+let opts = { 
+  'body': ["body_example"] // [String] | The permissions to use while inferring licenses
+};
+
+apiInstance.postLicenseInferPermissions(opts)
+  .then((data) => {
+    console.log(`postLicenseInferPermissions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLicenseInferPermissions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **[String]** | The permissions to use while inferring licenses | [optional]  |
+
+### Return type
+
+**[&#39;String&#39;]**
+
+
 ## postLicenseOrganization
 
 > [LicenseUpdateStatus] postLicenseOrganization(opts)
@@ -471,4 +527,4 @@ apiInstance.postLicenseUsers(opts)
 **{&#39;String&#39;: Object}**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

@@ -505,6 +505,10 @@
       "class": "V2ReprocessJobStateChangedTopicJobStateChanged"
     },
     {
+      "topic": "v2.speechandtextanalytics.topics.generatedphrases.jobs.{id}",
+      "class": "GenAiPhrasesTopicsDefinitionsJob"
+    },
+    {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
       "class": "PublishTopicTopicsDefinitionsJob"
     },

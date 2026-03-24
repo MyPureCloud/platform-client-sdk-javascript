@@ -28,6 +28,8 @@ docs/BusinessRulesApi.json
 docs/BusinessRulesApi.md
 docs/CarrierServicesApi.json
 docs/CarrierServicesApi.md
+docs/CaseManagementApi.json
+docs/CaseManagementApi.md
 docs/ChatApi.json
 docs/ChatApi.md
 docs/CoachingApi.json
@@ -227,6 +229,8 @@ docs/deleteBusinessrulesDecisiontable-example.txt
 docs/deleteBusinessrulesDecisiontableVersion-example.txt
 docs/deleteBusinessrulesDecisiontableVersionRow-example.txt
 docs/deleteBusinessrulesSchema-example.txt
+docs/deleteCasemanagementCase-example.txt
+docs/deleteCasemanagementCaseplan-example.txt
 docs/deleteChatsRoomMessage-example.txt
 docs/deleteChatsRoomMessagesPin-example.txt
 docs/deleteChatsRoomParticipant-example.txt
@@ -317,6 +321,7 @@ docs/deleteJourneyOutcomesPredictor-example.txt
 docs/deleteJourneySegment-example.txt
 docs/deleteJourneyView-example.txt
 docs/deleteJourneyViewSchedules-example.txt
+docs/deleteKnowledgeConnection-example.txt
 docs/deleteKnowledgeKnowledgebase-example.txt
 docs/deleteKnowledgeKnowledgebaseCategory-example.txt
 docs/deleteKnowledgeKnowledgebaseDocument-example.txt
@@ -328,6 +333,7 @@ docs/deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/deleteKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/deleteKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/deleteKnowledgeSetting-example.txt
+docs/deleteKnowledgeSource-example.txt
 docs/deleteLanguage-example.txt
 docs/deleteLanguageunderstandingDomain-example.txt
 docs/deleteLanguageunderstandingDomainFeedbackFeedbackId-example.txt
@@ -710,6 +716,25 @@ docs/getBusinessrulesSchemas-example.txt
 docs/getBusinessrulesSchemasCoretype-example.txt
 docs/getBusinessrulesSchemasCoretypes-example.txt
 docs/getCarrierservicesIntegrationsEmergencylocationsMe-example.txt
+docs/getCasemanagementCase-example.txt
+docs/getCasemanagementCaseAssociation-example.txt
+docs/getCasemanagementCaseAssociations-example.txt
+docs/getCasemanagementCaseStage-example.txt
+docs/getCasemanagementCaseStageStep-example.txt
+docs/getCasemanagementCaseStageSteps-example.txt
+docs/getCasemanagementCaseStages-example.txt
+docs/getCasemanagementCaseTerminateJob-example.txt
+docs/getCasemanagementCaseplan-example.txt
+docs/getCasemanagementCaseplanVersion-example.txt
+docs/getCasemanagementCaseplanVersionDataschemas-example.txt
+docs/getCasemanagementCaseplanVersionIntakesettings-example.txt
+docs/getCasemanagementCaseplanVersionStageplan-example.txt
+docs/getCasemanagementCaseplanVersionStageplanStepplan-example.txt
+docs/getCasemanagementCaseplanVersionStageplanStepplans-example.txt
+docs/getCasemanagementCaseplanVersionStageplans-example.txt
+docs/getCasemanagementCaseplans-example.txt
+docs/getCasemanagementCasesExternalcontact-example.txt
+docs/getCasemanagementCasesReference-example.txt
 docs/getChatsMessage-example.txt
 docs/getChatsRoom-example.txt
 docs/getChatsRoomMessage-example.txt
@@ -1197,6 +1222,9 @@ docs/getJourneyViewsEventdefinitions-example.txt
 docs/getJourneyViewsJobs-example.txt
 docs/getJourneyViewsJobsMe-example.txt
 docs/getJourneyViewsSchedules-example.txt
+docs/getKnowledgeConnection-example.txt
+docs/getKnowledgeConnectionOptions-example.txt
+docs/getKnowledgeConnections-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
@@ -1233,6 +1261,11 @@ docs/getKnowledgeKnowledgebaseUploadsUrlsJob-example.txt
 docs/getKnowledgeKnowledgebases-example.txt
 docs/getKnowledgeSetting-example.txt
 docs/getKnowledgeSettings-example.txt
+docs/getKnowledgeSource-example.txt
+docs/getKnowledgeSourceSynchronization-example.txt
+docs/getKnowledgeSourceSynchronizations-example.txt
+docs/getKnowledgeSources-example.txt
+docs/getKnowledgeSourcesSynchronizations-example.txt
 docs/getLanguage-example.txt
 docs/getLanguages-example.txt
 docs/getLanguagesTranslations-example.txt
@@ -1372,6 +1405,7 @@ docs/getOutboundContactlistsDivisionview-example.txt
 docs/getOutboundContactlistsDivisionviews-example.txt
 docs/getOutboundContactlisttemplate-example.txt
 docs/getOutboundContactlisttemplates-example.txt
+docs/getOutboundDiagnosticsCampaignSummary-example.txt
 docs/getOutboundDigitalruleset-example.txt
 docs/getOutboundDigitalrulesets-example.txt
 docs/getOutboundDnclist-example.txt
@@ -1765,6 +1799,7 @@ docs/getTelephonyProvidersEdgesTrunkbasesettingsTemplate-example.txt
 docs/getTelephonyProvidersEdgesTrunks-example.txt
 docs/getTelephonyProvidersEdgesTrunksMetrics-example.txt
 docs/getTelephonyProvidersEdgesTrunkswithrecording-example.txt
+docs/getTelephonySettings-example.txt
 docs/getTelephonySipmessagesConversation-example.txt
 docs/getTelephonySipmessagesConversationHeaders-example.txt
 docs/getTelephonySiptraces-example.txt
@@ -1917,8 +1952,10 @@ docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession-exa
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId-example.txt
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId-example.txt
 docs/getWorkforcemanagementBusinessunitManagementunits-example.txt
+docs/getWorkforcemanagementBusinessunitMinimumstaffingSettings-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroups-example.txt
+docs/getWorkforcemanagementBusinessunitSchedulerSettings-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRunResult-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRuns-example.txt
@@ -1930,6 +1967,7 @@ docs/getWorkforcemanagementBusinessunitTimeofflimit-example.txt
 docs/getWorkforcemanagementBusinessunitTimeofflimits-example.txt
 docs/getWorkforcemanagementBusinessunitTimeoffplan-example.txt
 docs/getWorkforcemanagementBusinessunitTimeoffplans-example.txt
+docs/getWorkforcemanagementBusinessunitUsers-example.txt
 docs/getWorkforcemanagementBusinessunitWeekSchedule-example.txt
 docs/getWorkforcemanagementBusinessunitWeekScheduleGenerationresults-example.txt
 docs/getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast-example.txt
@@ -2013,6 +2051,12 @@ docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchBusinessrulesDecisiontable-example.txt
 docs/patchBusinessrulesDecisiontableVersion-example.txt
+docs/patchCasemanagementCaseDatedue-example.txt
+docs/patchCasemanagementCasePriority-example.txt
+docs/patchCasemanagementCaseSummary-example.txt
+docs/patchCasemanagementCaseplan-example.txt
+docs/patchCasemanagementCaseplanStageplan-example.txt
+docs/patchCasemanagementCaseplanStageplanStepplan-example.txt
 docs/patchChatsRoom-example.txt
 docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
@@ -2082,6 +2126,7 @@ docs/patchEmailsSettingsThreading-example.txt
 docs/patchEmailsSettingsThreading-example.txt
 docs/patchEmployeeengagementCelebration-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
+docs/patchExternalcontactsContact-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchExternalcontactsOrganizationIdentifiers-example.txt
 docs/patchFlowsInstancesSettingsExecutiondata-example.txt
@@ -2100,6 +2145,7 @@ docs/patchJourneyActiontemplate-example.txt
 docs/patchJourneyOutcome-example.txt
 docs/patchJourneySegment-example.txt
 docs/patchJourneyViewVersionJob-example.txt
+docs/patchKnowledgeConnection-example.txt
 docs/patchKnowledgeGuestSessionDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebase-example.txt
 docs/patchKnowledgeKnowledgebaseCategory-example.txt
@@ -2114,6 +2160,7 @@ docs/patchKnowledgeKnowledgebaseParseJob-example.txt
 docs/patchKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/patchKnowledgeSetting-example.txt
+docs/patchKnowledgeSourceSynchronization-example.txt
 docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
 docs/patchLearningAssignment-example.txt
@@ -2211,7 +2258,9 @@ docs/patchWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/patchWorkforcemanagementBusinessunitActivityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitCapacityplan-example.txt
+docs/patchWorkforcemanagementBusinessunitMinimumstaffingSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
+docs/patchWorkforcemanagementBusinessunitSchedulerSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/patchWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
 docs/patchWorkforcemanagementBusinessunitStaffinggroup-example.txt
@@ -2376,6 +2425,13 @@ docs/postBusinessrulesDecisiontableVersions-example.txt
 docs/postBusinessrulesDecisiontables-example.txt
 docs/postBusinessrulesSchemas-example.txt
 docs/postCarrierservicesIntegrationsEmergencylocationsMe-example.txt
+docs/postCasemanagementCaseAssociations-example.txt
+docs/postCasemanagementCaseTerminateJobs-example.txt
+docs/postCasemanagementCaseplanPublish-example.txt
+docs/postCasemanagementCaseplanVersions-example.txt
+docs/postCasemanagementCaseplans-example.txt
+docs/postCasemanagementCases-example.txt
+docs/postCasemanagementCasesAssociationsQuery-example.txt
 docs/postCertificateDetails-example.txt
 docs/postChatsRoomMessages-example.txt
 docs/postChatsRoomMessagesPins-example.txt
@@ -2646,6 +2702,7 @@ docs/postJourneyViewVersionJobs-example.txt
 docs/postJourneyViewVersions-example.txt
 docs/postJourneyViews-example.txt
 docs/postJourneyViewsEncodingsValidate-example.txt
+docs/postKnowledgeConnections-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeGuestSessionDocumentCopies-example.txt
@@ -2688,6 +2745,9 @@ docs/postKnowledgeKnowledgebases-example.txt
 docs/postKnowledgeSearch-example.txt
 docs/postKnowledgeSearchPreview-example.txt
 docs/postKnowledgeSettings-example.txt
+docs/postKnowledgeSourceSynchronizationUploads-example.txt
+docs/postKnowledgeSourceSynchronizations-example.txt
+docs/postKnowledgeSources-example.txt
 docs/postLanguages-example.txt
 docs/postLanguageunderstandingDomainFeedback-example.txt
 docs/postLanguageunderstandingDomainVersionDetect-example.txt
@@ -2719,6 +2779,7 @@ docs/postLearningScheduleslotsJobs-example.txt
 docs/postLearningScheduleslotsQuery-example.txt
 docs/postLearningScorm-example.txt
 docs/postLicenseInfer-example.txt
+docs/postLicenseInferPermissions-example.txt
 docs/postLicenseOrganization-example.txt
 docs/postLicenseToggle-example.txt
 docs/postLicenseUsers-example.txt
@@ -2819,6 +2880,8 @@ docs/postRecordingsScreensessionsAcknowledge-example.txt
 docs/postRecordingsScreensessionsMetadata-example.txt
 docs/postResponsemanagementLibraries-example.txt
 docs/postResponsemanagementLibrariesBulk-example.txt
+docs/postResponsemanagementLibrariesQuery-example.txt
+docs/postResponsemanagementResponseassetsBulk-example.txt
 docs/postResponsemanagementResponseassetsSearch-example.txt
 docs/postResponsemanagementResponseassetsUploads-example.txt
 docs/postResponsemanagementResponses-example.txt
@@ -3200,6 +3263,7 @@ docs/putJourneyViewSchedules-example.txt
 docs/putJourneyViewVersion-example.txt
 docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
+docs/putKnowledgeSource-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
 docs/putLearningModulePreview-example.txt
@@ -3322,6 +3386,7 @@ docs/putTelephonyProvidersEdgesSiteNumberplans-example.txt
 docs/putTelephonyProvidersEdgesSiteOutboundroute-example.txt
 docs/putTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/putTelephonyProvidersEdgesTrunkbasesetting-example.txt
+docs/putTelephonySettings-example.txt
 docs/putTokensTimeout-example.txt
 docs/putUserCallforwarding-example.txt
 docs/putUserCustomattributes-example.txt
@@ -3376,6 +3441,7 @@ src/purecloud-platform-client-v2/api/BackgroundAssistantApi.js
 src/purecloud-platform-client-v2/api/BillingApi.js
 src/purecloud-platform-client-v2/api/BusinessRulesApi.js
 src/purecloud-platform-client-v2/api/CarrierServicesApi.js
+src/purecloud-platform-client-v2/api/CaseManagementApi.js
 src/purecloud-platform-client-v2/api/ChatApi.js
 src/purecloud-platform-client-v2/api/CoachingApi.js
 src/purecloud-platform-client-v2/api/ContentManagementApi.js

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundCampaignrule**](OutboundApi#deleteOutboundCampaignrule) | **DELETE** /api/v2/outbound/campaignrules/{campaignRuleId} | Delete Campaign Rule
 [**deleteOutboundContactlist**](OutboundApi#deleteOutboundContactlist) | **DELETE** /api/v2/outbound/contactlists/{contactListId} | Delete a contact list.
 [**deleteOutboundContactlistContact**](OutboundApi#deleteOutboundContactlistContact) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Delete a contact.
-[**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
+[**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 [**deleteOutboundContactlistfilter**](OutboundApi#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
 [**deleteOutboundContactlists**](OutboundApi#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundContactlisttemplate**](OutboundApi#deleteOutboundContactlisttemplate) | **DELETE** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Delete Contact List Template
@@ -73,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundContactlistsDivisionviews**](OutboundApi#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
 [**getOutboundContactlisttemplate**](OutboundApi#getOutboundContactlisttemplate) | **GET** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Get Contact List Template
 [**getOutboundContactlisttemplates**](OutboundApi#getOutboundContactlisttemplates) | **GET** /api/v2/outbound/contactlisttemplates | Query a list of contact list templates
+[**getOutboundDiagnosticsCampaignSummary**](OutboundApi#getOutboundDiagnosticsCampaignSummary) | **GET** /api/v2/outbound/diagnostics/campaigns/{campaignId}/summary | Get diagnostic summary for a single campaign
 [**getOutboundDigitalruleset**](OutboundApi#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
 [**getOutboundDigitalrulesets**](OutboundApi#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
 [**getOutboundDnclist**](OutboundApi#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
@@ -594,7 +595,7 @@ void (no response body)
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts
 
-Delete contacts from a contact list.
+Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 
 Requires ANY permissions:
 
@@ -3826,6 +3827,60 @@ apiInstance.getOutboundContactlisttemplates(opts)
 ### Return type
 
 **ContactListTemplateEntityListing**
+
+
+## getOutboundDiagnosticsCampaignSummary
+
+> CampaignDiagnosticSummary getOutboundDiagnosticsCampaignSummary(campaignId, start, end)
+
+
+GET /api/v2/outbound/diagnostics/campaigns/{campaignId}/summary
+
+Get diagnostic summary for a single campaign
+
+Requires ANY permissions:
+
+* outbound:campaignDiagnostic:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let start = "start_example"; // String | Start datetime (ISO 8601 or Unix epoch)
+let end = "end_example"; // String | End datetime (ISO 8601 or Unix epoch)
+
+apiInstance.getOutboundDiagnosticsCampaignSummary(campaignId, start, end)
+  .then((data) => {
+    console.log(`getOutboundDiagnosticsCampaignSummary success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundDiagnosticsCampaignSummary');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **start** | **String** | Start datetime (ISO 8601 or Unix epoch) |  |
+ **end** | **String** | End datetime (ISO 8601 or Unix epoch) |  |
+
+### Return type
+
+**CampaignDiagnosticSummary**
 
 
 ## getOutboundDigitalruleset
@@ -9565,4 +9620,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

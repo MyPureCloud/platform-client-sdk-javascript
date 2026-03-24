@@ -4359,4 +4359,4 @@ apiInstance.putGamificationStatus(status)
 **GamificationStatus**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

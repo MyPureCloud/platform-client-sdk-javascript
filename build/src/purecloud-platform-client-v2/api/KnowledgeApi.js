@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class KnowledgeApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete connection
+	 * 
+	 * @param {String} connectionId Connection ID
+	 */
+	deleteKnowledgeConnection(connectionId) { 
+		// verify the required parameter 'connectionId' is set
+		if (connectionId === undefined || connectionId === null || connectionId === '') {
+			throw 'Missing the required parameter "connectionId" when calling deleteKnowledgeConnection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/connections/{connectionId}', 
+			'DELETE', 
+			{ 'connectionId': connectionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete knowledge base
@@ -335,6 +360,109 @@ class KnowledgeApi {
 			'/api/v2/knowledge/settings/{knowledgeSettingId}', 
 			'DELETE', 
 			{ 'knowledgeSettingId': knowledgeSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete source
+	 * 
+	 * @param {String} sourceId Source ID
+	 */
+	deleteKnowledgeSource(sourceId) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeSource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}', 
+			'DELETE', 
+			{ 'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get connection
+	 * 
+	 * @param {String} connectionId Connection ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 */
+	getKnowledgeConnection(connectionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'connectionId' is set
+		if (connectionId === undefined || connectionId === null || connectionId === '') {
+			throw 'Missing the required parameter "connectionId" when calling getKnowledgeConnection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/connections/{connectionId}', 
+			'GET', 
+			{ 'connectionId': connectionId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get connection options
+	 * 
+	 * @param {String} connectionId Connection ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.parentId The id of the parent option whose children to be listed.
+	 */
+	getKnowledgeConnectionOptions(connectionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'connectionId' is set
+		if (connectionId === undefined || connectionId === null || connectionId === '') {
+			throw 'Missing the required parameter "connectionId" when calling getKnowledgeConnectionOptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/connections/{connectionId}/options', 
+			'GET', 
+			{ 'connectionId': connectionId },
+			{ 'parentId': opts['parentId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get connections
+	 * 
+	 */
+	getKnowledgeConnections() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/connections', 
+			'GET', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -1528,6 +1656,175 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get source
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Optional fields to expand for the Source.
+	 */
+	getKnowledgeSource(sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}', 
+			'GET', 
+			{ 'sourceId': sourceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific synchronization of a source.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 */
+	getKnowledgeSourceSynchronization(sourceId, synchronizationId) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronization';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling getKnowledgeSourceSynchronization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}', 
+			'GET', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get synchronizations of a source.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 */
+	getKnowledgeSourceSynchronizations(sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronizations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations', 
+			'GET', 
+			{ 'sourceId': sourceId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List sources
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Optional fields to expand for the Source.
+	 */
+	getKnowledgeSources(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get synchronizations of all sources of the organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 */
+	getKnowledgeSourcesSynchronizations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/synchronizations', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update connection
+	 * 
+	 * @param {String} connectionId Connection ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeConnection(connectionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'connectionId' is set
+		if (connectionId === undefined || connectionId === null || connectionId === '') {
+			throw 'Missing the required parameter "connectionId" when calling patchKnowledgeConnection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/connections/{connectionId}', 
+			'PATCH', 
+			{ 'connectionId': connectionId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update search result.
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -2009,6 +2306,66 @@ class KnowledgeApi {
 			'/api/v2/knowledge/settings/{knowledgeSettingId}', 
 			'PATCH', 
 			{ 'knowledgeSettingId': knowledgeSettingId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update synchronization.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {Object} body 
+	 */
+	patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling patchKnowledgeSourceSynchronization';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling patchKnowledgeSourceSynchronization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeSourceSynchronization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}', 
+			'PATCH', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create new connection
+	 * 
+	 * @param {Object} body 
+	 */
+	postKnowledgeConnections(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeConnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/connections', 
+			'POST', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -3229,6 +3586,95 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Create presigned URL for uploading a file in the synchronization.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {String} synchronizationId Synchronization ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeSourceSynchronizationUploads';
+		}
+		// verify the required parameter 'synchronizationId' is set
+		if (synchronizationId === undefined || synchronizationId === null || synchronizationId === '') {
+			throw 'Missing the required parameter "synchronizationId" when calling postKnowledgeSourceSynchronizationUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeSourceSynchronizationUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads', 
+			'POST', 
+			{ 'sourceId': sourceId,'synchronizationId': synchronizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start a manual synchronization from a source.
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeSourceSynchronizations(sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeSourceSynchronizations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}/synchronizations', 
+			'POST', 
+			{ 'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new source
+	 * 
+	 * @param {Object} body 
+	 */
+	postKnowledgeSources(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeSources';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update Salesforce Knowledge integration source
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -3288,6 +3734,36 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
 			'PUT', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the source
+	 * 
+	 * @param {String} sourceId Source ID
+	 * @param {Object} body 
+	 */
+	putKnowledgeSource(sourceId, body) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling putKnowledgeSource';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putKnowledgeSource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/sources/{sourceId}', 
+			'PUT', 
+			{ 'sourceId': sourceId },
 			{  },
 			{  },
 			{  },

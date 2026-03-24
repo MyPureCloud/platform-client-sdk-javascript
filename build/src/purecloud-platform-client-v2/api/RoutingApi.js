@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -2207,7 +2207,7 @@ class RoutingApi {
 
 	/**
 	 * Get a phone number provisioned for SMS.
-	 * 
+	 * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the "SMS Default" profile. This default profile allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The "SMS Default" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
 	 * @param {String} phoneNumberId phone number
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand response with additional information
@@ -2236,7 +2236,7 @@ class RoutingApi {
 
 	/**
 	 * Get a list of provisioned phone numbers.
-	 * 
+	 * When no supported content profile is explicitly set, the system uses the "SMS Default" profile. This default profile allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The "SMS Default" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
 	 * @param {Array.<String>} opts.phoneNumberType Filter on phone number type
@@ -3153,7 +3153,7 @@ class RoutingApi {
 
 	/**
 	 * Update a phone number provisioned for SMS.
-	 * 
+	 * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the "SMS Default" profile, which allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
 	 * @param {String} phoneNumberId phone number
 	 * @param {Object} body SmsPhoneNumberPatchRequest
 	 */
@@ -3996,7 +3996,7 @@ class RoutingApi {
 
 	/**
 	 * Provision a phone number for SMS
-	 * 
+	 * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the "SMS Default" profile. This default profile allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
 	 * @param {Object} body SmsPhoneNumber
 	 */
 	postRoutingSmsPhonenumbers(body) { 

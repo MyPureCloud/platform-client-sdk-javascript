@@ -18,6 +18,7 @@ import BackgroundAssistantApi from './api/BackgroundAssistantApi.js';
 import BillingApi from './api/BillingApi.js';
 import BusinessRulesApi from './api/BusinessRulesApi.js';
 import CarrierServicesApi from './api/CarrierServicesApi.js';
+import CaseManagementApi from './api/CaseManagementApi.js';
 import ChatApi from './api/ChatApi.js';
 import CoachingApi from './api/CoachingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
@@ -121,7 +122,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 248.0.0
+ * @version 249.0.0
  */
 class platformClient {
 	constructor() {
@@ -205,6 +206,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/CarrierServicesApi}
 		 */
 		this.CarrierServicesApi = CarrierServicesApi;
+		/**
+		 * The CaseManagementApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/CaseManagementApi}
+		 */
+		this.CaseManagementApi = CaseManagementApi;
 		/**
 		 * The ChatApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ChatApi}

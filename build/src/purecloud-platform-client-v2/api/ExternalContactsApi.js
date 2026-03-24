@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -1636,6 +1636,36 @@ class ExternalContactsApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update specific fields of an external contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} body Contact fields to update
+	 */
+	patchExternalcontactsContact(contactId, body) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null || contactId === '') {
+			throw 'Missing the required parameter "contactId" when calling patchExternalcontactsContact';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsContact';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}', 
+			'PATCH', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

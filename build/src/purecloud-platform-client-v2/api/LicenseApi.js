@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -152,6 +152,31 @@ class LicenseApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/license/infer', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of licenses inferred based on a list of permissions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.body The permissions to use while inferring licenses
+	 * postLicenseInferPermissions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postLicenseInferPermissions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/license/infer/permissions', 
 			'POST', 
 			{  },
 			{  },

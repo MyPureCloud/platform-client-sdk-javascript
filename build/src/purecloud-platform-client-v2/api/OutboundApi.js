@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -226,7 +226,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Delete contacts from a contact list.
+	 * Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {Array.<String>} contactIds ContactIds to delete.
@@ -1823,6 +1823,41 @@ class OutboundApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get diagnostic summary for a single campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {String} start Start datetime (ISO 8601 or Unix epoch)
+	 * @param {String} end End datetime (ISO 8601 or Unix epoch)
+	 */
+	getOutboundDiagnosticsCampaignSummary(campaignId, start, end) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundDiagnosticsCampaignSummary';
+		}
+		// verify the required parameter 'start' is set
+		if (start === undefined || start === null) {
+			throw 'Missing the required parameter "start" when calling getOutboundDiagnosticsCampaignSummary';
+		}
+		// verify the required parameter 'end' is set
+		if (end === undefined || end === null) {
+			throw 'Missing the required parameter "end" when calling getOutboundDiagnosticsCampaignSummary';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/diagnostics/campaigns/{campaignId}/summary', 
+			'GET', 
+			{ 'campaignId': campaignId },
+			{ 'start': start,'end': end },
 			{  },
 			{  },
 			null, 

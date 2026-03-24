@@ -153,6 +153,8 @@ DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/ro
 
 Delete a decision table row
 
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
 Requires ALL permissions:
 
 * businessrules:decisionTableRow:delete
@@ -840,6 +842,8 @@ PATCH /api/v2/businessrules/decisiontables/{tableId}
 
 Update a decision table
 
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
 Requires ALL permissions:
 
 * businessrules:decisionTable:edit
@@ -1108,6 +1112,8 @@ POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows
 
 Create a decision table row
 
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
 Requires ALL permissions:
 
 * businessrules:decisionTableRow:add
@@ -1325,6 +1331,8 @@ POST /api/v2/businessrules/decisiontables
 
 Create a decision table
 
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
 Requires ALL permissions:
 
 * businessrules:decisionTable:add
@@ -1479,6 +1487,8 @@ PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/
 
 Full update a decision table row
 
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
 Requires ALL permissions:
 
 * businessrules:decisionTableRow:edit
@@ -1579,4 +1589,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 **BusinessRulesDataSchema**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 248.0.0
+	 * @version 249.0.0
 	 */
 
 	/**
@@ -2193,8 +2193,12 @@ class ConversationsApi {
 	 * Get conversation messages
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeAgentlessStitchedMessages Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. (default to false)
 	 */
-	getConversationsEmailMessages(conversationId) { 
+	getConversationsEmailMessages(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessages';
@@ -2204,7 +2208,7 @@ class ConversationsApi {
 			'/api/v2/conversations/emails/{conversationId}/messages', 
 			'GET', 
 			{ 'conversationId': conversationId },
-			{  },
+			{ 'includeAgentlessStitchedMessages': opts['includeAgentlessStitchedMessages'] },
 			{  },
 			{  },
 			null, 
@@ -9478,7 +9482,7 @@ class ConversationsApi {
 	/**
 	 * Set the organization's default supported content profile that may be assigned to an integration when it is created.
 	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
-	 * @param {Object} body SupportedContent
+	 * @param {Object} body Reference to supported content profile
 	 */
 	putConversationsMessagingSupportedcontentDefault(body) { 
 		// verify the required parameter 'body' is set
