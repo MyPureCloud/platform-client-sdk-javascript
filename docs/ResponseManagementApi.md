@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getResponsemanagementResponses**](ResponseManagementApi#getResponsemanagementResponses) | **GET** /api/v2/responsemanagement/responses | Gets a list of existing responses.
 [**postResponsemanagementLibraries**](ResponseManagementApi#postResponsemanagementLibraries) | **POST** /api/v2/responsemanagement/libraries | Create a response library.
 [**postResponsemanagementLibrariesBulk**](ResponseManagementApi#postResponsemanagementLibrariesBulk) | **POST** /api/v2/responsemanagement/libraries/bulk | Get response libraries.
+[**postResponsemanagementLibrariesQuery**](ResponseManagementApi#postResponsemanagementLibrariesQuery) | **POST** /api/v2/responsemanagement/libraries/query | Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+[**postResponsemanagementResponseassetsBulk**](ResponseManagementApi#postResponsemanagementResponseassetsBulk) | **POST** /api/v2/responsemanagement/responseassets/bulk | Get response assets.
 [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi#postResponsemanagementResponseassetsSearch) | **POST** /api/v2/responsemanagement/responseassets/search | Search response assets
 [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi#postResponsemanagementResponseassetsUploads) | **POST** /api/v2/responsemanagement/responseassets/uploads | Creates pre-signed url for uploading response asset
 [**postResponsemanagementResponses**](ResponseManagementApi#postResponsemanagementResponses) | **POST** /api/v2/responsemanagement/responses | Create a response.
@@ -601,6 +603,114 @@ apiInstance.postResponsemanagementLibrariesBulk(body)
 **LibraryEntityListing**
 
 
+## postResponsemanagementLibrariesQuery
+
+> LibraryEntityListing postResponsemanagementLibrariesQuery(body, opts)
+
+
+POST /api/v2/responsemanagement/libraries/query
+
+Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+
+postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* responses:library:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let body = {}; // Object | Query criteria
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.postResponsemanagementLibrariesQuery(body, opts)
+  .then((data) => {
+    console.log(`postResponsemanagementLibrariesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementLibrariesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Query criteria |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**LibraryEntityListing**
+
+
+## postResponsemanagementResponseassetsBulk
+
+> ResponseAssetEntityListing postResponsemanagementResponseassetsBulk(body)
+
+
+POST /api/v2/responsemanagement/responseassets/bulk
+
+Get response assets.
+
+Requires ANY permissions:
+
+* responseAssets:asset:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let body = {}; // Object | Asset IDs (max allowed 50)
+
+apiInstance.postResponsemanagementResponseassetsBulk(body)
+  .then((data) => {
+    console.log(`postResponsemanagementResponseassetsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementResponseassetsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Asset IDs (max allowed 50) |  |
+
+### Return type
+
+**ResponseAssetEntityListing**
+
+
 ## postResponsemanagementResponseassetsSearch
 
 > ResponseAssetSearchResults postResponsemanagementResponseassetsSearch(body, opts)
@@ -973,4 +1083,4 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body)
 **ResponseAsset**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteKnowledgeConnection**](KnowledgeApi#deleteKnowledgeConnection) | **DELETE** /api/v2/knowledge/connections/{connectionId} | Delete connection
 [**deleteKnowledgeKnowledgebase**](KnowledgeApi#deleteKnowledgeKnowledgebase) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Delete knowledge base
 [**deleteKnowledgeKnowledgebaseCategory**](KnowledgeApi#deleteKnowledgeKnowledgebaseCategory) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Delete category
 [**deleteKnowledgeKnowledgebaseDocument**](KnowledgeApi#deleteKnowledgeKnowledgebaseDocument) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} | Delete document.
@@ -17,6 +18,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Delete ServiceNow Knowledge integration source
 [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Delete synchronization job
 [**deleteKnowledgeSetting**](KnowledgeApi#deleteKnowledgeSetting) | **DELETE** /api/v2/knowledge/settings/{knowledgeSettingId} | Delete Knowledge setting.
+[**deleteKnowledgeSource**](KnowledgeApi#deleteKnowledgeSource) | **DELETE** /api/v2/knowledge/sources/{sourceId} | Delete source
+[**getKnowledgeConnection**](KnowledgeApi#getKnowledgeConnection) | **GET** /api/v2/knowledge/connections/{connectionId} | Get connection
+[**getKnowledgeConnectionOptions**](KnowledgeApi#getKnowledgeConnectionOptions) | **GET** /api/v2/knowledge/connections/{connectionId}/options | Get connection options
+[**getKnowledgeConnections**](KnowledgeApi#getKnowledgeConnections) | **GET** /api/v2/knowledge/connections | Get connections
 [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/categories | Get categories
 [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId} | Get a knowledge document by ID.
 [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/documents | Get documents.
@@ -52,6 +57,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebases**](KnowledgeApi#getKnowledgeKnowledgebases) | **GET** /api/v2/knowledge/knowledgebases | Get knowledge bases
 [**getKnowledgeSetting**](KnowledgeApi#getKnowledgeSetting) | **GET** /api/v2/knowledge/settings/{knowledgeSettingId} | Get Knowledge setting.
 [**getKnowledgeSettings**](KnowledgeApi#getKnowledgeSettings) | **GET** /api/v2/knowledge/settings | Get Knowledge settings.
+[**getKnowledgeSource**](KnowledgeApi#getKnowledgeSource) | **GET** /api/v2/knowledge/sources/{sourceId} | Get source
+[**getKnowledgeSourceSynchronization**](KnowledgeApi#getKnowledgeSourceSynchronization) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId} | Get a specific synchronization of a source.
+[**getKnowledgeSourceSynchronizations**](KnowledgeApi#getKnowledgeSourceSynchronizations) | **GET** /api/v2/knowledge/sources/{sourceId}/synchronizations | Get synchronizations of a source.
+[**getKnowledgeSources**](KnowledgeApi#getKnowledgeSources) | **GET** /api/v2/knowledge/sources | List sources
+[**getKnowledgeSourcesSynchronizations**](KnowledgeApi#getKnowledgeSourcesSynchronizations) | **GET** /api/v2/knowledge/sources/synchronizations | Get synchronizations of all sources of the organization.
+[**patchKnowledgeConnection**](KnowledgeApi#patchKnowledgeConnection) | **PATCH** /api/v2/knowledge/connections/{connectionId} | Update connection
 [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} | Update search result.
 [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
 [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Update category
@@ -66,6 +77,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Update synchronization job
 [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Update a Knowledge base unanswered phrase group
 [**patchKnowledgeSetting**](KnowledgeApi#patchKnowledgeSetting) | **PATCH** /api/v2/knowledge/settings/{knowledgeSettingId} | Update Knowledge setting.
+[**patchKnowledgeSourceSynchronization**](KnowledgeApi#patchKnowledgeSourceSynchronization) | **PATCH** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId} | Update synchronization.
+[**postKnowledgeConnections**](KnowledgeApi#postKnowledgeConnections) | **POST** /api/v2/knowledge/connections | Create new connection
 [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi#postKnowledgeGuestSessionDocumentFeedback) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback | Give feedback on a document
@@ -106,9 +119,63 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeSearch**](KnowledgeApi#postKnowledgeSearch) | **POST** /api/v2/knowledge/search | Get Knowledge Search
 [**postKnowledgeSearchPreview**](KnowledgeApi#postKnowledgeSearchPreview) | **POST** /api/v2/knowledge/search/preview | Get Knowledge Search Preview
 [**postKnowledgeSettings**](KnowledgeApi#postKnowledgeSettings) | **POST** /api/v2/knowledge/settings | Create Knowledge setting.
+[**postKnowledgeSourceSynchronizationUploads**](KnowledgeApi#postKnowledgeSourceSynchronizationUploads) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads | Create presigned URL for uploading a file in the synchronization.
+[**postKnowledgeSourceSynchronizations**](KnowledgeApi#postKnowledgeSourceSynchronizations) | **POST** /api/v2/knowledge/sources/{sourceId}/synchronizations | Start a manual synchronization from a source.
+[**postKnowledgeSources**](KnowledgeApi#postKnowledgeSources) | **POST** /api/v2/knowledge/sources | Create a new source
 [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Update Salesforce Knowledge integration source
 [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Update ServiceNow Knowledge integration source
+[**putKnowledgeSource**](KnowledgeApi#putKnowledgeSource) | **PUT** /api/v2/knowledge/sources/{sourceId} | Update the source
 
+
+
+## deleteKnowledgeConnection
+
+> ConnectionResponse deleteKnowledgeConnection(connectionId)
+
+
+DELETE /api/v2/knowledge/connections/{connectionId}
+
+Delete connection
+
+Requires ALL permissions:
+
+* knowledge:connection:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let connectionId = "connectionId_example"; // String | Connection ID
+
+apiInstance.deleteKnowledgeConnection(connectionId)
+  .then((data) => {
+    console.log(`deleteKnowledgeConnection success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeConnection');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **connectionId** | **String** | Connection ID |  |
+
+### Return type
+
+**ConnectionResponse**
 
 
 ## deleteKnowledgeKnowledgebase
@@ -680,6 +747,209 @@ apiInstance.deleteKnowledgeSetting(knowledgeSettingId)
 ### Return type
 
 void (no response body)
+
+
+## deleteKnowledgeSource
+
+> void deleteKnowledgeSource(sourceId)
+
+
+DELETE /api/v2/knowledge/sources/{sourceId}
+
+Delete source
+
+Requires ALL permissions:
+
+* knowledge:source:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+
+apiInstance.deleteKnowledgeSource(sourceId)
+  .then(() => {
+    console.log('deleteKnowledgeSource returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeSource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## getKnowledgeConnection
+
+> ConnectionResponse getKnowledgeConnection(connectionId, opts)
+
+
+GET /api/v2/knowledge/connections/{connectionId}
+
+Get connection
+
+Requires ALL permissions:
+
+* knowledge:connection:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let connectionId = "connectionId_example"; // String | Connection ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+};
+
+apiInstance.getKnowledgeConnection(connectionId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeConnection success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeConnection');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **connectionId** | **String** | Connection ID |  |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: authenticationProperties |
+
+### Return type
+
+**ConnectionResponse**
+
+
+## getKnowledgeConnectionOptions
+
+> ConnectionOptionListing getKnowledgeConnectionOptions(connectionId, opts)
+
+
+GET /api/v2/knowledge/connections/{connectionId}/options
+
+Get connection options
+
+Requires ALL permissions:
+
+* knowledge:connectionOptions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let connectionId = "connectionId_example"; // String | Connection ID
+let opts = { 
+  'parentId': "parentId_example" // String | The id of the parent option whose children to be listed.
+};
+
+apiInstance.getKnowledgeConnectionOptions(connectionId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeConnectionOptions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeConnectionOptions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **connectionId** | **String** | Connection ID |  |
+ **parentId** | **String** | The id of the parent option whose children to be listed. | [optional]  |
+
+### Return type
+
+**ConnectionOptionListing**
+
+
+## getKnowledgeConnections
+
+> ConnectionListing getKnowledgeConnections()
+
+
+GET /api/v2/knowledge/connections
+
+Get connections
+
+Requires ALL permissions:
+
+* knowledge:connection:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+apiInstance.getKnowledgeConnections()
+  .then((data) => {
+    console.log(`getKnowledgeConnections success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeConnections');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**ConnectionListing**
 
 
 ## getKnowledgeGuestSessionCategories
@@ -2727,6 +2997,332 @@ apiInstance.getKnowledgeSettings(opts)
 **KnowledgeSettingListing**
 
 
+## getKnowledgeSource
+
+> V3SourceDetailedWithErrorResponse getKnowledgeSource(sourceId, opts)
+
+
+GET /api/v2/knowledge/sources/{sourceId}
+
+Get source
+
+Requires ALL permissions:
+
+* knowledge:source:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Optional fields to expand for the Source.
+};
+
+apiInstance.getKnowledgeSource(sourceId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeSource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails |
+
+### Return type
+
+**V3SourceDetailedWithErrorResponse**
+
+
+## getKnowledgeSourceSynchronization
+
+> V3Synchronization getKnowledgeSourceSynchronization(sourceId, synchronizationId)
+
+
+GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}
+
+Get a specific synchronization of a source.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+
+apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId)
+  .then((data) => {
+    console.log(`getKnowledgeSourceSynchronization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourceSynchronization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+
+### Return type
+
+**V3Synchronization**
+
+
+## getKnowledgeSourceSynchronizations
+
+> V3SynchronizationListing getKnowledgeSourceSynchronizations(sourceId, opts)
+
+
+GET /api/v2/knowledge/sources/{sourceId}/synchronizations
+
+Get synchronizations of a source.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getKnowledgeSourceSynchronizations(sourceId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourceSynchronizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourceSynchronizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+**V3SynchronizationListing**
+
+
+## getKnowledgeSources
+
+> V3SourceWithErrorListing getKnowledgeSources(opts)
+
+
+GET /api/v2/knowledge/sources
+
+List sources
+
+Requires ALL permissions:
+
+* knowledge:source:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'expand': ["expand_example"] // [String] | Optional fields to expand for the Source.
+};
+
+apiInstance.getKnowledgeSources(opts)
+  .then((data) => {
+    console.log(`getKnowledgeSources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSources');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync |
+
+### Return type
+
+**V3SourceWithErrorListing**
+
+
+## getKnowledgeSourcesSynchronizations
+
+> V3SynchronizationListing getKnowledgeSourcesSynchronizations(opts)
+
+
+GET /api/v2/knowledge/sources/synchronizations
+
+Get synchronizations of all sources of the organization.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getKnowledgeSourcesSynchronizations(opts)
+  .then((data) => {
+    console.log(`getKnowledgeSourcesSynchronizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeSourcesSynchronizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+**V3SynchronizationListing**
+
+
+## patchKnowledgeConnection
+
+> ConnectionResponse patchKnowledgeConnection(connectionId, opts)
+
+
+PATCH /api/v2/knowledge/connections/{connectionId}
+
+Update connection
+
+Requires ALL permissions:
+
+* knowledge:connection:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let connectionId = "connectionId_example"; // String | Connection ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchKnowledgeConnection(connectionId, opts)
+  .then((data) => {
+    console.log(`patchKnowledgeConnection success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeConnection');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **connectionId** | **String** | Connection ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**ConnectionResponse**
+
+
 ## patchKnowledgeGuestSessionDocumentsSearchSearchId
 
 > void patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
@@ -3485,6 +4081,110 @@ apiInstance.patchKnowledgeSetting(knowledgeSettingId, body)
 ### Return type
 
 **KnowledgeSettingsResponse**
+
+
+## patchKnowledgeSourceSynchronization
+
+> V3Synchronization patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body)
+
+
+PATCH /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}
+
+Update synchronization.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let body = {}; // Object | 
+
+apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body)
+  .then((data) => {
+    console.log(`patchKnowledgeSourceSynchronization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeSourceSynchronization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**V3Synchronization**
+
+
+## postKnowledgeConnections
+
+> ConnectionCreateResponse postKnowledgeConnections(body)
+
+
+POST /api/v2/knowledge/connections
+
+Create new connection
+
+Requires ALL permissions:
+
+* knowledge:connection:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeConnections(body)
+  .then((data) => {
+    console.log(`postKnowledgeConnections success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeConnections');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**ConnectionCreateResponse**
 
 
 ## postKnowledgeDocumentuploads
@@ -5583,6 +6283,164 @@ apiInstance.postKnowledgeSettings(opts)
 **KnowledgeSettingsResponse**
 
 
+## postKnowledgeSourceSynchronizationUploads
+
+> V3SynchronizationUploadUrlResponse postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body)
+
+
+POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads
+
+Create presigned URL for uploading a file in the synchronization.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body)
+  .then((data) => {
+    console.log(`postKnowledgeSourceSynchronizationUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSourceSynchronizationUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **synchronizationId** | **String** | Synchronization ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**V3SynchronizationUploadUrlResponse**
+
+
+## postKnowledgeSourceSynchronizations
+
+> V3Synchronization postKnowledgeSourceSynchronizations(sourceId, opts)
+
+
+POST /api/v2/knowledge/sources/{sourceId}/synchronizations
+
+Start a manual synchronization from a source.
+
+Requires ALL permissions:
+
+* knowledge:synchronization:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeSourceSynchronizations(sourceId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeSourceSynchronizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSourceSynchronizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**V3Synchronization**
+
+
+## postKnowledgeSources
+
+> V3SourceDetailedResponse postKnowledgeSources(body)
+
+
+POST /api/v2/knowledge/sources
+
+Create a new source
+
+Requires ALL permissions:
+
+* knowledge:source:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeSources(body)
+  .then((data) => {
+    console.log(`postKnowledgeSources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeSources');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**V3SourceDetailedResponse**
+
+
 ## putKnowledgeKnowledgebaseSourcesSalesforceSourceId
 
 > SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
@@ -5691,4 +6549,56 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@248.0.0_
+## putKnowledgeSource
+
+> V3SourceDetailedResponse putKnowledgeSource(sourceId, body)
+
+
+PUT /api/v2/knowledge/sources/{sourceId}
+
+Update the source
+
+Requires ALL permissions:
+
+* knowledge:source:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sourceId = "sourceId_example"; // String | Source ID
+let body = {}; // Object | 
+
+apiInstance.putKnowledgeSource(sourceId, body)
+  .then((data) => {
+    console.log(`putKnowledgeSource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putKnowledgeSource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | Source ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**V3SourceDetailedResponse**
+
+
+_purecloud-platform-client-v2@249.0.0_

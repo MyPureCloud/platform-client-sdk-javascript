@@ -4307,7 +4307,7 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 
 ## getConversationsEmailMessages
 
-> EmailMessagePreviewListing getConversationsEmailMessages(conversationId)
+> EmailMessagePreviewListing getConversationsEmailMessages(conversationId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages
@@ -4330,8 +4330,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'includeAgentlessStitchedMessages': false // Boolean | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message.
+};
 
-apiInstance.getConversationsEmailMessages(conversationId)
+apiInstance.getConversationsEmailMessages(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4347,6 +4350,7 @@ apiInstance.getConversationsEmailMessages(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **includeAgentlessStitchedMessages** | **Boolean** | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. | [optional] [default to false] |
 
 ### Return type
 
@@ -17164,7 +17168,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
-let body = {}; // Object | SupportedContent
+let body = {}; // Object | Reference to supported content profile
 
 apiInstance.putConversationsMessagingSupportedcontentDefault(body)
   .then((data) => {
@@ -17181,7 +17185,7 @@ apiInstance.putConversationsMessagingSupportedcontentDefault(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | SupportedContent |  |
+ **body** | **Object** | Reference to supported content profile |  |
 
 ### Return type
 
@@ -17401,4 +17405,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_

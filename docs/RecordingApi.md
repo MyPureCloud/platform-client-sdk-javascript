@@ -81,6 +81,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -441,6 +442,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -514,6 +516,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -571,6 +574,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -625,6 +629,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -677,6 +682,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -731,6 +737,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -1953,6 +1960,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -2009,6 +2017,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -2607,6 +2616,7 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recording:editRetention
+* recording:screenRecording:view
 * recording:screenRecording:editRetention
 * recording:snippetRecording:view
 * recording:snippetRecording:editRetention
@@ -2671,6 +2681,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -3146,4 +3157,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@248.0.0_
+_purecloud-platform-client-v2@249.0.0_
