@@ -24,7 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteOauthClient
 
-> void deleteOauthClient(clientId)
+> void deleteOauthClient(clientId, opts)
 
 
 DELETE /api/v2/oauth/clients/{clientId}
@@ -49,8 +49,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | Client ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOauthClient(clientId)
+apiInstance.deleteOauthClient(clientId, opts)
   .then(() => {
     console.log('deleteOauthClient returned successfully.');
   })
@@ -66,6 +72,7 @@ apiInstance.deleteOauthClient(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -100,7 +107,11 @@ let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | The ID of client
 let opts = { 
-  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+  'acceptLanguage': "en-us", // String | The language in which to display the client descriptions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOauthAuthorization(clientId, opts)
@@ -120,6 +131,7 @@ apiInstance.getOauthAuthorization(clientId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | The ID of client |  |
  **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -153,7 +165,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let opts = { 
-  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+  'acceptLanguage': "en-us", // String | The language in which to display the client descriptions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOauthAuthorizations(opts)
@@ -172,6 +188,7 @@ apiInstance.getOauthAuthorizations(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -180,7 +197,7 @@ apiInstance.getOauthAuthorizations(opts)
 
 ## getOauthClient
 
-> OAuthClient getOauthClient(clientId)
+> OAuthClient getOauthClient(clientId, opts)
 
 
 GET /api/v2/oauth/clients/{clientId}
@@ -205,8 +222,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | Client ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOauthClient(clientId)
+apiInstance.getOauthClient(clientId, opts)
   .then((data) => {
     console.log(`getOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -222,6 +245,7 @@ apiInstance.getOauthClient(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -230,7 +254,7 @@ apiInstance.getOauthClient(clientId)
 
 ## getOauthClientUsageQueryResult
 
-> ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
+> ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId, opts)
 
 
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
@@ -257,8 +281,14 @@ let apiInstance = new platformClient.OAuthApi();
 
 let executionId = "executionId_example"; // String | ID of the query execution
 let clientId = "clientId_example"; // String | Client ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
+apiInstance.getOauthClientUsageQueryResult(executionId, clientId, opts)
   .then((data) => {
     console.log(`getOauthClientUsageQueryResult success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -275,6 +305,7 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the query execution |  |
  **clientId** | **String** | Client ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -312,7 +343,11 @@ let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | Client ID
 let opts = { 
-  'days': "7" // String | Previous number of days to query
+  'days': "7", // String | Previous number of days to query
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOauthClientUsageSummary(clientId, opts)
@@ -332,6 +367,7 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **days** | **String** | Previous number of days to query | [optional] [default to 7] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -340,7 +376,7 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 
 ## getOauthClients
 
-> OAuthClientEntityListing getOauthClients()
+> OAuthClientEntityListing getOauthClients(opts)
 
 
 GET /api/v2/oauth/clients
@@ -363,8 +399,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OAuthApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOauthClients()
+apiInstance.getOauthClients(opts)
   .then((data) => {
     console.log(`getOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -376,7 +418,10 @@ apiInstance.getOauthClients()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -409,7 +454,11 @@ let apiInstance = new platformClient.OAuthApi();
 
 let scopeId = "scopeId_example"; // String | Scope ID
 let opts = { 
-  'acceptLanguage': "en-us" // String | The language with which to display the scope description.
+  'acceptLanguage': "en-us", // String | The language with which to display the scope description.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOauthScope(scopeId, opts)
@@ -429,6 +478,7 @@ apiInstance.getOauthScope(scopeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scopeId** | **String** | Scope ID |  |
  **acceptLanguage** | **String** | The language with which to display the scope description. | [optional] [default to en-us] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -460,7 +510,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let opts = { 
-  'acceptLanguage': "en-us" // String | The language with which to display the scope descriptions.
+  'acceptLanguage': "en-us", // String | The language with which to display the scope descriptions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOauthScopes(opts)
@@ -479,6 +533,7 @@ apiInstance.getOauthScopes(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **acceptLanguage** | **String** | The language with which to display the scope descriptions. | [optional] [default to en-us] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -487,7 +542,7 @@ apiInstance.getOauthScopes(opts)
 
 ## postOauthClientSecret
 
-> OAuthClient postOauthClientSecret(clientId)
+> OAuthClient postOauthClientSecret(clientId, opts)
 
 
 POST /api/v2/oauth/clients/{clientId}/secret
@@ -514,8 +569,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | Client ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOauthClientSecret(clientId)
+apiInstance.postOauthClientSecret(clientId, opts)
   .then((data) => {
     console.log(`postOauthClientSecret success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -531,6 +592,7 @@ apiInstance.postOauthClientSecret(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -539,7 +601,7 @@ apiInstance.postOauthClientSecret(clientId)
 
 ## postOauthClientUsageQuery
 
-> UsageExecutionResult postOauthClientUsageQuery(clientId, body)
+> UsageExecutionResult postOauthClientUsageQuery(clientId, body, opts)
 
 
 POST /api/v2/oauth/clients/{clientId}/usage/query
@@ -568,8 +630,14 @@ let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | Client ID
 let body = {}; // Object | Query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOauthClientUsageQuery(clientId, body)
+apiInstance.postOauthClientUsageQuery(clientId, body, opts)
   .then((data) => {
     console.log(`postOauthClientUsageQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -586,6 +654,7 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **body** | **Object** | Query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -594,7 +663,7 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 
 ## postOauthClients
 
-> OAuthClient postOauthClients(body)
+> OAuthClient postOauthClients(body, opts)
 
 
 POST /api/v2/oauth/clients
@@ -621,8 +690,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let body = {}; // Object | Client
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOauthClients(body)
+apiInstance.postOauthClients(body, opts)
   .then((data) => {
     console.log(`postOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -638,6 +713,7 @@ apiInstance.postOauthClients(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Client |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -646,7 +722,7 @@ apiInstance.postOauthClients(body)
 
 ## putOauthClient
 
-> OAuthClient putOauthClient(clientId, body)
+> OAuthClient putOauthClient(clientId, body, opts)
 
 
 PUT /api/v2/oauth/clients/{clientId}
@@ -672,8 +748,14 @@ let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | Client ID
 let body = {}; // Object | Client
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOauthClient(clientId, body)
+apiInstance.putOauthClient(clientId, body, opts)
   .then((data) => {
     console.log(`putOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -690,10 +772,11 @@ apiInstance.putOauthClient(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **body** | **Object** | Client |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **OAuthClient**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

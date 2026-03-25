@@ -32,7 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteCoachingAppointment
 
-> CoachingAppointmentReference deleteCoachingAppointment(appointmentId)
+> CoachingAppointmentReference deleteCoachingAppointment(appointmentId, opts)
 
 
 DELETE /api/v2/coaching/appointments/{appointmentId}
@@ -59,8 +59,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteCoachingAppointment(appointmentId)
+apiInstance.deleteCoachingAppointment(appointmentId, opts)
   .then((data) => {
     console.log(`deleteCoachingAppointment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -76,6 +82,7 @@ apiInstance.deleteCoachingAppointment(appointmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -84,7 +91,7 @@ apiInstance.deleteCoachingAppointment(appointmentId)
 
 ## deleteCoachingAppointmentAnnotation
 
-> void deleteCoachingAppointmentAnnotation(appointmentId, annotationId)
+> void deleteCoachingAppointmentAnnotation(appointmentId, annotationId, opts)
 
 
 DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}
@@ -113,8 +120,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let annotationId = "annotationId_example"; // String | The ID of the annotation.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteCoachingAppointmentAnnotation(appointmentId, annotationId)
+apiInstance.deleteCoachingAppointmentAnnotation(appointmentId, annotationId, opts)
   .then(() => {
     console.log('deleteCoachingAppointmentAnnotation returned successfully.');
   })
@@ -131,6 +144,7 @@ apiInstance.deleteCoachingAppointmentAnnotation(appointmentId, annotationId)
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **annotationId** | **String** | The ID of the annotation. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -139,7 +153,7 @@ void (no response body)
 
 ## getCoachingAppointment
 
-> CoachingAppointmentResponse getCoachingAppointment(appointmentId)
+> CoachingAppointmentResponse getCoachingAppointment(appointmentId, opts)
 
 
 GET /api/v2/coaching/appointments/{appointmentId}
@@ -166,8 +180,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCoachingAppointment(appointmentId)
+apiInstance.getCoachingAppointment(appointmentId, opts)
   .then((data) => {
     console.log(`getCoachingAppointment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -183,6 +203,7 @@ apiInstance.getCoachingAppointment(appointmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -191,7 +212,7 @@ apiInstance.getCoachingAppointment(appointmentId)
 
 ## getCoachingAppointmentAnnotation
 
-> CoachingAnnotation getCoachingAppointmentAnnotation(appointmentId, annotationId)
+> CoachingAnnotation getCoachingAppointmentAnnotation(appointmentId, annotationId, opts)
 
 
 GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}
@@ -220,8 +241,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let annotationId = "annotationId_example"; // String | The ID of the annotation.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCoachingAppointmentAnnotation(appointmentId, annotationId)
+apiInstance.getCoachingAppointmentAnnotation(appointmentId, annotationId, opts)
   .then((data) => {
     console.log(`getCoachingAppointmentAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -238,6 +265,7 @@ apiInstance.getCoachingAppointmentAnnotation(appointmentId, annotationId)
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **annotationId** | **String** | The ID of the annotation. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -276,7 +304,11 @@ let apiInstance = new platformClient.CoachingApi();
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCoachingAppointmentAnnotations(appointmentId, opts)
@@ -297,6 +329,7 @@ apiInstance.getCoachingAppointmentAnnotations(appointmentId, opts)
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -334,7 +367,11 @@ let apiInstance = new platformClient.CoachingApi();
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCoachingAppointmentStatuses(appointmentId, opts)
@@ -355,6 +392,7 @@ apiInstance.getCoachingAppointmentStatuses(appointmentId, opts)
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -398,7 +436,11 @@ let opts = {
   'relationships': ["relationships_example"], // [String] | Relationships to filter by
   'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'overdue': "overdue_example", // String | Overdue status to filter by
-  'intervalCondition': "intervalCondition_example" // String | Filter condition for interval
+  'intervalCondition': "intervalCondition_example", // String | Filter condition for interval
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCoachingAppointments(userIds, opts)
@@ -427,6 +469,7 @@ apiInstance.getCoachingAppointments(userIds, opts)
  **completionInterval** | **String** | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
  **intervalCondition** | **String** | Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -467,7 +510,11 @@ let opts = {
   'relationships': ["relationships_example"], // [String] | Relationships to filter by
   'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'overdue': "overdue_example", // String | Overdue status to filter by
-  'intervalCondition': "intervalCondition_example" // String | Filter condition for interval
+  'intervalCondition': "intervalCondition_example", // String | Filter condition for interval
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCoachingAppointmentsMe(opts)
@@ -495,6 +542,7 @@ apiInstance.getCoachingAppointmentsMe(opts)
  **completionInterval** | **String** | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
  **intervalCondition** | **String** | Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -531,7 +579,11 @@ let apiInstance = new platformClient.CoachingApi();
 
 let notificationId = "notificationId_example"; // String | The ID of the notification.
 let opts = { 
-  'expand': ["expand_example"] // [String] | Indicates a field in the response which should be expanded.
+  'expand': ["expand_example"], // [String] | Indicates a field in the response which should be expanded.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCoachingNotification(notificationId, opts)
@@ -551,6 +603,7 @@ apiInstance.getCoachingNotification(notificationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **notificationId** | **String** | The ID of the notification. |  |
  **expand** | **[String]** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -584,7 +637,11 @@ let apiInstance = new platformClient.CoachingApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'expand': ["expand_example"] // [String] | Indicates a field in the response which should be expanded.
+  'expand': ["expand_example"], // [String] | Indicates a field in the response which should be expanded.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCoachingNotifications(opts)
@@ -605,6 +662,7 @@ apiInstance.getCoachingNotifications(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **expand** | **[String]** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -613,7 +671,7 @@ apiInstance.getCoachingNotifications(opts)
 
 ## getCoachingScheduleslotsJob
 
-> CoachingScheduleSlotsJobResponse getCoachingScheduleslotsJob(jobId)
+> CoachingScheduleSlotsJobResponse getCoachingScheduleslotsJob(jobId, opts)
 
 
 GET /api/v2/coaching/scheduleslots/jobs/{jobId}
@@ -638,8 +696,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let jobId = "jobId_example"; // String | The ID of job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCoachingScheduleslotsJob(jobId)
+apiInstance.getCoachingScheduleslotsJob(jobId, opts)
   .then((data) => {
     console.log(`getCoachingScheduleslotsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -655,6 +719,7 @@ apiInstance.getCoachingScheduleslotsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -663,7 +728,7 @@ apiInstance.getCoachingScheduleslotsJob(jobId)
 
 ## patchCoachingAppointment
 
-> CoachingAppointmentResponse patchCoachingAppointment(appointmentId, body)
+> CoachingAppointmentResponse patchCoachingAppointment(appointmentId, body, opts)
 
 
 PATCH /api/v2/coaching/appointments/{appointmentId}
@@ -691,8 +756,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let body = {}; // Object | The new version of the appointment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCoachingAppointment(appointmentId, body)
+apiInstance.patchCoachingAppointment(appointmentId, body, opts)
   .then((data) => {
     console.log(`patchCoachingAppointment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -709,6 +780,7 @@ apiInstance.patchCoachingAppointment(appointmentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **body** | **Object** | The new version of the appointment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -717,7 +789,7 @@ apiInstance.patchCoachingAppointment(appointmentId, body)
 
 ## patchCoachingAppointmentAnnotation
 
-> CoachingAnnotation patchCoachingAppointmentAnnotation(appointmentId, annotationId, body)
+> CoachingAnnotation patchCoachingAppointmentAnnotation(appointmentId, annotationId, body, opts)
 
 
 PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}
@@ -747,8 +819,14 @@ let apiInstance = new platformClient.CoachingApi();
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let annotationId = "annotationId_example"; // String | The ID of the annotation.
 let body = {}; // Object | The new version of the annotation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body)
+apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body, opts)
   .then((data) => {
     console.log(`patchCoachingAppointmentAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -766,6 +844,7 @@ apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **annotationId** | **String** | The ID of the annotation. |  |
  **body** | **Object** | The new version of the annotation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -774,7 +853,7 @@ apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body
 
 ## patchCoachingAppointmentStatus
 
-> CoachingAppointmentStatusResponse patchCoachingAppointmentStatus(appointmentId, body)
+> CoachingAppointmentStatusResponse patchCoachingAppointmentStatus(appointmentId, body, opts)
 
 
 PATCH /api/v2/coaching/appointments/{appointmentId}/status
@@ -802,8 +881,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let body = {}; // Object | Updated status of the coaching appointment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCoachingAppointmentStatus(appointmentId, body)
+apiInstance.patchCoachingAppointmentStatus(appointmentId, body, opts)
   .then((data) => {
     console.log(`patchCoachingAppointmentStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -820,6 +905,7 @@ apiInstance.patchCoachingAppointmentStatus(appointmentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **body** | **Object** | Updated status of the coaching appointment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -828,7 +914,7 @@ apiInstance.patchCoachingAppointmentStatus(appointmentId, body)
 
 ## patchCoachingNotification
 
-> CoachingNotification patchCoachingNotification(notificationId, body)
+> CoachingNotification patchCoachingNotification(notificationId, body, opts)
 
 
 PATCH /api/v2/coaching/notifications/{notificationId}
@@ -854,8 +940,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let notificationId = "notificationId_example"; // String | The ID of the notification.
 let body = {}; // Object | Change the read state of a notification
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCoachingNotification(notificationId, body)
+apiInstance.patchCoachingNotification(notificationId, body, opts)
   .then((data) => {
     console.log(`patchCoachingNotification success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -872,6 +964,7 @@ apiInstance.patchCoachingNotification(notificationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **notificationId** | **String** | The ID of the notification. |  |
  **body** | **Object** | Change the read state of a notification |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -880,7 +973,7 @@ apiInstance.patchCoachingNotification(notificationId, body)
 
 ## postCoachingAppointmentAnnotations
 
-> CoachingAnnotation postCoachingAppointmentAnnotations(appointmentId, body)
+> CoachingAnnotation postCoachingAppointmentAnnotations(appointmentId, body, opts)
 
 
 POST /api/v2/coaching/appointments/{appointmentId}/annotations
@@ -909,8 +1002,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let body = {}; // Object | The annotation to add
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCoachingAppointmentAnnotations(appointmentId, body)
+apiInstance.postCoachingAppointmentAnnotations(appointmentId, body, opts)
   .then((data) => {
     console.log(`postCoachingAppointmentAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -927,6 +1026,7 @@ apiInstance.postCoachingAppointmentAnnotations(appointmentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **body** | **Object** | The annotation to add |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -935,7 +1035,7 @@ apiInstance.postCoachingAppointmentAnnotations(appointmentId, body)
 
 ## postCoachingAppointmentConversations
 
-> AddConversationResponse postCoachingAppointmentConversations(appointmentId, body)
+> AddConversationResponse postCoachingAppointmentConversations(appointmentId, body, opts)
 
 
 POST /api/v2/coaching/appointments/{appointmentId}/conversations
@@ -964,8 +1064,14 @@ let apiInstance = new platformClient.CoachingApi();
 
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCoachingAppointmentConversations(appointmentId, body)
+apiInstance.postCoachingAppointmentConversations(appointmentId, body, opts)
   .then((data) => {
     console.log(`postCoachingAppointmentConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -982,6 +1088,7 @@ apiInstance.postCoachingAppointmentConversations(appointmentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **appointmentId** | **String** | The ID of the coaching appointment. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -990,7 +1097,7 @@ apiInstance.postCoachingAppointmentConversations(appointmentId, body)
 
 ## postCoachingAppointments
 
-> CoachingAppointmentResponse postCoachingAppointments(body)
+> CoachingAppointmentResponse postCoachingAppointments(body, opts)
 
 
 POST /api/v2/coaching/appointments
@@ -1015,8 +1122,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let body = {}; // Object | The appointment to add
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCoachingAppointments(body)
+apiInstance.postCoachingAppointments(body, opts)
   .then((data) => {
     console.log(`postCoachingAppointments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1032,6 +1145,7 @@ apiInstance.postCoachingAppointments(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The appointment to add |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1040,7 +1154,7 @@ apiInstance.postCoachingAppointments(body)
 
 ## postCoachingAppointmentsAggregatesQuery
 
-> CoachingAppointmentAggregateResponse postCoachingAppointmentsAggregatesQuery(body)
+> CoachingAppointmentAggregateResponse postCoachingAppointmentsAggregatesQuery(body, opts)
 
 
 POST /api/v2/coaching/appointments/aggregates/query
@@ -1065,8 +1179,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let body = {}; // Object | Aggregate Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCoachingAppointmentsAggregatesQuery(body)
+apiInstance.postCoachingAppointmentsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postCoachingAppointmentsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1082,6 +1202,7 @@ apiInstance.postCoachingAppointmentsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Aggregate Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1090,7 +1211,7 @@ apiInstance.postCoachingAppointmentsAggregatesQuery(body)
 
 ## postCoachingScheduleslotsJobs
 
-> CoachingScheduleSlotsJobResponse postCoachingScheduleslotsJobs(body)
+> CoachingScheduleSlotsJobResponse postCoachingScheduleslotsJobs(body, opts)
 
 
 POST /api/v2/coaching/scheduleslots/jobs
@@ -1115,8 +1236,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let body = {}; // Object | The slots search request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCoachingScheduleslotsJobs(body)
+apiInstance.postCoachingScheduleslotsJobs(body, opts)
   .then((data) => {
     console.log(`postCoachingScheduleslotsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1132,6 +1259,7 @@ apiInstance.postCoachingScheduleslotsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The slots search request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1140,7 +1268,7 @@ apiInstance.postCoachingScheduleslotsJobs(body)
 
 ## postCoachingScheduleslotsQuery
 
-> CoachingSlotsResponse postCoachingScheduleslotsQuery(body)
+> CoachingSlotsResponse postCoachingScheduleslotsQuery(body, opts)
 
 
 POST /api/v2/coaching/scheduleslots/query
@@ -1165,8 +1293,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let body = {}; // Object | The slot search request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCoachingScheduleslotsQuery(body)
+apiInstance.postCoachingScheduleslotsQuery(body, opts)
   .then((data) => {
     console.log(`postCoachingScheduleslotsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1182,10 +1316,11 @@ apiInstance.postCoachingScheduleslotsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The slot search request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CoachingSlotsResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

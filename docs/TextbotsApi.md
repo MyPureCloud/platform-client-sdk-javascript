@@ -46,7 +46,11 @@ let opts = {
   'botName': "botName_example", // String | Bot name
   'botId': ["botId_example"], // [String] | Bot IDs. Maximum of 50
   'virtualAgentEnabled': true, // Boolean | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
-  'pageSize': 25 // Number | The maximum results to return. Maximum of 100
+  'pageSize': 25, // Number | The maximum results to return. Maximum of 100
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTextbotsBotsSearch(opts)
@@ -69,6 +73,7 @@ apiInstance.getTextbotsBotsSearch(opts)
  **botId** | **[String]** | Bot IDs. Maximum of 50 | [optional]  |
  **virtualAgentEnabled** | **Boolean** | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows | [optional]  |
  **pageSize** | **Number** | The maximum results to return. Maximum of 100 | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -77,7 +82,7 @@ apiInstance.getTextbotsBotsSearch(opts)
 
 ## postTextbotsBotflowsSessionTurns
 
-> TextBotFlowTurnResponse postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
+> TextBotFlowTurnResponse postTextbotsBotflowsSessionTurns(sessionId, turnRequest, opts)
 
 
 POST /api/v2/textbots/botflows/sessions/{sessionId}/turns
@@ -105,8 +110,14 @@ let apiInstance = new platformClient.TextbotsApi();
 
 let sessionId = "sessionId_example"; // String | The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions'
 let turnRequest = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
+apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest, opts)
   .then((data) => {
     console.log(`postTextbotsBotflowsSessionTurns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -123,6 +134,7 @@ apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions' |  |
  **turnRequest** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -131,7 +143,7 @@ apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 
 ## postTextbotsBotflowsSessions
 
-> TextBotFlowLaunchResponse postTextbotsBotflowsSessions(launchRequest)
+> TextBotFlowLaunchResponse postTextbotsBotflowsSessions(launchRequest, opts)
 
 
 POST /api/v2/textbots/botflows/sessions
@@ -158,8 +170,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TextbotsApi();
 
 let launchRequest = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTextbotsBotflowsSessions(launchRequest)
+apiInstance.postTextbotsBotflowsSessions(launchRequest, opts)
   .then((data) => {
     console.log(`postTextbotsBotflowsSessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -175,6 +193,7 @@ apiInstance.postTextbotsBotflowsSessions(launchRequest)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **launchRequest** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -183,7 +202,7 @@ apiInstance.postTextbotsBotflowsSessions(launchRequest)
 
 ## postTextbotsBotsExecute
 
-> PostTextResponse postTextbotsBotsExecute(postTextRequest)
+> PostTextResponse postTextbotsBotsExecute(postTextRequest, opts)
 
 
 POST /api/v2/textbots/bots/execute
@@ -210,8 +229,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TextbotsApi();
 
 let postTextRequest = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTextbotsBotsExecute(postTextRequest)
+apiInstance.postTextbotsBotsExecute(postTextRequest, opts)
   .then((data) => {
     console.log(`postTextbotsBotsExecute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -227,10 +252,11 @@ apiInstance.postTextbotsBotsExecute(postTextRequest)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **postTextRequest** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **PostTextResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

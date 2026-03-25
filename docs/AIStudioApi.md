@@ -32,7 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteConversationsSummariesSetting
 
-> void deleteConversationsSummariesSetting(summarySettingId)
+> void deleteConversationsSummariesSetting(summarySettingId, opts)
 
 
 DELETE /api/v2/conversations/summaries/settings/{summarySettingId}
@@ -57,8 +57,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let summarySettingId = "summarySettingId_example"; // String | Summary setting id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsSummariesSetting(summarySettingId)
+apiInstance.deleteConversationsSummariesSetting(summarySettingId, opts)
   .then(() => {
     console.log('deleteConversationsSummariesSetting returned successfully.');
   })
@@ -74,6 +80,7 @@ apiInstance.deleteConversationsSummariesSetting(summarySettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **summarySettingId** | **String** | Summary setting id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -82,7 +89,7 @@ void (no response body)
 
 ## deleteGuideJobs
 
-> GuideJob deleteGuideJobs(guideId)
+> GuideJob deleteGuideJobs(guideId, opts)
 
 
 DELETE /api/v2/guides/{guideId}/jobs
@@ -107,8 +114,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let guideId = "guideId_example"; // String | Guide ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteGuideJobs(guideId)
+apiInstance.deleteGuideJobs(guideId, opts)
   .then((data) => {
     console.log(`deleteGuideJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -124,6 +137,7 @@ apiInstance.deleteGuideJobs(guideId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **guideId** | **String** | Guide ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -132,7 +146,7 @@ apiInstance.deleteGuideJobs(guideId)
 
 ## getConversationsSummariesSetting
 
-> SummarySetting getConversationsSummariesSetting(summarySettingId)
+> SummarySetting getConversationsSummariesSetting(summarySettingId, opts)
 
 
 GET /api/v2/conversations/summaries/settings/{summarySettingId}
@@ -157,8 +171,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let summarySettingId = "summarySettingId_example"; // String | Summary setting id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsSummariesSetting(summarySettingId)
+apiInstance.getConversationsSummariesSetting(summarySettingId, opts)
   .then((data) => {
     console.log(`getConversationsSummariesSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -174,6 +194,7 @@ apiInstance.getConversationsSummariesSetting(summarySettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **summarySettingId** | **String** | Summary setting id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -212,7 +233,11 @@ let opts = {
   'sortBy': "dateModified", // String | Sort by. Default value dateModified.
   'sortOrder': "desc", // String | Sort Order. Default value desc.
   'pageNumber': 1, // Number | Page number.
-  'pageSize': 25 // Number | Page size. The maximum page size is 100.
+  'pageSize': 25, // Number | Page size. The maximum page size is 100.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsSummariesSettings(opts)
@@ -236,6 +261,7 @@ apiInstance.getConversationsSummariesSettings(opts)
  **sortOrder** | **String** | Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc |
  **pageNumber** | **Number** | Page number. | [optional] [default to 1] |
  **pageSize** | **Number** | Page size. The maximum page size is 100. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -244,7 +270,7 @@ apiInstance.getConversationsSummariesSettings(opts)
 
 ## getGuide
 
-> Guide getGuide(guideId)
+> Guide getGuide(guideId, opts)
 
 
 GET /api/v2/guides/{guideId}
@@ -269,8 +295,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let guideId = "guideId_example"; // String | Guide ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGuide(guideId)
+apiInstance.getGuide(guideId, opts)
   .then((data) => {
     console.log(`getGuide success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -286,6 +318,7 @@ apiInstance.getGuide(guideId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **guideId** | **String** | Guide ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -294,7 +327,7 @@ apiInstance.getGuide(guideId)
 
 ## getGuideJob
 
-> GuideJob getGuideJob(guideId, jobId)
+> GuideJob getGuideJob(guideId, jobId, opts)
 
 
 GET /api/v2/guides/{guideId}/jobs/{jobId}
@@ -320,8 +353,14 @@ let apiInstance = new platformClient.AIStudioApi();
 
 let guideId = "guideId_example"; // String | Guide ID
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGuideJob(guideId, jobId)
+apiInstance.getGuideJob(guideId, jobId, opts)
   .then((data) => {
     console.log(`getGuideJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -338,6 +377,7 @@ apiInstance.getGuideJob(guideId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **guideId** | **String** | Guide ID |  |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -346,7 +386,7 @@ apiInstance.getGuideJob(guideId, jobId)
 
 ## getGuideVersion
 
-> GuideVersion getGuideVersion(guideId, versionId)
+> GuideVersion getGuideVersion(guideId, versionId, opts)
 
 
 GET /api/v2/guides/{guideId}/versions/{versionId}
@@ -372,8 +412,14 @@ let apiInstance = new platformClient.AIStudioApi();
 
 let guideId = "guideId_example"; // String | Guide ID
 let versionId = "versionId_example"; // String | Version ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGuideVersion(guideId, versionId)
+apiInstance.getGuideVersion(guideId, versionId, opts)
   .then((data) => {
     console.log(`getGuideVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -390,6 +436,7 @@ apiInstance.getGuideVersion(guideId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **guideId** | **String** | Guide ID |  |
  **versionId** | **String** | Version ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -398,7 +445,7 @@ apiInstance.getGuideVersion(guideId, versionId)
 
 ## getGuideVersionJob
 
-> GuideVersionPublishJob getGuideVersionJob(guideId, versionId, jobId)
+> GuideVersionPublishJob getGuideVersionJob(guideId, versionId, jobId, opts)
 
 
 GET /api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}
@@ -425,8 +472,14 @@ let apiInstance = new platformClient.AIStudioApi();
 let guideId = "guideId_example"; // String | Guide ID
 let versionId = "versionId_example"; // String | Version ID
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGuideVersionJob(guideId, versionId, jobId)
+apiInstance.getGuideVersionJob(guideId, versionId, jobId, opts)
   .then((data) => {
     console.log(`getGuideVersionJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -444,6 +497,7 @@ apiInstance.getGuideVersionJob(guideId, versionId, jobId)
  **guideId** | **String** | Guide ID |  |
  **versionId** | **String** | Version ID |  |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -483,7 +537,11 @@ let opts = {
   'sortBy': "dateModified", // String | Sort by. Default value dateModified.
   'sortOrder': "desc", // String | Sort Order. Default value desc.
   'pageNumber': 1, // Number | Page number.
-  'pageSize': 25 // Number | Page size. The maximum page size is 100.
+  'pageSize': 25, // Number | Page size. The maximum page size is 100.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGuides(opts)
@@ -508,6 +566,7 @@ apiInstance.getGuides(opts)
  **sortOrder** | **String** | Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc |
  **pageNumber** | **Number** | Page number. | [optional] [default to 1] |
  **pageSize** | **Number** | Page size. The maximum page size is 100. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -516,7 +575,7 @@ apiInstance.getGuides(opts)
 
 ## getGuidesJob
 
-> GuideContentGenerationJob getGuidesJob(jobId)
+> GuideContentGenerationJob getGuidesJob(jobId, opts)
 
 
 GET /api/v2/guides/jobs/{jobId}
@@ -541,8 +600,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGuidesJob(jobId)
+apiInstance.getGuidesJob(jobId, opts)
   .then((data) => {
     console.log(`getGuidesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -558,6 +623,7 @@ apiInstance.getGuidesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -566,7 +632,7 @@ apiInstance.getGuidesJob(jobId)
 
 ## patchGuide
 
-> Guide patchGuide(guideId, body)
+> Guide patchGuide(guideId, body, opts)
 
 
 PATCH /api/v2/guides/{guideId}
@@ -592,8 +658,14 @@ let apiInstance = new platformClient.AIStudioApi();
 
 let guideId = "guideId_example"; // String | Guide ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchGuide(guideId, body)
+apiInstance.patchGuide(guideId, body, opts)
   .then((data) => {
     console.log(`patchGuide success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -610,6 +682,7 @@ apiInstance.patchGuide(guideId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **guideId** | **String** | Guide ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -618,7 +691,7 @@ apiInstance.patchGuide(guideId, body)
 
 ## patchGuideVersion
 
-> GuideVersion patchGuideVersion(guideId, versionId, body)
+> GuideVersion patchGuideVersion(guideId, versionId, body, opts)
 
 
 PATCH /api/v2/guides/{guideId}/versions/{versionId}
@@ -645,8 +718,14 @@ let apiInstance = new platformClient.AIStudioApi();
 let guideId = "guideId_example"; // String | Guide ID
 let versionId = "versionId_example"; // String | Version ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchGuideVersion(guideId, versionId, body)
+apiInstance.patchGuideVersion(guideId, versionId, body, opts)
   .then((data) => {
     console.log(`patchGuideVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -664,6 +743,7 @@ apiInstance.patchGuideVersion(guideId, versionId, body)
  **guideId** | **String** | Guide ID |  |
  **versionId** | **String** | Version ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -672,7 +752,7 @@ apiInstance.patchGuideVersion(guideId, versionId, body)
 
 ## postConversationsSummariesPreview
 
-> void postConversationsSummariesPreview(body)
+> void postConversationsSummariesPreview(body, opts)
 
 
 POST /api/v2/conversations/summaries/preview
@@ -697,8 +777,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsSummariesPreview(body)
+apiInstance.postConversationsSummariesPreview(body, opts)
   .then(() => {
     console.log('postConversationsSummariesPreview returned successfully.');
   })
@@ -714,6 +800,7 @@ apiInstance.postConversationsSummariesPreview(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -722,7 +809,7 @@ void (no response body)
 
 ## postConversationsSummariesSettings
 
-> SummarySetting postConversationsSummariesSettings(body)
+> SummarySetting postConversationsSummariesSettings(body, opts)
 
 
 POST /api/v2/conversations/summaries/settings
@@ -747,8 +834,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsSummariesSettings(body)
+apiInstance.postConversationsSummariesSettings(body, opts)
   .then((data) => {
     console.log(`postConversationsSummariesSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -764,6 +857,7 @@ apiInstance.postConversationsSummariesSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -772,7 +866,7 @@ apiInstance.postConversationsSummariesSettings(body)
 
 ## postGuideSessionTurns
 
-> GuideSessionTurnResponse postGuideSessionTurns(guideId, guideSessionId, body)
+> GuideSessionTurnResponse postGuideSessionTurns(guideId, guideSessionId, body, opts)
 
 
 POST /api/v2/guides/{guideId}/sessions/{guideSessionId}/turns
@@ -801,8 +895,14 @@ let apiInstance = new platformClient.AIStudioApi();
 let guideId = "guideId_example"; // String | Guide ID
 let guideSessionId = "guideSessionId_example"; // String | Guide Session ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGuideSessionTurns(guideId, guideSessionId, body)
+apiInstance.postGuideSessionTurns(guideId, guideSessionId, body, opts)
   .then((data) => {
     console.log(`postGuideSessionTurns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -820,6 +920,7 @@ apiInstance.postGuideSessionTurns(guideId, guideSessionId, body)
  **guideId** | **String** | Guide ID |  |
  **guideSessionId** | **String** | Guide Session ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -828,7 +929,7 @@ apiInstance.postGuideSessionTurns(guideId, guideSessionId, body)
 
 ## postGuideVersionJobs
 
-> GuideVersionPublishJob postGuideVersionJobs(guideId, versionId, body)
+> GuideVersionPublishJob postGuideVersionJobs(guideId, versionId, body, opts)
 
 
 POST /api/v2/guides/{guideId}/versions/{versionId}/jobs
@@ -855,8 +956,14 @@ let apiInstance = new platformClient.AIStudioApi();
 let guideId = "guideId_example"; // String | Guide ID
 let versionId = "versionId_example"; // String | Version ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGuideVersionJobs(guideId, versionId, body)
+apiInstance.postGuideVersionJobs(guideId, versionId, body, opts)
   .then((data) => {
     console.log(`postGuideVersionJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -874,6 +981,7 @@ apiInstance.postGuideVersionJobs(guideId, versionId, body)
  **guideId** | **String** | Guide ID |  |
  **versionId** | **String** | Version ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -908,7 +1016,11 @@ let apiInstance = new platformClient.AIStudioApi();
 
 let guideId = "guideId_example"; // String | Guide ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postGuideVersions(guideId, opts)
@@ -928,6 +1040,7 @@ apiInstance.postGuideVersions(guideId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **guideId** | **String** | Guide ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -936,7 +1049,7 @@ apiInstance.postGuideVersions(guideId, opts)
 
 ## postGuides
 
-> Guide postGuides(body)
+> Guide postGuides(body, opts)
 
 
 POST /api/v2/guides
@@ -961,8 +1074,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGuides(body)
+apiInstance.postGuides(body, opts)
   .then((data) => {
     console.log(`postGuides success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -978,6 +1097,7 @@ apiInstance.postGuides(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -986,7 +1106,7 @@ apiInstance.postGuides(body)
 
 ## postGuidesJobs
 
-> GuideContentGenerationJob postGuidesJobs(body)
+> GuideContentGenerationJob postGuidesJobs(body, opts)
 
 
 POST /api/v2/guides/jobs
@@ -1011,8 +1131,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGuidesJobs(body)
+apiInstance.postGuidesJobs(body, opts)
   .then((data) => {
     console.log(`postGuidesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1028,6 +1154,7 @@ apiInstance.postGuidesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1036,7 +1163,7 @@ apiInstance.postGuidesJobs(body)
 
 ## postGuidesUploads
 
-> UploadUrlResponse postGuidesUploads(body)
+> UploadUrlResponse postGuidesUploads(body, opts)
 
 
 POST /api/v2/guides/uploads
@@ -1061,8 +1188,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGuidesUploads(body)
+apiInstance.postGuidesUploads(body, opts)
   .then((data) => {
     console.log(`postGuidesUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1078,6 +1211,7 @@ apiInstance.postGuidesUploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1086,7 +1220,7 @@ apiInstance.postGuidesUploads(body)
 
 ## putConversationsSummariesSetting
 
-> SummarySetting putConversationsSummariesSetting(summarySettingId, body)
+> SummarySetting putConversationsSummariesSetting(summarySettingId, body, opts)
 
 
 PUT /api/v2/conversations/summaries/settings/{summarySettingId}
@@ -1112,8 +1246,14 @@ let apiInstance = new platformClient.AIStudioApi();
 
 let summarySettingId = "summarySettingId_example"; // String | Summary setting id
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsSummariesSetting(summarySettingId, body)
+apiInstance.putConversationsSummariesSetting(summarySettingId, body, opts)
   .then((data) => {
     console.log(`putConversationsSummariesSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1130,10 +1270,11 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **summarySettingId** | **String** | Summary setting id |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

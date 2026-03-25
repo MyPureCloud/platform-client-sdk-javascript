@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteCasemanagementCase
 
-> **Object** deleteCasemanagementCase(caseId)
+> **Object** deleteCasemanagementCase(caseId, opts)
 
 
 DELETE /api/v2/casemanagement/cases/{caseId}
@@ -72,8 +72,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteCasemanagementCase(caseId)
+apiInstance.deleteCasemanagementCase(caseId, opts)
   .then((data) => {
     console.log(`deleteCasemanagementCase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -89,6 +95,7 @@ apiInstance.deleteCasemanagementCase(caseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -97,7 +104,7 @@ apiInstance.deleteCasemanagementCase(caseId)
 
 ## deleteCasemanagementCaseplan
 
-> **Object** deleteCasemanagementCaseplan(caseplanId)
+> **Object** deleteCasemanagementCaseplan(caseplanId, opts)
 
 
 DELETE /api/v2/casemanagement/caseplans/{caseplanId}
@@ -124,8 +131,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteCasemanagementCaseplan(caseplanId)
+apiInstance.deleteCasemanagementCaseplan(caseplanId, opts)
   .then((data) => {
     console.log(`deleteCasemanagementCaseplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -141,6 +154,7 @@ apiInstance.deleteCasemanagementCaseplan(caseplanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -177,7 +191,11 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let opts = { 
-  'expands': "expands_example" // String | Which fields to expand.
+  'expands': "expands_example", // String | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCase(caseId, opts)
@@ -197,6 +215,7 @@ apiInstance.getCasemanagementCase(caseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **expands** | **String** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -205,7 +224,7 @@ apiInstance.getCasemanagementCase(caseId, opts)
 
 ## getCasemanagementCaseAssociation
 
-> CaseAssociation getCasemanagementCaseAssociation(caseId, associationId)
+> CaseAssociation getCasemanagementCaseAssociation(caseId, associationId, opts)
 
 
 GET /api/v2/casemanagement/cases/{caseId}/associations/{associationId}
@@ -233,8 +252,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let associationId = "associationId_example"; // String | Case Association ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseAssociation(caseId, associationId)
+apiInstance.getCasemanagementCaseAssociation(caseId, associationId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseAssociation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -251,6 +276,7 @@ apiInstance.getCasemanagementCaseAssociation(caseId, associationId)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **associationId** | **String** | Case Association ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -289,7 +315,11 @@ let caseId = "caseId_example"; // String | Case ID.
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseAssociations(caseId, opts)
@@ -311,6 +341,7 @@ apiInstance.getCasemanagementCaseAssociations(caseId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -319,7 +350,7 @@ apiInstance.getCasemanagementCaseAssociations(caseId, opts)
 
 ## getCasemanagementCaseStage
 
-> Stage getCasemanagementCaseStage(caseId, stageId)
+> Stage getCasemanagementCaseStage(caseId, stageId, opts)
 
 
 GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}
@@ -347,8 +378,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let stageId = "stageId_example"; // String | Stage ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseStage(caseId, stageId)
+apiInstance.getCasemanagementCaseStage(caseId, stageId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseStage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -365,6 +402,7 @@ apiInstance.getCasemanagementCaseStage(caseId, stageId)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **stageId** | **String** | Stage ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -373,7 +411,7 @@ apiInstance.getCasemanagementCaseStage(caseId, stageId)
 
 ## getCasemanagementCaseStageStep
 
-> Step getCasemanagementCaseStageStep(caseId, stageId, stepId)
+> Step getCasemanagementCaseStageStep(caseId, stageId, stepId, opts)
 
 
 GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId}
@@ -402,8 +440,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 let caseId = "caseId_example"; // String | Case ID
 let stageId = "stageId_example"; // String | Stage ID
 let stepId = "stepId_example"; // String | Step ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId)
+apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseStageStep success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -421,6 +465,7 @@ apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId)
  **caseId** | **String** | Case ID |  |
  **stageId** | **String** | Stage ID |  |
  **stepId** | **String** | Step ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -460,7 +505,11 @@ let stageId = "stageId_example"; // String | Stage ID
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, opts)
@@ -483,6 +532,7 @@ apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -521,7 +571,11 @@ let caseId = "caseId_example"; // String | Case ID
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseStages(caseId, opts)
@@ -543,6 +597,7 @@ apiInstance.getCasemanagementCaseStages(caseId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -551,7 +606,7 @@ apiInstance.getCasemanagementCaseStages(caseId, opts)
 
 ## getCasemanagementCaseTerminateJob
 
-> TerminateJob getCasemanagementCaseTerminateJob(caseId, jobId)
+> TerminateJob getCasemanagementCaseTerminateJob(caseId, jobId, opts)
 
 
 GET /api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId}
@@ -579,8 +634,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId)
+apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -597,6 +658,7 @@ apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -605,7 +667,7 @@ apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId)
 
 ## getCasemanagementCaseplan
 
-> Caseplan getCasemanagementCaseplan(caseplanId)
+> Caseplan getCasemanagementCaseplan(caseplanId, opts)
 
 
 GET /api/v2/casemanagement/caseplans/{caseplanId}
@@ -632,8 +694,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseplan(caseplanId)
+apiInstance.getCasemanagementCaseplan(caseplanId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -649,6 +717,7 @@ apiInstance.getCasemanagementCaseplan(caseplanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -657,7 +726,7 @@ apiInstance.getCasemanagementCaseplan(caseplanId)
 
 ## getCasemanagementCaseplanVersion
 
-> Caseplan getCasemanagementCaseplanVersion(caseplanId, versionId)
+> Caseplan getCasemanagementCaseplanVersion(caseplanId, versionId, opts)
 
 
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}
@@ -685,8 +754,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let versionId = "versionId_example"; // String | Version of the caseplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId)
+apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseplanVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -703,6 +778,7 @@ apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
  **versionId** | **String** | Version of the caseplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -711,7 +787,7 @@ apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId)
 
 ## getCasemanagementCaseplanVersionDataschemas
 
-> CaseplanDataSchemaListing getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId)
+> CaseplanDataSchemaListing getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, opts)
 
 
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas
@@ -739,8 +815,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let versionId = "versionId_example"; // String | Version of the caseplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId)
+apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseplanVersionDataschemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -757,6 +839,7 @@ apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
  **versionId** | **String** | Version of the caseplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -765,7 +848,7 @@ apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId)
 
 ## getCasemanagementCaseplanVersionIntakesettings
 
-> IntakeSettingsListing getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId)
+> IntakeSettingsListing getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId, opts)
 
 
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/intakesettings
@@ -793,8 +876,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let versionId = "versionId_example"; // String | Version of the caseplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId)
+apiInstance.getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId, opts)
   .then((data) => {
     console.log(`getCasemanagementCaseplanVersionIntakesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -811,6 +900,7 @@ apiInstance.getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
  **versionId** | **String** | Version of the caseplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -849,7 +939,11 @@ let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let versionId = "versionId_example"; // String | Version ID
 let stageplanId = "stageplanId_example"; // String | Stageplan ID
 let opts = { 
-  'expands': ["expands_example"] // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, stageplanId, opts)
@@ -871,6 +965,7 @@ apiInstance.getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, sta
  **versionId** | **String** | Version ID |  |
  **stageplanId** | **String** | Stageplan ID |  |
  **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -910,7 +1005,11 @@ let versionId = "versionId_example"; // String | Version ID
 let stageplanId = "stageplanId_example"; // String | Stageplan ID
 let stepplanId = "stepplanId_example"; // String | Stepplan ID
 let opts = { 
-  'expands': ["expands_example"] // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versionId, stageplanId, stepplanId, opts)
@@ -933,6 +1032,7 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versio
  **stageplanId** | **String** | Stageplan ID |  |
  **stepplanId** | **String** | Stepplan ID |  |
  **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -974,7 +1074,11 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'expands': ["expands_example"] // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, opts)
@@ -999,6 +1103,7 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versi
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1039,7 +1144,11 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'expands': ["expands_example"] // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, opts)
@@ -1063,6 +1172,7 @@ apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, op
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1101,7 +1211,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of caseplans that has been returned.
   'pageSize': 3.4, // Number | Number of caseplans to return. Maximum of 200.
   'customerIntentId': "customerIntentId_example", // String | Filter by Customer Intent.
-  'divisionIds': "divisionIds_example" // String | Filter by Divisions.
+  'divisionIds': "divisionIds_example", // String | Filter by Divisions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCaseplans(opts)
@@ -1123,6 +1237,7 @@ apiInstance.getCasemanagementCaseplans(opts)
  **pageSize** | **Number** | Number of caseplans to return. Maximum of 200. | [optional]  |
  **customerIntentId** | **String** | Filter by Customer Intent. | [optional]  |
  **divisionIds** | **String** | Filter by Divisions. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1162,7 +1277,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of cases that has been returned.
   'pageSize': 3.4, // Number | Number of cases to return. Maximum of 200.
   'divisionIds': "divisionIds_example", // String | Filter by Divisions
-  'expands': ["expands_example"] // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCasesExternalcontact(externalContactId, opts)
@@ -1185,6 +1304,7 @@ apiInstance.getCasemanagementCasesExternalcontact(externalContactId, opts)
  **pageSize** | **Number** | Number of cases to return. Maximum of 200. | [optional]  |
  **divisionIds** | **String** | Filter by Divisions | [optional]  |
  **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1221,7 +1341,11 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let referenceId = "referenceId_example"; // String | Reference
 let opts = { 
-  'expands': "expands_example" // String | Which fields to expand.
+  'expands': "expands_example", // String | Which fields to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getCasemanagementCasesReference(referenceId, opts)
@@ -1241,6 +1365,7 @@ apiInstance.getCasemanagementCasesReference(referenceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **referenceId** | **String** | Reference |  |
  **expands** | **String** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1249,7 +1374,7 @@ apiInstance.getCasemanagementCasesReference(referenceId, opts)
 
 ## patchCasemanagementCaseDatedue
 
-> Case patchCasemanagementCaseDatedue(caseId, body)
+> Case patchCasemanagementCaseDatedue(caseId, body, opts)
 
 
 PATCH /api/v2/casemanagement/cases/{caseId}/datedue
@@ -1277,8 +1402,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let body = {}; // Object | Date due
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCasemanagementCaseDatedue(caseId, body)
+apiInstance.patchCasemanagementCaseDatedue(caseId, body, opts)
   .then((data) => {
     console.log(`patchCasemanagementCaseDatedue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1295,6 +1426,7 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **body** | **Object** | Date due |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1303,7 +1435,7 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body)
 
 ## patchCasemanagementCasePriority
 
-> Case patchCasemanagementCasePriority(caseId, body)
+> Case patchCasemanagementCasePriority(caseId, body, opts)
 
 
 PATCH /api/v2/casemanagement/cases/{caseId}/priority
@@ -1331,8 +1463,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let body = {}; // Object | Priority
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCasemanagementCasePriority(caseId, body)
+apiInstance.patchCasemanagementCasePriority(caseId, body, opts)
   .then((data) => {
     console.log(`patchCasemanagementCasePriority success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1349,6 +1487,7 @@ apiInstance.patchCasemanagementCasePriority(caseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **body** | **Object** | Priority |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1357,7 +1496,7 @@ apiInstance.patchCasemanagementCasePriority(caseId, body)
 
 ## patchCasemanagementCaseSummary
 
-> Case patchCasemanagementCaseSummary(caseId, body)
+> Case patchCasemanagementCaseSummary(caseId, body, opts)
 
 
 PATCH /api/v2/casemanagement/cases/{caseId}/summary
@@ -1385,8 +1524,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
 let body = {}; // Object | Summary
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCasemanagementCaseSummary(caseId, body)
+apiInstance.patchCasemanagementCaseSummary(caseId, body, opts)
   .then((data) => {
     console.log(`patchCasemanagementCaseSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1403,6 +1548,7 @@ apiInstance.patchCasemanagementCaseSummary(caseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
  **body** | **Object** | Summary |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1411,7 +1557,7 @@ apiInstance.patchCasemanagementCaseSummary(caseId, body)
 
 ## patchCasemanagementCaseplan
 
-> Caseplan patchCasemanagementCaseplan(caseplanId, body)
+> Caseplan patchCasemanagementCaseplan(caseplanId, body, opts)
 
 
 PATCH /api/v2/casemanagement/caseplans/{caseplanId}
@@ -1439,8 +1585,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let body = {}; // Object | Caseplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCasemanagementCaseplan(caseplanId, body)
+apiInstance.patchCasemanagementCaseplan(caseplanId, body, opts)
   .then((data) => {
     console.log(`patchCasemanagementCaseplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1457,6 +1609,7 @@ apiInstance.patchCasemanagementCaseplan(caseplanId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
  **body** | **Object** | Caseplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1465,7 +1618,7 @@ apiInstance.patchCasemanagementCaseplan(caseplanId, body)
 
 ## patchCasemanagementCaseplanStageplan
 
-> Stageplan patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body)
+> Stageplan patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, opts)
 
 
 PATCH /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}
@@ -1494,8 +1647,14 @@ let apiInstance = new platformClient.CaseManagementApi();
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let stageplanId = "stageplanId_example"; // String | Stageplan ID
 let body = {}; // Object | Stageplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body)
+apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, opts)
   .then((data) => {
     console.log(`patchCasemanagementCaseplanStageplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1513,6 +1672,7 @@ apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body)
  **caseplanId** | **String** | Caseplan ID |  |
  **stageplanId** | **String** | Stageplan ID |  |
  **body** | **Object** | Stageplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1521,7 +1681,7 @@ apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body)
 
 ## patchCasemanagementCaseplanStageplanStepplan
 
-> Stepplan patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body)
+> Stepplan patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body, opts)
 
 
 PATCH /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId}
@@ -1551,8 +1711,14 @@ let caseplanId = "caseplanId_example"; // String | Caseplan ID
 let stageplanId = "stageplanId_example"; // String | Stageplan ID
 let stepplanId = "stepplanId_example"; // String | Stepplan ID
 let body = {}; // Object | Stepplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body)
+apiInstance.patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body, opts)
   .then((data) => {
     console.log(`patchCasemanagementCaseplanStageplanStepplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1571,6 +1737,7 @@ apiInstance.patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId
  **stageplanId** | **String** | Stageplan ID |  |
  **stepplanId** | **String** | Stepplan ID |  |
  **body** | **Object** | Stepplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1607,7 +1774,11 @@ let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID.
 let opts = { 
-  'body': {} // Object | Case Association
+  'body': {}, // Object | Case Association
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postCasemanagementCaseAssociations(caseId, opts)
@@ -1627,6 +1798,7 @@ apiInstance.postCasemanagementCaseAssociations(caseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID. |  |
  **body** | **Object** | Case Association | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1635,7 +1807,7 @@ apiInstance.postCasemanagementCaseAssociations(caseId, opts)
 
 ## postCasemanagementCaseTerminateJobs
 
-> TerminateJob postCasemanagementCaseTerminateJobs(caseId)
+> TerminateJob postCasemanagementCaseTerminateJobs(caseId, opts)
 
 
 POST /api/v2/casemanagement/cases/{caseId}/terminate/jobs
@@ -1662,8 +1834,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let caseId = "caseId_example"; // String | Case ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCasemanagementCaseTerminateJobs(caseId)
+apiInstance.postCasemanagementCaseTerminateJobs(caseId, opts)
   .then((data) => {
     console.log(`postCasemanagementCaseTerminateJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1679,6 +1857,7 @@ apiInstance.postCasemanagementCaseTerminateJobs(caseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseId** | **String** | Case ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1687,7 +1866,7 @@ apiInstance.postCasemanagementCaseTerminateJobs(caseId)
 
 ## postCasemanagementCaseplanPublish
 
-> Caseplan postCasemanagementCaseplanPublish(caseplanId)
+> Caseplan postCasemanagementCaseplanPublish(caseplanId, opts)
 
 
 POST /api/v2/casemanagement/caseplans/{caseplanId}/publish
@@ -1714,8 +1893,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCasemanagementCaseplanPublish(caseplanId)
+apiInstance.postCasemanagementCaseplanPublish(caseplanId, opts)
   .then((data) => {
     console.log(`postCasemanagementCaseplanPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1731,6 +1916,7 @@ apiInstance.postCasemanagementCaseplanPublish(caseplanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1739,7 +1925,7 @@ apiInstance.postCasemanagementCaseplanPublish(caseplanId)
 
 ## postCasemanagementCaseplanVersions
 
-> Caseplan postCasemanagementCaseplanVersions(caseplanId)
+> Caseplan postCasemanagementCaseplanVersions(caseplanId, opts)
 
 
 POST /api/v2/casemanagement/caseplans/{caseplanId}/versions
@@ -1766,8 +1952,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCasemanagementCaseplanVersions(caseplanId)
+apiInstance.postCasemanagementCaseplanVersions(caseplanId, opts)
   .then((data) => {
     console.log(`postCasemanagementCaseplanVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1783,6 +1975,7 @@ apiInstance.postCasemanagementCaseplanVersions(caseplanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **caseplanId** | **String** | Caseplan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1791,7 +1984,7 @@ apiInstance.postCasemanagementCaseplanVersions(caseplanId)
 
 ## postCasemanagementCaseplans
 
-> CaseplanCreateResponse postCasemanagementCaseplans(body)
+> CaseplanCreateResponse postCasemanagementCaseplans(body, opts)
 
 
 POST /api/v2/casemanagement/caseplans
@@ -1818,8 +2011,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let body = {}; // Object | Caseplan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCasemanagementCaseplans(body)
+apiInstance.postCasemanagementCaseplans(body, opts)
   .then((data) => {
     console.log(`postCasemanagementCaseplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1835,6 +2034,7 @@ apiInstance.postCasemanagementCaseplans(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Caseplan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1843,7 +2043,7 @@ apiInstance.postCasemanagementCaseplans(body)
 
 ## postCasemanagementCases
 
-> Case postCasemanagementCases(body)
+> Case postCasemanagementCases(body, opts)
 
 
 POST /api/v2/casemanagement/cases
@@ -1870,8 +2070,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let body = {}; // Object | Case
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCasemanagementCases(body)
+apiInstance.postCasemanagementCases(body, opts)
   .then((data) => {
     console.log(`postCasemanagementCases success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1887,6 +2093,7 @@ apiInstance.postCasemanagementCases(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Case |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1922,7 +2129,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let opts = { 
-  'body': {} // Object | Case Association
+  'body': {}, // Object | Case Association
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postCasemanagementCasesAssociationsQuery(opts)
@@ -1941,10 +2152,11 @@ apiInstance.postCasemanagementCasesAssociationsQuery(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Case Association | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CaseAssociationQueryEntityListing**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

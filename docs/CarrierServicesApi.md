@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getCarrierservicesIntegrationsEmergencylocationsMe
 
-> EmergencyLocation getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber)
+> EmergencyLocation getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber, opts)
 
 
 GET /api/v2/carrierservices/integrations/emergencylocations/me
@@ -36,8 +36,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CarrierServicesApi();
 
 let phoneNumber = "phoneNumber_example"; // String | Phone number in E164 format
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber)
+apiInstance.getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber, opts)
   .then((data) => {
     console.log(`getCarrierservicesIntegrationsEmergencylocationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -53,6 +59,7 @@ apiInstance.getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumber** | **String** | Phone number in E164 format |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -84,7 +91,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CarrierServicesApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postCarrierservicesIntegrationsEmergencylocationsMe(opts)
@@ -103,10 +114,11 @@ apiInstance.postCarrierservicesIntegrationsEmergencylocationsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **EmergencyLocation**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

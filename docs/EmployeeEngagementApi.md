@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteEmployeeengagementCelebration
 
-> void deleteEmployeeengagementCelebration(celebrationId)
+> void deleteEmployeeengagementCelebration(celebrationId, opts)
 
 
 DELETE /api/v2/employeeengagement/celebrations/{celebrationId}
@@ -42,8 +42,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EmployeeEngagementApi();
 
 let celebrationId = "celebrationId_example"; // String | The ID of the celebration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteEmployeeengagementCelebration(celebrationId)
+apiInstance.deleteEmployeeengagementCelebration(celebrationId, opts)
   .then(() => {
     console.log('deleteEmployeeengagementCelebration returned successfully.');
   })
@@ -59,6 +65,7 @@ apiInstance.deleteEmployeeengagementCelebration(celebrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **celebrationId** | **String** | The ID of the celebration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -93,7 +100,11 @@ let apiInstance = new platformClient.EmployeeEngagementApi();
 
 let opts = { 
   'pageNumber': 1, // Number | 
-  'pageSize': 25 // Number | 
+  'pageSize': 25, // Number | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getEmployeeengagementCelebrations(opts)
@@ -113,6 +124,7 @@ apiInstance.getEmployeeengagementCelebrations(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** |  | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -121,7 +133,7 @@ apiInstance.getEmployeeengagementCelebrations(opts)
 
 ## getEmployeeengagementRecognition
 
-> Recognition getEmployeeengagementRecognition(recognitionId)
+> Recognition getEmployeeengagementRecognition(recognitionId, opts)
 
 
 GET /api/v2/employeeengagement/recognitions/{recognitionId}
@@ -146,8 +158,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EmployeeEngagementApi();
 
 let recognitionId = "recognitionId_example"; // String | The Recognition ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getEmployeeengagementRecognition(recognitionId)
+apiInstance.getEmployeeengagementRecognition(recognitionId, opts)
   .then((data) => {
     console.log(`getEmployeeengagementRecognition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -163,6 +181,7 @@ apiInstance.getEmployeeengagementRecognition(recognitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recognitionId** | **String** | The Recognition ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -201,7 +220,11 @@ let opts = {
   'dateStart': new Date("2013-10-20T19:20:30+01:00"), // Date | The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
   'dateEnd': new Date("2013-10-20T19:20:30+01:00"), // Date | The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
   'pageSize': 100, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getEmployeeengagementRecognitions(opts)
@@ -225,6 +248,7 @@ apiInstance.getEmployeeengagementRecognitions(opts)
  **dateEnd** | **Date** | The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 100] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -233,7 +257,7 @@ apiInstance.getEmployeeengagementRecognitions(opts)
 
 ## patchEmployeeengagementCelebration
 
-> void patchEmployeeengagementCelebration(celebrationId, body)
+> void patchEmployeeengagementCelebration(celebrationId, body, opts)
 
 
 PATCH /api/v2/employeeengagement/celebrations/{celebrationId}
@@ -259,8 +283,14 @@ let apiInstance = new platformClient.EmployeeEngagementApi();
 
 let celebrationId = "celebrationId_example"; // String | The ID of the celebration
 let body = {}; // Object | Patch Celebration state
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchEmployeeengagementCelebration(celebrationId, body)
+apiInstance.patchEmployeeengagementCelebration(celebrationId, body, opts)
   .then(() => {
     console.log('patchEmployeeengagementCelebration returned successfully.');
   })
@@ -277,6 +307,7 @@ apiInstance.patchEmployeeengagementCelebration(celebrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **celebrationId** | **String** | The ID of the celebration |  |
  **body** | **Object** | Patch Celebration state |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -285,7 +316,7 @@ void (no response body)
 
 ## postEmployeeengagementRecognitions
 
-> RecognitionBase postEmployeeengagementRecognitions(body)
+> RecognitionBase postEmployeeengagementRecognitions(body, opts)
 
 
 POST /api/v2/employeeengagement/recognitions
@@ -310,8 +341,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EmployeeEngagementApi();
 
 let body = {}; // Object | Create Recognition
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEmployeeengagementRecognitions(body)
+apiInstance.postEmployeeengagementRecognitions(body, opts)
   .then((data) => {
     console.log(`postEmployeeengagementRecognitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -327,10 +364,11 @@ apiInstance.postEmployeeengagementRecognitions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create Recognition |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **RecognitionBase**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

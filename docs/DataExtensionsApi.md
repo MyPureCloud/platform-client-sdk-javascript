@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getDataextensionsCoretype
 
-> Coretype getDataextensionsCoretype(coretypeName)
+> Coretype getDataextensionsCoretype(coretypeName, opts)
 
 
 GET /api/v2/dataextensions/coretypes/{coretypeName}
@@ -39,8 +39,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.DataExtensionsApi();
 
 let coretypeName = "coretypeName_example"; // String | The core type's name
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDataextensionsCoretype(coretypeName)
+apiInstance.getDataextensionsCoretype(coretypeName, opts)
   .then((data) => {
     console.log(`getDataextensionsCoretype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -56,6 +62,7 @@ apiInstance.getDataextensionsCoretype(coretypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coretypeName** | **String** | The core type's name | <br />**Values**: text, longtext, url, identifier, enum, date, datetime, integer, number, checkbox, tag |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -64,7 +71,7 @@ apiInstance.getDataextensionsCoretype(coretypeName)
 
 ## getDataextensionsCoretypes
 
-> CoretypeListing getDataextensionsCoretypes()
+> CoretypeListing getDataextensionsCoretypes(opts)
 
 
 GET /api/v2/dataextensions/coretypes
@@ -87,8 +94,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.DataExtensionsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDataextensionsCoretypes()
+apiInstance.getDataextensionsCoretypes(opts)
   .then((data) => {
     console.log(`getDataextensionsCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -100,7 +113,10 @@ apiInstance.getDataextensionsCoretypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -109,7 +125,7 @@ This endpoint does not need any parameter.
 
 ## getDataextensionsLimits
 
-> SchemaQuantityLimits getDataextensionsLimits()
+> SchemaQuantityLimits getDataextensionsLimits(opts)
 
 
 GET /api/v2/dataextensions/limits
@@ -132,8 +148,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.DataExtensionsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDataextensionsLimits()
+apiInstance.getDataextensionsLimits(opts)
   .then((data) => {
     console.log(`getDataextensionsLimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -145,11 +167,14 @@ apiInstance.getDataextensionsLimits()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **SchemaQuantityLimits**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -96,7 +96,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'force': false // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
+  'force': false, // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteAuthorizationDivision(divisionId, opts)
@@ -116,6 +120,7 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **force** | **Boolean** | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -124,7 +129,7 @@ void (no response body)
 
 ## deleteAuthorizationPoliciesTargetSubjectSubjectId
 
-> void deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+> void deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId, opts)
 
 
 DELETE /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}
@@ -150,8 +155,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy is applied
 let subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+apiInstance.deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId, opts)
   .then(() => {
     console.log('deleteAuthorizationPoliciesTargetSubjectSubjectId returned successfully.');
   })
@@ -168,6 +179,7 @@ apiInstance.deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjec
 | ------------- | ------------- | ------------- | ------------- |
  **targetName** | **String** | The domain:entity:action target to which the policy is applied |  |
  **subjectId** | **String** | The ID of the subject to which the policy is applied |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -176,7 +188,7 @@ void (no response body)
 
 ## deleteAuthorizationRole
 
-> void deleteAuthorizationRole(roleId)
+> void deleteAuthorizationRole(roleId, opts)
 
 
 DELETE /api/v2/authorization/roles/{roleId}
@@ -201,8 +213,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAuthorizationRole(roleId)
+apiInstance.deleteAuthorizationRole(roleId, opts)
   .then(() => {
     console.log('deleteAuthorizationRole returned successfully.');
   })
@@ -218,6 +236,7 @@ apiInstance.deleteAuthorizationRole(roleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -226,7 +245,7 @@ void (no response body)
 
 ## deleteAuthorizationSubjectDivisionRole
 
-> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -253,8 +272,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let divisionId = "divisionId_example"; // String | the id of the division of the grant
 let roleId = "roleId_example"; // String | the id of the role of the grant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
   .then(() => {
     console.log('deleteAuthorizationSubjectDivisionRole returned successfully.');
   })
@@ -272,6 +297,7 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -304,7 +330,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'objectCount': false // Boolean | Get count of objects in this division, grouped by type
+  'objectCount': false, // Boolean | Get count of objects in this division, grouped by type
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivision(divisionId, opts)
@@ -324,6 +354,7 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -361,7 +392,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionGrants(divisionId, opts)
@@ -382,6 +417,7 @@ apiInstance.getAuthorizationDivisionGrants(divisionId, opts)
  **divisionId** | **String** | Division ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -423,7 +459,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'objectCount': false, // Boolean | Include the count of objects contained in the division
   'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
-  'name': "name_example" // String | Search term to filter by division name
+  'name': "name_example", // String | Search term to filter by division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisions(opts)
@@ -450,6 +490,7 @@ apiInstance.getAuthorizationDivisions(opts)
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -484,7 +525,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionsDeleted(opts)
@@ -504,6 +549,7 @@ apiInstance.getAuthorizationDivisionsDeleted(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -512,7 +558,7 @@ apiInstance.getAuthorizationDivisionsDeleted(opts)
 
 ## getAuthorizationDivisionsHome
 
-> AuthzDivision getAuthorizationDivisionsHome()
+> AuthzDivision getAuthorizationDivisionsHome(opts)
 
 
 GET /api/v2/authorization/divisions/home
@@ -535,8 +581,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationDivisionsHome()
+apiInstance.getAuthorizationDivisionsHome(opts)
   .then((data) => {
     console.log(`getAuthorizationDivisionsHome success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -548,7 +600,10 @@ apiInstance.getAuthorizationDivisionsHome()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -557,7 +612,7 @@ This endpoint does not need any parameter.
 
 ## getAuthorizationDivisionsLimit
 
-> **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+> **&#39;Number&#39;** getAuthorizationDivisionsLimit(opts)
 
 
 GET /api/v2/authorization/divisions/limit
@@ -578,8 +633,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationDivisionsLimit()
+apiInstance.getAuthorizationDivisionsLimit(opts)
   .then((data) => {
     console.log(`getAuthorizationDivisionsLimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -591,7 +652,10 @@ apiInstance.getAuthorizationDivisionsLimit()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -629,7 +693,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "25", // String | Page size (max 200, default 25)
   'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
-  'name': "name_example" // String | Optionally request specific divisions by division name
+  'name': "name_example", // String | Optionally request specific divisions by division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionsQuery(opts)
@@ -652,6 +720,7 @@ apiInstance.getAuthorizationDivisionsQuery(opts)
  **pageSize** | **String** | Page size (max 200, default 25) | [optional] [default to 25] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Optionally request specific divisions by division name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -689,7 +758,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
 let opts = { 
-  'name': "name_example" // String | Search term to filter by division name
+  'name': "name_example", // String | Search term to filter by division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
@@ -709,6 +782,7 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **name** | **String** | Search term to filter by division name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -742,7 +816,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
@@ -763,6 +841,7 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -802,7 +881,11 @@ let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
@@ -824,6 +907,7 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -860,7 +944,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'queryType': "queryType_example", // String | Query filter type
-  'query': "query_example" // String | Comma-separated list of permissions or domains to query
+  'query': "query_example", // String | Comma-separated list of permissions or domains to query
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationPermissions(opts)
@@ -882,6 +970,7 @@ apiInstance.getAuthorizationPermissions(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **queryType** | **String** | Query filter type | [optional] <br />**Values**: domain, permission |
  **query** | **String** | Comma-separated list of permissions or domains to query | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -916,7 +1005,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+  'pageSize': 25, // Number | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationPolicies(opts)
@@ -936,6 +1029,7 @@ apiInstance.getAuthorizationPolicies(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -971,7 +1065,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let subjectId = "subjectId_example"; // String | The ID of the subject to which policies are applied
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+  'pageSize': 25, // Number | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationPoliciesSubjectSubjectId(subjectId, opts)
@@ -992,6 +1090,7 @@ apiInstance.getAuthorizationPoliciesSubjectSubjectId(subjectId, opts)
  **subjectId** | **String** | The ID of the subject to which policies are applied |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1027,7 +1126,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let targetName = "targetName_example"; // String | The domain:entity:action resource target to which policies are applied
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+  'pageSize': 25, // Number | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationPoliciesTarget(targetName, opts)
@@ -1048,6 +1151,7 @@ apiInstance.getAuthorizationPoliciesTarget(targetName, opts)
  **targetName** | **String** | The domain:entity:action resource target to which policies are applied |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1056,7 +1160,7 @@ apiInstance.getAuthorizationPoliciesTarget(targetName, opts)
 
 ## getAuthorizationPoliciesTargetSubjectSubjectId
 
-> AuthorizationPolicy getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+> AuthorizationPolicy getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId, opts)
 
 
 GET /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}
@@ -1082,8 +1186,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let targetName = "targetName_example"; // String | The domain:entity:action resource target to which the policy is applied
 let subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+apiInstance.getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId, opts)
   .then((data) => {
     console.log(`getAuthorizationPoliciesTargetSubjectSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1100,6 +1210,7 @@ apiInstance.getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId
 | ------------- | ------------- | ------------- | ------------- |
  **targetName** | **String** | The domain:entity:action resource target to which the policy is applied |  |
  **subjectId** | **String** | The ID of the subject to which the policy is applied |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1108,7 +1219,7 @@ apiInstance.getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId
 
 ## getAuthorizationPoliciesTargets
 
-> TargetAttributes getAuthorizationPoliciesTargets()
+> TargetAttributes getAuthorizationPoliciesTargets(opts)
 
 
 GET /api/v2/authorization/policies/targets
@@ -1131,8 +1242,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationPoliciesTargets()
+apiInstance.getAuthorizationPoliciesTargets(opts)
   .then((data) => {
     console.log(`getAuthorizationPoliciesTargets success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1144,7 +1261,10 @@ apiInstance.getAuthorizationPoliciesTargets()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1153,7 +1273,7 @@ This endpoint does not need any parameter.
 
 ## getAuthorizationPolicy
 
-> AuthorizationPolicy getAuthorizationPolicy(policyId)
+> AuthorizationPolicy getAuthorizationPolicy(policyId, opts)
 
 
 GET /api/v2/authorization/policies/{policyId}
@@ -1178,8 +1298,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let policyId = "policyId_example"; // String | The ID of the policy to retrieve
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationPolicy(policyId)
+apiInstance.getAuthorizationPolicy(policyId, opts)
   .then((data) => {
     console.log(`getAuthorizationPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1195,6 +1321,7 @@ apiInstance.getAuthorizationPolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | The ID of the policy to retrieve |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1203,7 +1330,7 @@ apiInstance.getAuthorizationPolicy(policyId)
 
 ## getAuthorizationPolicyAttributes
 
-> PolicyAttributeSet getAuthorizationPolicyAttributes(policyId)
+> PolicyAttributeSet getAuthorizationPolicyAttributes(policyId, opts)
 
 
 GET /api/v2/authorization/policies/{policyId}/attributes
@@ -1228,8 +1355,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let policyId = "policyId_example"; // String | The ID of the policy to retrieve attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationPolicyAttributes(policyId)
+apiInstance.getAuthorizationPolicyAttributes(policyId, opts)
   .then((data) => {
     console.log(`getAuthorizationPolicyAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1245,6 +1378,7 @@ apiInstance.getAuthorizationPolicyAttributes(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | The ID of the policy to retrieve attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1253,7 +1387,7 @@ apiInstance.getAuthorizationPolicyAttributes(policyId)
 
 ## getAuthorizationProducts
 
-> OrganizationProductEntityListing getAuthorizationProducts()
+> OrganizationProductEntityListing getAuthorizationProducts(opts)
 
 
 GET /api/v2/authorization/products
@@ -1276,8 +1410,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationProducts()
+apiInstance.getAuthorizationProducts(opts)
   .then((data) => {
     console.log(`getAuthorizationProducts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1289,7 +1429,10 @@ apiInstance.getAuthorizationProducts()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1327,7 +1470,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let roleId = "roleId_example"; // String | Role ID
 let opts = { 
   'userCount': true, // Boolean | Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts.
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationRole(roleId, opts)
@@ -1348,6 +1495,7 @@ apiInstance.getAuthorizationRole(roleId, opts)
  **roleId** | **String** | Role ID |  |
  **userCount** | **Boolean** | Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. | [optional] [default to true]<br />**Values**: true, false |
  **expand** | **[String]** | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1356,7 +1504,7 @@ apiInstance.getAuthorizationRole(roleId, opts)
 
 ## getAuthorizationRoleComparedefaultRightRoleId
 
-> DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
+> DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, opts)
 
 
 GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
@@ -1384,8 +1532,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let leftRoleId = "leftRoleId_example"; // String | Left Role ID
 let rightRoleId = "rightRoleId_example"; // String | Right Role id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
+apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, opts)
   .then((data) => {
     console.log(`getAuthorizationRoleComparedefaultRightRoleId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1402,6 +1556,7 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 | ------------- | ------------- | ------------- | ------------- |
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1443,7 +1598,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
@@ -1468,6 +1627,7 @@ apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1503,7 +1663,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let roleId = "roleId_example"; // String | Role ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationRoleUsers(roleId, opts)
@@ -1524,6 +1688,7 @@ apiInstance.getAuthorizationRoleUsers(roleId, opts)
  **roleId** | **String** | Role ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1567,7 +1732,11 @@ let opts = {
   'permission': ["permission_example"], // [String] | 
   'defaultRoleId': ["defaultRoleId_example"], // [String] | 
   'userCount': true, // Boolean | 
-  'id': ["id_example"] // [String] | id
+  'id': ["id_example"], // [String] | id
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationRoles(opts)
@@ -1596,6 +1765,7 @@ apiInstance.getAuthorizationRoles(opts)
  **defaultRoleId** | **[String]** |  | [optional]  |
  **userCount** | **Boolean** |  | [optional] [default to true] |
  **id** | **[String]** | id | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1604,7 +1774,7 @@ apiInstance.getAuthorizationRoles(opts)
 
 ## getAuthorizationRolesSettings
 
-> RoleSettings getAuthorizationRolesSettings()
+> RoleSettings getAuthorizationRolesSettings(opts)
 
 
 GET /api/v2/authorization/roles/settings
@@ -1628,8 +1798,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationRolesSettings()
+apiInstance.getAuthorizationRolesSettings(opts)
   .then((data) => {
     console.log(`getAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1641,7 +1817,10 @@ apiInstance.getAuthorizationRolesSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1650,7 +1829,7 @@ This endpoint does not need any parameter.
 
 ## getAuthorizationSettings
 
-> AuthorizationSettings getAuthorizationSettings()
+> AuthorizationSettings getAuthorizationSettings(opts)
 
 
 GET /api/v2/authorization/settings
@@ -1674,8 +1853,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationSettings()
+apiInstance.getAuthorizationSettings(opts)
   .then((data) => {
     console.log(`getAuthorizationSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1687,7 +1872,10 @@ apiInstance.getAuthorizationSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1722,7 +1910,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let opts = { 
-  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+  'includeDuplicates': false, // Boolean | Include multiple entries with the same role and division but different subjects
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationSubject(subjectId, opts)
@@ -1742,6 +1934,7 @@ apiInstance.getAuthorizationSubject(subjectId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1773,7 +1966,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let opts = { 
-  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+  'includeDuplicates': false, // Boolean | Include multiple entries with the same role and division but different subjects
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationSubjectsMe(opts)
@@ -1792,6 +1989,7 @@ apiInstance.getAuthorizationSubjectsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1825,7 +2023,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let opts = { 
-  'id': ["id_example"] // [String] | id
+  'id': ["id_example"], // [String] | id
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationSubjectsRolecounts(opts)
@@ -1844,6 +2046,7 @@ apiInstance.getAuthorizationSubjectsRolecounts(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | id | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1852,7 +2055,7 @@ apiInstance.getAuthorizationSubjectsRolecounts(opts)
 
 ## getUserRoles
 
-> UserAuthorization getUserRoles(subjectId)
+> UserAuthorization getUserRoles(subjectId, opts)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -1877,8 +2080,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let subjectId = "subjectId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserRoles(subjectId)
+apiInstance.getUserRoles(subjectId, opts)
   .then((data) => {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1894,6 +2103,7 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1902,7 +2112,7 @@ apiInstance.getUserRoles(subjectId)
 
 ## patchAuthorizationRole
 
-> DomainOrganizationRole patchAuthorizationRole(roleId, body)
+> DomainOrganizationRole patchAuthorizationRole(roleId, body, opts)
 
 
 PATCH /api/v2/authorization/roles/{roleId}
@@ -1930,8 +2140,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let body = {}; // Object | Organization role
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAuthorizationRole(roleId, body)
+apiInstance.patchAuthorizationRole(roleId, body, opts)
   .then((data) => {
     console.log(`patchAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1948,6 +2164,7 @@ apiInstance.patchAuthorizationRole(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Organization role |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1956,7 +2173,7 @@ apiInstance.patchAuthorizationRole(roleId, body)
 
 ## patchAuthorizationSettings
 
-> AuthorizationSettings patchAuthorizationSettings(body)
+> AuthorizationSettings patchAuthorizationSettings(body, opts)
 
 
 PATCH /api/v2/authorization/settings
@@ -1984,8 +2201,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let body = {}; // Object | Authorization Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAuthorizationSettings(body)
+apiInstance.patchAuthorizationSettings(body, opts)
   .then((data) => {
     console.log(`patchAuthorizationSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2001,6 +2224,7 @@ apiInstance.patchAuthorizationSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Authorization Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2009,7 +2233,7 @@ apiInstance.patchAuthorizationSettings(body)
 
 ## postAuthorizationDivisionObject
 
-> void postAuthorizationDivisionObject(divisionId, objectType, body)
+> void postAuthorizationDivisionObject(divisionId, objectType, body, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
@@ -2036,8 +2260,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 let divisionId = "divisionId_example"; // String | Division ID
 let objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
 let body = ["body_example"]; // [String] | Object Id List
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
+apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body, opts)
   .then(() => {
     console.log('postAuthorizationDivisionObject returned successfully.');
   })
@@ -2055,6 +2285,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT, LIBRARY |
  **body** | **[String]** | Object Id List |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2063,7 +2294,7 @@ void (no response body)
 
 ## postAuthorizationDivisionRestore
 
-> AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, body, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -2089,8 +2320,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let body = {}; // Object | Recreated division data
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationDivisionRestore(divisionId, body)
+apiInstance.postAuthorizationDivisionRestore(divisionId, body, opts)
   .then((data) => {
     console.log(`postAuthorizationDivisionRestore success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2107,6 +2344,7 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Recreated division data |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2115,7 +2353,7 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 
 ## postAuthorizationDivisions
 
-> AuthzDivision postAuthorizationDivisions(body)
+> AuthzDivision postAuthorizationDivisions(body, opts)
 
 
 POST /api/v2/authorization/divisions
@@ -2141,8 +2379,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let body = {}; // Object | Division
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationDivisions(body)
+apiInstance.postAuthorizationDivisions(body, opts)
   .then((data) => {
     console.log(`postAuthorizationDivisions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2158,6 +2402,7 @@ apiInstance.postAuthorizationDivisions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Division |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2193,7 +2438,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 let body = {}; // Object | Access control policy
 let opts = { 
-  'skipLockoutCheck': false // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+  'skipLockoutCheck': false, // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationPoliciesTarget(targetName, body, opts)
@@ -2214,6 +2463,7 @@ apiInstance.postAuthorizationPoliciesTarget(targetName, body, opts)
  **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
  **body** | **Object** | Access control policy |  |
  **skipLockoutCheck** | **Boolean** | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2222,7 +2472,7 @@ apiInstance.postAuthorizationPoliciesTarget(targetName, body, opts)
 
 ## postAuthorizationPoliciesTargetValidate
 
-> ValidationErrorListing postAuthorizationPoliciesTargetValidate(targetName, body)
+> ValidationErrorListing postAuthorizationPoliciesTargetValidate(targetName, body, opts)
 
 
 POST /api/v2/authorization/policies/targets/{targetName}/validate
@@ -2248,8 +2498,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 let body = {}; // Object | Access control policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationPoliciesTargetValidate(targetName, body)
+apiInstance.postAuthorizationPoliciesTargetValidate(targetName, body, opts)
   .then((data) => {
     console.log(`postAuthorizationPoliciesTargetValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2266,6 +2522,7 @@ apiInstance.postAuthorizationPoliciesTargetValidate(targetName, body)
 | ------------- | ------------- | ------------- | ------------- |
  **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
  **body** | **Object** | Access control policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2274,7 +2531,7 @@ apiInstance.postAuthorizationPoliciesTargetValidate(targetName, body)
 
 ## postAuthorizationPolicySimulate
 
-> PolicyTestResult postAuthorizationPolicySimulate(policyId, body)
+> PolicyTestResult postAuthorizationPolicySimulate(policyId, body, opts)
 
 
 POST /api/v2/authorization/policies/{policyId}/simulate
@@ -2300,8 +2557,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let policyId = "policyId_example"; // String | The ID of the policy to test the simulated data against
 let body = {}; // Object | A map of attribute names to type and simulated data value
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationPolicySimulate(policyId, body)
+apiInstance.postAuthorizationPolicySimulate(policyId, body, opts)
   .then((data) => {
     console.log(`postAuthorizationPolicySimulate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2318,6 +2581,7 @@ apiInstance.postAuthorizationPolicySimulate(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | The ID of the policy to test the simulated data against |  |
  **body** | **Object** | A map of attribute names to type and simulated data value |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2353,7 +2617,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let roleId = "roleId_example"; // String | Role ID
 let body = {}; // Object | Subjects and Divisions
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'subjectType': "PC_USER", // String | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationRole(roleId, body, opts)
@@ -2374,6 +2642,7 @@ apiInstance.postAuthorizationRole(roleId, body, opts)
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Subjects and Divisions |  |
  **subjectType** | **String** | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2382,7 +2651,7 @@ void (no response body)
 
 ## postAuthorizationRoleComparedefaultRightRoleId
 
-> DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
+> DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body, opts)
 
 
 POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
@@ -2411,8 +2680,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 let leftRoleId = "leftRoleId_example"; // String | Left Role ID
 let rightRoleId = "rightRoleId_example"; // String | Right Role id
 let body = {}; // Object | Organization role
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
+apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body, opts)
   .then((data) => {
     console.log(`postAuthorizationRoleComparedefaultRightRoleId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2430,6 +2705,7 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
  **body** | **Object** | Organization role |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2438,7 +2714,7 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
 
 ## postAuthorizationRoles
 
-> DomainOrganizationRole postAuthorizationRoles(body)
+> DomainOrganizationRole postAuthorizationRoles(body, opts)
 
 
 POST /api/v2/authorization/roles
@@ -2463,8 +2739,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let body = {}; // Object | Organization role
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationRoles(body)
+apiInstance.postAuthorizationRoles(body, opts)
   .then((data) => {
     console.log(`postAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2480,6 +2762,7 @@ apiInstance.postAuthorizationRoles(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization role |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2515,7 +2798,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let opts = { 
-  'force': false // Boolean | Restore default roles
+  'force': false, // Boolean | Restore default roles
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationRolesDefault(opts)
@@ -2534,6 +2821,7 @@ apiInstance.postAuthorizationRolesDefault(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **force** | **Boolean** | Restore default roles | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2569,7 +2857,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let body = {}; // Object | Pairs of role and division IDs
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'subjectType': "PC_USER", // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
@@ -2590,6 +2882,7 @@ apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2598,7 +2891,7 @@ void (no response body)
 
 ## postAuthorizationSubjectBulkremove
 
-> void postAuthorizationSubjectBulkremove(subjectId, body)
+> void postAuthorizationSubjectBulkremove(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
@@ -2624,8 +2917,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let body = {}; // Object | Pairs of role and division IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
+apiInstance.postAuthorizationSubjectBulkremove(subjectId, body, opts)
   .then(() => {
     console.log('postAuthorizationSubjectBulkremove returned successfully.');
   })
@@ -2642,6 +2941,7 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2680,7 +2980,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let body = {}; // Object | Pairs of role and division IDs
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'subjectType': "PC_USER", // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
@@ -2701,6 +3005,7 @@ apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2737,7 +3042,11 @@ let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
 let roleId = "roleId_example"; // String | the id of the role to grant
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
+  'subjectType': "PC_USER", // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
@@ -2759,6 +3068,7 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
  **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2767,7 +3077,7 @@ void (no response body)
 
 ## putAuthorizationDivision
 
-> AuthzDivision putAuthorizationDivision(divisionId, body)
+> AuthzDivision putAuthorizationDivision(divisionId, body, opts)
 
 
 PUT /api/v2/authorization/divisions/{divisionId}
@@ -2793,8 +3103,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let body = {}; // Object | Updated division data
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationDivision(divisionId, body)
+apiInstance.putAuthorizationDivision(divisionId, body, opts)
   .then((data) => {
     console.log(`putAuthorizationDivision success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2811,6 +3127,7 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Updated division data |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2847,7 +3164,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
 let body = {}; // Object | Access control policy
 let opts = { 
-  'skipLockoutCheck': false // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+  'skipLockoutCheck': false, // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putAuthorizationPoliciesTarget(targetName, body, opts)
@@ -2868,6 +3189,7 @@ apiInstance.putAuthorizationPoliciesTarget(targetName, body, opts)
  **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
  **body** | **Object** | Access control policy |  |
  **skipLockoutCheck** | **Boolean** | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2903,7 +3225,11 @@ let apiInstance = new platformClient.AuthorizationApi();
 let policyId = "policyId_example"; // String | The ID of the policy to update
 let body = {}; // Object | Access control policy
 let opts = { 
-  'skipLockoutCheck': false // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+  'skipLockoutCheck': false, // Boolean | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putAuthorizationPolicy(policyId, body, opts)
@@ -2924,6 +3250,7 @@ apiInstance.putAuthorizationPolicy(policyId, body, opts)
  **policyId** | **String** | The ID of the policy to update |  |
  **body** | **Object** | Access control policy |  |
  **skipLockoutCheck** | **Boolean** | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2932,7 +3259,7 @@ apiInstance.putAuthorizationPolicy(policyId, body, opts)
 
 ## putAuthorizationRole
 
-> DomainOrganizationRole putAuthorizationRole(roleId, body)
+> DomainOrganizationRole putAuthorizationRole(roleId, body, opts)
 
 
 PUT /api/v2/authorization/roles/{roleId}
@@ -2960,8 +3287,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let body = {}; // Object | Organization role
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationRole(roleId, body)
+apiInstance.putAuthorizationRole(roleId, body, opts)
   .then((data) => {
     console.log(`putAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2978,6 +3311,7 @@ apiInstance.putAuthorizationRole(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Organization role |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2986,7 +3320,7 @@ apiInstance.putAuthorizationRole(roleId, body)
 
 ## putAuthorizationRoleUsersAdd
 
-> **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body)
+> **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body, opts)
 
 
 PUT /api/v2/authorization/roles/{roleId}/users/add
@@ -3012,8 +3346,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let body = ["body_example"]; // [String] | List of user IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
+apiInstance.putAuthorizationRoleUsersAdd(roleId, body, opts)
   .then((data) => {
     console.log(`putAuthorizationRoleUsersAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3030,6 +3370,7 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **[String]** | List of user IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3038,7 +3379,7 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 
 ## putAuthorizationRoleUsersRemove
 
-> **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body)
+> **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body, opts)
 
 
 PUT /api/v2/authorization/roles/{roleId}/users/remove
@@ -3064,8 +3405,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let body = ["body_example"]; // [String] | List of user IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
+apiInstance.putAuthorizationRoleUsersRemove(roleId, body, opts)
   .then((data) => {
     console.log(`putAuthorizationRoleUsersRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3082,6 +3429,7 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **[String]** | List of user IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3090,7 +3438,7 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 
 ## putAuthorizationRolesDefault
 
-> OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
+> OrganizationRoleEntityListing putAuthorizationRolesDefault(body, opts)
 
 
 PUT /api/v2/authorization/roles/default
@@ -3115,8 +3463,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let body = [{}]; // Object | Organization roles list
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationRolesDefault(body)
+apiInstance.putAuthorizationRolesDefault(body, opts)
   .then((data) => {
     console.log(`putAuthorizationRolesDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3132,6 +3486,7 @@ apiInstance.putAuthorizationRolesDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization roles list |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3140,7 +3495,7 @@ apiInstance.putAuthorizationRolesDefault(body)
 
 ## putAuthorizationRolesSettings
 
-> RoleSettings putAuthorizationRolesSettings(body)
+> RoleSettings putAuthorizationRolesSettings(body, opts)
 
 
 PUT /api/v2/authorization/roles/settings
@@ -3168,8 +3523,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let body = {}; // Object | Authorization Role Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationRolesSettings(body)
+apiInstance.putAuthorizationRolesSettings(body, opts)
   .then((data) => {
     console.log(`putAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3185,6 +3546,7 @@ apiInstance.putAuthorizationRolesSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Authorization Role Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3193,7 +3555,7 @@ apiInstance.putAuthorizationRolesSettings(body)
 
 ## putUserRoles
 
-> UserAuthorization putUserRoles(subjectId, body)
+> UserAuthorization putUserRoles(subjectId, body, opts)
 
 
 PUT /api/v2/users/{subjectId}/roles
@@ -3219,8 +3581,14 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let subjectId = "subjectId_example"; // String | User ID
 let body = ["body_example"]; // [String] | List of roles
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoles(subjectId, body)
+apiInstance.putUserRoles(subjectId, body, opts)
   .then((data) => {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3237,10 +3605,11 @@ apiInstance.putUserRoles(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

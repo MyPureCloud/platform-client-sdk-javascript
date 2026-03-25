@@ -87,7 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteTaskmanagementWorkbin
 
-> void deleteTaskmanagementWorkbin(workbinId)
+> void deleteTaskmanagementWorkbin(workbinId, opts)
 
 
 DELETE /api/v2/taskmanagement/workbins/{workbinId}
@@ -112,8 +112,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let workbinId = "workbinId_example"; // String | Workbin ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorkbin(workbinId)
+apiInstance.deleteTaskmanagementWorkbin(workbinId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorkbin returned successfully.');
   })
@@ -129,6 +135,7 @@ apiInstance.deleteTaskmanagementWorkbin(workbinId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -137,7 +144,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorkitem
 
-> void deleteTaskmanagementWorkitem(workitemId)
+> void deleteTaskmanagementWorkitem(workitemId, opts)
 
 
 DELETE /api/v2/taskmanagement/workitems/{workitemId}
@@ -162,8 +169,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorkitem(workitemId)
+apiInstance.deleteTaskmanagementWorkitem(workitemId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorkitem returned successfully.');
   })
@@ -179,6 +192,7 @@ apiInstance.deleteTaskmanagementWorkitem(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -187,7 +201,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorkitemsBulkAddJob
 
-> void deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+> void deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId, opts)
 
 
 DELETE /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}
@@ -212,8 +226,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+apiInstance.deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorkitemsBulkAddJob returned successfully.');
   })
@@ -229,6 +249,7 @@ apiInstance.deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -237,7 +258,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorkitemsBulkTerminateJob
 
-> void deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+> void deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, opts)
 
 
 DELETE /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}
@@ -262,8 +283,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+apiInstance.deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorkitemsBulkTerminateJob returned successfully.');
   })
@@ -279,6 +306,7 @@ apiInstance.deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -287,7 +315,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorkitemsSchema
 
-> void deleteTaskmanagementWorkitemsSchema(schemaId)
+> void deleteTaskmanagementWorkitemsSchema(schemaId, opts)
 
 
 DELETE /api/v2/taskmanagement/workitems/schemas/{schemaId}
@@ -312,8 +340,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorkitemsSchema(schemaId)
+apiInstance.deleteTaskmanagementWorkitemsSchema(schemaId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorkitemsSchema returned successfully.');
   })
@@ -329,6 +363,7 @@ apiInstance.deleteTaskmanagementWorkitemsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -337,7 +372,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorktype
 
-> void deleteTaskmanagementWorktype(worktypeId)
+> void deleteTaskmanagementWorktype(worktypeId, opts)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}
@@ -362,8 +397,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorktype(worktypeId)
+apiInstance.deleteTaskmanagementWorktype(worktypeId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorktype returned successfully.');
   })
@@ -379,6 +420,7 @@ apiInstance.deleteTaskmanagementWorktype(worktypeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -387,7 +429,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorktypeFlowsDatebasedRule
 
-> void deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
+> void deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, opts)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}
@@ -413,8 +455,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
+apiInstance.deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorktypeFlowsDatebasedRule returned successfully.');
   })
@@ -431,6 +479,7 @@ apiInstance.deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -439,7 +488,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorktypeFlowsOnattributechangeRule
 
-> void deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+> void deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, opts)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}
@@ -465,8 +514,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+apiInstance.deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorktypeFlowsOnattributechangeRule returned successfully.');
   })
@@ -483,6 +538,7 @@ apiInstance.deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, r
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -491,7 +547,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorktypeFlowsOncreateRule
 
-> void deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+> void deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, opts)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}
@@ -517,8 +573,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+apiInstance.deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorktypeFlowsOncreateRule returned successfully.');
   })
@@ -535,6 +597,7 @@ apiInstance.deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -543,7 +606,7 @@ void (no response body)
 
 ## deleteTaskmanagementWorktypeStatus
 
-> void deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
+> void deleteTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -569,8 +632,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let statusId = "statusId_example"; // String | Status id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
+apiInstance.deleteTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
   .then(() => {
     console.log('deleteTaskmanagementWorktypeStatus returned successfully.');
   })
@@ -587,6 +656,7 @@ apiInstance.deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -595,7 +665,7 @@ void (no response body)
 
 ## getTaskmanagementWorkbin
 
-> Workbin getTaskmanagementWorkbin(workbinId)
+> Workbin getTaskmanagementWorkbin(workbinId, opts)
 
 
 GET /api/v2/taskmanagement/workbins/{workbinId}
@@ -620,8 +690,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let workbinId = "workbinId_example"; // String | Workbin ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkbin(workbinId)
+apiInstance.getTaskmanagementWorkbin(workbinId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkbin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -637,6 +713,7 @@ apiInstance.getTaskmanagementWorkbin(workbinId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -673,7 +750,11 @@ let workbinId = "workbinId_example"; // String | Workbin ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkbinHistory(workbinId, opts)
@@ -695,6 +776,7 @@ apiInstance.getTaskmanagementWorkbinHistory(workbinId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -703,7 +785,7 @@ apiInstance.getTaskmanagementWorkbinHistory(workbinId, opts)
 
 ## getTaskmanagementWorkbinVersion
 
-> WorkbinVersion getTaskmanagementWorkbinVersion(workbinId, entityVersion)
+> WorkbinVersion getTaskmanagementWorkbinVersion(workbinId, entityVersion, opts)
 
 
 GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}
@@ -729,8 +811,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workbinId = "workbinId_example"; // String | Workbin ID
 let entityVersion = 3.4; // Number | Workbin version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkbinVersion(workbinId, entityVersion)
+apiInstance.getTaskmanagementWorkbinVersion(workbinId, entityVersion, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkbinVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -747,6 +835,7 @@ apiInstance.getTaskmanagementWorkbinVersion(workbinId, entityVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
  **entityVersion** | **Number** | Workbin version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -783,7 +872,11 @@ let workbinId = "workbinId_example"; // String | Workbin ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkbinVersions(workbinId, opts)
@@ -805,6 +898,7 @@ apiInstance.getTaskmanagementWorkbinVersions(workbinId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -839,7 +933,11 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
 let opts = { 
-  'expands': ["expands_example"] // [String] | Which fields to expand. Comma separated if more than one.
+  'expands': ["expands_example"], // [String] | Which fields to expand. Comma separated if more than one.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkitem(workitemId, opts)
@@ -859,6 +957,7 @@ apiInstance.getTaskmanagementWorkitem(workitemId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **expands** | **[String]** | Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -895,7 +994,11 @@ let workitemId = "workitemId_example"; // String | Workitem ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkitemHistory(workitemId, opts)
@@ -917,6 +1020,7 @@ apiInstance.getTaskmanagementWorkitemHistory(workitemId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -955,7 +1059,11 @@ let opts = {
   'expands': "expands_example", // String | Which fields, if any, to expand.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
@@ -979,6 +1087,7 @@ apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -987,7 +1096,7 @@ apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
 
 ## getTaskmanagementWorkitemVersion
 
-> WorkitemVersion getTaskmanagementWorkitemVersion(workitemId, entityVersion)
+> WorkitemVersion getTaskmanagementWorkitemVersion(workitemId, entityVersion, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}
@@ -1013,8 +1122,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
 let entityVersion = 3.4; // Number | Workitem version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemVersion(workitemId, entityVersion)
+apiInstance.getTaskmanagementWorkitemVersion(workitemId, entityVersion, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1031,6 +1146,7 @@ apiInstance.getTaskmanagementWorkitemVersion(workitemId, entityVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **entityVersion** | **Number** | Workitem version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1067,7 +1183,11 @@ let workitemId = "workitemId_example"; // String | Workitem ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkitemVersions(workitemId, opts)
@@ -1089,6 +1209,7 @@ apiInstance.getTaskmanagementWorkitemVersions(workitemId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1126,7 +1247,11 @@ let opts = {
   'expands': "expands_example", // String | Which fields, if any, to expand.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)
@@ -1149,6 +1274,7 @@ apiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1157,7 +1283,7 @@ apiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)
 
 ## getTaskmanagementWorkitemsBulkAddJob
 
-> BulkJob getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+> BulkJob getTaskmanagementWorkitemsBulkAddJob(bulkJobId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}
@@ -1182,8 +1308,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+apiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsBulkAddJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1199,6 +1331,7 @@ apiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1207,7 +1340,7 @@ apiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
 
 ## getTaskmanagementWorkitemsBulkAddJobResults
 
-> BulkJobAddResponse getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)
+> BulkJobAddResponse getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results
@@ -1232,8 +1365,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)
+apiInstance.getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsBulkAddJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1249,6 +1388,7 @@ apiInstance.getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1285,7 +1425,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
   'sortOrder': "descending", // String | Ascending or descending sort order
-  'action': "action_example" // String | The bulk job action.
+  'action': "action_example", // String | The bulk job action.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorkitemsBulkJobsUsersMe(opts)
@@ -1307,6 +1451,7 @@ apiInstance.getTaskmanagementWorkitemsBulkJobsUsersMe(opts)
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
  **action** | **String** | The bulk job action. | [optional] <br />**Values**: TerminateWorkitems, AddWorkitems |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1315,7 +1460,7 @@ apiInstance.getTaskmanagementWorkitemsBulkJobsUsersMe(opts)
 
 ## getTaskmanagementWorkitemsBulkTerminateJob
 
-> BulkJob getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+> BulkJob getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}
@@ -1340,8 +1485,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+apiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsBulkTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1357,6 +1508,7 @@ apiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1365,7 +1517,7 @@ apiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
 
 ## getTaskmanagementWorkitemsBulkTerminateJobResults
 
-> BulkJobTerminateResultsResponse getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
+> BulkJobTerminateResultsResponse getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results
@@ -1390,8 +1542,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
+apiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsBulkTerminateJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1407,6 +1565,7 @@ apiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1415,7 +1574,7 @@ apiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
 
 ## getTaskmanagementWorkitemsQueryJob
 
-> WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(jobId)
+> WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(jobId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}
@@ -1440,8 +1599,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsQueryJob(jobId)
+apiInstance.getTaskmanagementWorkitemsQueryJob(jobId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsQueryJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1457,6 +1622,7 @@ apiInstance.getTaskmanagementWorkitemsQueryJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1465,7 +1631,7 @@ apiInstance.getTaskmanagementWorkitemsQueryJob(jobId)
 
 ## getTaskmanagementWorkitemsQueryJobResults
 
-> WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(jobId)
+> WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(jobId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results
@@ -1490,8 +1656,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId)
+apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsQueryJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1507,6 +1679,7 @@ apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1515,7 +1688,7 @@ apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId)
 
 ## getTaskmanagementWorkitemsSchema
 
-> DataSchema getTaskmanagementWorkitemsSchema(schemaId)
+> DataSchema getTaskmanagementWorkitemsSchema(schemaId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}
@@ -1540,8 +1713,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchema(schemaId)
+apiInstance.getTaskmanagementWorkitemsSchema(schemaId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1557,6 +1736,7 @@ apiInstance.getTaskmanagementWorkitemsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1565,7 +1745,7 @@ apiInstance.getTaskmanagementWorkitemsSchema(schemaId)
 
 ## getTaskmanagementWorkitemsSchemaVersion
 
-> DataSchema getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
+> DataSchema getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}
@@ -1591,8 +1771,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let versionId = "versionId_example"; // String | Schema version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
+apiInstance.getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1609,6 +1795,7 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1617,7 +1804,7 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
 
 ## getTaskmanagementWorkitemsSchemaVersions
 
-> DataSchemaListing getTaskmanagementWorkitemsSchemaVersions(schemaId)
+> DataSchemaListing getTaskmanagementWorkitemsSchemaVersions(schemaId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions
@@ -1642,8 +1829,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId)
+apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1659,6 +1852,7 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1667,7 +1861,7 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId)
 
 ## getTaskmanagementWorkitemsSchemas
 
-> DataSchemaListing getTaskmanagementWorkitemsSchemas()
+> DataSchemaListing getTaskmanagementWorkitemsSchemas(opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas
@@ -1690,8 +1884,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TaskManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchemas()
+apiInstance.getTaskmanagementWorkitemsSchemas(opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1703,7 +1903,10 @@ apiInstance.getTaskmanagementWorkitemsSchemas()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1712,7 +1915,7 @@ This endpoint does not need any parameter.
 
 ## getTaskmanagementWorkitemsSchemasCoretype
 
-> Coretype getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
+> Coretype getTaskmanagementWorkitemsSchemasCoretype(coreTypeName, opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}
@@ -1737,8 +1940,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
+apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1754,6 +1963,7 @@ apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coreTypeName** | **String** | Name of the core type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1762,7 +1972,7 @@ apiInstance.getTaskmanagementWorkitemsSchemasCoretype(coreTypeName)
 
 ## getTaskmanagementWorkitemsSchemasCoretypes
 
-> CoretypeListing getTaskmanagementWorkitemsSchemasCoretypes()
+> CoretypeListing getTaskmanagementWorkitemsSchemasCoretypes(opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/coretypes
@@ -1785,8 +1995,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TaskManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchemasCoretypes()
+apiInstance.getTaskmanagementWorkitemsSchemasCoretypes(opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1798,7 +2014,10 @@ apiInstance.getTaskmanagementWorkitemsSchemasCoretypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1807,7 +2026,7 @@ This endpoint does not need any parameter.
 
 ## getTaskmanagementWorkitemsSchemasLimits
 
-> SchemaQuantityLimits getTaskmanagementWorkitemsSchemasLimits()
+> SchemaQuantityLimits getTaskmanagementWorkitemsSchemasLimits(opts)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/limits
@@ -1830,8 +2049,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TaskManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorkitemsSchemasLimits()
+apiInstance.getTaskmanagementWorkitemsSchemasLimits(opts)
   .then((data) => {
     console.log(`getTaskmanagementWorkitemsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1843,7 +2068,10 @@ apiInstance.getTaskmanagementWorkitemsSchemasLimits()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1878,7 +2106,11 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let opts = { 
-  'expands': ["expands_example"] // [String] | Which fields, if any, to expand.
+  'expands': ["expands_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorktype(worktypeId, opts)
@@ -1898,6 +2130,7 @@ apiInstance.getTaskmanagementWorktype(worktypeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **expands** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1906,7 +2139,7 @@ apiInstance.getTaskmanagementWorktype(worktypeId, opts)
 
 ## getTaskmanagementWorktypeFlowsDatebasedRule
 
-> WorkitemDateBasedRule getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
+> WorkitemDateBasedRule getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}
@@ -1932,8 +2165,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
+apiInstance.getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorktypeFlowsDatebasedRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1950,6 +2189,7 @@ apiInstance.getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1985,7 +2225,11 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': 25 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, opts)
@@ -2006,6 +2250,7 @@ apiInstance.getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, opts)
  **worktypeId** | **String** | Worktype id |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2014,7 +2259,7 @@ apiInstance.getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, opts)
 
 ## getTaskmanagementWorktypeFlowsOnattributechangeRule
 
-> WorkitemOnAttributeChangeRule getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+> WorkitemOnAttributeChangeRule getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}
@@ -2040,8 +2285,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorktypeFlowsOnattributechangeRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2058,6 +2309,7 @@ apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, rule
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2093,7 +2345,11 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': 25 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts)
@@ -2114,6 +2370,7 @@ apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opt
  **worktypeId** | **String** | Worktype id |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2122,7 +2379,7 @@ apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opt
 
 ## getTaskmanagementWorktypeFlowsOncreateRule
 
-> WorkitemOnCreateRule getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+> WorkitemOnCreateRule getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}
@@ -2148,8 +2405,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+apiInstance.getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorktypeFlowsOncreateRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2166,6 +2429,7 @@ apiInstance.getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2201,7 +2465,11 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': 25 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts)
@@ -2222,6 +2490,7 @@ apiInstance.getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts)
  **worktypeId** | **String** | Worktype id |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2259,7 +2528,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
   'sortOrder': "descending", // String | Ascending or descending sort order
-  'fields': ["fields_example"] // [String] | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
+  'fields': ["fields_example"], // [String] | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorktypeHistory(worktypeId, opts)
@@ -2282,6 +2555,7 @@ apiInstance.getTaskmanagementWorktypeHistory(worktypeId, opts)
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
  **fields** | **[String]** | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. | [optional] <br />**Values**: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2290,7 +2564,7 @@ apiInstance.getTaskmanagementWorktypeHistory(worktypeId, opts)
 
 ## getTaskmanagementWorktypeStatus
 
-> WorkitemStatus getTaskmanagementWorktypeStatus(worktypeId, statusId)
+> WorkitemStatus getTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -2316,8 +2590,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let statusId = "statusId_example"; // String | Status id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId)
+apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorktypeStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2334,6 +2614,7 @@ apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2342,7 +2623,7 @@ apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId)
 
 ## getTaskmanagementWorktypeStatuses
 
-> WorkitemStatusListing getTaskmanagementWorktypeStatuses(worktypeId)
+> WorkitemStatusListing getTaskmanagementWorktypeStatuses(worktypeId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
@@ -2367,8 +2648,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorktypeStatuses(worktypeId)
+apiInstance.getTaskmanagementWorktypeStatuses(worktypeId, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorktypeStatuses success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2384,6 +2671,7 @@ apiInstance.getTaskmanagementWorktypeStatuses(worktypeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2392,7 +2680,7 @@ apiInstance.getTaskmanagementWorktypeStatuses(worktypeId)
 
 ## getTaskmanagementWorktypeVersion
 
-> WorktypeVersion getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
+> WorktypeVersion getTaskmanagementWorktypeVersion(worktypeId, entityVersion, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}
@@ -2418,8 +2706,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let entityVersion = 3.4; // Number | Worktype version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
+apiInstance.getTaskmanagementWorktypeVersion(worktypeId, entityVersion, opts)
   .then((data) => {
     console.log(`getTaskmanagementWorktypeVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2436,6 +2730,7 @@ apiInstance.getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **entityVersion** | **Number** | Worktype version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2472,7 +2767,11 @@ let worktypeId = "worktypeId_example"; // String | Worktype id
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTaskmanagementWorktypeVersions(worktypeId, opts)
@@ -2494,6 +2793,7 @@ apiInstance.getTaskmanagementWorktypeVersions(worktypeId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2502,7 +2802,7 @@ apiInstance.getTaskmanagementWorktypeVersions(worktypeId, opts)
 
 ## patchTaskmanagementWorkbin
 
-> Workbin patchTaskmanagementWorkbin(workbinId, body)
+> Workbin patchTaskmanagementWorkbin(workbinId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workbins/{workbinId}
@@ -2528,8 +2828,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workbinId = "workbinId_example"; // String | Workbin ID
 let body = {}; // Object | Json with attributes and their new values: {description:new description, name:new name}.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkbin(workbinId, body)
+apiInstance.patchTaskmanagementWorkbin(workbinId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorkbin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2546,6 +2852,7 @@ apiInstance.patchTaskmanagementWorkbin(workbinId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
  **body** | **Object** | Json with attributes and their new values: {description:new description, name:new name}. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2554,7 +2861,7 @@ apiInstance.patchTaskmanagementWorkbin(workbinId, body)
 
 ## patchTaskmanagementWorkitem
 
-> Workitem patchTaskmanagementWorkitem(workitemId, body)
+> Workitem patchTaskmanagementWorkitem(workitemId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}
@@ -2581,8 +2888,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
 let body = {}; // Object | Workitem
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkitem(workitemId, body)
+apiInstance.patchTaskmanagementWorkitem(workitemId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorkitem success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2599,6 +2912,7 @@ apiInstance.patchTaskmanagementWorkitem(workitemId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **body** | **Object** | Workitem |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2607,7 +2921,7 @@ apiInstance.patchTaskmanagementWorkitem(workitemId, body)
 
 ## patchTaskmanagementWorkitemAssignment
 
-> void patchTaskmanagementWorkitemAssignment(workitemId, body)
+> void patchTaskmanagementWorkitemAssignment(workitemId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/assignment
@@ -2634,8 +2948,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
 let body = {}; // Object | Targeted user
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkitemAssignment(workitemId, body)
+apiInstance.patchTaskmanagementWorkitemAssignment(workitemId, body, opts)
   .then(() => {
     console.log('patchTaskmanagementWorkitemAssignment returned successfully.');
   })
@@ -2652,6 +2972,7 @@ apiInstance.patchTaskmanagementWorkitemAssignment(workitemId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **body** | **Object** | Targeted user |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2660,7 +2981,7 @@ void (no response body)
 
 ## patchTaskmanagementWorkitemUserWrapups
 
-> void patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
+> void patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
@@ -2687,8 +3008,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 let workitemId = "workitemId_example"; // String | The ID of the Workitem.
 let userId = "userId_example"; // String | The ID of the user
 let body = {}; // Object | Request body to add/remove a wrapup code for a workitem
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
+apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body, opts)
   .then(() => {
     console.log('patchTaskmanagementWorkitemUserWrapups returned successfully.');
   })
@@ -2706,6 +3033,7 @@ apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
  **workitemId** | **String** | The ID of the Workitem. |  |
  **userId** | **String** | The ID of the user |  |
  **body** | **Object** | Request body to add/remove a wrapup code for a workitem |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2714,7 +3042,7 @@ void (no response body)
 
 ## patchTaskmanagementWorkitemUsersMeWrapups
 
-> void patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
+> void patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups
@@ -2740,8 +3068,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | The ID of the Workitem.
 let body = {}; // Object | Request body to add/remove the wrapup code for workitem
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
+apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body, opts)
   .then(() => {
     console.log('patchTaskmanagementWorkitemUsersMeWrapups returned successfully.');
   })
@@ -2758,6 +3092,7 @@ apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | The ID of the Workitem. |  |
  **body** | **Object** | Request body to add/remove the wrapup code for workitem |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2766,7 +3101,7 @@ void (no response body)
 
 ## patchTaskmanagementWorkitemsBulkAddJob
 
-> BulkJob patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
+> BulkJob patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}
@@ -2792,8 +3127,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
 let body = {}; // Object | Bulk add job update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
+apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorkitemsBulkAddJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2810,6 +3151,7 @@ apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
  **body** | **Object** | Bulk add job update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2818,7 +3160,7 @@ apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
 
 ## patchTaskmanagementWorkitemsBulkTerminateJob
 
-> BulkJob patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
+> BulkJob patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}
@@ -2844,8 +3186,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let bulkJobId = "bulkJobId_example"; // String | Bulk job id
 let body = {}; // Object | Bulk job update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
+apiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorkitemsBulkTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2862,6 +3210,7 @@ apiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **bulkJobId** | **String** | Bulk job id |  |
  **body** | **Object** | Bulk job update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2870,7 +3219,7 @@ apiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
 
 ## patchTaskmanagementWorktype
 
-> Worktype patchTaskmanagementWorktype(worktypeId, body)
+> Worktype patchTaskmanagementWorktype(worktypeId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}
@@ -2896,8 +3245,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let body = {}; // Object | Worktype
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorktype(worktypeId, body)
+apiInstance.patchTaskmanagementWorktype(worktypeId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorktype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2914,6 +3269,7 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Worktype |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2922,7 +3278,7 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, body)
 
 ## patchTaskmanagementWorktypeFlowsDatebasedRule
 
-> WorkitemDateBasedRule patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body)
+> WorkitemDateBasedRule patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}
@@ -2949,8 +3305,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
 let body = {}; // Object | Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body)
+apiInstance.patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorktypeFlowsDatebasedRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2968,6 +3330,7 @@ apiInstance.patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, bo
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
  **body** | **Object** | Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2976,7 +3339,7 @@ apiInstance.patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, bo
 
 ## patchTaskmanagementWorktypeFlowsOnattributechangeRule
 
-> WorkitemOnAttributeChangeRule patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body)
+> WorkitemOnAttributeChangeRule patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}
@@ -3003,8 +3366,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
 let body = {}; // Object | Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body)
+apiInstance.patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorktypeFlowsOnattributechangeRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3022,6 +3391,7 @@ apiInstance.patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ru
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
  **body** | **Object** | Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3030,7 +3400,7 @@ apiInstance.patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ru
 
 ## patchTaskmanagementWorktypeFlowsOncreateRule
 
-> WorkitemOnCreateRule patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body)
+> WorkitemOnCreateRule patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}
@@ -3057,8 +3427,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let ruleId = "ruleId_example"; // String | ruleId
 let body = {}; // Object | Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body)
+apiInstance.patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorktypeFlowsOncreateRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3076,6 +3452,7 @@ apiInstance.patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, bod
  **worktypeId** | **String** | Worktype id |  |
  **ruleId** | **String** | ruleId |  |
  **body** | **Object** | Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3084,7 +3461,7 @@ apiInstance.patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, bod
 
 ## patchTaskmanagementWorktypeStatus
 
-> WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
+> WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, body, opts)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -3111,8 +3488,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let statusId = "statusId_example"; // String | Status id
 let body = {}; // Object | Status
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
+apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body, opts)
   .then((data) => {
     console.log(`patchTaskmanagementWorktypeStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3130,6 +3513,7 @@ apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
  **body** | **Object** | Status |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3138,7 +3522,7 @@ apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
 
 ## postTaskmanagementWorkbins
 
-> Workbin postTaskmanagementWorkbins(body)
+> Workbin postTaskmanagementWorkbins(body, opts)
 
 
 POST /api/v2/taskmanagement/workbins
@@ -3163,8 +3547,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | Workbin
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkbins(body)
+apiInstance.postTaskmanagementWorkbins(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkbins success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3180,6 +3570,7 @@ apiInstance.postTaskmanagementWorkbins(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Workbin |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3188,7 +3579,7 @@ apiInstance.postTaskmanagementWorkbins(body)
 
 ## postTaskmanagementWorkbinsQuery
 
-> WorkbinQueryEntityListing postTaskmanagementWorkbinsQuery(body)
+> WorkbinQueryEntityListing postTaskmanagementWorkbinsQuery(body, opts)
 
 
 POST /api/v2/taskmanagement/workbins/query
@@ -3213,8 +3604,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | QueryPostRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkbinsQuery(body)
+apiInstance.postTaskmanagementWorkbinsQuery(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkbinsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3230,6 +3627,7 @@ apiInstance.postTaskmanagementWorkbinsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | QueryPostRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3238,7 +3636,7 @@ apiInstance.postTaskmanagementWorkbinsQuery(body)
 
 ## postTaskmanagementWorkitemAcdCancel
 
-> Workitem postTaskmanagementWorkitemAcdCancel(workitemId)
+> Workitem postTaskmanagementWorkitemAcdCancel(workitemId, opts)
 
 
 POST /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel
@@ -3263,8 +3661,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemAcdCancel(workitemId)
+apiInstance.postTaskmanagementWorkitemAcdCancel(workitemId, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemAcdCancel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3280,6 +3684,7 @@ apiInstance.postTaskmanagementWorkitemAcdCancel(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3288,7 +3693,7 @@ apiInstance.postTaskmanagementWorkitemAcdCancel(workitemId)
 
 ## postTaskmanagementWorkitemDisconnect
 
-> Workitem postTaskmanagementWorkitemDisconnect(workitemId)
+> Workitem postTaskmanagementWorkitemDisconnect(workitemId, opts)
 
 
 POST /api/v2/taskmanagement/workitems/{workitemId}/disconnect
@@ -3313,8 +3718,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemDisconnect(workitemId)
+apiInstance.postTaskmanagementWorkitemDisconnect(workitemId, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemDisconnect success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3330,6 +3741,7 @@ apiInstance.postTaskmanagementWorkitemDisconnect(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3364,7 +3776,11 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let workitemId = "workitemId_example"; // String | Workitem ID
 let opts = { 
-  'body': {} // Object | Terminated request
+  'body': {}, // Object | Terminated request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postTaskmanagementWorkitemTerminate(workitemId, opts)
@@ -3384,6 +3800,7 @@ apiInstance.postTaskmanagementWorkitemTerminate(workitemId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **body** | **Object** | Terminated request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3392,7 +3809,7 @@ apiInstance.postTaskmanagementWorkitemTerminate(workitemId, opts)
 
 ## postTaskmanagementWorkitems
 
-> Workitem postTaskmanagementWorkitems(body)
+> Workitem postTaskmanagementWorkitems(body, opts)
 
 
 POST /api/v2/taskmanagement/workitems
@@ -3417,8 +3834,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | Workitem
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitems(body)
+apiInstance.postTaskmanagementWorkitems(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitems success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3434,6 +3857,7 @@ apiInstance.postTaskmanagementWorkitems(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Workitem |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3442,7 +3866,7 @@ apiInstance.postTaskmanagementWorkitems(body)
 
 ## postTaskmanagementWorkitemsBulkAddJobs
 
-> BulkJob postTaskmanagementWorkitemsBulkAddJobs(body)
+> BulkJob postTaskmanagementWorkitemsBulkAddJobs(body, opts)
 
 
 POST /api/v2/taskmanagement/workitems/bulk/add/jobs
@@ -3467,8 +3891,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | Bulk job definition.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemsBulkAddJobs(body)
+apiInstance.postTaskmanagementWorkitemsBulkAddJobs(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemsBulkAddJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3484,6 +3914,7 @@ apiInstance.postTaskmanagementWorkitemsBulkAddJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Bulk job definition. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3492,7 +3923,7 @@ apiInstance.postTaskmanagementWorkitemsBulkAddJobs(body)
 
 ## postTaskmanagementWorkitemsBulkTerminateJobs
 
-> BulkJob postTaskmanagementWorkitemsBulkTerminateJobs(body)
+> BulkJob postTaskmanagementWorkitemsBulkTerminateJobs(body, opts)
 
 
 POST /api/v2/taskmanagement/workitems/bulk/terminate/jobs
@@ -3517,8 +3948,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | Bulk job definition.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body)
+apiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemsBulkTerminateJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3534,6 +3971,7 @@ apiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Bulk job definition. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3542,7 +3980,7 @@ apiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body)
 
 ## postTaskmanagementWorkitemsQuery
 
-> WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(body)
+> WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(body, opts)
 
 
 POST /api/v2/taskmanagement/workitems/query
@@ -3569,8 +4007,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | WorkitemQueryPostRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemsQuery(body)
+apiInstance.postTaskmanagementWorkitemsQuery(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3586,6 +4030,7 @@ apiInstance.postTaskmanagementWorkitemsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WorkitemQueryPostRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3594,7 +4039,7 @@ apiInstance.postTaskmanagementWorkitemsQuery(body)
 
 ## postTaskmanagementWorkitemsQueryJobs
 
-> WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(body)
+> WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(body, opts)
 
 
 POST /api/v2/taskmanagement/workitems/query/jobs
@@ -3619,8 +4064,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | WorkitemQueryJobCreate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemsQueryJobs(body)
+apiInstance.postTaskmanagementWorkitemsQueryJobs(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemsQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3636,6 +4087,7 @@ apiInstance.postTaskmanagementWorkitemsQueryJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WorkitemQueryJobCreate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3644,7 +4096,7 @@ apiInstance.postTaskmanagementWorkitemsQueryJobs(body)
 
 ## postTaskmanagementWorkitemsSchemas
 
-> DataSchema postTaskmanagementWorkitemsSchemas(body)
+> DataSchema postTaskmanagementWorkitemsSchemas(body, opts)
 
 
 POST /api/v2/taskmanagement/workitems/schemas
@@ -3669,8 +4121,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorkitemsSchemas(body)
+apiInstance.postTaskmanagementWorkitemsSchemas(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorkitemsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3686,6 +4144,7 @@ apiInstance.postTaskmanagementWorkitemsSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3694,7 +4153,7 @@ apiInstance.postTaskmanagementWorkitemsSchemas(body)
 
 ## postTaskmanagementWorktypeFlowsDatebasedRules
 
-> WorkitemDateBasedRule postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body)
+> WorkitemDateBasedRule postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body, opts)
 
 
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules
@@ -3720,8 +4179,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let body = {}; // Object | Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body)
+apiInstance.postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorktypeFlowsDatebasedRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3738,6 +4203,7 @@ apiInstance.postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3746,7 +4212,7 @@ apiInstance.postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body)
 
 ## postTaskmanagementWorktypeFlowsOnattributechangeRules
 
-> WorkitemOnAttributeChangeRule postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body)
+> WorkitemOnAttributeChangeRule postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body, opts)
 
 
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules
@@ -3772,8 +4238,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let body = {}; // Object | Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body)
+apiInstance.postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorktypeFlowsOnattributechangeRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3790,6 +4262,7 @@ apiInstance.postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3798,7 +4271,7 @@ apiInstance.postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, bo
 
 ## postTaskmanagementWorktypeFlowsOncreateRules
 
-> WorkitemOnCreateRule postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
+> WorkitemOnCreateRule postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body, opts)
 
 
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules
@@ -3824,8 +4297,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let body = {}; // Object | Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
+apiInstance.postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorktypeFlowsOncreateRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3842,6 +4321,7 @@ apiInstance.postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3850,7 +4330,7 @@ apiInstance.postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
 
 ## postTaskmanagementWorktypeStatuses
 
-> WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, body)
+> WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, body, opts)
 
 
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
@@ -3876,8 +4356,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let body = {}; // Object | Status
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body)
+apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorktypeStatuses success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3894,6 +4380,7 @@ apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Status |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3902,7 +4389,7 @@ apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body)
 
 ## postTaskmanagementWorktypes
 
-> Worktype postTaskmanagementWorktypes(body)
+> Worktype postTaskmanagementWorktypes(body, opts)
 
 
 POST /api/v2/taskmanagement/worktypes
@@ -3927,8 +4414,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | Worktype
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorktypes(body)
+apiInstance.postTaskmanagementWorktypes(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorktypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3944,6 +4437,7 @@ apiInstance.postTaskmanagementWorktypes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Worktype |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3952,7 +4446,7 @@ apiInstance.postTaskmanagementWorktypes(body)
 
 ## postTaskmanagementWorktypesQuery
 
-> WorktypeQueryEntityListing postTaskmanagementWorktypesQuery(body)
+> WorktypeQueryEntityListing postTaskmanagementWorktypesQuery(body, opts)
 
 
 POST /api/v2/taskmanagement/worktypes/query
@@ -3977,8 +4471,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let body = {}; // Object | QueryPostRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTaskmanagementWorktypesQuery(body)
+apiInstance.postTaskmanagementWorktypesQuery(body, opts)
   .then((data) => {
     console.log(`postTaskmanagementWorktypesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3994,6 +4494,7 @@ apiInstance.postTaskmanagementWorktypesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | QueryPostRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4002,7 +4503,7 @@ apiInstance.postTaskmanagementWorktypesQuery(body)
 
 ## putTaskmanagementWorkitemsSchema
 
-> DataSchema putTaskmanagementWorkitemsSchema(schemaId, body)
+> DataSchema putTaskmanagementWorkitemsSchema(schemaId, body, opts)
 
 
 PUT /api/v2/taskmanagement/workitems/schemas/{schemaId}
@@ -4028,8 +4529,14 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let body = {}; // Object | Data Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
+apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body, opts)
   .then((data) => {
     console.log(`putTaskmanagementWorkitemsSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4046,10 +4553,11 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **DataSchema**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

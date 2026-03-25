@@ -20,7 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteUsersRule
 
-> void deleteUsersRule(ruleId)
+> void deleteUsersRule(ruleId, opts)
 
 
 DELETE /api/v2/users/rules/{ruleId}
@@ -45,8 +45,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersRulesApi();
 
 let ruleId = "ruleId_example"; // String | The id of the rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUsersRule(ruleId)
+apiInstance.deleteUsersRule(ruleId, opts)
   .then(() => {
     console.log('deleteUsersRule returned successfully.');
   })
@@ -62,6 +68,7 @@ apiInstance.deleteUsersRule(ruleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | The id of the rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -70,7 +77,7 @@ void (no response body)
 
 ## getUsersRule
 
-> UsersRulesRule getUsersRule(ruleId)
+> UsersRulesRule getUsersRule(ruleId, opts)
 
 
 GET /api/v2/users/rules/{ruleId}
@@ -95,8 +102,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersRulesApi();
 
 let ruleId = "ruleId_example"; // String | The ID of the rule to retrieve
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersRule(ruleId)
+apiInstance.getUsersRule(ruleId, opts)
   .then((data) => {
     console.log(`getUsersRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -112,6 +125,7 @@ apiInstance.getUsersRule(ruleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | The ID of the rule to retrieve |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -120,7 +134,7 @@ apiInstance.getUsersRule(ruleId)
 
 ## getUsersRuleDependentTypeId
 
-> UsersRulesDependent getUsersRuleDependentTypeId(ruleId, ruleType, typeId)
+> UsersRulesDependent getUsersRuleDependentTypeId(ruleId, ruleType, typeId, opts)
 
 
 GET /api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}
@@ -147,8 +161,14 @@ let apiInstance = new platformClient.UsersRulesApi();
 let ruleId = "ruleId_example"; // String | The ID of the rule for which to retrieve dependents
 let ruleType = "ruleType_example"; // String | The type of the dependent
 let typeId = "typeId_example"; // String | The type ID of the dependent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersRuleDependentTypeId(ruleId, ruleType, typeId)
+apiInstance.getUsersRuleDependentTypeId(ruleId, ruleType, typeId, opts)
   .then((data) => {
     console.log(`getUsersRuleDependentTypeId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -166,6 +186,7 @@ apiInstance.getUsersRuleDependentTypeId(ruleId, ruleType, typeId)
  **ruleId** | **String** | The ID of the rule for which to retrieve dependents |  |
  **ruleType** | **String** | The type of the dependent | <br />**Values**: learning, activityplan |
  **typeId** | **String** | The type ID of the dependent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -202,7 +223,11 @@ let ruleId = "ruleId_example"; // String | The ID of the rule for which to retri
 let opts = { 
   'pageSize': 25, // Number | Number of results per page
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "descending" // String | Sort order for dependents (by last run date, then created date)
+  'sortOrder': "descending", // String | Sort order for dependents (by last run date, then created date)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersRuleDependents(ruleId, opts)
@@ -224,6 +249,7 @@ apiInstance.getUsersRuleDependents(ruleId, opts)
  **pageSize** | **Number** | Number of results per page | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order for dependents (by last run date, then created date) | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -263,7 +289,11 @@ let opts = {
   'expand': ["expand_example"], // [String] | Fields to expand in response
   'enabled': true, // Boolean | Whether to list enabled or disabled rules
   'searchTerm': "searchTerm_example", // String | a search term for finding a rule by name
-  'sortOrder': "ascending" // String | sort rules by name, ascending, descending
+  'sortOrder': "ascending", // String | sort rules by name, ascending, descending
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersRules(types, opts)
@@ -288,6 +318,7 @@ apiInstance.getUsersRules(types, opts)
  **enabled** | **Boolean** | Whether to list enabled or disabled rules | [optional]  |
  **searchTerm** | **String** | a search term for finding a rule by name | [optional]  |
  **sortOrder** | **String** | sort rules by name, ascending, descending | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -296,7 +327,7 @@ apiInstance.getUsersRules(types, opts)
 
 ## getUsersRulesSetting
 
-> UsersRulesRuleSettings getUsersRulesSetting(ruleType)
+> UsersRulesRuleSettings getUsersRulesSetting(ruleType, opts)
 
 
 GET /api/v2/users/rules/settings/{ruleType}
@@ -321,8 +352,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersRulesApi();
 
 let ruleType = "ruleType_example"; // String | The type of the rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersRulesSetting(ruleType)
+apiInstance.getUsersRulesSetting(ruleType, opts)
   .then((data) => {
     console.log(`getUsersRulesSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -338,6 +375,7 @@ apiInstance.getUsersRulesSetting(ruleType)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleType** | **String** | The type of the rule | <br />**Values**: Learning, ActivityPlan |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -346,7 +384,7 @@ apiInstance.getUsersRulesSetting(ruleType)
 
 ## patchUsersRule
 
-> UsersRulesRule patchUsersRule(ruleId, body)
+> UsersRulesRule patchUsersRule(ruleId, body, opts)
 
 
 PATCH /api/v2/users/rules/{ruleId}
@@ -374,8 +412,14 @@ let apiInstance = new platformClient.UsersRulesApi();
 
 let ruleId = "ruleId_example"; // String | The ID of the rule to update
 let body = {}; // Object | updateRuleRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUsersRule(ruleId, body)
+apiInstance.patchUsersRule(ruleId, body, opts)
   .then((data) => {
     console.log(`patchUsersRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -392,6 +436,7 @@ apiInstance.patchUsersRule(ruleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | The ID of the rule to update |  |
  **body** | **Object** | updateRuleRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -400,7 +445,7 @@ apiInstance.patchUsersRule(ruleId, body)
 
 ## postUsersRules
 
-> UsersRulesRule postUsersRules(body)
+> UsersRulesRule postUsersRules(body, opts)
 
 
 POST /api/v2/users/rules
@@ -427,8 +472,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersRulesApi();
 
 let body = {}; // Object | usersRulesCreateRuleRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersRules(body)
+apiInstance.postUsersRules(body, opts)
   .then((data) => {
     console.log(`postUsersRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -444,6 +495,7 @@ apiInstance.postUsersRules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | usersRulesCreateRuleRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -481,7 +533,11 @@ let apiInstance = new platformClient.UsersRulesApi();
 let body = {}; // Object | usersRulesQueryRuleRequest
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Number of results per page
+  'pageSize': 25, // Number | Number of results per page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postUsersRulesQuery(body, opts)
@@ -502,10 +558,11 @@ apiInstance.postUsersRulesQuery(body, opts)
  **body** | **Object** | usersRulesQueryRuleRequest |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Number of results per page | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UsersRulesQueryResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

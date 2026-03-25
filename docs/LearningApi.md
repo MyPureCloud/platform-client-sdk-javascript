@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteLearningAssignment
 
-> void deleteLearningAssignment(assignmentId)
+> void deleteLearningAssignment(assignmentId, opts)
 
 
 DELETE /api/v2/learning/assignments/{assignmentId}
@@ -74,8 +74,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLearningAssignment(assignmentId)
+apiInstance.deleteLearningAssignment(assignmentId, opts)
   .then(() => {
     console.log('deleteLearningAssignment returned successfully.');
   })
@@ -91,6 +97,7 @@ apiInstance.deleteLearningAssignment(assignmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The Learning Assignment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -99,7 +106,7 @@ void (no response body)
 
 ## deleteLearningModule
 
-> void deleteLearningModule(moduleId)
+> void deleteLearningModule(moduleId, opts)
 
 
 DELETE /api/v2/learning/modules/{moduleId}
@@ -126,8 +133,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLearningModule(moduleId)
+apiInstance.deleteLearningModule(moduleId, opts)
   .then(() => {
     console.log('deleteLearningModule returned successfully.');
   })
@@ -143,6 +156,7 @@ apiInstance.deleteLearningModule(moduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -179,7 +193,11 @@ let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
 let opts = { 
-  'expand': ["expand_example"] // [String] | Fields to expand in response
+  'expand': ["expand_example"], // [String] | Fields to expand in response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningAssignment(assignmentId, opts)
@@ -199,6 +217,7 @@ apiInstance.getLearningAssignment(assignmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -238,7 +257,11 @@ let stepId = "stepId_example"; // String | The ID of Learning Assignment Step
 let opts = { 
   'shareableContentObjectId': "shareableContentObjectId_example", // String | The ID of SCO to load
   'defaultShareableContentObject': "defaultShareableContentObject_example", // String | The default SCO to retrieve
-  'expand': ["expand_example"] // [String] | Fields to expand in response
+  'expand': ["expand_example"], // [String] | Fields to expand in response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningAssignmentStep(assignmentId, stepId, opts)
@@ -261,6 +284,7 @@ apiInstance.getLearningAssignmentStep(assignmentId, stepId, opts)
  **shareableContentObjectId** | **String** | The ID of SCO to load | [optional]  |
  **defaultShareableContentObject** | **String** | The default SCO to retrieve | [optional] <br />**Values**: First, Last, Next |
  **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: moduleStep |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -310,7 +334,11 @@ let opts = {
   'userId': ["userId_example"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs.
   'types': ["types_example"], // [String] | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
   'states': ["states_example"], // [String] | Specifies the assignment states to filter by
-  'expand': ["expand_example"] // [String] | Specifies the expand option for returning additional information
+  'expand': ["expand_example"], // [String] | Specifies the expand option for returning additional information
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningAssignments(opts)
@@ -343,6 +371,7 @@ apiInstance.getLearningAssignments(opts)
  **types** | **[String]** | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -387,7 +416,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
   'types': ["types_example"], // [String] | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
   'states': ["states_example"], // [String] | Specifies the assignment states to filter by
-  'expand': ["expand_example"] // [String] | Specifies the expand option for returning additional information
+  'expand': ["expand_example"], // [String] | Specifies the expand option for returning additional information
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningAssignmentsMe(opts)
@@ -419,6 +452,7 @@ apiInstance.getLearningAssignmentsMe(opts)
  **types** | **[String]** | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -453,7 +487,11 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let opts = { 
-  'expand': ["expand_example"] // [String] | Fields to expand in response(case insensitive)
+  'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningModule(moduleId, opts)
@@ -473,6 +511,7 @@ apiInstance.getLearningModule(moduleId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -481,7 +520,7 @@ apiInstance.getLearningModule(moduleId, opts)
 
 ## getLearningModuleJob
 
-> LearningModuleJobResponse getLearningModuleJob(moduleId, jobId)
+> LearningModuleJobResponse getLearningModuleJob(moduleId, jobId, opts)
 
 
 GET /api/v2/learning/modules/{moduleId}/jobs/{jobId}
@@ -507,8 +546,14 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let jobId = "jobId_example"; // String | The ID of the learning module job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLearningModuleJob(moduleId, jobId)
+apiInstance.getLearningModuleJob(moduleId, jobId, opts)
   .then((data) => {
     console.log(`getLearningModuleJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -525,6 +570,7 @@ apiInstance.getLearningModuleJob(moduleId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **jobId** | **String** | The ID of the learning module job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -533,7 +579,7 @@ apiInstance.getLearningModuleJob(moduleId, jobId)
 
 ## getLearningModulePreview
 
-> LearningModulePreviewGetResponse getLearningModulePreview(moduleId)
+> LearningModulePreviewGetResponse getLearningModulePreview(moduleId, opts)
 
 
 GET /api/v2/learning/modules/{moduleId}/preview
@@ -558,8 +604,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLearningModulePreview(moduleId)
+apiInstance.getLearningModulePreview(moduleId, opts)
   .then((data) => {
     console.log(`getLearningModulePreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -575,6 +627,7 @@ apiInstance.getLearningModulePreview(moduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -583,7 +636,7 @@ apiInstance.getLearningModulePreview(moduleId)
 
 ## getLearningModuleRule
 
-> LearningModuleRule getLearningModuleRule(moduleId)
+> LearningModuleRule getLearningModuleRule(moduleId, opts)
 
 
 GET /api/v2/learning/modules/{moduleId}/rule
@@ -608,8 +661,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLearningModuleRule(moduleId)
+apiInstance.getLearningModuleRule(moduleId, opts)
   .then((data) => {
     console.log(`getLearningModuleRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -625,6 +684,7 @@ apiInstance.getLearningModuleRule(moduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -660,7 +720,11 @@ let apiInstance = new platformClient.LearningApi();
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let versionId = "versionId_example"; // String | The version of learning module
 let opts = { 
-  'expand': ["expand_example"] // [String] | Fields to expand in response(case insensitive)
+  'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningModuleVersion(moduleId, versionId, opts)
@@ -681,6 +745,7 @@ apiInstance.getLearningModuleVersion(moduleId, versionId, opts)
  **moduleId** | **String** | The ID of the learning module |  |
  **versionId** | **String** | The version of learning module |  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -724,7 +789,11 @@ let opts = {
   'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
   'isPublished': "Any", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
   'statuses': ["statuses_example"], // [String] | Specifies the module statuses to filter by
-  'externalIds': ["externalIds_example"] // [String] | Specifies the module external IDs to filter by. Only one ID is allowed
+  'externalIds': ["externalIds_example"], // [String] | Specifies the module external IDs to filter by. Only one ID is allowed
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningModules(opts)
@@ -753,6 +822,7 @@ apiInstance.getLearningModules(opts)
  **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **statuses** | **[String]** | Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
  **externalIds** | **[String]** | Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -793,7 +863,11 @@ let opts = {
   'searchTerm': "searchTerm_example", // String | Search Term (searches by name and description)
   'overdue': "Any", // String | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned.
   'assignmentStates': ["assignmentStates_example"], // [String] | Specifies the assignment states to return.
-  'expand': ["expand_example"] // [String] | Fields to expand in response(case insensitive)
+  'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLearningModulesAssignments(userIds, opts)
@@ -818,6 +892,7 @@ apiInstance.getLearningModulesAssignments(userIds, opts)
  **overdue** | **String** | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. | [optional] [default to Any]<br />**Values**: True, False, Any |
  **assignmentStates** | **[String]** | Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -826,7 +901,7 @@ apiInstance.getLearningModulesAssignments(userIds, opts)
 
 ## getLearningModulesCoverartCoverArtId
 
-> LearningModuleCoverArtResponse getLearningModulesCoverartCoverArtId(coverArtId)
+> LearningModuleCoverArtResponse getLearningModulesCoverartCoverArtId(coverArtId, opts)
 
 
 GET /api/v2/learning/modules/coverart/{coverArtId}
@@ -851,8 +926,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let coverArtId = "coverArtId_example"; // String | Key identifier for the cover art
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLearningModulesCoverartCoverArtId(coverArtId)
+apiInstance.getLearningModulesCoverartCoverArtId(coverArtId, opts)
   .then((data) => {
     console.log(`getLearningModulesCoverartCoverArtId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -868,6 +949,7 @@ apiInstance.getLearningModulesCoverartCoverArtId(coverArtId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coverArtId** | **String** | Key identifier for the cover art |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -876,7 +958,7 @@ apiInstance.getLearningModulesCoverartCoverArtId(coverArtId)
 
 ## getLearningScheduleslotsJob
 
-> LearningScheduleSlotsJobResponse getLearningScheduleslotsJob(jobId)
+> LearningScheduleSlotsJobResponse getLearningScheduleslotsJob(jobId, opts)
 
 
 GET /api/v2/learning/scheduleslots/jobs/{jobId}
@@ -901,8 +983,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLearningScheduleslotsJob(jobId)
+apiInstance.getLearningScheduleslotsJob(jobId, opts)
   .then((data) => {
     console.log(`getLearningScheduleslotsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -918,6 +1006,7 @@ apiInstance.getLearningScheduleslotsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -926,7 +1015,7 @@ apiInstance.getLearningScheduleslotsJob(jobId)
 
 ## getLearningScormScormId
 
-> LearningScormResponse getLearningScormScormId(scormId)
+> LearningScormResponse getLearningScormScormId(scormId, opts)
 
 
 GET /api/v2/learning/scorm/{scormId}
@@ -951,8 +1040,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let scormId = "scormId_example"; // String | The ID of the SCORM package
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLearningScormScormId(scormId)
+apiInstance.getLearningScormScormId(scormId, opts)
   .then((data) => {
     console.log(`getLearningScormScormId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -968,6 +1063,7 @@ apiInstance.getLearningScormScormId(scormId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scormId** | **String** | The ID of the SCORM package |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1000,7 +1096,11 @@ let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
 let opts = { 
-  'body': {} // Object | The Learning Assignment to be updated
+  'body': {}, // Object | The Learning Assignment to be updated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchLearningAssignment(assignmentId, opts)
@@ -1020,6 +1120,7 @@ apiInstance.patchLearningAssignment(assignmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **body** | **Object** | The Learning Assignment to be updated | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1054,7 +1155,11 @@ let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
 let opts = { 
-  'body': {} // Object | The Learning assignment reschedule model
+  'body': {}, // Object | The Learning assignment reschedule model
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchLearningAssignmentReschedule(assignmentId, opts)
@@ -1074,6 +1179,7 @@ apiInstance.patchLearningAssignmentReschedule(assignmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **body** | **Object** | The Learning assignment reschedule model | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1111,7 +1217,11 @@ let apiInstance = new platformClient.LearningApi();
 let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
 let stepId = "stepId_example"; // String | The ID of Learning Assignment Step
 let opts = { 
-  'body': {} // Object | The Learning Assignment Step to be updated
+  'body': {}, // Object | The Learning Assignment Step to be updated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchLearningAssignmentStep(assignmentId, stepId, opts)
@@ -1132,6 +1242,7 @@ apiInstance.patchLearningAssignmentStep(assignmentId, stepId, opts)
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **stepId** | **String** | The ID of Learning Assignment Step |  |
  **body** | **Object** | The Learning Assignment Step to be updated | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1140,7 +1251,7 @@ apiInstance.patchLearningAssignmentStep(assignmentId, stepId, opts)
 
 ## patchLearningModuleUserAssignments
 
-> LearningAssignment patchLearningModuleUserAssignments(moduleId, userId, body)
+> LearningAssignment patchLearningModuleUserAssignments(moduleId, userId, body, opts)
 
 
 PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments
@@ -1167,8 +1278,14 @@ let apiInstance = new platformClient.LearningApi();
 let moduleId = "moduleId_example"; // String | Key identifier for the module
 let userId = "userId_example"; // String | Key identifier for the user
 let body = {}; // Object | The learning request for updating the assignment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body)
+apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body, opts)
   .then((data) => {
     console.log(`patchLearningModuleUserAssignments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1186,6 +1303,7 @@ apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body)
  **moduleId** | **String** | Key identifier for the module |  |
  **userId** | **String** | Key identifier for the user |  |
  **body** | **Object** | The learning request for updating the assignment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1194,7 +1312,7 @@ apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body)
 
 ## postLearningAssessmentsScoring
 
-> AssessmentScoringSet postLearningAssessmentsScoring(body)
+> AssessmentScoringSet postLearningAssessmentsScoring(body, opts)
 
 
 POST /api/v2/learning/assessments/scoring
@@ -1221,8 +1339,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let body = {}; // Object | Assessment form and answers to score
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningAssessmentsScoring(body)
+apiInstance.postLearningAssessmentsScoring(body, opts)
   .then((data) => {
     console.log(`postLearningAssessmentsScoring success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1238,6 +1362,7 @@ apiInstance.postLearningAssessmentsScoring(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Assessment form and answers to score |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1246,7 +1371,7 @@ apiInstance.postLearningAssessmentsScoring(body)
 
 ## postLearningAssignmentReassign
 
-> LearningAssignment postLearningAssignmentReassign(assignmentId)
+> LearningAssignment postLearningAssignmentReassign(assignmentId, opts)
 
 
 POST /api/v2/learning/assignments/{assignmentId}/reassign
@@ -1273,8 +1398,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningAssignmentReassign(assignmentId)
+apiInstance.postLearningAssignmentReassign(assignmentId, opts)
   .then((data) => {
     console.log(`postLearningAssignmentReassign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1290,6 +1421,7 @@ apiInstance.postLearningAssignmentReassign(assignmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The Learning Assignment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1298,7 +1430,7 @@ apiInstance.postLearningAssignmentReassign(assignmentId)
 
 ## postLearningAssignmentReset
 
-> LearningAssignment postLearningAssignmentReset(assignmentId)
+> LearningAssignment postLearningAssignmentReset(assignmentId, opts)
 
 
 POST /api/v2/learning/assignments/{assignmentId}/reset
@@ -1325,8 +1457,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningAssignmentReset(assignmentId)
+apiInstance.postLearningAssignmentReset(assignmentId, opts)
   .then((data) => {
     console.log(`postLearningAssignmentReset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1342,6 +1480,7 @@ apiInstance.postLearningAssignmentReset(assignmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The Learning Assignment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1375,7 +1514,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
-  'body': {} // Object | The Learning Assignment to be created
+  'body': {}, // Object | The Learning Assignment to be created
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLearningAssignments(opts)
@@ -1394,6 +1537,7 @@ apiInstance.postLearningAssignments(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Learning Assignment to be created | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1402,7 +1546,7 @@ apiInstance.postLearningAssignments(opts)
 
 ## postLearningAssignmentsAggregatesQuery
 
-> LearningAssignmentAggregateResponse postLearningAssignmentsAggregatesQuery(body)
+> LearningAssignmentAggregateResponse postLearningAssignmentsAggregatesQuery(body, opts)
 
 
 POST /api/v2/learning/assignments/aggregates/query
@@ -1427,8 +1571,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let body = {}; // Object | Aggregate Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningAssignmentsAggregatesQuery(body)
+apiInstance.postLearningAssignmentsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postLearningAssignmentsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1444,6 +1594,7 @@ apiInstance.postLearningAssignmentsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Aggregate Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1477,7 +1628,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
-  'body': [{}] // Object | The learning assignments to be created
+  'body': [{}], // Object | The learning assignments to be created
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLearningAssignmentsBulkadd(opts)
@@ -1496,6 +1651,7 @@ apiInstance.postLearningAssignmentsBulkadd(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The learning assignments to be created | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1529,7 +1685,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
-  'body': ["body_example"] // [String] | The IDs of the learning assignments to be removed
+  'body': ["body_example"], // [String] | The IDs of the learning assignments to be removed
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLearningAssignmentsBulkremove(opts)
@@ -1548,6 +1708,7 @@ apiInstance.postLearningAssignmentsBulkremove(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | The IDs of the learning assignments to be removed | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1556,7 +1717,7 @@ apiInstance.postLearningAssignmentsBulkremove(opts)
 
 ## postLearningModuleJobs
 
-> LearningModuleJobResponse postLearningModuleJobs(moduleId, body)
+> LearningModuleJobResponse postLearningModuleJobs(moduleId, body, opts)
 
 
 POST /api/v2/learning/modules/{moduleId}/jobs
@@ -1584,8 +1745,14 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let body = {}; // Object | The learning module job request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningModuleJobs(moduleId, body)
+apiInstance.postLearningModuleJobs(moduleId, body, opts)
   .then((data) => {
     console.log(`postLearningModuleJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1602,6 +1769,7 @@ apiInstance.postLearningModuleJobs(moduleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **body** | **Object** | The learning module job request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1636,7 +1804,11 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let opts = { 
-  'body': {} // Object | The request body
+  'body': {}, // Object | The request body
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLearningModulePublish(moduleId, opts)
@@ -1656,6 +1828,7 @@ apiInstance.postLearningModulePublish(moduleId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **body** | **Object** | The request body | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1664,7 +1837,7 @@ apiInstance.postLearningModulePublish(moduleId, opts)
 
 ## postLearningModuleRuleMigrate
 
-> LearningModuleMigrateResponse postLearningModuleRuleMigrate(moduleId)
+> LearningModuleMigrateResponse postLearningModuleRuleMigrate(moduleId, opts)
 
 
 POST /api/v2/learning/modules/{moduleId}/rule/migrate
@@ -1691,8 +1864,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningModuleRuleMigrate(moduleId)
+apiInstance.postLearningModuleRuleMigrate(moduleId, opts)
   .then((data) => {
     console.log(`postLearningModuleRuleMigrate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1708,6 +1887,7 @@ apiInstance.postLearningModuleRuleMigrate(moduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1716,7 +1896,7 @@ apiInstance.postLearningModuleRuleMigrate(moduleId)
 
 ## postLearningModules
 
-> LearningModule postLearningModules(body)
+> LearningModule postLearningModules(body, opts)
 
 
 POST /api/v2/learning/modules
@@ -1743,8 +1923,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let body = {}; // Object | The learning module to be created
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningModules(body)
+apiInstance.postLearningModules(body, opts)
   .then((data) => {
     console.log(`postLearningModules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1760,6 +1946,7 @@ apiInstance.postLearningModules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The learning module to be created |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1768,7 +1955,7 @@ apiInstance.postLearningModules(body)
 
 ## postLearningRulesQuery
 
-> LearningAssignmentUserListing postLearningRulesQuery(pageSize, pageNumber, body)
+> LearningAssignmentUserListing postLearningRulesQuery(pageSize, pageNumber, body, opts)
 
 
 POST /api/v2/learning/rules/query
@@ -1797,8 +1984,14 @@ let apiInstance = new platformClient.LearningApi();
 let pageSize = 50; // Number | Page size
 let pageNumber = 1; // Number | Page number
 let body = {}; // Object | The learning module rule to fetch users
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningRulesQuery(pageSize, pageNumber, body)
+apiInstance.postLearningRulesQuery(pageSize, pageNumber, body, opts)
   .then((data) => {
     console.log(`postLearningRulesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1816,6 +2009,7 @@ apiInstance.postLearningRulesQuery(pageSize, pageNumber, body)
  **pageSize** | **Number** | Page size | [default to 50] |
  **pageNumber** | **Number** | Page number | [default to 1] |
  **body** | **Object** | The learning module rule to fetch users |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1824,7 +2018,7 @@ apiInstance.postLearningRulesQuery(pageSize, pageNumber, body)
 
 ## postLearningScheduleslotsJobs
 
-> LearningScheduleSlotsJobResponse postLearningScheduleslotsJobs(body)
+> LearningScheduleSlotsJobResponse postLearningScheduleslotsJobs(body, opts)
 
 
 POST /api/v2/learning/scheduleslots/jobs
@@ -1849,8 +2043,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let body = {}; // Object | The slots search request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningScheduleslotsJobs(body)
+apiInstance.postLearningScheduleslotsJobs(body, opts)
   .then((data) => {
     console.log(`postLearningScheduleslotsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1866,6 +2066,7 @@ apiInstance.postLearningScheduleslotsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The slots search request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1874,7 +2075,7 @@ apiInstance.postLearningScheduleslotsJobs(body)
 
 ## postLearningScheduleslotsQuery
 
-> LearningScheduleSlotsQueryResponse postLearningScheduleslotsQuery(body)
+> LearningScheduleSlotsQueryResponse postLearningScheduleslotsQuery(body, opts)
 
 
 POST /api/v2/learning/scheduleslots/query
@@ -1899,8 +2100,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let body = {}; // Object | The slot search request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLearningScheduleslotsQuery(body)
+apiInstance.postLearningScheduleslotsQuery(body, opts)
   .then((data) => {
     console.log(`postLearningScheduleslotsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1916,6 +2123,7 @@ apiInstance.postLearningScheduleslotsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The slot search request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1949,7 +2157,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
-  'body': {} // Object | The SCORM package to be uploaded
+  'body': {}, // Object | The SCORM package to be uploaded
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLearningScorm(opts)
@@ -1968,6 +2180,7 @@ apiInstance.postLearningScorm(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The SCORM package to be uploaded | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1976,7 +2189,7 @@ apiInstance.postLearningScorm(opts)
 
 ## putLearningModule
 
-> LearningModule putLearningModule(moduleId, body)
+> LearningModule putLearningModule(moduleId, body, opts)
 
 
 PUT /api/v2/learning/modules/{moduleId}
@@ -2004,8 +2217,14 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let body = {}; // Object | The learning module to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putLearningModule(moduleId, body)
+apiInstance.putLearningModule(moduleId, body, opts)
   .then((data) => {
     console.log(`putLearningModule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2022,6 +2241,7 @@ apiInstance.putLearningModule(moduleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **body** | **Object** | The learning module to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2030,7 +2250,7 @@ apiInstance.putLearningModule(moduleId, body)
 
 ## putLearningModulePreview
 
-> LearningModulePreviewUpdateResponse putLearningModulePreview(moduleId, body)
+> LearningModulePreviewUpdateResponse putLearningModulePreview(moduleId, body, opts)
 
 
 PUT /api/v2/learning/modules/{moduleId}/preview
@@ -2058,8 +2278,14 @@ let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let body = {}; // Object | The learning module to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putLearningModulePreview(moduleId, body)
+apiInstance.putLearningModulePreview(moduleId, body, opts)
   .then((data) => {
     console.log(`putLearningModulePreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2076,6 +2302,7 @@ apiInstance.putLearningModulePreview(moduleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **body** | **Object** | The learning module to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2113,7 +2340,11 @@ let apiInstance = new platformClient.LearningApi();
 let moduleId = "moduleId_example"; // String | The ID of the learning module
 let body = {}; // Object | The learning module rule to be updated
 let opts = { 
-  'assign': true // Boolean | Whether to assign the module to users or not
+  'assign': true, // Boolean | Whether to assign the module to users or not
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putLearningModuleRule(moduleId, body, opts)
@@ -2134,10 +2365,11 @@ apiInstance.putLearningModuleRule(moduleId, body, opts)
  **moduleId** | **String** | The ID of the learning module |  |
  **body** | **Object** | The learning module rule to be updated |  |
  **assign** | **Boolean** | Whether to assign the module to users or not | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **LearningModuleRule**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

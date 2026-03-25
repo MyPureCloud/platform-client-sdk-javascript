@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getScript
 
-> Script getScript(scriptId)
+> Script getScript(scriptId, opts)
 
 
 GET /api/v2/scripts/{scriptId}
@@ -51,8 +51,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ScriptsApi();
 
 let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getScript(scriptId)
+apiInstance.getScript(scriptId, opts)
   .then((data) => {
     console.log(`getScript success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -68,6 +74,7 @@ apiInstance.getScript(scriptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -103,7 +110,11 @@ let apiInstance = new platformClient.ScriptsApi();
 let scriptId = "scriptId_example"; // String | Script ID
 let pageId = "pageId_example"; // String | Page ID
 let opts = { 
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptPage(scriptId, pageId, opts)
@@ -124,6 +135,7 @@ apiInstance.getScriptPage(scriptId, pageId, opts)
  **scriptId** | **String** | Script ID |  |
  **pageId** | **String** | Page ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -158,7 +170,11 @@ let apiInstance = new platformClient.ScriptsApi();
 
 let scriptId = "scriptId_example"; // String | Script ID
 let opts = { 
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptPages(scriptId, opts)
@@ -178,6 +194,7 @@ apiInstance.getScriptPages(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -220,7 +237,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | SortBy
   'sortOrder': "sortOrder_example", // String | SortOrder
   'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
-  'divisionIds': "divisionIds_example" // String | Filters scripts to requested divisionIds
+  'divisionIds': "divisionIds_example", // String | Filters scripts to requested divisionIds
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScripts(opts)
@@ -248,6 +269,7 @@ apiInstance.getScripts(opts)
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -290,7 +312,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | SortBy
   'sortOrder': "sortOrder_example", // String | SortOrder
   'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
-  'divisionIds': "divisionIds_example" // String | Filters scripts to requested divisionIds
+  'divisionIds': "divisionIds_example", // String | Filters scripts to requested divisionIds
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsDivisionviews(opts)
@@ -318,6 +344,7 @@ apiInstance.getScriptsDivisionviews(opts)
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -358,7 +385,11 @@ let opts = {
   'feature': "feature_example", // String | Feature filter
   'flowId': "flowId_example", // String | Secure flow id filter
   'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
-  'divisionIds': "divisionIds_example" // String | Filters scripts to requested divisionIds
+  'divisionIds': "divisionIds_example", // String | Filters scripts to requested divisionIds
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublished(opts)
@@ -384,6 +415,7 @@ apiInstance.getScriptsPublished(opts)
  **flowId** | **String** | Secure flow id filter | [optional]  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -421,7 +453,11 @@ let opts = {
   'input': "input_example", // String | input
   'output': "output_example", // String | output
   'type': "type_example", // String | type
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublishedDivisionviewVariables(scriptId, opts)
@@ -444,6 +480,7 @@ apiInstance.getScriptsPublishedDivisionviewVariables(scriptId, opts)
  **output** | **String** | output | [optional] <br />**Values**: true, false |
  **type** | **String** | type | [optional] <br />**Values**: string, number, boolean |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -484,7 +521,11 @@ let opts = {
   'feature': "feature_example", // String | Feature filter
   'flowId': "flowId_example", // String | Secure flow id filter
   'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
-  'divisionIds': "divisionIds_example" // String | Filters scripts to requested divisionIds
+  'divisionIds': "divisionIds_example", // String | Filters scripts to requested divisionIds
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublishedDivisionviews(opts)
@@ -510,6 +551,7 @@ apiInstance.getScriptsPublishedDivisionviews(opts)
  **flowId** | **String** | Secure flow id filter | [optional]  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -544,7 +586,11 @@ let apiInstance = new platformClient.ScriptsApi();
 
 let scriptId = "scriptId_example"; // String | Script ID
 let opts = { 
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublishedScriptId(scriptId, opts)
@@ -564,6 +610,7 @@ apiInstance.getScriptsPublishedScriptId(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -599,7 +646,11 @@ let apiInstance = new platformClient.ScriptsApi();
 let scriptId = "scriptId_example"; // String | Script ID
 let pageId = "pageId_example"; // String | Page ID
 let opts = { 
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
@@ -620,6 +671,7 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
  **scriptId** | **String** | Script ID |  |
  **pageId** | **String** | Page ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -654,7 +706,11 @@ let apiInstance = new platformClient.ScriptsApi();
 
 let scriptId = "scriptId_example"; // String | Script ID
 let opts = { 
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
@@ -674,6 +730,7 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -711,7 +768,11 @@ let opts = {
   'input': "input_example", // String | input
   'output': "output_example", // String | output
   'type': "type_example", // String | type
-  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
@@ -734,6 +795,7 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
  **output** | **String** | output | [optional] <br />**Values**: true, false |
  **type** | **String** | type | [optional] <br />**Values**: string, number, boolean |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -768,7 +830,11 @@ let apiInstance = new platformClient.ScriptsApi();
 
 let uploadId = "uploadId_example"; // String | Upload ID
 let opts = { 
-  'longPoll': false // Boolean | Enable longPolling endpoint
+  'longPoll': false, // Boolean | Enable longPolling endpoint
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getScriptsUploadStatus(uploadId, opts)
@@ -788,6 +854,7 @@ apiInstance.getScriptsUploadStatus(uploadId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **uploadId** | **String** | Upload ID |  |
  **longPoll** | **Boolean** | Enable longPolling endpoint | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -822,7 +889,11 @@ let apiInstance = new platformClient.ScriptsApi();
 
 let scriptId = "scriptId_example"; // String | Script ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postScriptExport(scriptId, opts)
@@ -842,6 +913,7 @@ apiInstance.postScriptExport(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -876,7 +948,11 @@ let apiInstance = new platformClient.ScriptsApi();
 
 let opts = { 
   'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postScriptsPublished(opts)
@@ -896,10 +972,11 @@ apiInstance.postScriptsPublished(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **body** | **Object** | body | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Script**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

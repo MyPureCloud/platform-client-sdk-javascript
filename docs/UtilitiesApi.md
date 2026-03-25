@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getDate
 
-> ServerDate getDate()
+> ServerDate getDate(opts)
 
 
 GET /api/v2/date
@@ -36,8 +36,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UtilitiesApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDate()
+apiInstance.getDate(opts)
   .then((data) => {
     console.log(`getDate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -49,7 +55,10 @@ apiInstance.getDate()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -58,7 +67,7 @@ This endpoint does not need any parameter.
 
 ## getIpranges
 
-> IpAddressRangeListing getIpranges()
+> IpAddressRangeListing getIpranges(opts)
 
 
 GET /api/v2/ipranges
@@ -79,8 +88,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UtilitiesApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIpranges()
+apiInstance.getIpranges(opts)
   .then((data) => {
     console.log(`getIpranges success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -92,7 +107,10 @@ apiInstance.getIpranges()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -125,7 +143,11 @@ let apiInstance = new platformClient.UtilitiesApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTimezones(opts)
@@ -145,6 +167,7 @@ apiInstance.getTimezones(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -153,7 +176,7 @@ apiInstance.getTimezones(opts)
 
 ## postCertificateDetails
 
-> ParsedCertificate postCertificateDetails(body)
+> ParsedCertificate postCertificateDetails(body, opts)
 
 
 POST /api/v2/certificate/details
@@ -176,8 +199,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UtilitiesApi();
 
 let body = {}; // Object | Certificate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postCertificateDetails(body)
+apiInstance.postCertificateDetails(body, opts)
   .then((data) => {
     console.log(`postCertificateDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -193,10 +222,11 @@ apiInstance.postCertificateDetails(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Certificate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ParsedCertificate**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

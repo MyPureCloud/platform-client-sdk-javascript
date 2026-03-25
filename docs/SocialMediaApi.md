@@ -68,7 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteSocialmediaEscalationrule
 
-> void deleteSocialmediaEscalationrule(escalationRuleId)
+> void deleteSocialmediaEscalationrule(escalationRuleId, opts)
 
 
 DELETE /api/v2/socialmedia/escalationrules/{escalationRuleId}
@@ -93,8 +93,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSocialmediaEscalationrule(escalationRuleId)
+apiInstance.deleteSocialmediaEscalationrule(escalationRuleId, opts)
   .then(() => {
     console.log('deleteSocialmediaEscalationrule returned successfully.');
   })
@@ -110,6 +116,7 @@ apiInstance.deleteSocialmediaEscalationrule(escalationRuleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **escalationRuleId** | **String** | escalationRuleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -118,7 +125,7 @@ void (no response body)
 
 ## deleteSocialmediaMessage
 
-> void deleteSocialmediaMessage(messageId)
+> void deleteSocialmediaMessage(messageId, opts)
 
 
 DELETE /api/v2/socialmedia/messages/{messageId}
@@ -145,8 +152,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSocialmediaMessage(messageId)
+apiInstance.deleteSocialmediaMessage(messageId, opts)
   .then(() => {
     console.log('deleteSocialmediaMessage returned successfully.');
   })
@@ -162,6 +175,7 @@ apiInstance.deleteSocialmediaMessage(messageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -196,7 +210,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'hardDelete': true // Boolean | Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': true, // Boolean | Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSocialmediaTopic(topicId, opts)
@@ -216,6 +234,7 @@ apiInstance.deleteSocialmediaTopic(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **hardDelete** | **Boolean** | Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -251,7 +270,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | facebookIngestionRuleId
 let opts = { 
-  'hardDelete': false // Boolean | Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': false, // Boolean | Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts)
@@ -272,6 +295,7 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRul
  **topicId** | **String** | topicId |  |
  **facebookIngestionRuleId** | **String** | facebookIngestionRuleId |  |
  **hardDelete** | **Boolean** | Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -309,7 +333,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
 let opts = { 
-  'hardDelete': false // Boolean | Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': false, // Boolean | Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
@@ -330,6 +358,7 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleB
  **topicId** | **String** | topicId |  |
  **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
  **hardDelete** | **Boolean** | Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -365,7 +394,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let instagramIngestionRuleId = "instagramIngestionRuleId_example"; // String | instagramIngestionRuleId
 let opts = { 
-  'hardDelete': false // Boolean | Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': false, // Boolean | Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -386,6 +419,7 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionR
  **topicId** | **String** | topicId |  |
  **instagramIngestionRuleId** | **String** | instagramIngestionRuleId |  |
  **hardDelete** | **Boolean** | Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -421,7 +455,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let openId = "openId_example"; // String | openId
 let opts = { 
-  'hardDelete': false // Boolean | Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': false, // Boolean | Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts)
@@ -442,6 +480,7 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, 
  **topicId** | **String** | topicId |  |
  **openId** | **String** | openId |  |
  **hardDelete** | **Boolean** | Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -477,7 +516,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitterIngestionRuleId
 let opts = { 
-  'hardDelete': false // Boolean | Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': false, // Boolean | Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts)
@@ -498,6 +541,7 @@ apiInstance.deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleI
  **topicId** | **String** | topicId |  |
  **twitterIngestionRuleId** | **String** | twitterIngestionRuleId |  |
  **hardDelete** | **Boolean** | Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -506,7 +550,7 @@ void (no response body)
 
 ## getSocialmediaAnalyticsAggregatesJob
 
-> AsyncQueryStatus getSocialmediaAnalyticsAggregatesJob(jobId)
+> AsyncQueryStatus getSocialmediaAnalyticsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/socialmedia/analytics/aggregates/jobs/{jobId}
@@ -531,8 +575,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSocialmediaAnalyticsAggregatesJob(jobId)
+apiInstance.getSocialmediaAnalyticsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getSocialmediaAnalyticsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -548,6 +598,7 @@ apiInstance.getSocialmediaAnalyticsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -582,7 +633,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaAnalyticsAggregatesJobResults(jobId, opts)
@@ -602,6 +657,7 @@ apiInstance.getSocialmediaAnalyticsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -610,7 +666,7 @@ apiInstance.getSocialmediaAnalyticsAggregatesJobResults(jobId, opts)
 
 ## getSocialmediaAnalyticsMessagesJob
 
-> AsyncQueryStatus getSocialmediaAnalyticsMessagesJob(jobId)
+> AsyncQueryStatus getSocialmediaAnalyticsMessagesJob(jobId, opts)
 
 
 GET /api/v2/socialmedia/analytics/messages/jobs/{jobId}
@@ -635,8 +691,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSocialmediaAnalyticsMessagesJob(jobId)
+apiInstance.getSocialmediaAnalyticsMessagesJob(jobId, opts)
   .then((data) => {
     console.log(`getSocialmediaAnalyticsMessagesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -652,6 +714,7 @@ apiInstance.getSocialmediaAnalyticsMessagesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -686,7 +749,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaAnalyticsMessagesJobResults(jobId, opts)
@@ -706,6 +773,7 @@ apiInstance.getSocialmediaAnalyticsMessagesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -740,7 +808,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
 let opts = { 
-  'expand': "expand_example" // String | which fields, if any, to expand
+  'expand': "expand_example", // String | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaEscalationrule(escalationRuleId, opts)
@@ -760,6 +832,7 @@ apiInstance.getSocialmediaEscalationrule(escalationRuleId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **escalationRuleId** | **String** | escalationRuleId |  |
  **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: dataIngestionRule |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -795,7 +868,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let divisionId = "divisionId_example"; // String | One division ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaEscalationrules(divisionId, opts)
@@ -816,6 +893,7 @@ apiInstance.getSocialmediaEscalationrules(divisionId, opts)
  **divisionId** | **String** | One division ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -850,7 +928,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopic(topicId, opts)
@@ -870,6 +952,7 @@ apiInstance.getSocialmediaTopic(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -906,7 +989,11 @@ let topicId = "topicId_example"; // String | topicId
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrules(topicId, opts)
@@ -928,6 +1015,7 @@ apiInstance.getSocialmediaTopicDataingestionrules(topicId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -963,7 +1051,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | facebookIngestionRuleId
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts)
@@ -984,6 +1076,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
  **topicId** | **String** | topicId |  |
  **facebookIngestionRuleId** | **String** | facebookIngestionRuleId |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1020,7 +1113,11 @@ let topicId = "topicId_example"; // String | topicId
 let facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | facebookIngestionRuleId
 let dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted item in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted item in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion(topicId, facebookIngestionRuleId, dataIngestionRuleVersion, opts)
@@ -1042,6 +1139,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
  **facebookIngestionRuleId** | **String** | facebookIngestionRuleId |  |
  **dataIngestionRuleVersion** | **String** | version |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted item in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1079,7 +1177,11 @@ let facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | fac
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId, facebookIngestionRuleId, opts)
@@ -1102,6 +1204,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1139,7 +1242,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
@@ -1160,6 +1267,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusi
  **topicId** | **String** | topicId |  |
  **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1198,7 +1306,11 @@ let topicId = "topicId_example"; // String | topicId
 let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
 let dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted item in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted item in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts)
@@ -1220,6 +1332,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusi
  **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
  **dataIngestionRuleVersion** | **String** | version |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted item in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1259,7 +1372,11 @@ let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts)
@@ -1282,6 +1399,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusi
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1317,7 +1435,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let instagramIngestionRuleId = "instagramIngestionRuleId_example"; // String | instagramIngestionRuleId
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -1338,6 +1460,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRule
  **topicId** | **String** | topicId |  |
  **instagramIngestionRuleId** | **String** | instagramIngestionRuleId |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1374,7 +1497,11 @@ let topicId = "topicId_example"; // String | topicId
 let instagramIngestionRuleId = "instagramIngestionRuleId_example"; // String | instagramIngestionRuleId
 let dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted item in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted item in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, opts)
@@ -1396,6 +1523,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRule
  **instagramIngestionRuleId** | **String** | instagramIngestionRuleId |  |
  **dataIngestionRuleVersion** | **String** | version |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted item in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1433,7 +1561,11 @@ let instagramIngestionRuleId = "instagramIngestionRuleId_example"; // String | i
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(topicId, instagramIngestionRuleId, opts)
@@ -1456,6 +1588,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRule
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1491,7 +1624,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let openId = "openId_example"; // String | openId
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts)
@@ -1512,6 +1649,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opt
  **topicId** | **String** | topicId |  |
  **openId** | **String** | openId |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1548,7 +1686,11 @@ let topicId = "topicId_example"; // String | topicId
 let openId = "openId_example"; // String | openId
 let dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted item in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted item in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, openId, dataIngestionRuleVersion, opts)
@@ -1570,6 +1712,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, open
  **openId** | **String** | openId |  |
  **dataIngestionRuleVersion** | **String** | version |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted item in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1607,7 +1750,11 @@ let openId = "openId_example"; // String | openId
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, openId, opts)
@@ -1630,6 +1777,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, ope
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1665,7 +1813,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitterIngestionRuleId
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts)
@@ -1686,6 +1838,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
  **topicId** | **String** | topicId |  |
  **twitterIngestionRuleId** | **String** | twitterIngestionRuleId |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1722,7 +1875,11 @@ let topicId = "topicId_example"; // String | topicId
 let twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitterIngestionRuleId
 let dataIngestionRuleVersion = "dataIngestionRuleVersion_example"; // String | version
 let opts = { 
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted item in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted item in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId, twitterIngestionRuleId, dataIngestionRuleVersion, opts)
@@ -1744,6 +1901,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVe
  **twitterIngestionRuleId** | **String** | twitterIngestionRuleId |  |
  **dataIngestionRuleVersion** | **String** | version |  |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted item in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1781,7 +1939,11 @@ let twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitt
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'includeDeleted': true // Boolean | Determines whether to include soft-deleted items in the result.
+  'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions(topicId, twitterIngestionRuleId, opts)
@@ -1804,6 +1966,7 @@ apiInstance.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVe
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1842,7 +2005,11 @@ let opts = {
   'divisionIds': ["divisionIds_example"], // [String] | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
   'includeDeleted': true, // Boolean | Determines whether to include soft-deleted items in the result.
   'name': "name_example", // String | Search for topic by name that contains the given search string, search is case insensitive
-  'ids': ["ids_example"] // [String] | One or more topic IDs to search through the topics.
+  'ids': ["ids_example"], // [String] | One or more topic IDs to search through the topics.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSocialmediaTopics(opts)
@@ -1866,6 +2033,7 @@ apiInstance.getSocialmediaTopics(opts)
  **includeDeleted** | **Boolean** | Determines whether to include soft-deleted items in the result. | [optional]  |
  **name** | **String** | Search for topic by name that contains the given search string, search is case insensitive | [optional]  |
  **ids** | **[String]** | One or more topic IDs to search through the topics. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1900,7 +2068,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchSocialmediaTopic(topicId, opts)
@@ -1920,6 +2092,7 @@ apiInstance.patchSocialmediaTopic(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1955,7 +2128,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | facebookIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts)
@@ -1976,6 +2153,7 @@ apiInstance.patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRule
  **topicId** | **String** | topicId |  |
  **facebookIngestionRuleId** | **String** | facebookIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2013,7 +2191,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
@@ -2034,6 +2216,7 @@ apiInstance.patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBu
  **topicId** | **String** | topicId |  |
  **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2069,7 +2252,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let instagramIngestionRuleId = "instagramIngestionRuleId_example"; // String | instagramIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -2090,6 +2277,7 @@ apiInstance.patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRu
  **topicId** | **String** | topicId |  |
  **instagramIngestionRuleId** | **String** | instagramIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2125,7 +2313,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let openId = "openId_example"; // String | openId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts)
@@ -2146,6 +2338,7 @@ apiInstance.patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, o
  **topicId** | **String** | topicId |  |
  **openId** | **String** | openId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2181,7 +2374,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitterIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts)
@@ -2202,6 +2399,7 @@ apiInstance.patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId
  **topicId** | **String** | topicId |  |
  **twitterIngestionRuleId** | **String** | twitterIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2210,7 +2408,7 @@ apiInstance.patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId
 
 ## postSocialmediaAnalyticsAggregatesJobs
 
-> AsyncQueryResponse postSocialmediaAnalyticsAggregatesJobs(body)
+> AsyncQueryResponse postSocialmediaAnalyticsAggregatesJobs(body, opts)
 
 
 POST /api/v2/socialmedia/analytics/aggregates/jobs
@@ -2235,8 +2433,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSocialmediaAnalyticsAggregatesJobs(body)
+apiInstance.postSocialmediaAnalyticsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postSocialmediaAnalyticsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2252,6 +2456,7 @@ apiInstance.postSocialmediaAnalyticsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2260,7 +2465,7 @@ apiInstance.postSocialmediaAnalyticsAggregatesJobs(body)
 
 ## postSocialmediaAnalyticsMessagesJobs
 
-> AsyncQueryResponse postSocialmediaAnalyticsMessagesJobs(body)
+> AsyncQueryResponse postSocialmediaAnalyticsMessagesJobs(body, opts)
 
 
 POST /api/v2/socialmedia/analytics/messages/jobs
@@ -2285,8 +2490,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSocialmediaAnalyticsMessagesJobs(body)
+apiInstance.postSocialmediaAnalyticsMessagesJobs(body, opts)
   .then((data) => {
     console.log(`postSocialmediaAnalyticsMessagesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2302,6 +2513,7 @@ apiInstance.postSocialmediaAnalyticsMessagesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2335,7 +2547,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaEscalationrules(opts)
@@ -2354,6 +2570,7 @@ apiInstance.postSocialmediaEscalationrules(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2388,7 +2605,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let divisionId = "divisionId_example"; // String | One division ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaEscalationsMessages(divisionId, opts)
@@ -2408,6 +2629,7 @@ apiInstance.postSocialmediaEscalationsMessages(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | One division ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2442,7 +2664,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaTopicDataingestionrulesFacebook(topicId, opts)
@@ -2462,6 +2688,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesFacebook(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2498,7 +2725,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts)
@@ -2518,6 +2749,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId,
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2552,7 +2784,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaTopicDataingestionrulesInstagram(topicId, opts)
@@ -2572,6 +2808,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesInstagram(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2606,7 +2843,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaTopicDataingestionrulesOpen(topicId, opts)
@@ -2626,6 +2867,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesOpen(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2634,7 +2876,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesOpen(topicId, opts)
 
 ## postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk
 
-> OpenSocialNormalizedMessageEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body)
+> OpenSocialNormalizedMessageEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body, opts)
 
 
 POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk
@@ -2663,8 +2905,14 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | Topic ID
 let ruleId = "ruleId_example"; // String | Data Ingestion Rule ID
 let body = [{}]; // Object | NormalizedMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body)
+apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body, opts)
   .then((data) => {
     console.log(`postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2682,6 +2930,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId
  **topicId** | **String** | Topic ID |  |
  **ruleId** | **String** | Data Ingestion Rule ID |  |
  **body** | **Object** | NormalizedMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2690,7 +2939,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId
 
 ## postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk
 
-> OpenSocialReactionsNormalizedEventEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body)
+> OpenSocialReactionsNormalizedEventEntityListing postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body, opts)
 
 
 POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk
@@ -2719,8 +2968,14 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | Topic ID
 let ruleId = "ruleId_example"; // String | Data Ingestion Rule ID
 let body = {}; // Object | NormalizedEvent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body)
+apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body, opts)
   .then((data) => {
     console.log(`postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2738,6 +2993,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicI
  **topicId** | **String** | Topic ID |  |
  **ruleId** | **String** | Data Ingestion Rule ID |  |
  **body** | **Object** | NormalizedEvent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2772,7 +3028,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let topicId = "topicId_example"; // String | topicId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaTopicDataingestionrulesTwitter(topicId, opts)
@@ -2792,6 +3052,7 @@ apiInstance.postSocialmediaTopicDataingestionrulesTwitter(topicId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | topicId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2825,7 +3086,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSocialmediaTopics(opts)
@@ -2844,6 +3109,7 @@ apiInstance.postSocialmediaTopics(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2852,7 +3118,7 @@ apiInstance.postSocialmediaTopics(opts)
 
 ## postSocialmediaTwitterHistoricalTweets
 
-> TwitterDataHistoricalTweetResponse postSocialmediaTwitterHistoricalTweets(body)
+> TwitterDataHistoricalTweetResponse postSocialmediaTwitterHistoricalTweets(body, opts)
 
 
 POST /api/v2/socialmedia/twitter/historical/tweets
@@ -2877,8 +3143,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SocialMediaApi();
 
 let body = {}; // Object | TwitterDataHistoricalTweetRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSocialmediaTwitterHistoricalTweets(body)
+apiInstance.postSocialmediaTwitterHistoricalTweets(body, opts)
   .then((data) => {
     console.log(`postSocialmediaTwitterHistoricalTweets success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2894,6 +3166,7 @@ apiInstance.postSocialmediaTwitterHistoricalTweets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | TwitterDataHistoricalTweetRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2928,7 +3201,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 
 let escalationRuleId = "escalationRuleId_example"; // String | escalationRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSocialmediaEscalationrule(escalationRuleId, opts)
@@ -2948,6 +3225,7 @@ apiInstance.putSocialmediaEscalationrule(escalationRuleId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **escalationRuleId** | **String** | escalationRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2983,7 +3261,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let facebookIngestionRuleId = "facebookIngestionRuleId_example"; // String | facebookIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts)
@@ -3004,6 +3286,7 @@ apiInstance.putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId
  **topicId** | **String** | topicId |  |
  **facebookIngestionRuleId** | **String** | facebookIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3041,7 +3324,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let googleBusinessProfileIngestionRuleId = "googleBusinessProfileIngestionRuleId_example"; // String | googleBusinessProfileIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts)
@@ -3062,6 +3349,7 @@ apiInstance.putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusi
  **topicId** | **String** | topicId |  |
  **googleBusinessProfileIngestionRuleId** | **String** | googleBusinessProfileIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3097,7 +3385,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let instagramIngestionRuleId = "instagramIngestionRuleId_example"; // String | instagramIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts)
@@ -3118,6 +3410,7 @@ apiInstance.putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRule
  **topicId** | **String** | topicId |  |
  **instagramIngestionRuleId** | **String** | instagramIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3153,7 +3446,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let openId = "openId_example"; // String | openId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts)
@@ -3174,6 +3471,7 @@ apiInstance.putSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opt
  **topicId** | **String** | topicId |  |
  **openId** | **String** | openId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3209,7 +3507,11 @@ let apiInstance = new platformClient.SocialMediaApi();
 let topicId = "topicId_example"; // String | topicId
 let twitterIngestionRuleId = "twitterIngestionRuleId_example"; // String | twitterIngestionRuleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts)
@@ -3230,10 +3532,11 @@ apiInstance.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(t
  **topicId** | **String** | topicId |  |
  **twitterIngestionRuleId** | **String** | twitterIngestionRuleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TwitterDataIngestionRuleResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

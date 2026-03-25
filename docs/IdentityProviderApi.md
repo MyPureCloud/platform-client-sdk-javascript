@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteIdentityprovider
 
-> void deleteIdentityprovider(providerId)
+> void deleteIdentityprovider(providerId, opts)
 
 
 DELETE /api/v2/identityproviders/{providerId}
@@ -74,8 +74,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let providerId = "providerId_example"; // String | Provider ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovider(providerId)
+apiInstance.deleteIdentityprovider(providerId, opts)
   .then(() => {
     console.log('deleteIdentityprovider returned successfully.');
   })
@@ -91,6 +97,7 @@ apiInstance.deleteIdentityprovider(providerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **providerId** | **String** | Provider ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -99,7 +106,7 @@ void (no response body)
 
 ## deleteIdentityprovidersAdfs
 
-> **Object** deleteIdentityprovidersAdfs()
+> **Object** deleteIdentityprovidersAdfs(opts)
 
 
 DELETE /api/v2/identityproviders/adfs
@@ -122,8 +129,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersAdfs()
+apiInstance.deleteIdentityprovidersAdfs(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -135,7 +148,10 @@ apiInstance.deleteIdentityprovidersAdfs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -144,7 +160,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersCic
 
-> **Object** deleteIdentityprovidersCic()
+> **Object** deleteIdentityprovidersCic(opts)
 
 
 DELETE /api/v2/identityproviders/cic
@@ -167,8 +183,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersCic()
+apiInstance.deleteIdentityprovidersCic(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -180,7 +202,10 @@ apiInstance.deleteIdentityprovidersCic()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -189,7 +214,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersGeneric
 
-> **Object** deleteIdentityprovidersGeneric()
+> **Object** deleteIdentityprovidersGeneric(opts)
 
 
 DELETE /api/v2/identityproviders/generic
@@ -212,8 +237,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersGeneric()
+apiInstance.deleteIdentityprovidersGeneric(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersGeneric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -225,7 +256,10 @@ apiInstance.deleteIdentityprovidersGeneric()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -234,7 +268,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersGsuite
 
-> **Object** deleteIdentityprovidersGsuite()
+> **Object** deleteIdentityprovidersGsuite(opts)
 
 
 DELETE /api/v2/identityproviders/gsuite
@@ -257,8 +291,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersGsuite()
+apiInstance.deleteIdentityprovidersGsuite(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -270,7 +310,10 @@ apiInstance.deleteIdentityprovidersGsuite()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -279,7 +322,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersIdentitynow
 
-> **Object** deleteIdentityprovidersIdentitynow()
+> **Object** deleteIdentityprovidersIdentitynow(opts)
 
 
 DELETE /api/v2/identityproviders/identitynow
@@ -302,8 +345,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersIdentitynow()
+apiInstance.deleteIdentityprovidersIdentitynow(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -315,7 +364,10 @@ apiInstance.deleteIdentityprovidersIdentitynow()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -324,7 +376,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersOkta
 
-> **Object** deleteIdentityprovidersOkta()
+> **Object** deleteIdentityprovidersOkta(opts)
 
 
 DELETE /api/v2/identityproviders/okta
@@ -347,8 +399,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersOkta()
+apiInstance.deleteIdentityprovidersOkta(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -360,7 +418,10 @@ apiInstance.deleteIdentityprovidersOkta()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -369,7 +430,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersOnelogin
 
-> **Object** deleteIdentityprovidersOnelogin()
+> **Object** deleteIdentityprovidersOnelogin(opts)
 
 
 DELETE /api/v2/identityproviders/onelogin
@@ -392,8 +453,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersOnelogin()
+apiInstance.deleteIdentityprovidersOnelogin(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -405,7 +472,10 @@ apiInstance.deleteIdentityprovidersOnelogin()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -414,7 +484,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersPing
 
-> **Object** deleteIdentityprovidersPing()
+> **Object** deleteIdentityprovidersPing(opts)
 
 
 DELETE /api/v2/identityproviders/ping
@@ -437,8 +507,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersPing()
+apiInstance.deleteIdentityprovidersPing(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -450,7 +526,10 @@ apiInstance.deleteIdentityprovidersPing()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -459,7 +538,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersPurecloud
 
-> **Object** deleteIdentityprovidersPurecloud()
+> **Object** deleteIdentityprovidersPurecloud(opts)
 
 
 DELETE /api/v2/identityproviders/purecloud
@@ -482,8 +561,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersPurecloud()
+apiInstance.deleteIdentityprovidersPurecloud(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -495,7 +580,10 @@ apiInstance.deleteIdentityprovidersPurecloud()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -504,7 +592,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersPureengage
 
-> **Object** deleteIdentityprovidersPureengage()
+> **Object** deleteIdentityprovidersPureengage(opts)
 
 
 DELETE /api/v2/identityproviders/pureengage
@@ -527,8 +615,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersPureengage()
+apiInstance.deleteIdentityprovidersPureengage(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersPureengage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -540,7 +634,10 @@ apiInstance.deleteIdentityprovidersPureengage()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -549,7 +646,7 @@ This endpoint does not need any parameter.
 
 ## deleteIdentityprovidersSalesforce
 
-> **Object** deleteIdentityprovidersSalesforce()
+> **Object** deleteIdentityprovidersSalesforce(opts)
 
 
 DELETE /api/v2/identityproviders/salesforce
@@ -572,8 +669,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIdentityprovidersSalesforce()
+apiInstance.deleteIdentityprovidersSalesforce(opts)
   .then((data) => {
     console.log(`deleteIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -585,7 +688,10 @@ apiInstance.deleteIdentityprovidersSalesforce()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -594,7 +700,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovider
 
-> CustomProvider getIdentityprovider(providerId)
+> CustomProvider getIdentityprovider(providerId, opts)
 
 
 GET /api/v2/identityproviders/{providerId}
@@ -619,8 +725,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let providerId = "providerId_example"; // String | Provider ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovider(providerId)
+apiInstance.getIdentityprovider(providerId, opts)
   .then((data) => {
     console.log(`getIdentityprovider success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -636,6 +748,7 @@ apiInstance.getIdentityprovider(providerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **providerId** | **String** | Provider ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -644,7 +757,7 @@ apiInstance.getIdentityprovider(providerId)
 
 ## getIdentityproviders
 
-> IdentityProviderEntityListing getIdentityproviders()
+> IdentityProviderEntityListing getIdentityproviders(opts)
 
 
 GET /api/v2/identityproviders
@@ -667,8 +780,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityproviders()
+apiInstance.getIdentityproviders(opts)
   .then((data) => {
     console.log(`getIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -680,7 +799,10 @@ apiInstance.getIdentityproviders()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -689,7 +811,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersAdfs
 
-> ADFS getIdentityprovidersAdfs()
+> ADFS getIdentityprovidersAdfs(opts)
 
 
 GET /api/v2/identityproviders/adfs
@@ -712,8 +834,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersAdfs()
+apiInstance.getIdentityprovidersAdfs(opts)
   .then((data) => {
     console.log(`getIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -725,7 +853,10 @@ apiInstance.getIdentityprovidersAdfs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -734,7 +865,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersCic
 
-> CustomerInteractionCenter getIdentityprovidersCic()
+> CustomerInteractionCenter getIdentityprovidersCic(opts)
 
 
 GET /api/v2/identityproviders/cic
@@ -757,8 +888,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersCic()
+apiInstance.getIdentityprovidersCic(opts)
   .then((data) => {
     console.log(`getIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -770,7 +907,10 @@ apiInstance.getIdentityprovidersCic()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -779,7 +919,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersGeneric
 
-> GenericSAML getIdentityprovidersGeneric()
+> GenericSAML getIdentityprovidersGeneric(opts)
 
 
 GET /api/v2/identityproviders/generic
@@ -802,8 +942,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersGeneric()
+apiInstance.getIdentityprovidersGeneric(opts)
   .then((data) => {
     console.log(`getIdentityprovidersGeneric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -815,7 +961,10 @@ apiInstance.getIdentityprovidersGeneric()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -824,7 +973,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersGsuite
 
-> GSuite getIdentityprovidersGsuite()
+> GSuite getIdentityprovidersGsuite(opts)
 
 
 GET /api/v2/identityproviders/gsuite
@@ -847,8 +996,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersGsuite()
+apiInstance.getIdentityprovidersGsuite(opts)
   .then((data) => {
     console.log(`getIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -860,7 +1015,10 @@ apiInstance.getIdentityprovidersGsuite()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -869,7 +1027,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersIdentitynow
 
-> IdentityNow getIdentityprovidersIdentitynow()
+> IdentityNow getIdentityprovidersIdentitynow(opts)
 
 
 GET /api/v2/identityproviders/identitynow
@@ -892,8 +1050,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersIdentitynow()
+apiInstance.getIdentityprovidersIdentitynow(opts)
   .then((data) => {
     console.log(`getIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -905,7 +1069,10 @@ apiInstance.getIdentityprovidersIdentitynow()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -914,7 +1081,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersOkta
 
-> Okta getIdentityprovidersOkta()
+> Okta getIdentityprovidersOkta(opts)
 
 
 GET /api/v2/identityproviders/okta
@@ -937,8 +1104,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersOkta()
+apiInstance.getIdentityprovidersOkta(opts)
   .then((data) => {
     console.log(`getIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -950,7 +1123,10 @@ apiInstance.getIdentityprovidersOkta()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -959,7 +1135,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersOnelogin
 
-> OneLogin getIdentityprovidersOnelogin()
+> OneLogin getIdentityprovidersOnelogin(opts)
 
 
 GET /api/v2/identityproviders/onelogin
@@ -982,8 +1158,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersOnelogin()
+apiInstance.getIdentityprovidersOnelogin(opts)
   .then((data) => {
     console.log(`getIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -995,7 +1177,10 @@ apiInstance.getIdentityprovidersOnelogin()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1004,7 +1189,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersPing
 
-> PingIdentity getIdentityprovidersPing()
+> PingIdentity getIdentityprovidersPing(opts)
 
 
 GET /api/v2/identityproviders/ping
@@ -1027,8 +1212,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersPing()
+apiInstance.getIdentityprovidersPing(opts)
   .then((data) => {
     console.log(`getIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1040,7 +1231,10 @@ apiInstance.getIdentityprovidersPing()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1049,7 +1243,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersPurecloud
 
-> PureCloud getIdentityprovidersPurecloud()
+> PureCloud getIdentityprovidersPurecloud(opts)
 
 
 GET /api/v2/identityproviders/purecloud
@@ -1072,8 +1266,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersPurecloud()
+apiInstance.getIdentityprovidersPurecloud(opts)
   .then((data) => {
     console.log(`getIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1085,7 +1285,10 @@ apiInstance.getIdentityprovidersPurecloud()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1094,7 +1297,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersPureengage
 
-> PureEngage getIdentityprovidersPureengage()
+> PureEngage getIdentityprovidersPureengage(opts)
 
 
 GET /api/v2/identityproviders/pureengage
@@ -1117,8 +1320,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersPureengage()
+apiInstance.getIdentityprovidersPureengage(opts)
   .then((data) => {
     console.log(`getIdentityprovidersPureengage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1130,7 +1339,10 @@ apiInstance.getIdentityprovidersPureengage()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1139,7 +1351,7 @@ This endpoint does not need any parameter.
 
 ## getIdentityprovidersSalesforce
 
-> Salesforce getIdentityprovidersSalesforce()
+> Salesforce getIdentityprovidersSalesforce(opts)
 
 
 GET /api/v2/identityproviders/salesforce
@@ -1162,8 +1374,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIdentityprovidersSalesforce()
+apiInstance.getIdentityprovidersSalesforce(opts)
   .then((data) => {
     console.log(`getIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1175,7 +1393,10 @@ apiInstance.getIdentityprovidersSalesforce()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1184,7 +1405,7 @@ This endpoint does not need any parameter.
 
 ## postIdentityproviders
 
-> CustomProvider postIdentityproviders(body)
+> CustomProvider postIdentityproviders(body, opts)
 
 
 POST /api/v2/identityproviders
@@ -1209,8 +1430,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIdentityproviders(body)
+apiInstance.postIdentityproviders(body, opts)
   .then((data) => {
     console.log(`postIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1226,6 +1453,7 @@ apiInstance.postIdentityproviders(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1234,7 +1462,7 @@ apiInstance.postIdentityproviders(body)
 
 ## putIdentityprovider
 
-> CustomProvider putIdentityprovider(providerId, body)
+> CustomProvider putIdentityprovider(providerId, body, opts)
 
 
 PUT /api/v2/identityproviders/{providerId}
@@ -1260,8 +1488,14 @@ let apiInstance = new platformClient.IdentityProviderApi();
 
 let providerId = "providerId_example"; // String | Provider ID
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovider(providerId, body)
+apiInstance.putIdentityprovider(providerId, body, opts)
   .then((data) => {
     console.log(`putIdentityprovider success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1278,6 +1512,7 @@ apiInstance.putIdentityprovider(providerId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **providerId** | **String** | Provider ID |  |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1286,7 +1521,7 @@ apiInstance.putIdentityprovider(providerId, body)
 
 ## putIdentityprovidersAdfs
 
-> IdentityProvider putIdentityprovidersAdfs(body)
+> IdentityProvider putIdentityprovidersAdfs(body, opts)
 
 
 PUT /api/v2/identityproviders/adfs
@@ -1312,8 +1547,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersAdfs(body)
+apiInstance.putIdentityprovidersAdfs(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1329,6 +1570,7 @@ apiInstance.putIdentityprovidersAdfs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1337,7 +1579,7 @@ apiInstance.putIdentityprovidersAdfs(body)
 
 ## putIdentityprovidersCic
 
-> IdentityProvider putIdentityprovidersCic(body)
+> IdentityProvider putIdentityprovidersCic(body, opts)
 
 
 PUT /api/v2/identityproviders/cic
@@ -1363,8 +1605,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersCic(body)
+apiInstance.putIdentityprovidersCic(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1380,6 +1628,7 @@ apiInstance.putIdentityprovidersCic(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1388,7 +1637,7 @@ apiInstance.putIdentityprovidersCic(body)
 
 ## putIdentityprovidersGeneric
 
-> IdentityProvider putIdentityprovidersGeneric(body)
+> IdentityProvider putIdentityprovidersGeneric(body, opts)
 
 
 PUT /api/v2/identityproviders/generic
@@ -1414,8 +1663,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersGeneric(body)
+apiInstance.putIdentityprovidersGeneric(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersGeneric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1431,6 +1686,7 @@ apiInstance.putIdentityprovidersGeneric(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1439,7 +1695,7 @@ apiInstance.putIdentityprovidersGeneric(body)
 
 ## putIdentityprovidersGsuite
 
-> IdentityProvider putIdentityprovidersGsuite(body)
+> IdentityProvider putIdentityprovidersGsuite(body, opts)
 
 
 PUT /api/v2/identityproviders/gsuite
@@ -1465,8 +1721,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersGsuite(body)
+apiInstance.putIdentityprovidersGsuite(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1482,6 +1744,7 @@ apiInstance.putIdentityprovidersGsuite(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1490,7 +1753,7 @@ apiInstance.putIdentityprovidersGsuite(body)
 
 ## putIdentityprovidersIdentitynow
 
-> IdentityNow putIdentityprovidersIdentitynow(body)
+> IdentityNow putIdentityprovidersIdentitynow(body, opts)
 
 
 PUT /api/v2/identityproviders/identitynow
@@ -1516,8 +1779,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersIdentitynow(body)
+apiInstance.putIdentityprovidersIdentitynow(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1533,6 +1802,7 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1541,7 +1811,7 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 
 ## putIdentityprovidersOkta
 
-> IdentityProvider putIdentityprovidersOkta(body)
+> IdentityProvider putIdentityprovidersOkta(body, opts)
 
 
 PUT /api/v2/identityproviders/okta
@@ -1567,8 +1837,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersOkta(body)
+apiInstance.putIdentityprovidersOkta(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1584,6 +1860,7 @@ apiInstance.putIdentityprovidersOkta(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1592,7 +1869,7 @@ apiInstance.putIdentityprovidersOkta(body)
 
 ## putIdentityprovidersOnelogin
 
-> IdentityProvider putIdentityprovidersOnelogin(body)
+> IdentityProvider putIdentityprovidersOnelogin(body, opts)
 
 
 PUT /api/v2/identityproviders/onelogin
@@ -1618,8 +1895,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersOnelogin(body)
+apiInstance.putIdentityprovidersOnelogin(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1635,6 +1918,7 @@ apiInstance.putIdentityprovidersOnelogin(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1643,7 +1927,7 @@ apiInstance.putIdentityprovidersOnelogin(body)
 
 ## putIdentityprovidersPing
 
-> IdentityProvider putIdentityprovidersPing(body)
+> IdentityProvider putIdentityprovidersPing(body, opts)
 
 
 PUT /api/v2/identityproviders/ping
@@ -1669,8 +1953,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersPing(body)
+apiInstance.putIdentityprovidersPing(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1686,6 +1976,7 @@ apiInstance.putIdentityprovidersPing(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1694,7 +1985,7 @@ apiInstance.putIdentityprovidersPing(body)
 
 ## putIdentityprovidersPurecloud
 
-> IdentityProvider putIdentityprovidersPurecloud(body)
+> IdentityProvider putIdentityprovidersPurecloud(body, opts)
 
 
 PUT /api/v2/identityproviders/purecloud
@@ -1720,8 +2011,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersPurecloud(body)
+apiInstance.putIdentityprovidersPurecloud(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1737,6 +2034,7 @@ apiInstance.putIdentityprovidersPurecloud(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1745,7 +2043,7 @@ apiInstance.putIdentityprovidersPurecloud(body)
 
 ## putIdentityprovidersPureengage
 
-> IdentityProvider putIdentityprovidersPureengage(body)
+> IdentityProvider putIdentityprovidersPureengage(body, opts)
 
 
 PUT /api/v2/identityproviders/pureengage
@@ -1771,8 +2069,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersPureengage(body)
+apiInstance.putIdentityprovidersPureengage(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersPureengage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1788,6 +2092,7 @@ apiInstance.putIdentityprovidersPureengage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1796,7 +2101,7 @@ apiInstance.putIdentityprovidersPureengage(body)
 
 ## putIdentityprovidersSalesforce
 
-> IdentityProvider putIdentityprovidersSalesforce(body)
+> IdentityProvider putIdentityprovidersSalesforce(body, opts)
 
 
 PUT /api/v2/identityproviders/salesforce
@@ -1822,8 +2127,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IdentityProviderApi();
 
 let body = {}; // Object | Provider
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIdentityprovidersSalesforce(body)
+apiInstance.putIdentityprovidersSalesforce(body, opts)
   .then((data) => {
     console.log(`putIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1839,10 +2150,11 @@ apiInstance.putIdentityprovidersSalesforce(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **IdentityProvider**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

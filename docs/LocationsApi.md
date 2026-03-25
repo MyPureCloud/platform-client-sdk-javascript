@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteLocation
 
-> void deleteLocation(locationId)
+> void deleteLocation(locationId, opts)
 
 
 DELETE /api/v2/locations/{locationId}
@@ -44,8 +44,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LocationsApi();
 
 let locationId = "locationId_example"; // String | Location ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLocation(locationId)
+apiInstance.deleteLocation(locationId, opts)
   .then(() => {
     console.log('deleteLocation returned successfully.');
   })
@@ -61,6 +67,7 @@ apiInstance.deleteLocation(locationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -93,7 +100,11 @@ let apiInstance = new platformClient.LocationsApi();
 
 let locationId = "locationId_example"; // String | Location ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLocation(locationId, opts)
@@ -113,6 +124,7 @@ apiInstance.getLocation(locationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: images, addressVerificationDetails |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -121,7 +133,7 @@ apiInstance.getLocation(locationId, opts)
 
 ## getLocationSublocations
 
-> LocationEntityListing getLocationSublocations(locationId)
+> LocationEntityListing getLocationSublocations(locationId, opts)
 
 
 GET /api/v2/locations/{locationId}/sublocations
@@ -144,8 +156,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LocationsApi();
 
 let locationId = "locationId_example"; // String | Location ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLocationSublocations(locationId)
+apiInstance.getLocationSublocations(locationId, opts)
   .then((data) => {
     console.log(`getLocationSublocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -161,6 +179,7 @@ apiInstance.getLocationSublocations(locationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -195,7 +214,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
-  'sortOrder': "sortOrder_example" // String | Sort order
+  'sortOrder': "sortOrder_example", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLocations(opts)
@@ -217,6 +240,7 @@ apiInstance.getLocations(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **id** | **[String]** | id | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -249,7 +273,11 @@ let apiInstance = new platformClient.LocationsApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | Provides more details about a specified resource
+  'expand': ["expand_example"], // [String] | Provides more details about a specified resource
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLocationsSearch(q64, opts)
@@ -269,6 +297,7 @@ apiInstance.getLocationsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -277,7 +306,7 @@ apiInstance.getLocationsSearch(q64, opts)
 
 ## patchLocation
 
-> LocationDefinition patchLocation(locationId, body)
+> LocationDefinition patchLocation(locationId, body, opts)
 
 
 PATCH /api/v2/locations/{locationId}
@@ -303,8 +332,14 @@ let apiInstance = new platformClient.LocationsApi();
 
 let locationId = "locationId_example"; // String | Location ID
 let body = {}; // Object | Location
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchLocation(locationId, body)
+apiInstance.patchLocation(locationId, body, opts)
   .then((data) => {
     console.log(`patchLocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -321,6 +356,7 @@ apiInstance.patchLocation(locationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
  **body** | **Object** | Location |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -329,7 +365,7 @@ apiInstance.patchLocation(locationId, body)
 
 ## postLocations
 
-> LocationDefinition postLocations(body)
+> LocationDefinition postLocations(body, opts)
 
 
 POST /api/v2/locations
@@ -354,8 +390,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LocationsApi();
 
 let body = {}; // Object | Location
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLocations(body)
+apiInstance.postLocations(body, opts)
   .then((data) => {
     console.log(`postLocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -371,6 +413,7 @@ apiInstance.postLocations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Location |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +422,7 @@ apiInstance.postLocations(body)
 
 ## postLocationsSearch
 
-> LocationsSearchResponse postLocationsSearch(body)
+> LocationsSearchResponse postLocationsSearch(body, opts)
 
 
 POST /api/v2/locations/search
@@ -402,8 +445,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LocationsApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLocationsSearch(body)
+apiInstance.postLocationsSearch(body, opts)
   .then((data) => {
     console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -419,10 +468,11 @@ apiInstance.postLocationsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **LocationsSearchResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteWidgetsDeployment
 
-> void deleteWidgetsDeployment(deploymentId)
+> void deleteWidgetsDeployment(deploymentId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -47,8 +47,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WidgetsApi();
 
 let deploymentId = "deploymentId_example"; // String | Widget Config Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWidgetsDeployment(deploymentId)
+apiInstance.deleteWidgetsDeployment(deploymentId, opts)
   .then(() => {
     console.log('deleteWidgetsDeployment returned successfully.');
   })
@@ -64,6 +70,7 @@ apiInstance.deleteWidgetsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -72,7 +79,7 @@ void (no response body)
 
 ## getWidgetsDeployment
 
-> WidgetDeployment getWidgetsDeployment(deploymentId)
+> WidgetDeployment getWidgetsDeployment(deploymentId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -103,8 +110,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WidgetsApi();
 
 let deploymentId = "deploymentId_example"; // String | Widget Config Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWidgetsDeployment(deploymentId)
+apiInstance.getWidgetsDeployment(deploymentId, opts)
   .then((data) => {
     console.log(`getWidgetsDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -120,6 +133,7 @@ apiInstance.getWidgetsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -128,7 +142,7 @@ apiInstance.getWidgetsDeployment(deploymentId)
 
 ## getWidgetsDeployments
 
-> WidgetDeploymentEntityListing getWidgetsDeployments()
+> WidgetDeploymentEntityListing getWidgetsDeployments(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -157,8 +171,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WidgetsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWidgetsDeployments()
+apiInstance.getWidgetsDeployments(opts)
   .then((data) => {
     console.log(`getWidgetsDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -170,7 +190,10 @@ apiInstance.getWidgetsDeployments()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -179,7 +202,7 @@ This endpoint does not need any parameter.
 
 ## postWidgetsDeployments
 
-> WidgetDeployment postWidgetsDeployments(body)
+> WidgetDeployment postWidgetsDeployments(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -210,8 +233,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WidgetsApi();
 
 let body = {}; // Object | Deployment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWidgetsDeployments(body)
+apiInstance.postWidgetsDeployments(body, opts)
   .then((data) => {
     console.log(`postWidgetsDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -227,6 +256,7 @@ apiInstance.postWidgetsDeployments(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Deployment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -235,7 +265,7 @@ apiInstance.postWidgetsDeployments(body)
 
 ## putWidgetsDeployment
 
-> WidgetDeployment putWidgetsDeployment(deploymentId, body)
+> WidgetDeployment putWidgetsDeployment(deploymentId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -267,8 +297,14 @@ let apiInstance = new platformClient.WidgetsApi();
 
 let deploymentId = "deploymentId_example"; // String | Widget Config Id
 let body = {}; // Object | Deployment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWidgetsDeployment(deploymentId, body)
+apiInstance.putWidgetsDeployment(deploymentId, body, opts)
   .then((data) => {
     console.log(`putWidgetsDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -285,10 +321,11 @@ apiInstance.putWidgetsDeployment(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
  **body** | **Object** | Deployment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **WidgetDeployment**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

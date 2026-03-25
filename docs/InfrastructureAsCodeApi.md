@@ -44,7 +44,11 @@ let apiInstance = new platformClient.InfrastructureAsCodeApi();
 
 let acceleratorId = "acceleratorId_example"; // String | Accelerator ID
 let opts = { 
-  'preferredLanguage': "en-US" // String | Preferred Language
+  'preferredLanguage': "en-US", // String | Preferred Language
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getInfrastructureascodeAccelerator(acceleratorId, opts)
@@ -64,6 +68,7 @@ apiInstance.getInfrastructureascodeAccelerator(acceleratorId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **acceleratorId** | **String** | Accelerator ID |  |
  **preferredLanguage** | **String** | Preferred Language | [optional] [default to en-US]<br />**Values**: ar, cs, da, de, en-US, es, fi, fr, it, iw, ko, ja, nl, no, pl, pt-BR, pt-PT, sv, th, tr, zh-CN, zh-TW |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -108,7 +113,11 @@ let opts = {
   'origin': "origin_example", // String | Filter by origin
   'type': "type_example", // String | Filter by type
   'classification': "classification_example", // String | Filter by classification
-  'tags': "tags_example" // String | Filter by tags
+  'tags': "tags_example", // String | Filter by tags
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getInfrastructureascodeAccelerators(opts)
@@ -136,6 +145,7 @@ apiInstance.getInfrastructureascodeAccelerators(opts)
  **type** | **String** | Filter by type | [optional] <br />**Values**: module, accelerator, blueprint |
  **classification** | **String** | Filter by classification | [optional]  |
  **tags** | **String** | Filter by tags | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -172,7 +182,11 @@ let apiInstance = new platformClient.InfrastructureAsCodeApi();
 
 let jobId = "jobId_example"; // String | Job ID
 let opts = { 
-  'details': false // Boolean | Include details of execution, including job results or error information
+  'details': false, // Boolean | Include details of execution, including job results or error information
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getInfrastructureascodeJob(jobId, opts)
@@ -192,6 +206,7 @@ apiInstance.getInfrastructureascodeJob(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job ID |  |
  **details** | **Boolean** | Include details of execution, including job results or error information | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -233,7 +248,11 @@ let opts = {
   'sortOrder': "desc", // String | Sort order
   'acceleratorId': "acceleratorId_example", // String | Find only jobs associated with this accelerator
   'submittedBy': "submittedBy_example", // String | Find only jobs submitted by this user
-  'status': "status_example" // String | Find only jobs in this state
+  'status': "status_example", // String | Find only jobs in this state
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getInfrastructureascodeJobs(opts)
@@ -258,6 +277,7 @@ apiInstance.getInfrastructureascodeJobs(opts)
  **acceleratorId** | **String** | Find only jobs associated with this accelerator | [optional]  |
  **submittedBy** | **String** | Find only jobs submitted by this user | [optional]  |
  **status** | **String** | Find only jobs in this state | [optional] <br />**Values**: Created, Queued, Running, Complete, Failed, Incomplete |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -266,7 +286,7 @@ apiInstance.getInfrastructureascodeJobs(opts)
 
 ## postInfrastructureascodeJobs
 
-> InfrastructureascodeJob postInfrastructureascodeJobs(body)
+> InfrastructureascodeJob postInfrastructureascodeJobs(body, opts)
 
 
 POST /api/v2/infrastructureascode/jobs
@@ -293,8 +313,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.InfrastructureAsCodeApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postInfrastructureascodeJobs(body)
+apiInstance.postInfrastructureascodeJobs(body, opts)
   .then((data) => {
     console.log(`postInfrastructureascodeJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -310,10 +336,11 @@ apiInstance.postInfrastructureascodeJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **InfrastructureascodeJob**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@249.0.0
+Documentation version purecloud-platform-client-v2@249.1.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/249.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/249.1.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/249.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/249.1.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -530,6 +530,37 @@ client.loginImplicitGrant(clientId, redirectUri)
   });
 ```
 
+### Setting Custom Headers per Request
+
+The SDK now allows setting custom headers per API Request.  
+Each API method includes an optional parameter structure (**opts**), which supports an optional parameter named **customHeaders**. The **customHeaders** is a string map, that you can use to set custom headers on the corresponding API request.
+
+```javascript
+// Create API instance
+const usersApi = new platformClient.UsersApi();
+
+// Authenticate
+client.loginClientCredentialsGrant(clientId, clientSecret)
+  .then(() => { 
+    // Make request to GET /api/v2/users/{userId}
+    let opts = {
+      'customHeaders': {  // Object.<string, string> | Request Custom Headers
+        'X-Service-Name': 'customer-service',
+        'X-Request-ID': 'req-12345'
+      }
+    }
+    let userId = 'xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx';
+    return usersApi.getUser(userId, opts);
+  })
+  .then((permissions) => {
+    // Handle successful result
+    console.log(permissions);
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+```
 
 ### Extended Responses
 

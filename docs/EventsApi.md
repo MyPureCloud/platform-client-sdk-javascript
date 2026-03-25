@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## postEventsConversations
 
-> BatchEventResponse postEventsConversations(body)
+> BatchEventResponse postEventsConversations(body, opts)
 
 
 POST /api/v2/events/conversations
@@ -39,8 +39,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EventsApi();
 
 let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEventsConversations(body)
+apiInstance.postEventsConversations(body, opts)
   .then((data) => {
     console.log(`postEventsConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -56,6 +62,7 @@ apiInstance.postEventsConversations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -64,7 +71,7 @@ apiInstance.postEventsConversations(body)
 
 ## postEventsUsersPresence
 
-> BatchEventResponse postEventsUsersPresence(body)
+> BatchEventResponse postEventsUsersPresence(body, opts)
 
 
 POST /api/v2/events/users/presence
@@ -89,8 +96,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EventsApi();
 
 let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEventsUsersPresence(body)
+apiInstance.postEventsUsersPresence(body, opts)
   .then((data) => {
     console.log(`postEventsUsersPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -106,6 +119,7 @@ apiInstance.postEventsUsersPresence(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -114,7 +128,7 @@ apiInstance.postEventsUsersPresence(body)
 
 ## postEventsUsersRoutingstatus
 
-> BatchEventResponse postEventsUsersRoutingstatus(body)
+> BatchEventResponse postEventsUsersRoutingstatus(body, opts)
 
 
 POST /api/v2/events/users/routingstatus
@@ -139,8 +153,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EventsApi();
 
 let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEventsUsersRoutingstatus(body)
+apiInstance.postEventsUsersRoutingstatus(body, opts)
   .then((data) => {
     console.log(`postEventsUsersRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -156,10 +176,11 @@ apiInstance.postEventsUsersRoutingstatus(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **BatchEventResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

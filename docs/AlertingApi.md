@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAlertingAlert
 
-> void deleteAlertingAlert(alertId)
+> void deleteAlertingAlert(alertId, opts)
 
 
 DELETE /api/v2/alerting/alerts/{alertId}
@@ -51,8 +51,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let alertId = "alertId_example"; // String | Alert ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAlertingAlert(alertId)
+apiInstance.deleteAlertingAlert(alertId, opts)
   .then(() => {
     console.log('deleteAlertingAlert returned successfully.');
   })
@@ -68,6 +74,7 @@ apiInstance.deleteAlertingAlert(alertId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **alertId** | **String** | Alert ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -76,7 +83,7 @@ void (no response body)
 
 ## deleteAlertingAlertsAll
 
-> **Object** deleteAlertingAlertsAll()
+> **Object** deleteAlertingAlertsAll(opts)
 
 
 DELETE /api/v2/alerting/alerts/all
@@ -99,8 +106,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AlertingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAlertingAlertsAll()
+apiInstance.deleteAlertingAlertsAll(opts)
   .then((data) => {
     console.log(`deleteAlertingAlertsAll success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -112,7 +125,10 @@ apiInstance.deleteAlertingAlertsAll()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -121,7 +137,7 @@ This endpoint does not need any parameter.
 
 ## deleteAlertingRule
 
-> void deleteAlertingRule(ruleId)
+> void deleteAlertingRule(ruleId, opts)
 
 
 DELETE /api/v2/alerting/rules/{ruleId}
@@ -146,8 +162,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let ruleId = "ruleId_example"; // String | Rule Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAlertingRule(ruleId)
+apiInstance.deleteAlertingRule(ruleId, opts)
   .then(() => {
     console.log('deleteAlertingRule returned successfully.');
   })
@@ -163,6 +185,7 @@ apiInstance.deleteAlertingRule(ruleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | Rule Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -171,7 +194,7 @@ void (no response body)
 
 ## getAlertingAlert
 
-> CommonAlert getAlertingAlert(alertId)
+> CommonAlert getAlertingAlert(alertId, opts)
 
 
 GET /api/v2/alerting/alerts/{alertId}
@@ -196,8 +219,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let alertId = "alertId_example"; // String | Alert ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAlertingAlert(alertId)
+apiInstance.getAlertingAlert(alertId, opts)
   .then((data) => {
     console.log(`getAlertingAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -213,6 +242,7 @@ apiInstance.getAlertingAlert(alertId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **alertId** | **String** | Alert ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -221,7 +251,7 @@ apiInstance.getAlertingAlert(alertId)
 
 ## getAlertingRule
 
-> CommonRule getAlertingRule(ruleId)
+> CommonRule getAlertingRule(ruleId, opts)
 
 
 GET /api/v2/alerting/rules/{ruleId}
@@ -246,8 +276,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let ruleId = "ruleId_example"; // String | Rule Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAlertingRule(ruleId)
+apiInstance.getAlertingRule(ruleId, opts)
   .then((data) => {
     console.log(`getAlertingRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -263,6 +299,7 @@ apiInstance.getAlertingRule(ruleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | Rule Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -299,7 +336,11 @@ let apiInstance = new platformClient.AlertingApi();
 
 let alertId = "alertId_example"; // String | Alert ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchAlertingAlert(alertId, opts)
@@ -319,6 +360,7 @@ apiInstance.patchAlertingAlert(alertId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **alertId** | **String** | Alert ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -352,7 +394,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchAlertingAlertsAll(opts)
@@ -371,6 +417,7 @@ apiInstance.patchAlertingAlertsAll(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +426,7 @@ apiInstance.patchAlertingAlertsAll(opts)
 
 ## patchAlertingAlertsBulk
 
-> BulkResponse patchAlertingAlertsBulk(body)
+> BulkResponse patchAlertingAlertsBulk(body, opts)
 
 
 PATCH /api/v2/alerting/alerts/bulk
@@ -404,8 +451,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAlertingAlertsBulk(body)
+apiInstance.patchAlertingAlertsBulk(body, opts)
   .then((data) => {
     console.log(`patchAlertingAlertsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -421,6 +474,7 @@ apiInstance.patchAlertingAlertsBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -429,7 +483,7 @@ apiInstance.patchAlertingAlertsBulk(body)
 
 ## patchAlertingRulesBulk
 
-> BulkResponse patchAlertingRulesBulk(body)
+> BulkResponse patchAlertingRulesBulk(body, opts)
 
 
 PATCH /api/v2/alerting/rules/bulk
@@ -454,8 +508,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAlertingRulesBulk(body)
+apiInstance.patchAlertingRulesBulk(body, opts)
   .then((data) => {
     console.log(`patchAlertingRulesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -471,6 +531,7 @@ apiInstance.patchAlertingRulesBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -504,7 +565,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAlertingAlertsQuery(opts)
@@ -523,6 +588,7 @@ apiInstance.postAlertingAlertsQuery(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -531,7 +597,7 @@ apiInstance.postAlertingAlertsQuery(opts)
 
 ## postAlertingRules
 
-> CommonRule postAlertingRules(body)
+> CommonRule postAlertingRules(body, opts)
 
 
 POST /api/v2/alerting/rules
@@ -556,8 +622,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let body = {}; // Object | rule to be created
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAlertingRules(body)
+apiInstance.postAlertingRules(body, opts)
   .then((data) => {
     console.log(`postAlertingRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -573,6 +645,7 @@ apiInstance.postAlertingRules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | rule to be created |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -581,7 +654,7 @@ apiInstance.postAlertingRules(body)
 
 ## postAlertingRulesBulkRemove
 
-> BulkResponse postAlertingRulesBulkRemove(body)
+> BulkResponse postAlertingRulesBulkRemove(body, opts)
 
 
 POST /api/v2/alerting/rules/bulk/remove
@@ -606,8 +679,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAlertingRulesBulkRemove(body)
+apiInstance.postAlertingRulesBulkRemove(body, opts)
   .then((data) => {
     console.log(`postAlertingRulesBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -623,6 +702,7 @@ apiInstance.postAlertingRulesBulkRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -656,7 +736,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AlertingApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAlertingRulesQuery(opts)
@@ -675,6 +759,7 @@ apiInstance.postAlertingRulesQuery(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -709,7 +794,11 @@ let apiInstance = new platformClient.AlertingApi();
 
 let alertId = "alertId_example"; // String | Alert ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putAlertingAlert(alertId, opts)
@@ -729,6 +818,7 @@ apiInstance.putAlertingAlert(alertId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **alertId** | **String** | Alert ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -737,7 +827,7 @@ apiInstance.putAlertingAlert(alertId, opts)
 
 ## putAlertingRule
 
-> CommonRule putAlertingRule(ruleId, body)
+> CommonRule putAlertingRule(ruleId, body, opts)
 
 
 PUT /api/v2/alerting/rules/{ruleId}
@@ -763,8 +853,14 @@ let apiInstance = new platformClient.AlertingApi();
 
 let ruleId = "ruleId_example"; // String | Rule Id
 let body = {}; // Object | rule to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAlertingRule(ruleId, body)
+apiInstance.putAlertingRule(ruleId, body, opts)
   .then((data) => {
     console.log(`putAlertingRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -781,10 +877,11 @@ apiInstance.putAlertingRule(ruleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | Rule Id |  |
  **body** | **Object** | rule to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CommonRule**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

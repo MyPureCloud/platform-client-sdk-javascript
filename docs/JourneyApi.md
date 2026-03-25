@@ -86,7 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAnalyticsJourneysAggregatesJob
 
-> void deleteAnalyticsJourneysAggregatesJob(jobId)
+> void deleteAnalyticsJourneysAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -113,8 +113,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId)
+apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsJourneysAggregatesJob returned successfully.');
   })
@@ -130,6 +136,7 @@ apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -138,7 +145,7 @@ void (no response body)
 
 ## deleteJourneyActionmap
 
-> void deleteJourneyActionmap(actionMapId)
+> void deleteJourneyActionmap(actionMapId, opts)
 
 
 DELETE /api/v2/journey/actionmaps/{actionMapId}
@@ -163,8 +170,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let actionMapId = "actionMapId_example"; // String | ID of the action map.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteJourneyActionmap(actionMapId)
+apiInstance.deleteJourneyActionmap(actionMapId, opts)
   .then(() => {
     console.log('deleteJourneyActionmap returned successfully.');
   })
@@ -180,6 +193,7 @@ apiInstance.deleteJourneyActionmap(actionMapId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionMapId** | **String** | ID of the action map. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -214,7 +228,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
 let opts = { 
-  'hardDelete': true // Boolean | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'hardDelete': true, // Boolean | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteJourneyActiontemplate(actionTemplateId, opts)
@@ -234,6 +252,7 @@ apiInstance.deleteJourneyActiontemplate(actionTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
  **hardDelete** | **Boolean** | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -242,7 +261,7 @@ void (no response body)
 
 ## deleteJourneyOutcome
 
-> void deleteJourneyOutcome(outcomeId)
+> void deleteJourneyOutcome(outcomeId, opts)
 
 
 DELETE /api/v2/journey/outcomes/{outcomeId}
@@ -267,8 +286,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let outcomeId = "outcomeId_example"; // String | ID of the outcome.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteJourneyOutcome(outcomeId)
+apiInstance.deleteJourneyOutcome(outcomeId, opts)
   .then(() => {
     console.log('deleteJourneyOutcome returned successfully.');
   })
@@ -284,6 +309,7 @@ apiInstance.deleteJourneyOutcome(outcomeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -292,7 +318,7 @@ void (no response body)
 
 ## deleteJourneyOutcomesPredictor
 
-> void deleteJourneyOutcomesPredictor(predictorId)
+> void deleteJourneyOutcomesPredictor(predictorId, opts)
 
 
 DELETE /api/v2/journey/outcomes/predictors/{predictorId}
@@ -317,8 +343,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let predictorId = "predictorId_example"; // String | ID of predictor
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteJourneyOutcomesPredictor(predictorId)
+apiInstance.deleteJourneyOutcomesPredictor(predictorId, opts)
   .then(() => {
     console.log('deleteJourneyOutcomesPredictor returned successfully.');
   })
@@ -334,6 +366,7 @@ apiInstance.deleteJourneyOutcomesPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | ID of predictor |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -342,7 +375,7 @@ void (no response body)
 
 ## deleteJourneySegment
 
-> void deleteJourneySegment(segmentId)
+> void deleteJourneySegment(segmentId, opts)
 
 
 DELETE /api/v2/journey/segments/{segmentId}
@@ -367,8 +400,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let segmentId = "segmentId_example"; // String | ID of the segment.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteJourneySegment(segmentId)
+apiInstance.deleteJourneySegment(segmentId, opts)
   .then(() => {
     console.log('deleteJourneySegment returned successfully.');
   })
@@ -384,6 +423,7 @@ apiInstance.deleteJourneySegment(segmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **segmentId** | **String** | ID of the segment. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -392,7 +432,7 @@ void (no response body)
 
 ## deleteJourneyView
 
-> void deleteJourneyView(viewId)
+> void deleteJourneyView(viewId, opts)
 
 
 DELETE /api/v2/journey/views/{viewId}
@@ -419,8 +459,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | viewId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteJourneyView(viewId)
+apiInstance.deleteJourneyView(viewId, opts)
   .then(() => {
     console.log('deleteJourneyView returned successfully.');
   })
@@ -436,6 +482,7 @@ apiInstance.deleteJourneyView(viewId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -444,7 +491,7 @@ void (no response body)
 
 ## deleteJourneyViewSchedules
 
-> JourneyViewSchedule deleteJourneyViewSchedules(viewId)
+> JourneyViewSchedule deleteJourneyViewSchedules(viewId, opts)
 
 
 DELETE /api/v2/journey/views/{viewId}/schedules
@@ -469,8 +516,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | Journey View Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteJourneyViewSchedules(viewId)
+apiInstance.deleteJourneyViewSchedules(viewId, opts)
   .then((data) => {
     console.log(`deleteJourneyViewSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -486,6 +539,7 @@ apiInstance.deleteJourneyViewSchedules(viewId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -494,7 +548,7 @@ apiInstance.deleteJourneyViewSchedules(viewId)
 
 ## getAnalyticsJourneysAggregatesJob
 
-> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -521,8 +575,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
+apiInstance.getAnalyticsJourneysAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsJourneysAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -538,6 +598,7 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -574,7 +635,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
@@ -594,6 +659,7 @@ apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -629,7 +695,11 @@ let apiInstance = new platformClient.JourneyApi();
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
   'includeMerged': true, // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
-  'limit': 3.4 // Number | Number of entities to return. Default of 25, maximum of 500.
+  'limit': 3.4, // Number | Number of entities to return. Default of 25, maximum of 500.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactJourneySegments(contactId, opts)
@@ -650,6 +720,7 @@ apiInstance.getExternalcontactsContactJourneySegments(contactId, opts)
  **contactId** | **String** | ExternalContact ID |  |
  **includeMerged** | **Boolean** | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional]  |
  **limit** | **Number** | Number of entities to return. Default of 25, maximum of 500. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -686,7 +757,11 @@ let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'includeMerged': true // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+  'includeMerged': true, // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
@@ -708,6 +783,7 @@ apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **includeMerged** | **Boolean** | Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -716,7 +792,7 @@ apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
 
 ## getJourneyActionmap
 
-> ActionMap getJourneyActionmap(actionMapId)
+> ActionMap getJourneyActionmap(actionMapId, opts)
 
 
 GET /api/v2/journey/actionmaps/{actionMapId}
@@ -741,8 +817,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let actionMapId = "actionMapId_example"; // String | ID of the action map.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyActionmap(actionMapId)
+apiInstance.getJourneyActionmap(actionMapId, opts)
   .then((data) => {
     console.log(`getJourneyActionmap success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -758,6 +840,7 @@ apiInstance.getJourneyActionmap(actionMapId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionMapId** | **String** | ID of the action map. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -798,7 +881,11 @@ let opts = {
   'filterValue': "filterValue_example", // String | Value to filter by. Requires 'filterValue' to also be set.
   'actionMapIds': ["actionMapIds_example"], // [String] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Action Map field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example", // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyActionmaps(opts)
@@ -824,6 +911,7 @@ apiInstance.getJourneyActionmaps(opts)
  **actionMapIds** | **[String]** | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Action Map field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -832,7 +920,7 @@ apiInstance.getJourneyActionmaps(opts)
 
 ## getJourneyActionmapsEstimatesJob
 
-> **&#39;String&#39;** getJourneyActionmapsEstimatesJob(jobId)
+> **&#39;String&#39;** getJourneyActionmapsEstimatesJob(jobId, opts)
 
 
 GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}
@@ -857,8 +945,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | ID of the job.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyActionmapsEstimatesJob(jobId)
+apiInstance.getJourneyActionmapsEstimatesJob(jobId, opts)
   .then((data) => {
     console.log(`getJourneyActionmapsEstimatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -874,6 +968,7 @@ apiInstance.getJourneyActionmapsEstimatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -882,7 +977,7 @@ apiInstance.getJourneyActionmapsEstimatesJob(jobId)
 
 ## getJourneyActionmapsEstimatesJobResults
 
-> ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(jobId)
+> ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(jobId, opts)
 
 
 GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results
@@ -907,8 +1002,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | ID of the job.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyActionmapsEstimatesJobResults(jobId)
+apiInstance.getJourneyActionmapsEstimatesJobResults(jobId, opts)
   .then((data) => {
     console.log(`getJourneyActionmapsEstimatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -924,6 +1025,7 @@ apiInstance.getJourneyActionmapsEstimatesJobResults(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -932,7 +1034,7 @@ apiInstance.getJourneyActionmapsEstimatesJobResults(jobId)
 
 ## getJourneyActiontarget
 
-> ActionTarget getJourneyActiontarget(actionTargetId)
+> ActionTarget getJourneyActiontarget(actionTargetId, opts)
 
 
 GET /api/v2/journey/actiontargets/{actionTargetId}
@@ -957,8 +1059,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let actionTargetId = "actionTargetId_example"; // String | ID of the action target.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyActiontarget(actionTargetId)
+apiInstance.getJourneyActiontarget(actionTargetId, opts)
   .then((data) => {
     console.log(`getJourneyActiontarget success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -974,6 +1082,7 @@ apiInstance.getJourneyActiontarget(actionTargetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionTargetId** | **String** | ID of the action target. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1008,7 +1117,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyActiontargets(opts)
@@ -1028,6 +1141,7 @@ apiInstance.getJourneyActiontargets(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1036,7 +1150,7 @@ apiInstance.getJourneyActiontargets(opts)
 
 ## getJourneyActiontemplate
 
-> ActionTemplate getJourneyActiontemplate(actionTemplateId)
+> ActionTemplate getJourneyActiontemplate(actionTemplateId, opts)
 
 
 GET /api/v2/journey/actiontemplates/{actionTemplateId}
@@ -1061,8 +1175,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyActiontemplate(actionTemplateId)
+apiInstance.getJourneyActiontemplate(actionTemplateId, opts)
   .then((data) => {
     console.log(`getJourneyActiontemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1078,6 +1198,7 @@ apiInstance.getJourneyActiontemplate(actionTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1117,7 +1238,11 @@ let opts = {
   'mediaType': "mediaType_example", // String | Media type
   'state': "state_example", // String | Action template state.
   'queryFields': ["queryFields_example"], // [String] | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example", // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyActiontemplates(opts)
@@ -1142,6 +1267,7 @@ apiInstance.getJourneyActiontemplates(opts)
  **state** | **String** | Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
  **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1176,7 +1302,11 @@ let opts = {
   'dt': "dt_example", // String | Document Title.  A human readable name for the page or screen
   'appNamespace': "appNamespace_example", // String | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
   'sessionId': "sessionId_example", // String | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
-  'sinceLastBeaconMilliseconds': 3.4 // Number | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+  'sinceLastBeaconMilliseconds': 3.4, // Number | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opts)
@@ -1201,6 +1331,7 @@ apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opt
  **appNamespace** | **String** | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional]  |
  **sessionId** | **String** | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session | [optional]  |
  **sinceLastBeaconMilliseconds** | **Number** | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1209,7 +1340,7 @@ apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opt
 
 ## getJourneyOutcome
 
-> Outcome getJourneyOutcome(outcomeId)
+> Outcome getJourneyOutcome(outcomeId, opts)
 
 
 GET /api/v2/journey/outcomes/{outcomeId}
@@ -1234,8 +1365,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let outcomeId = "outcomeId_example"; // String | ID of the outcome.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyOutcome(outcomeId)
+apiInstance.getJourneyOutcome(outcomeId, opts)
   .then((data) => {
     console.log(`getJourneyOutcome success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1251,6 +1388,7 @@ apiInstance.getJourneyOutcome(outcomeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1289,7 +1427,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
   'outcomeIds': ["outcomeIds_example"], // [String] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Outcome field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example", // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyOutcomes(opts)
@@ -1313,6 +1455,7 @@ apiInstance.getJourneyOutcomes(opts)
  **outcomeIds** | **[String]** | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Outcome field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1321,7 +1464,7 @@ apiInstance.getJourneyOutcomes(opts)
 
 ## getJourneyOutcomesAttributionsJob
 
-> OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(jobId)
+> OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(jobId, opts)
 
 
 GET /api/v2/journey/outcomes/attributions/jobs/{jobId}
@@ -1348,8 +1491,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | ID of the job.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyOutcomesAttributionsJob(jobId)
+apiInstance.getJourneyOutcomesAttributionsJob(jobId, opts)
   .then((data) => {
     console.log(`getJourneyOutcomesAttributionsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1365,6 +1514,7 @@ apiInstance.getJourneyOutcomesAttributionsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1373,7 +1523,7 @@ apiInstance.getJourneyOutcomesAttributionsJob(jobId)
 
 ## getJourneyOutcomesAttributionsJobResults
 
-> OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(jobId)
+> OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(jobId, opts)
 
 
 GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results
@@ -1400,8 +1550,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let jobId = "jobId_example"; // String | ID of the job.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyOutcomesAttributionsJobResults(jobId)
+apiInstance.getJourneyOutcomesAttributionsJobResults(jobId, opts)
   .then((data) => {
     console.log(`getJourneyOutcomesAttributionsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1417,6 +1573,7 @@ apiInstance.getJourneyOutcomesAttributionsJobResults(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1425,7 +1582,7 @@ apiInstance.getJourneyOutcomesAttributionsJobResults(jobId)
 
 ## getJourneyOutcomesPredictor
 
-> OutcomePredictor getJourneyOutcomesPredictor(predictorId)
+> OutcomePredictor getJourneyOutcomesPredictor(predictorId, opts)
 
 
 GET /api/v2/journey/outcomes/predictors/{predictorId}
@@ -1450,8 +1607,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let predictorId = "predictorId_example"; // String | ID of predictor
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyOutcomesPredictor(predictorId)
+apiInstance.getJourneyOutcomesPredictor(predictorId, opts)
   .then((data) => {
     console.log(`getJourneyOutcomesPredictor success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1467,6 +1630,7 @@ apiInstance.getJourneyOutcomesPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | ID of predictor |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1475,7 +1639,7 @@ apiInstance.getJourneyOutcomesPredictor(predictorId)
 
 ## getJourneyOutcomesPredictors
 
-> OutcomePredictorListing getJourneyOutcomesPredictors()
+> OutcomePredictorListing getJourneyOutcomesPredictors(opts)
 
 
 GET /api/v2/journey/outcomes/predictors
@@ -1498,8 +1662,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyOutcomesPredictors()
+apiInstance.getJourneyOutcomesPredictors(opts)
   .then((data) => {
     console.log(`getJourneyOutcomesPredictors success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1511,7 +1681,10 @@ apiInstance.getJourneyOutcomesPredictors()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1520,7 +1693,7 @@ This endpoint does not need any parameter.
 
 ## getJourneySegment
 
-> JourneySegment getJourneySegment(segmentId)
+> JourneySegment getJourneySegment(segmentId, opts)
 
 
 GET /api/v2/journey/segments/{segmentId}
@@ -1545,8 +1718,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let segmentId = "segmentId_example"; // String | ID of the segment.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneySegment(segmentId)
+apiInstance.getJourneySegment(segmentId, opts)
   .then((data) => {
     console.log(`getJourneySegment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1562,6 +1741,7 @@ apiInstance.getJourneySegment(segmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **segmentId** | **String** | ID of the segment. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1601,7 +1781,11 @@ let opts = {
   'isActive': true, // Boolean | Determines whether or not to show only active segments.
   'segmentIds': ["segmentIds_example"], // [String] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
   'queryFields': ["queryFields_example"], // [String] | Segment field(s) to query on. Requires 'queryValue' to also be set.
-  'queryValue': "queryValue_example" // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'queryValue': "queryValue_example", // String | Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneySegments(opts)
@@ -1626,6 +1810,7 @@ apiInstance.getJourneySegments(opts)
  **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Segment field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1634,7 +1819,7 @@ apiInstance.getJourneySegments(opts)
 
 ## getJourneySession
 
-> Session getJourneySession(sessionId)
+> Session getJourneySession(sessionId, opts)
 
 
 GET /api/v2/journey/sessions/{sessionId}
@@ -1660,8 +1845,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let sessionId = "sessionId_example"; // String | ID of the session.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneySession(sessionId)
+apiInstance.getJourneySession(sessionId, opts)
   .then((data) => {
     console.log(`getJourneySession success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1677,6 +1868,7 @@ apiInstance.getJourneySession(sessionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | ID of the session. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1713,7 +1905,11 @@ let sessionId = "sessionId_example"; // String | System-generated UUID that repr
 let opts = { 
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'eventType': "eventType_example" // String | A comma separated list of journey event types to include in the results.
+  'eventType': "eventType_example", // String | A comma separated list of journey event types to include in the results.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneySessionEvents(sessionId, opts)
@@ -1735,6 +1931,7 @@ apiInstance.getJourneySessionEvents(sessionId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **eventType** | **String** | A comma separated list of journey event types to include in the results. | [optional] <br />**Values**: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1743,7 +1940,7 @@ apiInstance.getJourneySessionEvents(sessionId, opts)
 
 ## getJourneySessionOutcomescores
 
-> OutcomeScoresResult getJourneySessionOutcomescores(sessionId)
+> OutcomeScoresResult getJourneySessionOutcomescores(sessionId, opts)
 
 
 GET /api/v2/journey/sessions/{sessionId}/outcomescores
@@ -1768,8 +1965,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let sessionId = "sessionId_example"; // String | ID of the session.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneySessionOutcomescores(sessionId)
+apiInstance.getJourneySessionOutcomescores(sessionId, opts)
   .then((data) => {
     console.log(`getJourneySessionOutcomescores success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1785,6 +1988,7 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | ID of the session. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1793,7 +1997,7 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 
 ## getJourneyView
 
-> JourneyView getJourneyView(viewId)
+> JourneyView getJourneyView(viewId, opts)
 
 
 GET /api/v2/journey/views/{viewId}
@@ -1820,8 +2024,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | viewId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyView(viewId)
+apiInstance.getJourneyView(viewId, opts)
   .then((data) => {
     console.log(`getJourneyView success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1837,6 +2047,7 @@ apiInstance.getJourneyView(viewId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1845,7 +2056,7 @@ apiInstance.getJourneyView(viewId)
 
 ## getJourneyViewSchedules
 
-> JourneyViewSchedule getJourneyViewSchedules(viewId)
+> JourneyViewSchedule getJourneyViewSchedules(viewId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/schedules
@@ -1870,8 +2081,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | Journey View Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewSchedules(viewId)
+apiInstance.getJourneyViewSchedules(viewId, opts)
   .then((data) => {
     console.log(`getJourneyViewSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1887,6 +2104,7 @@ apiInstance.getJourneyViewSchedules(viewId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1895,7 +2113,7 @@ apiInstance.getJourneyViewSchedules(viewId)
 
 ## getJourneyViewVersion
 
-> JourneyView getJourneyViewVersion(viewId, versionId)
+> JourneyView getJourneyViewVersion(viewId, versionId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{versionId}
@@ -1921,8 +2139,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | viewId
 let versionId = "versionId_example"; // String | versionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersion(viewId, versionId)
+apiInstance.getJourneyViewVersion(viewId, versionId, opts)
   .then((data) => {
     console.log(`getJourneyViewVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1939,6 +2163,7 @@ apiInstance.getJourneyViewVersion(viewId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
  **versionId** | **String** | versionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1947,7 +2172,7 @@ apiInstance.getJourneyViewVersion(viewId, versionId)
 
 ## getJourneyViewVersionChart
 
-> JourneyViewChart getJourneyViewVersionChart(viewId, journeyViewVersion, chartId)
+> JourneyViewChart getJourneyViewVersionChart(viewId, journeyViewVersion, chartId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}
@@ -1976,8 +2201,14 @@ let apiInstance = new platformClient.JourneyApi();
 let viewId = "viewId_example"; // String | viewId
 let journeyViewVersion = "journeyViewVersion_example"; // String | Journey View Version
 let chartId = "chartId_example"; // String | chartId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersionChart(viewId, journeyViewVersion, chartId)
+apiInstance.getJourneyViewVersionChart(viewId, journeyViewVersion, chartId, opts)
   .then((data) => {
     console.log(`getJourneyViewVersionChart success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1995,6 +2226,7 @@ apiInstance.getJourneyViewVersionChart(viewId, journeyViewVersion, chartId)
  **viewId** | **String** | viewId |  |
  **journeyViewVersion** | **String** | Journey View Version |  |
  **chartId** | **String** | chartId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2003,7 +2235,7 @@ apiInstance.getJourneyViewVersionChart(viewId, journeyViewVersion, chartId)
 
 ## getJourneyViewVersionChartVersion
 
-> JourneyViewChart getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion)
+> JourneyViewChart getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}
@@ -2031,8 +2263,14 @@ let viewId = "viewId_example"; // String | viewId
 let journeyViewVersion = "journeyViewVersion_example"; // String | Journey View Version
 let chartId = "chartId_example"; // String | chartId
 let chartVersion = "chartVersion_example"; // String | chartVersion
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion)
+apiInstance.getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion, opts)
   .then((data) => {
     console.log(`getJourneyViewVersionChartVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2051,6 +2289,7 @@ apiInstance.getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartI
  **journeyViewVersion** | **String** | Journey View Version |  |
  **chartId** | **String** | chartId |  |
  **chartVersion** | **String** | chartVersion |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2059,7 +2298,7 @@ apiInstance.getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartI
 
 ## getJourneyViewVersionJob
 
-> JourneyViewJob getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+> JourneyViewJob getJourneyViewVersionJob(viewId, journeyVersionId, jobId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
@@ -2086,8 +2325,14 @@ let apiInstance = new platformClient.JourneyApi();
 let viewId = "viewId_example"; // String | Journey View Id
 let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
 let jobId = "jobId_example"; // String | JobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId, opts)
   .then((data) => {
     console.log(`getJourneyViewVersionJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2105,6 +2350,7 @@ apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
  **viewId** | **String** | Journey View Id |  |
  **journeyVersionId** | **String** | Journey View Version |  |
  **jobId** | **String** | JobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2113,7 +2359,7 @@ apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
 
 ## getJourneyViewVersionJobResults
 
-> JourneyViewResult getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+> JourneyViewResult getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results
@@ -2140,8 +2386,14 @@ let apiInstance = new platformClient.JourneyApi();
 let viewId = "viewId_example"; // String | JourneyViewResult id
 let journeyViewVersion = "journeyViewVersion_example"; // String | Journey View Version
 let jobId = "jobId_example"; // String | Id of the executing job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId, opts)
   .then((data) => {
     console.log(`getJourneyViewVersionJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2159,6 +2411,7 @@ apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
  **viewId** | **String** | JourneyViewResult id |  |
  **journeyViewVersion** | **String** | Journey View Version |  |
  **jobId** | **String** | Id of the executing job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2167,7 +2420,7 @@ apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
 
 ## getJourneyViewVersionJobResultsChart
 
-> JourneyViewChartResult getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId)
+> JourneyViewChartResult getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}
@@ -2195,8 +2448,14 @@ let viewId = "viewId_example"; // String | Journey View Id
 let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
 let jobId = "jobId_example"; // String | JobId
 let chartId = "chartId_example"; // String | ChartId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId)
+apiInstance.getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId, opts)
   .then((data) => {
     console.log(`getJourneyViewVersionJobResultsChart success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2215,6 +2474,7 @@ apiInstance.getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId
  **journeyVersionId** | **String** | Journey View Version |  |
  **jobId** | **String** | JobId |  |
  **chartId** | **String** | ChartId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2223,7 +2483,7 @@ apiInstance.getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId
 
 ## getJourneyViewVersionJobsLatest
 
-> JourneyViewJob getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+> JourneyViewJob getJourneyViewVersionJobsLatest(viewId, journeyVersionId, opts)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest
@@ -2249,8 +2509,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | Journey View Id
 let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId, opts)
   .then((data) => {
     console.log(`getJourneyViewVersionJobsLatest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2267,6 +2533,7 @@ apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
  **journeyVersionId** | **String** | Journey View Version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2304,7 +2571,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'nameOrCreatedBy': "nameOrCreatedBy_example", // String | Journey View Name or Created By
   'expand': "expand_example", // String | Parameter to request additional data to return in Journey payload
-  'id': "id_example" // String | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
+  'id': "id_example", // String | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyViews(opts)
@@ -2327,6 +2598,7 @@ apiInstance.getJourneyViews(opts)
  **nameOrCreatedBy** | **String** | Journey View Name or Created By | [optional]  |
  **expand** | **String** | Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
  **id** | **String** | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2335,7 +2607,7 @@ apiInstance.getJourneyViews(opts)
 
 ## getJourneyViewsDataDetails
 
-> DataRange getJourneyViewsDataDetails()
+> DataRange getJourneyViewsDataDetails(opts)
 
 
 GET /api/v2/journey/views/data/details
@@ -2358,8 +2630,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewsDataDetails()
+apiInstance.getJourneyViewsDataDetails(opts)
   .then((data) => {
     console.log(`getJourneyViewsDataDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2371,7 +2649,10 @@ apiInstance.getJourneyViewsDataDetails()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2380,7 +2661,7 @@ This endpoint does not need any parameter.
 
 ## getJourneyViewsEventdefinition
 
-> JourneyEventDefinition getJourneyViewsEventdefinition(eventDefinitionId)
+> JourneyEventDefinition getJourneyViewsEventdefinition(eventDefinitionId, opts)
 
 
 GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}
@@ -2405,8 +2686,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewsEventdefinition(eventDefinitionId)
+apiInstance.getJourneyViewsEventdefinition(eventDefinitionId, opts)
   .then((data) => {
     console.log(`getJourneyViewsEventdefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2422,6 +2709,7 @@ apiInstance.getJourneyViewsEventdefinition(eventDefinitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **eventDefinitionId** | **String** | Event Definition ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2430,7 +2718,7 @@ apiInstance.getJourneyViewsEventdefinition(eventDefinitionId)
 
 ## getJourneyViewsEventdefinitions
 
-> JourneyEventDefinitionListing getJourneyViewsEventdefinitions()
+> JourneyEventDefinitionListing getJourneyViewsEventdefinitions(opts)
 
 
 GET /api/v2/journey/views/eventdefinitions
@@ -2453,8 +2741,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getJourneyViewsEventdefinitions()
+apiInstance.getJourneyViewsEventdefinitions(opts)
   .then((data) => {
     console.log(`getJourneyViewsEventdefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2466,7 +2760,10 @@ apiInstance.getJourneyViewsEventdefinitions()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2503,7 +2800,11 @@ let opts = {
   'pageNumber': 1, // Number | The number of the page to return
   'pageSize': 25, // Number | Max number of entities to return
   'interval': 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z, // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
-  'statuses': statuses=Accepted,Executing,Complete,Failed,Scheduled // String | Job statuses to filter for
+  'statuses': statuses=Accepted,Executing,Complete,Failed,Scheduled, // String | Job statuses to filter for
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyViewsJobs(opts)
@@ -2525,6 +2826,7 @@ apiInstance.getJourneyViewsJobs(opts)
  **pageSize** | **Number** | Max number of entities to return | [optional] [default to 25] |
  **interval** | **String** | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
  **statuses** | **String** | Job statuses to filter for | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2561,7 +2863,11 @@ let opts = {
   'pageNumber': 1, // Number | The number of the page to return
   'pageSize': 25, // Number | Max number of entities to return
   'interval': 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z, // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
-  'statuses': statuses=Accepted,Executing,Complete,Failed,Scheduled // String | Job statuses to filter for
+  'statuses': statuses=Accepted,Executing,Complete,Failed,Scheduled, // String | Job statuses to filter for
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyViewsJobsMe(opts)
@@ -2583,6 +2889,7 @@ apiInstance.getJourneyViewsJobsMe(opts)
  **pageSize** | **Number** | Max number of entities to return | [optional] [default to 25] |
  **interval** | **String** | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
  **statuses** | **String** | Job statuses to filter for | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2617,7 +2924,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
   'pageNumber': 1, // Number | The number of the page to return
-  'pageSize': 25 // Number | Max number of entities to return
+  'pageSize': 25, // Number | Max number of entities to return
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getJourneyViewsSchedules(opts)
@@ -2637,6 +2948,7 @@ apiInstance.getJourneyViewsSchedules(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | The number of the page to return | [optional] [default to 1] |
  **pageSize** | **Number** | Max number of entities to return | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2671,7 +2983,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let actionMapId = "actionMapId_example"; // String | ID of the action map.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchJourneyActionmap(actionMapId, opts)
@@ -2691,6 +3007,7 @@ apiInstance.patchJourneyActionmap(actionMapId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionMapId** | **String** | ID of the action map. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2725,7 +3042,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let actionTargetId = "actionTargetId_example"; // String | ID of the action target.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchJourneyActiontarget(actionTargetId, opts)
@@ -2745,6 +3066,7 @@ apiInstance.patchJourneyActiontarget(actionTargetId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTargetId** | **String** | ID of the action target. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2779,7 +3101,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchJourneyActiontemplate(actionTemplateId, opts)
@@ -2799,6 +3125,7 @@ apiInstance.patchJourneyActiontemplate(actionTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2833,7 +3160,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let outcomeId = "outcomeId_example"; // String | ID of the outcome.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchJourneyOutcome(outcomeId, opts)
@@ -2853,6 +3184,7 @@ apiInstance.patchJourneyOutcome(outcomeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2887,7 +3219,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let segmentId = "segmentId_example"; // String | ID of the segment.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchJourneySegment(segmentId, opts)
@@ -2907,6 +3243,7 @@ apiInstance.patchJourneySegment(segmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **segmentId** | **String** | ID of the segment. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2915,7 +3252,7 @@ apiInstance.patchJourneySegment(segmentId, opts)
 
 ## patchJourneyViewVersionJob
 
-> JourneyViewJob patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body)
+> JourneyViewJob patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body, opts)
 
 
 PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
@@ -2943,8 +3280,14 @@ let viewId = "viewId_example"; // String | Journey View Id
 let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
 let jobId = "jobId_example"; // String | JobId
 let body = {}; // Object | journeyViewJob
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body)
+apiInstance.patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body, opts)
   .then((data) => {
     console.log(`patchJourneyViewVersionJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2963,6 +3306,7 @@ apiInstance.patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body)
  **journeyVersionId** | **String** | Journey View Version |  |
  **jobId** | **String** | JobId |  |
  **body** | **Object** | journeyViewJob |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2971,7 +3315,7 @@ apiInstance.patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body)
 
 ## postAnalyticsJourneysAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/journeys/aggregates/jobs
@@ -2998,8 +3342,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsJourneysAggregatesJobs(body)
+apiInstance.postAnalyticsJourneysAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsJourneysAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3015,6 +3365,7 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3023,7 +3374,7 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 
 ## postAnalyticsJourneysAggregatesQuery
 
-> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
+> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/journeys/aggregates/query
@@ -3048,8 +3399,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsJourneysAggregatesQuery(body)
+apiInstance.postAnalyticsJourneysAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsJourneysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3065,6 +3422,7 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3100,7 +3458,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsContactJourneySegments(contactId, opts)
@@ -3120,6 +3482,7 @@ apiInstance.postExternalcontactsContactJourneySegments(contactId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3153,7 +3516,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyActionmaps(opts)
@@ -3172,6 +3539,7 @@ apiInstance.postJourneyActionmaps(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3180,7 +3548,7 @@ apiInstance.postJourneyActionmaps(opts)
 
 ## postJourneyActionmapsEstimatesJobs
 
-> EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(body)
+> EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(body, opts)
 
 
 POST /api/v2/journey/actionmaps/estimates/jobs
@@ -3205,8 +3573,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let body = {}; // Object | audience estimator request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postJourneyActionmapsEstimatesJobs(body)
+apiInstance.postJourneyActionmapsEstimatesJobs(body, opts)
   .then((data) => {
     console.log(`postJourneyActionmapsEstimatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3222,6 +3596,7 @@ apiInstance.postJourneyActionmapsEstimatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | audience estimator request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3255,7 +3630,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyActiontemplates(opts)
@@ -3274,6 +3653,7 @@ apiInstance.postJourneyActiontemplates(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3282,7 +3662,7 @@ apiInstance.postJourneyActiontemplates(opts)
 
 ## postJourneyDeploymentActionevent
 
-> void postJourneyDeploymentActionevent(deploymentId, body)
+> void postJourneyDeploymentActionevent(deploymentId, body, opts)
 
 
 POST /api/v2/journey/deployments/{deploymentId}/actionevent
@@ -3303,8 +3683,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the beacon.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postJourneyDeploymentActionevent(deploymentId, body)
+apiInstance.postJourneyDeploymentActionevent(deploymentId, body, opts)
   .then(() => {
     console.log('postJourneyDeploymentActionevent returned successfully.');
   })
@@ -3321,6 +3707,7 @@ apiInstance.postJourneyDeploymentActionevent(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The ID of the deployment sending the beacon. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3350,7 +3737,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the app event.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyDeploymentAppevents(deploymentId, opts)
@@ -3370,6 +3761,7 @@ apiInstance.postJourneyDeploymentAppevents(deploymentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The ID of the deployment sending the app event. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3399,7 +3791,11 @@ let apiInstance = new platformClient.JourneyApi();
 
 let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the web event.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyDeploymentWebevents(deploymentId, opts)
@@ -3419,6 +3815,7 @@ apiInstance.postJourneyDeploymentWebevents(deploymentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The ID of the deployment sending the web event. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3452,7 +3849,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyFlowsPathsQuery(opts)
@@ -3471,6 +3872,7 @@ apiInstance.postJourneyFlowsPathsQuery(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3504,7 +3906,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyOutcomes(opts)
@@ -3523,6 +3929,7 @@ apiInstance.postJourneyOutcomes(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3558,7 +3965,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | outcome attribution request
+  'body': {}, // Object | outcome attribution request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyOutcomesAttributionsJobs(opts)
@@ -3577,6 +3988,7 @@ apiInstance.postJourneyOutcomesAttributionsJobs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | outcome attribution request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3610,7 +4022,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyOutcomesPredictors(opts)
@@ -3629,6 +4045,7 @@ apiInstance.postJourneyOutcomesPredictors(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3662,7 +4079,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneySegments(opts)
@@ -3681,6 +4102,7 @@ apiInstance.postJourneySegments(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3689,7 +4111,7 @@ apiInstance.postJourneySegments(opts)
 
 ## postJourneyViewSchedules
 
-> JourneyViewSchedule postJourneyViewSchedules(viewId, body)
+> JourneyViewSchedule postJourneyViewSchedules(viewId, body, opts)
 
 
 POST /api/v2/journey/views/{viewId}/schedules
@@ -3715,8 +4137,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | Journey View Id
 let body = {}; // Object | journeyViewSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postJourneyViewSchedules(viewId, body)
+apiInstance.postJourneyViewSchedules(viewId, body, opts)
   .then((data) => {
     console.log(`postJourneyViewSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3733,6 +4161,7 @@ apiInstance.postJourneyViewSchedules(viewId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
  **body** | **Object** | journeyViewSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3741,7 +4170,7 @@ apiInstance.postJourneyViewSchedules(viewId, body)
 
 ## postJourneyViewVersionJobs
 
-> JourneyViewJob postJourneyViewVersionJobs(viewId, journeyVersionId)
+> JourneyViewJob postJourneyViewVersionJobs(viewId, journeyVersionId, opts)
 
 
 POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs
@@ -3767,8 +4196,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | Journey View Id
 let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId)
+apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId, opts)
   .then((data) => {
     console.log(`postJourneyViewVersionJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3785,6 +4220,7 @@ apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
  **journeyVersionId** | **String** | Journey View Version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3793,7 +4229,7 @@ apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId)
 
 ## postJourneyViewVersions
 
-> JourneyView postJourneyViewVersions(viewId, body)
+> JourneyView postJourneyViewVersions(viewId, body, opts)
 
 
 POST /api/v2/journey/views/{viewId}/versions
@@ -3821,8 +4257,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | viewId
 let body = {}; // Object | JourneyView
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postJourneyViewVersions(viewId, body)
+apiInstance.postJourneyViewVersions(viewId, body, opts)
   .then((data) => {
     console.log(`postJourneyViewVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3839,6 +4281,7 @@ apiInstance.postJourneyViewVersions(viewId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
  **body** | **Object** | JourneyView |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3847,7 +4290,7 @@ apiInstance.postJourneyViewVersions(viewId, body)
 
 ## postJourneyViews
 
-> JourneyView postJourneyViews(body)
+> JourneyView postJourneyViews(body, opts)
 
 
 POST /api/v2/journey/views
@@ -3872,8 +4315,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let body = {}; // Object | JourneyView
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postJourneyViews(body)
+apiInstance.postJourneyViews(body, opts)
   .then((data) => {
     console.log(`postJourneyViews success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3889,6 +4338,7 @@ apiInstance.postJourneyViews(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | JourneyView |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3924,7 +4374,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
-  'body': [{}] // Object | 
+  'body': [{}], // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postJourneyViewsEncodingsValidate(opts)
@@ -3943,6 +4397,7 @@ apiInstance.postJourneyViewsEncodingsValidate(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3951,7 +4406,7 @@ apiInstance.postJourneyViewsEncodingsValidate(opts)
 
 ## putJourneyViewSchedules
 
-> JourneyViewSchedule putJourneyViewSchedules(viewId, body)
+> JourneyViewSchedule putJourneyViewSchedules(viewId, body, opts)
 
 
 PUT /api/v2/journey/views/{viewId}/schedules
@@ -3977,8 +4432,14 @@ let apiInstance = new platformClient.JourneyApi();
 
 let viewId = "viewId_example"; // String | Journey View Id
 let body = {}; // Object | journeyViewSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putJourneyViewSchedules(viewId, body)
+apiInstance.putJourneyViewSchedules(viewId, body, opts)
   .then((data) => {
     console.log(`putJourneyViewSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3995,6 +4456,7 @@ apiInstance.putJourneyViewSchedules(viewId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
  **body** | **Object** | journeyViewSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4003,7 +4465,7 @@ apiInstance.putJourneyViewSchedules(viewId, body)
 
 ## putJourneyViewVersion
 
-> JourneyView putJourneyViewVersion(viewId, versionId, body)
+> JourneyView putJourneyViewVersion(viewId, versionId, body, opts)
 
 
 PUT /api/v2/journey/views/{viewId}/versions/{versionId}
@@ -4032,8 +4494,14 @@ let apiInstance = new platformClient.JourneyApi();
 let viewId = "viewId_example"; // String | viewId
 let versionId = "versionId_example"; // String | versionId
 let body = {}; // Object | JourneyView
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putJourneyViewVersion(viewId, versionId, body)
+apiInstance.putJourneyViewVersion(viewId, versionId, body, opts)
   .then((data) => {
     console.log(`putJourneyViewVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4051,10 +4519,11 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
  **viewId** | **String** | viewId |  |
  **versionId** | **String** | versionId |  |
  **body** | **Object** | JourneyView |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **JourneyView**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

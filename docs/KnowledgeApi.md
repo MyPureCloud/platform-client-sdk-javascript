@@ -130,7 +130,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteKnowledgeConnection
 
-> ConnectionResponse deleteKnowledgeConnection(connectionId)
+> ConnectionResponse deleteKnowledgeConnection(connectionId, opts)
 
 
 DELETE /api/v2/knowledge/connections/{connectionId}
@@ -155,8 +155,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let connectionId = "connectionId_example"; // String | Connection ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeConnection(connectionId)
+apiInstance.deleteKnowledgeConnection(connectionId, opts)
   .then((data) => {
     console.log(`deleteKnowledgeConnection success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -172,6 +178,7 @@ apiInstance.deleteKnowledgeConnection(connectionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **connectionId** | **String** | Connection ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -180,7 +187,7 @@ apiInstance.deleteKnowledgeConnection(connectionId)
 
 ## deleteKnowledgeKnowledgebase
 
-> KnowledgeBase deleteKnowledgeKnowledgebase(knowledgeBaseId)
+> KnowledgeBase deleteKnowledgeKnowledgebase(knowledgeBaseId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}
@@ -205,8 +212,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebase(knowledgeBaseId)
+apiInstance.deleteKnowledgeKnowledgebase(knowledgeBaseId, opts)
   .then((data) => {
     console.log(`deleteKnowledgeKnowledgebase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -222,6 +235,7 @@ apiInstance.deleteKnowledgeKnowledgebase(knowledgeBaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -230,7 +244,7 @@ apiInstance.deleteKnowledgeKnowledgebase(knowledgeBaseId)
 
 ## deleteKnowledgeKnowledgebaseCategory
 
-> CategoryResponse deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
+> CategoryResponse deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}
@@ -256,8 +270,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let categoryId = "categoryId_example"; // String | Category ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
+apiInstance.deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, opts)
   .then((data) => {
     console.log(`deleteKnowledgeKnowledgebaseCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -274,6 +294,7 @@ apiInstance.deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **categoryId** | **String** | Category ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -282,7 +303,7 @@ apiInstance.deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 
 ## deleteKnowledgeKnowledgebaseDocument
 
-> void deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)
+> void deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}
@@ -308,8 +329,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)
+apiInstance.deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseDocument returned successfully.');
   })
@@ -326,6 +353,7 @@ apiInstance.deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **documentId** | **String** | Document ID. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -334,7 +362,7 @@ void (no response body)
 
 ## deleteKnowledgeKnowledgebaseDocumentVariation
 
-> void deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)
+> void deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}
@@ -362,8 +390,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let documentVariationId = "documentVariationId_example"; // String | Globally unique identifier for a document variation.
 let documentId = "documentId_example"; // String | Globally unique identifier for a document.
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)
+apiInstance.deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseDocumentVariation returned successfully.');
   })
@@ -381,6 +415,7 @@ apiInstance.deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, d
  **documentVariationId** | **String** | Globally unique identifier for a document variation. |  |
  **documentId** | **String** | Globally unique identifier for a document. |  |
  **knowledgeBaseId** | **String** | Globally unique identifier for a knowledge base. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -389,7 +424,7 @@ void (no response body)
 
 ## deleteKnowledgeKnowledgebaseExportJob
 
-> void deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
+> void deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}
@@ -415,8 +450,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let exportJobId = "exportJobId_example"; // String | Export job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
+apiInstance.deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseExportJob returned successfully.');
   })
@@ -433,6 +474,7 @@ apiInstance.deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **exportJobId** | **String** | Export job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -441,7 +483,7 @@ void (no response body)
 
 ## deleteKnowledgeKnowledgebaseImportJob
 
-> void deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)
+> void deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}
@@ -467,8 +509,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let importJobId = "importJobId_example"; // String | Import job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)
+apiInstance.deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseImportJob returned successfully.');
   })
@@ -485,6 +533,7 @@ apiInstance.deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **importJobId** | **String** | Import job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -493,7 +542,7 @@ void (no response body)
 
 ## deleteKnowledgeKnowledgebaseLabel
 
-> LabelResponse deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
+> LabelResponse deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}
@@ -519,8 +568,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let labelId = "labelId_example"; // String | Label ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
+apiInstance.deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, opts)
   .then((data) => {
     console.log(`deleteKnowledgeKnowledgebaseLabel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -537,6 +592,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **labelId** | **String** | Label ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -545,7 +601,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 
 ## deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId
 
-> void deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId)
+> void deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}
@@ -571,8 +627,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId)
+apiInstance.deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId returned successfully.');
   })
@@ -589,6 +651,7 @@ apiInstance.deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseI
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -597,7 +660,7 @@ void (no response body)
 
 ## deleteKnowledgeKnowledgebaseSourcesServicenowSourceId
 
-> void deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId)
+> void deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}
@@ -623,8 +686,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId)
+apiInstance.deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseSourcesServicenowSourceId returned successfully.');
   })
@@ -641,6 +710,7 @@ apiInstance.deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseI
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -649,7 +719,7 @@ void (no response body)
 
 ## deleteKnowledgeKnowledgebaseSynchronizeJob
 
-> void deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+> void deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, opts)
 
 
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
@@ -675,8 +745,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let syncJobId = "syncJobId_example"; // String | Synchronization job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+apiInstance.deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, opts)
   .then(() => {
     console.log('deleteKnowledgeKnowledgebaseSynchronizeJob returned successfully.');
   })
@@ -693,6 +769,7 @@ apiInstance.deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobI
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **syncJobId** | **String** | Synchronization job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -701,7 +778,7 @@ void (no response body)
 
 ## deleteKnowledgeSetting
 
-> void deleteKnowledgeSetting(knowledgeSettingId)
+> void deleteKnowledgeSetting(knowledgeSettingId, opts)
 
 
 DELETE /api/v2/knowledge/settings/{knowledgeSettingId}
@@ -726,8 +803,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeSetting(knowledgeSettingId)
+apiInstance.deleteKnowledgeSetting(knowledgeSettingId, opts)
   .then(() => {
     console.log('deleteKnowledgeSetting returned successfully.');
   })
@@ -743,6 +826,7 @@ apiInstance.deleteKnowledgeSetting(knowledgeSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeSettingId** | **String** | Knowledge Setting ID. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -751,7 +835,7 @@ void (no response body)
 
 ## deleteKnowledgeSource
 
-> void deleteKnowledgeSource(sourceId)
+> void deleteKnowledgeSource(sourceId, opts)
 
 
 DELETE /api/v2/knowledge/sources/{sourceId}
@@ -776,8 +860,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteKnowledgeSource(sourceId)
+apiInstance.deleteKnowledgeSource(sourceId, opts)
   .then(() => {
     console.log('deleteKnowledgeSource returned successfully.');
   })
@@ -793,6 +883,7 @@ apiInstance.deleteKnowledgeSource(sourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -827,7 +918,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let connectionId = "connectionId_example"; // String | Connection ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeConnection(connectionId, opts)
@@ -847,6 +942,7 @@ apiInstance.getKnowledgeConnection(connectionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **connectionId** | **String** | Connection ID |  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: authenticationProperties |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -881,7 +977,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let connectionId = "connectionId_example"; // String | Connection ID
 let opts = { 
-  'parentId': "parentId_example" // String | The id of the parent option whose children to be listed.
+  'parentId': "parentId_example", // String | The id of the parent option whose children to be listed.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeConnectionOptions(connectionId, opts)
@@ -901,6 +1001,7 @@ apiInstance.getKnowledgeConnectionOptions(connectionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **connectionId** | **String** | Connection ID |  |
  **parentId** | **String** | The id of the parent option whose children to be listed. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -909,7 +1010,7 @@ apiInstance.getKnowledgeConnectionOptions(connectionId, opts)
 
 ## getKnowledgeConnections
 
-> ConnectionListing getKnowledgeConnections()
+> ConnectionListing getKnowledgeConnections(opts)
 
 
 GET /api/v2/knowledge/connections
@@ -932,8 +1033,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.KnowledgeApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeConnections()
+apiInstance.getKnowledgeConnections(opts)
   .then((data) => {
     console.log(`getKnowledgeConnections success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -945,7 +1052,10 @@ apiInstance.getKnowledgeConnections()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -983,7 +1093,11 @@ let opts = {
   'name': "name_example", // String | Filter to return the categories that starts with the given category name.
   'sortBy': "Name", // String | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically
   'expand': "expand_example", // String | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
-  'includeDocumentCount': true // Boolean | If specified, retrieves the number of documents related to category.
+  'includeDocumentCount': true, // Boolean | If specified, retrieves the number of documents related to category.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)
@@ -1011,6 +1125,7 @@ apiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)
  **sortBy** | **String** | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically | [optional] [default to Name]<br />**Values**: Name, Hierarchy |
  **expand** | **String** | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors. | [optional]  |
  **includeDocumentCount** | **Boolean** | If specified, retrieves the number of documents related to category. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1019,7 +1134,7 @@ apiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)
 
 ## getKnowledgeGuestSessionDocument
 
-> KnowledgeGuestDocumentResponse getKnowledgeGuestSessionDocument(sessionId, documentId)
+> KnowledgeGuestDocumentResponse getKnowledgeGuestSessionDocument(sessionId, documentId, opts)
 
 
 GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}
@@ -1040,8 +1155,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId)
+apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId, opts)
   .then((data) => {
     console.log(`getKnowledgeGuestSessionDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1058,6 +1179,7 @@ apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **documentId** | **String** | Document ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1088,7 +1210,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let opts = { 
   'categoryId': ["categoryId_example"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.
-  'pageSize': 3.4 // Number | Number of entities to return. Maximum of 200.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
@@ -1109,6 +1235,7 @@ apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **categoryId** | **[String]** | If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1143,7 +1270,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let opts = { 
-  'knowledgeBaseIds': ["knowledgeBaseIds_example"] // [String] | Narrowing down filtering option results by knowledge base.
+  'knowledgeBaseIds': ["knowledgeBaseIds_example"], // [String] | Narrowing down filtering option results by knowledge base.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeIntegrationOptions(integrationId, opts)
@@ -1163,6 +1294,7 @@ apiInstance.getKnowledgeIntegrationOptions(integrationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **knowledgeBaseIds** | **[String]** | Narrowing down filtering option results by knowledge base. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1171,7 +1303,7 @@ apiInstance.getKnowledgeIntegrationOptions(integrationId, opts)
 
 ## getKnowledgeKnowledgebase
 
-> KnowledgeBase getKnowledgeKnowledgebase(knowledgeBaseId)
+> KnowledgeBase getKnowledgeKnowledgebase(knowledgeBaseId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}
@@ -1196,8 +1328,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebase(knowledgeBaseId)
+apiInstance.getKnowledgeKnowledgebase(knowledgeBaseId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1213,6 +1351,7 @@ apiInstance.getKnowledgeKnowledgebase(knowledgeBaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1255,7 +1394,11 @@ let opts = {
   'name': "name_example", // String | Filter to return the categories that starts with the given category name.
   'sortBy': "Name", // String | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically
   'expand': "expand_example", // String | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
-  'includeDocumentCount': true // Boolean | If specified, retrieves the number of documents related to category.
+  'includeDocumentCount': true, // Boolean | If specified, retrieves the number of documents related to category.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseCategories(knowledgeBaseId, opts)
@@ -1283,6 +1426,7 @@ apiInstance.getKnowledgeKnowledgebaseCategories(knowledgeBaseId, opts)
  **sortBy** | **String** | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically | [optional] [default to Name]<br />**Values**: Name, Hierarchy |
  **expand** | **String** | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors. | [optional]  |
  **includeDocumentCount** | **Boolean** | If specified, retrieves the number of documents related to category. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1291,7 +1435,7 @@ apiInstance.getKnowledgeKnowledgebaseCategories(knowledgeBaseId, opts)
 
 ## getKnowledgeKnowledgebaseCategory
 
-> CategoryResponse getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
+> CategoryResponse getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}
@@ -1317,8 +1461,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let categoryId = "categoryId_example"; // String | Category ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
+apiInstance.getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1335,6 +1485,7 @@ apiInstance.getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **categoryId** | **String** | Category ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1371,7 +1522,11 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let opts = { 
   'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20.
-  'state': "state_example" // String | when state is Draft, draft version of the document is returned,otherwise by default published version is returned in the response.
+  'state': "state_example", // String | when state is Draft, draft version of the document is returned,otherwise by default published version is returned in the response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts)
@@ -1393,6 +1548,7 @@ apiInstance.getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts)
  **documentId** | **String** | Document ID. |  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20. | [optional] <br />**Values**: category, labels, variations |
  **state** | **String** | when state is Draft, draft version of the document is returned,otherwise by default published version is returned in the response. | [optional] <br />**Values**: Draft, Published |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1438,7 +1594,11 @@ let opts = {
   'queryType': "queryType_example", // String | Query type to filter by. Supported only if onlyCommented=true is set.
   'userId': "userId_example", // String | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
   'queueId': "queueId_example", // String | Queue ID to filter by. Supported only if onlyCommented=true is set.
-  'state': "state_example" // String | State to filter by. Supported only if onlyCommented=true is set. Default: Final
+  'state': "state_example", // String | State to filter by. Supported only if onlyCommented=true is set. Default: Final
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, opts)
@@ -1469,6 +1629,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentI
  **userId** | **String** | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. | [optional]  |
  **queueId** | **String** | Queue ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
  **state** | **String** | State to filter by. Supported only if onlyCommented=true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1477,7 +1638,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentI
 
 ## getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId
 
-> KnowledgeDocumentFeedbackResponse getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)
+> KnowledgeDocumentFeedbackResponse getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}
@@ -1504,8 +1665,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let feedbackId = "feedbackId_example"; // String | Feedback ID.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)
+apiInstance.getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1523,6 +1690,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId,
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **documentId** | **String** | Document ID. |  |
  **feedbackId** | **String** | Feedback ID. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1560,7 +1728,11 @@ let documentId = "documentId_example"; // String | Globally unique identifier fo
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
 let opts = { 
   'documentState': "documentState_example", // String | The state of the document.
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)
@@ -1583,6 +1755,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, docu
  **knowledgeBaseId** | **String** | Globally unique identifier for a knowledge base. |  |
  **documentState** | **String** | The state of the document. | [optional] <br />**Values**: Draft, Published |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: contentUrl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1622,7 +1795,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'documentState': "documentState_example", // String | The state of the document.
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts)
@@ -1647,6 +1824,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documen
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **documentState** | **String** | The state of the document. | [optional] <br />**Values**: Draft, Published |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: contentUrl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1683,7 +1861,11 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique ide
 let documentId = "documentId_example"; // String | Globally unique identifier for the document.
 let versionId = "versionId_example"; // String | Globally unique identifier for the document version.
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, opts)
@@ -1705,6 +1887,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId
  **documentId** | **String** | Globally unique identifier for the document. |  |
  **versionId** | **String** | Globally unique identifier for the document version. |  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1713,7 +1896,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId
 
 ## getKnowledgeKnowledgebaseDocumentVersionVariation
 
-> KnowledgeDocumentVersionVariation getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)
+> KnowledgeDocumentVersionVariation getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId}
@@ -1741,8 +1924,14 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique ide
 let documentId = "documentId_example"; // String | Globally unique identifier for the document.
 let versionId = "versionId_example"; // String | Globally unique identifier for the document version.
 let variationId = "variationId_example"; // String | Globally unique identifier for the document version variation.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)
+apiInstance.getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseDocumentVersionVariation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1761,6 +1950,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, d
  **documentId** | **String** | Globally unique identifier for the document. |  |
  **versionId** | **String** | Globally unique identifier for the document version. |  |
  **variationId** | **String** | Globally unique identifier for the document version variation. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1799,7 +1989,11 @@ let versionId = "versionId_example"; // String | Globally unique identifier for 
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, opts)
@@ -1823,6 +2017,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, 
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1861,7 +2056,11 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, opts)
@@ -1885,6 +2084,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentI
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1929,7 +2129,11 @@ let opts = {
   'includeDrafts': true, // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.
   'labelIds': ["labelIds_example"], // [String] | If specified, retrieves documents associated with label ids, comma separated values expected.
   'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
-  'externalIds': ["externalIds_example"] // [String] | If specified, retrieves documents associated with external ids, comma separated values expected.
+  'externalIds': ["externalIds_example"], // [String] | If specified, retrieves documents associated with external ids, comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
@@ -1959,6 +2163,7 @@ apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
  **labelIds** | **[String]** | If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
  **externalIds** | **[String]** | If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1967,7 +2172,7 @@ apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
 
 ## getKnowledgeKnowledgebaseExportJob
 
-> KnowledgeExportJobResponse getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
+> KnowledgeExportJobResponse getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}
@@ -1993,8 +2198,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let exportJobId = "exportJobId_example"; // String | Export job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
+apiInstance.getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseExportJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2011,6 +2222,7 @@ apiInstance.getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **exportJobId** | **String** | Export job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2046,7 +2258,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let importJobId = "importJobId_example"; // String | Import job ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+  'expand': ["expand_example"], // [String] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opts)
@@ -2067,6 +2283,7 @@ apiInstance.getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opt
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **importJobId** | **String** | Import job ID |  |
  **expand** | **[String]** | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2075,7 +2292,7 @@ apiInstance.getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opt
 
 ## getKnowledgeKnowledgebaseLabel
 
-> LabelResponse getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
+> LabelResponse getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}
@@ -2101,8 +2318,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let labelId = "labelId_example"; // String | Label ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
+apiInstance.getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseLabel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2119,6 +2342,7 @@ apiInstance.getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **labelId** | **String** | Label ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2157,7 +2381,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'name': "name_example", // String | Filter to return the labels that contains the given phrase in the name.
-  'includeDocumentCount': true // Boolean | If specified, retrieves the number of documents related to label.
+  'includeDocumentCount': true, // Boolean | If specified, retrieves the number of documents related to label.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseLabels(knowledgeBaseId, opts)
@@ -2181,6 +2409,7 @@ apiInstance.getKnowledgeKnowledgebaseLabels(knowledgeBaseId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Filter to return the labels that contains the given phrase in the name. | [optional]  |
  **includeDocumentCount** | **Boolean** | If specified, retrieves the number of documents related to label. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2222,7 +2451,11 @@ let opts = {
   'type': ["type_example"], // [String] | If specified, retrieves operations with specified operation type, comma separated values expected.
   'status': ["status_example"], // [String] | If specified, retrieves operations with specified operation status, comma separated values expected.
   'interval': "interval_example", // String | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
-  'sourceId': ["sourceId_example"] // [String] | If specified, retrieves operations associated with source ids, comma separated values expected.
+  'sourceId': ["sourceId_example"], // [String] | If specified, retrieves operations associated with source ids, comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
@@ -2249,6 +2482,7 @@ apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
  **status** | **[String]** | If specified, retrieves operations with specified operation status, comma separated values expected. | [optional]  |
  **interval** | **String** | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
  **sourceId** | **[String]** | If specified, retrieves operations associated with source ids, comma separated values expected. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2257,7 +2491,7 @@ apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
 
 ## getKnowledgeKnowledgebaseOperationsUsersQuery
 
-> OperationCreatorUserResponse getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+> OperationCreatorUserResponse getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query
@@ -2282,8 +2516,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseOperationsUsersQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2299,6 +2539,7 @@ apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2334,7 +2575,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let parseJobId = "parseJobId_example"; // String | Parse job ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+  'expand': ["expand_example"], // [String] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
@@ -2355,6 +2600,7 @@ apiInstance.getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **parseJobId** | **String** | Parse job ID |  |
  **expand** | **[String]** | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2391,7 +2637,11 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let opts = { 
   'type': "type_example", // String | If specified, retrieves integration sources with specified integration type.
   'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
-  'ids': ["ids_example"] // [String] | If specified, retrieves integration sources with specified IDs.
+  'ids': ["ids_example"], // [String] | If specified, retrieves integration sources with specified IDs.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts)
@@ -2413,6 +2663,7 @@ apiInstance.getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts)
  **type** | **String** | If specified, retrieves integration sources with specified integration type. | [optional] <br />**Values**: Salesforce, ServiceNow |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
  **ids** | **[String]** | If specified, retrieves integration sources with specified IDs. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2448,7 +2699,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts)
@@ -2469,6 +2724,7 @@ apiInstance.getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, 
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2504,7 +2760,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts)
@@ -2525,6 +2785,7 @@ apiInstance.getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2533,7 +2794,7 @@ apiInstance.getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 
 ## getKnowledgeKnowledgebaseSynchronizeJob
 
-> KnowledgeSyncJobResponse getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+> KnowledgeSyncJobResponse getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
@@ -2559,8 +2820,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let syncJobId = "syncJobId_example"; // String | Synchronization job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+apiInstance.getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseSynchronizeJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2577,6 +2844,7 @@ apiInstance.getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **syncJobId** | **String** | Synchronization job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2614,7 +2882,11 @@ let groupId = "groupId_example"; // String | The ID of the group to be retrieved
 let opts = { 
   'app': "app_example", // String | The app value to be used for filtering phrases.
   'dateStart': "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'dateEnd': "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts)
@@ -2637,6 +2909,7 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, o
  **app** | **String** | The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
  **dateStart** | **String** | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **dateEnd** | **String** | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2675,7 +2948,11 @@ let phraseGroupId = "phraseGroupId_example"; // String | The ID of the phraseGro
 let opts = { 
   'app': "app_example", // String | The app value to be used for filtering phrases.
   'dateStart': "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'dateEnd': "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, opts)
@@ -2699,6 +2976,7 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId,
  **app** | **String** | The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
  **dateStart** | **String** | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **dateEnd** | **String** | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2735,7 +3013,11 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let opts = { 
   'app': "app_example", // String | The app value to be used for filtering phrases.
   'dateStart': "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'dateEnd': "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
@@ -2757,6 +3039,7 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
  **app** | **String** | The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
  **dateStart** | **String** | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **dateEnd** | **String** | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2765,7 +3048,7 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
 
 ## getKnowledgeKnowledgebaseUploadsUrlsJob
 
-> GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+> GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
@@ -2791,8 +3074,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let jobId = "jobId_example"; // String | Upload job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseUploadsUrlsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2809,6 +3098,7 @@ apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **jobId** | **String** | Upload job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2850,7 +3140,11 @@ let opts = {
   'coreLanguage': "coreLanguage_example", // String | Filter by core language.
   'published': true, // Boolean | Filter by published status.
   'sortBy': "sortBy_example", // String | Sort by.
-  'sortOrder': "sortOrder_example" // String | Sort Order.
+  'sortOrder': "sortOrder_example", // String | Sort Order.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeKnowledgebases(opts)
@@ -2877,6 +3171,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **published** | **Boolean** | Filter by published status. | [optional]  |
  **sortBy** | **String** | Sort by. | [optional] <br />**Values**: Name, Date |
  **sortOrder** | **String** | Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2885,7 +3180,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
 
 ## getKnowledgeSetting
 
-> KnowledgeSettingsResponse getKnowledgeSetting(knowledgeSettingId)
+> KnowledgeSettingsResponse getKnowledgeSetting(knowledgeSettingId, opts)
 
 
 GET /api/v2/knowledge/settings/{knowledgeSettingId}
@@ -2910,8 +3205,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeSetting(knowledgeSettingId)
+apiInstance.getKnowledgeSetting(knowledgeSettingId, opts)
   .then((data) => {
     console.log(`getKnowledgeSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2927,6 +3228,7 @@ apiInstance.getKnowledgeSetting(knowledgeSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeSettingId** | **String** | Knowledge Setting ID. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2966,7 +3268,11 @@ let opts = {
   'name': "name_example", // String | Knowledge setting name to search upon.
   'sourceId': "sourceId_example", // String | Source ID to filter knowledge settings by.
   'sortBy': "sortBy_example", // String | Field to sort the knowledge settings on.
-  'sortOrder': "sortOrder_example" // String | Sorting order for knowledge settings.
+  'sortOrder': "sortOrder_example", // String | Sorting order for knowledge settings.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeSettings(opts)
@@ -2991,6 +3297,7 @@ apiInstance.getKnowledgeSettings(opts)
  **sourceId** | **String** | Source ID to filter knowledge settings by. | [optional]  |
  **sortBy** | **String** | Field to sort the knowledge settings on. | [optional] <br />**Values**: dateModified, name |
  **sortOrder** | **String** | Sorting order for knowledge settings. | [optional] <br />**Values**: Asc, Desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3025,7 +3332,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Optional fields to expand for the Source.
+  'expand': ["expand_example"], // [String] | Optional fields to expand for the Source.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeSource(sourceId, opts)
@@ -3045,6 +3356,7 @@ apiInstance.getKnowledgeSource(sourceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
  **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3053,7 +3365,7 @@ apiInstance.getKnowledgeSource(sourceId, opts)
 
 ## getKnowledgeSourceSynchronization
 
-> V3Synchronization getKnowledgeSourceSynchronization(sourceId, synchronizationId)
+> V3Synchronization getKnowledgeSourceSynchronization(sourceId, synchronizationId, opts)
 
 
 GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}
@@ -3079,8 +3391,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sourceId = "sourceId_example"; // String | Source ID
 let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId)
+apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId, opts)
   .then((data) => {
     console.log(`getKnowledgeSourceSynchronization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3097,6 +3415,7 @@ apiInstance.getKnowledgeSourceSynchronization(sourceId, synchronizationId)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
  **synchronizationId** | **String** | Synchronization ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3133,7 +3452,11 @@ let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeSourceSynchronizations(sourceId, opts)
@@ -3155,6 +3478,7 @@ apiInstance.getKnowledgeSourceSynchronizations(sourceId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3188,7 +3512,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let opts = { 
-  'expand': ["expand_example"] // [String] | Optional fields to expand for the Source.
+  'expand': ["expand_example"], // [String] | Optional fields to expand for the Source.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeSources(opts)
@@ -3207,6 +3535,7 @@ apiInstance.getKnowledgeSources(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3242,7 +3571,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getKnowledgeSourcesSynchronizations(opts)
@@ -3263,6 +3596,7 @@ apiInstance.getKnowledgeSourcesSynchronizations(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3297,7 +3631,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let connectionId = "connectionId_example"; // String | Connection ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchKnowledgeConnection(connectionId, opts)
@@ -3317,6 +3655,7 @@ apiInstance.patchKnowledgeConnection(connectionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **connectionId** | **String** | Connection ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3325,7 +3664,7 @@ apiInstance.patchKnowledgeConnection(connectionId, opts)
 
 ## patchKnowledgeGuestSessionDocumentsSearchSearchId
 
-> void patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
+> void patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body, opts)
 
 
 PATCH /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}
@@ -3347,8 +3686,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let searchId = "searchId_example"; // String | Search Result ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
+apiInstance.patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body, opts)
   .then(() => {
     console.log('patchKnowledgeGuestSessionDocumentsSearchSearchId returned successfully.');
   })
@@ -3366,6 +3711,7 @@ apiInstance.patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchI
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **searchId** | **String** | Search Result ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3374,7 +3720,7 @@ void (no response body)
 
 ## patchKnowledgeKnowledgebase
 
-> KnowledgeBase patchKnowledgeKnowledgebase(knowledgeBaseId, body)
+> KnowledgeBase patchKnowledgeKnowledgebase(knowledgeBaseId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}
@@ -3400,8 +3746,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body)
+apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3418,6 +3770,7 @@ apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3426,7 +3779,7 @@ apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body)
 
 ## patchKnowledgeKnowledgebaseCategory
 
-> CategoryResponse patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)
+> CategoryResponse patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}
@@ -3453,8 +3806,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let categoryId = "categoryId_example"; // String | Category ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)
+apiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3472,6 +3831,7 @@ apiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, bod
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **categoryId** | **String** | Category ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3507,7 +3867,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
 let searchId = "searchId_example"; // String | Unique identifier of search request
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, opts)
@@ -3528,6 +3892,7 @@ apiInstance.patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, sea
  **knowledgeBaseId** | **String** | Knowledge Base ID |  |
  **searchId** | **String** | Unique identifier of search request |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3536,7 +3901,7 @@ void (no response body)
 
 ## patchKnowledgeKnowledgebaseDocument
 
-> KnowledgeDocumentResponse patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
+> KnowledgeDocumentResponse patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}
@@ -3563,8 +3928,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
+apiInstance.patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3582,6 +3953,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, bod
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **documentId** | **String** | Document ID. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3618,7 +3990,11 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let feedbackId = "feedbackId_example"; // String | Feedback ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts)
@@ -3640,6 +4016,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseI
  **documentId** | **String** | Document ID. |  |
  **feedbackId** | **String** | Feedback ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3648,7 +4025,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseI
 
 ## patchKnowledgeKnowledgebaseDocumentVariation
 
-> DocumentVariationResponse patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
+> DocumentVariationResponse patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}
@@ -3676,8 +4053,14 @@ let documentVariationId = "documentVariationId_example"; // String | Globally un
 let documentId = "documentId_example"; // String | Globally unique identifier for a document.
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
+apiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseDocumentVariation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3696,6 +4079,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, do
  **documentId** | **String** | Globally unique identifier for a document. |  |
  **knowledgeBaseId** | **String** | Globally unique identifier for a knowledge base. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3731,7 +4115,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | The ID of knowledge base containing the documents to query.
 let searchId = "searchId_example"; // String | Search Result ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, opts)
@@ -3752,6 +4140,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, 
  **knowledgeBaseId** | **String** | The ID of knowledge base containing the documents to query. |  |
  **searchId** | **String** | Search Result ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3760,7 +4149,7 @@ void (no response body)
 
 ## patchKnowledgeKnowledgebaseImportJob
 
-> KnowledgeImportJobResponse patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)
+> KnowledgeImportJobResponse patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}
@@ -3787,8 +4176,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let importJobId = "importJobId_example"; // String | Import job ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)
+apiInstance.patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseImportJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3806,6 +4201,7 @@ apiInstance.patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, b
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **importJobId** | **String** | Import job ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3814,7 +4210,7 @@ apiInstance.patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, b
 
 ## patchKnowledgeKnowledgebaseLabel
 
-> LabelResponse patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
+> LabelResponse patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}
@@ -3841,8 +4237,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let labelId = "labelId_example"; // String | Label ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
+apiInstance.patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseLabel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3860,6 +4262,7 @@ apiInstance.patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **labelId** | **String** | Label ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3868,7 +4271,7 @@ apiInstance.patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
 
 ## patchKnowledgeKnowledgebaseParseJob
 
-> void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+> void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
@@ -3895,8 +4298,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let parseJobId = "parseJobId_example"; // String | Parse job ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body, opts)
   .then(() => {
     console.log('patchKnowledgeKnowledgebaseParseJob returned successfully.');
   })
@@ -3914,6 +4323,7 @@ apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, bod
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **parseJobId** | **String** | Parse job ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3922,7 +4332,7 @@ void (no response body)
 
 ## patchKnowledgeKnowledgebaseSynchronizeJob
 
-> KnowledgeSyncJobResponse patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
+> KnowledgeSyncJobResponse patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
@@ -3949,8 +4359,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let syncJobId = "syncJobId_example"; // String | Synchronization job ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
+apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseSynchronizeJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3968,6 +4384,7 @@ apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **syncJobId** | **String** | Synchronization job ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3976,7 +4393,7 @@ apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId
 
 ## patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup
 
-> UnansweredPhraseGroupUpdateResponse patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)
+> UnansweredPhraseGroupUpdateResponse patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body, opts)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}
@@ -4005,8 +4422,14 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let groupId = "groupId_example"; // String | The ID of the group to be updated.
 let phraseGroupId = "phraseGroupId_example"; // String | The ID of the phraseGroup to be updated.
 let body = {}; // Object | Request body of the update unanswered group endpoint.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)
+apiInstance.patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4025,6 +4448,7 @@ apiInstance.patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseI
  **groupId** | **String** | The ID of the group to be updated. |  |
  **phraseGroupId** | **String** | The ID of the phraseGroup to be updated. |  |
  **body** | **Object** | Request body of the update unanswered group endpoint. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4033,7 +4457,7 @@ apiInstance.patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseI
 
 ## patchKnowledgeSetting
 
-> KnowledgeSettingsResponse patchKnowledgeSetting(knowledgeSettingId, body)
+> KnowledgeSettingsResponse patchKnowledgeSetting(knowledgeSettingId, body, opts)
 
 
 PATCH /api/v2/knowledge/settings/{knowledgeSettingId}
@@ -4059,8 +4483,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeSettingId = "knowledgeSettingId_example"; // String | Knowledge Setting ID.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeSetting(knowledgeSettingId, body)
+apiInstance.patchKnowledgeSetting(knowledgeSettingId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4077,6 +4507,7 @@ apiInstance.patchKnowledgeSetting(knowledgeSettingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeSettingId** | **String** | Knowledge Setting ID. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4085,7 +4516,7 @@ apiInstance.patchKnowledgeSetting(knowledgeSettingId, body)
 
 ## patchKnowledgeSourceSynchronization
 
-> V3Synchronization patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body)
+> V3Synchronization patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body, opts)
 
 
 PATCH /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}
@@ -4112,8 +4543,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sourceId = "sourceId_example"; // String | Source ID
 let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body)
+apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body, opts)
   .then((data) => {
     console.log(`patchKnowledgeSourceSynchronization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4131,6 +4568,7 @@ apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, bod
  **sourceId** | **String** | Source ID |  |
  **synchronizationId** | **String** | Synchronization ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4139,7 +4577,7 @@ apiInstance.patchKnowledgeSourceSynchronization(sourceId, synchronizationId, bod
 
 ## postKnowledgeConnections
 
-> ConnectionCreateResponse postKnowledgeConnections(body)
+> ConnectionCreateResponse postKnowledgeConnections(body, opts)
 
 
 POST /api/v2/knowledge/connections
@@ -4164,8 +4602,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeConnections(body)
+apiInstance.postKnowledgeConnections(body, opts)
   .then((data) => {
     console.log(`postKnowledgeConnections success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4181,6 +4625,7 @@ apiInstance.postKnowledgeConnections(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4189,7 +4634,7 @@ apiInstance.postKnowledgeConnections(body)
 
 ## postKnowledgeDocumentuploads
 
-> UploadUrlResponse postKnowledgeDocumentuploads(body)
+> UploadUrlResponse postKnowledgeDocumentuploads(body, opts)
 
 
 POST /api/v2/knowledge/documentuploads
@@ -4214,8 +4659,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeDocumentuploads(body)
+apiInstance.postKnowledgeDocumentuploads(body, opts)
   .then((data) => {
     console.log(`postKnowledgeDocumentuploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4231,6 +4682,7 @@ apiInstance.postKnowledgeDocumentuploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4261,7 +4713,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let documentId = "documentId_example"; // String | Document ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
@@ -4282,6 +4738,7 @@ apiInstance.postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **documentId** | **String** | Document ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4312,7 +4769,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let documentId = "documentId_example"; // String | Document ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opts)
@@ -4333,6 +4794,7 @@ apiInstance.postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opt
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **documentId** | **String** | Document ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4363,7 +4825,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let documentId = "documentId_example"; // String | Document ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts)
@@ -4384,6 +4850,7 @@ apiInstance.postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts)
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **documentId** | **String** | Document ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4392,7 +4859,7 @@ void (no response body)
 
 ## postKnowledgeGuestSessionDocumentsAnswers
 
-> KnowledgeGuestAnswerDocumentsResponse postKnowledgeGuestSessionDocumentsAnswers(sessionId, body)
+> KnowledgeGuestAnswerDocumentsResponse postKnowledgeGuestSessionDocumentsAnswers(sessionId, body, opts)
 
 
 POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/answers
@@ -4413,8 +4880,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeGuestSessionDocumentsAnswers(sessionId, body)
+apiInstance.postKnowledgeGuestSessionDocumentsAnswers(sessionId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeGuestSessionDocumentsAnswers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4431,6 +4904,7 @@ apiInstance.postKnowledgeGuestSessionDocumentsAnswers(sessionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4460,7 +4934,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts)
@@ -4480,6 +4958,7 @@ apiInstance.postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4510,7 +4989,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let opts = { 
   'expand': ["expand_example"], // [String] | Fields, if any, to expand for each document in the search result matching the query.
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeGuestSessionDocumentsSearch(sessionId, opts)
@@ -4531,6 +5014,7 @@ apiInstance.postKnowledgeGuestSessionDocumentsSearch(sessionId, opts)
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4560,7 +5044,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, opts)
@@ -4580,6 +5068,7 @@ apiInstance.postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4588,7 +5077,7 @@ apiInstance.postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, opts)
 
 ## postKnowledgeGuestSessions
 
-> KnowledgeGuestSession postKnowledgeGuestSessions(body)
+> KnowledgeGuestSession postKnowledgeGuestSessions(body, opts)
 
 
 POST /api/v2/knowledge/guest/sessions
@@ -4608,8 +5097,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.KnowledgeApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeGuestSessions(body)
+apiInstance.postKnowledgeGuestSessions(body, opts)
   .then((data) => {
     console.log(`postKnowledgeGuestSessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4625,6 +5120,7 @@ apiInstance.postKnowledgeGuestSessions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4633,7 +5129,7 @@ apiInstance.postKnowledgeGuestSessions(body)
 
 ## postKnowledgeKnowledgebaseCategories
 
-> CategoryResponse postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
+> CategoryResponse postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories
@@ -4659,8 +5155,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseCategories success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4677,6 +5179,7 @@ apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4711,7 +5214,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts)
@@ -4731,6 +5238,7 @@ apiInstance.postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge Base ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4766,7 +5274,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts)
@@ -4787,6 +5299,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **documentId** | **String** | Document ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4822,7 +5335,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, opts)
@@ -4843,6 +5360,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, document
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **documentId** | **String** | Document ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4851,7 +5369,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, document
 
 ## postKnowledgeKnowledgebaseDocumentVariations
 
-> DocumentVariationResponse postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
+> DocumentVariationResponse postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations
@@ -4879,8 +5397,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for the knowledge base.
 let documentId = "documentId_example"; // String | Globally unique identifier for the document.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
+apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocumentVariations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4898,6 +5422,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, docume
  **knowledgeBaseId** | **String** | Globally unique identifier for the knowledge base. |  |
  **documentId** | **String** | Globally unique identifier for the document. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4906,7 +5431,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, docume
 
 ## postKnowledgeKnowledgebaseDocumentVersions
 
-> KnowledgeDocumentVersion postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)
+> KnowledgeDocumentVersion postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions
@@ -4933,8 +5458,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for the knowledge base.
 let documentId = "documentId_example"; // String | Globally unique identifier for the document.
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)
+apiInstance.postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocumentVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4952,6 +5483,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, document
  **knowledgeBaseId** | **String** | Globally unique identifier for the knowledge base. |  |
  **documentId** | **String** | Globally unique identifier for the document. |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4987,7 +5519,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let documentId = "documentId_example"; // String | Document ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId, documentId, opts)
@@ -5008,6 +5544,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId, documentId,
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **documentId** | **String** | Document ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5016,7 +5553,7 @@ void (no response body)
 
 ## postKnowledgeKnowledgebaseDocuments
 
-> KnowledgeDocumentResponse postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
+> KnowledgeDocumentResponse postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents
@@ -5042,8 +5579,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5060,6 +5603,7 @@ apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5068,7 +5612,7 @@ apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseDocumentsAnswers
 
-> KnowledgeAnswerDocumentsResponse postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
+> KnowledgeAnswerDocumentsResponse postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/answers
@@ -5095,8 +5639,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocumentsAnswers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5113,6 +5663,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5121,7 +5672,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseDocumentsBulkRemove
 
-> BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
+> BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove
@@ -5147,8 +5698,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocumentsBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5165,6 +5722,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5173,7 +5731,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseDocumentsBulkUpdate
 
-> BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
+> BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update
@@ -5199,8 +5757,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocumentsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5217,6 +5781,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5251,7 +5816,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts)
@@ -5271,6 +5840,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, op
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5306,7 +5876,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
 let opts = { 
   'expand': ["expand_example"], // [String] | Fields, if any, to expand for each document in the search result matching the query.
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
@@ -5327,6 +5901,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
  **knowledgeBaseId** | **String** | Knowledge Base ID |  |
  **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5362,7 +5937,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | The ID of knowledge base containing the documents to query.
 let opts = { 
   'expand': ["expand_example"], // [String] | Fields, if any, to expand for each document in the search result matching the query.
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)
@@ -5383,6 +5962,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)
  **knowledgeBaseId** | **String** | The ID of knowledge base containing the documents to query. |  |
  **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5417,7 +5997,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | The ID of knowledge base containing the documents to query.
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, opts)
@@ -5437,6 +6021,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | The ID of knowledge base containing the documents to query. |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5445,7 +6030,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId
 
 ## postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd
 
-> BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
+> BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add
@@ -5471,8 +6056,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5489,6 +6080,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, 
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5497,7 +6089,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, 
 
 ## postKnowledgeKnowledgebaseExportJobs
 
-> KnowledgeExportJobResponse postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
+> KnowledgeExportJobResponse postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs
@@ -5523,8 +6115,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseExportJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5541,6 +6139,7 @@ apiInstance.postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5549,7 +6148,7 @@ apiInstance.postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseImportJobs
 
-> KnowledgeImportJobResponse postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
+> KnowledgeImportJobResponse postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs
@@ -5575,8 +6174,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5593,6 +6198,7 @@ apiInstance.postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5601,7 +6207,7 @@ apiInstance.postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseLabels
 
-> LabelResponse postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
+> LabelResponse postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels
@@ -5627,8 +6233,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseLabels success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5645,6 +6257,7 @@ apiInstance.postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5653,7 +6266,7 @@ apiInstance.postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseParseJobImport
 
-> void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+> void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import
@@ -5680,8 +6293,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let parseJobId = "parseJobId_example"; // String | Parse job ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+apiInstance.postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body, opts)
   .then(() => {
     console.log('postKnowledgeKnowledgebaseParseJobImport returned successfully.');
   })
@@ -5699,6 +6318,7 @@ apiInstance.postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **parseJobId** | **String** | Parse job ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5707,7 +6327,7 @@ void (no response body)
 
 ## postKnowledgeKnowledgebaseParseJobs
 
-> KnowledgeParseJobResponse postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+> KnowledgeParseJobResponse postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs
@@ -5733,8 +6353,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseParseJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5751,6 +6377,7 @@ apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5759,7 +6386,7 @@ apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseSourcesSalesforce
 
-> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
+> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce
@@ -5785,8 +6412,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseSourcesSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5803,6 +6436,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5838,7 +6472,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
-  'body': null // Object | 
+  'body': null, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, opts)
@@ -5859,6 +6497,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBas
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5867,7 +6506,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBas
 
 ## postKnowledgeKnowledgebaseSourcesServicenow
 
-> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
+> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow
@@ -5893,8 +6532,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseSourcesServicenow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5911,6 +6556,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5946,7 +6592,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
-  'body': null // Object | 
+  'body': null, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, opts)
@@ -5967,6 +6617,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBas
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5975,7 +6626,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBas
 
 ## postKnowledgeKnowledgebaseSynchronizeJobs
 
-> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
+> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs
@@ -6001,8 +6652,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseSynchronizeJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6019,6 +6676,7 @@ apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6027,7 +6685,7 @@ apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseUploadsUrlsJobs
 
-> CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+> CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
@@ -6053,8 +6711,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | uploadRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseUploadsUrlsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6071,6 +6735,7 @@ apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** | uploadRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6079,7 +6744,7 @@ apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebases
 
-> KnowledgeBase postKnowledgeKnowledgebases(body)
+> KnowledgeBase postKnowledgeKnowledgebases(body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases
@@ -6104,8 +6769,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebases(body)
+apiInstance.postKnowledgeKnowledgebases(body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebases success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6121,6 +6792,7 @@ apiInstance.postKnowledgeKnowledgebases(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6154,7 +6826,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeSearch(opts)
@@ -6173,6 +6849,7 @@ apiInstance.postKnowledgeSearch(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6206,7 +6883,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeSearchPreview(opts)
@@ -6225,6 +6906,7 @@ apiInstance.postKnowledgeSearchPreview(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6258,7 +6940,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeSettings(opts)
@@ -6277,6 +6963,7 @@ apiInstance.postKnowledgeSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6285,7 +6972,7 @@ apiInstance.postKnowledgeSettings(opts)
 
 ## postKnowledgeSourceSynchronizationUploads
 
-> V3SynchronizationUploadUrlResponse postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body)
+> V3SynchronizationUploadUrlResponse postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body, opts)
 
 
 POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads
@@ -6312,8 +6999,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sourceId = "sourceId_example"; // String | Source ID
 let synchronizationId = "synchronizationId_example"; // String | Synchronization ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body)
+apiInstance.postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeSourceSynchronizationUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6331,6 +7024,7 @@ apiInstance.postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationI
  **sourceId** | **String** | Source ID |  |
  **synchronizationId** | **String** | Synchronization ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6365,7 +7059,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sourceId = "sourceId_example"; // String | Source ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postKnowledgeSourceSynchronizations(sourceId, opts)
@@ -6385,6 +7083,7 @@ apiInstance.postKnowledgeSourceSynchronizations(sourceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6393,7 +7092,7 @@ apiInstance.postKnowledgeSourceSynchronizations(sourceId, opts)
 
 ## postKnowledgeSources
 
-> V3SourceDetailedResponse postKnowledgeSources(body)
+> V3SourceDetailedResponse postKnowledgeSources(body, opts)
 
 
 POST /api/v2/knowledge/sources
@@ -6418,8 +7117,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeSources(body)
+apiInstance.postKnowledgeSources(body, opts)
   .then((data) => {
     console.log(`postKnowledgeSources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6435,6 +7140,7 @@ apiInstance.postKnowledgeSources(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6443,7 +7149,7 @@ apiInstance.postKnowledgeSources(body)
 
 ## putKnowledgeKnowledgebaseSourcesSalesforceSourceId
 
-> SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
+> SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body, opts)
 
 
 PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}
@@ -6470,8 +7176,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
+apiInstance.putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body, opts)
   .then((data) => {
     console.log(`putKnowledgeKnowledgebaseSourcesSalesforceSourceId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6489,6 +7201,7 @@ apiInstance.putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, 
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6497,7 +7210,7 @@ apiInstance.putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, 
 
 ## putKnowledgeKnowledgebaseSourcesServicenowSourceId
 
-> ServiceNowSourceResponse putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body)
+> ServiceNowSourceResponse putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body, opts)
 
 
 PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}
@@ -6524,8 +7237,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body)
+apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body, opts)
   .then((data) => {
     console.log(`putKnowledgeKnowledgebaseSourcesServicenowSourceId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6543,6 +7262,7 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6551,7 +7271,7 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 
 ## putKnowledgeSource
 
-> V3SourceDetailedResponse putKnowledgeSource(sourceId, body)
+> V3SourceDetailedResponse putKnowledgeSource(sourceId, body, opts)
 
 
 PUT /api/v2/knowledge/sources/{sourceId}
@@ -6577,8 +7297,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sourceId = "sourceId_example"; // String | Source ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putKnowledgeSource(sourceId, body)
+apiInstance.putKnowledgeSource(sourceId, body, opts)
   .then((data) => {
     console.log(`putKnowledgeSource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6595,10 +7321,11 @@ apiInstance.putKnowledgeSource(sourceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **V3SourceDetailedResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

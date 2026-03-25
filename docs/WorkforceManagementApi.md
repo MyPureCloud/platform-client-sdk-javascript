@@ -287,7 +287,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteWorkforcemanagementBusinessunit
 
-> void deleteWorkforcemanagementBusinessunit(businessUnitId)
+> void deleteWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -314,8 +314,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunit(businessUnitId)
+apiInstance.deleteWorkforcemanagementBusinessunit(businessUnitId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunit returned successfully.');
   })
@@ -331,6 +337,7 @@ apiInstance.deleteWorkforcemanagementBusinessunit(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -339,7 +346,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitActivitycode
 
-> void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
+> void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -365,8 +372,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
+apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitActivitycode returned successfully.');
   })
@@ -383,6 +396,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, ac
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -418,7 +432,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
 let opts = { 
-  'beforeDateId': "beforeDateId_example" // String | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'beforeDateId': "beforeDateId_example", // String | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts)
@@ -439,6 +457,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupalloca
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
  **beforeDateId** | **String** | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -447,7 +466,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitPlanninggroup
 
-> void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
+> void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -473,8 +492,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let planningGroupId = "planningGroupId_example"; // String | The ID of a planning group to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
+apiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitPlanninggroup returned successfully.');
   })
@@ -491,6 +516,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, p
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -499,7 +525,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitSchedulingRun
 
-> void deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
+> void deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -525,8 +551,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let runId = "runId_example"; // String | The ID of the schedule run
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
+apiInstance.deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitSchedulingRun returned successfully.');
   })
@@ -543,6 +575,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, r
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -551,7 +584,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitServicegoaltemplate
 
-> void deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
+> void deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
@@ -577,8 +610,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of the service goal template to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
+apiInstance.deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitServicegoaltemplate returned successfully.');
   })
@@ -595,6 +634,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of the service goal template to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -603,7 +643,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitStaffinggroup
 
-> void deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+> void deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
@@ -629,8 +669,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitStaffinggroup returned successfully.');
   })
@@ -647,6 +693,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, s
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **staffingGroupId** | **String** | The ID of the staffing group to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -655,7 +702,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitTimeofflimit
 
-> void deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+> void deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}
@@ -681,8 +728,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+apiInstance.deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitTimeofflimit returned successfully.');
   })
@@ -699,6 +752,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, ti
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffLimitId** | **String** | The ID of the time-off limit object to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -707,7 +761,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitTimeoffplan
 
-> void deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+> void deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
@@ -733,8 +787,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+apiInstance.deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitTimeoffplan returned successfully.');
   })
@@ -751,6 +811,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, tim
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffPlanId** | **String** | The ID of the time-off plan to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -759,7 +820,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitWeekSchedule
 
-> BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
+> BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}
@@ -786,8 +847,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
+apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
   .then((data) => {
     console.log(`deleteWorkforcemanagementBusinessunitWeekSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -805,6 +872,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, we
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -813,7 +881,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, we
 
 ## deleteWorkforcemanagementBusinessunitWeekShorttermforecast
 
-> void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
+> void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}
@@ -842,8 +910,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
+apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitWeekShorttermforecast returned successfully.');
   })
@@ -861,6 +935,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessU
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -869,7 +944,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitWorkplanbid
 
-> void deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+> void deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}
@@ -895,8 +970,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The ID of the work plan bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitWorkplanbid returned successfully.');
   })
@@ -913,6 +994,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bid
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The ID of the work plan bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -921,7 +1003,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementBusinessunitWorkplanbidGroup
 
-> void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+> void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
@@ -948,8 +1030,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitWorkplanbidGroup returned successfully.');
   })
@@ -967,6 +1055,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | Work Plan Bid Group id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -975,7 +1064,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementCalendarUrlIcs
 
-> void deleteWorkforcemanagementCalendarUrlIcs()
+> void deleteWorkforcemanagementCalendarUrlIcs(opts)
 
 
 DELETE /api/v2/workforcemanagement/calendar/url/ics
@@ -998,8 +1087,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementCalendarUrlIcs()
+apiInstance.deleteWorkforcemanagementCalendarUrlIcs(opts)
   .then(() => {
     console.log('deleteWorkforcemanagementCalendarUrlIcs returned successfully.');
   })
@@ -1011,7 +1106,10 @@ apiInstance.deleteWorkforcemanagementCalendarUrlIcs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1020,7 +1118,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementManagementunit
 
-> void deleteWorkforcemanagementManagementunit(managementUnitId)
+> void deleteWorkforcemanagementManagementunit(managementUnitId, opts)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}
@@ -1045,8 +1143,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId)
+apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementManagementunit returned successfully.');
   })
@@ -1062,6 +1166,7 @@ apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1070,7 +1175,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementManagementunitTimeofflimit
 
-> void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
+> void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -1096,8 +1201,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
+apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementManagementunitTimeofflimit returned successfully.');
   })
@@ -1114,6 +1225,7 @@ apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1122,7 +1234,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementManagementunitTimeoffplan
 
-> void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
+> void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -1148,8 +1260,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
+apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementManagementunitTimeoffplan returned successfully.');
   })
@@ -1166,6 +1284,7 @@ apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1174,7 +1293,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementManagementunitWorkplan
 
-> void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
+> void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
@@ -1200,8 +1319,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
+apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementManagementunitWorkplan returned successfully.');
   })
@@ -1218,6 +1343,7 @@ apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, wo
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1226,7 +1352,7 @@ void (no response body)
 
 ## deleteWorkforcemanagementManagementunitWorkplanrotation
 
-> void deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
+> void deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -1252,8 +1378,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to be deleted
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
+apiInstance.deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
   .then(() => {
     console.log('deleteWorkforcemanagementManagementunitWorkplanrotation returned successfully.');
   })
@@ -1270,6 +1402,7 @@ apiInstance.deleteWorkforcemanagementManagementunitWorkplanrotation(managementUn
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to be deleted |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1278,7 +1411,7 @@ void (no response body)
 
 ## getWorkforcemanagementAdherence
 
-> [UserScheduleAdherence] getWorkforcemanagementAdherence(userId)
+> [UserScheduleAdherence] getWorkforcemanagementAdherence(userId, opts)
 
 
 GET /api/v2/workforcemanagement/adherence
@@ -1303,8 +1436,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let userId = ["userId_example"]; // [String] | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAdherence(userId)
+apiInstance.getWorkforcemanagementAdherence(userId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAdherence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1320,6 +1459,7 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **[String]** | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1328,7 +1468,7 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 
 ## getWorkforcemanagementAdherenceExplanation
 
-> AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(explanationId)
+> AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(explanationId, opts)
 
 
 GET /api/v2/workforcemanagement/adherence/explanations/{explanationId}
@@ -1353,8 +1493,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let explanationId = "explanationId_example"; // String | The ID of the explanation to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId)
+apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1370,6 +1516,7 @@ apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **explanationId** | **String** | The ID of the explanation to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1378,7 +1525,7 @@ apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId)
 
 ## getWorkforcemanagementAdherenceExplanationsJob
 
-> AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(jobId)
+> AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}
@@ -1403,8 +1550,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId)
+apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAdherenceExplanationsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1420,6 +1573,7 @@ apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1428,7 +1582,7 @@ apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId)
 
 ## getWorkforcemanagementAdherenceHistoricalBulkJob
 
-> WfmHistoricalAdherenceBulkResponse getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
+> WfmHistoricalAdherenceBulkResponse getWorkforcemanagementAdherenceHistoricalBulkJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}
@@ -1453,8 +1607,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | ID of the job to get
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
+apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAdherenceHistoricalBulkJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1470,6 +1630,7 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job to get |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1478,7 +1639,7 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
 
 ## getWorkforcemanagementAdherenceHistoricalJob
 
-> WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(jobId)
+> WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/adherence/historical/jobs/{jobId}
@@ -1505,8 +1666,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAdherenceHistoricalJob(jobId)
+apiInstance.getWorkforcemanagementAdherenceHistoricalJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAdherenceHistoricalJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1522,6 +1689,7 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1530,7 +1698,7 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalJob(jobId)
 
 ## getWorkforcemanagementAgentAdherenceExplanation
 
-> AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
+> AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, opts)
 
 
 GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}
@@ -1556,8 +1724,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let agentId = "agentId_example"; // String | The ID of the agent to query
 let explanationId = "explanationId_example"; // String | The ID of the explanation to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
+apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAgentAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1574,6 +1748,7 @@ apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanation
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent to query |  |
  **explanationId** | **String** | The ID of the explanation to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1582,7 +1757,7 @@ apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanation
 
 ## getWorkforcemanagementAgentManagementunit
 
-> AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(agentId)
+> AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(agentId, opts)
 
 
 GET /api/v2/workforcemanagement/agents/{agentId}/managementunit
@@ -1613,8 +1788,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let agentId = "agentId_example"; // String | The ID of the agent to look up
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAgentManagementunit(agentId)
+apiInstance.getWorkforcemanagementAgentManagementunit(agentId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAgentManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1630,6 +1811,7 @@ apiInstance.getWorkforcemanagementAgentManagementunit(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent to look up |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1638,7 +1820,7 @@ apiInstance.getWorkforcemanagementAgentManagementunit(agentId)
 
 ## getWorkforcemanagementAgentsMeAdherenceHistoricalJob
 
-> WfmAgentHistoricalAdherenceResponse getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId)
+> WfmAgentHistoricalAdherenceResponse getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId}
@@ -1663,8 +1845,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | ID of the job to get
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId)
+apiInstance.getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAgentsMeAdherenceHistoricalJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1680,6 +1868,7 @@ apiInstance.getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job to get |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1688,7 +1877,7 @@ apiInstance.getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId)
 
 ## getWorkforcemanagementAgentsMeManagementunit
 
-> AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit()
+> AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit(opts)
 
 
 GET /api/v2/workforcemanagement/agents/me/managementunit
@@ -1768,8 +1957,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAgentsMeManagementunit()
+apiInstance.getWorkforcemanagementAgentsMeManagementunit(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAgentsMeManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1781,7 +1976,10 @@ apiInstance.getWorkforcemanagementAgentsMeManagementunit()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1790,7 +1988,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementAlternativeshiftsOffersJob
 
-> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}
@@ -1817,8 +2015,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
+apiInstance.getWorkforcemanagementAlternativeshiftsOffersJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAlternativeshiftsOffersJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1834,6 +2038,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1842,7 +2047,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
 
 ## getWorkforcemanagementAlternativeshiftsOffersSearchJob
 
-> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}
@@ -1869,8 +2074,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
+apiInstance.getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAlternativeshiftsOffersSearchJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1886,6 +2097,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1894,7 +2106,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
 
 ## getWorkforcemanagementAlternativeshiftsSettings
 
-> AlternativeShiftBuSettingsResponse getWorkforcemanagementAlternativeshiftsSettings()
+> AlternativeShiftBuSettingsResponse getWorkforcemanagementAlternativeshiftsSettings(opts)
 
 
 GET /api/v2/workforcemanagement/alternativeshifts/settings
@@ -1917,8 +2129,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAlternativeshiftsSettings()
+apiInstance.getWorkforcemanagementAlternativeshiftsSettings(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1930,7 +2148,10 @@ apiInstance.getWorkforcemanagementAlternativeshiftsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1939,7 +2160,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementAlternativeshiftsTrade
 
-> AlternativeShiftTradeResponse getWorkforcemanagementAlternativeshiftsTrade(tradeId)
+> AlternativeShiftTradeResponse getWorkforcemanagementAlternativeshiftsTrade(tradeId, opts)
 
 
 GET /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}
@@ -1964,8 +2185,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAlternativeshiftsTrade(tradeId)
+apiInstance.getWorkforcemanagementAlternativeshiftsTrade(tradeId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1981,6 +2208,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsTrade(tradeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **tradeId** | **String** | The ID of the alternative shift trade |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2014,7 +2242,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementAlternativeshiftsTrades(opts)
@@ -2033,6 +2265,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsTrades(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2041,7 +2274,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsTrades(opts)
 
 ## getWorkforcemanagementAlternativeshiftsTradesJob
 
-> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}
@@ -2068,8 +2301,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
+apiInstance.getWorkforcemanagementAlternativeshiftsTradesJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAlternativeshiftsTradesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2085,6 +2324,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2093,7 +2333,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
 
 ## getWorkforcemanagementAlternativeshiftsTradesStateJob
 
-> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}
@@ -2120,8 +2360,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
+apiInstance.getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementAlternativeshiftsTradesStateJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2137,6 +2383,7 @@ apiInstance.getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2244,7 +2491,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
   'expand': ["expand_example"], // [String] | Include to access additional data on the business unit
-  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
+  'includeSchedulingDefaultMessageSeverities': true, // Boolean | Whether to include scheduling default message severities
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
@@ -2265,6 +2516,7 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **expand** | **[String]** | Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching |
  **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2273,7 +2525,7 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 ## getWorkforcemanagementBusinessunitActivitycode
 
-> BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
+> BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -2299,8 +2551,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
+apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2317,6 +2575,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activ
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2409,7 +2668,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
@@ -2429,6 +2692,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2437,7 +2701,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts
 
 ## getWorkforcemanagementBusinessunitActivityplan
 
-> ActivityPlanResponse getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId)
+> ActivityPlanResponse getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}
@@ -2463,8 +2727,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId)
+apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivityplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2481,6 +2751,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activ
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **activityPlanId** | **String** | The ID of the activity plan to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2489,7 +2760,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activ
 
 ## getWorkforcemanagementBusinessunitActivityplanRunsJob
 
-> ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId)
+> ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}
@@ -2516,8 +2787,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the run job
 let jobId = "jobId_example"; // String | The ID of the activity plan run job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId)
+apiInstance.getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivityplanRunsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2535,6 +2812,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId
  **businessUnitId** | **String** | The ID of the business unit |  |
  **activityPlanId** | **String** | The ID of the activity plan associated with the run job |  |
  **jobId** | **String** | The ID of the activity plan run job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2569,7 +2847,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
-  'state': "state_example" // String | Optionally filter by activity plan state
+  'state': "state_example", // String | Optionally filter by activity plan state
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts)
@@ -2589,6 +2871,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **state** | **String** | Optionally filter by activity plan state | [optional] <br />**Values**: Active, Inactive |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2597,7 +2880,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts
 
 ## getWorkforcemanagementBusinessunitActivityplansJobs
 
-> ActivityPlanJobListing getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
+> ActivityPlanJobListing getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
@@ -2622,8 +2905,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivityplansJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2639,6 +2928,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2647,7 +2937,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
 
 ## getWorkforcemanagementBusinessunitAlternativeshiftsSettings
 
-> AlternativeShiftBuSettingsResponse getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId)
+> AlternativeShiftBuSettingsResponse getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings
@@ -2672,8 +2962,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2689,6 +2985,7 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsSettings(business
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2697,7 +2994,7 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsSettings(business
 
 ## getWorkforcemanagementBusinessunitAlternativeshiftsTrade
 
-> AlternativeShiftTradeResponse getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId)
+> AlternativeShiftTradeResponse getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}
@@ -2723,8 +3020,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId)
+apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2741,6 +3044,7 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **tradeId** | **String** | The ID of the alternative shift trade |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2749,7 +3053,7 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUni
 
 ## getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob
 
-> BuAlternativeShiftJobResponse getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId)
+> BuAlternativeShiftJobResponse getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}
@@ -2777,8 +3081,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId)
+apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2795,6 +3105,7 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(b
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2803,7 +3114,7 @@ apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(b
 
 ## getWorkforcemanagementBusinessunitCapacityplan
 
-> CapacityPlanResponse getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+> CapacityPlanResponse getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}
@@ -2829,8 +3140,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2847,6 +3164,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capac
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2882,7 +3200,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
 let opts = { 
-  'granularity': "granularity_example" // String | Granularity to access staffing group data, defaults to weekly
+  'granularity': "granularity_example", // String | Granularity to access staffing group data, defaults to weekly
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, opts)
@@ -2903,6 +3225,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocatio
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
  **granularity** | **String** | Granularity to access staffing group data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2911,7 +3234,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocatio
 
 ## getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements
 
-> CapacityPlanStaffingRequirementResult getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+> CapacityPlanStaffingRequirementResult getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements
@@ -2937,8 +3260,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2955,6 +3284,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(b
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2991,7 +3321,11 @@ let businessUnitId = "businessUnitId_example"; // String |
 let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | forecastId of forecast
 let opts = { 
-  'granularity': "granularity_example" // String | Granularity to access staffing requirements data, defaults to weekly
+  'granularity': "granularity_example", // String | Granularity to access staffing requirements data, defaults to weekly
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, opts)
@@ -3013,6 +3347,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequiremen
  **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | forecastId of forecast |  |
  **granularity** | **String** | Granularity to access staffing requirements data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3021,7 +3356,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequiremen
 
 ## getWorkforcemanagementBusinessunitCapacityplans
 
-> CapacityPlansListResponse getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+> CapacityPlansListResponse getWorkforcemanagementBusinessunitCapacityplans(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
@@ -3046,8 +3381,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitCapacityplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3063,6 +3404,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3071,7 +3413,7 @@ apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
 
 ## getWorkforcemanagementBusinessunitIntradayPlanninggroups
 
-> WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
+> WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups
@@ -3097,8 +3439,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let _date = "_date_example"; // String | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
+apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitIntradayPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3115,6 +3463,7 @@ apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **_date** | **String** | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3123,7 +3472,7 @@ apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUni
 
 ## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession
 
-> ContinuousForecastGetSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId)
+> ContinuousForecastGetSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session
@@ -3150,8 +3499,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3167,6 +3522,7 @@ apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSess
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3175,7 +3531,7 @@ apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSess
 
 ## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId
 
-> ContinuousForecastSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId)
+> ContinuousForecastSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}
@@ -3203,8 +3559,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | 
 let sessionId = "sessionId_example"; // String | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId)
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3221,6 +3583,7 @@ apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSess
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** |  |  |
  **sessionId** | **String** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3229,7 +3592,7 @@ apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSess
 
 ## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId
 
-> ContinuousForecastSnapshotResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId)
+> ContinuousForecastSnapshotResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId}
@@ -3258,8 +3621,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | 
 let sessionId = "sessionId_example"; // String | 
 let snapshotId = "snapshotId_example"; // String | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId)
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3277,6 +3646,7 @@ apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSess
  **businessUnitId** | **String** |  |  |
  **sessionId** | **String** |  |  |
  **snapshotId** | **String** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3310,7 +3680,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
   'feature': "feature_example", // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned
-  'divisionId': "divisionId_example" // String | If specified, the list of management units belonging to the specified division will be returned
+  'divisionId': "divisionId_example", // String | If specified, the list of management units belonging to the specified division will be returned
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts)
@@ -3331,6 +3705,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3339,7 +3714,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 
 ## getWorkforcemanagementBusinessunitMinimumstaffingSettings
 
-> MinimumStaffingResponse getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId)
+> MinimumStaffingResponse getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings
@@ -3364,8 +3739,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitMinimumstaffingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3381,6 +3762,7 @@ apiInstance.getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUn
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3389,7 +3771,7 @@ apiInstance.getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUn
 
 ## getWorkforcemanagementBusinessunitPlanninggroup
 
-> PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
+> PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -3415,8 +3797,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let planningGroupId = "planningGroupId_example"; // String | The ID of a planning group to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
+apiInstance.getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitPlanninggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3433,6 +3821,7 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, plan
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3441,7 +3830,7 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, plan
 
 ## getWorkforcemanagementBusinessunitPlanninggroups
 
-> PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
+> PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
@@ -3471,8 +3860,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3488,6 +3883,7 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3496,7 +3892,7 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 
 ## getWorkforcemanagementBusinessunitSchedulerSettings
 
-> BuSchedulerSettingsResponse getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId)
+> BuSchedulerSettingsResponse getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings
@@ -3521,8 +3917,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitSchedulerSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3538,6 +3940,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3546,7 +3949,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId)
 
 ## getWorkforcemanagementBusinessunitSchedulingRun
 
-> BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
+> BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -3573,8 +3976,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let runId = "runId_example"; // String | The ID of the schedule run
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
+apiInstance.getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitSchedulingRun success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3591,6 +4000,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runI
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3599,7 +4009,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runI
 
 ## getWorkforcemanagementBusinessunitSchedulingRunResult
 
-> BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)
+> BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result
@@ -3628,8 +4038,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let runId = "runId_example"; // String | The ID of the schedule run
 let managementUnitIds = ["managementUnitIds_example"]; // [String] | The IDs of the management units for which to fetch the reschedule results
 let expand = ["expand_example"]; // [String] | The fields to expand. Omitting will return an empty response
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)
+apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitSchedulingRunResult success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3648,6 +4064,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId
  **runId** | **String** | The ID of the schedule run |  |
  **managementUnitIds** | **[String]** | The IDs of the management units for which to fetch the reschedule results |  |
  **expand** | **[String]** | The fields to expand. Omitting will return an empty response | <br />**Values**: headcountForecast, generationResults, agentSchedules |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3656,7 +4073,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId
 
 ## getWorkforcemanagementBusinessunitSchedulingRuns
 
-> BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
+> BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs
@@ -3682,8 +4099,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitSchedulingRuns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3699,6 +4122,7 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3734,7 +4158,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of a service goal template to fetch
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the service goal template
+  'expand': ["expand_example"], // [String] | Include to access additional data on the service goal template
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
@@ -3755,6 +4183,7 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of a service goal template to fetch |  |
  **expand** | **[String]** | Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3791,7 +4220,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the service goal template
+  'expand': ["expand_example"], // [String] | Include to access additional data on the service goal template
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
@@ -3811,6 +4244,7 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **expand** | **[String]** | Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3819,7 +4253,7 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitI
 
 ## getWorkforcemanagementBusinessunitStaffinggroup
 
-> StaffingGroupResponse getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+> StaffingGroupResponse getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
@@ -3845,8 +4279,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+apiInstance.getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3863,6 +4303,7 @@ apiInstance.getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staf
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **staffingGroupId** | **String** | The ID of the staffing group to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3898,7 +4339,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
   'managementUnitId': "managementUnitId_example", // String | The ID of the management unit to get management unit specific staffing groups
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
@@ -3919,6 +4364,7 @@ apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opt
  **businessUnitId** | **String** | The ID of the business unit |  |
  **managementUnitId** | **String** | The ID of the management unit to get management unit specific staffing groups | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3927,7 +4373,7 @@ apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opt
 
 ## getWorkforcemanagementBusinessunitTimeofflimit
 
-> BuTimeOffLimitResponse getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+> BuTimeOffLimitResponse getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}
@@ -3955,8 +4401,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+apiInstance.getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3973,6 +4425,7 @@ apiInstance.getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeO
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffLimitId** | **String** | The ID of the time-off limit to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4008,7 +4461,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
-  'managementUnitId': "managementUnitId_example" // String | The ID of the management unit to get management unit specific time-off limit objects
+  'managementUnitId': "managementUnitId_example", // String | The ID of the management unit to get management unit specific time-off limit objects
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
@@ -4028,6 +4485,7 @@ apiInstance.getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **managementUnitId** | **String** | The ID of the management unit to get management unit specific time-off limit objects | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4036,7 +4494,7 @@ apiInstance.getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts
 
 ## getWorkforcemanagementBusinessunitTimeoffplan
 
-> BuTimeOffPlanResponse getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+> BuTimeOffPlanResponse getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
@@ -4062,8 +4520,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+apiInstance.getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4080,6 +4544,7 @@ apiInstance.getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOf
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffPlanId** | **String** | The ID of the time-off plan to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4115,7 +4580,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
   'managementUnitId': "managementUnitId_example", // String | The ID of the management unit to get management unit specific staffing groups
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
@@ -4136,6 +4605,7 @@ apiInstance.getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
  **businessUnitId** | **String** | The ID of the business unit |  |
  **managementUnitId** | **String** | The ID of the management unit to get management unit specific staffing groups | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4170,7 +4640,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
-  'managementUnitIds': ["managementUnitIds_example"] // [String] | The IDs of the management units for which to retrieve users
+  'managementUnitIds': ["managementUnitIds_example"], // [String] | The IDs of the management units for which to retrieve users
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitUsers(businessUnitId, opts)
@@ -4190,6 +4664,7 @@ apiInstance.getWorkforcemanagementBusinessunitUsers(businessUnitId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **managementUnitIds** | **[String]** | The IDs of the management units for which to retrieve users | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4227,7 +4702,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let opts = { 
-  'expand': "expand_example" // String | expand
+  'expand': "expand_example", // String | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
@@ -4249,6 +4728,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekI
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **expand** | **String** | expand | [optional] <br />**Values**: managementUnits.agents |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4257,7 +4737,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekI
 
 ## getWorkforcemanagementBusinessunitWeekScheduleGenerationresults
 
-> ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
+> ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults
@@ -4285,8 +4765,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
+apiInstance.getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekScheduleGenerationresults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4304,6 +4790,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(busi
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4341,7 +4828,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let opts = { 
-  'forceDownload': true // Boolean | Whether to force the result to come via download url.  For testing purposes only
+  'forceDownload': true, // Boolean | Whether to force the result to come via download url.  For testing purposes only
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, opts)
@@ -4363,6 +4854,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(busi
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **forceDownload** | **Boolean** | Whether to force the result to come via download url.  For testing purposes only | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4371,7 +4863,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(busi
 
 ## getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent
 
-> BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
+> BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}
@@ -4400,8 +4892,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let agentId = "agentId_example"; // String | THe ID of the agent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
+apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4420,6 +4918,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessU
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **agentId** | **String** | THe ID of the agent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4428,7 +4927,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessU
 
 ## getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions
 
-> PerformancePredictionResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId)
+> PerformancePredictionResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions
@@ -4456,8 +4955,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId)
+apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4475,6 +4980,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions
  **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
  **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4483,7 +4989,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions
 
 ## getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation
 
-> PerformancePredictionRecalculationResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId)
+> PerformancePredictionRecalculationResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}
@@ -4512,8 +5018,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule the recalculation belongs to
 let recalculationId = "recalculationId_example"; // String | The ID of the recalculation request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId)
+apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4532,6 +5044,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
  **scheduleId** | **String** | The ID of the schedule the recalculation belongs to |  |
  **recalculationId** | **String** | The ID of the recalculation request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4571,7 +5084,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 let opts = { 
   'includeOnlyPublished': true, // Boolean | includeOnlyPublished
-  'expand': "expand_example" // String | expand
+  'expand': "expand_example", // String | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, opts)
@@ -4593,6 +5110,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, week
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules |  |
  **includeOnlyPublished** | **Boolean** | includeOnlyPublished | [optional]  |
  **expand** | **String** | expand | [optional] <br />**Values**: forecast.description |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4629,7 +5147,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the forecast
+  'expand': ["expand_example"], // [String] | Include to access additional data on the forecast
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
@@ -4651,6 +5173,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnit
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **expand** | **[String]** | Include to access additional data on the forecast | [optional] <br />**Values**: planningGroups, generationResults |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4690,7 +5213,11 @@ let weekDateId = "weekDateId_example"; // String | The week start date of the fo
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
   'weekNumber': 3.4, // Number | The week number to fetch (for multi-week forecasts)
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, opts)
@@ -4713,6 +5240,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastData(business
  **forecastId** | **String** | The ID of the forecast |  |
  **weekNumber** | **Number** | The week number to fetch (for multi-week forecasts) | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4721,7 +5249,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastData(business
 
 ## getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults
 
-> BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
+> BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults
@@ -4748,8 +5276,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
+apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4767,6 +5301,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationres
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4805,7 +5340,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts)
@@ -4827,6 +5366,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforec
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4835,7 +5375,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforec
 
 ## getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups
 
-> ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
+> ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups
@@ -4864,8 +5404,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
+apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4883,6 +5429,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroup
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4920,7 +5467,11 @@ let weekDateId = "weekDateId_example"; // String | The week start date of the fo
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
   'weekNumbers': ["weekNumbers_example"], // [String] | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
-  'expand': ["expand_example"] // [String] | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
+  'expand': ["expand_example"], // [String] | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts)
@@ -4943,6 +5494,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequi
  **forecastId** | **String** | The ID of the forecast |  |
  **weekNumbers** | **[String]** | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
  **expand** | **[String]** | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) | [optional] <br />**Values**: results.planningGroupStaffingRequirements.minimumStaffPerInterval, results.planningGroupStaffingRequirements.effectiveStaffPerInterval |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4951,7 +5503,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequi
 
 ## getWorkforcemanagementBusinessunitWeekShorttermforecasts
 
-> BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
+> BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts
@@ -4980,8 +5532,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
+apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecasts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4998,6 +5556,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5006,7 +5565,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUni
 
 ## getWorkforcemanagementBusinessunitWorkplanbid
 
-> WorkPlanBid getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+> WorkPlanBid getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}
@@ -5032,8 +5591,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The id of the workplanbid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWorkplanbid success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5050,6 +5615,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The id of the workplanbid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5058,7 +5624,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
 
 ## getWorkforcemanagementBusinessunitWorkplanbidGroup
 
-> WorkPlanBidGroupResponse getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+> WorkPlanBidGroupResponse getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
@@ -5085,8 +5651,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWorkplanbidGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5104,6 +5676,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, b
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | Work Plan Bid Group id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5112,7 +5685,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, b
 
 ## getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences
 
-> AdminAgentWorkPlanPreferenceResponse getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId)
+> AdminAgentWorkPlanPreferenceResponse getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences
@@ -5139,8 +5712,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId)
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5158,6 +5737,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(busine
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | The ID of the work plan bid group |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5166,7 +5746,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(busine
 
 ## getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary
 
-> WorkPlanBidGroupSummaryList getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId)
+> WorkPlanBidGroupSummaryList getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary
@@ -5192,8 +5772,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId)
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5210,6 +5796,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessU
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5218,7 +5805,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessU
 
 ## getWorkforcemanagementBusinessunitWorkplanbids
 
-> WorkPlanBidListResponse getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
+> WorkPlanBidListResponse getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids
@@ -5243,8 +5830,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5260,6 +5853,7 @@ apiInstance.getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5292,7 +5886,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
   'feature': "feature_example", // String | If specified, the list of business units for which the user is authorized to use the requested feature will be returned
-  'divisionId': "divisionId_example" // String | If specified, the list of business units belonging to the specified division will be returned
+  'divisionId': "divisionId_example", // String | If specified, the list of business units belonging to the specified division will be returned
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunits(opts)
@@ -5312,6 +5910,7 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
  **divisionId** | **String** | If specified, the list of business units belonging to the specified division will be returned | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5345,7 +5944,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'divisionId': ["divisionId_example"] // [String] | The divisionIds to filter by. If omitted, will return business units in all divisions
+  'divisionId': ["divisionId_example"], // [String] | The divisionIds to filter by. If omitted, will return business units in all divisions
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
@@ -5364,6 +5967,7 @@ apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **[String]** | The divisionIds to filter by. If omitted, will return business units in all divisions | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5372,7 +5976,7 @@ apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
 
 ## getWorkforcemanagementCalendarDataIcs
 
-> **&#39;String&#39;** getWorkforcemanagementCalendarDataIcs(calendarId)
+> **&#39;String&#39;** getWorkforcemanagementCalendarDataIcs(calendarId, opts)
 
 
 GET /api/v2/workforcemanagement/calendar/data/ics
@@ -5392,8 +5996,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let calendarId = "calendarId_example"; // String | The id of the ics-formatted calendar
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
+apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementCalendarDataIcs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5409,6 +6019,7 @@ apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **calendarId** | **String** | The id of the ics-formatted calendar |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5417,7 +6028,7 @@ apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
 
 ## getWorkforcemanagementCalendarUrlIcs
 
-> CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs()
+> CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs(opts)
 
 
 GET /api/v2/workforcemanagement/calendar/url/ics
@@ -5441,8 +6052,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementCalendarUrlIcs()
+apiInstance.getWorkforcemanagementCalendarUrlIcs(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementCalendarUrlIcs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5454,7 +6071,10 @@ apiInstance.getWorkforcemanagementCalendarUrlIcs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5463,7 +6083,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementHistoricaldataBulkRemoveJob
 
-> HistoricalImportDeleteFilesJobResponse getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
+> HistoricalImportDeleteFilesJobResponse getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}
@@ -5488,8 +6108,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The job ID of the historical data delete request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
+apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementHistoricaldataBulkRemoveJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5505,6 +6131,7 @@ apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The job ID of the historical data delete request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5513,7 +6140,7 @@ apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
 
 ## getWorkforcemanagementHistoricaldataBulkRemoveJobs
 
-> HistoricalImportOverallDeleteStatusResponse getWorkforcemanagementHistoricaldataBulkRemoveJobs()
+> HistoricalImportOverallDeleteStatusResponse getWorkforcemanagementHistoricaldataBulkRemoveJobs(opts)
 
 
 GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
@@ -5536,8 +6163,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJobs()
+apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJobs(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementHistoricaldataBulkRemoveJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5549,7 +6182,10 @@ apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJobs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5558,7 +6194,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementHistoricaldataImportstatus
 
-> HistoricalImportStatusListing getWorkforcemanagementHistoricaldataImportstatus()
+> HistoricalImportStatusListing getWorkforcemanagementHistoricaldataImportstatus(opts)
 
 
 GET /api/v2/workforcemanagement/historicaldata/importstatus
@@ -5581,8 +6217,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementHistoricaldataImportstatus()
+apiInstance.getWorkforcemanagementHistoricaldataImportstatus(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementHistoricaldataImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5594,7 +6236,10 @@ apiInstance.getWorkforcemanagementHistoricaldataImportstatus()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5603,7 +6248,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementHistoricaldataImportstatusJobId
 
-> HistoricalImportStatusJobResponse getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+> HistoricalImportStatusJobResponse getWorkforcemanagementHistoricaldataImportstatusJobId(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/historicaldata/importstatus/{jobId}
@@ -5628,8 +6273,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The job Id of the historical data import request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementHistoricaldataImportstatusJobId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5645,6 +6296,7 @@ apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The job Id of the historical data import request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5653,7 +6305,7 @@ apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
 
 ## getWorkforcemanagementIntegrationsHris
 
-> WfmIntegrationListing getWorkforcemanagementIntegrationsHris()
+> WfmIntegrationListing getWorkforcemanagementIntegrationsHris(opts)
 
 
 GET /api/v2/workforcemanagement/integrations/hris
@@ -5676,8 +6328,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementIntegrationsHris()
+apiInstance.getWorkforcemanagementIntegrationsHris(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementIntegrationsHris success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5689,7 +6347,10 @@ apiInstance.getWorkforcemanagementIntegrationsHris()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5698,7 +6359,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementIntegrationsHrisTimeofftypesJob
 
-> HrisTimeOffTypesJobResponse getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
+> HrisTimeOffTypesJobResponse getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}
@@ -5721,8 +6382,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
+apiInstance.getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementIntegrationsHrisTimeofftypesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5738,6 +6405,7 @@ apiInstance.getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5837,7 +6505,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"], // [String] | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
@@ -5857,6 +6529,7 @@ apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5865,7 +6538,7 @@ apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
 
 ## getWorkforcemanagementManagementunitActivitycodes
 
-> ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
+> ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -5933,8 +6606,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
+apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5950,6 +6629,7 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5984,7 +6664,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, opts)
@@ -6004,6 +6688,7 @@ apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6040,7 +6725,11 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let agentId = "agentId_example"; // String | The agent id
 let opts = { 
   'excludeCapabilities': true, // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"], // [String] | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
@@ -6062,6 +6751,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
  **agentId** | **String** | The agent id |  |
  **excludeCapabilities** | **Boolean** | Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
  **expand** | **[String]** |  | [optional] <br />**Values**: workPlanOverrides |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6070,7 +6760,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
 
 ## getWorkforcemanagementManagementunitAgentShifttrades
 
-> ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
+> ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades
@@ -6097,8 +6787,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let agentId = "agentId_example"; // String | The agent id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
+apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitAgentShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6115,6 +6811,7 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6123,7 +6820,7 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 
 ## getWorkforcemanagementManagementunitShifttradesMatched
 
-> ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
+> ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched
@@ -6149,8 +6846,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
+apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitShifttradesMatched success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6166,6 +6869,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUni
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6174,7 +6878,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUni
 
 ## getWorkforcemanagementManagementunitShifttradesUsers
 
-> WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
+> WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users
@@ -6199,8 +6903,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
+apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitShifttradesUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6216,6 +6926,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6224,7 +6935,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 
 ## getWorkforcemanagementManagementunitTimeofflimit
 
-> TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
+> TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -6252,8 +6963,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
+apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6270,6 +6987,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, t
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6278,7 +6996,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, t
 
 ## getWorkforcemanagementManagementunitTimeofflimits
 
-> TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
+> TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
@@ -6306,8 +7024,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
+apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6323,6 +7047,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6331,7 +7056,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 
 ## getWorkforcemanagementManagementunitTimeoffplan
 
-> TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
+> TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -6357,8 +7082,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
+apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6375,6 +7106,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, ti
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6383,7 +7115,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, ti
 
 ## getWorkforcemanagementManagementunitTimeoffplans
 
-> TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
+> TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
@@ -6408,8 +7140,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
+apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6425,6 +7163,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6433,7 +7172,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 
 ## getWorkforcemanagementManagementunitUserTimeoffrequest
 
-> TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
+> TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
@@ -6460,8 +7199,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6479,6 +7224,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUni
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6487,7 +7233,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUni
 
 ## getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits
 
-> QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
+> QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits
@@ -6515,8 +7261,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let userId = "userId_example"; // String | The userId to whom the time off request applies.
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6534,6 +7286,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **userId** | **String** | The userId to whom the time off request applies. |  |
  **timeOffRequestId** | **String** | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6542,7 +7295,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(
 
 ## getWorkforcemanagementManagementunitUserTimeoffrequests
 
-> TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
+> TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests
@@ -6568,8 +7321,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6586,6 +7345,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6594,7 +7354,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 
 ## getWorkforcemanagementManagementunitUsers
 
-> WfmUserEntityListing getWorkforcemanagementManagementunitUsers(managementUnitId)
+> WfmUserEntityListing getWorkforcemanagementManagementunitUsers(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users
@@ -6627,8 +7387,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
+apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6644,6 +7410,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6685,7 +7452,11 @@ let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule to fetch
 let opts = { 
   'expand': "expand_example", // String | Which fields, if any, to expand
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
@@ -6708,6 +7479,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, w
  **scheduleId** | **String** | The ID of the schedule to fetch |  |
  **expand** | **String** | Which fields, if any, to expand | [optional] <br />**Values**: generationResults, headcountForecast |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6749,7 +7521,11 @@ let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM
 let opts = { 
   'includeOnlyPublished': true, // Boolean | Return only published schedules
   'earliestWeekDate': "earliestWeekDate_example", // String | The start date of the earliest week to query in yyyy-MM-dd format
-  'latestWeekDate': "latestWeekDate_example" // String | The start date of the latest week to query in yyyy-MM-dd format
+  'latestWeekDate': "latestWeekDate_example", // String | The start date of the latest week to query in yyyy-MM-dd format
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
@@ -6772,6 +7548,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
  **includeOnlyPublished** | **Boolean** | Return only published schedules | [optional]  |
  **earliestWeekDate** | **String** | The start date of the earliest week to query in yyyy-MM-dd format | [optional]  |
  **latestWeekDate** | **String** | The start date of the latest week to query in yyyy-MM-dd format | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6810,7 +7587,11 @@ let weekDateId = "weekDateId_example"; // String | The start week date of the in
 let opts = { 
   'evaluateMatches': true, // Boolean | Whether to evaluate the matches for violations
   'includeCrossWeekShifts': false, // Boolean | Whether to include all shift trades with either the initiating shift or the receiving shift in the week
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
@@ -6833,6 +7614,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
  **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
  **includeCrossWeekShifts** | **Boolean** | Whether to include all shift trades with either the initiating shift or the receiving shift in the week | [optional] [default to false] |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6870,7 +7652,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to fetch
 let opts = { 
-  'includeOnly': ["includeOnly_example"] // [String] | limit response to the specified fields
+  'includeOnly': ["includeOnly_example"], // [String] | limit response to the specified fields
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
@@ -6891,6 +7677,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workP
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to fetch |  |
  **includeOnly** | **[String]** | limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6899,7 +7686,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workP
 
 ## getWorkforcemanagementManagementunitWorkplanrotation
 
-> WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
+> WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -6925,8 +7712,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to fetch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
+apiInstance.getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWorkplanrotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6943,6 +7736,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotation(managementUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to fetch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6978,7 +7772,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"], // [String] | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
@@ -6998,6 +7796,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotations(managementUnit
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: agents |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7039,7 +7838,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'expand': ["expand_example"], // [String] | Include to access additional data on the work plans
-  'exclude': ["exclude_example"] // [String] | Exclude specific data on the work plans from the response
+  'exclude': ["exclude_example"], // [String] | Exclude specific data on the work plans from the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
@@ -7060,6 +7863,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** | Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
  **exclude** | **[String]** | Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7095,7 +7899,11 @@ let opts = {
   'pageNumber': 3.4, // Number | Deprecated, paging is not supported
   'expand': "expand_example", // String | Deprecated, expand settings on the single MU route
   'feature': "feature_example", // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned
-  'divisionId': "divisionId_example" // String | If specified, the list of management units belonging to the specified division will be returned
+  'divisionId': "divisionId_example", // String | If specified, the list of management units belonging to the specified division will be returned
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunits(opts)
@@ -7118,6 +7926,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **expand** | **String** | Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
  **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7151,7 +7960,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'divisionId': ["divisionId_example"] // [String] | The divisionIds to filter by. If omitted, will return all divisions
+  'divisionId': ["divisionId_example"], // [String] | The divisionIds to filter by. If omitted, will return all divisions
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
@@ -7170,6 +7983,7 @@ apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **[String]** | The divisionIds to filter by. If omitted, will return all divisions | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7178,7 +7992,7 @@ apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
 
 ## getWorkforcemanagementNotifications
 
-> NotificationsResponse getWorkforcemanagementNotifications()
+> NotificationsResponse getWorkforcemanagementNotifications(opts)
 
 
 GET /api/v2/workforcemanagement/notifications
@@ -7201,8 +8015,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementNotifications()
+apiInstance.getWorkforcemanagementNotifications(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementNotifications success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7214,7 +8034,10 @@ apiInstance.getWorkforcemanagementNotifications()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7223,7 +8046,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementSchedulingjob
 
-> SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId)
+> SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/schedulingjobs/{jobId}
@@ -7248,8 +8071,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The id of the scheduling job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementSchedulingjob(jobId)
+apiInstance.getWorkforcemanagementSchedulingjob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementSchedulingjob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7265,6 +8094,7 @@ apiInstance.getWorkforcemanagementSchedulingjob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The id of the scheduling job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7273,7 +8103,7 @@ apiInstance.getWorkforcemanagementSchedulingjob(jobId)
 
 ## getWorkforcemanagementShifttrades
 
-> ShiftTradeListResponse getWorkforcemanagementShifttrades()
+> ShiftTradeListResponse getWorkforcemanagementShifttrades(opts)
 
 
 GET /api/v2/workforcemanagement/shifttrades
@@ -7298,8 +8128,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementShifttrades()
+apiInstance.getWorkforcemanagementShifttrades(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7311,7 +8147,10 @@ apiInstance.getWorkforcemanagementShifttrades()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7320,7 +8159,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementShrinkageJob
 
-> WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(jobId)
+> WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId}
@@ -7343,8 +8182,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementShrinkageJob(jobId)
+apiInstance.getWorkforcemanagementShrinkageJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementShrinkageJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7360,6 +8205,7 @@ apiInstance.getWorkforcemanagementShrinkageJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7368,7 +8214,7 @@ apiInstance.getWorkforcemanagementShrinkageJob(jobId)
 
 ## getWorkforcemanagementTeamAdherence
 
-> UserScheduleAdherenceListing getWorkforcemanagementTeamAdherence(teamId)
+> UserScheduleAdherenceListing getWorkforcemanagementTeamAdherence(teamId, opts)
 
 
 GET /api/v2/workforcemanagement/teams/{teamId}/adherence
@@ -7393,8 +8239,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementTeamAdherence(teamId)
+apiInstance.getWorkforcemanagementTeamAdherence(teamId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementTeamAdherence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7410,6 +8262,7 @@ apiInstance.getWorkforcemanagementTeamAdherence(teamId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7418,7 +8271,7 @@ apiInstance.getWorkforcemanagementTeamAdherence(teamId)
 
 ## getWorkforcemanagementTimeoffbalanceJob
 
-> TimeOffBalanceJobResponse getWorkforcemanagementTimeoffbalanceJob(jobId)
+> TimeOffBalanceJobResponse getWorkforcemanagementTimeoffbalanceJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}
@@ -7441,8 +8294,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementTimeoffbalanceJob(jobId)
+apiInstance.getWorkforcemanagementTimeoffbalanceJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementTimeoffbalanceJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7458,6 +8317,7 @@ apiInstance.getWorkforcemanagementTimeoffbalanceJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7466,7 +8326,7 @@ apiInstance.getWorkforcemanagementTimeoffbalanceJob(jobId)
 
 ## getWorkforcemanagementTimeoffrequest
 
-> TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId)
+> TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
@@ -7492,8 +8352,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
+apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7509,6 +8375,7 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7517,7 +8384,7 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 ## getWorkforcemanagementTimeoffrequestWaitlistpositions
 
-> WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
+> WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId, opts)
 
 
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions
@@ -7542,8 +8409,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
+apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequestWaitlistpositions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7559,6 +8432,7 @@ apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequest
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7567,7 +8441,7 @@ apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequest
 
 ## getWorkforcemanagementTimeoffrequests
 
-> TimeOffRequestList getWorkforcemanagementTimeoffrequests()
+> TimeOffRequestList getWorkforcemanagementTimeoffrequests(opts)
 
 
 GET /api/v2/workforcemanagement/timeoffrequests
@@ -7591,8 +8465,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementTimeoffrequests()
+apiInstance.getWorkforcemanagementTimeoffrequests(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7604,7 +8484,10 @@ apiInstance.getWorkforcemanagementTimeoffrequests()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7613,7 +8496,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementUnavailabletimesSettings
 
-> ManagementUnitAvailabilitySettingsResponse getWorkforcemanagementUnavailabletimesSettings()
+> ManagementUnitAvailabilitySettingsResponse getWorkforcemanagementUnavailabletimesSettings(opts)
 
 
 GET /api/v2/workforcemanagement/unavailabletimes/settings
@@ -7636,8 +8519,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementUnavailabletimesSettings()
+apiInstance.getWorkforcemanagementUnavailabletimesSettings(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementUnavailabletimesSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7649,7 +8538,10 @@ apiInstance.getWorkforcemanagementUnavailabletimesSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7658,7 +8550,7 @@ This endpoint does not need any parameter.
 
 ## getWorkforcemanagementUnavailabletimesValidationJob
 
-> QueryAgentUnavailableTimesValidationJobResponse getWorkforcemanagementUnavailabletimesValidationJob(jobId)
+> QueryAgentUnavailableTimesValidationJobResponse getWorkforcemanagementUnavailabletimesValidationJob(jobId, opts)
 
 
 GET /api/v2/workforcemanagement/unavailabletimes/validation/jobs/{jobId}
@@ -7683,8 +8575,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let jobId = "jobId_example"; // String | The ID of the job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementUnavailabletimesValidationJob(jobId)
+apiInstance.getWorkforcemanagementUnavailabletimesValidationJob(jobId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementUnavailabletimesValidationJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7700,6 +8598,7 @@ apiInstance.getWorkforcemanagementUnavailabletimesValidationJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7708,7 +8607,7 @@ apiInstance.getWorkforcemanagementUnavailabletimesValidationJob(jobId)
 
 ## getWorkforcemanagementUserWorkplanbidranks
 
-> WorkPlanBidRanks getWorkforcemanagementUserWorkplanbidranks(userId)
+> WorkPlanBidRanks getWorkforcemanagementUserWorkplanbidranks(userId, opts)
 
 
 GET /api/v2/workforcemanagement/users/{userId}/workplanbidranks
@@ -7733,8 +8632,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementUserWorkplanbidranks(userId)
+apiInstance.getWorkforcemanagementUserWorkplanbidranks(userId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementUserWorkplanbidranks success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7750,6 +8655,7 @@ apiInstance.getWorkforcemanagementUserWorkplanbidranks(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The userId to whom the work plan bid ranks apply. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7758,7 +8664,7 @@ apiInstance.getWorkforcemanagementUserWorkplanbidranks(userId)
 
 ## getWorkforcemanagementWorkplanbidPreferences
 
-> AgentWorkPlanBiddingPreferenceResponse getWorkforcemanagementWorkplanbidPreferences(bidId)
+> AgentWorkPlanBiddingPreferenceResponse getWorkforcemanagementWorkplanbidPreferences(bidId, opts)
 
 
 GET /api/v2/workforcemanagement/workplanbids/{bidId}/preferences
@@ -7783,8 +8689,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let bidId = "bidId_example"; // String | The ID of the work plan bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementWorkplanbidPreferences(bidId)
+apiInstance.getWorkforcemanagementWorkplanbidPreferences(bidId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementWorkplanbidPreferences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7800,6 +8712,7 @@ apiInstance.getWorkforcemanagementWorkplanbidPreferences(bidId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bidId** | **String** | The ID of the work plan bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7808,7 +8721,7 @@ apiInstance.getWorkforcemanagementWorkplanbidPreferences(bidId)
 
 ## getWorkforcemanagementWorkplanbidWorkplans
 
-> AgentWorkPlanListResponse getWorkforcemanagementWorkplanbidWorkplans(bidId)
+> AgentWorkPlanListResponse getWorkforcemanagementWorkplanbidWorkplans(bidId, opts)
 
 
 GET /api/v2/workforcemanagement/workplanbids/{bidId}/workplans
@@ -7833,8 +8746,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let bidId = "bidId_example"; // String | The ID of the work plan bid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementWorkplanbidWorkplans(bidId)
+apiInstance.getWorkforcemanagementWorkplanbidWorkplans(bidId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementWorkplanbidWorkplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7850,6 +8769,7 @@ apiInstance.getWorkforcemanagementWorkplanbidWorkplans(bidId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **bidId** | **String** | The ID of the work plan bid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7858,7 +8778,7 @@ apiInstance.getWorkforcemanagementWorkplanbidWorkplans(bidId)
 
 ## getWorkforcemanagementWorkplanbids
 
-> AgentWorkPlanBids getWorkforcemanagementWorkplanbids()
+> AgentWorkPlanBids getWorkforcemanagementWorkplanbids(opts)
 
 
 GET /api/v2/workforcemanagement/workplanbids
@@ -7881,8 +8801,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWorkforcemanagementWorkplanbids()
+apiInstance.getWorkforcemanagementWorkplanbids(opts)
   .then((data) => {
     console.log(`getWorkforcemanagementWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7894,7 +8820,10 @@ apiInstance.getWorkforcemanagementWorkplanbids()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7903,7 +8832,7 @@ This endpoint does not need any parameter.
 
 ## patchWorkforcemanagementAgentAdherenceExplanation
 
-> AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+> AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}
@@ -7930,8 +8859,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let agentId = "agentId_example"; // String | The ID of the agent to query
 let explanationId = "explanationId_example"; // String | The ID of the explanation to update
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementAgentAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7949,6 +8884,7 @@ apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanati
  **agentId** | **String** | The ID of the agent to query |  |
  **explanationId** | **String** | The ID of the explanation to update |  |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7957,7 +8893,7 @@ apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanati
 
 ## patchWorkforcemanagementAlternativeshiftsTrade
 
-> AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
+> AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}
@@ -7983,8 +8919,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
+apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8001,6 +8943,7 @@ apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **tradeId** | **String** | The ID of the alternative shift trade |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8009,7 +8952,7 @@ apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
 
 ## patchWorkforcemanagementAlternativeshiftsTradesStateJobs
 
-> AlternativeShiftAsyncResponse patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
+> AlternativeShiftAsyncResponse patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body, opts)
 
 
 PATCH /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs
@@ -8034,8 +8977,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
+apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementAlternativeshiftsTradesStateJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8051,6 +9000,7 @@ apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8086,7 +9036,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let body = {}; // Object | body
 let opts = { 
-  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
+  'includeSchedulingDefaultMessageSeverities': true, // Boolean | Whether to include scheduling default message severities
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
@@ -8107,6 +9061,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **body** | **Object** | body |  |
  **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8115,7 +9070,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
 
 ## patchWorkforcemanagementBusinessunitActivitycode
 
-> BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
+> BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -8142,8 +9097,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
+apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8161,6 +9122,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, act
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8169,7 +9131,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, act
 
 ## patchWorkforcemanagementBusinessunitActivityplan
 
-> ActivityPlanResponse patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body)
+> ActivityPlanResponse patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}
@@ -8198,8 +9160,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body)
+apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitActivityplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8217,6 +9185,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, act
  **businessUnitId** | **String** | The ID of the business unit |  |
  **activityPlanId** | **String** | The ID of the activity plan to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8225,7 +9194,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, act
 
 ## patchWorkforcemanagementBusinessunitAlternativeshiftsSettings
 
-> AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
+> AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings
@@ -8251,8 +9220,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
+apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8269,6 +9244,7 @@ apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(busine
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8277,7 +9253,7 @@ apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(busine
 
 ## patchWorkforcemanagementBusinessunitCapacityplan
 
-> CapacityPlanResponse patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+> CapacityPlanResponse patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}
@@ -8304,8 +9280,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8323,6 +9305,7 @@ apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, cap
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8331,7 +9314,7 @@ apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, cap
 
 ## patchWorkforcemanagementBusinessunitMinimumstaffingSettings
 
-> MinimumStaffingResponse patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body)
+> MinimumStaffingResponse patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings
@@ -8357,8 +9340,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body)
+apiInstance.patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitMinimumstaffingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8375,6 +9364,7 @@ apiInstance.patchWorkforcemanagementBusinessunitMinimumstaffingSettings(business
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8383,7 +9373,7 @@ apiInstance.patchWorkforcemanagementBusinessunitMinimumstaffingSettings(business
 
 ## patchWorkforcemanagementBusinessunitPlanninggroup
 
-> PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
+> PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -8410,8 +9400,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let planningGroupId = "planningGroupId_example"; // String | The ID of a planning group to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
+apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitPlanninggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8429,6 +9425,7 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8437,7 +9434,7 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
 
 ## patchWorkforcemanagementBusinessunitSchedulerSettings
 
-> BuSchedulerSettingsResponse patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body)
+> BuSchedulerSettingsResponse patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings
@@ -8463,8 +9460,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body)
+apiInstance.patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitSchedulerSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8481,6 +9484,7 @@ apiInstance.patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8489,7 +9493,7 @@ apiInstance.patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId
 
 ## patchWorkforcemanagementBusinessunitSchedulingRun
 
-> void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
+> void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -8516,8 +9520,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let runId = "runId_example"; // String | The ID of the schedule run
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
+apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body, opts)
   .then(() => {
     console.log('patchWorkforcemanagementBusinessunitSchedulingRun returned successfully.');
   })
@@ -8535,6 +9545,7 @@ apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, ru
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8543,7 +9554,7 @@ void (no response body)
 
 ## patchWorkforcemanagementBusinessunitServicegoaltemplate
 
-> ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
+> ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
@@ -8570,8 +9581,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of a service goal template to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
+apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitServicegoaltemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8589,6 +9606,7 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of a service goal template to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8597,7 +9615,7 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 
 ## patchWorkforcemanagementBusinessunitStaffinggroup
 
-> StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
+> StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
@@ -8624,8 +9642,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
+apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8643,6 +9667,7 @@ apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, st
  **businessUnitId** | **String** | The ID of the business unit |  |
  **staffingGroupId** | **String** | The ID of the staffing group to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8651,7 +9676,7 @@ apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, st
 
 ## patchWorkforcemanagementBusinessunitTimeoffplan
 
-> BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
+> BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
@@ -8678,8 +9703,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
+apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8697,6 +9728,7 @@ apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, time
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffPlanId** | **String** | The ID of the time-off plan to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8705,7 +9737,7 @@ apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, time
 
 ## patchWorkforcemanagementBusinessunitWorkplanbid
 
-> WorkPlanBid patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body)
+> WorkPlanBid patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}
@@ -8732,8 +9764,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The id of the workplanbid
 let body = {}; // Object | The work plan bid to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body)
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitWorkplanbid success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8751,6 +9789,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidI
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The id of the workplanbid |  |
  **body** | **Object** | The work plan bid to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8759,7 +9798,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidI
 
 ## patchWorkforcemanagementBusinessunitWorkplanbidGroup
 
-> WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
+> WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
@@ -8787,8 +9826,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitWorkplanbidGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8807,6 +9852,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | Work Plan Bid Group id |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8815,7 +9861,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId,
 
 ## patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences
 
-> AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
+> AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences
@@ -8843,8 +9889,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8863,6 +9915,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(busi
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **bidGroupId** | **String** | The ID of the work plan bid group |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8871,7 +9924,7 @@ apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(busi
 
 ## patchWorkforcemanagementManagementunit
 
-> ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, body)
+> ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}
@@ -8897,8 +9950,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body)
+apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8915,6 +9974,7 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8923,7 +9983,7 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body)
 
 ## patchWorkforcemanagementManagementunitAgents
 
-> void patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
+> void patchWorkforcemanagementManagementunitAgents(managementUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents
@@ -8949,8 +10009,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
+apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, body, opts)
   .then(() => {
     console.log('patchWorkforcemanagementManagementunitAgents returned successfully.');
   })
@@ -8967,6 +10033,7 @@ apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8975,7 +10042,7 @@ void (no response body)
 
 ## patchWorkforcemanagementManagementunitAgentsWorkplansBulk
 
-> UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body)
+> UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk
@@ -9001,8 +10068,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body)
+apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitAgentsWorkplansBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9019,6 +10092,7 @@ apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(management
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9027,7 +10101,7 @@ apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(management
 
 ## patchWorkforcemanagementManagementunitTimeofflimit
 
-> TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
+> TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -9056,8 +10130,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The id of time off limit object to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
+apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9075,6 +10155,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The id of time off limit object to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9083,7 +10164,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 
 ## patchWorkforcemanagementManagementunitTimeoffplan
 
-> TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
+> TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -9110,8 +10191,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
+apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9129,6 +10216,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9137,7 +10225,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
 
 ## patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus
 
-> UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
+> UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus
@@ -9165,8 +10253,14 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request.
 let userId = "userId_example"; // String | The ID of user to whom the time off request belongs.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
+apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9185,6 +10279,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrations
  **timeOffRequestId** | **String** | The ID of the time off request. |  |
  **userId** | **String** | The ID of user to whom the time off request belongs. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9193,7 +10288,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrations
 
 ## patchWorkforcemanagementManagementunitUnavailabletimesSettings
 
-> ManagementUnitAvailabilitySettingsResponse patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body)
+> ManagementUnitAvailabilitySettingsResponse patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings
@@ -9219,8 +10314,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body)
+apiInstance.patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitUnavailabletimesSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9237,6 +10338,7 @@ apiInstance.patchWorkforcemanagementManagementunitUnavailabletimesSettings(manag
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9245,7 +10347,7 @@ apiInstance.patchWorkforcemanagementManagementunitUnavailabletimesSettings(manag
 
 ## patchWorkforcemanagementManagementunitUserTimeoffrequest
 
-> TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
+> TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
@@ -9273,8 +10375,14 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 let timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
+apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9293,6 +10401,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
  **userId** | **String** | The id of the user the requested time off request belongs to |  |
  **timeOffRequestId** | **String** | The id of the time off request to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9301,7 +10410,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
 
 ## patchWorkforcemanagementManagementunitWeekShifttrade
 
-> ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
+> ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}
@@ -9329,8 +10438,14 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
+apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWeekShifttrade success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9349,6 +10464,7 @@ apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitI
  **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9385,7 +10501,11 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
 let body = {}; // Object | body
 let opts = { 
-  'validationMode': "validationMode_example" // String | Allows to update work plan even if validation result is invalid
+  'validationMode': "validationMode_example", // String | Allows to update work plan even if validation result is invalid
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts)
@@ -9407,6 +10527,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
  **workPlanId** | **String** | The ID of the work plan to update |  |
  **body** | **Object** | body |  |
  **validationMode** | **String** | Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9415,7 +10536,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
 
 ## patchWorkforcemanagementManagementunitWorkplanrotation
 
-> WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
+> WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -9442,8 +10563,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
+apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWorkplanrotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9461,6 +10588,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9469,7 +10597,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
 
 ## patchWorkforcemanagementTimeoffrequest
 
-> TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
+> TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
@@ -9495,8 +10623,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
+apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9513,6 +10647,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9521,7 +10656,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
 
 ## patchWorkforcemanagementUnavailabletimes
 
-> UnavailableTimeListing patchWorkforcemanagementUnavailabletimes(body)
+> UnavailableTimeListing patchWorkforcemanagementUnavailabletimes(body, opts)
 
 
 PATCH /api/v2/workforcemanagement/unavailabletimes
@@ -9546,8 +10681,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementUnavailabletimes(body)
+apiInstance.patchWorkforcemanagementUnavailabletimes(body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementUnavailabletimes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9563,6 +10704,7 @@ apiInstance.patchWorkforcemanagementUnavailabletimes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9571,7 +10713,7 @@ apiInstance.patchWorkforcemanagementUnavailabletimes(body)
 
 ## patchWorkforcemanagementUserWorkplanbidranks
 
-> WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(userId, body)
+> WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(userId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/users/{userId}/workplanbidranks
@@ -9597,8 +10739,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body)
+apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementUserWorkplanbidranks success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9615,6 +10763,7 @@ apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The userId to whom the work plan bid ranks apply. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9623,7 +10772,7 @@ apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body)
 
 ## patchWorkforcemanagementUsersWorkplanbidranksBulk
 
-> EntityListing patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
+> EntityListing patchWorkforcemanagementUsersWorkplanbidranksBulk(body, opts)
 
 
 PATCH /api/v2/workforcemanagement/users/workplanbidranks/bulk
@@ -9648,8 +10797,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = [{}]; // Object | Users
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
+apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementUsersWorkplanbidranksBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9665,6 +10820,7 @@ apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Users |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9673,7 +10829,7 @@ apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
 
 ## patchWorkforcemanagementWorkplanbidPreferences
 
-> AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
+> AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(bidId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/workplanbids/{bidId}/preferences
@@ -9699,8 +10855,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let bidId = "bidId_example"; // String | The ID of the work plan bid
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
+apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementWorkplanbidPreferences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9717,6 +10879,7 @@ apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **bidId** | **String** | The ID of the work plan bid |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9725,7 +10888,7 @@ apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
 
 ## postWorkforcemanagementAdherenceExplanations
 
-> AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(body)
+> AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(body, opts)
 
 
 POST /api/v2/workforcemanagement/adherence/explanations
@@ -9750,8 +10913,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAdherenceExplanations(body)
+apiInstance.postWorkforcemanagementAdherenceExplanations(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAdherenceExplanations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9767,6 +10936,7 @@ apiInstance.postWorkforcemanagementAdherenceExplanations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9802,7 +10972,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let body = {}; // Object | The request body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
@@ -9823,6 +10997,7 @@ apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9859,7 +11034,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
@@ -9878,6 +11057,7 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9886,7 +11066,7 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 
 ## postWorkforcemanagementAdherenceHistoricalBulk
 
-> WfmHistoricalAdherenceBulkResponse postWorkforcemanagementAdherenceHistoricalBulk(body)
+> WfmHistoricalAdherenceBulkResponse postWorkforcemanagementAdherenceHistoricalBulk(body, opts)
 
 
 POST /api/v2/workforcemanagement/adherence/historical/bulk
@@ -9911,8 +11091,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body)
+apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAdherenceHistoricalBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9928,6 +11114,7 @@ apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9936,7 +11123,7 @@ apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body)
 
 ## postWorkforcemanagementAgentAdherenceExplanations
 
-> AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
+> AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(agentId, body, opts)
 
 
 POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations
@@ -9962,8 +11149,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let agentId = "agentId_example"; // String | The ID of the agent to query
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
+apiInstance.postWorkforcemanagementAgentAdherenceExplanations(agentId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentAdherenceExplanations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9980,6 +11173,7 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent to query |  |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10016,7 +11210,11 @@ let agentId = "agentId_example"; // String | The ID of the agent to query
 let body = {}; // Object | The request body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts)
@@ -10038,6 +11236,7 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10046,7 +11245,7 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body
 
 ## postWorkforcemanagementAgentUnavailabletimesQuery
 
-> UnavailableTimeListing postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body)
+> UnavailableTimeListing postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body, opts)
 
 
 POST /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query
@@ -10072,8 +11271,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let agentId = "agentId_example"; // String | The ID of the agent
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body)
+apiInstance.postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentUnavailabletimesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10090,6 +11295,7 @@ apiInstance.postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10098,7 +11304,7 @@ apiInstance.postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body)
 
 ## postWorkforcemanagementAgents
 
-> MoveAgentsResponse postWorkforcemanagementAgents(body)
+> MoveAgentsResponse postWorkforcemanagementAgents(body, opts)
 
 
 POST /api/v2/workforcemanagement/agents
@@ -10123,8 +11329,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAgents(body)
+apiInstance.postWorkforcemanagementAgents(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAgents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10140,6 +11352,7 @@ apiInstance.postWorkforcemanagementAgents(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10148,7 +11361,7 @@ apiInstance.postWorkforcemanagementAgents(body)
 
 ## postWorkforcemanagementAgentsIntegrationsHrisQuery
 
-> AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
+> AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(body, opts)
 
 
 POST /api/v2/workforcemanagement/agents/integrations/hris/query
@@ -10173,8 +11386,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
+apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentsIntegrationsHrisQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10190,6 +11409,7 @@ apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10227,7 +11447,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts)
@@ -10247,6 +11471,7 @@ apiInstance.postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. | [optional] <br />**Values**: exceptionInfo, actuals, scheduledActivities, conformance |
  **body** | **Object** | body | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10255,7 +11480,7 @@ apiInstance.postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts)
 
 ## postWorkforcemanagementAgentsMePossibleworkshifts
 
-> AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(body)
+> AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(body, opts)
 
 
 POST /api/v2/workforcemanagement/agents/me/possibleworkshifts
@@ -10280,8 +11505,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body)
+apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentsMePossibleworkshifts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10297,6 +11528,7 @@ apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10332,7 +11564,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts)
@@ -10353,6 +11589,7 @@ apiInstance.postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts)
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10361,7 +11598,7 @@ apiInstance.postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts)
 
 ## postWorkforcemanagementAgentschedulesMine
 
-> BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(body)
+> BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(body, opts)
 
 
 POST /api/v2/workforcemanagement/agentschedules/mine
@@ -10386,8 +11623,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAgentschedulesMine(body)
+apiInstance.postWorkforcemanagementAgentschedulesMine(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentschedulesMine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10403,6 +11646,7 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10411,7 +11655,7 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(body)
 
 ## postWorkforcemanagementAlternativeshiftsOffersJobs
 
-> AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersJobs(body)
+> AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersJobs(body, opts)
 
 
 POST /api/v2/workforcemanagement/alternativeshifts/offers/jobs
@@ -10436,8 +11680,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAlternativeshiftsOffersJobs(body)
+apiInstance.postWorkforcemanagementAlternativeshiftsOffersJobs(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAlternativeshiftsOffersJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10453,6 +11703,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsOffersJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10461,7 +11712,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsOffersJobs(body)
 
 ## postWorkforcemanagementAlternativeshiftsOffersSearchJobs
 
-> AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
+> AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body, opts)
 
 
 POST /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs
@@ -10486,8 +11737,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
+apiInstance.postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAlternativeshiftsOffersSearchJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10503,6 +11760,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10511,7 +11769,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
 
 ## postWorkforcemanagementAlternativeshiftsTrades
 
-> AlternativeShiftTradeResponse postWorkforcemanagementAlternativeshiftsTrades(body)
+> AlternativeShiftTradeResponse postWorkforcemanagementAlternativeshiftsTrades(body, opts)
 
 
 POST /api/v2/workforcemanagement/alternativeshifts/trades
@@ -10536,8 +11794,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body)
+apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementAlternativeshiftsTrades success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10553,6 +11817,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10561,7 +11826,7 @@ apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body)
 
 ## postWorkforcemanagementBusinessunitActivitycodes
 
-> BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
+> BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
@@ -10587,8 +11852,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10605,6 +11876,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10613,7 +11885,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, bod
 
 ## postWorkforcemanagementBusinessunitActivityplanRunsJobs
 
-> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId)
+> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs
@@ -10641,8 +11913,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to run
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId)
+apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitActivityplanRunsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10659,6 +11937,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnit
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **activityPlanId** | **String** | The ID of the activity plan to run |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10667,7 +11946,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnit
 
 ## postWorkforcemanagementBusinessunitActivityplans
 
-> ActivityPlanResponse postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body)
+> ActivityPlanResponse postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
@@ -10693,8 +11972,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitActivityplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10711,6 +11996,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplans(businessUnitId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10747,7 +12033,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let body = {}; // Object | The request body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts)
@@ -10769,6 +12059,7 @@ apiInstance.postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(busine
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10806,7 +12097,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts)
@@ -10828,6 +12123,7 @@ apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnit
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10863,7 +12159,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | The request body
 let opts = { 
-  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, opts)
@@ -10884,6 +12184,7 @@ apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(bus
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10892,7 +12193,7 @@ apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(bus
 
 ## postWorkforcemanagementBusinessunitCapacityplanCopy
 
-> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy
@@ -10919,8 +12220,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitCapacityplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10938,6 +12245,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, 
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10946,7 +12254,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, 
 
 ## postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate
 
-> CapacityPlanStaffingRequirementResult postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+> CapacityPlanStaffingRequirementResult postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate
@@ -10972,8 +12280,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10990,6 +12304,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(b
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10998,7 +12313,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(b
 
 ## postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
 
-> CapacityPlanStaffingGroupMetricChangeResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+> CapacityPlanStaffingGroupMetricChangeResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations
@@ -11025,8 +12340,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11044,6 +12365,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocati
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11052,7 +12374,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocati
 
 ## postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery
 
-> CapacityPlanStaffingGroupMetricChangeHistoryListResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+> CapacityPlanStaffingGroupMetricChangeHistoryListResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query
@@ -11079,8 +12401,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11098,6 +12426,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocati
  **businessUnitId** | **String** | The ID of the business unit |  |
  **capacityPlanId** | **String** | The ID of the capacity plan |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11106,7 +12435,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocati
 
 ## postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate
 
-> LongTermRequirementsResponse postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+> LongTermRequirementsResponse postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate
@@ -11133,8 +12462,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | 
 let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | forecastId of forecast
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11152,6 +12487,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequireme
  **businessUnitId** | **String** |  |  |
  **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | forecastId of forecast |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11160,7 +12496,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequireme
 
 ## postWorkforcemanagementBusinessunitCapacityplans
 
-> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
@@ -11186,8 +12522,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitCapacityplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11204,6 +12546,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11212,7 +12555,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, bod
 
 ## postWorkforcemanagementBusinessunitCapacityplansBulkRemove
 
-> void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+> void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove
@@ -11238,8 +12581,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body, opts)
   .then(() => {
     console.log('postWorkforcemanagementBusinessunitCapacityplansBulkRemove returned successfully.');
   })
@@ -11256,6 +12605,7 @@ apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessU
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11291,7 +12641,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
 let opts = { 
-  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts)
@@ -11312,6 +12666,7 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, op
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11320,7 +12675,7 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, op
 
 ## postWorkforcemanagementBusinessunitPlanninggroups
 
-> PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
+> PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
@@ -11346,8 +12701,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11364,6 +12725,7 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11372,7 +12734,7 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, bo
 
 ## postWorkforcemanagementBusinessunitServicegoaltemplates
 
-> ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
+> ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
@@ -11398,8 +12760,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitServicegoaltemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11416,6 +12784,7 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11424,7 +12793,7 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 
 ## postWorkforcemanagementBusinessunitStaffinggroups
 
-> StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
+> StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
@@ -11450,8 +12819,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitStaffinggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11468,6 +12843,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11476,7 +12852,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, bo
 
 ## postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery
 
-> PlanningGroupToStaffingGroupsListing postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+> PlanningGroupToStaffingGroupsListing postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query
@@ -11502,8 +12878,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11520,6 +12902,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11555,7 +12938,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, opts)
@@ -11576,6 +12963,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitI
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11584,7 +12972,7 @@ apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitI
 
 ## postWorkforcemanagementBusinessunitTimeofflimits
 
-> BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
+> BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
@@ -11610,8 +12998,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11628,6 +13022,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11636,7 +13031,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, bod
 
 ## postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery
 
-> BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
+> BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
@@ -11662,8 +13057,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11680,6 +13081,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(business
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11688,7 +13090,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(business
 
 ## postWorkforcemanagementBusinessunitTimeoffplans
 
-> BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
+> BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
@@ -11714,8 +13116,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11732,6 +13140,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11740,7 +13149,7 @@ apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body
 
 ## postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery
 
-> QueryAgentScheduleUnavailableTimesResponse postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body)
+> QueryAgentScheduleUnavailableTimesResponse postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query
@@ -11766,8 +13175,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11784,6 +13199,7 @@ apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(bu
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11792,7 +13208,7 @@ apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(bu
 
 ## postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery
 
-> QueryAvailabilityManagementUnitsSettingsResponse postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body)
+> QueryAvailabilityManagementUnitsSettingsResponse postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query
@@ -11818,8 +13234,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11836,6 +13258,7 @@ apiInstance.postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(bus
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11875,7 +13298,11 @@ let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, opts)
@@ -11899,6 +13326,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(b
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11907,7 +13335,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(b
 
 ## postWorkforcemanagementBusinessunitWeekScheduleCopy
 
-> BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)
+> BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy
@@ -11935,8 +13363,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule to copy
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekScheduleCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11955,6 +13389,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, 
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule to copy |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11963,7 +13398,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, 
 
 ## postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations
 
-> PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
+> PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations
@@ -11991,8 +13426,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12011,6 +13452,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
  **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12019,7 +13461,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
 
 ## postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl
 
-> PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
+> PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl
@@ -12047,8 +13489,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12067,6 +13515,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
  **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12075,7 +13524,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformanceprediction
 
 ## postWorkforcemanagementBusinessunitWeekScheduleReschedule
 
-> BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
+> BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule
@@ -12103,8 +13552,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekScheduleReschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12123,6 +13578,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUn
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12131,7 +13587,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUn
 
 ## postWorkforcemanagementBusinessunitWeekScheduleUpdate
 
-> BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
+> BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update
@@ -12161,8 +13617,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekScheduleUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12181,6 +13643,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12189,7 +13652,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId
 
 ## postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl
 
-> UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
+> UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl
@@ -12219,8 +13682,14 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12239,6 +13708,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(busin
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12247,7 +13717,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(busin
 
 ## postWorkforcemanagementBusinessunitWeekSchedules
 
-> BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
+> BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules
@@ -12274,8 +13744,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12293,6 +13769,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, wee
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12301,7 +13778,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, wee
 
 ## postWorkforcemanagementBusinessunitWeekSchedulesGenerate
 
-> BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
+> BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate
@@ -12328,8 +13805,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulesGenerate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12347,6 +13830,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUni
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12355,7 +13839,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUni
 
 ## postWorkforcemanagementBusinessunitWeekSchedulesImport
 
-> ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
+> ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import
@@ -12384,8 +13868,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulesImport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12403,6 +13893,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitI
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12411,7 +13902,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitI
 
 ## postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl
 
-> ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
+> ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl
@@ -12440,8 +13931,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12459,6 +13956,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(busi
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12496,7 +13994,11 @@ let weekDateId = "weekDateId_example"; // String | The week start date of the fo
 let forecastId = "forecastId_example"; // String | The ID of the forecast to copy
 let body = {}; // Object | body
 let opts = { 
-  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, opts)
@@ -12519,6 +14021,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(busines
  **forecastId** | **String** | The ID of the forecast to copy |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12555,7 +14058,11 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let opts = { 
-  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts)
@@ -12577,6 +14084,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(bu
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12585,7 +14093,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(bu
 
 ## postWorkforcemanagementBusinessunitWeekShorttermforecastsImport
 
-> ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
+> ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import
@@ -12614,8 +14122,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastsImport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12633,6 +14147,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(busi
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12641,7 +14156,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(busi
 
 ## postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl
 
-> ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
+> ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl
@@ -12670,8 +14185,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
+apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12689,6 +14210,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploa
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12697,7 +14219,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploa
 
 ## postWorkforcemanagementBusinessunitWorkplanbidCopy
 
-> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body)
+> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy
@@ -12724,8 +14246,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The ID of the work plan bid to copy
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body)
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWorkplanbidCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12743,6 +14271,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, b
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The ID of the work plan bid to copy |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12751,7 +14280,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, b
 
 ## postWorkforcemanagementBusinessunitWorkplanbidGroups
 
-> WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
+> WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups
@@ -12778,8 +14307,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWorkplanbidGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12797,6 +14332,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,
  **businessUnitId** | **String** | The ID of the business unit |  |
  **bidId** | **String** | The work plan bid id of the bid groups |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12805,7 +14341,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId,
 
 ## postWorkforcemanagementBusinessunitWorkplanbids
 
-> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
+> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids
@@ -12831,8 +14367,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let body = {}; // Object | The work plan bid to be created
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12849,6 +14391,7 @@ apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **body** | **Object** | The work plan bid to be created |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12885,7 +14428,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
 let opts = { 
-  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
+  'includeSchedulingDefaultMessageSeverities': true, // Boolean | Whether to include scheduling default message severities
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementBusinessunits(body, opts)
@@ -12905,6 +14452,7 @@ apiInstance.postWorkforcemanagementBusinessunits(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
  **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12939,7 +14487,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'language': en-US // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar
+  'language': en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
@@ -12958,6 +14510,7 @@ apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **language** | **String** | A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12966,7 +14519,7 @@ apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
 
 ## postWorkforcemanagementHistoricaldataBulkRemoveJobs
 
-> HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
+> HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(body, opts)
 
 
 POST /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
@@ -12991,8 +14544,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
+apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementHistoricaldataBulkRemoveJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13008,6 +14567,7 @@ apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13016,7 +14576,7 @@ apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
 
 ## postWorkforcemanagementHistoricaldataValidate
 
-> ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(body)
+> ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(body, opts)
 
 
 POST /api/v2/workforcemanagement/historicaldata/validate
@@ -13041,8 +14601,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementHistoricaldataValidate(body)
+apiInstance.postWorkforcemanagementHistoricaldataValidate(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementHistoricaldataValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13058,6 +14624,7 @@ apiInstance.postWorkforcemanagementHistoricaldataValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13066,7 +14633,7 @@ apiInstance.postWorkforcemanagementHistoricaldataValidate(body)
 
 ## postWorkforcemanagementIntegrationsHriTimeofftypesJobs
 
-> HrisTimeOffTypesResponse postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)
+> HrisTimeOffTypesResponse postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId, opts)
 
 
 POST /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs
@@ -13091,8 +14658,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let hrisIntegrationId = "hrisIntegrationId_example"; // String | The ID of the HRIS integration for which time off types are queried.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)
+apiInstance.postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementIntegrationsHriTimeofftypesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13108,6 +14681,7 @@ apiInstance.postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **hrisIntegrationId** | **String** | The ID of the HRIS integration for which time off types are queried. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13143,7 +14717,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts)
@@ -13164,6 +14742,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(management
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13201,7 +14780,11 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts)
@@ -13223,6 +14806,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13231,7 +14815,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 
 ## postWorkforcemanagementManagementunitHistoricaladherencequery
 
-> WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
+> WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery
@@ -13259,8 +14843,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitHistoricaladherencequery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13277,6 +14867,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13285,7 +14876,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 
 ## postWorkforcemanagementManagementunitMove
 
-> MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, body)
+> MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move
@@ -13313,8 +14904,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitMove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13331,6 +14928,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13339,7 +14937,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body)
 
 ## postWorkforcemanagementManagementunitSchedulesSearch
 
-> UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
+> UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -13369,8 +14967,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13387,6 +14991,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13395,7 +15000,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 
 ## postWorkforcemanagementManagementunitShrinkageJobs
 
-> WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
+> WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs
@@ -13423,8 +15028,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13441,6 +15052,7 @@ apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13449,7 +15061,7 @@ apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,
 
 ## postWorkforcemanagementManagementunitTimeofflimits
 
-> TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
+> TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
@@ -13477,8 +15089,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13495,6 +15113,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13503,7 +15122,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 
 ## postWorkforcemanagementManagementunitTimeofflimitsValuesQuery
 
-> QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
+> QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query
@@ -13529,8 +15148,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13547,6 +15172,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13555,7 +15181,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 
 ## postWorkforcemanagementManagementunitTimeoffplans
 
-> TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
+> TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
@@ -13581,8 +15207,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13599,6 +15231,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13607,7 +15240,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 
 ## postWorkforcemanagementManagementunitTimeoffrequests
 
-> TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
+> TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests
@@ -13633,8 +15266,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13651,6 +15290,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13659,7 +15299,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 
 ## postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery
 
-> UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
+> UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query
@@ -13685,8 +15325,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13703,6 +15349,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatu
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13740,7 +15387,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts)
@@ -13761,6 +15412,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13769,7 +15421,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 
 ## postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery
 
-> WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
+> WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query
@@ -13795,8 +15447,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13813,6 +15471,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistposition
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13821,7 +15480,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistposition
 
 ## postWorkforcemanagementManagementunitUserTimeoffbalanceJobs
 
-> TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)
+> TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs
@@ -13848,8 +15507,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let userId = "userId_example"; // String | The ID of the user
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)
+apiInstance.postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitUserTimeoffbalanceJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13867,6 +15532,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(manageme
  **managementUnitId** | **String** | The ID of the management unit |  |
  **userId** | **String** | The ID of the user |  |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13875,7 +15541,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(manageme
 
 ## postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs
 
-> TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)
+> TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs
@@ -13902,8 +15568,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let userId = "userId_example"; // String | The userId to whom the time off request applies.
 let timeOffRequestId = "timeOffRequestId_example"; // String | The time off request id.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)
+apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13921,6 +15593,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanc
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **userId** | **String** | The userId to whom the time off request applies. |  |
  **timeOffRequestId** | **String** | The time off request id. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13929,7 +15602,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanc
 
 ## postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate
 
-> EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
+> EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate
@@ -13956,8 +15629,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let userId = "userId_example"; // String | The id of the user for whom the time off request estimate is requested
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
+apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13975,6 +15654,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(man
  **managementUnitId** | **String** | The ID of the management unit |  |
  **userId** | **String** | The id of the user for whom the time off request estimate is requested |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13983,7 +15663,7 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(man
 
 ## postWorkforcemanagementManagementunitWeekShifttradeMatch
 
-> MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
+> MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match
@@ -14011,8 +15691,14 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShifttradeMatch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14031,6 +15717,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementU
  **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14039,7 +15726,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementU
 
 ## postWorkforcemanagementManagementunitWeekShifttrades
 
-> ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
+> ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
@@ -14066,8 +15753,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
+apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14085,6 +15778,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitI
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14121,7 +15815,11 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let opts = { 
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts)
@@ -14143,6 +15841,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managemen
  **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14182,7 +15881,11 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let opts = { 
-  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, opts)
@@ -14204,6 +15907,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
  **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14212,7 +15916,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
 
 ## postWorkforcemanagementManagementunitWorkplanCopy
 
-> WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
+> WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy
@@ -14239,8 +15943,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to create a copy
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
+apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14258,6 +15968,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to create a copy |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14295,7 +16006,11 @@ let managementUnitId = "managementUnitId_example"; // String | The ID of the man
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
 let body = {}; // Object | body
 let opts = { 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"], // [String] | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts)
@@ -14317,6 +16032,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
  **workPlanId** | **String** | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. |  |
  **body** | **Object** | body |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: messages |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14325,7 +16041,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
 
 ## postWorkforcemanagementManagementunitWorkplanrotationCopy
 
-> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
+> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy
@@ -14352,8 +16068,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to create a copy
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
+apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanrotationCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14371,6 +16093,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to create a copy |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14379,7 +16102,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
 
 ## postWorkforcemanagementManagementunitWorkplanrotations
 
-> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
+> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations
@@ -14405,8 +16128,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
+apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanrotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14423,6 +16152,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUni
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14458,7 +16188,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let body = {}; // Object | body
 let opts = { 
-  'validationMode': "validationMode_example" // String | Allows to create work plan even if the validation result is invalid
+  'validationMode': "validationMode_example", // String | Allows to create work plan even if the validation result is invalid
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts)
@@ -14479,6 +16213,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, bod
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body |  |
  **validationMode** | **String** | Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14487,7 +16222,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, bod
 
 ## postWorkforcemanagementManagementunits
 
-> ManagementUnit postWorkforcemanagementManagementunits(body)
+> ManagementUnit postWorkforcemanagementManagementunits(body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits
@@ -14514,8 +16249,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementManagementunits(body)
+apiInstance.postWorkforcemanagementManagementunits(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14531,6 +16272,7 @@ apiInstance.postWorkforcemanagementManagementunits(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14539,7 +16281,7 @@ apiInstance.postWorkforcemanagementManagementunits(body)
 
 ## postWorkforcemanagementNotificationsUpdate
 
-> UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(body)
+> UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(body, opts)
 
 
 POST /api/v2/workforcemanagement/notifications/update
@@ -14562,8 +16304,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementNotificationsUpdate(body)
+apiInstance.postWorkforcemanagementNotificationsUpdate(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementNotificationsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14579,6 +16327,7 @@ apiInstance.postWorkforcemanagementNotificationsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14615,7 +16364,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWorkforcemanagementSchedules(opts)
@@ -14634,6 +16387,7 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14642,7 +16396,7 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 
 ## postWorkforcemanagementTeamAdherenceHistorical
 
-> WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
+> WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, body, opts)
 
 
 POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical
@@ -14670,8 +16424,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
+apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTeamAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14688,6 +16448,7 @@ apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14696,7 +16457,7 @@ apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
 
 ## postWorkforcemanagementTeamShrinkageJobs
 
-> WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, body)
+> WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, body, opts)
 
 
 POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs
@@ -14724,8 +16485,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body)
+apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTeamShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14742,6 +16509,7 @@ apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14750,7 +16518,7 @@ apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body)
 
 ## postWorkforcemanagementTimeoffbalanceJobs
 
-> TimeOffBalancesResponse postWorkforcemanagementTimeoffbalanceJobs(body)
+> TimeOffBalancesResponse postWorkforcemanagementTimeoffbalanceJobs(body, opts)
 
 
 POST /api/v2/workforcemanagement/timeoffbalance/jobs
@@ -14775,8 +16543,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | The request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body)
+apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffbalanceJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14792,6 +16566,7 @@ apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14800,7 +16575,7 @@ apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body)
 
 ## postWorkforcemanagementTimeofflimitsAvailableQuery
 
-> AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(body)
+> AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(body, opts)
 
 
 POST /api/v2/workforcemanagement/timeofflimits/available/query
@@ -14825,8 +16600,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(body)
+apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeofflimitsAvailableQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14842,6 +16623,7 @@ apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14850,7 +16632,7 @@ apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(body)
 
 ## postWorkforcemanagementTimeoffrequests
 
-> TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(body)
+> TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(body, opts)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests
@@ -14875,8 +16657,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTimeoffrequests(body)
+apiInstance.postWorkforcemanagementTimeoffrequests(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14892,6 +16680,7 @@ apiInstance.postWorkforcemanagementTimeoffrequests(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14900,7 +16689,7 @@ apiInstance.postWorkforcemanagementTimeoffrequests(body)
 
 ## postWorkforcemanagementTimeoffrequestsEstimate
 
-> EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(body)
+> EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(body, opts)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests/estimate
@@ -14925,8 +16714,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body)
+apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequestsEstimate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14942,6 +16737,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14950,7 +16746,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body)
 
 ## postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery
 
-> TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
+> TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body, opts)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query
@@ -14975,8 +16771,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
+apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14992,6 +16794,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -15000,7 +16803,7 @@ apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
 
 ## postWorkforcemanagementUnavailabletimesQuery
 
-> UnavailableTimeListing postWorkforcemanagementUnavailabletimesQuery(body)
+> UnavailableTimeListing postWorkforcemanagementUnavailabletimesQuery(body, opts)
 
 
 POST /api/v2/workforcemanagement/unavailabletimes/query
@@ -15025,8 +16828,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementUnavailabletimesQuery(body)
+apiInstance.postWorkforcemanagementUnavailabletimesQuery(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementUnavailabletimesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -15042,6 +16851,7 @@ apiInstance.postWorkforcemanagementUnavailabletimesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -15050,7 +16860,7 @@ apiInstance.postWorkforcemanagementUnavailabletimesQuery(body)
 
 ## postWorkforcemanagementUnavailabletimesValidationJobs
 
-> ValidateAgentUnavailableTimesResponse postWorkforcemanagementUnavailabletimesValidationJobs(body)
+> ValidateAgentUnavailableTimesResponse postWorkforcemanagementUnavailabletimesValidationJobs(body, opts)
 
 
 POST /api/v2/workforcemanagement/unavailabletimes/validation/jobs
@@ -15075,8 +16885,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWorkforcemanagementUnavailabletimesValidationJobs(body)
+apiInstance.postWorkforcemanagementUnavailabletimesValidationJobs(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementUnavailabletimesValidationJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -15092,6 +16908,7 @@ apiInstance.postWorkforcemanagementUnavailabletimesValidationJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -15100,7 +16917,7 @@ apiInstance.postWorkforcemanagementUnavailabletimesValidationJobs(body)
 
 ## putWorkforcemanagementAgentIntegrationsHris
 
-> AgentIntegrationsResponse putWorkforcemanagementAgentIntegrationsHris(agentId, body)
+> AgentIntegrationsResponse putWorkforcemanagementAgentIntegrationsHris(agentId, body, opts)
 
 
 PUT /api/v2/workforcemanagement/agents/{agentId}/integrations/hris
@@ -15126,8 +16943,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let agentId = "agentId_example"; // String | The ID of the agent
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body)
+apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body, opts)
   .then((data) => {
     console.log(`putWorkforcemanagementAgentIntegrationsHris success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -15144,6 +16967,7 @@ apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -15152,7 +16976,7 @@ apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body)
 
 ## putWorkforcemanagementBusinessunitTimeofflimitValues
 
-> BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
+> BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body, opts)
 
 
 PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
@@ -15181,8 +17005,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set values for
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
+apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body, opts)
   .then((data) => {
     console.log(`putWorkforcemanagementBusinessunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -15200,6 +17030,7 @@ apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,
  **businessUnitId** | **String** | The ID of the business unit |  |
  **timeOffLimitId** | **String** | The ID of the time-off limit object to set values for |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -15208,7 +17039,7 @@ apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId,
 
 ## putWorkforcemanagementManagementunitTimeofflimitValues
 
-> TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
+> TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts)
 
 
 PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values
@@ -15237,8 +17068,14 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to set values for
 let body = {}; // Object | body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
+apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts)
   .then((data) => {
     console.log(`putWorkforcemanagementManagementunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -15256,10 +17093,11 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to set values for |  |
  **body** | **Object** | body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -40,7 +40,11 @@ let downloadId = "downloadId_example"; // String | Download ID
 let opts = { 
   'contentDisposition': "contentDisposition_example", // String | 
   'issueRedirect': true, // Boolean | 
-  'redirectToAuth': true // Boolean | 
+  'redirectToAuth': true, // Boolean | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getDownload(downloadId, opts)
@@ -62,10 +66,11 @@ apiInstance.getDownload(downloadId, opts)
  **contentDisposition** | **String** |  | [optional]  |
  **issueRedirect** | **Boolean** |  | [optional] [default to true] |
  **redirectToAuth** | **Boolean** |  | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UrlResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

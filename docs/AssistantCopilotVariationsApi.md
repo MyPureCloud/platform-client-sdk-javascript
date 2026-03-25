@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAssistantVariation
 
-> void deleteAssistantVariation(assistantId, variationId)
+> void deleteAssistantVariation(assistantId, variationId, opts)
 
 
 DELETE /api/v2/assistants/{assistantId}/variations/{variationId}
@@ -42,8 +42,14 @@ let apiInstance = new platformClient.AssistantCopilotVariationsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let variationId = "variationId_example"; // String | Variation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAssistantVariation(assistantId, variationId)
+apiInstance.deleteAssistantVariation(assistantId, variationId, opts)
   .then(() => {
     console.log('deleteAssistantVariation returned successfully.');
   })
@@ -60,6 +66,7 @@ apiInstance.deleteAssistantVariation(assistantId, variationId)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **variationId** | **String** | Variation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -68,7 +75,7 @@ void (no response body)
 
 ## getAssistantVariation
 
-> AssistantCopilotVariation getAssistantVariation(assistantId, variationId)
+> AssistantCopilotVariation getAssistantVariation(assistantId, variationId, opts)
 
 
 GET /api/v2/assistants/{assistantId}/variations/{variationId}
@@ -94,8 +101,14 @@ let apiInstance = new platformClient.AssistantCopilotVariationsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let variationId = "variationId_example"; // String | Variation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAssistantVariation(assistantId, variationId)
+apiInstance.getAssistantVariation(assistantId, variationId, opts)
   .then((data) => {
     console.log(`getAssistantVariation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -112,6 +125,7 @@ apiInstance.getAssistantVariation(assistantId, variationId)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **variationId** | **String** | Variation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -120,7 +134,7 @@ apiInstance.getAssistantVariation(assistantId, variationId)
 
 ## getAssistantVariations
 
-> AssistantCopilotVariationListing getAssistantVariations(assistantId)
+> AssistantCopilotVariationListing getAssistantVariations(assistantId, opts)
 
 
 GET /api/v2/assistants/{assistantId}/variations
@@ -145,8 +159,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AssistantCopilotVariationsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAssistantVariations(assistantId)
+apiInstance.getAssistantVariations(assistantId, opts)
   .then((data) => {
     console.log(`getAssistantVariations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -162,6 +182,7 @@ apiInstance.getAssistantVariations(assistantId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -170,7 +191,7 @@ apiInstance.getAssistantVariations(assistantId)
 
 ## postAssistantVariations
 
-> AssistantCopilotVariation postAssistantVariations(assistantId, body)
+> AssistantCopilotVariation postAssistantVariations(assistantId, body, opts)
 
 
 POST /api/v2/assistants/{assistantId}/variations
@@ -196,8 +217,14 @@ let apiInstance = new platformClient.AssistantCopilotVariationsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAssistantVariations(assistantId, body)
+apiInstance.postAssistantVariations(assistantId, body, opts)
   .then((data) => {
     console.log(`postAssistantVariations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -214,6 +241,7 @@ apiInstance.postAssistantVariations(assistantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -222,7 +250,7 @@ apiInstance.postAssistantVariations(assistantId, body)
 
 ## putAssistantVariation
 
-> AssistantCopilotVariation putAssistantVariation(assistantId, variationId, body)
+> AssistantCopilotVariation putAssistantVariation(assistantId, variationId, body, opts)
 
 
 PUT /api/v2/assistants/{assistantId}/variations/{variationId}
@@ -249,8 +277,14 @@ let apiInstance = new platformClient.AssistantCopilotVariationsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let variationId = "variationId_example"; // String | Variation ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAssistantVariation(assistantId, variationId, body)
+apiInstance.putAssistantVariation(assistantId, variationId, body, opts)
   .then((data) => {
     console.log(`putAssistantVariation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -268,10 +302,11 @@ apiInstance.putAssistantVariation(assistantId, variationId, body)
  **assistantId** | **String** | Assistant ID |  |
  **variationId** | **String** | Variation ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AssistantCopilotVariation**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteChatsRoomMessage
 
-> void deleteChatsRoomMessage(roomJid, messageId)
+> void deleteChatsRoomMessage(roomJid, messageId, opts)
 
 
 DELETE /api/v2/chats/rooms/{roomJid}/messages/{messageId}
@@ -72,8 +72,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteChatsRoomMessage(roomJid, messageId)
+apiInstance.deleteChatsRoomMessage(roomJid, messageId, opts)
   .then(() => {
     console.log('deleteChatsRoomMessage returned successfully.');
   })
@@ -90,6 +96,7 @@ apiInstance.deleteChatsRoomMessage(roomJid, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomId |  |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -98,7 +105,7 @@ void (no response body)
 
 ## deleteChatsRoomMessagesPin
 
-> void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
+> void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId, opts)
 
 
 DELETE /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}
@@ -125,8 +132,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let pinnedMessageId = "pinnedMessageId_example"; // String | pinnedMessageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
+apiInstance.deleteChatsRoomMessagesPin(roomJid, pinnedMessageId, opts)
   .then(() => {
     console.log('deleteChatsRoomMessagesPin returned successfully.');
   })
@@ -143,6 +156,7 @@ apiInstance.deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **pinnedMessageId** | **String** | pinnedMessageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -151,7 +165,7 @@ void (no response body)
 
 ## deleteChatsRoomParticipant
 
-> void deleteChatsRoomParticipant(roomJid, userId)
+> void deleteChatsRoomParticipant(roomJid, userId, opts)
 
 
 DELETE /api/v2/chats/rooms/{roomJid}/participants/{userId}
@@ -178,8 +192,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let userId = "userId_example"; // String | userId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteChatsRoomParticipant(roomJid, userId)
+apiInstance.deleteChatsRoomParticipant(roomJid, userId, opts)
   .then(() => {
     console.log('deleteChatsRoomParticipant returned successfully.');
   })
@@ -196,6 +216,7 @@ apiInstance.deleteChatsRoomParticipant(roomJid, userId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **userId** | **String** | userId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -204,7 +225,7 @@ void (no response body)
 
 ## deleteChatsUserMessage
 
-> void deleteChatsUserMessage(userId, messageId)
+> void deleteChatsUserMessage(userId, messageId, opts)
 
 
 DELETE /api/v2/chats/users/{userId}/messages/{messageId}
@@ -231,8 +252,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteChatsUserMessage(userId, messageId)
+apiInstance.deleteChatsUserMessage(userId, messageId, opts)
   .then(() => {
     console.log('deleteChatsUserMessage returned successfully.');
   })
@@ -249,6 +276,7 @@ apiInstance.deleteChatsUserMessage(userId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -257,7 +285,7 @@ void (no response body)
 
 ## deleteChatsUserMessagesPin
 
-> void deleteChatsUserMessagesPin(userId, pinnedMessageId)
+> void deleteChatsUserMessagesPin(userId, pinnedMessageId, opts)
 
 
 DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}
@@ -284,8 +312,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
 let pinnedMessageId = "pinnedMessageId_example"; // String | pinnedMessageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteChatsUserMessagesPin(userId, pinnedMessageId)
+apiInstance.deleteChatsUserMessagesPin(userId, pinnedMessageId, opts)
   .then(() => {
     console.log('deleteChatsUserMessagesPin returned successfully.');
   })
@@ -302,6 +336,7 @@ apiInstance.deleteChatsUserMessagesPin(userId, pinnedMessageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **pinnedMessageId** | **String** | pinnedMessageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -310,7 +345,7 @@ void (no response body)
 
 ## deleteChatsUsersMeSettings
 
-> void deleteChatsUsersMeSettings()
+> void deleteChatsUsersMeSettings(opts)
 
 
 DELETE /api/v2/chats/users/me/settings
@@ -331,8 +366,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ChatApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteChatsUsersMeSettings()
+apiInstance.deleteChatsUsersMeSettings(opts)
   .then(() => {
     console.log('deleteChatsUsersMeSettings returned successfully.');
   })
@@ -344,7 +385,10 @@ apiInstance.deleteChatsUsersMeSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -353,7 +397,7 @@ void (no response body)
 
 ## getChatsMessage
 
-> ChatMessageResponse getChatsMessage(messageId)
+> ChatMessageResponse getChatsMessage(messageId, opts)
 
 
 GET /api/v2/chats/messages/{messageId}
@@ -380,8 +424,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsMessage(messageId)
+apiInstance.getChatsMessage(messageId, opts)
   .then((data) => {
     console.log(`getChatsMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -397,6 +447,7 @@ apiInstance.getChatsMessage(messageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -405,7 +456,7 @@ apiInstance.getChatsMessage(messageId)
 
 ## getChatsRoom
 
-> Room getChatsRoom(roomJid)
+> Room getChatsRoom(roomJid, opts)
 
 
 GET /api/v2/chats/rooms/{roomJid}
@@ -431,8 +482,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsRoom(roomJid)
+apiInstance.getChatsRoom(roomJid, opts)
   .then((data) => {
     console.log(`getChatsRoom success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -448,6 +505,7 @@ apiInstance.getChatsRoom(roomJid)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -456,7 +514,7 @@ apiInstance.getChatsRoom(roomJid)
 
 ## getChatsRoomMessage
 
-> ChatMessageEntityListing getChatsRoomMessage(roomJid, messageIds)
+> ChatMessageEntityListing getChatsRoomMessage(roomJid, messageIds, opts)
 
 
 GET /api/v2/chats/rooms/{roomJid}/messages/{messageIds}
@@ -483,8 +541,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let messageIds = "messageIds_example"; // String | messageIds, comma separated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsRoomMessage(roomJid, messageIds)
+apiInstance.getChatsRoomMessage(roomJid, messageIds, opts)
   .then((data) => {
     console.log(`getChatsRoomMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -501,6 +565,7 @@ apiInstance.getChatsRoomMessage(roomJid, messageIds)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **messageIds** | **String** | messageIds, comma separated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -539,7 +604,11 @@ let opts = {
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
   'after': "after_example", // String | The beginning date for messages to retrieve
-  'excludeMetadata': true // Boolean | Whether to exclude metadata for messages
+  'excludeMetadata': true, // Boolean | Whether to exclude metadata for messages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getChatsRoomMessages(roomJid, opts)
@@ -562,6 +631,7 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
  **excludeMetadata** | **Boolean** | Whether to exclude metadata for messages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -570,7 +640,7 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
 
 ## getChatsRoomParticipant
 
-> RoomParticipant getChatsRoomParticipant(roomJid, participantJid)
+> RoomParticipant getChatsRoomParticipant(roomJid, participantJid, opts)
 
 
 GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid}
@@ -594,8 +664,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let participantJid = "participantJid_example"; // String | participantJid
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsRoomParticipant(roomJid, participantJid)
+apiInstance.getChatsRoomParticipant(roomJid, participantJid, opts)
   .then((data) => {
     console.log(`getChatsRoomParticipant success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -612,6 +688,7 @@ apiInstance.getChatsRoomParticipant(roomJid, participantJid)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **participantJid** | **String** | participantJid |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -647,7 +724,11 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let opts = { 
-  'notify': true // Boolean | Whether to get users to notify
+  'notify': true, // Boolean | Whether to get users to notify
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getChatsRoomParticipants(roomJid, opts)
@@ -667,6 +748,7 @@ apiInstance.getChatsRoomParticipants(roomJid, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **notify** | **Boolean** | Whether to get users to notify | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -675,7 +757,7 @@ apiInstance.getChatsRoomParticipants(roomJid, opts)
 
 ## getChatsSettings
 
-> ChatSettings getChatsSettings()
+> ChatSettings getChatsSettings(opts)
 
 
 GET /api/v2/chats/settings
@@ -699,8 +781,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ChatApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsSettings()
+apiInstance.getChatsSettings(opts)
   .then((data) => {
     console.log(`getChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -712,7 +800,10 @@ apiInstance.getChatsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -751,7 +842,11 @@ let opts = {
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
   'after': "after_example", // String | The beginning date for messages to retrieve
-  'excludeMetadata': true // Boolean | Whether to exclude metadata for messages
+  'excludeMetadata': true, // Boolean | Whether to exclude metadata for messages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getChatsThreadMessages(threadId, opts)
@@ -774,6 +869,7 @@ apiInstance.getChatsThreadMessages(threadId, opts)
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
  **excludeMetadata** | **Boolean** | Whether to exclude metadata for messages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -782,7 +878,7 @@ apiInstance.getChatsThreadMessages(threadId, opts)
 
 ## getChatsUser
 
-> OneOnOne getChatsUser(userId)
+> OneOnOne getChatsUser(userId, opts)
 
 
 GET /api/v2/chats/users/{userId}
@@ -808,8 +904,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsUser(userId)
+apiInstance.getChatsUser(userId, opts)
   .then((data) => {
     console.log(`getChatsUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -825,6 +927,7 @@ apiInstance.getChatsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -833,7 +936,7 @@ apiInstance.getChatsUser(userId)
 
 ## getChatsUserMessage
 
-> ChatMessageEntityListing getChatsUserMessage(userId, messageIds)
+> ChatMessageEntityListing getChatsUserMessage(userId, messageIds, opts)
 
 
 GET /api/v2/chats/users/{userId}/messages/{messageIds}
@@ -860,8 +963,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
 let messageIds = "messageIds_example"; // String | messageIds, comma separated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsUserMessage(userId, messageIds)
+apiInstance.getChatsUserMessage(userId, messageIds, opts)
   .then((data) => {
     console.log(`getChatsUserMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -878,6 +987,7 @@ apiInstance.getChatsUserMessage(userId, messageIds)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **messageIds** | **String** | messageIds, comma separated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -916,7 +1026,11 @@ let opts = {
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
   'after': "after_example", // String | The beginning date for messages to retrieve
-  'excludeMetadata': true // Boolean | Whether to exclude metadata for messages
+  'excludeMetadata': true, // Boolean | Whether to exclude metadata for messages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getChatsUserMessages(userId, opts)
@@ -939,6 +1053,7 @@ apiInstance.getChatsUserMessages(userId, opts)
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
  **excludeMetadata** | **Boolean** | Whether to exclude metadata for messages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -947,7 +1062,7 @@ apiInstance.getChatsUserMessages(userId, opts)
 
 ## getChatsUserSettings
 
-> ChatUserSettings getChatsUserSettings(userId)
+> ChatUserSettings getChatsUserSettings(userId, opts)
 
 
 GET /api/v2/chats/users/{userId}/settings
@@ -973,8 +1088,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsUserSettings(userId)
+apiInstance.getChatsUserSettings(userId, opts)
   .then((data) => {
     console.log(`getChatsUserSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -990,6 +1111,7 @@ apiInstance.getChatsUserSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -998,7 +1120,7 @@ apiInstance.getChatsUserSettings(userId)
 
 ## getChatsUsersMeSettings
 
-> UserSettingsForChat getChatsUsersMeSettings()
+> UserSettingsForChat getChatsUsersMeSettings(opts)
 
 
 GET /api/v2/chats/users/me/settings
@@ -1019,8 +1141,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ChatApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getChatsUsersMeSettings()
+apiInstance.getChatsUsersMeSettings(opts)
   .then((data) => {
     console.log(`getChatsUsersMeSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1032,7 +1160,10 @@ apiInstance.getChatsUsersMeSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1041,7 +1172,7 @@ This endpoint does not need any parameter.
 
 ## patchChatsRoom
 
-> void patchChatsRoom(roomJid, body)
+> void patchChatsRoom(roomJid, body, opts)
 
 
 PATCH /api/v2/chats/rooms/{roomJid}
@@ -1068,8 +1199,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let body = {}; // Object | Room properties
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchChatsRoom(roomJid, body)
+apiInstance.patchChatsRoom(roomJid, body, opts)
   .then(() => {
     console.log('patchChatsRoom returned successfully.');
   })
@@ -1086,6 +1223,7 @@ apiInstance.patchChatsRoom(roomJid, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **body** | **Object** | Room properties |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1094,7 +1232,7 @@ void (no response body)
 
 ## patchChatsRoomMessage
 
-> ChatSendMessageResponse patchChatsRoomMessage(roomJid, messageId, body)
+> ChatSendMessageResponse patchChatsRoomMessage(roomJid, messageId, body, opts)
 
 
 PATCH /api/v2/chats/rooms/{roomJid}/messages/{messageId}
@@ -1122,8 +1260,14 @@ let apiInstance = new platformClient.ChatApi();
 let roomJid = "roomJid_example"; // String | roomId
 let messageId = "messageId_example"; // String | messageId
 let body = {}; // Object | messageBody
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchChatsRoomMessage(roomJid, messageId, body)
+apiInstance.patchChatsRoomMessage(roomJid, messageId, body, opts)
   .then((data) => {
     console.log(`patchChatsRoomMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1141,6 +1285,7 @@ apiInstance.patchChatsRoomMessage(roomJid, messageId, body)
  **roomJid** | **String** | roomId |  |
  **messageId** | **String** | messageId |  |
  **body** | **Object** | messageBody |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1149,7 +1294,7 @@ apiInstance.patchChatsRoomMessage(roomJid, messageId, body)
 
 ## patchChatsSettings
 
-> ChatSettings patchChatsSettings(body)
+> ChatSettings patchChatsSettings(body, opts)
 
 
 PATCH /api/v2/chats/settings
@@ -1174,8 +1319,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let body = {}; // Object | Chat
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchChatsSettings(body)
+apiInstance.patchChatsSettings(body, opts)
   .then((data) => {
     console.log(`patchChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1191,6 +1342,7 @@ apiInstance.patchChatsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Chat |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1199,7 +1351,7 @@ apiInstance.patchChatsSettings(body)
 
 ## patchChatsUserMessage
 
-> ChatSendMessageResponse patchChatsUserMessage(userId, messageId, body)
+> ChatSendMessageResponse patchChatsUserMessage(userId, messageId, body, opts)
 
 
 PATCH /api/v2/chats/users/{userId}/messages/{messageId}
@@ -1227,8 +1379,14 @@ let apiInstance = new platformClient.ChatApi();
 let userId = "userId_example"; // String | userId
 let messageId = "messageId_example"; // String | messageId
 let body = {}; // Object | message body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchChatsUserMessage(userId, messageId, body)
+apiInstance.patchChatsUserMessage(userId, messageId, body, opts)
   .then((data) => {
     console.log(`patchChatsUserMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1246,6 +1404,7 @@ apiInstance.patchChatsUserMessage(userId, messageId, body)
  **userId** | **String** | userId |  |
  **messageId** | **String** | messageId |  |
  **body** | **Object** | message body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1254,7 +1413,7 @@ apiInstance.patchChatsUserMessage(userId, messageId, body)
 
 ## patchChatsUserSettings
 
-> ChatUserSettings patchChatsUserSettings(userId, body)
+> ChatUserSettings patchChatsUserSettings(userId, body, opts)
 
 
 PATCH /api/v2/chats/users/{userId}/settings
@@ -1281,8 +1440,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchChatsUserSettings(userId, body)
+apiInstance.patchChatsUserSettings(userId, body, opts)
   .then((data) => {
     console.log(`patchChatsUserSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1299,6 +1464,7 @@ apiInstance.patchChatsUserSettings(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1307,7 +1473,7 @@ apiInstance.patchChatsUserSettings(userId, body)
 
 ## patchChatsUsersMeSettings
 
-> UserSettingsForChat patchChatsUsersMeSettings(body)
+> UserSettingsForChat patchChatsUsersMeSettings(body, opts)
 
 
 PATCH /api/v2/chats/users/me/settings
@@ -1330,8 +1496,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchChatsUsersMeSettings(body)
+apiInstance.patchChatsUsersMeSettings(body, opts)
   .then((data) => {
     console.log(`patchChatsUsersMeSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1347,6 +1519,7 @@ apiInstance.patchChatsUsersMeSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1355,7 +1528,7 @@ apiInstance.patchChatsUsersMeSettings(body)
 
 ## postChatsRoomMessages
 
-> ChatSendMessageResponse postChatsRoomMessages(roomJid, body)
+> ChatSendMessageResponse postChatsRoomMessages(roomJid, body, opts)
 
 
 POST /api/v2/chats/rooms/{roomJid}/messages
@@ -1382,8 +1555,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomId
 let body = {}; // Object | messageBody
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsRoomMessages(roomJid, body)
+apiInstance.postChatsRoomMessages(roomJid, body, opts)
   .then((data) => {
     console.log(`postChatsRoomMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1400,6 +1579,7 @@ apiInstance.postChatsRoomMessages(roomJid, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomId |  |
  **body** | **Object** | messageBody |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1408,7 +1588,7 @@ apiInstance.postChatsRoomMessages(roomJid, body)
 
 ## postChatsRoomMessagesPins
 
-> void postChatsRoomMessagesPins(roomJid, body)
+> void postChatsRoomMessagesPins(roomJid, body, opts)
 
 
 POST /api/v2/chats/rooms/{roomJid}/messages/pins
@@ -1435,8 +1615,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let body = {}; // Object | Pinned Message Ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsRoomMessagesPins(roomJid, body)
+apiInstance.postChatsRoomMessagesPins(roomJid, body, opts)
   .then(() => {
     console.log('postChatsRoomMessagesPins returned successfully.');
   })
@@ -1453,6 +1639,7 @@ apiInstance.postChatsRoomMessagesPins(roomJid, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **body** | **Object** | Pinned Message Ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1461,7 +1648,7 @@ void (no response body)
 
 ## postChatsRoomParticipant
 
-> void postChatsRoomParticipant(roomJid, userId)
+> void postChatsRoomParticipant(roomJid, userId, opts)
 
 
 POST /api/v2/chats/rooms/{roomJid}/participants/{userId}
@@ -1488,8 +1675,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let userId = "userId_example"; // String | userId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsRoomParticipant(roomJid, userId)
+apiInstance.postChatsRoomParticipant(roomJid, userId, opts)
   .then(() => {
     console.log('postChatsRoomParticipant returned successfully.');
   })
@@ -1506,6 +1699,7 @@ apiInstance.postChatsRoomParticipant(roomJid, userId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **userId** | **String** | userId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1514,7 +1708,7 @@ void (no response body)
 
 ## postChatsRooms
 
-> CreateRoomResponse postChatsRooms(body)
+> CreateRoomResponse postChatsRooms(body, opts)
 
 
 POST /api/v2/chats/rooms
@@ -1540,8 +1734,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let body = {}; // Object | Room properties
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsRooms(body)
+apiInstance.postChatsRooms(body, opts)
   .then((data) => {
     console.log(`postChatsRooms success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1557,6 +1757,7 @@ apiInstance.postChatsRooms(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Room properties |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1565,7 +1766,7 @@ apiInstance.postChatsRooms(body)
 
 ## postChatsUserMessages
 
-> ChatSendMessageResponse postChatsUserMessages(userId, body)
+> ChatSendMessageResponse postChatsUserMessages(userId, body, opts)
 
 
 POST /api/v2/chats/users/{userId}/messages
@@ -1592,8 +1793,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
 let body = {}; // Object | message body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsUserMessages(userId, body)
+apiInstance.postChatsUserMessages(userId, body, opts)
   .then((data) => {
     console.log(`postChatsUserMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1610,6 +1817,7 @@ apiInstance.postChatsUserMessages(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **body** | **Object** | message body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1618,7 +1826,7 @@ apiInstance.postChatsUserMessages(userId, body)
 
 ## postChatsUserMessagesPins
 
-> void postChatsUserMessagesPins(userId, body)
+> void postChatsUserMessagesPins(userId, body, opts)
 
 
 POST /api/v2/chats/users/{userId}/messages/pins
@@ -1645,8 +1853,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
 let body = {}; // Object | Pinned Message Ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsUserMessagesPins(userId, body)
+apiInstance.postChatsUserMessagesPins(userId, body, opts)
   .then(() => {
     console.log('postChatsUserMessagesPins returned successfully.');
   })
@@ -1663,6 +1877,7 @@ apiInstance.postChatsUserMessagesPins(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **body** | **Object** | Pinned Message Ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1671,7 +1886,7 @@ void (no response body)
 
 ## postChatsUsersMeSettings
 
-> void postChatsUsersMeSettings(body)
+> void postChatsUsersMeSettings(body, opts)
 
 
 POST /api/v2/chats/users/me/settings
@@ -1694,8 +1909,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postChatsUsersMeSettings(body)
+apiInstance.postChatsUsersMeSettings(body, opts)
   .then(() => {
     console.log('postChatsUsersMeSettings returned successfully.');
   })
@@ -1711,6 +1932,7 @@ apiInstance.postChatsUsersMeSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1719,7 +1941,7 @@ void (no response body)
 
 ## putChatsMessageReactions
 
-> void putChatsMessageReactions(messageId, body)
+> void putChatsMessageReactions(messageId, body, opts)
 
 
 PUT /api/v2/chats/messages/{messageId}/reactions
@@ -1746,8 +1968,14 @@ let apiInstance = new platformClient.ChatApi();
 
 let messageId = "messageId_example"; // String | messageId
 let body = {}; // Object | reactionUpdate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putChatsMessageReactions(messageId, body)
+apiInstance.putChatsMessageReactions(messageId, body, opts)
   .then(() => {
     console.log('putChatsMessageReactions returned successfully.');
   })
@@ -1764,6 +1992,7 @@ apiInstance.putChatsMessageReactions(messageId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
  **body** | **Object** | reactionUpdate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1772,7 +2001,7 @@ void (no response body)
 
 ## putChatsSettings
 
-> ChatSettings putChatsSettings(body)
+> ChatSettings putChatsSettings(body, opts)
 
 
 PUT /api/v2/chats/settings
@@ -1797,8 +2026,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ChatApi();
 
 let body = {}; // Object | Chat
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putChatsSettings(body)
+apiInstance.putChatsSettings(body, opts)
   .then((data) => {
     console.log(`putChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1814,10 +2049,11 @@ apiInstance.putChatsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Chat |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

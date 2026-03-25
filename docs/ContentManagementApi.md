@@ -73,7 +73,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let documentId = "documentId_example"; // String | Document ID
 let opts = { 
-  'override': true // Boolean | Override any lock on the document
+  'override': true, // Boolean | Override any lock on the document
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteContentmanagementDocument(documentId, opts)
@@ -93,6 +97,7 @@ apiInstance.deleteContentmanagementDocument(documentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -101,7 +106,7 @@ void (no response body)
 
 ## deleteContentmanagementShare
 
-> void deleteContentmanagementShare(shareId)
+> void deleteContentmanagementShare(shareId, opts)
 
 
 DELETE /api/v2/contentmanagement/shares/{shareId}
@@ -126,8 +131,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ContentManagementApi();
 
 let shareId = "shareId_example"; // String | Share ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteContentmanagementShare(shareId)
+apiInstance.deleteContentmanagementShare(shareId, opts)
   .then(() => {
     console.log('deleteContentmanagementShare returned successfully.');
   })
@@ -143,6 +154,7 @@ apiInstance.deleteContentmanagementShare(shareId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **shareId** | **String** | Share ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -151,7 +163,7 @@ void (no response body)
 
 ## deleteContentmanagementStatusStatusId
 
-> void deleteContentmanagementStatusStatusId(statusId)
+> void deleteContentmanagementStatusStatusId(statusId, opts)
 
 
 DELETE /api/v2/contentmanagement/status/{statusId}
@@ -174,8 +186,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ContentManagementApi();
 
 let statusId = "statusId_example"; // String | Status ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteContentmanagementStatusStatusId(statusId)
+apiInstance.deleteContentmanagementStatusStatusId(statusId, opts)
   .then(() => {
     console.log('deleteContentmanagementStatusStatusId returned successfully.');
   })
@@ -191,6 +209,7 @@ apiInstance.deleteContentmanagementStatusStatusId(statusId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **statusId** | **String** | Status ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -223,7 +242,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let opts = { 
-  'moveChildrenToWorkspaceId': "moveChildrenToWorkspaceId_example" // String | New location for objects in deleted workspace.
+  'moveChildrenToWorkspaceId': "moveChildrenToWorkspaceId_example", // String | New location for objects in deleted workspace.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
@@ -243,6 +266,7 @@ apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **moveChildrenToWorkspaceId** | **String** | New location for objects in deleted workspace. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -251,7 +275,7 @@ void (no response body)
 
 ## deleteContentmanagementWorkspaceMember
 
-> void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
+> void deleteContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
@@ -275,8 +299,14 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let memberId = "memberId_example"; // String | Member ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
+apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId, opts)
   .then(() => {
     console.log('deleteContentmanagementWorkspaceMember returned successfully.');
   })
@@ -293,6 +323,7 @@ apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -301,7 +332,7 @@ void (no response body)
 
 ## deleteContentmanagementWorkspaceTagvalue
 
-> void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
+> void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
@@ -327,8 +358,14 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let tagId = "tagId_example"; // String | Tag ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
+apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
   .then(() => {
     console.log('deleteContentmanagementWorkspaceTagvalue returned successfully.');
   })
@@ -345,6 +382,7 @@ apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +417,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let documentId = "documentId_example"; // String | Document ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementDocument(documentId, opts)
@@ -399,6 +441,7 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: lockInfo, acl, workspace |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -434,7 +477,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 let documentId = "documentId_example"; // String | Document ID
 let opts = { 
   'disposition': "disposition_example", // String | Request how the content will be downloaded: a file attachment or inline. Default is attachment.
-  'contentType': "contentType_example" // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
+  'contentType': "contentType_example", // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementDocumentContent(documentId, opts)
@@ -455,6 +502,7 @@ apiInstance.getContentmanagementDocumentContent(documentId, opts)
  **documentId** | **String** | Document ID |  |
  **disposition** | **String** | Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] <br />**Values**: attachment, inline |
  **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -495,7 +543,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "sortBy_example", // String | name or dateCreated
-  'sortOrder': "ascending" // String | ascending or descending
+  'sortOrder': "ascending", // String | ascending or descending
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementDocuments(workspaceId, opts)
@@ -520,6 +572,7 @@ apiInstance.getContentmanagementDocuments(workspaceId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | name or dateCreated | [optional]  |
  **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -556,7 +609,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | name or dateCreated
   'sortOrder': "ascending", // String | ascending or descending
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementQuery(queryPhrase, opts)
@@ -580,6 +637,7 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
  **sortBy** | **String** | name or dateCreated | [optional] [default to name] |
  **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -588,7 +646,7 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
 
 ## getContentmanagementSecurityprofile
 
-> SecurityProfile getContentmanagementSecurityprofile(securityProfileId)
+> SecurityProfile getContentmanagementSecurityprofile(securityProfileId, opts)
 
 
 GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}
@@ -611,8 +669,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ContentManagementApi();
 
 let securityProfileId = "securityProfileId_example"; // String | Security Profile Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getContentmanagementSecurityprofile(securityProfileId)
+apiInstance.getContentmanagementSecurityprofile(securityProfileId, opts)
   .then((data) => {
     console.log(`getContentmanagementSecurityprofile success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -628,6 +692,7 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **securityProfileId** | **String** | Security Profile Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -636,7 +701,7 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
 
 ## getContentmanagementSecurityprofiles
 
-> SecurityProfileEntityListing getContentmanagementSecurityprofiles()
+> SecurityProfileEntityListing getContentmanagementSecurityprofiles(opts)
 
 
 GET /api/v2/contentmanagement/securityprofiles
@@ -657,8 +722,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ContentManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getContentmanagementSecurityprofiles()
+apiInstance.getContentmanagementSecurityprofiles(opts)
   .then((data) => {
     console.log(`getContentmanagementSecurityprofiles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -670,7 +741,10 @@ apiInstance.getContentmanagementSecurityprofiles()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -703,7 +777,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let shareId = "shareId_example"; // String | Share ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementShare(shareId, opts)
@@ -723,6 +801,7 @@ apiInstance.getContentmanagementShare(shareId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **shareId** | **String** | Share ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -759,7 +838,11 @@ let sharedId = "sharedId_example"; // String | Shared ID
 let opts = { 
   'disposition': "attachment", // String | Request how the share content will be downloaded: attached as a file or inline. Default is attachment.
   'contentType': "contentType_example", // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
-  'expand': "expand_example" // String | Expand some document fields
+  'expand': "expand_example", // String | Expand some document fields
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
@@ -781,6 +864,7 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
  **disposition** | **String** | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
  **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: document.acl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -817,7 +901,11 @@ let opts = {
   'entityId': "entityId_example", // String | Filters the shares returned to only the entity specified by the value of this parameter.
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementShares(opts)
@@ -839,6 +927,7 @@ apiInstance.getContentmanagementShares(opts)
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -871,7 +960,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementStatus(opts)
@@ -891,6 +984,7 @@ apiInstance.getContentmanagementStatus(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -899,7 +993,7 @@ apiInstance.getContentmanagementStatus(opts)
 
 ## getContentmanagementStatusStatusId
 
-> CommandStatus getContentmanagementStatusStatusId(statusId)
+> CommandStatus getContentmanagementStatusStatusId(statusId, opts)
 
 
 GET /api/v2/contentmanagement/status/{statusId}
@@ -922,8 +1016,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ContentManagementApi();
 
 let statusId = "statusId_example"; // String | Status ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getContentmanagementStatusStatusId(statusId)
+apiInstance.getContentmanagementStatusStatusId(statusId, opts)
   .then((data) => {
     console.log(`getContentmanagementStatusStatusId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -939,6 +1039,7 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **statusId** | **String** | Status ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -947,7 +1048,7 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
 
 ## getContentmanagementUsage
 
-> Usage getContentmanagementUsage()
+> Usage getContentmanagementUsage(opts)
 
 
 GET /api/v2/contentmanagement/usage
@@ -968,8 +1069,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ContentManagementApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getContentmanagementUsage()
+apiInstance.getContentmanagementUsage(opts)
   .then((data) => {
     console.log(`getContentmanagementUsage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -981,7 +1088,10 @@ apiInstance.getContentmanagementUsage()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1014,7 +1124,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspace(workspaceId, opts)
@@ -1034,6 +1148,7 @@ apiInstance.getContentmanagementWorkspace(workspaceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1070,7 +1185,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "sortBy_example", // String | name or dateCreated
-  'sortOrder': "ascending" // String | ascending or descending
+  'sortOrder': "ascending", // String | ascending or descending
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
@@ -1094,6 +1213,7 @@ apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | name or dateCreated | [optional]  |
  **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1127,7 +1247,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let memberId = "memberId_example"; // String | Member ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
@@ -1148,6 +1272,7 @@ apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1182,7 +1307,11 @@ let workspaceId = "workspaceId_example"; // String | Workspace ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
@@ -1204,6 +1333,7 @@ apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1237,7 +1367,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let tagId = "tagId_example"; // String | Tag ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
@@ -1258,6 +1392,7 @@ apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1293,7 +1428,11 @@ let opts = {
   'value': "value_example", // String | filter the list of tags returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
@@ -1316,6 +1455,7 @@ apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1352,7 +1492,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'access': ["access_example"], // [String] | Requested access level.
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getContentmanagementWorkspaces(opts)
@@ -1374,6 +1518,7 @@ apiInstance.getContentmanagementWorkspaces(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **access** | **[String]** | Requested access level. | [optional] <br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1410,7 +1555,11 @@ let documentId = "documentId_example"; // String | Document ID
 let body = {}; // Object | Document
 let opts = { 
   'expand': "expand_example", // String | Expand some document fields
-  'override': true // Boolean | Override any lock on the document
+  'override': true, // Boolean | Override any lock on the document
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postContentmanagementDocument(documentId, body, opts)
@@ -1432,6 +1581,7 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
  **body** | **Object** | Document |  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1467,7 +1617,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 let documentId = "documentId_example"; // String | Document ID
 let body = {}; // Object | Replace Request
 let opts = { 
-  'override': true // Boolean | Override any lock on the document
+  'override': true, // Boolean | Override any lock on the document
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
@@ -1488,6 +1642,7 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
  **documentId** | **String** | Document ID |  |
  **body** | **Object** | Replace Request |  |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1522,7 +1677,11 @@ let body = {}; // Object | Document
 let opts = { 
   'copySource': "copySource_example", // String | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
   'moveSource': "moveSource_example", // String | Move a document to a new workspace. Provide a document ID as the move source.
-  'override': true // Boolean | Override any lock on the source document
+  'override': true, // Boolean | Override any lock on the source document
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postContentmanagementDocuments(body, opts)
@@ -1544,6 +1703,7 @@ apiInstance.postContentmanagementDocuments(body, opts)
  **copySource** | **String** | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. | [optional]  |
  **moveSource** | **String** | Move a document to a new workspace. Provide a document ID as the move source. | [optional]  |
  **override** | **Boolean** | Override any lock on the source document | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1576,7 +1736,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let body = {}; // Object | Allows for a filtered query returning facet information
 let opts = { 
-  'expand': "expand_example" // String | Expand some document fields
+  'expand': "expand_example", // String | Expand some document fields
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postContentmanagementQuery(body, opts)
@@ -1596,6 +1760,7 @@ apiInstance.postContentmanagementQuery(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Allows for a filtered query returning facet information |  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl, workspace |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1604,7 +1769,7 @@ apiInstance.postContentmanagementQuery(body, opts)
 
 ## postContentmanagementShares
 
-> CreateShareResponse postContentmanagementShares(body)
+> CreateShareResponse postContentmanagementShares(body, opts)
 
 
 POST /api/v2/contentmanagement/shares
@@ -1627,8 +1792,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ContentManagementApi();
 
 let body = {}; // Object | CreateShareRequest - entity id and type and a single member or list of members are required
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postContentmanagementShares(body)
+apiInstance.postContentmanagementShares(body, opts)
   .then((data) => {
     console.log(`postContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1644,6 +1815,7 @@ apiInstance.postContentmanagementShares(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CreateShareRequest - entity id and type and a single member or list of members are required |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1652,7 +1824,7 @@ apiInstance.postContentmanagementShares(body)
 
 ## postContentmanagementWorkspaceTagvalues
 
-> TagValue postContentmanagementWorkspaceTagvalues(workspaceId, body)
+> TagValue postContentmanagementWorkspaceTagvalues(workspaceId, body, opts)
 
 
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
@@ -1676,8 +1848,14 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let body = {}; // Object | tag
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
+apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body, opts)
   .then((data) => {
     console.log(`postContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1694,6 +1872,7 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **body** | **Object** | tag |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1727,7 +1906,11 @@ let apiInstance = new platformClient.ContentManagementApi();
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let body = {}; // Object | query
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
@@ -1748,6 +1931,7 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
  **workspaceId** | **String** | Workspace ID |  |
  **body** | **Object** | query |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1756,7 +1940,7 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
 
 ## postContentmanagementWorkspaces
 
-> Workspace postContentmanagementWorkspaces(body)
+> Workspace postContentmanagementWorkspaces(body, opts)
 
 
 POST /api/v2/contentmanagement/workspaces
@@ -1779,8 +1963,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ContentManagementApi();
 
 let body = {}; // Object | Workspace
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postContentmanagementWorkspaces(body)
+apiInstance.postContentmanagementWorkspaces(body, opts)
   .then((data) => {
     console.log(`postContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1796,6 +1986,7 @@ apiInstance.postContentmanagementWorkspaces(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Workspace |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1804,7 +1995,7 @@ apiInstance.postContentmanagementWorkspaces(body)
 
 ## putContentmanagementWorkspace
 
-> Workspace putContentmanagementWorkspace(workspaceId, body)
+> Workspace putContentmanagementWorkspace(workspaceId, body, opts)
 
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}
@@ -1828,8 +2019,14 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let body = {}; // Object | Workspace
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putContentmanagementWorkspace(workspaceId, body)
+apiInstance.putContentmanagementWorkspace(workspaceId, body, opts)
   .then((data) => {
     console.log(`putContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1846,6 +2043,7 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **body** | **Object** | Workspace |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1854,7 +2052,7 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 
 ## putContentmanagementWorkspaceMember
 
-> WorkspaceMember putContentmanagementWorkspaceMember(workspaceId, memberId, body)
+> WorkspaceMember putContentmanagementWorkspaceMember(workspaceId, memberId, body, opts)
 
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
@@ -1879,8 +2077,14 @@ let apiInstance = new platformClient.ContentManagementApi();
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let memberId = "memberId_example"; // String | Member ID
 let body = {}; // Object | Workspace Member
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
+apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body, opts)
   .then((data) => {
     console.log(`putContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1898,6 +2102,7 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
  **body** | **Object** | Workspace Member |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1906,7 +2111,7 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 ## putContentmanagementWorkspaceTagvalue
 
-> TagValue putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
+> TagValue putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body, opts)
 
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
@@ -1931,8 +2136,14 @@ let apiInstance = new platformClient.ContentManagementApi();
 let workspaceId = "workspaceId_example"; // String | Workspace ID
 let tagId = "tagId_example"; // String | Tag ID
 let body = {}; // Object | Workspace
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
+apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body, opts)
   .then((data) => {
     console.log(`putContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1950,10 +2161,11 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
  **body** | **Object** | Workspace |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TagValue**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

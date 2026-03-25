@@ -32,7 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteWebdeploymentsConfiguration
 
-> void deleteWebdeploymentsConfiguration(configurationId)
+> void deleteWebdeploymentsConfiguration(configurationId, opts)
 
 
 DELETE /api/v2/webdeployments/configurations/{configurationId}
@@ -57,8 +57,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationId = "configurationId_example"; // String | The configuration version ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebdeploymentsConfiguration(configurationId)
+apiInstance.deleteWebdeploymentsConfiguration(configurationId, opts)
   .then(() => {
     console.log('deleteWebdeploymentsConfiguration returned successfully.');
   })
@@ -74,6 +80,7 @@ apiInstance.deleteWebdeploymentsConfiguration(configurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **configurationId** | **String** | The configuration version ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -82,7 +89,7 @@ void (no response body)
 
 ## deleteWebdeploymentsDeployment
 
-> void deleteWebdeploymentsDeployment(deploymentId)
+> void deleteWebdeploymentsDeployment(deploymentId, opts)
 
 
 DELETE /api/v2/webdeployments/deployments/{deploymentId}
@@ -107,8 +114,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebdeploymentsDeployment(deploymentId)
+apiInstance.deleteWebdeploymentsDeployment(deploymentId, opts)
   .then(() => {
     console.log('deleteWebdeploymentsDeployment returned successfully.');
   })
@@ -124,6 +137,7 @@ apiInstance.deleteWebdeploymentsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -132,7 +146,7 @@ void (no response body)
 
 ## deleteWebdeploymentsDeploymentCobrowseSessionId
 
-> **Object** deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+> **Object** deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId, opts)
 
 
 DELETE /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}
@@ -153,8 +167,14 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
 let sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId, opts)
   .then((data) => {
     console.log(`deleteWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -171,6 +191,7 @@ apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessio
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | WebMessaging deployment ID |  |
  **sessionId** | **String** | Cobrowse session id or join code |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -200,7 +221,11 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
   'xJourneySessionId': "xJourneySessionId_example", // String | The Customer's journey sessionId.
-  'xJourneySessionType': "xJourneySessionType_example" // String | The Customer's journey session type.
+  'xJourneySessionType': "xJourneySessionType_example", // String | The Customer's journey session type.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteWebdeploymentsTokenRevoke(opts)
@@ -220,6 +245,7 @@ apiInstance.deleteWebdeploymentsTokenRevoke(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **xJourneySessionId** | **String** | The Customer's journey sessionId. | [optional]  |
  **xJourneySessionType** | **String** | The Customer's journey session type. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -228,7 +254,7 @@ void (no response body)
 
 ## getWebdeploymentsConfigurationVersion
 
-> WebDeploymentConfigurationVersion getWebdeploymentsConfigurationVersion(configurationId, versionId)
+> WebDeploymentConfigurationVersion getWebdeploymentsConfigurationVersion(configurationId, versionId, opts)
 
 
 GET /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}
@@ -254,8 +280,14 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationId = "configurationId_example"; // String | The configuration version ID
 let versionId = "versionId_example"; // String | The version of the configuration to get
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebdeploymentsConfigurationVersion(configurationId, versionId)
+apiInstance.getWebdeploymentsConfigurationVersion(configurationId, versionId, opts)
   .then((data) => {
     console.log(`getWebdeploymentsConfigurationVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -272,6 +304,7 @@ apiInstance.getWebdeploymentsConfigurationVersion(configurationId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **configurationId** | **String** | The configuration version ID |  |
  **versionId** | **String** | The version of the configuration to get |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -308,7 +341,11 @@ let configurationId = "configurationId_example"; // String | The configuration v
 let opts = { 
   'pageSize': "pageSize_example", // String | Number of entities to return. Defaults to 300.
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
-  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebdeploymentsConfigurationVersions(configurationId, opts)
@@ -330,6 +367,7 @@ apiInstance.getWebdeploymentsConfigurationVersions(configurationId, opts)
  **pageSize** | **String** | Number of entities to return. Defaults to 300. | [optional]  |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -338,7 +376,7 @@ apiInstance.getWebdeploymentsConfigurationVersions(configurationId, opts)
 
 ## getWebdeploymentsConfigurationVersionsDraft
 
-> WebDeploymentConfigurationVersion getWebdeploymentsConfigurationVersionsDraft(configurationId)
+> WebDeploymentConfigurationVersion getWebdeploymentsConfigurationVersionsDraft(configurationId, opts)
 
 
 GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft
@@ -363,8 +401,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationId = "configurationId_example"; // String | The configuration version ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebdeploymentsConfigurationVersionsDraft(configurationId)
+apiInstance.getWebdeploymentsConfigurationVersionsDraft(configurationId, opts)
   .then((data) => {
     console.log(`getWebdeploymentsConfigurationVersionsDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -380,6 +424,7 @@ apiInstance.getWebdeploymentsConfigurationVersionsDraft(configurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **configurationId** | **String** | The configuration version ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -416,7 +461,11 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Defaults to 300.
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'showOnlyPublished': true // Boolean | Filter by published status.
+  'showOnlyPublished': true, // Boolean | Filter by published status.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebdeploymentsConfigurations(opts)
@@ -438,6 +487,7 @@ apiInstance.getWebdeploymentsConfigurations(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **showOnlyPublished** | **Boolean** | Filter by published status. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -472,7 +522,11 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. 
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected. 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebdeploymentsDeployment(deploymentId, opts)
@@ -492,6 +546,7 @@ apiInstance.getWebdeploymentsDeployment(deploymentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent, flowDetails |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -500,7 +555,7 @@ apiInstance.getWebdeploymentsDeployment(deploymentId, opts)
 
 ## getWebdeploymentsDeploymentCobrowseSessionId
 
-> CobrowseWebMessagingSession getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+> CobrowseWebMessagingSession getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId, opts)
 
 
 GET /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}
@@ -521,8 +576,14 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
 let sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+apiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId, opts)
   .then((data) => {
     console.log(`getWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -539,6 +600,7 @@ apiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | WebMessaging deployment ID |  |
  **sessionId** | **String** | Cobrowse session id or join code |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -572,7 +634,11 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 let deploymentId = "deploymentId_example"; // String | The deployment ID
 let opts = { 
   'type': "type_example", // String | Get active configuration on a deployment
-  'expand': ["expand_example"] // [String] | Expand instructions for the return value
+  'expand': ["expand_example"], // [String] | Expand instructions for the return value
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
@@ -593,6 +659,7 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
  **deploymentId** | **String** | The deployment ID |  |
  **type** | **String** | Get active configuration on a deployment | [optional]  |
  **expand** | **[String]** | Expand instructions for the return value | [optional] <br />**Values**: supportedContent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -601,7 +668,7 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
 
 ## getWebdeploymentsDeploymentIdentityresolution
 
-> DeploymentIdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+> DeploymentIdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(deploymentId, opts)
 
 
 GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
@@ -627,8 +694,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId, opts)
   .then((data) => {
     console.log(`getWebdeploymentsDeploymentIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -644,6 +717,7 @@ apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -680,7 +754,11 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Defaults to 300.
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. 
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected. 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebdeploymentsDeployments(opts)
@@ -702,6 +780,7 @@ apiInstance.getWebdeploymentsDeployments(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -710,7 +789,7 @@ apiInstance.getWebdeploymentsDeployments(opts)
 
 ## postWebdeploymentsConfigurationVersionsDraftPublish
 
-> WebDeploymentConfigurationVersion postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
+> WebDeploymentConfigurationVersion postWebdeploymentsConfigurationVersionsDraftPublish(configurationId, opts)
 
 
 POST /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish
@@ -736,8 +815,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationId = "configurationId_example"; // String | The configuration version ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
+apiInstance.postWebdeploymentsConfigurationVersionsDraftPublish(configurationId, opts)
   .then((data) => {
     console.log(`postWebdeploymentsConfigurationVersionsDraftPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -753,6 +838,7 @@ apiInstance.postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **configurationId** | **String** | The configuration version ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -761,7 +847,7 @@ apiInstance.postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
 
 ## postWebdeploymentsConfigurations
 
-> WebDeploymentConfigurationVersion postWebdeploymentsConfigurations(configurationVersion)
+> WebDeploymentConfigurationVersion postWebdeploymentsConfigurations(configurationVersion, opts)
 
 
 POST /api/v2/webdeployments/configurations
@@ -786,8 +872,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationVersion = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebdeploymentsConfigurations(configurationVersion)
+apiInstance.postWebdeploymentsConfigurations(configurationVersion, opts)
   .then((data) => {
     console.log(`postWebdeploymentsConfigurations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -803,6 +895,7 @@ apiInstance.postWebdeploymentsConfigurations(configurationVersion)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **configurationVersion** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -811,7 +904,7 @@ apiInstance.postWebdeploymentsConfigurations(configurationVersion)
 
 ## postWebdeploymentsDeployments
 
-> WebDeployment postWebdeploymentsDeployments(deployment)
+> WebDeployment postWebdeploymentsDeployments(deployment, opts)
 
 
 POST /api/v2/webdeployments/deployments
@@ -836,8 +929,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deployment = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebdeploymentsDeployments(deployment)
+apiInstance.postWebdeploymentsDeployments(deployment, opts)
   .then((data) => {
     console.log(`postWebdeploymentsDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -853,6 +952,7 @@ apiInstance.postWebdeploymentsDeployments(deployment)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deployment** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -861,7 +961,7 @@ apiInstance.postWebdeploymentsDeployments(deployment)
 
 ## postWebdeploymentsTokenOauthcodegrantjwtexchange
 
-> WebDeploymentsAuthorizationResponse postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
+> WebDeploymentsAuthorizationResponse postWebdeploymentsTokenOauthcodegrantjwtexchange(body, opts)
 
 
 POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange
@@ -881,8 +981,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let body = {}; // Object | webDeploymentsOAuthExchangeRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
+apiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body, opts)
   .then((data) => {
     console.log(`postWebdeploymentsTokenOauthcodegrantjwtexchange success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -898,6 +1004,7 @@ apiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | webDeploymentsOAuthExchangeRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -926,7 +1033,11 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postWebdeploymentsTokenRefresh(opts)
@@ -945,6 +1056,7 @@ apiInstance.postWebdeploymentsTokenRefresh(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -953,7 +1065,7 @@ apiInstance.postWebdeploymentsTokenRefresh(opts)
 
 ## putWebdeploymentsConfigurationVersionsDraft
 
-> WebDeploymentConfigurationVersion putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion)
+> WebDeploymentConfigurationVersion putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion, opts)
 
 
 PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft
@@ -979,8 +1091,14 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let configurationId = "configurationId_example"; // String | The configuration version ID
 let configurationVersion = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion)
+apiInstance.putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion, opts)
   .then((data) => {
     console.log(`putWebdeploymentsConfigurationVersionsDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -997,6 +1115,7 @@ apiInstance.putWebdeploymentsConfigurationVersionsDraft(configurationId, configu
 | ------------- | ------------- | ------------- | ------------- |
  **configurationId** | **String** | The configuration version ID |  |
  **configurationVersion** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1005,7 +1124,7 @@ apiInstance.putWebdeploymentsConfigurationVersionsDraft(configurationId, configu
 
 ## putWebdeploymentsDeployment
 
-> WebDeployment putWebdeploymentsDeployment(deploymentId, deployment)
+> WebDeployment putWebdeploymentsDeployment(deploymentId, deployment, opts)
 
 
 PUT /api/v2/webdeployments/deployments/{deploymentId}
@@ -1031,8 +1150,14 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
 let deployment = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
+apiInstance.putWebdeploymentsDeployment(deploymentId, deployment, opts)
   .then((data) => {
     console.log(`putWebdeploymentsDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1049,6 +1174,7 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
  **deployment** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1057,7 +1183,7 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 
 ## putWebdeploymentsDeploymentIdentityresolution
 
-> DeploymentIdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+> DeploymentIdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(deploymentId, body, opts)
 
 
 PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
@@ -1084,8 +1210,14 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body, opts)
   .then((data) => {
     console.log(`putWebdeploymentsDeploymentIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1102,10 +1234,11 @@ apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **DeploymentIdentityResolutionConfig**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

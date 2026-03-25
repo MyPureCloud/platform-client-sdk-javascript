@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteTeam
 
-> void deleteTeam(teamId)
+> void deleteTeam(teamId, opts)
 
 
 DELETE /api/v2/teams/{teamId}
@@ -46,8 +46,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTeam(teamId)
+apiInstance.deleteTeam(teamId, opts)
   .then(() => {
     console.log('deleteTeam returned successfully.');
   })
@@ -63,6 +69,7 @@ apiInstance.deleteTeam(teamId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -71,7 +78,7 @@ void (no response body)
 
 ## deleteTeamMembers
 
-> void deleteTeamMembers(teamId, id)
+> void deleteTeamMembers(teamId, id, opts)
 
 
 DELETE /api/v2/teams/{teamId}/members
@@ -97,8 +104,14 @@ let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
 let id = "id_example"; // String | Comma separated list of member ids to remove
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTeamMembers(teamId, id)
+apiInstance.deleteTeamMembers(teamId, id, opts)
   .then(() => {
     console.log('deleteTeamMembers returned successfully.');
   })
@@ -115,6 +128,7 @@ apiInstance.deleteTeamMembers(teamId, id)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **id** | **String** | Comma separated list of member ids to remove |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -149,7 +163,11 @@ let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
 let opts = { 
-  'expand': "expand_example" // String | Expand the division name
+  'expand': "expand_example", // String | Expand the division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTeam(teamId, opts)
@@ -169,6 +187,7 @@ apiInstance.getTeam(teamId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **expand** | **String** | Expand the division name | [optional] <br />**Values**: entities.division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -206,7 +225,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'before': "before_example", // String | The cursor that points to the previous item in the complete list of teams
   'after': "after_example", // String | The cursor that points to the next item in the complete list of teams
-  'expand': "expand_example" // String | Expand the name on each user
+  'expand': "expand_example", // String | Expand the name on each user
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTeamMembers(teamId, opts)
@@ -229,6 +252,7 @@ apiInstance.getTeamMembers(teamId, opts)
  **before** | **String** | The cursor that points to the previous item in the complete list of teams | [optional]  |
  **after** | **String** | The cursor that points to the next item in the complete list of teams | [optional]  |
  **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -266,7 +290,11 @@ let opts = {
   'name': "name_example", // String | Return only teams whose names start with this value (case-insensitive matching)
   'after': "after_example", // String | The cursor that points to the next item in the complete list of teams
   'before': "before_example", // String | The cursor that points to the previous item in the complete list of teams
-  'expand': "expand_example" // String | Expand the division on each team
+  'expand': "expand_example", // String | Expand the division on each team
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTeams(opts)
@@ -289,6 +317,7 @@ apiInstance.getTeams(opts)
  **after** | **String** | The cursor that points to the next item in the complete list of teams | [optional]  |
  **before** | **String** | The cursor that points to the previous item in the complete list of teams | [optional]  |
  **expand** | **String** | Expand the division on each team | [optional] <br />**Values**: entities.division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -297,7 +326,7 @@ apiInstance.getTeams(opts)
 
 ## patchTeam
 
-> Team patchTeam(teamId, body)
+> Team patchTeam(teamId, body, opts)
 
 
 PATCH /api/v2/teams/{teamId}
@@ -323,8 +352,14 @@ let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
 let body = {}; // Object | Team
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTeam(teamId, body)
+apiInstance.patchTeam(teamId, body, opts)
   .then((data) => {
     console.log(`patchTeam success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -341,6 +376,7 @@ apiInstance.patchTeam(teamId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **body** | **Object** | Team |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -376,7 +412,11 @@ let apiInstance = new platformClient.TeamsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
@@ -397,6 +437,7 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -405,7 +446,7 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
 
 ## postTeamMembers
 
-> TeamMemberAddListingResponse postTeamMembers(teamId, body)
+> TeamMemberAddListingResponse postTeamMembers(teamId, body, opts)
 
 
 POST /api/v2/teams/{teamId}/members
@@ -431,8 +472,14 @@ let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
 let body = {}; // Object | TeamMembers
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTeamMembers(teamId, body)
+apiInstance.postTeamMembers(teamId, body, opts)
   .then((data) => {
     console.log(`postTeamMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -449,6 +496,7 @@ apiInstance.postTeamMembers(teamId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **body** | **Object** | TeamMembers |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -457,7 +505,7 @@ apiInstance.postTeamMembers(teamId, body)
 
 ## postTeams
 
-> Team postTeams(body)
+> Team postTeams(body, opts)
 
 
 POST /api/v2/teams
@@ -482,8 +530,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TeamsApi();
 
 let body = {}; // Object | Team
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTeams(body)
+apiInstance.postTeams(body, opts)
   .then((data) => {
     console.log(`postTeams success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -499,6 +553,7 @@ apiInstance.postTeams(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Team |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -507,7 +562,7 @@ apiInstance.postTeams(body)
 
 ## postTeamsSearch
 
-> TeamsSearchResponse postTeamsSearch(body)
+> TeamsSearchResponse postTeamsSearch(body, opts)
 
 
 POST /api/v2/teams/search
@@ -532,8 +587,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TeamsApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTeamsSearch(body)
+apiInstance.postTeamsSearch(body, opts)
   .then((data) => {
     console.log(`postTeamsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -549,10 +610,11 @@ apiInstance.postTeamsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TeamsSearchResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

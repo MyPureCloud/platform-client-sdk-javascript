@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteProcessautomationTrigger
 
-> void deleteProcessautomationTrigger(triggerId)
+> void deleteProcessautomationTrigger(triggerId, opts)
 
 
 DELETE /api/v2/processautomation/triggers/{triggerId}
@@ -44,8 +44,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ProcessAutomationApi();
 
 let triggerId = "triggerId_example"; // String | triggerId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteProcessautomationTrigger(triggerId)
+apiInstance.deleteProcessautomationTrigger(triggerId, opts)
   .then(() => {
     console.log('deleteProcessautomationTrigger returned successfully.');
   })
@@ -61,6 +67,7 @@ apiInstance.deleteProcessautomationTrigger(triggerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **triggerId** | **String** | triggerId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -69,7 +76,7 @@ void (no response body)
 
 ## getProcessautomationTrigger
 
-> Trigger getProcessautomationTrigger(triggerId)
+> Trigger getProcessautomationTrigger(triggerId, opts)
 
 
 GET /api/v2/processautomation/triggers/{triggerId}
@@ -95,8 +102,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ProcessAutomationApi();
 
 let triggerId = "triggerId_example"; // String | triggerId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getProcessautomationTrigger(triggerId)
+apiInstance.getProcessautomationTrigger(triggerId, opts)
   .then((data) => {
     console.log(`getProcessautomationTrigger success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -112,6 +125,7 @@ apiInstance.getProcessautomationTrigger(triggerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **triggerId** | **String** | triggerId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -151,7 +165,11 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'topicName': "topicName_example", // String | Topic name(s). Separated by commas
   'enabled': true, // Boolean | Boolean indicating desired enabled state of triggers
-  'hasDelayBy': true // Boolean | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.
+  'hasDelayBy': true, // Boolean | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getProcessautomationTriggers(opts)
@@ -175,6 +193,7 @@ apiInstance.getProcessautomationTriggers(opts)
  **topicName** | **String** | Topic name(s). Separated by commas | [optional]  |
  **enabled** | **Boolean** | Boolean indicating desired enabled state of triggers | [optional]  |
  **hasDelayBy** | **Boolean** | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -211,7 +230,11 @@ let apiInstance = new platformClient.ProcessAutomationApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getProcessautomationTriggersTopics(opts)
@@ -232,6 +255,7 @@ apiInstance.getProcessautomationTriggersTopics(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -266,7 +290,11 @@ let apiInstance = new platformClient.ProcessAutomationApi();
 
 let triggerId = "triggerId_example"; // String | triggerId
 let opts = { 
-  'body': "body_example" // String | eventBody
+  'body': "body_example", // String | eventBody
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postProcessautomationTriggerTest(triggerId, opts)
@@ -286,6 +314,7 @@ apiInstance.postProcessautomationTriggerTest(triggerId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **triggerId** | **String** | triggerId |  |
  **body** | **String** | eventBody | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -294,7 +323,7 @@ apiInstance.postProcessautomationTriggerTest(triggerId, opts)
 
 ## postProcessautomationTriggers
 
-> Trigger postProcessautomationTriggers(body)
+> Trigger postProcessautomationTriggers(body, opts)
 
 
 POST /api/v2/processautomation/triggers
@@ -319,8 +348,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ProcessAutomationApi();
 
 let body = {}; // Object | Input used to create a Trigger.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postProcessautomationTriggers(body)
+apiInstance.postProcessautomationTriggers(body, opts)
   .then((data) => {
     console.log(`postProcessautomationTriggers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -336,6 +371,7 @@ apiInstance.postProcessautomationTriggers(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Input used to create a Trigger. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -370,7 +406,11 @@ let apiInstance = new platformClient.ProcessAutomationApi();
 
 let topicName = "topicName_example"; // String | topicName
 let opts = { 
-  'body': "body_example" // String | eventBody
+  'body': "body_example", // String | eventBody
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postProcessautomationTriggersTopicTest(topicName, opts)
@@ -390,6 +430,7 @@ apiInstance.postProcessautomationTriggersTopicTest(topicName, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **topicName** | **String** | topicName |  |
  **body** | **String** | eventBody | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -398,7 +439,7 @@ apiInstance.postProcessautomationTriggersTopicTest(topicName, opts)
 
 ## putProcessautomationTrigger
 
-> Trigger putProcessautomationTrigger(triggerId, body)
+> Trigger putProcessautomationTrigger(triggerId, body, opts)
 
 
 PUT /api/v2/processautomation/triggers/{triggerId}
@@ -424,8 +465,14 @@ let apiInstance = new platformClient.ProcessAutomationApi();
 
 let triggerId = "triggerId_example"; // String | triggerId
 let body = {}; // Object | Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName)
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putProcessautomationTrigger(triggerId, body)
+apiInstance.putProcessautomationTrigger(triggerId, body, opts)
   .then((data) => {
     console.log(`putProcessautomationTrigger success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -442,10 +489,11 @@ apiInstance.putProcessautomationTrigger(triggerId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **triggerId** | **String** | triggerId |  |
  **body** | **Object** | Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName) |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Trigger**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

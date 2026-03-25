@@ -48,7 +48,11 @@ let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'force': false // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
+  'force': false, // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteAuthorizationDivision(divisionId, opts)
@@ -68,6 +72,7 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **force** | **Boolean** | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -100,7 +105,11 @@ let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'objectCount': false // Boolean | Get count of objects in this division, grouped by type
+  'objectCount': false, // Boolean | Get count of objects in this division, grouped by type
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivision(divisionId, opts)
@@ -120,6 +129,7 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -161,7 +171,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'objectCount': false, // Boolean | Include the count of objects contained in the division
   'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
-  'name': "name_example" // String | Search term to filter by division name
+  'name': "name_example", // String | Search term to filter by division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisions(opts)
@@ -188,6 +202,7 @@ apiInstance.getAuthorizationDivisions(opts)
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -222,7 +237,11 @@ let apiInstance = new platformClient.ObjectsApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionsDeleted(opts)
@@ -242,6 +261,7 @@ apiInstance.getAuthorizationDivisionsDeleted(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -250,7 +270,7 @@ apiInstance.getAuthorizationDivisionsDeleted(opts)
 
 ## getAuthorizationDivisionsHome
 
-> AuthzDivision getAuthorizationDivisionsHome()
+> AuthzDivision getAuthorizationDivisionsHome(opts)
 
 
 GET /api/v2/authorization/divisions/home
@@ -273,8 +293,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationDivisionsHome()
+apiInstance.getAuthorizationDivisionsHome(opts)
   .then((data) => {
     console.log(`getAuthorizationDivisionsHome success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -286,7 +312,10 @@ apiInstance.getAuthorizationDivisionsHome()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -295,7 +324,7 @@ This endpoint does not need any parameter.
 
 ## getAuthorizationDivisionsLimit
 
-> **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+> **&#39;Number&#39;** getAuthorizationDivisionsLimit(opts)
 
 
 GET /api/v2/authorization/divisions/limit
@@ -316,8 +345,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuthorizationDivisionsLimit()
+apiInstance.getAuthorizationDivisionsLimit(opts)
   .then((data) => {
     console.log(`getAuthorizationDivisionsLimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -329,7 +364,10 @@ apiInstance.getAuthorizationDivisionsLimit()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -367,7 +405,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "25", // String | Page size (max 200, default 25)
   'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
-  'name': "name_example" // String | Optionally request specific divisions by division name
+  'name': "name_example", // String | Optionally request specific divisions by division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionsQuery(opts)
@@ -390,6 +432,7 @@ apiInstance.getAuthorizationDivisionsQuery(opts)
  **pageSize** | **String** | Page size (max 200, default 25) | [optional] [default to 25] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Optionally request specific divisions by division name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -398,7 +441,7 @@ apiInstance.getAuthorizationDivisionsQuery(opts)
 
 ## postAuthorizationDivisionObject
 
-> void postAuthorizationDivisionObject(divisionId, objectType, body)
+> void postAuthorizationDivisionObject(divisionId, objectType, body, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
@@ -425,8 +468,14 @@ let apiInstance = new platformClient.ObjectsApi();
 let divisionId = "divisionId_example"; // String | Division ID
 let objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
 let body = ["body_example"]; // [String] | Object Id List
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
+apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body, opts)
   .then(() => {
     console.log('postAuthorizationDivisionObject returned successfully.');
   })
@@ -444,6 +493,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT, LIBRARY |
  **body** | **[String]** | Object Id List |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -452,7 +502,7 @@ void (no response body)
 
 ## postAuthorizationDivisionRestore
 
-> AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, body, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -478,8 +528,14 @@ let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let body = {}; // Object | Recreated division data
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationDivisionRestore(divisionId, body)
+apiInstance.postAuthorizationDivisionRestore(divisionId, body, opts)
   .then((data) => {
     console.log(`postAuthorizationDivisionRestore success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -496,6 +552,7 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Recreated division data |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -504,7 +561,7 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 
 ## postAuthorizationDivisions
 
-> AuthzDivision postAuthorizationDivisions(body)
+> AuthzDivision postAuthorizationDivisions(body, opts)
 
 
 POST /api/v2/authorization/divisions
@@ -530,8 +587,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ObjectsApi();
 
 let body = {}; // Object | Division
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationDivisions(body)
+apiInstance.postAuthorizationDivisions(body, opts)
   .then((data) => {
     console.log(`postAuthorizationDivisions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -547,6 +610,7 @@ apiInstance.postAuthorizationDivisions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Division |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -555,7 +619,7 @@ apiInstance.postAuthorizationDivisions(body)
 
 ## putAuthorizationDivision
 
-> AuthzDivision putAuthorizationDivision(divisionId, body)
+> AuthzDivision putAuthorizationDivision(divisionId, body, opts)
 
 
 PUT /api/v2/authorization/divisions/{divisionId}
@@ -581,8 +645,14 @@ let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let body = {}; // Object | Updated division data
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAuthorizationDivision(divisionId, body)
+apiInstance.putAuthorizationDivision(divisionId, body, opts)
   .then((data) => {
     console.log(`putAuthorizationDivision success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -599,10 +669,11 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Updated division data |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AuthzDivision**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

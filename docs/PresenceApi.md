@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deletePresenceDefinition0
 
-> void deletePresenceDefinition0(definitionId)
+> void deletePresenceDefinition0(definitionId, opts)
 
 
 DELETE /api/v2/presence/definitions/{definitionId}
@@ -64,8 +64,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let definitionId = "definitionId_example"; // String | Presence Definition ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deletePresenceDefinition0(definitionId)
+apiInstance.deletePresenceDefinition0(definitionId, opts)
   .then(() => {
     console.log('deletePresenceDefinition0 returned successfully.');
   })
@@ -81,6 +87,7 @@ apiInstance.deletePresenceDefinition0(definitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -89,7 +96,7 @@ void (no response body)
 
 ## deletePresenceSource
 
-> void deletePresenceSource(sourceId)
+> void deletePresenceSource(sourceId, opts)
 
 
 DELETE /api/v2/presence/sources/{sourceId}
@@ -115,8 +122,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let sourceId = "sourceId_example"; // String | Presence Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deletePresenceSource(sourceId)
+apiInstance.deletePresenceSource(sourceId, opts)
   .then(() => {
     console.log('deletePresenceSource returned successfully.');
   })
@@ -132,6 +145,7 @@ apiInstance.deletePresenceSource(sourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Presence Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -140,7 +154,7 @@ void (no response body)
 
 ## deletePresencedefinition
 
-> void deletePresencedefinition(presenceId)
+> void deletePresencedefinition(presenceId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -168,8 +182,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let presenceId = "presenceId_example"; // String | Organization Presence ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deletePresencedefinition(presenceId)
+apiInstance.deletePresencedefinition(presenceId, opts)
   .then(() => {
     console.log('deletePresencedefinition returned successfully.');
   })
@@ -185,6 +205,7 @@ apiInstance.deletePresencedefinition(presenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -219,7 +240,11 @@ let apiInstance = new platformClient.PresenceApi();
 
 let definitionId = "definitionId_example"; // String | Presence Definition ID
 let opts = { 
-  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+  'localeCode': "localeCode_example", // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getPresenceDefinition0(definitionId, opts)
@@ -239,6 +264,7 @@ apiInstance.getPresenceDefinition0(definitionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
  **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -274,7 +300,11 @@ let apiInstance = new platformClient.PresenceApi();
 let opts = { 
   'deactivated': "false", // String | Deactivated query can be TRUE or FALSE
   'divisionId': ["divisionId_example"], // [String] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
-  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+  'localeCode': "localeCode_example", // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getPresenceDefinitions0(opts)
@@ -295,6 +325,7 @@ apiInstance.getPresenceDefinitions0(opts)
  **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
  **divisionId** | **[String]** | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
  **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -303,7 +334,7 @@ apiInstance.getPresenceDefinitions0(opts)
 
 ## getPresenceSettings
 
-> PresenceSettings getPresenceSettings()
+> PresenceSettings getPresenceSettings(opts)
 
 
 GET /api/v2/presence/settings
@@ -326,8 +357,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getPresenceSettings()
+apiInstance.getPresenceSettings(opts)
   .then((data) => {
     console.log(`getPresenceSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -339,7 +376,10 @@ apiInstance.getPresenceSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -348,7 +388,7 @@ This endpoint does not need any parameter.
 
 ## getPresenceSource
 
-> Source getPresenceSource(sourceId)
+> Source getPresenceSource(sourceId, opts)
 
 
 GET /api/v2/presence/sources/{sourceId}
@@ -373,8 +413,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let sourceId = "sourceId_example"; // String | Presence Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getPresenceSource(sourceId)
+apiInstance.getPresenceSource(sourceId, opts)
   .then((data) => {
     console.log(`getPresenceSource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -390,6 +436,7 @@ apiInstance.getPresenceSource(sourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Presence Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -423,7 +470,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let opts = { 
-  'deactivated': "false" // String | Deactivated query can be TRUE or FALSE
+  'deactivated': "false", // String | Deactivated query can be TRUE or FALSE
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getPresenceSources(opts)
@@ -442,6 +493,7 @@ apiInstance.getPresenceSources(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -450,7 +502,7 @@ apiInstance.getPresenceSources(opts)
 
 ## getPresenceUserPrimarysource
 
-> UserPrimarySource getPresenceUserPrimarysource(userId)
+> UserPrimarySource getPresenceUserPrimarysource(userId, opts)
 
 
 GET /api/v2/presence/users/{userId}/primarysource
@@ -475,8 +527,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getPresenceUserPrimarysource(userId)
+apiInstance.getPresenceUserPrimarysource(userId, opts)
   .then((data) => {
     console.log(`getPresenceUserPrimarysource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -492,6 +550,7 @@ apiInstance.getPresenceUserPrimarysource(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -529,7 +588,11 @@ let apiInstance = new platformClient.PresenceApi();
 
 let presenceId = "presenceId_example"; // String | Organization Presence ID
 let opts = { 
-  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+  'localeCode': "localeCode_example", // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getPresencedefinition(presenceId, opts)
@@ -549,6 +612,7 @@ apiInstance.getPresencedefinition(presenceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
  **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -586,7 +650,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'deleted': "false", // String | Deleted query can be TRUE, FALSE or ALL
-  'localeCode': "localeCode_example" // String | The locale code to fetch for each presence definition. Use ALL to fetch everything.
+  'localeCode': "localeCode_example", // String | The locale code to fetch for each presence definition. Use ALL to fetch everything.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getPresencedefinitions(opts)
@@ -608,6 +676,7 @@ apiInstance.getPresencedefinitions(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **deleted** | **String** | Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
  **localeCode** | **String** | The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -616,7 +685,7 @@ apiInstance.getPresencedefinitions(opts)
 
 ## getSystempresences
 
-> [SystemPresence] getSystempresences()
+> [SystemPresence] getSystempresences(opts)
 
 
 GET /api/v2/systempresences
@@ -637,8 +706,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSystempresences()
+apiInstance.getSystempresences(opts)
   .then((data) => {
     console.log(`getSystempresences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -650,7 +725,10 @@ apiInstance.getSystempresences()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -659,7 +737,7 @@ This endpoint does not need any parameter.
 
 ## getUserPresence
 
-> UserPresence getUserPresence(userId, sourceId)
+> UserPresence getUserPresence(userId, sourceId, opts)
 
 
 GET /api/v2/users/{userId}/presences/{sourceId}
@@ -685,8 +763,14 @@ let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user Id
 let sourceId = "sourceId_example"; // String | Presence source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserPresence(userId, sourceId)
+apiInstance.getUserPresence(userId, sourceId, opts)
   .then((data) => {
     console.log(`getUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -703,6 +787,7 @@ apiInstance.getUserPresence(userId, sourceId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **sourceId** | **String** | Presence source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -711,7 +796,7 @@ apiInstance.getUserPresence(userId, sourceId)
 
 ## getUserPresencesPurecloud
 
-> UserPresence getUserPresencesPurecloud(userId)
+> UserPresence getUserPresencesPurecloud(userId, opts)
 
 
 GET /api/v2/users/{userId}/presences/purecloud
@@ -736,8 +821,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserPresencesPurecloud(userId)
+apiInstance.getUserPresencesPurecloud(userId, opts)
   .then((data) => {
     console.log(`getUserPresencesPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -753,6 +844,7 @@ apiInstance.getUserPresencesPurecloud(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -785,7 +877,11 @@ let apiInstance = new platformClient.PresenceApi();
 
 let sourceId = "sourceId_example"; // String | The requested presence source ID.
 let opts = { 
-  'id': ["id_example"] // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+  'id': ["id_example"], // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersPresenceBulk(sourceId, opts)
@@ -805,6 +901,7 @@ apiInstance.getUsersPresenceBulk(sourceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | The requested presence source ID. |  |
  **id** | **[String]** | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -836,7 +933,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let opts = { 
-  'id': ["id_example"] // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+  'id': ["id_example"], // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersPresencesPurecloudBulk(opts)
@@ -855,6 +956,7 @@ apiInstance.getUsersPresencesPurecloudBulk(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -863,7 +965,7 @@ apiInstance.getUsersPresencesPurecloudBulk(opts)
 
 ## patchUserPresence
 
-> UserPresence patchUserPresence(userId, sourceId, body)
+> UserPresence patchUserPresence(userId, sourceId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/presences/{sourceId}
@@ -890,8 +992,14 @@ let apiInstance = new platformClient.PresenceApi();
 let userId = "userId_example"; // String | user Id
 let sourceId = "sourceId_example"; // String | Presence source ID
 let body = {}; // Object | User presence
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserPresence(userId, sourceId, body)
+apiInstance.patchUserPresence(userId, sourceId, body, opts)
   .then((data) => {
     console.log(`patchUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -909,6 +1017,7 @@ apiInstance.patchUserPresence(userId, sourceId, body)
  **userId** | **String** | user Id |  |
  **sourceId** | **String** | Presence source ID |  |
  **body** | **Object** | User presence |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -917,7 +1026,7 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 
 ## patchUserPresencesPurecloud
 
-> UserPresence patchUserPresencesPurecloud(userId, body)
+> UserPresence patchUserPresencesPurecloud(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/presences/purecloud
@@ -943,8 +1052,14 @@ let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user Id
 let body = {}; // Object | User presence
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserPresencesPurecloud(userId, body)
+apiInstance.patchUserPresencesPurecloud(userId, body, opts)
   .then((data) => {
     console.log(`patchUserPresencesPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -961,6 +1076,7 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **body** | **Object** | User presence |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -969,7 +1085,7 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 
 ## postPresenceDefinitions0
 
-> OrganizationPresenceDefinition postPresenceDefinitions0(body)
+> OrganizationPresenceDefinition postPresenceDefinitions0(body, opts)
 
 
 POST /api/v2/presence/definitions
@@ -994,8 +1110,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let body = {}; // Object | The Presence Definition to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postPresenceDefinitions0(body)
+apiInstance.postPresenceDefinitions0(body, opts)
   .then((data) => {
     console.log(`postPresenceDefinitions0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1011,6 +1133,7 @@ apiInstance.postPresenceDefinitions0(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Presence Definition to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1019,7 +1142,7 @@ apiInstance.postPresenceDefinitions0(body)
 
 ## postPresenceSources
 
-> Source postPresenceSources(body)
+> Source postPresenceSources(body, opts)
 
 
 POST /api/v2/presence/sources
@@ -1044,8 +1167,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let body = {}; // Object | The Presence Source to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postPresenceSources(body)
+apiInstance.postPresenceSources(body, opts)
   .then((data) => {
     console.log(`postPresenceSources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1061,6 +1190,7 @@ apiInstance.postPresenceSources(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Presence Source to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1069,7 +1199,7 @@ apiInstance.postPresenceSources(body)
 
 ## postPresencedefinitions
 
-> OrganizationPresence postPresencedefinitions(body)
+> OrganizationPresence postPresencedefinitions(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1097,8 +1227,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let body = {}; // Object | The Presence Definition to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postPresencedefinitions(body)
+apiInstance.postPresencedefinitions(body, opts)
   .then((data) => {
     console.log(`postPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1114,6 +1250,7 @@ apiInstance.postPresencedefinitions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Presence Definition to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1122,7 +1259,7 @@ apiInstance.postPresencedefinitions(body)
 
 ## putPresenceDefinition0
 
-> OrganizationPresenceDefinition putPresenceDefinition0(definitionId, body)
+> OrganizationPresenceDefinition putPresenceDefinition0(definitionId, body, opts)
 
 
 PUT /api/v2/presence/definitions/{definitionId}
@@ -1148,8 +1285,14 @@ let apiInstance = new platformClient.PresenceApi();
 
 let definitionId = "definitionId_example"; // String | Presence Definition ID
 let body = {}; // Object | The updated Presence Definition
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putPresenceDefinition0(definitionId, body)
+apiInstance.putPresenceDefinition0(definitionId, body, opts)
   .then((data) => {
     console.log(`putPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1166,6 +1309,7 @@ apiInstance.putPresenceDefinition0(definitionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
  **body** | **Object** | The updated Presence Definition |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1174,7 +1318,7 @@ apiInstance.putPresenceDefinition0(definitionId, body)
 
 ## putPresenceSettings
 
-> PresenceSettings putPresenceSettings(body)
+> PresenceSettings putPresenceSettings(body, opts)
 
 
 PUT /api/v2/presence/settings
@@ -1199,8 +1343,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let body = {}; // Object | Presence Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putPresenceSettings(body)
+apiInstance.putPresenceSettings(body, opts)
   .then((data) => {
     console.log(`putPresenceSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1216,6 +1366,7 @@ apiInstance.putPresenceSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Presence Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1224,7 +1375,7 @@ apiInstance.putPresenceSettings(body)
 
 ## putPresenceSource
 
-> Source putPresenceSource(sourceId, body)
+> Source putPresenceSource(sourceId, body, opts)
 
 
 PUT /api/v2/presence/sources/{sourceId}
@@ -1250,8 +1401,14 @@ let apiInstance = new platformClient.PresenceApi();
 
 let sourceId = "sourceId_example"; // String | Presence Source ID
 let body = {}; // Object | The updated Presence Source
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putPresenceSource(sourceId, body)
+apiInstance.putPresenceSource(sourceId, body, opts)
   .then((data) => {
     console.log(`putPresenceSource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1268,6 +1425,7 @@ apiInstance.putPresenceSource(sourceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Presence Source ID |  |
  **body** | **Object** | The updated Presence Source |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1276,7 +1434,7 @@ apiInstance.putPresenceSource(sourceId, body)
 
 ## putPresenceUserPrimarysource
 
-> UserPrimarySource putPresenceUserPrimarysource(userId, body)
+> UserPrimarySource putPresenceUserPrimarysource(userId, body, opts)
 
 
 PUT /api/v2/presence/users/{userId}/primarysource
@@ -1302,8 +1460,14 @@ let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user ID
 let body = {}; // Object | Primary Source
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putPresenceUserPrimarysource(userId, body)
+apiInstance.putPresenceUserPrimarysource(userId, body, opts)
   .then((data) => {
     console.log(`putPresenceUserPrimarysource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1320,6 +1484,7 @@ apiInstance.putPresenceUserPrimarysource(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **body** | **Object** | Primary Source |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1328,7 +1493,7 @@ apiInstance.putPresenceUserPrimarysource(userId, body)
 
 ## putPresencedefinition
 
-> OrganizationPresence putPresencedefinition(presenceId, body)
+> OrganizationPresence putPresencedefinition(presenceId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1357,8 +1522,14 @@ let apiInstance = new platformClient.PresenceApi();
 
 let presenceId = "presenceId_example"; // String | Organization Presence ID
 let body = {}; // Object | The OrganizationPresence to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putPresencedefinition(presenceId, body)
+apiInstance.putPresencedefinition(presenceId, body, opts)
   .then((data) => {
     console.log(`putPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1375,6 +1546,7 @@ apiInstance.putPresencedefinition(presenceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
  **body** | **Object** | The OrganizationPresence to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1383,7 +1555,7 @@ apiInstance.putPresencedefinition(presenceId, body)
 
 ## putUsersPresencesBulk
 
-> [UserPresence] putUsersPresencesBulk(body)
+> [UserPresence] putUsersPresencesBulk(body, opts)
 
 
 PUT /api/v2/users/presences/bulk
@@ -1408,8 +1580,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let body = [{}]; // Object | List of User presences
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUsersPresencesBulk(body)
+apiInstance.putUsersPresencesBulk(body, opts)
   .then((data) => {
     console.log(`putUsersPresencesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1425,10 +1603,11 @@ apiInstance.putUsersPresencesBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | List of User presences |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **[UserPresence]**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

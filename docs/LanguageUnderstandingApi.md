@@ -51,7 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteLanguageunderstandingDomain
 
-> void deleteLanguageunderstandingDomain(domainId)
+> void deleteLanguageunderstandingDomain(domainId, opts)
 
 
 DELETE /api/v2/languageunderstanding/domains/{domainId}
@@ -77,8 +77,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLanguageunderstandingDomain(domainId)
+apiInstance.deleteLanguageunderstandingDomain(domainId, opts)
   .then(() => {
     console.log('deleteLanguageunderstandingDomain returned successfully.');
   })
@@ -94,6 +100,7 @@ apiInstance.deleteLanguageunderstandingDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -102,7 +109,7 @@ void (no response body)
 
 ## deleteLanguageunderstandingDomainFeedbackFeedbackId
 
-> void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
+> void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts)
 
 
 DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}
@@ -129,8 +136,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let feedbackId = "feedbackId_example"; // String | ID of the Feedback
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
+apiInstance.deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts)
   .then(() => {
     console.log('deleteLanguageunderstandingDomainFeedbackFeedbackId returned successfully.');
   })
@@ -147,6 +160,7 @@ apiInstance.deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedba
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **feedbackId** | **String** | ID of the Feedback |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -155,7 +169,7 @@ void (no response body)
 
 ## deleteLanguageunderstandingDomainVersion
 
-> void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
+> void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
 
 
 DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
@@ -182,8 +196,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
+apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
   .then(() => {
     console.log('deleteLanguageunderstandingDomainVersion returned successfully.');
   })
@@ -200,6 +220,7 @@ apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -208,7 +229,7 @@ void (no response body)
 
 ## deleteLanguageunderstandingMiner
 
-> void deleteLanguageunderstandingMiner(minerId)
+> void deleteLanguageunderstandingMiner(minerId, opts)
 
 
 DELETE /api/v2/languageunderstanding/miners/{minerId}
@@ -233,8 +254,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLanguageunderstandingMiner(minerId)
+apiInstance.deleteLanguageunderstandingMiner(minerId, opts)
   .then(() => {
     console.log('deleteLanguageunderstandingMiner returned successfully.');
   })
@@ -250,6 +277,7 @@ apiInstance.deleteLanguageunderstandingMiner(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -258,7 +286,7 @@ void (no response body)
 
 ## deleteLanguageunderstandingMinerDraft
 
-> void deleteLanguageunderstandingMinerDraft(minerId, draftId)
+> void deleteLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 
 DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
@@ -284,8 +312,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
 let draftId = "draftId_example"; // String | Draft ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLanguageunderstandingMinerDraft(minerId, draftId)
+apiInstance.deleteLanguageunderstandingMinerDraft(minerId, draftId, opts)
   .then(() => {
     console.log('deleteLanguageunderstandingMinerDraft returned successfully.');
   })
@@ -302,6 +336,7 @@ apiInstance.deleteLanguageunderstandingMinerDraft(minerId, draftId)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **draftId** | **String** | Draft ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -310,7 +345,7 @@ void (no response body)
 
 ## getLanguageunderstandingDomain
 
-> NluDomain getLanguageunderstandingDomain(domainId)
+> NluDomain getLanguageunderstandingDomain(domainId, opts)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}
@@ -336,8 +371,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingDomain(domainId)
+apiInstance.getLanguageunderstandingDomain(domainId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -353,6 +394,7 @@ apiInstance.getLanguageunderstandingDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -399,7 +441,11 @@ let opts = {
   'enableCursorPagination': false, // Boolean | Enable Cursor Pagination
   'includeTrainingUtterances': true, // Boolean | Include Training Utterances. By default they're included.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
-  'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
+  'fields': ["fields_example"], // [String] | Fields and properties to get, comma-separated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
@@ -430,6 +476,7 @@ apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
  **includeTrainingUtterances** | **Boolean** | Include Training Utterances. By default they're included. | [optional] [default to true] |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true | [optional]  |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -466,7 +513,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let feedbackId = "feedbackId_example"; // String | ID of the Feedback
 let opts = { 
-  'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
+  'fields': ["fields_example"], // [String] | Fields and properties to get, comma-separated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts)
@@ -487,6 +538,7 @@ apiInstance.getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackI
  **domainId** | **String** | ID of the NLU domain. |  |
  **feedbackId** | **String** | ID of the Feedback |  |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -523,7 +575,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
 let opts = { 
-  'includeUtterances': true // Boolean | Whether utterances for intent definition should be included when marshalling response.
+  'includeUtterances': true, // Boolean | Whether utterances for intent definition should be included when marshalling response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
@@ -544,6 +600,7 @@ apiInstance.getLanguageunderstandingDomainVersion(domainId, domainVersionId, opt
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
  **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -552,7 +609,7 @@ apiInstance.getLanguageunderstandingDomainVersion(domainId, domainVersionId, opt
 
 ## getLanguageunderstandingDomainVersionReport
 
-> NluDomainVersionQualityReport getLanguageunderstandingDomainVersionReport(domainId, domainVersionId)
+> NluDomainVersionQualityReport getLanguageunderstandingDomainVersionReport(domainId, domainVersionId, opts)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report
@@ -579,8 +636,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingDomainVersionReport(domainId, domainVersionId)
+apiInstance.getLanguageunderstandingDomainVersionReport(domainId, domainVersionId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingDomainVersionReport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -597,6 +660,7 @@ apiInstance.getLanguageunderstandingDomainVersionReport(domainId, domainVersionI
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -634,7 +698,11 @@ let domainId = "domainId_example"; // String | ID of the NLU domain.
 let opts = { 
   'includeUtterances': true, // Boolean | Whether utterances for intent definition should be included when marshalling response.
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingDomainVersions(domainId, opts)
@@ -656,6 +724,7 @@ apiInstance.getLanguageunderstandingDomainVersions(domainId, opts)
  **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -691,7 +760,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingDomains(opts)
@@ -711,6 +784,7 @@ apiInstance.getLanguageunderstandingDomains(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -749,7 +823,11 @@ let opts = {
   'pageNumber': 1, // Number | The page number for the listing
   'text': "text_example", // String | The phrase text filter applied to the listing
   'sortOrder': "desc", // String | The sort order for the listing
-  'sortBy': "dateModified" // String | The field to sort by for the listing
+  'sortBy': "dateModified", // String | The field to sort by for the listing
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingIgnorephrase(languageCode, opts)
@@ -773,6 +851,7 @@ apiInstance.getLanguageunderstandingIgnorephrase(languageCode, opts)
  **text** | **String** | The phrase text filter applied to the listing | [optional]  |
  **sortOrder** | **String** | The sort order for the listing | [optional] [default to desc]<br />**Values**: asc, desc |
  **sortBy** | **String** | The field to sort by for the listing | [optional] [default to dateModified]<br />**Values**: dateModified, text |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -811,7 +890,11 @@ let opts = {
   'pageNumber': 1, // Number | The page number for the listing
   'text': "text_example", // String | The topic text filter applied to the listing
   'sortOrder': "desc", // String | The sort order for the listing
-  'sortBy': "dateModified" // String | The field to sort by for the listing
+  'sortBy': "dateModified", // String | The field to sort by for the listing
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingIgnoretopic(languageCode, opts)
@@ -835,6 +918,7 @@ apiInstance.getLanguageunderstandingIgnoretopic(languageCode, opts)
  **text** | **String** | The topic text filter applied to the listing | [optional]  |
  **sortOrder** | **String** | The sort order for the listing | [optional] [default to desc]<br />**Values**: asc, desc |
  **sortBy** | **String** | The field to sort by for the listing | [optional] [default to dateModified]<br />**Values**: dateModified, text |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -843,7 +927,7 @@ apiInstance.getLanguageunderstandingIgnoretopic(languageCode, opts)
 
 ## getLanguageunderstandingMiner
 
-> Miner getLanguageunderstandingMiner(minerId)
+> Miner getLanguageunderstandingMiner(minerId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}
@@ -868,8 +952,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingMiner(minerId)
+apiInstance.getLanguageunderstandingMiner(minerId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingMiner success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -885,6 +975,7 @@ apiInstance.getLanguageunderstandingMiner(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -921,7 +1012,11 @@ let minerId = "minerId_example"; // String | Miner ID
 let draftId = "draftId_example"; // String | Draft ID
 let opts = { 
   'draftIntentId': "draftIntentId_example", // String | Parameter to filter a specific intent.
-  'draftTopicId': "draftTopicId_example" // String | Parameter to filter a specific topic.
+  'draftTopicId': "draftTopicId_example", // String | Parameter to filter a specific topic.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, opts)
@@ -943,6 +1038,7 @@ apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, opts)
  **draftId** | **String** | Draft ID |  |
  **draftIntentId** | **String** | Parameter to filter a specific intent. | [optional]  |
  **draftTopicId** | **String** | Parameter to filter a specific topic. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -951,7 +1047,7 @@ apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 ## getLanguageunderstandingMinerDrafts
 
-> DraftListing getLanguageunderstandingMinerDrafts(minerId)
+> DraftListing getLanguageunderstandingMinerDrafts(minerId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/drafts
@@ -976,8 +1072,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingMinerDrafts(minerId)
+apiInstance.getLanguageunderstandingMinerDrafts(minerId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingMinerDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -993,6 +1095,7 @@ apiInstance.getLanguageunderstandingMinerDrafts(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1028,7 +1131,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let minerId = "minerId_example"; // String | Miner ID
 let intentId = "intentId_example"; // String | The ID of the intent to be retrieved.
 let opts = { 
-  'expand': "expand_example" // String | Option to fetch utterances
+  'expand': "expand_example", // String | Option to fetch utterances
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
@@ -1049,6 +1156,7 @@ apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
  **minerId** | **String** | Miner ID |  |
  **intentId** | **String** | The ID of the intent to be retrieved. |  |
  **expand** | **String** | Option to fetch utterances | [optional] <br />**Values**: phrases, utterances |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1083,7 +1191,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
 let opts = { 
-  'expand': "expand_example" // String | Option to fetch utterances.
+  'expand': "expand_example", // String | Option to fetch utterances.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
@@ -1103,6 +1215,7 @@ apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **expand** | **String** | Option to fetch utterances. | [optional] <br />**Values**: phrases, utterances |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1138,7 +1251,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let minerId = "minerId_example"; // String | Miner ID
 let topicId = "topicId_example"; // String | The ID of the topic to be retrieved.
 let opts = { 
-  'expand': "expand_example" // String | Option to fetch phrases
+  'expand': "expand_example", // String | Option to fetch phrases
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, opts)
@@ -1159,6 +1276,7 @@ apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, opts)
  **minerId** | **String** | Miner ID |  |
  **topicId** | **String** | The ID of the topic to be retrieved. |  |
  **expand** | **String** | Option to fetch phrases | [optional] <br />**Values**: phrases, utterances |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1167,7 +1285,7 @@ apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, opts)
 
 ## getLanguageunderstandingMinerTopicPhrase
 
-> MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
+> MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}
@@ -1194,8 +1312,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let minerId = "minerId_example"; // String | Miner ID
 let topicId = "topicId_example"; // String | The ID of the topic to be retrieved.
 let phraseId = "phraseId_example"; // String | The ID of the phrase to be retrieved.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
+apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingMinerTopicPhrase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1213,6 +1337,7 @@ apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
  **minerId** | **String** | Miner ID |  |
  **topicId** | **String** | The ID of the topic to be retrieved. |  |
  **phraseId** | **String** | The ID of the phrase to be retrieved. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1221,7 +1346,7 @@ apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
 
 ## getLanguageunderstandingMinerTopics
 
-> MinerTopicsListing getLanguageunderstandingMinerTopics(minerId)
+> MinerTopicsListing getLanguageunderstandingMinerTopics(minerId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/topics
@@ -1246,8 +1371,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingMinerTopics(minerId)
+apiInstance.getLanguageunderstandingMinerTopics(minerId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingMinerTopics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1263,6 +1394,7 @@ apiInstance.getLanguageunderstandingMinerTopics(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1296,7 +1428,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let opts = { 
-  'minerType': "minerType_example" // String | Type of miner, either intent or topic
+  'minerType': "minerType_example", // String | Type of miner, either intent or topic
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguageunderstandingMiners(opts)
@@ -1315,6 +1451,7 @@ apiInstance.getLanguageunderstandingMiners(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerType** | **String** | Type of miner, either intent or topic | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1323,7 +1460,7 @@ apiInstance.getLanguageunderstandingMiners(opts)
 
 ## getLanguageunderstandingSettings
 
-> NluOrganization getLanguageunderstandingSettings()
+> NluOrganization getLanguageunderstandingSettings(opts)
 
 
 GET /api/v2/languageunderstanding/settings
@@ -1346,8 +1483,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.LanguageUnderstandingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguageunderstandingSettings()
+apiInstance.getLanguageunderstandingSettings(opts)
   .then((data) => {
     console.log(`getLanguageunderstandingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1359,7 +1502,10 @@ apiInstance.getLanguageunderstandingSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1368,7 +1514,7 @@ This endpoint does not need any parameter.
 
 ## patchLanguageunderstandingDomain
 
-> NluDomain patchLanguageunderstandingDomain(domainId, body)
+> NluDomain patchLanguageunderstandingDomain(domainId, body, opts)
 
 
 PATCH /api/v2/languageunderstanding/domains/{domainId}
@@ -1395,8 +1541,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let body = {}; // Object | The updated NLU Domain.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchLanguageunderstandingDomain(domainId, body)
+apiInstance.patchLanguageunderstandingDomain(domainId, body, opts)
   .then((data) => {
     console.log(`patchLanguageunderstandingDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1413,6 +1565,7 @@ apiInstance.patchLanguageunderstandingDomain(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The updated NLU Domain. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1448,7 +1601,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let minerId = "minerId_example"; // String | Miner ID
 let draftId = "draftId_example"; // String | Draft ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
@@ -1469,6 +1626,7 @@ apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
  **minerId** | **String** | Miner ID |  |
  **draftId** | **String** | Draft ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1477,7 +1635,7 @@ apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 ## postLanguageunderstandingDomainFeedback
 
-> NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, body)
+> NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, body, opts)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/feedback
@@ -1504,8 +1662,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let body = {}; // Object | The Feedback to create.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingDomainFeedback(domainId, body)
+apiInstance.postLanguageunderstandingDomainFeedback(domainId, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1522,6 +1686,7 @@ apiInstance.postLanguageunderstandingDomainFeedback(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The Feedback to create. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1530,7 +1695,7 @@ apiInstance.postLanguageunderstandingDomainFeedback(domainId, body)
 
 ## postLanguageunderstandingDomainVersionDetect
 
-> NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
+> NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body, opts)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect
@@ -1558,8 +1723,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
 let body = {}; // Object | The input data to perform detection on.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
+apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainVersionDetect success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1577,6 +1748,7 @@ apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersion
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
  **body** | **Object** | The input data to perform detection on. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1585,7 +1757,7 @@ apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersion
 
 ## postLanguageunderstandingDomainVersionPublish
 
-> NluDomainVersion postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId)
+> NluDomainVersion postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId, opts)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish
@@ -1612,8 +1784,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId)
+apiInstance.postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainVersionPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1630,6 +1808,7 @@ apiInstance.postLanguageunderstandingDomainVersionPublish(domainId, domainVersio
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1638,7 +1817,7 @@ apiInstance.postLanguageunderstandingDomainVersionPublish(domainId, domainVersio
 
 ## postLanguageunderstandingDomainVersionTrain
 
-> NluDomainVersionTrainingResponse postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
+> NluDomainVersionTrainingResponse postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId, opts)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train
@@ -1665,8 +1844,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
+apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainVersionTrain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1683,6 +1868,7 @@ apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionI
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1719,7 +1905,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let body = {}; // Object | The NLU Domain Version to create.
 let opts = { 
-  'includeUtterances': true // Boolean | Whether utterances for intent definition should be included when marshalling response.
+  'includeUtterances': true, // Boolean | Whether utterances for intent definition should be included when marshalling response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLanguageunderstandingDomainVersions(domainId, body, opts)
@@ -1740,6 +1930,7 @@ apiInstance.postLanguageunderstandingDomainVersions(domainId, body, opts)
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The NLU Domain Version to create. |  |
  **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1748,7 +1939,7 @@ apiInstance.postLanguageunderstandingDomainVersions(domainId, body, opts)
 
 ## postLanguageunderstandingDomains
 
-> NluDomain postLanguageunderstandingDomains(body)
+> NluDomain postLanguageunderstandingDomains(body, opts)
 
 
 POST /api/v2/languageunderstanding/domains
@@ -1774,8 +1965,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let body = {}; // Object | The NLU Domain to create.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingDomains(body)
+apiInstance.postLanguageunderstandingDomains(body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1791,6 +1988,7 @@ apiInstance.postLanguageunderstandingDomains(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The NLU Domain to create. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1799,7 +1997,7 @@ apiInstance.postLanguageunderstandingDomains(body)
 
 ## postLanguageunderstandingIgnorephrase
 
-> IgnorePhrasesResponse postLanguageunderstandingIgnorephrase(languageCode, body)
+> IgnorePhrasesResponse postLanguageunderstandingIgnorephrase(languageCode, body, opts)
 
 
 POST /api/v2/languageunderstanding/ignorephrases/{languageCode}
@@ -1825,8 +2023,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let languageCode = "languageCode_example"; // String | Language Code
 let body = {}; // Object | Request body containing phrases to be ignored
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingIgnorephrase(languageCode, body)
+apiInstance.postLanguageunderstandingIgnorephrase(languageCode, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingIgnorephrase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1843,6 +2047,7 @@ apiInstance.postLanguageunderstandingIgnorephrase(languageCode, body)
 | ------------- | ------------- | ------------- | ------------- |
  **languageCode** | **String** | Language Code |  |
  **body** | **Object** | Request body containing phrases to be ignored |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1851,7 +2056,7 @@ apiInstance.postLanguageunderstandingIgnorephrase(languageCode, body)
 
 ## postLanguageunderstandingIgnorephraseRemove
 
-> void postLanguageunderstandingIgnorephraseRemove(languageCode, body)
+> void postLanguageunderstandingIgnorephraseRemove(languageCode, body, opts)
 
 
 POST /api/v2/languageunderstanding/ignorephrases/{languageCode}/remove
@@ -1877,8 +2082,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let languageCode = "languageCode_example"; // String | Language Code
 let body = {}; // Object | Request body containing entities to be removed
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingIgnorephraseRemove(languageCode, body)
+apiInstance.postLanguageunderstandingIgnorephraseRemove(languageCode, body, opts)
   .then(() => {
     console.log('postLanguageunderstandingIgnorephraseRemove returned successfully.');
   })
@@ -1895,6 +2106,7 @@ apiInstance.postLanguageunderstandingIgnorephraseRemove(languageCode, body)
 | ------------- | ------------- | ------------- | ------------- |
  **languageCode** | **String** | Language Code |  |
  **body** | **Object** | Request body containing entities to be removed |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1903,7 +2115,7 @@ void (no response body)
 
 ## postLanguageunderstandingIgnoretopic
 
-> IgnoreTopicsResponse postLanguageunderstandingIgnoretopic(languageCode, body)
+> IgnoreTopicsResponse postLanguageunderstandingIgnoretopic(languageCode, body, opts)
 
 
 POST /api/v2/languageunderstanding/ignoretopics/{languageCode}
@@ -1929,8 +2141,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let languageCode = "languageCode_example"; // String | Language Code
 let body = {}; // Object | Request body containing topics to be ignored
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingIgnoretopic(languageCode, body)
+apiInstance.postLanguageunderstandingIgnoretopic(languageCode, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingIgnoretopic success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1947,6 +2165,7 @@ apiInstance.postLanguageunderstandingIgnoretopic(languageCode, body)
 | ------------- | ------------- | ------------- | ------------- |
  **languageCode** | **String** | Language Code |  |
  **body** | **Object** | Request body containing topics to be ignored |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1955,7 +2174,7 @@ apiInstance.postLanguageunderstandingIgnoretopic(languageCode, body)
 
 ## postLanguageunderstandingIgnoretopicRemove
 
-> void postLanguageunderstandingIgnoretopicRemove(languageCode, body)
+> void postLanguageunderstandingIgnoretopicRemove(languageCode, body, opts)
 
 
 POST /api/v2/languageunderstanding/ignoretopics/{languageCode}/remove
@@ -1981,8 +2200,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let languageCode = "languageCode_example"; // String | Language Code
 let body = {}; // Object | Request body containing entities to be removed
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingIgnoretopicRemove(languageCode, body)
+apiInstance.postLanguageunderstandingIgnoretopicRemove(languageCode, body, opts)
   .then(() => {
     console.log('postLanguageunderstandingIgnoretopicRemove returned successfully.');
   })
@@ -1999,6 +2224,7 @@ apiInstance.postLanguageunderstandingIgnoretopicRemove(languageCode, body)
 | ------------- | ------------- | ------------- | ------------- |
  **languageCode** | **String** | Language Code |  |
  **body** | **Object** | Request body containing entities to be removed |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2007,7 +2233,7 @@ void (no response body)
 
 ## postLanguageunderstandingMinerDrafts
 
-> Draft postLanguageunderstandingMinerDrafts(minerId, body)
+> Draft postLanguageunderstandingMinerDrafts(minerId, body, opts)
 
 
 POST /api/v2/languageunderstanding/miners/{minerId}/drafts
@@ -2033,8 +2259,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
 let body = {}; // Object | Details for creating draft resource
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingMinerDrafts(minerId, body)
+apiInstance.postLanguageunderstandingMinerDrafts(minerId, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingMinerDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2051,6 +2283,7 @@ apiInstance.postLanguageunderstandingMinerDrafts(minerId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **body** | **Object** | Details for creating draft resource |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2085,7 +2318,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
@@ -2105,6 +2342,7 @@ apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2113,7 +2351,7 @@ apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
 
 ## postLanguageunderstandingMiners
 
-> Miner postLanguageunderstandingMiners(body)
+> Miner postLanguageunderstandingMiners(body, opts)
 
 
 POST /api/v2/languageunderstanding/miners
@@ -2138,8 +2376,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let body = {}; // Object | Details for creating a new miner resource.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingMiners(body)
+apiInstance.postLanguageunderstandingMiners(body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingMiners success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2155,6 +2399,7 @@ apiInstance.postLanguageunderstandingMiners(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Details for creating a new miner resource. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2163,7 +2408,7 @@ apiInstance.postLanguageunderstandingMiners(body)
 
 ## putLanguageunderstandingDomainVersion
 
-> NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
+> NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, body, opts)
 
 
 PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
@@ -2191,8 +2436,14 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
 let body = {}; // Object | The updated NLU Domain Version.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
+apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, body, opts)
   .then((data) => {
     console.log(`putLanguageunderstandingDomainVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2210,10 +2461,11 @@ apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, bod
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
  **body** | **Object** | The updated NLU Domain Version. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **NluDomainVersion**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_
