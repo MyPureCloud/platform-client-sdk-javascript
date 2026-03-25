@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+> void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
 
 
 DELETE /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -40,8 +40,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentUIApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
   .then(() => {
     console.log('deleteUsersAgentuiAgentsAutoanswerAgentIdSettings returned successfully.');
   })
@@ -57,6 +63,7 @@ apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -65,7 +72,7 @@ void (no response body)
 
 ## getUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> AutoAnswerSettings getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+> AutoAnswerSettings getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
 
 
 GET /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -90,8 +97,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentUIApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
   .then((data) => {
     console.log(`getUsersAgentuiAgentsAutoanswerAgentIdSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -107,6 +120,7 @@ apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -115,7 +129,7 @@ apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 
 ## patchUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> AutoAnswerSettings patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+> AutoAnswerSettings patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
 
 
 PATCH /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -141,8 +155,14 @@ let apiInstance = new platformClient.AgentUIApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
 let body = {}; // Object | AutoAnswerSettings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
   .then((data) => {
     console.log(`patchUsersAgentuiAgentsAutoanswerAgentIdSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -159,6 +179,7 @@ apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
  **body** | **Object** | AutoAnswerSettings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -167,7 +188,7 @@ apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 
 ## putUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+> AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
 
 
 PUT /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -193,8 +214,14 @@ let apiInstance = new platformClient.AgentUIApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
 let body = {}; // Object | AutoAnswerSettings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
   .then((data) => {
     console.log(`putUsersAgentuiAgentsAutoanswerAgentIdSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -211,10 +238,11 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
  **body** | **Object** | AutoAnswerSettings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

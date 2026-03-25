@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class NotificationsApi {
 	 * Remove all subscriptions
 	 * 
 	 * @param {String} channelId Channel ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteNotificationsChannelSubscriptions(channelId) { 
+	deleteNotificationsChannelSubscriptions(channelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling deleteNotificationsChannelSubscriptions';
@@ -41,7 +45,8 @@ class NotificationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,6 +56,7 @@ class NotificationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.includePreview Whether or not to include Preview topics (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getNotificationsAvailabletopics(opts) { 
 		opts = opts || {};
@@ -66,7 +72,8 @@ class NotificationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +81,12 @@ class NotificationsApi {
 	 * The list of all subscriptions for this channel
 	 * 
 	 * @param {String} channelId Channel ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getNotificationsChannelSubscriptions(channelId) { 
+	getNotificationsChannelSubscriptions(channelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling getNotificationsChannelSubscriptions';
@@ -91,7 +102,8 @@ class NotificationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -100,6 +112,7 @@ class NotificationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includechannels Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getNotificationsChannels(opts) { 
 		opts = opts || {};
@@ -115,7 +128,8 @@ class NotificationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -123,8 +137,12 @@ class NotificationsApi {
 	 * Verify a channel still exists and is valid
 	 * Returns a 200 OK if channel exists, and a 404 Not Found if it doesnt
 	 * @param {String} channelId Channel ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	headNotificationsChannel(channelId) { 
+	headNotificationsChannel(channelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null || channelId === '') {
 			throw 'Missing the required parameter "channelId" when calling headNotificationsChannel';
@@ -140,7 +158,8 @@ class NotificationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -151,6 +170,7 @@ class NotificationsApi {
 	 * @param {Array.<Object>} body Body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postNotificationsChannelSubscriptions(channelId, body, opts) { 
 		opts = opts || {};
@@ -174,15 +194,20 @@ class NotificationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Create a new channel
 	 * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postNotificationsChannels() { 
+	postNotificationsChannels(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels', 
@@ -194,7 +219,8 @@ class NotificationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,6 +231,7 @@ class NotificationsApi {
 	 * @param {Array.<Object>} body Body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putNotificationsChannelSubscriptions(channelId, body, opts) { 
 		opts = opts || {};
@@ -228,7 +255,8 @@ class NotificationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

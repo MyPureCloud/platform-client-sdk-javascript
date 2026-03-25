@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class TeamsApi {
 	 * Delete team
 	 * 
 	 * @param {String} teamId Team ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTeam(teamId) { 
+	deleteTeam(teamId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling deleteTeam';
@@ -41,7 +45,8 @@ class TeamsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class TeamsApi {
 	 * 
 	 * @param {String} teamId Team ID
 	 * @param {String} id Comma separated list of member ids to remove
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTeamMembers(teamId, id) { 
+	deleteTeamMembers(teamId, id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling deleteTeamMembers';
@@ -71,7 +80,8 @@ class TeamsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -81,6 +91,7 @@ class TeamsApi {
 	 * @param {String} teamId Team ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand the division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTeam(teamId, opts) { 
 		opts = opts || {};
@@ -100,7 +111,8 @@ class TeamsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -113,6 +125,7 @@ class TeamsApi {
 	 * @param {String} opts.before The cursor that points to the previous item in the complete list of teams
 	 * @param {String} opts.after The cursor that points to the next item in the complete list of teams
 	 * @param {Object} opts.expand Expand the name on each user
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTeamMembers(teamId, opts) { 
 		opts = opts || {};
@@ -132,7 +145,8 @@ class TeamsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -145,6 +159,7 @@ class TeamsApi {
 	 * @param {String} opts.after The cursor that points to the next item in the complete list of teams
 	 * @param {String} opts.before The cursor that points to the previous item in the complete list of teams
 	 * @param {Object} opts.expand Expand the division on each team
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTeams(opts) { 
 		opts = opts || {};
@@ -160,7 +175,8 @@ class TeamsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -169,8 +185,12 @@ class TeamsApi {
 	 * 
 	 * @param {String} teamId Team ID
 	 * @param {Object} body Team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTeam(teamId, body) { 
+	patchTeam(teamId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling patchTeam';
@@ -190,7 +210,8 @@ class TeamsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -201,6 +222,7 @@ class TeamsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAnalyticsTeamsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -220,7 +242,8 @@ class TeamsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -229,8 +252,12 @@ class TeamsApi {
 	 * 
 	 * @param {String} teamId Team ID
 	 * @param {Object} body TeamMembers
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTeamMembers(teamId, body) { 
+	postTeamMembers(teamId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling postTeamMembers';
@@ -250,7 +277,8 @@ class TeamsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -258,8 +286,12 @@ class TeamsApi {
 	 * Create a team
 	 * 
 	 * @param {Object} body Team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTeams(body) { 
+	postTeams(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTeams';
@@ -275,7 +307,8 @@ class TeamsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -283,8 +316,12 @@ class TeamsApi {
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTeamsSearch(body) { 
+	postTeamsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTeamsSearch';
@@ -300,7 +337,8 @@ class TeamsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

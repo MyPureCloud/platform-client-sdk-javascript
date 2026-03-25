@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class QualityApi {
 	 * Delete/cancel an async request for evaluation aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteAnalyticsEvaluationsAggregatesJob(jobId) { 
+	deleteAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsEvaluationsAggregatesJob';
@@ -42,7 +46,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,9 +55,13 @@ class QualityApi {
 	 * Delete/cancel an async request for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteAnalyticsSurveysAggregatesJob(jobId) { 
+	deleteAnalyticsSurveysAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsSurveysAggregatesJob';
@@ -68,7 +77,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -77,8 +87,12 @@ class QualityApi {
 	 * 
 	 * @param {String} calibrationId Calibration ID
 	 * @param {String} calibratorId calibratorId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteQualityCalibration(calibrationId, calibratorId) { 
+	deleteQualityCalibration(calibrationId, calibratorId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'calibrationId' is set
 		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling deleteQualityCalibration';
@@ -98,7 +112,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -109,6 +124,7 @@ class QualityApi {
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.expand evaluatorId, evaluationForm
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteQualityConversationEvaluation(conversationId, evaluationId, opts) { 
 		opts = opts || {};
@@ -132,7 +148,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -140,9 +157,13 @@ class QualityApi {
 	 * Delete an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteQualityForm(formId) { 
+	deleteQualityForm(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityForm';
@@ -158,7 +179,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -166,8 +188,12 @@ class QualityApi {
 	 * Delete an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteQualityFormsEvaluation(formId) { 
+	deleteQualityFormsEvaluation(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityFormsEvaluation';
@@ -183,7 +209,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -191,8 +218,12 @@ class QualityApi {
 	 * Delete a survey form.
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteQualityFormsSurvey(formId) { 
+	deleteQualityFormsSurvey(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityFormsSurvey';
@@ -208,7 +239,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -217,8 +249,12 @@ class QualityApi {
 	 * 
 	 * @param {String} programId Program ID from Speech and Text Analytics
 	 * @param {String} ruleId Agent Scoring Rule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteQualityProgramAgentscoringrule(programId, ruleId) { 
+	deleteQualityProgramAgentscoringrule(programId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling deleteQualityProgramAgentscoringrule';
@@ -238,7 +274,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -246,9 +283,13 @@ class QualityApi {
 	 * Get status for async query for evaluation aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getAnalyticsEvaluationsAggregatesJob(jobId) { 
+	getAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
@@ -264,7 +305,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -274,6 +316,7 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
@@ -294,7 +337,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -302,9 +346,13 @@ class QualityApi {
 	 * Get status for async query for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getAnalyticsSurveysAggregatesJob(jobId) { 
+	getAnalyticsSurveysAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
@@ -320,7 +368,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -330,6 +379,7 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
@@ -350,7 +400,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -373,6 +424,7 @@ class QualityApi {
 	 * @param {String} opts.agentTeamId team id of agents requested
 	 * @param {String} opts.formContextId shared id between form versions
 	 * @param {Object} opts.userState 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (default to Legacy)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityAgentsActivity(opts) { 
 		opts = opts || {};
@@ -388,7 +440,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -399,6 +452,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.calibratorId calibratorId
 	 * @param {String} opts.conversationId conversationId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityCalibration(calibrationId, opts) { 
 		opts = opts || {};
@@ -418,7 +472,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -436,6 +491,7 @@ class QualityApi {
 	 * @param {String} opts.conversationId conversation id
 	 * @param {Date} opts.startTime Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Date} opts.endTime end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityCalibrations(calibratorId, opts) { 
 		opts = opts || {};
@@ -455,7 +511,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -466,6 +523,7 @@ class QualityApi {
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.expand agent, assignee, evaluator, evaluationForm
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityConversationEvaluation(conversationId, evaluationId, opts) { 
 		opts = opts || {};
@@ -489,7 +547,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -497,8 +556,12 @@ class QualityApi {
 	 * Get the surveys for a conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityConversationSurveys(conversationId) { 
+	getQualityConversationSurveys(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getQualityConversationSurveys';
@@ -514,7 +577,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -522,8 +586,12 @@ class QualityApi {
 	 * Get status of audit query execution
 	 * 
 	 * @param {String} transactionId Transaction ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityConversationsAuditsQueryTransactionId(transactionId) { 
+	getQualityConversationsAuditsQueryTransactionId(transactionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'transactionId' is set
 		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionId';
@@ -539,7 +607,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -551,6 +620,7 @@ class QualityApi {
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityConversationsAuditsQueryTransactionIdResults(transactionId, opts) { 
 		opts = opts || {};
@@ -570,7 +640,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -598,6 +669,7 @@ class QualityApi {
 	 * @param {Number} opts.maximum the maximum number of results to return
 	 * @param {String} opts.sortOrder NOTE: Does not work when conversationId is supplied.
 	 * @param {Boolean} opts.includeDeletedUsers Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityEvaluationsQuery(opts) { 
 		opts = opts || {};
@@ -613,7 +685,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -633,6 +706,7 @@ class QualityApi {
 	 * @param {Array.<String>} opts.permission permission strings
 	 * @param {String} opts.group group id
 	 * @param {String} opts.agentTeamId team id of agents to be considered
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityEvaluatorsActivity(opts) { 
 		opts = opts || {};
@@ -648,7 +722,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -656,9 +731,13 @@ class QualityApi {
 	 * Get an evaluation form
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getQualityForm(formId) { 
+	getQualityForm(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityForm';
@@ -674,7 +753,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -686,6 +766,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getQualityFormVersions(formId, opts) { 
@@ -706,7 +787,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -722,6 +804,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getQualityForms(opts) { 
@@ -738,7 +821,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -746,8 +830,12 @@ class QualityApi {
 	 * Get an evaluation form
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityFormsEvaluation(formId) { 
+	getQualityFormsEvaluation(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluation';
@@ -763,7 +851,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -775,6 +864,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityFormsEvaluationVersions(formId, opts) { 
 		opts = opts || {};
@@ -794,7 +884,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -810,6 +901,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityFormsEvaluations(opts) { 
 		opts = opts || {};
@@ -825,7 +917,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -835,6 +928,7 @@ class QualityApi {
 	 * @param {Array.<String>} id A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeLatestVersionFormName Whether to include the name of the form's most recently published version (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityFormsEvaluationsBulk(id, opts) { 
 		opts = opts || {};
@@ -854,7 +948,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -862,8 +957,12 @@ class QualityApi {
 	 * Retrieve a list of the latest published evaluation form versions by context ids
 	 * 
 	 * @param {Array.<String>} contextId A comma-delimited list of valid evaluation form context ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityFormsEvaluationsBulkContexts(contextId) { 
+	getQualityFormsEvaluationsBulkContexts(contextId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contextId' is set
 		if (contextId === undefined || contextId === null) {
 			throw 'Missing the required parameter "contextId" when calling getQualityFormsEvaluationsBulkContexts';
@@ -879,7 +978,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -887,8 +987,12 @@ class QualityApi {
 	 * Get a survey form
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityFormsSurvey(formId) { 
+	getQualityFormsSurvey(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsSurvey';
@@ -904,7 +1008,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -915,6 +1020,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityFormsSurveyVersions(formId, opts) { 
 		opts = opts || {};
@@ -934,7 +1040,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -950,6 +1057,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityFormsSurveys(opts) { 
 		opts = opts || {};
@@ -965,7 +1073,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -973,8 +1082,12 @@ class QualityApi {
 	 * Retrieve a list of survey forms by their ids
 	 * 
 	 * @param {Array.<String>} id A comma-delimited list of valid survey form ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityFormsSurveysBulk(id) { 
+	getQualityFormsSurveysBulk(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling getQualityFormsSurveysBulk';
@@ -990,7 +1103,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1000,6 +1114,7 @@ class QualityApi {
 	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.published If true, the latest published version will be included. If false, only the unpublished version will be included. (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityFormsSurveysBulkContexts(contextId, opts) { 
 		opts = opts || {};
@@ -1019,7 +1134,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1028,8 +1144,12 @@ class QualityApi {
 	 * 
 	 * @param {String} programId Program ID from Speech and Text Analytics
 	 * @param {String} ruleId Agent Scoring Rule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityProgramAgentscoringrule(programId, ruleId) { 
+	getQualityProgramAgentscoringrule(programId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getQualityProgramAgentscoringrule';
@@ -1049,7 +1169,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1057,8 +1178,12 @@ class QualityApi {
 	 * Get Agent Scoring Rules for a program
 	 * 
 	 * @param {String} programId Program ID from Speech and Text Analytics
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityProgramAgentscoringrules(programId) { 
+	getQualityProgramAgentscoringrules(programId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getQualityProgramAgentscoringrules';
@@ -1074,7 +1199,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1082,9 +1208,13 @@ class QualityApi {
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getQualityPublishedform(formId) { 
+	getQualityPublishedform(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedform';
@@ -1100,7 +1230,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1112,6 +1243,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getQualityPublishedforms(opts) { 
@@ -1128,7 +1260,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1136,8 +1269,12 @@ class QualityApi {
 	 * Get the most recent published version of an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityPublishedformsEvaluation(formId) { 
+	getQualityPublishedformsEvaluation(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsEvaluation';
@@ -1153,7 +1290,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1165,6 +1303,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityPublishedformsEvaluations(opts) { 
 		opts = opts || {};
@@ -1180,7 +1319,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1188,8 +1328,12 @@ class QualityApi {
 	 * Get the most recent published version of a survey form.
 	 * 
 	 * @param {String} formId Form ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualityPublishedformsSurvey(formId) { 
+	getQualityPublishedformsSurvey(formId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsSurvey';
@@ -1205,7 +1349,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1217,6 +1362,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestEnabledPerContext onlyLatestEnabledPerContext (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getQualityPublishedformsSurveys(opts) { 
 		opts = opts || {};
@@ -1232,7 +1378,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1240,8 +1387,12 @@ class QualityApi {
 	 * Get a survey for a conversation
 	 * 
 	 * @param {String} surveyId surveyId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualitySurvey(surveyId) { 
+	getQualitySurvey(surveyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'surveyId' is set
 		if (surveyId === undefined || surveyId === null || surveyId === '') {
 			throw 'Missing the required parameter "surveyId" when calling getQualitySurvey';
@@ -1257,7 +1408,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1265,8 +1417,12 @@ class QualityApi {
 	 * Get a survey as an end-customer, for the purposes of scoring it.
 	 * 
 	 * @param {String} customerSurveyUrl customerSurveyUrl
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getQualitySurveysScorable(customerSurveyUrl) { 
+	getQualitySurveysScorable(customerSurveyUrl, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerSurveyUrl' is set
 		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
 			throw 'Missing the required parameter "customerSurveyUrl" when calling getQualitySurveysScorable';
@@ -1282,7 +1438,8 @@ class QualityApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1291,8 +1448,12 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Survey form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchQualityFormsSurvey(formId, body) { 
+	patchQualityFormsSurvey(formId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling patchQualityFormsSurvey';
@@ -1312,7 +1473,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1320,9 +1482,13 @@ class QualityApi {
 	 * Query for evaluation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postAnalyticsEvaluationsAggregatesJobs(body) { 
+	postAnalyticsEvaluationsAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesJobs';
@@ -1338,7 +1504,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1346,8 +1513,12 @@ class QualityApi {
 	 * Query for evaluation aggregates
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsEvaluationsAggregatesQuery(body) { 
+	postAnalyticsEvaluationsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesQuery';
@@ -1363,7 +1534,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1371,9 +1543,13 @@ class QualityApi {
 	 * Query for survey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postAnalyticsSurveysAggregatesJobs(body) { 
+	postAnalyticsSurveysAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesJobs';
@@ -1389,7 +1565,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1397,8 +1574,12 @@ class QualityApi {
 	 * Query for survey aggregates
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsSurveysAggregatesQuery(body) { 
+	postAnalyticsSurveysAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesQuery';
@@ -1414,7 +1595,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1424,6 +1606,7 @@ class QualityApi {
 	 * @param {Object} body calibration
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.expand calibratorId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postQualityCalibrations(body, opts) { 
 		opts = opts || {};
@@ -1443,7 +1626,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1455,6 +1639,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.idempotencyKey Idempotency key for request deduplication
 	 * @param {String} opts.expand evaluatorId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postQualityConversationEvaluations(conversationId, body, opts) { 
 		opts = opts || {};
@@ -1478,7 +1663,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1486,8 +1672,12 @@ class QualityApi {
 	 * Create audit query execution
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityConversationsAuditsQuery(body) { 
+	postQualityConversationsAuditsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityConversationsAuditsQuery';
@@ -1503,7 +1693,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1511,8 +1702,12 @@ class QualityApi {
 	 * Query for evaluation aggregates for the current user
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityEvaluationsAggregatesQueryMe(body) { 
+	postQualityEvaluationsAggregatesQueryMe(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityEvaluationsAggregatesQueryMe';
@@ -1528,7 +1723,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1536,8 +1732,12 @@ class QualityApi {
 	 * Score evaluation
 	 * 
 	 * @param {Object} body evaluationAndScoringSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityEvaluationsScoring(body) { 
+	postQualityEvaluationsScoring(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityEvaluationsScoring';
@@ -1553,7 +1753,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1561,8 +1762,12 @@ class QualityApi {
 	 * Search evaluations based along specified criteria
 	 * Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing questionGroup in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing question in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
 	 * @param {Object} body Evaluation search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityEvaluationsSearch(body) { 
+	postQualityEvaluationsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityEvaluationsSearch';
@@ -1578,7 +1783,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1586,9 +1792,13 @@ class QualityApi {
 	 * Create an evaluation form.
 	 * 
 	 * @param {Object} body Evaluation form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postQualityForms(body) { 
+	postQualityForms(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityForms';
@@ -1604,7 +1814,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1612,8 +1823,12 @@ class QualityApi {
 	 * Create an evaluation form.
 	 * 
 	 * @param {Object} body Evaluation form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityFormsEvaluations(body) { 
+	postQualityFormsEvaluations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityFormsEvaluations';
@@ -1629,7 +1844,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1637,8 +1853,12 @@ class QualityApi {
 	 * Create a survey form.
 	 * 
 	 * @param {Object} body Survey form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityFormsSurveys(body) { 
+	postQualityFormsSurveys(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityFormsSurveys';
@@ -1654,7 +1874,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1663,8 +1884,12 @@ class QualityApi {
 	 * Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
 	 * @param {String} programId Program ID from Speech and Text Analytics
 	 * @param {Object} body Agent Scoring Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityProgramAgentscoringrules(programId, body) { 
+	postQualityProgramAgentscoringrules(programId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling postQualityProgramAgentscoringrules';
@@ -1684,7 +1909,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1692,9 +1918,13 @@ class QualityApi {
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postQualityPublishedforms(body) { 
+	postQualityPublishedforms(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityPublishedforms';
@@ -1710,7 +1940,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1718,8 +1949,12 @@ class QualityApi {
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityPublishedformsEvaluations(body) { 
+	postQualityPublishedformsEvaluations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityPublishedformsEvaluations';
@@ -1735,7 +1970,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1743,8 +1979,12 @@ class QualityApi {
 	 * Publish a survey form.
 	 * 
 	 * @param {Object} body Survey form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualityPublishedformsSurveys(body) { 
+	postQualityPublishedformsSurveys(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualityPublishedformsSurveys';
@@ -1760,7 +2000,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1768,8 +2009,12 @@ class QualityApi {
 	 * Create a survey for a conversation
 	 * 
 	 * @param {Object} body Survey creation request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualitySurveys(body) { 
+	postQualitySurveys(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualitySurveys';
@@ -1785,7 +2030,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1793,8 +2039,12 @@ class QualityApi {
 	 * Score survey
 	 * 
 	 * @param {Object} body surveyAndScoringSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postQualitySurveysScoring(body) { 
+	postQualitySurveysScoring(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postQualitySurveysScoring';
@@ -1810,7 +2060,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1819,8 +2070,12 @@ class QualityApi {
 	 * 
 	 * @param {String} calibrationId Calibration ID
 	 * @param {Object} body Calibration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putQualityCalibration(calibrationId, body) { 
+	putQualityCalibration(calibrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'calibrationId' is set
 		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling putQualityCalibration';
@@ -1840,7 +2095,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1852,6 +2108,7 @@ class QualityApi {
 	 * @param {Object} body evaluation
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.expand evaluatorId, evaluationForm, assignee, evaluator
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putQualityConversationEvaluation(conversationId, evaluationId, body, opts) { 
 		opts = opts || {};
@@ -1879,7 +2136,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1888,9 +2146,13 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Evaluation form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putQualityForm(formId, body) { 
+	putQualityForm(formId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityForm';
@@ -1910,7 +2172,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1919,8 +2182,12 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Evaluation form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putQualityFormsEvaluation(formId, body) { 
+	putQualityFormsEvaluation(formId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluation';
@@ -1940,7 +2207,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1949,8 +2217,12 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body AI Scoring Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putQualityFormsEvaluationAiscoringSettings(formId, body) { 
+	putQualityFormsEvaluationAiscoringSettings(formId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluationAiscoringSettings';
@@ -1970,7 +2242,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1979,8 +2252,12 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Survey form
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putQualityFormsSurvey(formId, body) { 
+	putQualityFormsSurvey(formId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsSurvey';
@@ -2000,7 +2277,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2010,8 +2288,12 @@ class QualityApi {
 	 * @param {String} programId Program ID from Speech and Text Analytics
 	 * @param {String} ruleId Agent Scoring Rule ID
 	 * @param {Object} body Agent Scoring Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putQualityProgramAgentscoringrule(programId, ruleId, body) { 
+	putQualityProgramAgentscoringrule(programId, ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putQualityProgramAgentscoringrule';
@@ -2035,7 +2317,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2044,8 +2327,12 @@ class QualityApi {
 	 * 
 	 * @param {String} customerSurveyUrl customerSurveyUrl
 	 * @param {Object} body survey
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putQualitySurveysScorable(customerSurveyUrl, body) { 
+	putQualitySurveysScorable(customerSurveyUrl, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerSurveyUrl' is set
 		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
 			throw 'Missing the required parameter "customerSurveyUrl" when calling putQualitySurveysScorable';
@@ -2065,7 +2352,8 @@ class QualityApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -23,8 +23,12 @@ class GeolocationApi {
 	/**
 	 * Get a organization's GeolocationSettings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGeolocationsSettings() { 
+	getGeolocationsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/geolocations/settings', 
@@ -36,7 +40,8 @@ class GeolocationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -45,8 +50,12 @@ class GeolocationApi {
 	 * 
 	 * @param {String} userId user Id
 	 * @param {String} clientId client Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserGeolocation(userId, clientId) { 
+	getUserGeolocation(userId, clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
@@ -66,7 +75,8 @@ class GeolocationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class GeolocationApi {
 	 * Patch a organization's GeolocationSettings
 	 * 
 	 * @param {Object} body Geolocation settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchGeolocationsSettings(body) { 
+	patchGeolocationsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchGeolocationsSettings';
@@ -91,7 +105,8 @@ class GeolocationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -101,8 +116,12 @@ class GeolocationApi {
 	 * @param {String} userId user Id
 	 * @param {String} clientId client Id
 	 * @param {Object} body Geolocation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserGeolocation(userId, clientId, body) { 
+	patchUserGeolocation(userId, clientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
@@ -126,7 +145,8 @@ class GeolocationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

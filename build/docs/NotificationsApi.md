@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteNotificationsChannelSubscriptions
 
-> void deleteNotificationsChannelSubscriptions(channelId)
+> void deleteNotificationsChannelSubscriptions(channelId, opts)
 
 
 DELETE /api/v2/notifications/channels/{channelId}/subscriptions
@@ -42,8 +42,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.NotificationsApi();
 
 let channelId = "channelId_example"; // String | Channel ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteNotificationsChannelSubscriptions(channelId)
+apiInstance.deleteNotificationsChannelSubscriptions(channelId, opts)
   .then(() => {
     console.log('deleteNotificationsChannelSubscriptions returned successfully.');
   })
@@ -59,6 +65,7 @@ apiInstance.deleteNotificationsChannelSubscriptions(channelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -91,7 +98,11 @@ let apiInstance = new platformClient.NotificationsApi();
 
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'includePreview': true // Boolean | Whether or not to include Preview topics
+  'includePreview': true, // Boolean | Whether or not to include Preview topics
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getNotificationsAvailabletopics(opts)
@@ -111,6 +122,7 @@ apiInstance.getNotificationsAvailabletopics(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
  **includePreview** | **Boolean** | Whether or not to include Preview topics | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -119,7 +131,7 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 ## getNotificationsChannelSubscriptions
 
-> ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId)
+> ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId, opts)
 
 
 GET /api/v2/notifications/channels/{channelId}/subscriptions
@@ -142,8 +154,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.NotificationsApi();
 
 let channelId = "channelId_example"; // String | Channel ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getNotificationsChannelSubscriptions(channelId)
+apiInstance.getNotificationsChannelSubscriptions(channelId, opts)
   .then((data) => {
     console.log(`getNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -159,6 +177,7 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -190,7 +209,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.NotificationsApi();
 
 let opts = { 
-  'includechannels': "token" // String | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence.
+  'includechannels': "token", // String | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getNotificationsChannels(opts)
@@ -209,6 +232,7 @@ apiInstance.getNotificationsChannels(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includechannels** | **String** | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -217,7 +241,7 @@ apiInstance.getNotificationsChannels(opts)
 
 ## headNotificationsChannel
 
-> void headNotificationsChannel(channelId)
+> void headNotificationsChannel(channelId, opts)
 
 
 HEAD /api/v2/notifications/channels/{channelId}
@@ -242,8 +266,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.NotificationsApi();
 
 let channelId = "channelId_example"; // String | Channel ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.headNotificationsChannel(channelId)
+apiInstance.headNotificationsChannel(channelId, opts)
   .then(() => {
     console.log('headNotificationsChannel returned successfully.');
   })
@@ -259,6 +289,7 @@ apiInstance.headNotificationsChannel(channelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -292,7 +323,11 @@ let apiInstance = new platformClient.NotificationsApi();
 let channelId = "channelId_example"; // String | Channel ID
 let body = [{}]; // Object | Body
 let opts = { 
-  'ignoreErrors': false // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+  'ignoreErrors': false, // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postNotificationsChannelSubscriptions(channelId, body, opts)
@@ -313,6 +348,7 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body, opts)
  **channelId** | **String** | Channel ID |  |
  **body** | **Object** | Body |  |
  **ignoreErrors** | **Boolean** | Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -321,7 +357,7 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body, opts)
 
 ## postNotificationsChannels
 
-> Channel postNotificationsChannels()
+> Channel postNotificationsChannels(opts)
 
 
 POST /api/v2/notifications/channels
@@ -344,8 +380,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.NotificationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postNotificationsChannels()
+apiInstance.postNotificationsChannels(opts)
   .then((data) => {
     console.log(`postNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -357,7 +399,10 @@ apiInstance.postNotificationsChannels()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -391,7 +436,11 @@ let apiInstance = new platformClient.NotificationsApi();
 let channelId = "channelId_example"; // String | Channel ID
 let body = [{}]; // Object | Body
 let opts = { 
-  'ignoreErrors': false // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+  'ignoreErrors': false, // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putNotificationsChannelSubscriptions(channelId, body, opts)
@@ -412,10 +461,11 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body, opts)
  **channelId** | **String** | Channel ID |  |
  **body** | **Object** | Body |  |
  **ignoreErrors** | **Boolean** | Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ChannelTopicEntityListing**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

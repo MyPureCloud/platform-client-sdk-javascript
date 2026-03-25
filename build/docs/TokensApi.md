@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteToken
 
-> void deleteToken(userId)
+> void deleteToken(userId, opts)
 
 
 DELETE /api/v2/tokens/{userId}
@@ -42,8 +42,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TokensApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteToken(userId)
+apiInstance.deleteToken(userId, opts)
   .then(() => {
     console.log('deleteToken returned successfully.');
   })
@@ -59,6 +65,7 @@ apiInstance.deleteToken(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -67,7 +74,7 @@ void (no response body)
 
 ## deleteTokensMe
 
-> void deleteTokensMe()
+> void deleteTokensMe(opts)
 
 
 DELETE /api/v2/tokens/me
@@ -88,8 +95,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTokensMe()
+apiInstance.deleteTokensMe(opts)
   .then(() => {
     console.log('deleteTokensMe returned successfully.');
   })
@@ -101,7 +114,10 @@ apiInstance.deleteTokensMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -133,7 +149,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TokensApi();
 
 let opts = { 
-  'preserveIdleTTL': true // Boolean | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.
+  'preserveIdleTTL': true, // Boolean | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTokensMe(opts)
@@ -152,6 +172,7 @@ apiInstance.getTokensMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **preserveIdleTTL** | **Boolean** | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -160,7 +181,7 @@ apiInstance.getTokensMe(opts)
 
 ## getTokensTimeout
 
-> IdleTokenTimeout getTokensTimeout()
+> IdleTokenTimeout getTokensTimeout(opts)
 
 
 GET /api/v2/tokens/timeout
@@ -181,8 +202,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTokensTimeout()
+apiInstance.getTokensTimeout(opts)
   .then((data) => {
     console.log(`getTokensTimeout success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -194,7 +221,10 @@ apiInstance.getTokensTimeout()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -203,7 +233,7 @@ This endpoint does not need any parameter.
 
 ## headTokensMe
 
-> void headTokensMe()
+> void headTokensMe(opts)
 
 
 HEAD /api/v2/tokens/me
@@ -224,8 +254,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.headTokensMe()
+apiInstance.headTokensMe(opts)
   .then(() => {
     console.log('headTokensMe returned successfully.');
   })
@@ -237,7 +273,10 @@ apiInstance.headTokensMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -271,7 +310,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TokensApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putTokensTimeout(opts)
@@ -290,10 +333,11 @@ apiInstance.putTokensTimeout(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **IdleTokenTimeout**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

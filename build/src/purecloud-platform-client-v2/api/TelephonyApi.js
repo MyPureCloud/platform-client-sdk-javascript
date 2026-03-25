@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class TelephonyApi {
 	 * Get an agent's greetings.
 	 * 
 	 * @param {String} agentId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyAgentGreetings(agentId) { 
+	getTelephonyAgentGreetings(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getTelephonyAgentGreetings';
@@ -41,15 +45,20 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the agent's own greetings.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyAgentsGreetingsMe() { 
+	getTelephonyAgentsGreetingsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/agents/greetings/me', 
@@ -61,7 +70,8 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -70,6 +80,7 @@ class TelephonyApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.metricType Flag to indicate metric type to fetch. (default to cloud)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyCallsMetrics(opts) { 
 		opts = opts || {};
@@ -85,15 +96,20 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieve the list of AWS regions media can stream through.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyMediaregions() { 
+	getTelephonyMediaregions(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/mediaregions', 
@@ -105,15 +121,20 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the global telephony configuration.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonySettings() { 
+	getTelephonySettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/settings', 
@@ -125,7 +146,8 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -133,8 +155,12 @@ class TelephonyApi {
 	 * Get a SIP message.
 	 * Get the raw form of the SIP message
 	 * @param {String} conversationId Conversation id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonySipmessagesConversation(conversationId) { 
+	getTelephonySipmessagesConversation(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversation';
@@ -150,7 +176,8 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -160,6 +187,7 @@ class TelephonyApi {
 	 * @param {String} conversationId Conversation id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
 		opts = opts || {};
@@ -179,7 +207,8 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -193,6 +222,7 @@ class TelephonyApi {
 	 * @param {String} opts.toUser User to who the call was placed
 	 * @param {String} opts.fromUser user who placed the call
 	 * @param {String} opts.conversationId Unique identification of the conversation
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonySiptraces(dateStart, dateEnd, opts) { 
 		opts = opts || {};
@@ -216,7 +246,8 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -224,8 +255,12 @@ class TelephonyApi {
 	 * Get signed S3 URL for a pcap download
 	 * 
 	 * @param {String} downloadId unique id for the downloaded file in S3
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonySiptracesDownloadDownloadId(downloadId) { 
+	getTelephonySiptracesDownloadDownloadId(downloadId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'downloadId' is set
 		if (downloadId === undefined || downloadId === null || downloadId === '') {
 			throw 'Missing the required parameter "downloadId" when calling getTelephonySiptracesDownloadDownloadId';
@@ -241,7 +276,8 @@ class TelephonyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -249,8 +285,12 @@ class TelephonyApi {
 	 * Request a download of a pcap file to S3
 	 * 
 	 * @param {Object} sIPSearchPublicRequest 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonySiptracesDownload(sIPSearchPublicRequest) { 
+	postTelephonySiptracesDownload(sIPSearchPublicRequest, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sIPSearchPublicRequest' is set
 		if (sIPSearchPublicRequest === undefined || sIPSearchPublicRequest === null) {
 			throw 'Missing the required parameter "sIPSearchPublicRequest" when calling postTelephonySiptracesDownload';
@@ -266,7 +306,8 @@ class TelephonyApi {
 			sIPSearchPublicRequest, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -275,8 +316,12 @@ class TelephonyApi {
 	 * 
 	 * @param {String} agentId User ID
 	 * @param {Object} body Agent Greeting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyAgentGreetings(agentId, body) { 
+	putTelephonyAgentGreetings(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling putTelephonyAgentGreetings';
@@ -296,7 +341,8 @@ class TelephonyApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -304,8 +350,12 @@ class TelephonyApi {
 	 * Updates the agent's own greetings.
 	 * 
 	 * @param {Object} body Agent Greeting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyAgentsGreetingsMe(body) { 
+	putTelephonyAgentsGreetingsMe(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putTelephonyAgentsGreetingsMe';
@@ -321,7 +371,8 @@ class TelephonyApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -329,8 +380,12 @@ class TelephonyApi {
 	 * Update the global telephony configuration.
 	 * 
 	 * @param {Object} body Telephony
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonySettings(body) { 
+	putTelephonySettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putTelephonySettings';
@@ -346,7 +401,8 @@ class TelephonyApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

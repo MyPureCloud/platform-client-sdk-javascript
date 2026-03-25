@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteVoicemailMessage
 
-> void deleteVoicemailMessage(messageId)
+> void deleteVoicemailMessage(messageId, opts)
 
 
 DELETE /api/v2/voicemail/messages/{messageId}
@@ -63,8 +63,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let messageId = "messageId_example"; // String | Message ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteVoicemailMessage(messageId)
+apiInstance.deleteVoicemailMessage(messageId, opts)
   .then(() => {
     console.log('deleteVoicemailMessage returned successfully.');
   })
@@ -80,6 +86,7 @@ apiInstance.deleteVoicemailMessage(messageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -88,7 +95,7 @@ void (no response body)
 
 ## deleteVoicemailMessages
 
-> void deleteVoicemailMessages()
+> void deleteVoicemailMessages(opts)
 
 
 DELETE /api/v2/voicemail/messages
@@ -109,8 +116,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.VoicemailApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteVoicemailMessages()
+apiInstance.deleteVoicemailMessages(opts)
   .then(() => {
     console.log('deleteVoicemailMessages returned successfully.');
   })
@@ -122,7 +135,10 @@ apiInstance.deleteVoicemailMessages()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -131,7 +147,7 @@ void (no response body)
 
 ## getVoicemailGroupMailbox
 
-> VoicemailMailboxInfo getVoicemailGroupMailbox(groupId)
+> VoicemailMailboxInfo getVoicemailGroupMailbox(groupId, opts)
 
 
 GET /api/v2/voicemail/groups/{groupId}/mailbox
@@ -154,8 +170,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let groupId = "groupId_example"; // String | groupId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailGroupMailbox(groupId)
+apiInstance.getVoicemailGroupMailbox(groupId, opts)
   .then((data) => {
     console.log(`getVoicemailGroupMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -171,6 +193,7 @@ apiInstance.getVoicemailGroupMailbox(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | groupId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -204,7 +227,11 @@ let apiInstance = new platformClient.VoicemailApi();
 let groupId = "groupId_example"; // String | Group ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailGroupMessages(groupId, opts)
@@ -225,6 +252,7 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
  **groupId** | **String** | Group ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -233,7 +261,7 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
 
 ## getVoicemailGroupPolicy
 
-> VoicemailGroupPolicy getVoicemailGroupPolicy(groupId)
+> VoicemailGroupPolicy getVoicemailGroupPolicy(groupId, opts)
 
 
 GET /api/v2/voicemail/groups/{groupId}/policy
@@ -258,8 +286,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailGroupPolicy(groupId)
+apiInstance.getVoicemailGroupPolicy(groupId, opts)
   .then((data) => {
     console.log(`getVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -275,6 +309,7 @@ apiInstance.getVoicemailGroupPolicy(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -283,7 +318,7 @@ apiInstance.getVoicemailGroupPolicy(groupId)
 
 ## getVoicemailMailbox
 
-> VoicemailMailboxInfo getVoicemailMailbox()
+> VoicemailMailboxInfo getVoicemailMailbox(opts)
 
 
 GET /api/v2/voicemail/mailbox
@@ -304,8 +339,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.VoicemailApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailMailbox()
+apiInstance.getVoicemailMailbox(opts)
   .then((data) => {
     console.log(`getVoicemailMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -317,7 +358,10 @@ apiInstance.getVoicemailMailbox()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -326,7 +370,7 @@ This endpoint does not need any parameter.
 
 ## getVoicemailMeMailbox
 
-> VoicemailMailboxInfo getVoicemailMeMailbox()
+> VoicemailMailboxInfo getVoicemailMeMailbox(opts)
 
 
 GET /api/v2/voicemail/me/mailbox
@@ -347,8 +391,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.VoicemailApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailMeMailbox()
+apiInstance.getVoicemailMeMailbox(opts)
   .then((data) => {
     console.log(`getVoicemailMeMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -360,7 +410,10 @@ apiInstance.getVoicemailMeMailbox()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -393,7 +446,11 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailMeMessages(opts)
@@ -413,6 +470,7 @@ apiInstance.getVoicemailMeMessages(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -421,7 +479,7 @@ apiInstance.getVoicemailMeMessages(opts)
 
 ## getVoicemailMePolicy
 
-> VoicemailUserPolicy getVoicemailMePolicy()
+> VoicemailUserPolicy getVoicemailMePolicy(opts)
 
 
 GET /api/v2/voicemail/me/policy
@@ -442,8 +500,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.VoicemailApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailMePolicy()
+apiInstance.getVoicemailMePolicy(opts)
   .then((data) => {
     console.log(`getVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -455,7 +519,10 @@ apiInstance.getVoicemailMePolicy()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -488,7 +555,11 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let messageId = "messageId_example"; // String | Message ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | If the caller is a known user, which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | If the caller is a known user, which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailMessage(messageId, opts)
@@ -508,6 +579,7 @@ apiInstance.getVoicemailMessage(messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **expand** | **[String]** | If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -542,7 +614,11 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let messageId = "messageId_example"; // String | Message ID
 let opts = { 
-  'formatId': "WEBM" // String | The desired media format.
+  'formatId': "WEBM", // String | The desired media format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailMessageMedia(messageId, opts)
@@ -562,6 +638,7 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -594,7 +671,11 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let opts = { 
   'ids': "ids_example", // String | An optional comma separated list of VoicemailMessage ids
-  'expand': ["expand_example"] // [String] | If the caller is a known user, which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | If the caller is a known user, which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailMessages(opts)
@@ -614,6 +695,7 @@ apiInstance.getVoicemailMessages(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** | An optional comma separated list of VoicemailMessage ids | [optional]  |
  **expand** | **[String]** | If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -622,7 +704,7 @@ apiInstance.getVoicemailMessages(opts)
 
 ## getVoicemailPolicy
 
-> VoicemailOrganizationPolicy getVoicemailPolicy()
+> VoicemailOrganizationPolicy getVoicemailPolicy(opts)
 
 
 GET /api/v2/voicemail/policy
@@ -645,8 +727,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.VoicemailApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailPolicy()
+apiInstance.getVoicemailPolicy(opts)
   .then((data) => {
     console.log(`getVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -658,7 +746,10 @@ apiInstance.getVoicemailPolicy()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -694,7 +785,11 @@ let apiInstance = new platformClient.VoicemailApi();
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailQueueMessages(queueId, opts)
@@ -715,6 +810,7 @@ apiInstance.getVoicemailQueueMessages(queueId, opts)
  **queueId** | **String** | Queue ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -747,7 +843,11 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailSearch(q64, opts)
@@ -767,6 +867,7 @@ apiInstance.getVoicemailSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -775,7 +876,7 @@ apiInstance.getVoicemailSearch(q64, opts)
 
 ## getVoicemailUserMailbox
 
-> VoicemailMailboxInfo getVoicemailUserMailbox(userId)
+> VoicemailMailboxInfo getVoicemailUserMailbox(userId, opts)
 
 
 GET /api/v2/voicemail/users/{userId}/mailbox
@@ -800,8 +901,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let userId = "userId_example"; // String | userId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailUserMailbox(userId)
+apiInstance.getVoicemailUserMailbox(userId, opts)
   .then((data) => {
     console.log(`getVoicemailUserMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -817,6 +924,7 @@ apiInstance.getVoicemailUserMailbox(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -852,7 +960,11 @@ let apiInstance = new platformClient.VoicemailApi();
 let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailUserMessages(userId, opts)
@@ -873,6 +985,7 @@ apiInstance.getVoicemailUserMessages(userId, opts)
  **userId** | **String** | User ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -881,7 +994,7 @@ apiInstance.getVoicemailUserMessages(userId, opts)
 
 ## getVoicemailUserpolicy
 
-> VoicemailUserPolicy getVoicemailUserpolicy(userId)
+> VoicemailUserPolicy getVoicemailUserpolicy(userId, opts)
 
 
 GET /api/v2/voicemail/userpolicies/{userId}
@@ -907,8 +1020,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getVoicemailUserpolicy(userId)
+apiInstance.getVoicemailUserpolicy(userId, opts)
   .then((data) => {
     console.log(`getVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -924,6 +1043,7 @@ apiInstance.getVoicemailUserpolicy(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -932,7 +1052,7 @@ apiInstance.getVoicemailUserpolicy(userId)
 
 ## patchVoicemailGroupPolicy
 
-> VoicemailGroupPolicy patchVoicemailGroupPolicy(groupId, body)
+> VoicemailGroupPolicy patchVoicemailGroupPolicy(groupId, body, opts)
 
 
 PATCH /api/v2/voicemail/groups/{groupId}/policy
@@ -958,8 +1078,14 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let body = {}; // Object | The group's voicemail policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchVoicemailGroupPolicy(groupId, body)
+apiInstance.patchVoicemailGroupPolicy(groupId, body, opts)
   .then((data) => {
     console.log(`patchVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -976,6 +1102,7 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | The group's voicemail policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -984,7 +1111,7 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 
 ## patchVoicemailMePolicy
 
-> VoicemailUserPolicy patchVoicemailMePolicy(body)
+> VoicemailUserPolicy patchVoicemailMePolicy(body, opts)
 
 
 PATCH /api/v2/voicemail/me/policy
@@ -1007,8 +1134,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let body = {}; // Object | The user's voicemail policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchVoicemailMePolicy(body)
+apiInstance.patchVoicemailMePolicy(body, opts)
   .then((data) => {
     console.log(`patchVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1024,6 +1157,7 @@ apiInstance.patchVoicemailMePolicy(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The user's voicemail policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1032,7 +1166,7 @@ apiInstance.patchVoicemailMePolicy(body)
 
 ## patchVoicemailMessage
 
-> VoicemailMessage patchVoicemailMessage(messageId, body)
+> VoicemailMessage patchVoicemailMessage(messageId, body, opts)
 
 
 PATCH /api/v2/voicemail/messages/{messageId}
@@ -1058,8 +1192,14 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let messageId = "messageId_example"; // String | Message ID
 let body = {}; // Object | VoicemailMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchVoicemailMessage(messageId, body)
+apiInstance.patchVoicemailMessage(messageId, body, opts)
   .then((data) => {
     console.log(`patchVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1076,6 +1216,7 @@ apiInstance.patchVoicemailMessage(messageId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **body** | **Object** | VoicemailMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1084,7 +1225,7 @@ apiInstance.patchVoicemailMessage(messageId, body)
 
 ## patchVoicemailUserpolicy
 
-> VoicemailUserPolicy patchVoicemailUserpolicy(userId, body)
+> VoicemailUserPolicy patchVoicemailUserpolicy(userId, body, opts)
 
 
 PATCH /api/v2/voicemail/userpolicies/{userId}
@@ -1111,8 +1252,14 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | The user's voicemail policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchVoicemailUserpolicy(userId, body)
+apiInstance.patchVoicemailUserpolicy(userId, body, opts)
   .then((data) => {
     console.log(`patchVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1129,6 +1276,7 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The user's voicemail policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1160,7 +1308,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postVoicemailMessages(opts)
@@ -1179,6 +1331,7 @@ apiInstance.postVoicemailMessages(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1187,7 +1340,7 @@ apiInstance.postVoicemailMessages(opts)
 
 ## postVoicemailSearch
 
-> VoicemailsSearchResponse postVoicemailSearch(body)
+> VoicemailsSearchResponse postVoicemailSearch(body, opts)
 
 
 POST /api/v2/voicemail/search
@@ -1210,8 +1363,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postVoicemailSearch(body)
+apiInstance.postVoicemailSearch(body, opts)
   .then((data) => {
     console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1227,6 +1386,7 @@ apiInstance.postVoicemailSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1235,7 +1395,7 @@ apiInstance.postVoicemailSearch(body)
 
 ## putVoicemailMessage
 
-> VoicemailMessage putVoicemailMessage(messageId, body)
+> VoicemailMessage putVoicemailMessage(messageId, body, opts)
 
 
 PUT /api/v2/voicemail/messages/{messageId}
@@ -1261,8 +1421,14 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let messageId = "messageId_example"; // String | Message ID
 let body = {}; // Object | VoicemailMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putVoicemailMessage(messageId, body)
+apiInstance.putVoicemailMessage(messageId, body, opts)
   .then((data) => {
     console.log(`putVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1279,6 +1445,7 @@ apiInstance.putVoicemailMessage(messageId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **body** | **Object** | VoicemailMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1287,7 +1454,7 @@ apiInstance.putVoicemailMessage(messageId, body)
 
 ## putVoicemailPolicy
 
-> VoicemailOrganizationPolicy putVoicemailPolicy(body)
+> VoicemailOrganizationPolicy putVoicemailPolicy(body, opts)
 
 
 PUT /api/v2/voicemail/policy
@@ -1312,8 +1479,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.VoicemailApi();
 
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putVoicemailPolicy(body)
+apiInstance.putVoicemailPolicy(body, opts)
   .then((data) => {
     console.log(`putVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1329,6 +1502,7 @@ apiInstance.putVoicemailPolicy(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1337,7 +1511,7 @@ apiInstance.putVoicemailPolicy(body)
 
 ## putVoicemailUserpolicy
 
-> VoicemailUserPolicy putVoicemailUserpolicy(userId, body)
+> VoicemailUserPolicy putVoicemailUserpolicy(userId, body, opts)
 
 
 PUT /api/v2/voicemail/userpolicies/{userId}
@@ -1364,8 +1538,14 @@ let apiInstance = new platformClient.VoicemailApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | The user's voicemail policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putVoicemailUserpolicy(userId, body)
+apiInstance.putVoicemailUserpolicy(userId, body, opts)
   .then((data) => {
     console.log(`putVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1382,10 +1562,11 @@ apiInstance.putVoicemailUserpolicy(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The user's voicemail policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **VoicemailUserPolicy**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteEmailsSettingsThreading
 
-> void deleteEmailsSettingsThreading()
+> void deleteEmailsSettingsThreading(opts)
 
 
 DELETE /api/v2/emails/settings/threading
@@ -48,8 +48,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteEmailsSettingsThreading()
+apiInstance.deleteEmailsSettingsThreading(opts)
   .then(() => {
     console.log('deleteEmailsSettingsThreading returned successfully.');
   })
@@ -61,7 +67,10 @@ apiInstance.deleteEmailsSettingsThreading()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -70,7 +79,7 @@ void (no response body)
 
 ## deleteExternalcontactsSettings
 
-> UpdatedSettingsResponse deleteExternalcontactsSettings()
+> UpdatedSettingsResponse deleteExternalcontactsSettings(opts)
 
 
 DELETE /api/v2/externalcontacts/settings
@@ -93,8 +102,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsSettings()
+apiInstance.deleteExternalcontactsSettings(opts)
   .then((data) => {
     console.log(`deleteExternalcontactsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -106,7 +121,10 @@ apiInstance.deleteExternalcontactsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -115,7 +133,7 @@ This endpoint does not need any parameter.
 
 ## deleteUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+> void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
 
 
 DELETE /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -140,8 +158,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SettingsApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
   .then(() => {
     console.log('deleteUsersAgentuiAgentsAutoanswerAgentIdSettings returned successfully.');
   })
@@ -157,6 +181,7 @@ apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -165,7 +190,7 @@ void (no response body)
 
 ## getEmailsSettings
 
-> EmailSettings getEmailsSettings()
+> EmailSettings getEmailsSettings(opts)
 
 
 GET /api/v2/emails/settings
@@ -188,8 +213,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getEmailsSettings()
+apiInstance.getEmailsSettings(opts)
   .then((data) => {
     console.log(`getEmailsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -201,7 +232,10 @@ apiInstance.getEmailsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -210,7 +244,7 @@ This endpoint does not need any parameter.
 
 ## getEmailsSettingsThreading
 
-> EmailThreadingSettings getEmailsSettingsThreading()
+> EmailThreadingSettings getEmailsSettingsThreading(opts)
 
 
 GET /api/v2/emails/settings/threading
@@ -233,8 +267,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getEmailsSettingsThreading()
+apiInstance.getEmailsSettingsThreading(opts)
   .then((data) => {
     console.log(`getEmailsSettingsThreading success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -246,7 +286,10 @@ apiInstance.getEmailsSettingsThreading()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -255,7 +298,7 @@ This endpoint does not need any parameter.
 
 ## getExternalcontactsSettings
 
-> ExternalContactsSettings getExternalcontactsSettings()
+> ExternalContactsSettings getExternalcontactsSettings(opts)
 
 
 GET /api/v2/externalcontacts/settings
@@ -278,8 +321,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsSettings()
+apiInstance.getExternalcontactsSettings(opts)
   .then((data) => {
     console.log(`getExternalcontactsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -291,7 +340,10 @@ apiInstance.getExternalcontactsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -300,7 +352,7 @@ This endpoint does not need any parameter.
 
 ## getSettingsExecutiondata
 
-> ExecutionDataGlobalSettingsResponse getSettingsExecutiondata()
+> ExecutionDataGlobalSettingsResponse getSettingsExecutiondata(opts)
 
 
 GET /api/v2/settings/executiondata
@@ -325,8 +377,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SettingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSettingsExecutiondata()
+apiInstance.getSettingsExecutiondata(opts)
   .then((data) => {
     console.log(`getSettingsExecutiondata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -338,7 +396,10 @@ apiInstance.getSettingsExecutiondata()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -347,7 +408,7 @@ This endpoint does not need any parameter.
 
 ## getUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> AutoAnswerSettings getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+> AutoAnswerSettings getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
 
 
 GET /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -372,8 +433,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SettingsApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts)
   .then((data) => {
     console.log(`getUsersAgentuiAgentsAutoanswerAgentIdSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -389,6 +456,7 @@ apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -422,7 +490,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SettingsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchEmailsSettings(opts)
@@ -441,6 +513,7 @@ apiInstance.patchEmailsSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -474,7 +547,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SettingsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchEmailsSettingsThreading(opts)
@@ -493,6 +570,7 @@ apiInstance.patchEmailsSettingsThreading(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -501,7 +579,7 @@ apiInstance.patchEmailsSettingsThreading(opts)
 
 ## patchSettingsExecutiondata
 
-> ExecutionDataGlobalSettingsResponse patchSettingsExecutiondata(body)
+> ExecutionDataGlobalSettingsResponse patchSettingsExecutiondata(body, opts)
 
 
 PATCH /api/v2/settings/executiondata
@@ -528,8 +606,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SettingsApi();
 
 let body = {}; // Object | New Execution Data Setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchSettingsExecutiondata(body)
+apiInstance.patchSettingsExecutiondata(body, opts)
   .then((data) => {
     console.log(`patchSettingsExecutiondata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -545,6 +629,7 @@ apiInstance.patchSettingsExecutiondata(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | New Execution Data Setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -553,7 +638,7 @@ apiInstance.patchSettingsExecutiondata(body)
 
 ## patchUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> AutoAnswerSettings patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+> AutoAnswerSettings patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
 
 
 PATCH /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -579,8 +664,14 @@ let apiInstance = new platformClient.SettingsApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
 let body = {}; // Object | AutoAnswerSettings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
   .then((data) => {
     console.log(`patchUsersAgentuiAgentsAutoanswerAgentIdSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -597,6 +688,7 @@ apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
  **body** | **Object** | AutoAnswerSettings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -630,7 +722,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SettingsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putExternalcontactsSettings(opts)
@@ -649,6 +745,7 @@ apiInstance.putExternalcontactsSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -657,7 +754,7 @@ apiInstance.putExternalcontactsSettings(opts)
 
 ## putUsersAgentuiAgentsAutoanswerAgentIdSettings
 
-> AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+> AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
 
 
 PUT /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -683,8 +780,14 @@ let apiInstance = new platformClient.SettingsApi();
 
 let agentId = "agentId_example"; // String | The agent to apply the auto answer settings to
 let body = {}; // Object | AutoAnswerSettings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts)
   .then((data) => {
     console.log(`putUsersAgentuiAgentsAutoanswerAgentIdSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -701,10 +804,11 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
  **body** | **Object** | AutoAnswerSettings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

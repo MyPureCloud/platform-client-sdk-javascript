@@ -5,7 +5,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class EmployeeEngagementApi {
 	 * Deletes a celebration
 	 * 
 	 * @param {String} celebrationId The ID of the celebration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteEmployeeengagementCelebration(celebrationId) { 
+	deleteEmployeeengagementCelebration(celebrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'celebrationId' is set
 		if (celebrationId === undefined || celebrationId === null || celebrationId === '') {
 			throw 'Missing the required parameter "celebrationId" when calling deleteEmployeeengagementCelebration';
@@ -41,7 +45,8 @@ class EmployeeEngagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,6 +56,7 @@ class EmployeeEngagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber  (default to 1)
 	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getEmployeeengagementCelebrations(opts) { 
 		opts = opts || {};
@@ -66,7 +72,8 @@ class EmployeeEngagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +81,12 @@ class EmployeeEngagementApi {
 	 * Gets a single recognition
 	 * 
 	 * @param {String} recognitionId The Recognition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getEmployeeengagementRecognition(recognitionId) { 
+	getEmployeeengagementRecognition(recognitionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'recognitionId' is set
 		if (recognitionId === undefined || recognitionId === null || recognitionId === '') {
 			throw 'Missing the required parameter "recognitionId" when calling getEmployeeengagementRecognition';
@@ -91,7 +102,8 @@ class EmployeeEngagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,6 +117,7 @@ class EmployeeEngagementApi {
 	 * @param {Date} opts.dateEnd The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Number} opts.pageSize Page size (default to 100)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getEmployeeengagementRecognitions(opts) { 
 		opts = opts || {};
@@ -120,7 +133,8 @@ class EmployeeEngagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -129,8 +143,12 @@ class EmployeeEngagementApi {
 	 * 
 	 * @param {String} celebrationId The ID of the celebration
 	 * @param {Object} body Patch Celebration state
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchEmployeeengagementCelebration(celebrationId, body) { 
+	patchEmployeeengagementCelebration(celebrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'celebrationId' is set
 		if (celebrationId === undefined || celebrationId === null || celebrationId === '') {
 			throw 'Missing the required parameter "celebrationId" when calling patchEmployeeengagementCelebration';
@@ -150,7 +168,8 @@ class EmployeeEngagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -158,8 +177,12 @@ class EmployeeEngagementApi {
 	 * Creates a recognition
 	 * 
 	 * @param {Object} body Create Recognition
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postEmployeeengagementRecognitions(body) { 
+	postEmployeeengagementRecognitions(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postEmployeeengagementRecognitions';
@@ -175,7 +198,8 @@ class EmployeeEngagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

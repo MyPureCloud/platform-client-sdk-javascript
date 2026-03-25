@@ -5,7 +5,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class DataPrivacyApi {
 	 * Delete a masking rule.
 	 * 
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteDataprivacyMaskingrule(ruleId) { 
+	deleteDataprivacyMaskingrule(ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteDataprivacyMaskingrule';
@@ -41,7 +45,8 @@ class DataPrivacyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class DataPrivacyApi {
 	 * Fetch details about a masking rule.
 	 * 
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDataprivacyMaskingrule(ruleId) { 
+	getDataprivacyMaskingrule(ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getDataprivacyMaskingrule';
@@ -66,15 +75,20 @@ class DataPrivacyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieve the list of masking rules.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDataprivacyMaskingrules() { 
+	getDataprivacyMaskingrules(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/dataprivacy/maskingrules', 
@@ -86,7 +100,8 @@ class DataPrivacyApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -96,6 +111,7 @@ class DataPrivacyApi {
 	 * @param {String} ruleId ruleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchDataprivacyMaskingrule(ruleId, opts) { 
 		opts = opts || {};
@@ -115,7 +131,8 @@ class DataPrivacyApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -123,8 +140,12 @@ class DataPrivacyApi {
 	 * Create a new masking rule resource.
 	 * 
 	 * @param {Object} body Details for creating masking rule resource
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postDataprivacyMaskingrules(body) { 
+	postDataprivacyMaskingrules(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postDataprivacyMaskingrules';
@@ -140,7 +161,8 @@ class DataPrivacyApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -148,8 +170,12 @@ class DataPrivacyApi {
 	 * Validate masking before creating.
 	 * 
 	 * @param {Object} body Text to be masked
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postDataprivacyMaskingrulesValidate(body) { 
+	postDataprivacyMaskingrulesValidate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';
@@ -165,7 +191,8 @@ class DataPrivacyApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

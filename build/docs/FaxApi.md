@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteFaxDocument
 
-> void deleteFaxDocument(documentId)
+> void deleteFaxDocument(documentId, opts)
 
 
 DELETE /api/v2/fax/documents/{documentId}
@@ -42,8 +42,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.FaxApi();
 
 let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFaxDocument(documentId)
+apiInstance.deleteFaxDocument(documentId, opts)
   .then(() => {
     console.log('deleteFaxDocument returned successfully.');
   })
@@ -59,6 +65,7 @@ apiInstance.deleteFaxDocument(documentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -67,7 +74,7 @@ void (no response body)
 
 ## getFaxDocument
 
-> FaxDocument getFaxDocument(documentId)
+> FaxDocument getFaxDocument(documentId, opts)
 
 
 GET /api/v2/fax/documents/{documentId}
@@ -90,8 +97,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.FaxApi();
 
 let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFaxDocument(documentId)
+apiInstance.getFaxDocument(documentId, opts)
   .then((data) => {
     console.log(`getFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -107,6 +120,7 @@ apiInstance.getFaxDocument(documentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -115,7 +129,7 @@ apiInstance.getFaxDocument(documentId)
 
 ## getFaxDocumentContent
 
-> DownloadResponse getFaxDocumentContent(documentId)
+> DownloadResponse getFaxDocumentContent(documentId, opts)
 
 
 GET /api/v2/fax/documents/{documentId}/content
@@ -138,8 +152,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.FaxApi();
 
 let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFaxDocumentContent(documentId)
+apiInstance.getFaxDocumentContent(documentId, opts)
   .then((data) => {
     console.log(`getFaxDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -155,6 +175,7 @@ apiInstance.getFaxDocumentContent(documentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -187,7 +208,11 @@ let apiInstance = new platformClient.FaxApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFaxDocuments(opts)
@@ -207,6 +232,7 @@ apiInstance.getFaxDocuments(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -215,7 +241,7 @@ apiInstance.getFaxDocuments(opts)
 
 ## getFaxSettings
 
-> FaxConfig getFaxSettings()
+> FaxConfig getFaxSettings(opts)
 
 
 GET /api/v2/fax/settings
@@ -236,8 +262,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FaxApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFaxSettings()
+apiInstance.getFaxSettings(opts)
   .then((data) => {
     console.log(`getFaxSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -249,7 +281,10 @@ apiInstance.getFaxSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -258,7 +293,7 @@ This endpoint does not need any parameter.
 
 ## getFaxSummary
 
-> FaxSummary getFaxSummary()
+> FaxSummary getFaxSummary(opts)
 
 
 GET /api/v2/fax/summary
@@ -279,8 +314,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FaxApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFaxSummary()
+apiInstance.getFaxSummary(opts)
   .then((data) => {
     console.log(`getFaxSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -292,7 +333,10 @@ apiInstance.getFaxSummary()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -301,7 +345,7 @@ This endpoint does not need any parameter.
 
 ## putFaxDocument
 
-> FaxDocument putFaxDocument(documentId, body)
+> FaxDocument putFaxDocument(documentId, body, opts)
 
 
 PUT /api/v2/fax/documents/{documentId}
@@ -325,8 +369,14 @@ let apiInstance = new platformClient.FaxApi();
 
 let documentId = "documentId_example"; // String | Document ID
 let body = {}; // Object | Document
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putFaxDocument(documentId, body)
+apiInstance.putFaxDocument(documentId, body, opts)
   .then((data) => {
     console.log(`putFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -343,6 +393,7 @@ apiInstance.putFaxDocument(documentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **body** | **Object** | Document |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -376,7 +427,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.FaxApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFaxSettings(opts)
@@ -395,10 +450,11 @@ apiInstance.putFaxSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **FaxConfig**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

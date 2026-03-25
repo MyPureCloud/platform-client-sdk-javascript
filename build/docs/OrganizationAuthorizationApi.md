@@ -59,7 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteOrgauthorizationTrustee
 
-> void deleteOrgauthorizationTrustee(trusteeOrgId)
+> void deleteOrgauthorizationTrustee(trusteeOrgId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}
@@ -84,8 +84,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId)
+apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustee returned successfully.');
   })
@@ -101,6 +107,7 @@ apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -109,7 +116,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrusteeCloneduser
 
-> void deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
+> void deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}
@@ -135,8 +142,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Id of the cloned user to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
+apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrusteeCloneduser returned successfully.');
   })
@@ -153,6 +166,7 @@ apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Id of the cloned user to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -161,7 +175,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrusteeGroup
 
-> void deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
+> void deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}
@@ -187,8 +201,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeGroupId = "trusteeGroupId_example"; // String | Trustee Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
+apiInstance.deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrusteeGroup returned successfully.');
   })
@@ -205,6 +225,7 @@ apiInstance.deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeGroupId** | **String** | Trustee Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -213,7 +234,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrusteeGroupRoles
 
-> void deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)
+> void deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles
@@ -239,8 +260,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeGroupId = "trusteeGroupId_example"; // String | Trustee Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)
+apiInstance.deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrusteeGroupRoles returned successfully.');
   })
@@ -257,6 +284,7 @@ apiInstance.deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeGroupId** | **String** | Trustee Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -265,7 +293,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrusteeUser
 
-> void deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
+> void deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}
@@ -291,8 +319,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
+apiInstance.deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrusteeUser returned successfully.');
   })
@@ -309,6 +343,7 @@ apiInstance.deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -317,7 +352,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrusteeUserRoles
 
-> void deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
+> void deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles
@@ -343,8 +378,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
+apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrusteeUserRoles returned successfully.');
   })
@@ -361,6 +402,7 @@ apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -369,7 +411,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrustees
 
-> void deleteOrgauthorizationTrustees(id)
+> void deleteOrgauthorizationTrustees(id, opts)
 
 
 DELETE /api/v2/orgauthorization/trustees
@@ -396,8 +438,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let id = ["id_example"]; // [String] | Comma separated list of trustee ids to remove
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustees(id)
+apiInstance.deleteOrgauthorizationTrustees(id, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustees returned successfully.');
   })
@@ -413,6 +461,7 @@ apiInstance.deleteOrgauthorizationTrustees(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma separated list of trustee ids to remove |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -421,7 +470,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrustor
 
-> void deleteOrgauthorizationTrustor(trustorOrgId)
+> void deleteOrgauthorizationTrustor(trustorOrgId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}
@@ -446,8 +495,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustor(trustorOrgId)
+apiInstance.deleteOrgauthorizationTrustor(trustorOrgId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustor returned successfully.');
   })
@@ -463,6 +518,7 @@ apiInstance.deleteOrgauthorizationTrustor(trustorOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -471,7 +527,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrustorCloneduser
 
-> void deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+> void deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
@@ -497,8 +553,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+apiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustorCloneduser returned successfully.');
   })
@@ -515,6 +577,7 @@ apiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -523,7 +586,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrustorGroup
 
-> void deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
+> void deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}
@@ -549,8 +612,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trustorGroupId = "trustorGroupId_example"; // String | Trustor Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
+apiInstance.deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustorGroup returned successfully.');
   })
@@ -567,6 +636,7 @@ apiInstance.deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trustorGroupId** | **String** | Trustor Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -575,7 +645,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrustorUser
 
-> void deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+> void deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
 
 
 DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}
@@ -601,8 +671,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustorUser returned successfully.');
   })
@@ -619,6 +695,7 @@ apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -627,7 +704,7 @@ void (no response body)
 
 ## deleteOrgauthorizationTrustors
 
-> void deleteOrgauthorizationTrustors(id)
+> void deleteOrgauthorizationTrustors(id, opts)
 
 
 DELETE /api/v2/orgauthorization/trustors
@@ -654,8 +731,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let id = ["id_example"]; // [String] | Comma separated list of trustor ids to remove
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrgauthorizationTrustors(id)
+apiInstance.deleteOrgauthorizationTrustors(id, opts)
   .then(() => {
     console.log('deleteOrgauthorizationTrustors returned successfully.');
   })
@@ -671,6 +754,7 @@ apiInstance.deleteOrgauthorizationTrustors(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma separated list of trustor ids to remove |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -679,7 +763,7 @@ void (no response body)
 
 ## getOrgauthorizationPairing
 
-> TrustRequest getOrgauthorizationPairing(pairingId)
+> TrustRequest getOrgauthorizationPairing(pairingId, opts)
 
 
 GET /api/v2/orgauthorization/pairings/{pairingId}
@@ -705,8 +789,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let pairingId = "pairingId_example"; // String | Pairing Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationPairing(pairingId)
+apiInstance.getOrgauthorizationPairing(pairingId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationPairing success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -722,6 +812,7 @@ apiInstance.getOrgauthorizationPairing(pairingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **pairingId** | **String** | Pairing Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -730,7 +821,7 @@ apiInstance.getOrgauthorizationPairing(pairingId)
 
 ## getOrgauthorizationTrustee
 
-> Trustee getOrgauthorizationTrustee(trusteeOrgId)
+> Trustee getOrgauthorizationTrustee(trusteeOrgId, opts)
 
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}
@@ -755,8 +846,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
+apiInstance.getOrgauthorizationTrustee(trusteeOrgId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -772,6 +869,7 @@ apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -780,7 +878,7 @@ apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
 
 ## getOrgauthorizationTrusteeClonedusers
 
-> ClonedUserEntityListing getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
+> ClonedUserEntityListing getOrgauthorizationTrusteeClonedusers(trusteeOrgId, opts)
 
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers
@@ -807,8 +905,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
+apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteeClonedusers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -824,6 +928,7 @@ apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -832,7 +937,7 @@ apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
 
 ## getOrgauthorizationTrusteeGroup
 
-> TrustGroup getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
+> TrustGroup getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId, opts)
 
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}
@@ -858,8 +963,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeGroupId = "trusteeGroupId_example"; // String | Trustee Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
+apiInstance.getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteeGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -876,6 +987,7 @@ apiInstance.getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeGroupId** | **String** | Trustee Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -884,7 +996,7 @@ apiInstance.getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)
 
 ## getOrgauthorizationTrusteeGroupRoles
 
-> UserAuthorization getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)
+> UserAuthorization getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, opts)
 
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles
@@ -910,8 +1022,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeGroupId = "trusteeGroupId_example"; // String | Trustee Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)
+apiInstance.getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteeGroupRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -928,6 +1046,7 @@ apiInstance.getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeGroupId** | **String** | Trustee Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -963,7 +1082,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrgauthorizationTrusteeGroups(trusteeOrgId, opts)
@@ -984,6 +1107,7 @@ apiInstance.getOrgauthorizationTrusteeGroups(trusteeOrgId, opts)
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -992,7 +1116,7 @@ apiInstance.getOrgauthorizationTrusteeGroups(trusteeOrgId, opts)
 
 ## getOrgauthorizationTrusteeUser
 
-> TrustUser getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
+> TrustUser getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId, opts)
 
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}
@@ -1018,8 +1142,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
+apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteeUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1036,6 +1166,7 @@ apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1044,7 +1175,7 @@ apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 ## getOrgauthorizationTrusteeUserRoles
 
-> UserAuthorization getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
+> UserAuthorization getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, opts)
 
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles
@@ -1070,8 +1201,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
+apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteeUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1088,6 +1225,7 @@ apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1123,7 +1261,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
@@ -1144,6 +1286,7 @@ apiInstance.getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1178,7 +1321,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrgauthorizationTrustees(opts)
@@ -1198,6 +1345,7 @@ apiInstance.getOrgauthorizationTrustees(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1206,7 +1354,7 @@ apiInstance.getOrgauthorizationTrustees(opts)
 
 ## getOrgauthorizationTrusteesCare
 
-> TrusteeReferenceList getOrgauthorizationTrusteesCare()
+> TrusteeReferenceList getOrgauthorizationTrusteesCare(opts)
 
 
 GET /api/v2/orgauthorization/trustees/care
@@ -1230,8 +1378,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteesCare()
+apiInstance.getOrgauthorizationTrusteesCare(opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteesCare success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1243,7 +1397,10 @@ apiInstance.getOrgauthorizationTrusteesCare()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1252,7 +1409,7 @@ This endpoint does not need any parameter.
 
 ## getOrgauthorizationTrusteesDefault
 
-> Trustee getOrgauthorizationTrusteesDefault()
+> Trustee getOrgauthorizationTrusteesDefault(opts)
 
 
 GET /api/v2/orgauthorization/trustees/default
@@ -1276,8 +1433,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrusteesDefault()
+apiInstance.getOrgauthorizationTrusteesDefault(opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrusteesDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1289,7 +1452,10 @@ apiInstance.getOrgauthorizationTrusteesDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1298,7 +1464,7 @@ This endpoint does not need any parameter.
 
 ## getOrgauthorizationTrustor
 
-> Trustor getOrgauthorizationTrustor(trustorOrgId)
+> Trustor getOrgauthorizationTrustor(trustorOrgId, opts)
 
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}
@@ -1323,8 +1489,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrustor(trustorOrgId)
+apiInstance.getOrgauthorizationTrustor(trustorOrgId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrustor success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1340,6 +1512,7 @@ apiInstance.getOrgauthorizationTrustor(trustorOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1348,7 +1521,7 @@ apiInstance.getOrgauthorizationTrustor(trustorOrgId)
 
 ## getOrgauthorizationTrustorCloneduser
 
-> ClonedUser getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+> ClonedUser getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts)
 
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
@@ -1374,8 +1547,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+apiInstance.getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrustorCloneduser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1392,6 +1571,7 @@ apiInstance.getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1400,7 +1580,7 @@ apiInstance.getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 
 ## getOrgauthorizationTrustorClonedusers
 
-> ClonedUserEntityListing getOrgauthorizationTrustorClonedusers(trustorOrgId)
+> ClonedUserEntityListing getOrgauthorizationTrustorClonedusers(trustorOrgId, opts)
 
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers
@@ -1425,8 +1605,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId)
+apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrustorClonedusers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1442,6 +1628,7 @@ apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1450,7 +1637,7 @@ apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId)
 
 ## getOrgauthorizationTrustorGroup
 
-> TrustGroup getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
+> TrustGroup getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts)
 
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}
@@ -1476,8 +1663,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trustorGroupId = "trustorGroupId_example"; // String | Trustor Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
+apiInstance.getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrustorGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1494,6 +1687,7 @@ apiInstance.getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trustorGroupId** | **String** | Trustor Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1529,7 +1723,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trustorOrgId = "trustorOrgId_example"; // String | Trustee Organization Id
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrgauthorizationTrustorGroups(trustorOrgId, opts)
@@ -1550,6 +1748,7 @@ apiInstance.getOrgauthorizationTrustorGroups(trustorOrgId, opts)
  **trustorOrgId** | **String** | Trustee Organization Id |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1558,7 +1757,7 @@ apiInstance.getOrgauthorizationTrustorGroups(trustorOrgId, opts)
 
 ## getOrgauthorizationTrustorUser
 
-> TrustUser getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+> TrustUser getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
 
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}
@@ -1584,8 +1783,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
   .then((data) => {
     console.log(`getOrgauthorizationTrustorUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1602,6 +1807,7 @@ apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1637,7 +1843,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trustorOrgId = "trustorOrgId_example"; // String | Trustee Organization Id
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrgauthorizationTrustorUsers(trustorOrgId, opts)
@@ -1658,6 +1868,7 @@ apiInstance.getOrgauthorizationTrustorUsers(trustorOrgId, opts)
  **trustorOrgId** | **String** | Trustee Organization Id |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1692,7 +1903,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrgauthorizationTrustors(opts)
@@ -1712,6 +1927,7 @@ apiInstance.getOrgauthorizationTrustors(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1720,7 +1936,7 @@ apiInstance.getOrgauthorizationTrustors(opts)
 
 ## postOrgauthorizationPairings
 
-> TrustRequest postOrgauthorizationPairings(body)
+> TrustRequest postOrgauthorizationPairings(body, opts)
 
 
 POST /api/v2/orgauthorization/pairings
@@ -1745,8 +1961,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let body = {}; // Object | Pairing Info
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOrgauthorizationPairings(body)
+apiInstance.postOrgauthorizationPairings(body, opts)
   .then((data) => {
     console.log(`postOrgauthorizationPairings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1762,6 +1984,7 @@ apiInstance.postOrgauthorizationPairings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Pairing Info |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1770,7 +1993,7 @@ apiInstance.postOrgauthorizationPairings(body)
 
 ## postOrgauthorizationTrusteeGroups
 
-> TrustGroup postOrgauthorizationTrusteeGroups(trusteeOrgId, body)
+> TrustGroup postOrgauthorizationTrusteeGroups(trusteeOrgId, body, opts)
 
 
 POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups
@@ -1796,8 +2019,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let body = {}; // Object | Trust
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOrgauthorizationTrusteeGroups(trusteeOrgId, body)
+apiInstance.postOrgauthorizationTrusteeGroups(trusteeOrgId, body, opts)
   .then((data) => {
     console.log(`postOrgauthorizationTrusteeGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1814,6 +2043,7 @@ apiInstance.postOrgauthorizationTrusteeGroups(trusteeOrgId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **body** | **Object** | Trust |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1822,7 +2052,7 @@ apiInstance.postOrgauthorizationTrusteeGroups(trusteeOrgId, body)
 
 ## postOrgauthorizationTrusteeUsers
 
-> TrustUser postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
+> TrustUser postOrgauthorizationTrusteeUsers(trusteeOrgId, body, opts)
 
 
 POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users
@@ -1848,8 +2078,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let body = {}; // Object | Trust
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
+apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body, opts)
   .then((data) => {
     console.log(`postOrgauthorizationTrusteeUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1866,6 +2102,7 @@ apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **body** | **Object** | Trust |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1874,7 +2111,7 @@ apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 
 ## postOrgauthorizationTrustees
 
-> Trustee postOrgauthorizationTrustees(body)
+> Trustee postOrgauthorizationTrustees(body, opts)
 
 
 POST /api/v2/orgauthorization/trustees
@@ -1900,8 +2137,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let body = {}; // Object | Trust
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOrgauthorizationTrustees(body)
+apiInstance.postOrgauthorizationTrustees(body, opts)
   .then((data) => {
     console.log(`postOrgauthorizationTrustees success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1917,6 +2160,7 @@ apiInstance.postOrgauthorizationTrustees(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Trust |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1954,7 +2198,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "timestamp", // String | Sort by
-  'sortOrder': "descending" // String | Sort order
+  'sortOrder': "descending", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
@@ -1977,6 +2225,7 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
  **sortOrder** | **String** | Sort order | [optional] [default to descending] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2014,7 +2263,11 @@ let opts = {
   'assignDefaultRole': true, // Boolean | Assign Admin role to default pairing with Customer Care
   'autoExpire': true, // Boolean | Automatically expire pairing after 30 days
   'assignFullAccess': true, // Boolean | Grant Customer Care full access to the organization
-  'allowTrustedUserAccess': true // Boolean | Make Customer Care a Trusted User
+  'allowTrustedUserAccess': true, // Boolean | Make Customer Care a Trusted User
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOrgauthorizationTrusteesCare(opts)
@@ -2036,6 +2289,7 @@ apiInstance.postOrgauthorizationTrusteesCare(opts)
  **autoExpire** | **Boolean** | Automatically expire pairing after 30 days | [optional]  |
  **assignFullAccess** | **Boolean** | Grant Customer Care full access to the organization | [optional]  |
  **allowTrustedUserAccess** | **Boolean** | Make Customer Care a Trusted User | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2071,7 +2325,11 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let opts = { 
   'assignDefaultRole': true, // Boolean | Assign Admin role to default pairing with Customer Care
-  'autoExpire': true // Boolean | Automatically expire pairing after 30 days
+  'autoExpire': true, // Boolean | Automatically expire pairing after 30 days
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOrgauthorizationTrusteesDefault(opts)
@@ -2091,6 +2349,7 @@ apiInstance.postOrgauthorizationTrusteesDefault(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assignDefaultRole** | **Boolean** | Assign Admin role to default pairing with Customer Care | [optional]  |
  **autoExpire** | **Boolean** | Automatically expire pairing after 30 days | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2128,7 +2387,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "timestamp", // String | Sort by
-  'sortOrder': "descending" // String | Sort order
+  'sortOrder': "descending", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOrgauthorizationTrustorAudits(body, opts)
@@ -2151,6 +2414,7 @@ apiInstance.postOrgauthorizationTrustorAudits(body, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
  **sortOrder** | **String** | Sort order | [optional] [default to descending] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2159,7 +2423,7 @@ apiInstance.postOrgauthorizationTrustorAudits(body, opts)
 
 ## putOrgauthorizationTrustee
 
-> Trustee putOrgauthorizationTrustee(trusteeOrgId, body)
+> Trustee putOrgauthorizationTrustee(trusteeOrgId, body, opts)
 
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}
@@ -2185,8 +2449,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let body = {}; // Object | Client
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
+apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2203,6 +2473,7 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **body** | **Object** | Client |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2211,7 +2482,7 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
 
 ## putOrgauthorizationTrusteeGroupRoledivisions
 
-> UserAuthorization putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body)
+> UserAuthorization putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body, opts)
 
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions
@@ -2238,8 +2509,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeGroupId = "trusteeGroupId_example"; // String | Trustee Group Id
 let body = {}; // Object | Set of roles with corresponding divisions to apply
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body)
+apiInstance.putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrusteeGroupRoledivisions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2257,6 +2534,7 @@ apiInstance.putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGr
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeGroupId** | **String** | Trustee Group Id |  |
  **body** | **Object** | Set of roles with corresponding divisions to apply |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2265,7 +2543,7 @@ apiInstance.putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGr
 
 ## putOrgauthorizationTrusteeGroupRoles
 
-> UserAuthorization putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body)
+> UserAuthorization putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body, opts)
 
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles
@@ -2292,8 +2570,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeGroupId = "trusteeGroupId_example"; // String | Trustee Group Id
 let body = ["body_example"]; // [String] | List of roles
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body)
+apiInstance.putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrusteeGroupRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2311,6 +2595,7 @@ apiInstance.putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, b
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeGroupId** | **String** | Trustee Group Id |  |
  **body** | **[String]** | List of roles |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2319,7 +2604,7 @@ apiInstance.putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, b
 
 ## putOrgauthorizationTrusteeUserRoledivisions
 
-> UserAuthorization putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)
+> UserAuthorization putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body, opts)
 
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions
@@ -2346,8 +2631,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 let body = {}; // Object | Set of roles with corresponding divisions to apply
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)
+apiInstance.putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrusteeUserRoledivisions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2365,6 +2656,7 @@ apiInstance.putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUse
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
  **body** | **Object** | Set of roles with corresponding divisions to apply |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2373,7 +2665,7 @@ apiInstance.putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUse
 
 ## putOrgauthorizationTrusteeUserRoles
 
-> UserAuthorization putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
+> UserAuthorization putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body, opts)
 
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles
@@ -2400,8 +2692,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 let body = ["body_example"]; // [String] | List of roles
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
+apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrusteeUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2419,6 +2717,7 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
  **body** | **[String]** | List of roles |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2427,7 +2726,7 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
 
 ## putOrgauthorizationTrustorCloneduser
 
-> ClonedUser putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+> ClonedUser putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts)
 
 
 PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
@@ -2453,8 +2752,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrustorCloneduser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2471,6 +2776,7 @@ apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2479,7 +2785,7 @@ apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
 
 ## putOrgauthorizationTrustorGroup
 
-> TrustGroup putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
+> TrustGroup putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts)
 
 
 PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}
@@ -2505,8 +2811,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trustorGroupId = "trustorGroupId_example"; // String | Trustor Group Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
+apiInstance.putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrustorGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2523,6 +2835,7 @@ apiInstance.putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trustorGroupId** | **String** | Trustor Group Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2531,7 +2844,7 @@ apiInstance.putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)
 
 ## putOrgauthorizationTrustorUser
 
-> TrustUser putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+> TrustUser putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
 
 
 PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}
@@ -2557,8 +2870,14 @@ let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts)
   .then((data) => {
     console.log(`putOrgauthorizationTrustorUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2575,10 +2894,11 @@ apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TrustUser**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

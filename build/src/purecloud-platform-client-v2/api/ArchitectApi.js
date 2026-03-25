@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class ArchitectApi {
 	 * Deletes a emergency group by ID
 	 * 
 	 * @param {String} emergencyGroupId Emergency group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectEmergencygroup(emergencyGroupId) { 
+	deleteArchitectEmergencygroup(emergencyGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'emergencyGroupId' is set
 		if (emergencyGroupId === undefined || emergencyGroupId === null || emergencyGroupId === '') {
 			throw 'Missing the required parameter "emergencyGroupId" when calling deleteArchitectEmergencygroup';
@@ -41,7 +45,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class ArchitectApi {
 	 * Delete a grammar.
 	 * 
 	 * @param {String} grammarId grammar ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectGrammar(grammarId) { 
+	deleteArchitectGrammar(grammarId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammar';
@@ -66,7 +75,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -75,8 +85,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectGrammarLanguage(grammarId, languageCode) { 
+	deleteArchitectGrammarLanguage(grammarId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguage';
@@ -96,7 +110,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,8 +120,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode) { 
+	deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesDtmf';
@@ -126,7 +145,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -135,8 +155,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode) { 
+	deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesVoice';
@@ -156,7 +180,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -164,8 +189,12 @@ class ArchitectApi {
 	 * Delete an IVR Config.
 	 * 
 	 * @param {String} ivrId IVR id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectIvr(ivrId) { 
+	deleteArchitectIvr(ivrId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling deleteArchitectIvr';
@@ -181,7 +210,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -191,6 +221,7 @@ class ArchitectApi {
 	 * @param {String} promptId Prompt ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.allResources Whether or not to delete all the prompt resources
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteArchitectPrompt(promptId, opts) { 
 		opts = opts || {};
@@ -210,7 +241,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -219,8 +251,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectPromptResource(promptId, languageCode) { 
+	deleteArchitectPromptResource(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResource';
@@ -240,7 +276,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -249,8 +286,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectPromptResourceAudio(promptId, languageCode) { 
+	deleteArchitectPromptResourceAudio(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResourceAudio';
@@ -270,7 +311,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -278,8 +320,12 @@ class ArchitectApi {
 	 * Batch-delete a list of prompts
 	 * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 	 * @param {Array.<String>} id List of Prompt IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectPrompts(id) { 
+	deleteArchitectPrompts(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteArchitectPrompts';
@@ -295,7 +341,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -303,8 +350,12 @@ class ArchitectApi {
 	 * Delete a schedule by id
 	 * 
 	 * @param {String} scheduleId Schedule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectSchedule(scheduleId) { 
+	deleteArchitectSchedule(scheduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling deleteArchitectSchedule';
@@ -320,7 +371,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -328,8 +380,12 @@ class ArchitectApi {
 	 * Deletes a schedule group by ID
 	 * 
 	 * @param {String} scheduleGroupId Schedule group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectSchedulegroup(scheduleGroupId) { 
+	deleteArchitectSchedulegroup(scheduleGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scheduleGroupId' is set
 		if (scheduleGroupId === undefined || scheduleGroupId === null || scheduleGroupId === '') {
 			throw 'Missing the required parameter "scheduleGroupId" when calling deleteArchitectSchedulegroup';
@@ -345,7 +401,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -354,8 +411,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteArchitectSystempromptResource(promptId, languageCode) { 
+	deleteArchitectSystempromptResource(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling deleteArchitectSystempromptResource';
@@ -375,7 +436,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -383,8 +445,12 @@ class ArchitectApi {
 	 * Delete flow
 	 * 
 	 * @param {String} flowId Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFlow(flowId) { 
+	deleteFlow(flowId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling deleteFlow';
@@ -400,7 +466,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -408,8 +475,12 @@ class ArchitectApi {
 	 * Deletes a log level for a flow by flow id.
 	 * Deletes the associated log level for a flow by flow id
 	 * @param {String} flowId The flow id to delete the loglevel for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFlowInstancesSettingsLoglevels(flowId) { 
+	deleteFlowInstancesSettingsLoglevels(flowId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling deleteFlowInstancesSettingsLoglevels';
@@ -425,7 +496,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -433,8 +505,12 @@ class ArchitectApi {
 	 * Batch-delete a list of flows
 	 * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 	 * @param {Array.<String>} id List of Flow IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFlows(id) { 
+	deleteFlows(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteFlows';
@@ -450,7 +526,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -460,6 +537,7 @@ class ArchitectApi {
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.force force delete, even if in use (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteFlowsDatatable(datatableId, opts) { 
 		opts = opts || {};
@@ -479,7 +557,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -488,8 +567,12 @@ class ArchitectApi {
 	 * Deletes a row with a given rowId (the value of the key field).
 	 * @param {String} datatableId id of datatable
 	 * @param {String} rowId the key for the row
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFlowsDatatableRow(datatableId, rowId) { 
+	deleteFlowsDatatableRow(datatableId, rowId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling deleteFlowsDatatableRow';
@@ -509,15 +592,20 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Resets the org log level to default, base
 	 * Resets the org log level to default, base
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFlowsInstancesSettingsLoglevelsDefault() { 
+	deleteFlowsInstancesSettingsLoglevelsDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/instances/settings/loglevels/default', 
@@ -529,7 +617,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -537,8 +626,12 @@ class ArchitectApi {
 	 * Delete a flow milestone.
 	 * 
 	 * @param {String} milestoneId flow milestone ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFlowsMilestone(milestoneId) { 
+	deleteFlowsMilestone(milestoneId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'milestoneId' is set
 		if (milestoneId === undefined || milestoneId === null || milestoneId === '') {
 			throw 'Missing the required parameter "milestoneId" when calling deleteFlowsMilestone';
@@ -554,7 +647,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -570,6 +664,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.consumingResources Include resources that consume each result item
 	 * @param {Array.<String>} opts.consumedResourceType Types of consumed resources to return, if consumed resources are requested
 	 * @param {Array.<String>} opts.consumingResourceType Types of consuming resources to return, if consuming resources are requested
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytracking(name, opts) { 
 		opts = opts || {};
@@ -589,15 +684,20 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Dependency Tracking build status for an organization
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectDependencytrackingBuild() { 
+	getArchitectDependencytrackingBuild(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/build', 
@@ -609,7 +709,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -623,6 +724,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.resourceType Types of consumed resources to show.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytrackingConsumedresources(id, version, objectType, opts) { 
 		opts = opts || {};
@@ -650,7 +752,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -665,6 +768,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.flowFilter Show only checkedIn or published flows
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytrackingConsumingresources(id, objectType, opts) { 
 		opts = opts || {};
@@ -688,7 +792,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -703,6 +808,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.consumedResourceType Resource type(s) to return
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytrackingDeletedresourceconsumers(opts) { 
 		opts = opts || {};
@@ -718,7 +824,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -734,6 +841,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.consumedResourceType Types of consumed resources to return, if consumed resources are requested
 	 * @param {Array.<String>} opts.consumingResourceType Types of consuming resources to return, if consuming resources are requested
 	 * @param {Boolean} opts.consumedResourceRequest Indicate that this is going to look up a consumed resource object
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytrackingObject(id, opts) { 
 		opts = opts || {};
@@ -753,7 +861,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -761,8 +870,12 @@ class ArchitectApi {
 	 * Get a Dependency Tracking type.
 	 * 
 	 * @param {String} typeId Type ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectDependencytrackingType(typeId) { 
+	getArchitectDependencytrackingType(typeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'typeId' is set
 		if (typeId === undefined || typeId === null || typeId === '') {
 			throw 'Missing the required parameter "typeId" when calling getArchitectDependencytrackingType';
@@ -778,7 +891,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -788,6 +902,7 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytrackingTypes(opts) { 
 		opts = opts || {};
@@ -803,7 +918,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -817,6 +933,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.consumedResourceType Resource type(s) to return
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectDependencytrackingUpdatedresourceconsumers(opts) { 
 		opts = opts || {};
@@ -832,7 +949,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -840,8 +958,12 @@ class ArchitectApi {
 	 * Gets a emergency group by ID
 	 * 
 	 * @param {String} emergencyGroupId Emergency group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectEmergencygroup(emergencyGroupId) { 
+	getArchitectEmergencygroup(emergencyGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'emergencyGroupId' is set
 		if (emergencyGroupId === undefined || emergencyGroupId === null || emergencyGroupId === '') {
 			throw 'Missing the required parameter "emergencyGroupId" when calling getArchitectEmergencygroup';
@@ -857,7 +979,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -870,6 +993,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the Emergency Group to filter by.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectEmergencygroups(opts) { 
 		opts = opts || {};
@@ -885,7 +1009,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -900,6 +1025,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.id ID of the Emergency Groups to filter by.
 	 * @param {String} opts.name Name of the Emergency Group to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectEmergencygroupsDivisionviews(opts) { 
 		opts = opts || {};
@@ -915,7 +1041,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -925,6 +1052,7 @@ class ArchitectApi {
 	 * @param {String} grammarId grammar ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectGrammar(grammarId, opts) { 
 		opts = opts || {};
@@ -944,7 +1072,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -953,8 +1082,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectGrammarLanguage(grammarId, languageCode) { 
+	getArchitectGrammarLanguage(grammarId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammarLanguage';
@@ -974,7 +1107,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -991,6 +1125,7 @@ class ArchitectApi {
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description
 	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectGrammars(opts) { 
 		opts = opts || {};
@@ -1006,7 +1141,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1014,8 +1150,12 @@ class ArchitectApi {
 	 * Get an IVR config.
 	 * 
 	 * @param {String} ivrId IVR id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectIvr(ivrId) { 
+	getArchitectIvr(ivrId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling getArchitectIvr';
@@ -1031,7 +1171,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1039,8 +1180,12 @@ class ArchitectApi {
 	 * Get an IVR IdentityResolutionConfig.
 	 * 
 	 * @param {String} ivrId IVR id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectIvrIdentityresolution(ivrId) { 
+	getArchitectIvrIdentityresolution(ivrId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling getArchitectIvrIdentityresolution';
@@ -1056,7 +1201,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1072,6 +1218,7 @@ class ArchitectApi {
 	 * @param {String} opts.dnis The phone number of the IVR to filter by.
 	 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectIvrs(opts) { 
 		opts = opts || {};
@@ -1087,7 +1234,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1102,6 +1250,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.id ID of the IVR to filter by.
 	 * @param {String} opts.name Name of the IVR to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectIvrsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1117,7 +1266,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1129,6 +1279,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
 	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
 	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectPrompt(promptId, opts) { 
 		opts = opts || {};
@@ -1148,7 +1299,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1163,6 +1315,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to desc)
 	 * @param {Object} opts.sortBy Sort by (default to timestamp)
 	 * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectPromptHistoryHistoryId(promptId, historyId, opts) { 
 		opts = opts || {};
@@ -1186,7 +1339,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1195,8 +1349,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectPromptResource(promptId, languageCode) { 
+	getArchitectPromptResource(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectPromptResource';
@@ -1216,7 +1374,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1227,6 +1386,7 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectPromptResources(promptId, opts) { 
 		opts = opts || {};
@@ -1246,7 +1406,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1264,6 +1425,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
 	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
 	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectPrompts(opts) { 
 		opts = opts || {};
@@ -1279,7 +1441,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1287,8 +1450,12 @@ class ArchitectApi {
 	 * Get a schedule by ID
 	 * 
 	 * @param {String} scheduleId Schedule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectSchedule(scheduleId) { 
+	getArchitectSchedule(scheduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling getArchitectSchedule';
@@ -1304,7 +1471,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1312,8 +1480,12 @@ class ArchitectApi {
 	 * Gets a schedule group by ID
 	 * 
 	 * @param {String} scheduleGroupId Schedule group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectSchedulegroup(scheduleGroupId) { 
+	getArchitectSchedulegroup(scheduleGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scheduleGroupId' is set
 		if (scheduleGroupId === undefined || scheduleGroupId === null || scheduleGroupId === '') {
 			throw 'Missing the required parameter "scheduleGroupId" when calling getArchitectSchedulegroup';
@@ -1329,7 +1501,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1344,6 +1517,7 @@ class ArchitectApi {
 	 * @param {String} opts.name Name of the Schedule Group to filter by.
 	 * @param {String} opts.scheduleIds A comma-delimited list of Schedule IDs to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSchedulegroups(opts) { 
 		opts = opts || {};
@@ -1359,7 +1533,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1374,6 +1549,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.id ID of the schedule group to filter by.
 	 * @param {String} opts.name Name of the schedule group to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSchedulegroupsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1389,7 +1565,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1403,6 +1580,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.name Name of the Schedule to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSchedules(opts) { 
 		opts = opts || {};
@@ -1418,7 +1596,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1433,6 +1612,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.id ID of the schedule group to filter by.
 	 * @param {String} opts.name Name of the schedule group to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSchedulesDivisionviews(opts) { 
 		opts = opts || {};
@@ -1448,7 +1628,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1460,6 +1641,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
 	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
 	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSystemprompt(promptId, opts) { 
 		opts = opts || {};
@@ -1479,7 +1661,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1494,6 +1677,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to desc)
 	 * @param {Object} opts.sortBy Sort by (default to timestamp)
 	 * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts) { 
 		opts = opts || {};
@@ -1517,7 +1701,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1526,8 +1711,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getArchitectSystempromptResource(promptId, languageCode) { 
+	getArchitectSystempromptResource(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptResource';
@@ -1547,7 +1736,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1560,6 +1750,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSystempromptResources(promptId, opts) { 
 		opts = opts || {};
@@ -1579,7 +1770,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1597,6 +1789,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
 	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
 	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getArchitectSystemprompts(opts) { 
 		opts = opts || {};
@@ -1612,7 +1805,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1622,6 +1816,7 @@ class ArchitectApi {
 	 * @param {String} flowId Flow ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.deleted Deleted flows (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlow(flowId, opts) { 
 		opts = opts || {};
@@ -1641,7 +1836,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1656,6 +1852,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to desc)
 	 * @param {Object} opts.sortBy Sort by (default to timestamp)
 	 * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowHistoryHistoryId(flowId, historyId, opts) { 
 		opts = opts || {};
@@ -1679,7 +1876,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1689,6 +1887,7 @@ class ArchitectApi {
 	 * @param {String} flowId The flow id to get the loglevel for
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowInstancesSettingsLoglevels(flowId, opts) { 
 		opts = opts || {};
@@ -1708,7 +1907,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1718,6 +1918,7 @@ class ArchitectApi {
 	 * @param {String} flowId Flow ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.deleted Deleted flows (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowLatestconfiguration(flowId, opts) { 
 		opts = opts || {};
@@ -1737,7 +1938,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1748,6 +1950,7 @@ class ArchitectApi {
 	 * @param {String} versionId Version ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deleted Deleted flows
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowVersion(flowId, versionId, opts) { 
 		opts = opts || {};
@@ -1771,7 +1974,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1782,6 +1986,7 @@ class ArchitectApi {
 	 * @param {String} versionId Version ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deleted Deleted flows
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowVersionConfiguration(flowId, versionId, opts) { 
 		opts = opts || {};
@@ -1805,7 +2010,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1816,6 +2022,7 @@ class ArchitectApi {
 	 * @param {String} versionId Version ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.language Language to filter for
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowVersionHealth(flowId, versionId, opts) { 
 		opts = opts || {};
@@ -1839,7 +2046,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1850,8 +2058,12 @@ class ArchitectApi {
 	 * @param {String} versionId Version ID.
 	 * @param {String} intentId Intent ID.
 	 * @param {Object} language Language to filter for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowVersionIntentHealth(flowId, versionId, intentId, language) { 
+	getFlowVersionIntentHealth(flowId, versionId, intentId, language, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersionIntentHealth';
@@ -1879,7 +2091,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1891,8 +2104,12 @@ class ArchitectApi {
 	 * @param {String} intentId Intent ID.
 	 * @param {String} utteranceId Utterance ID.
 	 * @param {Object} language Language to filter for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language) { 
+	getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling getFlowVersionIntentUtteranceHealth';
@@ -1924,7 +2141,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1936,6 +2154,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.deleted Include Deleted flows
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowVersions(flowId, opts) { 
 		opts = opts || {};
@@ -1955,7 +2174,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1983,6 +2203,7 @@ class ArchitectApi {
 	 * @param {String} opts.publishedAfter Published after
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlows(opts) { 
 		opts = opts || {};
@@ -1998,7 +2219,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2008,6 +2230,7 @@ class ArchitectApi {
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatable(datatableId, opts) { 
 		opts = opts || {};
@@ -2027,7 +2250,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2036,8 +2260,12 @@ class ArchitectApi {
 	 * Returns the state information about an export job.
 	 * @param {String} datatableId id of datatable
 	 * @param {String} exportJobId id of export job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsDatatableExportJob(datatableId, exportJobId) { 
+	getFlowsDatatableExportJob(datatableId, exportJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableExportJob';
@@ -2057,7 +2285,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2066,8 +2295,12 @@ class ArchitectApi {
 	 * Returns the state information about an import job.
 	 * @param {String} datatableId id of datatable
 	 * @param {String} importJobId id of import job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsDatatableImportJob(datatableId, importJobId) { 
+	getFlowsDatatableImportJob(datatableId, importJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
@@ -2087,7 +2320,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2098,6 +2332,7 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatableImportJobs(datatableId, opts) { 
 		opts = opts || {};
@@ -2117,7 +2352,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2128,6 +2364,7 @@ class ArchitectApi {
 	 * @param {String} rowId The key for the row
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.showbrief if true returns just the key field for the row (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatableRow(datatableId, rowId, opts) { 
 		opts = opts || {};
@@ -2151,7 +2388,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2164,6 +2402,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatableRows(datatableId, opts) { 
 		opts = opts || {};
@@ -2183,7 +2422,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2198,6 +2438,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 * @param {String} opts.name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatables(opts) { 
 		opts = opts || {};
@@ -2213,7 +2454,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2223,6 +2465,7 @@ class ArchitectApi {
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatablesDivisionview(datatableId, opts) { 
 		opts = opts || {};
@@ -2242,7 +2485,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2257,6 +2501,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 * @param {String} opts.name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDatatablesDivisionviews(opts) { 
 		opts = opts || {};
@@ -2272,7 +2517,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2292,6 +2538,7 @@ class ArchitectApi {
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsDivisionviews(opts) { 
 		opts = opts || {};
@@ -2307,7 +2554,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2315,8 +2563,12 @@ class ArchitectApi {
 	 * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 	 * 
 	 * @param {String} flowExecutionId flow execution ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsExecution(flowExecutionId) { 
+	getFlowsExecution(flowExecutionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowExecutionId' is set
 		if (flowExecutionId === undefined || flowExecutionId === null || flowExecutionId === '') {
 			throw 'Missing the required parameter "flowExecutionId" when calling getFlowsExecution';
@@ -2332,7 +2584,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2342,6 +2595,7 @@ class ArchitectApi {
 	 * @param {String} jobId Job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsExportJob(jobId, opts) { 
 		opts = opts || {};
@@ -2361,7 +2615,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2371,6 +2626,7 @@ class ArchitectApi {
 	 * @param {String} instanceId Instance ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various details.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsInstance(instanceId, opts) { 
 		opts = opts || {};
@@ -2390,7 +2646,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2398,8 +2655,12 @@ class ArchitectApi {
 	 * Get the status and/or results of an asynchronous flow execution data retrieval job
 	 * 
 	 * @param {String} jobId The asynchronous job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsInstancesJob(jobId) { 
+	getFlowsInstancesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getFlowsInstancesJob';
@@ -2415,7 +2676,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2424,6 +2686,7 @@ class ArchitectApi {
 	 * Returns the queryable parameters that can be used to build a query for execution data.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsInstancesQuerycapabilities(opts) { 
 		opts = opts || {};
@@ -2439,15 +2702,20 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the execution history enabled setting.
 	 * Get the execution history enabled setting.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsInstancesSettingsExecutiondata() { 
+	getFlowsInstancesSettingsExecutiondata(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/instances/settings/executiondata', 
@@ -2459,7 +2727,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2470,6 +2739,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsInstancesSettingsLoglevels(opts) { 
 		opts = opts || {};
@@ -2485,15 +2755,20 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Gets the available flow log level characteristics for this organization.
 	 * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsInstancesSettingsLoglevelsCharacteristics() { 
+	getFlowsInstancesSettingsLoglevelsCharacteristics(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/instances/settings/loglevels/characteristics', 
@@ -2505,7 +2780,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2514,6 +2790,7 @@ class ArchitectApi {
 	 * Returns the flow default log level which will be used if no specific flow id log level is found.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsInstancesSettingsLoglevelsDefault(opts) { 
 		opts = opts || {};
@@ -2529,7 +2806,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2539,6 +2817,7 @@ class ArchitectApi {
 	 * @param {String} jobId Job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsJob(jobId, opts) { 
 		opts = opts || {};
@@ -2558,7 +2837,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2566,8 +2846,12 @@ class ArchitectApi {
 	 * Get a flow milestone
 	 * Returns a specified flow milestone
 	 * @param {String} milestoneId flow milestone ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsMilestone(milestoneId) { 
+	getFlowsMilestone(milestoneId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'milestoneId' is set
 		if (milestoneId === undefined || milestoneId === null || milestoneId === '') {
 			throw 'Missing the required parameter "milestoneId" when calling getFlowsMilestone';
@@ -2583,7 +2867,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2600,6 +2885,7 @@ class ArchitectApi {
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsMilestones(opts) { 
 		opts = opts || {};
@@ -2615,7 +2901,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2630,6 +2917,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.id ID
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsMilestonesDivisionviews(opts) { 
 		opts = opts || {};
@@ -2645,7 +2933,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2653,8 +2942,12 @@ class ArchitectApi {
 	 * Get a flow outcome
 	 * Returns a specified flow outcome
 	 * @param {String} flowOutcomeId flow outcome ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFlowsOutcome(flowOutcomeId) { 
+	getFlowsOutcome(flowOutcomeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowOutcomeId' is set
 		if (flowOutcomeId === undefined || flowOutcomeId === null || flowOutcomeId === '') {
 			throw 'Missing the required parameter "flowOutcomeId" when calling getFlowsOutcome';
@@ -2670,7 +2963,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2687,6 +2981,7 @@ class ArchitectApi {
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsOutcomes(opts) { 
 		opts = opts || {};
@@ -2702,7 +2997,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2717,6 +3013,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.id ID
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFlowsOutcomesDivisionviews(opts) { 
 		opts = opts || {};
@@ -2732,7 +3029,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2742,6 +3040,7 @@ class ArchitectApi {
 	 * @param {String} grammarId grammar ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchArchitectGrammar(grammarId, opts) { 
 		opts = opts || {};
@@ -2761,7 +3060,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2772,6 +3072,7 @@ class ArchitectApi {
 	 * @param {String} languageCode Language
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchArchitectGrammarLanguage(grammarId, languageCode, opts) { 
 		opts = opts || {};
@@ -2795,7 +3096,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2803,8 +3105,12 @@ class ArchitectApi {
 	 * Edit the execution history enabled setting.
 	 * Edit the execution history enabled setting.
 	 * @param {Object} body New Execution Data Setting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchFlowsInstancesSettingsExecutiondata(body) { 
+	patchFlowsInstancesSettingsExecutiondata(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchFlowsInstancesSettingsExecutiondata';
@@ -2820,15 +3126,20 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Rebuild Dependency Tracking data for an organization
 	 * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectDependencytrackingBuild() { 
+	postArchitectDependencytrackingBuild(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/build', 
@@ -2840,7 +3151,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2848,8 +3160,12 @@ class ArchitectApi {
 	 * Creates a new emergency group
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectEmergencygroups(body) { 
+	postArchitectEmergencygroups(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postArchitectEmergencygroups';
@@ -2865,7 +3181,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2875,8 +3192,12 @@ class ArchitectApi {
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body) { 
+	postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesDtmf';
@@ -2900,7 +3221,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2910,8 +3232,12 @@ class ArchitectApi {
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body) { 
+	postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesVoice';
@@ -2935,7 +3261,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2944,8 +3271,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectGrammarLanguages(grammarId, body) { 
+	postArchitectGrammarLanguages(grammarId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'grammarId' is set
 		if (grammarId === undefined || grammarId === null || grammarId === '') {
 			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguages';
@@ -2965,7 +3296,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2973,8 +3305,12 @@ class ArchitectApi {
 	 * Create a new grammar
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectGrammars(body) { 
+	postArchitectGrammars(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postArchitectGrammars';
@@ -2990,7 +3326,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2998,8 +3335,12 @@ class ArchitectApi {
 	 * Create IVR config.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectIvrs(body) { 
+	postArchitectIvrs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postArchitectIvrs';
@@ -3015,7 +3356,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3023,8 +3365,12 @@ class ArchitectApi {
 	 * Generate prompt history
 	 * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 	 * @param {String} promptId Prompt ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectPromptHistory(promptId) { 
+	postArchitectPromptHistory(promptId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectPromptHistory';
@@ -3040,7 +3386,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3049,9 +3396,13 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postArchitectPromptResourceUploads(promptId, languageCode) { 
+	postArchitectPromptResourceUploads(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectPromptResourceUploads';
@@ -3071,7 +3422,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3080,8 +3432,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectPromptResources(promptId, body) { 
+	postArchitectPromptResources(promptId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectPromptResources';
@@ -3101,7 +3457,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3109,8 +3466,12 @@ class ArchitectApi {
 	 * Create a new user prompt
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectPrompts(body) { 
+	postArchitectPrompts(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postArchitectPrompts';
@@ -3126,7 +3487,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3134,8 +3496,12 @@ class ArchitectApi {
 	 * Creates a new schedule group
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectSchedulegroups(body) { 
+	postArchitectSchedulegroups(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postArchitectSchedulegroups';
@@ -3151,7 +3517,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3159,8 +3526,12 @@ class ArchitectApi {
 	 * Create a new schedule.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectSchedules(body) { 
+	postArchitectSchedules(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postArchitectSchedules';
@@ -3176,7 +3547,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3184,8 +3556,12 @@ class ArchitectApi {
 	 * Generate system prompt history
 	 * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 	 * @param {String} promptId promptId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectSystempromptHistory(promptId) { 
+	postArchitectSystempromptHistory(promptId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptHistory';
@@ -3201,7 +3577,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3210,9 +3587,13 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postArchitectSystempromptResourceUploads(promptId, languageCode) { 
+	postArchitectSystempromptResourceUploads(promptId, languageCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptResourceUploads';
@@ -3232,7 +3613,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3241,8 +3623,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postArchitectSystempromptResources(promptId, body) { 
+	postArchitectSystempromptResources(promptId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptResources';
@@ -3262,7 +3648,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3270,8 +3657,12 @@ class ArchitectApi {
 	 * Generate flow history
 	 * Asynchronous.  Notification topic: v2.flows.{flowId}
 	 * @param {String} flowId Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowHistory(flowId) { 
+	postFlowHistory(flowId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling postFlowHistory';
@@ -3287,7 +3678,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3298,6 +3690,7 @@ class ArchitectApi {
 	 * @param {Object} body New LogLevel settings
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlowInstancesSettingsLoglevels(flowId, body, opts) { 
 		opts = opts || {};
@@ -3321,7 +3714,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3330,8 +3724,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} flowId Flow ID
 	 * @param {Object.<String, {String: Object}>} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowVersions(flowId, body) { 
+	postFlowVersions(flowId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling postFlowVersions';
@@ -3351,7 +3749,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3361,6 +3760,7 @@ class ArchitectApi {
 	 * @param {Object} body 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.language Language
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlows(body, opts) { 
 		opts = opts || {};
@@ -3380,7 +3780,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3388,8 +3789,12 @@ class ArchitectApi {
 	 * Check-in flow
 	 * Asynchronous.  Notification topic: v2.flows.{flowId}
 	 * @param {String} flow Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsActionsCheckin(flow) { 
+	postFlowsActionsCheckin(flow, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
 			throw 'Missing the required parameter "flow" when calling postFlowsActionsCheckin';
@@ -3405,7 +3810,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3413,8 +3819,12 @@ class ArchitectApi {
 	 * Check-out flow
 	 * 
 	 * @param {String} flow Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsActionsCheckout(flow) { 
+	postFlowsActionsCheckout(flow, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
 			throw 'Missing the required parameter "flow" when calling postFlowsActionsCheckout';
@@ -3430,7 +3840,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3438,8 +3849,12 @@ class ArchitectApi {
 	 * Deactivate flow
 	 * 
 	 * @param {String} flow Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsActionsDeactivate(flow) { 
+	postFlowsActionsDeactivate(flow, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
 			throw 'Missing the required parameter "flow" when calling postFlowsActionsDeactivate';
@@ -3455,7 +3870,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3465,6 +3881,7 @@ class ArchitectApi {
 	 * @param {String} flow Flow ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.version version
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlowsActionsPublish(flow, opts) { 
 		opts = opts || {};
@@ -3484,7 +3901,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3492,8 +3910,12 @@ class ArchitectApi {
 	 * Revert flow
 	 * 
 	 * @param {String} flow Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsActionsRevert(flow) { 
+	postFlowsActionsRevert(flow, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
 			throw 'Missing the required parameter "flow" when calling postFlowsActionsRevert';
@@ -3509,7 +3931,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3517,8 +3940,12 @@ class ArchitectApi {
 	 * Unlock flow
 	 * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
 	 * @param {String} flow Flow ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsActionsUnlock(flow) { 
+	postFlowsActionsUnlock(flow, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
 			throw 'Missing the required parameter "flow" when calling postFlowsActionsUnlock';
@@ -3534,7 +3961,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3542,8 +3970,12 @@ class ArchitectApi {
 	 * Begin an export process for exporting all rows from a datatable
 	 * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
 	 * @param {String} datatableId id of datatable
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsDatatableExportJobs(datatableId) { 
+	postFlowsDatatableExportJobs(datatableId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableExportJobs';
@@ -3559,7 +3991,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3568,8 +4001,12 @@ class ArchitectApi {
 	 * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} body import job information
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsDatatableImportJobs(datatableId, body) { 
+	postFlowsDatatableImportJobs(datatableId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableImportJobs';
@@ -3589,7 +4026,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3598,8 +4036,12 @@ class ArchitectApi {
 	 * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  When building the request body within API Explorer, Pro mode should be used. The DataTableRow should be a json-ized stream of key -> value pairs {      "Field1": "XYZZY",      "Field2": false,      "KEY": "27272"  }
 	 * @param {String} datatableId id of datatable
 	 * @param {Object.<String, {String: Object}>} dataTableRow 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsDatatableRows(datatableId, dataTableRow) { 
+	postFlowsDatatableRows(datatableId, dataTableRow, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null || datatableId === '') {
 			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableRows';
@@ -3619,7 +4061,8 @@ class ArchitectApi {
 			dataTableRow, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3627,8 +4070,12 @@ class ArchitectApi {
 	 * Create a new datatable with the specified json-schema definition
 	 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schemas title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 	 * @param {Object} body datatable json-schema
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsDatatables(body) { 
+	postFlowsDatatables(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postFlowsDatatables';
@@ -3644,7 +4091,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3652,8 +4100,12 @@ class ArchitectApi {
 	 * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 	 * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
 	 * @param {Object} flowLaunchRequest 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsExecutions(flowLaunchRequest) { 
+	postFlowsExecutions(flowLaunchRequest, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowLaunchRequest' is set
 		if (flowLaunchRequest === undefined || flowLaunchRequest === null) {
 			throw 'Missing the required parameter "flowLaunchRequest" when calling postFlowsExecutions';
@@ -3669,7 +4121,8 @@ class ArchitectApi {
 			flowLaunchRequest, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3677,8 +4130,12 @@ class ArchitectApi {
 	 * Register Architect Export Job
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsExportJobs(body) { 
+	postFlowsExportJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postFlowsExportJobs';
@@ -3694,7 +4151,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3704,6 +4162,7 @@ class ArchitectApi {
 	 * @param {Object} body Requested Flow Ids
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlowsInstancesJobs(body, opts) { 
 		opts = opts || {};
@@ -3723,7 +4182,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3734,6 +4194,7 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.indexOnly indexes only
 	 * @param {Number} opts.pageSize number of results to return (default to 50)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlowsInstancesQuery(body, opts) { 
 		opts = opts || {};
@@ -3753,15 +4214,20 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postFlowsJobs() { 
+	postFlowsJobs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/jobs', 
@@ -3773,7 +4239,8 @@ class ArchitectApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3782,6 +4249,7 @@ class ArchitectApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlowsMilestones(opts) { 
 		opts = opts || {};
@@ -3797,7 +4265,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3806,6 +4275,7 @@ class ArchitectApi {
 	 * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postFlowsOutcomes(opts) { 
 		opts = opts || {};
@@ -3821,7 +4291,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3830,8 +4301,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} emergencyGroupId Emergency group ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectEmergencygroup(emergencyGroupId, body) { 
+	putArchitectEmergencygroup(emergencyGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'emergencyGroupId' is set
 		if (emergencyGroupId === undefined || emergencyGroupId === null || emergencyGroupId === '') {
 			throw 'Missing the required parameter "emergencyGroupId" when calling putArchitectEmergencygroup';
@@ -3851,7 +4326,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3860,8 +4336,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} ivrId IVR id
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectIvr(ivrId, body) { 
+	putArchitectIvr(ivrId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling putArchitectIvr';
@@ -3881,7 +4361,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3890,8 +4371,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} ivrId IVR id
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectIvrIdentityresolution(ivrId, body) { 
+	putArchitectIvrIdentityresolution(ivrId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null || ivrId === '') {
 			throw 'Missing the required parameter "ivrId" when calling putArchitectIvrIdentityresolution';
@@ -3911,7 +4396,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3920,8 +4406,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} promptId Prompt ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectPrompt(promptId, body) { 
+	putArchitectPrompt(promptId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling putArchitectPrompt';
@@ -3941,7 +4431,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3951,8 +4442,12 @@ class ArchitectApi {
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectPromptResource(promptId, languageCode, body) { 
+	putArchitectPromptResource(promptId, languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling putArchitectPromptResource';
@@ -3976,7 +4471,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3985,8 +4481,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} scheduleId Schedule ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectSchedule(scheduleId, body) { 
+	putArchitectSchedule(scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null || scheduleId === '') {
 			throw 'Missing the required parameter "scheduleId" when calling putArchitectSchedule';
@@ -4006,7 +4506,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4015,8 +4516,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} scheduleGroupId Schedule group ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectSchedulegroup(scheduleGroupId, body) { 
+	putArchitectSchedulegroup(scheduleGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scheduleGroupId' is set
 		if (scheduleGroupId === undefined || scheduleGroupId === null || scheduleGroupId === '') {
 			throw 'Missing the required parameter "scheduleGroupId" when calling putArchitectSchedulegroup';
@@ -4036,7 +4541,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4046,8 +4552,12 @@ class ArchitectApi {
 	 * @param {String} promptId Prompt ID
 	 * @param {String} languageCode Language
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putArchitectSystempromptResource(promptId, languageCode, body) { 
+	putArchitectSystempromptResource(promptId, languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null || promptId === '') {
 			throw 'Missing the required parameter "promptId" when calling putArchitectSystempromptResource';
@@ -4071,7 +4581,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4080,8 +4591,12 @@ class ArchitectApi {
 	 * 
 	 * @param {String} flowId Flow ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putFlow(flowId, body) { 
+	putFlow(flowId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null || flowId === '') {
 			throw 'Missing the required parameter "flowId" when calling putFlow';
@@ -4101,7 +4616,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4112,6 +4628,7 @@ class ArchitectApi {
 	 * @param {Object} body New LogLevel settings
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFlowInstancesSettingsLoglevels(flowId, body, opts) { 
 		opts = opts || {};
@@ -4135,7 +4652,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4146,6 +4664,7 @@ class ArchitectApi {
 	 * @param {Object} body datatable json-schema
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFlowsDatatable(datatableId, body, opts) { 
 		opts = opts || {};
@@ -4169,7 +4688,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4180,6 +4700,7 @@ class ArchitectApi {
 	 * @param {String} rowId the key for the row
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<String, {String: Object}>} opts.body datatable row
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFlowsDatatableRow(datatableId, rowId, opts) { 
 		opts = opts || {};
@@ -4203,7 +4724,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4213,6 +4735,7 @@ class ArchitectApi {
 	 * @param {Object} body New LogLevel settings
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFlowsInstancesSettingsLoglevelsDefault(body, opts) { 
 		opts = opts || {};
@@ -4232,7 +4755,8 @@ class ArchitectApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4242,6 +4766,7 @@ class ArchitectApi {
 	 * @param {String} milestoneId flow milestone ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFlowsMilestone(milestoneId, opts) { 
 		opts = opts || {};
@@ -4261,7 +4786,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4271,6 +4797,7 @@ class ArchitectApi {
 	 * @param {String} flowOutcomeId flow outcome ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFlowsOutcome(flowOutcomeId, opts) { 
 		opts = opts || {};
@@ -4290,7 +4817,8 @@ class ArchitectApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

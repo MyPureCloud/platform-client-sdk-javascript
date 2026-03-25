@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class IdentityProviderApi {
 	 * Delete Identity Provider
 	 * 
 	 * @param {String} providerId Provider ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovider(providerId) { 
+	deleteIdentityprovider(providerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'providerId' is set
 		if (providerId === undefined || providerId === null || providerId === '') {
 			throw 'Missing the required parameter "providerId" when calling deleteIdentityprovider';
@@ -41,15 +45,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete ADFS Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersAdfs() { 
+	deleteIdentityprovidersAdfs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/adfs', 
@@ -61,15 +70,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete Customer Interaction Center (CIC) Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersCic() { 
+	deleteIdentityprovidersCic(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
@@ -81,15 +95,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete Generic SAML Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersGeneric() { 
+	deleteIdentityprovidersGeneric(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/generic', 
@@ -101,15 +120,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete G Suite Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersGsuite() { 
+	deleteIdentityprovidersGsuite(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/gsuite', 
@@ -121,15 +145,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete IdentityNow Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersIdentitynow() { 
+	deleteIdentityprovidersIdentitynow(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/identitynow', 
@@ -141,15 +170,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete Okta Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersOkta() { 
+	deleteIdentityprovidersOkta(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/okta', 
@@ -161,15 +195,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete OneLogin Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersOnelogin() { 
+	deleteIdentityprovidersOnelogin(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/onelogin', 
@@ -181,15 +220,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete Ping Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersPing() { 
+	deleteIdentityprovidersPing(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/ping', 
@@ -201,15 +245,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete PureCloud Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersPurecloud() { 
+	deleteIdentityprovidersPurecloud(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
@@ -221,15 +270,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete PureEngage Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersPureengage() { 
+	deleteIdentityprovidersPureengage(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/pureengage', 
@@ -241,15 +295,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete Salesforce Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIdentityprovidersSalesforce() { 
+	deleteIdentityprovidersSalesforce(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/salesforce', 
@@ -261,7 +320,8 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -269,8 +329,12 @@ class IdentityProviderApi {
 	 * Get Identity Provider
 	 * 
 	 * @param {String} providerId Provider ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovider(providerId) { 
+	getIdentityprovider(providerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'providerId' is set
 		if (providerId === undefined || providerId === null || providerId === '') {
 			throw 'Missing the required parameter "providerId" when calling getIdentityprovider';
@@ -286,15 +350,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * The list of identity providers
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityproviders() { 
+	getIdentityproviders(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders', 
@@ -306,15 +375,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get ADFS Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersAdfs() { 
+	getIdentityprovidersAdfs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/adfs', 
@@ -326,15 +400,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Customer Interaction Center (CIC) Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersCic() { 
+	getIdentityprovidersCic(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
@@ -346,15 +425,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Generic SAML Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersGeneric() { 
+	getIdentityprovidersGeneric(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/generic', 
@@ -366,15 +450,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get G Suite Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersGsuite() { 
+	getIdentityprovidersGsuite(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/gsuite', 
@@ -386,15 +475,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get IdentityNow Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersIdentitynow() { 
+	getIdentityprovidersIdentitynow(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/identitynow', 
@@ -406,15 +500,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Okta Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersOkta() { 
+	getIdentityprovidersOkta(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/okta', 
@@ -426,15 +525,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get OneLogin Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersOnelogin() { 
+	getIdentityprovidersOnelogin(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/onelogin', 
@@ -446,15 +550,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Ping Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersPing() { 
+	getIdentityprovidersPing(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/ping', 
@@ -466,15 +575,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get PureCloud Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersPurecloud() { 
+	getIdentityprovidersPurecloud(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
@@ -486,15 +600,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get PureEngage Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersPureengage() { 
+	getIdentityprovidersPureengage(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/pureengage', 
@@ -506,15 +625,20 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Salesforce Identity Provider
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIdentityprovidersSalesforce() { 
+	getIdentityprovidersSalesforce(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/salesforce', 
@@ -526,7 +650,8 @@ class IdentityProviderApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -534,8 +659,12 @@ class IdentityProviderApi {
 	 * Create Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIdentityproviders(body) { 
+	postIdentityproviders(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIdentityproviders';
@@ -551,7 +680,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -560,8 +690,12 @@ class IdentityProviderApi {
 	 * 
 	 * @param {String} providerId Provider ID
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovider(providerId, body) { 
+	putIdentityprovider(providerId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'providerId' is set
 		if (providerId === undefined || providerId === null || providerId === '') {
 			throw 'Missing the required parameter "providerId" when calling putIdentityprovider';
@@ -581,7 +715,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -589,8 +724,12 @@ class IdentityProviderApi {
 	 * Update/Create ADFS Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersAdfs(body) { 
+	putIdentityprovidersAdfs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersAdfs';
@@ -606,7 +745,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -614,8 +754,12 @@ class IdentityProviderApi {
 	 * Update/Create Customer Interaction Center (CIC) Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersCic(body) { 
+	putIdentityprovidersCic(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersCic';
@@ -631,7 +775,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -639,8 +784,12 @@ class IdentityProviderApi {
 	 * Update/Create Generic SAML Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersGeneric(body) { 
+	putIdentityprovidersGeneric(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersGeneric';
@@ -656,7 +805,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -664,8 +814,12 @@ class IdentityProviderApi {
 	 * Update/Create G Suite Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersGsuite(body) { 
+	putIdentityprovidersGsuite(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersGsuite';
@@ -681,7 +835,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -689,8 +844,12 @@ class IdentityProviderApi {
 	 * Update/Create IdentityNow Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersIdentitynow(body) { 
+	putIdentityprovidersIdentitynow(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersIdentitynow';
@@ -706,7 +865,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -714,8 +874,12 @@ class IdentityProviderApi {
 	 * Update/Create Okta Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersOkta(body) { 
+	putIdentityprovidersOkta(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersOkta';
@@ -731,7 +895,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -739,8 +904,12 @@ class IdentityProviderApi {
 	 * Update/Create OneLogin Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersOnelogin(body) { 
+	putIdentityprovidersOnelogin(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersOnelogin';
@@ -756,7 +925,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -764,8 +934,12 @@ class IdentityProviderApi {
 	 * Update/Create Ping Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersPing(body) { 
+	putIdentityprovidersPing(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersPing';
@@ -781,7 +955,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -789,8 +964,12 @@ class IdentityProviderApi {
 	 * Update/Create PureCloud Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersPurecloud(body) { 
+	putIdentityprovidersPurecloud(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersPurecloud';
@@ -806,7 +985,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -814,8 +994,12 @@ class IdentityProviderApi {
 	 * Update/Create PureEngage Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersPureengage(body) { 
+	putIdentityprovidersPureengage(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersPureengage';
@@ -831,7 +1015,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -839,8 +1024,12 @@ class IdentityProviderApi {
 	 * Update/Create Salesforce Identity Provider
 	 * 
 	 * @param {Object} body Provider
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIdentityprovidersSalesforce(body) { 
+	putIdentityprovidersSalesforce(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';
@@ -856,7 +1045,8 @@ class IdentityProviderApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

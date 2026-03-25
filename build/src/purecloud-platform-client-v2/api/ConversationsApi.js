@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class ConversationsApi {
 	 * Delete/cancel an async request for conversation aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteAnalyticsConversationsAggregatesJob(jobId) { 
+	deleteAnalyticsConversationsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsAggregatesJob';
@@ -42,7 +46,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class ConversationsApi {
 	 * Delete/cancel an async details job
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAnalyticsConversationsDetailsJob(jobId) { 
+	deleteAnalyticsConversationsDetailsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
@@ -67,7 +76,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -75,8 +85,12 @@ class ConversationsApi {
 	 * Update a conversation by disconnecting all of the participants
 	 * 
 	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversation(conversationId) { 
+	deleteConversation(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversation';
@@ -92,7 +106,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -101,8 +116,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {String} attributesId attributesId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationCustomattribute(conversationId, attributesId) { 
+	deleteConversationCustomattribute(conversationId, attributesId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationCustomattribute';
@@ -122,7 +141,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -132,8 +152,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {String} addCommunicationCode addCommunicationCode
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode) { 
+	deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantCode';
@@ -157,7 +181,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -166,8 +191,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationParticipantFlaggedreason(conversationId, participantId) { 
+	deleteConversationParticipantFlaggedreason(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantFlaggedreason';
@@ -187,7 +216,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -197,8 +227,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId) { 
+	deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationsCallParticipantCommunicationPostflowaction';
@@ -222,7 +256,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -231,8 +266,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsCallParticipantConsult(conversationId, participantId) { 
+	deleteConversationsCallParticipantConsult(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationsCallParticipantConsult';
@@ -252,7 +291,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -261,8 +301,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} attachmentId attachmentId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId) { 
+	deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationsEmailMessagesDraftAttachment';
@@ -282,7 +326,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -290,8 +335,12 @@ class ConversationsApi {
 	 * Remove a cached media item asychronously
 	 * 
 	 * @param {String} cachedMediaItemId cachedMediaItemId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
+	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'cachedMediaItemId' is set
 		if (cachedMediaItemId === undefined || cachedMediaItemId === null || cachedMediaItemId === '') {
 			throw 'Missing the required parameter "cachedMediaItemId" when calling deleteConversationsMessagesCachedmediaCachedMediaItemId';
@@ -307,7 +356,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -315,8 +365,12 @@ class ConversationsApi {
 	 * Delete an Apple messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingIntegrationsAppleIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsAppleIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsAppleIntegrationId';
@@ -332,7 +386,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -340,8 +395,12 @@ class ConversationsApi {
 	 * Delete a Facebook messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsFacebookIntegrationId';
@@ -357,7 +416,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -365,8 +425,12 @@ class ConversationsApi {
 	 * Delete Instagram messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsInstagramIntegrationId';
@@ -382,7 +446,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -390,9 +455,13 @@ class ConversationsApi {
 	 * Delete an Open messaging integration with the Google Business Profile extension
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
@@ -408,7 +477,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -416,8 +486,12 @@ class ConversationsApi {
 	 * Delete an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenIntegrationId';
@@ -433,7 +507,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -441,8 +516,12 @@ class ConversationsApi {
 	 * Delete Twitter messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
@@ -458,7 +537,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -466,8 +546,12 @@ class ConversationsApi {
 	 * Delete a WhatsApp messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
+	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsWhatsappIntegrationId';
@@ -483,7 +567,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -491,8 +576,12 @@ class ConversationsApi {
 	 * Delete a messaging setting
 	 * 
 	 * @param {String} messageSettingId Message Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingSetting(messageSettingId) { 
+	deleteConversationsMessagingSetting(messageSettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageSettingId' is set
 		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling deleteConversationsMessagingSetting';
@@ -508,15 +597,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete the organization's default setting, a global default will be applied to integrations without settings
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingSettingsDefault() { 
+	deleteConversationsMessagingSettingsDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/settings/default', 
@@ -528,7 +622,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -536,8 +631,12 @@ class ConversationsApi {
 	 * Delete a supported content profile
 	 * 
 	 * @param {String} supportedContentId Supported Content ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'supportedContentId' is set
 		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling deleteConversationsMessagingSupportedcontentSupportedContentId';
@@ -553,7 +652,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -561,8 +661,12 @@ class ConversationsApi {
 	 * Get a conversation by id
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAnalyticsConversationDetails(conversationId) { 
+	getAnalyticsConversationDetails(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails';
@@ -578,7 +682,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -586,9 +691,13 @@ class ConversationsApi {
 	 * Get status for async query for conversation aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getAnalyticsConversationsAggregatesJob(jobId) { 
+	getAnalyticsConversationsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
@@ -604,7 +713,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -614,6 +724,7 @@ class ConversationsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
@@ -634,7 +745,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -643,6 +755,7 @@ class ConversationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.id Comma-separated conversation ids
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAnalyticsConversationsDetails(opts) { 
 		opts = opts || {};
@@ -658,7 +771,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -666,8 +780,12 @@ class ConversationsApi {
 	 * Get status for async query for conversation details
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAnalyticsConversationsDetailsJob(jobId) { 
+	getAnalyticsConversationsDetailsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
@@ -683,7 +801,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -694,6 +813,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize The desired maximum number of results
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAnalyticsConversationsDetailsJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -713,15 +833,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Lookup the datalake availability date and time
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAnalyticsConversationsDetailsJobsAvailability() { 
+	getAnalyticsConversationsDetailsJobsAvailability(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/availability', 
@@ -733,7 +858,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -741,8 +867,12 @@ class ConversationsApi {
 	 * Get conversation
 	 * 
 	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversation(conversationId) { 
+	getConversation(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversation';
@@ -758,7 +888,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -768,8 +899,12 @@ class ConversationsApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} communicationId Communication ID
 	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId) { 
+	getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationAgentchecklist';
@@ -793,7 +928,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -804,8 +940,12 @@ class ConversationsApi {
 	 * @param {String} communicationId Communication ID
 	 * @param {String} agentChecklistId Agent Checklist ID
 	 * @param {String} jobId Inference Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId) { 
+	getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationAgentchecklistJob';
@@ -833,7 +973,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -842,8 +983,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} communicationId Communication ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationCommunicationAgentchecklists(conversationId, communicationId) { 
+	getConversationCommunicationAgentchecklists(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationAgentchecklists';
@@ -863,7 +1008,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -873,8 +1019,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationCommunicationInternalmessage(conversationId, communicationId, messageId) { 
+	getConversationCommunicationInternalmessage(conversationId, communicationId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCommunicationInternalmessage';
@@ -898,7 +1048,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -910,6 +1061,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationCommunicationInternalmessages(conversationId, communicationId, opts) { 
 		opts = opts || {};
@@ -933,7 +1085,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -942,8 +1095,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {String} attributesId attributesId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationCustomattribute(conversationId, attributesId) { 
+	getConversationCustomattribute(conversationId, attributesId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCustomattribute';
@@ -963,7 +1120,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -971,8 +1129,12 @@ class ConversationsApi {
 	 * Get a list of custom attributes for a conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationCustomattributes(conversationId) { 
+	getConversationCustomattributes(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationCustomattributes';
@@ -988,7 +1150,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -998,8 +1161,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {String} secureSessionId secure IVR session ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId) { 
+	getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsession';
@@ -1023,7 +1190,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1032,8 +1200,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationParticipantSecureivrsessions(conversationId, participantId) { 
+	getConversationParticipantSecureivrsessions(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsessions';
@@ -1053,7 +1225,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1064,6 +1237,7 @@ class ConversationsApi {
 	 * @param {String} participantId participant ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationParticipantWrapup(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -1087,7 +1261,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1096,8 +1271,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantWrapupcodes';
@@ -1117,7 +1296,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1125,8 +1305,12 @@ class ConversationsApi {
 	 * Get the secure attributes on a conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationSecureattributes(conversationId) { 
+	getConversationSecureattributes(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSecureattributes';
@@ -1142,7 +1326,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1151,8 +1336,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} suggestionId Suggestion ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationSuggestion(conversationId, suggestionId) { 
+	getConversationSuggestion(conversationId, suggestionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestion';
@@ -1172,7 +1361,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1186,6 +1376,7 @@ class ConversationsApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.type Suggestion type to filter by.
 	 * @param {Object} opts.state Suggestion state to filter Copilot suggestions.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationSuggestions(conversationId, opts) { 
 		opts = opts || {};
@@ -1205,7 +1396,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1213,8 +1405,12 @@ class ConversationsApi {
 	 * Get the summaries of the conversation.
 	 * 
 	 * @param {String} conversationId Conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationSummaries(conversationId) { 
+	getConversationSummaries(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationSummaries';
@@ -1230,7 +1426,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1239,6 +1436,7 @@ class ConversationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.communicationType Call or Chat communication filtering
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversations(opts) { 
 		opts = opts || {};
@@ -1254,7 +1452,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1262,8 +1461,12 @@ class ConversationsApi {
 	 * Get call conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCall(conversationId) { 
+	getConversationsCall(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCall';
@@ -1279,7 +1482,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1291,6 +1495,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -1318,7 +1523,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1329,6 +1535,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsCallParticipantWrapup(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -1352,7 +1559,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1361,8 +1569,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCallParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationsCallParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapupcodes';
@@ -1382,7 +1594,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1390,8 +1603,12 @@ class ConversationsApi {
 	 * Get callback conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCallback(conversationId) { 
+	getConversationsCallback(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallback';
@@ -1407,7 +1624,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1419,6 +1637,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -1446,7 +1665,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1457,6 +1677,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsCallbackParticipantWrapup(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -1480,7 +1701,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1489,8 +1711,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCallbackParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationsCallbackParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapupcodes';
@@ -1510,15 +1736,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the logged-in user's active conversations and their Callback participants state.
 	 * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCallbacks() { 
+	getConversationsCallbacks(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
@@ -1530,15 +1761,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the logged-in user's active conversations and their Call participants state.
 	 * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCalls() { 
+	getConversationsCalls(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls', 
@@ -1550,7 +1786,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1562,6 +1799,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsCallsHistory(opts) { 
 		opts = opts || {};
@@ -1577,15 +1815,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the maximum number of participants that this user can have on a conference
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCallsMaximumconferenceparties() { 
+	getConversationsCallsMaximumconferenceparties(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/maximumconferenceparties', 
@@ -1597,7 +1840,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1605,9 +1849,13 @@ class ConversationsApi {
 	 * Get chat conversation
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getConversationsChat(conversationId) { 
+	getConversationsChat(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChat';
@@ -1623,7 +1871,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1632,9 +1881,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getConversationsChatMessage(conversationId, messageId) { 
+	getConversationsChatMessage(conversationId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessage';
@@ -1654,7 +1907,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1667,6 +1921,7 @@ class ConversationsApi {
 	 * @param {String} opts.before If specified, get the messages chronologically before the id of this message
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getConversationsChatMessages(conversationId, opts) { 
@@ -1687,7 +1942,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1699,6 +1955,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
@@ -1727,7 +1984,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1738,6 +1996,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getConversationsChatParticipantWrapup(conversationId, participantId, opts) { 
@@ -1762,7 +2021,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1771,9 +2031,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getConversationsChatParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationsChatParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapupcodes';
@@ -1793,16 +2057,21 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get active chat conversations for the logged in user
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getConversationsChats() { 
+	getConversationsChats(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats', 
@@ -1814,7 +2083,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1822,8 +2092,12 @@ class ConversationsApi {
 	 * Get cobrowse conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCobrowsesession(conversationId) { 
+	getConversationsCobrowsesession(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesession';
@@ -1839,7 +2113,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1851,6 +2126,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
@@ -1879,7 +2155,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1890,6 +2167,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts) { 
@@ -1914,7 +2192,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1923,9 +2202,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
@@ -1945,15 +2228,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get active cobrowse conversations for the logged in user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCobrowsesessions() { 
+	getConversationsCobrowsesessions(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions', 
@@ -1965,7 +2253,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1973,8 +2262,12 @@ class ConversationsApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchema(schemaId) { 
+	getConversationsCustomattributesSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchema';
@@ -1990,7 +2283,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1999,8 +2293,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchemaVersion(schemaId, versionId) { 
+	getConversationsCustomattributesSchemaVersion(schemaId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersion';
@@ -2020,7 +2318,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2028,8 +2327,12 @@ class ConversationsApi {
 	 * Get all versions of a CCA schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchemaVersions(schemaId) { 
+	getConversationsCustomattributesSchemaVersions(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getConversationsCustomattributesSchemaVersions';
@@ -2045,15 +2348,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of schemas.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchemas() { 
+	getConversationsCustomattributesSchemas(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/customattributes/schemas', 
@@ -2065,7 +2373,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2073,8 +2382,12 @@ class ConversationsApi {
 	 * Get the core types from which all schemas are built.
 	 * 
 	 * @param {String} coreTypeName Name of the core type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchemasCoretype(coreTypeName) { 
+	getConversationsCustomattributesSchemasCoretype(coreTypeName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'coreTypeName' is set
 		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getConversationsCustomattributesSchemasCoretype';
@@ -2090,15 +2403,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of core types enabled for a specific namespace.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchemasCoretypes() { 
+	getConversationsCustomattributesSchemasCoretypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/customattributes/schemas/coretypes', 
@@ -2110,15 +2428,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get quantitative limits on schemas
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsCustomattributesSchemasLimits() { 
+	getConversationsCustomattributesSchemasLimits(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/customattributes/schemas/limits', 
@@ -2130,7 +2453,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2138,8 +2462,12 @@ class ConversationsApi {
 	 * Get email conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsEmail(conversationId) { 
+	getConversationsEmail(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmail';
@@ -2155,7 +2483,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2164,8 +2493,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsEmailMessage(conversationId, messageId) { 
+	getConversationsEmailMessage(conversationId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessage';
@@ -2185,7 +2518,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2195,6 +2529,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeAgentlessStitchedMessages Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsEmailMessages(conversationId, opts) { 
 		opts = opts || {};
@@ -2214,7 +2549,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2222,8 +2558,12 @@ class ConversationsApi {
 	 * Get conversation draft reply
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsEmailMessagesDraft(conversationId) { 
+	getConversationsEmailMessagesDraft(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessagesDraft';
@@ -2239,7 +2579,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2251,6 +2592,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -2278,7 +2620,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2289,6 +2632,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsEmailParticipantWrapup(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -2312,7 +2656,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2321,8 +2666,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsEmailParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationsEmailParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapupcodes';
@@ -2342,7 +2691,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2350,8 +2700,12 @@ class ConversationsApi {
 	 * Get emails settings for a given conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsEmailSettings(conversationId) { 
+	getConversationsEmailSettings(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailSettings';
@@ -2367,15 +2721,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the logged-in user's active conversations and their Email participants state.
 	 * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsEmails() { 
+	getConversationsEmails(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails', 
@@ -2387,7 +2746,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2395,8 +2755,12 @@ class ConversationsApi {
 	 * Get internal message conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsInternalmessage(conversationId) { 
+	getConversationsInternalmessage(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsInternalmessage';
@@ -2412,15 +2776,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the logged-in user's active conversations and their InternalMessage participants state.
 	 * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsInternalmessages() { 
+	getConversationsInternalmessages(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/internalmessages', 
@@ -2432,7 +2801,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2440,8 +2810,12 @@ class ConversationsApi {
 	 * Get the encryption key configurations
 	 * 
 	 * @param {String} keyconfigurationsId Key Configurations Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsKeyconfiguration(keyconfigurationsId) { 
+	getConversationsKeyconfiguration(keyconfigurationsId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'keyconfigurationsId' is set
 		if (keyconfigurationsId === undefined || keyconfigurationsId === null || keyconfigurationsId === '') {
 			throw 'Missing the required parameter "keyconfigurationsId" when calling getConversationsKeyconfiguration';
@@ -2457,15 +2831,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of key configurations data
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsKeyconfigurations() { 
+	getConversationsKeyconfigurations(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/keyconfigurations', 
@@ -2477,7 +2856,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2485,8 +2865,12 @@ class ConversationsApi {
 	 * Get message conversation
 	 * 
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessage(conversationId) { 
+	getConversationsMessage(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessage';
@@ -2502,7 +2886,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2515,6 +2900,7 @@ class ConversationsApi {
 	 * @param {Object} opts.status The status on which to filter the response.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts) { 
 		opts = opts || {};
@@ -2538,7 +2924,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2548,8 +2935,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {String} mediaId mediaId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId) { 
+	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
@@ -2573,7 +2964,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2583,6 +2975,7 @@ class ConversationsApi {
 	 * @param {String} messageId messageId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageDetails(messageId, opts) { 
 		opts = opts || {};
@@ -2602,7 +2995,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2613,6 +3007,7 @@ class ConversationsApi {
 	 * @param {String} messageId messageId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageMessage(conversationId, messageId, opts) { 
 		opts = opts || {};
@@ -2636,7 +3031,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2648,6 +3044,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -2675,7 +3072,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2686,6 +3084,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessageParticipantWrapup(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -2709,7 +3108,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2718,8 +3118,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessageParticipantWrapupcodes(conversationId, participantId) { 
+	getConversationsMessageParticipantWrapupcodes(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapupcodes';
@@ -2739,15 +3143,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the logged-in user's active conversations and their Message participants state.
 	 * This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessages() { 
+	getConversationsMessages(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
@@ -2759,7 +3168,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2770,6 +3180,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.url URL to search for
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagesCachedmedia(opts) { 
 		opts = opts || {};
@@ -2785,7 +3196,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2793,8 +3205,12 @@ class ConversationsApi {
 	 * Get a cached media item
 	 * 
 	 * @param {String} cachedMediaItemId cachedMediaItemId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
+	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'cachedMediaItemId' is set
 		if (cachedMediaItemId === undefined || cachedMediaItemId === null || cachedMediaItemId === '') {
 			throw 'Missing the required parameter "cachedMediaItemId" when calling getConversationsMessagesCachedmediaCachedMediaItemId';
@@ -2810,15 +3226,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Genesys Facebook App Id
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingFacebookApp() { 
+	getConversationsMessagingFacebookApp(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/facebook/app', 
@@ -2830,15 +3251,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of Facebook Permissions
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingFacebookPermissions() { 
+	getConversationsMessagingFacebookPermissions(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/facebook/permissions', 
@@ -2850,7 +3276,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2858,8 +3285,12 @@ class ConversationsApi {
 	 * Get Apple messaging integration identity resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId) { 
+	getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
@@ -2875,7 +3306,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2883,8 +3315,12 @@ class ConversationsApi {
 	 * Get Facebook messaging integration identity resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId) { 
+	getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId';
@@ -2900,7 +3336,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2908,8 +3345,12 @@ class ConversationsApi {
 	 * Get an Instagram integration identity resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId) { 
+	getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
@@ -2925,7 +3366,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2933,8 +3375,12 @@ class ConversationsApi {
 	 * Get an open messaging integration Identity Resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId) { 
+	getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId';
@@ -2950,7 +3396,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2958,8 +3405,12 @@ class ConversationsApi {
 	 * Get X (Formally Twitter) messaging integration identity resolution settings
 	 * 
 	 * @param {String} integrationId Integration Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId) { 
+	getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId';
@@ -2975,7 +3426,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2983,8 +3435,12 @@ class ConversationsApi {
 	 * Get a whatsApp integration Identity Resolution settings
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId) { 
+	getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId';
@@ -3000,7 +3456,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3008,8 +3465,12 @@ class ConversationsApi {
 	 * Get twitter oauth settings to patch an integration
 	 * 
 	 * @param {String} integrationId Integration Id of an existing integration that needs to be patched with new oauth settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIntegrationTwitterOauthSettings(integrationId) { 
+	getConversationsMessagingIntegrationTwitterOauthSettings(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationTwitterOauthSettings';
@@ -3025,7 +3486,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3038,6 +3500,7 @@ class ConversationsApi {
 	 * @param {Array.<String>} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrations(opts) { 
 		opts = opts || {};
@@ -3053,7 +3516,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3066,6 +3530,7 @@ class ConversationsApi {
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsApple(opts) { 
 		opts = opts || {};
@@ -3081,7 +3546,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3091,6 +3557,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsAppleIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -3110,7 +3577,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3123,6 +3591,7 @@ class ConversationsApi {
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsFacebook(opts) { 
 		opts = opts || {};
@@ -3138,7 +3607,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3148,6 +3618,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -3167,7 +3638,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3180,6 +3652,7 @@ class ConversationsApi {
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsInstagram(opts) { 
 		opts = opts || {};
@@ -3195,7 +3668,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3205,6 +3679,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -3224,7 +3699,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3237,6 +3713,7 @@ class ConversationsApi {
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsOpen(opts) { 
 		opts = opts || {};
@@ -3252,7 +3729,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3262,6 +3740,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts) { 
@@ -3282,16 +3761,21 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Google Business Profile OAuth 2 settings
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings() { 
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings', 
@@ -3303,7 +3787,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3311,9 +3796,13 @@ class ConversationsApi {
 	 * Get a Google Auth Token
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} tokenId Token ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId) { 
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tokenId' is set
 		if (tokenId === undefined || tokenId === null || tokenId === '') {
 			throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken';
@@ -3329,7 +3818,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3337,9 +3827,13 @@ class ConversationsApi {
 	 * Get Google Business Profile accounts
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} tokenId Token ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId) { 
+	getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tokenId' is set
 		if (tokenId === undefined || tokenId === null || tokenId === '') {
 			throw 'Missing the required parameter "tokenId" when calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts';
@@ -3355,7 +3849,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3365,6 +3860,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -3384,7 +3880,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3397,6 +3894,7 @@ class ConversationsApi {
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsTwitter(opts) { 
 		opts = opts || {};
@@ -3412,7 +3910,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3422,6 +3921,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -3441,15 +3941,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get twitter oauth settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingIntegrationsTwitterOauthSettings() { 
+	getConversationsMessagingIntegrationsTwitterOauthSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/oauth/settings', 
@@ -3461,7 +3966,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3474,6 +3980,7 @@ class ConversationsApi {
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsWhatsapp(opts) { 
 		opts = opts || {};
@@ -3489,7 +3996,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3499,6 +4007,7 @@ class ConversationsApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -3518,7 +4027,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3529,6 +4039,7 @@ class ConversationsApi {
 	 * @param {String} state The state/nonce value generated by Genesys Auth-Client Service.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.error Error parameter from OAuth provider
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingOauthAppleCallback(code, state, opts) { 
 		opts = opts || {};
@@ -3552,7 +4063,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3560,8 +4072,12 @@ class ConversationsApi {
 	 * Get a messaging setting
 	 * 
 	 * @param {String} messageSettingId Message Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingSetting(messageSettingId) { 
+	getConversationsMessagingSetting(messageSettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageSettingId' is set
 		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling getConversationsMessagingSetting';
@@ -3577,7 +4093,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3587,6 +4104,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingSettings(opts) { 
 		opts = opts || {};
@@ -3602,15 +4120,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the organization's default settings that will be used as the default when creating an integration.
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingSettingsDefault() { 
+	getConversationsMessagingSettingsDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/settings/default', 
@@ -3622,7 +4145,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3632,6 +4156,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsMessagingSupportedcontent(opts) { 
 		opts = opts || {};
@@ -3647,15 +4172,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the organization's default supported content profile that will be used as the default when creating an integration.
 	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingSupportedcontentDefault() { 
+	getConversationsMessagingSupportedcontentDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent/default', 
@@ -3667,7 +4197,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3675,8 +4206,12 @@ class ConversationsApi {
 	 * Get a supported content profile
 	 * 
 	 * @param {String} supportedContentId Supported Content ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'supportedContentId' is set
 		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling getConversationsMessagingSupportedcontentSupportedContentId';
@@ -3692,15 +4227,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get conversation threading window timeline for each messaging type
 	 * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsMessagingThreadingtimeline() { 
+	getConversationsMessagingThreadingtimeline(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/threadingtimeline', 
@@ -3712,7 +4252,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3724,6 +4265,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
@@ -3752,15 +4294,20 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsSettings() { 
+	getConversationsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/settings', 
@@ -3772,7 +4319,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3784,6 +4332,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -3811,7 +4360,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3819,9 +4369,13 @@ class ConversationsApi {
 	 * Get video conference details (e.g. the current number of active participants).
 	 * 
 	 * @param {String} conferenceId conferenceId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getConversationsVideoDetails(conferenceId) { 
+	getConversationsVideoDetails(conferenceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conferenceId' is set
 		if (conferenceId === undefined || conferenceId === null || conferenceId === '') {
 			throw 'Missing the required parameter "conferenceId" when calling getConversationsVideoDetails';
@@ -3837,7 +4391,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3849,6 +4404,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates whether or not to fetch provisional wrap-up code. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -3876,7 +4432,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3884,8 +4441,12 @@ class ConversationsApi {
 	 * Gets a record for a given meetingId
 	 * 
 	 * @param {String} meetingId meetingId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsVideosMeeting(meetingId) { 
+	getConversationsVideosMeeting(meetingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'meetingId' is set
 		if (meetingId === undefined || meetingId === null || meetingId === '') {
 			throw 'Missing the required parameter "meetingId" when calling getConversationsVideosMeeting';
@@ -3901,7 +4462,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3911,6 +4473,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationCustomattributes(conversationId, opts) { 
 		opts = opts || {};
@@ -3930,7 +4493,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3940,6 +4504,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<Object>} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationCustomattributesBulk(conversationId, opts) { 
 		opts = opts || {};
@@ -3959,7 +4524,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3969,8 +4535,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationParticipant(conversationId, participantId, body) { 
+	patchConversationParticipant(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationParticipant';
@@ -3994,7 +4564,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4004,8 +4575,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Participant attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationParticipantAttributes(conversationId, participantId, body) { 
+	patchConversationParticipantAttributes(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationParticipantAttributes';
@@ -4029,7 +4604,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4038,8 +4614,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationRecordingstate(conversationId, body) { 
+	patchConversationRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationRecordingstate';
@@ -4059,7 +4639,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4068,8 +4649,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Conversation Secure Attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationSecureattributes(conversationId, body) { 
+	patchConversationSecureattributes(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationSecureattributes';
@@ -4089,7 +4674,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4100,6 +4686,7 @@ class ConversationsApi {
 	 * @param {String} summaryId Summary ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationSummaryEngagements(conversationId, summaryId, opts) { 
 		opts = opts || {};
@@ -4123,7 +4710,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4134,6 +4722,7 @@ class ConversationsApi {
 	 * @param {String} summaryId Summary ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationSummaryFeedback(conversationId, summaryId, opts) { 
 		opts = opts || {};
@@ -4157,7 +4746,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4166,8 +4756,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Conversation Utilization Label
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationUtilizationlabel(conversationId, body) { 
+	patchConversationUtilizationlabel(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationUtilizationlabel';
@@ -4187,7 +4781,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4198,8 +4793,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body AfterCallWorkUpdate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
@@ -4227,7 +4826,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4236,8 +4836,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCall(conversationId, body) { 
+	patchConversationsCall(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCall';
@@ -4257,7 +4861,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4266,8 +4871,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body UpdateConferenceRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallConference(conversationId, body) { 
+	patchConversationsCallConference(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallConference';
@@ -4287,7 +4896,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4297,8 +4907,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Participant request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallParticipant(conversationId, participantId, body) { 
+	patchConversationsCallParticipant(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipant';
@@ -4322,7 +4936,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4332,8 +4947,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Participant attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallParticipantAttributes(conversationId, participantId, body) { 
+	patchConversationsCallParticipantAttributes(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantAttributes';
@@ -4357,7 +4976,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4368,8 +4988,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantCommunication';
@@ -4397,7 +5021,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4409,6 +5034,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Action
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -4436,7 +5062,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4446,8 +5073,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body new speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallParticipantConsult(conversationId, participantId, body) { 
+	patchConversationsCallParticipantConsult(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantConsult';
@@ -4471,7 +5102,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4482,8 +5114,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} userId userId
 	 * @param {Object} body Participant request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body) { 
+	patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantUserUserId';
@@ -4511,7 +5147,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4520,8 +5157,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallback(conversationId, body) { 
+	patchConversationsCallback(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallback';
@@ -4541,7 +5182,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4551,8 +5193,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallbackParticipant(conversationId, participantId, body) { 
+	patchConversationsCallbackParticipant(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipant';
@@ -4576,7 +5222,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4586,8 +5233,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallbackParticipantAttributes(conversationId, participantId, body) { 
+	patchConversationsCallbackParticipantAttributes(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantAttributes';
@@ -4611,7 +5262,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4622,8 +5274,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantCommunication';
@@ -4651,7 +5307,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4659,8 +5316,12 @@ class ConversationsApi {
 	 * Update a scheduled callback
 	 * 
 	 * @param {Object} body PatchCallbackRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsCallbacks(body) { 
+	patchConversationsCallbacks(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchConversationsCallbacks';
@@ -4676,7 +5337,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4685,9 +5347,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchConversationsChat(conversationId, body) { 
+	patchConversationsChat(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChat';
@@ -4707,7 +5373,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4717,9 +5384,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchConversationsChatParticipant(conversationId, participantId, body) { 
+	patchConversationsChatParticipant(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipant';
@@ -4743,7 +5414,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4753,9 +5425,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Participant attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchConversationsChatParticipantAttributes(conversationId, participantId, body) { 
+	patchConversationsChatParticipantAttributes(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantAttributes';
@@ -4779,7 +5455,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4790,9 +5467,13 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantCommunication';
@@ -4820,7 +5501,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4829,9 +5511,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchConversationsCobrowsesession(conversationId, body) { 
+	patchConversationsCobrowsesession(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesession';
@@ -4851,7 +5537,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4862,6 +5549,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts) { 
@@ -4886,7 +5574,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4897,6 +5586,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts) { 
@@ -4921,7 +5611,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4932,9 +5623,13 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
@@ -4962,7 +5657,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4971,8 +5667,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsEmail(conversationId, body) { 
+	patchConversationsEmail(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmail';
@@ -4992,7 +5692,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5004,6 +5705,7 @@ class ConversationsApi {
 	 * @param {Boolean} opts.autoFill autoFill
 	 * @param {Boolean} opts.discard discard
 	 * @param {Object} opts.body Draft Manipulation Request
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationsEmailMessagesDraft(conversationId, opts) { 
 		opts = opts || {};
@@ -5023,7 +5725,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5033,8 +5736,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsEmailParticipant(conversationId, participantId, body) { 
+	patchConversationsEmailParticipant(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipant';
@@ -5058,7 +5765,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5068,8 +5776,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Participant attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsEmailParticipantAttributes(conversationId, participantId, body) { 
+	patchConversationsEmailParticipantAttributes(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantAttributes';
@@ -5093,7 +5805,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5104,8 +5817,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantCommunication';
@@ -5133,7 +5850,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5143,8 +5861,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Parking update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsEmailParticipantParkingstate(conversationId, participantId, body) { 
+	patchConversationsEmailParticipantParkingstate(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantParkingstate';
@@ -5168,7 +5890,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5177,8 +5900,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessage(conversationId, body) { 
+	patchConversationsMessage(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessage';
@@ -5198,7 +5925,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5209,6 +5937,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationsMessageParticipant(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -5232,7 +5961,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5243,6 +5973,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchConversationsMessageParticipantAttributes(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -5266,7 +5997,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5277,8 +6009,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body) { 
+	patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantCommunication';
@@ -5306,7 +6042,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5315,8 +6052,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body AppleIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsAppleIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsAppleIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsAppleIntegrationId';
@@ -5336,7 +6077,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5345,8 +6087,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body FacebookIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
@@ -5366,7 +6112,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5375,8 +6122,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body InstagramIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsInstagramIntegrationId';
@@ -5396,7 +6147,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5405,9 +6157,13 @@ class ConversationsApi {
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body GoogleBusinessProfileOpenIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId';
@@ -5427,7 +6183,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5436,8 +6193,12 @@ class ConversationsApi {
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body OpenIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
@@ -5457,7 +6218,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5466,8 +6228,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body TwitterIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
@@ -5487,7 +6253,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5496,8 +6263,12 @@ class ConversationsApi {
 	 * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationActivationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
@@ -5517,7 +6288,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5526,8 +6298,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppIntegrationUpdateRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body) { 
+	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
@@ -5547,7 +6323,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5556,8 +6333,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} messageSettingId Message Setting ID
 	 * @param {Object} body MessagingSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingSetting(messageSettingId, body) { 
+	patchConversationsMessagingSetting(messageSettingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageSettingId' is set
 		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling patchConversationsMessagingSetting';
@@ -5577,7 +6358,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5586,8 +6368,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} supportedContentId Supported Content ID
 	 * @param {Object} body SupportedContent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
+	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'supportedContentId' is set
 		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling patchConversationsMessagingSupportedcontentSupportedContentId';
@@ -5607,7 +6393,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5615,8 +6402,12 @@ class ConversationsApi {
 	 * Update Settings
 	 * 
 	 * @param {Object} body Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchConversationsSettings(body) { 
+	patchConversationsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchConversationsSettings';
@@ -5632,7 +6423,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5641,8 +6433,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsConversationDetailsProperties(conversationId, body) { 
+	postAnalyticsConversationDetailsProperties(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties';
@@ -5662,7 +6458,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5673,6 +6470,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAnalyticsConversationsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -5692,7 +6490,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5700,9 +6499,13 @@ class ConversationsApi {
 	 * Query for conversation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postAnalyticsConversationsAggregatesJobs(body) { 
+	postAnalyticsConversationsAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesJobs';
@@ -5718,7 +6521,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5726,8 +6530,12 @@ class ConversationsApi {
 	 * Query for conversation aggregates
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsConversationsAggregatesQuery(body) { 
+	postAnalyticsConversationsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesQuery';
@@ -5743,7 +6551,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5751,8 +6560,12 @@ class ConversationsApi {
 	 * Query for conversation details asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsConversationsDetailsJobs(body) { 
+	postAnalyticsConversationsDetailsJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsJobs';
@@ -5768,7 +6581,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5776,8 +6590,12 @@ class ConversationsApi {
 	 * Query for conversation details
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsConversationsDetailsQuery(body) { 
+	postAnalyticsConversationsDetailsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsQuery';
@@ -5793,7 +6611,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5802,8 +6621,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Targeted user
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationAssign(conversationId, body) { 
+	postConversationAssign(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationAssign';
@@ -5823,7 +6646,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5831,8 +6655,12 @@ class ConversationsApi {
 	 * Barge a conversation creating a barged in conference of connected participants.
 	 * 
 	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationBarge(conversationId) { 
+	postConversationBarge(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationBarge';
@@ -5848,7 +6676,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5856,8 +6685,12 @@ class ConversationsApi {
 	 * Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
 	 * 
 	 * @param {String} conversationId Conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationCobrowse(conversationId) { 
+	postConversationCobrowse(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCobrowse';
@@ -5873,7 +6706,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5884,8 +6718,12 @@ class ConversationsApi {
 	 * @param {String} communicationId Communication ID
 	 * @param {String} agentChecklistId Agent Checklist ID
 	 * @param {Object} body Agent checklist activation payload
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body) { 
+	postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklist';
@@ -5913,7 +6751,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5924,8 +6763,12 @@ class ConversationsApi {
 	 * @param {String} communicationId Communication ID
 	 * @param {String} agentChecklistId Agent Checklist ID
 	 * @param {Object} body Agent action payload
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body) { 
+	postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklistAgentaction';
@@ -5953,7 +6796,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5964,8 +6808,12 @@ class ConversationsApi {
 	 * @param {String} communicationId Communication ID
 	 * @param {String} agentChecklistId Agent Checklist ID
 	 * @param {Object} body Agent checklist inference job payload
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body) { 
+	postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklistJobs';
@@ -5993,7 +6841,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6003,8 +6852,12 @@ class ConversationsApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} communicationId Communication ID
 	 * @param {Object} body Agent checklist finalize payload
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body) { 
+	postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationAgentchecklistsFinalize';
@@ -6028,7 +6881,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6038,8 +6892,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationCommunicationInternalmessages(conversationId, communicationId, body) { 
+	postConversationCommunicationInternalmessages(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationCommunicationInternalmessages';
@@ -6063,7 +6921,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6071,8 +6930,12 @@ class ConversationsApi {
 	 * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 	 * 
 	 * @param {String} conversationId conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationDisconnect(conversationId) { 
+	postConversationDisconnect(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationDisconnect';
@@ -6088,7 +6951,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6099,6 +6963,7 @@ class ConversationsApi {
 	 * @param {String} participantId participant ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationParticipantCallbacks(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -6122,7 +6987,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6133,6 +6999,7 @@ class ConversationsApi {
 	 * @param {String} participantId participant ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Digits
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationParticipantDigits(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -6156,7 +7023,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6166,8 +7034,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Confer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body) { 
+	postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantInternalmessagesUsersCommunications';
@@ -6191,7 +7063,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6201,9 +7074,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationParticipantReplace(conversationId, participantId, body) { 
+	postConversationParticipantReplace(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplace';
@@ -6227,7 +7104,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6237,8 +7115,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationParticipantReplaceAgent(conversationId, participantId, body) { 
+	postConversationParticipantReplaceAgent(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceAgent';
@@ -6262,7 +7144,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6272,8 +7155,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationParticipantReplaceContactExternal(conversationId, participantId, body) { 
+	postConversationParticipantReplaceContactExternal(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceContactExternal';
@@ -6297,7 +7184,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6307,9 +7195,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
+	postConversationParticipantReplaceExternal(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceExternal';
@@ -6333,7 +7225,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6343,8 +7236,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationParticipantReplaceQueue(conversationId, participantId, body) { 
+	postConversationParticipantReplaceQueue(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceQueue';
@@ -6368,7 +7265,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6379,6 +7277,7 @@ class ConversationsApi {
 	 * @param {String} participantId participant ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationParticipantSecureivrsessions(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -6402,7 +7301,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6412,8 +7312,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationParticipantTransfer(conversationId, participantId, body) { 
+	postConversationParticipantTransfer(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantTransfer';
@@ -6437,7 +7341,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6447,8 +7352,12 @@ class ConversationsApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} suggestionId Suggestion ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationSuggestionEngagement(conversationId, suggestionId, body) { 
+	postConversationSuggestionEngagement(conversationId, suggestionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionEngagement';
@@ -6472,7 +7381,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6481,9 +7391,13 @@ class ConversationsApi {
 	 * Google Agent Assist offering within Genesys will no longer be supported
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body SuggestionFeedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationSuggestionsFeedback(conversationId, body) { 
+	postConversationSuggestionsFeedback(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionsFeedback';
@@ -6503,7 +7417,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6514,6 +7429,7 @@ class ConversationsApi {
 	 * @param {String} summaryId Summary ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationSummaryFeedback(conversationId, summaryId, opts) { 
 		opts = opts || {};
@@ -6537,7 +7453,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6546,8 +7463,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCall(conversationId, body) { 
+	postConversationsCall(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCall';
@@ -6567,7 +7488,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6576,8 +7498,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantBarge(conversationId, participantId) { 
+	postConversationsCallParticipantBarge(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantBarge';
@@ -6597,7 +7523,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6606,8 +7533,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantCoach(conversationId, participantId) { 
+	postConversationsCallParticipantCoach(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCoach';
@@ -6627,7 +7558,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6639,6 +7571,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -6666,7 +7599,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6676,9 +7610,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
+	postConversationsCallParticipantConsult(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsult';
@@ -6702,7 +7640,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6712,8 +7651,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination agent and initial speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantConsultAgent(conversationId, participantId, body) { 
+	postConversationsCallParticipantConsultAgent(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultAgent';
@@ -6737,7 +7680,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6747,8 +7691,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body) { 
+	postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultContactExternal';
@@ -6772,7 +7720,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6782,9 +7731,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
+	postConversationsCallParticipantConsultExternal(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultExternal';
@@ -6808,7 +7761,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6818,8 +7772,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination queue and initial speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantConsultQueue(conversationId, participantId, body) { 
+	postConversationsCallParticipantConsultQueue(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultQueue';
@@ -6843,7 +7801,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6852,8 +7811,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantMonitor(conversationId, participantId) { 
+	postConversationsCallParticipantMonitor(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantMonitor';
@@ -6873,7 +7836,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6883,8 +7847,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantReplace(conversationId, participantId, body) { 
+	postConversationsCallParticipantReplace(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantReplace';
@@ -6908,7 +7876,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6918,8 +7887,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantVoiceConsult(conversationId, participantId, body) { 
+	postConversationsCallParticipantVoiceConsult(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantVoiceConsult';
@@ -6943,7 +7916,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6952,8 +7926,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipants(conversationId, body) { 
+	postConversationsCallParticipants(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipants';
@@ -6973,7 +7951,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6983,8 +7962,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} userId userId
 	 * @param {Object} body Conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallParticipantsUserUserId(conversationId, userId, body) { 
+	postConversationsCallParticipantsUserUserId(conversationId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantsUserUserId';
@@ -7008,7 +7991,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7020,6 +8004,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -7047,7 +8032,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7057,8 +8043,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallbackParticipantReplace(conversationId, participantId, body) { 
+	postConversationsCallbackParticipantReplace(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantReplace';
@@ -7082,7 +8072,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7090,8 +8081,12 @@ class ConversationsApi {
 	 * Create a Callback
 	 * 
 	 * @param {Object} body Callback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallbacks(body) { 
+	postConversationsCallbacks(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCallbacks';
@@ -7107,7 +8102,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7115,8 +8111,12 @@ class ConversationsApi {
 	 * Disconnect multiple scheduled callbacks
 	 * 
 	 * @param {Object} body BulkCallbackDisconnectRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallbacksBulkDisconnect(body) { 
+	postConversationsCallbacksBulkDisconnect(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkDisconnect';
@@ -7132,7 +8132,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7140,8 +8141,12 @@ class ConversationsApi {
 	 * Update multiple scheduled callbacks
 	 * 
 	 * @param {Object} body BulkCallbackPatchRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallbacksBulkUpdate(body) { 
+	postConversationsCallbacksBulkUpdate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkUpdate';
@@ -7157,7 +8162,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7165,8 +8171,12 @@ class ConversationsApi {
 	 * Create a call conversation
 	 * 
 	 * @param {Object} body Call request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCalls(body) { 
+	postConversationsCalls(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCalls';
@@ -7182,7 +8192,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7191,8 +8202,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {Object} body Call request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCallsUserUserId(userId, body) { 
+	postConversationsCallsUserUserId(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postConversationsCallsUserUserId';
@@ -7212,7 +8227,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7222,9 +8238,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsChatCommunicationMessages(conversationId, communicationId, body) { 
+	postConversationsChatCommunicationMessages(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
@@ -7248,7 +8268,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7257,9 +8278,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsChatCommunicationTyping(conversationId, communicationId) { 
+	postConversationsChatCommunicationTyping(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
@@ -7279,7 +8304,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7291,6 +8317,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
@@ -7319,7 +8346,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7329,9 +8357,13 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsChatParticipantReplace(conversationId, participantId, body) { 
+	postConversationsChatParticipantReplace(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantReplace';
@@ -7355,7 +8387,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7363,9 +8396,13 @@ class ConversationsApi {
 	 * Create a web chat conversation
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {Object} body Create web chat request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsChats(body) { 
+	postConversationsChats(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsChats';
@@ -7381,7 +8418,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7393,6 +8431,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
@@ -7421,7 +8460,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7432,6 +8472,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts) { 
@@ -7456,7 +8497,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7464,8 +8506,12 @@ class ConversationsApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema create request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCustomattributesSchemas(body) { 
+	postConversationsCustomattributesSchemas(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSchemas';
@@ -7481,7 +8527,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7489,8 +8536,12 @@ class ConversationsApi {
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCustomattributesSearch(body) { 
+	postConversationsCustomattributesSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
@@ -7506,7 +8557,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7515,8 +8567,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Send external email reply
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmailInboundmessages(conversationId, body) { 
+	postConversationsEmailInboundmessages(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailInboundmessages';
@@ -7536,7 +8592,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7545,8 +8602,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Reply
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmailMessages(conversationId, body) { 
+	postConversationsEmailMessages(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessages';
@@ -7566,7 +8627,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7575,8 +8637,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Copy Attachment Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body) { 
+	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
@@ -7596,7 +8662,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7608,6 +8675,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -7635,7 +8703,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7645,8 +8714,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmailParticipantReplace(conversationId, participantId, body) { 
+	postConversationsEmailParticipantReplace(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailParticipantReplace';
@@ -7670,7 +8743,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7678,8 +8752,12 @@ class ConversationsApi {
 	 * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
 	 * This request is not valid when using the Client Credentials OAuth grant.
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmailReconnect(conversationId) { 
+	postConversationsEmailReconnect(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailReconnect';
@@ -7695,7 +8773,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7703,8 +8782,12 @@ class ConversationsApi {
 	 * Create an email conversation
 	 * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
 	 * @param {Object} body Create email request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmails(body) { 
+	postConversationsEmails(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsEmails';
@@ -7720,7 +8803,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7728,8 +8812,12 @@ class ConversationsApi {
 	 * Create an email conversation, per API
 	 * 
 	 * @param {Object} body Create agentless email request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsEmailsAgentless(body) { 
+	postConversationsEmailsAgentless(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsEmailsAgentless';
@@ -7745,7 +8833,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7753,8 +8842,12 @@ class ConversationsApi {
 	 * Create Fax Conversation
 	 * 
 	 * @param {Object} body Fax
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsFaxes(body) { 
+	postConversationsFaxes(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsFaxes';
@@ -7770,7 +8863,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7778,8 +8872,12 @@ class ConversationsApi {
 	 * Setup configurations for encryption key creation
 	 * 
 	 * @param {Object} body Encryption Configuration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsKeyconfigurations(body) { 
+	postConversationsKeyconfigurations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsKeyconfigurations';
@@ -7795,7 +8893,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7803,8 +8902,12 @@ class ConversationsApi {
 	 * Validate encryption key configurations without saving it
 	 * 
 	 * @param {Object} body Encryption Configuration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsKeyconfigurationsValidate(body) { 
+	postConversationsKeyconfigurationsValidate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsKeyconfigurationsValidate';
@@ -7820,7 +8923,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7832,6 +8936,7 @@ class ConversationsApi {
 	 * @param {Object} body Message
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts) { 
 		opts = opts || {};
@@ -7859,7 +8964,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7868,9 +8974,13 @@ class ConversationsApi {
 	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId) { 
+	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMedia';
@@ -7890,7 +9000,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7900,8 +9011,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body) { 
+	postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMediaUploads';
@@ -7925,7 +9040,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7935,8 +9051,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body) { 
+	postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationSocialmediaMessages';
@@ -7960,7 +9080,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7970,8 +9091,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body MessageTypingEvent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageCommunicationTyping(conversationId, communicationId, body) { 
+	postConversationsMessageCommunicationTyping(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationTyping';
@@ -7995,7 +9120,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8004,8 +9130,12 @@ class ConversationsApi {
 	 * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 	 * @param {String} integrationId integrationId
 	 * @param {Object} body NormalizedMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageInboundOpenEvent(integrationId, body) { 
+	postConversationsMessageInboundOpenEvent(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenEvent';
@@ -8025,7 +9155,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8036,6 +9167,7 @@ class ConversationsApi {
 	 * @param {Object} body NormalizedMessage
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.prefetchConversationId Indicates whether or not to prefetch conversationId (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessageInboundOpenMessage(integrationId, body, opts) { 
 		opts = opts || {};
@@ -8059,7 +9191,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8068,8 +9201,12 @@ class ConversationsApi {
 	 * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 	 * @param {String} integrationId integrationId
 	 * @param {Object} body NormalizedMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageInboundOpenReceipt(integrationId, body) { 
+	postConversationsMessageInboundOpenReceipt(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenReceipt';
@@ -8089,7 +9226,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8098,8 +9236,12 @@ class ConversationsApi {
 	 * Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 	 * @param {String} integrationId integrationId
 	 * @param {Object} body OpenInboundStructuredResponseMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageInboundOpenStructuredResponse(integrationId, body) { 
+	postConversationsMessageInboundOpenStructuredResponse(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenStructuredResponse';
@@ -8119,7 +9261,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8130,6 +9273,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media) (default to false)
 	 * @param {Array.<String>} opts.body messageIds
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessageMessagesBulk(conversationId, opts) { 
 		opts = opts || {};
@@ -8149,7 +9293,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8161,6 +9306,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -8188,7 +9334,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8197,8 +9344,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageParticipantMonitor(conversationId, participantId) { 
+	postConversationsMessageParticipantMonitor(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantMonitor';
@@ -8218,7 +9369,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8228,8 +9380,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessageParticipantReplace(conversationId, participantId, body) { 
+	postConversationsMessageParticipantReplace(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantReplace';
@@ -8253,7 +9409,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8261,8 +9418,12 @@ class ConversationsApi {
 	 * Create an outbound messaging conversation.
 	 * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
 	 * @param {Object} body Create outbound messaging conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessages(body) { 
+	postConversationsMessages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessages';
@@ -8278,7 +9439,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8288,6 +9450,7 @@ class ConversationsApi {
 	 * @param {Object} body Create agentless outbound messaging request
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsMessagesAgentless(body, opts) { 
 		opts = opts || {};
@@ -8307,7 +9470,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8315,9 +9479,13 @@ class ConversationsApi {
 	 * Send an inbound Open Message
 	 * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 	 * @param {Object} body NormalizedMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsMessagesInboundOpen(body) { 
+	postConversationsMessagesInboundOpen(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagesInboundOpen';
@@ -8333,7 +9501,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8341,8 +9510,12 @@ class ConversationsApi {
 	 * Create Apple Integration
 	 * 
 	 * @param {Object} body AppleIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingIntegrationsApple(body) { 
+	postConversationsMessagingIntegrationsApple(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsApple';
@@ -8358,7 +9531,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8366,8 +9540,12 @@ class ConversationsApi {
 	 * Create a Facebook Integration
 	 * 
 	 * @param {Object} body FacebookIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingIntegrationsFacebook(body) { 
+	postConversationsMessagingIntegrationsFacebook(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
@@ -8383,7 +9561,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8391,8 +9570,12 @@ class ConversationsApi {
 	 * Create Instagram Integration
 	 * 
 	 * @param {Object} body InstagramIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingIntegrationsInstagram(body) { 
+	postConversationsMessagingIntegrationsInstagram(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsInstagram';
@@ -8408,7 +9591,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8416,8 +9600,12 @@ class ConversationsApi {
 	 * Create an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} body OpenIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingIntegrationsOpen(body) { 
+	postConversationsMessagingIntegrationsOpen(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpen';
@@ -8433,7 +9621,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8441,9 +9630,13 @@ class ConversationsApi {
 	 * Create an Open messaging integration with the Google Business Profile extension
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} body GoogleBusinessProfileOpenIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body) { 
+	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile';
@@ -8459,7 +9652,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8467,9 +9661,13 @@ class ConversationsApi {
 	 * Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} body GoogleAuthTokenRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body) { 
+	postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens';
@@ -8485,7 +9683,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8493,8 +9692,12 @@ class ConversationsApi {
 	 * Create Twitter Integration
 	 * 
 	 * @param {Object} body TwitterIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingIntegrationsTwitter(body) { 
+	postConversationsMessagingIntegrationsTwitter(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
@@ -8510,7 +9713,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8518,9 +9722,13 @@ class ConversationsApi {
 	 * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 	 * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 	 * @param {Object} body WhatsAppIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postConversationsMessagingIntegrationsWhatsapp(body) { 
+	postConversationsMessagingIntegrationsWhatsapp(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsapp';
@@ -8536,7 +9744,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8544,8 +9753,12 @@ class ConversationsApi {
 	 * Create a WhatsApp Integration using the WhatsApp embedded signup flow
 	 * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
 	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body) { 
+	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsappEmbeddedsignup';
@@ -8561,7 +9774,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8569,8 +9783,12 @@ class ConversationsApi {
 	 * Create a messaging setting
 	 * 
 	 * @param {Object} body MessagingSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingSettings(body) { 
+	postConversationsMessagingSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingSettings';
@@ -8586,7 +9804,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8594,8 +9813,12 @@ class ConversationsApi {
 	 * Create a Supported Content profile
 	 * 
 	 * @param {Object} body SupportedContent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsMessagingSupportedcontent(body) { 
+	postConversationsMessagingSupportedcontent(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingSupportedcontent';
@@ -8611,7 +9834,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8619,8 +9843,12 @@ class ConversationsApi {
 	 * Search conversations
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsParticipantsAttributesSearch(body) { 
+	postConversationsParticipantsAttributesSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsParticipantsAttributesSearch';
@@ -8636,7 +9864,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8648,6 +9877,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
@@ -8676,7 +9906,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8688,6 +9919,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -8715,7 +9947,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8724,9 +9957,13 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postConversationsVideoAgentconferenceCommunication(conversationId, communicationId) { 
+	postConversationsVideoAgentconferenceCommunication(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoAgentconferenceCommunication';
@@ -8746,7 +9983,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8758,6 +9996,7 @@ class ConversationsApi {
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -8785,7 +10024,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8793,8 +10033,12 @@ class ConversationsApi {
 	 * Generate a meetingId for a given conferenceId
 	 * 
 	 * @param {Object} body MeetingIdRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsVideosMeetings(body) { 
+	postConversationsVideosMeetings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsVideosMeetings';
@@ -8810,7 +10054,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8820,6 +10065,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putConversationCustomattributes(conversationId, opts) { 
 		opts = opts || {};
@@ -8839,7 +10085,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8849,6 +10096,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<Object>} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putConversationCustomattributesBulk(conversationId, opts) { 
 		opts = opts || {};
@@ -8868,7 +10116,8 @@ class ConversationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8877,8 +10126,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationParticipantFlaggedreason(conversationId, participantId) { 
+	putConversationParticipantFlaggedreason(conversationId, participantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationParticipantFlaggedreason';
@@ -8898,7 +10151,8 @@ class ConversationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8907,8 +10161,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Conversation Secure Attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationSecureattributes(conversationId, body) { 
+	putConversationSecureattributes(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationSecureattributes';
@@ -8928,7 +10186,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8937,8 +10196,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Conversation Tags
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationTags(conversationId, body) { 
+	putConversationTags(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationTags';
@@ -8958,7 +10221,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8969,8 +10233,12 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body UUIData Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body) { 
+	putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCallParticipantCommunicationUuidata';
@@ -8998,7 +10266,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9007,8 +10276,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsCallRecordingstate(conversationId, body) { 
+	putConversationsCallRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCallRecordingstate';
@@ -9028,7 +10301,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9037,8 +10311,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsCallbackRecordingstate(conversationId, body) { 
+	putConversationsCallbackRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCallbackRecordingstate';
@@ -9058,7 +10336,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9067,9 +10346,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putConversationsChatRecordingstate(conversationId, body) { 
+	putConversationsChatRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsChatRecordingstate';
@@ -9089,7 +10372,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9098,9 +10382,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putConversationsCobrowsesessionRecordingstate(conversationId, body) { 
+	putConversationsCobrowsesessionRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsCobrowsesessionRecordingstate';
@@ -9120,7 +10408,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9129,8 +10418,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Schema update request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsCustomattributesSchema(schemaId, body) { 
+	putConversationsCustomattributesSchema(schemaId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putConversationsCustomattributesSchema';
@@ -9150,7 +10443,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9159,8 +10453,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Draft
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsEmailMessagesDraft(conversationId, body) { 
+	putConversationsEmailMessagesDraft(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailMessagesDraft';
@@ -9180,7 +10478,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9189,8 +10488,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsEmailRecordingstate(conversationId, body) { 
+	putConversationsEmailRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailRecordingstate';
@@ -9210,7 +10513,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9219,8 +10523,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} keyconfigurationsId Key Configurations Id
 	 * @param {Object} body Encryption key configuration metadata
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsKeyconfiguration(keyconfigurationsId, body) { 
+	putConversationsKeyconfiguration(keyconfigurationsId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'keyconfigurationsId' is set
 		if (keyconfigurationsId === undefined || keyconfigurationsId === null || keyconfigurationsId === '') {
 			throw 'Missing the required parameter "keyconfigurationsId" when calling putConversationsKeyconfiguration';
@@ -9240,7 +10548,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9249,8 +10558,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessageRecordingstate(conversationId, body) { 
+	putConversationsMessageRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsMessageRecordingstate';
@@ -9270,7 +10583,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9279,8 +10593,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body IdentityResolutionConfig
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body) { 
+	putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId';
@@ -9300,7 +10618,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9309,8 +10628,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body IdentityResolutionConfig
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body) { 
+	putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId';
@@ -9330,7 +10653,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9339,8 +10663,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body IdentityResolutionConfig
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body) { 
+	putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId';
@@ -9360,7 +10688,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9369,8 +10698,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body) { 
+	putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId';
@@ -9390,7 +10723,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9399,8 +10733,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration Id
 	 * @param {Object} body IdentityResolutionConfig
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body) { 
+	putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId';
@@ -9420,7 +10758,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9429,8 +10768,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body) { 
+	putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId';
@@ -9450,7 +10793,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9458,8 +10802,12 @@ class ConversationsApi {
 	 * Set the organization's default setting that may be applied to to integrations without settings
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
 	 * @param {Object} body MessagingSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingSettingsDefault(body) { 
+	putConversationsMessagingSettingsDefault(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putConversationsMessagingSettingsDefault';
@@ -9475,7 +10823,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9483,8 +10832,12 @@ class ConversationsApi {
 	 * Set the organization's default supported content profile that may be assigned to an integration when it is created.
 	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 	 * @param {Object} body Reference to supported content profile
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingSupportedcontentDefault(body) { 
+	putConversationsMessagingSupportedcontentDefault(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putConversationsMessagingSupportedcontentDefault';
@@ -9500,7 +10853,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9508,8 +10862,12 @@ class ConversationsApi {
 	 * Update conversation threading window timeline for each messaging type
 	 * PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
 	 * @param {Object} body ConversationThreadingWindowRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsMessagingThreadingtimeline(body) { 
+	putConversationsMessagingThreadingtimeline(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putConversationsMessagingThreadingtimeline';
@@ -9525,7 +10883,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9534,9 +10893,13 @@ class ConversationsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putConversationsScreenshareRecordingstate(conversationId, body) { 
+	putConversationsScreenshareRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsScreenshareRecordingstate';
@@ -9556,7 +10919,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9565,8 +10929,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsSocialRecordingstate(conversationId, body) { 
+	putConversationsSocialRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsSocialRecordingstate';
@@ -9586,7 +10954,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -9595,8 +10964,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsVideoRecordingstate(conversationId, body) { 
+	putConversationsVideoRecordingstate(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationsVideoRecordingstate';
@@ -9616,7 +10989,8 @@ class ConversationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

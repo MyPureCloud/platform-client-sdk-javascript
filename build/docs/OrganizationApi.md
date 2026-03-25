@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getFieldconfig
 
-> FieldConfig getFieldconfig(type)
+> FieldConfig getFieldconfig(type, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -56,8 +56,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let type = "type_example"; // String | Field type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFieldconfig(type)
+apiInstance.getFieldconfig(type, opts)
   .then((data) => {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -73,6 +79,7 @@ apiInstance.getFieldconfig(type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **type** | **String** | Field type | <br />**Values**: person, group, org |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -81,7 +88,7 @@ apiInstance.getFieldconfig(type)
 
 ## getOrganizationsAuthenticationSettings
 
-> OrgAuthSettings getOrganizationsAuthenticationSettings()
+> OrgAuthSettings getOrganizationsAuthenticationSettings(opts)
 
 
 GET /api/v2/organizations/authentication/settings
@@ -104,8 +111,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsAuthenticationSettings()
+apiInstance.getOrganizationsAuthenticationSettings(opts)
   .then((data) => {
     console.log(`getOrganizationsAuthenticationSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -117,7 +130,10 @@ apiInstance.getOrganizationsAuthenticationSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -126,7 +142,7 @@ This endpoint does not need any parameter.
 
 ## getOrganizationsEmbeddedintegration
 
-> EmbeddedIntegration getOrganizationsEmbeddedintegration()
+> EmbeddedIntegration getOrganizationsEmbeddedintegration(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -152,8 +168,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsEmbeddedintegration()
+apiInstance.getOrganizationsEmbeddedintegration(opts)
   .then((data) => {
     console.log(`getOrganizationsEmbeddedintegration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -165,7 +187,10 @@ apiInstance.getOrganizationsEmbeddedintegration()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -174,7 +199,7 @@ This endpoint does not need any parameter.
 
 ## getOrganizationsIpaddressauthentication
 
-> IpAddressAuthentication getOrganizationsIpaddressauthentication()
+> IpAddressAuthentication getOrganizationsIpaddressauthentication(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -202,8 +227,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsIpaddressauthentication()
+apiInstance.getOrganizationsIpaddressauthentication(opts)
   .then((data) => {
     console.log(`getOrganizationsIpaddressauthentication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -215,7 +246,10 @@ apiInstance.getOrganizationsIpaddressauthentication()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -224,7 +258,7 @@ This endpoint does not need any parameter.
 
 ## getOrganizationsLimitsChangerequest
 
-> LimitChangeRequestDetails getOrganizationsLimitsChangerequest(requestId)
+> LimitChangeRequestDetails getOrganizationsLimitsChangerequest(requestId, opts)
 
 
 GET /api/v2/organizations/limits/changerequests/{requestId}
@@ -249,8 +283,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let requestId = "requestId_example"; // String | Unique id for the limit change request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsLimitsChangerequest(requestId)
+apiInstance.getOrganizationsLimitsChangerequest(requestId, opts)
   .then((data) => {
     console.log(`getOrganizationsLimitsChangerequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -266,6 +306,7 @@ apiInstance.getOrganizationsLimitsChangerequest(requestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **requestId** | **String** | Unique id for the limit change request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -305,7 +346,11 @@ let opts = {
   'before': 3.4, // Number | Timestamp indicating the date to end before when searching for requests.
   'status': "status_example", // String | Status of the request to be filtered by
   'pageSize': 25, // Number | Page Size
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrganizationsLimitsChangerequests(opts)
@@ -328,6 +373,7 @@ apiInstance.getOrganizationsLimitsChangerequests(opts)
  **status** | **String** | Status of the request to be filtered by | [optional] <br />**Values**: Approved, Rejected, Rollback, Pending, Open, SecondaryApprovalNamespacesAdded, ReviewerApproved, ReviewerRejected, ReviewerRollback, ImplementingChange, ChangeImplemented, ImplementingRollback, RollbackImplemented |
  **pageSize** | **Number** | Page Size | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -336,7 +382,7 @@ apiInstance.getOrganizationsLimitsChangerequests(opts)
 
 ## getOrganizationsLimitsDocs
 
-> LimitDocumentation getOrganizationsLimitsDocs()
+> LimitDocumentation getOrganizationsLimitsDocs(opts)
 
 
 GET /api/v2/organizations/limits/docs
@@ -357,8 +403,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsLimitsDocs()
+apiInstance.getOrganizationsLimitsDocs(opts)
   .then((data) => {
     console.log(`getOrganizationsLimitsDocs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -370,7 +422,10 @@ apiInstance.getOrganizationsLimitsDocs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +434,7 @@ This endpoint does not need any parameter.
 
 ## getOrganizationsLimitsDocsFreetrial
 
-> FreeTrialLimitDocs getOrganizationsLimitsDocsFreetrial()
+> FreeTrialLimitDocs getOrganizationsLimitsDocsFreetrial(opts)
 
 
 GET /api/v2/organizations/limits/docs/freetrial
@@ -400,8 +455,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsLimitsDocsFreetrial()
+apiInstance.getOrganizationsLimitsDocsFreetrial(opts)
   .then((data) => {
     console.log(`getOrganizationsLimitsDocsFreetrial success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -413,7 +474,10 @@ apiInstance.getOrganizationsLimitsDocsFreetrial()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -422,7 +486,7 @@ This endpoint does not need any parameter.
 
 ## getOrganizationsLimitsNamespace
 
-> LimitsEntityListing getOrganizationsLimitsNamespace(namespaceName)
+> LimitsEntityListing getOrganizationsLimitsNamespace(namespaceName, opts)
 
 
 GET /api/v2/organizations/limits/namespaces/{namespaceName}
@@ -445,8 +509,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let namespaceName = "namespaceName_example"; // String | The namespace to fetch limits for
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsLimitsNamespace(namespaceName)
+apiInstance.getOrganizationsLimitsNamespace(namespaceName, opts)
   .then((data) => {
     console.log(`getOrganizationsLimitsNamespace success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -462,6 +532,7 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **namespaceName** | **String** | The namespace to fetch limits for |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -470,7 +541,7 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 
 ## getOrganizationsLimitsNamespaceDefaults
 
-> LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName)
+> LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName, opts)
 
 
 GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults
@@ -493,8 +564,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let namespaceName = "namespaceName_example"; // String | The namespace to fetch defaults limits for
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
+apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName, opts)
   .then((data) => {
     console.log(`getOrganizationsLimitsNamespaceDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -510,6 +587,7 @@ apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **namespaceName** | **String** | The namespace to fetch defaults limits for |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -542,7 +620,11 @@ let apiInstance = new platformClient.OrganizationApi();
 
 let opts = { 
   'pageSize': 100, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrganizationsLimitsNamespaces(opts)
@@ -562,6 +644,7 @@ apiInstance.getOrganizationsLimitsNamespaces(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 100] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -570,7 +653,7 @@ apiInstance.getOrganizationsLimitsNamespaces(opts)
 
 ## getOrganizationsMe
 
-> Organization getOrganizationsMe()
+> Organization getOrganizationsMe(opts)
 
 
 GET /api/v2/organizations/me
@@ -591,8 +674,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsMe()
+apiInstance.getOrganizationsMe(opts)
   .then((data) => {
     console.log(`getOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -604,7 +693,10 @@ apiInstance.getOrganizationsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -613,7 +705,7 @@ This endpoint does not need any parameter.
 
 ## getOrganizationsWhitelist
 
-> OrgWhitelistSettings getOrganizationsWhitelist()
+> OrgWhitelistSettings getOrganizationsWhitelist(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -637,8 +729,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrganizationsWhitelist()
+apiInstance.getOrganizationsWhitelist(opts)
   .then((data) => {
     console.log(`getOrganizationsWhitelist success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -650,7 +748,10 @@ apiInstance.getOrganizationsWhitelist()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -659,7 +760,7 @@ This endpoint does not need any parameter.
 
 ## patchOrganizationsAuthenticationSettings
 
-> OrgAuthSettings patchOrganizationsAuthenticationSettings(body)
+> OrgAuthSettings patchOrganizationsAuthenticationSettings(body, opts)
 
 
 PATCH /api/v2/organizations/authentication/settings
@@ -684,8 +785,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let body = {}; // Object | Org settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOrganizationsAuthenticationSettings(body)
+apiInstance.patchOrganizationsAuthenticationSettings(body, opts)
   .then((data) => {
     console.log(`patchOrganizationsAuthenticationSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -701,6 +808,7 @@ apiInstance.patchOrganizationsAuthenticationSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Org settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -709,7 +817,7 @@ apiInstance.patchOrganizationsAuthenticationSettings(body)
 
 ## patchOrganizationsFeature
 
-> OrganizationFeatures patchOrganizationsFeature(featureName, enabled)
+> OrganizationFeatures patchOrganizationsFeature(featureName, enabled, opts)
 
 
 PATCH /api/v2/organizations/features/{featureName}
@@ -735,8 +843,14 @@ let apiInstance = new platformClient.OrganizationApi();
 
 let featureName = "featureName_example"; // String | Organization feature
 let enabled = {}; // Object | New state of feature
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOrganizationsFeature(featureName, enabled)
+apiInstance.patchOrganizationsFeature(featureName, enabled, opts)
   .then((data) => {
     console.log(`patchOrganizationsFeature success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -753,6 +867,7 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 | ------------- | ------------- | ------------- | ------------- |
  **featureName** | **String** | Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
  **enabled** | **Object** | New state of feature |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -761,7 +876,7 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 
 ## putOrganizationsEmbeddedintegration
 
-> EmbeddedIntegration putOrganizationsEmbeddedintegration(body)
+> EmbeddedIntegration putOrganizationsEmbeddedintegration(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -791,8 +906,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let body = {}; // Object | Whitelist settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrganizationsEmbeddedintegration(body)
+apiInstance.putOrganizationsEmbeddedintegration(body, opts)
   .then((data) => {
     console.log(`putOrganizationsEmbeddedintegration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -808,6 +929,7 @@ apiInstance.putOrganizationsEmbeddedintegration(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Whitelist settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -816,7 +938,7 @@ apiInstance.putOrganizationsEmbeddedintegration(body)
 
 ## putOrganizationsIpaddressauthentication
 
-> IpAddressAuthentication putOrganizationsIpaddressauthentication(body)
+> IpAddressAuthentication putOrganizationsIpaddressauthentication(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -846,8 +968,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let body = {}; // Object | IP address Whitelist settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrganizationsIpaddressauthentication(body)
+apiInstance.putOrganizationsIpaddressauthentication(body, opts)
   .then((data) => {
     console.log(`putOrganizationsIpaddressauthentication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -863,6 +991,7 @@ apiInstance.putOrganizationsIpaddressauthentication(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | IP address Whitelist settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -896,7 +1025,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let opts = { 
-  'body': {} // Object | Organization
+  'body': {}, // Object | Organization
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putOrganizationsMe(opts)
@@ -915,6 +1048,7 @@ apiInstance.putOrganizationsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -923,7 +1057,7 @@ apiInstance.putOrganizationsMe(opts)
 
 ## putOrganizationsWhitelist
 
-> OrgWhitelistSettings putOrganizationsWhitelist(body)
+> OrgWhitelistSettings putOrganizationsWhitelist(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -951,8 +1085,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let body = {}; // Object | Whitelist settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOrganizationsWhitelist(body)
+apiInstance.putOrganizationsWhitelist(body, opts)
   .then((data) => {
     console.log(`putOrganizationsWhitelist success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -968,10 +1108,11 @@ apiInstance.putOrganizationsWhitelist(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Whitelist settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **OrgWhitelistSettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

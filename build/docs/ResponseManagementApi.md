@@ -31,7 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteResponsemanagementLibrary
 
-> void deleteResponsemanagementLibrary(libraryId)
+> void deleteResponsemanagementLibrary(libraryId, opts)
 
 
 DELETE /api/v2/responsemanagement/libraries/{libraryId}
@@ -58,8 +58,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let libraryId = "libraryId_example"; // String | Library ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteResponsemanagementLibrary(libraryId)
+apiInstance.deleteResponsemanagementLibrary(libraryId, opts)
   .then(() => {
     console.log('deleteResponsemanagementLibrary returned successfully.');
   })
@@ -75,6 +81,7 @@ apiInstance.deleteResponsemanagementLibrary(libraryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -83,7 +90,7 @@ void (no response body)
 
 ## deleteResponsemanagementResponse
 
-> void deleteResponsemanagementResponse(responseId)
+> void deleteResponsemanagementResponse(responseId, opts)
 
 
 DELETE /api/v2/responsemanagement/responses/{responseId}
@@ -110,8 +117,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let responseId = "responseId_example"; // String | Response ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteResponsemanagementResponse(responseId)
+apiInstance.deleteResponsemanagementResponse(responseId, opts)
   .then(() => {
     console.log('deleteResponsemanagementResponse returned successfully.');
   })
@@ -127,6 +140,7 @@ apiInstance.deleteResponsemanagementResponse(responseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseId** | **String** | Response ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -135,7 +149,7 @@ void (no response body)
 
 ## deleteResponsemanagementResponseasset
 
-> void deleteResponsemanagementResponseasset(responseAssetId)
+> void deleteResponsemanagementResponseasset(responseAssetId, opts)
 
 
 DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}
@@ -160,8 +174,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let responseAssetId = "responseAssetId_example"; // String | Asset Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteResponsemanagementResponseasset(responseAssetId)
+apiInstance.deleteResponsemanagementResponseasset(responseAssetId, opts)
   .then(() => {
     console.log('deleteResponsemanagementResponseasset returned successfully.');
   })
@@ -177,6 +197,7 @@ apiInstance.deleteResponsemanagementResponseasset(responseAssetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseAssetId** | **String** | Asset Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -213,7 +234,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'messagingTemplateFilter': "messagingTemplateFilter_example", // String | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
-  'libraryPrefix': "libraryPrefix_example" // String | Returns a list of libraries that contain the prefix provided
+  'libraryPrefix': "libraryPrefix_example", // String | Returns a list of libraries that contain the prefix provided
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getResponsemanagementLibraries(opts)
@@ -235,6 +260,7 @@ apiInstance.getResponsemanagementLibraries(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **messagingTemplateFilter** | **String** | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
  **libraryPrefix** | **String** | Returns a list of libraries that contain the prefix provided | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -243,7 +269,7 @@ apiInstance.getResponsemanagementLibraries(opts)
 
 ## getResponsemanagementLibrary
 
-> Library getResponsemanagementLibrary(libraryId)
+> Library getResponsemanagementLibrary(libraryId, opts)
 
 
 GET /api/v2/responsemanagement/libraries/{libraryId}
@@ -268,8 +294,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let libraryId = "libraryId_example"; // String | Library ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getResponsemanagementLibrary(libraryId)
+apiInstance.getResponsemanagementLibrary(libraryId, opts)
   .then((data) => {
     console.log(`getResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -285,6 +317,7 @@ apiInstance.getResponsemanagementLibrary(libraryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -319,7 +352,11 @@ let apiInstance = new platformClient.ResponseManagementApi();
 
 let responseId = "responseId_example"; // String | Response ID
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getResponsemanagementResponse(responseId, opts)
@@ -339,6 +376,7 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **responseId** | **String** | Response ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -347,7 +385,7 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 
 ## getResponsemanagementResponseasset
 
-> ResponseAsset getResponsemanagementResponseasset(responseAssetId)
+> ResponseAsset getResponsemanagementResponseasset(responseAssetId, opts)
 
 
 GET /api/v2/responsemanagement/responseassets/{responseAssetId}
@@ -372,8 +410,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let responseAssetId = "responseAssetId_example"; // String | Asset Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getResponsemanagementResponseasset(responseAssetId)
+apiInstance.getResponsemanagementResponseasset(responseAssetId, opts)
   .then((data) => {
     console.log(`getResponsemanagementResponseasset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -389,6 +433,7 @@ apiInstance.getResponsemanagementResponseasset(responseAssetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseAssetId** | **String** | Asset Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -397,7 +442,7 @@ apiInstance.getResponsemanagementResponseasset(responseAssetId)
 
 ## getResponsemanagementResponseassetsStatusStatusId
 
-> ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(statusId)
+> ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(statusId, opts)
 
 
 GET /api/v2/responsemanagement/responseassets/status/{statusId}
@@ -422,8 +467,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let statusId = "statusId_example"; // String | Status Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId)
+apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId, opts)
   .then((data) => {
     console.log(`getResponsemanagementResponseassetsStatusStatusId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -439,6 +490,7 @@ apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **statusId** | **String** | Status Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -475,7 +527,11 @@ let libraryId = "libraryId_example"; // String | Library ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getResponsemanagementResponses(libraryId, opts)
@@ -497,6 +553,7 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -505,7 +562,7 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
 
 ## postResponsemanagementLibraries
 
-> Library postResponsemanagementLibraries(body)
+> Library postResponsemanagementLibraries(body, opts)
 
 
 POST /api/v2/responsemanagement/libraries
@@ -530,8 +587,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | Library
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postResponsemanagementLibraries(body)
+apiInstance.postResponsemanagementLibraries(body, opts)
   .then((data) => {
     console.log(`postResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -547,6 +610,7 @@ apiInstance.postResponsemanagementLibraries(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Library |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -555,7 +619,7 @@ apiInstance.postResponsemanagementLibraries(body)
 
 ## postResponsemanagementLibrariesBulk
 
-> LibraryEntityListing postResponsemanagementLibrariesBulk(body)
+> LibraryEntityListing postResponsemanagementLibrariesBulk(body, opts)
 
 
 POST /api/v2/responsemanagement/libraries/bulk
@@ -580,8 +644,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | LibraryIDs (max allowed 50)
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postResponsemanagementLibrariesBulk(body)
+apiInstance.postResponsemanagementLibrariesBulk(body, opts)
   .then((data) => {
     console.log(`postResponsemanagementLibrariesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -597,6 +667,7 @@ apiInstance.postResponsemanagementLibrariesBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | LibraryIDs (max allowed 50) |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -634,7 +705,11 @@ let apiInstance = new platformClient.ResponseManagementApi();
 let body = {}; // Object | Query criteria
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postResponsemanagementLibrariesQuery(body, opts)
@@ -655,6 +730,7 @@ apiInstance.postResponsemanagementLibrariesQuery(body, opts)
  **body** | **Object** | Query criteria |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -663,7 +739,7 @@ apiInstance.postResponsemanagementLibrariesQuery(body, opts)
 
 ## postResponsemanagementResponseassetsBulk
 
-> ResponseAssetEntityListing postResponsemanagementResponseassetsBulk(body)
+> ResponseAssetEntityListing postResponsemanagementResponseassetsBulk(body, opts)
 
 
 POST /api/v2/responsemanagement/responseassets/bulk
@@ -688,8 +764,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | Asset IDs (max allowed 50)
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postResponsemanagementResponseassetsBulk(body)
+apiInstance.postResponsemanagementResponseassetsBulk(body, opts)
   .then((data) => {
     console.log(`postResponsemanagementResponseassetsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -705,6 +787,7 @@ apiInstance.postResponsemanagementResponseassetsBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Asset IDs (max allowed 50) |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -739,7 +822,11 @@ let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | request
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postResponsemanagementResponseassetsSearch(body, opts)
@@ -759,6 +846,7 @@ apiInstance.postResponsemanagementResponseassetsSearch(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | request |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -767,7 +855,7 @@ apiInstance.postResponsemanagementResponseassetsSearch(body, opts)
 
 ## postResponsemanagementResponseassetsUploads
 
-> CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(body)
+> CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(body, opts)
 
 
 POST /api/v2/responsemanagement/responseassets/uploads
@@ -792,8 +880,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postResponsemanagementResponseassetsUploads(body)
+apiInstance.postResponsemanagementResponseassetsUploads(body, opts)
   .then((data) => {
     console.log(`postResponsemanagementResponseassetsUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -809,6 +903,7 @@ apiInstance.postResponsemanagementResponseassetsUploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -843,7 +938,11 @@ let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | Response
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postResponsemanagementResponses(body, opts)
@@ -863,6 +962,7 @@ apiInstance.postResponsemanagementResponses(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Response |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -871,7 +971,7 @@ apiInstance.postResponsemanagementResponses(body, opts)
 
 ## postResponsemanagementResponsesQuery
 
-> ResponseQueryResults postResponsemanagementResponsesQuery(body)
+> ResponseQueryResults postResponsemanagementResponsesQuery(body, opts)
 
 
 POST /api/v2/responsemanagement/responses/query
@@ -896,8 +996,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ResponseManagementApi();
 
 let body = {}; // Object | Response
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postResponsemanagementResponsesQuery(body)
+apiInstance.postResponsemanagementResponsesQuery(body, opts)
   .then((data) => {
     console.log(`postResponsemanagementResponsesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -913,6 +1019,7 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Response |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -921,7 +1028,7 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 
 ## putResponsemanagementLibrary
 
-> Library putResponsemanagementLibrary(libraryId, body)
+> Library putResponsemanagementLibrary(libraryId, body, opts)
 
 
 PUT /api/v2/responsemanagement/libraries/{libraryId}
@@ -949,8 +1056,14 @@ let apiInstance = new platformClient.ResponseManagementApi();
 
 let libraryId = "libraryId_example"; // String | Library ID
 let body = {}; // Object | Library
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putResponsemanagementLibrary(libraryId, body)
+apiInstance.putResponsemanagementLibrary(libraryId, body, opts)
   .then((data) => {
     console.log(`putResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -967,6 +1080,7 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
  **body** | **Object** | Library |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1004,7 +1118,11 @@ let apiInstance = new platformClient.ResponseManagementApi();
 let responseId = "responseId_example"; // String | Response ID
 let body = {}; // Object | Response
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putResponsemanagementResponse(responseId, body, opts)
@@ -1025,6 +1143,7 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
  **responseId** | **String** | Response ID |  |
  **body** | **Object** | Response |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1033,7 +1152,7 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
 
 ## putResponsemanagementResponseasset
 
-> ResponseAsset putResponsemanagementResponseasset(responseAssetId, body)
+> ResponseAsset putResponsemanagementResponseasset(responseAssetId, body, opts)
 
 
 PUT /api/v2/responsemanagement/responseassets/{responseAssetId}
@@ -1059,8 +1178,14 @@ let apiInstance = new platformClient.ResponseManagementApi();
 
 let responseAssetId = "responseAssetId_example"; // String | Asset Id
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putResponsemanagementResponseasset(responseAssetId, body)
+apiInstance.putResponsemanagementResponseasset(responseAssetId, body, opts)
   .then((data) => {
     console.log(`putResponsemanagementResponseasset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1077,10 +1202,11 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **responseAssetId** | **String** | Asset Id |  |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ResponseAsset**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

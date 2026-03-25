@@ -5,7 +5,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -29,6 +29,7 @@ class TextbotsApi {
 	 * @param {Array.<String>} opts.botId Bot IDs. Maximum of 50
 	 * @param {Boolean} opts.virtualAgentEnabled Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
 	 * @param {Number} opts.pageSize The maximum results to return. Maximum of 100 (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTextbotsBotsSearch(opts) { 
 		opts = opts || {};
@@ -44,7 +45,8 @@ class TextbotsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -53,8 +55,12 @@ class TextbotsApi {
 	 * Send a turn event to an executing bot flow and produce the next action to take.
 	 * @param {String} sessionId The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions'
 	 * @param {Object} turnRequest 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTextbotsBotflowsSessionTurns(sessionId, turnRequest) { 
+	postTextbotsBotflowsSessionTurns(sessionId, turnRequest, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postTextbotsBotflowsSessionTurns';
@@ -74,7 +80,8 @@ class TextbotsApi {
 			turnRequest, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -82,8 +89,12 @@ class TextbotsApi {
 	 * Create an execution instance of a bot flow definition.
 	 * The launch is asynchronous; use the returned instance ID to post turns to it using POST /api/v2/textbots/botflows/sessions/{sessionId}/turns.
 	 * @param {Object} launchRequest 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTextbotsBotflowsSessions(launchRequest) { 
+	postTextbotsBotflowsSessions(launchRequest, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'launchRequest' is set
 		if (launchRequest === undefined || launchRequest === null) {
 			throw 'Missing the required parameter "launchRequest" when calling postTextbotsBotflowsSessions';
@@ -99,7 +110,8 @@ class TextbotsApi {
 			launchRequest, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -107,8 +119,12 @@ class TextbotsApi {
 	 * Send an intent to a bot to start a dialog/interact with it via text
 	 * This will either start a bot with the given id or relay a communication to an existing bot session.
 	 * @param {Object} postTextRequest 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTextbotsBotsExecute(postTextRequest) { 
+	postTextbotsBotsExecute(postTextRequest, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'postTextRequest' is set
 		if (postTextRequest === undefined || postTextRequest === null) {
 			throw 'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';
@@ -124,7 +140,8 @@ class TextbotsApi {
 			postTextRequest, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class MessagingApi {
 	 * Delete a messaging setting
 	 * 
 	 * @param {String} messageSettingId Message Settings ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteMessagingSetting(messageSettingId) { 
+	deleteMessagingSetting(messageSettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageSettingId' is set
 		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling deleteMessagingSetting';
@@ -42,16 +46,21 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete the organization's default setting, a global default will be applied to integrations without settings
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be applied to it.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteMessagingSettingsDefault() { 
+	deleteMessagingSettingsDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/messaging/settings/default', 
@@ -63,7 +72,8 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -71,9 +81,13 @@ class MessagingApi {
 	 * Delete a supported content profile
 	 * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+	deleteMessagingSupportedcontentSupportedContentId(supportedContentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'supportedContentId' is set
 		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling deleteMessagingSupportedcontentSupportedContentId';
@@ -89,7 +103,8 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -97,9 +112,13 @@ class MessagingApi {
 	 * Get a messaging setting
 	 * 
 	 * @param {String} messageSettingId Message Settings ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getMessagingSetting(messageSettingId) { 
+	getMessagingSetting(messageSettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageSettingId' is set
 		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling getMessagingSetting';
@@ -115,7 +134,8 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -125,6 +145,7 @@ class MessagingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getMessagingSettings(opts) { 
@@ -141,16 +162,21 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the organization's default settings that will be used as the default when creating an integration.
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be applied to it.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getMessagingSettingsDefault() { 
+	getMessagingSettingsDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/messaging/settings/default', 
@@ -162,7 +188,8 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -172,6 +199,7 @@ class MessagingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getMessagingSupportedcontent(opts) { 
@@ -188,7 +216,8 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -196,9 +225,13 @@ class MessagingApi {
 	 * Get a supported content profile
 	 * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+	getMessagingSupportedcontentSupportedContentId(supportedContentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'supportedContentId' is set
 		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling getMessagingSupportedcontentSupportedContentId';
@@ -214,7 +247,8 @@ class MessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -223,9 +257,13 @@ class MessagingApi {
 	 * 
 	 * @param {String} messageSettingId Message Settings ID
 	 * @param {Object} body MessagingSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchMessagingSetting(messageSettingId, body) { 
+	patchMessagingSetting(messageSettingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageSettingId' is set
 		if (messageSettingId === undefined || messageSettingId === null || messageSettingId === '') {
 			throw 'Missing the required parameter "messageSettingId" when calling patchMessagingSetting';
@@ -245,7 +283,8 @@ class MessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -254,9 +293,13 @@ class MessagingApi {
 	 * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
 	 * @param {Object} body SupportedContent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
+	patchMessagingSupportedcontentSupportedContentId(supportedContentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'supportedContentId' is set
 		if (supportedContentId === undefined || supportedContentId === null || supportedContentId === '') {
 			throw 'Missing the required parameter "supportedContentId" when calling patchMessagingSupportedcontentSupportedContentId';
@@ -276,7 +319,8 @@ class MessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -284,9 +328,13 @@ class MessagingApi {
 	 * Create a messaging setting
 	 * 
 	 * @param {Object} body MessagingSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postMessagingSettings(body) { 
+	postMessagingSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postMessagingSettings';
@@ -302,7 +350,8 @@ class MessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -310,9 +359,13 @@ class MessagingApi {
 	 * Create a Supported Content profile
 	 * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 	 * @param {Object} body SupportedContent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postMessagingSupportedcontent(body) { 
+	postMessagingSupportedcontent(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postMessagingSupportedcontent';
@@ -328,7 +381,8 @@ class MessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -336,9 +390,13 @@ class MessagingApi {
 	 * Set the organization's default settings that may be applied to an integration when it is created.
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be applied to it.
 	 * @param {Object} body Messaging Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putMessagingSettingsDefault(body) { 
+	putMessagingSettingsDefault(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putMessagingSettingsDefault';
@@ -354,7 +412,8 @@ class MessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

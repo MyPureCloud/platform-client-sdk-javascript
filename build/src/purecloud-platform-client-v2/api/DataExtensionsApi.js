@@ -5,7 +5,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class DataExtensionsApi {
 	 * Get a specific named core type.
 	 * 
 	 * @param {Object} coretypeName The core type's name
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDataextensionsCoretype(coretypeName) { 
+	getDataextensionsCoretype(coretypeName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'coretypeName' is set
 		if (coretypeName === undefined || coretypeName === null || coretypeName === '') {
 			throw 'Missing the required parameter "coretypeName" when calling getDataextensionsCoretype';
@@ -41,15 +45,20 @@ class DataExtensionsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the core types from which all schemas are built.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDataextensionsCoretypes() { 
+	getDataextensionsCoretypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/dataextensions/coretypes', 
@@ -61,15 +70,20 @@ class DataExtensionsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get quantitative limits on schemas
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDataextensionsLimits() { 
+	getDataextensionsLimits(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/dataextensions/limits', 
@@ -81,7 +95,8 @@ class DataExtensionsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

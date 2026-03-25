@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class OAuthApi {
 	 * Delete OAuth Client
 	 * 
 	 * @param {String} clientId Client ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOauthClient(clientId) { 
+	deleteOauthClient(clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling deleteOauthClient';
@@ -41,7 +45,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,6 +56,7 @@ class OAuthApi {
 	 * @param {String} clientId The ID of client
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOauthAuthorization(clientId, opts) { 
 		opts = opts || {};
@@ -70,7 +76,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -79,6 +86,7 @@ class OAuthApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOauthAuthorizations(opts) { 
 		opts = opts || {};
@@ -94,7 +102,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -102,8 +111,12 @@ class OAuthApi {
 	 * Get OAuth Client
 	 * 
 	 * @param {String} clientId Client ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOauthClient(clientId) { 
+	getOauthClient(clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getOauthClient';
@@ -119,7 +132,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -128,8 +142,12 @@ class OAuthApi {
 	 * 
 	 * @param {String} executionId ID of the query execution
 	 * @param {String} clientId Client ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOauthClientUsageQueryResult(executionId, clientId) { 
+	getOauthClientUsageQueryResult(executionId, clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'executionId' is set
 		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
@@ -149,7 +167,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -159,6 +178,7 @@ class OAuthApi {
 	 * @param {String} clientId Client ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.days Previous number of days to query (default to 7)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOauthClientUsageSummary(clientId, opts) { 
 		opts = opts || {};
@@ -178,15 +198,20 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * The list of OAuth clients
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOauthClients() { 
+	getOauthClients(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients', 
@@ -198,7 +223,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -208,6 +234,7 @@ class OAuthApi {
 	 * @param {String} scopeId Scope ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.acceptLanguage The language with which to display the scope description. (default to en-us)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOauthScope(scopeId, opts) { 
 		opts = opts || {};
@@ -227,7 +254,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -236,6 +264,7 @@ class OAuthApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.acceptLanguage The language with which to display the scope descriptions. (default to en-us)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOauthScopes(opts) { 
 		opts = opts || {};
@@ -251,7 +280,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -259,8 +289,12 @@ class OAuthApi {
 	 * Regenerate Client Secret
 	 * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
 	 * @param {String} clientId Client ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOauthClientSecret(clientId) { 
+	postOauthClientSecret(clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postOauthClientSecret';
@@ -276,7 +310,8 @@ class OAuthApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -285,8 +320,12 @@ class OAuthApi {
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
 	 * @param {Object} body Query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOauthClientUsageQuery(clientId, body) { 
+	postOauthClientUsageQuery(clientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
@@ -306,7 +345,8 @@ class OAuthApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -314,8 +354,12 @@ class OAuthApi {
 	 * Create OAuth client
 	 * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is CODE which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the TOKEN grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the CLIENT-CREDENTIALS grant may be used. In this case the client must be granted roles  via the roleIds field.
 	 * @param {Object} body Client
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOauthClients(body) { 
+	postOauthClients(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOauthClients';
@@ -331,7 +375,8 @@ class OAuthApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -340,8 +385,12 @@ class OAuthApi {
 	 * 
 	 * @param {String} clientId Client ID
 	 * @param {Object} body Client
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOauthClient(clientId, body) { 
+	putOauthClient(clientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling putOauthClient';
@@ -361,7 +410,8 @@ class OAuthApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -23,8 +23,12 @@ class SettingsApi {
 	/**
 	 * Reset email threading settings to default
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteEmailsSettingsThreading() { 
+	deleteEmailsSettingsThreading(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings/threading', 
@@ -36,15 +40,20 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteExternalcontactsSettings() { 
+	deleteExternalcontactsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/settings', 
@@ -56,7 +65,8 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -64,8 +74,12 @@ class SettingsApi {
 	 * Delete agent auto answer settings
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
+	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling deleteUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -81,15 +95,20 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get email Contact Center settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getEmailsSettings() { 
+	getEmailsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings', 
@@ -101,15 +120,20 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get email threading settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getEmailsSettingsThreading() { 
+	getEmailsSettingsThreading(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings/threading', 
@@ -121,15 +145,20 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getExternalcontactsSettings() { 
+	getExternalcontactsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/settings', 
@@ -141,15 +170,20 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the execution history enabled setting.
 	 * Get the execution history enabled setting.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSettingsExecutiondata() { 
+	getSettingsExecutiondata(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/settings/executiondata', 
@@ -161,7 +195,8 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -169,8 +204,12 @@ class SettingsApi {
 	 * Get agent auto answer settings
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
+	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -186,7 +225,8 @@ class SettingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -195,6 +235,7 @@ class SettingsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchEmailsSettings(opts) { 
 		opts = opts || {};
@@ -210,7 +251,8 @@ class SettingsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -219,6 +261,7 @@ class SettingsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchEmailsSettingsThreading(opts) { 
 		opts = opts || {};
@@ -234,7 +277,8 @@ class SettingsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -242,8 +286,12 @@ class SettingsApi {
 	 * Edit the execution history on off setting.
 	 * Edit the execution history on off setting.
 	 * @param {Object} body New Execution Data Setting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchSettingsExecutiondata(body) { 
+	patchSettingsExecutiondata(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchSettingsExecutiondata';
@@ -259,7 +307,8 @@ class SettingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -268,8 +317,12 @@ class SettingsApi {
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
 	 * @param {Object} body AutoAnswerSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
+	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling patchUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -289,7 +342,8 @@ class SettingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -298,6 +352,7 @@ class SettingsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putExternalcontactsSettings(opts) { 
 		opts = opts || {};
@@ -313,7 +368,8 @@ class SettingsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -322,8 +378,12 @@ class SettingsApi {
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
 	 * @param {Object} body AutoAnswerSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
+	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -343,7 +403,8 @@ class SettingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

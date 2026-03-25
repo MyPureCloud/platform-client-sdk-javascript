@@ -5,7 +5,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class GreetingsApi {
 	 * Deletes a Greeting with the given GreetingId
 	 * 
 	 * @param {String} greetingId Greeting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteGreeting(greetingId) { 
+	deleteGreeting(greetingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling deleteGreeting';
@@ -41,7 +45,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class GreetingsApi {
 	 * Get a Greeting with the given GreetingId
 	 * 
 	 * @param {String} greetingId Greeting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGreeting(greetingId) { 
+	getGreeting(greetingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling getGreeting';
@@ -66,7 +75,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -76,6 +86,7 @@ class GreetingsApi {
 	 * @param {String} greetingId Greeting ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGreetingDownloads(greetingId, opts) { 
 		opts = opts || {};
@@ -95,7 +106,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,6 +117,7 @@ class GreetingsApi {
 	 * @param {String} greetingId Greeting ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGreetingGroupsDownloads(greetingId, opts) { 
 		opts = opts || {};
@@ -124,7 +137,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -134,6 +148,7 @@ class GreetingsApi {
 	 * @param {String} greetingId Greeting ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGreetingMedia(greetingId, opts) { 
 		opts = opts || {};
@@ -153,7 +168,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -163,6 +179,7 @@ class GreetingsApi {
 	 * @param {String} greetingId Greeting ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WAV)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGreetingUsersDownloads(greetingId, opts) { 
 		opts = opts || {};
@@ -182,7 +199,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -192,6 +210,7 @@ class GreetingsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGreetings(opts) { 
 		opts = opts || {};
@@ -207,15 +226,20 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get an Organization's DefaultGreetingList
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGreetingsDefaults() { 
+	getGreetingsDefaults(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/greetings/defaults', 
@@ -227,7 +251,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -238,6 +263,7 @@ class GreetingsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGroupGreetings(groupId, opts) { 
 		opts = opts || {};
@@ -257,7 +283,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -265,8 +292,12 @@ class GreetingsApi {
 	 * Grabs the list of Default Greetings given a Group's ID
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGroupGreetingsDefaults(groupId) { 
+	getGroupGreetingsDefaults(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupGreetingsDefaults';
@@ -282,7 +313,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -293,6 +325,7 @@ class GreetingsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserGreetings(userId, opts) { 
 		opts = opts || {};
@@ -312,7 +345,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -320,8 +354,12 @@ class GreetingsApi {
 	 * Grabs the list of Default Greetings given a User's ID
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserGreetingsDefaults(userId) { 
+	getUserGreetingsDefaults(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGreetingsDefaults';
@@ -337,7 +375,8 @@ class GreetingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -345,8 +384,12 @@ class GreetingsApi {
 	 * Create a Greeting for an Organization
 	 * 
 	 * @param {Object} body The Greeting to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGreetings(body) { 
+	postGreetings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGreetings';
@@ -362,7 +405,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -371,8 +415,12 @@ class GreetingsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body The Greeting to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGroupGreetings(groupId, body) { 
+	postGroupGreetings(groupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling postGroupGreetings';
@@ -392,7 +440,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -401,8 +450,12 @@ class GreetingsApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body The Greeting to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserGreetings(userId, body) { 
+	postUserGreetings(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserGreetings';
@@ -422,7 +475,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -431,8 +485,12 @@ class GreetingsApi {
 	 * 
 	 * @param {String} greetingId Greeting ID
 	 * @param {Object} body The updated Greeting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putGreeting(greetingId, body) { 
+	putGreeting(greetingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null || greetingId === '') {
 			throw 'Missing the required parameter "greetingId" when calling putGreeting';
@@ -452,7 +510,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -460,8 +519,12 @@ class GreetingsApi {
 	 * Update an Organization's DefaultGreetingList
 	 * 
 	 * @param {Object} body The updated defaultGreetingList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putGreetingsDefaults(body) { 
+	putGreetingsDefaults(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putGreetingsDefaults';
@@ -477,7 +540,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -486,8 +550,12 @@ class GreetingsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body The updated defaultGreetingList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putGroupGreetingsDefaults(groupId, body) { 
+	putGroupGreetingsDefaults(groupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putGroupGreetingsDefaults';
@@ -507,7 +575,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -516,8 +585,12 @@ class GreetingsApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body The updated defaultGreetingList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserGreetingsDefaults(userId, body) { 
+	putUserGreetingsDefaults(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserGreetingsDefaults';
@@ -537,7 +610,8 @@ class GreetingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

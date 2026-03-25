@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteWebmessagingDeploymentPushdevice
 
-> void deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId)
+> void deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId, opts)
 
 
 DELETE /api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}
@@ -36,8 +36,14 @@ let apiInstance = new platformClient.WebMessagingApi();
 
 let deploymentId = "deploymentId_example"; // String | WebMessaging deployment id
 let tokenId = "tokenId_example"; // String | Device token id or cookie id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId)
+apiInstance.deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId, opts)
   .then(() => {
     console.log('deleteWebmessagingDeploymentPushdevice returned successfully.');
   })
@@ -54,6 +60,7 @@ apiInstance.deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | WebMessaging deployment id |  |
  **tokenId** | **String** | Device token id or cookie id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -83,7 +90,11 @@ let apiInstance = new platformClient.WebMessagingApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebmessagingMessages(opts)
@@ -103,6 +114,7 @@ apiInstance.getWebmessagingMessages(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -111,7 +123,7 @@ apiInstance.getWebmessagingMessages(opts)
 
 ## patchWebmessagingDeploymentPushdevice
 
-> void patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body)
+> void patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body, opts)
 
 
 PATCH /api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}
@@ -133,8 +145,14 @@ let apiInstance = new platformClient.WebMessagingApi();
 let deploymentId = "deploymentId_example"; // String | WebMessaging deployment id
 let tokenId = "tokenId_example"; // String | Device token id or cookie id
 let body = {}; // Object | Request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body)
+apiInstance.patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body, opts)
   .then(() => {
     console.log('patchWebmessagingDeploymentPushdevice returned successfully.');
   })
@@ -152,6 +170,7 @@ apiInstance.patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body)
  **deploymentId** | **String** | WebMessaging deployment id |  |
  **tokenId** | **String** | Device token id or cookie id |  |
  **body** | **Object** | Request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -160,7 +179,7 @@ void (no response body)
 
 ## postWebmessagingDeploymentPushdevice
 
-> void postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body)
+> void postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body, opts)
 
 
 POST /api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}
@@ -182,8 +201,14 @@ let apiInstance = new platformClient.WebMessagingApi();
 let deploymentId = "deploymentId_example"; // String | WebMessaging deployment id
 let tokenId = "tokenId_example"; // String | Device token id or cookie id
 let body = {}; // Object | Request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body)
+apiInstance.postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body, opts)
   .then(() => {
     console.log('postWebmessagingDeploymentPushdevice returned successfully.');
   })
@@ -201,10 +226,11 @@ apiInstance.postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body)
  **deploymentId** | **String** | WebMessaging deployment id |  |
  **tokenId** | **String** | Device token id or cookie id |  |
  **body** | **Object** | Request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 void (no response body)
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class ScriptsApi {
 	 * Get a script
 	 * 
 	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScript(scriptId) { 
+	getScript(scriptId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScript';
@@ -41,7 +45,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -52,6 +57,7 @@ class ScriptsApi {
 	 * @param {String} pageId Page ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptPage(scriptId, pageId, opts) { 
 		opts = opts || {};
@@ -75,7 +81,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -85,6 +92,7 @@ class ScriptsApi {
 	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptPages(scriptId, opts) { 
 		opts = opts || {};
@@ -104,7 +112,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -122,6 +131,7 @@ class ScriptsApi {
 	 * @param {Object} opts.sortOrder SortOrder
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScripts(opts) { 
 		opts = opts || {};
@@ -137,7 +147,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -155,6 +166,7 @@ class ScriptsApi {
 	 * @param {Object} opts.sortOrder SortOrder
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsDivisionviews(opts) { 
 		opts = opts || {};
@@ -170,7 +182,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -186,6 +199,7 @@ class ScriptsApi {
 	 * @param {String} opts.flowId Secure flow id filter
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublished(opts) { 
 		opts = opts || {};
@@ -201,7 +215,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -214,6 +229,7 @@ class ScriptsApi {
 	 * @param {Object} opts.output output
 	 * @param {Object} opts.type type
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublishedDivisionviewVariables(scriptId, opts) { 
 		opts = opts || {};
@@ -233,7 +249,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -249,6 +266,7 @@ class ScriptsApi {
 	 * @param {String} opts.flowId Secure flow id filter
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublishedDivisionviews(opts) { 
 		opts = opts || {};
@@ -264,7 +282,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -274,6 +293,7 @@ class ScriptsApi {
 	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublishedScriptId(scriptId, opts) { 
 		opts = opts || {};
@@ -293,7 +313,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -304,6 +325,7 @@ class ScriptsApi {
 	 * @param {String} pageId Page ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublishedScriptIdPage(scriptId, pageId, opts) { 
 		opts = opts || {};
@@ -327,7 +349,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -337,6 +360,7 @@ class ScriptsApi {
 	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublishedScriptIdPages(scriptId, opts) { 
 		opts = opts || {};
@@ -356,7 +380,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -369,6 +394,7 @@ class ScriptsApi {
 	 * @param {Object} opts.output output
 	 * @param {Object} opts.type type
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsPublishedScriptIdVariables(scriptId, opts) { 
 		opts = opts || {};
@@ -388,7 +414,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -398,6 +425,7 @@ class ScriptsApi {
 	 * @param {String} uploadId Upload ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.longPoll Enable longPolling endpoint (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScriptsUploadStatus(uploadId, opts) { 
 		opts = opts || {};
@@ -417,7 +445,8 @@ class ScriptsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -427,6 +456,7 @@ class ScriptsApi {
 	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postScriptExport(scriptId, opts) { 
 		opts = opts || {};
@@ -446,7 +476,8 @@ class ScriptsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -456,6 +487,7 @@ class ScriptsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 * @param {Object} opts.body body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postScriptsPublished(opts) { 
 		opts = opts || {};
@@ -471,7 +503,8 @@ class ScriptsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

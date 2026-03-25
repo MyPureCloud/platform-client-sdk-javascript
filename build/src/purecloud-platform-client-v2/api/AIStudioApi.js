@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class AIStudioApi {
 	 * Delete a summary setting.
 	 * 
 	 * @param {String} summarySettingId Summary setting id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationsSummariesSetting(summarySettingId) { 
+	deleteConversationsSummariesSetting(summarySettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'summarySettingId' is set
 		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
 			throw 'Missing the required parameter "summarySettingId" when calling deleteConversationsSummariesSetting';
@@ -41,7 +45,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class AIStudioApi {
 	 * Start the deletion of a guide.
 	 * 
 	 * @param {String} guideId Guide ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteGuideJobs(guideId) { 
+	deleteGuideJobs(guideId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling deleteGuideJobs';
@@ -66,7 +75,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class AIStudioApi {
 	 * Receive a summary setting.
 	 * 
 	 * @param {String} summarySettingId Summary setting id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationsSummariesSetting(summarySettingId) { 
+	getConversationsSummariesSetting(summarySettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'summarySettingId' is set
 		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
 			throw 'Missing the required parameter "summarySettingId" when calling getConversationsSummariesSetting';
@@ -91,7 +105,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,6 +120,7 @@ class AIStudioApi {
 	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
 	 * @param {Number} opts.pageNumber Page number. (default to 1)
 	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsSummariesSettings(opts) { 
 		opts = opts || {};
@@ -120,7 +136,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -128,8 +145,12 @@ class AIStudioApi {
 	 * Get guide.
 	 * 
 	 * @param {String} guideId Guide ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuide(guideId) { 
+	getGuide(guideId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuide';
@@ -145,7 +166,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -154,8 +176,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuideJob(guideId, jobId) { 
+	getGuideJob(guideId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideJob';
@@ -175,7 +201,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -184,8 +211,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuideVersion(guideId, versionId) { 
+	getGuideVersion(guideId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideVersion';
@@ -205,7 +236,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -215,8 +247,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuideVersionJob(guideId, versionId, jobId) { 
+	getGuideVersionJob(guideId, versionId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideVersionJob';
@@ -240,7 +276,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -255,6 +292,7 @@ class AIStudioApi {
 	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
 	 * @param {Number} opts.pageNumber Page number. (default to 1)
 	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGuides(opts) { 
 		opts = opts || {};
@@ -270,7 +308,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -278,8 +317,12 @@ class AIStudioApi {
 	 * Get the status of the guide content generation job.
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuidesJob(jobId) { 
+	getGuidesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getGuidesJob';
@@ -295,7 +338,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -304,8 +348,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchGuide(guideId, body) { 
+	patchGuide(guideId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling patchGuide';
@@ -325,7 +373,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -335,8 +384,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchGuideVersion(guideId, versionId, body) { 
+	patchGuideVersion(guideId, versionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling patchGuideVersion';
@@ -360,7 +413,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -368,8 +422,12 @@ class AIStudioApi {
 	 * Trigger summary preview event generation.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsSummariesPreview(body) { 
+	postConversationsSummariesPreview(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsSummariesPreview';
@@ -385,7 +443,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -393,8 +452,12 @@ class AIStudioApi {
 	 * Create a summary setting.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsSummariesSettings(body) { 
+	postConversationsSummariesSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsSummariesSettings';
@@ -410,7 +473,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -420,8 +484,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} guideSessionId Guide Session ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuideSessionTurns(guideId, guideSessionId, body) { 
+	postGuideSessionTurns(guideId, guideSessionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling postGuideSessionTurns';
@@ -445,7 +513,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -455,8 +524,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuideVersionJobs(guideId, versionId, body) { 
+	postGuideVersionJobs(guideId, versionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling postGuideVersionJobs';
@@ -480,7 +553,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -490,6 +564,7 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postGuideVersions(guideId, opts) { 
 		opts = opts || {};
@@ -509,7 +584,8 @@ class AIStudioApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -517,8 +593,12 @@ class AIStudioApi {
 	 * Create a guide.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuides(body) { 
+	postGuides(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGuides';
@@ -534,7 +614,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -542,8 +623,12 @@ class AIStudioApi {
 	 * Start a guide content generation job.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuidesJobs(body) { 
+	postGuidesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGuidesJobs';
@@ -559,7 +644,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -567,8 +653,12 @@ class AIStudioApi {
 	 * Generate presigned URL for uploading a file content to generate guide
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuidesUploads(body) { 
+	postGuidesUploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGuidesUploads';
@@ -584,7 +674,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -593,8 +684,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} summarySettingId Summary setting id
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationsSummariesSetting(summarySettingId, body) { 
+	putConversationsSummariesSetting(summarySettingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'summarySettingId' is set
 		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
 			throw 'Missing the required parameter "summarySettingId" when calling putConversationsSummariesSetting';
@@ -614,7 +709,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

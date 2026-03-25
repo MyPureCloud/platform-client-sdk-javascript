@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -25,8 +25,12 @@ class UploadsApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} jobId Upload job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
+	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
@@ -46,7 +50,8 @@ class UploadsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -54,8 +59,12 @@ class UploadsApi {
 	 * Generates pre-signed URL to upload a prize image for gamification contests
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationContestsUploadsPrizeimages(body) { 
+	postGamificationContestsUploadsPrizeimages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGamificationContestsUploadsPrizeimages';
@@ -71,7 +80,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -79,8 +89,12 @@ class UploadsApi {
 	 * Generate presigned URL for uploading a file content to generate guide
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuidesUploads(body) { 
+	postGuidesUploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGuidesUploads';
@@ -96,7 +110,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,8 +120,12 @@ class UploadsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to request URL upload.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
+	postIntegrationsActionDraftFunctionUpload(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftFunctionUpload';
@@ -126,7 +145,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -134,8 +154,12 @@ class UploadsApi {
 	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeDocumentuploads(body) { 
+	postKnowledgeDocumentuploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
@@ -151,7 +175,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -160,8 +185,12 @@ class UploadsApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body uploadRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
@@ -181,7 +210,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -190,8 +220,12 @@ class UploadsApi {
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingMinerUploads(minerId, body) { 
+	postLanguageunderstandingMinerUploads(minerId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerUploads';
@@ -211,7 +245,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -219,8 +254,12 @@ class UploadsApi {
 	 * Generates pre-signed URL to upload cover art for learning modules
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUploadsLearningCoverart(body) { 
+	postUploadsLearningCoverart(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUploadsLearningCoverart';
@@ -236,7 +275,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -244,8 +284,12 @@ class UploadsApi {
 	 * Creates presigned url for uploading a public asset image
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUploadsPublicassetsImages(body) { 
+	postUploadsPublicassetsImages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUploadsPublicassetsImages';
@@ -261,7 +305,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -269,8 +314,12 @@ class UploadsApi {
 	 * Creates presigned url for uploading a recording file
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUploadsRecordings(body) { 
+	postUploadsRecordings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUploadsRecordings';
@@ -286,7 +335,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -294,8 +344,12 @@ class UploadsApi {
 	 * Creates presigned url for uploading WFM historical data file. Requires data in csv format.
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUploadsWorkforcemanagementHistoricaldataCsv(body) { 
+	postUploadsWorkforcemanagementHistoricaldataCsv(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';
@@ -311,7 +365,8 @@ class UploadsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class UsersRulesApi {
 	 * Delete an existing users rule
 	 * 
 	 * @param {String} ruleId The id of the rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUsersRule(ruleId) { 
+	deleteUsersRule(ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteUsersRule';
@@ -41,7 +45,8 @@ class UsersRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class UsersRulesApi {
 	 * Get a users rule
 	 * 
 	 * @param {String} ruleId The ID of the rule to retrieve
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsersRule(ruleId) { 
+	getUsersRule(ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getUsersRule';
@@ -66,7 +75,8 @@ class UsersRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -76,8 +86,12 @@ class UsersRulesApi {
 	 * @param {String} ruleId The ID of the rule for which to retrieve dependents
 	 * @param {Object} ruleType The type of the dependent
 	 * @param {String} typeId The type ID of the dependent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsersRuleDependentTypeId(ruleId, ruleType, typeId) { 
+	getUsersRuleDependentTypeId(ruleId, ruleType, typeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getUsersRuleDependentTypeId';
@@ -101,7 +115,8 @@ class UsersRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -113,6 +128,7 @@ class UsersRulesApi {
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order for dependents (by last run date, then created date) (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersRuleDependents(ruleId, opts) { 
 		opts = opts || {};
@@ -132,7 +148,8 @@ class UsersRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -147,6 +164,7 @@ class UsersRulesApi {
 	 * @param {Boolean} opts.enabled Whether to list enabled or disabled rules
 	 * @param {String} opts.searchTerm a search term for finding a rule by name
 	 * @param {Object} opts.sortOrder sort rules by name, ascending, descending (default to ascending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersRules(types, opts) { 
 		opts = opts || {};
@@ -166,7 +184,8 @@ class UsersRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,8 +193,12 @@ class UsersRulesApi {
 	 * Get the settings for a specific users rule type
 	 * 
 	 * @param {Object} ruleType The type of the rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsersRulesSetting(ruleType) { 
+	getUsersRulesSetting(ruleType, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleType' is set
 		if (ruleType === undefined || ruleType === null || ruleType === '') {
 			throw 'Missing the required parameter "ruleType" when calling getUsersRulesSetting';
@@ -191,7 +214,8 @@ class UsersRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -200,8 +224,12 @@ class UsersRulesApi {
 	 * This will update an existing users rule with the specified fields.
 	 * @param {String} ruleId The ID of the rule to update
 	 * @param {Object} body updateRuleRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUsersRule(ruleId, body) { 
+	patchUsersRule(ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling patchUsersRule';
@@ -221,7 +249,8 @@ class UsersRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -229,8 +258,12 @@ class UsersRulesApi {
 	 * Create a new rule
 	 * This will create a new rule with the specified fields.
 	 * @param {Object} body usersRulesCreateRuleRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersRules(body) { 
+	postUsersRules(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersRules';
@@ -246,7 +279,8 @@ class UsersRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -257,6 +291,7 @@ class UsersRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Number of results per page (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postUsersRulesQuery(body, opts) { 
 		opts = opts || {};
@@ -276,7 +311,8 @@ class UsersRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

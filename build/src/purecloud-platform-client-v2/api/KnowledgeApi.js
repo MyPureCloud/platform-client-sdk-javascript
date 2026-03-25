@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class KnowledgeApi {
 	 * Delete connection
 	 * 
 	 * @param {String} connectionId Connection ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeConnection(connectionId) { 
+	deleteKnowledgeConnection(connectionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'connectionId' is set
 		if (connectionId === undefined || connectionId === null || connectionId === '') {
 			throw 'Missing the required parameter "connectionId" when calling deleteKnowledgeConnection';
@@ -41,7 +45,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class KnowledgeApi {
 	 * Delete knowledge base
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebase(knowledgeBaseId) { 
+	deleteKnowledgeKnowledgebase(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebase';
@@ -66,7 +75,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -75,8 +85,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} categoryId Category ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId) { 
+	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseCategory';
@@ -96,7 +110,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,8 +120,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID.
 	 * @param {String} documentId Document ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId) { 
+	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseDocument';
@@ -126,7 +145,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -136,8 +156,12 @@ class KnowledgeApi {
 	 * @param {String} documentVariationId Globally unique identifier for a document variation.
 	 * @param {String} documentId Globally unique identifier for a document.
 	 * @param {String} knowledgeBaseId Globally unique identifier for a knowledge base.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId) { 
+	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'documentVariationId' is set
 		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
@@ -161,7 +185,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -170,8 +195,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} exportJobId Export job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId) { 
+	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseExportJob';
@@ -191,7 +220,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -200,8 +230,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} importJobId Import job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId) { 
+	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseImportJob';
@@ -221,7 +255,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -230,8 +265,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} labelId Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId) { 
+	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLabel';
@@ -251,7 +290,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -260,8 +300,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId) { 
+	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
@@ -281,7 +325,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -290,8 +335,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId) { 
+	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
@@ -311,7 +360,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -320,8 +370,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} syncJobId Synchronization job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
@@ -341,7 +395,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -349,8 +404,12 @@ class KnowledgeApi {
 	 * Delete Knowledge setting.
 	 * 
 	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeSetting(knowledgeSettingId) { 
+	deleteKnowledgeSetting(knowledgeSettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeSettingId' is set
 		if (knowledgeSettingId === undefined || knowledgeSettingId === null || knowledgeSettingId === '') {
 			throw 'Missing the required parameter "knowledgeSettingId" when calling deleteKnowledgeSetting';
@@ -366,7 +425,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -374,8 +434,12 @@ class KnowledgeApi {
 	 * Delete source
 	 * 
 	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteKnowledgeSource(sourceId) { 
+	deleteKnowledgeSource(sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeSource';
@@ -391,7 +455,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -401,6 +466,7 @@ class KnowledgeApi {
 	 * @param {String} connectionId Connection ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeConnection(connectionId, opts) { 
 		opts = opts || {};
@@ -420,7 +486,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -430,6 +497,7 @@ class KnowledgeApi {
 	 * @param {String} connectionId Connection ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.parentId The id of the parent option whose children to be listed.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeConnectionOptions(connectionId, opts) { 
 		opts = opts || {};
@@ -449,15 +517,20 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get connections
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeConnections() { 
+	getKnowledgeConnections(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/connections', 
@@ -469,7 +542,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -487,6 +561,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.sortBy Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically (default to Name)
 	 * @param {String} opts.expand The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
 	 * @param {Boolean} opts.includeDocumentCount If specified, retrieves the number of documents related to category.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeGuestSessionCategories(sessionId, opts) { 
 		opts = opts || {};
@@ -506,7 +581,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -515,8 +591,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeGuestSessionDocument(sessionId, documentId) { 
+	getKnowledgeGuestSessionDocument(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocument';
@@ -536,7 +616,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -547,6 +628,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.categoryId If specified, retrieves documents associated with category ids, comma separated values expected.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeGuestSessionDocuments(sessionId, opts) { 
 		opts = opts || {};
@@ -566,7 +648,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -576,6 +659,7 @@ class KnowledgeApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.knowledgeBaseIds Narrowing down filtering option results by knowledge base.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeIntegrationOptions(integrationId, opts) { 
 		opts = opts || {};
@@ -595,7 +679,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -603,8 +688,12 @@ class KnowledgeApi {
 	 * Get knowledge base
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebase(knowledgeBaseId) { 
+	getKnowledgeKnowledgebase(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebase';
@@ -620,7 +709,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -638,6 +728,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.sortBy Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically (default to Name)
 	 * @param {String} opts.expand The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
 	 * @param {Boolean} opts.includeDocumentCount If specified, retrieves the number of documents related to category.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseCategories(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -657,7 +748,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -666,8 +758,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} categoryId Category ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId) { 
+	getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseCategory';
@@ -687,7 +783,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -699,6 +796,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20.
 	 * @param {Object} opts.state when state is Draft, draft version of the document is returned,otherwise by default published version is returned in the response.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -722,7 +820,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -743,6 +842,7 @@ class KnowledgeApi {
 	 * @param {String} opts.userId The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
 	 * @param {String} opts.queueId Queue ID to filter by. Supported only if onlyCommented=true is set.
 	 * @param {Object} opts.state State to filter by. Supported only if onlyCommented=true is set. Default: Final
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -766,7 +866,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -776,8 +877,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID.
 	 * @param {String} documentId Document ID.
 	 * @param {String} feedbackId Feedback ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId) { 
+	getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
@@ -801,7 +906,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -814,6 +920,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.documentState The state of the document.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -841,7 +948,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -856,6 +964,7 @@ class KnowledgeApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.documentState The state of the document.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -879,7 +988,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -891,6 +1001,7 @@ class KnowledgeApi {
 	 * @param {String} versionId Globally unique identifier for the document version.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, opts) { 
 		opts = opts || {};
@@ -918,7 +1029,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -929,8 +1041,12 @@ class KnowledgeApi {
 	 * @param {String} documentId Globally unique identifier for the document.
 	 * @param {String} versionId Globally unique identifier for the document version.
 	 * @param {String} variationId Globally unique identifier for the document version variation.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId) { 
+	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
@@ -958,7 +1074,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -972,6 +1089,7 @@ class KnowledgeApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, opts) { 
 		opts = opts || {};
@@ -999,7 +1117,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1013,6 +1132,7 @@ class KnowledgeApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -1036,7 +1156,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1056,6 +1177,7 @@ class KnowledgeApi {
 	 * @param {Array.<String>} opts.labelIds If specified, retrieves documents associated with label ids, comma separated values expected.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 * @param {Array.<String>} opts.externalIds If specified, retrieves documents associated with external ids, comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1075,7 +1197,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1084,8 +1207,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} exportJobId Export job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId) { 
+	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseExportJob';
@@ -1105,7 +1232,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1116,6 +1244,7 @@ class KnowledgeApi {
 	 * @param {String} importJobId Import job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opts) { 
 		opts = opts || {};
@@ -1139,7 +1268,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1148,8 +1278,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} labelId Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId) { 
+	getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLabel';
@@ -1169,7 +1303,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1183,6 +1318,7 @@ class KnowledgeApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the labels that contains the given phrase in the name.
 	 * @param {Boolean} opts.includeDocumentCount If specified, retrieves the number of documents related to label.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseLabels(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1202,7 +1338,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1219,6 +1356,7 @@ class KnowledgeApi {
 	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
 	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
 	 * @param {Array.<String>} opts.sourceId If specified, retrieves operations associated with source ids, comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1238,7 +1376,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1246,8 +1385,12 @@ class KnowledgeApi {
 	 * Get ids of operation creator users and oauth clients
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
+	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperationsUsersQuery';
@@ -1263,7 +1406,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1274,6 +1418,7 @@ class KnowledgeApi {
 	 * @param {String} parseJobId Parse job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts) { 
 		opts = opts || {};
@@ -1297,7 +1442,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1309,6 +1455,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.type If specified, retrieves integration sources with specified integration type.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 * @param {Array.<String>} opts.ids If specified, retrieves integration sources with specified IDs.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1328,7 +1475,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1339,6 +1487,7 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts) { 
 		opts = opts || {};
@@ -1362,7 +1511,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1373,6 +1523,7 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts) { 
 		opts = opts || {};
@@ -1396,7 +1547,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1405,8 +1557,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} syncJobId Synchronization job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
@@ -1426,7 +1582,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1439,6 +1596,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.app The app value to be used for filtering phrases.
 	 * @param {String} opts.dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts) { 
 		opts = opts || {};
@@ -1462,7 +1620,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1476,6 +1635,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.app The app value to be used for filtering phrases.
 	 * @param {String} opts.dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, opts) { 
 		opts = opts || {};
@@ -1503,7 +1663,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1515,6 +1676,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.app The app value to be used for filtering phrases.
 	 * @param {String} opts.dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1534,7 +1696,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1543,8 +1706,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} jobId Upload job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
+	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
@@ -1564,7 +1731,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1581,6 +1749,7 @@ class KnowledgeApi {
 	 * @param {Boolean} opts.published Filter by published status.
 	 * @param {Object} opts.sortBy Sort by.
 	 * @param {Object} opts.sortOrder Sort Order.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeKnowledgebases(opts) { 
 		opts = opts || {};
@@ -1596,7 +1765,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1604,8 +1774,12 @@ class KnowledgeApi {
 	 * Get Knowledge setting.
 	 * 
 	 * @param {String} knowledgeSettingId Knowledge Setting ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeSetting(knowledgeSettingId) { 
+	getKnowledgeSetting(knowledgeSettingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeSettingId' is set
 		if (knowledgeSettingId === undefined || knowledgeSettingId === null || knowledgeSettingId === '') {
 			throw 'Missing the required parameter "knowledgeSettingId" when calling getKnowledgeSetting';
@@ -1621,7 +1795,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1636,6 +1811,7 @@ class KnowledgeApi {
 	 * @param {String} opts.sourceId Source ID to filter knowledge settings by.
 	 * @param {Object} opts.sortBy Field to sort the knowledge settings on.
 	 * @param {Object} opts.sortOrder Sorting order for knowledge settings.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeSettings(opts) { 
 		opts = opts || {};
@@ -1651,7 +1827,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1661,6 +1838,7 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Optional fields to expand for the Source.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeSource(sourceId, opts) { 
 		opts = opts || {};
@@ -1680,7 +1858,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1689,8 +1868,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} sourceId Source ID
 	 * @param {String} synchronizationId Synchronization ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getKnowledgeSourceSynchronization(sourceId, synchronizationId) { 
+	getKnowledgeSourceSynchronization(sourceId, synchronizationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getKnowledgeSourceSynchronization';
@@ -1710,7 +1893,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1722,6 +1906,7 @@ class KnowledgeApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeSourceSynchronizations(sourceId, opts) { 
 		opts = opts || {};
@@ -1741,7 +1926,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1750,6 +1936,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Optional fields to expand for the Source.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeSources(opts) { 
 		opts = opts || {};
@@ -1765,7 +1952,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1776,6 +1964,7 @@ class KnowledgeApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getKnowledgeSourcesSynchronizations(opts) { 
 		opts = opts || {};
@@ -1791,7 +1980,8 @@ class KnowledgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1801,6 +1991,7 @@ class KnowledgeApi {
 	 * @param {String} connectionId Connection ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchKnowledgeConnection(connectionId, opts) { 
 		opts = opts || {};
@@ -1820,7 +2011,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1830,8 +2022,12 @@ class KnowledgeApi {
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {String} searchId Search Result ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body) { 
+	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling patchKnowledgeGuestSessionDocumentsSearchSearchId';
@@ -1855,7 +2051,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1864,8 +2061,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebase(knowledgeBaseId, body) { 
+	patchKnowledgeKnowledgebase(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebase';
@@ -1885,7 +2086,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1895,8 +2097,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} categoryId Category ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body) { 
+	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseCategory';
@@ -1920,7 +2126,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1931,6 +2138,7 @@ class KnowledgeApi {
 	 * @param {String} searchId Unique identifier of search request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchKnowledgeKnowledgebaseChunksSearchSearchId(knowledgeBaseId, searchId, opts) { 
 		opts = opts || {};
@@ -1954,7 +2162,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1964,8 +2173,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID.
 	 * @param {String} documentId Document ID.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body) { 
+	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocument';
@@ -1989,7 +2202,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2001,6 +2215,7 @@ class KnowledgeApi {
 	 * @param {String} feedbackId Feedback ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts) { 
 		opts = opts || {};
@@ -2028,7 +2243,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2039,8 +2255,12 @@ class KnowledgeApi {
 	 * @param {String} documentId Globally unique identifier for a document.
 	 * @param {String} knowledgeBaseId Globally unique identifier for a knowledge base.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body) { 
+	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'documentVariationId' is set
 		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
@@ -2068,7 +2288,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2079,6 +2300,7 @@ class KnowledgeApi {
 	 * @param {String} searchId Search Result ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, opts) { 
 		opts = opts || {};
@@ -2102,7 +2324,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2112,8 +2335,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} importJobId Import job ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body) { 
+	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseImportJob';
@@ -2137,7 +2364,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2147,8 +2375,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} labelId Label ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body) { 
+	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLabel';
@@ -2172,7 +2404,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2182,8 +2415,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} parseJobId Parse job ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body) { 
+	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseParseJob';
@@ -2207,7 +2444,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2217,8 +2455,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} syncJobId Synchronization job ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body) { 
+	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
@@ -2242,7 +2484,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2253,8 +2496,12 @@ class KnowledgeApi {
 	 * @param {String} groupId The ID of the group to be updated.
 	 * @param {String} phraseGroupId The ID of the phraseGroup to be updated.
 	 * @param {Object} body Request body of the update unanswered group endpoint.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body) { 
+	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
@@ -2282,7 +2529,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2291,8 +2539,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeSettingId Knowledge Setting ID.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeSetting(knowledgeSettingId, body) { 
+	patchKnowledgeSetting(knowledgeSettingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeSettingId' is set
 		if (knowledgeSettingId === undefined || knowledgeSettingId === null || knowledgeSettingId === '') {
 			throw 'Missing the required parameter "knowledgeSettingId" when calling patchKnowledgeSetting';
@@ -2312,7 +2564,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2322,8 +2575,12 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {String} synchronizationId Synchronization ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body) { 
+	patchKnowledgeSourceSynchronization(sourceId, synchronizationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling patchKnowledgeSourceSynchronization';
@@ -2347,7 +2604,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2355,8 +2613,12 @@ class KnowledgeApi {
 	 * Create new connection
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeConnections(body) { 
+	postKnowledgeConnections(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postKnowledgeConnections';
@@ -2372,7 +2634,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2380,8 +2643,12 @@ class KnowledgeApi {
 	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeDocumentuploads(body) { 
+	postKnowledgeDocumentuploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
@@ -2397,7 +2664,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2408,6 +2676,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts) { 
 		opts = opts || {};
@@ -2431,7 +2700,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2442,6 +2712,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opts) { 
 		opts = opts || {};
@@ -2465,7 +2736,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2476,6 +2748,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts) { 
 		opts = opts || {};
@@ -2499,7 +2772,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2508,8 +2782,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeGuestSessionDocumentsAnswers(sessionId, body) { 
+	postKnowledgeGuestSessionDocumentsAnswers(sessionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsAnswers';
@@ -2529,7 +2807,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2539,6 +2818,7 @@ class KnowledgeApi {
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts) { 
 		opts = opts || {};
@@ -2558,7 +2838,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2569,6 +2850,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeGuestSessionDocumentsSearch(sessionId, opts) { 
 		opts = opts || {};
@@ -2588,7 +2870,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2598,6 +2881,7 @@ class KnowledgeApi {
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, opts) { 
 		opts = opts || {};
@@ -2617,7 +2901,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2625,8 +2910,12 @@ class KnowledgeApi {
 	 * Create guest session
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeGuestSessions(body) { 
+	postKnowledgeGuestSessions(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postKnowledgeGuestSessions';
@@ -2642,7 +2931,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2651,8 +2941,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseCategories';
@@ -2672,7 +2966,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2682,6 +2977,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge Base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -2701,7 +2997,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2712,6 +3009,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -2735,7 +3033,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2746,6 +3045,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -2769,7 +3069,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2779,8 +3080,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Globally unique identifier for the knowledge base.
 	 * @param {String} documentId Globally unique identifier for the document.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body) { 
+	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentVariations';
@@ -2804,7 +3109,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2814,8 +3120,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Globally unique identifier for the knowledge base.
 	 * @param {String} documentId Globally unique identifier for the document.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body) { 
+	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentVersions';
@@ -2839,7 +3149,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2850,6 +3161,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -2873,7 +3185,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2882,8 +3195,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocuments';
@@ -2903,7 +3220,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2912,8 +3230,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsAnswers';
@@ -2933,7 +3255,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2942,8 +3265,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
@@ -2963,7 +3290,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2972,8 +3300,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
@@ -2993,7 +3325,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3003,6 +3336,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -3022,7 +3356,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3033,6 +3368,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -3052,7 +3388,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3063,6 +3400,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -3082,7 +3420,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3092,6 +3431,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId The ID of knowledge base containing the documents to query.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -3111,7 +3451,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3120,8 +3461,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
@@ -3141,7 +3486,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3150,8 +3496,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseExportJobs';
@@ -3171,7 +3521,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3180,8 +3531,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseImportJobs';
@@ -3201,7 +3556,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3210,8 +3566,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLabels';
@@ -3231,7 +3591,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3241,8 +3602,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} parseJobId Parse job ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body) { 
+	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobImport';
@@ -3266,7 +3631,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3275,8 +3641,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobs';
@@ -3296,7 +3666,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3305,8 +3676,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
@@ -3326,7 +3701,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3337,6 +3713,7 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, opts) { 
 		opts = opts || {};
@@ -3360,7 +3737,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3369,8 +3747,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenow';
@@ -3390,7 +3772,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3401,6 +3784,7 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, opts) { 
 		opts = opts || {};
@@ -3424,7 +3808,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3433,8 +3818,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
@@ -3454,7 +3843,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3463,8 +3853,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body uploadRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
+	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
@@ -3484,7 +3878,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3492,8 +3887,12 @@ class KnowledgeApi {
 	 * Create new knowledge base
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeKnowledgebases(body) { 
+	postKnowledgeKnowledgebases(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebases';
@@ -3509,7 +3908,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3518,6 +3918,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeSearch(opts) { 
 		opts = opts || {};
@@ -3533,7 +3934,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3542,6 +3944,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeSearchPreview(opts) { 
 		opts = opts || {};
@@ -3557,7 +3960,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3566,6 +3970,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeSettings(opts) { 
 		opts = opts || {};
@@ -3581,7 +3986,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3591,8 +3997,12 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {String} synchronizationId Synchronization ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body) { 
+	postKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling postKnowledgeSourceSynchronizationUploads';
@@ -3616,7 +4026,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3626,6 +4037,7 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postKnowledgeSourceSynchronizations(sourceId, opts) { 
 		opts = opts || {};
@@ -3645,7 +4057,8 @@ class KnowledgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3653,8 +4066,12 @@ class KnowledgeApi {
 	 * Create a new source
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postKnowledgeSources(body) { 
+	postKnowledgeSources(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postKnowledgeSources';
@@ -3670,7 +4087,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3680,8 +4098,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body) { 
+	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
@@ -3705,7 +4127,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3715,8 +4138,12 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body) { 
+	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
@@ -3740,7 +4167,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3749,8 +4177,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} sourceId Source ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putKnowledgeSource(sourceId, body) { 
+	putKnowledgeSource(sourceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling putKnowledgeSource';
@@ -3770,7 +4202,8 @@ class KnowledgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

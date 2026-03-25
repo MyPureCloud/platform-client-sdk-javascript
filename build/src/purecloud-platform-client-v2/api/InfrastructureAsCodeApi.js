@@ -5,7 +5,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -26,6 +26,7 @@ class InfrastructureAsCodeApi {
 	 * @param {String} acceleratorId Accelerator ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.preferredLanguage Preferred Language (default to en-US)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getInfrastructureascodeAccelerator(acceleratorId, opts) { 
 		opts = opts || {};
@@ -45,7 +46,8 @@ class InfrastructureAsCodeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -63,6 +65,7 @@ class InfrastructureAsCodeApi {
 	 * @param {Object} opts.type Filter by type
 	 * @param {String} opts.classification Filter by classification
 	 * @param {String} opts.tags Filter by tags
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getInfrastructureascodeAccelerators(opts) { 
 		opts = opts || {};
@@ -78,7 +81,8 @@ class InfrastructureAsCodeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -88,6 +92,7 @@ class InfrastructureAsCodeApi {
 	 * @param {String} jobId Job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.details Include details of execution, including job results or error information (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getInfrastructureascodeJob(jobId, opts) { 
 		opts = opts || {};
@@ -107,7 +112,8 @@ class InfrastructureAsCodeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -122,6 +128,7 @@ class InfrastructureAsCodeApi {
 	 * @param {String} opts.acceleratorId Find only jobs associated with this accelerator
 	 * @param {String} opts.submittedBy Find only jobs submitted by this user
 	 * @param {Object} opts.status Find only jobs in this state
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getInfrastructureascodeJobs(opts) { 
 		opts = opts || {};
@@ -137,7 +144,8 @@ class InfrastructureAsCodeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -145,8 +153,12 @@ class InfrastructureAsCodeApi {
 	 * Create a Job
 	 * Create and submit a job for remote execution or see job planning results.
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postInfrastructureascodeJobs(body) { 
+	postInfrastructureascodeJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postInfrastructureascodeJobs';
@@ -162,7 +174,8 @@ class InfrastructureAsCodeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

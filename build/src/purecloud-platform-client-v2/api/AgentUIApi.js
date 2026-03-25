@@ -5,7 +5,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class AgentUIApi {
 	 * Delete agent auto answer settings
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
+	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling deleteUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -41,7 +45,8 @@ class AgentUIApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class AgentUIApi {
 	 * Get agent auto answer settings
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
+	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -66,7 +75,8 @@ class AgentUIApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -75,8 +85,12 @@ class AgentUIApi {
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
 	 * @param {Object} body AutoAnswerSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
+	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling patchUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -96,7 +110,8 @@ class AgentUIApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,8 +120,12 @@ class AgentUIApi {
 	 * 
 	 * @param {String} agentId The agent to apply the auto answer settings to
 	 * @param {Object} body AutoAnswerSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
+	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling putUsersAgentuiAgentsAutoanswerAgentIdSettings';
@@ -126,7 +145,8 @@ class AgentUIApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

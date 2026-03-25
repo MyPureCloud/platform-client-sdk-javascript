@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class WebChatApi {
 	 * Delete a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteWebchatDeployment(deploymentId) { 
+	deleteWebchatDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';
@@ -42,7 +46,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,9 +56,13 @@ class WebChatApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteWebchatGuestConversationMember(conversationId, memberId) { 
+	deleteWebchatGuestConversationMember(conversationId, memberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';
@@ -73,16 +82,21 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Remove WebChat deployment settings
 	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteWebchatSettings() { 
+	deleteWebchatSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/webchat/settings', 
@@ -94,7 +108,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -102,9 +117,13 @@ class WebChatApi {
 	 * Get a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatDeployment(deploymentId) { 
+	getWebchatDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebchatDeployment';
@@ -120,16 +139,21 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * List WebChat deployments
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatDeployments() { 
+	getWebchatDeployments(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/webchat/deployments', 
@@ -141,7 +165,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -150,9 +175,13 @@ class WebChatApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {String} mediaRequestId mediaRequestId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId) { 
+	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';
@@ -172,7 +201,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -180,9 +210,13 @@ class WebChatApi {
 	 * Get all media requests to the guest in the conversation
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatGuestConversationMediarequests(conversationId) { 
+	getWebchatGuestConversationMediarequests(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';
@@ -198,7 +232,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -207,9 +242,13 @@ class WebChatApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatGuestConversationMember(conversationId, memberId) { 
+	getWebchatGuestConversationMember(conversationId, memberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';
@@ -229,7 +268,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -241,6 +281,7 @@ class WebChatApi {
 	 * @param {Number} opts.pageSize The number of entries to return per page, or omitted for the default. (default to 25)
 	 * @param {Number} opts.pageNumber The page number to return, or omitted for the first page. (default to 1)
 	 * @param {Boolean} opts.excludeDisconnectedMembers If true, the results will not contain members who have a DISCONNECTED state. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getWebchatGuestConversationMembers(conversationId, opts) { 
@@ -261,7 +302,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -270,9 +312,13 @@ class WebChatApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatGuestConversationMessage(conversationId, messageId) { 
+	getWebchatGuestConversationMessage(conversationId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';
@@ -292,7 +338,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -305,6 +352,7 @@ class WebChatApi {
 	 * @param {String} opts.before If available, get the messages chronologically before the id of this message
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getWebchatGuestConversationMessages(conversationId, opts) { 
@@ -325,16 +373,21 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get WebChat deployment settings
 	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWebchatSettings() { 
+	getWebchatSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/webchat/settings', 
@@ -346,7 +399,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -356,9 +410,13 @@ class WebChatApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} mediaRequestId mediaRequestId
 	 * @param {Object} body Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body) { 
+	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';
@@ -382,7 +440,8 @@ class WebChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -390,9 +449,13 @@ class WebChatApi {
 	 * Create WebChat deployment
 	 * 
 	 * @param {Object} body Deployment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postWebchatDeployments(body) { 
+	postWebchatDeployments(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWebchatDeployments';
@@ -408,7 +471,8 @@ class WebChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -418,9 +482,13 @@ class WebChatApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
 	 * @param {Object} body Message
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postWebchatGuestConversationMemberMessages(conversationId, memberId, body) { 
+	postWebchatGuestConversationMemberMessages(conversationId, memberId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';
@@ -444,7 +512,8 @@ class WebChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -453,9 +522,13 @@ class WebChatApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postWebchatGuestConversationMemberTyping(conversationId, memberId) { 
+	postWebchatGuestConversationMemberTyping(conversationId, memberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';
@@ -475,7 +548,8 @@ class WebChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -483,9 +557,13 @@ class WebChatApi {
 	 * Create an ACD chat conversation from an external customer.
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. This endpoint will create a new ACD Chat conversation under the specified Chat Deployment. The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the memberAuthToken field should include his JWT as generated by the POST /api/v2/signeddata resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted. The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the eventStreamUri field of the response; the conversation is not routed until the event stream is attached.
 	 * @param {Object} body CreateConversationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postWebchatGuestConversations(body) { 
+	postWebchatGuestConversations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWebchatGuestConversations';
@@ -501,7 +579,8 @@ class WebChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -510,9 +589,13 @@ class WebChatApi {
 	 * 
 	 * @param {String} deploymentId Deployment Id
 	 * @param {Object} body Deployment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putWebchatDeployment(deploymentId, body) { 
+	putWebchatDeployment(deploymentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebchatDeployment';
@@ -532,7 +615,8 @@ class WebChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -540,9 +624,13 @@ class WebChatApi {
 	 * Update WebChat deployment settings
 	 * This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 	 * @param {Object} body webChatSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putWebchatSettings(body) { 
+	putWebchatSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putWebchatSettings';
@@ -558,7 +646,8 @@ class WebChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

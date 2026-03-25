@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -23,8 +23,12 @@ class AuditApi {
 	/**
 	 * Get service mapping information used in realtime audits.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuditsQueryRealtimeServicemapping() { 
+	getAuditsQueryRealtimeServicemapping(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/realtime/servicemapping', 
@@ -36,15 +40,20 @@ class AuditApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get service mapping information used in audits.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuditsQueryServicemapping() { 
+	getAuditsQueryServicemapping(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/servicemapping', 
@@ -56,7 +65,8 @@ class AuditApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -64,8 +74,12 @@ class AuditApi {
 	 * Get status of audit query execution
 	 * 
 	 * @param {String} transactionId Transaction ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuditsQueryTransactionId(transactionId) { 
+	getAuditsQueryTransactionId(transactionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'transactionId' is set
 		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionId';
@@ -81,7 +95,8 @@ class AuditApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -94,6 +109,7 @@ class AuditApi {
 	 * @param {Number} opts.pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (default to 25)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.allowRedirect Result sets with large amounts of data will respond with a download url
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuditsQueryTransactionIdResults(transactionId, opts) { 
 		opts = opts || {};
@@ -113,7 +129,8 @@ class AuditApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -121,8 +138,12 @@ class AuditApi {
 	 * Create audit query execution
 	 * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuditsQuery(body) { 
+	postAuditsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAuditsQuery';
@@ -138,7 +159,8 @@ class AuditApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -148,6 +170,7 @@ class AuditApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuditsQueryRealtime(body, opts) { 
 		opts = opts || {};
@@ -167,7 +190,8 @@ class AuditApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -177,6 +201,7 @@ class AuditApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuditsQueryRealtimeRelated(body, opts) { 
 		opts = opts || {};
@@ -196,7 +221,8 @@ class AuditApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

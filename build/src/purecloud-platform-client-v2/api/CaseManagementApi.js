@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class CaseManagementApi {
 	 * Delete a Case.
 	 * 
 	 * @param {String} caseId Case ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteCasemanagementCase(caseId) { 
+	deleteCasemanagementCase(caseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling deleteCasemanagementCase';
@@ -42,7 +46,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,9 +55,13 @@ class CaseManagementApi {
 	 * Delete a Caseplan.
 	 * 
 	 * @param {String} caseplanId Caseplan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteCasemanagementCaseplan(caseplanId) { 
+	deleteCasemanagementCaseplan(caseplanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling deleteCasemanagementCaseplan';
@@ -68,7 +77,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -78,6 +88,7 @@ class CaseManagementApi {
 	 * @param {String} caseId Case ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCase(caseId, opts) { 
@@ -98,7 +109,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -107,9 +119,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case ID
 	 * @param {String} associationId Case Association ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseAssociation(caseId, associationId) { 
+	getCasemanagementCaseAssociation(caseId, associationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling getCasemanagementCaseAssociation';
@@ -129,7 +145,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -141,6 +158,7 @@ class CaseManagementApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseAssociations(caseId, opts) { 
@@ -161,7 +179,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -170,9 +189,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case ID
 	 * @param {String} stageId Stage ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseStage(caseId, stageId) { 
+	getCasemanagementCaseStage(caseId, stageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling getCasemanagementCaseStage';
@@ -192,7 +215,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -202,9 +226,13 @@ class CaseManagementApi {
 	 * @param {String} caseId Case ID
 	 * @param {String} stageId Stage ID
 	 * @param {String} stepId Step ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseStageStep(caseId, stageId, stepId) { 
+	getCasemanagementCaseStageStep(caseId, stageId, stepId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling getCasemanagementCaseStageStep';
@@ -228,7 +256,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -241,6 +270,7 @@ class CaseManagementApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStageSteps(caseId, stageId, opts) { 
@@ -265,7 +295,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -277,6 +308,7 @@ class CaseManagementApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStages(caseId, opts) { 
@@ -297,7 +329,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -306,9 +339,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case ID
 	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseTerminateJob(caseId, jobId) { 
+	getCasemanagementCaseTerminateJob(caseId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling getCasemanagementCaseTerminateJob';
@@ -328,7 +365,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -336,9 +374,13 @@ class CaseManagementApi {
 	 * Get a Caseplan.
 	 * 
 	 * @param {String} caseplanId Caseplan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseplan(caseplanId) { 
+	getCasemanagementCaseplan(caseplanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling getCasemanagementCaseplan';
@@ -354,7 +396,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -363,9 +406,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseplanId Caseplan ID
 	 * @param {String} versionId Version of the caseplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseplanVersion(caseplanId, versionId) { 
+	getCasemanagementCaseplanVersion(caseplanId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling getCasemanagementCaseplanVersion';
@@ -385,7 +432,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -394,9 +442,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseplanId Caseplan ID
 	 * @param {String} versionId Version of the caseplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId) { 
+	getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling getCasemanagementCaseplanVersionDataschemas';
@@ -416,7 +468,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -425,9 +478,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseplanId Caseplan ID
 	 * @param {String} versionId Version of the caseplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId) { 
+	getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling getCasemanagementCaseplanVersionIntakesettings';
@@ -447,7 +504,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -459,6 +517,7 @@ class CaseManagementApi {
 	 * @param {String} stageplanId Stageplan ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, stageplanId, opts) { 
@@ -487,7 +546,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -500,6 +560,7 @@ class CaseManagementApi {
 	 * @param {String} stepplanId Stepplan ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versionId, stageplanId, stepplanId, opts) { 
@@ -532,7 +593,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -547,6 +609,7 @@ class CaseManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, opts) { 
@@ -575,7 +638,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -589,6 +653,7 @@ class CaseManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, opts) { 
@@ -613,7 +678,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -625,6 +691,7 @@ class CaseManagementApi {
 	 * @param {Number} opts.pageSize Number of caseplans to return. Maximum of 200.
 	 * @param {String} opts.customerIntentId Filter by Customer Intent.
 	 * @param {String} opts.divisionIds Filter by Divisions.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplans(opts) { 
@@ -641,7 +708,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -654,6 +722,7 @@ class CaseManagementApi {
 	 * @param {Number} opts.pageSize Number of cases to return. Maximum of 200.
 	 * @param {String} opts.divisionIds Filter by Divisions
 	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesExternalcontact(externalContactId, opts) { 
@@ -674,7 +743,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -684,6 +754,7 @@ class CaseManagementApi {
 	 * @param {String} referenceId Reference
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expands Which fields to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesReference(referenceId, opts) { 
@@ -704,7 +775,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -713,9 +785,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case ID
 	 * @param {Object} body Date due
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchCasemanagementCaseDatedue(caseId, body) { 
+	patchCasemanagementCaseDatedue(caseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseDatedue';
@@ -735,7 +811,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -744,9 +821,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case ID
 	 * @param {Object} body Priority
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchCasemanagementCasePriority(caseId, body) { 
+	patchCasemanagementCasePriority(caseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCasePriority';
@@ -766,7 +847,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -775,9 +857,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseId Case ID
 	 * @param {Object} body Summary
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchCasemanagementCaseSummary(caseId, body) { 
+	patchCasemanagementCaseSummary(caseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling patchCasemanagementCaseSummary';
@@ -797,7 +883,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -806,9 +893,13 @@ class CaseManagementApi {
 	 * 
 	 * @param {String} caseplanId Caseplan ID
 	 * @param {Object} body Caseplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchCasemanagementCaseplan(caseplanId, body) { 
+	patchCasemanagementCaseplan(caseplanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling patchCasemanagementCaseplan';
@@ -828,7 +919,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -838,9 +930,13 @@ class CaseManagementApi {
 	 * @param {String} caseplanId Caseplan ID
 	 * @param {String} stageplanId Stageplan ID
 	 * @param {Object} body Stageplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body) { 
+	patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling patchCasemanagementCaseplanStageplan';
@@ -864,7 +960,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -875,9 +972,13 @@ class CaseManagementApi {
 	 * @param {String} stageplanId Stageplan ID
 	 * @param {String} stepplanId Stepplan ID
 	 * @param {Object} body Stepplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body) { 
+	patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling patchCasemanagementCaseplanStageplanStepplan';
@@ -905,7 +1006,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -915,6 +1017,7 @@ class CaseManagementApi {
 	 * @param {String} caseId Case ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Case Association
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseAssociations(caseId, opts) { 
@@ -935,7 +1038,8 @@ class CaseManagementApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -943,9 +1047,13 @@ class CaseManagementApi {
 	 * Create a Terminate Job for a Case.
 	 * 
 	 * @param {String} caseId Case ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCaseTerminateJobs(caseId) { 
+	postCasemanagementCaseTerminateJobs(caseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling postCasemanagementCaseTerminateJobs';
@@ -961,7 +1069,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -969,9 +1078,13 @@ class CaseManagementApi {
 	 * Publish Caseplan.
 	 * 
 	 * @param {String} caseplanId Caseplan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCaseplanPublish(caseplanId) { 
+	postCasemanagementCaseplanPublish(caseplanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling postCasemanagementCaseplanPublish';
@@ -987,7 +1100,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -995,9 +1109,13 @@ class CaseManagementApi {
 	 * Create Caseplan version.
 	 * 
 	 * @param {String} caseplanId Caseplan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCaseplanVersions(caseplanId) { 
+	postCasemanagementCaseplanVersions(caseplanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'caseplanId' is set
 		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
 			throw 'Missing the required parameter "caseplanId" when calling postCasemanagementCaseplanVersions';
@@ -1013,7 +1131,8 @@ class CaseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1021,9 +1140,13 @@ class CaseManagementApi {
 	 * Create a Caseplan.
 	 * 
 	 * @param {Object} body Caseplan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCaseplans(body) { 
+	postCasemanagementCaseplans(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postCasemanagementCaseplans';
@@ -1039,7 +1162,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1047,9 +1171,13 @@ class CaseManagementApi {
 	 * Create a Case.
 	 * 
 	 * @param {Object} body Case
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCases(body) { 
+	postCasemanagementCases(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postCasemanagementCases';
@@ -1065,7 +1193,8 @@ class CaseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1074,6 +1203,7 @@ class CaseManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Case Association
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCasesAssociationsQuery(opts) { 
@@ -1090,7 +1220,8 @@ class CaseManagementApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

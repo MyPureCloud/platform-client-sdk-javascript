@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class SpeechTextAnalyticsApi {
 	 * Delete a Speech and Text Analytics category by ID
 	 * 
 	 * @param {String} categoryId The id of the category
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteSpeechandtextanalyticsCategory(categoryId) { 
+	deleteSpeechandtextanalyticsCategory(categoryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteSpeechandtextanalyticsCategory';
@@ -41,7 +45,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class SpeechTextAnalyticsApi {
 	 * Delete a Speech and Text Analytics DictionaryFeedback by Id
 	 * 
 	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
+	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dictionaryFeedbackId' is set
 		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
 			throw 'Missing the required parameter "dictionaryFeedbackId" when calling deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
@@ -66,7 +75,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -76,6 +86,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {String} programId The id of the program
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteSpeechandtextanalyticsProgram(programId, opts) { 
 		opts = opts || {};
@@ -95,7 +106,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -103,9 +115,13 @@ class SpeechTextAnalyticsApi {
 	 * Delete a Speech and Text Analytics Reprocessing job by Id
 	 * 
 	 * @param {String} jobId The Id of the Reprocessing job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteSpeechandtextanalyticsReprocessingJob(jobId) { 
+	deleteSpeechandtextanalyticsReprocessingJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteSpeechandtextanalyticsReprocessingJob';
@@ -121,15 +137,20 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete All Speech and Text Analytics SentimentFeedback
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteSpeechandtextanalyticsSentimentfeedback() { 
+	deleteSpeechandtextanalyticsSentimentfeedback(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/sentimentfeedback', 
@@ -141,7 +162,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -149,8 +171,12 @@ class SpeechTextAnalyticsApi {
 	 * Delete a Speech and Text Analytics SentimentFeedback by Id
 	 * 
 	 * @param {String} sentimentFeedbackId The Id of the SentimentFeedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId) { 
+	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sentimentFeedbackId' is set
 		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null || sentimentFeedbackId === '') {
 			throw 'Missing the required parameter "sentimentFeedbackId" when calling deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId';
@@ -166,7 +192,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,8 +201,12 @@ class SpeechTextAnalyticsApi {
 	 * Delete a Speech and Text Analytics topic by id
 	 * 
 	 * @param {String} topicId The id of the topic
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteSpeechandtextanalyticsTopic(topicId) { 
+	deleteSpeechandtextanalyticsTopic(topicId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSpeechandtextanalyticsTopic';
@@ -191,7 +222,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,6 +237,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts.sortOrder The sort order for the listing (default to asc)
 	 * @param {Object} opts.sortBy The field to sort by for the listing (default to name)
 	 * @param {Array.<String>} opts.ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsCategories(opts) { 
 		opts = opts || {};
@@ -220,7 +253,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -228,8 +262,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics Category by ID
 	 * 
 	 * @param {String} categoryId The id of the category
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsCategory(categoryId) { 
+	getSpeechandtextanalyticsCategory(categoryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getSpeechandtextanalyticsCategory';
@@ -245,7 +283,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -253,8 +292,12 @@ class SpeechTextAnalyticsApi {
 	 * Get Speech and Text Analytics for a specific conversation
 	 * 
 	 * @param {String} conversationId Conversation Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsConversation(conversationId) { 
+	getSpeechandtextanalyticsConversation(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversation';
@@ -270,7 +313,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -281,6 +325,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 50. (default to 25)
 	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsConversationCategories(conversationId, opts) { 
 		opts = opts || {};
@@ -300,7 +345,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -309,8 +355,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} communicationId Communication ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId) { 
+	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
@@ -330,7 +380,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -339,8 +390,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} communicationId Communication ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId) { 
+	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
@@ -360,7 +415,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -368,8 +424,12 @@ class SpeechTextAnalyticsApi {
 	 * Get sentiment data
 	 * 
 	 * @param {String} conversationId The conversation ID of the sentiment data
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsConversationSentiments(conversationId) { 
+	getSpeechandtextanalyticsConversationSentiments(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSentiments';
@@ -385,7 +445,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -393,8 +454,12 @@ class SpeechTextAnalyticsApi {
 	 * Get conversation summaries by conversation id.
 	 * 
 	 * @param {String} conversationId The conversation ID of the summaries
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsConversationSummaries(conversationId) { 
+	getSpeechandtextanalyticsConversationSummaries(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSummaries';
@@ -410,7 +475,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -422,6 +488,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts.transcriptionEngine Filter by transcription engine, If not provided, all transcription engines will be considered
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 500)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsDictionaryfeedback(opts) { 
 		opts = opts || {};
@@ -437,7 +504,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -445,8 +513,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics dictionary feedback by id
 	 * 
 	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
+	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dictionaryFeedbackId' is set
 		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
 			throw 'Missing the required parameter "dictionaryFeedbackId" when calling getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
@@ -462,7 +534,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -470,8 +543,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics program by id
 	 * 
 	 * @param {String} programId The id of the program
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgram(programId) { 
+	getSpeechandtextanalyticsProgram(programId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
@@ -487,7 +564,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -495,8 +573,12 @@ class SpeechTextAnalyticsApi {
 	 * Get Speech and Text Analytics program mappings to queues and flows by id
 	 * 
 	 * @param {String} programId The id of the program
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramMappings(programId) { 
+	getSpeechandtextanalyticsProgramMappings(programId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramMappings';
@@ -512,7 +594,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -520,8 +603,12 @@ class SpeechTextAnalyticsApi {
 	 * Get AI Insights settings of a program
 	 * 
 	 * @param {String} programId The id of the program
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramSettingsInsights(programId) { 
+	getSpeechandtextanalyticsProgramSettingsInsights(programId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsInsights';
@@ -537,7 +624,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -545,8 +633,12 @@ class SpeechTextAnalyticsApi {
 	 * Get transcription engine settings of a program
 	 * 
 	 * @param {String} programId The id of the program
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramTranscriptionengines(programId) { 
+	getSpeechandtextanalyticsProgramTranscriptionengines(programId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramTranscriptionengines';
@@ -562,7 +654,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -576,6 +669,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {String} opts.name Case insensitive partial name to filter by
 	 * @param {Object} opts.sortBy Sort results by. Defaults to name
 	 * @param {Object} opts.sortOrder Sort order. Defaults to asc
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsPrograms(opts) { 
 		opts = opts || {};
@@ -591,7 +685,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -599,8 +694,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics general program job by id
 	 * 
 	 * @param {String} jobId The id of the publish programs job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramsGeneralJob(jobId) { 
+	getSpeechandtextanalyticsProgramsGeneralJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsGeneralJob';
@@ -616,7 +715,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -626,6 +726,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsProgramsMappings(opts) { 
 		opts = opts || {};
@@ -641,7 +742,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -649,8 +751,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics publish programs job by id
 	 * 
 	 * @param {String} jobId The id of the publish programs job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramsPublishjob(jobId) { 
+	getSpeechandtextanalyticsProgramsPublishjob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsPublishjob';
@@ -666,7 +772,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -677,6 +784,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 100)
 	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
 	 * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsProgramsSettingsInsights(opts) { 
 		opts = opts || {};
@@ -692,7 +800,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -700,8 +809,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics program-topic links job by id
 	 * 
 	 * @param {String} jobId The id of the program-topic links job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramsTopiclinksJob(jobId) { 
+	getSpeechandtextanalyticsProgramsTopiclinksJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsTopiclinksJob';
@@ -717,15 +830,20 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get supported dialects for each transcription engine
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects() { 
+	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/transcriptionengines/dialects', 
@@ -737,7 +855,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -747,6 +866,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsProgramsUnpublished(opts) { 
 		opts = opts || {};
@@ -762,7 +882,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -770,9 +891,13 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics reprocess job by id
 	 * 
 	 * @param {String} jobId The Id of the Reprocessing job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getSpeechandtextanalyticsReprocessingJob(jobId) { 
+	getSpeechandtextanalyticsReprocessingJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsReprocessingJob';
@@ -788,7 +913,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -796,9 +922,13 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics Reprocessing interactions statuses by job id
 	 * 
 	 * @param {String} jobId The Id of the Reprocessing job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getSpeechandtextanalyticsReprocessingJobInteractions(jobId) { 
+	getSpeechandtextanalyticsReprocessingJobInteractions(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsReprocessingJobInteractions';
@@ -814,7 +944,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -826,6 +957,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Number} opts.pageNumber The page number for the listing. Defaults to 1.
 	 * @param {Object} opts.sortOrder Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc).
 	 * @param {String} opts.name Case insensitive partial name to filter by.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSpeechandtextanalyticsReprocessingJobs(opts) { 
@@ -842,15 +974,20 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of Speech and Text Analytics sentiment supported dialects
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsSentimentDialects() { 
+	getSpeechandtextanalyticsSentimentDialects(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/sentiment/dialects', 
@@ -862,7 +999,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -871,6 +1009,7 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsSentimentfeedback(opts) { 
 		opts = opts || {};
@@ -886,15 +1025,20 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Speech And Text Analytics Settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsSettings() { 
+	getSpeechandtextanalyticsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/settings', 
@@ -906,7 +1050,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -914,8 +1059,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics topic by id
 	 * 
 	 * @param {String} topicId The id of the topic
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsTopic(topicId) { 
+	getSpeechandtextanalyticsTopic(topicId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
@@ -931,7 +1080,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -948,6 +1098,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Array.<String>} opts.dialects Comma separated dialect strings to filter by. Maximum of 15 dialects allowed.
 	 * @param {Object} opts.sortBy Sort results by. Defaults to name
 	 * @param {Object} opts.sortOrder Sort order. Defaults to asc
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsTopics(opts) { 
 		opts = opts || {};
@@ -963,15 +1114,20 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get list of supported Speech and Text Analytics topics dialects
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsTopicsDialects() { 
+	getSpeechandtextanalyticsTopicsDialects(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/dialects', 
@@ -983,7 +1139,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -992,6 +1149,7 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsTopicsGeneral(opts) { 
 		opts = opts || {};
@@ -1007,7 +1165,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1016,6 +1175,7 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsTopicsGeneralStatus(opts) { 
 		opts = opts || {};
@@ -1031,7 +1191,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1039,8 +1200,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics publish topics job by id
 	 * 
 	 * @param {String} jobId The id of the publish topics job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsTopicsPublishjob(jobId) { 
+	getSpeechandtextanalyticsTopicsPublishjob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';
@@ -1056,7 +1221,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1064,8 +1230,12 @@ class SpeechTextAnalyticsApi {
 	 * Get a Speech and Text Analytics test topics phrase job by id
 	 * 
 	 * @param {String} jobId the id of the test topic phrase job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsTopicsTestphraseJob(jobId) { 
+	getSpeechandtextanalyticsTopicsTestphraseJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsTestphraseJob';
@@ -1081,7 +1251,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1093,6 +1264,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
 	 * @param {String} opts.recordingId Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts) { 
 		opts = opts || {};
@@ -1116,15 +1288,20 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get supported translation languages
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSpeechandtextanalyticsTranslationsLanguages() { 
+	getSpeechandtextanalyticsTranslationsLanguages(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/translations/languages', 
@@ -1136,7 +1313,8 @@ class SpeechTextAnalyticsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1144,8 +1322,12 @@ class SpeechTextAnalyticsApi {
 	 * Patch Speech And Text Analytics Settings
 	 * 
 	 * @param {Object} body Speech And Text Analytics Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchSpeechandtextanalyticsSettings(body) { 
+	patchSpeechandtextanalyticsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchSpeechandtextanalyticsSettings';
@@ -1161,7 +1343,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1169,8 +1352,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics category
 	 * 
 	 * @param {Object} body The category to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsCategories(body) { 
+	postSpeechandtextanalyticsCategories(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsCategories';
@@ -1186,7 +1373,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1194,8 +1382,12 @@ class SpeechTextAnalyticsApi {
 	 * Create a Speech and Text Analytics DictionaryFeedback
 	 * 
 	 * @param {Object} body The DictionaryFeedback to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsDictionaryfeedback(body) { 
+	postSpeechandtextanalyticsDictionaryfeedback(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsDictionaryfeedback';
@@ -1211,7 +1403,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1219,8 +1412,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics program
 	 * 
 	 * @param {Object} body The program to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsPrograms(body) { 
+	postSpeechandtextanalyticsPrograms(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsPrograms';
@@ -1236,7 +1433,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1244,8 +1442,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics general program job
 	 * 
 	 * @param {Object} body The general programs job to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsProgramsGeneralJobs(body) { 
+	postSpeechandtextanalyticsProgramsGeneralJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsGeneralJobs';
@@ -1261,7 +1463,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1269,8 +1472,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics publish programs job
 	 * 
 	 * @param {Object} body The publish programs job to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsProgramsPublishjobs(body) { 
+	postSpeechandtextanalyticsProgramsPublishjobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsPublishjobs';
@@ -1286,7 +1493,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1294,9 +1502,13 @@ class SpeechTextAnalyticsApi {
 	 * Create a Speech and Text Analytics reprocess job.
 	 * 
 	 * @param {Object} body The ReprocessJob to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postSpeechandtextanalyticsReprocessingJobs(body) { 
+	postSpeechandtextanalyticsReprocessingJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsReprocessingJobs';
@@ -1312,7 +1524,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1320,8 +1533,12 @@ class SpeechTextAnalyticsApi {
 	 * Create a Speech and Text Analytics SentimentFeedback
 	 * 
 	 * @param {Object} body The SentimentFeedback to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsSentimentfeedback(body) { 
+	postSpeechandtextanalyticsSentimentfeedback(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsSentimentfeedback';
@@ -1337,7 +1554,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1345,8 +1563,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics topic
 	 * 
 	 * @param {Object} body The topic to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsTopics(body) { 
+	postSpeechandtextanalyticsTopics(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';
@@ -1362,7 +1584,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1370,8 +1593,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics publish topics job
 	 * 
 	 * @param {Object} body The publish topics job to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsTopicsPublishjobs(body) { 
+	postSpeechandtextanalyticsTopicsPublishjobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsPublishjobs';
@@ -1387,7 +1614,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1395,8 +1623,12 @@ class SpeechTextAnalyticsApi {
 	 * Create new Speech and Text Analytics publish topics job
 	 * 
 	 * @param {Object} body The publish test topic phrase job to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsTopicsTestphraseJobs(body) { 
+	postSpeechandtextanalyticsTopicsTestphraseJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsTestphraseJobs';
@@ -1412,7 +1644,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1420,8 +1653,12 @@ class SpeechTextAnalyticsApi {
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsTranscriptsSearch(body) { 
+	postSpeechandtextanalyticsTranscriptsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
@@ -1437,7 +1674,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1446,8 +1684,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} categoryId The id of the category
 	 * @param {Object} body The updated category
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsCategory(categoryId, body) { 
+	putSpeechandtextanalyticsCategory(categoryId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling putSpeechandtextanalyticsCategory';
@@ -1467,7 +1709,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1477,6 +1720,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts) { 
 		opts = opts || {};
@@ -1496,7 +1740,8 @@ class SpeechTextAnalyticsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1505,8 +1750,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} body The program to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsProgram(programId, body) { 
+	putSpeechandtextanalyticsProgram(programId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgram';
@@ -1526,7 +1775,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1535,8 +1785,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} body The program to set mappings for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsProgramMappings(programId, body) { 
+	putSpeechandtextanalyticsProgramMappings(programId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramMappings';
@@ -1556,7 +1810,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1565,8 +1820,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} body Program AI Insights setting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsProgramSettingsInsights(programId, body) { 
+	putSpeechandtextanalyticsProgramSettingsInsights(programId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramSettingsInsights';
@@ -1586,7 +1845,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1595,8 +1855,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} body Program transcription engine setting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsProgramTranscriptionengines(programId, body) { 
+	putSpeechandtextanalyticsProgramTranscriptionengines(programId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
@@ -1616,7 +1880,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1624,8 +1889,12 @@ class SpeechTextAnalyticsApi {
 	 * Update Speech And Text Analytics Settings
 	 * 
 	 * @param {Object} body Speech And Text Analytics Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsSettings(body) { 
+	putSpeechandtextanalyticsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsSettings';
@@ -1641,7 +1910,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1650,8 +1920,12 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {String} topicId The id of the topic
 	 * @param {Object} body The topic to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putSpeechandtextanalyticsTopic(topicId, body) { 
+	putSpeechandtextanalyticsTopic(topicId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling putSpeechandtextanalyticsTopic';
@@ -1671,7 +1945,8 @@ class SpeechTextAnalyticsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

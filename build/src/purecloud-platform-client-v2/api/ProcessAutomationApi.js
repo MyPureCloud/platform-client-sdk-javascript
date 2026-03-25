@@ -5,7 +5,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class ProcessAutomationApi {
 	 * Delete a Trigger
 	 * 
 	 * @param {String} triggerId triggerId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteProcessautomationTrigger(triggerId) { 
+	deleteProcessautomationTrigger(triggerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'triggerId' is set
 		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling deleteProcessautomationTrigger';
@@ -41,7 +45,8 @@ class ProcessAutomationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class ProcessAutomationApi {
 	 * Retrieve a single Trigger matching id
 	 * 
 	 * @param {String} triggerId triggerId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getProcessautomationTrigger(triggerId) { 
+	getProcessautomationTrigger(triggerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'triggerId' is set
 		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling getProcessautomationTrigger';
@@ -66,7 +75,8 @@ class ProcessAutomationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -80,6 +90,7 @@ class ProcessAutomationApi {
 	 * @param {String} opts.topicName Topic name(s). Separated by commas
 	 * @param {Boolean} opts.enabled Boolean indicating desired enabled state of triggers
 	 * @param {Boolean} opts.hasDelayBy Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getProcessautomationTriggers(opts) { 
 		opts = opts || {};
@@ -95,7 +106,8 @@ class ProcessAutomationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -106,6 +118,7 @@ class ProcessAutomationApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getProcessautomationTriggersTopics(opts) { 
 		opts = opts || {};
@@ -121,7 +134,8 @@ class ProcessAutomationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -131,6 +145,7 @@ class ProcessAutomationApi {
 	 * @param {String} triggerId triggerId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.body eventBody
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postProcessautomationTriggerTest(triggerId, opts) { 
 		opts = opts || {};
@@ -150,7 +165,8 @@ class ProcessAutomationApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -158,8 +174,12 @@ class ProcessAutomationApi {
 	 * Create a Trigger
 	 * 
 	 * @param {Object} body Input used to create a Trigger.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postProcessautomationTriggers(body) { 
+	postProcessautomationTriggers(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postProcessautomationTriggers';
@@ -175,7 +195,8 @@ class ProcessAutomationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -185,6 +206,7 @@ class ProcessAutomationApi {
 	 * @param {String} topicName topicName
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.body eventBody
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postProcessautomationTriggersTopicTest(topicName, opts) { 
 		opts = opts || {};
@@ -204,7 +226,8 @@ class ProcessAutomationApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -213,8 +236,12 @@ class ProcessAutomationApi {
 	 * 
 	 * @param {String} triggerId triggerId
 	 * @param {Object} body Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putProcessautomationTrigger(triggerId, body) { 
+	putProcessautomationTrigger(triggerId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'triggerId' is set
 		if (triggerId === undefined || triggerId === null || triggerId === '') {
 			throw 'Missing the required parameter "triggerId" when calling putProcessautomationTrigger';
@@ -234,7 +261,8 @@ class ProcessAutomationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

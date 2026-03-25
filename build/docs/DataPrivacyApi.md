@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteDataprivacyMaskingrule
 
-> void deleteDataprivacyMaskingrule(ruleId)
+> void deleteDataprivacyMaskingrule(ruleId, opts)
 
 
 DELETE /api/v2/dataprivacy/maskingrules/{ruleId}
@@ -42,8 +42,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.DataPrivacyApi();
 
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteDataprivacyMaskingrule(ruleId)
+apiInstance.deleteDataprivacyMaskingrule(ruleId, opts)
   .then(() => {
     console.log('deleteDataprivacyMaskingrule returned successfully.');
   })
@@ -59,6 +65,7 @@ apiInstance.deleteDataprivacyMaskingrule(ruleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -67,7 +74,7 @@ void (no response body)
 
 ## getDataprivacyMaskingrule
 
-> MaskingRule getDataprivacyMaskingrule(ruleId)
+> MaskingRule getDataprivacyMaskingrule(ruleId, opts)
 
 
 GET /api/v2/dataprivacy/maskingrules/{ruleId}
@@ -92,8 +99,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.DataPrivacyApi();
 
 let ruleId = "ruleId_example"; // String | ruleId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDataprivacyMaskingrule(ruleId)
+apiInstance.getDataprivacyMaskingrule(ruleId, opts)
   .then((data) => {
     console.log(`getDataprivacyMaskingrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -109,6 +122,7 @@ apiInstance.getDataprivacyMaskingrule(ruleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | ruleId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -117,7 +131,7 @@ apiInstance.getDataprivacyMaskingrule(ruleId)
 
 ## getDataprivacyMaskingrules
 
-> MaskingRuleListing getDataprivacyMaskingrules()
+> MaskingRuleListing getDataprivacyMaskingrules(opts)
 
 
 GET /api/v2/dataprivacy/maskingrules
@@ -140,8 +154,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.DataPrivacyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDataprivacyMaskingrules()
+apiInstance.getDataprivacyMaskingrules(opts)
   .then((data) => {
     console.log(`getDataprivacyMaskingrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -153,7 +173,10 @@ apiInstance.getDataprivacyMaskingrules()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -188,7 +211,11 @@ let apiInstance = new platformClient.DataPrivacyApi();
 
 let ruleId = "ruleId_example"; // String | ruleId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchDataprivacyMaskingrule(ruleId, opts)
@@ -208,6 +235,7 @@ apiInstance.patchDataprivacyMaskingrule(ruleId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | ruleId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -216,7 +244,7 @@ apiInstance.patchDataprivacyMaskingrule(ruleId, opts)
 
 ## postDataprivacyMaskingrules
 
-> MaskingRule postDataprivacyMaskingrules(body)
+> MaskingRule postDataprivacyMaskingrules(body, opts)
 
 
 POST /api/v2/dataprivacy/maskingrules
@@ -241,8 +269,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.DataPrivacyApi();
 
 let body = {}; // Object | Details for creating masking rule resource
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postDataprivacyMaskingrules(body)
+apiInstance.postDataprivacyMaskingrules(body, opts)
   .then((data) => {
     console.log(`postDataprivacyMaskingrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -258,6 +292,7 @@ apiInstance.postDataprivacyMaskingrules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Details for creating masking rule resource |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -266,7 +301,7 @@ apiInstance.postDataprivacyMaskingrules(body)
 
 ## postDataprivacyMaskingrulesValidate
 
-> MaskingRuleValidateResponse postDataprivacyMaskingrulesValidate(body)
+> MaskingRuleValidateResponse postDataprivacyMaskingrulesValidate(body, opts)
 
 
 POST /api/v2/dataprivacy/maskingrules/validate
@@ -291,8 +326,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.DataPrivacyApi();
 
 let body = {}; // Object | Text to be masked
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postDataprivacyMaskingrulesValidate(body)
+apiInstance.postDataprivacyMaskingrulesValidate(body, opts)
   .then((data) => {
     console.log(`postDataprivacyMaskingrulesValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -308,10 +349,11 @@ apiInstance.postDataprivacyMaskingrulesValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Text to be masked |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **MaskingRuleValidateResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

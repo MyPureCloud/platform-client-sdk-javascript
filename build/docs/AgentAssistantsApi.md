@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAssistant
 
-> void deleteAssistant(assistantId)
+> void deleteAssistant(assistantId, opts)
 
 
 DELETE /api/v2/assistants/{assistantId}
@@ -59,8 +59,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentAssistantsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAssistant(assistantId)
+apiInstance.deleteAssistant(assistantId, opts)
   .then(() => {
     console.log('deleteAssistant returned successfully.');
   })
@@ -76,6 +82,7 @@ apiInstance.deleteAssistant(assistantId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -84,7 +91,7 @@ void (no response body)
 
 ## deleteAssistantQueue
 
-> void deleteAssistantQueue(assistantId, queueId)
+> void deleteAssistantQueue(assistantId, queueId, opts)
 
 
 DELETE /api/v2/assistants/{assistantId}/queues/{queueId}
@@ -110,8 +117,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAssistantQueue(assistantId, queueId)
+apiInstance.deleteAssistantQueue(assistantId, queueId, opts)
   .then(() => {
     console.log('deleteAssistantQueue returned successfully.');
   })
@@ -128,6 +141,7 @@ apiInstance.deleteAssistantQueue(assistantId, queueId)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -162,7 +176,11 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let opts = { 
-  'queueIds': "queueIds_example" // String | Comma-separated identifiers of the queues that need to be deleted.
+  'queueIds': "queueIds_example", // String | Comma-separated identifiers of the queues that need to be deleted.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteAssistantQueues(assistantId, opts)
@@ -182,6 +200,7 @@ apiInstance.deleteAssistantQueues(assistantId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **queueIds** | **String** | Comma-separated identifiers of the queues that need to be deleted. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -190,7 +209,7 @@ void (no response body)
 
 ## deleteAssistantsAgentchecklist
 
-> void deleteAssistantsAgentchecklist(agentChecklistId)
+> void deleteAssistantsAgentchecklist(agentChecklistId, opts)
 
 
 DELETE /api/v2/assistants/agentchecklists/{agentChecklistId}
@@ -215,8 +234,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentAssistantsApi();
 
 let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAssistantsAgentchecklist(agentChecklistId)
+apiInstance.deleteAssistantsAgentchecklist(agentChecklistId, opts)
   .then(() => {
     console.log('deleteAssistantsAgentchecklist returned successfully.');
   })
@@ -232,6 +257,7 @@ apiInstance.deleteAssistantsAgentchecklist(agentChecklistId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -268,7 +294,11 @@ let assistantId = "assistantId_example"; // String | Assistant ID
 let opts = { 
   'expand': "expand_example", // String | Which fields, if any, to expand.
   'languageVariation': "languageVariation_example", // String | Language variation
-  'fallbackToPrimaryAssistant': true // Boolean | Fall back to primary assistant if specified variation is not found
+  'fallbackToPrimaryAssistant': true, // Boolean | Fall back to primary assistant if specified variation is not found
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAssistant(assistantId, opts)
@@ -290,6 +320,7 @@ apiInstance.getAssistant(assistantId, opts)
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: copilot |
  **languageVariation** | **String** | Language variation | [optional]  |
  **fallbackToPrimaryAssistant** | **Boolean** | Fall back to primary assistant if specified variation is not found | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -325,7 +356,11 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'expand': "expand_example" // String | Which fields, if any, to expand.
+  'expand': "expand_example", // String | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAssistantQueue(assistantId, queueId, opts)
@@ -346,6 +381,7 @@ apiInstance.getAssistantQueue(assistantId, queueId, opts)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -354,7 +390,7 @@ apiInstance.getAssistantQueue(assistantId, queueId, opts)
 
 ## getAssistantQueueUsersJob
 
-> AssistantQueueUsersJobsResponse getAssistantQueueUsersJob(assistantId, queueId, jobId)
+> AssistantQueueUsersJobsResponse getAssistantQueueUsersJob(assistantId, queueId, jobId, opts)
 
 
 GET /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId}
@@ -381,8 +417,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAssistantQueueUsersJob(assistantId, queueId, jobId)
+apiInstance.getAssistantQueueUsersJob(assistantId, queueId, jobId, opts)
   .then((data) => {
     console.log(`getAssistantQueueUsersJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -400,6 +442,7 @@ apiInstance.getAssistantQueueUsersJob(assistantId, queueId, jobId)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -437,7 +480,11 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'expand': "expand_example" // String | Which fields, if any, to expand.
+  'expand': "expand_example", // String | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAssistantQueues(assistantId, opts)
@@ -460,6 +507,7 @@ apiInstance.getAssistantQueues(assistantId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -498,7 +546,11 @@ let opts = {
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'name': "name_example", // String | Return the assistant by the given name.
-  'expand': "expand_example" // String | Which fields, if any, to expand
+  'expand': "expand_example", // String | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAssistants(opts)
@@ -522,6 +574,7 @@ apiInstance.getAssistants(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Return the assistant by the given name. | [optional]  |
  **expand** | **String** | Which fields, if any, to expand | [optional] <br />**Values**: copilot |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -530,7 +583,7 @@ apiInstance.getAssistants(opts)
 
 ## getAssistantsAgentchecklist
 
-> AgentChecklist getAssistantsAgentchecklist(agentChecklistId)
+> AgentChecklist getAssistantsAgentchecklist(agentChecklistId, opts)
 
 
 GET /api/v2/assistants/agentchecklists/{agentChecklistId}
@@ -555,8 +608,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentAssistantsApi();
 
 let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAssistantsAgentchecklist(agentChecklistId)
+apiInstance.getAssistantsAgentchecklist(agentChecklistId, opts)
   .then((data) => {
     console.log(`getAssistantsAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -572,6 +631,7 @@ apiInstance.getAssistantsAgentchecklist(agentChecklistId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -611,7 +671,11 @@ let opts = {
   'namePrefix': "namePrefix_example", // String | The agent checklist name prefix filter applied to the listing.
   'language': "language_example", // String | The agent checklist language filter applied to the listing.
   'sortOrder': "sortOrder_example", // String | The sort order for the listing
-  'sortBy': "sortBy_example" // String | The field to sort by for the listing.
+  'sortBy': "sortBy_example", // String | The field to sort by for the listing.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAssistantsAgentchecklists(opts)
@@ -636,6 +700,7 @@ apiInstance.getAssistantsAgentchecklists(opts)
  **language** | **String** | The agent checklist language filter applied to the listing. | [optional]  |
  **sortOrder** | **String** | The sort order for the listing | [optional] <br />**Values**: asc, desc |
  **sortBy** | **String** | The field to sort by for the listing. | [optional] <br />**Values**: dateModified, language, name |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -644,7 +709,7 @@ apiInstance.getAssistantsAgentchecklists(opts)
 
 ## getAssistantsAgentchecklistsLanguages
 
-> EntityListing getAssistantsAgentchecklistsLanguages()
+> EntityListing getAssistantsAgentchecklistsLanguages(opts)
 
 
 GET /api/v2/assistants/agentchecklists/languages
@@ -667,8 +732,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AgentAssistantsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAssistantsAgentchecklistsLanguages()
+apiInstance.getAssistantsAgentchecklistsLanguages(opts)
   .then((data) => {
     console.log(`getAssistantsAgentchecklistsLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -680,7 +751,10 @@ apiInstance.getAssistantsAgentchecklistsLanguages()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -718,7 +792,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'queueIds': "queueIds_example", // String | Comma-separated identifiers of the queues that need to be retrieved.
-  'expand': "expand_example" // String | Which fields, if any, to expand.
+  'expand': "expand_example", // String | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAssistantsQueues(opts)
@@ -741,6 +819,7 @@ apiInstance.getAssistantsQueues(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **queueIds** | **String** | Comma-separated identifiers of the queues that need to be retrieved. | [optional]  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -749,7 +828,7 @@ apiInstance.getAssistantsQueues(opts)
 
 ## patchAssistant
 
-> Assistant patchAssistant(assistantId, body)
+> Assistant patchAssistant(assistantId, body, opts)
 
 
 PATCH /api/v2/assistants/{assistantId}
@@ -775,8 +854,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAssistant(assistantId, body)
+apiInstance.patchAssistant(assistantId, body, opts)
   .then((data) => {
     console.log(`patchAssistant success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -793,6 +878,7 @@ apiInstance.patchAssistant(assistantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -801,7 +887,7 @@ apiInstance.patchAssistant(assistantId, body)
 
 ## patchAssistantQueues
 
-> AssistantQueueListing patchAssistantQueues(assistantId, body)
+> AssistantQueueListing patchAssistantQueues(assistantId, body, opts)
 
 
 PATCH /api/v2/assistants/{assistantId}/queues
@@ -827,8 +913,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 
 let assistantId = "assistantId_example"; // String | Assistant ID
 let body = [{}]; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAssistantQueues(assistantId, body)
+apiInstance.patchAssistantQueues(assistantId, body, opts)
   .then((data) => {
     console.log(`patchAssistantQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -845,6 +937,7 @@ apiInstance.patchAssistantQueues(assistantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -853,7 +946,7 @@ apiInstance.patchAssistantQueues(assistantId, body)
 
 ## postAssistantQueueUsersBulkAdd
 
-> BulkResponse postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
+> BulkResponse postAssistantQueueUsersBulkAdd(assistantId, queueId, body, opts)
 
 
 POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add
@@ -880,8 +973,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
+apiInstance.postAssistantQueueUsersBulkAdd(assistantId, queueId, body, opts)
   .then((data) => {
     console.log(`postAssistantQueueUsersBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -899,6 +998,7 @@ apiInstance.postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -907,7 +1007,7 @@ apiInstance.postAssistantQueueUsersBulkAdd(assistantId, queueId, body)
 
 ## postAssistantQueueUsersBulkRemove
 
-> BulkResponse postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
+> BulkResponse postAssistantQueueUsersBulkRemove(assistantId, queueId, body, opts)
 
 
 POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove
@@ -934,8 +1034,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
+apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body, opts)
   .then((data) => {
     console.log(`postAssistantQueueUsersBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -953,6 +1059,7 @@ apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -961,7 +1068,7 @@ apiInstance.postAssistantQueueUsersBulkRemove(assistantId, queueId, body)
 
 ## postAssistantQueueUsersJobs
 
-> AssistantQueueUsersJobsResponse postAssistantQueueUsersJobs(assistantId, queueId, body)
+> AssistantQueueUsersJobsResponse postAssistantQueueUsersJobs(assistantId, queueId, body, opts)
 
 
 POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs
@@ -988,8 +1095,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAssistantQueueUsersJobs(assistantId, queueId, body)
+apiInstance.postAssistantQueueUsersJobs(assistantId, queueId, body, opts)
   .then((data) => {
     console.log(`postAssistantQueueUsersJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1007,6 +1120,7 @@ apiInstance.postAssistantQueueUsersJobs(assistantId, queueId, body)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1043,7 +1157,11 @@ let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | 
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand with.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand with.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAssistantQueueUsersQuery(assistantId, queueId, body, opts)
@@ -1065,6 +1183,7 @@ apiInstance.postAssistantQueueUsersQuery(assistantId, queueId, body, opts)
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
  **expand** | **[String]** | Which fields, if any, to expand with. | [optional] <br />**Values**: assistant, copilot |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1073,7 +1192,7 @@ apiInstance.postAssistantQueueUsersQuery(assistantId, queueId, body, opts)
 
 ## postAssistants
 
-> Assistant postAssistants(body)
+> Assistant postAssistants(body, opts)
 
 
 POST /api/v2/assistants
@@ -1098,8 +1217,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentAssistantsApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAssistants(body)
+apiInstance.postAssistants(body, opts)
   .then((data) => {
     console.log(`postAssistants success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1115,6 +1240,7 @@ apiInstance.postAssistants(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1123,7 +1249,7 @@ apiInstance.postAssistants(body)
 
 ## postAssistantsAgentchecklists
 
-> AgentChecklist postAssistantsAgentchecklists(body)
+> AgentChecklist postAssistantsAgentchecklists(body, opts)
 
 
 POST /api/v2/assistants/agentchecklists
@@ -1148,8 +1274,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AgentAssistantsApi();
 
 let body = {}; // Object | Request body containing details of checklist to be added
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAssistantsAgentchecklists(body)
+apiInstance.postAssistantsAgentchecklists(body, opts)
   .then((data) => {
     console.log(`postAssistantsAgentchecklists success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1165,6 +1297,7 @@ apiInstance.postAssistantsAgentchecklists(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Request body containing details of checklist to be added |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1173,7 +1306,7 @@ apiInstance.postAssistantsAgentchecklists(body)
 
 ## putAssistantQueue
 
-> AssistantQueue putAssistantQueue(assistantId, queueId, body)
+> AssistantQueue putAssistantQueue(assistantId, queueId, body, opts)
 
 
 PUT /api/v2/assistants/{assistantId}/queues/{queueId}
@@ -1200,8 +1333,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 let assistantId = "assistantId_example"; // String | Assistant ID
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAssistantQueue(assistantId, queueId, body)
+apiInstance.putAssistantQueue(assistantId, queueId, body, opts)
   .then((data) => {
     console.log(`putAssistantQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1219,6 +1358,7 @@ apiInstance.putAssistantQueue(assistantId, queueId, body)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1227,7 +1367,7 @@ apiInstance.putAssistantQueue(assistantId, queueId, body)
 
 ## putAssistantsAgentchecklist
 
-> AgentChecklist putAssistantsAgentchecklist(agentChecklistId, body)
+> AgentChecklist putAssistantsAgentchecklist(agentChecklistId, body, opts)
 
 
 PUT /api/v2/assistants/agentchecklists/{agentChecklistId}
@@ -1253,8 +1393,14 @@ let apiInstance = new platformClient.AgentAssistantsApi();
 
 let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
 let body = {}; // Object | Request body containing details of checklist to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAssistantsAgentchecklist(agentChecklistId, body)
+apiInstance.putAssistantsAgentchecklist(agentChecklistId, body, opts)
   .then((data) => {
     console.log(`putAssistantsAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1271,10 +1417,11 @@ apiInstance.putAssistantsAgentchecklist(agentChecklistId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentChecklistId** | **String** | Agent Checklist ID |  |
  **body** | **Object** | Request body containing details of checklist to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AgentChecklist**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

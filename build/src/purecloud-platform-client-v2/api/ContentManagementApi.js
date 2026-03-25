@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -26,6 +26,7 @@ class ContentManagementApi {
 	 * @param {String} documentId Document ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.override Override any lock on the document
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteContentmanagementDocument(documentId, opts) { 
 		opts = opts || {};
@@ -45,7 +46,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -53,8 +55,12 @@ class ContentManagementApi {
 	 * Deletes an existing share.
 	 * This revokes sharing rights specified in the share record
 	 * @param {String} shareId Share ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteContentmanagementShare(shareId) { 
+	deleteContentmanagementShare(shareId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'shareId' is set
 		if (shareId === undefined || shareId === null || shareId === '') {
 			throw 'Missing the required parameter "shareId" when calling deleteContentmanagementShare';
@@ -70,7 +76,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -78,8 +85,12 @@ class ContentManagementApi {
 	 * Cancel the command for this status
 	 * 
 	 * @param {String} statusId Status ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteContentmanagementStatusStatusId(statusId) { 
+	deleteContentmanagementStatusStatusId(statusId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'statusId' is set
 		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling deleteContentmanagementStatusStatusId';
@@ -95,7 +106,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,6 +117,7 @@ class ContentManagementApi {
 	 * @param {String} workspaceId Workspace ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.moveChildrenToWorkspaceId New location for objects in deleted workspace.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteContentmanagementWorkspace(workspaceId, opts) { 
 		opts = opts || {};
@@ -124,7 +137,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -133,8 +147,12 @@ class ContentManagementApi {
 	 * 
 	 * @param {String} workspaceId Workspace ID
 	 * @param {String} memberId Member ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteContentmanagementWorkspaceMember(workspaceId, memberId) { 
+	deleteContentmanagementWorkspaceMember(workspaceId, memberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceMember';
@@ -154,7 +172,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -163,8 +182,12 @@ class ContentManagementApi {
 	 * Delete a tag from a workspace. Will remove this tag from all documents.
 	 * @param {String} workspaceId Workspace ID
 	 * @param {String} tagId Tag ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId) { 
+	deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceTagvalue';
@@ -184,7 +207,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -194,6 +218,7 @@ class ContentManagementApi {
 	 * @param {String} documentId Document ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementDocument(documentId, opts) { 
 		opts = opts || {};
@@ -213,7 +238,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -224,6 +250,7 @@ class ContentManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment.
 	 * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementDocumentContent(documentId, opts) { 
 		opts = opts || {};
@@ -243,7 +270,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -258,6 +286,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy name or dateCreated
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getContentmanagementDocuments(workspaceId, opts) { 
@@ -278,7 +307,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -292,6 +322,7 @@ class ContentManagementApi {
 	 * @param {String} opts.sortBy name or dateCreated (default to name)
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementQuery(queryPhrase, opts) { 
 		opts = opts || {};
@@ -311,7 +342,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -319,8 +351,12 @@ class ContentManagementApi {
 	 * Get a Security Profile
 	 * 
 	 * @param {String} securityProfileId Security Profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getContentmanagementSecurityprofile(securityProfileId) { 
+	getContentmanagementSecurityprofile(securityProfileId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'securityProfileId' is set
 		if (securityProfileId === undefined || securityProfileId === null || securityProfileId === '') {
 			throw 'Missing the required parameter "securityProfileId" when calling getContentmanagementSecurityprofile';
@@ -336,15 +372,20 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a List of Security Profiles
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getContentmanagementSecurityprofiles() { 
+	getContentmanagementSecurityprofiles(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/securityprofiles', 
@@ -356,7 +397,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -366,6 +408,7 @@ class ContentManagementApi {
 	 * @param {String} shareId Share ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementShare(shareId, opts) { 
 		opts = opts || {};
@@ -385,7 +428,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -397,6 +441,7 @@ class ContentManagementApi {
 	 * @param {Object} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
 	 * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
 	 * @param {Object} opts.expand Expand some document fields
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementSharedSharedId(sharedId, opts) { 
 		opts = opts || {};
@@ -416,7 +461,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -428,6 +474,7 @@ class ContentManagementApi {
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementShares(opts) { 
 		opts = opts || {};
@@ -443,7 +490,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -453,6 +501,7 @@ class ContentManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementStatus(opts) { 
 		opts = opts || {};
@@ -468,7 +517,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -476,8 +526,12 @@ class ContentManagementApi {
 	 * Get a status.
 	 * 
 	 * @param {String} statusId Status ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getContentmanagementStatusStatusId(statusId) { 
+	getContentmanagementStatusStatusId(statusId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'statusId' is set
 		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling getContentmanagementStatusStatusId';
@@ -493,15 +547,20 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get usage details.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getContentmanagementUsage() { 
+	getContentmanagementUsage(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/usage', 
@@ -513,7 +572,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -523,6 +583,7 @@ class ContentManagementApi {
 	 * @param {String} workspaceId Workspace ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspace(workspaceId, opts) { 
 		opts = opts || {};
@@ -542,7 +603,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -556,6 +618,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy name or dateCreated
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspaceDocuments(workspaceId, opts) { 
 		opts = opts || {};
@@ -575,7 +638,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -586,6 +650,7 @@ class ContentManagementApi {
 	 * @param {String} memberId Member ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspaceMember(workspaceId, memberId, opts) { 
 		opts = opts || {};
@@ -609,7 +674,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -621,6 +687,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspaceMembers(workspaceId, opts) { 
 		opts = opts || {};
@@ -640,7 +707,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -651,6 +719,7 @@ class ContentManagementApi {
 	 * @param {String} tagId Tag ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts) { 
 		opts = opts || {};
@@ -674,7 +743,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -687,6 +757,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspaceTagvalues(workspaceId, opts) { 
 		opts = opts || {};
@@ -706,7 +777,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -718,6 +790,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.access Requested access level.
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getContentmanagementWorkspaces(opts) { 
 		opts = opts || {};
@@ -733,7 +806,8 @@ class ContentManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -745,6 +819,7 @@ class ContentManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand some document fields
 	 * @param {Boolean} opts.override Override any lock on the document
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postContentmanagementDocument(documentId, body, opts) { 
 		opts = opts || {};
@@ -768,7 +843,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -779,6 +855,7 @@ class ContentManagementApi {
 	 * @param {Object} body Replace Request
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.override Override any lock on the document
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postContentmanagementDocumentContent(documentId, body, opts) { 
 		opts = opts || {};
@@ -802,7 +879,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -814,6 +892,7 @@ class ContentManagementApi {
 	 * @param {String} opts.copySource Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
 	 * @param {String} opts.moveSource Move a document to a new workspace. Provide a document ID as the move source.
 	 * @param {Boolean} opts.override Override any lock on the source document
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postContentmanagementDocuments(body, opts) { 
 		opts = opts || {};
@@ -833,7 +912,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -843,6 +923,7 @@ class ContentManagementApi {
 	 * @param {Object} body Allows for a filtered query returning facet information
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand some document fields
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postContentmanagementQuery(body, opts) { 
 		opts = opts || {};
@@ -862,7 +943,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -870,8 +952,12 @@ class ContentManagementApi {
 	 * Creates a new share or updates an existing share if the entity has already been shared
 	 * 
 	 * @param {Object} body CreateShareRequest - entity id and type and a single member or list of members are required
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postContentmanagementShares(body) { 
+	postContentmanagementShares(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postContentmanagementShares';
@@ -887,7 +973,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -896,8 +983,12 @@ class ContentManagementApi {
 	 * 
 	 * @param {String} workspaceId Workspace ID
 	 * @param {Object} body tag
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postContentmanagementWorkspaceTagvalues(workspaceId, body) { 
+	postContentmanagementWorkspaceTagvalues(workspaceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvalues';
@@ -917,7 +1008,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -928,6 +1020,7 @@ class ContentManagementApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts) { 
 		opts = opts || {};
@@ -951,7 +1044,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -959,8 +1053,12 @@ class ContentManagementApi {
 	 * Create a group workspace
 	 * 
 	 * @param {Object} body Workspace
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postContentmanagementWorkspaces(body) { 
+	postContentmanagementWorkspaces(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postContentmanagementWorkspaces';
@@ -976,7 +1074,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -985,8 +1084,12 @@ class ContentManagementApi {
 	 * 
 	 * @param {String} workspaceId Workspace ID
 	 * @param {Object} body Workspace
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putContentmanagementWorkspace(workspaceId, body) { 
+	putContentmanagementWorkspace(workspaceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspace';
@@ -1006,7 +1109,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1016,8 +1120,12 @@ class ContentManagementApi {
 	 * @param {String} workspaceId Workspace ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Workspace Member
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putContentmanagementWorkspaceMember(workspaceId, memberId, body) { 
+	putContentmanagementWorkspaceMember(workspaceId, memberId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceMember';
@@ -1041,7 +1149,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1051,8 +1160,12 @@ class ContentManagementApi {
 	 * @param {String} workspaceId Workspace ID
 	 * @param {String} tagId Tag ID
 	 * @param {Object} body Workspace
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body) { 
+	putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceTagvalue';
@@ -1076,7 +1189,8 @@ class ContentManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

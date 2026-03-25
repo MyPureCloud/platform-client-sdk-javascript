@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class GroupsApi {
 	 * Delete group
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteGroup(groupId) { 
+	deleteGroup(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling deleteGroup';
@@ -41,7 +45,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,9 +54,13 @@ class GroupsApi {
 	 * Remove dynamic group definition
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteGroupDynamicsettings(groupId) { 
+	deleteGroupDynamicsettings(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling deleteGroupDynamicsettings';
@@ -67,7 +76,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -76,8 +86,12 @@ class GroupsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {String} ids Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteGroupMembers(groupId, ids) { 
+	deleteGroupMembers(groupId, ids, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling deleteGroupMembers';
@@ -97,7 +111,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,9 +120,13 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getFieldconfig(type) { 
+	getFieldconfig(type, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
 			throw 'Missing the required parameter "type" when calling getFieldconfig';
@@ -123,7 +142,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -131,8 +151,12 @@ class GroupsApi {
 	 * Get group
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGroup(groupId) { 
+	getGroup(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroup';
@@ -148,7 +172,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -156,9 +181,13 @@ class GroupsApi {
 	 * Get dynamic group definition
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getGroupDynamicsettings(groupId) { 
+	getGroupDynamicsettings(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupDynamicsettings';
@@ -174,7 +203,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -182,8 +212,12 @@ class GroupsApi {
 	 * Get all individuals associated with the group
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGroupIndividuals(groupId) { 
+	getGroupIndividuals(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getGroupIndividuals';
@@ -199,7 +233,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -212,6 +247,7 @@ class GroupsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGroupMembers(groupId, opts) { 
 		opts = opts || {};
@@ -231,7 +267,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -241,6 +278,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
@@ -261,7 +299,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -274,6 +313,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGroups(opts) { 
 		opts = opts || {};
@@ -289,7 +329,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -299,6 +340,7 @@ class GroupsApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGroupsSearch(q64, opts) { 
 		opts = opts || {};
@@ -318,7 +360,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -331,6 +374,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getProfilesGroups(opts) { 
@@ -347,7 +391,8 @@ class GroupsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -356,8 +401,12 @@ class GroupsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body Add members
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGroupMembers(groupId, body) { 
+	postGroupMembers(groupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling postGroupMembers';
@@ -377,7 +426,8 @@ class GroupsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -385,8 +435,12 @@ class GroupsApi {
 	 * Create a group
 	 * 
 	 * @param {Object} body Group
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGroups(body) { 
+	postGroups(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGroups';
@@ -402,7 +456,8 @@ class GroupsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -410,10 +465,14 @@ class GroupsApi {
 	 * Preview the number of users selected for a dynamic group definition query
 	 * 
 	 * @param {Object} body Group query to preview
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postGroupsDynamicsettingsPreview(body) { 
+	postGroupsDynamicsettingsPreview(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGroupsDynamicsettingsPreview';
@@ -429,7 +488,8 @@ class GroupsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -437,8 +497,12 @@ class GroupsApi {
 	 * Search groups
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGroupsSearch(body) { 
+	postGroupsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGroupsSearch';
@@ -454,7 +518,8 @@ class GroupsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -464,6 +529,7 @@ class GroupsApi {
 	 * @param {String} groupId Group ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Group
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putGroup(groupId, opts) { 
 		opts = opts || {};
@@ -483,7 +549,8 @@ class GroupsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -492,9 +559,13 @@ class GroupsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body Create/Update dynamic groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	putGroupDynamicsettings(groupId, body) { 
+	putGroupDynamicsettings(groupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling putGroupDynamicsettings';
@@ -514,7 +585,8 @@ class GroupsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

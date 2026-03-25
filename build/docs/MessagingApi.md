@@ -24,7 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteMessagingSetting
 
-> void deleteMessagingSetting(messageSettingId)
+> void deleteMessagingSetting(messageSettingId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -52,8 +52,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let messageSettingId = "messageSettingId_example"; // String | Message Settings ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteMessagingSetting(messageSettingId)
+apiInstance.deleteMessagingSetting(messageSettingId, opts)
   .then(() => {
     console.log('deleteMessagingSetting returned successfully.');
   })
@@ -69,6 +75,7 @@ apiInstance.deleteMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Settings ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -77,7 +84,7 @@ void (no response body)
 
 ## deleteMessagingSettingsDefault
 
-> void deleteMessagingSettingsDefault()
+> void deleteMessagingSettingsDefault(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -105,8 +112,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.MessagingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteMessagingSettingsDefault()
+apiInstance.deleteMessagingSettingsDefault(opts)
   .then(() => {
     console.log('deleteMessagingSettingsDefault returned successfully.');
   })
@@ -118,7 +131,10 @@ apiInstance.deleteMessagingSettingsDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -127,7 +143,7 @@ void (no response body)
 
 ## deleteMessagingSupportedcontentSupportedContentId
 
-> void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
+> void deleteMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -157,8 +173,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
+apiInstance.deleteMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
   .then(() => {
     console.log('deleteMessagingSupportedcontentSupportedContentId returned successfully.');
   })
@@ -174,6 +196,7 @@ apiInstance.deleteMessagingSupportedcontentSupportedContentId(supportedContentId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -182,7 +205,7 @@ void (no response body)
 
 ## getMessagingSetting
 
-> MessagingSetting getMessagingSetting(messageSettingId)
+> MessagingSetting getMessagingSetting(messageSettingId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -210,8 +233,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let messageSettingId = "messageSettingId_example"; // String | Message Settings ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getMessagingSetting(messageSettingId)
+apiInstance.getMessagingSetting(messageSettingId, opts)
   .then((data) => {
     console.log(`getMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -227,6 +256,7 @@ apiInstance.getMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Settings ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -264,7 +294,11 @@ let apiInstance = new platformClient.MessagingApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getMessagingSettings(opts)
@@ -284,6 +318,7 @@ apiInstance.getMessagingSettings(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -292,7 +327,7 @@ apiInstance.getMessagingSettings(opts)
 
 ## getMessagingSettingsDefault
 
-> MessagingSetting getMessagingSettingsDefault()
+> MessagingSetting getMessagingSettingsDefault(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -320,8 +355,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.MessagingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getMessagingSettingsDefault()
+apiInstance.getMessagingSettingsDefault(opts)
   .then((data) => {
     console.log(`getMessagingSettingsDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -333,7 +374,10 @@ apiInstance.getMessagingSettingsDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -373,7 +417,11 @@ let apiInstance = new platformClient.MessagingApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getMessagingSupportedcontent(opts)
@@ -393,6 +441,7 @@ apiInstance.getMessagingSupportedcontent(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -401,7 +450,7 @@ apiInstance.getMessagingSupportedcontent(opts)
 
 ## getMessagingSupportedcontentSupportedContentId
 
-> SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId)
+> SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -431,8 +480,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
+apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
   .then((data) => {
     console.log(`getMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -448,6 +503,7 @@ apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -456,7 +512,7 @@ apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 ## patchMessagingSetting
 
-> MessagingSetting patchMessagingSetting(messageSettingId, body)
+> MessagingSetting patchMessagingSetting(messageSettingId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -485,8 +541,14 @@ let apiInstance = new platformClient.MessagingApi();
 
 let messageSettingId = "messageSettingId_example"; // String | Message Settings ID
 let body = {}; // Object | MessagingSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchMessagingSetting(messageSettingId, body)
+apiInstance.patchMessagingSetting(messageSettingId, body, opts)
   .then((data) => {
     console.log(`patchMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -503,6 +565,7 @@ apiInstance.patchMessagingSetting(messageSettingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Settings ID |  |
  **body** | **Object** | MessagingSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -511,7 +574,7 @@ apiInstance.patchMessagingSetting(messageSettingId, body)
 
 ## patchMessagingSupportedcontentSupportedContentId
 
-> SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+> SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -542,8 +605,14 @@ let apiInstance = new platformClient.MessagingApi();
 
 let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
 let body = {}; // Object | SupportedContent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId, body, opts)
   .then((data) => {
     console.log(`patchMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -560,6 +629,7 @@ apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId,
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
  **body** | **Object** | SupportedContent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -568,7 +638,7 @@ apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId,
 
 ## postMessagingSettings
 
-> MessagingSetting postMessagingSettings(body)
+> MessagingSetting postMessagingSettings(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -596,8 +666,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let body = {}; // Object | MessagingSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postMessagingSettings(body)
+apiInstance.postMessagingSettings(body, opts)
   .then((data) => {
     console.log(`postMessagingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -613,6 +689,7 @@ apiInstance.postMessagingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MessagingSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -621,7 +698,7 @@ apiInstance.postMessagingSettings(body)
 
 ## postMessagingSupportedcontent
 
-> SupportedContent postMessagingSupportedcontent(body)
+> SupportedContent postMessagingSupportedcontent(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -651,8 +728,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let body = {}; // Object | SupportedContent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postMessagingSupportedcontent(body)
+apiInstance.postMessagingSupportedcontent(body, opts)
   .then((data) => {
     console.log(`postMessagingSupportedcontent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -668,6 +751,7 @@ apiInstance.postMessagingSupportedcontent(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SupportedContent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -676,7 +760,7 @@ apiInstance.postMessagingSupportedcontent(body)
 
 ## putMessagingSettingsDefault
 
-> MessagingSetting putMessagingSettingsDefault(body)
+> MessagingSetting putMessagingSettingsDefault(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -706,8 +790,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MessagingApi();
 
 let body = {}; // Object | Messaging Setting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putMessagingSettingsDefault(body)
+apiInstance.putMessagingSettingsDefault(body, opts)
   .then((data) => {
     console.log(`putMessagingSettingsDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -723,10 +813,11 @@ apiInstance.putMessagingSettingsDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Messaging Setting ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **MessagingSetting**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -83,7 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAnalyticsEvaluationsAggregatesJob
 
-> void deleteAnalyticsEvaluationsAggregatesJob(jobId)
+> void deleteAnalyticsEvaluationsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
@@ -110,8 +110,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsEvaluationsAggregatesJob returned successfully.');
   })
@@ -127,6 +133,7 @@ apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -135,7 +142,7 @@ void (no response body)
 
 ## deleteAnalyticsSurveysAggregatesJob
 
-> void deleteAnalyticsSurveysAggregatesJob(jobId)
+> void deleteAnalyticsSurveysAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
@@ -162,8 +169,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
+apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsSurveysAggregatesJob returned successfully.');
   })
@@ -179,6 +192,7 @@ apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -187,7 +201,7 @@ void (no response body)
 
 ## deleteQualityCalibration
 
-> Calibration deleteQualityCalibration(calibrationId, calibratorId)
+> Calibration deleteQualityCalibration(calibrationId, calibratorId, opts)
 
 
 DELETE /api/v2/quality/calibrations/{calibrationId}
@@ -213,8 +227,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let calibrationId = "calibrationId_example"; // String | Calibration ID
 let calibratorId = "calibratorId_example"; // String | calibratorId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
+apiInstance.deleteQualityCalibration(calibrationId, calibratorId, opts)
   .then((data) => {
     console.log(`deleteQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -231,6 +251,7 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
 | ------------- | ------------- | ------------- | ------------- |
  **calibrationId** | **String** | Calibration ID |  |
  **calibratorId** | **String** | calibratorId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -266,7 +287,11 @@ let apiInstance = new platformClient.QualityApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let opts = { 
-  'expand': "expand_example" // String | evaluatorId, evaluationForm
+  'expand': "expand_example", // String | evaluatorId, evaluationForm
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
@@ -287,6 +312,7 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
  **expand** | **String** | evaluatorId, evaluationForm | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -295,7 +321,7 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 
 ## deleteQualityForm
 
-> void deleteQualityForm(formId)
+> void deleteQualityForm(formId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -323,8 +349,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteQualityForm(formId)
+apiInstance.deleteQualityForm(formId, opts)
   .then(() => {
     console.log('deleteQualityForm returned successfully.');
   })
@@ -340,6 +372,7 @@ apiInstance.deleteQualityForm(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -348,7 +381,7 @@ void (no response body)
 
 ## deleteQualityFormsEvaluation
 
-> void deleteQualityFormsEvaluation(formId)
+> void deleteQualityFormsEvaluation(formId, opts)
 
 
 DELETE /api/v2/quality/forms/evaluations/{formId}
@@ -373,8 +406,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteQualityFormsEvaluation(formId)
+apiInstance.deleteQualityFormsEvaluation(formId, opts)
   .then(() => {
     console.log('deleteQualityFormsEvaluation returned successfully.');
   })
@@ -390,6 +429,7 @@ apiInstance.deleteQualityFormsEvaluation(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -398,7 +438,7 @@ void (no response body)
 
 ## deleteQualityFormsSurvey
 
-> void deleteQualityFormsSurvey(formId)
+> void deleteQualityFormsSurvey(formId, opts)
 
 
 DELETE /api/v2/quality/forms/surveys/{formId}
@@ -423,8 +463,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteQualityFormsSurvey(formId)
+apiInstance.deleteQualityFormsSurvey(formId, opts)
   .then(() => {
     console.log('deleteQualityFormsSurvey returned successfully.');
   })
@@ -440,6 +486,7 @@ apiInstance.deleteQualityFormsSurvey(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -448,7 +495,7 @@ void (no response body)
 
 ## deleteQualityProgramAgentscoringrule
 
-> void deleteQualityProgramAgentscoringrule(programId, ruleId)
+> void deleteQualityProgramAgentscoringrule(programId, ruleId, opts)
 
 
 DELETE /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}
@@ -474,8 +521,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
 let ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteQualityProgramAgentscoringrule(programId, ruleId)
+apiInstance.deleteQualityProgramAgentscoringrule(programId, ruleId, opts)
   .then(() => {
     console.log('deleteQualityProgramAgentscoringrule returned successfully.');
   })
@@ -492,6 +545,7 @@ apiInstance.deleteQualityProgramAgentscoringrule(programId, ruleId)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | Program ID from Speech and Text Analytics |  |
  **ruleId** | **String** | Agent Scoring Rule ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -500,7 +554,7 @@ void (no response body)
 
 ## getAnalyticsEvaluationsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
@@ -527,8 +581,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
+apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsEvaluationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -544,6 +604,7 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -580,7 +641,11 @@ let apiInstance = new platformClient.QualityApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
@@ -600,6 +665,7 @@ apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -608,7 +674,7 @@ apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsSurveysAggregatesJob
 
-> AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
@@ -635,8 +701,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
+apiInstance.getAnalyticsSurveysAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsSurveysAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -652,6 +724,7 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -688,7 +761,11 @@ let apiInstance = new platformClient.QualityApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
@@ -708,6 +785,7 @@ apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -757,7 +835,11 @@ let opts = {
   'group': "group_example", // String | group id
   'agentTeamId': "agentTeamId_example", // String | team id of agents requested
   'formContextId': "formContextId_example", // String | shared id between form versions
-  'userState': "Legacy" // String | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states.
+  'userState': "Legacy", // String | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityAgentsActivity(opts)
@@ -790,6 +872,7 @@ apiInstance.getQualityAgentsActivity(opts)
  **agentTeamId** | **String** | team id of agents requested | [optional]  |
  **formContextId** | **String** | shared id between form versions | [optional]  |
  **userState** | **String** | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. | [optional] [default to Legacy]<br />**Values**: Any, Legacy |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -825,7 +908,11 @@ let apiInstance = new platformClient.QualityApi();
 let calibrationId = "calibrationId_example"; // String | Calibration ID
 let opts = { 
   'calibratorId': "calibratorId_example", // String | calibratorId
-  'conversationId': "conversationId_example" // String | conversationId
+  'conversationId': "conversationId_example", // String | conversationId
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityCalibration(calibrationId, opts)
@@ -846,6 +933,7 @@ apiInstance.getQualityCalibration(calibrationId, opts)
  **calibrationId** | **String** | Calibration ID |  |
  **calibratorId** | **String** | calibratorId | [optional]  |
  **conversationId** | **String** | conversationId | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -890,7 +978,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversation id
   'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-  'endTime': new Date("2013-10-20T19:20:30+01:00") // Date | end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityCalibrations(calibratorId, opts)
@@ -918,6 +1010,7 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
  **conversationId** | **String** | conversation id | [optional]  |
  **startTime** | **Date** | Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
  **endTime** | **Date** | end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -955,7 +1048,11 @@ let apiInstance = new platformClient.QualityApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let opts = { 
-  'expand': "expand_example" // String | agent, assignee, evaluator, evaluationForm
+  'expand': "expand_example", // String | agent, assignee, evaluator, evaluationForm
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
@@ -976,6 +1073,7 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
  **expand** | **String** | agent, assignee, evaluator, evaluationForm | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -984,7 +1082,7 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 ## getQualityConversationSurveys
 
-> [Survey] getQualityConversationSurveys(conversationId)
+> [Survey] getQualityConversationSurveys(conversationId, opts)
 
 
 GET /api/v2/quality/conversations/{conversationId}/surveys
@@ -1009,8 +1107,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityConversationSurveys(conversationId)
+apiInstance.getQualityConversationSurveys(conversationId, opts)
   .then((data) => {
     console.log(`getQualityConversationSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1026,6 +1130,7 @@ apiInstance.getQualityConversationSurveys(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1034,7 +1139,7 @@ apiInstance.getQualityConversationSurveys(conversationId)
 
 ## getQualityConversationsAuditsQueryTransactionId
 
-> QualityAuditQueryExecutionStatusResponse getQualityConversationsAuditsQueryTransactionId(transactionId)
+> QualityAuditQueryExecutionStatusResponse getQualityConversationsAuditsQueryTransactionId(transactionId, opts)
 
 
 GET /api/v2/quality/conversations/audits/query/{transactionId}
@@ -1059,8 +1164,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let transactionId = "transactionId_example"; // String | Transaction ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityConversationsAuditsQueryTransactionId(transactionId)
+apiInstance.getQualityConversationsAuditsQueryTransactionId(transactionId, opts)
   .then((data) => {
     console.log(`getQualityConversationsAuditsQueryTransactionId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1076,6 +1187,7 @@ apiInstance.getQualityConversationsAuditsQueryTransactionId(transactionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **transactionId** | **String** | Transaction ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1112,7 +1224,11 @@ let transactionId = "transactionId_example"; // String | Transaction ID
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
   'pageSize': 25, // Number | Page size
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityConversationsAuditsQueryTransactionIdResults(transactionId, opts)
@@ -1134,6 +1250,7 @@ apiInstance.getQualityConversationsAuditsQueryTransactionIdResults(transactionId
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1188,7 +1305,11 @@ let opts = {
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
   'maximum': 3.4, // Number | the maximum number of results to return
   'sortOrder': "sortOrder_example", // String | NOTE: Does not work when conversationId is supplied.
-  'includeDeletedUsers': false // Boolean | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
+  'includeDeletedUsers': false, // Boolean | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityEvaluationsQuery(opts)
@@ -1226,6 +1347,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **maximum** | **Number** | the maximum number of results to return | [optional]  |
  **sortOrder** | **String** | NOTE: Does not work when conversationId is supplied. | [optional]  |
  **includeDeletedUsers** | **Boolean** | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1270,7 +1392,11 @@ let opts = {
   'name': "name_example", // String | Evaluator name
   'permission': ["permission_example"], // [String] | permission strings
   'group': "group_example", // String | group id
-  'agentTeamId': "agentTeamId_example" // String | team id of agents to be considered
+  'agentTeamId': "agentTeamId_example", // String | team id of agents to be considered
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityEvaluatorsActivity(opts)
@@ -1300,6 +1426,7 @@ apiInstance.getQualityEvaluatorsActivity(opts)
  **permission** | **[String]** | permission strings | [optional]  |
  **group** | **String** | group id | [optional]  |
  **agentTeamId** | **String** | team id of agents to be considered | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1308,7 +1435,7 @@ apiInstance.getQualityEvaluatorsActivity(opts)
 
 ## getQualityForm
 
-> EvaluationFormResponse getQualityForm(formId)
+> EvaluationFormResponse getQualityForm(formId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1336,8 +1463,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityForm(formId)
+apiInstance.getQualityForm(formId, opts)
   .then((data) => {
     console.log(`getQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1353,6 +1486,7 @@ apiInstance.getQualityForm(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1392,7 +1526,11 @@ let formId = "formId_example"; // String | Form ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "asc" // String | Sort order
+  'sortOrder': "asc", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormVersions(formId, opts)
@@ -1414,6 +1552,7 @@ apiInstance.getQualityFormVersions(formId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1457,7 +1596,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'expand': "expand_example", // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
   'name': "name_example", // String | Name
-  'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
+  'sortOrder': "sortOrder_example", // String | Order to sort results, either asc or desc
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityForms(opts)
@@ -1483,6 +1626,7 @@ apiInstance.getQualityForms(opts)
  **expand** | **String** | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
  **name** | **String** | Name | [optional]  |
  **sortOrder** | **String** | Order to sort results, either asc or desc | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1491,7 +1635,7 @@ apiInstance.getQualityForms(opts)
 
 ## getQualityFormsEvaluation
 
-> EvaluationFormResponse getQualityFormsEvaluation(formId)
+> EvaluationFormResponse getQualityFormsEvaluation(formId, opts)
 
 
 GET /api/v2/quality/forms/evaluations/{formId}
@@ -1516,8 +1660,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityFormsEvaluation(formId)
+apiInstance.getQualityFormsEvaluation(formId, opts)
   .then((data) => {
     console.log(`getQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1533,6 +1683,7 @@ apiInstance.getQualityFormsEvaluation(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1569,7 +1720,11 @@ let formId = "formId_example"; // String | Form ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "asc" // String | Sort order
+  'sortOrder': "asc", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormsEvaluationVersions(formId, opts)
@@ -1591,6 +1746,7 @@ apiInstance.getQualityFormsEvaluationVersions(formId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1633,7 +1789,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'expand': "expand_example", // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
   'name': "name_example", // String | Name
-  'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
+  'sortOrder': "sortOrder_example", // String | Order to sort results, either asc or desc
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormsEvaluations(opts)
@@ -1659,6 +1819,7 @@ apiInstance.getQualityFormsEvaluations(opts)
  **expand** | **String** | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
  **name** | **String** | Name | [optional]  |
  **sortOrder** | **String** | Order to sort results, either asc or desc | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1693,7 +1854,11 @@ let apiInstance = new platformClient.QualityApi();
 
 let id = ["id_example"]; // [String] | A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100
 let opts = { 
-  'includeLatestVersionFormName': false // Boolean | Whether to include the name of the form's most recently published version
+  'includeLatestVersionFormName': false, // Boolean | Whether to include the name of the form's most recently published version
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormsEvaluationsBulk(id, opts)
@@ -1713,6 +1878,7 @@ apiInstance.getQualityFormsEvaluationsBulk(id, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100 |  |
  **includeLatestVersionFormName** | **Boolean** | Whether to include the name of the form's most recently published version | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1721,7 +1887,7 @@ apiInstance.getQualityFormsEvaluationsBulk(id, opts)
 
 ## getQualityFormsEvaluationsBulkContexts
 
-> [EvaluationFormResponse] getQualityFormsEvaluationsBulkContexts(contextId)
+> [EvaluationFormResponse] getQualityFormsEvaluationsBulkContexts(contextId, opts)
 
 
 GET /api/v2/quality/forms/evaluations/bulk/contexts
@@ -1746,8 +1912,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid evaluation form context ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityFormsEvaluationsBulkContexts(contextId)
+apiInstance.getQualityFormsEvaluationsBulkContexts(contextId, opts)
   .then((data) => {
     console.log(`getQualityFormsEvaluationsBulkContexts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1763,6 +1935,7 @@ apiInstance.getQualityFormsEvaluationsBulkContexts(contextId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contextId** | **[String]** | A comma-delimited list of valid evaluation form context ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1771,7 +1944,7 @@ apiInstance.getQualityFormsEvaluationsBulkContexts(contextId)
 
 ## getQualityFormsSurvey
 
-> SurveyForm getQualityFormsSurvey(formId)
+> SurveyForm getQualityFormsSurvey(formId, opts)
 
 
 GET /api/v2/quality/forms/surveys/{formId}
@@ -1796,8 +1969,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityFormsSurvey(formId)
+apiInstance.getQualityFormsSurvey(formId, opts)
   .then((data) => {
     console.log(`getQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1813,6 +1992,7 @@ apiInstance.getQualityFormsSurvey(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1848,7 +2028,11 @@ let apiInstance = new platformClient.QualityApi();
 let formId = "formId_example"; // String | Form ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormsSurveyVersions(formId, opts)
@@ -1869,6 +2053,7 @@ apiInstance.getQualityFormsSurveyVersions(formId, opts)
  **formId** | **String** | Form ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1909,7 +2094,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'expand': "expand_example", // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
   'name': "name_example", // String | Name
-  'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
+  'sortOrder': "sortOrder_example", // String | Order to sort results, either asc or desc
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormsSurveys(opts)
@@ -1935,6 +2124,7 @@ apiInstance.getQualityFormsSurveys(opts)
  **expand** | **String** | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
  **name** | **String** | Name | [optional]  |
  **sortOrder** | **String** | Order to sort results, either asc or desc | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1943,7 +2133,7 @@ apiInstance.getQualityFormsSurveys(opts)
 
 ## getQualityFormsSurveysBulk
 
-> SurveyFormEntityListing getQualityFormsSurveysBulk(id)
+> SurveyFormEntityListing getQualityFormsSurveysBulk(id, opts)
 
 
 GET /api/v2/quality/forms/surveys/bulk
@@ -1968,8 +2158,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let id = ["id_example"]; // [String] | A comma-delimited list of valid survey form ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityFormsSurveysBulk(id)
+apiInstance.getQualityFormsSurveysBulk(id, opts)
   .then((data) => {
     console.log(`getQualityFormsSurveysBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1985,6 +2181,7 @@ apiInstance.getQualityFormsSurveysBulk(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | A comma-delimited list of valid survey form ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2019,7 +2216,11 @@ let apiInstance = new platformClient.QualityApi();
 
 let contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 let opts = { 
-  'published': true // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
+  'published': true, // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
@@ -2039,6 +2240,7 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contextId** | **[String]** | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. |  |
  **published** | **Boolean** | If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2047,7 +2249,7 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 
 ## getQualityProgramAgentscoringrule
 
-> AgentScoringRule getQualityProgramAgentscoringrule(programId, ruleId)
+> AgentScoringRule getQualityProgramAgentscoringrule(programId, ruleId, opts)
 
 
 GET /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}
@@ -2073,8 +2275,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
 let ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityProgramAgentscoringrule(programId, ruleId)
+apiInstance.getQualityProgramAgentscoringrule(programId, ruleId, opts)
   .then((data) => {
     console.log(`getQualityProgramAgentscoringrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2091,6 +2299,7 @@ apiInstance.getQualityProgramAgentscoringrule(programId, ruleId)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | Program ID from Speech and Text Analytics |  |
  **ruleId** | **String** | Agent Scoring Rule ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2099,7 +2308,7 @@ apiInstance.getQualityProgramAgentscoringrule(programId, ruleId)
 
 ## getQualityProgramAgentscoringrules
 
-> AgentScoringRuleEntityListing getQualityProgramAgentscoringrules(programId)
+> AgentScoringRuleEntityListing getQualityProgramAgentscoringrules(programId, opts)
 
 
 GET /api/v2/quality/programs/{programId}/agentscoringrules
@@ -2124,8 +2333,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityProgramAgentscoringrules(programId)
+apiInstance.getQualityProgramAgentscoringrules(programId, opts)
   .then((data) => {
     console.log(`getQualityProgramAgentscoringrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2141,6 +2356,7 @@ apiInstance.getQualityProgramAgentscoringrules(programId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | Program ID from Speech and Text Analytics |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2149,7 +2365,7 @@ apiInstance.getQualityProgramAgentscoringrules(programId)
 
 ## getQualityPublishedform
 
-> EvaluationFormResponse getQualityPublishedform(formId)
+> EvaluationFormResponse getQualityPublishedform(formId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -2177,8 +2393,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityPublishedform(formId)
+apiInstance.getQualityPublishedform(formId, opts)
   .then((data) => {
     console.log(`getQualityPublishedform success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2194,6 +2416,7 @@ apiInstance.getQualityPublishedform(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2233,7 +2456,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
-  'onlyLatestPerContext': false // Boolean | onlyLatestPerContext
+  'onlyLatestPerContext': false, // Boolean | onlyLatestPerContext
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityPublishedforms(opts)
@@ -2255,6 +2482,7 @@ apiInstance.getQualityPublishedforms(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Name | [optional]  |
  **onlyLatestPerContext** | **Boolean** | onlyLatestPerContext | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2263,7 +2491,7 @@ apiInstance.getQualityPublishedforms(opts)
 
 ## getQualityPublishedformsEvaluation
 
-> EvaluationFormResponse getQualityPublishedformsEvaluation(formId)
+> EvaluationFormResponse getQualityPublishedformsEvaluation(formId, opts)
 
 
 GET /api/v2/quality/publishedforms/evaluations/{formId}
@@ -2288,8 +2516,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityPublishedformsEvaluation(formId)
+apiInstance.getQualityPublishedformsEvaluation(formId, opts)
   .then((data) => {
     console.log(`getQualityPublishedformsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2305,6 +2539,7 @@ apiInstance.getQualityPublishedformsEvaluation(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2341,7 +2576,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
-  'onlyLatestPerContext': false // Boolean | onlyLatestPerContext
+  'onlyLatestPerContext': false, // Boolean | onlyLatestPerContext
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityPublishedformsEvaluations(opts)
@@ -2363,6 +2602,7 @@ apiInstance.getQualityPublishedformsEvaluations(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Name | [optional]  |
  **onlyLatestPerContext** | **Boolean** | onlyLatestPerContext | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2371,7 +2611,7 @@ apiInstance.getQualityPublishedformsEvaluations(opts)
 
 ## getQualityPublishedformsSurvey
 
-> SurveyForm getQualityPublishedformsSurvey(formId)
+> SurveyForm getQualityPublishedformsSurvey(formId, opts)
 
 
 GET /api/v2/quality/publishedforms/surveys/{formId}
@@ -2396,8 +2636,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualityPublishedformsSurvey(formId)
+apiInstance.getQualityPublishedformsSurvey(formId, opts)
   .then((data) => {
     console.log(`getQualityPublishedformsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2413,6 +2659,7 @@ apiInstance.getQualityPublishedformsSurvey(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2449,7 +2696,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
-  'onlyLatestEnabledPerContext': false // Boolean | onlyLatestEnabledPerContext
+  'onlyLatestEnabledPerContext': false, // Boolean | onlyLatestEnabledPerContext
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getQualityPublishedformsSurveys(opts)
@@ -2471,6 +2722,7 @@ apiInstance.getQualityPublishedformsSurveys(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Name | [optional]  |
  **onlyLatestEnabledPerContext** | **Boolean** | onlyLatestEnabledPerContext | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2479,7 +2731,7 @@ apiInstance.getQualityPublishedformsSurveys(opts)
 
 ## getQualitySurvey
 
-> Survey getQualitySurvey(surveyId)
+> Survey getQualitySurvey(surveyId, opts)
 
 
 GET /api/v2/quality/surveys/{surveyId}
@@ -2504,8 +2756,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let surveyId = "surveyId_example"; // String | surveyId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualitySurvey(surveyId)
+apiInstance.getQualitySurvey(surveyId, opts)
   .then((data) => {
     console.log(`getQualitySurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2521,6 +2779,7 @@ apiInstance.getQualitySurvey(surveyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **surveyId** | **String** | surveyId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2529,7 +2788,7 @@ apiInstance.getQualitySurvey(surveyId)
 
 ## getQualitySurveysScorable
 
-> ScorableSurvey getQualitySurveysScorable(customerSurveyUrl)
+> ScorableSurvey getQualitySurveysScorable(customerSurveyUrl, opts)
 
 
 GET /api/v2/quality/surveys/scorable
@@ -2549,8 +2808,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.QualityApi();
 
 let customerSurveyUrl = "customerSurveyUrl_example"; // String | customerSurveyUrl
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getQualitySurveysScorable(customerSurveyUrl)
+apiInstance.getQualitySurveysScorable(customerSurveyUrl, opts)
   .then((data) => {
     console.log(`getQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2566,6 +2831,7 @@ apiInstance.getQualitySurveysScorable(customerSurveyUrl)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **customerSurveyUrl** | **String** | customerSurveyUrl |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2574,7 +2840,7 @@ apiInstance.getQualitySurveysScorable(customerSurveyUrl)
 
 ## patchQualityFormsSurvey
 
-> SurveyForm patchQualityFormsSurvey(formId, body)
+> SurveyForm patchQualityFormsSurvey(formId, body, opts)
 
 
 PATCH /api/v2/quality/forms/surveys/{formId}
@@ -2600,8 +2866,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
 let body = {}; // Object | Survey form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchQualityFormsSurvey(formId, body)
+apiInstance.patchQualityFormsSurvey(formId, body, opts)
   .then((data) => {
     console.log(`patchQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2618,6 +2890,7 @@ apiInstance.patchQualityFormsSurvey(formId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
  **body** | **Object** | Survey form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2626,7 +2899,7 @@ apiInstance.patchQualityFormsSurvey(formId, body)
 
 ## postAnalyticsEvaluationsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/evaluations/aggregates/jobs
@@ -2653,8 +2926,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
+apiInstance.postAnalyticsEvaluationsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsEvaluationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2670,6 +2949,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2678,7 +2958,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
 
 ## postAnalyticsEvaluationsAggregatesQuery
 
-> EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
+> EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/evaluations/aggregates/query
@@ -2703,8 +2983,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
+apiInstance.postAnalyticsEvaluationsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2720,6 +3006,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2728,7 +3015,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 ## postAnalyticsSurveysAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/surveys/aggregates/jobs
@@ -2755,8 +3042,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsSurveysAggregatesJobs(body)
+apiInstance.postAnalyticsSurveysAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsSurveysAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2772,6 +3065,7 @@ apiInstance.postAnalyticsSurveysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2780,7 +3074,7 @@ apiInstance.postAnalyticsSurveysAggregatesJobs(body)
 
 ## postAnalyticsSurveysAggregatesQuery
 
-> SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+> SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/surveys/aggregates/query
@@ -2805,8 +3099,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsSurveysAggregatesQuery(body)
+apiInstance.postAnalyticsSurveysAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsSurveysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2822,6 +3122,7 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2856,7 +3157,11 @@ let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | calibration
 let opts = { 
-  'expand': "expand_example" // String | calibratorId
+  'expand': "expand_example", // String | calibratorId
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postQualityCalibrations(body, opts)
@@ -2876,6 +3181,7 @@ apiInstance.postQualityCalibrations(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | calibration |  |
  **expand** | **String** | calibratorId | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2912,7 +3218,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | evaluation
 let opts = { 
   'idempotencyKey': "idempotencyKey_example", // String | Idempotency key for request deduplication
-  'expand': "expand_example" // String | evaluatorId
+  'expand': "expand_example", // String | evaluatorId
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
@@ -2934,6 +3244,7 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
  **body** | **Object** | evaluation |  |
  **idempotencyKey** | **String** | Idempotency key for request deduplication | [optional]  |
  **expand** | **String** | evaluatorId | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2942,7 +3253,7 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 
 ## postQualityConversationsAuditsQuery
 
-> QualityAuditQueryExecutionStatusResponse postQualityConversationsAuditsQuery(body)
+> QualityAuditQueryExecutionStatusResponse postQualityConversationsAuditsQuery(body, opts)
 
 
 POST /api/v2/quality/conversations/audits/query
@@ -2967,8 +3278,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityConversationsAuditsQuery(body)
+apiInstance.postQualityConversationsAuditsQuery(body, opts)
   .then((data) => {
     console.log(`postQualityConversationsAuditsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2984,6 +3301,7 @@ apiInstance.postQualityConversationsAuditsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2992,7 +3310,7 @@ apiInstance.postQualityConversationsAuditsQuery(body)
 
 ## postQualityEvaluationsAggregatesQueryMe
 
-> EvaluationAggregateQueryResponse postQualityEvaluationsAggregatesQueryMe(body)
+> EvaluationAggregateQueryResponse postQualityEvaluationsAggregatesQueryMe(body, opts)
 
 
 POST /api/v2/quality/evaluations/aggregates/query/me
@@ -3015,8 +3333,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityEvaluationsAggregatesQueryMe(body)
+apiInstance.postQualityEvaluationsAggregatesQueryMe(body, opts)
   .then((data) => {
     console.log(`postQualityEvaluationsAggregatesQueryMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3032,6 +3356,7 @@ apiInstance.postQualityEvaluationsAggregatesQueryMe(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3040,7 +3365,7 @@ apiInstance.postQualityEvaluationsAggregatesQueryMe(body)
 
 ## postQualityEvaluationsScoring
 
-> EvaluationScoringSet postQualityEvaluationsScoring(body)
+> EvaluationScoringSet postQualityEvaluationsScoring(body, opts)
 
 
 POST /api/v2/quality/evaluations/scoring
@@ -3063,8 +3388,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | evaluationAndScoringSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityEvaluationsScoring(body)
+apiInstance.postQualityEvaluationsScoring(body, opts)
   .then((data) => {
     console.log(`postQualityEvaluationsScoring success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3080,6 +3411,7 @@ apiInstance.postQualityEvaluationsScoring(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | evaluationAndScoringSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3088,7 +3420,7 @@ apiInstance.postQualityEvaluationsScoring(body)
 
 ## postQualityEvaluationsSearch
 
-> EvaluationSearchResponse postQualityEvaluationsSearch(body)
+> EvaluationSearchResponse postQualityEvaluationsSearch(body, opts)
 
 
 POST /api/v2/quality/evaluations/search
@@ -3115,8 +3447,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Evaluation search request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityEvaluationsSearch(body)
+apiInstance.postQualityEvaluationsSearch(body, opts)
   .then((data) => {
     console.log(`postQualityEvaluationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3132,6 +3470,7 @@ apiInstance.postQualityEvaluationsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Evaluation search request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3140,7 +3479,7 @@ apiInstance.postQualityEvaluationsSearch(body)
 
 ## postQualityForms
 
-> EvaluationFormResponse postQualityForms(body)
+> EvaluationFormResponse postQualityForms(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -3168,8 +3507,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Evaluation form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityForms(body)
+apiInstance.postQualityForms(body, opts)
   .then((data) => {
     console.log(`postQualityForms success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3185,6 +3530,7 @@ apiInstance.postQualityForms(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Evaluation form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3193,7 +3539,7 @@ apiInstance.postQualityForms(body)
 
 ## postQualityFormsEvaluations
 
-> EvaluationFormResponse postQualityFormsEvaluations(body)
+> EvaluationFormResponse postQualityFormsEvaluations(body, opts)
 
 
 POST /api/v2/quality/forms/evaluations
@@ -3218,8 +3564,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Evaluation form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityFormsEvaluations(body)
+apiInstance.postQualityFormsEvaluations(body, opts)
   .then((data) => {
     console.log(`postQualityFormsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3235,6 +3587,7 @@ apiInstance.postQualityFormsEvaluations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Evaluation form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3243,7 +3596,7 @@ apiInstance.postQualityFormsEvaluations(body)
 
 ## postQualityFormsSurveys
 
-> SurveyForm postQualityFormsSurveys(body)
+> SurveyForm postQualityFormsSurveys(body, opts)
 
 
 POST /api/v2/quality/forms/surveys
@@ -3268,8 +3621,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Survey form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityFormsSurveys(body)
+apiInstance.postQualityFormsSurveys(body, opts)
   .then((data) => {
     console.log(`postQualityFormsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3285,6 +3644,7 @@ apiInstance.postQualityFormsSurveys(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Survey form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3293,7 +3653,7 @@ apiInstance.postQualityFormsSurveys(body)
 
 ## postQualityProgramAgentscoringrules
 
-> AgentScoringRule postQualityProgramAgentscoringrules(programId, body)
+> AgentScoringRule postQualityProgramAgentscoringrules(programId, body, opts)
 
 
 POST /api/v2/quality/programs/{programId}/agentscoringrules
@@ -3321,8 +3681,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
 let body = {}; // Object | Agent Scoring Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityProgramAgentscoringrules(programId, body)
+apiInstance.postQualityProgramAgentscoringrules(programId, body, opts)
   .then((data) => {
     console.log(`postQualityProgramAgentscoringrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3339,6 +3705,7 @@ apiInstance.postQualityProgramAgentscoringrules(programId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | Program ID from Speech and Text Analytics |  |
  **body** | **Object** | Agent Scoring Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3347,7 +3714,7 @@ apiInstance.postQualityProgramAgentscoringrules(programId, body)
 
 ## postQualityPublishedforms
 
-> EvaluationFormResponse postQualityPublishedforms(body)
+> EvaluationFormResponse postQualityPublishedforms(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -3375,8 +3742,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Publish request containing id of form to publish
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityPublishedforms(body)
+apiInstance.postQualityPublishedforms(body, opts)
   .then((data) => {
     console.log(`postQualityPublishedforms success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3392,6 +3765,7 @@ apiInstance.postQualityPublishedforms(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Publish request containing id of form to publish |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3400,7 +3774,7 @@ apiInstance.postQualityPublishedforms(body)
 
 ## postQualityPublishedformsEvaluations
 
-> EvaluationFormResponse postQualityPublishedformsEvaluations(body)
+> EvaluationFormResponse postQualityPublishedformsEvaluations(body, opts)
 
 
 POST /api/v2/quality/publishedforms/evaluations
@@ -3425,8 +3799,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Publish request containing id of form to publish
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityPublishedformsEvaluations(body)
+apiInstance.postQualityPublishedformsEvaluations(body, opts)
   .then((data) => {
     console.log(`postQualityPublishedformsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3442,6 +3822,7 @@ apiInstance.postQualityPublishedformsEvaluations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Publish request containing id of form to publish |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3450,7 +3831,7 @@ apiInstance.postQualityPublishedformsEvaluations(body)
 
 ## postQualityPublishedformsSurveys
 
-> SurveyForm postQualityPublishedformsSurveys(body)
+> SurveyForm postQualityPublishedformsSurveys(body, opts)
 
 
 POST /api/v2/quality/publishedforms/surveys
@@ -3475,8 +3856,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Survey form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualityPublishedformsSurveys(body)
+apiInstance.postQualityPublishedformsSurveys(body, opts)
   .then((data) => {
     console.log(`postQualityPublishedformsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3492,6 +3879,7 @@ apiInstance.postQualityPublishedformsSurveys(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Survey form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3500,7 +3888,7 @@ apiInstance.postQualityPublishedformsSurveys(body)
 
 ## postQualitySurveys
 
-> CreateSurveyResponse postQualitySurveys(body)
+> CreateSurveyResponse postQualitySurveys(body, opts)
 
 
 POST /api/v2/quality/surveys
@@ -3525,8 +3913,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | Survey creation request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualitySurveys(body)
+apiInstance.postQualitySurveys(body, opts)
   .then((data) => {
     console.log(`postQualitySurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3542,6 +3936,7 @@ apiInstance.postQualitySurveys(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Survey creation request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3550,7 +3945,7 @@ apiInstance.postQualitySurveys(body)
 
 ## postQualitySurveysScoring
 
-> SurveyScoringSet postQualitySurveysScoring(body)
+> SurveyScoringSet postQualitySurveysScoring(body, opts)
 
 
 POST /api/v2/quality/surveys/scoring
@@ -3573,8 +3968,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let body = {}; // Object | surveyAndScoringSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postQualitySurveysScoring(body)
+apiInstance.postQualitySurveysScoring(body, opts)
   .then((data) => {
     console.log(`postQualitySurveysScoring success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3590,6 +3991,7 @@ apiInstance.postQualitySurveysScoring(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | surveyAndScoringSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3598,7 +4000,7 @@ apiInstance.postQualitySurveysScoring(body)
 
 ## putQualityCalibration
 
-> Calibration putQualityCalibration(calibrationId, body)
+> Calibration putQualityCalibration(calibrationId, body, opts)
 
 
 PUT /api/v2/quality/calibrations/{calibrationId}
@@ -3624,8 +4026,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let calibrationId = "calibrationId_example"; // String | Calibration ID
 let body = {}; // Object | Calibration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualityCalibration(calibrationId, body)
+apiInstance.putQualityCalibration(calibrationId, body, opts)
   .then((data) => {
     console.log(`putQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3642,6 +4050,7 @@ apiInstance.putQualityCalibration(calibrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **calibrationId** | **String** | Calibration ID |  |
  **body** | **Object** | Calibration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3682,7 +4091,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let body = {}; // Object | evaluation
 let opts = { 
-  'expand': "expand_example" // String | evaluatorId, evaluationForm, assignee, evaluator
+  'expand': "expand_example", // String | evaluatorId, evaluationForm, assignee, evaluator
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
@@ -3704,6 +4117,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
  **evaluationId** | **String** | evaluationId |  |
  **body** | **Object** | evaluation |  |
  **expand** | **String** | evaluatorId, evaluationForm, assignee, evaluator | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3712,7 +4126,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 
 ## putQualityForm
 
-> EvaluationFormResponse putQualityForm(formId, body)
+> EvaluationFormResponse putQualityForm(formId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -3741,8 +4155,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
 let body = {}; // Object | Evaluation form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualityForm(formId, body)
+apiInstance.putQualityForm(formId, body, opts)
   .then((data) => {
     console.log(`putQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3759,6 +4179,7 @@ apiInstance.putQualityForm(formId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
  **body** | **Object** | Evaluation form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3767,7 +4188,7 @@ apiInstance.putQualityForm(formId, body)
 
 ## putQualityFormsEvaluation
 
-> EvaluationFormResponse putQualityFormsEvaluation(formId, body)
+> EvaluationFormResponse putQualityFormsEvaluation(formId, body, opts)
 
 
 PUT /api/v2/quality/forms/evaluations/{formId}
@@ -3793,8 +4214,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
 let body = {}; // Object | Evaluation form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualityFormsEvaluation(formId, body)
+apiInstance.putQualityFormsEvaluation(formId, body, opts)
   .then((data) => {
     console.log(`putQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3811,6 +4238,7 @@ apiInstance.putQualityFormsEvaluation(formId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
  **body** | **Object** | Evaluation form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3819,7 +4247,7 @@ apiInstance.putQualityFormsEvaluation(formId, body)
 
 ## putQualityFormsEvaluationAiscoringSettings
 
-> AiScoringSettings putQualityFormsEvaluationAiscoringSettings(formId, body)
+> AiScoringSettings putQualityFormsEvaluationAiscoringSettings(formId, body, opts)
 
 
 PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings
@@ -3845,8 +4273,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
 let body = {}; // Object | AI Scoring Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body)
+apiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body, opts)
   .then((data) => {
     console.log(`putQualityFormsEvaluationAiscoringSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3863,6 +4297,7 @@ apiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
  **body** | **Object** | AI Scoring Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3871,7 +4306,7 @@ apiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body)
 
 ## putQualityFormsSurvey
 
-> SurveyForm putQualityFormsSurvey(formId, body)
+> SurveyForm putQualityFormsSurvey(formId, body, opts)
 
 
 PUT /api/v2/quality/forms/surveys/{formId}
@@ -3897,8 +4332,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
 let body = {}; // Object | Survey form
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualityFormsSurvey(formId, body)
+apiInstance.putQualityFormsSurvey(formId, body, opts)
   .then((data) => {
     console.log(`putQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3915,6 +4356,7 @@ apiInstance.putQualityFormsSurvey(formId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
  **body** | **Object** | Survey form |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3923,7 +4365,7 @@ apiInstance.putQualityFormsSurvey(formId, body)
 
 ## putQualityProgramAgentscoringrule
 
-> AgentScoringRule putQualityProgramAgentscoringrule(programId, ruleId, body)
+> AgentScoringRule putQualityProgramAgentscoringrule(programId, ruleId, body, opts)
 
 
 PUT /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}
@@ -3950,8 +4392,14 @@ let apiInstance = new platformClient.QualityApi();
 let programId = "programId_example"; // String | Program ID from Speech and Text Analytics
 let ruleId = "ruleId_example"; // String | Agent Scoring Rule ID
 let body = {}; // Object | Agent Scoring Rule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualityProgramAgentscoringrule(programId, ruleId, body)
+apiInstance.putQualityProgramAgentscoringrule(programId, ruleId, body, opts)
   .then((data) => {
     console.log(`putQualityProgramAgentscoringrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3969,6 +4417,7 @@ apiInstance.putQualityProgramAgentscoringrule(programId, ruleId, body)
  **programId** | **String** | Program ID from Speech and Text Analytics |  |
  **ruleId** | **String** | Agent Scoring Rule ID |  |
  **body** | **Object** | Agent Scoring Rule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3977,7 +4426,7 @@ apiInstance.putQualityProgramAgentscoringrule(programId, ruleId, body)
 
 ## putQualitySurveysScorable
 
-> ScorableSurvey putQualitySurveysScorable(customerSurveyUrl, body)
+> ScorableSurvey putQualitySurveysScorable(customerSurveyUrl, body, opts)
 
 
 PUT /api/v2/quality/surveys/scorable
@@ -3998,8 +4447,14 @@ let apiInstance = new platformClient.QualityApi();
 
 let customerSurveyUrl = "customerSurveyUrl_example"; // String | customerSurveyUrl
 let body = {}; // Object | survey
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
+apiInstance.putQualitySurveysScorable(customerSurveyUrl, body, opts)
   .then((data) => {
     console.log(`putQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4016,10 +4471,11 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 | ------------- | ------------- | ------------- | ------------- |
  **customerSurveyUrl** | **String** | customerSurveyUrl |  |
  **body** | **Object** | survey |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

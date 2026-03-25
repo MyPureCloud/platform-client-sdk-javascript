@@ -5,7 +5,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -27,6 +27,7 @@ class SuggestApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSearch(q64, opts) { 
 		opts = opts || {};
@@ -46,7 +47,8 @@ class SuggestApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -57,6 +59,7 @@ class SuggestApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSearchSuggest(q64, opts) { 
 		opts = opts || {};
@@ -76,7 +79,8 @@ class SuggestApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -86,6 +90,7 @@ class SuggestApi {
 	 * @param {Object} body Search request options
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSearch(body, opts) { 
 		opts = opts || {};
@@ -105,7 +110,8 @@ class SuggestApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -115,6 +121,7 @@ class SuggestApi {
 	 * @param {Object} body Search request options
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSearchSuggest(body, opts) { 
 		opts = opts || {};
@@ -134,7 +141,8 @@ class SuggestApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

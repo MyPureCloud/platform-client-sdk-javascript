@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class OrganizationAuthorizationApi {
 	 * Delete Org Trust
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrustee(trusteeOrgId) { 
+	deleteOrgauthorizationTrustee(trusteeOrgId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrustee';
@@ -41,7 +45,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Id of the cloned user to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId) { 
+	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeCloneduser';
@@ -71,7 +80,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -80,8 +90,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
+	deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroup';
@@ -101,7 +115,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -110,8 +125,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
+	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroupRoles';
@@ -131,7 +150,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -140,8 +160,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId) { 
+	deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUser';
@@ -161,7 +185,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -170,8 +195,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId) { 
+	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUserRoles';
@@ -191,7 +220,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -199,9 +229,13 @@ class OrganizationAuthorizationApi {
 	 * Delete Bulk Org Trustees
 	 * 
 	 * @param {Array.<String>} id Comma separated list of trustee ids to remove
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteOrgauthorizationTrustees(id) { 
+	deleteOrgauthorizationTrustees(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteOrgauthorizationTrustees';
@@ -217,7 +251,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -225,8 +260,12 @@ class OrganizationAuthorizationApi {
 	 * Delete Org Trust
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrustor(trustorOrgId) { 
+	deleteOrgauthorizationTrustor(trustorOrgId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustor';
@@ -242,7 +281,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -251,8 +291,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
+	deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorCloneduser';
@@ -272,7 +316,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -281,8 +326,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trustorGroupId Trustor Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+	deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorGroup';
@@ -302,7 +351,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -311,8 +361,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
+	deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorUser';
@@ -332,7 +386,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -340,9 +395,13 @@ class OrganizationAuthorizationApi {
 	 * Delete Bulk Org Trustors
 	 * 
 	 * @param {Array.<String>} id Comma separated list of trustor ids to remove
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteOrgauthorizationTrustors(id) { 
+	deleteOrgauthorizationTrustors(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteOrgauthorizationTrustors';
@@ -358,7 +417,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -366,8 +426,12 @@ class OrganizationAuthorizationApi {
 	 * Get Pairing Info
 	 * 
 	 * @param {String} pairingId Pairing Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationPairing(pairingId) { 
+	getOrgauthorizationPairing(pairingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'pairingId' is set
 		if (pairingId === undefined || pairingId === null || pairingId === '') {
 			throw 'Missing the required parameter "pairingId" when calling getOrgauthorizationPairing';
@@ -383,7 +447,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -391,8 +456,12 @@ class OrganizationAuthorizationApi {
 	 * Get Org Trust
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrustee(trusteeOrgId) { 
+	getOrgauthorizationTrustee(trusteeOrgId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrustee';
@@ -408,7 +477,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -416,8 +486,12 @@ class OrganizationAuthorizationApi {
 	 * The list of cloned users from the trustee organization (i.e. users with a native user record).
 	 * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
 	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteeClonedusers(trusteeOrgId) { 
+	getOrgauthorizationTrusteeClonedusers(trusteeOrgId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeClonedusers';
@@ -433,7 +507,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -442,8 +517,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
+	getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroup';
@@ -463,7 +542,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -472,8 +552,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
+	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroupRoles';
@@ -493,7 +577,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -504,6 +589,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrgauthorizationTrusteeGroups(trusteeOrgId, opts) { 
 		opts = opts || {};
@@ -523,7 +609,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -532,8 +619,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId) { 
+	getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUser';
@@ -553,7 +644,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -562,8 +654,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId) { 
+	getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUserRoles';
@@ -583,7 +679,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -594,6 +691,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrgauthorizationTrusteeUsers(trusteeOrgId, opts) { 
 		opts = opts || {};
@@ -613,7 +711,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -623,6 +722,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrgauthorizationTrustees(opts) { 
 		opts = opts || {};
@@ -638,15 +738,20 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Customer Care organization ids.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteesCare() { 
+	getOrgauthorizationTrusteesCare(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/care', 
@@ -658,15 +763,20 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get organization authorization trust with Customer Care, if one exists.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrusteesDefault() { 
+	getOrgauthorizationTrusteesDefault(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/default', 
@@ -678,7 +788,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -686,8 +797,12 @@ class OrganizationAuthorizationApi {
 	 * Get Org Trust
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrustor(trustorOrgId) { 
+	getOrgauthorizationTrustor(trustorOrgId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustor';
@@ -703,7 +818,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -712,8 +828,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
+	getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorCloneduser';
@@ -733,7 +853,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -741,8 +862,12 @@ class OrganizationAuthorizationApi {
 	 * The list of cloned users in the trustor organization (i.e. users with a native user record).
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrustorClonedusers(trustorOrgId) { 
+	getOrgauthorizationTrustorClonedusers(trustorOrgId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorClonedusers';
@@ -758,7 +883,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -767,8 +893,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trustorGroupId Trustor Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+	getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroup';
@@ -788,7 +918,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -799,6 +930,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrgauthorizationTrustorGroups(trustorOrgId, opts) { 
 		opts = opts || {};
@@ -818,7 +950,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -827,8 +960,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
+	getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUser';
@@ -848,7 +985,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -859,6 +997,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrgauthorizationTrustorUsers(trustorOrgId, opts) { 
 		opts = opts || {};
@@ -878,7 +1017,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -888,6 +1028,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrgauthorizationTrustors(opts) { 
 		opts = opts || {};
@@ -903,7 +1044,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -911,8 +1053,12 @@ class OrganizationAuthorizationApi {
 	 * A pairing id is created by the trustee and given to the trustor to create a trust.
 	 * 
 	 * @param {Object} body Pairing Info
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOrgauthorizationPairings(body) { 
+	postOrgauthorizationPairings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOrgauthorizationPairings';
@@ -928,7 +1074,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -937,8 +1084,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {Object} body Trust
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOrgauthorizationTrusteeGroups(trusteeOrgId, body) { 
+	postOrgauthorizationTrusteeGroups(trusteeOrgId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeGroups';
@@ -958,7 +1109,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -967,8 +1119,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {Object} body Trust
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOrgauthorizationTrusteeUsers(trusteeOrgId, body) { 
+	postOrgauthorizationTrusteeUsers(trusteeOrgId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeUsers';
@@ -988,7 +1144,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -996,8 +1153,12 @@ class OrganizationAuthorizationApi {
 	 * Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 	 * 
 	 * @param {Object} body Trust
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOrgauthorizationTrustees(body) { 
+	postOrgauthorizationTrustees(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrustees';
@@ -1013,7 +1174,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1026,6 +1188,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to timestamp)
 	 * @param {String} opts.sortOrder Sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOrgauthorizationTrusteesAudits(body, opts) { 
 		opts = opts || {};
@@ -1045,7 +1208,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1057,6 +1221,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Boolean} opts.autoExpire Automatically expire pairing after 30 days
 	 * @param {Boolean} opts.assignFullAccess Grant Customer Care full access to the organization
 	 * @param {Boolean} opts.allowTrustedUserAccess Make Customer Care a Trusted User
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOrgauthorizationTrusteesCare(opts) { 
 		opts = opts || {};
@@ -1072,7 +1237,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1082,6 +1248,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.assignDefaultRole Assign Admin role to default pairing with Customer Care
 	 * @param {Boolean} opts.autoExpire Automatically expire pairing after 30 days
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOrgauthorizationTrusteesDefault(opts) { 
 		opts = opts || {};
@@ -1097,7 +1264,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1110,6 +1278,7 @@ class OrganizationAuthorizationApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to timestamp)
 	 * @param {String} opts.sortOrder Sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOrgauthorizationTrustorAudits(body, opts) { 
 		opts = opts || {};
@@ -1129,7 +1298,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1138,8 +1308,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {Object} body Client
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrustee(trusteeOrgId, body) { 
+	putOrgauthorizationTrustee(trusteeOrgId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrustee';
@@ -1159,7 +1333,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1169,8 +1344,12 @@ class OrganizationAuthorizationApi {
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeGroupId Trustee Group Id
 	 * @param {Object} body Set of roles with corresponding divisions to apply
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body) { 
+	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
@@ -1194,7 +1373,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1204,8 +1384,12 @@ class OrganizationAuthorizationApi {
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeGroupId Trustee Group Id
 	 * @param {Array.<String>} body List of roles
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body) { 
+	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoles';
@@ -1229,7 +1413,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1239,8 +1424,12 @@ class OrganizationAuthorizationApi {
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
 	 * @param {Object} body Set of roles with corresponding divisions to apply
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body) { 
+	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoledivisions';
@@ -1264,7 +1453,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1274,8 +1464,12 @@ class OrganizationAuthorizationApi {
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
 	 * @param {Array.<String>} body List of roles
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body) { 
+	putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoles';
@@ -1299,7 +1493,8 @@ class OrganizationAuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1308,8 +1503,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
+	putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorCloneduser';
@@ -1329,7 +1528,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1338,8 +1538,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trustorGroupId Trustor Group Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+	putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorGroup';
@@ -1359,7 +1563,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1368,8 +1573,12 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
+	putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorUser';
@@ -1389,7 +1598,8 @@ class OrganizationAuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

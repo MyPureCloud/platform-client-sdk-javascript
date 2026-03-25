@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class LicenseApi {
 	 * Get PureCloud license definition.
 	 * 
 	 * @param {String} licenseId ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLicenseDefinition(licenseId) { 
+	getLicenseDefinition(licenseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'licenseId' is set
 		if (licenseId === undefined || licenseId === null || licenseId === '') {
 			throw 'Missing the required parameter "licenseId" when calling getLicenseDefinition';
@@ -41,15 +45,20 @@ class LicenseApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get all PureCloud license definitions available for the organization.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLicenseDefinitions() { 
+	getLicenseDefinitions(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/license/definitions', 
@@ -61,7 +70,8 @@ class LicenseApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -69,8 +79,12 @@ class LicenseApi {
 	 * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
 	 * 
 	 * @param {String} featureName featureName
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLicenseToggle(featureName) { 
+	getLicenseToggle(featureName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'featureName' is set
 		if (featureName === undefined || featureName === null || featureName === '') {
 			throw 'Missing the required parameter "featureName" when calling getLicenseToggle';
@@ -86,7 +100,8 @@ class LicenseApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -94,8 +109,12 @@ class LicenseApi {
 	 * Get licenses for specified user.
 	 * 
 	 * @param {String} userId ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLicenseUser(userId) { 
+	getLicenseUser(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getLicenseUser';
@@ -111,7 +130,8 @@ class LicenseApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -121,6 +141,7 @@ class LicenseApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLicenseUsers(opts) { 
 		opts = opts || {};
@@ -136,7 +157,8 @@ class LicenseApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -145,6 +167,7 @@ class LicenseApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.body The roleIds to use while inferring licenses
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLicenseInfer(opts) { 
 		opts = opts || {};
@@ -160,7 +183,8 @@ class LicenseApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -169,6 +193,7 @@ class LicenseApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.body The permissions to use while inferring licenses
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postLicenseInferPermissions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postLicenseInferPermissions(opts) { 
@@ -185,7 +210,8 @@ class LicenseApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -194,6 +220,7 @@ class LicenseApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The license assignments to update.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLicenseOrganization(opts) { 
 		opts = opts || {};
@@ -209,7 +236,8 @@ class LicenseApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -217,8 +245,12 @@ class LicenseApi {
 	 * Deprecated. No alternative required - this endpoint has no effect
 	 * 
 	 * @param {String} featureName featureName
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLicenseToggle(featureName) { 
+	postLicenseToggle(featureName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'featureName' is set
 		if (featureName === undefined || featureName === null || featureName === '') {
 			throw 'Missing the required parameter "featureName" when calling postLicenseToggle';
@@ -234,7 +266,8 @@ class LicenseApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -243,6 +276,7 @@ class LicenseApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.body The user IDs to fetch.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLicenseUsers(opts) { 
 		opts = opts || {};
@@ -258,7 +292,8 @@ class LicenseApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

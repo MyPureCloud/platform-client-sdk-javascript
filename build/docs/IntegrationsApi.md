@@ -103,7 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteIntegration
 
-> Integration deleteIntegration(integrationId)
+> Integration deleteIntegration(integrationId, opts)
 
 
 DELETE /api/v2/integrations/{integrationId}
@@ -128,8 +128,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIntegration(integrationId)
+apiInstance.deleteIntegration(integrationId, opts)
   .then((data) => {
     console.log(`deleteIntegration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -145,6 +151,7 @@ apiInstance.deleteIntegration(integrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -153,7 +160,7 @@ apiInstance.deleteIntegration(integrationId)
 
 ## deleteIntegrationsAction
 
-> void deleteIntegrationsAction(actionId)
+> void deleteIntegrationsAction(actionId, opts)
 
 
 DELETE /api/v2/integrations/actions/{actionId}
@@ -178,8 +185,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIntegrationsAction(actionId)
+apiInstance.deleteIntegrationsAction(actionId, opts)
   .then(() => {
     console.log('deleteIntegrationsAction returned successfully.');
   })
@@ -195,6 +208,7 @@ apiInstance.deleteIntegrationsAction(actionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -203,7 +217,7 @@ void (no response body)
 
 ## deleteIntegrationsActionDraft
 
-> void deleteIntegrationsActionDraft(actionId)
+> void deleteIntegrationsActionDraft(actionId, opts)
 
 
 DELETE /api/v2/integrations/actions/{actionId}/draft
@@ -228,8 +242,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIntegrationsActionDraft(actionId)
+apiInstance.deleteIntegrationsActionDraft(actionId, opts)
   .then(() => {
     console.log('deleteIntegrationsActionDraft returned successfully.');
   })
@@ -245,6 +265,7 @@ apiInstance.deleteIntegrationsActionDraft(actionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -253,7 +274,7 @@ void (no response body)
 
 ## deleteIntegrationsCredential
 
-> void deleteIntegrationsCredential(credentialId)
+> void deleteIntegrationsCredential(credentialId, opts)
 
 
 DELETE /api/v2/integrations/credentials/{credentialId}
@@ -278,8 +299,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let credentialId = "credentialId_example"; // String | Credential ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIntegrationsCredential(credentialId)
+apiInstance.deleteIntegrationsCredential(credentialId, opts)
   .then(() => {
     console.log('deleteIntegrationsCredential returned successfully.');
   })
@@ -295,6 +322,7 @@ apiInstance.deleteIntegrationsCredential(credentialId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **credentialId** | **String** | Credential ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -334,7 +362,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegration(integrationId, opts)
@@ -359,6 +391,7 @@ apiInstance.getIntegration(integrationId, opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -367,7 +400,7 @@ apiInstance.getIntegration(integrationId, opts)
 
 ## getIntegrationConfigCurrent
 
-> IntegrationConfiguration getIntegrationConfigCurrent(integrationId)
+> IntegrationConfiguration getIntegrationConfigCurrent(integrationId, opts)
 
 
 GET /api/v2/integrations/{integrationId}/config/current
@@ -392,8 +425,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationConfigCurrent(integrationId)
+apiInstance.getIntegrationConfigCurrent(integrationId, opts)
   .then((data) => {
     console.log(`getIntegrationConfigCurrent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -409,6 +448,7 @@ apiInstance.getIntegrationConfigCurrent(integrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -450,7 +490,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'ids': 7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376, // [String] | Comma-separated list of integration IDs to filter by (max 100)
   'integrationType': webhook, // String | Filter integrations by integration type ID
-  'reportedState': ACTIVE // String | Filter integrations by reported state (case-insensitive)
+  'reportedState': ACTIVE, // String | Filter integrations by reported state (case-insensitive)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrations(opts)
@@ -477,6 +521,7 @@ apiInstance.getIntegrations(opts)
  **ids** | **[String]** | Comma-separated list of integration IDs to filter by (max 100) | [optional]  |
  **integrationType** | **String** | Filter integrations by integration type ID | [optional]  |
  **reportedState** | **String** | Filter integrations by reported state (case-insensitive) | [optional] <br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -514,7 +559,11 @@ let actionId = "actionId_example"; // String | actionId
 let opts = { 
   'expand': "expand_example", // String | Indicates a field in the response which should be expanded.
   'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
-  'includeConfig': false // Boolean | Return config in response.
+  'includeConfig': false, // Boolean | Return config in response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsAction(actionId, opts)
@@ -536,6 +585,7 @@ apiInstance.getIntegrationsAction(actionId, opts)
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false]<br />**Values**: true, false |
  **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -573,7 +623,11 @@ let actionId = "actionId_example"; // String | actionId
 let opts = { 
   'expand': "expand_example", // String | Indicates a field in the response which should be expanded.
   'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
-  'includeConfig': false // Boolean | Return config in response.
+  'includeConfig': false, // Boolean | Return config in response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActionDraft(actionId, opts)
@@ -595,6 +649,7 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false]<br />**Values**: true, false |
  **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -603,7 +658,7 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 
 ## getIntegrationsActionDraftFunction
 
-> FunctionConfig getIntegrationsActionDraftFunction(actionId)
+> FunctionConfig getIntegrationsActionDraftFunction(actionId, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/draft/function
@@ -628,8 +683,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionDraftFunction(actionId)
+apiInstance.getIntegrationsActionDraftFunction(actionId, opts)
   .then((data) => {
     console.log(`getIntegrationsActionDraftFunction success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -645,6 +706,7 @@ apiInstance.getIntegrationsActionDraftFunction(actionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -681,7 +743,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this draft.
 let opts = { 
-  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActionDraftSchema(actionId, fileName, opts)
@@ -702,6 +768,7 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName, opts)
  **actionId** | **String** | actionId |  |
  **fileName** | **String** | Name of schema file to be retrieved for this draft. |  |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -710,7 +777,7 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName, opts)
 
 ## getIntegrationsActionDraftTemplate
 
-> **&#39;String&#39;** getIntegrationsActionDraftTemplate(actionId, fileName)
+> **&#39;String&#39;** getIntegrationsActionDraftTemplate(actionId, fileName, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}
@@ -737,8 +804,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let fileName = "fileName_example"; // String | Name of template file to be retrieved for this action draft.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
+apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName, opts)
   .then((data) => {
     console.log(`getIntegrationsActionDraftTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -755,6 +828,7 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **fileName** | **String** | Name of template file to be retrieved for this action draft. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -763,7 +837,7 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
 
 ## getIntegrationsActionDraftValidation
 
-> DraftValidationResult getIntegrationsActionDraftValidation(actionId)
+> DraftValidationResult getIntegrationsActionDraftValidation(actionId, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/draft/validation
@@ -788,8 +862,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionDraftValidation(actionId)
+apiInstance.getIntegrationsActionDraftValidation(actionId, opts)
   .then((data) => {
     console.log(`getIntegrationsActionDraftValidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -805,6 +885,7 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -813,7 +894,7 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 
 ## getIntegrationsActionFunction
 
-> FunctionConfig getIntegrationsActionFunction(actionId)
+> FunctionConfig getIntegrationsActionFunction(actionId, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/function
@@ -838,8 +919,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionFunction(actionId)
+apiInstance.getIntegrationsActionFunction(actionId, opts)
   .then((data) => {
     console.log(`getIntegrationsActionFunction success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -855,6 +942,7 @@ apiInstance.getIntegrationsActionFunction(actionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -891,7 +979,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this action.
 let opts = { 
-  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActionSchema(actionId, fileName, opts)
@@ -912,6 +1004,7 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName, opts)
  **actionId** | **String** | actionId |  |
  **fileName** | **String** | Name of schema file to be retrieved for this action. |  |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -920,7 +1013,7 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName, opts)
 
 ## getIntegrationsActionTemplate
 
-> **&#39;String&#39;** getIntegrationsActionTemplate(actionId, fileName)
+> **&#39;String&#39;** getIntegrationsActionTemplate(actionId, fileName, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/templates/{fileName}
@@ -947,8 +1040,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let fileName = "fileName_example"; // String | Name of template file to be retrieved for this action.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionTemplate(actionId, fileName)
+apiInstance.getIntegrationsActionTemplate(actionId, fileName, opts)
   .then((data) => {
     console.log(`getIntegrationsActionTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -965,6 +1064,7 @@ apiInstance.getIntegrationsActionTemplate(actionId, fileName)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **fileName** | **String** | Name of template file to be retrieved for this action. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1010,7 +1110,11 @@ let opts = {
   'ids': "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
   'secure': "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "false", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
-  'includeConfig': false // Boolean | Return config in response.
+  'includeConfig': false, // Boolean | Return config in response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActions(opts)
@@ -1040,6 +1144,7 @@ apiInstance.getIntegrationsActions(opts)
  **secure** | **String** | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
  **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1080,7 +1185,11 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'sortBy': "sortBy_example", // String | Root level field name to sort on.  Only 'name' is supported on this endpoint.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
-  'secure': "secure_example" // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActionsCategories(opts)
@@ -1105,6 +1214,7 @@ apiInstance.getIntegrationsActionsCategories(opts)
  **sortBy** | **String** | Root level field name to sort on.  Only 'name' is supported on this endpoint. | [optional]  |
  **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1139,7 +1249,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
   'status': "status_example", // String | Indicates the validity of the certificate in question.
-  'type': "type_example" // String | Indicates the type of the certificate.
+  'type': "type_example", // String | Indicates the type of the certificate.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActionsCertificates(opts)
@@ -1159,6 +1273,7 @@ apiInstance.getIntegrationsActionsCertificates(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **status** | **String** | Indicates the validity of the certificate in question. | [optional] <br />**Values**: Current, Upcoming |
  **type** | **String** | Indicates the type of the certificate. | [optional] <br />**Values**: Client |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1167,7 +1282,7 @@ apiInstance.getIntegrationsActionsCertificates(opts)
 
 ## getIntegrationsActionsCertificatesTruststore
 
-> TrustedCertificates getIntegrationsActionsCertificatesTruststore()
+> TrustedCertificates getIntegrationsActionsCertificatesTruststore(opts)
 
 
 GET /api/v2/integrations/actions/certificates/truststore
@@ -1190,8 +1305,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IntegrationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionsCertificatesTruststore()
+apiInstance.getIntegrationsActionsCertificatesTruststore(opts)
   .then((data) => {
     console.log(`getIntegrationsActionsCertificatesTruststore success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1203,7 +1324,10 @@ apiInstance.getIntegrationsActionsCertificatesTruststore()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1249,7 +1373,11 @@ let opts = {
   'ids': "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
   'secure': "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "false", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
-  'includeConfig': false // Boolean | Return config in response.
+  'includeConfig': false, // Boolean | Return config in response.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsActionsDrafts(opts)
@@ -1279,6 +1407,7 @@ apiInstance.getIntegrationsActionsDrafts(opts)
  **secure** | **String** | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
  **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1287,7 +1416,7 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 
 ## getIntegrationsActionsFunctionsRuntimes
 
-> [FunctionRuntime] getIntegrationsActionsFunctionsRuntimes()
+> [FunctionRuntime] getIntegrationsActionsFunctionsRuntimes(opts)
 
 
 GET /api/v2/integrations/actions/functions/runtimes
@@ -1310,8 +1439,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IntegrationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsActionsFunctionsRuntimes()
+apiInstance.getIntegrationsActionsFunctionsRuntimes(opts)
   .then((data) => {
     console.log(`getIntegrationsActionsFunctionsRuntimes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1323,7 +1458,10 @@ apiInstance.getIntegrationsActionsFunctionsRuntimes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1361,7 +1499,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
 let botId = "botId_example"; // String | The bot ID for this bot
 let opts = { 
-  'version': "version_example" // String | Specific Version
+  'version': "version_example", // String | Specific Version
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsBotconnectorBot(integrationId, botId, opts)
@@ -1382,6 +1524,7 @@ apiInstance.getIntegrationsBotconnectorBot(integrationId, botId, opts)
  **integrationId** | **String** | The integration ID for this group of bots |  |
  **botId** | **String** | The bot ID for this bot |  |
  **version** | **String** | Specific Version | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1419,7 +1562,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots.
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsBotconnectorBots(integrationId, opts)
@@ -1440,6 +1587,7 @@ apiInstance.getIntegrationsBotconnectorBots(integrationId, opts)
  **integrationId** | **String** | The integration ID for this group of bots. |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1477,7 +1625,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots.
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsBotconnectorBotsSummaries(integrationId, opts)
@@ -1498,6 +1650,7 @@ apiInstance.getIntegrationsBotconnectorBotsSummaries(integrationId, opts)
  **integrationId** | **String** | The integration ID for this group of bots. |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1533,7 +1686,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
 let botId = "botId_example"; // String | The botID for this bot
 let opts = { 
-  'version': "version_example" // String | Specific Version
+  'version': "version_example", // String | Specific Version
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts)
@@ -1554,6 +1711,7 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, op
  **integrationId** | **String** | The integration ID for this group of bots |  |
  **botId** | **String** | The botID for this bot |  |
  **version** | **String** | Specific Version | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1590,7 +1748,11 @@ let integrationId = "integrationId_example"; // String | The integration ID for 
 let botId = "botId_example"; // String | The botID for this bot
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts)
@@ -1612,6 +1774,7 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, b
  **botId** | **String** | The botID for this bot |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1620,7 +1783,7 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, b
 
 ## getIntegrationsBotconnectorIntegrationIdBots
 
-> BotList getIntegrationsBotconnectorIntegrationIdBots(integrationId)
+> BotList getIntegrationsBotconnectorIntegrationIdBots(integrationId, opts)
 
 
 GET /api/v2/integrations/botconnector/{integrationId}/bots
@@ -1645,8 +1808,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId)
+apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId, opts)
   .then((data) => {
     console.log(`getIntegrationsBotconnectorIntegrationIdBots success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1662,6 +1831,7 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | The integration ID for this group of bots |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1697,7 +1867,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts)
@@ -1718,6 +1892,7 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId,
  **integrationId** | **String** | The integration ID for this group of bots |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1754,7 +1929,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsClientapps(opts)
@@ -1778,6 +1957,7 @@ apiInstance.getIntegrationsClientapps(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1821,7 +2001,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
@@ -1845,6 +2029,7 @@ apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1853,7 +2038,7 @@ apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
 
 ## getIntegrationsCredential
 
-> Credential getIntegrationsCredential(credentialId)
+> Credential getIntegrationsCredential(credentialId, opts)
 
 
 GET /api/v2/integrations/credentials/{credentialId}
@@ -1878,8 +2063,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let credentialId = "credentialId_example"; // String | Credential ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsCredential(credentialId)
+apiInstance.getIntegrationsCredential(credentialId, opts)
   .then((data) => {
     console.log(`getIntegrationsCredential success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1895,6 +2086,7 @@ apiInstance.getIntegrationsCredential(credentialId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **credentialId** | **String** | Credential ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1934,7 +2126,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsCredentials(opts)
@@ -1954,6 +2150,7 @@ apiInstance.getIntegrationsCredentials(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1989,7 +2186,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsCredentialsListing(opts)
@@ -2010,6 +2211,7 @@ apiInstance.getIntegrationsCredentialsListing(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2018,7 +2220,7 @@ apiInstance.getIntegrationsCredentialsListing(opts)
 
 ## getIntegrationsCredentialsTypes
 
-> CredentialTypeListing getIntegrationsCredentialsTypes()
+> CredentialTypeListing getIntegrationsCredentialsTypes(opts)
 
 
 GET /api/v2/integrations/credentials/types
@@ -2041,8 +2243,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IntegrationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsCredentialsTypes()
+apiInstance.getIntegrationsCredentialsTypes(opts)
   .then((data) => {
     console.log(`getIntegrationsCredentialsTypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2054,7 +2262,10 @@ apiInstance.getIntegrationsCredentialsTypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2089,7 +2300,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechAudioconnector(opts)
@@ -2109,6 +2324,7 @@ apiInstance.getIntegrationsSpeechAudioconnector(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2117,7 +2333,7 @@ apiInstance.getIntegrationsSpeechAudioconnector(opts)
 
 ## getIntegrationsSpeechAudioconnectorIntegrationId
 
-> AudioConnectorIntegration getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
+> AudioConnectorIntegration getIntegrationsSpeechAudioconnectorIntegrationId(integrationId, opts)
 
 
 GET /api/v2/integrations/speech/audioconnector/{integrationId}
@@ -2142,8 +2358,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | The integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
+apiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechAudioconnectorIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2159,6 +2381,7 @@ apiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | The integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2167,7 +2390,7 @@ apiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
 
 ## getIntegrationsSpeechDialogflowAgent
 
-> DialogflowAgent getIntegrationsSpeechDialogflowAgent(agentId)
+> DialogflowAgent getIntegrationsSpeechDialogflowAgent(agentId, opts)
 
 
 GET /api/v2/integrations/speech/dialogflow/agents/{agentId}
@@ -2192,8 +2415,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let agentId = "agentId_example"; // String | The agent ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechDialogflowAgent(agentId)
+apiInstance.getIntegrationsSpeechDialogflowAgent(agentId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechDialogflowAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2209,6 +2438,7 @@ apiInstance.getIntegrationsSpeechDialogflowAgent(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2244,7 +2474,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'name': "name_example" // String | Filter on agent name
+  'name': "name_example", // String | Filter on agent name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
@@ -2265,6 +2499,7 @@ apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **name** | **String** | Filter on agent name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2273,7 +2508,7 @@ apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
 
 ## getIntegrationsSpeechDialogflowcxAgent
 
-> DialogflowCXAgent getIntegrationsSpeechDialogflowcxAgent(agentId)
+> DialogflowCXAgent getIntegrationsSpeechDialogflowcxAgent(agentId, opts)
 
 
 GET /api/v2/integrations/speech/dialogflowcx/agents/{agentId}
@@ -2298,8 +2533,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let agentId = "agentId_example"; // String | The agent ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechDialogflowcxAgent(agentId)
+apiInstance.getIntegrationsSpeechDialogflowcxAgent(agentId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechDialogflowcxAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2315,6 +2556,7 @@ apiInstance.getIntegrationsSpeechDialogflowcxAgent(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2350,7 +2592,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'name': "name_example" // String | Filter on agent name
+  'name': "name_example", // String | Filter on agent name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechDialogflowcxAgents(opts)
@@ -2371,6 +2617,7 @@ apiInstance.getIntegrationsSpeechDialogflowcxAgents(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **name** | **String** | Filter on agent name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2379,7 +2626,7 @@ apiInstance.getIntegrationsSpeechDialogflowcxAgents(opts)
 
 ## getIntegrationsSpeechLexBotAlias
 
-> LexBotAlias getIntegrationsSpeechLexBotAlias(aliasId)
+> LexBotAlias getIntegrationsSpeechLexBotAlias(aliasId, opts)
 
 
 GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}
@@ -2404,8 +2651,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let aliasId = "aliasId_example"; // String | The alias ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechLexBotAlias(aliasId)
+apiInstance.getIntegrationsSpeechLexBotAlias(aliasId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechLexBotAlias success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2421,6 +2674,7 @@ apiInstance.getIntegrationsSpeechLexBotAlias(aliasId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **aliasId** | **String** | The alias ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2458,7 +2712,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'status': "status_example", // String | Filter on alias status
-  'name': "name_example" // String | Filter on alias name
+  'name': "name_example", // String | Filter on alias name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
@@ -2481,6 +2739,7 @@ apiInstance.getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **status** | **String** | Filter on alias status | [optional] <br />**Values**: READY, FAILED, BUILDING, NOT_BUILT |
  **name** | **String** | Filter on alias name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2516,7 +2775,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'name': "name_example" // String | Filter on bot name
+  'name': "name_example", // String | Filter on bot name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechLexBots(opts)
@@ -2537,6 +2800,7 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **name** | **String** | Filter on bot name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2545,7 +2809,7 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
 
 ## getIntegrationsSpeechLexv2BotAlias
 
-> LexV2BotAlias getIntegrationsSpeechLexv2BotAlias(aliasId)
+> LexV2BotAlias getIntegrationsSpeechLexv2BotAlias(aliasId, opts)
 
 
 GET /api/v2/integrations/speech/lexv2/bot/alias/{aliasId}
@@ -2570,8 +2834,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let aliasId = "aliasId_example"; // String | The Alias ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechLexv2BotAlias(aliasId)
+apiInstance.getIntegrationsSpeechLexv2BotAlias(aliasId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechLexv2BotAlias success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2587,6 +2857,7 @@ apiInstance.getIntegrationsSpeechLexv2BotAlias(aliasId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **aliasId** | **String** | The Alias ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2624,7 +2895,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'status': "status_example", // String | Filter on alias status
-  'name': "name_example" // String | Filter on alias name
+  'name': "name_example", // String | Filter on alias name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts)
@@ -2647,6 +2922,7 @@ apiInstance.getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **status** | **String** | Filter on alias status | [optional] <br />**Values**: Creating, Available, Deleting, Failed |
  **name** | **String** | Filter on alias name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2682,7 +2958,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'name': "name_example" // String | Filter on bot name
+  'name': "name_example", // String | Filter on bot name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechLexv2Bots(opts)
@@ -2703,6 +2983,7 @@ apiInstance.getIntegrationsSpeechLexv2Bots(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **name** | **String** | Filter on bot name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2739,7 +3020,11 @@ let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integra
 let botId = "botId_example"; // String | The Nuance bot ID to get
 let opts = { 
   'expand': ["expand_example"], // [String] | expand
-  'targetChannel': "targetChannel_example" // String | targetChannel
+  'targetChannel': "targetChannel_example", // String | targetChannel
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts)
@@ -2761,6 +3046,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationI
  **botId** | **String** | The Nuance bot ID to get |  |
  **expand** | **[String]** | expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
  **targetChannel** | **String** | targetChannel | [optional] <br />**Values**: digital, voice |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2769,7 +3055,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationI
 
 ## getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob
 
-> AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+> AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId, opts)
 
 
 GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}
@@ -2796,8 +3082,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
 let botId = "botId_example"; // String | The Nuance bot ID
 let jobId = "jobId_example"; // String | The asynchronous job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2815,6 +3107,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrati
  **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
  **botId** | **String** | The Nuance bot ID |  |
  **jobId** | **String** | The asynchronous job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2823,7 +3116,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrati
 
 ## getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults
 
-> NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+> NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId, opts)
 
 
 GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results
@@ -2850,8 +3143,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
 let botId = "botId_example"; // String | The Nuance bot ID
 let jobId = "jobId_example"; // String | The asynchronous job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2869,6 +3168,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIn
  **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
  **botId** | **String** | The Nuance bot ID |  |
  **jobId** | **String** | The asynchronous job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2907,7 +3207,11 @@ let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integra
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'onlyRegisteredBots': true // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+  'onlyRegisteredBots': true, // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts)
@@ -2929,6 +3233,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegration
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **onlyRegisteredBots** | **Boolean** | Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2937,7 +3242,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegration
 
 ## getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob
 
-> AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+> AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId, opts)
 
 
 GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}
@@ -2963,8 +3268,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
 let jobId = "jobId_example"; // String | The asynchronous job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2981,6 +3292,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrat
 | ------------- | ------------- | ------------- | ------------- |
  **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
  **jobId** | **String** | The asynchronous job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2989,7 +3301,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrat
 
 ## getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults
 
-> NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+> NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId, opts)
 
 
 GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results
@@ -3015,8 +3327,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
 let jobId = "jobId_example"; // String | The asynchronous job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3033,6 +3351,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceI
 | ------------- | ------------- | ------------- | ------------- |
  **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
  **jobId** | **String** | The asynchronous job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3041,7 +3360,7 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceI
 
 ## getIntegrationsSpeechSttEngine
 
-> SttEngineEntity getIntegrationsSpeechSttEngine(engineId)
+> SttEngineEntity getIntegrationsSpeechSttEngine(engineId, opts)
 
 
 GET /api/v2/integrations/speech/stt/engines/{engineId}
@@ -3066,8 +3385,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let engineId = "engineId_example"; // String | The engine ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechSttEngine(engineId)
+apiInstance.getIntegrationsSpeechSttEngine(engineId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechSttEngine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3083,6 +3408,7 @@ apiInstance.getIntegrationsSpeechSttEngine(engineId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **engineId** | **String** | The engine ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3118,7 +3444,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'name': "name_example" // String | Filter on engine name
+  'name': "name_example", // String | Filter on engine name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechSttEngines(opts)
@@ -3139,6 +3469,7 @@ apiInstance.getIntegrationsSpeechSttEngines(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **name** | **String** | Filter on engine name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3173,7 +3504,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let engineId = "engineId_example"; // String | The engine ID
 let opts = { 
-  'includeVoices': false // Boolean | Include voices for the engine
+  'includeVoices': false, // Boolean | Include voices for the engine
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechTtsEngine(engineId, opts)
@@ -3193,6 +3528,7 @@ apiInstance.getIntegrationsSpeechTtsEngine(engineId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **engineId** | **String** | The engine ID |  |
  **includeVoices** | **Boolean** | Include voices for the engine | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3201,7 +3537,7 @@ apiInstance.getIntegrationsSpeechTtsEngine(engineId, opts)
 
 ## getIntegrationsSpeechTtsEngineVoice
 
-> TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
+> TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(engineId, voiceId, opts)
 
 
 GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}
@@ -3227,8 +3563,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let engineId = "engineId_example"; // String | The engine ID
 let voiceId = "voiceId_example"; // String | The voice ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
+apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId, opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechTtsEngineVoice success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3245,6 +3587,7 @@ apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
 | ------------- | ------------- | ------------- | ------------- |
  **engineId** | **String** | The engine ID |  |
  **voiceId** | **String** | The voice ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3280,7 +3623,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let engineId = "engineId_example"; // String | The engine ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechTtsEngineVoices(engineId, opts)
@@ -3301,6 +3648,7 @@ apiInstance.getIntegrationsSpeechTtsEngineVoices(engineId, opts)
  **engineId** | **String** | The engine ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3338,7 +3686,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'includeVoices': false, // Boolean | Include voices for the engine
   'name': "name_example", // String | Filter on engine name
-  'language': "language_example" // String | Filter on supported language. If includeVoices=true then the voices are also filtered.
+  'language': "language_example", // String | Filter on supported language. If includeVoices=true then the voices are also filtered.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsSpeechTtsEngines(opts)
@@ -3361,6 +3713,7 @@ apiInstance.getIntegrationsSpeechTtsEngines(opts)
  **includeVoices** | **Boolean** | Include voices for the engine | [optional] [default to false] |
  **name** | **String** | Filter on engine name | [optional]  |
  **language** | **String** | Filter on supported language. If includeVoices=true then the voices are also filtered. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3369,7 +3722,7 @@ apiInstance.getIntegrationsSpeechTtsEngines(opts)
 
 ## getIntegrationsSpeechTtsSettings
 
-> TtsSettings getIntegrationsSpeechTtsSettings()
+> TtsSettings getIntegrationsSpeechTtsSettings(opts)
 
 
 GET /api/v2/integrations/speech/tts/settings
@@ -3392,8 +3745,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IntegrationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsSpeechTtsSettings()
+apiInstance.getIntegrationsSpeechTtsSettings(opts)
   .then((data) => {
     console.log(`getIntegrationsSpeechTtsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3405,7 +3764,10 @@ apiInstance.getIntegrationsSpeechTtsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3414,7 +3776,7 @@ This endpoint does not need any parameter.
 
 ## getIntegrationsType
 
-> IntegrationType getIntegrationsType(typeId)
+> IntegrationType getIntegrationsType(typeId, opts)
 
 
 GET /api/v2/integrations/types/{typeId}
@@ -3439,8 +3801,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let typeId = "typeId_example"; // String | Integration Type Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsType(typeId)
+apiInstance.getIntegrationsType(typeId, opts)
   .then((data) => {
     console.log(`getIntegrationsType success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3456,6 +3824,7 @@ apiInstance.getIntegrationsType(typeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **typeId** | **String** | Integration Type Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3464,7 +3833,7 @@ apiInstance.getIntegrationsType(typeId)
 
 ## getIntegrationsTypeConfigschema
 
-> JsonSchemaDocument getIntegrationsTypeConfigschema(typeId, configType)
+> JsonSchemaDocument getIntegrationsTypeConfigschema(typeId, configType, opts)
 
 
 GET /api/v2/integrations/types/{typeId}/configschemas/{configType}
@@ -3490,8 +3859,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let typeId = "typeId_example"; // String | Integration Type Id
 let configType = "configType_example"; // String | Config schema type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsTypeConfigschema(typeId, configType)
+apiInstance.getIntegrationsTypeConfigschema(typeId, configType, opts)
   .then((data) => {
     console.log(`getIntegrationsTypeConfigschema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3508,6 +3883,7 @@ apiInstance.getIntegrationsTypeConfigschema(typeId, configType)
 | ------------- | ------------- | ------------- | ------------- |
  **typeId** | **String** | Integration Type Id |  |
  **configType** | **String** | Config schema type | <br />**Values**: properties, advanced |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3546,7 +3922,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsTypes(opts)
@@ -3570,6 +3950,7 @@ apiInstance.getIntegrationsTypes(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3578,7 +3959,7 @@ apiInstance.getIntegrationsTypes(opts)
 
 ## getIntegrationsUnifiedcommunicationsClientapp
 
-> UnifiedCommunicationsIntegration getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
+> UnifiedCommunicationsIntegration getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId, opts)
 
 
 GET /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}
@@ -3605,8 +3986,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let ucIntegrationId = "ucIntegrationId_example"; // String | 3rd Party Service Type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
+apiInstance.getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId, opts)
   .then((data) => {
     console.log(`getIntegrationsUnifiedcommunicationsClientapp success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3622,6 +4009,7 @@ apiInstance.getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ucIntegrationId** | **String** | 3rd Party Service Type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3662,7 +4050,11 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsUnifiedcommunicationsClientapps(opts)
@@ -3686,6 +4078,7 @@ apiInstance.getIntegrationsUnifiedcommunicationsClientapps(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3723,7 +4116,11 @@ let opts = {
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'appHost': "appHost_example" // String | The type of UserApp to filter by
+  'appHost': "appHost_example", // String | The type of UserApp to filter by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntegrationsUserapps(opts)
@@ -3748,6 +4145,7 @@ apiInstance.getIntegrationsUserapps(opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **appHost** | **String** | The type of UserApp to filter by | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3788,7 +4186,11 @@ let opts = {
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'body': {} // Object | Integration Update
+  'body': {}, // Object | Integration Update
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchIntegration(integrationId, opts)
@@ -3814,6 +4216,7 @@ apiInstance.patchIntegration(integrationId, opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **body** | **Object** | Integration Update | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3822,7 +4225,7 @@ apiInstance.patchIntegration(integrationId, opts)
 
 ## patchIntegrationsAction
 
-> Action patchIntegrationsAction(actionId, body)
+> Action patchIntegrationsAction(actionId, body, opts)
 
 
 PATCH /api/v2/integrations/actions/{actionId}
@@ -3848,8 +4251,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = {}; // Object | Input used to patch the Action.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchIntegrationsAction(actionId, body)
+apiInstance.patchIntegrationsAction(actionId, body, opts)
   .then((data) => {
     console.log(`patchIntegrationsAction success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3866,6 +4275,7 @@ apiInstance.patchIntegrationsAction(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to patch the Action. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3874,7 +4284,7 @@ apiInstance.patchIntegrationsAction(actionId, body)
 
 ## patchIntegrationsActionDraft
 
-> Action patchIntegrationsActionDraft(actionId, body)
+> Action patchIntegrationsActionDraft(actionId, body, opts)
 
 
 PATCH /api/v2/integrations/actions/{actionId}/draft
@@ -3900,8 +4310,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = {}; // Object | Input used to patch the Action Draft.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchIntegrationsActionDraft(actionId, body)
+apiInstance.patchIntegrationsActionDraft(actionId, body, opts)
   .then((data) => {
     console.log(`patchIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3918,6 +4334,7 @@ apiInstance.patchIntegrationsActionDraft(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to patch the Action Draft. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3951,7 +4368,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
-  'body': {} // Object | Integration
+  'body': {}, // Object | Integration
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrations(opts)
@@ -3970,6 +4391,7 @@ apiInstance.postIntegrations(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Integration | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3978,7 +4400,7 @@ apiInstance.postIntegrations(opts)
 
 ## postIntegrationsActionDraft
 
-> Action postIntegrationsActionDraft(actionId)
+> Action postIntegrationsActionDraft(actionId, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/draft
@@ -4003,8 +4425,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsActionDraft(actionId)
+apiInstance.postIntegrationsActionDraft(actionId, opts)
   .then((data) => {
     console.log(`postIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4020,6 +4448,7 @@ apiInstance.postIntegrationsActionDraft(actionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4028,7 +4457,7 @@ apiInstance.postIntegrationsActionDraft(actionId)
 
 ## postIntegrationsActionDraftFunctionUpload
 
-> FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body)
+> FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/draft/function/upload
@@ -4054,8 +4483,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = {}; // Object | Input used to request URL upload.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
+apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionDraftFunctionUpload success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4072,6 +4507,7 @@ apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to request URL upload. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4080,7 +4516,7 @@ apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
 
 ## postIntegrationsActionDraftPublish
 
-> Action postIntegrationsActionDraftPublish(actionId, body)
+> Action postIntegrationsActionDraftPublish(actionId, body, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/draft/publish
@@ -4106,8 +4542,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = {}; // Object | Input used to patch the Action.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsActionDraftPublish(actionId, body)
+apiInstance.postIntegrationsActionDraftPublish(actionId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionDraftPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4124,6 +4566,7 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to patch the Action. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4159,7 +4602,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let body = null; // {String: Object} | Map of parameters used for variable substitution.
 let opts = { 
-  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrationsActionDraftTest(actionId, body, opts)
@@ -4180,6 +4627,7 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body, opts)
  **actionId** | **String** | actionId |  |
  **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4216,7 +4664,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let body = null; // {String: Object} | Map of parameters used for variable substitution.
 let opts = { 
-  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrationsActionExecute(actionId, body, opts)
@@ -4237,6 +4689,7 @@ apiInstance.postIntegrationsActionExecute(actionId, body, opts)
  **actionId** | **String** | actionId |  |
  **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4273,7 +4726,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let body = null; // {String: Object} | Map of parameters used for variable substitution.
 let opts = { 
-  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrationsActionTest(actionId, body, opts)
@@ -4294,6 +4751,7 @@ apiInstance.postIntegrationsActionTest(actionId, body, opts)
  **actionId** | **String** | actionId |  |
  **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
  **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4302,7 +4760,7 @@ apiInstance.postIntegrationsActionTest(actionId, body, opts)
 
 ## postIntegrationsActions
 
-> Action postIntegrationsActions(body)
+> Action postIntegrationsActions(body, opts)
 
 
 POST /api/v2/integrations/actions
@@ -4327,8 +4785,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let body = {}; // Object | Input used to create Action.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsActions(body)
+apiInstance.postIntegrationsActions(body, opts)
   .then((data) => {
     console.log(`postIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4344,6 +4808,7 @@ apiInstance.postIntegrationsActions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Input used to create Action. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4352,7 +4817,7 @@ apiInstance.postIntegrationsActions(body)
 
 ## postIntegrationsActionsDrafts
 
-> Action postIntegrationsActionsDrafts(body)
+> Action postIntegrationsActionsDrafts(body, opts)
 
 
 POST /api/v2/integrations/actions/drafts
@@ -4377,8 +4842,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let body = {}; // Object | Input used to create Action Draft.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsActionsDrafts(body)
+apiInstance.postIntegrationsActionsDrafts(body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4394,6 +4865,7 @@ apiInstance.postIntegrationsActionsDrafts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Input used to create Action Draft. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4402,7 +4874,7 @@ apiInstance.postIntegrationsActionsDrafts(body)
 
 ## postIntegrationsBotconnectorsIncomingMessages
 
-> IncomingMessageResponse postIntegrationsBotconnectorsIncomingMessages(body)
+> IncomingMessageResponse postIntegrationsBotconnectorsIncomingMessages(body, opts)
 
 
 POST /api/v2/integrations/botconnectors/incoming/messages
@@ -4429,8 +4901,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let body = {}; // Object | Incoming Message Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsBotconnectorsIncomingMessages(body)
+apiInstance.postIntegrationsBotconnectorsIncomingMessages(body, opts)
   .then((data) => {
     console.log(`postIntegrationsBotconnectorsIncomingMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4446,6 +4924,7 @@ apiInstance.postIntegrationsBotconnectorsIncomingMessages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Incoming Message Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4454,7 +4933,7 @@ apiInstance.postIntegrationsBotconnectorsIncomingMessages(body)
 
 ## postIntegrationsBotconnectorsOutgoingMessages
 
-> OutgoingMessageResponse postIntegrationsBotconnectorsOutgoingMessages(body)
+> OutgoingMessageResponse postIntegrationsBotconnectorsOutgoingMessages(body, opts)
 
 
 POST /api/v2/integrations/botconnectors/outgoing/messages
@@ -4481,8 +4960,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let body = {}; // Object | Outgoing Message Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsBotconnectorsOutgoingMessages(body)
+apiInstance.postIntegrationsBotconnectorsOutgoingMessages(body, opts)
   .then((data) => {
     console.log(`postIntegrationsBotconnectorsOutgoingMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4498,6 +4983,7 @@ apiInstance.postIntegrationsBotconnectorsOutgoingMessages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Outgoing Message Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4531,7 +5017,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
-  'body': {} // Object | Credential
+  'body': {}, // Object | Credential
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrationsCredentials(opts)
@@ -4550,6 +5040,7 @@ apiInstance.postIntegrationsCredentials(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Credential | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4586,7 +5077,11 @@ let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integra
 let botId = "botId_example"; // String | The Nuance bot ID
 let opts = { 
   'expand': ["expand_example"], // [String] | expand
-  'body': "body_example" // String | targetChannel
+  'body': "body_example", // String | targetChannel
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts)
@@ -4608,6 +5103,7 @@ apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegra
  **botId** | **String** | The Nuance bot ID |  |
  **expand** | **[String]** | expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
  **body** | **String** | targetChannel | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4644,7 +5140,11 @@ let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integra
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'onlyRegisteredBots': true // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+  'onlyRegisteredBots': true, // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts)
@@ -4666,6 +5166,7 @@ apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegr
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **onlyRegisteredBots** | **Boolean** | Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4674,7 +5175,7 @@ apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegr
 
 ## postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate
 
-> void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+> void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings, opts)
 
 
 POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate
@@ -4700,8 +5201,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
 let settings = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings, opts)
   .then(() => {
     console.log('postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate returned successfully.');
   })
@@ -4718,6 +5225,7 @@ apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nu
 | ------------- | ------------- | ------------- | ------------- |
  **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
  **settings** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4726,7 +5234,7 @@ void (no response body)
 
 ## postIntegrationsWebhookEvents
 
-> WebhookInvocationResponse postIntegrationsWebhookEvents(tokenId, body)
+> WebhookInvocationResponse postIntegrationsWebhookEvents(tokenId, body, opts)
 
 
 POST /api/v2/integrations/webhooks/{tokenId}/events
@@ -4747,8 +5255,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let tokenId = "tokenId_example"; // String | The token of the webhook to be invoked
 let body = null; // {String: Object} | Webhook Invocation Payload
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsWebhookEvents(tokenId, body)
+apiInstance.postIntegrationsWebhookEvents(tokenId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsWebhookEvents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4765,6 +5279,7 @@ apiInstance.postIntegrationsWebhookEvents(tokenId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **tokenId** | **String** | The token of the webhook to be invoked |  |
  **body** | **{String: Object}** | Webhook Invocation Payload |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4799,7 +5314,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
 let opts = { 
-  'body': {} // Object | Integration Configuration
+  'body': {}, // Object | Integration Configuration
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putIntegrationConfigCurrent(integrationId, opts)
@@ -4819,6 +5338,7 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
  **body** | **Object** | Integration Configuration | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4827,7 +5347,7 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 
 ## putIntegrationsActionDraftFunction
 
-> FunctionConfig putIntegrationsActionDraftFunction(actionId, body)
+> FunctionConfig putIntegrationsActionDraftFunction(actionId, body, opts)
 
 
 PUT /api/v2/integrations/actions/{actionId}/draft/function
@@ -4853,8 +5373,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = {}; // Object | Input used to update function settings.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIntegrationsActionDraftFunction(actionId, body)
+apiInstance.putIntegrationsActionDraftFunction(actionId, body, opts)
   .then((data) => {
     console.log(`putIntegrationsActionDraftFunction success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4871,6 +5397,7 @@ apiInstance.putIntegrationsActionDraftFunction(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to update function settings. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4879,7 +5406,7 @@ apiInstance.putIntegrationsActionDraftFunction(actionId, body)
 
 ## putIntegrationsBotconnectorIntegrationIdBots
 
-> void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
+> void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList, opts)
 
 
 PUT /api/v2/integrations/botconnector/{integrationId}/bots
@@ -4905,8 +5432,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
 let botList = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
+apiInstance.putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList, opts)
   .then(() => {
     console.log('putIntegrationsBotconnectorIntegrationIdBots returned successfully.');
   })
@@ -4923,6 +5456,7 @@ apiInstance.putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | The integration ID for this group of bots |  |
  **botList** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4957,7 +5491,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let credentialId = "credentialId_example"; // String | Credential ID
 let opts = { 
-  'body': {} // Object | Credential
+  'body': {}, // Object | Credential
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putIntegrationsCredential(credentialId, opts)
@@ -4977,6 +5515,7 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **credentialId** | **String** | Credential ID |  |
  **body** | **Object** | Credential | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4985,7 +5524,7 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 
 ## putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings
 
-> void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+> void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings, opts)
 
 
 PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings
@@ -5011,8 +5550,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
 let settings = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+apiInstance.putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings, opts)
   .then(() => {
     console.log('putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings returned successfully.');
   })
@@ -5029,6 +5574,7 @@ apiInstance.putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nua
 | ------------- | ------------- | ------------- | ------------- |
  **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
  **settings** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5037,7 +5583,7 @@ void (no response body)
 
 ## putIntegrationsSpeechTtsSettings
 
-> TtsSettings putIntegrationsSpeechTtsSettings(body)
+> TtsSettings putIntegrationsSpeechTtsSettings(body, opts)
 
 
 PUT /api/v2/integrations/speech/tts/settings
@@ -5062,8 +5608,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let body = {}; // Object | Updated TtsSettings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIntegrationsSpeechTtsSettings(body)
+apiInstance.putIntegrationsSpeechTtsSettings(body, opts)
   .then((data) => {
     console.log(`putIntegrationsSpeechTtsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5079,6 +5631,7 @@ apiInstance.putIntegrationsSpeechTtsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Updated TtsSettings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5087,7 +5640,7 @@ apiInstance.putIntegrationsSpeechTtsSettings(body)
 
 ## putIntegrationsUnifiedcommunicationThirdpartypresences
 
-> **&#39;String&#39;** putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body)
+> **&#39;String&#39;** putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body, opts)
 
 
 PUT /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences
@@ -5115,8 +5668,14 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let ucIntegrationId = "ucIntegrationId_example"; // String | UC Integration ID
 let body = [{}]; // Object | List of User presences
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body)
+apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body, opts)
   .then((data) => {
     console.log(`putIntegrationsUnifiedcommunicationThirdpartypresences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5133,10 +5692,11 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 | ------------- | ------------- | ------------- | ------------- |
  **ucIntegrationId** | **String** | UC Integration ID |  |
  **body** | **Object** | List of User presences |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

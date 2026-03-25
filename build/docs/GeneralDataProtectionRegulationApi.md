@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getGdprRequest
 
-> GDPRRequest getGdprRequest(requestId)
+> GDPRRequest getGdprRequest(requestId, opts)
 
 
 GET /api/v2/gdpr/requests/{requestId}
@@ -40,8 +40,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
 let requestId = "requestId_example"; // String | Request id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGdprRequest(requestId)
+apiInstance.getGdprRequest(requestId, opts)
   .then((data) => {
     console.log(`getGdprRequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -57,6 +63,7 @@ apiInstance.getGdprRequest(requestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **requestId** | **String** | Request id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -91,7 +98,11 @@ let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGdprRequests(opts)
@@ -111,6 +122,7 @@ apiInstance.getGdprRequests(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -119,7 +131,7 @@ apiInstance.getGdprRequests(opts)
 
 ## getGdprSubjects
 
-> GDPRSubjectEntityListing getGdprSubjects(searchType, searchValue)
+> GDPRSubjectEntityListing getGdprSubjects(searchType, searchValue, opts)
 
 
 GET /api/v2/gdpr/subjects
@@ -145,8 +157,14 @@ let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
 let searchType = "searchType_example"; // String | Search Type
 let searchValue = "searchValue_example"; // String | Search Value
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGdprSubjects(searchType, searchValue)
+apiInstance.getGdprSubjects(searchType, searchValue, opts)
   .then((data) => {
     console.log(`getGdprSubjects success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -163,6 +181,7 @@ apiInstance.getGdprSubjects(searchType, searchValue)
 | ------------- | ------------- | ------------- | ------------- |
  **searchType** | **String** | Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER, INSTAGRAM, FACEBOOK, APPLE_MESSAGES, EXTERNAL_ID |
  **searchValue** | **String** | Search Value |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -197,7 +216,11 @@ let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
 let body = {}; // Object | GDPR request
 let opts = { 
-  'deleteConfirmed': false // Boolean | Confirm delete
+  'deleteConfirmed': false, // Boolean | Confirm delete
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postGdprRequests(body, opts)
@@ -217,10 +240,11 @@ apiInstance.postGdprRequests(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | GDPR request |  |
  **deleteConfirmed** | **Boolean** | Confirm delete | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **GDPRRequest**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

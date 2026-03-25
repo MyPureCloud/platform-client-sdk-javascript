@@ -5,7 +5,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class IntentsApi {
 	 * Delete category for categoryId
 	 * 
 	 * @param {String} categoryId Category id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIntentsCategory(categoryId) { 
+	deleteIntentsCategory(categoryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteIntentsCategory';
@@ -41,7 +45,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class IntentsApi {
 	 * Delete customer intent for customerIntentId
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIntentsCustomerintent(customerIntentId) { 
+	deleteIntentsCustomerintent(customerIntentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerIntentId' is set
 		if (customerIntentId === undefined || customerIntentId === null || customerIntentId === '') {
 			throw 'Missing the required parameter "customerIntentId" when calling deleteIntentsCustomerintent';
@@ -66,7 +75,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -77,6 +87,7 @@ class IntentsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsAssignmentsExternalcontact(externalContactId, opts) { 
 		opts = opts || {};
@@ -96,7 +107,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -107,6 +119,7 @@ class IntentsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.queryValue Search query value to filter results by
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsCategories(opts) { 
 		opts = opts || {};
@@ -122,7 +135,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -130,8 +144,12 @@ class IntentsApi {
 	 * Get category for categoryId
 	 * 
 	 * @param {String} categoryId Category id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntentsCategory(categoryId) { 
+	getIntentsCategory(categoryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getIntentsCategory';
@@ -147,7 +165,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -155,8 +174,12 @@ class IntentsApi {
 	 * Get customer intent for customerIntentId
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntentsCustomerintent(customerIntentId) { 
+	getIntentsCustomerintent(customerIntentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerIntentId' is set
 		if (customerIntentId === undefined || customerIntentId === null || customerIntentId === '') {
 			throw 'Missing the required parameter "customerIntentId" when calling getIntentsCustomerintent';
@@ -172,7 +195,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -184,6 +208,7 @@ class IntentsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.queryValue Search query value to filter results by
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsCustomerintentSourceintents(customerIntentId, opts) { 
 		opts = opts || {};
@@ -203,7 +228,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -215,6 +241,7 @@ class IntentsApi {
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.queryValue Search query value to filter results by
 	 * @param {String} opts.categoryId CategoryId to filter query by
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsCustomerintents(opts) { 
 		opts = opts || {};
@@ -230,7 +257,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -242,6 +270,7 @@ class IntentsApi {
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {Object} opts.type Source Type to query by. If none selected default response will be for type Segment.
 	 * @param {String} opts.sourceId Source Id to query by. Only required for sourceType: Copilot, Bot, Digitalbot
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntentsSourceintents(opts) { 
 		opts = opts || {};
@@ -257,7 +286,8 @@ class IntentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -266,8 +296,12 @@ class IntentsApi {
 	 * 
 	 * @param {String} categoryId Category id
 	 * @param {Object} body category
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchIntentsCategory(categoryId, body) { 
+	patchIntentsCategory(categoryId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling patchIntentsCategory';
@@ -287,7 +321,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -296,8 +331,12 @@ class IntentsApi {
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
 	 * @param {Object} body Customer intent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchIntentsCustomerintent(customerIntentId, body) { 
+	patchIntentsCustomerintent(customerIntentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerIntentId' is set
 		if (customerIntentId === undefined || customerIntentId === null || customerIntentId === '') {
 			throw 'Missing the required parameter "customerIntentId" when calling patchIntentsCustomerintent';
@@ -317,7 +356,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -327,8 +367,12 @@ class IntentsApi {
 	 * @param {String} externalContactId External Contact id
 	 * @param {String} customerIntentId Customer Intent id
 	 * @param {Object} body Customer intent assignment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId, customerIntentId, body) { 
+	postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId, customerIntentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'externalContactId' is set
 		if (externalContactId === undefined || externalContactId === null || externalContactId === '') {
 			throw 'Missing the required parameter "externalContactId" when calling postIntentsAssignmentsExternalcontactCustomerintentAssignment';
@@ -352,7 +396,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -360,8 +405,12 @@ class IntentsApi {
 	 * Create category
 	 * 
 	 * @param {Object} body category
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntentsCategories(body) { 
+	postIntentsCategories(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIntentsCategories';
@@ -377,7 +426,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -386,8 +436,12 @@ class IntentsApi {
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
 	 * @param {Object} body Source intents to be added
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body) { 
+	postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerIntentId' is set
 		if (customerIntentId === undefined || customerIntentId === null || customerIntentId === '') {
 			throw 'Missing the required parameter "customerIntentId" when calling postIntentsCustomerintentSourceintentsBulkAdd';
@@ -407,7 +461,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -416,8 +471,12 @@ class IntentsApi {
 	 * 
 	 * @param {String} customerIntentId Customer Intent id
 	 * @param {Object} body Source intents to be removed
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, body) { 
+	postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'customerIntentId' is set
 		if (customerIntentId === undefined || customerIntentId === null || customerIntentId === '') {
 			throw 'Missing the required parameter "customerIntentId" when calling postIntentsCustomerintentSourceintentsBulkRemove';
@@ -437,7 +496,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -445,8 +505,12 @@ class IntentsApi {
 	 * Create customer intents
 	 * 
 	 * @param {Object} body Customer intent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntentsCustomerintents(body) { 
+	postIntentsCustomerintents(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIntentsCustomerintents';
@@ -462,7 +526,8 @@ class IntentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

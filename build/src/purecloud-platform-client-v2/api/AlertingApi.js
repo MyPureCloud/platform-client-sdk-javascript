@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class AlertingApi {
 	 * Delete an alert
 	 * 
 	 * @param {String} alertId Alert ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAlertingAlert(alertId) { 
+	deleteAlertingAlert(alertId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'alertId' is set
 		if (alertId === undefined || alertId === null || alertId === '') {
 			throw 'Missing the required parameter "alertId" when calling deleteAlertingAlert';
@@ -41,15 +45,20 @@ class AlertingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete all alerts for the user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAlertingAlertsAll() { 
+	deleteAlertingAlertsAll(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/alerting/alerts/all', 
@@ -61,7 +70,8 @@ class AlertingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -69,8 +79,12 @@ class AlertingApi {
 	 * Delete a rule.
 	 * 
 	 * @param {String} ruleId Rule Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAlertingRule(ruleId) { 
+	deleteAlertingRule(ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling deleteAlertingRule';
@@ -86,7 +100,8 @@ class AlertingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -94,8 +109,12 @@ class AlertingApi {
 	 * Get an alert
 	 * 
 	 * @param {String} alertId Alert ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAlertingAlert(alertId) { 
+	getAlertingAlert(alertId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'alertId' is set
 		if (alertId === undefined || alertId === null || alertId === '') {
 			throw 'Missing the required parameter "alertId" when calling getAlertingAlert';
@@ -111,7 +130,8 @@ class AlertingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -119,8 +139,12 @@ class AlertingApi {
 	 * Get a rule.
 	 * 
 	 * @param {String} ruleId Rule Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAlertingRule(ruleId) { 
+	getAlertingRule(ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling getAlertingRule';
@@ -136,7 +160,8 @@ class AlertingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -146,6 +171,7 @@ class AlertingApi {
 	 * @param {String} alertId Alert ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchAlertingAlert(alertId, opts) { 
 		opts = opts || {};
@@ -165,7 +191,8 @@ class AlertingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,6 +201,7 @@ class AlertingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchAlertingAlertsAll(opts) { 
 		opts = opts || {};
@@ -189,7 +217,8 @@ class AlertingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -197,8 +226,12 @@ class AlertingApi {
 	 * Bulk alert updates
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchAlertingAlertsBulk(body) { 
+	patchAlertingAlertsBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchAlertingAlertsBulk';
@@ -214,7 +247,8 @@ class AlertingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -222,8 +256,12 @@ class AlertingApi {
 	 * Bulk update of notification lists
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchAlertingRulesBulk(body) { 
+	patchAlertingRulesBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchAlertingRulesBulk';
@@ -239,7 +277,8 @@ class AlertingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -248,6 +287,7 @@ class AlertingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAlertingAlertsQuery(opts) { 
 		opts = opts || {};
@@ -263,7 +303,8 @@ class AlertingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -271,8 +312,12 @@ class AlertingApi {
 	 * Create a Rule.
 	 * 
 	 * @param {Object} body rule to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAlertingRules(body) { 
+	postAlertingRules(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAlertingRules';
@@ -288,7 +333,8 @@ class AlertingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -296,8 +342,12 @@ class AlertingApi {
 	 * Bulk remove rules
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAlertingRulesBulkRemove(body) { 
+	postAlertingRulesBulkRemove(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAlertingRulesBulkRemove';
@@ -313,7 +363,8 @@ class AlertingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -322,6 +373,7 @@ class AlertingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAlertingRulesQuery(opts) { 
 		opts = opts || {};
@@ -337,7 +389,8 @@ class AlertingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -347,6 +400,7 @@ class AlertingApi {
 	 * @param {String} alertId Alert ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putAlertingAlert(alertId, opts) { 
 		opts = opts || {};
@@ -366,7 +420,8 @@ class AlertingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -375,8 +430,12 @@ class AlertingApi {
 	 * 
 	 * @param {String} ruleId Rule Id
 	 * @param {Object} body rule to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAlertingRule(ruleId, body) { 
+	putAlertingRule(ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null || ruleId === '') {
 			throw 'Missing the required parameter "ruleId" when calling putAlertingRule';
@@ -396,7 +455,8 @@ class AlertingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

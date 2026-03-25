@@ -5,7 +5,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class FaxApi {
 	 * Delete a fax document.
 	 * 
 	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteFaxDocument(documentId) { 
+	deleteFaxDocument(documentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteFaxDocument';
@@ -41,7 +45,8 @@ class FaxApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class FaxApi {
 	 * Get a document.
 	 * 
 	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFaxDocument(documentId) { 
+	getFaxDocument(documentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getFaxDocument';
@@ -66,7 +75,8 @@ class FaxApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class FaxApi {
 	 * Download a fax document.
 	 * 
 	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFaxDocumentContent(documentId) { 
+	getFaxDocumentContent(documentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getFaxDocumentContent';
@@ -91,7 +105,8 @@ class FaxApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -101,6 +116,7 @@ class FaxApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getFaxDocuments(opts) { 
 		opts = opts || {};
@@ -116,15 +132,20 @@ class FaxApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get organization config for given organization
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFaxSettings() { 
+	getFaxSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/fax/settings', 
@@ -136,15 +157,20 @@ class FaxApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get fax summary
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getFaxSummary() { 
+	getFaxSummary(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/fax/summary', 
@@ -156,7 +182,8 @@ class FaxApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -165,8 +192,12 @@ class FaxApi {
 	 * 
 	 * @param {String} documentId Document ID
 	 * @param {Object} body Document
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putFaxDocument(documentId, body) { 
+	putFaxDocument(documentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling putFaxDocument';
@@ -186,7 +217,8 @@ class FaxApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -195,6 +227,7 @@ class FaxApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putFaxSettings(opts) { 
 		opts = opts || {};
@@ -210,7 +243,8 @@ class FaxApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

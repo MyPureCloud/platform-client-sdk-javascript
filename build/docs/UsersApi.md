@@ -131,7 +131,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAnalyticsUsersAggregatesJob
 
-> void deleteAnalyticsUsersAggregatesJob(jobId)
+> void deleteAnalyticsUsersAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -158,8 +158,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
+apiInstance.deleteAnalyticsUsersAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsUsersAggregatesJob returned successfully.');
   })
@@ -175,6 +181,7 @@ apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -183,7 +190,7 @@ void (no response body)
 
 ## deleteAnalyticsUsersDetailsJob
 
-> void deleteAnalyticsUsersDetailsJob(jobId)
+> void deleteAnalyticsUsersDetailsJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
@@ -208,8 +215,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
+apiInstance.deleteAnalyticsUsersDetailsJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsUsersDetailsJob returned successfully.');
   })
@@ -225,6 +238,7 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -233,7 +247,7 @@ void (no response body)
 
 ## deleteAuthorizationSubjectDivisionRole
 
-> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -260,8 +274,14 @@ let apiInstance = new platformClient.UsersApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let divisionId = "divisionId_example"; // String | the id of the division of the grant
 let roleId = "roleId_example"; // String | the id of the role of the grant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
   .then(() => {
     console.log('deleteAuthorizationSubjectDivisionRole returned successfully.');
   })
@@ -279,6 +299,7 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -287,7 +308,7 @@ void (no response body)
 
 ## deleteRoutingDirectroutingbackupSettingsMe
 
-> void deleteRoutingDirectroutingbackupSettingsMe()
+> void deleteRoutingDirectroutingbackupSettingsMe(opts)
 
 
 DELETE /api/v2/routing/directroutingbackup/settings/me
@@ -310,8 +331,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
+apiInstance.deleteRoutingDirectroutingbackupSettingsMe(opts)
   .then(() => {
     console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
   })
@@ -323,7 +350,10 @@ apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -332,7 +362,7 @@ void (no response body)
 
 ## deleteRoutingUserDirectroutingbackupSettings
 
-> void deleteRoutingUserDirectroutingbackupSettings(userId)
+> void deleteRoutingUserDirectroutingbackupSettings(userId, opts)
 
 
 DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -357,8 +387,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
+apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId, opts)
   .then(() => {
     console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
   })
@@ -374,6 +410,7 @@ apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -382,7 +419,7 @@ void (no response body)
 
 ## deleteRoutingUserUtilization
 
-> void deleteRoutingUserUtilization(userId)
+> void deleteRoutingUserUtilization(userId, opts)
 
 
 DELETE /api/v2/routing/users/{userId}/utilization
@@ -407,8 +444,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingUserUtilization(userId)
+apiInstance.deleteRoutingUserUtilization(userId, opts)
   .then(() => {
     console.log('deleteRoutingUserUtilization returned successfully.');
   })
@@ -424,6 +467,7 @@ apiInstance.deleteRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -432,7 +476,7 @@ void (no response body)
 
 ## deleteUser
 
-> **Object** deleteUser(userId)
+> **Object** deleteUser(userId, opts)
 
 
 DELETE /api/v2/users/{userId}
@@ -459,8 +503,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUser(userId)
+apiInstance.deleteUser(userId, opts)
   .then((data) => {
     console.log(`deleteUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -476,6 +526,7 @@ apiInstance.deleteUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -484,7 +535,7 @@ apiInstance.deleteUser(userId)
 
 ## deleteUserCustomattribute
 
-> void deleteUserCustomattribute(userId, schemaId)
+> void deleteUserCustomattribute(userId, schemaId, opts)
 
 
 DELETE /api/v2/users/{userId}/customattributes/{schemaId}
@@ -512,8 +563,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user ID
 let schemaId = "schemaId_example"; // String | schemaId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserCustomattribute(userId, schemaId)
+apiInstance.deleteUserCustomattribute(userId, schemaId, opts)
   .then(() => {
     console.log('deleteUserCustomattribute returned successfully.');
   })
@@ -530,6 +587,7 @@ apiInstance.deleteUserCustomattribute(userId, schemaId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **schemaId** | **String** | schemaId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -538,7 +596,7 @@ void (no response body)
 
 ## deleteUserExternalidAuthorityNameExternalKey
 
-> void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+> void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey, opts)
 
 
 DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey}
@@ -565,8 +623,14 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let authorityName = "authorityName_example"; // String | Authority Name
 let externalKey = "externalKey_example"; // String | External Key
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey, opts)
   .then(() => {
     console.log('deleteUserExternalidAuthorityNameExternalKey returned successfully.');
   })
@@ -584,6 +648,7 @@ apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, 
  **userId** | **String** | User ID |  |
  **authorityName** | **String** | Authority Name |  |
  **externalKey** | **String** | External Key |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -592,7 +657,7 @@ void (no response body)
 
 ## deleteUserRoutinglanguage
 
-> void deleteUserRoutinglanguage(userId, languageId)
+> void deleteUserRoutinglanguage(userId, languageId, opts)
 
 
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
@@ -619,8 +684,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let languageId = "languageId_example"; // String | languageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserRoutinglanguage(userId, languageId)
+apiInstance.deleteUserRoutinglanguage(userId, languageId, opts)
   .then(() => {
     console.log('deleteUserRoutinglanguage returned successfully.');
   })
@@ -637,6 +708,7 @@ apiInstance.deleteUserRoutinglanguage(userId, languageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -645,7 +717,7 @@ void (no response body)
 
 ## deleteUserRoutingskill
 
-> void deleteUserRoutingskill(userId, skillId)
+> void deleteUserRoutingskill(userId, skillId, opts)
 
 
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
@@ -671,8 +743,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let skillId = "skillId_example"; // String | skillId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserRoutingskill(userId, skillId)
+apiInstance.deleteUserRoutingskill(userId, skillId, opts)
   .then(() => {
     console.log('deleteUserRoutingskill returned successfully.');
   })
@@ -689,6 +767,7 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -697,7 +776,7 @@ void (no response body)
 
 ## deleteUserStationAssociatedstation
 
-> void deleteUserStationAssociatedstation(userId)
+> void deleteUserStationAssociatedstation(userId, opts)
 
 
 DELETE /api/v2/users/{userId}/station/associatedstation
@@ -720,8 +799,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserStationAssociatedstation(userId)
+apiInstance.deleteUserStationAssociatedstation(userId, opts)
   .then(() => {
     console.log('deleteUserStationAssociatedstation returned successfully.');
   })
@@ -737,6 +822,7 @@ apiInstance.deleteUserStationAssociatedstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -745,7 +831,7 @@ void (no response body)
 
 ## deleteUserStationDefaultstation
 
-> void deleteUserStationDefaultstation(userId)
+> void deleteUserStationDefaultstation(userId, opts)
 
 
 DELETE /api/v2/users/{userId}/station/defaultstation
@@ -771,8 +857,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserStationDefaultstation(userId)
+apiInstance.deleteUserStationDefaultstation(userId, opts)
   .then(() => {
     console.log('deleteUserStationDefaultstation returned successfully.');
   })
@@ -788,6 +880,7 @@ apiInstance.deleteUserStationDefaultstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -796,7 +889,7 @@ void (no response body)
 
 ## deleteUserVerifier
 
-> void deleteUserVerifier(userId, verifierId)
+> void deleteUserVerifier(userId, verifierId, opts)
 
 
 DELETE /api/v2/users/{userId}/verifiers/{verifierId}
@@ -822,8 +915,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let verifierId = "verifierId_example"; // String | Verifier ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserVerifier(userId, verifierId)
+apiInstance.deleteUserVerifier(userId, verifierId, opts)
   .then(() => {
     console.log('deleteUserVerifier returned successfully.');
   })
@@ -840,6 +939,7 @@ apiInstance.deleteUserVerifier(userId, verifierId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **verifierId** | **String** | Verifier ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -848,7 +948,7 @@ void (no response body)
 
 ## deleteUsersCustomattributesSchema
 
-> void deleteUsersCustomattributesSchema(schemaId)
+> void deleteUsersCustomattributesSchema(schemaId, opts)
 
 
 DELETE /api/v2/users/customattributes/schemas/{schemaId}
@@ -875,8 +975,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUsersCustomattributesSchema(schemaId)
+apiInstance.deleteUsersCustomattributesSchema(schemaId, opts)
   .then(() => {
     console.log('deleteUsersCustomattributesSchema returned successfully.');
   })
@@ -892,6 +998,7 @@ apiInstance.deleteUsersCustomattributesSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -900,7 +1007,7 @@ void (no response body)
 
 ## getAnalyticsUsersAggregatesJob
 
-> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -927,8 +1034,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsUsersAggregatesJob(jobId)
+apiInstance.getAnalyticsUsersAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsUsersAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -944,6 +1057,7 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -980,7 +1094,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
@@ -1000,6 +1118,7 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1008,7 +1127,7 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsUsersDetailsJob
 
-> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId, opts)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
@@ -1033,8 +1152,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsUsersDetailsJob(jobId)
+apiInstance.getAnalyticsUsersDetailsJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsUsersDetailsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1050,6 +1175,7 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1085,7 +1211,11 @@ let apiInstance = new platformClient.UsersApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 3.4 // Number | The desired maximum number of results
+  'pageSize': 3.4, // Number | The desired maximum number of results
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
@@ -1106,6 +1236,7 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1114,7 +1245,7 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 ## getAnalyticsUsersDetailsJobsAvailability
 
-> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability(opts)
 
 
 GET /api/v2/analytics/users/details/jobs/availability
@@ -1137,8 +1268,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsUsersDetailsJobsAvailability()
+apiInstance.getAnalyticsUsersDetailsJobsAvailability(opts)
   .then((data) => {
     console.log(`getAnalyticsUsersDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1150,7 +1287,10 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1188,7 +1328,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
 let opts = { 
-  'name': "name_example" // String | Search term to filter by division name
+  'name': "name_example", // String | Search term to filter by division name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
@@ -1208,6 +1352,7 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **name** | **String** | Search term to filter by division name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1241,7 +1386,11 @@ let apiInstance = new platformClient.UsersApi();
 let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
@@ -1262,6 +1411,7 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1301,7 +1451,11 @@ let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
@@ -1323,6 +1477,7 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1357,7 +1512,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let opts = { 
-  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+  'includeDuplicates': false, // Boolean | Include multiple entries with the same role and division but different subjects
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationSubject(subjectId, opts)
@@ -1377,6 +1536,7 @@ apiInstance.getAuthorizationSubject(subjectId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1408,7 +1568,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let opts = { 
-  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+  'includeDuplicates': false, // Boolean | Include multiple entries with the same role and division but different subjects
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuthorizationSubjectsMe(opts)
@@ -1427,6 +1591,7 @@ apiInstance.getAuthorizationSubjectsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1435,7 +1600,7 @@ apiInstance.getAuthorizationSubjectsMe(opts)
 
 ## getFieldconfig
 
-> FieldConfig getFieldconfig(type)
+> FieldConfig getFieldconfig(type, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1461,8 +1626,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let type = "type_example"; // String | Field type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFieldconfig(type)
+apiInstance.getFieldconfig(type, opts)
   .then((data) => {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1478,6 +1649,7 @@ apiInstance.getFieldconfig(type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **type** | **String** | Field type | <br />**Values**: person, group, org |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1520,7 +1692,11 @@ let opts = {
   'jid': ["jid_example"], // [String] | jid
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getProfilesUsers(opts)
@@ -1545,6 +1721,7 @@ apiInstance.getProfilesUsers(opts)
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1553,7 +1730,7 @@ apiInstance.getProfilesUsers(opts)
 
 ## getRoutingDirectroutingbackupSettingsMe
 
-> AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+> AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe(opts)
 
 
 GET /api/v2/routing/directroutingbackup/settings/me
@@ -1576,8 +1753,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingDirectroutingbackupSettingsMe()
+apiInstance.getRoutingDirectroutingbackupSettingsMe(opts)
   .then((data) => {
     console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1589,7 +1772,10 @@ apiInstance.getRoutingDirectroutingbackupSettingsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1598,7 +1784,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingUserDirectroutingbackupSettings
 
-> AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+> AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId, opts)
 
 
 GET /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -1623,8 +1809,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
+apiInstance.getRoutingUserDirectroutingbackupSettings(userId, opts)
   .then((data) => {
     console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1640,6 +1832,7 @@ apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1648,7 +1841,7 @@ apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
 
 ## getRoutingUserUtilization
 
-> AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
+> AgentMaxUtilizationResponse getRoutingUserUtilization(userId, opts)
 
 
 GET /api/v2/routing/users/{userId}/utilization
@@ -1674,8 +1867,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUserUtilization(userId)
+apiInstance.getRoutingUserUtilization(userId, opts)
   .then((data) => {
     console.log(`getRoutingUserUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1691,6 +1890,7 @@ apiInstance.getRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1725,7 +1925,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for a user instead of their default.
-  'state': "active" // String | Search for a user with this state
+  'state': "active", // String | Search for a user with this state
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUser(userId, opts)
@@ -1747,6 +1951,7 @@ apiInstance.getUser(userId, opts)
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1779,7 +1984,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserAdjacents(userId, opts)
@@ -1799,6 +2008,7 @@ apiInstance.getUserAdjacents(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1807,7 +2017,7 @@ apiInstance.getUserAdjacents(userId, opts)
 
 ## getUserCallforwarding
 
-> CallForwarding getUserCallforwarding(userId)
+> CallForwarding getUserCallforwarding(userId, opts)
 
 
 GET /api/v2/users/{userId}/callforwarding
@@ -1830,8 +2040,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserCallforwarding(userId)
+apiInstance.getUserCallforwarding(userId, opts)
   .then((data) => {
     console.log(`getUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1847,6 +2063,7 @@ apiInstance.getUserCallforwarding(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1855,7 +2072,7 @@ apiInstance.getUserCallforwarding(userId)
 
 ## getUserCustomattribute
 
-> UserCustomAttributes getUserCustomattribute(userId, schemaId)
+> UserCustomAttributes getUserCustomattribute(userId, schemaId, opts)
 
 
 GET /api/v2/users/{userId}/customattributes/{schemaId}
@@ -1883,8 +2100,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user ID
 let schemaId = "schemaId_example"; // String | schemaId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserCustomattribute(userId, schemaId)
+apiInstance.getUserCustomattribute(userId, schemaId, opts)
   .then((data) => {
     console.log(`getUserCustomattribute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1901,6 +2124,7 @@ apiInstance.getUserCustomattribute(userId, schemaId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **schemaId** | **String** | schemaId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1909,7 +2133,7 @@ apiInstance.getUserCustomattribute(userId, schemaId)
 
 ## getUserCustomattributesBulk
 
-> **[Object]** getUserCustomattributesBulk(userId, schemaIds)
+> **[Object]** getUserCustomattributesBulk(userId, schemaIds, opts)
 
 
 GET /api/v2/users/{userId}/customattributes/bulk
@@ -1937,8 +2161,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user ID
 let schemaIds = ["schemaIds_example"]; // [String] | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserCustomattributesBulk(userId, schemaIds)
+apiInstance.getUserCustomattributesBulk(userId, schemaIds, opts)
   .then((data) => {
     console.log(`getUserCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1955,6 +2185,7 @@ apiInstance.getUserCustomattributesBulk(userId, schemaIds)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **schemaIds** | **[String]** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1987,7 +2218,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserDirectreports(userId, opts)
@@ -2007,6 +2242,7 @@ apiInstance.getUserDirectreports(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2015,7 +2251,7 @@ apiInstance.getUserDirectreports(userId, opts)
 
 ## getUserExternalid
 
-> [UserExternalIdentifier] getUserExternalid(userId)
+> [UserExternalIdentifier] getUserExternalid(userId, opts)
 
 
 GET /api/v2/users/{userId}/externalid
@@ -2038,8 +2274,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserExternalid(userId)
+apiInstance.getUserExternalid(userId, opts)
   .then((data) => {
     console.log(`getUserExternalid success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2055,6 +2297,7 @@ apiInstance.getUserExternalid(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2063,7 +2306,7 @@ apiInstance.getUserExternalid(userId)
 
 ## getUserExternalidAuthorityName
 
-> UserExternalIdentifier getUserExternalidAuthorityName(userId, authorityName)
+> UserExternalIdentifier getUserExternalidAuthorityName(userId, authorityName, opts)
 
 
 GET /api/v2/users/{userId}/externalid/{authorityName}
@@ -2089,8 +2332,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let authorityName = "authorityName_example"; // String | Authority Name
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserExternalidAuthorityName(userId, authorityName)
+apiInstance.getUserExternalidAuthorityName(userId, authorityName, opts)
   .then((data) => {
     console.log(`getUserExternalidAuthorityName success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2107,6 +2356,7 @@ apiInstance.getUserExternalidAuthorityName(userId, authorityName)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **authorityName** | **String** | Authority Name |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2145,7 +2395,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Sort order
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserFavorites(userId, opts)
@@ -2168,6 +2422,7 @@ apiInstance.getUserFavorites(userId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2176,7 +2431,7 @@ apiInstance.getUserFavorites(userId, opts)
 
 ## getUserGeolocation
 
-> Geolocation getUserGeolocation(userId, clientId)
+> Geolocation getUserGeolocation(userId, clientId, opts)
 
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
@@ -2200,8 +2455,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user Id
 let clientId = "clientId_example"; // String | client Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserGeolocation(userId, clientId)
+apiInstance.getUserGeolocation(userId, clientId, opts)
   .then((data) => {
     console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2218,6 +2479,7 @@ apiInstance.getUserGeolocation(userId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2226,7 +2488,7 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 ## getUserOutofoffice
 
-> OutOfOffice getUserOutofoffice(userId)
+> OutOfOffice getUserOutofoffice(userId, opts)
 
 
 GET /api/v2/users/{userId}/outofoffice
@@ -2249,8 +2511,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserOutofoffice(userId)
+apiInstance.getUserOutofoffice(userId, opts)
   .then((data) => {
     console.log(`getUserOutofoffice success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2266,6 +2534,7 @@ apiInstance.getUserOutofoffice(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2304,7 +2573,11 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | userId
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | Gets an integration presence for a user instead of their default.
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for a user instead of their default.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserProfile(userId, opts)
@@ -2325,6 +2598,7 @@ apiInstance.getUserProfile(userId, opts)
  **userId** | **String** | userId |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2333,7 +2607,7 @@ apiInstance.getUserProfile(userId, opts)
 
 ## getUserProfileskills
 
-> **[&#39;String&#39;]** getUserProfileskills(userId)
+> **[&#39;String&#39;]** getUserProfileskills(userId, opts)
 
 
 GET /api/v2/users/{userId}/profileskills
@@ -2358,8 +2632,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserProfileskills(userId)
+apiInstance.getUserProfileskills(userId, opts)
   .then((data) => {
     console.log(`getUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2375,6 +2655,7 @@ apiInstance.getUserProfileskills(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2412,7 +2693,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'joined': true, // Boolean | Is joined to the queue
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserQueues(userId, opts)
@@ -2435,6 +2720,7 @@ apiInstance.getUserQueues(userId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2443,7 +2729,7 @@ apiInstance.getUserQueues(userId, opts)
 
 ## getUserRoles
 
-> UserAuthorization getUserRoles(subjectId)
+> UserAuthorization getUserRoles(subjectId, opts)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -2468,8 +2754,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserRoles(subjectId)
+apiInstance.getUserRoles(subjectId, opts)
   .then((data) => {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2485,6 +2777,7 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2519,7 +2812,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "ASC" // String | Ascending or descending sort order
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserRoutinglanguages(userId, opts)
@@ -2541,6 +2838,7 @@ apiInstance.getUserRoutinglanguages(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2575,7 +2873,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "ASC" // String | Ascending or descending sort order
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserRoutingskills(userId, opts)
@@ -2597,6 +2899,7 @@ apiInstance.getUserRoutingskills(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2605,7 +2908,7 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 ## getUserRoutingstatus
 
-> RoutingStatus getUserRoutingstatus(userId)
+> RoutingStatus getUserRoutingstatus(userId, opts)
 
 
 GET /api/v2/users/{userId}/routingstatus
@@ -2628,8 +2931,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserRoutingstatus(userId)
+apiInstance.getUserRoutingstatus(userId, opts)
   .then((data) => {
     console.log(`getUserRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2645,6 +2954,7 @@ apiInstance.getUserRoutingstatus(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2681,7 +2991,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'after': "after_example", // String | The cursor that points to the next page
-  'before': "before_example" // String | The cursor that points to the previous page
+  'before': "before_example", // String | The cursor that points to the previous page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserSkillgroups(userId, opts)
@@ -2703,6 +3017,7 @@ apiInstance.getUserSkillgroups(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **after** | **String** | The cursor that points to the next page | [optional]  |
  **before** | **String** | The cursor that points to the previous page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2711,7 +3026,7 @@ apiInstance.getUserSkillgroups(userId, opts)
 
 ## getUserState
 
-> UserState getUserState(userId)
+> UserState getUserState(userId, opts)
 
 
 GET /api/v2/users/{userId}/state
@@ -2736,8 +3051,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserState(userId)
+apiInstance.getUserState(userId, opts)
   .then((data) => {
     console.log(`getUserState success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2753,6 +3074,7 @@ apiInstance.getUserState(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2761,7 +3083,7 @@ apiInstance.getUserState(userId)
 
 ## getUserStation
 
-> UserStations getUserStation(userId)
+> UserStations getUserStation(userId, opts)
 
 
 GET /api/v2/users/{userId}/station
@@ -2784,8 +3106,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserStation(userId)
+apiInstance.getUserStation(userId, opts)
   .then((data) => {
     console.log(`getUserStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2801,6 +3129,7 @@ apiInstance.getUserStation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2833,7 +3162,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserSuperiors(userId, opts)
@@ -2853,6 +3186,7 @@ apiInstance.getUserSuperiors(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2888,7 +3222,11 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserTrustors(userId, opts)
@@ -2909,6 +3247,7 @@ apiInstance.getUserTrustors(userId, opts)
  **userId** | **String** | User ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2917,7 +3256,7 @@ apiInstance.getUserTrustors(userId, opts)
 
 ## getUserVerifiers
 
-> VerifierEntityListing getUserVerifiers(userId)
+> VerifierEntityListing getUserVerifiers(userId, opts)
 
 
 GET /api/v2/users/{userId}/verifiers
@@ -2942,8 +3281,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserVerifiers(userId)
+apiInstance.getUserVerifiers(userId, opts)
   .then((data) => {
     console.log(`getUserVerifiers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2959,6 +3304,7 @@ apiInstance.getUserVerifiers(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2997,7 +3343,11 @@ let opts = {
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
-  'state': "active" // String | Only list users of this state
+  'state': "active", // String | Only list users of this state
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsers(opts)
@@ -3023,6 +3373,7 @@ apiInstance.getUsers(opts)
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3059,7 +3410,11 @@ let apiInstance = new platformClient.UsersApi();
 let opts = { 
   'excludeClosed': true, // Boolean | Whether or not to exclude closed chats
   'includePresence': true, // Boolean | Whether or not to include user presence
-  'after': "after_example" // String | The key to start after
+  'after': "after_example", // String | The key to start after
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersChatsMe(opts)
@@ -3080,6 +3435,7 @@ apiInstance.getUsersChatsMe(opts)
  **excludeClosed** | **Boolean** | Whether or not to exclude closed chats | [optional]  |
  **includePresence** | **Boolean** | Whether or not to include user presence | [optional]  |
  **after** | **String** | The key to start after | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3088,7 +3444,7 @@ apiInstance.getUsersChatsMe(opts)
 
 ## getUsersCustomattributesSchema
 
-> DataSchema getUsersCustomattributesSchema(schemaId)
+> DataSchema getUsersCustomattributesSchema(schemaId, opts)
 
 
 GET /api/v2/users/customattributes/schemas/{schemaId}
@@ -3115,8 +3471,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchema(schemaId)
+apiInstance.getUsersCustomattributesSchema(schemaId, opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3132,6 +3494,7 @@ apiInstance.getUsersCustomattributesSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3140,7 +3503,7 @@ apiInstance.getUsersCustomattributesSchema(schemaId)
 
 ## getUsersCustomattributesSchemaVersion
 
-> DataSchema getUsersCustomattributesSchemaVersion(schemaId, versionId)
+> DataSchema getUsersCustomattributesSchemaVersion(schemaId, versionId, opts)
 
 
 GET /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}
@@ -3168,8 +3531,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let versionId = "versionId_example"; // String | Schema version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchemaVersion(schemaId, versionId)
+apiInstance.getUsersCustomattributesSchemaVersion(schemaId, versionId, opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3186,6 +3555,7 @@ apiInstance.getUsersCustomattributesSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3194,7 +3564,7 @@ apiInstance.getUsersCustomattributesSchemaVersion(schemaId, versionId)
 
 ## getUsersCustomattributesSchemaVersions
 
-> DataSchemaListing getUsersCustomattributesSchemaVersions(schemaId)
+> DataSchemaListing getUsersCustomattributesSchemaVersions(schemaId, opts)
 
 
 GET /api/v2/users/customattributes/schemas/{schemaId}/versions
@@ -3221,8 +3591,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchemaVersions(schemaId)
+apiInstance.getUsersCustomattributesSchemaVersions(schemaId, opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3238,6 +3614,7 @@ apiInstance.getUsersCustomattributesSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3246,7 +3623,7 @@ apiInstance.getUsersCustomattributesSchemaVersions(schemaId)
 
 ## getUsersCustomattributesSchemas
 
-> DataSchemaListing getUsersCustomattributesSchemas()
+> DataSchemaListing getUsersCustomattributesSchemas(opts)
 
 
 GET /api/v2/users/customattributes/schemas
@@ -3271,8 +3648,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchemas()
+apiInstance.getUsersCustomattributesSchemas(opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3284,7 +3667,10 @@ apiInstance.getUsersCustomattributesSchemas()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3293,7 +3679,7 @@ This endpoint does not need any parameter.
 
 ## getUsersCustomattributesSchemasCoretype
 
-> Coretype getUsersCustomattributesSchemasCoretype(coreTypeName)
+> Coretype getUsersCustomattributesSchemasCoretype(coreTypeName, opts)
 
 
 GET /api/v2/users/customattributes/schemas/coretypes/{coreTypeName}
@@ -3320,8 +3706,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchemasCoretype(coreTypeName)
+apiInstance.getUsersCustomattributesSchemasCoretype(coreTypeName, opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3337,6 +3729,7 @@ apiInstance.getUsersCustomattributesSchemasCoretype(coreTypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coreTypeName** | **String** | Name of the core type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3345,7 +3738,7 @@ apiInstance.getUsersCustomattributesSchemasCoretype(coreTypeName)
 
 ## getUsersCustomattributesSchemasCoretypes
 
-> CoretypeListing getUsersCustomattributesSchemasCoretypes()
+> CoretypeListing getUsersCustomattributesSchemasCoretypes(opts)
 
 
 GET /api/v2/users/customattributes/schemas/coretypes
@@ -3370,8 +3763,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchemasCoretypes()
+apiInstance.getUsersCustomattributesSchemasCoretypes(opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3383,7 +3782,10 @@ apiInstance.getUsersCustomattributesSchemasCoretypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3392,7 +3794,7 @@ This endpoint does not need any parameter.
 
 ## getUsersCustomattributesSchemasLimits
 
-> SchemaQuantityLimits getUsersCustomattributesSchemasLimits()
+> SchemaQuantityLimits getUsersCustomattributesSchemasLimits(opts)
 
 
 GET /api/v2/users/customattributes/schemas/limits
@@ -3417,8 +3819,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersCustomattributesSchemasLimits()
+apiInstance.getUsersCustomattributesSchemasLimits(opts)
   .then((data) => {
     console.log(`getUsersCustomattributesSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3430,7 +3838,10 @@ apiInstance.getUsersCustomattributesSchemasLimits()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3478,7 +3889,11 @@ let opts = {
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
   'types': ["types_example"], // [String] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
-  'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+  'relationship': ["relationship_example"], // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersDevelopmentActivities(opts)
@@ -3508,6 +3923,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3551,7 +3967,11 @@ let opts = {
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
   'types': ["types_example"], // [String] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
-  'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+  'relationship': ["relationship_example"], // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersDevelopmentActivitiesMe(opts)
@@ -3580,6 +4000,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3588,7 +4009,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
 
 ## getUsersDevelopmentActivity
 
-> DevelopmentActivity getUsersDevelopmentActivity(activityId, type)
+> DevelopmentActivity getUsersDevelopmentActivity(activityId, type, opts)
 
 
 GET /api/v2/users/development/activities/{activityId}
@@ -3617,8 +4038,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let activityId = "activityId_example"; // String | Specifies the activity ID, maps to either assignment or appointment ID
 let type = "type_example"; // String | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsersDevelopmentActivity(activityId, type)
+apiInstance.getUsersDevelopmentActivity(activityId, type, opts)
   .then((data) => {
     console.log(`getUsersDevelopmentActivity success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3635,6 +4062,7 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
  **type** | **String** | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3670,7 +4098,11 @@ let apiInstance = new platformClient.UsersApi();
 let authorityName = "authorityName_example"; // String | Authority Name
 let externalKey = "externalKey_example"; // String | External Key
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
@@ -3691,6 +4123,7 @@ apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKe
  **authorityName** | **String** | Authority Name |  |
  **externalKey** | **String** | External Key |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3725,7 +4158,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersMe(opts)
@@ -3745,6 +4182,7 @@ apiInstance.getUsersMe(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
  **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3785,7 +4223,11 @@ let opts = {
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
-  'state': "active" // String | Only list users of this state
+  'state': "active", // String | Only list users of this state
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersQuery(opts)
@@ -3809,6 +4251,7 @@ apiInstance.getUsersQuery(opts)
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3844,7 +4287,11 @@ let apiInstance = new platformClient.UsersApi();
 let q64 = "q64_example"; // String | q64
 let opts = { 
   'expand': ["expand_example"], // [String] | expand
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | integrationPresenceSource
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | integrationPresenceSource
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersSearch(q64, opts)
@@ -3865,6 +4312,7 @@ apiInstance.getUsersSearch(q64, opts)
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
  **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3873,7 +4321,7 @@ apiInstance.getUsersSearch(q64, opts)
 
 ## patchUser
 
-> User patchUser(userId, body)
+> User patchUser(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}
@@ -3901,8 +4349,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | User
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUser(userId, body)
+apiInstance.patchUser(userId, body, opts)
   .then((data) => {
     console.log(`patchUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3919,6 +4373,7 @@ apiInstance.patchUser(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3927,7 +4382,7 @@ apiInstance.patchUser(userId, body)
 
 ## patchUserCallforwarding
 
-> CallForwarding patchUserCallforwarding(userId, body)
+> CallForwarding patchUserCallforwarding(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/callforwarding
@@ -3953,8 +4408,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Call forwarding
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserCallforwarding(userId, body)
+apiInstance.patchUserCallforwarding(userId, body, opts)
   .then((data) => {
     console.log(`patchUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3971,6 +4432,7 @@ apiInstance.patchUserCallforwarding(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Call forwarding |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3979,7 +4441,7 @@ apiInstance.patchUserCallforwarding(userId, body)
 
 ## patchUserCustomattributes
 
-> UserCustomAttributes patchUserCustomattributes(userId, userCustomAttributes)
+> UserCustomAttributes patchUserCustomattributes(userId, userCustomAttributes, opts)
 
 
 PATCH /api/v2/users/{userId}/customattributes
@@ -4007,8 +4469,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user ID
 let userCustomAttributes = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserCustomattributes(userId, userCustomAttributes)
+apiInstance.patchUserCustomattributes(userId, userCustomAttributes, opts)
   .then((data) => {
     console.log(`patchUserCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4025,6 +4493,7 @@ apiInstance.patchUserCustomattributes(userId, userCustomAttributes)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **userCustomAttributes** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4033,7 +4502,7 @@ apiInstance.patchUserCustomattributes(userId, userCustomAttributes)
 
 ## patchUserCustomattributesBulk
 
-> UserCustomAttributes patchUserCustomattributesBulk(userId, userCustomAttributesList)
+> UserCustomAttributes patchUserCustomattributesBulk(userId, userCustomAttributesList, opts)
 
 
 PATCH /api/v2/users/{userId}/customattributes/bulk
@@ -4061,8 +4530,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user ID
 let userCustomAttributesList = [{}]; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserCustomattributesBulk(userId, userCustomAttributesList)
+apiInstance.patchUserCustomattributesBulk(userId, userCustomAttributesList, opts)
   .then((data) => {
     console.log(`patchUserCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4079,6 +4554,7 @@ apiInstance.patchUserCustomattributesBulk(userId, userCustomAttributesList)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **userCustomAttributesList** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4087,7 +4563,7 @@ apiInstance.patchUserCustomattributesBulk(userId, userCustomAttributesList)
 
 ## patchUserGeolocation
 
-> Geolocation patchUserGeolocation(userId, clientId, body)
+> Geolocation patchUserGeolocation(userId, clientId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
@@ -4114,8 +4590,14 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | user Id
 let clientId = "clientId_example"; // String | client Id
 let body = {}; // Object | Geolocation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserGeolocation(userId, clientId, body)
+apiInstance.patchUserGeolocation(userId, clientId, body, opts)
   .then((data) => {
     console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4133,6 +4615,7 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
  **body** | **Object** | Geolocation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4141,7 +4624,7 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 
 ## patchUserQueue
 
-> UserQueue patchUserQueue(queueId, userId, body)
+> UserQueue patchUserQueue(queueId, userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/queues/{queueId}
@@ -4169,8 +4652,14 @@ let apiInstance = new platformClient.UsersApi();
 let queueId = "queueId_example"; // String | Queue ID
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Queue Member
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserQueue(queueId, userId, body)
+apiInstance.patchUserQueue(queueId, userId, body, opts)
   .then((data) => {
     console.log(`patchUserQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4188,6 +4677,7 @@ apiInstance.patchUserQueue(queueId, userId, body)
  **queueId** | **String** | Queue ID |  |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Queue Member |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4226,7 +4716,11 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | User Queues
 let opts = { 
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchUserQueues(userId, body, opts)
@@ -4247,6 +4741,7 @@ apiInstance.patchUserQueues(userId, body, opts)
  **userId** | **String** | User ID |  |
  **body** | **Object** | User Queues |  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4255,7 +4750,7 @@ apiInstance.patchUserQueues(userId, body, opts)
 
 ## patchUserRoutinglanguage
 
-> UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
+> UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
@@ -4283,8 +4778,14 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let languageId = "languageId_example"; // String | languageId
 let body = {}; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserRoutinglanguage(userId, languageId, body)
+apiInstance.patchUserRoutinglanguage(userId, languageId, body, opts)
   .then((data) => {
     console.log(`patchUserRoutinglanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4302,6 +4803,7 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4310,7 +4812,7 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 
 ## patchUserRoutinglanguagesBulk
 
-> UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
+> UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/bulk
@@ -4337,8 +4839,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserRoutinglanguagesBulk(userId, body)
+apiInstance.patchUserRoutinglanguagesBulk(userId, body, opts)
   .then((data) => {
     console.log(`patchUserRoutinglanguagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4355,6 +4863,7 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4363,7 +4872,7 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 
 ## patchUserRoutingskillsBulk
 
-> UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
+> UserSkillEntityListing patchUserRoutingskillsBulk(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/routingskills/bulk
@@ -4389,8 +4898,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserRoutingskillsBulk(userId, body)
+apiInstance.patchUserRoutingskillsBulk(userId, body, opts)
   .then((data) => {
     console.log(`patchUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4407,6 +4922,7 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4415,7 +4931,7 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 
 ## patchUsersBulk
 
-> UserEntityListing patchUsersBulk(body)
+> UserEntityListing patchUsersBulk(body, opts)
 
 
 PATCH /api/v2/users/bulk
@@ -4441,8 +4957,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = [{}]; // Object | Users
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUsersBulk(body)
+apiInstance.patchUsersBulk(body, opts)
   .then((data) => {
     console.log(`patchUsersBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4458,6 +4980,7 @@ apiInstance.patchUsersBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Users |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4493,7 +5016,11 @@ let apiInstance = new platformClient.UsersApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsUsersActivityQuery(body, opts)
@@ -4514,6 +5041,7 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4522,7 +5050,7 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
 
 ## postAnalyticsUsersAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/users/aggregates/jobs
@@ -4549,8 +5077,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersAggregatesJobs(body)
+apiInstance.postAnalyticsUsersAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4566,6 +5100,7 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4574,7 +5109,7 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 
 ## postAnalyticsUsersAggregatesQuery
 
-> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
+> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/users/aggregates/query
@@ -4599,8 +5134,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersAggregatesQuery(body)
+apiInstance.postAnalyticsUsersAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4616,6 +5157,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4624,7 +5166,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 ## postAnalyticsUsersDetailsJobs
 
-> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body, opts)
 
 
 POST /api/v2/analytics/users/details/jobs
@@ -4649,8 +5191,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersDetailsJobs(body)
+apiInstance.postAnalyticsUsersDetailsJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersDetailsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4666,6 +5214,7 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4674,7 +5223,7 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 
 ## postAnalyticsUsersDetailsQuery
 
-> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
+> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body, opts)
 
 
 POST /api/v2/analytics/users/details/query
@@ -4699,8 +5248,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersDetailsQuery(body)
+apiInstance.postAnalyticsUsersDetailsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4716,6 +5271,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4724,7 +5280,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 ## postAnalyticsUsersObservationsQuery
 
-> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body, opts)
 
 
 POST /api/v2/analytics/users/observations/query
@@ -4749,8 +5305,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersObservationsQuery(body)
+apiInstance.postAnalyticsUsersObservationsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4766,6 +5328,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4801,7 +5364,11 @@ let apiInstance = new platformClient.UsersApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let body = {}; // Object | Pairs of role and division IDs
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'subjectType': "PC_USER", // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
@@ -4822,6 +5389,7 @@ apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4830,7 +5398,7 @@ void (no response body)
 
 ## postAuthorizationSubjectBulkremove
 
-> void postAuthorizationSubjectBulkremove(subjectId, body)
+> void postAuthorizationSubjectBulkremove(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
@@ -4856,8 +5424,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let body = {}; // Object | Pairs of role and division IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
+apiInstance.postAuthorizationSubjectBulkremove(subjectId, body, opts)
   .then(() => {
     console.log('postAuthorizationSubjectBulkremove returned successfully.');
   })
@@ -4874,6 +5448,7 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4912,7 +5487,11 @@ let apiInstance = new platformClient.UsersApi();
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let body = {}; // Object | Pairs of role and division IDs
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'subjectType': "PC_USER", // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
@@ -4933,6 +5512,7 @@ apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4969,7 +5549,11 @@ let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
 let roleId = "roleId_example"; // String | the id of the role to grant
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
+  'subjectType': "PC_USER", // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
@@ -4991,6 +5575,7 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
  **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4999,7 +5584,7 @@ void (no response body)
 
 ## postUserExternalid
 
-> [UserExternalIdentifier] postUserExternalid(userId, body)
+> [UserExternalIdentifier] postUserExternalid(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/externalid
@@ -5027,8 +5612,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserExternalid(userId, body)
+apiInstance.postUserExternalid(userId, body, opts)
   .then((data) => {
     console.log(`postUserExternalid success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5045,6 +5636,7 @@ apiInstance.postUserExternalid(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5081,7 +5673,11 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let opts = { 
-  'force': false // Boolean | Resend the invitation even if one is already outstanding
+  'force': false, // Boolean | Resend the invitation even if one is already outstanding
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postUserInvite(userId, opts)
@@ -5101,6 +5697,7 @@ apiInstance.postUserInvite(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **force** | **Boolean** | Resend the invitation even if one is already outstanding | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5109,7 +5706,7 @@ void (no response body)
 
 ## postUserPassword
 
-> void postUserPassword(userId, body)
+> void postUserPassword(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/password
@@ -5135,8 +5732,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Password
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserPassword(userId, body)
+apiInstance.postUserPassword(userId, body, opts)
   .then(() => {
     console.log('postUserPassword returned successfully.');
   })
@@ -5153,6 +5756,7 @@ apiInstance.postUserPassword(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Password |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5161,7 +5765,7 @@ void (no response body)
 
 ## postUserRoutinglanguages
 
-> UserRoutingLanguage postUserRoutinglanguages(userId, body)
+> UserRoutingLanguage postUserRoutinglanguages(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/routinglanguages
@@ -5188,8 +5792,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserRoutinglanguages(userId, body)
+apiInstance.postUserRoutinglanguages(userId, body, opts)
   .then((data) => {
     console.log(`postUserRoutinglanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5206,6 +5816,7 @@ apiInstance.postUserRoutinglanguages(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5214,7 +5825,7 @@ apiInstance.postUserRoutinglanguages(userId, body)
 
 ## postUserRoutingskills
 
-> UserRoutingSkill postUserRoutingskills(userId, body)
+> UserRoutingSkill postUserRoutingskills(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/routingskills
@@ -5240,8 +5851,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserRoutingskills(userId, body)
+apiInstance.postUserRoutingskills(userId, body, opts)
   .then((data) => {
     console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5258,6 +5875,7 @@ apiInstance.postUserRoutingskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5266,7 +5884,7 @@ apiInstance.postUserRoutingskills(userId, body)
 
 ## postUsers
 
-> User postUsers(body)
+> User postUsers(body, opts)
 
 
 POST /api/v2/users
@@ -5293,8 +5911,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | User
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsers(body)
+apiInstance.postUsers(body, opts)
   .then((data) => {
     console.log(`postUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5310,6 +5934,7 @@ apiInstance.postUsers(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | User |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5318,7 +5943,7 @@ apiInstance.postUsers(body)
 
 ## postUsersCustomattributesSchemas
 
-> DataSchema postUsersCustomattributesSchemas(body)
+> DataSchema postUsersCustomattributesSchemas(body, opts)
 
 
 POST /api/v2/users/customattributes/schemas
@@ -5345,8 +5970,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersCustomattributesSchemas(body)
+apiInstance.postUsersCustomattributesSchemas(body, opts)
   .then((data) => {
     console.log(`postUsersCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5362,6 +5993,7 @@ apiInstance.postUsersCustomattributesSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5370,7 +6002,7 @@ apiInstance.postUsersCustomattributesSchemas(body)
 
 ## postUsersDevelopmentActivitiesAggregatesQuery
 
-> DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
+> DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body, opts)
 
 
 POST /api/v2/users/development/activities/aggregates/query
@@ -5398,8 +6030,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Aggregate Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body)
+apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postUsersDevelopmentActivitiesAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5415,6 +6053,7 @@ apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Aggregate Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5423,7 +6062,7 @@ apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body)
 
 ## postUsersMePassword
 
-> void postUsersMePassword(body)
+> void postUsersMePassword(body, opts)
 
 
 POST /api/v2/users/me/password
@@ -5446,8 +6085,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Password
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersMePassword(body)
+apiInstance.postUsersMePassword(body, opts)
   .then(() => {
     console.log('postUsersMePassword returned successfully.');
   })
@@ -5463,6 +6108,7 @@ apiInstance.postUsersMePassword(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Password |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5471,7 +6117,7 @@ void (no response body)
 
 ## postUsersSearch
 
-> UsersSearchResponse postUsersSearch(body)
+> UsersSearchResponse postUsersSearch(body, opts)
 
 
 POST /api/v2/users/search
@@ -5496,8 +6142,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearch(body)
+apiInstance.postUsersSearch(body, opts)
   .then((data) => {
     console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5513,6 +6165,7 @@ apiInstance.postUsersSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5521,7 +6174,7 @@ apiInstance.postUsersSearch(body)
 
 ## postUsersSearchConversationTarget
 
-> UsersSearchResponse postUsersSearchConversationTarget(body)
+> UsersSearchResponse postUsersSearchConversationTarget(body, opts)
 
 
 POST /api/v2/users/search/conversation/target
@@ -5548,8 +6201,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearchConversationTarget(body)
+apiInstance.postUsersSearchConversationTarget(body, opts)
   .then((data) => {
     console.log(`postUsersSearchConversationTarget success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5565,6 +6224,7 @@ apiInstance.postUsersSearchConversationTarget(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5573,7 +6233,7 @@ apiInstance.postUsersSearchConversationTarget(body)
 
 ## postUsersSearchQueuemembersManage
 
-> UsersSearchResponse postUsersSearchQueuemembersManage(body)
+> UsersSearchResponse postUsersSearchQueuemembersManage(body, opts)
 
 
 POST /api/v2/users/search/queuemembers/manage
@@ -5601,8 +6261,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearchQueuemembersManage(body)
+apiInstance.postUsersSearchQueuemembersManage(body, opts)
   .then((data) => {
     console.log(`postUsersSearchQueuemembersManage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5618,6 +6284,7 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5626,7 +6293,7 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 
 ## postUsersSearchTeamsAssign
 
-> UsersSearchResponse postUsersSearchTeamsAssign(body)
+> UsersSearchResponse postUsersSearchTeamsAssign(body, opts)
 
 
 POST /api/v2/users/search/teams/assign
@@ -5651,8 +6318,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearchTeamsAssign(body)
+apiInstance.postUsersSearchTeamsAssign(body, opts)
   .then((data) => {
     console.log(`postUsersSearchTeamsAssign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5668,6 +6341,7 @@ apiInstance.postUsersSearchTeamsAssign(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5676,7 +6350,7 @@ apiInstance.postUsersSearchTeamsAssign(body)
 
 ## putRoutingDirectroutingbackupSettingsMe
 
-> AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+> AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body, opts)
 
 
 PUT /api/v2/routing/directroutingbackup/settings/me
@@ -5701,8 +6375,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let body = {}; // Object | directRoutingBackup
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
+apiInstance.putRoutingDirectroutingbackupSettingsMe(body, opts)
   .then((data) => {
     console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5718,6 +6398,7 @@ apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | directRoutingBackup |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5726,7 +6407,7 @@ apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
 
 ## putRoutingUserDirectroutingbackupSettings
 
-> AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+> AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body, opts)
 
 
 PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -5752,8 +6433,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | directRoutingBackup
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
+apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body, opts)
   .then((data) => {
     console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5770,6 +6457,7 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | directRoutingBackup |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5778,7 +6466,7 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
 
 ## putRoutingUserUtilization
 
-> AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
+> AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body, opts)
 
 
 PUT /api/v2/routing/users/{userId}/utilization
@@ -5804,8 +6492,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | utilization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingUserUtilization(userId, body)
+apiInstance.putRoutingUserUtilization(userId, body, opts)
   .then((data) => {
     console.log(`putRoutingUserUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5822,6 +6516,7 @@ apiInstance.putRoutingUserUtilization(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | utilization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5830,7 +6525,7 @@ apiInstance.putRoutingUserUtilization(userId, body)
 
 ## putUserCallforwarding
 
-> CallForwarding putUserCallforwarding(userId, body)
+> CallForwarding putUserCallforwarding(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/callforwarding
@@ -5856,8 +6551,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Call forwarding
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserCallforwarding(userId, body)
+apiInstance.putUserCallforwarding(userId, body, opts)
   .then((data) => {
     console.log(`putUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5874,6 +6575,7 @@ apiInstance.putUserCallforwarding(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Call forwarding |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5882,7 +6584,7 @@ apiInstance.putUserCallforwarding(userId, body)
 
 ## putUserCustomattributes
 
-> UserCustomAttributes putUserCustomattributes(userId, userCustomAttributes)
+> UserCustomAttributes putUserCustomattributes(userId, userCustomAttributes, opts)
 
 
 PUT /api/v2/users/{userId}/customattributes
@@ -5910,8 +6612,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | user ID
 let userCustomAttributes = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserCustomattributes(userId, userCustomAttributes)
+apiInstance.putUserCustomattributes(userId, userCustomAttributes, opts)
   .then((data) => {
     console.log(`putUserCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5928,6 +6636,7 @@ apiInstance.putUserCustomattributes(userId, userCustomAttributes)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **userCustomAttributes** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5936,7 +6645,7 @@ apiInstance.putUserCustomattributes(userId, userCustomAttributes)
 
 ## putUserOutofoffice
 
-> OutOfOffice putUserOutofoffice(userId, body)
+> OutOfOffice putUserOutofoffice(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/outofoffice
@@ -5960,8 +6669,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | The updated OutOffOffice
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserOutofoffice(userId, body)
+apiInstance.putUserOutofoffice(userId, body, opts)
   .then((data) => {
     console.log(`putUserOutofoffice success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5978,6 +6693,7 @@ apiInstance.putUserOutofoffice(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The updated OutOffOffice |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5986,7 +6702,7 @@ apiInstance.putUserOutofoffice(userId, body)
 
 ## putUserProfileskills
 
-> **[&#39;String&#39;]** putUserProfileskills(userId, body)
+> **[&#39;String&#39;]** putUserProfileskills(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/profileskills
@@ -6012,8 +6728,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = ["body_example"]; // [String] | Skills
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserProfileskills(userId, body)
+apiInstance.putUserProfileskills(userId, body, opts)
   .then((data) => {
     console.log(`putUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6030,6 +6752,7 @@ apiInstance.putUserProfileskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **[String]** | Skills |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6038,7 +6761,7 @@ apiInstance.putUserProfileskills(userId, body)
 
 ## putUserRoles
 
-> UserAuthorization putUserRoles(subjectId, body)
+> UserAuthorization putUserRoles(subjectId, body, opts)
 
 
 PUT /api/v2/users/{subjectId}/roles
@@ -6064,8 +6787,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | User ID
 let body = ["body_example"]; // [String] | List of roles
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoles(subjectId, body)
+apiInstance.putUserRoles(subjectId, body, opts)
   .then((data) => {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6082,6 +6811,7 @@ apiInstance.putUserRoles(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6090,7 +6820,7 @@ apiInstance.putUserRoles(subjectId, body)
 
 ## putUserRoutingskill
 
-> UserRoutingSkill putUserRoutingskill(userId, skillId, body)
+> UserRoutingSkill putUserRoutingskill(userId, skillId, body, opts)
 
 
 PUT /api/v2/users/{userId}/routingskills/{skillId}
@@ -6117,8 +6847,14 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let skillId = "skillId_example"; // String | skillId
 let body = {}; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoutingskill(userId, skillId, body)
+apiInstance.putUserRoutingskill(userId, skillId, body, opts)
   .then((data) => {
     console.log(`putUserRoutingskill success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6136,6 +6872,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6144,7 +6881,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 
 ## putUserRoutingskillsBulk
 
-> UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
+> UserSkillEntityListing putUserRoutingskillsBulk(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/routingskills/bulk
@@ -6170,8 +6907,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoutingskillsBulk(userId, body)
+apiInstance.putUserRoutingskillsBulk(userId, body, opts)
   .then((data) => {
     console.log(`putUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6188,6 +6931,7 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6196,7 +6940,7 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 
 ## putUserRoutingstatus
 
-> RoutingStatus putUserRoutingstatus(userId, body)
+> RoutingStatus putUserRoutingstatus(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/routingstatus
@@ -6220,8 +6964,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Routing Status
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoutingstatus(userId, body)
+apiInstance.putUserRoutingstatus(userId, body, opts)
   .then((data) => {
     console.log(`putUserRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6238,6 +6988,7 @@ apiInstance.putUserRoutingstatus(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Routing Status |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6246,7 +6997,7 @@ apiInstance.putUserRoutingstatus(userId, body)
 
 ## putUserState
 
-> UserState putUserState(userId, body)
+> UserState putUserState(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/state
@@ -6272,8 +7023,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | User
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserState(userId, body)
+apiInstance.putUserState(userId, body, opts)
   .then((data) => {
     console.log(`putUserState success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6290,6 +7047,7 @@ apiInstance.putUserState(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6298,7 +7056,7 @@ apiInstance.putUserState(userId, body)
 
 ## putUserStationAssociatedstationStationId
 
-> void putUserStationAssociatedstationStationId(userId, stationId)
+> void putUserStationAssociatedstationStationId(userId, stationId, opts)
 
 
 PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
@@ -6322,8 +7080,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let stationId = "stationId_example"; // String | stationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
+apiInstance.putUserStationAssociatedstationStationId(userId, stationId, opts)
   .then(() => {
     console.log('putUserStationAssociatedstationStationId returned successfully.');
   })
@@ -6340,6 +7104,7 @@ apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **stationId** | **String** | stationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6348,7 +7113,7 @@ void (no response body)
 
 ## putUserStationDefaultstationStationId
 
-> void putUserStationDefaultstationStationId(userId, stationId)
+> void putUserStationDefaultstationStationId(userId, stationId, opts)
 
 
 PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
@@ -6375,8 +7140,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let stationId = "stationId_example"; // String | stationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserStationDefaultstationStationId(userId, stationId)
+apiInstance.putUserStationDefaultstationStationId(userId, stationId, opts)
   .then(() => {
     console.log('putUserStationDefaultstationStationId returned successfully.');
   })
@@ -6393,6 +7164,7 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **stationId** | **String** | stationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6401,7 +7173,7 @@ void (no response body)
 
 ## putUserVerifier
 
-> Verifier putUserVerifier(userId, verifierId, body)
+> Verifier putUserVerifier(userId, verifierId, body, opts)
 
 
 PUT /api/v2/users/{userId}/verifiers/{verifierId}
@@ -6428,8 +7200,14 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let verifierId = "verifierId_example"; // String | Verifier ID
 let body = {}; // Object | Verifier Update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserVerifier(userId, verifierId, body)
+apiInstance.putUserVerifier(userId, verifierId, body, opts)
   .then((data) => {
     console.log(`putUserVerifier success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6447,6 +7225,7 @@ apiInstance.putUserVerifier(userId, verifierId, body)
  **userId** | **String** | User ID |  |
  **verifierId** | **String** | Verifier ID |  |
  **body** | **Object** | Verifier Update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6455,7 +7234,7 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 
 ## putUsersCustomattributesSchema
 
-> DataSchema putUsersCustomattributesSchema(schemaId, body)
+> DataSchema putUsersCustomattributesSchema(schemaId, body, opts)
 
 
 PUT /api/v2/users/customattributes/schemas/{schemaId}
@@ -6483,8 +7262,14 @@ let apiInstance = new platformClient.UsersApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let body = {}; // Object | Data Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUsersCustomattributesSchema(schemaId, body)
+apiInstance.putUsersCustomattributesSchema(schemaId, body, opts)
   .then((data) => {
     console.log(`putUsersCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6501,10 +7286,11 @@ apiInstance.putUsersCustomattributesSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **DataSchema**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

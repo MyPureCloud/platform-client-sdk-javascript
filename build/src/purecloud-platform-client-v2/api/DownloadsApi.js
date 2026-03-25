@@ -5,7 +5,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -28,6 +28,7 @@ class DownloadsApi {
 	 * @param {String} opts.contentDisposition 
 	 * @param {Boolean} opts.issueRedirect  (default to true)
 	 * @param {Boolean} opts.redirectToAuth  (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getDownload(downloadId, opts) { 
 		opts = opts || {};
@@ -47,7 +48,8 @@ class DownloadsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

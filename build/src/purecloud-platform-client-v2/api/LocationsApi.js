@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class LocationsApi {
 	 * Delete a location
 	 * 
 	 * @param {String} locationId Location ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLocation(locationId) { 
+	deleteLocation(locationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling deleteLocation';
@@ -41,7 +45,8 @@ class LocationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,6 +56,7 @@ class LocationsApi {
 	 * @param {String} locationId Location ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLocation(locationId, opts) { 
 		opts = opts || {};
@@ -70,7 +76,8 @@ class LocationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -78,8 +85,12 @@ class LocationsApi {
 	 * Get sublocations for location ID.
 	 * 
 	 * @param {String} locationId Location ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLocationSublocations(locationId) { 
+	getLocationSublocations(locationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling getLocationSublocations';
@@ -95,7 +106,8 @@ class LocationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -107,6 +119,7 @@ class LocationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.id id
 	 * @param {Object} opts.sortOrder Sort order
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLocations(opts) { 
 		opts = opts || {};
@@ -122,7 +135,8 @@ class LocationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -132,6 +146,7 @@ class LocationsApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Provides more details about a specified resource
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLocationsSearch(q64, opts) { 
 		opts = opts || {};
@@ -151,7 +166,8 @@ class LocationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -160,8 +176,12 @@ class LocationsApi {
 	 * 
 	 * @param {String} locationId Location ID
 	 * @param {Object} body Location
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchLocation(locationId, body) { 
+	patchLocation(locationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null || locationId === '') {
 			throw 'Missing the required parameter "locationId" when calling patchLocation';
@@ -181,7 +201,8 @@ class LocationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -189,8 +210,12 @@ class LocationsApi {
 	 * Create a location
 	 * 
 	 * @param {Object} body Location
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLocations(body) { 
+	postLocations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLocations';
@@ -206,7 +231,8 @@ class LocationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -214,8 +240,12 @@ class LocationsApi {
 	 * Search locations
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLocationsSearch(body) { 
+	postLocationsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLocationsSearch';
@@ -231,7 +261,8 @@ class LocationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

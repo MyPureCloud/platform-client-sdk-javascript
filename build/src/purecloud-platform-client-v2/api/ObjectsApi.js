@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -26,6 +26,7 @@ class ObjectsApi {
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -45,7 +46,8 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -55,6 +57,7 @@ class ObjectsApi {
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -74,7 +77,8 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -91,6 +95,7 @@ class ObjectsApi {
 	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
 	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Search term to filter by division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisions(opts) { 
 		opts = opts || {};
@@ -106,7 +111,8 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -116,6 +122,7 @@ class ObjectsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionsDeleted(opts) { 
 		opts = opts || {};
@@ -131,15 +138,20 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieve the home division for the organization.
 	 * Will not include object counts.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationDivisionsHome() { 
+	getAuthorizationDivisionsHome(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/home', 
@@ -151,15 +163,20 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Returns the maximum allowed number of divisions.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationDivisionsLimit() { 
+	getAuthorizationDivisionsLimit(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/limit', 
@@ -171,7 +188,8 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -184,6 +202,7 @@ class ObjectsApi {
 	 * @param {String} opts.pageSize Page size (max 200, default 25) (default to 25)
 	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Optionally request specific divisions by division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionsQuery(opts) { 
 		opts = opts || {};
@@ -199,7 +218,8 @@ class ObjectsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -209,8 +229,12 @@ class ObjectsApi {
 	 * @param {String} divisionId Division ID
 	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
 	 * @param {Array.<String>} body Object Id List
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationDivisionObject(divisionId, objectType, body) { 
+	postAuthorizationDivisionObject(divisionId, objectType, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
@@ -234,7 +258,8 @@ class ObjectsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -243,8 +268,12 @@ class ObjectsApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} body Recreated division data
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationDivisionRestore(divisionId, body) { 
+	postAuthorizationDivisionRestore(divisionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
@@ -264,7 +293,8 @@ class ObjectsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -272,8 +302,12 @@ class ObjectsApi {
 	 * Create a division.
 	 * 
 	 * @param {Object} body Division
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationDivisions(body) { 
+	postAuthorizationDivisions(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
@@ -289,7 +323,8 @@ class ObjectsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -298,8 +333,12 @@ class ObjectsApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} body Updated division data
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationDivision(divisionId, body) { 
+	putAuthorizationDivision(divisionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
@@ -319,7 +358,8 @@ class ObjectsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

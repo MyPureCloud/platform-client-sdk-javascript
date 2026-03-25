@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -25,8 +25,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteChatsRoomMessage(roomJid, messageId) { 
+	deleteChatsRoomMessage(roomJid, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomMessage';
@@ -46,7 +50,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -55,8 +60,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} pinnedMessageId pinnedMessageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteChatsRoomMessagesPin(roomJid, pinnedMessageId) { 
+	deleteChatsRoomMessagesPin(roomJid, pinnedMessageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomMessagesPin';
@@ -76,7 +85,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -85,8 +95,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} userId userId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteChatsRoomParticipant(roomJid, userId) { 
+	deleteChatsRoomParticipant(roomJid, userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomParticipant';
@@ -106,7 +120,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -115,8 +130,12 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteChatsUserMessage(userId, messageId) { 
+	deleteChatsUserMessage(userId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteChatsUserMessage';
@@ -136,7 +155,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -145,8 +165,12 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {String} pinnedMessageId pinnedMessageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteChatsUserMessagesPin(userId, pinnedMessageId) { 
+	deleteChatsUserMessagesPin(userId, pinnedMessageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteChatsUserMessagesPin';
@@ -166,15 +190,20 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete a user's chat settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteChatsUsersMeSettings() { 
+	deleteChatsUsersMeSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/chats/users/me/settings', 
@@ -186,7 +215,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -194,8 +224,12 @@ class ChatApi {
 	 * Get a message
 	 * 
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsMessage(messageId) { 
+	getChatsMessage(messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getChatsMessage';
@@ -211,7 +245,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -219,8 +254,12 @@ class ChatApi {
 	 * Get a room
 	 * 
 	 * @param {String} roomJid roomJid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsRoom(roomJid) { 
+	getChatsRoom(roomJid, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoom';
@@ -236,7 +275,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -245,8 +285,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} messageIds messageIds, comma separated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsRoomMessage(roomJid, messageIds) { 
+	getChatsRoomMessage(roomJid, messageIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomMessage';
@@ -266,7 +310,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -279,6 +324,7 @@ class ChatApi {
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
 	 * @param {Boolean} opts.excludeMetadata Whether to exclude metadata for messages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getChatsRoomMessages(roomJid, opts) { 
 		opts = opts || {};
@@ -298,7 +344,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -307,8 +354,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} participantJid participantJid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsRoomParticipant(roomJid, participantJid) { 
+	getChatsRoomParticipant(roomJid, participantJid, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipant';
@@ -328,7 +379,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -338,6 +390,7 @@ class ChatApi {
 	 * @param {String} roomJid roomJid
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.notify Whether to get users to notify
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getChatsRoomParticipants(roomJid, opts) { 
 		opts = opts || {};
@@ -357,15 +410,20 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Chat Settings.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsSettings() { 
+	getChatsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/chats/settings', 
@@ -377,7 +435,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -390,6 +449,7 @@ class ChatApi {
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
 	 * @param {Boolean} opts.excludeMetadata Whether to exclude metadata for messages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getChatsThreadMessages(threadId, opts) { 
 		opts = opts || {};
@@ -409,7 +469,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -417,8 +478,12 @@ class ChatApi {
 	 * Get information for a 1on1
 	 * 
 	 * @param {String} userId userId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsUser(userId) { 
+	getChatsUser(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUser';
@@ -434,7 +499,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -443,8 +509,12 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {String} messageIds messageIds, comma separated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsUserMessage(userId, messageIds) { 
+	getChatsUserMessage(userId, messageIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUserMessage';
@@ -464,7 +534,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -477,6 +548,7 @@ class ChatApi {
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
 	 * @param {Boolean} opts.excludeMetadata Whether to exclude metadata for messages
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getChatsUserMessages(userId, opts) { 
 		opts = opts || {};
@@ -496,7 +568,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -504,8 +577,12 @@ class ChatApi {
 	 * Get a user's chat settings
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsUserSettings(userId) { 
+	getChatsUserSettings(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getChatsUserSettings';
@@ -521,15 +598,20 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a user's chat settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getChatsUsersMeSettings() { 
+	getChatsUsersMeSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/chats/users/me/settings', 
@@ -541,7 +623,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -550,8 +633,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {Object} body Room properties
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchChatsRoom(roomJid, body) { 
+	patchChatsRoom(roomJid, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling patchChatsRoom';
@@ -571,7 +658,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -581,8 +669,12 @@ class ChatApi {
 	 * @param {String} roomJid roomId
 	 * @param {String} messageId messageId
 	 * @param {Object} body messageBody
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchChatsRoomMessage(roomJid, messageId, body) { 
+	patchChatsRoomMessage(roomJid, messageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling patchChatsRoomMessage';
@@ -606,7 +698,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -614,8 +707,12 @@ class ChatApi {
 	 * Patch Chat Settings.
 	 * 
 	 * @param {Object} body Chat
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchChatsSettings(body) { 
+	patchChatsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchChatsSettings';
@@ -631,7 +728,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -641,8 +739,12 @@ class ChatApi {
 	 * @param {String} userId userId
 	 * @param {String} messageId messageId
 	 * @param {Object} body message body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchChatsUserMessage(userId, messageId, body) { 
+	patchChatsUserMessage(userId, messageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchChatsUserMessage';
@@ -666,7 +768,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -675,8 +778,12 @@ class ChatApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchChatsUserSettings(userId, body) { 
+	patchChatsUserSettings(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchChatsUserSettings';
@@ -696,7 +803,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -704,8 +812,12 @@ class ChatApi {
 	 * Update a user's chat settings
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchChatsUsersMeSettings(body) { 
+	patchChatsUsersMeSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchChatsUsersMeSettings';
@@ -721,7 +833,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -730,8 +843,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomId
 	 * @param {Object} body messageBody
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsRoomMessages(roomJid, body) { 
+	postChatsRoomMessages(roomJid, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling postChatsRoomMessages';
@@ -751,7 +868,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -760,8 +878,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {Object} body Pinned Message Ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsRoomMessagesPins(roomJid, body) { 
+	postChatsRoomMessagesPins(roomJid, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling postChatsRoomMessagesPins';
@@ -781,7 +903,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -790,8 +913,12 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} userId userId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsRoomParticipant(roomJid, userId) { 
+	postChatsRoomParticipant(roomJid, userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roomJid' is set
 		if (roomJid === undefined || roomJid === null || roomJid === '') {
 			throw 'Missing the required parameter "roomJid" when calling postChatsRoomParticipant';
@@ -811,7 +938,8 @@ class ChatApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -819,8 +947,12 @@ class ChatApi {
 	 * Create an adhoc room
 	 * 
 	 * @param {Object} body Room properties
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsRooms(body) { 
+	postChatsRooms(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postChatsRooms';
@@ -836,7 +968,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -845,8 +978,12 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {Object} body message body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsUserMessages(userId, body) { 
+	postChatsUserMessages(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postChatsUserMessages';
@@ -866,7 +1003,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -875,8 +1013,12 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {Object} body Pinned Message Ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsUserMessagesPins(userId, body) { 
+	postChatsUserMessagesPins(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postChatsUserMessagesPins';
@@ -896,7 +1038,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -904,8 +1047,12 @@ class ChatApi {
 	 * Create a user's chat settings
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postChatsUsersMeSettings(body) { 
+	postChatsUsersMeSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postChatsUsersMeSettings';
@@ -921,7 +1068,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -930,8 +1078,12 @@ class ChatApi {
 	 * 
 	 * @param {String} messageId messageId
 	 * @param {Object} body reactionUpdate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putChatsMessageReactions(messageId, body) { 
+	putChatsMessageReactions(messageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling putChatsMessageReactions';
@@ -951,7 +1103,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -959,8 +1112,12 @@ class ChatApi {
 	 * Update Chat Settings.
 	 * 
 	 * @param {Object} body Chat
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putChatsSettings(body) { 
+	putChatsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putChatsSettings';
@@ -976,7 +1133,8 @@ class ChatApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

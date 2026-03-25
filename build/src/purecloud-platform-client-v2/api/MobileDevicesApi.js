@@ -5,7 +5,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class MobileDevicesApi {
 	 * Delete device
 	 * 
 	 * @param {String} deviceId Device ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteMobiledevice(deviceId) { 
+	deleteMobiledevice(deviceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deviceId' is set
 		if (deviceId === undefined || deviceId === null || deviceId === '') {
 			throw 'Missing the required parameter "deviceId" when calling deleteMobiledevice';
@@ -41,7 +45,8 @@ class MobileDevicesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class MobileDevicesApi {
 	 * Get device
 	 * 
 	 * @param {String} deviceId Device ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getMobiledevice(deviceId) { 
+	getMobiledevice(deviceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deviceId' is set
 		if (deviceId === undefined || deviceId === null || deviceId === '') {
 			throw 'Missing the required parameter "deviceId" when calling getMobiledevice';
@@ -66,7 +75,8 @@ class MobileDevicesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -77,6 +87,7 @@ class MobileDevicesApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ascending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getMobiledevices(opts) { 
 		opts = opts || {};
@@ -92,7 +103,8 @@ class MobileDevicesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -100,8 +112,12 @@ class MobileDevicesApi {
 	 * Create User device
 	 * 
 	 * @param {Object} body Device
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postMobiledevices(body) { 
+	postMobiledevices(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postMobiledevices';
@@ -117,7 +133,8 @@ class MobileDevicesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -127,6 +144,7 @@ class MobileDevicesApi {
 	 * @param {String} deviceId Device ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Device
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putMobiledevice(deviceId, opts) { 
 		opts = opts || {};
@@ -146,7 +164,8 @@ class MobileDevicesApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

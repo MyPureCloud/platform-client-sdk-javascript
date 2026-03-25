@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class AgentAssistantsApi {
 	 * Delete an assistant.
 	 * 
 	 * @param {String} assistantId Assistant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAssistant(assistantId) { 
+	deleteAssistant(assistantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling deleteAssistant';
@@ -41,7 +45,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class AgentAssistantsApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAssistantQueue(assistantId, queueId) { 
+	deleteAssistantQueue(assistantId, queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling deleteAssistantQueue';
@@ -71,7 +80,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -81,6 +91,7 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.queueIds Comma-separated identifiers of the queues that need to be deleted.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteAssistantQueues(assistantId, opts) { 
 		opts = opts || {};
@@ -100,7 +111,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -108,8 +120,12 @@ class AgentAssistantsApi {
 	 * Delete an agent checklist
 	 * 
 	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAssistantsAgentchecklist(agentChecklistId) { 
+	deleteAssistantsAgentchecklist(agentChecklistId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentChecklistId' is set
 		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
 			throw 'Missing the required parameter "agentChecklistId" when calling deleteAssistantsAgentchecklist';
@@ -125,7 +141,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -137,6 +154,7 @@ class AgentAssistantsApi {
 	 * @param {Object} opts.expand Which fields, if any, to expand.
 	 * @param {String} opts.languageVariation Language variation
 	 * @param {Boolean} opts.fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistant(assistantId, opts) { 
 		opts = opts || {};
@@ -156,7 +174,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -167,6 +186,7 @@ class AgentAssistantsApi {
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistantQueue(assistantId, queueId, opts) { 
 		opts = opts || {};
@@ -190,7 +210,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -200,8 +221,12 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} queueId Queue ID
 	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAssistantQueueUsersJob(assistantId, queueId, jobId) { 
+	getAssistantQueueUsersJob(assistantId, queueId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantQueueUsersJob';
@@ -225,7 +250,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -238,6 +264,7 @@ class AgentAssistantsApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistantQueues(assistantId, opts) { 
 		opts = opts || {};
@@ -257,7 +284,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -271,6 +299,7 @@ class AgentAssistantsApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Return the assistant by the given name.
 	 * @param {Object} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistants(opts) { 
 		opts = opts || {};
@@ -286,7 +315,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -294,8 +324,12 @@ class AgentAssistantsApi {
 	 * Get an agent checklist
 	 * 
 	 * @param {String} agentChecklistId Agent Checklist ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAssistantsAgentchecklist(agentChecklistId) { 
+	getAssistantsAgentchecklist(agentChecklistId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentChecklistId' is set
 		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
 			throw 'Missing the required parameter "agentChecklistId" when calling getAssistantsAgentchecklist';
@@ -311,7 +345,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -326,6 +361,7 @@ class AgentAssistantsApi {
 	 * @param {String} opts.language The agent checklist language filter applied to the listing.
 	 * @param {Object} opts.sortOrder The sort order for the listing
 	 * @param {Object} opts.sortBy The field to sort by for the listing.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistantsAgentchecklists(opts) { 
 		opts = opts || {};
@@ -341,15 +377,20 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of supported languages
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAssistantsAgentchecklistsLanguages() { 
+	getAssistantsAgentchecklistsLanguages(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/assistants/agentchecklists/languages', 
@@ -361,7 +402,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -374,6 +416,7 @@ class AgentAssistantsApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.queueIds Comma-separated identifiers of the queues that need to be retrieved.
 	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistantsQueues(opts) { 
 		opts = opts || {};
@@ -389,7 +432,8 @@ class AgentAssistantsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -398,8 +442,12 @@ class AgentAssistantsApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchAssistant(assistantId, body) { 
+	patchAssistant(assistantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling patchAssistant';
@@ -419,7 +467,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -428,8 +477,12 @@ class AgentAssistantsApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {Array.<Object>} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchAssistantQueues(assistantId, body) { 
+	patchAssistantQueues(assistantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling patchAssistantQueues';
@@ -449,7 +502,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -459,8 +513,12 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAssistantQueueUsersBulkAdd(assistantId, queueId, body) { 
+	postAssistantQueueUsersBulkAdd(assistantId, queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersBulkAdd';
@@ -484,7 +542,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -494,8 +553,12 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAssistantQueueUsersBulkRemove(assistantId, queueId, body) { 
+	postAssistantQueueUsersBulkRemove(assistantId, queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersBulkRemove';
@@ -519,7 +582,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -529,8 +593,12 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAssistantQueueUsersJobs(assistantId, queueId, body) { 
+	postAssistantQueueUsersJobs(assistantId, queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling postAssistantQueueUsersJobs';
@@ -554,7 +622,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -566,6 +635,7 @@ class AgentAssistantsApi {
 	 * @param {Object} body 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand with.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAssistantQueueUsersQuery(assistantId, queueId, body, opts) { 
 		opts = opts || {};
@@ -593,7 +663,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -601,8 +672,12 @@ class AgentAssistantsApi {
 	 * Create an Assistant.
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAssistants(body) { 
+	postAssistants(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAssistants';
@@ -618,7 +693,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -626,8 +702,12 @@ class AgentAssistantsApi {
 	 * Create an agent checklist
 	 * 
 	 * @param {Object} body Request body containing details of checklist to be added
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAssistantsAgentchecklists(body) { 
+	postAssistantsAgentchecklists(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAssistantsAgentchecklists';
@@ -643,7 +723,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -653,8 +734,12 @@ class AgentAssistantsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAssistantQueue(assistantId, queueId, body) { 
+	putAssistantQueue(assistantId, queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling putAssistantQueue';
@@ -678,7 +763,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -687,8 +773,12 @@ class AgentAssistantsApi {
 	 * 
 	 * @param {String} agentChecklistId Agent Checklist ID
 	 * @param {Object} body Request body containing details of checklist to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAssistantsAgentchecklist(agentChecklistId, body) { 
+	putAssistantsAgentchecklist(agentChecklistId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentChecklistId' is set
 		if (agentChecklistId === undefined || agentChecklistId === null || agentChecklistId === '') {
 			throw 'Missing the required parameter "agentChecklistId" when calling putAssistantsAgentchecklist';
@@ -708,7 +798,8 @@ class AgentAssistantsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

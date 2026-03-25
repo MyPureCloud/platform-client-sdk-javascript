@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteGreeting
 
-> void deleteGreeting(greetingId)
+> void deleteGreeting(greetingId, opts)
 
 
 DELETE /api/v2/greetings/{greetingId}
@@ -53,8 +53,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteGreeting(greetingId)
+apiInstance.deleteGreeting(greetingId, opts)
   .then(() => {
     console.log('deleteGreeting returned successfully.');
   })
@@ -70,6 +76,7 @@ apiInstance.deleteGreeting(greetingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -78,7 +85,7 @@ void (no response body)
 
 ## getGreeting
 
-> Greeting getGreeting(greetingId)
+> Greeting getGreeting(greetingId, opts)
 
 
 GET /api/v2/greetings/{greetingId}
@@ -101,8 +108,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGreeting(greetingId)
+apiInstance.getGreeting(greetingId, opts)
   .then((data) => {
     console.log(`getGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -118,6 +131,7 @@ apiInstance.getGreeting(greetingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -152,7 +166,11 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
 let opts = { 
-  'formatId': "WAV" // String | The desired media format.
+  'formatId': "WAV", // String | The desired media format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGreetingDownloads(greetingId, opts)
@@ -172,6 +190,7 @@ apiInstance.getGreetingDownloads(greetingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -206,7 +225,11 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
 let opts = { 
-  'formatId': "WAV" // String | The desired media format.
+  'formatId': "WAV", // String | The desired media format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGreetingGroupsDownloads(greetingId, opts)
@@ -226,6 +249,7 @@ apiInstance.getGreetingGroupsDownloads(greetingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -260,7 +284,11 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
 let opts = { 
-  'formatId': "WAV" // String | The desired media format.
+  'formatId': "WAV", // String | The desired media format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGreetingMedia(greetingId, opts)
@@ -280,6 +308,7 @@ apiInstance.getGreetingMedia(greetingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -314,7 +343,11 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
 let opts = { 
-  'formatId': "WAV" // String | The desired media format.
+  'formatId': "WAV", // String | The desired media format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGreetingUsersDownloads(greetingId, opts)
@@ -334,6 +367,7 @@ apiInstance.getGreetingUsersDownloads(greetingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -366,7 +400,11 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGreetings(opts)
@@ -386,6 +424,7 @@ apiInstance.getGreetings(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -394,7 +433,7 @@ apiInstance.getGreetings(opts)
 
 ## getGreetingsDefaults
 
-> DefaultGreetingList getGreetingsDefaults()
+> DefaultGreetingList getGreetingsDefaults(opts)
 
 
 GET /api/v2/greetings/defaults
@@ -415,8 +454,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GreetingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGreetingsDefaults()
+apiInstance.getGreetingsDefaults(opts)
   .then((data) => {
     console.log(`getGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -428,7 +473,10 @@ apiInstance.getGreetingsDefaults()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -462,7 +510,11 @@ let apiInstance = new platformClient.GreetingsApi();
 let groupId = "groupId_example"; // String | Group ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGroupGreetings(groupId, opts)
@@ -483,6 +535,7 @@ apiInstance.getGroupGreetings(groupId, opts)
  **groupId** | **String** | Group ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -491,7 +544,7 @@ apiInstance.getGroupGreetings(groupId, opts)
 
 ## getGroupGreetingsDefaults
 
-> DefaultGreetingList getGroupGreetingsDefaults(groupId)
+> DefaultGreetingList getGroupGreetingsDefaults(groupId, opts)
 
 
 GET /api/v2/groups/{groupId}/greetings/defaults
@@ -514,8 +567,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GreetingsApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGroupGreetingsDefaults(groupId)
+apiInstance.getGroupGreetingsDefaults(groupId, opts)
   .then((data) => {
     console.log(`getGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -531,6 +590,7 @@ apiInstance.getGroupGreetingsDefaults(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -564,7 +624,11 @@ let apiInstance = new platformClient.GreetingsApi();
 let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserGreetings(userId, opts)
@@ -585,6 +649,7 @@ apiInstance.getUserGreetings(userId, opts)
  **userId** | **String** | User ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -593,7 +658,7 @@ apiInstance.getUserGreetings(userId, opts)
 
 ## getUserGreetingsDefaults
 
-> DefaultGreetingList getUserGreetingsDefaults(userId)
+> DefaultGreetingList getUserGreetingsDefaults(userId, opts)
 
 
 GET /api/v2/users/{userId}/greetings/defaults
@@ -616,8 +681,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GreetingsApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserGreetingsDefaults(userId)
+apiInstance.getUserGreetingsDefaults(userId, opts)
   .then((data) => {
     console.log(`getUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -633,6 +704,7 @@ apiInstance.getUserGreetingsDefaults(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -641,7 +713,7 @@ apiInstance.getUserGreetingsDefaults(userId)
 
 ## postGreetings
 
-> Greeting postGreetings(body)
+> Greeting postGreetings(body, opts)
 
 
 POST /api/v2/greetings
@@ -664,8 +736,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GreetingsApi();
 
 let body = {}; // Object | The Greeting to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGreetings(body)
+apiInstance.postGreetings(body, opts)
   .then((data) => {
     console.log(`postGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -681,6 +759,7 @@ apiInstance.postGreetings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Greeting to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -689,7 +768,7 @@ apiInstance.postGreetings(body)
 
 ## postGroupGreetings
 
-> Greeting postGroupGreetings(groupId, body)
+> Greeting postGroupGreetings(groupId, body, opts)
 
 
 POST /api/v2/groups/{groupId}/greetings
@@ -713,8 +792,14 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let body = {}; // Object | The Greeting to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGroupGreetings(groupId, body)
+apiInstance.postGroupGreetings(groupId, body, opts)
   .then((data) => {
     console.log(`postGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -731,6 +816,7 @@ apiInstance.postGroupGreetings(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | The Greeting to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -739,7 +825,7 @@ apiInstance.postGroupGreetings(groupId, body)
 
 ## postUserGreetings
 
-> Greeting postUserGreetings(userId, body)
+> Greeting postUserGreetings(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/greetings
@@ -763,8 +849,14 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | The Greeting to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserGreetings(userId, body)
+apiInstance.postUserGreetings(userId, body, opts)
   .then((data) => {
     console.log(`postUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -781,6 +873,7 @@ apiInstance.postUserGreetings(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The Greeting to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -789,7 +882,7 @@ apiInstance.postUserGreetings(userId, body)
 
 ## putGreeting
 
-> Greeting putGreeting(greetingId, body)
+> Greeting putGreeting(greetingId, body, opts)
 
 
 PUT /api/v2/greetings/{greetingId}
@@ -813,8 +906,14 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let greetingId = "greetingId_example"; // String | Greeting ID
 let body = {}; // Object | The updated Greeting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGreeting(greetingId, body)
+apiInstance.putGreeting(greetingId, body, opts)
   .then((data) => {
     console.log(`putGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -831,6 +930,7 @@ apiInstance.putGreeting(greetingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
  **body** | **Object** | The updated Greeting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -839,7 +939,7 @@ apiInstance.putGreeting(greetingId, body)
 
 ## putGreetingsDefaults
 
-> DefaultGreetingList putGreetingsDefaults(body)
+> DefaultGreetingList putGreetingsDefaults(body, opts)
 
 
 PUT /api/v2/greetings/defaults
@@ -862,8 +962,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GreetingsApi();
 
 let body = {}; // Object | The updated defaultGreetingList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGreetingsDefaults(body)
+apiInstance.putGreetingsDefaults(body, opts)
   .then((data) => {
     console.log(`putGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -879,6 +985,7 @@ apiInstance.putGreetingsDefaults(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The updated defaultGreetingList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -887,7 +994,7 @@ apiInstance.putGreetingsDefaults(body)
 
 ## putGroupGreetingsDefaults
 
-> DefaultGreetingList putGroupGreetingsDefaults(groupId, body)
+> DefaultGreetingList putGroupGreetingsDefaults(groupId, body, opts)
 
 
 PUT /api/v2/groups/{groupId}/greetings/defaults
@@ -911,8 +1018,14 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let body = {}; // Object | The updated defaultGreetingList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGroupGreetingsDefaults(groupId, body)
+apiInstance.putGroupGreetingsDefaults(groupId, body, opts)
   .then((data) => {
     console.log(`putGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -929,6 +1042,7 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | The updated defaultGreetingList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -937,7 +1051,7 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
 
 ## putUserGreetingsDefaults
 
-> DefaultGreetingList putUserGreetingsDefaults(userId, body)
+> DefaultGreetingList putUserGreetingsDefaults(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/greetings/defaults
@@ -961,8 +1075,14 @@ let apiInstance = new platformClient.GreetingsApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | The updated defaultGreetingList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserGreetingsDefaults(userId, body)
+apiInstance.putUserGreetingsDefaults(userId, body, opts)
   .then((data) => {
     console.log(`putUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -979,10 +1099,11 @@ apiInstance.putUserGreetingsDefaults(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The updated defaultGreetingList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **DefaultGreetingList**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

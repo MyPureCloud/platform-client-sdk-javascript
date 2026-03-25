@@ -5,7 +5,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class SocialMediaApi {
 	 * Delete an escalation rule.
 	 * 
 	 * @param {String} escalationRuleId escalationRuleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteSocialmediaEscalationrule(escalationRuleId) { 
+	deleteSocialmediaEscalationrule(escalationRuleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'escalationRuleId' is set
 		if (escalationRuleId === undefined || escalationRuleId === null || escalationRuleId === '') {
 			throw 'Missing the required parameter "escalationRuleId" when calling deleteSocialmediaEscalationrule';
@@ -41,7 +45,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,9 +54,13 @@ class SocialMediaApi {
 	 * Delete a social media message.
 	 * 
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteSocialmediaMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteSocialmediaMessage(messageId) { 
+	deleteSocialmediaMessage(messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling deleteSocialmediaMessage';
@@ -67,7 +76,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -77,6 +87,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteSocialmediaTopic(topicId, opts) { 
 		opts = opts || {};
@@ -96,7 +107,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -107,6 +119,7 @@ class SocialMediaApi {
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -130,7 +143,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -141,6 +155,7 @@ class SocialMediaApi {
 	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
@@ -165,7 +180,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -176,6 +192,7 @@ class SocialMediaApi {
 	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -199,7 +216,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -210,6 +228,7 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -233,7 +252,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -244,6 +264,7 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.hardDelete Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -267,7 +288,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -275,8 +297,12 @@ class SocialMediaApi {
 	 * Get status for async query for social media aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSocialmediaAnalyticsAggregatesJob(jobId) { 
+	getSocialmediaAnalyticsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsAggregatesJob';
@@ -292,7 +318,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -302,6 +329,7 @@ class SocialMediaApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaAnalyticsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -321,7 +349,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -329,8 +358,12 @@ class SocialMediaApi {
 	 * Get status for async query for social media messages job
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSocialmediaAnalyticsMessagesJob(jobId) { 
+	getSocialmediaAnalyticsMessagesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSocialmediaAnalyticsMessagesJob';
@@ -346,7 +379,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -356,6 +390,7 @@ class SocialMediaApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaAnalyticsMessagesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -375,7 +410,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -385,6 +421,7 @@ class SocialMediaApi {
 	 * @param {String} escalationRuleId escalationRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaEscalationrule(escalationRuleId, opts) { 
 		opts = opts || {};
@@ -404,7 +441,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -415,6 +453,7 @@ class SocialMediaApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaEscalationrules(divisionId, opts) { 
 		opts = opts || {};
@@ -434,7 +473,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -444,6 +484,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopic(topicId, opts) { 
 		opts = opts || {};
@@ -463,7 +504,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -475,6 +517,7 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrules(topicId, opts) { 
 		opts = opts || {};
@@ -494,7 +537,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -505,6 +549,7 @@ class SocialMediaApi {
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -528,7 +573,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -540,6 +586,7 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion(topicId, facebookIngestionRuleId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -567,7 +614,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -580,6 +628,7 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -603,7 +652,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -614,6 +664,7 @@ class SocialMediaApi {
 	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
@@ -638,7 +689,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -650,6 +702,7 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersion(topicId, googleBusinessProfileIngestionRuleId, dataIngestionRuleVersion, opts) { 
@@ -678,7 +731,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -691,6 +745,7 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleIdVersions(topicId, googleBusinessProfileIngestionRuleId, opts) { 
@@ -715,7 +770,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -726,6 +782,7 @@ class SocialMediaApi {
 	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -749,7 +806,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -761,6 +819,7 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -788,7 +847,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -801,6 +861,7 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions(topicId, instagramIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -824,7 +885,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -835,6 +897,7 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -858,7 +921,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -870,6 +934,7 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, openId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -897,7 +962,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -910,6 +976,7 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, openId, opts) { 
 		opts = opts || {};
@@ -933,7 +1000,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -944,6 +1012,7 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -967,7 +1036,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -979,6 +1049,7 @@ class SocialMediaApi {
 	 * @param {String} dataIngestionRuleVersion version
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId, twitterIngestionRuleId, dataIngestionRuleVersion, opts) { 
 		opts = opts || {};
@@ -1006,7 +1077,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1019,6 +1091,7 @@ class SocialMediaApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1042,7 +1115,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1056,6 +1130,7 @@ class SocialMediaApi {
 	 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
 	 * @param {String} opts.name Search for topic by name that contains the given search string, search is case insensitive
 	 * @param {Array.<String>} opts.ids One or more topic IDs to search through the topics.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSocialmediaTopics(opts) { 
 		opts = opts || {};
@@ -1071,7 +1146,8 @@ class SocialMediaApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1081,6 +1157,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchSocialmediaTopic(topicId, opts) { 
 		opts = opts || {};
@@ -1100,7 +1177,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1111,6 +1189,7 @@ class SocialMediaApi {
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1134,7 +1213,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1145,6 +1225,7 @@ class SocialMediaApi {
 	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
@@ -1169,7 +1250,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1180,6 +1262,7 @@ class SocialMediaApi {
 	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1203,7 +1286,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1214,6 +1298,7 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -1237,7 +1322,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1248,6 +1334,7 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1271,7 +1358,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1279,8 +1367,12 @@ class SocialMediaApi {
 	 * Query for social media aggregates asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSocialmediaAnalyticsAggregatesJobs(body) { 
+	postSocialmediaAnalyticsAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSocialmediaAnalyticsAggregatesJobs';
@@ -1296,7 +1388,8 @@ class SocialMediaApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1304,8 +1397,12 @@ class SocialMediaApi {
 	 * Query for social media messages asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSocialmediaAnalyticsMessagesJobs(body) { 
+	postSocialmediaAnalyticsMessagesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSocialmediaAnalyticsMessagesJobs';
@@ -1321,7 +1418,8 @@ class SocialMediaApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1330,6 +1428,7 @@ class SocialMediaApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaEscalationrules(opts) { 
 		opts = opts || {};
@@ -1345,7 +1444,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1355,6 +1455,7 @@ class SocialMediaApi {
 	 * @param {String} divisionId One division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaEscalationsMessages(divisionId, opts) { 
 		opts = opts || {};
@@ -1374,7 +1475,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1384,6 +1486,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaTopicDataingestionrulesFacebook(topicId, opts) { 
 		opts = opts || {};
@@ -1403,7 +1506,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1413,6 +1517,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postSocialmediaTopicDataingestionrulesGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postSocialmediaTopicDataingestionrulesGooglebusinessprofile(topicId, opts) { 
@@ -1433,7 +1538,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1443,6 +1549,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaTopicDataingestionrulesInstagram(topicId, opts) { 
 		opts = opts || {};
@@ -1462,7 +1569,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1472,6 +1580,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaTopicDataingestionrulesOpen(topicId, opts) { 
 		opts = opts || {};
@@ -1491,7 +1600,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1501,8 +1611,12 @@ class SocialMediaApi {
 	 * @param {String} topicId Topic ID
 	 * @param {String} ruleId Data Ingestion Rule ID
 	 * @param {Array.<Object>} body NormalizedMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body) { 
+	postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk(topicId, ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdMessagesBulk';
@@ -1526,7 +1640,8 @@ class SocialMediaApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1536,8 +1651,12 @@ class SocialMediaApi {
 	 * @param {String} topicId Topic ID
 	 * @param {String} ruleId Data Ingestion Rule ID
 	 * @param {Object} body NormalizedEvent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body) { 
+	postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk(topicId, ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpenRuleIdReactionsBulk';
@@ -1561,7 +1680,8 @@ class SocialMediaApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1571,6 +1691,7 @@ class SocialMediaApi {
 	 * @param {String} topicId topicId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaTopicDataingestionrulesTwitter(topicId, opts) { 
 		opts = opts || {};
@@ -1590,7 +1711,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1599,6 +1721,7 @@ class SocialMediaApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSocialmediaTopics(opts) { 
 		opts = opts || {};
@@ -1614,7 +1737,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1622,8 +1746,12 @@ class SocialMediaApi {
 	 * Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
 	 * 
 	 * @param {Object} body TwitterDataHistoricalTweetRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSocialmediaTwitterHistoricalTweets(body) { 
+	postSocialmediaTwitterHistoricalTweets(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSocialmediaTwitterHistoricalTweets';
@@ -1639,7 +1767,8 @@ class SocialMediaApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1649,6 +1778,7 @@ class SocialMediaApi {
 	 * @param {String} escalationRuleId escalationRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putSocialmediaEscalationrule(escalationRuleId, opts) { 
 		opts = opts || {};
@@ -1668,7 +1798,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1679,6 +1810,7 @@ class SocialMediaApi {
 	 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1702,7 +1834,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1713,6 +1846,7 @@ class SocialMediaApi {
 	 * @param {String} googleBusinessProfileIngestionRuleId googleBusinessProfileIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putSocialmediaTopicDataingestionrulesGooglebusinessprofileGoogleBusinessProfileIngestionRuleId(topicId, googleBusinessProfileIngestionRuleId, opts) { 
@@ -1737,7 +1871,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1748,6 +1883,7 @@ class SocialMediaApi {
 	 * @param {String} instagramIngestionRuleId instagramIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId(topicId, instagramIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1771,7 +1907,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1782,6 +1919,7 @@ class SocialMediaApi {
 	 * @param {String} openId openId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
 		opts = opts || {};
@@ -1805,7 +1943,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1816,6 +1955,7 @@ class SocialMediaApi {
 	 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
 		opts = opts || {};
@@ -1839,7 +1979,8 @@ class SocialMediaApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

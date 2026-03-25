@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteMobiledevice
 
-> void deleteMobiledevice(deviceId)
+> void deleteMobiledevice(deviceId, opts)
 
 
 DELETE /api/v2/mobiledevices/{deviceId}
@@ -39,8 +39,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MobileDevicesApi();
 
 let deviceId = "deviceId_example"; // String | Device ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteMobiledevice(deviceId)
+apiInstance.deleteMobiledevice(deviceId, opts)
   .then(() => {
     console.log('deleteMobiledevice returned successfully.');
   })
@@ -56,6 +62,7 @@ apiInstance.deleteMobiledevice(deviceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deviceId** | **String** | Device ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -64,7 +71,7 @@ void (no response body)
 
 ## getMobiledevice
 
-> UserDevice getMobiledevice(deviceId)
+> UserDevice getMobiledevice(deviceId, opts)
 
 
 GET /api/v2/mobiledevices/{deviceId}
@@ -87,8 +94,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MobileDevicesApi();
 
 let deviceId = "deviceId_example"; // String | Device ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getMobiledevice(deviceId)
+apiInstance.getMobiledevice(deviceId, opts)
   .then((data) => {
     console.log(`getMobiledevice success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -104,6 +117,7 @@ apiInstance.getMobiledevice(deviceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deviceId** | **String** | Device ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -137,7 +151,11 @@ let apiInstance = new platformClient.MobileDevicesApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "ascending" // String | Ascending or descending sort order
+  'sortOrder': "ascending", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getMobiledevices(opts)
@@ -158,6 +176,7 @@ apiInstance.getMobiledevices(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -166,7 +185,7 @@ apiInstance.getMobiledevices(opts)
 
 ## postMobiledevices
 
-> UserDevice postMobiledevices(body)
+> UserDevice postMobiledevices(body, opts)
 
 
 POST /api/v2/mobiledevices
@@ -189,8 +208,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.MobileDevicesApi();
 
 let body = {}; // Object | Device
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postMobiledevices(body)
+apiInstance.postMobiledevices(body, opts)
   .then((data) => {
     console.log(`postMobiledevices success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -206,6 +231,7 @@ apiInstance.postMobiledevices(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Device |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -238,7 +264,11 @@ let apiInstance = new platformClient.MobileDevicesApi();
 
 let deviceId = "deviceId_example"; // String | Device ID
 let opts = { 
-  'body': {} // Object | Device
+  'body': {}, // Object | Device
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putMobiledevice(deviceId, opts)
@@ -258,10 +288,11 @@ apiInstance.putMobiledevice(deviceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deviceId** | **String** | Device ID |  |
  **body** | **Object** | Device | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UserDevice**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

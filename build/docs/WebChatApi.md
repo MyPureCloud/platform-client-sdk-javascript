@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteWebchatDeployment
 
-> void deleteWebchatDeployment(deploymentId)
+> void deleteWebchatDeployment(deploymentId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -58,8 +58,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebChatApi();
 
 let deploymentId = "deploymentId_example"; // String | Deployment Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebchatDeployment(deploymentId)
+apiInstance.deleteWebchatDeployment(deploymentId, opts)
   .then(() => {
     console.log('deleteWebchatDeployment returned successfully.');
   })
@@ -75,6 +81,7 @@ apiInstance.deleteWebchatDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Deployment Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -83,7 +90,7 @@ void (no response body)
 
 ## deleteWebchatGuestConversationMember
 
-> void deleteWebchatGuestConversationMember(conversationId, memberId)
+> void deleteWebchatGuestConversationMember(conversationId, memberId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -115,8 +122,14 @@ let apiInstance = new platformClient.WebChatApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let memberId = "memberId_example"; // String | memberId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebchatGuestConversationMember(conversationId, memberId)
+apiInstance.deleteWebchatGuestConversationMember(conversationId, memberId, opts)
   .then(() => {
     console.log('deleteWebchatGuestConversationMember returned successfully.');
   })
@@ -133,6 +146,7 @@ apiInstance.deleteWebchatGuestConversationMember(conversationId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -141,7 +155,7 @@ void (no response body)
 
 ## deleteWebchatSettings
 
-> void deleteWebchatSettings()
+> void deleteWebchatSettings(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -169,8 +183,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WebChatApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteWebchatSettings()
+apiInstance.deleteWebchatSettings(opts)
   .then(() => {
     console.log('deleteWebchatSettings returned successfully.');
   })
@@ -182,7 +202,10 @@ apiInstance.deleteWebchatSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -191,7 +214,7 @@ void (no response body)
 
 ## getWebchatDeployment
 
-> WebChatDeployment getWebchatDeployment(deploymentId)
+> WebChatDeployment getWebchatDeployment(deploymentId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -219,8 +242,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebChatApi();
 
 let deploymentId = "deploymentId_example"; // String | Deployment Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatDeployment(deploymentId)
+apiInstance.getWebchatDeployment(deploymentId, opts)
   .then((data) => {
     console.log(`getWebchatDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -236,6 +265,7 @@ apiInstance.getWebchatDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Deployment Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -244,7 +274,7 @@ apiInstance.getWebchatDeployment(deploymentId)
 
 ## getWebchatDeployments
 
-> WebChatDeploymentEntityListing getWebchatDeployments()
+> WebChatDeploymentEntityListing getWebchatDeployments(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -270,8 +300,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WebChatApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatDeployments()
+apiInstance.getWebchatDeployments(opts)
   .then((data) => {
     console.log(`getWebchatDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -283,7 +319,10 @@ apiInstance.getWebchatDeployments()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -292,7 +331,7 @@ This endpoint does not need any parameter.
 
 ## getWebchatGuestConversationMediarequest
 
-> WebChatGuestMediaRequest getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
+> WebChatGuestMediaRequest getWebchatGuestConversationMediarequest(conversationId, mediaRequestId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -324,8 +363,14 @@ let apiInstance = new platformClient.WebChatApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let mediaRequestId = "mediaRequestId_example"; // String | mediaRequestId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
+apiInstance.getWebchatGuestConversationMediarequest(conversationId, mediaRequestId, opts)
   .then((data) => {
     console.log(`getWebchatGuestConversationMediarequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -342,6 +387,7 @@ apiInstance.getWebchatGuestConversationMediarequest(conversationId, mediaRequest
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **mediaRequestId** | **String** | mediaRequestId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -350,7 +396,7 @@ apiInstance.getWebchatGuestConversationMediarequest(conversationId, mediaRequest
 
 ## getWebchatGuestConversationMediarequests
 
-> WebChatGuestMediaRequestEntityList getWebchatGuestConversationMediarequests(conversationId)
+> WebChatGuestMediaRequestEntityList getWebchatGuestConversationMediarequests(conversationId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -381,8 +427,14 @@ Guest Chat JWT.apiKey = 'YOUR API KEY';
 let apiInstance = new platformClient.WebChatApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatGuestConversationMediarequests(conversationId)
+apiInstance.getWebchatGuestConversationMediarequests(conversationId, opts)
   .then((data) => {
     console.log(`getWebchatGuestConversationMediarequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -398,6 +450,7 @@ apiInstance.getWebchatGuestConversationMediarequests(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -406,7 +459,7 @@ apiInstance.getWebchatGuestConversationMediarequests(conversationId)
 
 ## getWebchatGuestConversationMember
 
-> WebChatMemberInfo getWebchatGuestConversationMember(conversationId, memberId)
+> WebChatMemberInfo getWebchatGuestConversationMember(conversationId, memberId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -438,8 +491,14 @@ let apiInstance = new platformClient.WebChatApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let memberId = "memberId_example"; // String | memberId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatGuestConversationMember(conversationId, memberId)
+apiInstance.getWebchatGuestConversationMember(conversationId, memberId, opts)
   .then((data) => {
     console.log(`getWebchatGuestConversationMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -456,6 +515,7 @@ apiInstance.getWebchatGuestConversationMember(conversationId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -498,7 +558,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let opts = { 
   'pageSize': 25, // Number | The number of entries to return per page, or omitted for the default.
   'pageNumber': 1, // Number | The page number to return, or omitted for the first page.
-  'excludeDisconnectedMembers': false // Boolean | If true, the results will not contain members who have a DISCONNECTED state.
+  'excludeDisconnectedMembers': false, // Boolean | If true, the results will not contain members who have a DISCONNECTED state.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebchatGuestConversationMembers(conversationId, opts)
@@ -520,6 +584,7 @@ apiInstance.getWebchatGuestConversationMembers(conversationId, opts)
  **pageSize** | **Number** | The number of entries to return per page, or omitted for the default. | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number to return, or omitted for the first page. | [optional] [default to 1] |
  **excludeDisconnectedMembers** | **Boolean** | If true, the results will not contain members who have a DISCONNECTED state. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -528,7 +593,7 @@ apiInstance.getWebchatGuestConversationMembers(conversationId, opts)
 
 ## getWebchatGuestConversationMessage
 
-> WebChatMessage getWebchatGuestConversationMessage(conversationId, messageId)
+> WebChatMessage getWebchatGuestConversationMessage(conversationId, messageId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -560,8 +625,14 @@ let apiInstance = new platformClient.WebChatApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatGuestConversationMessage(conversationId, messageId)
+apiInstance.getWebchatGuestConversationMessage(conversationId, messageId, opts)
   .then((data) => {
     console.log(`getWebchatGuestConversationMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -578,6 +649,7 @@ apiInstance.getWebchatGuestConversationMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -621,7 +693,11 @@ let opts = {
   'after': "after_example", // String | If available, get the messages chronologically after the id of this message
   'before': "before_example", // String | If available, get the messages chronologically before the id of this message
   'sortOrder': "ascending", // String | Sort order
-  'maxResults': 100 // Number | Limit the returned number of messages, up to a maximum of 100
+  'maxResults': 100, // Number | Limit the returned number of messages, up to a maximum of 100
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getWebchatGuestConversationMessages(conversationId, opts)
@@ -644,6 +720,7 @@ apiInstance.getWebchatGuestConversationMessages(conversationId, opts)
  **before** | **String** | If available, get the messages chronologically before the id of this message | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **maxResults** | **Number** | Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -652,7 +729,7 @@ apiInstance.getWebchatGuestConversationMessages(conversationId, opts)
 
 ## getWebchatSettings
 
-> WebChatSettings getWebchatSettings()
+> WebChatSettings getWebchatSettings(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -680,8 +757,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WebChatApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getWebchatSettings()
+apiInstance.getWebchatSettings(opts)
   .then((data) => {
     console.log(`getWebchatSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -693,7 +776,10 @@ apiInstance.getWebchatSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -702,7 +788,7 @@ This endpoint does not need any parameter.
 
 ## patchWebchatGuestConversationMediarequest
 
-> WebChatGuestMediaRequest patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
+> WebChatGuestMediaRequest patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -735,8 +821,14 @@ let apiInstance = new platformClient.WebChatApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let mediaRequestId = "mediaRequestId_example"; // String | mediaRequestId
 let body = {}; // Object | Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
+apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body, opts)
   .then((data) => {
     console.log(`patchWebchatGuestConversationMediarequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -754,6 +846,7 @@ apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaReque
  **conversationId** | **String** | conversationId |  |
  **mediaRequestId** | **String** | mediaRequestId |  |
  **body** | **Object** | Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -762,7 +855,7 @@ apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaReque
 
 ## postWebchatDeployments
 
-> WebChatDeployment postWebchatDeployments(body)
+> WebChatDeployment postWebchatDeployments(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -790,8 +883,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebChatApi();
 
 let body = {}; // Object | Deployment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebchatDeployments(body)
+apiInstance.postWebchatDeployments(body, opts)
   .then((data) => {
     console.log(`postWebchatDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -807,6 +906,7 @@ apiInstance.postWebchatDeployments(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Deployment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -815,7 +915,7 @@ apiInstance.postWebchatDeployments(body)
 
 ## postWebchatGuestConversationMemberMessages
 
-> WebChatMessage postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
+> WebChatMessage postWebchatGuestConversationMemberMessages(conversationId, memberId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -848,8 +948,14 @@ let apiInstance = new platformClient.WebChatApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let memberId = "memberId_example"; // String | memberId
 let body = {}; // Object | Message
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
+apiInstance.postWebchatGuestConversationMemberMessages(conversationId, memberId, body, opts)
   .then((data) => {
     console.log(`postWebchatGuestConversationMemberMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -867,6 +973,7 @@ apiInstance.postWebchatGuestConversationMemberMessages(conversationId, memberId,
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
  **body** | **Object** | Message |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -875,7 +982,7 @@ apiInstance.postWebchatGuestConversationMemberMessages(conversationId, memberId,
 
 ## postWebchatGuestConversationMemberTyping
 
-> WebChatTyping postWebchatGuestConversationMemberTyping(conversationId, memberId)
+> WebChatTyping postWebchatGuestConversationMemberTyping(conversationId, memberId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -907,8 +1014,14 @@ let apiInstance = new platformClient.WebChatApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let memberId = "memberId_example"; // String | memberId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebchatGuestConversationMemberTyping(conversationId, memberId)
+apiInstance.postWebchatGuestConversationMemberTyping(conversationId, memberId, opts)
   .then((data) => {
     console.log(`postWebchatGuestConversationMemberTyping success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -925,6 +1038,7 @@ apiInstance.postWebchatGuestConversationMemberTyping(conversationId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -933,7 +1047,7 @@ apiInstance.postWebchatGuestConversationMemberTyping(conversationId, memberId)
 
 ## postWebchatGuestConversations
 
-> CreateWebChatConversationResponse postWebchatGuestConversations(body)
+> CreateWebChatConversationResponse postWebchatGuestConversations(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -958,8 +1072,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.WebChatApi();
 
 let body = {}; // Object | CreateConversationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postWebchatGuestConversations(body)
+apiInstance.postWebchatGuestConversations(body, opts)
   .then((data) => {
     console.log(`postWebchatGuestConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -975,6 +1095,7 @@ apiInstance.postWebchatGuestConversations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CreateConversationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -983,7 +1104,7 @@ apiInstance.postWebchatGuestConversations(body)
 
 ## putWebchatDeployment
 
-> WebChatDeployment putWebchatDeployment(deploymentId, body)
+> WebChatDeployment putWebchatDeployment(deploymentId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1012,8 +1133,14 @@ let apiInstance = new platformClient.WebChatApi();
 
 let deploymentId = "deploymentId_example"; // String | Deployment Id
 let body = {}; // Object | Deployment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWebchatDeployment(deploymentId, body)
+apiInstance.putWebchatDeployment(deploymentId, body, opts)
   .then((data) => {
     console.log(`putWebchatDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1030,6 +1157,7 @@ apiInstance.putWebchatDeployment(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Deployment Id |  |
  **body** | **Object** | Deployment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1038,7 +1166,7 @@ apiInstance.putWebchatDeployment(deploymentId, body)
 
 ## putWebchatSettings
 
-> WebChatSettings putWebchatSettings(body)
+> WebChatSettings putWebchatSettings(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1068,8 +1196,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebChatApi();
 
 let body = {}; // Object | webChatSettings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putWebchatSettings(body)
+apiInstance.putWebchatSettings(body, opts)
   .then((data) => {
     console.log(`putWebchatSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1085,10 +1219,11 @@ apiInstance.putWebchatSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | webChatSettings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **WebChatSettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

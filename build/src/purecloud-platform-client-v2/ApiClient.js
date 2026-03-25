@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 249.0.0
+ * @version 249.1.0
  */
 class ApiClient {
 	/**
@@ -1563,9 +1563,10 @@ class ApiClient {
 	 * @param {Array.<String>} contentTypes An array of request MIME types.
 	 * @param {Array.<String>} accepts An array of acceptable response MIME types.types or the
 	 * constructor for a complex type.
+	 * @param {Object.<string, string>} customHeaders Optional per-request headers to include with the API call.
 	 * @returns {Promise} A Promise object.
 	 */
-	callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts) {
+	callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts, customHeaders) {
 		return new Promise((resolve, reject) => {
 			sendRequest(this);
 			function sendRequest(that) {
@@ -1579,6 +1580,29 @@ class ApiClient {
 				const defaultHeaders = that.defaultHeaders;
 				const normalizedHeaderParams = that.normalizeParams(headerParams);
 				request.headers = that.addHeaders(request.headers, defaultHeaders, normalizedHeaderParams);
+
+				if (customHeaders) {
+					if (typeof customHeaders !== 'object') {
+						throw new Error('Per-request headers must be a valid object');
+					}
+					for (const [name, value] of Object.entries(customHeaders)) {
+						if (typeof name !== 'string' || typeof value !== 'string') {
+							throw new Error(`Invalid header: "${name}" must have string name and value`);
+						}
+						// Basic header name validation (RFC 7230)
+						if (!/^[!#$%&'*+\-.0-9A-Z^_`a-z|~]+$/.test(name)) {
+							throw new Error(`Invalid header name: "${name}" - must be a valid HTTP token`);
+						}
+						// Basic header value validation
+						for (let i = 0; i < value.length; i++) {
+							const charCode = value.charCodeAt(i);
+							if (!((charCode >= 0x21 && charCode <= 0x7E) || charCode === 0x20 || charCode === 0x09 || (charCode >= 0x80 && charCode <= 0xFF))) {
+								throw new Error(`Invalid header value for "${name}": contains invalid characters`);
+							}
+						}
+						request.headers[name] = value;
+					}
+				}
 
 				var contentType = that.jsonPreferredMime(contentTypes);
 				if (contentType) {

@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class PresenceApi {
 	 * Delete a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deletePresenceDefinition0(definitionId) { 
+	deletePresenceDefinition0(definitionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition0';
@@ -41,7 +45,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class PresenceApi {
 	 * Delete a Presence Source
 	 * 
 	 * @param {String} sourceId Presence Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deletePresenceSource(sourceId) { 
+	deletePresenceSource(sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling deletePresenceSource';
@@ -66,7 +75,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,9 +84,13 @@ class PresenceApi {
 	 * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 	 * 
 	 * @param {String} presenceId Organization Presence ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deletePresencedefinition(presenceId) { 
+	deletePresencedefinition(presenceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'presenceId' is set
 		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling deletePresencedefinition';
@@ -92,7 +106,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -102,6 +117,7 @@ class PresenceApi {
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getPresenceDefinition0(definitionId, opts) { 
 		opts = opts || {};
@@ -121,7 +137,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -132,6 +149,7 @@ class PresenceApi {
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
 	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getPresenceDefinitions0(opts) { 
 		opts = opts || {};
@@ -147,15 +165,20 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the presence settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getPresenceSettings() { 
+	getPresenceSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/presence/settings', 
@@ -167,7 +190,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -175,8 +199,12 @@ class PresenceApi {
 	 * Get a Presence Source
 	 * 
 	 * @param {String} sourceId Presence Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getPresenceSource(sourceId) { 
+	getPresenceSource(sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getPresenceSource';
@@ -192,7 +220,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -201,6 +230,7 @@ class PresenceApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getPresenceSources(opts) { 
 		opts = opts || {};
@@ -216,7 +246,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -224,8 +255,12 @@ class PresenceApi {
 	 * Get a user's Primary Presence Source
 	 * 
 	 * @param {String} userId user ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getPresenceUserPrimarysource(userId) { 
+	getPresenceUserPrimarysource(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getPresenceUserPrimarysource';
@@ -241,7 +276,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -251,6 +287,7 @@ class PresenceApi {
 	 * @param {String} presenceId Organization Presence ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getPresencedefinition(presenceId, opts) { 
@@ -271,7 +308,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -283,6 +321,7 @@ class PresenceApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.deleted Deleted query can be TRUE, FALSE or ALL (default to false)
 	 * @param {String} opts.localeCode The locale code to fetch for each presence definition. Use ALL to fetch everything.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getPresencedefinitions(opts) { 
@@ -299,15 +338,20 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of SystemPresences
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getSystempresences() { 
+	getSystempresences(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/systempresences', 
@@ -319,7 +363,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -328,8 +373,12 @@ class PresenceApi {
 	 * Get a users presence for the specified source that is not specifically listed.  Used to support custom presence sources. This endpoint does not support registered presence sources.
 	 * @param {String} userId user Id
 	 * @param {String} sourceId Presence source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserPresence(userId, sourceId) { 
+	getUserPresence(userId, sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserPresence';
@@ -349,7 +398,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -357,8 +407,12 @@ class PresenceApi {
 	 * Get a user's Genesys Cloud presence.
 	 * Get the default Genesys Cloud user presence source PURECLOUD
 	 * @param {String} userId user Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserPresencesPurecloud(userId) { 
+	getUserPresencesPurecloud(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserPresencesPurecloud';
@@ -374,7 +428,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -384,6 +439,7 @@ class PresenceApi {
 	 * @param {String} sourceId The requested presence source ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersPresenceBulk(sourceId, opts) { 
 		opts = opts || {};
@@ -403,7 +459,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -412,6 +469,7 @@ class PresenceApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersPresencesPurecloudBulk(opts) { 
 		opts = opts || {};
@@ -427,7 +485,8 @@ class PresenceApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -437,8 +496,12 @@ class PresenceApi {
 	 * @param {String} userId user Id
 	 * @param {String} sourceId Presence source ID
 	 * @param {Object} body User presence
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserPresence(userId, sourceId, body) { 
+	patchUserPresence(userId, sourceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserPresence';
@@ -462,7 +525,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -471,8 +535,12 @@ class PresenceApi {
 	 * The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the PURECLOUD source as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
 	 * @param {Object} body User presence
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserPresencesPurecloud(userId, body) { 
+	patchUserPresencesPurecloud(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserPresencesPurecloud';
@@ -492,7 +560,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -500,8 +569,12 @@ class PresenceApi {
 	 * Create a Presence Definition
 	 * 
 	 * @param {Object} body The Presence Definition to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postPresenceDefinitions0(body) { 
+	postPresenceDefinitions0(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postPresenceDefinitions0';
@@ -517,7 +590,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -525,8 +599,12 @@ class PresenceApi {
 	 * Create a Presence Source
 	 * 
 	 * @param {Object} body The Presence Source to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postPresenceSources(body) { 
+	postPresenceSources(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postPresenceSources';
@@ -542,7 +620,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -550,9 +629,13 @@ class PresenceApi {
 	 * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 	 * 
 	 * @param {Object} body The Presence Definition to create
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postPresencedefinitions(body) { 
+	postPresencedefinitions(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postPresencedefinitions';
@@ -568,7 +651,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -577,8 +661,12 @@ class PresenceApi {
 	 * 
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} body The updated Presence Definition
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putPresenceDefinition0(definitionId, body) { 
+	putPresenceDefinition0(definitionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition0';
@@ -598,7 +686,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -606,8 +695,12 @@ class PresenceApi {
 	 * Update the presence settings
 	 * 
 	 * @param {Object} body Presence Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putPresenceSettings(body) { 
+	putPresenceSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putPresenceSettings';
@@ -623,7 +716,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -632,8 +726,12 @@ class PresenceApi {
 	 * 
 	 * @param {String} sourceId Presence Source ID
 	 * @param {Object} body The updated Presence Source
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putPresenceSource(sourceId, body) { 
+	putPresenceSource(sourceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling putPresenceSource';
@@ -653,7 +751,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -662,8 +761,12 @@ class PresenceApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {Object} body Primary Source
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putPresenceUserPrimarysource(userId, body) { 
+	putPresenceUserPrimarysource(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putPresenceUserPrimarysource';
@@ -683,7 +786,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -692,9 +796,13 @@ class PresenceApi {
 	 * 
 	 * @param {String} presenceId Organization Presence ID
 	 * @param {Object} body The OrganizationPresence to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putPresencedefinition(presenceId, body) { 
+	putPresencedefinition(presenceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'presenceId' is set
 		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling putPresencedefinition';
@@ -714,7 +822,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -722,8 +831,12 @@ class PresenceApi {
 	 * Update bulk user Presences
 	 * 
 	 * @param {Array.<Object>} body List of User presences
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUsersPresencesBulk(body) { 
+	putUsersPresencesBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putUsersPresencesBulk';
@@ -739,7 +852,8 @@ class PresenceApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

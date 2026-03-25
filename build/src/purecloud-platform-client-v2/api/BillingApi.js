@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class BillingApi {
 	 * Get billing contract
 	 * Retrieve a single contract from the system.
 	 * @param {String} contractId The contract number.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContract is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getBillingContract(contractId) { 
+	getBillingContract(contractId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contractId' is set
 		if (contractId === undefined || contractId === null || contractId === '') {
 			throw 'Missing the required parameter "contractId" when calling getBillingContract';
@@ -42,7 +46,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,9 +56,13 @@ class BillingApi {
 	 * Fetch the billing information for a given Organization by billing period.
 	 * @param {String} contractId The contract number.
 	 * @param {String} billingPeriodId The Billing Period Id for the Org.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContractBillingperiod is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getBillingContractBillingperiod(contractId, billingPeriodId) { 
+	getBillingContractBillingperiod(contractId, billingPeriodId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contractId' is set
 		if (contractId === undefined || contractId === null || contractId === '') {
 			throw 'Missing the required parameter "contractId" when calling getBillingContractBillingperiod';
@@ -73,7 +82,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -88,6 +98,7 @@ class BillingApi {
 	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.status Filter by the status of contracts
 	 * @param {String} opts.externalNumber Filter by the unique external number.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContracts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBillingContracts(opts) { 
@@ -104,7 +115,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -112,9 +124,13 @@ class BillingApi {
 	 * Get invoice document
 	 * Fetch the document for a specific invoice.
 	 * @param {String} invoiceId invoiceId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContractsInvoiceDocument is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getBillingContractsInvoiceDocument(invoiceId) { 
+	getBillingContractsInvoiceDocument(invoiceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId === undefined || invoiceId === null || invoiceId === '') {
 			throw 'Missing the required parameter "invoiceId" when calling getBillingContractsInvoiceDocument';
@@ -130,7 +146,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -142,6 +159,7 @@ class BillingApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContractsInvoiceLines is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBillingContractsInvoiceLines(invoiceId, opts) { 
@@ -162,7 +180,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -176,6 +195,7 @@ class BillingApi {
 	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.paymentStatus Payment Status
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getBillingContractsInvoices is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getBillingContractsInvoices(opts) { 
@@ -192,7 +212,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -201,8 +222,12 @@ class BillingApi {
 	 * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If responses status is InProgress, wait a few seconds, then try the same request again.
 	 * @param {Date} startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Date} endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBillingReportsBillableusage(startDate, endDate) { 
+	getBillingReportsBillableusage(startDate, endDate, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'startDate' is set
 		if (startDate === undefined || startDate === null) {
 			throw 'Missing the required parameter "startDate" when calling getBillingReportsBillableusage';
@@ -222,7 +247,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -232,6 +258,7 @@ class BillingApi {
 	 * @param {String} trustorOrgId The organization ID of the trustor (customer) organization.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.billingPeriodIndex 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. (default to 0)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts) { 
 		opts = opts || {};
@@ -251,7 +278,8 @@ class BillingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

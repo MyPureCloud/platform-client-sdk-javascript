@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class OrganizationApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getFieldconfig(type) { 
+	getFieldconfig(type, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
 			throw 'Missing the required parameter "type" when calling getFieldconfig';
@@ -42,15 +46,20 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Gets the organization's settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsAuthenticationSettings() { 
+	getOrganizationsAuthenticationSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/authentication/settings', 
@@ -62,16 +71,21 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getOrganizationsEmbeddedintegration() { 
+	getOrganizationsEmbeddedintegration(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
@@ -83,16 +97,21 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get organization IP address whitelist settings
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getOrganizationsIpaddressauthentication() { 
+	getOrganizationsIpaddressauthentication(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/ipaddressauthentication', 
@@ -104,7 +123,8 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -112,8 +132,12 @@ class OrganizationApi {
 	 * Get a limit change request
 	 * 
 	 * @param {String} requestId Unique id for the limit change request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsLimitsChangerequest(requestId) { 
+	getOrganizationsLimitsChangerequest(requestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'requestId' is set
 		if (requestId === undefined || requestId === null || requestId === '') {
 			throw 'Missing the required parameter "requestId" when calling getOrganizationsLimitsChangerequest';
@@ -129,7 +153,8 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -142,6 +167,7 @@ class OrganizationApi {
 	 * @param {Object} opts.status Status of the request to be filtered by
 	 * @param {Number} opts.pageSize Page Size (default to 25)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrganizationsLimitsChangerequests(opts) { 
 		opts = opts || {};
@@ -157,15 +183,20 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get limit documentation
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsLimitsDocs() { 
+	getOrganizationsLimitsDocs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/docs', 
@@ -177,15 +208,20 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get free trial limit documentation
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsLimitsDocsFreetrial() { 
+	getOrganizationsLimitsDocsFreetrial(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/docs/freetrial', 
@@ -197,7 +233,8 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,8 +242,12 @@ class OrganizationApi {
 	 * Get the effective limits in a namespace for an organization
 	 * 
 	 * @param {String} namespaceName The namespace to fetch limits for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsLimitsNamespace(namespaceName) { 
+	getOrganizationsLimitsNamespace(namespaceName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'namespaceName' is set
 		if (namespaceName === undefined || namespaceName === null || namespaceName === '') {
 			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespace';
@@ -222,7 +263,8 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -230,8 +272,12 @@ class OrganizationApi {
 	 * Get the default limits in a namespace for an organization
 	 * 
 	 * @param {String} namespaceName The namespace to fetch defaults limits for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsLimitsNamespaceDefaults(namespaceName) { 
+	getOrganizationsLimitsNamespaceDefaults(namespaceName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'namespaceName' is set
 		if (namespaceName === undefined || namespaceName === null || namespaceName === '') {
 			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceDefaults';
@@ -247,7 +293,8 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -257,6 +304,7 @@ class OrganizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 100)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrganizationsLimitsNamespaces(opts) { 
 		opts = opts || {};
@@ -272,15 +320,20 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get organization.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrganizationsMe() { 
+	getOrganizationsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/me', 
@@ -292,16 +345,21 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getOrganizationsWhitelist() { 
+	getOrganizationsWhitelist(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/whitelist', 
@@ -313,7 +371,8 @@ class OrganizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -321,8 +380,12 @@ class OrganizationApi {
 	 * Update the organization's settings
 	 * 
 	 * @param {Object} body Org settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOrganizationsAuthenticationSettings(body) { 
+	patchOrganizationsAuthenticationSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchOrganizationsAuthenticationSettings';
@@ -338,7 +401,8 @@ class OrganizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -347,8 +411,12 @@ class OrganizationApi {
 	 * 
 	 * @param {Object} featureName Organization feature
 	 * @param {Object} enabled New state of feature
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOrganizationsFeature(featureName, enabled) { 
+	patchOrganizationsFeature(featureName, enabled, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'featureName' is set
 		if (featureName === undefined || featureName === null || featureName === '') {
 			throw 'Missing the required parameter "featureName" when calling patchOrganizationsFeature';
@@ -368,7 +436,8 @@ class OrganizationApi {
 			enabled, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -376,9 +445,13 @@ class OrganizationApi {
 	 * Update the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putOrganizationsEmbeddedintegration(body) { 
+	putOrganizationsEmbeddedintegration(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putOrganizationsEmbeddedintegration';
@@ -394,7 +467,8 @@ class OrganizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -402,9 +476,13 @@ class OrganizationApi {
 	 * Update organization IP address whitelist settings
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body IP address Whitelist settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putOrganizationsIpaddressauthentication(body) { 
+	putOrganizationsIpaddressauthentication(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putOrganizationsIpaddressauthentication';
@@ -420,7 +498,8 @@ class OrganizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -429,6 +508,7 @@ class OrganizationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Organization
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putOrganizationsMe(opts) { 
 		opts = opts || {};
@@ -444,7 +524,8 @@ class OrganizationApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -452,9 +533,13 @@ class OrganizationApi {
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @param {Object} body Whitelist settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putOrganizationsWhitelist(body) { 
+	putOrganizationsWhitelist(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putOrganizationsWhitelist';
@@ -470,7 +555,8 @@ class OrganizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

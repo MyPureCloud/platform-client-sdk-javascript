@@ -5,7 +5,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class WidgetsApi {
 	 * Delete a Widget deployment
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {String} deploymentId Widget Config Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteWidgetsDeployment(deploymentId) { 
+	deleteWidgetsDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';
@@ -42,7 +46,8 @@ class WidgetsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,9 +55,13 @@ class WidgetsApi {
 	 * Get a Widget deployment
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {String} deploymentId Widget Config Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWidgetsDeployment(deploymentId) { 
+	getWidgetsDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWidgetsDeployment';
@@ -68,16 +77,21 @@ class WidgetsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * List Widget deployments
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWidgetsDeployments() { 
+	getWidgetsDeployments(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/widgets/deployments', 
@@ -89,7 +103,8 @@ class WidgetsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -97,9 +112,13 @@ class WidgetsApi {
 	 * Create Widget deployment
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {Object} body Deployment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postWidgetsDeployments(body) { 
+	postWidgetsDeployments(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWidgetsDeployments';
@@ -115,7 +134,8 @@ class WidgetsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,9 +144,13 @@ class WidgetsApi {
 	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 	 * @param {String} deploymentId Widget Config Id
 	 * @param {Object} body Deployment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	putWidgetsDeployment(deploymentId, body) { 
+	putWidgetsDeployment(deploymentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWidgetsDeployment';
@@ -146,7 +170,8 @@ class WidgetsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

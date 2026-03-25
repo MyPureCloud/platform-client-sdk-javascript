@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -26,8 +26,12 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {String} annotationId Annotation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId) { 
+	deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationRecordingAnnotation';
@@ -51,7 +55,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -59,8 +64,12 @@ class RecordingApi {
 	 * Deletes a single orphan recording
 	 * 
 	 * @param {String} orphanId Orphan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOrphanrecording(orphanId) { 
+	deleteOrphanrecording(orphanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'orphanId' is set
 		if (orphanId === undefined || orphanId === null || orphanId === '') {
 			throw 'Missing the required parameter "orphanId" when calling deleteOrphanrecording';
@@ -76,7 +85,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -84,8 +94,12 @@ class RecordingApi {
 	 * Delete media retention policies
 	 * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 	 * @param {String} ids 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRecordingCrossplatformMediaretentionpolicies(ids) { 
+	deleteRecordingCrossplatformMediaretentionpolicies(ids, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ids' is set
 		if (ids === undefined || ids === null) {
 			throw 'Missing the required parameter "ids" when calling deleteRecordingCrossplatformMediaretentionpolicies';
@@ -101,7 +115,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -109,8 +124,12 @@ class RecordingApi {
 	 * Delete a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRecordingCrossplatformMediaretentionpolicy(policyId) { 
+	deleteRecordingCrossplatformMediaretentionpolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling deleteRecordingCrossplatformMediaretentionpolicy';
@@ -126,7 +145,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -134,8 +154,12 @@ class RecordingApi {
 	 * Delete the recording bulk job
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRecordingJob(jobId) { 
+	deleteRecordingJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteRecordingJob';
@@ -151,7 +175,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -159,8 +184,12 @@ class RecordingApi {
 	 * Delete media retention policies
 	 * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 	 * @param {String} ids 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRecordingMediaretentionpolicies(ids) { 
+	deleteRecordingMediaretentionpolicies(ids, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ids' is set
 		if (ids === undefined || ids === null) {
 			throw 'Missing the required parameter "ids" when calling deleteRecordingMediaretentionpolicies';
@@ -176,7 +205,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -184,8 +214,12 @@ class RecordingApi {
 	 * Delete a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRecordingMediaretentionpolicy(policyId) { 
+	deleteRecordingMediaretentionpolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling deleteRecordingMediaretentionpolicy';
@@ -201,7 +235,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -219,6 +254,7 @@ class RecordingApi {
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationRecording(conversationId, recordingId, opts) { 
 		opts = opts || {};
@@ -242,7 +278,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -252,8 +289,12 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {String} annotationId Annotation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationRecordingAnnotation(conversationId, recordingId, annotationId) { 
+	getConversationRecordingAnnotation(conversationId, recordingId, annotationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingAnnotation';
@@ -277,7 +318,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -286,8 +328,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationRecordingAnnotations(conversationId, recordingId) { 
+	getConversationRecordingAnnotations(conversationId, recordingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingAnnotations';
@@ -307,7 +353,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -315,8 +362,12 @@ class RecordingApi {
 	 * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationRecordingmetadata(conversationId) { 
+	getConversationRecordingmetadata(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingmetadata';
@@ -332,7 +383,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -341,8 +393,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getConversationRecordingmetadataRecordingId(conversationId, recordingId) { 
+	getConversationRecordingmetadataRecordingId(conversationId, recordingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingmetadataRecordingId';
@@ -362,7 +418,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -376,6 +433,7 @@ class RecordingApi {
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 	 * @param {String} opts.locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
 	 * @param {Boolean} opts.includePauseAnnotationsForScreenRecordings Include applicable Secure Pause annotations from all audio recordings to all screen recordings (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};
@@ -395,7 +453,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -403,8 +462,12 @@ class RecordingApi {
 	 * Gets a single orphan recording
 	 * 
 	 * @param {String} orphanId Orphan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOrphanrecording(orphanId) { 
+	getOrphanrecording(orphanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'orphanId' is set
 		if (orphanId === undefined || orphanId === null || orphanId === '') {
 			throw 'Missing the required parameter "orphanId" when calling getOrphanrecording';
@@ -420,7 +483,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -437,6 +501,7 @@ class RecordingApi {
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrphanrecordingMedia(orphanId, opts) { 
 		opts = opts || {};
@@ -456,7 +521,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -472,6 +538,7 @@ class RecordingApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
 	 * @param {Object} opts.media Filter resulting orphans based on their media type
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOrphanrecordings(opts) { 
 		opts = opts || {};
@@ -487,7 +554,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -495,8 +563,12 @@ class RecordingApi {
 	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingBatchrequest(jobId) { 
+	getRecordingBatchrequest(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRecordingBatchrequest';
@@ -512,7 +584,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -531,6 +604,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
 	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
 	 * @param {Number} opts.deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingCrossplatformMediaretentionpolicies(opts) { 
 		opts = opts || {};
@@ -546,7 +620,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -554,8 +629,12 @@ class RecordingApi {
 	 * Get a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
+	getRecordingCrossplatformMediaretentionpolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
@@ -571,7 +650,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -579,8 +659,12 @@ class RecordingApi {
 	 * Get the status of the job associated with the job id.
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingJob(jobId) { 
+	getRecordingJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRecordingJob';
@@ -596,7 +680,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -609,6 +694,7 @@ class RecordingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingJobFailedrecordings(jobId, opts) { 
 		opts = opts || {};
@@ -628,7 +714,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -644,6 +731,7 @@ class RecordingApi {
 	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
 	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingJobs(opts) { 
 		opts = opts || {};
@@ -659,7 +747,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -667,8 +756,12 @@ class RecordingApi {
 	 * Get the encryption key configurations
 	 * 
 	 * @param {String} keyConfigurationId Key Configurations Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingKeyconfiguration(keyConfigurationId) { 
+	getRecordingKeyconfiguration(keyConfigurationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'keyConfigurationId' is set
 		if (keyConfigurationId === undefined || keyConfigurationId === null || keyConfigurationId === '') {
 			throw 'Missing the required parameter "keyConfigurationId" when calling getRecordingKeyconfiguration';
@@ -684,15 +777,20 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of key configurations data
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingKeyconfigurations() { 
+	getRecordingKeyconfigurations(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/keyconfigurations', 
@@ -704,7 +802,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -723,6 +822,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
 	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
 	 * @param {Number} opts.deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingMediaretentionpolicies(opts) { 
 		opts = opts || {};
@@ -738,7 +838,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -746,8 +847,12 @@ class RecordingApi {
 	 * Get a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingMediaretentionpolicy(policyId) { 
+	getRecordingMediaretentionpolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getRecordingMediaretentionpolicy';
@@ -763,7 +868,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -773,6 +879,7 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingRecordingkeys(opts) { 
 		opts = opts || {};
@@ -788,15 +895,20 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get key rotation schedule
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingRecordingkeysRotationschedule() { 
+	getRecordingRecordingkeysRotationschedule(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/recordingkeys/rotationschedule', 
@@ -808,7 +920,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -817,6 +930,7 @@ class RecordingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.createDefault If no settings are found, a new one is created with default values (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingSettings(opts) { 
 		opts = opts || {};
@@ -832,7 +946,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -840,8 +955,12 @@ class RecordingApi {
 	 * Get the status of a recording upload status report
 	 * 
 	 * @param {String} reportId reportId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingUploadsReport(reportId) { 
+	getRecordingUploadsReport(reportId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'reportId' is set
 		if (reportId === undefined || reportId === null || reportId === '') {
 			throw 'Missing the required parameter "reportId" when calling getRecordingUploadsReport';
@@ -857,7 +976,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -868,6 +988,7 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize Page size. Maximum is 500. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRecordingsRetentionQuery(retentionThresholdDays, opts) { 
 		opts = opts || {};
@@ -887,15 +1008,20 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieves an object containing the total number of concurrent active screen recordings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRecordingsScreensessionsDetails() { 
+	getRecordingsScreensessionsDetails(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/recordings/screensessions/details', 
@@ -907,7 +1033,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -916,8 +1043,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+	patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
@@ -937,7 +1068,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -946,8 +1078,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRecordingMediaretentionpolicy(policyId, body) { 
+	patchRecordingMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingMediaretentionpolicy';
@@ -967,7 +1103,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -977,8 +1114,12 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} body annotation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationRecordingAnnotations(conversationId, recordingId, body) { 
+	postConversationRecordingAnnotations(conversationId, recordingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationRecordingAnnotations';
@@ -1002,7 +1143,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1010,8 +1152,12 @@ class RecordingApi {
 	 * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
 	 * 
 	 * @param {Object} body Job submission criteria
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingBatchrequests(body) { 
+	postRecordingBatchrequests(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingBatchrequests';
@@ -1027,7 +1173,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1035,8 +1182,12 @@ class RecordingApi {
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingCrossplatformMediaretentionpolicies(body) { 
+	postRecordingCrossplatformMediaretentionpolicies(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
@@ -1052,7 +1203,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1060,8 +1212,12 @@ class RecordingApi {
 	 * Create a recording bulk job.
 	 * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected. It is recommended to query over smaller time periods so your request does not time out.
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingJobs(body) { 
+	postRecordingJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingJobs';
@@ -1077,7 +1233,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1085,8 +1242,12 @@ class RecordingApi {
 	 * Setup configurations for encryption key creation
 	 * 
 	 * @param {Object} body Encryption Configuration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingKeyconfigurations(body) { 
+	postRecordingKeyconfigurations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingKeyconfigurations';
@@ -1102,7 +1263,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1110,8 +1272,12 @@ class RecordingApi {
 	 * Validate encryption key configurations without saving it
 	 * 
 	 * @param {Object} body Encryption Configuration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingKeyconfigurationsValidate(body) { 
+	postRecordingKeyconfigurationsValidate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingKeyconfigurationsValidate';
@@ -1127,7 +1293,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1135,8 +1302,12 @@ class RecordingApi {
 	 * create a local key management recording key
 	 * 
 	 * @param {Object} body Local Encryption body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingLocalkeys(body) { 
+	postRecordingLocalkeys(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingLocalkeys';
@@ -1152,7 +1323,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1160,8 +1332,12 @@ class RecordingApi {
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingMediaretentionpolicies(body) { 
+	postRecordingMediaretentionpolicies(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingMediaretentionpolicies';
@@ -1177,15 +1353,20 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Create encryption key
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingRecordingkeys() { 
+	postRecordingRecordingkeys(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/recordingkeys', 
@@ -1197,7 +1378,8 @@ class RecordingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1205,8 +1387,12 @@ class RecordingApi {
 	 * Creates a recording upload status report
 	 * 
 	 * @param {Object} body Report parameters
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingUploadsReports(body) { 
+	postRecordingUploadsReports(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingUploadsReports';
@@ -1222,7 +1408,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1230,8 +1417,12 @@ class RecordingApi {
 	 * Get a list of conversations with protected recordings
 	 * 
 	 * @param {Object} body conversationIds
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingsDeletionprotection(body) { 
+	postRecordingsDeletionprotection(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingsDeletionprotection';
@@ -1247,7 +1438,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1255,8 +1447,12 @@ class RecordingApi {
 	 * Acknowledge a screen recording.
 	 * 
 	 * @param {Object} body AcknowledgeScreenRecordingRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingsScreensessionsAcknowledge(body) { 
+	postRecordingsScreensessionsAcknowledge(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsAcknowledge';
@@ -1272,7 +1468,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1280,8 +1477,12 @@ class RecordingApi {
 	 * Provide meta-data a screen recording.
 	 * 
 	 * @param {Object} body ScreenRecordingMetaDataRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRecordingsScreensessionsMetadata(body) { 
+	postRecordingsScreensessionsMetadata(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsMetadata';
@@ -1297,7 +1498,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1309,6 +1511,7 @@ class RecordingApi {
 	 * @param {Object} body recording
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.clearExport Whether to clear the pending export for the recording
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putConversationRecording(conversationId, recordingId, body, opts) { 
 		opts = opts || {};
@@ -1336,7 +1539,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1347,8 +1551,12 @@ class RecordingApi {
 	 * @param {String} recordingId Recording ID
 	 * @param {String} annotationId Annotation ID
 	 * @param {Object} body annotation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body) { 
+	putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationRecordingAnnotation';
@@ -1376,7 +1584,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1386,6 +1595,7 @@ class RecordingApi {
 	 * @param {String} orphanId Orphan ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putOrphanrecording(orphanId, opts) { 
 		opts = opts || {};
@@ -1405,7 +1615,8 @@ class RecordingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1414,8 +1625,12 @@ class RecordingApi {
 	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+	putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
@@ -1435,7 +1650,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1444,8 +1660,12 @@ class RecordingApi {
 	 * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
 	 * @param {String} jobId jobId
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRecordingJob(jobId, body) { 
+	putRecordingJob(jobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling putRecordingJob';
@@ -1465,7 +1685,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1474,8 +1695,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} keyConfigurationId Key Configurations Id
 	 * @param {Object} body Encryption key configuration metadata
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRecordingKeyconfiguration(keyConfigurationId, body) { 
+	putRecordingKeyconfiguration(keyConfigurationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'keyConfigurationId' is set
 		if (keyConfigurationId === undefined || keyConfigurationId === null || keyConfigurationId === '') {
 			throw 'Missing the required parameter "keyConfigurationId" when calling putRecordingKeyconfiguration';
@@ -1495,7 +1720,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1504,8 +1730,12 @@ class RecordingApi {
 	 * Policy does not work retroactively. In the conditions.forUsers section, each user object can include the id field containing the users unique identifier. Example: [{"id":"<userId>"}].
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRecordingMediaretentionpolicy(policyId, body) { 
+	putRecordingMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putRecordingMediaretentionpolicy';
@@ -1525,7 +1755,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1533,8 +1764,12 @@ class RecordingApi {
 	 * Update key rotation schedule
 	 * 
 	 * @param {Object} body KeyRotationSchedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRecordingRecordingkeysRotationschedule(body) { 
+	putRecordingRecordingkeysRotationschedule(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRecordingRecordingkeysRotationschedule';
@@ -1550,7 +1785,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1558,8 +1794,12 @@ class RecordingApi {
 	 * Update the Recording Settings for the Organization
 	 * 
 	 * @param {Object} body Recording settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRecordingSettings(body) { 
+	putRecordingSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRecordingSettings';
@@ -1575,7 +1815,8 @@ class RecordingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1585,6 +1826,7 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.protect Check for apply, uncheck for revoke (each action requires the respective permission) (default to true)
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putRecordingsDeletionprotection(opts) { 
 		opts = opts || {};
@@ -1600,7 +1842,8 @@ class RecordingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

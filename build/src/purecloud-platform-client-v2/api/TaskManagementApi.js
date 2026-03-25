@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class TaskManagementApi {
 	 * Delete a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorkbin(workbinId) { 
+	deleteTaskmanagementWorkbin(workbinId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workbinId' is set
 		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling deleteTaskmanagementWorkbin';
@@ -41,7 +45,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class TaskManagementApi {
 	 * Delete a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorkitem(workitemId) { 
+	deleteTaskmanagementWorkitem(workitemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling deleteTaskmanagementWorkitem';
@@ -66,7 +75,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class TaskManagementApi {
 	 * Delete a bulk add job
 	 * 
 	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
+	deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkAddJob';
@@ -91,7 +105,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -99,8 +114,12 @@ class TaskManagementApi {
 	 * Delete a Bulk job
 	 * 
 	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
+	deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkTerminateJob';
@@ -116,7 +135,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,8 +144,12 @@ class TaskManagementApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorkitemsSchema(schemaId) { 
+	deleteTaskmanagementWorkitemsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteTaskmanagementWorkitemsSchema';
@@ -141,7 +165,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -149,8 +174,12 @@ class TaskManagementApi {
 	 * Delete a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorktype(worktypeId) { 
+	deleteTaskmanagementWorktype(worktypeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktype';
@@ -166,7 +195,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -175,8 +205,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
+	deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
@@ -196,7 +230,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,8 +240,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
@@ -226,7 +265,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -235,8 +275,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
@@ -256,7 +300,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -265,8 +310,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
+	deleteTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeStatus';
@@ -286,7 +335,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -294,8 +344,12 @@ class TaskManagementApi {
 	 * Get a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkbin(workbinId) { 
+	getTaskmanagementWorkbin(workbinId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workbinId' is set
 		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbin';
@@ -311,7 +365,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -323,6 +378,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkbinHistory(workbinId, opts) { 
 		opts = opts || {};
@@ -342,7 +398,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -351,8 +408,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Number} entityVersion Workbin version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
+	getTaskmanagementWorkbinVersion(workbinId, entityVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workbinId' is set
 		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersion';
@@ -372,7 +433,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -384,6 +446,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkbinVersions(workbinId, opts) { 
 		opts = opts || {};
@@ -403,7 +466,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -413,6 +477,7 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields to expand. Comma separated if more than one.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkitem(workitemId, opts) { 
 		opts = opts || {};
@@ -432,7 +497,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -444,6 +510,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkitemHistory(workitemId, opts) { 
 		opts = opts || {};
@@ -463,7 +530,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -477,6 +545,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts) { 
 		opts = opts || {};
@@ -500,7 +569,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -509,8 +579,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Number} entityVersion Workitem version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
+	getTaskmanagementWorkitemVersion(workitemId, entityVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersion';
@@ -530,7 +604,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -542,6 +617,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkitemVersions(workitemId, opts) { 
 		opts = opts || {};
@@ -561,7 +637,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -574,6 +651,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkitemWrapups(workitemId, opts) { 
 		opts = opts || {};
@@ -593,7 +671,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -601,8 +680,12 @@ class TaskManagementApi {
 	 * Get the bulk add job associated with the job id.
 	 * 
 	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
+	getTaskmanagementWorkitemsBulkAddJob(bulkJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJob';
@@ -618,7 +701,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -626,8 +710,12 @@ class TaskManagementApi {
 	 * Get bulk add job results.
 	 * 
 	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId) { 
+	getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJobResults';
@@ -643,7 +731,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -655,6 +744,7 @@ class TaskManagementApi {
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
 	 * @param {Object} opts.action The bulk job action.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorkitemsBulkJobsUsersMe(opts) { 
 		opts = opts || {};
@@ -670,7 +760,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -678,8 +769,12 @@ class TaskManagementApi {
 	 * Get the bulk job associated with the job id.
 	 * 
 	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
+	getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJob';
@@ -695,7 +790,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -703,8 +799,12 @@ class TaskManagementApi {
 	 * Get bulk terminate job results.
 	 * 
 	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId) { 
+	getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJobResults';
@@ -720,7 +820,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -728,8 +829,12 @@ class TaskManagementApi {
 	 * Get the workitem query job associated with the job id.
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsQueryJob(jobId) { 
+	getTaskmanagementWorkitemsQueryJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJob';
@@ -745,7 +850,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -753,8 +859,12 @@ class TaskManagementApi {
 	 * Get results from for workitem query job 
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsQueryJobResults(jobId) { 
+	getTaskmanagementWorkitemsQueryJobResults(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJobResults';
@@ -770,7 +880,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -778,8 +889,12 @@ class TaskManagementApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchema(schemaId) { 
+	getTaskmanagementWorkitemsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchema';
@@ -795,7 +910,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -804,8 +920,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
+	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersion';
@@ -825,7 +945,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -833,8 +954,12 @@ class TaskManagementApi {
 	 * Get all versions of a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
+	getTaskmanagementWorkitemsSchemaVersions(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersions';
@@ -850,15 +975,20 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of schemas.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchemas() { 
+	getTaskmanagementWorkitemsSchemas(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems/schemas', 
@@ -870,7 +1000,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -878,8 +1009,12 @@ class TaskManagementApi {
 	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName Name of the core type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchemasCoretype(coreTypeName) { 
+	getTaskmanagementWorkitemsSchemasCoretype(coreTypeName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'coreTypeName' is set
 		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getTaskmanagementWorkitemsSchemasCoretype';
@@ -895,15 +1030,20 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the core types from which all schemas are built.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchemasCoretypes() { 
+	getTaskmanagementWorkitemsSchemasCoretypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems/schemas/coretypes', 
@@ -915,15 +1055,20 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get quantitative limits on schemas
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorkitemsSchemasLimits() { 
+	getTaskmanagementWorkitemsSchemasLimits(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems/schemas/limits', 
@@ -935,7 +1080,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -945,6 +1091,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -964,7 +1111,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -973,8 +1121,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
+	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
@@ -994,7 +1146,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1005,6 +1158,7 @@ class TaskManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, opts) { 
 		opts = opts || {};
@@ -1024,7 +1178,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1033,8 +1188,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
@@ -1054,7 +1213,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1065,6 +1225,7 @@ class TaskManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts) { 
 		opts = opts || {};
@@ -1084,7 +1245,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1093,8 +1255,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
@@ -1114,7 +1280,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1125,6 +1292,7 @@ class TaskManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts) { 
 		opts = opts || {};
@@ -1144,7 +1312,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1157,6 +1326,7 @@ class TaskManagementApi {
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
 	 * @param {Array.<String>} opts.fields Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorktypeHistory(worktypeId, opts) { 
 		opts = opts || {};
@@ -1176,7 +1346,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1185,8 +1356,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
+	getTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatus';
@@ -1206,7 +1381,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1214,8 +1390,12 @@ class TaskManagementApi {
 	 * Get list of statuses for this worktype.
 	 * 
 	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorktypeStatuses(worktypeId) { 
+	getTaskmanagementWorktypeStatuses(worktypeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatuses';
@@ -1231,7 +1411,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1240,8 +1421,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Number} entityVersion Worktype version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
+	getTaskmanagementWorktypeVersion(worktypeId, entityVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersion';
@@ -1261,7 +1446,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1273,6 +1459,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTaskmanagementWorktypeVersions(worktypeId, opts) { 
 		opts = opts || {};
@@ -1292,7 +1479,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1301,8 +1489,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Object} body Json with attributes and their new values: {description:new description, name:new name}.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkbin(workbinId, body) { 
+	patchTaskmanagementWorkbin(workbinId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workbinId' is set
 		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling patchTaskmanagementWorkbin';
@@ -1322,7 +1514,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1331,8 +1524,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Workitem
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkitem(workitemId, body) { 
+	patchTaskmanagementWorkitem(workitemId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitem';
@@ -1352,7 +1549,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1361,8 +1559,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Targeted user
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkitemAssignment(workitemId, body) { 
+	patchTaskmanagementWorkitemAssignment(workitemId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemAssignment';
@@ -1382,7 +1584,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1392,8 +1595,12 @@ class TaskManagementApi {
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {String} userId The ID of the user
 	 * @param {Object} body Request body to add/remove a wrapup code for a workitem
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
+	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUserWrapups';
@@ -1417,7 +1624,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1426,8 +1634,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {Object} body Request body to add/remove the wrapup code for workitem
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
+	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUsersMeWrapups';
@@ -1447,7 +1659,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1456,8 +1669,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} bulkJobId Bulk job id
 	 * @param {Object} body Bulk add job update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body) { 
+	patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkAddJob';
@@ -1477,7 +1694,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1486,8 +1704,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} bulkJobId Bulk job id
 	 * @param {Object} body Bulk job update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body) { 
+	patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bulkJobId' is set
 		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
 			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkTerminateJob';
@@ -1507,7 +1729,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1516,8 +1739,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} body Worktype
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorktype(worktypeId, body) { 
+	patchTaskmanagementWorktype(worktypeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktype';
@@ -1537,7 +1764,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1547,8 +1775,12 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
 	 * @param {Object} body Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body) { 
+	patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
@@ -1572,7 +1804,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1582,8 +1815,12 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
 	 * @param {Object} body Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body) { 
+	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
@@ -1607,7 +1844,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1617,8 +1855,12 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} ruleId ruleId
 	 * @param {Object} body Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body) { 
+	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
@@ -1642,7 +1884,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1652,8 +1895,12 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
 	 * @param {Object} body Status
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTaskmanagementWorktypeStatus(worktypeId, statusId, body) { 
+	patchTaskmanagementWorktypeStatus(worktypeId, statusId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeStatus';
@@ -1677,7 +1924,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1685,8 +1933,12 @@ class TaskManagementApi {
 	 * Create a workbin
 	 * 
 	 * @param {Object} body Workbin
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkbins(body) { 
+	postTaskmanagementWorkbins(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkbins';
@@ -1702,7 +1954,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1710,8 +1963,12 @@ class TaskManagementApi {
 	 * Query for workbins
 	 * 
 	 * @param {Object} body QueryPostRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkbinsQuery(body) { 
+	postTaskmanagementWorkbinsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkbinsQuery';
@@ -1727,7 +1984,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1735,8 +1993,12 @@ class TaskManagementApi {
 	 * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 	 * 
 	 * @param {String} workitemId Workitem ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemAcdCancel(workitemId) { 
+	postTaskmanagementWorkitemAcdCancel(workitemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemAcdCancel';
@@ -1752,7 +2014,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1760,8 +2023,12 @@ class TaskManagementApi {
 	 * Disconnect the assignee of the workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemDisconnect(workitemId) { 
+	postTaskmanagementWorkitemDisconnect(workitemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemDisconnect';
@@ -1777,7 +2044,8 @@ class TaskManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1787,6 +2055,7 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Terminated request
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postTaskmanagementWorkitemTerminate(workitemId, opts) { 
 		opts = opts || {};
@@ -1806,7 +2075,8 @@ class TaskManagementApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1814,8 +2084,12 @@ class TaskManagementApi {
 	 * Create a workitem
 	 * 
 	 * @param {Object} body Workitem
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitems(body) { 
+	postTaskmanagementWorkitems(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitems';
@@ -1831,7 +2105,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1839,8 +2114,12 @@ class TaskManagementApi {
 	 * Create a workitem bulk add job.
 	 * 
 	 * @param {Object} body Bulk job definition.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemsBulkAddJobs(body) { 
+	postTaskmanagementWorkitemsBulkAddJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsBulkAddJobs';
@@ -1856,7 +2135,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1864,8 +2144,12 @@ class TaskManagementApi {
 	 * Create a workitem bulk terminate job.
 	 * 
 	 * @param {Object} body Bulk job definition.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemsBulkTerminateJobs(body) { 
+	postTaskmanagementWorkitemsBulkTerminateJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsBulkTerminateJobs';
@@ -1881,7 +2165,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1889,8 +2174,12 @@ class TaskManagementApi {
 	 * Query for workitems
 	 * This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
 	 * @param {Object} body WorkitemQueryPostRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemsQuery(body) { 
+	postTaskmanagementWorkitemsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsQuery';
@@ -1906,7 +2195,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1914,8 +2204,12 @@ class TaskManagementApi {
 	 * Create a workitem query job
 	 * 
 	 * @param {Object} body WorkitemQueryJobCreate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemsQueryJobs(body) { 
+	postTaskmanagementWorkitemsQueryJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsQueryJobs';
@@ -1931,7 +2225,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1939,8 +2234,12 @@ class TaskManagementApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorkitemsSchemas(body) { 
+	postTaskmanagementWorkitemsSchemas(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsSchemas';
@@ -1956,7 +2255,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1965,8 +2265,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} body Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body) { 
+	postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsDatebasedRules';
@@ -1986,7 +2290,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1995,8 +2300,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} body Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body) { 
+	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
@@ -2016,7 +2325,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2025,8 +2335,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} body Rule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body) { 
+	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOncreateRules';
@@ -2046,7 +2360,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2055,8 +2370,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} body Status
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorktypeStatuses(worktypeId, body) { 
+	postTaskmanagementWorktypeStatuses(worktypeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeStatuses';
@@ -2076,7 +2395,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2084,8 +2404,12 @@ class TaskManagementApi {
 	 * Create a worktype
 	 * 
 	 * @param {Object} body Worktype
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorktypes(body) { 
+	postTaskmanagementWorktypes(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypes';
@@ -2101,7 +2425,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2109,8 +2434,12 @@ class TaskManagementApi {
 	 * Query for worktypes
 	 * 
 	 * @param {Object} body QueryPostRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTaskmanagementWorktypesQuery(body) { 
+	postTaskmanagementWorktypesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypesQuery';
@@ -2126,7 +2455,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2135,8 +2465,12 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Data Schema
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTaskmanagementWorkitemsSchema(schemaId, body) { 
+	putTaskmanagementWorkitemsSchema(schemaId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putTaskmanagementWorkitemsSchema';
@@ -2156,7 +2490,8 @@ class TaskManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

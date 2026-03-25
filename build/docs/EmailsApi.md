@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteEmailsSettingsThreading
 
-> void deleteEmailsSettingsThreading()
+> void deleteEmailsSettingsThreading(opts)
 
 
 DELETE /api/v2/emails/settings/threading
@@ -39,8 +39,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.EmailsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteEmailsSettingsThreading()
+apiInstance.deleteEmailsSettingsThreading(opts)
   .then(() => {
     console.log('deleteEmailsSettingsThreading returned successfully.');
   })
@@ -52,7 +58,10 @@ apiInstance.deleteEmailsSettingsThreading()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -61,7 +70,7 @@ void (no response body)
 
 ## getEmailsSettings
 
-> EmailSettings getEmailsSettings()
+> EmailSettings getEmailsSettings(opts)
 
 
 GET /api/v2/emails/settings
@@ -84,8 +93,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.EmailsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getEmailsSettings()
+apiInstance.getEmailsSettings(opts)
   .then((data) => {
     console.log(`getEmailsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -97,7 +112,10 @@ apiInstance.getEmailsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -106,7 +124,7 @@ This endpoint does not need any parameter.
 
 ## getEmailsSettingsThreading
 
-> EmailThreadingSettings getEmailsSettingsThreading()
+> EmailThreadingSettings getEmailsSettingsThreading(opts)
 
 
 GET /api/v2/emails/settings/threading
@@ -129,8 +147,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.EmailsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getEmailsSettingsThreading()
+apiInstance.getEmailsSettingsThreading(opts)
   .then((data) => {
     console.log(`getEmailsSettingsThreading success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -142,7 +166,10 @@ apiInstance.getEmailsSettingsThreading()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -176,7 +203,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EmailsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchEmailsSettings(opts)
@@ -195,6 +226,7 @@ apiInstance.patchEmailsSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -228,7 +260,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EmailsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchEmailsSettingsThreading(opts)
@@ -247,10 +283,11 @@ apiInstance.patchEmailsSettingsThreading(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **EmailThreadingSettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

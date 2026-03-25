@@ -66,7 +66,11 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let opts = { 
-  'forceDelete': false // Boolean | Force delete decision table (under certain conditions)
+  'forceDelete': false, // Boolean | Force delete decision table (under certain conditions)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteBusinessrulesDecisiontable(tableId, opts)
@@ -86,6 +90,7 @@ apiInstance.deleteBusinessrulesDecisiontable(tableId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **forceDelete** | **Boolean** | Force delete decision table (under certain conditions) | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -94,7 +99,7 @@ void (no response body)
 
 ## deleteBusinessrulesDecisiontableVersion
 
-> void deleteBusinessrulesDecisiontableVersion(tableId, tableVersion)
+> void deleteBusinessrulesDecisiontableVersion(tableId, tableVersion, opts)
 
 
 DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}
@@ -120,8 +125,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteBusinessrulesDecisiontableVersion(tableId, tableVersion)
+apiInstance.deleteBusinessrulesDecisiontableVersion(tableId, tableVersion, opts)
   .then(() => {
     console.log('deleteBusinessrulesDecisiontableVersion returned successfully.');
   })
@@ -138,6 +149,7 @@ apiInstance.deleteBusinessrulesDecisiontableVersion(tableId, tableVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -146,7 +158,7 @@ void (no response body)
 
 ## deleteBusinessrulesDecisiontableVersionRow
 
-> void deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId)
+> void deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, opts)
 
 
 DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}
@@ -176,8 +188,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let rowId = "rowId_example"; // String | Row ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId)
+apiInstance.deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, opts)
   .then(() => {
     console.log('deleteBusinessrulesDecisiontableVersionRow returned successfully.');
   })
@@ -195,6 +213,7 @@ apiInstance.deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, ro
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **rowId** | **String** | Row ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -203,7 +222,7 @@ void (no response body)
 
 ## deleteBusinessrulesSchema
 
-> void deleteBusinessrulesSchema(schemaId)
+> void deleteBusinessrulesSchema(schemaId, opts)
 
 
 DELETE /api/v2/businessrules/schemas/{schemaId}
@@ -228,8 +247,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteBusinessrulesSchema(schemaId)
+apiInstance.deleteBusinessrulesSchema(schemaId, opts)
   .then(() => {
     console.log('deleteBusinessrulesSchema returned successfully.');
   })
@@ -245,6 +270,7 @@ apiInstance.deleteBusinessrulesSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -253,7 +279,7 @@ void (no response body)
 
 ## getBusinessrulesDecisiontable
 
-> DecisionTable getBusinessrulesDecisiontable(tableId)
+> DecisionTable getBusinessrulesDecisiontable(tableId, opts)
 
 
 GET /api/v2/businessrules/decisiontables/{tableId}
@@ -278,8 +304,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesDecisiontable(tableId)
+apiInstance.getBusinessrulesDecisiontable(tableId, opts)
   .then((data) => {
     console.log(`getBusinessrulesDecisiontable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -295,6 +327,7 @@ apiInstance.getBusinessrulesDecisiontable(tableId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -303,7 +336,7 @@ apiInstance.getBusinessrulesDecisiontable(tableId)
 
 ## getBusinessrulesDecisiontableVersion
 
-> DecisionTableVersion getBusinessrulesDecisiontableVersion(tableId, tableVersion)
+> DecisionTableVersion getBusinessrulesDecisiontableVersion(tableId, tableVersion, opts)
 
 
 GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}
@@ -329,8 +362,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesDecisiontableVersion(tableId, tableVersion)
+apiInstance.getBusinessrulesDecisiontableVersion(tableId, tableVersion, opts)
   .then((data) => {
     console.log(`getBusinessrulesDecisiontableVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -347,6 +386,7 @@ apiInstance.getBusinessrulesDecisiontableVersion(tableId, tableVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -355,7 +395,7 @@ apiInstance.getBusinessrulesDecisiontableVersion(tableId, tableVersion)
 
 ## getBusinessrulesDecisiontableVersionRow
 
-> DecisionTableRow getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId)
+> DecisionTableRow getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, opts)
 
 
 GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}
@@ -382,8 +422,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let rowId = "rowId_example"; // String | Row ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId)
+apiInstance.getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, opts)
   .then((data) => {
     console.log(`getBusinessrulesDecisiontableVersionRow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -401,6 +447,7 @@ apiInstance.getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **rowId** | **String** | Row ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -437,7 +484,11 @@ let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let opts = { 
   'pageNumber': "pageNumber_example", // String | Page number of the entities to return. Defaults to 1.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 100. Defaults to 25.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100. Defaults to 25.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, opts)
@@ -459,6 +510,7 @@ apiInstance.getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, opts
  **tableVersion** | **Number** | Table Version |  |
  **pageNumber** | **String** | Page number of the entities to return. Defaults to 1. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. Defaults to 25. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -494,7 +546,11 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 100.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
@@ -515,6 +571,7 @@ apiInstance.getBusinessrulesDecisiontableVersions(tableId, opts)
  **tableId** | **String** | Table ID |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -551,7 +608,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
   'divisionIds': ["divisionIds_example"], // [String] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
-  'name': "name_example" // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
+  'name': "name_example", // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBusinessrulesDecisiontables(opts)
@@ -573,6 +634,7 @@ apiInstance.getBusinessrulesDecisiontables(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
  **divisionIds** | **[String]** | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
  **name** | **String** | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -612,7 +674,11 @@ let opts = {
   'name': "name_example", // String | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
   'withPublishedVersion': true, // Boolean | Filters results to only decision tables that have at least one version in Published status
   'expand': ["expand_example"], // [String] | Fields to expand in response
-  'ids': ["ids_example"] // [String] | Decision table IDs to search for
+  'ids': ["ids_example"], // [String] | Decision table IDs to search for
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBusinessrulesDecisiontablesSearch(opts)
@@ -637,6 +703,7 @@ apiInstance.getBusinessrulesDecisiontablesSearch(opts)
  **withPublishedVersion** | **Boolean** | Filters results to only decision tables that have at least one version in Published status | [optional]  |
  **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: ExecutionInputSchema, ExecutionOutputSchema |
  **ids** | **[String]** | Decision table IDs to search for | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -645,7 +712,7 @@ apiInstance.getBusinessrulesDecisiontablesSearch(opts)
 
 ## getBusinessrulesSchema
 
-> BusinessRulesDataSchema getBusinessrulesSchema(schemaId)
+> BusinessRulesDataSchema getBusinessrulesSchema(schemaId, opts)
 
 
 GET /api/v2/businessrules/schemas/{schemaId}
@@ -670,8 +737,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesSchema(schemaId)
+apiInstance.getBusinessrulesSchema(schemaId, opts)
   .then((data) => {
     console.log(`getBusinessrulesSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -687,6 +760,7 @@ apiInstance.getBusinessrulesSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -695,7 +769,7 @@ apiInstance.getBusinessrulesSchema(schemaId)
 
 ## getBusinessrulesSchemas
 
-> BusinessRulesDataSchemaListing getBusinessrulesSchemas()
+> BusinessRulesDataSchemaListing getBusinessrulesSchemas(opts)
 
 
 GET /api/v2/businessrules/schemas
@@ -718,8 +792,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.BusinessRulesApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesSchemas()
+apiInstance.getBusinessrulesSchemas(opts)
   .then((data) => {
     console.log(`getBusinessrulesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -731,7 +811,10 @@ apiInstance.getBusinessrulesSchemas()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -740,7 +823,7 @@ This endpoint does not need any parameter.
 
 ## getBusinessrulesSchemasCoretype
 
-> Coretype getBusinessrulesSchemasCoretype(coreTypeName)
+> Coretype getBusinessrulesSchemasCoretype(coreTypeName, opts)
 
 
 GET /api/v2/businessrules/schemas/coretypes/{coreTypeName}
@@ -765,8 +848,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let coreTypeName = "coreTypeName_example"; // String | The core type's name
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesSchemasCoretype(coreTypeName)
+apiInstance.getBusinessrulesSchemasCoretype(coreTypeName, opts)
   .then((data) => {
     console.log(`getBusinessrulesSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -782,6 +871,7 @@ apiInstance.getBusinessrulesSchemasCoretype(coreTypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coreTypeName** | **String** | The core type's name |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -790,7 +880,7 @@ apiInstance.getBusinessrulesSchemasCoretype(coreTypeName)
 
 ## getBusinessrulesSchemasCoretypes
 
-> CoretypeListing getBusinessrulesSchemasCoretypes()
+> CoretypeListing getBusinessrulesSchemasCoretypes(opts)
 
 
 GET /api/v2/businessrules/schemas/coretypes
@@ -813,8 +903,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.BusinessRulesApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBusinessrulesSchemasCoretypes()
+apiInstance.getBusinessrulesSchemasCoretypes(opts)
   .then((data) => {
     console.log(`getBusinessrulesSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -826,7 +922,10 @@ apiInstance.getBusinessrulesSchemasCoretypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -835,7 +934,7 @@ This endpoint does not need any parameter.
 
 ## patchBusinessrulesDecisiontable
 
-> DecisionTable patchBusinessrulesDecisiontable(tableId, body)
+> DecisionTable patchBusinessrulesDecisiontable(tableId, body, opts)
 
 
 PATCH /api/v2/businessrules/decisiontables/{tableId}
@@ -865,8 +964,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let body = {}; // Object | Decision Table
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchBusinessrulesDecisiontable(tableId, body)
+apiInstance.patchBusinessrulesDecisiontable(tableId, body, opts)
   .then((data) => {
     console.log(`patchBusinessrulesDecisiontable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -883,6 +988,7 @@ apiInstance.patchBusinessrulesDecisiontable(tableId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **body** | **Object** | Decision Table |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -891,7 +997,7 @@ apiInstance.patchBusinessrulesDecisiontable(tableId, body)
 
 ## patchBusinessrulesDecisiontableVersion
 
-> DecisionTableVersion patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body)
+> DecisionTableVersion patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body, opts)
 
 
 PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}
@@ -918,8 +1024,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let body = {}; // Object | Decision Table
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body)
+apiInstance.patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body, opts)
   .then((data) => {
     console.log(`patchBusinessrulesDecisiontableVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -937,6 +1049,7 @@ apiInstance.patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body)
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **body** | **Object** | Decision Table |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -945,7 +1058,7 @@ apiInstance.patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body)
 
 ## postBusinessrulesDecisiontableExecute
 
-> DecisionTableExecutionResponse postBusinessrulesDecisiontableExecute(tableId, body)
+> DecisionTableExecutionResponse postBusinessrulesDecisiontableExecute(tableId, body, opts)
 
 
 POST /api/v2/businessrules/decisiontables/{tableId}/execute
@@ -971,8 +1084,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let body = {}; // Object | Decision Table
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontableExecute(tableId, body)
+apiInstance.postBusinessrulesDecisiontableExecute(tableId, body, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontableExecute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -989,6 +1108,7 @@ apiInstance.postBusinessrulesDecisiontableExecute(tableId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **body** | **Object** | Decision Table |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -997,7 +1117,7 @@ apiInstance.postBusinessrulesDecisiontableExecute(tableId, body)
 
 ## postBusinessrulesDecisiontableVersionCopy
 
-> DecisionTableVersion postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body)
+> DecisionTableVersion postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body, opts)
 
 
 POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy
@@ -1024,8 +1144,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let body = {}; // Object | Decision Table
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body)
+apiInstance.postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontableVersionCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1043,6 +1169,7 @@ apiInstance.postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, bod
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **body** | **Object** | Decision Table |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1051,7 +1178,7 @@ apiInstance.postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, bod
 
 ## postBusinessrulesDecisiontableVersionExecute
 
-> DecisionTableExecutionResponse postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body)
+> DecisionTableExecutionResponse postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body, opts)
 
 
 POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute
@@ -1078,8 +1205,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let body = {}; // Object | Decision Table
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body)
+apiInstance.postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontableVersionExecute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1097,6 +1230,7 @@ apiInstance.postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, 
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **body** | **Object** | Decision Table |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1105,7 +1239,7 @@ apiInstance.postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, 
 
 ## postBusinessrulesDecisiontableVersionRows
 
-> DecisionTableRow postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body)
+> DecisionTableRow postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body, opts)
 
 
 POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows
@@ -1135,8 +1269,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let body = {}; // Object | Create decision table row request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body)
+apiInstance.postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontableVersionRows success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1154,6 +1294,7 @@ apiInstance.postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, bod
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
  **body** | **Object** | Create decision table row request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1191,7 +1332,11 @@ let tableVersion = 3.4; // Number | Table Version
 let body = {}; // Object | Search decision table rows request
 let opts = { 
   'pageNumber': "pageNumber_example", // String | Page number of the entities to return. Defaults to 1.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 100. Defaults to 25.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100. Defaults to 25.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, opts)
@@ -1214,6 +1359,7 @@ apiInstance.postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersio
  **body** | **Object** | Search decision table rows request |  |
  **pageNumber** | **String** | Page number of the entities to return. Defaults to 1. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. Defaults to 25. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1222,7 +1368,7 @@ apiInstance.postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersio
 
 ## postBusinessrulesDecisiontableVersionSync
 
-> DecisionTableVersion postBusinessrulesDecisiontableVersionSync(tableId, tableVersion)
+> DecisionTableVersion postBusinessrulesDecisiontableVersionSync(tableId, tableVersion, opts)
 
 
 POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync
@@ -1248,8 +1394,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontableVersionSync(tableId, tableVersion)
+apiInstance.postBusinessrulesDecisiontableVersionSync(tableId, tableVersion, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontableVersionSync success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1266,6 +1418,7 @@ apiInstance.postBusinessrulesDecisiontableVersionSync(tableId, tableVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1274,7 +1427,7 @@ apiInstance.postBusinessrulesDecisiontableVersionSync(tableId, tableVersion)
 
 ## postBusinessrulesDecisiontableVersions
 
-> DecisionTableVersion postBusinessrulesDecisiontableVersions(tableId)
+> DecisionTableVersion postBusinessrulesDecisiontableVersions(tableId, opts)
 
 
 POST /api/v2/businessrules/decisiontables/{tableId}/versions
@@ -1299,8 +1452,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontableVersions(tableId)
+apiInstance.postBusinessrulesDecisiontableVersions(tableId, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontableVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1316,6 +1475,7 @@ apiInstance.postBusinessrulesDecisiontableVersions(tableId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1324,7 +1484,7 @@ apiInstance.postBusinessrulesDecisiontableVersions(tableId)
 
 ## postBusinessrulesDecisiontables
 
-> DecisionTableVersion postBusinessrulesDecisiontables(body)
+> DecisionTableVersion postBusinessrulesDecisiontables(body, opts)
 
 
 POST /api/v2/businessrules/decisiontables
@@ -1353,8 +1513,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let body = {}; // Object | Decision Table
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesDecisiontables(body)
+apiInstance.postBusinessrulesDecisiontables(body, opts)
   .then((data) => {
     console.log(`postBusinessrulesDecisiontables success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1370,6 +1536,7 @@ apiInstance.postBusinessrulesDecisiontables(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Decision Table |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1378,7 +1545,7 @@ apiInstance.postBusinessrulesDecisiontables(body)
 
 ## postBusinessrulesSchemas
 
-> BusinessRulesDataSchema postBusinessrulesSchemas(body)
+> BusinessRulesDataSchema postBusinessrulesSchemas(body, opts)
 
 
 POST /api/v2/businessrules/schemas
@@ -1403,8 +1570,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BusinessRulesApi();
 
 let body = {}; // Object | Business Rules Schema Create Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postBusinessrulesSchemas(body)
+apiInstance.postBusinessrulesSchemas(body, opts)
   .then((data) => {
     console.log(`postBusinessrulesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1420,6 +1593,7 @@ apiInstance.postBusinessrulesSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Business Rules Schema Create Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1428,7 +1602,7 @@ apiInstance.postBusinessrulesSchemas(body)
 
 ## putBusinessrulesDecisiontableVersionPublish
 
-> DecisionTableVersion putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion)
+> DecisionTableVersion putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion, opts)
 
 
 PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish
@@ -1454,8 +1628,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion)
+apiInstance.putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion, opts)
   .then((data) => {
     console.log(`putBusinessrulesDecisiontableVersionPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1472,6 +1652,7 @@ apiInstance.putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **tableVersion** | **Number** | Table Version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1480,7 +1661,7 @@ apiInstance.putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion)
 
 ## putBusinessrulesDecisiontableVersionRow
 
-> DecisionTableRow putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
+> DecisionTableRow putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body, opts)
 
 
 PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}
@@ -1511,8 +1692,14 @@ let tableId = "tableId_example"; // String | Table ID
 let tableVersion = 3.4; // Number | Table Version
 let rowId = "rowId_example"; // String | Row ID
 let body = {}; // Object | Full update decision table row request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body)
+apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body, opts)
   .then((data) => {
     console.log(`putBusinessrulesDecisiontableVersionRow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1531,6 +1718,7 @@ apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId
  **tableVersion** | **Number** | Table Version |  |
  **rowId** | **String** | Row ID |  |
  **body** | **Object** | Full update decision table row request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1539,7 +1727,7 @@ apiInstance.putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId
 
 ## putBusinessrulesSchema
 
-> BusinessRulesDataSchema putBusinessrulesSchema(schemaId, body)
+> BusinessRulesDataSchema putBusinessrulesSchema(schemaId, body, opts)
 
 
 PUT /api/v2/businessrules/schemas/{schemaId}
@@ -1565,8 +1753,14 @@ let apiInstance = new platformClient.BusinessRulesApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let body = {}; // Object | Business Rules Schema Update Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putBusinessrulesSchema(schemaId, body)
+apiInstance.putBusinessrulesSchema(schemaId, body, opts)
   .then((data) => {
     console.log(`putBusinessrulesSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1583,10 +1777,11 @@ apiInstance.putBusinessrulesSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Business Rules Schema Update Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **BusinessRulesDataSchema**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

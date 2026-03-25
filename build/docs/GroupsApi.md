@@ -29,7 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteGroup
 
-> void deleteGroup(groupId)
+> void deleteGroup(groupId, opts)
 
 
 DELETE /api/v2/groups/{groupId}
@@ -54,8 +54,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteGroup(groupId)
+apiInstance.deleteGroup(groupId, opts)
   .then(() => {
     console.log('deleteGroup returned successfully.');
   })
@@ -71,6 +77,7 @@ apiInstance.deleteGroup(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -79,7 +86,7 @@ void (no response body)
 
 ## deleteGroupDynamicsettings
 
-> void deleteGroupDynamicsettings(groupId)
+> void deleteGroupDynamicsettings(groupId, opts)
 
 
 DELETE /api/v2/groups/{groupId}/dynamicsettings
@@ -106,8 +113,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteGroupDynamicsettings(groupId)
+apiInstance.deleteGroupDynamicsettings(groupId, opts)
   .then(() => {
     console.log('deleteGroupDynamicsettings returned successfully.');
   })
@@ -123,6 +136,7 @@ apiInstance.deleteGroupDynamicsettings(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -131,7 +145,7 @@ void (no response body)
 
 ## deleteGroupMembers
 
-> **Object** deleteGroupMembers(groupId, ids)
+> **Object** deleteGroupMembers(groupId, ids, opts)
 
 
 DELETE /api/v2/groups/{groupId}/members
@@ -155,8 +169,14 @@ let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let ids = "ids_example"; // String | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteGroupMembers(groupId, ids)
+apiInstance.deleteGroupMembers(groupId, ids, opts)
   .then((data) => {
     console.log(`deleteGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -173,6 +193,7 @@ apiInstance.deleteGroupMembers(groupId, ids)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **ids** | **String** | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -181,7 +202,7 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 ## getFieldconfig
 
-> FieldConfig getFieldconfig(type)
+> FieldConfig getFieldconfig(type, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -207,8 +228,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let type = "type_example"; // String | Field type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFieldconfig(type)
+apiInstance.getFieldconfig(type, opts)
   .then((data) => {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -224,6 +251,7 @@ apiInstance.getFieldconfig(type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **type** | **String** | Field type | <br />**Values**: person, group, org |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -232,7 +260,7 @@ apiInstance.getFieldconfig(type)
 
 ## getGroup
 
-> Group getGroup(groupId)
+> Group getGroup(groupId, opts)
 
 
 GET /api/v2/groups/{groupId}
@@ -255,8 +283,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGroup(groupId)
+apiInstance.getGroup(groupId, opts)
   .then((data) => {
     console.log(`getGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -272,6 +306,7 @@ apiInstance.getGroup(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -280,7 +315,7 @@ apiInstance.getGroup(groupId)
 
 ## getGroupDynamicsettings
 
-> DynamicGroupDefinition getGroupDynamicsettings(groupId)
+> DynamicGroupDefinition getGroupDynamicsettings(groupId, opts)
 
 
 GET /api/v2/groups/{groupId}/dynamicsettings
@@ -307,8 +342,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGroupDynamicsettings(groupId)
+apiInstance.getGroupDynamicsettings(groupId, opts)
   .then((data) => {
     console.log(`getGroupDynamicsettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -324,6 +365,7 @@ apiInstance.getGroupDynamicsettings(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -332,7 +374,7 @@ apiInstance.getGroupDynamicsettings(groupId)
 
 ## getGroupIndividuals
 
-> UserEntityListing getGroupIndividuals(groupId)
+> UserEntityListing getGroupIndividuals(groupId, opts)
 
 
 GET /api/v2/groups/{groupId}/individuals
@@ -355,8 +397,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGroupIndividuals(groupId)
+apiInstance.getGroupIndividuals(groupId, opts)
   .then((data) => {
     console.log(`getGroupIndividuals success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -372,6 +420,7 @@ apiInstance.getGroupIndividuals(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -407,7 +456,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGroupMembers(groupId, opts)
@@ -430,6 +483,7 @@ apiInstance.getGroupMembers(groupId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -467,7 +521,11 @@ let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | groupId
 let opts = { 
-  'fields': "fields_example" // String | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+  'fields': "fields_example", // String | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGroupProfile(groupId, opts)
@@ -487,6 +545,7 @@ apiInstance.getGroupProfile(groupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | groupId |  |
  **fields** | **String** | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -522,7 +581,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
   'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
-  'sortOrder': "ASC" // String | Ascending or descending sort order
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGroups(opts)
@@ -545,6 +608,7 @@ apiInstance.getGroups(opts)
  **id** | **[String]** | id | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -577,7 +641,11 @@ let apiInstance = new platformClient.GroupsApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGroupsSearch(q64, opts)
@@ -597,6 +665,7 @@ apiInstance.getGroupsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -637,7 +706,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
   'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
-  'sortOrder': "ASC" // String | Ascending or descending sort order
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getProfilesGroups(opts)
@@ -660,6 +733,7 @@ apiInstance.getProfilesGroups(opts)
  **id** | **[String]** | id | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -668,7 +742,7 @@ apiInstance.getProfilesGroups(opts)
 
 ## postGroupMembers
 
-> **Object** postGroupMembers(groupId, body)
+> **Object** postGroupMembers(groupId, body, opts)
 
 
 POST /api/v2/groups/{groupId}/members
@@ -692,8 +766,14 @@ let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let body = {}; // Object | Add members
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGroupMembers(groupId, body)
+apiInstance.postGroupMembers(groupId, body, opts)
   .then((data) => {
     console.log(`postGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -710,6 +790,7 @@ apiInstance.postGroupMembers(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | Add members |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -718,7 +799,7 @@ apiInstance.postGroupMembers(groupId, body)
 
 ## postGroups
 
-> Group postGroups(body)
+> Group postGroups(body, opts)
 
 
 POST /api/v2/groups
@@ -743,8 +824,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let body = {}; // Object | Group
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGroups(body)
+apiInstance.postGroups(body, opts)
   .then((data) => {
     console.log(`postGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -760,6 +847,7 @@ apiInstance.postGroups(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Group |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -768,7 +856,7 @@ apiInstance.postGroups(body)
 
 ## postGroupsDynamicsettingsPreview
 
-> DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(body)
+> DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -798,8 +886,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let body = {}; // Object | Group query to preview
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGroupsDynamicsettingsPreview(body)
+apiInstance.postGroupsDynamicsettingsPreview(body, opts)
   .then((data) => {
     console.log(`postGroupsDynamicsettingsPreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -815,6 +909,7 @@ apiInstance.postGroupsDynamicsettingsPreview(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Group query to preview |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -823,7 +918,7 @@ apiInstance.postGroupsDynamicsettingsPreview(body)
 
 ## postGroupsSearch
 
-> GroupsSearchResponse postGroupsSearch(body)
+> GroupsSearchResponse postGroupsSearch(body, opts)
 
 
 POST /api/v2/groups/search
@@ -846,8 +941,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGroupsSearch(body)
+apiInstance.postGroupsSearch(body, opts)
   .then((data) => {
     console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -863,6 +964,7 @@ apiInstance.postGroupsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -897,7 +999,11 @@ let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let opts = { 
-  'body': {} // Object | Group
+  'body': {}, // Object | Group
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putGroup(groupId, opts)
@@ -917,6 +1023,7 @@ apiInstance.putGroup(groupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | Group | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -925,7 +1032,7 @@ apiInstance.putGroup(groupId, opts)
 
 ## putGroupDynamicsettings
 
-> void putGroupDynamicsettings(groupId, body)
+> void putGroupDynamicsettings(groupId, body, opts)
 
 
 PUT /api/v2/groups/{groupId}/dynamicsettings
@@ -953,8 +1060,14 @@ let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
 let body = {}; // Object | Create/Update dynamic groups
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGroupDynamicsettings(groupId, body)
+apiInstance.putGroupDynamicsettings(groupId, body, opts)
   .then(() => {
     console.log('putGroupDynamicsettings returned successfully.');
   })
@@ -971,10 +1084,11 @@ apiInstance.putGroupDynamicsettings(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | Create/Update dynamic groups |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 void (no response body)
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

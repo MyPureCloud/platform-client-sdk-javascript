@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class GamificationApi {
 	 * Delete an External Metric Definition
 	 * 
 	 * @param {String} metricId Specifies the External Metric Definition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteEmployeeperformanceExternalmetricsDefinition(metricId) { 
+	deleteEmployeeperformanceExternalmetricsDefinition(metricId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling deleteEmployeeperformanceExternalmetricsDefinition';
@@ -41,7 +45,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class GamificationApi {
 	 * Delete a Contest by Id
 	 * 
 	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteGamificationContest(contestId) { 
+	deleteGamificationContest(contestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling deleteGamificationContest';
@@ -66,7 +75,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class GamificationApi {
 	 * Get an External Metric Definition
 	 * 
 	 * @param {String} metricId Specifies the External Metric Definition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getEmployeeperformanceExternalmetricsDefinition(metricId) { 
+	getEmployeeperformanceExternalmetricsDefinition(metricId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling getEmployeeperformanceExternalmetricsDefinition';
@@ -91,7 +105,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -101,6 +116,7 @@ class GamificationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getEmployeeperformanceExternalmetricsDefinitions(opts) { 
 		opts = opts || {};
@@ -116,7 +132,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,8 +141,12 @@ class GamificationApi {
 	 * Get a Contest by Id
 	 * 
 	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationContest(contestId) { 
+	getGamificationContest(contestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling getGamificationContest';
@@ -141,7 +162,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -154,6 +176,7 @@ class GamificationApi {
 	 * @param {Number} opts.pageSize  (default to 25)
 	 * @param {String} opts.workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.returnsView Desired response results (default to All)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationContestAgentsScores(contestId, opts) { 
 		opts = opts || {};
@@ -173,7 +196,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -186,6 +210,7 @@ class GamificationApi {
 	 * @param {Number} opts.pageSize  (default to 25)
 	 * @param {String} opts.workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts.returnsView Desired response results (Supervisor Only) (default to All)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationContestAgentsScoresMe(contestId, opts) { 
 		opts = opts || {};
@@ -205,7 +230,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -213,8 +239,12 @@ class GamificationApi {
 	 * Get a Contest Score Trend (Average Trend)
 	 * 
 	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationContestAgentsScoresTrends(contestId) { 
+	getGamificationContestAgentsScoresTrends(contestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresTrends';
@@ -230,7 +260,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -238,8 +269,12 @@ class GamificationApi {
 	 * Get a Contest Score Trend for the requesting Agent
 	 * 
 	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationContestAgentsScoresTrendsMe(contestId) { 
+	getGamificationContestAgentsScoresTrendsMe(contestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresTrendsMe';
@@ -255,7 +290,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -264,8 +300,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} contestId The ID of the contest
 	 * @param {String} prizeImageId The ID of the prize image
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationContestPrizeimage(contestId, prizeImageId) { 
+	getGamificationContestPrizeimage(contestId, prizeImageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling getGamificationContestPrizeimage';
@@ -285,7 +325,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -300,6 +341,7 @@ class GamificationApi {
 	 * @param {Array.<String>} opts.status 
 	 * @param {Object} opts.sortBy  (default to dateStart)
 	 * @param {Object} opts.sortOrder  (default to desc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationContests(opts) { 
 		opts = opts || {};
@@ -315,7 +357,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -331,6 +374,7 @@ class GamificationApi {
 	 * @param {Object} opts.sortBy  (default to dateStart)
 	 * @param {Object} opts.sortOrder  (default to desc)
 	 * @param {Object} opts.view  (default to participant)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationContestsMe(opts) { 
 		opts = opts || {};
@@ -346,7 +390,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -366,6 +411,7 @@ class GamificationApi {
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
 	 * @param {String} opts.reportsTo The reportsTo used by ABAC policies.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts) { 
 		opts = opts || {};
@@ -401,7 +447,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -413,8 +460,12 @@ class GamificationApi {
 	 * @param {Object} granularity Granularity
 	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
+	getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsDetails';
@@ -446,7 +497,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -460,8 +512,12 @@ class GamificationApi {
 	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+	getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsGroupsTrends';
@@ -501,7 +557,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -515,8 +572,12 @@ class GamificationApi {
 	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+	getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsGroupsTrendsAll';
@@ -556,7 +617,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -570,6 +632,7 @@ class GamificationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 100)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, opts) { 
 		opts = opts || {};
@@ -601,7 +664,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -614,6 +678,7 @@ class GamificationApi {
 	 * @param {String} startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.reportsTo The reportsTo used by ABAC policies.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, opts) { 
 		opts = opts || {};
@@ -645,7 +710,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -663,6 +729,7 @@ class GamificationApi {
 	 * @param {Number} opts.sectionSize The number of top and bottom users to return before ties
 	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
 	 * @param {String} opts.reportsTo The reportsTo used by ABAC policies.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts) { 
 		opts = opts || {};
@@ -702,7 +769,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -716,8 +784,12 @@ class GamificationApi {
 	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+	getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsTrends';
@@ -757,7 +829,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -770,8 +843,12 @@ class GamificationApi {
 	 * @param {Object} granularity Granularity
 	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
+	getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserDetails';
@@ -807,7 +884,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -822,8 +900,12 @@ class GamificationApi {
 	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+	getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserTrends';
@@ -867,7 +949,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -878,6 +961,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.metricId Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationLeaderboard(startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -901,7 +985,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -914,6 +999,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.metricId Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -945,7 +1031,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -954,8 +1041,12 @@ class GamificationApi {
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
 	 * @param {String} filterId ID for the filter type. For example, division or performance profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationLeaderboardAllBestpoints(filterType, filterId) { 
+	getGamificationLeaderboardAllBestpoints(filterType, filterId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationLeaderboardAllBestpoints';
@@ -975,15 +1066,20 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Best Points of the requesting user's current performance profile or division
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationLeaderboardBestpoints() { 
+	getGamificationLeaderboardBestpoints(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/leaderboard/bestpoints', 
@@ -995,7 +1091,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1003,8 +1100,12 @@ class GamificationApi {
 	 * Metric definition by id
 	 * 
 	 * @param {String} metricDefinitionId metric definition id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationMetricdefinition(metricDefinitionId) { 
+	getGamificationMetricdefinition(metricDefinitionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'metricDefinitionId' is set
 		if (metricDefinitionId === undefined || metricDefinitionId === null || metricDefinitionId === '') {
 			throw 'Missing the required parameter "metricDefinitionId" when calling getGamificationMetricdefinition';
@@ -1020,15 +1121,20 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * All metric definitions
 	 * Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationMetricdefinitions() { 
+	getGamificationMetricdefinitions(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metricdefinitions', 
@@ -1040,7 +1146,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1048,8 +1155,12 @@ class GamificationApi {
 	 * Performance profile by id
 	 * 
 	 * @param {String} profileId performanceProfileId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationProfile(profileId) { 
+	getGamificationProfile(profileId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfile';
@@ -1065,7 +1176,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1073,8 +1185,12 @@ class GamificationApi {
 	 * Members of a given performance profile
 	 * 
 	 * @param {String} profileId Profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationProfileMembers(profileId) { 
+	getGamificationProfileMembers(profileId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMembers';
@@ -1090,7 +1206,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1101,6 +1218,7 @@ class GamificationApi {
 	 * @param {String} metricId Metric Id
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationProfileMetric(profileId, metricId, opts) { 
 		opts = opts || {};
@@ -1124,7 +1242,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1136,6 +1255,7 @@ class GamificationApi {
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.metricIds List of metric ids to filter the response (Optional, comma-separated).
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationProfileMetrics(profileId, opts) { 
 		opts = opts || {};
@@ -1155,7 +1275,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1165,6 +1286,7 @@ class GamificationApi {
 	 * @param {String} profileId Performance Profile Id
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationProfileMetricsObjectivedetails(profileId, opts) { 
 		opts = opts || {};
@@ -1184,15 +1306,20 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * All performance profiles
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationProfiles() { 
+	getGamificationProfiles(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles', 
@@ -1204,7 +1331,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1214,6 +1342,7 @@ class GamificationApi {
 	 * @param {String} userId 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationProfilesUser(userId, opts) { 
 		opts = opts || {};
@@ -1233,7 +1362,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1242,6 +1372,7 @@ class GamificationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationProfilesUsersMe(opts) { 
 		opts = opts || {};
@@ -1257,7 +1388,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1267,6 +1399,7 @@ class GamificationApi {
 	 * @param {String} workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecards(workday, opts) { 
 		opts = opts || {};
@@ -1286,7 +1419,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1295,8 +1429,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsAttendance(startWorkday, endWorkday) { 
+	getGamificationScorecardsAttendance(startWorkday, endWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
 			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsAttendance';
@@ -1316,15 +1454,20 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Best points of the requesting user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsBestpoints() { 
+	getGamificationScorecardsBestpoints(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/bestpoints', 
@@ -1336,7 +1479,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1344,8 +1488,12 @@ class GamificationApi {
 	 * All-time points of the requesting user
 	 * 
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsPointsAlltime(endWorkday) { 
+	getGamificationScorecardsPointsAlltime(endWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
 			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsPointsAlltime';
@@ -1361,7 +1509,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1369,8 +1518,12 @@ class GamificationApi {
 	 * Average points of the requesting user's division or performance profile
 	 * 
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsPointsAverage(workday) { 
+	getGamificationScorecardsPointsAverage(workday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
 			throw 'Missing the required parameter "workday" when calling getGamificationScorecardsPointsAverage';
@@ -1386,7 +1539,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1397,6 +1551,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dayOfWeek Optional filter to specify which day of weeks to be included in the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1420,7 +1575,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1435,6 +1591,7 @@ class GamificationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1470,7 +1627,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1486,6 +1644,7 @@ class GamificationApi {
 	 * @param {String} opts.filterId ID for the filter type. Only required when filterType is Division.
 	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1521,7 +1680,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1536,6 +1696,7 @@ class GamificationApi {
 	 * @param {Object} opts.filterType Filter type for the query request. If not set, returns the values trends of the requesting user
 	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1567,7 +1728,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1578,6 +1740,7 @@ class GamificationApi {
 	 * @param {String} workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsUser(userId, workday, opts) { 
 		opts = opts || {};
@@ -1601,7 +1764,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1611,8 +1775,12 @@ class GamificationApi {
 	 * @param {String} userId 
 	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday) { 
+	getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserAttendance';
@@ -1636,7 +1804,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1644,8 +1813,12 @@ class GamificationApi {
 	 * Best points of a user
 	 * 
 	 * @param {String} userId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsUserBestpoints(userId) { 
+	getGamificationScorecardsUserBestpoints(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserBestpoints';
@@ -1661,7 +1834,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1670,8 +1844,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} userId 
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsUserPointsAlltime(userId, endWorkday) { 
+	getGamificationScorecardsUserPointsAlltime(userId, endWorkday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsAlltime';
@@ -1691,7 +1869,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1703,6 +1882,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dayOfWeek Optional filter to specify which day of weeks to be included in the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1730,7 +1910,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1742,6 +1923,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1769,7 +1951,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1779,8 +1962,12 @@ class GamificationApi {
 	 * @param {Object} filterType Filter type for the query request.
 	 * @param {String} filterId ID for the filter type.
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday) { 
+	getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
 			throw 'Missing the required parameter "filterType" when calling getGamificationScorecardsUsersPointsAverage';
@@ -1804,7 +1991,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1816,6 +2004,7 @@ class GamificationApi {
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts) { 
 		opts = opts || {};
@@ -1843,7 +2032,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1856,6 +2046,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1887,7 +2078,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1897,6 +2089,7 @@ class GamificationApi {
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsValuesAverage(workday, opts) { 
 		opts = opts || {};
@@ -1916,7 +2109,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1929,6 +2123,7 @@ class GamificationApi {
 	 * @param {Object} opts.filterType Filter type for the query request. If not set, then the request is for the requesting user.
 	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts) { 
 		opts = opts || {};
@@ -1952,15 +2147,20 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Gamification activation status
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationStatus() { 
+	getGamificationStatus(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/status', 
@@ -1972,7 +2172,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1980,8 +2181,12 @@ class GamificationApi {
 	 * Objective template by id
 	 * 
 	 * @param {String} templateId template id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationTemplate(templateId) { 
+	getGamificationTemplate(templateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'templateId' is set
 		if (templateId === undefined || templateId === null || templateId === '') {
 			throw 'Missing the required parameter "templateId" when calling getGamificationTemplate';
@@ -1997,15 +2202,20 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * All objective templates
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGamificationTemplates() { 
+	getGamificationTemplates(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/templates', 
@@ -2017,7 +2227,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2026,8 +2237,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} metricId Specifies the metric definition ID
 	 * @param {Object} body The External Metric Definition parameters to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchEmployeeperformanceExternalmetricsDefinition(metricId, body) { 
+	patchEmployeeperformanceExternalmetricsDefinition(metricId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling patchEmployeeperformanceExternalmetricsDefinition';
@@ -2047,7 +2262,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2056,8 +2272,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} contestId The ID of the contest
 	 * @param {Object} body Finalize Contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchGamificationContest(contestId, body) { 
+	patchGamificationContest(contestId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling patchGamificationContest';
@@ -2077,7 +2297,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2086,6 +2307,7 @@ class GamificationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The External Metric Data to be added
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postEmployeeperformanceExternalmetricsData(opts) { 
 		opts = opts || {};
@@ -2101,7 +2323,8 @@ class GamificationApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2110,6 +2333,7 @@ class GamificationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The External Metric Definition to be created
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postEmployeeperformanceExternalmetricsDefinitions(opts) { 
 		opts = opts || {};
@@ -2125,7 +2349,8 @@ class GamificationApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2133,8 +2358,12 @@ class GamificationApi {
 	 * Creates a Contest
 	 * 
 	 * @param {Object} body Create Contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationContests(body) { 
+	postGamificationContests(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGamificationContests';
@@ -2150,7 +2379,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2158,8 +2388,12 @@ class GamificationApi {
 	 * Generates pre-signed URL to upload a prize image for gamification contests
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationContestsUploadsPrizeimages(body) { 
+	postGamificationContestsUploadsPrizeimages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGamificationContestsUploadsPrizeimages';
@@ -2175,7 +2409,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2183,8 +2418,12 @@ class GamificationApi {
 	 * Activate a performance profile
 	 * 
 	 * @param {String} profileId performanceProfileId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfileActivate(profileId) { 
+	postGamificationProfileActivate(profileId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileActivate';
@@ -2200,7 +2439,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2208,8 +2448,12 @@ class GamificationApi {
 	 * Deactivate a performance profile
 	 * 
 	 * @param {String} profileId performanceProfileId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfileDeactivate(profileId) { 
+	postGamificationProfileDeactivate(profileId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileDeactivate';
@@ -2225,7 +2469,8 @@ class GamificationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2234,8 +2479,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} profileId Profile Id
 	 * @param {Object} body assignUsers
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfileMembers(profileId, body) { 
+	postGamificationProfileMembers(profileId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMembers';
@@ -2255,7 +2504,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2264,8 +2514,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} profileId Profile Id
 	 * @param {Object} body memberAssignments
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfileMembersValidate(profileId, body) { 
+	postGamificationProfileMembersValidate(profileId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMembersValidate';
@@ -2285,7 +2539,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2295,8 +2550,12 @@ class GamificationApi {
 	 * @param {String} sourceProfileId Source Performance Profile Id
 	 * @param {String} sourceMetricId Source Metric Id
 	 * @param {Object} body linkedMetric
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body) { 
+	postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sourceProfileId' is set
 		if (sourceProfileId === undefined || sourceProfileId === null || sourceProfileId === '') {
 			throw 'Missing the required parameter "sourceProfileId" when calling postGamificationProfileMetricLink';
@@ -2320,7 +2579,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2329,8 +2589,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} profileId Performance Profile Id
 	 * @param {Object} body Metric
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfileMetrics(profileId, body) { 
+	postGamificationProfileMetrics(profileId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMetrics';
@@ -2350,7 +2614,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2360,6 +2625,7 @@ class GamificationApi {
 	 * @param {Object} body performanceProfile
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.copyMetrics Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postGamificationProfiles(body, opts) { 
 		opts = opts || {};
@@ -2379,7 +2645,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2388,8 +2655,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} userId The ID of a user.
 	 * @param {Object} body The date range of work day.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfilesUserQuery(userId, body) { 
+	postGamificationProfilesUserQuery(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postGamificationProfilesUserQuery';
@@ -2409,7 +2680,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2417,8 +2689,12 @@ class GamificationApi {
 	 * Query performance profiles in date range for the current user
 	 * 
 	 * @param {Object} body The date range of work day.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGamificationProfilesUsersMeQuery(body) { 
+	postGamificationProfilesUsersMeQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGamificationProfilesUsersMeQuery';
@@ -2434,7 +2710,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2443,8 +2720,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} contestId The ID of the contest
 	 * @param {Object} body Contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putGamificationContest(contestId, body) { 
+	putGamificationContest(contestId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contestId' is set
 		if (contestId === undefined || contestId === null || contestId === '') {
 			throw 'Missing the required parameter "contestId" when calling putGamificationContest';
@@ -2464,7 +2745,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2474,6 +2756,7 @@ class GamificationApi {
 	 * @param {String} profileId performanceProfileId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body performanceProfile
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putGamificationProfile(profileId, opts) { 
 		opts = opts || {};
@@ -2493,7 +2776,8 @@ class GamificationApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2503,8 +2787,12 @@ class GamificationApi {
 	 * @param {String} profileId Performance Profile Id
 	 * @param {String} metricId Metric Id
 	 * @param {Object} body Metric
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putGamificationProfileMetric(profileId, metricId, body) { 
+	putGamificationProfileMetric(profileId, metricId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling putGamificationProfileMetric';
@@ -2528,7 +2816,8 @@ class GamificationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2536,8 +2825,12 @@ class GamificationApi {
 	 * Update gamification activation status
 	 * 
 	 * @param {Object} status Gamification status
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putGamificationStatus(status) { 
+	putGamificationStatus(status, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'status' is set
 		if (status === undefined || status === null) {
 			throw 'Missing the required parameter "status" when calling putGamificationStatus';
@@ -2553,7 +2846,8 @@ class GamificationApi {
 			status, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

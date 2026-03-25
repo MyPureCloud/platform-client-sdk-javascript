@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class SearchApi {
 	 * Search gkn documentation using the q64 value returned from a previous search
 	 * 
 	 * @param {String} q64 q64
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDocumentationGknSearch(q64) { 
+	getDocumentationGknSearch(q64, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
 			throw 'Missing the required parameter "q64" when calling getDocumentationGknSearch';
@@ -41,7 +45,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class SearchApi {
 	 * Search documentation using the q64 value returned from a previous search
 	 * 
 	 * @param {String} q64 q64
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDocumentationSearch(q64) { 
+	getDocumentationSearch(q64, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
 			throw 'Missing the required parameter "q64" when calling getDocumentationSearch';
@@ -66,7 +75,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -76,6 +86,7 @@ class SearchApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGroupsSearch(q64, opts) { 
 		opts = opts || {};
@@ -95,7 +106,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,6 +117,7 @@ class SearchApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Provides more details about a specified resource
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLocationsSearch(q64, opts) { 
 		opts = opts || {};
@@ -124,7 +137,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -135,6 +149,7 @@ class SearchApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSearch(q64, opts) { 
 		opts = opts || {};
@@ -154,7 +169,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -165,6 +181,7 @@ class SearchApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getSearchSuggest(q64, opts) { 
 		opts = opts || {};
@@ -184,7 +201,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -194,6 +212,7 @@ class SearchApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
 		opts = opts || {};
@@ -213,7 +232,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -224,6 +244,7 @@ class SearchApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.integrationPresenceSource integrationPresenceSource
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersSearch(q64, opts) { 
 		opts = opts || {};
@@ -243,7 +264,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -253,6 +275,7 @@ class SearchApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailSearch(q64, opts) { 
 		opts = opts || {};
@@ -272,7 +295,8 @@ class SearchApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -280,8 +304,12 @@ class SearchApi {
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsCustomattributesSearch(body) { 
+	postConversationsCustomattributesSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsCustomattributesSearch';
@@ -297,7 +325,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -305,8 +334,12 @@ class SearchApi {
 	 * Search conversations
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postConversationsParticipantsAttributesSearch(body) { 
+	postConversationsParticipantsAttributesSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsParticipantsAttributesSearch';
@@ -322,7 +355,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -330,9 +364,13 @@ class SearchApi {
 	 * Search all documents
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postDocumentationAllSearch(body) { 
+	postDocumentationAllSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postDocumentationAllSearch';
@@ -348,7 +386,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -356,8 +395,12 @@ class SearchApi {
 	 * Search gkn documentation
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postDocumentationGknSearch(body) { 
+	postDocumentationGknSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postDocumentationGknSearch';
@@ -373,7 +416,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -381,8 +425,12 @@ class SearchApi {
 	 * Search documentation
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postDocumentationSearch(body) { 
+	postDocumentationSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postDocumentationSearch';
@@ -398,7 +446,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -406,8 +455,12 @@ class SearchApi {
 	 * Search groups
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGroupsSearch(body) { 
+	postGroupsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGroupsSearch';
@@ -423,7 +476,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -431,8 +485,12 @@ class SearchApi {
 	 * Search locations
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLocationsSearch(body) { 
+	postLocationsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLocationsSearch';
@@ -448,7 +506,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -458,6 +517,7 @@ class SearchApi {
 	 * @param {Object} body Search request options
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSearch(body, opts) { 
 		opts = opts || {};
@@ -477,7 +537,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -487,6 +548,7 @@ class SearchApi {
 	 * @param {Object} body Search request options
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.profile profile (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postSearchSuggest(body, opts) { 
 		opts = opts || {};
@@ -506,7 +568,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -514,8 +577,12 @@ class SearchApi {
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postSpeechandtextanalyticsTranscriptsSearch(body) { 
+	postSpeechandtextanalyticsTranscriptsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
@@ -531,7 +598,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -539,8 +607,12 @@ class SearchApi {
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTeamsSearch(body) { 
+	postTeamsSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTeamsSearch';
@@ -556,7 +628,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -564,8 +637,12 @@ class SearchApi {
 	 * Search sites
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesSitesSearch(body) { 
+	postTelephonyProvidersEdgesSitesSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
@@ -581,7 +658,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -589,8 +667,12 @@ class SearchApi {
 	 * Search users
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersSearch(body) { 
+	postUsersSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearch';
@@ -606,7 +688,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -614,9 +697,13 @@ class SearchApi {
 	 * Search users as conversation targets
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postUsersSearchConversationTarget(body) { 
+	postUsersSearchConversationTarget(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
@@ -632,7 +719,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -640,9 +728,13 @@ class SearchApi {
 	 * Search manage queue member
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postUsersSearchQueuemembersManage(body) { 
+	postUsersSearchQueuemembersManage(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
@@ -658,7 +750,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -666,8 +759,12 @@ class SearchApi {
 	 * Search users assigned to teams
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersSearchTeamsAssign(body) { 
+	postUsersSearchTeamsAssign(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearchTeamsAssign';
@@ -683,7 +780,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -691,8 +789,12 @@ class SearchApi {
 	 * Search voicemails
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postVoicemailSearch(body) { 
+	postVoicemailSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postVoicemailSearch';
@@ -708,7 +810,8 @@ class SearchApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

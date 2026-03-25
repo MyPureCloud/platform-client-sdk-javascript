@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -26,6 +26,7 @@ class SCIMApi {
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteScimUser(userId, opts) { 
 		opts = opts || {};
@@ -45,7 +46,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -55,6 +57,7 @@ class SCIMApi {
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -74,7 +77,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -86,6 +90,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimGroup(groupId, opts) { 
 		opts = opts || {};
@@ -105,7 +110,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -118,6 +124,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all groups. Examples of valid values: id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3, displayname eq Sales.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimGroups(opts) { 
 		opts = opts || {};
@@ -133,7 +140,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -141,8 +149,12 @@ class SCIMApi {
 	 * Get a resource type
 	 * 
 	 * @param {Object} resourceType The type of resource. Returned with GET /api/v2/scim/resourcetypes.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScimResourcetype(resourceType) { 
+	getScimResourcetype(resourceType, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'resourceType' is set
 		if (resourceType === undefined || resourceType === null || resourceType === '') {
 			throw 'Missing the required parameter "resourceType" when calling getScimResourcetype';
@@ -158,15 +170,20 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of resource types
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScimResourcetypes() { 
+	getScimResourcetypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/resourcetypes', 
@@ -178,7 +195,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -186,8 +204,12 @@ class SCIMApi {
 	 * Get a SCIM schema
 	 * 
 	 * @param {Object} schemaId The ID of a schema. Returned with GET /api/v2/scim/schemas.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScimSchema(schemaId) { 
+	getScimSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getScimSchema';
@@ -203,7 +225,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -212,6 +235,7 @@ class SCIMApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.filter Filtered results are invalid and return 403 Unauthorized.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimSchemas(opts) { 
 		opts = opts || {};
@@ -227,7 +251,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -236,6 +261,7 @@ class SCIMApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimServiceproviderconfig(opts) { 
 		opts = opts || {};
@@ -251,7 +277,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -263,6 +290,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, userName, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns the id, userName, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimUser(userId, opts) { 
 		opts = opts || {};
@@ -282,7 +310,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -295,6 +324,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, userName, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns the id, userName, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9, userName eq search@sample.org, manager eq 16e10e2f-1136-43fe-bb84-eac073168a49, email eq search@sample.org, division eq divisionName, externalId eq 167844, active eq false, employeeNumber eq 9876543210.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimUsers(opts) { 
 		opts = opts || {};
@@ -310,7 +340,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -322,6 +353,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimV2Group(groupId, opts) { 
 		opts = opts || {};
@@ -341,7 +373,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -354,6 +387,7 @@ class SCIMApi {
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the excludedAttributes or attributes query parameters to exclude or only include secondary lookup values such as externalId,  roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, or urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills. (default to 25)
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimV2Groups(filter, opts) { 
 		opts = opts || {};
@@ -373,7 +407,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -381,8 +416,12 @@ class SCIMApi {
 	 * Get a resource type
 	 * 
 	 * @param {Object} resourceType The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScimV2Resourcetype(resourceType) { 
+	getScimV2Resourcetype(resourceType, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'resourceType' is set
 		if (resourceType === undefined || resourceType === null || resourceType === '') {
 			throw 'Missing the required parameter "resourceType" when calling getScimV2Resourcetype';
@@ -398,15 +437,20 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of resource types
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScimV2Resourcetypes() { 
+	getScimV2Resourcetypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/v2/resourcetypes', 
@@ -418,7 +462,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -426,8 +471,12 @@ class SCIMApi {
 	 * Get a SCIM schema
 	 * 
 	 * @param {Object} schemaId The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getScimV2Schema(schemaId) { 
+	getScimV2Schema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getScimV2Schema';
@@ -443,7 +492,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -452,6 +502,7 @@ class SCIMApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.filter Filtered results are invalid and return 403 Unauthorized.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimV2Schemas(opts) { 
 		opts = opts || {};
@@ -467,7 +518,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -476,6 +528,7 @@ class SCIMApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimV2Serviceproviderconfig(opts) { 
 		opts = opts || {};
@@ -491,7 +544,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -503,6 +557,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, userName, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns the id, userName, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -522,7 +577,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -535,6 +591,7 @@ class SCIMApi {
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the id, userName, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns the id, userName, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9, userName eq search@sample.org, manager eq 16e10e2f-1136-43fe-bb84-eac073168a49, email eq search@sample.org, division eq divisionName, externalId eq 167844, active eq false, employeeNumber eq 9876543210.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getScimV2Users(opts) { 
 		opts = opts || {};
@@ -550,7 +607,8 @@ class SCIMApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -561,6 +619,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -584,7 +643,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -595,6 +655,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to modify a user.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -618,7 +679,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -629,6 +691,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -652,7 +715,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -663,6 +727,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to modify a user.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchScimV2User(userId, body, opts) { 
 		opts = opts || {};
@@ -686,7 +751,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -694,8 +760,12 @@ class SCIMApi {
 	 * Create a user
 	 * 
 	 * @param {Object} body The information used to create a user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postScimUsers(body) { 
+	postScimUsers(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postScimUsers';
@@ -711,7 +781,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -719,8 +790,12 @@ class SCIMApi {
 	 * Create a user
 	 * 
 	 * @param {Object} body The information used to create a user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postScimV2Users(body) { 
+	postScimV2Users(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postScimV2Users';
@@ -736,7 +811,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -747,6 +823,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to replace a group.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -770,7 +847,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -781,6 +859,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to replace a user.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -804,7 +883,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -815,6 +895,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to replace a group.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -838,7 +919,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -849,6 +931,7 @@ class SCIMApi {
 	 * @param {Object} body The information used to replace a user.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putScimV2User(userId, body, opts) { 
 		opts = opts || {};
@@ -872,7 +955,8 @@ class SCIMApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
+			['application/scim+json', 'application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class OperationalEventsApi {
 	 * Get an operational event definition by its id
 	 * 
 	 * @param {String} eventDefinitionId EventDefinition id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsageEventsDefinition(eventDefinitionId) { 
+	getUsageEventsDefinition(eventDefinitionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'eventDefinitionId' is set
 		if (eventDefinitionId === undefined || eventDefinitionId === null || eventDefinitionId === '') {
 			throw 'Missing the required parameter "eventDefinitionId" when calling getUsageEventsDefinition';
@@ -41,15 +45,20 @@ class OperationalEventsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get all operational event definitions
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsageEventsDefinitions() { 
+	getUsageEventsDefinitions(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/usage/events/definitions', 
@@ -61,7 +70,8 @@ class OperationalEventsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -70,6 +80,7 @@ class OperationalEventsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postUsageEventsAggregatesQuery(opts) { 
 		opts = opts || {};
@@ -85,7 +96,8 @@ class OperationalEventsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -97,6 +109,7 @@ class OperationalEventsApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postUsageEventsQuery(opts) { 
 		opts = opts || {};
@@ -112,7 +125,8 @@ class OperationalEventsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

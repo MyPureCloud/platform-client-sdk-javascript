@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,9 +24,13 @@ class UsersApi {
 	 * Delete/cancel an async request for user aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteAnalyticsUsersAggregatesJob(jobId) { 
+	deleteAnalyticsUsersAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersAggregatesJob';
@@ -42,7 +46,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class UsersApi {
 	 * Delete/cancel an async request
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAnalyticsUsersDetailsJob(jobId) { 
+	deleteAnalyticsUsersDetailsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
@@ -67,7 +76,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -77,8 +87,12 @@ class UsersApi {
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} divisionId the id of the division of the grant
 	 * @param {String} roleId the id of the role of the grant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
+	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
@@ -102,15 +116,20 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingDirectroutingbackupSettingsMe() { 
+	deleteRoutingDirectroutingbackupSettingsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/directroutingbackup/settings/me', 
@@ -122,7 +141,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -130,8 +150,12 @@ class UsersApi {
 	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+	deleteRoutingUserDirectroutingbackupSettings(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
@@ -147,7 +171,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -155,8 +180,12 @@ class UsersApi {
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingUserUtilization(userId) { 
+	deleteRoutingUserUtilization(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
@@ -172,7 +201,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -180,8 +210,12 @@ class UsersApi {
 	 * Delete user
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUser(userId) { 
+	deleteUser(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUser';
@@ -197,7 +231,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -206,9 +241,13 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {String} schemaId schemaId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteUserCustomattribute(userId, schemaId) { 
+	deleteUserCustomattribute(userId, schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserCustomattribute';
@@ -228,7 +267,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -238,8 +278,12 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {String} authorityName Authority Name
 	 * @param {String} externalKey External Key
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey) { 
+	deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserExternalidAuthorityNameExternalKey';
@@ -263,7 +307,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -272,8 +317,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserRoutinglanguage(userId, languageId) { 
+	deleteUserRoutinglanguage(userId, languageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
@@ -293,7 +342,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -302,8 +352,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserRoutingskill(userId, skillId) { 
+	deleteUserRoutingskill(userId, skillId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutingskill';
@@ -323,7 +377,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -331,8 +386,12 @@ class UsersApi {
 	 * Clear associated station
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserStationAssociatedstation(userId) { 
+	deleteUserStationAssociatedstation(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserStationAssociatedstation';
@@ -348,7 +407,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -356,8 +416,12 @@ class UsersApi {
 	 * Clear default station
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserStationDefaultstation(userId) { 
+	deleteUserStationDefaultstation(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserStationDefaultstation';
@@ -373,7 +437,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -382,8 +447,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} verifierId Verifier ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserVerifier(userId, verifierId) { 
+	deleteUserVerifier(userId, verifierId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserVerifier';
@@ -403,7 +472,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -411,9 +481,13 @@ class UsersApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deleteUsersCustomattributesSchema(schemaId) { 
+	deleteUsersCustomattributesSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteUsersCustomattributesSchema';
@@ -429,7 +503,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -437,9 +512,13 @@ class UsersApi {
 	 * Get status for async query for user aggregates
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getAnalyticsUsersAggregatesJob(jobId) { 
+	getAnalyticsUsersAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
@@ -455,7 +534,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -465,6 +545,7 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
@@ -485,7 +566,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -493,8 +575,12 @@ class UsersApi {
 	 * Get status for async query for user details
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAnalyticsUsersDetailsJob(jobId) { 
+	getAnalyticsUsersDetailsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
@@ -510,7 +596,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -521,6 +608,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize The desired maximum number of results
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAnalyticsUsersDetailsJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -540,15 +628,20 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Lookup the datalake availability date and time
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAnalyticsUsersDetailsJobsAvailability() { 
+	getAnalyticsUsersDetailsJobsAvailability(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/availability', 
@@ -560,7 +653,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -570,6 +664,7 @@ class UsersApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
@@ -590,7 +685,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -601,6 +697,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionspermittedPagedMe(permission, opts) { 
 		opts = opts || {};
@@ -620,7 +717,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -632,6 +730,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
@@ -656,7 +755,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -666,6 +766,7 @@ class UsersApi {
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubject(subjectId, opts) { 
 		opts = opts || {};
@@ -685,7 +786,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -694,6 +796,7 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubjectsMe(opts) { 
 		opts = opts || {};
@@ -709,7 +812,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -717,9 +821,13 @@ class UsersApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getFieldconfig(type) { 
+	getFieldconfig(type, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
 			throw 'Missing the required parameter "type" when calling getFieldconfig';
@@ -735,7 +843,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -750,6 +859,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getProfilesUsers(opts) { 
@@ -766,15 +876,20 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the user's Direct Routing Backup settings.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingDirectroutingbackupSettingsMe() { 
+	getRoutingDirectroutingbackupSettingsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/directroutingbackup/settings/me', 
@@ -786,7 +901,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -794,8 +910,12 @@ class UsersApi {
 	 * Get the user's Direct Routing Backup settings.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUserDirectroutingbackupSettings(userId) { 
+	getRoutingUserDirectroutingbackupSettings(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
@@ -811,7 +931,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -819,8 +940,12 @@ class UsersApi {
 	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUserUtilization(userId) { 
+	getRoutingUserUtilization(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
@@ -836,7 +961,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -848,6 +974,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
 	 * @param {Object} opts.state Search for a user with this state (default to active)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUser(userId, opts) { 
 		opts = opts || {};
@@ -867,7 +994,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -877,6 +1005,7 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserAdjacents(userId, opts) { 
 		opts = opts || {};
@@ -896,7 +1025,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -904,8 +1034,12 @@ class UsersApi {
 	 * Get a user's CallForwarding
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserCallforwarding(userId) { 
+	getUserCallforwarding(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserCallforwarding';
@@ -921,7 +1055,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -930,9 +1065,13 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {String} schemaId schemaId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUserCustomattribute(userId, schemaId) { 
+	getUserCustomattribute(userId, schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserCustomattribute';
@@ -952,7 +1091,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -961,9 +1101,13 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {Array.<String>} schemaIds 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUserCustomattributesBulk(userId, schemaIds) { 
+	getUserCustomattributesBulk(userId, schemaIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserCustomattributesBulk';
@@ -983,7 +1127,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -993,6 +1138,7 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserDirectreports(userId, opts) { 
 		opts = opts || {};
@@ -1012,7 +1158,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1020,8 +1167,12 @@ class UsersApi {
 	 * Get the external identifiers for a user.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserExternalid(userId) { 
+	getUserExternalid(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserExternalid';
@@ -1037,7 +1188,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1046,8 +1198,12 @@ class UsersApi {
 	 * Authority name and external key are case sensitive.
 	 * @param {String} userId User ID
 	 * @param {String} authorityName Authority Name
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserExternalidAuthorityName(userId, authorityName) { 
+	getUserExternalidAuthorityName(userId, authorityName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserExternalidAuthorityName';
@@ -1067,7 +1223,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1080,6 +1237,7 @@ class UsersApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getUserFavorites(userId, opts) { 
@@ -1100,7 +1258,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1109,8 +1268,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user Id
 	 * @param {String} clientId client Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserGeolocation(userId, clientId) { 
+	getUserGeolocation(userId, clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
@@ -1130,7 +1293,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1138,8 +1302,12 @@ class UsersApi {
 	 * Get a OutOfOffice
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserOutofoffice(userId) { 
+	getUserOutofoffice(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserOutofoffice';
@@ -1155,7 +1323,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1166,6 +1335,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getUserProfile(userId, opts) { 
@@ -1186,7 +1356,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1194,8 +1365,12 @@ class UsersApi {
 	 * List profile skills for a user
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserProfileskills(userId) { 
+	getUserProfileskills(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserProfileskills';
@@ -1211,7 +1386,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1224,6 +1400,7 @@ class UsersApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.joined Is joined to the queue (default to true)
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserQueues(userId, opts) { 
 		opts = opts || {};
@@ -1243,7 +1420,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1251,8 +1429,12 @@ class UsersApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserRoles(subjectId) { 
+	getUserRoles(subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
@@ -1268,7 +1450,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1280,6 +1463,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserRoutinglanguages(userId, opts) { 
 		opts = opts || {};
@@ -1299,7 +1483,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1311,6 +1496,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserRoutingskills(userId, opts) { 
 		opts = opts || {};
@@ -1330,7 +1516,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1338,8 +1525,12 @@ class UsersApi {
 	 * Fetch the routing status of a user
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserRoutingstatus(userId) { 
+	getUserRoutingstatus(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutingstatus';
@@ -1355,7 +1546,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1367,6 +1559,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.after The cursor that points to the next page
 	 * @param {String} opts.before The cursor that points to the previous page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserSkillgroups(userId, opts) { 
 		opts = opts || {};
@@ -1386,7 +1579,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1394,8 +1588,12 @@ class UsersApi {
 	 * Get user state information.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserState(userId) { 
+	getUserState(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserState';
@@ -1411,7 +1609,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1419,8 +1618,12 @@ class UsersApi {
 	 * Get station information for user
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserStation(userId) { 
+	getUserStation(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserStation';
@@ -1436,7 +1639,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1446,6 +1650,7 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserSuperiors(userId, opts) { 
 		opts = opts || {};
@@ -1465,7 +1670,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1476,6 +1682,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserTrustors(userId, opts) { 
 		opts = opts || {};
@@ -1495,7 +1702,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1503,8 +1711,12 @@ class UsersApi {
 	 * Get a list of verifiers
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserVerifiers(userId) { 
+	getUserVerifiers(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserVerifiers';
@@ -1520,7 +1732,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1536,6 +1749,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
 	 * @param {Object} opts.state Only list users of this state (default to active)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsers(opts) { 
 		opts = opts || {};
@@ -1551,7 +1765,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1562,6 +1777,7 @@ class UsersApi {
 	 * @param {Boolean} opts.excludeClosed Whether or not to exclude closed chats
 	 * @param {Boolean} opts.includePresence Whether or not to include user presence
 	 * @param {String} opts.after The key to start after
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersChatsMe(opts) { 
 		opts = opts || {};
@@ -1577,7 +1793,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1585,9 +1802,13 @@ class UsersApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchema(schemaId) { 
+	getUsersCustomattributesSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getUsersCustomattributesSchema';
@@ -1603,7 +1824,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1612,9 +1834,13 @@ class UsersApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchemaVersion(schemaId, versionId) { 
+	getUsersCustomattributesSchemaVersion(schemaId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getUsersCustomattributesSchemaVersion';
@@ -1634,7 +1860,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1642,9 +1869,13 @@ class UsersApi {
 	 * Get all versions of a user schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchemaVersions(schemaId) { 
+	getUsersCustomattributesSchemaVersions(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getUsersCustomattributesSchemaVersions';
@@ -1660,16 +1891,21 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of schemas.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchemas() { 
+	getUsersCustomattributesSchemas(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/users/customattributes/schemas', 
@@ -1681,7 +1917,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1689,9 +1926,13 @@ class UsersApi {
 	 * Get the core types from which all schemas are built.
 	 * 
 	 * @param {String} coreTypeName Name of the core type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchemasCoretype(coreTypeName) { 
+	getUsersCustomattributesSchemasCoretype(coreTypeName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'coreTypeName' is set
 		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getUsersCustomattributesSchemasCoretype';
@@ -1707,16 +1948,21 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of core types enabled for a specific namespace.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchemasCoretypes() { 
+	getUsersCustomattributesSchemasCoretypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/users/customattributes/schemas/coretypes', 
@@ -1728,16 +1974,21 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get quantitative limits on schemas
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getUsersCustomattributesSchemasLimits() { 
+	getUsersCustomattributesSchemasLimits(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/users/customattributes/schemas/limits', 
@@ -1749,7 +2000,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1769,6 +2021,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
 	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersDevelopmentActivities(opts) { 
 		opts = opts || {};
@@ -1784,7 +2037,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1803,6 +2057,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
 	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersDevelopmentActivitiesMe(opts) { 
 		opts = opts || {};
@@ -1818,7 +2073,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1827,8 +2083,12 @@ class UsersApi {
 	 * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 	 * @param {String} activityId Specifies the activity ID, maps to either assignment or appointment ID
 	 * @param {Object} type Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsersDevelopmentActivity(activityId, type) { 
+	getUsersDevelopmentActivity(activityId, type, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'activityId' is set
 		if (activityId === undefined || activityId === null || activityId === '') {
 			throw 'Missing the required parameter "activityId" when calling getUsersDevelopmentActivity';
@@ -1848,7 +2108,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1859,6 +2120,7 @@ class UsersApi {
 	 * @param {String} externalKey External Key
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts) { 
 		opts = opts || {};
@@ -1882,7 +2144,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1892,6 +2155,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {Object} opts.integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersMe(opts) { 
 		opts = opts || {};
@@ -1907,7 +2171,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1921,6 +2186,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
 	 * @param {Object} opts.state Only list users of this state (default to active)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersQuery(opts) { 
@@ -1937,7 +2203,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1948,6 +2215,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.integrationPresenceSource integrationPresenceSource
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersSearch(q64, opts) { 
 		opts = opts || {};
@@ -1967,7 +2235,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1976,8 +2245,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body User
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUser(userId, body) { 
+	patchUser(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUser';
@@ -1997,7 +2270,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2006,8 +2280,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Call forwarding
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserCallforwarding(userId, body) { 
+	patchUserCallforwarding(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserCallforwarding';
@@ -2027,7 +2305,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2036,9 +2315,13 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {Object} userCustomAttributes 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchUserCustomattributes(userId, userCustomAttributes) { 
+	patchUserCustomattributes(userId, userCustomAttributes, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserCustomattributes';
@@ -2058,7 +2341,8 @@ class UsersApi {
 			userCustomAttributes, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2067,9 +2351,13 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {Array.<Object>} userCustomAttributesList 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	patchUserCustomattributesBulk(userId, userCustomAttributesList) { 
+	patchUserCustomattributesBulk(userId, userCustomAttributesList, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserCustomattributesBulk';
@@ -2089,7 +2377,8 @@ class UsersApi {
 			userCustomAttributesList, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2099,8 +2388,12 @@ class UsersApi {
 	 * @param {String} userId user Id
 	 * @param {String} clientId client Id
 	 * @param {Object} body Geolocation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserGeolocation(userId, clientId, body) { 
+	patchUserGeolocation(userId, clientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
@@ -2124,7 +2417,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2134,8 +2428,12 @@ class UsersApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} userId User ID
 	 * @param {Object} body Queue Member
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserQueue(queueId, userId, body) { 
+	patchUserQueue(queueId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
@@ -2159,7 +2457,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2170,6 +2469,7 @@ class UsersApi {
 	 * @param {Array.<Object>} body User Queues
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchUserQueues(userId, body, opts) { 
 		opts = opts || {};
@@ -2193,7 +2493,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2203,8 +2504,12 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
 	 * @param {Object} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserRoutinglanguage(userId, languageId, body) { 
+	patchUserRoutinglanguage(userId, languageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguage';
@@ -2228,7 +2533,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2237,8 +2543,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserRoutinglanguagesBulk(userId, body) { 
+	patchUserRoutinglanguagesBulk(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
@@ -2258,7 +2568,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2267,8 +2578,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserRoutingskillsBulk(userId, body) { 
+	patchUserRoutingskillsBulk(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
@@ -2288,7 +2603,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2296,8 +2612,12 @@ class UsersApi {
 	 * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 	 * 
 	 * @param {Array.<Object>} body Users
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUsersBulk(body) { 
+	patchUsersBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchUsersBulk';
@@ -2313,7 +2633,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2324,6 +2645,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAnalyticsUsersActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2343,7 +2665,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2351,9 +2674,13 @@ class UsersApi {
 	 * Query for user aggregates asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postAnalyticsUsersAggregatesJobs(body) { 
+	postAnalyticsUsersAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesJobs';
@@ -2369,7 +2696,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2377,8 +2705,12 @@ class UsersApi {
 	 * Query for user aggregates
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsUsersAggregatesQuery(body) { 
+	postAnalyticsUsersAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesQuery';
@@ -2394,7 +2726,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2402,8 +2735,12 @@ class UsersApi {
 	 * Query for user details asynchronously
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsUsersDetailsJobs(body) { 
+	postAnalyticsUsersDetailsJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsJobs';
@@ -2419,7 +2756,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2427,8 +2765,12 @@ class UsersApi {
 	 * Query for user details
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsUsersDetailsQuery(body) { 
+	postAnalyticsUsersDetailsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsQuery';
@@ -2444,7 +2786,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2452,8 +2795,12 @@ class UsersApi {
 	 * Query for user observations
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsUsersObservationsQuery(body) { 
+	postAnalyticsUsersObservationsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsUsersObservationsQuery';
@@ -2469,7 +2816,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2480,6 +2828,7 @@ class UsersApi {
 	 * @param {Object} body Pairs of role and division IDs
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationSubjectBulkadd(subjectId, body, opts) { 
 		opts = opts || {};
@@ -2503,7 +2852,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2512,8 +2862,12 @@ class UsersApi {
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} body Pairs of role and division IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationSubjectBulkremove(subjectId, body) { 
+	postAuthorizationSubjectBulkremove(subjectId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
@@ -2533,7 +2887,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2544,6 +2899,7 @@ class UsersApi {
 	 * @param {Object} body Pairs of role and division IDs
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationSubjectBulkreplace(subjectId, body, opts) { 
 		opts = opts || {};
@@ -2567,7 +2923,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2579,6 +2936,7 @@ class UsersApi {
 	 * @param {String} roleId the id of the role to grant
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
 		opts = opts || {};
@@ -2606,7 +2964,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2615,8 +2974,12 @@ class UsersApi {
 	 * Authority Name and External key are case sensitive.
 	 * @param {String} userId User ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserExternalid(userId, body) { 
+	postUserExternalid(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserExternalid';
@@ -2636,7 +2999,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2646,6 +3010,7 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.force Resend the invitation even if one is already outstanding (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postUserInvite(userId, opts) { 
 		opts = opts || {};
@@ -2665,7 +3030,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2674,8 +3040,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Password
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserPassword(userId, body) { 
+	postUserPassword(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserPassword';
@@ -2695,7 +3065,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2704,8 +3075,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserRoutinglanguages(userId, body) { 
+	postUserRoutinglanguages(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutinglanguages';
@@ -2725,7 +3100,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2734,8 +3110,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserRoutingskills(userId, body) { 
+	postUserRoutingskills(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutingskills';
@@ -2755,7 +3135,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2763,8 +3144,12 @@ class UsersApi {
 	 * Create user
 	 * If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
 	 * @param {Object} body User
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsers(body) { 
+	postUsers(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsers';
@@ -2780,7 +3165,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2788,9 +3174,13 @@ class UsersApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postUsersCustomattributesSchemas(body) { 
+	postUsersCustomattributesSchemas(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersCustomattributesSchemas';
@@ -2806,7 +3196,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2814,8 +3205,12 @@ class UsersApi {
 	 * Retrieve aggregated development activity data
 	 * Results are filtered based on the applicable permissions.
 	 * @param {Object} body Aggregate Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersDevelopmentActivitiesAggregatesQuery(body) { 
+	postUsersDevelopmentActivitiesAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersDevelopmentActivitiesAggregatesQuery';
@@ -2831,7 +3226,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2839,8 +3235,12 @@ class UsersApi {
 	 * Change your password
 	 * 
 	 * @param {Object} body Password
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersMePassword(body) { 
+	postUsersMePassword(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersMePassword';
@@ -2856,7 +3256,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2864,8 +3265,12 @@ class UsersApi {
 	 * Search users
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersSearch(body) { 
+	postUsersSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearch';
@@ -2881,7 +3286,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2889,9 +3295,13 @@ class UsersApi {
 	 * Search users as conversation targets
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postUsersSearchConversationTarget(body) { 
+	postUsersSearchConversationTarget(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
@@ -2907,7 +3317,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2915,9 +3326,13 @@ class UsersApi {
 	 * Search manage queue member
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postUsersSearchQueuemembersManage(body) { 
+	postUsersSearchQueuemembersManage(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
@@ -2933,7 +3348,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2941,8 +3357,12 @@ class UsersApi {
 	 * Search users assigned to teams
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsersSearchTeamsAssign(body) { 
+	postUsersSearchTeamsAssign(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsersSearchTeamsAssign';
@@ -2958,7 +3378,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2966,8 +3387,12 @@ class UsersApi {
 	 * Update the user's Direct Routing Backup settings.
 	 * 
 	 * @param {Object} body directRoutingBackup
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingDirectroutingbackupSettingsMe(body) { 
+	putRoutingDirectroutingbackupSettingsMe(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
@@ -2983,7 +3408,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2992,8 +3418,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body directRoutingBackup
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+	putRoutingUserDirectroutingbackupSettings(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
@@ -3013,7 +3443,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3022,8 +3453,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body utilization
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingUserUtilization(userId, body) { 
+	putRoutingUserUtilization(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
@@ -3043,7 +3478,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3052,8 +3488,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Call forwarding
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserCallforwarding(userId, body) { 
+	putUserCallforwarding(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserCallforwarding';
@@ -3073,7 +3513,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3082,9 +3523,13 @@ class UsersApi {
 	 * 
 	 * @param {String} userId user ID
 	 * @param {Object} userCustomAttributes 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	putUserCustomattributes(userId, userCustomAttributes) { 
+	putUserCustomattributes(userId, userCustomAttributes, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserCustomattributes';
@@ -3104,7 +3549,8 @@ class UsersApi {
 			userCustomAttributes, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3113,8 +3559,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body The updated OutOffOffice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserOutofoffice(userId, body) { 
+	putUserOutofoffice(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserOutofoffice';
@@ -3134,7 +3584,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3143,8 +3594,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<String>} body Skills
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserProfileskills(userId, body) { 
+	putUserProfileskills(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserProfileskills';
@@ -3164,7 +3619,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3173,8 +3629,12 @@ class UsersApi {
 	 * 
 	 * @param {String} subjectId User ID
 	 * @param {Array.<String>} body List of roles
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoles(subjectId, body) { 
+	putUserRoles(subjectId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
@@ -3194,7 +3654,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3204,8 +3665,12 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
 	 * @param {Object} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoutingskill(userId, skillId, body) { 
+	putUserRoutingskill(userId, skillId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskill';
@@ -3229,7 +3694,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3238,8 +3704,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoutingskillsBulk(userId, body) { 
+	putUserRoutingskillsBulk(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
@@ -3259,7 +3729,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3268,8 +3739,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Routing Status
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoutingstatus(userId, body) { 
+	putUserRoutingstatus(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingstatus';
@@ -3289,7 +3764,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3298,8 +3774,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body User
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserState(userId, body) { 
+	putUserState(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserState';
@@ -3319,7 +3799,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3328,8 +3809,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} stationId stationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserStationAssociatedstationStationId(userId, stationId) { 
+	putUserStationAssociatedstationStationId(userId, stationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserStationAssociatedstationStationId';
@@ -3349,7 +3834,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3358,8 +3844,12 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} stationId stationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserStationDefaultstationStationId(userId, stationId) { 
+	putUserStationDefaultstationStationId(userId, stationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserStationDefaultstationStationId';
@@ -3379,7 +3869,8 @@ class UsersApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3389,8 +3880,12 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {String} verifierId Verifier ID
 	 * @param {Object} body Verifier Update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserVerifier(userId, verifierId, body) { 
+	putUserVerifier(userId, verifierId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserVerifier';
@@ -3414,7 +3909,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3423,9 +3919,13 @@ class UsersApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Data Schema
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	putUsersCustomattributesSchema(schemaId, body) { 
+	putUsersCustomattributesSchema(schemaId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putUsersCustomattributesSchema';
@@ -3445,7 +3945,8 @@ class UsersApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

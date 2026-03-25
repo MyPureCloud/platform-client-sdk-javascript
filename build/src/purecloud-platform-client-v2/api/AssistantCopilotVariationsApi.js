@@ -5,7 +5,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -25,8 +25,12 @@ class AssistantCopilotVariationsApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} variationId Variation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAssistantVariation(assistantId, variationId) { 
+	deleteAssistantVariation(assistantId, variationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling deleteAssistantVariation';
@@ -46,7 +50,8 @@ class AssistantCopilotVariationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -55,8 +60,12 @@ class AssistantCopilotVariationsApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} variationId Variation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAssistantVariation(assistantId, variationId) { 
+	getAssistantVariation(assistantId, variationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantVariation';
@@ -76,7 +85,8 @@ class AssistantCopilotVariationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -84,8 +94,12 @@ class AssistantCopilotVariationsApi {
 	 * Get variations of an assistant copilot
 	 * 
 	 * @param {String} assistantId Assistant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAssistantVariations(assistantId) { 
+	getAssistantVariations(assistantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantVariations';
@@ -101,7 +115,8 @@ class AssistantCopilotVariationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -110,8 +125,12 @@ class AssistantCopilotVariationsApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAssistantVariations(assistantId, body) { 
+	postAssistantVariations(assistantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling postAssistantVariations';
@@ -131,7 +150,8 @@ class AssistantCopilotVariationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -141,8 +161,12 @@ class AssistantCopilotVariationsApi {
 	 * @param {String} assistantId Assistant ID
 	 * @param {String} variationId Variation ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAssistantVariation(assistantId, variationId, body) { 
+	putAssistantVariation(assistantId, variationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling putAssistantVariation';
@@ -166,7 +190,8 @@ class AssistantCopilotVariationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

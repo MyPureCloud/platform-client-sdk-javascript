@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getUsageEventsDefinition
 
-> EventDefinition getUsageEventsDefinition(eventDefinitionId)
+> EventDefinition getUsageEventsDefinition(eventDefinitionId, opts)
 
 
 GET /api/v2/usage/events/definitions/{eventDefinitionId}
@@ -40,8 +40,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OperationalEventsApi();
 
 let eventDefinitionId = "eventDefinitionId_example"; // String | EventDefinition id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsageEventsDefinition(eventDefinitionId)
+apiInstance.getUsageEventsDefinition(eventDefinitionId, opts)
   .then((data) => {
     console.log(`getUsageEventsDefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -57,6 +63,7 @@ apiInstance.getUsageEventsDefinition(eventDefinitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **eventDefinitionId** | **String** | EventDefinition id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -65,7 +72,7 @@ apiInstance.getUsageEventsDefinition(eventDefinitionId)
 
 ## getUsageEventsDefinitions
 
-> EventDefinitionListing getUsageEventsDefinitions()
+> EventDefinitionListing getUsageEventsDefinitions(opts)
 
 
 GET /api/v2/usage/events/definitions
@@ -88,8 +95,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OperationalEventsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsageEventsDefinitions()
+apiInstance.getUsageEventsDefinitions(opts)
   .then((data) => {
     console.log(`getUsageEventsDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -101,7 +114,10 @@ apiInstance.getUsageEventsDefinitions()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -135,7 +151,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OperationalEventsApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postUsageEventsAggregatesQuery(opts)
@@ -154,6 +174,7 @@ apiInstance.postUsageEventsAggregatesQuery(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -190,7 +211,11 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postUsageEventsQuery(opts)
@@ -212,10 +237,11 @@ apiInstance.postUsageEventsQuery(opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **EventQueryResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

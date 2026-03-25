@@ -24,7 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getTelephonyAgentGreetings
 
-> AgentGreeting getTelephonyAgentGreetings(agentId)
+> AgentGreeting getTelephonyAgentGreetings(agentId, opts)
 
 
 GET /api/v2/telephony/agents/{agentId}/greetings
@@ -49,8 +49,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let agentId = "agentId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyAgentGreetings(agentId)
+apiInstance.getTelephonyAgentGreetings(agentId, opts)
   .then((data) => {
     console.log(`getTelephonyAgentGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -66,6 +72,7 @@ apiInstance.getTelephonyAgentGreetings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -74,7 +81,7 @@ apiInstance.getTelephonyAgentGreetings(agentId)
 
 ## getTelephonyAgentsGreetingsMe
 
-> SelfAgentGreeting getTelephonyAgentsGreetingsMe()
+> SelfAgentGreeting getTelephonyAgentsGreetingsMe(opts)
 
 
 GET /api/v2/telephony/agents/greetings/me
@@ -97,8 +104,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyAgentsGreetingsMe()
+apiInstance.getTelephonyAgentsGreetingsMe(opts)
   .then((data) => {
     console.log(`getTelephonyAgentsGreetingsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -110,7 +123,10 @@ apiInstance.getTelephonyAgentsGreetingsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -144,7 +160,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let opts = { 
-  'metricType': "cloud" // String | Flag to indicate metric type to fetch.
+  'metricType': "cloud", // String | Flag to indicate metric type to fetch.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyCallsMetrics(opts)
@@ -163,6 +183,7 @@ apiInstance.getTelephonyCallsMetrics(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricType** | **String** | Flag to indicate metric type to fetch. | [optional] [default to cloud]<br />**Values**: cloud, premises |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -171,7 +192,7 @@ apiInstance.getTelephonyCallsMetrics(opts)
 
 ## getTelephonyMediaregions
 
-> MediaRegions getTelephonyMediaregions()
+> MediaRegions getTelephonyMediaregions(opts)
 
 
 GET /api/v2/telephony/mediaregions
@@ -194,8 +215,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyMediaregions()
+apiInstance.getTelephonyMediaregions(opts)
   .then((data) => {
     console.log(`getTelephonyMediaregions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -207,7 +234,10 @@ apiInstance.getTelephonyMediaregions()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -216,7 +246,7 @@ This endpoint does not need any parameter.
 
 ## getTelephonySettings
 
-> TelephonySettings getTelephonySettings()
+> TelephonySettings getTelephonySettings(opts)
 
 
 GET /api/v2/telephony/settings
@@ -239,8 +269,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonySettings()
+apiInstance.getTelephonySettings(opts)
   .then((data) => {
     console.log(`getTelephonySettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -252,7 +288,10 @@ apiInstance.getTelephonySettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -261,7 +300,7 @@ This endpoint does not need any parameter.
 
 ## getTelephonySipmessagesConversation
 
-> Callmessage getTelephonySipmessagesConversation(conversationId)
+> Callmessage getTelephonySipmessagesConversation(conversationId, opts)
 
 
 GET /api/v2/telephony/sipmessages/conversations/{conversationId}
@@ -288,8 +327,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let conversationId = "conversationId_example"; // String | Conversation id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonySipmessagesConversation(conversationId)
+apiInstance.getTelephonySipmessagesConversation(conversationId, opts)
   .then((data) => {
     console.log(`getTelephonySipmessagesConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -305,6 +350,7 @@ apiInstance.getTelephonySipmessagesConversation(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -341,7 +387,11 @@ let apiInstance = new platformClient.TelephonyApi();
 
 let conversationId = "conversationId_example"; // String | Conversation id
 let opts = { 
-  'keys': ["keys_example"] // [String] | comma-separated list of header identifiers to query. e.g. ruri,to,from
+  'keys': ["keys_example"], // [String] | comma-separated list of header identifiers to query. e.g. ruri,to,from
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonySipmessagesConversationHeaders(conversationId, opts)
@@ -361,6 +411,7 @@ apiInstance.getTelephonySipmessagesConversationHeaders(conversationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation id |  |
  **keys** | **[String]** | comma-separated list of header identifiers to query. e.g. ruri,to,from | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -401,7 +452,11 @@ let opts = {
   'callId': "callId_example", // String | unique identification of the placed call
   'toUser': "toUser_example", // String | User to who the call was placed
   'fromUser': "fromUser_example", // String | user who placed the call
-  'conversationId': "conversationId_example" // String | Unique identification of the conversation
+  'conversationId': "conversationId_example", // String | Unique identification of the conversation
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonySiptraces(dateStart, dateEnd, opts)
@@ -425,6 +480,7 @@ apiInstance.getTelephonySiptraces(dateStart, dateEnd, opts)
  **toUser** | **String** | User to who the call was placed | [optional]  |
  **fromUser** | **String** | user who placed the call | [optional]  |
  **conversationId** | **String** | Unique identification of the conversation | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -433,7 +489,7 @@ apiInstance.getTelephonySiptraces(dateStart, dateEnd, opts)
 
 ## getTelephonySiptracesDownloadDownloadId
 
-> SignedUrlResponse getTelephonySiptracesDownloadDownloadId(downloadId)
+> SignedUrlResponse getTelephonySiptracesDownloadDownloadId(downloadId, opts)
 
 
 GET /api/v2/telephony/siptraces/download/{downloadId}
@@ -458,8 +514,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let downloadId = "downloadId_example"; // String | unique id for the downloaded file in S3
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonySiptracesDownloadDownloadId(downloadId)
+apiInstance.getTelephonySiptracesDownloadDownloadId(downloadId, opts)
   .then((data) => {
     console.log(`getTelephonySiptracesDownloadDownloadId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -475,6 +537,7 @@ apiInstance.getTelephonySiptracesDownloadDownloadId(downloadId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **downloadId** | **String** | unique id for the downloaded file in S3 |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -483,7 +546,7 @@ apiInstance.getTelephonySiptracesDownloadDownloadId(downloadId)
 
 ## postTelephonySiptracesDownload
 
-> SipDownloadResponse postTelephonySiptracesDownload(sIPSearchPublicRequest)
+> SipDownloadResponse postTelephonySiptracesDownload(sIPSearchPublicRequest, opts)
 
 
 POST /api/v2/telephony/siptraces/download
@@ -508,8 +571,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let sIPSearchPublicRequest = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonySiptracesDownload(sIPSearchPublicRequest)
+apiInstance.postTelephonySiptracesDownload(sIPSearchPublicRequest, opts)
   .then((data) => {
     console.log(`postTelephonySiptracesDownload success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -525,6 +594,7 @@ apiInstance.postTelephonySiptracesDownload(sIPSearchPublicRequest)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sIPSearchPublicRequest** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -533,7 +603,7 @@ apiInstance.postTelephonySiptracesDownload(sIPSearchPublicRequest)
 
 ## putTelephonyAgentGreetings
 
-> AgentGreeting putTelephonyAgentGreetings(agentId, body)
+> AgentGreeting putTelephonyAgentGreetings(agentId, body, opts)
 
 
 PUT /api/v2/telephony/agents/{agentId}/greetings
@@ -559,8 +629,14 @@ let apiInstance = new platformClient.TelephonyApi();
 
 let agentId = "agentId_example"; // String | User ID
 let body = {}; // Object | Agent Greeting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyAgentGreetings(agentId, body)
+apiInstance.putTelephonyAgentGreetings(agentId, body, opts)
   .then((data) => {
     console.log(`putTelephonyAgentGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -577,6 +653,7 @@ apiInstance.putTelephonyAgentGreetings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | User ID |  |
  **body** | **Object** | Agent Greeting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -585,7 +662,7 @@ apiInstance.putTelephonyAgentGreetings(agentId, body)
 
 ## putTelephonyAgentsGreetingsMe
 
-> SelfAgentGreeting putTelephonyAgentsGreetingsMe(body)
+> SelfAgentGreeting putTelephonyAgentsGreetingsMe(body, opts)
 
 
 PUT /api/v2/telephony/agents/greetings/me
@@ -610,8 +687,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let body = {}; // Object | Agent Greeting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyAgentsGreetingsMe(body)
+apiInstance.putTelephonyAgentsGreetingsMe(body, opts)
   .then((data) => {
     console.log(`putTelephonyAgentsGreetingsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -627,6 +710,7 @@ apiInstance.putTelephonyAgentsGreetingsMe(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Agent Greeting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -635,7 +719,7 @@ apiInstance.putTelephonyAgentsGreetingsMe(body)
 
 ## putTelephonySettings
 
-> TelephonySettings putTelephonySettings(body)
+> TelephonySettings putTelephonySettings(body, opts)
 
 
 PUT /api/v2/telephony/settings
@@ -660,8 +744,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyApi();
 
 let body = {}; // Object | Telephony
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonySettings(body)
+apiInstance.putTelephonySettings(body, opts)
   .then((data) => {
     console.log(`putTelephonySettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -677,10 +767,11 @@ apiInstance.putTelephonySettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Telephony |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TelephonySettings**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

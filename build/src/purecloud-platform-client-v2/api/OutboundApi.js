@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class OutboundApi {
 	 * Delete attempt limits
 	 * 
 	 * @param {String} attemptLimitsId Attempt limits ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundAttemptlimit(attemptLimitsId) { 
+	deleteOutboundAttemptlimit(attemptLimitsId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'attemptLimitsId' is set
 		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling deleteOutboundAttemptlimit';
@@ -41,7 +45,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class OutboundApi {
 	 * Delete callable time set
 	 * 
 	 * @param {String} callableTimeSetId Callable Time Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundCallabletimeset(callableTimeSetId) { 
+	deleteOutboundCallabletimeset(callableTimeSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'callableTimeSetId' is set
 		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling deleteOutboundCallabletimeset';
@@ -66,7 +75,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class OutboundApi {
 	 * Delete a dialer call analysis response set.
 	 * 
 	 * @param {String} callAnalysisSetId Call Analysis Response Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundCallanalysisresponseset(callAnalysisSetId) { 
+	deleteOutboundCallanalysisresponseset(callAnalysisSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'callAnalysisSetId' is set
 		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling deleteOutboundCallanalysisresponseset';
@@ -91,7 +105,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -99,8 +114,12 @@ class OutboundApi {
 	 * Delete a campaign.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundCampaign(campaignId) { 
+	deleteOutboundCampaign(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaign';
@@ -116,7 +135,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,8 +144,12 @@ class OutboundApi {
 	 * Reset campaign progress and recycle the campaign
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundCampaignProgress(campaignId) { 
+	deleteOutboundCampaignProgress(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaignProgress';
@@ -141,7 +165,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -149,8 +174,12 @@ class OutboundApi {
 	 * Delete Campaign Rule
 	 * 
 	 * @param {String} campaignRuleId Campaign Rule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundCampaignrule(campaignRuleId) { 
+	deleteOutboundCampaignrule(campaignRuleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignRuleId' is set
 		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling deleteOutboundCampaignrule';
@@ -166,7 +195,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,8 +204,12 @@ class OutboundApi {
 	 * Delete a contact list.
 	 * 
 	 * @param {String} contactListId ContactList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlist(contactListId) { 
+	deleteOutboundContactlist(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlist';
@@ -191,7 +225,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -200,8 +235,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {String} contactId Contact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlistContact(contactListId, contactId) { 
+	deleteOutboundContactlistContact(contactListId, contactId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContact';
@@ -221,7 +260,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -230,8 +270,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {Array.<String>} contactIds ContactIds to delete.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlistContacts(contactListId, contactIds) { 
+	deleteOutboundContactlistContacts(contactListId, contactIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContacts';
@@ -251,7 +295,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -259,8 +304,12 @@ class OutboundApi {
 	 * Delete Contact List Filter
 	 * 
 	 * @param {String} contactListFilterId Contact List Filter ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlistfilter(contactListFilterId) { 
+	deleteOutboundContactlistfilter(contactListFilterId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListFilterId' is set
 		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling deleteOutboundContactlistfilter';
@@ -276,7 +325,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -284,8 +334,12 @@ class OutboundApi {
 	 * Delete multiple contact lists.
 	 * 
 	 * @param {Array.<String>} id contact list id(s) to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlists(id) { 
+	deleteOutboundContactlists(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteOutboundContactlists';
@@ -301,7 +355,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -309,8 +364,12 @@ class OutboundApi {
 	 * Delete Contact List Template
 	 * 
 	 * @param {String} contactListTemplateId ContactListTemplate ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlisttemplate(contactListTemplateId) { 
+	deleteOutboundContactlisttemplate(contactListTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListTemplateId' is set
 		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
 			throw 'Missing the required parameter "contactListTemplateId" when calling deleteOutboundContactlisttemplate';
@@ -326,7 +385,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -334,8 +394,12 @@ class OutboundApi {
 	 * Delete multiple contact list templates.
 	 * 
 	 * @param {Array.<String>} id contact list template id(s) to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundContactlisttemplates(id) { 
+	deleteOutboundContactlisttemplates(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteOutboundContactlisttemplates';
@@ -351,7 +415,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -359,8 +424,12 @@ class OutboundApi {
 	 * Delete an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundDigitalruleset(digitalRuleSetId) { 
+	deleteOutboundDigitalruleset(digitalRuleSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'digitalRuleSetId' is set
 		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling deleteOutboundDigitalruleset';
@@ -376,7 +445,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -384,8 +454,12 @@ class OutboundApi {
 	 * Delete dialer DNC list
 	 * 
 	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundDnclist(dncListId) { 
+	deleteOutboundDnclist(dncListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclist';
@@ -401,7 +475,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -411,6 +486,7 @@ class OutboundApi {
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC entries that are expired (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts) { 
 		opts = opts || {};
@@ -430,7 +506,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -440,6 +517,7 @@ class OutboundApi {
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC entries that are expired (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteOutboundDnclistEmailaddresses(dncListId, opts) { 
 		opts = opts || {};
@@ -459,7 +537,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -469,6 +548,7 @@ class OutboundApi {
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC entries that are expired (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteOutboundDnclistPhonenumbers(dncListId, opts) { 
 		opts = opts || {};
@@ -488,7 +568,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -498,6 +579,7 @@ class OutboundApi {
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC whatsApp numbers that are expired (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteOutboundDnclistWhatsappnumbers(dncListId, opts) { 
 		opts = opts || {};
@@ -517,7 +599,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -525,8 +608,12 @@ class OutboundApi {
 	 * Delete File Specification Template
 	 * 
 	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
+	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'fileSpecificationTemplateId' is set
 		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
 			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling deleteOutboundFilespecificationtemplate';
@@ -542,7 +629,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -550,8 +638,12 @@ class OutboundApi {
 	 * Delete multiple file specification templates.
 	 * 
 	 * @param {Array.<String>} id File Specification template id(s) to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundFilespecificationtemplatesBulk(id) { 
+	deleteOutboundFilespecificationtemplatesBulk(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteOutboundFilespecificationtemplatesBulk';
@@ -567,7 +659,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -575,8 +668,12 @@ class OutboundApi {
 	 * Delete Import Template
 	 * 
 	 * @param {String} importTemplateId Import Template ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundImporttemplate(importTemplateId) { 
+	deleteOutboundImporttemplate(importTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'importTemplateId' is set
 		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
 			throw 'Missing the required parameter "importTemplateId" when calling deleteOutboundImporttemplate';
@@ -592,7 +689,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -600,8 +698,12 @@ class OutboundApi {
 	 * Delete multiple import templates.
 	 * 
 	 * @param {Array.<String>} id import template id(s) to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundImporttemplates(id) { 
+	deleteOutboundImporttemplates(id, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
 			throw 'Missing the required parameter "id" when calling deleteOutboundImporttemplates';
@@ -617,7 +719,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -625,8 +728,12 @@ class OutboundApi {
 	 * Delete an Outbound Messaging Campaign
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundMessagingcampaign(messagingCampaignId) { 
+	deleteOutboundMessagingcampaign(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
@@ -642,7 +749,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -650,8 +758,12 @@ class OutboundApi {
 	 * Reset messaging campaign progress and recycle the messaging campaign
 	 * Documented permissions are applicable based on campaign type.
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundMessagingcampaignProgress(messagingCampaignId) { 
+	deleteOutboundMessagingcampaignProgress(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaignProgress';
@@ -667,7 +779,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -675,8 +788,12 @@ class OutboundApi {
 	 * Delete a Rule Set.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundRuleset(ruleSetId) { 
+	deleteOutboundRuleset(ruleSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleSetId' is set
 		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling deleteOutboundRuleset';
@@ -692,7 +809,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -700,8 +818,12 @@ class OutboundApi {
 	 * Delete a dialer campaign schedule.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundSchedulesCampaign(campaignId) { 
+	deleteOutboundSchedulesCampaign(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundSchedulesCampaign';
@@ -717,7 +839,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -725,8 +848,12 @@ class OutboundApi {
 	 * Delete an email campaign schedule.
 	 * 
 	 * @param {String} emailCampaignId Email Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundSchedulesEmailcampaign(emailCampaignId) { 
+	deleteOutboundSchedulesEmailcampaign(emailCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'emailCampaignId' is set
 		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling deleteOutboundSchedulesEmailcampaign';
@@ -742,7 +869,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -750,8 +878,12 @@ class OutboundApi {
 	 * Delete a messaging campaign schedule.
 	 * 
 	 * @param {String} messagingCampaignId Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
+	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundSchedulesMessagingcampaign';
@@ -767,7 +899,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -775,8 +908,12 @@ class OutboundApi {
 	 * Delete a dialer sequence schedule.
 	 * 
 	 * @param {String} sequenceId Sequence ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundSchedulesSequence(sequenceId) { 
+	deleteOutboundSchedulesSequence(sequenceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSchedulesSequence';
@@ -792,7 +929,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -800,8 +938,12 @@ class OutboundApi {
 	 * Delete a WhatsApp campaign schedule.
 	 * 
 	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId) { 
+	deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'whatsAppCampaignId' is set
 		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
 			throw 'Missing the required parameter "whatsAppCampaignId" when calling deleteOutboundSchedulesWhatsappcampaign';
@@ -817,7 +959,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -825,8 +968,12 @@ class OutboundApi {
 	 * Delete a dialer campaign sequence.
 	 * 
 	 * @param {String} sequenceId Campaign Sequence ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteOutboundSequence(sequenceId) { 
+	deleteOutboundSequence(sequenceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSequence';
@@ -842,7 +989,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -850,8 +998,12 @@ class OutboundApi {
 	 * Get attempt limits
 	 * 
 	 * @param {String} attemptLimitsId Attempt limits ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundAttemptlimit(attemptLimitsId) { 
+	getOutboundAttemptlimit(attemptLimitsId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'attemptLimitsId' is set
 		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling getOutboundAttemptlimit';
@@ -867,7 +1019,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -882,6 +1035,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundAttemptlimits(opts) { 
 		opts = opts || {};
@@ -897,7 +1051,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -905,8 +1060,12 @@ class OutboundApi {
 	 * Get callable time set
 	 * 
 	 * @param {String} callableTimeSetId Callable Time Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCallabletimeset(callableTimeSetId) { 
+	getOutboundCallabletimeset(callableTimeSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'callableTimeSetId' is set
 		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling getOutboundCallabletimeset';
@@ -922,7 +1081,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -937,6 +1097,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCallabletimesets(opts) { 
 		opts = opts || {};
@@ -952,7 +1113,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -960,8 +1122,12 @@ class OutboundApi {
 	 * Get a dialer call analysis response set.
 	 * 
 	 * @param {String} callAnalysisSetId Call Analysis Response Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCallanalysisresponseset(callAnalysisSetId) { 
+	getOutboundCallanalysisresponseset(callAnalysisSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'callAnalysisSetId' is set
 		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling getOutboundCallanalysisresponseset';
@@ -977,7 +1143,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -992,6 +1159,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCallanalysisresponsesets(opts) { 
 		opts = opts || {};
@@ -1007,7 +1175,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1015,8 +1184,12 @@ class OutboundApi {
 	 * Get dialer campaign.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaign(campaignId) { 
+	getOutboundCampaign(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaign';
@@ -1032,7 +1205,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1040,8 +1214,12 @@ class OutboundApi {
 	 * Get a preview of how agents will be mapped to this campaign's contact list.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignAgentownedmappingpreviewResults(campaignId) { 
+	getOutboundCampaignAgentownedmappingpreviewResults(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
@@ -1057,7 +1235,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1065,8 +1244,12 @@ class OutboundApi {
 	 * Get campaign diagnostics
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignDiagnostics(campaignId) { 
+	getOutboundCampaignDiagnostics(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignDiagnostics';
@@ -1082,7 +1265,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1090,8 +1274,12 @@ class OutboundApi {
 	 * Get dialer campaign interactions.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignInteractions(campaignId) { 
+	getOutboundCampaignInteractions(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignInteractions';
@@ -1107,7 +1295,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1122,6 +1311,7 @@ class OutboundApi {
 	 * @param {Boolean} opts.useWeight Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
 	 * @param {Number} opts.relativeWeight Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
 	 * @param {Number} opts.outboundLineCount The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaignLinedistribution(campaignId, opts) { 
 		opts = opts || {};
@@ -1141,7 +1331,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1149,8 +1340,12 @@ class OutboundApi {
 	 * Get campaign progress
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignProgress(campaignId) { 
+	getOutboundCampaignProgress(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignProgress';
@@ -1166,7 +1361,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1177,6 +1373,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaignSkillcombinations(campaignId, opts) { 
 		opts = opts || {};
@@ -1196,7 +1393,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1204,8 +1402,12 @@ class OutboundApi {
 	 * Get statistics about a Dialer Campaign
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignStats(campaignId) { 
+	getOutboundCampaignStats(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignStats';
@@ -1221,7 +1423,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1229,8 +1432,12 @@ class OutboundApi {
 	 * Get Campaign Rule
 	 * 
 	 * @param {String} campaignRuleId Campaign Rule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignrule(campaignRuleId) { 
+	getOutboundCampaignrule(campaignRuleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignRuleId' is set
 		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling getOutboundCampaignrule';
@@ -1246,7 +1453,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1261,6 +1469,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaignrules(opts) { 
 		opts = opts || {};
@@ -1276,7 +1485,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1297,6 +1507,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaigns(opts) { 
 		opts = opts || {};
@@ -1312,7 +1523,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1327,6 +1539,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {Array.<String>} opts.mediaType Media type(s)
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaignsAll(opts) { 
 		opts = opts || {};
@@ -1342,7 +1555,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1357,6 +1571,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {Array.<String>} opts.mediaType Media type(s)
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaignsAllDivisionviews(opts) { 
 		opts = opts || {};
@@ -1372,7 +1587,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1380,8 +1596,12 @@ class OutboundApi {
 	 * Get a basic Campaign information object
 	 * This returns a simplified version of a Campaign, consisting of name and division.
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundCampaignsDivisionview(campaignId) { 
+	getOutboundCampaignsDivisionview(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
@@ -1397,7 +1617,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1412,6 +1633,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundCampaignsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1427,7 +1649,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1438,6 +1661,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlist(contactListId, opts) { 
 		opts = opts || {};
@@ -1457,7 +1681,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1466,8 +1691,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {String} contactId Contact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlistContact(contactListId, contactId) { 
+	getOutboundContactlistContact(contactListId, contactId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContact';
@@ -1487,7 +1716,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1496,8 +1726,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlistContactsBulkJob(contactListId, jobId) { 
+	getOutboundContactlistContactsBulkJob(contactListId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJob';
@@ -1517,7 +1751,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1525,8 +1760,12 @@ class OutboundApi {
 	 * Get 10 most recent bulk operation jobs associated with contact list.
 	 * 
 	 * @param {String} contactListId Contact List ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlistContactsBulkJobs(contactListId) { 
+	getOutboundContactlistContactsBulkJobs(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJobs';
@@ -1542,7 +1781,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1552,6 +1792,7 @@ class OutboundApi {
 	 * @param {String} contactListId ContactList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.download Redirect to download uri (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlistExport(contactListId, opts) { 
 		opts = opts || {};
@@ -1571,7 +1812,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1579,8 +1821,12 @@ class OutboundApi {
 	 * Get dialer contactList import status.
 	 * 
 	 * @param {String} contactListId ContactList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlistImportstatus(contactListId) { 
+	getOutboundContactlistImportstatus(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistImportstatus';
@@ -1596,7 +1842,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1604,8 +1851,12 @@ class OutboundApi {
 	 * Preview the result of applying Automatic Time Zone Mapping to a contact list
 	 * 
 	 * @param {String} contactListId ContactList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlistTimezonemappingpreview(contactListId) { 
+	getOutboundContactlistTimezonemappingpreview(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistTimezonemappingpreview';
@@ -1621,7 +1872,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1629,8 +1881,12 @@ class OutboundApi {
 	 * Get Contact list filter
 	 * 
 	 * @param {String} contactListFilterId Contact List Filter ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlistfilter(contactListFilterId) { 
+	getOutboundContactlistfilter(contactListFilterId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListFilterId' is set
 		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling getOutboundContactlistfilter';
@@ -1646,7 +1902,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1662,6 +1919,7 @@ class OutboundApi {
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 * @param {String} opts.contactListId Contact List ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlistfilters(opts) { 
 		opts = opts || {};
@@ -1677,7 +1935,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1696,6 +1955,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlists(opts) { 
 		opts = opts || {};
@@ -1711,7 +1971,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1722,6 +1983,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlistsDivisionview(contactListId, opts) { 
 		opts = opts || {};
@@ -1741,7 +2003,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1758,6 +2021,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlistsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1773,7 +2037,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1781,8 +2046,12 @@ class OutboundApi {
 	 * Get Contact List Template
 	 * 
 	 * @param {String} contactListTemplateId ContactListTemplate ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundContactlisttemplate(contactListTemplateId) { 
+	getOutboundContactlisttemplate(contactListTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListTemplateId' is set
 		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
 			throw 'Missing the required parameter "contactListTemplateId" when calling getOutboundContactlisttemplate';
@@ -1798,7 +2067,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1813,6 +2083,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundContactlisttemplates(opts) { 
 		opts = opts || {};
@@ -1828,7 +2099,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1838,8 +2110,12 @@ class OutboundApi {
 	 * @param {String} campaignId Campaign ID
 	 * @param {String} start Start datetime (ISO 8601 or Unix epoch)
 	 * @param {String} end End datetime (ISO 8601 or Unix epoch)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundDiagnosticsCampaignSummary(campaignId, start, end) { 
+	getOutboundDiagnosticsCampaignSummary(campaignId, start, end, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundDiagnosticsCampaignSummary';
@@ -1863,7 +2139,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1871,8 +2148,12 @@ class OutboundApi {
 	 * Get an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundDigitalruleset(digitalRuleSetId) { 
+	getOutboundDigitalruleset(digitalRuleSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'digitalRuleSetId' is set
 		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling getOutboundDigitalruleset';
@@ -1888,7 +2169,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1902,6 +2184,7 @@ class OutboundApi {
 	 * @param {Object} opts.sortOrder The direction to sort (default to ascending)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id A list of digital rule set ids to bulk fetch
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundDigitalrulesets(opts) { 
 		opts = opts || {};
@@ -1917,7 +2200,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1928,6 +2212,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundDnclist(dncListId, opts) { 
 		opts = opts || {};
@@ -1947,7 +2232,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1957,6 +2243,7 @@ class OutboundApi {
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.download Redirect to download uri (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundDnclistExport(dncListId, opts) { 
 		opts = opts || {};
@@ -1976,7 +2263,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1984,8 +2272,12 @@ class OutboundApi {
 	 * Get dialer dncList import status.
 	 * 
 	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundDnclistImportstatus(dncListId) { 
+	getOutboundDnclistImportstatus(dncListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistImportstatus';
@@ -2001,7 +2293,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2020,6 +2313,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundDnclists(opts) { 
 		opts = opts || {};
@@ -2035,7 +2329,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2046,6 +2341,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundDnclistsDivisionview(dncListId, opts) { 
 		opts = opts || {};
@@ -2065,7 +2361,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2083,6 +2380,7 @@ class OutboundApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundDnclistsDivisionviews(opts) { 
 		opts = opts || {};
@@ -2098,7 +2396,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2106,8 +2405,12 @@ class OutboundApi {
 	 * Get Dialer Event
 	 * 
 	 * @param {String} eventId Event Log ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundEvent(eventId) { 
+	getOutboundEvent(eventId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'eventId' is set
 		if (eventId === undefined || eventId === null || eventId === '') {
 			throw 'Missing the required parameter "eventId" when calling getOutboundEvent';
@@ -2123,7 +2426,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2138,6 +2442,7 @@ class OutboundApi {
 	 * @param {String} opts.level Level
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundEvents(opts) { 
 		opts = opts || {};
@@ -2153,7 +2458,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2161,8 +2467,12 @@ class OutboundApi {
 	 * Get File Specification Template
 	 * 
 	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
+	getOutboundFilespecificationtemplate(fileSpecificationTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'fileSpecificationTemplateId' is set
 		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
 			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling getOutboundFilespecificationtemplate';
@@ -2178,7 +2488,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2193,6 +2504,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundFilespecificationtemplates(opts) { 
 		opts = opts || {};
@@ -2208,7 +2520,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2218,6 +2531,7 @@ class OutboundApi {
 	 * @param {String} importTemplateId Import Template ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundImporttemplate(importTemplateId, opts) { 
 		opts = opts || {};
@@ -2237,7 +2551,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2247,6 +2562,7 @@ class OutboundApi {
 	 * @param {String} importTemplateId importTemplateId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.listNamePrefix listNamePrefix
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundImporttemplateImportstatus(importTemplateId, opts) { 
 		opts = opts || {};
@@ -2266,7 +2582,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2283,6 +2600,7 @@ class OutboundApi {
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 * @param {String} opts.contactListTemplateId Contact List Template ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundImporttemplates(opts) { 
 		opts = opts || {};
@@ -2298,7 +2616,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2306,8 +2625,12 @@ class OutboundApi {
 	 * Get an Outbound Messaging Campaign
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundMessagingcampaign(messagingCampaignId) { 
+	getOutboundMessagingcampaign(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
@@ -2323,7 +2646,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2331,8 +2655,12 @@ class OutboundApi {
 	 * Get messaging campaign diagnostics
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundMessagingcampaignDiagnostics(messagingCampaignId) { 
+	getOutboundMessagingcampaignDiagnostics(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignDiagnostics';
@@ -2348,7 +2676,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2356,8 +2685,12 @@ class OutboundApi {
 	 * Get messaging campaign's progress
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundMessagingcampaignProgress(messagingCampaignId) { 
+	getOutboundMessagingcampaignProgress(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
@@ -2373,7 +2706,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2394,6 +2728,7 @@ class OutboundApi {
 	 * @param {String} opts.contentTemplateId Content template ID
 	 * @param {Object} opts.campaignStatus Campaign Status
 	 * @param {Array.<String>} opts.ruleSetIds Ruleset ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundMessagingcampaigns(opts) { 
 		opts = opts || {};
@@ -2409,7 +2744,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2417,8 +2753,12 @@ class OutboundApi {
 	 * Get a basic Messaging Campaign information object
 	 * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundMessagingcampaignsDivisionview(messagingCampaignId) { 
+	getOutboundMessagingcampaignsDivisionview(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
@@ -2434,7 +2774,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2451,6 +2792,7 @@ class OutboundApi {
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
 	 * @param {String} opts.contentTemplateId Content template ID
 	 * @param {Object} opts.campaignStatus Campaign Status
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundMessagingcampaignsDivisionviews(opts) { 
 		opts = opts || {};
@@ -2466,7 +2808,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2474,8 +2817,12 @@ class OutboundApi {
 	 * Get a Rule Set by ID.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundRuleset(ruleSetId) { 
+	getOutboundRuleset(ruleSetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleSetId' is set
 		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling getOutboundRuleset';
@@ -2491,7 +2838,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2506,6 +2854,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundRulesets(opts) { 
 		opts = opts || {};
@@ -2521,7 +2870,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2529,8 +2879,12 @@ class OutboundApi {
 	 * Get a dialer campaign schedule.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesCampaign(campaignId) { 
+	getOutboundSchedulesCampaign(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundSchedulesCampaign';
@@ -2546,15 +2900,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Query for a list of dialer campaign schedules.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesCampaigns() { 
+	getOutboundSchedulesCampaigns(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/campaigns', 
@@ -2566,7 +2925,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2574,8 +2934,12 @@ class OutboundApi {
 	 * Get an email campaign schedule.
 	 * 
 	 * @param {String} emailCampaignId Email Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesEmailcampaign(emailCampaignId) { 
+	getOutboundSchedulesEmailcampaign(emailCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'emailCampaignId' is set
 		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling getOutboundSchedulesEmailcampaign';
@@ -2591,15 +2955,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Query for a list of email campaign schedules.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesEmailcampaigns() { 
+	getOutboundSchedulesEmailcampaigns(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/emailcampaigns', 
@@ -2611,7 +2980,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2619,8 +2989,12 @@ class OutboundApi {
 	 * Get a messaging campaign schedule.
 	 * 
 	 * @param {String} messagingCampaignId Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
+	getOutboundSchedulesMessagingcampaign(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundSchedulesMessagingcampaign';
@@ -2636,15 +3010,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Query for a list of messaging campaign schedules.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesMessagingcampaigns() { 
+	getOutboundSchedulesMessagingcampaigns(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/messagingcampaigns', 
@@ -2656,7 +3035,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2664,8 +3044,12 @@ class OutboundApi {
 	 * Get a dialer sequence schedule.
 	 * 
 	 * @param {String} sequenceId Sequence ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesSequence(sequenceId) { 
+	getOutboundSchedulesSequence(sequenceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling getOutboundSchedulesSequence';
@@ -2681,15 +3065,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Query for a list of dialer sequence schedules.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesSequences() { 
+	getOutboundSchedulesSequences(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/sequences', 
@@ -2701,7 +3090,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2709,8 +3099,12 @@ class OutboundApi {
 	 * Get a WhatsApp campaign schedule.
 	 * 
 	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId) { 
+	getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'whatsAppCampaignId' is set
 		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
 			throw 'Missing the required parameter "whatsAppCampaignId" when calling getOutboundSchedulesWhatsappcampaign';
@@ -2726,15 +3120,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Query for a list of WhatsApp campaign schedules.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSchedulesWhatsappcampaigns() { 
+	getOutboundSchedulesWhatsappcampaigns(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/whatsappcampaigns', 
@@ -2746,7 +3145,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2754,8 +3154,12 @@ class OutboundApi {
 	 * Get a dialer campaign sequence.
 	 * 
 	 * @param {String} sequenceId Campaign Sequence ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSequence(sequenceId) { 
+	getOutboundSequence(sequenceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling getOutboundSequence';
@@ -2771,7 +3175,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2786,6 +3191,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOutboundSequences(opts) { 
 		opts = opts || {};
@@ -2801,15 +3207,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the outbound settings for this organization
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundSettings() { 
+	getOutboundSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/settings', 
@@ -2821,15 +3232,20 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the Dialer wrap up code mapping.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOutboundWrapupcodemappings() { 
+	getOutboundWrapupcodemappings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/wrapupcodemappings', 
@@ -2841,7 +3257,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2850,8 +3267,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body CampaignPatchRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOutboundCampaign(campaignId, body) { 
+	patchOutboundCampaign(campaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling patchOutboundCampaign';
@@ -2871,7 +3292,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2880,8 +3302,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be deleted from
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} body DNC Custom exclusion column entries
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOutboundDnclistCustomexclusioncolumns(dncListId, body) { 
+	patchOutboundDnclistCustomexclusioncolumns(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistCustomexclusioncolumns';
@@ -2901,7 +3327,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2910,8 +3337,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be added to or deleted from
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} body DNC Emails
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOutboundDnclistEmailaddresses(dncListId, body) { 
+	patchOutboundDnclistEmailaddresses(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistEmailaddresses';
@@ -2931,7 +3362,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2940,8 +3372,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be added to deleted from
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} body DNC Phone Numbers
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOutboundDnclistPhonenumbers(dncListId, body) { 
+	patchOutboundDnclistPhonenumbers(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistPhonenumbers';
@@ -2961,7 +3397,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2970,8 +3407,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be deleted from
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} body DNC whatsApp numbers
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchOutboundDnclistWhatsappnumbers(dncListId, body) { 
+	patchOutboundDnclistWhatsappnumbers(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistWhatsappnumbers';
@@ -2991,7 +3432,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3001,6 +3443,7 @@ class OutboundApi {
 	 * @param {Object} body outboundSettings
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchOutboundSettings(body, opts) { 
 		opts = opts || {};
@@ -3020,7 +3463,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3028,8 +3472,12 @@ class OutboundApi {
 	 * Create attempt limits
 	 * 
 	 * @param {Object} body AttemptLimits
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundAttemptlimits(body) { 
+	postOutboundAttemptlimits(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundAttemptlimits';
@@ -3045,7 +3493,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3053,8 +3502,12 @@ class OutboundApi {
 	 * Create callable time set
 	 * 
 	 * @param {Object} body DialerCallableTimeSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCallabletimesets(body) { 
+	postOutboundCallabletimesets(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCallabletimesets';
@@ -3070,7 +3523,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3078,8 +3532,12 @@ class OutboundApi {
 	 * Create a dialer call analysis response set.
 	 * 
 	 * @param {Object} body ResponseSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCallanalysisresponsesets(body) { 
+	postOutboundCallanalysisresponsesets(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCallanalysisresponsesets';
@@ -3095,7 +3553,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3103,8 +3562,12 @@ class OutboundApi {
 	 * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCampaignAgentownedmappingpreview(campaignId) { 
+	postOutboundCampaignAgentownedmappingpreview(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
@@ -3120,7 +3583,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3129,9 +3593,13 @@ class OutboundApi {
 	 * This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body ContactCallbackRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postOutboundCampaignCallbackSchedule(campaignId, body) { 
+	postOutboundCampaignCallbackSchedule(campaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignCallbackSchedule';
@@ -3151,7 +3619,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3159,8 +3628,12 @@ class OutboundApi {
 	 * Start the campaign
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCampaignStart(campaignId) { 
+	postOutboundCampaignStart(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStart';
@@ -3176,7 +3649,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3184,8 +3658,12 @@ class OutboundApi {
 	 * Stop the campaign
 	 * 
 	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCampaignStop(campaignId) { 
+	postOutboundCampaignStop(campaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStop';
@@ -3201,7 +3679,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3209,8 +3688,12 @@ class OutboundApi {
 	 * Create Campaign Rule
 	 * 
 	 * @param {Object} body CampaignRule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCampaignrules(body) { 
+	postOutboundCampaignrules(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCampaignrules';
@@ -3226,7 +3709,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3236,6 +3720,7 @@ class OutboundApi {
 	 * @param {Object} body Campaign
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOutboundCampaigns(body, opts) { 
 		opts = opts || {};
@@ -3255,7 +3740,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3263,8 +3749,12 @@ class OutboundApi {
 	 * Get performance data for a list of campaigns
 	 * 
 	 * @param {Array.<String>} body Campaign IDs. Maximum of 50 IDs allowed.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCampaignsPerformanceQuery(body) { 
+	postOutboundCampaignsPerformanceQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCampaignsPerformanceQuery';
@@ -3280,7 +3770,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3288,8 +3779,12 @@ class OutboundApi {
 	 * Get progress for a list of campaigns
 	 * 
 	 * @param {Array.<String>} body Campaign IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundCampaignsProgress(body) { 
+	postOutboundCampaignsProgress(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCampaignsProgress';
@@ -3305,7 +3800,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3313,8 +3809,12 @@ class OutboundApi {
 	 * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 	 * 
 	 * @param {String} contactListId Contact List ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistClear(contactListId) { 
+	postOutboundContactlistClear(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
@@ -3330,7 +3830,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3343,6 +3844,7 @@ class OutboundApi {
 	 * @param {Boolean} opts.priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
 	 * @param {Boolean} opts.clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
 	 * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOutboundContactlistContacts(contactListId, body, opts) { 
 		opts = opts || {};
@@ -3366,7 +3868,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3375,8 +3878,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {Array.<String>} body ContactIds to get.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistContactsBulk(contactListId, body) { 
+	postOutboundContactlistContactsBulk(contactListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulk';
@@ -3396,7 +3903,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3405,8 +3913,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {Object} body Contact filter information.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistContactsBulkRemove(contactListId, body) { 
+	postOutboundContactlistContactsBulkRemove(contactListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkRemove';
@@ -3426,7 +3938,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3435,8 +3948,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {Object} body Contact bulk edit request information.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistContactsBulkUpdate(contactListId, body) { 
+	postOutboundContactlistContactsBulkUpdate(contactListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkUpdate';
@@ -3456,7 +3973,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3465,8 +3983,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId Contact List ID
 	 * @param {Object} body Contact search parameters.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistContactsSearch(contactListId, body) { 
+	postOutboundContactlistContactsSearch(contactListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsSearch';
@@ -3486,7 +4008,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3496,6 +4019,7 @@ class OutboundApi {
 	 * @param {String} contactListId ContactList ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Export information to get
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOutboundContactlistExport(contactListId, opts) { 
 		opts = opts || {};
@@ -3515,7 +4039,8 @@ class OutboundApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3523,8 +4048,12 @@ class OutboundApi {
 	 * Create Contact List Filter
 	 * 
 	 * @param {Object} body ContactListFilter
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistfilters(body) { 
+	postOutboundContactlistfilters(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlistfilters';
@@ -3540,7 +4069,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3548,8 +4078,12 @@ class OutboundApi {
 	 * Retrieve multiple contact list filters
 	 * 
 	 * @param {Object} body The contact list filters to retrieve
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistfiltersBulkRetrieve(body) { 
+	postOutboundContactlistfiltersBulkRetrieve(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlistfiltersBulkRetrieve';
@@ -3565,7 +4099,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3573,8 +4108,12 @@ class OutboundApi {
 	 * Get a preview of the output of a contact list filter
 	 * 
 	 * @param {Object} body ContactListFilter
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistfiltersPreview(body) { 
+	postOutboundContactlistfiltersPreview(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlistfiltersPreview';
@@ -3590,7 +4129,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3598,8 +4138,12 @@ class OutboundApi {
 	 * Create a contact List.
 	 * 
 	 * @param {Object} body ContactList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlists(body) { 
+	postOutboundContactlists(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlists';
@@ -3615,7 +4159,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3623,8 +4168,12 @@ class OutboundApi {
 	 * Generate presigned upload URL for contact list.
 	 * 
 	 * @param {Object} body contactListUploadUrlRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlistsUploads(body) { 
+	postOutboundContactlistsUploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlistsUploads';
@@ -3640,7 +4189,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3648,8 +4198,12 @@ class OutboundApi {
 	 * Create Contact List Template
 	 * 
 	 * @param {Object} body ContactListTemplate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlisttemplates(body) { 
+	postOutboundContactlisttemplates(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplates';
@@ -3665,7 +4219,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3673,8 +4228,12 @@ class OutboundApi {
 	 * Add multiple contact list templates
 	 * 
 	 * @param {Array.<Object>} body contact list template(s) to add
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlisttemplatesBulkAdd(body) { 
+	postOutboundContactlisttemplatesBulkAdd(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkAdd';
@@ -3690,7 +4249,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3698,8 +4258,12 @@ class OutboundApi {
 	 * Get multiple contact list templates
 	 * 
 	 * @param {Object} body contact list templates to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundContactlisttemplatesBulkRetrieve(body) { 
+	postOutboundContactlisttemplatesBulkRetrieve(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkRetrieve';
@@ -3715,7 +4279,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3723,8 +4288,12 @@ class OutboundApi {
 	 * Add phone numbers to a Dialer DNC list.
 	 * 
 	 * @param {String} conversationId Conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundConversationDnc(conversationId) { 
+	postOutboundConversationDnc(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postOutboundConversationDnc';
@@ -3740,7 +4309,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3748,8 +4318,12 @@ class OutboundApi {
 	 * Create an Outbound Digital Rule Set
 	 * 
 	 * @param {Object} body Digital Rule Set
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundDigitalrulesets(body) { 
+	postOutboundDigitalrulesets(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundDigitalrulesets';
@@ -3765,7 +4339,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3774,8 +4349,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
 	 * @param {Array.<String>} body DNC email addresses
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundDnclistEmailaddresses(dncListId, body) { 
+	postOutboundDnclistEmailaddresses(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistEmailaddresses';
@@ -3795,7 +4374,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3803,8 +4383,12 @@ class OutboundApi {
 	 * Initiate the export of a dnc list.
 	 * Returns 200 if received OK.
 	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundDnclistExport(dncListId) { 
+	postOutboundDnclistExport(dncListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistExport';
@@ -3820,7 +4404,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3831,6 +4416,7 @@ class OutboundApi {
 	 * @param {Array.<String>} body DNC Phone Numbers
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.expirationDateTime Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postOutboundDnclistPhonenumbers(dncListId, body, opts) { 
 		opts = opts || {};
@@ -3854,7 +4440,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3862,8 +4449,12 @@ class OutboundApi {
 	 * Create dialer DNC list
 	 * 
 	 * @param {Object} body DncList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundDnclists(body) { 
+	postOutboundDnclists(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundDnclists';
@@ -3879,7 +4470,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3887,8 +4479,12 @@ class OutboundApi {
 	 * Generate presigned upload URL for dnc list.
 	 * 
 	 * @param {Object} body dncListUploadUrlRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundDnclistsUploads(body) { 
+	postOutboundDnclistsUploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundDnclistsUploads';
@@ -3904,7 +4500,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3912,8 +4509,12 @@ class OutboundApi {
 	 * Create File Specification Template
 	 * 
 	 * @param {Object} body FileSpecificationTemplate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundFilespecificationtemplates(body) { 
+	postOutboundFilespecificationtemplates(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundFilespecificationtemplates';
@@ -3929,7 +4530,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3937,8 +4539,12 @@ class OutboundApi {
 	 * Create Import Template
 	 * 
 	 * @param {Object} body ImportTemplate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundImporttemplates(body) { 
+	postOutboundImporttemplates(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundImporttemplates';
@@ -3954,7 +4560,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3962,8 +4569,12 @@ class OutboundApi {
 	 * Add multiple import templates
 	 * 
 	 * @param {Array.<Object>} body import template(s) to add
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundImporttemplatesBulkAdd(body) { 
+	postOutboundImporttemplatesBulkAdd(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundImporttemplatesBulkAdd';
@@ -3979,7 +4590,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3987,8 +4599,12 @@ class OutboundApi {
 	 * Start the campaign
 	 * Documented permissions are applicable based on campaign type.
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundMessagingcampaignStart(messagingCampaignId) { 
+	postOutboundMessagingcampaignStart(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStart';
@@ -4004,7 +4620,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4012,8 +4629,12 @@ class OutboundApi {
 	 * Stop the campaign
 	 * Documented permissions are applicable based on campaign type.
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundMessagingcampaignStop(messagingCampaignId) { 
+	postOutboundMessagingcampaignStop(messagingCampaignId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStop';
@@ -4029,7 +4650,8 @@ class OutboundApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4037,8 +4659,12 @@ class OutboundApi {
 	 * Create a Messaging Campaign
 	 * 
 	 * @param {Object} body Messaging Campaign
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundMessagingcampaigns(body) { 
+	postOutboundMessagingcampaigns(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaigns';
@@ -4054,7 +4680,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4062,8 +4689,12 @@ class OutboundApi {
 	 * Get progress for a list of messaging campaigns
 	 * 
 	 * @param {Array.<String>} body Messaging Campaign IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundMessagingcampaignsProgress(body) { 
+	postOutboundMessagingcampaignsProgress(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaignsProgress';
@@ -4079,7 +4710,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4087,8 +4719,12 @@ class OutboundApi {
 	 * Create a Rule Set.
 	 * 
 	 * @param {Object} body RuleSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundRulesets(body) { 
+	postOutboundRulesets(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundRulesets';
@@ -4104,7 +4740,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4112,8 +4749,12 @@ class OutboundApi {
 	 * Create a new campaign sequence.
 	 * 
 	 * @param {Object} body Organization
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOutboundSequences(body) { 
+	postOutboundSequences(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundSequences';
@@ -4129,7 +4770,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4138,8 +4780,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} attemptLimitsId Attempt limits ID
 	 * @param {Object} body AttemptLimits
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundAttemptlimit(attemptLimitsId, body) { 
+	putOutboundAttemptlimit(attemptLimitsId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'attemptLimitsId' is set
 		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling putOutboundAttemptlimit';
@@ -4159,7 +4805,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4168,8 +4815,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} callableTimeSetId Callable Time Set ID
 	 * @param {Object} body DialerCallableTimeSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundCallabletimeset(callableTimeSetId, body) { 
+	putOutboundCallabletimeset(callableTimeSetId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'callableTimeSetId' is set
 		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling putOutboundCallabletimeset';
@@ -4189,7 +4840,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4198,8 +4850,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} callAnalysisSetId Call Analysis Response Set ID
 	 * @param {Object} body ResponseSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundCallanalysisresponseset(callAnalysisSetId, body) { 
+	putOutboundCallanalysisresponseset(callAnalysisSetId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'callAnalysisSetId' is set
 		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling putOutboundCallanalysisresponseset';
@@ -4219,7 +4875,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4230,6 +4887,7 @@ class OutboundApi {
 	 * @param {Object} body Campaign
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putOutboundCampaign(campaignId, body, opts) { 
 		opts = opts || {};
@@ -4253,7 +4911,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4263,8 +4922,12 @@ class OutboundApi {
 	 * @param {String} campaignId Campaign ID
 	 * @param {String} userId Agent's user ID
 	 * @param {Object} body agent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundCampaignAgent(campaignId, userId, body) { 
+	putOutboundCampaignAgent(campaignId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaignAgent';
@@ -4288,7 +4951,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4297,8 +4961,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} campaignRuleId Campaign Rule ID
 	 * @param {Object} body CampaignRule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundCampaignrule(campaignRuleId, body) { 
+	putOutboundCampaignrule(campaignRuleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignRuleId' is set
 		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling putOutboundCampaignrule';
@@ -4318,7 +4986,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4327,8 +4996,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListId ContactList ID
 	 * @param {Object} body ContactList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundContactlist(contactListId, body) { 
+	putOutboundContactlist(contactListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlist';
@@ -4348,7 +5021,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4358,8 +5032,12 @@ class OutboundApi {
 	 * @param {String} contactListId Contact List ID
 	 * @param {String} contactId Contact ID
 	 * @param {Object} body Contact
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundContactlistContact(contactListId, contactId, body) { 
+	putOutboundContactlistContact(contactListId, contactId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlistContact';
@@ -4383,7 +5061,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4392,8 +5071,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListFilterId Contact List Filter ID
 	 * @param {Object} body ContactListFilter
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundContactlistfilter(contactListFilterId, body) { 
+	putOutboundContactlistfilter(contactListFilterId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListFilterId' is set
 		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling putOutboundContactlistfilter';
@@ -4413,7 +5096,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4422,8 +5106,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} contactListTemplateId ContactListTemplate ID
 	 * @param {Object} body ContactListTemplate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundContactlisttemplate(contactListTemplateId, body) { 
+	putOutboundContactlisttemplate(contactListTemplateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListTemplateId' is set
 		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
 			throw 'Missing the required parameter "contactListTemplateId" when calling putOutboundContactlisttemplate';
@@ -4443,7 +5131,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4452,8 +5141,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
 	 * @param {Object} body Digital Rule Set
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundDigitalruleset(digitalRuleSetId, body) { 
+	putOutboundDigitalruleset(digitalRuleSetId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'digitalRuleSetId' is set
 		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling putOutboundDigitalruleset';
@@ -4473,7 +5166,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4482,8 +5176,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} dncListId DncList ID
 	 * @param {Object} body DncList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundDnclist(dncListId, body) { 
+	putOutboundDnclist(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling putOutboundDnclist';
@@ -4503,7 +5201,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4512,8 +5211,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} fileSpecificationTemplateId File Specification Template ID
 	 * @param {Object} body fileSpecificationTemplate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body) { 
+	putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'fileSpecificationTemplateId' is set
 		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
 			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling putOutboundFilespecificationtemplate';
@@ -4533,7 +5236,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4542,8 +5246,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} importTemplateId Import Template ID
 	 * @param {Object} body importTemplate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundImporttemplate(importTemplateId, body) { 
+	putOutboundImporttemplate(importTemplateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'importTemplateId' is set
 		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
 			throw 'Missing the required parameter "importTemplateId" when calling putOutboundImporttemplate';
@@ -4563,7 +5271,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4572,8 +5281,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
 	 * @param {Object} body MessagingCampaign
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundMessagingcampaign(messagingCampaignId, body) { 
+	putOutboundMessagingcampaign(messagingCampaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
@@ -4593,7 +5306,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4602,8 +5316,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
 	 * @param {Object} body RuleSet
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundRuleset(ruleSetId, body) { 
+	putOutboundRuleset(ruleSetId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ruleSetId' is set
 		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling putOutboundRuleset';
@@ -4623,7 +5341,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4632,8 +5351,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body CampaignSchedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundSchedulesCampaign(campaignId, body) { 
+	putOutboundSchedulesCampaign(campaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundSchedulesCampaign';
@@ -4653,7 +5376,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4662,8 +5386,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} emailCampaignId Email Campaign ID
 	 * @param {Object} body EmailCampaignSchedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundSchedulesEmailcampaign(emailCampaignId, body) { 
+	putOutboundSchedulesEmailcampaign(emailCampaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'emailCampaignId' is set
 		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling putOutboundSchedulesEmailcampaign';
@@ -4683,7 +5411,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4692,8 +5421,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} messagingCampaignId Messaging Campaign ID
 	 * @param {Object} body MessagingCampaignSchedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundSchedulesMessagingcampaign(messagingCampaignId, body) { 
+	putOutboundSchedulesMessagingcampaign(messagingCampaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundSchedulesMessagingcampaign';
@@ -4713,7 +5446,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4722,8 +5456,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} sequenceId Sequence ID
 	 * @param {Object} body SequenceSchedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundSchedulesSequence(sequenceId, body) { 
+	putOutboundSchedulesSequence(sequenceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling putOutboundSchedulesSequence';
@@ -4743,7 +5481,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4752,8 +5491,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
 	 * @param {Object} body WhatsAppCampaignSchedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body) { 
+	putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'whatsAppCampaignId' is set
 		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
 			throw 'Missing the required parameter "whatsAppCampaignId" when calling putOutboundSchedulesWhatsappcampaign';
@@ -4773,7 +5516,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4782,8 +5526,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} sequenceId Campaign Sequence ID
 	 * @param {Object} body Organization
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundSequence(sequenceId, body) { 
+	putOutboundSequence(sequenceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling putOutboundSequence';
@@ -4803,7 +5551,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4811,8 +5560,12 @@ class OutboundApi {
 	 * Update the Dialer wrap up code mapping.
 	 * 
 	 * @param {Object} body wrapUpCodeMapping
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putOutboundWrapupcodemappings(body) { 
+	putOutboundWrapupcodemappings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';
@@ -4828,7 +5581,8 @@ class OutboundApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

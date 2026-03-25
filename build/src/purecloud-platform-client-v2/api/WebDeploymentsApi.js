@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class WebDeploymentsApi {
 	 * Delete all versions of a configuration
 	 * 
 	 * @param {String} configurationId The configuration version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWebdeploymentsConfiguration(configurationId) { 
+	deleteWebdeploymentsConfiguration(configurationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling deleteWebdeploymentsConfiguration';
@@ -41,7 +45,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class WebDeploymentsApi {
 	 * Delete a deployment
 	 * 
 	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWebdeploymentsDeployment(deploymentId) { 
+	deleteWebdeploymentsDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeployment';
@@ -66,7 +75,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -75,8 +85,12 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} deploymentId WebMessaging deployment ID
 	 * @param {String} sessionId Cobrowse session id or join code
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
@@ -96,7 +110,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -106,6 +121,7 @@ class WebDeploymentsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.xJourneySessionId The Customer's journey sessionId.
 	 * @param {String} opts.xJourneySessionType The Customer's journey session type.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteWebdeploymentsTokenRevoke(opts) { 
 		opts = opts || {};
@@ -121,7 +137,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -130,8 +147,12 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} configurationId The configuration version ID
 	 * @param {String} versionId The version of the configuration to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWebdeploymentsConfigurationVersion(configurationId, versionId) { 
+	getWebdeploymentsConfigurationVersion(configurationId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersion';
@@ -151,7 +172,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -163,6 +185,7 @@ class WebDeploymentsApi {
 	 * @param {String} opts.pageSize Number of entities to return. Defaults to 300.
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWebdeploymentsConfigurationVersions(configurationId, opts) { 
 		opts = opts || {};
@@ -182,7 +205,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -190,8 +214,12 @@ class WebDeploymentsApi {
 	 * Get the configuration draft
 	 * 
 	 * @param {String} configurationId The configuration version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWebdeploymentsConfigurationVersionsDraft(configurationId) { 
+	getWebdeploymentsConfigurationVersionsDraft(configurationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersionsDraft';
@@ -207,7 +235,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -219,6 +248,7 @@ class WebDeploymentsApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Boolean} opts.showOnlyPublished Filter by published status.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWebdeploymentsConfigurations(opts) { 
 		opts = opts || {};
@@ -234,7 +264,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -244,6 +275,7 @@ class WebDeploymentsApi {
 	 * @param {String} deploymentId The deployment ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWebdeploymentsDeployment(deploymentId, opts) { 
 		opts = opts || {};
@@ -263,7 +295,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -272,8 +305,12 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} deploymentId WebMessaging deployment ID
 	 * @param {String} sessionId Cobrowse session id or join code
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
@@ -293,7 +330,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -304,6 +342,7 @@ class WebDeploymentsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.type Get active configuration on a deployment
 	 * @param {Array.<String>} opts.expand Expand instructions for the return value
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWebdeploymentsDeploymentConfigurations(deploymentId, opts) { 
 		opts = opts || {};
@@ -323,7 +362,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -331,8 +371,12 @@ class WebDeploymentsApi {
 	 * Get a deployment identity resolution setting.
 	 * 
 	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWebdeploymentsDeploymentIdentityresolution(deploymentId) { 
+	getWebdeploymentsDeploymentIdentityresolution(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentIdentityresolution';
@@ -348,7 +392,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -360,6 +405,7 @@ class WebDeploymentsApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWebdeploymentsDeployments(opts) { 
 		opts = opts || {};
@@ -375,7 +421,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -383,8 +430,12 @@ class WebDeploymentsApi {
 	 * Publish the configuration draft and create a new version
 	 * 
 	 * @param {String} configurationId The configuration version ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId) { 
+	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling postWebdeploymentsConfigurationVersionsDraftPublish';
@@ -400,7 +451,8 @@ class WebDeploymentsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -408,8 +460,12 @@ class WebDeploymentsApi {
 	 * Create a configuration draft
 	 * 
 	 * @param {Object} configurationVersion 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWebdeploymentsConfigurations(configurationVersion) { 
+	postWebdeploymentsConfigurations(configurationVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationVersion' is set
 		if (configurationVersion === undefined || configurationVersion === null) {
 			throw 'Missing the required parameter "configurationVersion" when calling postWebdeploymentsConfigurations';
@@ -425,7 +481,8 @@ class WebDeploymentsApi {
 			configurationVersion, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -433,8 +490,12 @@ class WebDeploymentsApi {
 	 * Create a deployment
 	 * 
 	 * @param {Object} deployment 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWebdeploymentsDeployments(deployment) { 
+	postWebdeploymentsDeployments(deployment, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deployment' is set
 		if (deployment === undefined || deployment === null) {
 			throw 'Missing the required parameter "deployment" when calling postWebdeploymentsDeployments';
@@ -450,7 +511,8 @@ class WebDeploymentsApi {
 			deployment, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -458,8 +520,12 @@ class WebDeploymentsApi {
 	 * Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 	 * 
 	 * @param {Object} body webDeploymentsOAuthExchangeRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWebdeploymentsTokenOauthcodegrantjwtexchange(body) { 
+	postWebdeploymentsTokenOauthcodegrantjwtexchange(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWebdeploymentsTokenOauthcodegrantjwtexchange';
@@ -475,7 +541,8 @@ class WebDeploymentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -484,6 +551,7 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWebdeploymentsTokenRefresh(opts) { 
 		opts = opts || {};
@@ -499,7 +567,8 @@ class WebDeploymentsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -508,8 +577,12 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} configurationId The configuration version ID
 	 * @param {Object} configurationVersion 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion) { 
+	putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null || configurationId === '') {
 			throw 'Missing the required parameter "configurationId" when calling putWebdeploymentsConfigurationVersionsDraft';
@@ -529,7 +602,8 @@ class WebDeploymentsApi {
 			configurationVersion, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -538,8 +612,12 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} deploymentId The deployment ID
 	 * @param {Object} deployment 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putWebdeploymentsDeployment(deploymentId, deployment) { 
+	putWebdeploymentsDeployment(deploymentId, deployment, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebdeploymentsDeployment';
@@ -559,7 +637,8 @@ class WebDeploymentsApi {
 			deployment, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -568,8 +647,12 @@ class WebDeploymentsApi {
 	 * 
 	 * @param {String} deploymentId The deployment ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putWebdeploymentsDeploymentIdentityresolution(deploymentId, body) { 
+	putWebdeploymentsDeploymentIdentityresolution(deploymentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebdeploymentsDeploymentIdentityresolution';
@@ -589,7 +672,8 @@ class WebDeploymentsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

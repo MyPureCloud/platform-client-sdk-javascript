@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getAuditsQueryRealtimeServicemapping
 
-> AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping()
+> AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping(opts)
 
 
 GET /api/v2/audits/query/realtime/servicemapping
@@ -41,8 +41,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuditsQueryRealtimeServicemapping()
+apiInstance.getAuditsQueryRealtimeServicemapping(opts)
   .then((data) => {
     console.log(`getAuditsQueryRealtimeServicemapping success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -54,7 +60,10 @@ apiInstance.getAuditsQueryRealtimeServicemapping()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -63,7 +72,7 @@ This endpoint does not need any parameter.
 
 ## getAuditsQueryServicemapping
 
-> AuditQueryServiceMapping getAuditsQueryServicemapping()
+> AuditQueryServiceMapping getAuditsQueryServicemapping(opts)
 
 
 GET /api/v2/audits/query/servicemapping
@@ -86,8 +95,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuditsQueryServicemapping()
+apiInstance.getAuditsQueryServicemapping(opts)
   .then((data) => {
     console.log(`getAuditsQueryServicemapping success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -99,7 +114,10 @@ apiInstance.getAuditsQueryServicemapping()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -108,7 +126,7 @@ This endpoint does not need any parameter.
 
 ## getAuditsQueryTransactionId
 
-> AuditQueryExecutionStatusResponse getAuditsQueryTransactionId(transactionId)
+> AuditQueryExecutionStatusResponse getAuditsQueryTransactionId(transactionId, opts)
 
 
 GET /api/v2/audits/query/{transactionId}
@@ -133,8 +151,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuditApi();
 
 let transactionId = "transactionId_example"; // String | Transaction ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAuditsQueryTransactionId(transactionId)
+apiInstance.getAuditsQueryTransactionId(transactionId, opts)
   .then((data) => {
     console.log(`getAuditsQueryTransactionId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -150,6 +174,7 @@ apiInstance.getAuditsQueryTransactionId(transactionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **transactionId** | **String** | Transaction ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -187,7 +212,11 @@ let opts = {
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
   'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'allowRedirect': true // Boolean | Result sets with large amounts of data will respond with a download url
+  'allowRedirect': true, // Boolean | Result sets with large amounts of data will respond with a download url
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
@@ -210,6 +239,7 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
  **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
  **allowRedirect** | **Boolean** | Result sets with large amounts of data will respond with a download url | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -218,7 +248,7 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
 
 ## postAuditsQuery
 
-> AuditQueryExecutionStatusResponse postAuditsQuery(body)
+> AuditQueryExecutionStatusResponse postAuditsQuery(body, opts)
 
 
 POST /api/v2/audits/query
@@ -245,8 +275,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuditApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAuditsQuery(body)
+apiInstance.postAuditsQuery(body, opts)
   .then((data) => {
     console.log(`postAuditsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -262,6 +298,7 @@ apiInstance.postAuditsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -298,7 +335,11 @@ let apiInstance = new platformClient.AuditApi();
 
 let body = {}; // Object | query
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuditsQueryRealtime(body, opts)
@@ -318,6 +359,7 @@ apiInstance.postAuditsQueryRealtime(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -352,7 +394,11 @@ let apiInstance = new platformClient.AuditApi();
 
 let body = {}; // Object | query
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAuditsQueryRealtimeRelated(body, opts)
@@ -372,10 +418,11 @@ apiInstance.postAuditsQueryRealtimeRelated(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AuditRealtimeRelatedResultsResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

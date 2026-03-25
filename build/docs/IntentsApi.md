@@ -27,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteIntentsCategory
 
-> void deleteIntentsCategory(categoryId)
+> void deleteIntentsCategory(categoryId, opts)
 
 
 DELETE /api/v2/intents/categories/{categoryId}
@@ -52,8 +52,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntentsApi();
 
 let categoryId = "categoryId_example"; // String | Category id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIntentsCategory(categoryId)
+apiInstance.deleteIntentsCategory(categoryId, opts)
   .then(() => {
     console.log('deleteIntentsCategory returned successfully.');
   })
@@ -69,6 +75,7 @@ apiInstance.deleteIntentsCategory(categoryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -77,7 +84,7 @@ void (no response body)
 
 ## deleteIntentsCustomerintent
 
-> void deleteIntentsCustomerintent(customerIntentId)
+> void deleteIntentsCustomerintent(customerIntentId, opts)
 
 
 DELETE /api/v2/intents/customerintents/{customerIntentId}
@@ -102,8 +109,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntentsApi();
 
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteIntentsCustomerintent(customerIntentId)
+apiInstance.deleteIntentsCustomerintent(customerIntentId, opts)
   .then(() => {
     console.log('deleteIntentsCustomerintent returned successfully.');
   })
@@ -119,6 +132,7 @@ apiInstance.deleteIntentsCustomerintent(customerIntentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **customerIntentId** | **String** | Customer Intent id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -154,7 +168,11 @@ let apiInstance = new platformClient.IntentsApi();
 let externalContactId = "externalContactId_example"; // String | External Contact id
 let opts = { 
   'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1 // Number | The page number requested
+  'pageNumber': 1, // Number | The page number requested
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntentsAssignmentsExternalcontact(externalContactId, opts)
@@ -175,6 +193,7 @@ apiInstance.getIntentsAssignmentsExternalcontact(externalContactId, opts)
  **externalContactId** | **String** | External Contact id |  |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -210,7 +229,11 @@ let apiInstance = new platformClient.IntentsApi();
 let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'queryValue': "queryValue_example" // String | Search query value to filter results by
+  'queryValue': "queryValue_example", // String | Search query value to filter results by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntentsCategories(opts)
@@ -231,6 +254,7 @@ apiInstance.getIntentsCategories(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **queryValue** | **String** | Search query value to filter results by | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -239,7 +263,7 @@ apiInstance.getIntentsCategories(opts)
 
 ## getIntentsCategory
 
-> IntentsCategory getIntentsCategory(categoryId)
+> IntentsCategory getIntentsCategory(categoryId, opts)
 
 
 GET /api/v2/intents/categories/{categoryId}
@@ -264,8 +288,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntentsApi();
 
 let categoryId = "categoryId_example"; // String | Category id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntentsCategory(categoryId)
+apiInstance.getIntentsCategory(categoryId, opts)
   .then((data) => {
     console.log(`getIntentsCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -281,6 +311,7 @@ apiInstance.getIntentsCategory(categoryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -289,7 +320,7 @@ apiInstance.getIntentsCategory(categoryId)
 
 ## getIntentsCustomerintent
 
-> CustomerIntentResponse getIntentsCustomerintent(customerIntentId)
+> CustomerIntentResponse getIntentsCustomerintent(customerIntentId, opts)
 
 
 GET /api/v2/intents/customerintents/{customerIntentId}
@@ -314,8 +345,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntentsApi();
 
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getIntentsCustomerintent(customerIntentId)
+apiInstance.getIntentsCustomerintent(customerIntentId, opts)
   .then((data) => {
     console.log(`getIntentsCustomerintent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -331,6 +368,7 @@ apiInstance.getIntentsCustomerintent(customerIntentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **customerIntentId** | **String** | Customer Intent id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -367,7 +405,11 @@ let customerIntentId = "customerIntentId_example"; // String | Customer Intent i
 let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'queryValue': "queryValue_example" // String | Search query value to filter results by
+  'queryValue': "queryValue_example", // String | Search query value to filter results by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntentsCustomerintentSourceintents(customerIntentId, opts)
@@ -389,6 +431,7 @@ apiInstance.getIntentsCustomerintentSourceintents(customerIntentId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **queryValue** | **String** | Search query value to filter results by | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -425,7 +468,11 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'queryValue': "queryValue_example", // String | Search query value to filter results by
-  'categoryId': "categoryId_example" // String | CategoryId to filter query by
+  'categoryId': "categoryId_example", // String | CategoryId to filter query by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntentsCustomerintents(opts)
@@ -447,6 +494,7 @@ apiInstance.getIntentsCustomerintents(opts)
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **queryValue** | **String** | Search query value to filter results by | [optional]  |
  **categoryId** | **String** | CategoryId to filter query by | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -483,7 +531,11 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'type': "type_example", // String | Source Type to query by. If none selected default response will be for type Segment.
-  'sourceId': "sourceId_example" // String | Source Id to query by. Only required for sourceType: Copilot, Bot, Digitalbot
+  'sourceId': "sourceId_example", // String | Source Id to query by. Only required for sourceType: Copilot, Bot, Digitalbot
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getIntentsSourceintents(opts)
@@ -505,6 +557,7 @@ apiInstance.getIntentsSourceintents(opts)
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **type** | **String** | Source Type to query by. If none selected default response will be for type Segment. | [optional] <br />**Values**: Bot, Copilot, Digitalbot, Segment, Topic, Unknown |
  **sourceId** | **String** | Source Id to query by. Only required for sourceType: Copilot, Bot, Digitalbot | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -513,7 +566,7 @@ apiInstance.getIntentsSourceintents(opts)
 
 ## patchIntentsCategory
 
-> IntentsCategory patchIntentsCategory(categoryId, body)
+> IntentsCategory patchIntentsCategory(categoryId, body, opts)
 
 
 PATCH /api/v2/intents/categories/{categoryId}
@@ -539,8 +592,14 @@ let apiInstance = new platformClient.IntentsApi();
 
 let categoryId = "categoryId_example"; // String | Category id
 let body = {}; // Object | category
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchIntentsCategory(categoryId, body)
+apiInstance.patchIntentsCategory(categoryId, body, opts)
   .then((data) => {
     console.log(`patchIntentsCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -557,6 +616,7 @@ apiInstance.patchIntentsCategory(categoryId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category id |  |
  **body** | **Object** | category |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -565,7 +625,7 @@ apiInstance.patchIntentsCategory(categoryId, body)
 
 ## patchIntentsCustomerintent
 
-> CustomerIntentResponse patchIntentsCustomerintent(customerIntentId, body)
+> CustomerIntentResponse patchIntentsCustomerintent(customerIntentId, body, opts)
 
 
 PATCH /api/v2/intents/customerintents/{customerIntentId}
@@ -591,8 +651,14 @@ let apiInstance = new platformClient.IntentsApi();
 
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
 let body = {}; // Object | Customer intent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchIntentsCustomerintent(customerIntentId, body)
+apiInstance.patchIntentsCustomerintent(customerIntentId, body, opts)
   .then((data) => {
     console.log(`patchIntentsCustomerintent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -609,6 +675,7 @@ apiInstance.patchIntentsCustomerintent(customerIntentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **customerIntentId** | **String** | Customer Intent id |  |
  **body** | **Object** | Customer intent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -617,7 +684,7 @@ apiInstance.patchIntentsCustomerintent(customerIntentId, body)
 
 ## postIntentsAssignmentsExternalcontactCustomerintentAssignment
 
-> CustomerIntentAssignmentResponse postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId, customerIntentId, body)
+> CustomerIntentAssignmentResponse postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId, customerIntentId, body, opts)
 
 
 POST /api/v2/intents/assignments/externalcontacts/{externalContactId}/customerintents/{customerIntentId}/assignment
@@ -644,8 +711,14 @@ let apiInstance = new platformClient.IntentsApi();
 let externalContactId = "externalContactId_example"; // String | External Contact id
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
 let body = {}; // Object | Customer intent assignment
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId, customerIntentId, body)
+apiInstance.postIntentsAssignmentsExternalcontactCustomerintentAssignment(externalContactId, customerIntentId, body, opts)
   .then((data) => {
     console.log(`postIntentsAssignmentsExternalcontactCustomerintentAssignment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -663,6 +736,7 @@ apiInstance.postIntentsAssignmentsExternalcontactCustomerintentAssignment(extern
  **externalContactId** | **String** | External Contact id |  |
  **customerIntentId** | **String** | Customer Intent id |  |
  **body** | **Object** | Customer intent assignment |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -671,7 +745,7 @@ apiInstance.postIntentsAssignmentsExternalcontactCustomerintentAssignment(extern
 
 ## postIntentsCategories
 
-> IntentsCategory postIntentsCategories(body)
+> IntentsCategory postIntentsCategories(body, opts)
 
 
 POST /api/v2/intents/categories
@@ -696,8 +770,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntentsApi();
 
 let body = {}; // Object | category
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntentsCategories(body)
+apiInstance.postIntentsCategories(body, opts)
   .then((data) => {
     console.log(`postIntentsCategories success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -713,6 +793,7 @@ apiInstance.postIntentsCategories(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | category |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -721,7 +802,7 @@ apiInstance.postIntentsCategories(body)
 
 ## postIntentsCustomerintentSourceintentsBulkAdd
 
-> BulkSourceIntentsResponse postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body)
+> BulkSourceIntentsResponse postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body, opts)
 
 
 POST /api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/add
@@ -747,8 +828,14 @@ let apiInstance = new platformClient.IntentsApi();
 
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
 let body = {}; // Object | Source intents to be added
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body)
+apiInstance.postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body, opts)
   .then((data) => {
     console.log(`postIntentsCustomerintentSourceintentsBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -765,6 +852,7 @@ apiInstance.postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body
 | ------------- | ------------- | ------------- | ------------- |
  **customerIntentId** | **String** | Customer Intent id |  |
  **body** | **Object** | Source intents to be added |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -773,7 +861,7 @@ apiInstance.postIntentsCustomerintentSourceintentsBulkAdd(customerIntentId, body
 
 ## postIntentsCustomerintentSourceintentsBulkRemove
 
-> BulkSourceIntentsResponse postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, body)
+> BulkSourceIntentsResponse postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, body, opts)
 
 
 POST /api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/remove
@@ -799,8 +887,14 @@ let apiInstance = new platformClient.IntentsApi();
 
 let customerIntentId = "customerIntentId_example"; // String | Customer Intent id
 let body = {}; // Object | Source intents to be removed
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, body)
+apiInstance.postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, body, opts)
   .then((data) => {
     console.log(`postIntentsCustomerintentSourceintentsBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -817,6 +911,7 @@ apiInstance.postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, b
 | ------------- | ------------- | ------------- | ------------- |
  **customerIntentId** | **String** | Customer Intent id |  |
  **body** | **Object** | Source intents to be removed |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -825,7 +920,7 @@ apiInstance.postIntentsCustomerintentSourceintentsBulkRemove(customerIntentId, b
 
 ## postIntentsCustomerintents
 
-> CustomerIntentResponse postIntentsCustomerintents(body)
+> CustomerIntentResponse postIntentsCustomerintents(body, opts)
 
 
 POST /api/v2/intents/customerintents
@@ -850,8 +945,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntentsApi();
 
 let body = {}; // Object | Customer intent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntentsCustomerintents(body)
+apiInstance.postIntentsCustomerintents(body, opts)
   .then((data) => {
     console.log(`postIntentsCustomerintents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -867,10 +968,11 @@ apiInstance.postIntentsCustomerintents(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Customer intent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CustomerIntentResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

@@ -5,7 +5,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class GeneralDataProtectionRegulationApi {
 	 * Get an existing GDPR request
 	 * 
 	 * @param {String} requestId Request id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGdprRequest(requestId) { 
+	getGdprRequest(requestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'requestId' is set
 		if (requestId === undefined || requestId === null || requestId === '') {
 			throw 'Missing the required parameter "requestId" when calling getGdprRequest';
@@ -41,7 +45,8 @@ class GeneralDataProtectionRegulationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,6 +56,7 @@ class GeneralDataProtectionRegulationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGdprRequests(opts) { 
 		opts = opts || {};
@@ -66,7 +72,8 @@ class GeneralDataProtectionRegulationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -75,8 +82,12 @@ class GeneralDataProtectionRegulationApi {
 	 * 
 	 * @param {Object} searchType Search Type
 	 * @param {String} searchValue Search Value
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGdprSubjects(searchType, searchValue) { 
+	getGdprSubjects(searchType, searchValue, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'searchType' is set
 		if (searchType === undefined || searchType === null) {
 			throw 'Missing the required parameter "searchType" when calling getGdprSubjects';
@@ -96,7 +107,8 @@ class GeneralDataProtectionRegulationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -106,6 +118,7 @@ class GeneralDataProtectionRegulationApi {
 	 * @param {Object} body GDPR request
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.deleteConfirmed Confirm delete (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postGdprRequests(body, opts) { 
 		opts = opts || {};
@@ -125,7 +138,8 @@ class GeneralDataProtectionRegulationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class CarrierServicesApi {
 	 * Get location for the logged in user
 	 * 
 	 * @param {String} phoneNumber Phone number in E164 format
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber) { 
+	getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneNumber' is set
 		if (phoneNumber === undefined || phoneNumber === null) {
 			throw 'Missing the required parameter "phoneNumber" when calling getCarrierservicesIntegrationsEmergencylocationsMe';
@@ -41,7 +45,8 @@ class CarrierServicesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,6 +55,7 @@ class CarrierServicesApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postCarrierservicesIntegrationsEmergencylocationsMe(opts) { 
 		opts = opts || {};
@@ -65,7 +71,8 @@ class CarrierServicesApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

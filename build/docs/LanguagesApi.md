@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteLanguage
 
-> void deleteLanguage(languageId)
+> void deleteLanguage(languageId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -49,8 +49,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguagesApi();
 
 let languageId = "languageId_example"; // String | Language ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteLanguage(languageId)
+apiInstance.deleteLanguage(languageId, opts)
   .then(() => {
     console.log('deleteLanguage returned successfully.');
   })
@@ -66,6 +72,7 @@ apiInstance.deleteLanguage(languageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **languageId** | **String** | Language ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -74,7 +81,7 @@ void (no response body)
 
 ## getLanguage
 
-> Language getLanguage(languageId)
+> Language getLanguage(languageId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -104,8 +111,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguagesApi();
 
 let languageId = "languageId_example"; // String | Language ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguage(languageId)
+apiInstance.getLanguage(languageId, opts)
   .then((data) => {
     console.log(`getLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -121,6 +134,7 @@ apiInstance.getLanguage(languageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **languageId** | **String** | Language ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -162,7 +176,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
-  'name': "name_example" // String | Name
+  'name': "name_example", // String | Name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLanguages(opts)
@@ -184,6 +202,7 @@ apiInstance.getLanguages(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -192,7 +211,7 @@ apiInstance.getLanguages(opts)
 
 ## getLanguagesTranslations
 
-> AvailableTranslations getLanguagesTranslations()
+> AvailableTranslations getLanguagesTranslations(opts)
 
 
 GET /api/v2/languages/translations
@@ -213,8 +232,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.LanguagesApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguagesTranslations()
+apiInstance.getLanguagesTranslations(opts)
   .then((data) => {
     console.log(`getLanguagesTranslations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -226,7 +251,10 @@ apiInstance.getLanguagesTranslations()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -235,7 +263,7 @@ This endpoint does not need any parameter.
 
 ## getLanguagesTranslationsBuiltin
 
-> **{&#39;String&#39;: Object}** getLanguagesTranslationsBuiltin(language)
+> **{&#39;String&#39;: Object}** getLanguagesTranslationsBuiltin(language, opts)
 
 
 GET /api/v2/languages/translations/builtin
@@ -258,8 +286,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguagesApi();
 
 let language = "language_example"; // String | The language of the builtin translation to retrieve
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguagesTranslationsBuiltin(language)
+apiInstance.getLanguagesTranslationsBuiltin(language, opts)
   .then((data) => {
     console.log(`getLanguagesTranslationsBuiltin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -275,6 +309,7 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **language** | **String** | The language of the builtin translation to retrieve |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -283,7 +318,7 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
 
 ## getLanguagesTranslationsOrganization
 
-> **{&#39;String&#39;: Object}** getLanguagesTranslationsOrganization(language)
+> **{&#39;String&#39;: Object}** getLanguagesTranslationsOrganization(language, opts)
 
 
 GET /api/v2/languages/translations/organization
@@ -306,8 +341,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguagesApi();
 
 let language = "language_example"; // String | The language of the translation to retrieve for the organization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguagesTranslationsOrganization(language)
+apiInstance.getLanguagesTranslationsOrganization(language, opts)
   .then((data) => {
     console.log(`getLanguagesTranslationsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -323,6 +364,7 @@ apiInstance.getLanguagesTranslationsOrganization(language)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **language** | **String** | The language of the translation to retrieve for the organization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -331,7 +373,7 @@ apiInstance.getLanguagesTranslationsOrganization(language)
 
 ## getLanguagesTranslationsUser
 
-> **{&#39;String&#39;: Object}** getLanguagesTranslationsUser(userId)
+> **{&#39;String&#39;: Object}** getLanguagesTranslationsUser(userId, opts)
 
 
 GET /api/v2/languages/translations/users/{userId}
@@ -354,8 +396,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguagesApi();
 
 let userId = "userId_example"; // String | The user id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getLanguagesTranslationsUser(userId)
+apiInstance.getLanguagesTranslationsUser(userId, opts)
   .then((data) => {
     console.log(`getLanguagesTranslationsUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -371,6 +419,7 @@ apiInstance.getLanguagesTranslationsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The user id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +428,7 @@ apiInstance.getLanguagesTranslationsUser(userId)
 
 ## postLanguages
 
-> Language postLanguages(body)
+> Language postLanguages(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -409,8 +458,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguagesApi();
 
 let body = {}; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguages(body)
+apiInstance.postLanguages(body, opts)
   .then((data) => {
     console.log(`postLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -426,10 +481,11 @@ apiInstance.postLanguages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Language**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

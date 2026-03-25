@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getBillingContract
 
-> BillingContract getBillingContract(contractId)
+> BillingContract getBillingContract(contractId, opts)
 
 
 GET /api/v2/billing/contracts/{contractId}
@@ -48,8 +48,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BillingApi();
 
 let contractId = "contractId_example"; // String | The contract number.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBillingContract(contractId)
+apiInstance.getBillingContract(contractId, opts)
   .then((data) => {
     console.log(`getBillingContract success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -65,6 +71,7 @@ apiInstance.getBillingContract(contractId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contractId** | **String** | The contract number. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -73,7 +80,7 @@ apiInstance.getBillingContract(contractId)
 
 ## getBillingContractBillingperiod
 
-> BillingContractPeriodDetail getBillingContractBillingperiod(contractId, billingPeriodId)
+> BillingContractPeriodDetail getBillingContractBillingperiod(contractId, billingPeriodId, opts)
 
 
 GET /api/v2/billing/contracts/{contractId}/billingperiods/{billingPeriodId}
@@ -103,8 +110,14 @@ let apiInstance = new platformClient.BillingApi();
 
 let contractId = "contractId_example"; // String | The contract number.
 let billingPeriodId = "billingPeriodId_example"; // String | The Billing Period Id for the Org.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBillingContractBillingperiod(contractId, billingPeriodId)
+apiInstance.getBillingContractBillingperiod(contractId, billingPeriodId, opts)
   .then((data) => {
     console.log(`getBillingContractBillingperiod success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -121,6 +134,7 @@ apiInstance.getBillingContractBillingperiod(contractId, billingPeriodId)
 | ------------- | ------------- | ------------- | ------------- |
  **contractId** | **String** | The contract number. |  |
  **billingPeriodId** | **String** | The Billing Period Id for the Org. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -164,7 +178,11 @@ let opts = {
   'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'status': "status_example", // String | Filter by the status of contracts
-  'externalNumber': "externalNumber_example" // String | Filter by the unique external number.
+  'externalNumber': "externalNumber_example", // String | Filter by the unique external number.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBillingContracts(opts)
@@ -189,6 +207,7 @@ apiInstance.getBillingContracts(opts)
  **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **status** | **String** | Filter by the status of contracts | [optional] <br />**Values**: Active, Inactive |
  **externalNumber** | **String** | Filter by the unique external number. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -197,7 +216,7 @@ apiInstance.getBillingContracts(opts)
 
 ## getBillingContractsInvoiceDocument
 
-> UrlResponse getBillingContractsInvoiceDocument(invoiceId)
+> UrlResponse getBillingContractsInvoiceDocument(invoiceId, opts)
 
 
 GET /api/v2/billing/contracts/invoices/{invoiceId}/document
@@ -226,8 +245,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.BillingApi();
 
 let invoiceId = "invoiceId_example"; // String | invoiceId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBillingContractsInvoiceDocument(invoiceId)
+apiInstance.getBillingContractsInvoiceDocument(invoiceId, opts)
   .then((data) => {
     console.log(`getBillingContractsInvoiceDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -243,6 +268,7 @@ apiInstance.getBillingContractsInvoiceDocument(invoiceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **invoiceId** | **String** | invoiceId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -283,7 +309,11 @@ let invoiceId = "invoiceId_example"; // String | invoiceId
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBillingContractsInvoiceLines(invoiceId, opts)
@@ -305,6 +335,7 @@ apiInstance.getBillingContractsInvoiceLines(invoiceId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -347,7 +378,11 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'paymentStatus': "paymentStatus_example" // String | Payment Status
+  'paymentStatus': "paymentStatus_example", // String | Payment Status
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBillingContractsInvoices(opts)
@@ -371,6 +406,7 @@ apiInstance.getBillingContractsInvoices(opts)
  **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **paymentStatus** | **String** | Payment Status | [optional] <br />**Values**: Paid, UnPaid |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +415,7 @@ apiInstance.getBillingContractsInvoices(opts)
 
 ## getBillingReportsBillableusage
 
-> BillingUsageReport getBillingReportsBillableusage(startDate, endDate)
+> BillingUsageReport getBillingReportsBillableusage(startDate, endDate, opts)
 
 
 GET /api/v2/billing/reports/billableusage
@@ -408,8 +444,14 @@ let apiInstance = new platformClient.BillingApi();
 
 let startDate = new Date("2013-10-20T19:20:30+01:00"); // Date | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 let endDate = new Date("2013-10-20T19:20:30+01:00"); // Date | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getBillingReportsBillableusage(startDate, endDate)
+apiInstance.getBillingReportsBillableusage(startDate, endDate, opts)
   .then((data) => {
     console.log(`getBillingReportsBillableusage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -426,6 +468,7 @@ apiInstance.getBillingReportsBillableusage(startDate, endDate)
 | ------------- | ------------- | ------------- | ------------- |
  **startDate** | **Date** | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
  **endDate** | **Date** | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -462,7 +505,11 @@ let apiInstance = new platformClient.BillingApi();
 
 let trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
 let opts = { 
-  'billingPeriodIndex': 0 // Number | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.
+  'billingPeriodIndex': 0, // Number | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
@@ -482,10 +529,11 @@ apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | The organization ID of the trustor (customer) organization. |  |
  **billingPeriodIndex** | **Number** | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. | [optional] [default to 0] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TrusteeBillingOverview**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

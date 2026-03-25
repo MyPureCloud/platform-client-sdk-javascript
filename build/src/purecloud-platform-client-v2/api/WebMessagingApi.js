@@ -5,7 +5,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -25,8 +25,12 @@ class WebMessagingApi {
 	 * 
 	 * @param {String} deploymentId WebMessaging deployment id
 	 * @param {String} tokenId Device token id or cookie id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId) { 
+	deleteWebmessagingDeploymentPushdevice(deploymentId, tokenId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebmessagingDeploymentPushdevice';
@@ -46,7 +50,8 @@ class WebMessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -56,6 +61,7 @@ class WebMessagingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWebmessagingMessages(opts) { 
 		opts = opts || {};
@@ -71,7 +77,8 @@ class WebMessagingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -81,8 +88,12 @@ class WebMessagingApi {
 	 * @param {String} deploymentId WebMessaging deployment id
 	 * @param {String} tokenId Device token id or cookie id
 	 * @param {Object} body Request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body) { 
+	patchWebmessagingDeploymentPushdevice(deploymentId, tokenId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling patchWebmessagingDeploymentPushdevice';
@@ -106,7 +117,8 @@ class WebMessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -116,8 +128,12 @@ class WebMessagingApi {
 	 * @param {String} deploymentId WebMessaging deployment id
 	 * @param {String} tokenId Device token id or cookie id
 	 * @param {Object} body Request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body) { 
+	postWebmessagingDeploymentPushdevice(deploymentId, tokenId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling postWebmessagingDeploymentPushdevice';
@@ -141,7 +157,8 @@ class WebMessagingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

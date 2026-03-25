@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class StationsApi {
 	 * Unassigns the user assigned to this station
 	 * 
 	 * @param {String} stationId Station ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteStationAssociateduser(stationId) { 
+	deleteStationAssociateduser(stationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'stationId' is set
 		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling deleteStationAssociateduser';
@@ -41,7 +45,8 @@ class StationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class StationsApi {
 	 * Get station.
 	 * 
 	 * @param {String} stationId Station ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getStation(stationId) { 
+	getStation(stationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'stationId' is set
 		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling getStation';
@@ -66,7 +75,8 @@ class StationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -82,6 +92,7 @@ class StationsApi {
 	 * @param {String} opts.webRtcUserId Filter for the webRtc station of the webRtcUserId
 	 * @param {String} opts.id Comma separated list of stationIds
 	 * @param {String} opts.lineAppearanceId lineAppearanceId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getStations(opts) { 
 		opts = opts || {};
@@ -97,7 +108,8 @@ class StationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

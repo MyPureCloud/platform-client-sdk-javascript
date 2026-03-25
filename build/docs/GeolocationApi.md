@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getGeolocationsSettings
 
-> GeolocationSettings getGeolocationsSettings()
+> GeolocationSettings getGeolocationsSettings(opts)
 
 
 GET /api/v2/geolocations/settings
@@ -36,8 +36,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GeolocationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGeolocationsSettings()
+apiInstance.getGeolocationsSettings(opts)
   .then((data) => {
     console.log(`getGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -49,7 +55,10 @@ apiInstance.getGeolocationsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -58,7 +67,7 @@ This endpoint does not need any parameter.
 
 ## getUserGeolocation
 
-> Geolocation getUserGeolocation(userId, clientId)
+> Geolocation getUserGeolocation(userId, clientId, opts)
 
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
@@ -82,8 +91,14 @@ let apiInstance = new platformClient.GeolocationApi();
 
 let userId = "userId_example"; // String | user Id
 let clientId = "clientId_example"; // String | client Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserGeolocation(userId, clientId)
+apiInstance.getUserGeolocation(userId, clientId, opts)
   .then((data) => {
     console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -100,6 +115,7 @@ apiInstance.getUserGeolocation(userId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -108,7 +124,7 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 ## patchGeolocationsSettings
 
-> GeolocationSettings patchGeolocationsSettings(body)
+> GeolocationSettings patchGeolocationsSettings(body, opts)
 
 
 PATCH /api/v2/geolocations/settings
@@ -133,8 +149,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GeolocationApi();
 
 let body = {}; // Object | Geolocation settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchGeolocationsSettings(body)
+apiInstance.patchGeolocationsSettings(body, opts)
   .then((data) => {
     console.log(`patchGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -150,6 +172,7 @@ apiInstance.patchGeolocationsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Geolocation settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -158,7 +181,7 @@ apiInstance.patchGeolocationsSettings(body)
 
 ## patchUserGeolocation
 
-> Geolocation patchUserGeolocation(userId, clientId, body)
+> Geolocation patchUserGeolocation(userId, clientId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
@@ -185,8 +208,14 @@ let apiInstance = new platformClient.GeolocationApi();
 let userId = "userId_example"; // String | user Id
 let clientId = "clientId_example"; // String | client Id
 let body = {}; // Object | Geolocation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserGeolocation(userId, clientId, body)
+apiInstance.patchUserGeolocation(userId, clientId, body, opts)
   .then((data) => {
     console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -204,10 +233,11 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
  **body** | **Object** | Geolocation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Geolocation**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

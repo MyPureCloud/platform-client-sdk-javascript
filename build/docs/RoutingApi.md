@@ -180,7 +180,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteRoutingAssessment
 
-> void deleteRoutingAssessment(assessmentId)
+> void deleteRoutingAssessment(assessmentId, opts)
 
 
 DELETE /api/v2/routing/assessments/{assessmentId}
@@ -205,8 +205,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let assessmentId = "assessmentId_example"; // String | Benefit Assessment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingAssessment(assessmentId)
+apiInstance.deleteRoutingAssessment(assessmentId, opts)
   .then(() => {
     console.log('deleteRoutingAssessment returned successfully.');
   })
@@ -222,6 +228,7 @@ apiInstance.deleteRoutingAssessment(assessmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assessmentId** | **String** | Benefit Assessment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -230,7 +237,7 @@ void (no response body)
 
 ## deleteRoutingDirectroutingbackupSettingsMe
 
-> void deleteRoutingDirectroutingbackupSettingsMe()
+> void deleteRoutingDirectroutingbackupSettingsMe(opts)
 
 
 DELETE /api/v2/routing/directroutingbackup/settings/me
@@ -253,8 +260,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
+apiInstance.deleteRoutingDirectroutingbackupSettingsMe(opts)
   .then(() => {
     console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
   })
@@ -266,7 +279,10 @@ apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -275,7 +291,7 @@ void (no response body)
 
 ## deleteRoutingEmailDomain
 
-> void deleteRoutingEmailDomain(domainId)
+> void deleteRoutingEmailDomain(domainId, opts)
 
 
 DELETE /api/v2/routing/email/domains/{domainId}
@@ -300,8 +316,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingEmailDomain(domainId)
+apiInstance.deleteRoutingEmailDomain(domainId, opts)
   .then(() => {
     console.log('deleteRoutingEmailDomain returned successfully.');
   })
@@ -317,6 +339,7 @@ apiInstance.deleteRoutingEmailDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -325,7 +348,7 @@ void (no response body)
 
 ## deleteRoutingEmailDomainRoute
 
-> void deleteRoutingEmailDomainRoute(domainName, routeId)
+> void deleteRoutingEmailDomainRoute(domainName, routeId, opts)
 
 
 DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}
@@ -351,8 +374,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainName = "domainName_example"; // String | email domain
 let routeId = "routeId_example"; // String | route ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
+apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId, opts)
   .then(() => {
     console.log('deleteRoutingEmailDomainRoute returned successfully.');
   })
@@ -369,6 +398,7 @@ apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -377,7 +407,7 @@ void (no response body)
 
 ## deleteRoutingEmailOutboundDomain
 
-> void deleteRoutingEmailOutboundDomain(domainId)
+> void deleteRoutingEmailOutboundDomain(domainId, opts)
 
 
 DELETE /api/v2/routing/email/outbound/domains/{domainId}
@@ -402,8 +432,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingEmailOutboundDomain(domainId)
+apiInstance.deleteRoutingEmailOutboundDomain(domainId, opts)
   .then(() => {
     console.log('deleteRoutingEmailOutboundDomain returned successfully.');
   })
@@ -419,6 +455,7 @@ apiInstance.deleteRoutingEmailOutboundDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -427,7 +464,7 @@ void (no response body)
 
 ## deleteRoutingLanguage
 
-> void deleteRoutingLanguage(languageId)
+> void deleteRoutingLanguage(languageId, opts)
 
 
 DELETE /api/v2/routing/languages/{languageId}
@@ -452,8 +489,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let languageId = "languageId_example"; // String | Language ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingLanguage(languageId)
+apiInstance.deleteRoutingLanguage(languageId, opts)
   .then(() => {
     console.log('deleteRoutingLanguage returned successfully.');
   })
@@ -469,6 +512,7 @@ apiInstance.deleteRoutingLanguage(languageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **languageId** | **String** | Language ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -477,7 +521,7 @@ void (no response body)
 
 ## deleteRoutingPredictor
 
-> void deleteRoutingPredictor(predictorId)
+> void deleteRoutingPredictor(predictorId, opts)
 
 
 DELETE /api/v2/routing/predictors/{predictorId}
@@ -503,8 +547,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let predictorId = "predictorId_example"; // String | Predictor ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingPredictor(predictorId)
+apiInstance.deleteRoutingPredictor(predictorId, opts)
   .then(() => {
     console.log('deleteRoutingPredictor returned successfully.');
   })
@@ -520,6 +570,7 @@ apiInstance.deleteRoutingPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -528,7 +579,7 @@ void (no response body)
 
 ## deleteRoutingPredictorsKeyperformanceindicator
 
-> void deleteRoutingPredictorsKeyperformanceindicator(kpiId)
+> void deleteRoutingPredictorsKeyperformanceindicator(kpiId, opts)
 
 
 DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
@@ -555,8 +606,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingPredictorsKeyperformanceindicator(kpiId)
+apiInstance.deleteRoutingPredictorsKeyperformanceindicator(kpiId, opts)
   .then(() => {
     console.log('deleteRoutingPredictorsKeyperformanceindicator returned successfully.');
   })
@@ -572,6 +629,7 @@ apiInstance.deleteRoutingPredictorsKeyperformanceindicator(kpiId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **kpiId** | **String** | Key Performance Indicator ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -606,7 +664,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'forceDelete': true // Boolean | forceDelete
+  'forceDelete': true, // Boolean | forceDelete
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteRoutingQueue(queueId, opts)
@@ -626,6 +688,7 @@ apiInstance.deleteRoutingQueue(queueId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **forceDelete** | **Boolean** | forceDelete | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -634,7 +697,7 @@ void (no response body)
 
 ## deleteRoutingQueueMember
 
-> void deleteRoutingQueueMember(queueId, memberId)
+> void deleteRoutingQueueMember(queueId, memberId, opts)
 
 
 DELETE /api/v2/routing/queues/{queueId}/members/{memberId}
@@ -661,8 +724,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let memberId = "memberId_example"; // String | Member ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingQueueMember(queueId, memberId)
+apiInstance.deleteRoutingQueueMember(queueId, memberId, opts)
   .then(() => {
     console.log('deleteRoutingQueueMember returned successfully.');
   })
@@ -679,6 +748,7 @@ apiInstance.deleteRoutingQueueMember(queueId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **memberId** | **String** | Member ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -687,7 +757,7 @@ void (no response body)
 
 ## deleteRoutingQueueUser
 
-> void deleteRoutingQueueUser(queueId, memberId)
+> void deleteRoutingQueueUser(queueId, memberId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -717,8 +787,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let memberId = "memberId_example"; // String | Member ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingQueueUser(queueId, memberId)
+apiInstance.deleteRoutingQueueUser(queueId, memberId, opts)
   .then(() => {
     console.log('deleteRoutingQueueUser returned successfully.');
   })
@@ -735,6 +811,7 @@ apiInstance.deleteRoutingQueueUser(queueId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **memberId** | **String** | Member ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -743,7 +820,7 @@ void (no response body)
 
 ## deleteRoutingQueueWrapupcode
 
-> void deleteRoutingQueueWrapupcode(queueId, codeId)
+> void deleteRoutingQueueWrapupcode(queueId, codeId, opts)
 
 
 DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}
@@ -769,8 +846,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let codeId = "codeId_example"; // String | Code ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId)
+apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId, opts)
   .then(() => {
     console.log('deleteRoutingQueueWrapupcode returned successfully.');
   })
@@ -787,6 +870,7 @@ apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **codeId** | **String** | Code ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -795,7 +879,7 @@ void (no response body)
 
 ## deleteRoutingSettings
 
-> void deleteRoutingSettings()
+> void deleteRoutingSettings(opts)
 
 
 DELETE /api/v2/routing/settings
@@ -818,8 +902,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingSettings()
+apiInstance.deleteRoutingSettings(opts)
   .then(() => {
     console.log('deleteRoutingSettings returned successfully.');
   })
@@ -831,7 +921,10 @@ apiInstance.deleteRoutingSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -840,7 +933,7 @@ void (no response body)
 
 ## deleteRoutingSkill
 
-> void deleteRoutingSkill(skillId)
+> void deleteRoutingSkill(skillId, opts)
 
 
 DELETE /api/v2/routing/skills/{skillId}
@@ -866,8 +959,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let skillId = "skillId_example"; // String | Skill ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingSkill(skillId)
+apiInstance.deleteRoutingSkill(skillId, opts)
   .then(() => {
     console.log('deleteRoutingSkill returned successfully.');
   })
@@ -883,6 +982,7 @@ apiInstance.deleteRoutingSkill(skillId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillId** | **String** | Skill ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -891,7 +991,7 @@ void (no response body)
 
 ## deleteRoutingSkillgroup
 
-> void deleteRoutingSkillgroup(skillGroupId)
+> void deleteRoutingSkillgroup(skillGroupId, opts)
 
 
 DELETE /api/v2/routing/skillgroups/{skillGroupId}
@@ -916,8 +1016,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingSkillgroup(skillGroupId)
+apiInstance.deleteRoutingSkillgroup(skillGroupId, opts)
   .then(() => {
     console.log('deleteRoutingSkillgroup returned successfully.');
   })
@@ -933,6 +1039,7 @@ apiInstance.deleteRoutingSkillgroup(skillGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillGroupId** | **String** | Skill Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -941,7 +1048,7 @@ void (no response body)
 
 ## deleteRoutingSmsAddress
 
-> void deleteRoutingSmsAddress(addressId)
+> void deleteRoutingSmsAddress(addressId, opts)
 
 
 DELETE /api/v2/routing/sms/addresses/{addressId}
@@ -966,8 +1073,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingSmsAddress(addressId)
+apiInstance.deleteRoutingSmsAddress(addressId, opts)
   .then(() => {
     console.log('deleteRoutingSmsAddress returned successfully.');
   })
@@ -983,6 +1096,7 @@ apiInstance.deleteRoutingSmsAddress(addressId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -991,7 +1105,7 @@ void (no response body)
 
 ## deleteRoutingSmsPhonenumber
 
-> void deleteRoutingSmsPhonenumber(phoneNumberId)
+> void deleteRoutingSmsPhonenumber(phoneNumberId, opts)
 
 
 DELETE /api/v2/routing/sms/phonenumbers/{phoneNumberId}
@@ -1016,8 +1130,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let phoneNumberId = "phoneNumberId_example"; // String | phone number
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingSmsPhonenumber(phoneNumberId)
+apiInstance.deleteRoutingSmsPhonenumber(phoneNumberId, opts)
   .then(() => {
     console.log('deleteRoutingSmsPhonenumber returned successfully.');
   })
@@ -1033,6 +1153,7 @@ apiInstance.deleteRoutingSmsPhonenumber(phoneNumberId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumberId** | **String** | phone number |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1041,7 +1162,7 @@ void (no response body)
 
 ## deleteRoutingUserDirectroutingbackupSettings
 
-> void deleteRoutingUserDirectroutingbackupSettings(userId)
+> void deleteRoutingUserDirectroutingbackupSettings(userId, opts)
 
 
 DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -1066,8 +1187,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
+apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId, opts)
   .then(() => {
     console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
   })
@@ -1083,6 +1210,7 @@ apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1091,7 +1219,7 @@ void (no response body)
 
 ## deleteRoutingUserUtilization
 
-> void deleteRoutingUserUtilization(userId)
+> void deleteRoutingUserUtilization(userId, opts)
 
 
 DELETE /api/v2/routing/users/{userId}/utilization
@@ -1116,8 +1244,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingUserUtilization(userId)
+apiInstance.deleteRoutingUserUtilization(userId, opts)
   .then(() => {
     console.log('deleteRoutingUserUtilization returned successfully.');
   })
@@ -1133,6 +1267,7 @@ apiInstance.deleteRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1141,7 +1276,7 @@ void (no response body)
 
 ## deleteRoutingUtilization
 
-> void deleteRoutingUtilization()
+> void deleteRoutingUtilization(opts)
 
 
 DELETE /api/v2/routing/utilization
@@ -1164,8 +1299,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingUtilization()
+apiInstance.deleteRoutingUtilization(opts)
   .then(() => {
     console.log('deleteRoutingUtilization returned successfully.');
   })
@@ -1177,7 +1318,10 @@ apiInstance.deleteRoutingUtilization()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1212,7 +1356,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let labelId = "labelId_example"; // String | Utilization Label ID
 let opts = { 
-  'forceDelete': false // Boolean | Remove all label usages (if found) without warning
+  'forceDelete': false, // Boolean | Remove all label usages (if found) without warning
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteRoutingUtilizationLabel(labelId, opts)
@@ -1232,6 +1380,7 @@ apiInstance.deleteRoutingUtilizationLabel(labelId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **labelId** | **String** | Utilization Label ID |  |
  **forceDelete** | **Boolean** | Remove all label usages (if found) without warning | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1268,7 +1417,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let tagId = "tagId_example"; // String | Utilization Tag ID
 let opts = { 
-  'forceDelete': false // Boolean | Remove all tag usages (if found) without warning
+  'forceDelete': false, // Boolean | Remove all tag usages (if found) without warning
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteRoutingUtilizationTag(tagId, opts)
@@ -1288,6 +1441,7 @@ apiInstance.deleteRoutingUtilizationTag(tagId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **tagId** | **String** | Utilization Tag ID |  |
  **forceDelete** | **Boolean** | Remove all tag usages (if found) without warning | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1296,7 +1450,7 @@ void (no response body)
 
 ## deleteRoutingWrapupcode
 
-> void deleteRoutingWrapupcode(codeId)
+> void deleteRoutingWrapupcode(codeId, opts)
 
 
 DELETE /api/v2/routing/wrapupcodes/{codeId}
@@ -1321,8 +1475,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let codeId = "codeId_example"; // String | Wrapup Code ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRoutingWrapupcode(codeId)
+apiInstance.deleteRoutingWrapupcode(codeId, opts)
   .then(() => {
     console.log('deleteRoutingWrapupcode returned successfully.');
   })
@@ -1338,6 +1498,7 @@ apiInstance.deleteRoutingWrapupcode(codeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1346,7 +1507,7 @@ void (no response body)
 
 ## deleteUserRoutinglanguage
 
-> void deleteUserRoutinglanguage(userId, languageId)
+> void deleteUserRoutinglanguage(userId, languageId, opts)
 
 
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
@@ -1373,8 +1534,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let languageId = "languageId_example"; // String | languageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserRoutinglanguage(userId, languageId)
+apiInstance.deleteUserRoutinglanguage(userId, languageId, opts)
   .then(() => {
     console.log('deleteUserRoutinglanguage returned successfully.');
   })
@@ -1391,6 +1558,7 @@ apiInstance.deleteUserRoutinglanguage(userId, languageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1399,7 +1567,7 @@ void (no response body)
 
 ## deleteUserRoutingskill
 
-> void deleteUserRoutingskill(userId, skillId)
+> void deleteUserRoutingskill(userId, skillId, opts)
 
 
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
@@ -1425,8 +1593,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let skillId = "skillId_example"; // String | skillId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserRoutingskill(userId, skillId)
+apiInstance.deleteUserRoutingskill(userId, skillId, opts)
   .then(() => {
     console.log('deleteUserRoutingskill returned successfully.');
   })
@@ -1443,6 +1617,7 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1451,7 +1626,7 @@ void (no response body)
 
 ## getRoutingAssessment
 
-> BenefitAssessment getRoutingAssessment(assessmentId)
+> BenefitAssessment getRoutingAssessment(assessmentId, opts)
 
 
 GET /api/v2/routing/assessments/{assessmentId}
@@ -1476,8 +1651,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let assessmentId = "assessmentId_example"; // String | Benefit Assessment ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingAssessment(assessmentId)
+apiInstance.getRoutingAssessment(assessmentId, opts)
   .then((data) => {
     console.log(`getRoutingAssessment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1493,6 +1674,7 @@ apiInstance.getRoutingAssessment(assessmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assessmentId** | **String** | Benefit Assessment ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1531,7 +1713,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'queueId': ["queueId_example"] // [String] | Queue ID(s) to filter assessments by.
+  'queueId': ["queueId_example"], // [String] | Queue ID(s) to filter assessments by.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingAssessments(opts)
@@ -1554,6 +1740,7 @@ apiInstance.getRoutingAssessments(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **queueId** | **[String]** | Queue ID(s) to filter assessments by. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1562,7 +1749,7 @@ apiInstance.getRoutingAssessments(opts)
 
 ## getRoutingAssessmentsJob
 
-> BenefitAssessmentJob getRoutingAssessmentsJob(jobId)
+> BenefitAssessmentJob getRoutingAssessmentsJob(jobId, opts)
 
 
 GET /api/v2/routing/assessments/jobs/{jobId}
@@ -1587,8 +1774,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let jobId = "jobId_example"; // String | Benefit Assessment Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingAssessmentsJob(jobId)
+apiInstance.getRoutingAssessmentsJob(jobId, opts)
   .then((data) => {
     console.log(`getRoutingAssessmentsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1604,6 +1797,7 @@ apiInstance.getRoutingAssessmentsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Benefit Assessment Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1637,7 +1831,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s) to filter assessment jobs by.
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s) to filter assessment jobs by.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingAssessmentsJobs(opts)
@@ -1656,6 +1854,7 @@ apiInstance.getRoutingAssessmentsJobs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **[String]** | Division ID(s) to filter assessment jobs by. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1664,7 +1863,7 @@ apiInstance.getRoutingAssessmentsJobs(opts)
 
 ## getRoutingAvailablemediatypes
 
-> AvailableMediaTypeEntityListing getRoutingAvailablemediatypes()
+> AvailableMediaTypeEntityListing getRoutingAvailablemediatypes(opts)
 
 
 GET /api/v2/routing/availablemediatypes
@@ -1685,8 +1884,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingAvailablemediatypes()
+apiInstance.getRoutingAvailablemediatypes(opts)
   .then((data) => {
     console.log(`getRoutingAvailablemediatypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1698,7 +1903,10 @@ apiInstance.getRoutingAvailablemediatypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1707,7 +1915,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingDirectroutingbackupSettingsMe
 
-> AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+> AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe(opts)
 
 
 GET /api/v2/routing/directroutingbackup/settings/me
@@ -1730,8 +1938,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingDirectroutingbackupSettingsMe()
+apiInstance.getRoutingDirectroutingbackupSettingsMe(opts)
   .then((data) => {
     console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1743,7 +1957,10 @@ apiInstance.getRoutingDirectroutingbackupSettingsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1779,7 +1996,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let opts = { 
-  'expand': "expand_example" // String | Expand options. Valid values: settings
+  'expand': "expand_example", // String | Expand options. Valid values: settings
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingEmailDomain(domainId, opts)
@@ -1799,6 +2020,7 @@ apiInstance.getRoutingEmailDomain(domainId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1807,7 +2029,7 @@ apiInstance.getRoutingEmailDomain(domainId, opts)
 
 ## getRoutingEmailDomainDkim
 
-> VerificationResult getRoutingEmailDomainDkim(domainId)
+> VerificationResult getRoutingEmailDomainDkim(domainId, opts)
 
 
 GET /api/v2/routing/email/domains/{domainId}/dkim
@@ -1832,8 +2054,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingEmailDomainDkim(domainId)
+apiInstance.getRoutingEmailDomainDkim(domainId, opts)
   .then((data) => {
     console.log(`getRoutingEmailDomainDkim success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1849,6 +2077,7 @@ apiInstance.getRoutingEmailDomainDkim(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1857,7 +2086,7 @@ apiInstance.getRoutingEmailDomainDkim(domainId)
 
 ## getRoutingEmailDomainMailfrom
 
-> MailFromResult getRoutingEmailDomainMailfrom(domainId)
+> MailFromResult getRoutingEmailDomainMailfrom(domainId, opts)
 
 
 GET /api/v2/routing/email/domains/{domainId}/mailfrom
@@ -1882,8 +2111,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingEmailDomainMailfrom(domainId)
+apiInstance.getRoutingEmailDomainMailfrom(domainId, opts)
   .then((data) => {
     console.log(`getRoutingEmailDomainMailfrom success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1899,6 +2134,7 @@ apiInstance.getRoutingEmailDomainMailfrom(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1935,7 +2171,11 @@ let apiInstance = new platformClient.RoutingApi();
 let domainName = "domainName_example"; // String | email domain
 let routeId = "routeId_example"; // String | route ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingEmailDomainRoute(domainName, routeId, opts)
@@ -1956,6 +2196,7 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId, opts)
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1964,7 +2205,7 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId, opts)
 
 ## getRoutingEmailDomainRouteIdentityresolution
 
-> RouteIdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+> RouteIdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(domainName, routeId, opts)
 
 
 GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
@@ -1991,8 +2232,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainName = "domainName_example"; // String | email domain
 let routeId = "routeId_example"; // String | route ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId, opts)
   .then((data) => {
     console.log(`getRoutingEmailDomainRouteIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2009,6 +2256,7 @@ apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2047,7 +2295,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'pattern': "pattern_example", // String | Filter routes by the route's pattern property
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
@@ -2070,6 +2322,7 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pattern** | **String** | Filter routes by the route's pattern property | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2078,7 +2331,7 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 
 ## getRoutingEmailDomainVerification
 
-> VerificationResult getRoutingEmailDomainVerification(domainId)
+> VerificationResult getRoutingEmailDomainVerification(domainId, opts)
 
 
 GET /api/v2/routing/email/domains/{domainId}/verification
@@ -2103,8 +2356,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingEmailDomainVerification(domainId)
+apiInstance.getRoutingEmailDomainVerification(domainId, opts)
   .then((data) => {
     console.log(`getRoutingEmailDomainVerification success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2120,6 +2379,7 @@ apiInstance.getRoutingEmailDomainVerification(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2157,7 +2417,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'excludeStatus': false, // Boolean | Exclude MX record data
   'filter': "filter_example", // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
-  'expand': "expand_example" // String | Expand options. Valid values: settings
+  'expand': "expand_example", // String | Expand options. Valid values: settings
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingEmailDomains(opts)
@@ -2180,6 +2444,7 @@ apiInstance.getRoutingEmailDomains(opts)
  **excludeStatus** | **Boolean** | Exclude MX record data | [optional] [default to false] |
  **filter** | **String** | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
  **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2215,7 +2480,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let opts = { 
-  'expand': "expand_example" // String | Expand options. Valid values: settings
+  'expand': "expand_example", // String | Expand options. Valid values: settings
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingEmailOutboundDomain(domainId, opts)
@@ -2235,6 +2504,7 @@ apiInstance.getRoutingEmailOutboundDomain(domainId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2243,7 +2513,7 @@ apiInstance.getRoutingEmailOutboundDomain(domainId, opts)
 
 ## getRoutingEmailOutboundDomainActivation
 
-> EmailOutboundDomainResult getRoutingEmailOutboundDomainActivation(domainId)
+> EmailOutboundDomainResult getRoutingEmailOutboundDomainActivation(domainId, opts)
 
 
 GET /api/v2/routing/email/outbound/domains/{domainId}/activation
@@ -2268,8 +2538,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingEmailOutboundDomainActivation(domainId)
+apiInstance.getRoutingEmailOutboundDomainActivation(domainId, opts)
   .then((data) => {
     console.log(`getRoutingEmailOutboundDomainActivation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2285,6 +2561,7 @@ apiInstance.getRoutingEmailOutboundDomainActivation(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2321,7 +2598,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'filter': "filter_example", // String | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
-  'expand': "expand_example" // String | Expand options. Valid values: settings
+  'expand': "expand_example", // String | Expand options. Valid values: settings
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingEmailOutboundDomains(opts)
@@ -2343,6 +2624,7 @@ apiInstance.getRoutingEmailOutboundDomains(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filter** | **String** | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
  **expand** | **String** | Expand options. Valid values: settings | [optional] <br />**Values**: settings |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2351,7 +2633,7 @@ apiInstance.getRoutingEmailOutboundDomains(opts)
 
 ## getRoutingEmailSetup
 
-> EmailSetup getRoutingEmailSetup()
+> EmailSetup getRoutingEmailSetup(opts)
 
 
 GET /api/v2/routing/email/setup
@@ -2374,8 +2656,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingEmailSetup()
+apiInstance.getRoutingEmailSetup(opts)
   .then((data) => {
     console.log(`getRoutingEmailSetup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2387,7 +2675,10 @@ apiInstance.getRoutingEmailSetup()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2396,7 +2687,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingLanguage
 
-> Language getRoutingLanguage(languageId)
+> Language getRoutingLanguage(languageId, opts)
 
 
 GET /api/v2/routing/languages/{languageId}
@@ -2419,8 +2710,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let languageId = "languageId_example"; // String | Language ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingLanguage(languageId)
+apiInstance.getRoutingLanguage(languageId, opts)
   .then((data) => {
     console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2436,6 +2733,7 @@ apiInstance.getRoutingLanguage(languageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **languageId** | **String** | Language ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2471,7 +2769,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'name': "name_example", // String | Name
-  'id': ["id_example"] // [String] | id
+  'id': ["id_example"], // [String] | id
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingLanguages(opts)
@@ -2494,6 +2796,7 @@ apiInstance.getRoutingLanguages(opts)
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | id | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2502,7 +2805,7 @@ apiInstance.getRoutingLanguages(opts)
 
 ## getRoutingMessageRecipient
 
-> Recipient getRoutingMessageRecipient(recipientId)
+> Recipient getRoutingMessageRecipient(recipientId, opts)
 
 
 GET /api/v2/routing/message/recipients/{recipientId}
@@ -2527,8 +2830,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let recipientId = "recipientId_example"; // String | Recipient ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingMessageRecipient(recipientId)
+apiInstance.getRoutingMessageRecipient(recipientId, opts)
   .then((data) => {
     console.log(`getRoutingMessageRecipient success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2544,6 +2853,7 @@ apiInstance.getRoutingMessageRecipient(recipientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recipientId** | **String** | Recipient ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2580,7 +2890,11 @@ let opts = {
   'messengerType': "messengerType_example", // String | Messenger Type
   'name': "name_example", // String | Recipient Name
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingMessageRecipients(opts)
@@ -2602,6 +2916,7 @@ apiInstance.getRoutingMessageRecipients(opts)
  **name** | **String** | Recipient Name | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2610,7 +2925,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 ## getRoutingPredictor
 
-> Predictor getRoutingPredictor(predictorId)
+> Predictor getRoutingPredictor(predictorId, opts)
 
 
 GET /api/v2/routing/predictors/{predictorId}
@@ -2635,8 +2950,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let predictorId = "predictorId_example"; // String | Predictor ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingPredictor(predictorId)
+apiInstance.getRoutingPredictor(predictorId, opts)
   .then((data) => {
     console.log(`getRoutingPredictor success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2652,6 +2973,7 @@ apiInstance.getRoutingPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2660,7 +2982,7 @@ apiInstance.getRoutingPredictor(predictorId)
 
 ## getRoutingPredictorModelFeatures
 
-> PredictorModelFeatureListing getRoutingPredictorModelFeatures(predictorId, modelId)
+> PredictorModelFeatureListing getRoutingPredictorModelFeatures(predictorId, modelId, opts)
 
 
 GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features
@@ -2686,8 +3008,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let predictorId = "predictorId_example"; // String | Predictor ID
 let modelId = "modelId_example"; // String | Model ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId)
+apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId, opts)
   .then((data) => {
     console.log(`getRoutingPredictorModelFeatures success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2704,6 +3032,7 @@ apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId)
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
  **modelId** | **String** | Model ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2712,7 +3041,7 @@ apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId)
 
 ## getRoutingPredictorModels
 
-> PredictorModels getRoutingPredictorModels(predictorId)
+> PredictorModels getRoutingPredictorModels(predictorId, opts)
 
 
 GET /api/v2/routing/predictors/{predictorId}/models
@@ -2737,8 +3066,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let predictorId = "predictorId_example"; // String | Predictor ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingPredictorModels(predictorId)
+apiInstance.getRoutingPredictorModels(predictorId, opts)
   .then((data) => {
     console.log(`getRoutingPredictorModels success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2754,6 +3089,7 @@ apiInstance.getRoutingPredictorModels(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2794,7 +3130,11 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'queueId': ["queueId_example"], // [String] | Comma-separated list of queue Ids to filter by.
   'kpiId': "kpiId_example", // String | Standard or custom KPI id used to filter predictors.
-  'state': "state_example" // String | The state used to filter predictors.
+  'state': "state_example", // String | The state used to filter predictors.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingPredictors(opts)
@@ -2819,6 +3159,7 @@ apiInstance.getRoutingPredictors(opts)
  **queueId** | **[String]** | Comma-separated list of queue Ids to filter by. | [optional]  |
  **kpiId** | **String** | Standard or custom KPI id used to filter predictors. | [optional]  |
  **state** | **String** | The state used to filter predictors. | [optional] <br />**Values**: Created, Error, Active |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2855,7 +3196,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Parameter to request additional data to return in KPI payload
+  'expand': ["expand_example"], // [String] | Parameter to request additional data to return in KPI payload
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
@@ -2875,6 +3220,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **kpiId** | **String** | Key Performance Indicator ID |  |
  **expand** | **[String]** | Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2909,7 +3255,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
   'kpiGroup': "kpiGroup_example", // String | The Group of Key Performance Indicators to return
-  'expand': ["expand_example"] // [String] | Parameter to request additional data to return in KPI payload
+  'expand': ["expand_example"], // [String] | Parameter to request additional data to return in KPI payload
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
@@ -2929,6 +3279,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **kpiGroup** | **String** | The Group of Key Performance Indicators to return | [optional] <br />**Values**: Standard, Custom |
  **expand** | **[String]** | Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2937,7 +3288,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 
 ## getRoutingPredictorsKeyperformanceindicatortypes
 
-> [KeyPerformanceIndicatorType] getRoutingPredictorsKeyperformanceindicatortypes()
+> [KeyPerformanceIndicatorType] getRoutingPredictorsKeyperformanceindicatortypes(opts)
 
 
 GET /api/v2/routing/predictors/keyperformanceindicatortypes
@@ -2962,8 +3313,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingPredictorsKeyperformanceindicatortypes()
+apiInstance.getRoutingPredictorsKeyperformanceindicatortypes(opts)
   .then((data) => {
     console.log(`getRoutingPredictorsKeyperformanceindicatortypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2975,7 +3332,10 @@ apiInstance.getRoutingPredictorsKeyperformanceindicatortypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3010,7 +3370,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueue(queueId, opts)
@@ -3030,6 +3394,7 @@ apiInstance.getRoutingQueue(queueId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3066,7 +3431,11 @@ let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'languageVariation': "languageVariation_example", // String | Language variation
-  'fallbackToPrimaryAssistant': true // Boolean | Fall back to primary assistant if specified variation is not found
+  'fallbackToPrimaryAssistant': true, // Boolean | Fall back to primary assistant if specified variation is not found
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueueAssistant(queueId, opts)
@@ -3088,6 +3457,7 @@ apiInstance.getRoutingQueueAssistant(queueId, opts)
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant, copilot |
  **languageVariation** | **String** | Language variation | [optional]  |
  **fallbackToPrimaryAssistant** | **Boolean** | Fall back to primary assistant if specified variation is not found | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3096,7 +3466,7 @@ apiInstance.getRoutingQueueAssistant(queueId, opts)
 
 ## getRoutingQueueComparisonperiod
 
-> ComparisonPeriod getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
+> ComparisonPeriod getRoutingQueueComparisonperiod(queueId, comparisonPeriodId, opts)
 
 
 GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}
@@ -3123,8 +3493,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue id
 let comparisonPeriodId = "comparisonPeriodId_example"; // String | ComparisonPeriod id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
+apiInstance.getRoutingQueueComparisonperiod(queueId, comparisonPeriodId, opts)
   .then((data) => {
     console.log(`getRoutingQueueComparisonperiod success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3141,6 +3517,7 @@ apiInstance.getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue id |  |
  **comparisonPeriodId** | **String** | ComparisonPeriod id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3149,7 +3526,7 @@ apiInstance.getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
 
 ## getRoutingQueueComparisonperiods
 
-> ComparisonPeriodListing getRoutingQueueComparisonperiods(queueId)
+> ComparisonPeriodListing getRoutingQueueComparisonperiods(queueId, opts)
 
 
 GET /api/v2/routing/queues/{queueId}/comparisonperiods
@@ -3175,8 +3552,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingQueueComparisonperiods(queueId)
+apiInstance.getRoutingQueueComparisonperiods(queueId, opts)
   .then((data) => {
     console.log(`getRoutingQueueComparisonperiods success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3192,6 +3575,7 @@ apiInstance.getRoutingQueueComparisonperiods(queueId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3226,7 +3610,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | queueId
 let opts = { 
-  'conversationId': "conversationId_example" // String | conversationId
+  'conversationId': "conversationId_example", // String | conversationId
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
@@ -3246,6 +3634,7 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | queueId |  |
  **conversationId** | **String** | conversationId | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3254,7 +3643,7 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 
 ## getRoutingQueueIdentityresolution
 
-> IdentityResolutionQueueConfig getRoutingQueueIdentityresolution(queueId)
+> IdentityResolutionQueueConfig getRoutingQueueIdentityresolution(queueId, opts)
 
 
 GET /api/v2/routing/queues/{queueId}/identityresolution
@@ -3280,8 +3669,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingQueueIdentityresolution(queueId)
+apiInstance.getRoutingQueueIdentityresolution(queueId, opts)
   .then((data) => {
     console.log(`getRoutingQueueIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3297,6 +3692,7 @@ apiInstance.getRoutingQueueIdentityresolution(queueId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3332,7 +3728,11 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | queueId
 let mediaType = "mediaType_example"; // String | mediaType
 let opts = { 
-  'labelId': "labelId_example" // String | Unique id that represents the interaction label used with media type for EWT calculation
+  'labelId': "labelId_example", // String | Unique id that represents the interaction label used with media type for EWT calculation
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts)
@@ -3353,6 +3753,7 @@ apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts)
  **queueId** | **String** | queueId |  |
  **mediaType** | **String** | mediaType | <br />**Values**: all, call, chat, callback, email, videoComm, message |
  **labelId** | **String** | Unique id that represents the interaction label used with media type for EWT calculation | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3401,7 +3802,11 @@ let opts = {
   'routingStatus': ["routingStatus_example"], // [String] | Filter by routing status
   'presence': ["presence_example"], // [String] | Filter by presence
   'memberBy': "memberBy_example", // String | Filter by member type
-  'joined': true // Boolean | Filter by joined status
+  'joined': true, // Boolean | Filter by joined status
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueueMembers(queueId, opts)
@@ -3432,6 +3837,7 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
  **presence** | **[String]** | Filter by presence | [optional]  |
  **memberBy** | **String** | Filter by member type | [optional] <br />**Values**: user, group |
  **joined** | **Boolean** | Filter by joined status | [optional] <br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3480,7 +3886,11 @@ let opts = {
   'skills': ["skills_example"], // [String] | Filter by skill
   'languages': ["languages_example"], // [String] | Filter by language
   'routingStatus': ["routingStatus_example"], // [String] | Filter by routing status
-  'presence': ["presence_example"] // [String] | Filter by presence
+  'presence': ["presence_example"], // [String] | Filter by presence
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueueUsers(queueId, opts)
@@ -3510,6 +3920,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **languages** | **[String]** | Filter by language | [optional]  |
  **routingStatus** | **[String]** | Filter by routing status | [optional]  |
  **presence** | **[String]** | Filter by presence | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3546,7 +3957,11 @@ let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'name': "name_example" // String | Wrapup code's name (trailing asterisks allowed)
+  'name': "name_example", // String | Wrapup code's name (trailing asterisks allowed)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueueWrapupcodes(queueId, opts)
@@ -3568,6 +3983,7 @@ apiInstance.getRoutingQueueWrapupcodes(queueId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Wrapup code's name (trailing asterisks allowed) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3610,7 +4026,11 @@ let opts = {
   'peerId': ["peerId_example"], // [String] | Include only queues with the specified peer ID(s)
   'cannedResponseLibraryId': "cannedResponseLibraryId_example", // String | Include only queues explicitly associated with the specified canned response library ID
   'hasPeer': true, // Boolean | Include only queues with a peer ID
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueues(opts)
@@ -3638,6 +4058,7 @@ apiInstance.getRoutingQueues(opts)
  **cannedResponseLibraryId** | **String** | Include only queues explicitly associated with the specified canned response library ID | [optional]  |
  **hasPeer** | **Boolean** | Include only queues with a peer ID | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3677,7 +4098,11 @@ let opts = {
   'sortOrder': "asc", // String | Sort order
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | Queue ID(s)
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueuesDivisionviews(opts)
@@ -3702,6 +4127,7 @@ apiInstance.getRoutingQueuesDivisionviews(opts)
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | Queue ID(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3737,7 +4163,11 @@ let apiInstance = new platformClient.RoutingApi();
 let opts = { 
   'pageSize': 25, // Number | Page size [max value is 500]
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "asc" // String | Sort order
+  'sortOrder': "asc", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueuesDivisionviewsAll(opts)
@@ -3758,6 +4188,7 @@ apiInstance.getRoutingQueuesDivisionviewsAll(opts)
  **pageSize** | **Number** | Page size [max value is 500] | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3792,7 +4223,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'joined': true, // Boolean | Filter by joined status.
-  'sortOrder': "asc" // String | Note: results are sorted by name.
+  'sortOrder': "asc", // String | Note: results are sorted by name.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingQueuesMe(opts)
@@ -3814,6 +4249,7 @@ apiInstance.getRoutingQueuesMe(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **joined** | **Boolean** | Filter by joined status. | [optional] <br />**Values**: true, false |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3822,7 +4258,7 @@ apiInstance.getRoutingQueuesMe(opts)
 
 ## getRoutingSettings
 
-> RoutingSettings getRoutingSettings()
+> RoutingSettings getRoutingSettings(opts)
 
 
 GET /api/v2/routing/settings
@@ -3843,8 +4279,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSettings()
+apiInstance.getRoutingSettings(opts)
   .then((data) => {
     console.log(`getRoutingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3856,7 +4298,10 @@ apiInstance.getRoutingSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3865,7 +4310,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingSettingsContactcenter
 
-> ContactCenterSettings getRoutingSettingsContactcenter()
+> ContactCenterSettings getRoutingSettingsContactcenter(opts)
 
 
 GET /api/v2/routing/settings/contactcenter
@@ -3886,8 +4331,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSettingsContactcenter()
+apiInstance.getRoutingSettingsContactcenter(opts)
   .then((data) => {
     console.log(`getRoutingSettingsContactcenter success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3899,7 +4350,10 @@ apiInstance.getRoutingSettingsContactcenter()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3908,7 +4362,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingSettingsTranscription
 
-> TranscriptionSettings getRoutingSettingsTranscription()
+> TranscriptionSettings getRoutingSettingsTranscription(opts)
 
 
 GET /api/v2/routing/settings/transcription
@@ -3931,8 +4385,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSettingsTranscription()
+apiInstance.getRoutingSettingsTranscription(opts)
   .then((data) => {
     console.log(`getRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3944,7 +4404,10 @@ apiInstance.getRoutingSettingsTranscription()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3953,7 +4416,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingSkill
 
-> RoutingSkill getRoutingSkill(skillId)
+> RoutingSkill getRoutingSkill(skillId, opts)
 
 
 GET /api/v2/routing/skills/{skillId}
@@ -3976,8 +4439,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let skillId = "skillId_example"; // String | Skill ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSkill(skillId)
+apiInstance.getRoutingSkill(skillId, opts)
   .then((data) => {
     console.log(`getRoutingSkill success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3993,6 +4462,7 @@ apiInstance.getRoutingSkill(skillId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillId** | **String** | Skill ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4001,7 +4471,7 @@ apiInstance.getRoutingSkill(skillId)
 
 ## getRoutingSkillgroup
 
-> SkillGroup getRoutingSkillgroup(skillGroupId)
+> SkillGroup getRoutingSkillgroup(skillGroupId, opts)
 
 
 GET /api/v2/routing/skillgroups/{skillGroupId}
@@ -4026,8 +4496,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSkillgroup(skillGroupId)
+apiInstance.getRoutingSkillgroup(skillGroupId, opts)
   .then((data) => {
     console.log(`getRoutingSkillgroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4043,6 +4519,7 @@ apiInstance.getRoutingSkillgroup(skillGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillGroupId** | **String** | Skill Group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4080,7 +4557,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'after': "after_example", // String | The cursor that points to the next item
   'before': "before_example", // String | The cursor that points to the previous item
-  'expand': "expand_example" // String | Expand the name on each user
+  'expand': "expand_example", // String | Expand the name on each user
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSkillgroupMembers(skillGroupId, opts)
@@ -4103,6 +4584,7 @@ apiInstance.getRoutingSkillgroupMembers(skillGroupId, opts)
  **after** | **String** | The cursor that points to the next item | [optional]  |
  **before** | **String** | The cursor that points to the previous item | [optional]  |
  **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4137,7 +4619,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
 let opts = { 
-  'expand': "expand_example" // String | Expand the name on each user
+  'expand': "expand_example", // String | Expand the name on each user
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSkillgroupMembersDivisions(skillGroupId, opts)
@@ -4157,6 +4643,7 @@ apiInstance.getRoutingSkillgroupMembersDivisions(skillGroupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **skillGroupId** | **String** | Skill Group ID |  |
  **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4193,7 +4680,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'name': "name_example", // String | Return only skill group names whose names start with this value (case-insensitive matching)
   'after': "after_example", // String | The cursor that points to the next item
-  'before': "before_example" // String | The cursor that points to the previous item
+  'before': "before_example", // String | The cursor that points to the previous item
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSkillgroups(opts)
@@ -4215,6 +4706,7 @@ apiInstance.getRoutingSkillgroups(opts)
  **name** | **String** | Return only skill group names whose names start with this value (case-insensitive matching) | [optional]  |
  **after** | **String** | The cursor that points to the next item | [optional]  |
  **before** | **String** | The cursor that points to the previous item | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4249,7 +4741,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Filter for results that start with this value
-  'id': ["id_example"] // [String] | id
+  'id': ["id_example"], // [String] | id
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSkills(opts)
@@ -4271,6 +4767,7 @@ apiInstance.getRoutingSkills(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Filter for results that start with this value | [optional]  |
  **id** | **[String]** | id | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4279,7 +4776,7 @@ apiInstance.getRoutingSkills(opts)
 
 ## getRoutingSmsAddress
 
-> SmsAddress getRoutingSmsAddress(addressId)
+> SmsAddress getRoutingSmsAddress(addressId, opts)
 
 
 GET /api/v2/routing/sms/addresses/{addressId}
@@ -4304,8 +4801,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSmsAddress(addressId)
+apiInstance.getRoutingSmsAddress(addressId, opts)
   .then((data) => {
     console.log(`getRoutingSmsAddress success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4321,6 +4824,7 @@ apiInstance.getRoutingSmsAddress(addressId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4355,7 +4859,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSmsAddresses(opts)
@@ -4375,6 +4883,7 @@ apiInstance.getRoutingSmsAddresses(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4416,7 +4925,11 @@ let opts = {
   'city': "city_example", // String | City that can be used to restrict the numbers returned
   'areaCode': "areaCode_example", // String | Area code that can be used to restrict the numbers returned
   'pattern': "pattern_example", // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
-  'addressRequirement': "addressRequirement_example" // String | This indicates whether the phone number requires to have an Address registered.
+  'addressRequirement': "addressRequirement_example", // String | This indicates whether the phone number requires to have an Address registered.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
@@ -4441,6 +4954,7 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
  **areaCode** | **String** | Area code that can be used to restrict the numbers returned | [optional]  |
  **pattern** | **String** | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit. | [optional]  |
  **addressRequirement** | **String** | This indicates whether the phone number requires to have an Address registered. | [optional] <br />**Values**: none, any, local, foreign |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4449,7 +4963,7 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
 
 ## getRoutingSmsIdentityresolutionPhonenumber
 
-> SmsIdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(addressId)
+> SmsIdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(addressId, opts)
 
 
 GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
@@ -4475,8 +4989,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId)
+apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId, opts)
   .then((data) => {
     console.log(`getRoutingSmsIdentityresolutionPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4492,6 +5012,7 @@ apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4528,7 +5049,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let phoneNumberId = "phoneNumberId_example"; // String | phone number
 let opts = { 
-  'expand': "expand_example" // String | Expand response with additional information
+  'expand': "expand_example", // String | Expand response with additional information
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSmsPhonenumber(phoneNumberId, opts)
@@ -4548,6 +5073,7 @@ apiInstance.getRoutingSmsPhonenumber(phoneNumberId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumberId** | **String** | phone number |  |
  **expand** | **String** | Expand response with additional information | [optional] <br />**Values**: compliance, supportedContent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4594,7 +5120,11 @@ let opts = {
   'language': en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations
   'integrationId': "integrationId_example", // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
   'supportedContentId': "supportedContentId_example", // String | Filter based on the supported content ID
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingSmsPhonenumbers(opts)
@@ -4624,6 +5154,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
  **integrationId** | **String** | Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
  **supportedContentId** | **String** | Filter based on the supported content ID | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution, supportedContent |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4632,7 +5163,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 
 ## getRoutingUserDirectroutingbackupSettings
 
-> AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+> AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId, opts)
 
 
 GET /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -4657,8 +5188,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
+apiInstance.getRoutingUserDirectroutingbackupSettings(userId, opts)
   .then((data) => {
     console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4674,6 +5211,7 @@ apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4682,7 +5220,7 @@ apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
 
 ## getRoutingUserUtilization
 
-> AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
+> AgentMaxUtilizationResponse getRoutingUserUtilization(userId, opts)
 
 
 GET /api/v2/routing/users/{userId}/utilization
@@ -4708,8 +5246,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUserUtilization(userId)
+apiInstance.getRoutingUserUtilization(userId, opts)
   .then((data) => {
     console.log(`getRoutingUserUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4725,6 +5269,7 @@ apiInstance.getRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4733,7 +5278,7 @@ apiInstance.getRoutingUserUtilization(userId)
 
 ## getRoutingUtilization
 
-> UtilizationResponse getRoutingUtilization()
+> UtilizationResponse getRoutingUtilization(opts)
 
 
 GET /api/v2/routing/utilization
@@ -4757,8 +5302,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUtilization()
+apiInstance.getRoutingUtilization(opts)
   .then((data) => {
     console.log(`getRoutingUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4770,7 +5321,10 @@ apiInstance.getRoutingUtilization()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4779,7 +5333,7 @@ This endpoint does not need any parameter.
 
 ## getRoutingUtilizationLabel
 
-> UtilizationLabel getRoutingUtilizationLabel(labelId)
+> UtilizationLabel getRoutingUtilizationLabel(labelId, opts)
 
 
 GET /api/v2/routing/utilization/labels/{labelId}
@@ -4804,8 +5358,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let labelId = "labelId_example"; // String | Utilization Label ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUtilizationLabel(labelId)
+apiInstance.getRoutingUtilizationLabel(labelId, opts)
   .then((data) => {
     console.log(`getRoutingUtilizationLabel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4821,6 +5381,7 @@ apiInstance.getRoutingUtilizationLabel(labelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **labelId** | **String** | Utilization Label ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4829,7 +5390,7 @@ apiInstance.getRoutingUtilizationLabel(labelId)
 
 ## getRoutingUtilizationLabelAgents
 
-> **[Object]** getRoutingUtilizationLabelAgents(labelId)
+> **[Object]** getRoutingUtilizationLabelAgents(labelId, opts)
 
 
 GET /api/v2/routing/utilization/labels/{labelId}/agents
@@ -4854,8 +5415,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let labelId = "labelId_example"; // String | Utilization Label ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUtilizationLabelAgents(labelId)
+apiInstance.getRoutingUtilizationLabelAgents(labelId, opts)
   .then((data) => {
     console.log(`getRoutingUtilizationLabelAgents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4871,6 +5438,7 @@ apiInstance.getRoutingUtilizationLabelAgents(labelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **labelId** | **String** | Utilization Label ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4907,7 +5475,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ascending", // String | Sort order by name
-  'name': "name_example" // String | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+  'name': "name_example", // String | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingUtilizationLabels(opts)
@@ -4929,6 +5501,7 @@ apiInstance.getRoutingUtilizationLabels(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **name** | **String** | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*' | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4937,7 +5510,7 @@ apiInstance.getRoutingUtilizationLabels(opts)
 
 ## getRoutingUtilizationTag
 
-> UtilizationTag getRoutingUtilizationTag(tagId)
+> UtilizationTag getRoutingUtilizationTag(tagId, opts)
 
 
 GET /api/v2/routing/utilization/tags/{tagId}
@@ -4964,8 +5537,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let tagId = "tagId_example"; // String | Utilization Tag ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUtilizationTag(tagId)
+apiInstance.getRoutingUtilizationTag(tagId, opts)
   .then((data) => {
     console.log(`getRoutingUtilizationTag success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4981,6 +5560,7 @@ apiInstance.getRoutingUtilizationTag(tagId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **tagId** | **String** | Utilization Tag ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4989,7 +5569,7 @@ apiInstance.getRoutingUtilizationTag(tagId)
 
 ## getRoutingUtilizationTagAgents
 
-> **[Object]** getRoutingUtilizationTagAgents(tagId)
+> **[Object]** getRoutingUtilizationTagAgents(tagId, opts)
 
 
 GET /api/v2/routing/utilization/tags/{tagId}/agents
@@ -5016,8 +5596,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let tagId = "tagId_example"; // String | Utilization Tag ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingUtilizationTagAgents(tagId)
+apiInstance.getRoutingUtilizationTagAgents(tagId, opts)
   .then((data) => {
     console.log(`getRoutingUtilizationTagAgents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5033,6 +5619,7 @@ apiInstance.getRoutingUtilizationTagAgents(tagId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **tagId** | **String** | Utilization Tag ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5071,7 +5658,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ascending", // String | Sort order by name
-  'name': "name_example" // String | Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
+  'name': "name_example", // String | Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingUtilizationTags(opts)
@@ -5093,6 +5684,7 @@ apiInstance.getRoutingUtilizationTags(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **name** | **String** | Utilization tag's name (Wildcard is supported, e.g., 'tag1*') | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5101,7 +5693,7 @@ apiInstance.getRoutingUtilizationTags(opts)
 
 ## getRoutingWrapupcode
 
-> WrapupCode getRoutingWrapupcode(codeId)
+> WrapupCode getRoutingWrapupcode(codeId, opts)
 
 
 GET /api/v2/routing/wrapupcodes/{codeId}
@@ -5126,8 +5718,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let codeId = "codeId_example"; // String | Wrapup Code ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingWrapupcode(codeId)
+apiInstance.getRoutingWrapupcode(codeId, opts)
   .then((data) => {
     console.log(`getRoutingWrapupcode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5143,6 +5741,7 @@ apiInstance.getRoutingWrapupcode(codeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5182,7 +5781,11 @@ let opts = {
   'sortOrder': "ascending", // String | Sort order
   'name': "name_example", // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
   'id': ["id_example"], // [String] | Filter by wrapup code ID(s)
-  'divisionId': ["divisionId_example"] // [String] | Filter by division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Filter by division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingWrapupcodes(opts)
@@ -5207,6 +5810,7 @@ apiInstance.getRoutingWrapupcodes(opts)
  **name** | **String** | Wrapup code's name ('Sort by' param is ignored unless this field is provided) | [optional]  |
  **id** | **[String]** | Filter by wrapup code ID(s) | [optional]  |
  **divisionId** | **[String]** | Filter by division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5215,7 +5819,7 @@ apiInstance.getRoutingWrapupcodes(opts)
 
 ## getRoutingWrapupcodesDivisionview
 
-> WrapupCode getRoutingWrapupcodesDivisionview(codeId)
+> WrapupCode getRoutingWrapupcodesDivisionview(codeId, opts)
 
 
 GET /api/v2/routing/wrapupcodes/divisionviews/{codeId}
@@ -5240,8 +5844,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let codeId = "codeId_example"; // String | Wrapup Code ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRoutingWrapupcodesDivisionview(codeId)
+apiInstance.getRoutingWrapupcodesDivisionview(codeId, opts)
   .then((data) => {
     console.log(`getRoutingWrapupcodesDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5257,6 +5867,7 @@ apiInstance.getRoutingWrapupcodesDivisionview(codeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5297,7 +5908,11 @@ let opts = {
   'name': "name_example", // String | Name (trailing asterisks allowed)
   'id': ["id_example"], // [String] | Wrapup code ID(s)
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
-  'includeState': "includeState_example" // String | Wrapup code state(s) to include
+  'includeState': "includeState_example", // String | Wrapup code state(s) to include
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRoutingWrapupcodesDivisionviews(opts)
@@ -5321,6 +5936,7 @@ apiInstance.getRoutingWrapupcodesDivisionviews(opts)
  **id** | **[String]** | Wrapup code ID(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **includeState** | **String** | Wrapup code state(s) to include | [optional] <br />**Values**: Active, Deleted, ActiveAndDeleted |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5358,7 +5974,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'joined': true, // Boolean | Is joined to the queue
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserQueues(userId, opts)
@@ -5381,6 +6001,7 @@ apiInstance.getUserQueues(userId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5415,7 +6036,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "ASC" // String | Ascending or descending sort order
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserRoutinglanguages(userId, opts)
@@ -5437,6 +6062,7 @@ apiInstance.getUserRoutinglanguages(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5471,7 +6097,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "ASC" // String | Ascending or descending sort order
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserRoutingskills(userId, opts)
@@ -5493,6 +6123,7 @@ apiInstance.getUserRoutingskills(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5529,7 +6160,11 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'pageSize': 25, // Number | Page size
   'after': "after_example", // String | The cursor that points to the next page
-  'before': "before_example" // String | The cursor that points to the previous page
+  'before': "before_example", // String | The cursor that points to the previous page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserSkillgroups(userId, opts)
@@ -5551,6 +6186,7 @@ apiInstance.getUserSkillgroups(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **after** | **String** | The cursor that points to the next page | [optional]  |
  **before** | **String** | The cursor that points to the previous page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5559,7 +6195,7 @@ apiInstance.getUserSkillgroups(userId, opts)
 
 ## patchRoutingConversation
 
-> RoutingConversationAttributesResponse patchRoutingConversation(conversationId, body)
+> RoutingConversationAttributesResponse patchRoutingConversation(conversationId, body, opts)
 
 
 PATCH /api/v2/routing/conversations/{conversationId}
@@ -5587,8 +6223,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let body = {}; // Object | Conversation Attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingConversation(conversationId, body)
+apiInstance.patchRoutingConversation(conversationId, body, opts)
   .then((data) => {
     console.log(`patchRoutingConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5605,6 +6247,7 @@ apiInstance.patchRoutingConversation(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **body** | **Object** | Conversation Attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5613,7 +6256,7 @@ apiInstance.patchRoutingConversation(conversationId, body)
 
 ## patchRoutingEmailDomain
 
-> InboundDomain patchRoutingEmailDomain(domainId, body)
+> InboundDomain patchRoutingEmailDomain(domainId, body, opts)
 
 
 PATCH /api/v2/routing/email/domains/{domainId}
@@ -5639,8 +6282,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let body = {}; // Object | Domain settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingEmailDomain(domainId, body)
+apiInstance.patchRoutingEmailDomain(domainId, body, opts)
   .then((data) => {
     console.log(`patchRoutingEmailDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5657,6 +6306,7 @@ apiInstance.patchRoutingEmailDomain(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **body** | **Object** | Domain settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5665,7 +6315,7 @@ apiInstance.patchRoutingEmailDomain(domainId, body)
 
 ## patchRoutingEmailDomainValidate
 
-> InboundDomain patchRoutingEmailDomainValidate(domainId, body)
+> InboundDomain patchRoutingEmailDomainValidate(domainId, body, opts)
 
 
 PATCH /api/v2/routing/email/domains/{domainId}/validate
@@ -5691,8 +6341,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let body = {}; // Object | Domain settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingEmailDomainValidate(domainId, body)
+apiInstance.patchRoutingEmailDomainValidate(domainId, body, opts)
   .then((data) => {
     console.log(`patchRoutingEmailDomainValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5709,6 +6365,7 @@ apiInstance.patchRoutingEmailDomainValidate(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **body** | **Object** | Domain settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5717,7 +6374,7 @@ apiInstance.patchRoutingEmailDomainValidate(domainId, body)
 
 ## patchRoutingEmailOutboundDomain
 
-> OutboundDomain patchRoutingEmailOutboundDomain(domainId, body)
+> OutboundDomain patchRoutingEmailOutboundDomain(domainId, body, opts)
 
 
 PATCH /api/v2/routing/email/outbound/domains/{domainId}
@@ -5743,8 +6400,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let body = {}; // Object | Domain settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingEmailOutboundDomain(domainId, body)
+apiInstance.patchRoutingEmailOutboundDomain(domainId, body, opts)
   .then((data) => {
     console.log(`patchRoutingEmailOutboundDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5761,6 +6424,7 @@ apiInstance.patchRoutingEmailOutboundDomain(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **body** | **Object** | Domain settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5796,7 +6460,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let predictorId = "predictorId_example"; // String | Predictor ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchRoutingPredictor(predictorId, opts)
@@ -5816,6 +6484,7 @@ apiInstance.patchRoutingPredictor(predictorId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5852,7 +6521,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
@@ -5872,6 +6545,7 @@ apiInstance.patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **kpiId** | **String** | Key Performance Indicator ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5880,7 +6554,7 @@ apiInstance.patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
 
 ## patchRoutingQueueMember
 
-> void patchRoutingQueueMember(queueId, memberId, body)
+> void patchRoutingQueueMember(queueId, memberId, body, opts)
 
 
 PATCH /api/v2/routing/queues/{queueId}/members/{memberId}
@@ -5908,8 +6582,14 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let memberId = "memberId_example"; // String | Member ID
 let body = {}; // Object | Queue Member
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingQueueMember(queueId, memberId, body)
+apiInstance.patchRoutingQueueMember(queueId, memberId, body, opts)
   .then(() => {
     console.log('patchRoutingQueueMember returned successfully.');
   })
@@ -5927,6 +6607,7 @@ apiInstance.patchRoutingQueueMember(queueId, memberId, body)
  **queueId** | **String** | Queue ID |  |
  **memberId** | **String** | Member ID |  |
  **body** | **Object** | Queue Member |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5935,7 +6616,7 @@ void (no response body)
 
 ## patchRoutingQueueMembers
 
-> QueueMemberEntityListing patchRoutingQueueMembers(queueId, body)
+> QueueMemberEntityListing patchRoutingQueueMembers(queueId, body, opts)
 
 
 PATCH /api/v2/routing/queues/{queueId}/members
@@ -5964,8 +6645,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let body = [{}]; // Object | Queue Members
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingQueueMembers(queueId, body)
+apiInstance.patchRoutingQueueMembers(queueId, body, opts)
   .then((data) => {
     console.log(`patchRoutingQueueMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5982,6 +6669,7 @@ apiInstance.patchRoutingQueueMembers(queueId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** | Queue Members |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5990,7 +6678,7 @@ apiInstance.patchRoutingQueueMembers(queueId, body)
 
 ## patchRoutingQueueUser
 
-> void patchRoutingQueueUser(queueId, memberId, body)
+> void patchRoutingQueueUser(queueId, memberId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -6021,8 +6709,14 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let memberId = "memberId_example"; // String | Member ID
 let body = {}; // Object | Queue Member
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingQueueUser(queueId, memberId, body)
+apiInstance.patchRoutingQueueUser(queueId, memberId, body, opts)
   .then(() => {
     console.log('patchRoutingQueueUser returned successfully.');
   })
@@ -6040,6 +6734,7 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
  **queueId** | **String** | Queue ID |  |
  **memberId** | **String** | Member ID |  |
  **body** | **Object** | Queue Member |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6048,7 +6743,7 @@ void (no response body)
 
 ## patchRoutingQueueUsers
 
-> QueueMemberEntityListingV1 patchRoutingQueueUsers(queueId, body)
+> QueueMemberEntityListingV1 patchRoutingQueueUsers(queueId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -6078,8 +6773,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let body = [{}]; // Object | Queue Members
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingQueueUsers(queueId, body)
+apiInstance.patchRoutingQueueUsers(queueId, body, opts)
   .then((data) => {
     console.log(`patchRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6096,6 +6797,7 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** | Queue Members |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6104,7 +6806,7 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 
 ## patchRoutingSettingsContactcenter
 
-> void patchRoutingSettingsContactcenter(body)
+> void patchRoutingSettingsContactcenter(body, opts)
 
 
 PATCH /api/v2/routing/settings/contactcenter
@@ -6129,8 +6831,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Contact Center Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingSettingsContactcenter(body)
+apiInstance.patchRoutingSettingsContactcenter(body, opts)
   .then(() => {
     console.log('patchRoutingSettingsContactcenter returned successfully.');
   })
@@ -6146,6 +6854,7 @@ apiInstance.patchRoutingSettingsContactcenter(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact Center Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6154,7 +6863,7 @@ void (no response body)
 
 ## patchRoutingSettingsTranscription
 
-> TranscriptionSettings patchRoutingSettingsTranscription(body)
+> TranscriptionSettings patchRoutingSettingsTranscription(body, opts)
 
 
 PATCH /api/v2/routing/settings/transcription
@@ -6179,8 +6888,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Organization Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingSettingsTranscription(body)
+apiInstance.patchRoutingSettingsTranscription(body, opts)
   .then((data) => {
     console.log(`patchRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6196,6 +6911,7 @@ apiInstance.patchRoutingSettingsTranscription(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6204,7 +6920,7 @@ apiInstance.patchRoutingSettingsTranscription(body)
 
 ## patchRoutingSkill
 
-> RoutingSkill patchRoutingSkill(skillId, body)
+> RoutingSkill patchRoutingSkill(skillId, body, opts)
 
 
 PATCH /api/v2/routing/skills/{skillId}
@@ -6230,8 +6946,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let skillId = "skillId_example"; // String | Skill ID
 let body = {}; // Object | updateSkillDivisionRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingSkill(skillId, body)
+apiInstance.patchRoutingSkill(skillId, body, opts)
   .then((data) => {
     console.log(`patchRoutingSkill success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6248,6 +6970,7 @@ apiInstance.patchRoutingSkill(skillId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **skillId** | **String** | Skill ID |  |
  **body** | **Object** | updateSkillDivisionRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6256,7 +6979,7 @@ apiInstance.patchRoutingSkill(skillId, body)
 
 ## patchRoutingSkillgroup
 
-> SkillGroup patchRoutingSkillgroup(skillGroupId, body)
+> SkillGroup patchRoutingSkillgroup(skillGroupId, body, opts)
 
 
 PATCH /api/v2/routing/skillgroups/{skillGroupId}
@@ -6282,8 +7005,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
 let body = {}; // Object | Update skill groups
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingSkillgroup(skillGroupId, body)
+apiInstance.patchRoutingSkillgroup(skillGroupId, body, opts)
   .then((data) => {
     console.log(`patchRoutingSkillgroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6300,6 +7029,7 @@ apiInstance.patchRoutingSkillgroup(skillGroupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **skillGroupId** | **String** | Skill Group ID |  |
  **body** | **Object** | Update skill groups |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6308,7 +7038,7 @@ apiInstance.patchRoutingSkillgroup(skillGroupId, body)
 
 ## patchRoutingSmsPhonenumber
 
-> SmsPhoneNumber patchRoutingSmsPhonenumber(phoneNumberId, body)
+> SmsPhoneNumber patchRoutingSmsPhonenumber(phoneNumberId, body, opts)
 
 
 PATCH /api/v2/routing/sms/phonenumbers/{phoneNumberId}
@@ -6336,8 +7066,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let phoneNumberId = "phoneNumberId_example"; // String | phone number
 let body = {}; // Object | SmsPhoneNumberPatchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRoutingSmsPhonenumber(phoneNumberId, body)
+apiInstance.patchRoutingSmsPhonenumber(phoneNumberId, body, opts)
   .then((data) => {
     console.log(`patchRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6354,6 +7090,7 @@ apiInstance.patchRoutingSmsPhonenumber(phoneNumberId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumberId** | **String** | phone number |  |
  **body** | **Object** | SmsPhoneNumberPatchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6362,7 +7099,7 @@ apiInstance.patchRoutingSmsPhonenumber(phoneNumberId, body)
 
 ## patchUserQueue
 
-> UserQueue patchUserQueue(queueId, userId, body)
+> UserQueue patchUserQueue(queueId, userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/queues/{queueId}
@@ -6390,8 +7127,14 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Queue Member
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserQueue(queueId, userId, body)
+apiInstance.patchUserQueue(queueId, userId, body, opts)
   .then((data) => {
     console.log(`patchUserQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6409,6 +7152,7 @@ apiInstance.patchUserQueue(queueId, userId, body)
  **queueId** | **String** | Queue ID |  |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Queue Member |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6447,7 +7191,11 @@ let apiInstance = new platformClient.RoutingApi();
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | User Queues
 let opts = { 
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchUserQueues(userId, body, opts)
@@ -6468,6 +7216,7 @@ apiInstance.patchUserQueues(userId, body, opts)
  **userId** | **String** | User ID |  |
  **body** | **Object** | User Queues |  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6476,7 +7225,7 @@ apiInstance.patchUserQueues(userId, body, opts)
 
 ## patchUserRoutinglanguage
 
-> UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
+> UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
@@ -6504,8 +7253,14 @@ let apiInstance = new platformClient.RoutingApi();
 let userId = "userId_example"; // String | User ID
 let languageId = "languageId_example"; // String | languageId
 let body = {}; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserRoutinglanguage(userId, languageId, body)
+apiInstance.patchUserRoutinglanguage(userId, languageId, body, opts)
   .then((data) => {
     console.log(`patchUserRoutinglanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6523,6 +7278,7 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6531,7 +7287,7 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 
 ## patchUserRoutinglanguagesBulk
 
-> UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
+> UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/bulk
@@ -6558,8 +7314,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserRoutinglanguagesBulk(userId, body)
+apiInstance.patchUserRoutinglanguagesBulk(userId, body, opts)
   .then((data) => {
     console.log(`patchUserRoutinglanguagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6576,6 +7338,7 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6584,7 +7347,7 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 
 ## patchUserRoutingskillsBulk
 
-> UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
+> UserSkillEntityListing patchUserRoutingskillsBulk(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/routingskills/bulk
@@ -6610,8 +7373,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchUserRoutingskillsBulk(userId, body)
+apiInstance.patchUserRoutingskillsBulk(userId, body, opts)
   .then((data) => {
     console.log(`patchUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6628,6 +7397,7 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6636,7 +7406,7 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 
 ## postAnalyticsQueuesObservationsQuery
 
-> QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
+> QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body, opts)
 
 
 POST /api/v2/analytics/queues/observations/query
@@ -6661,8 +7431,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsQueuesObservationsQuery(body)
+apiInstance.postAnalyticsQueuesObservationsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6678,6 +7454,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6713,7 +7490,11 @@ let apiInstance = new platformClient.RoutingApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
@@ -6734,6 +7515,7 @@ apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6768,7 +7550,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingAssessments(opts)
@@ -6787,6 +7573,7 @@ apiInstance.postRoutingAssessments(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6820,7 +7607,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingAssessmentsJobs(opts)
@@ -6839,6 +7630,7 @@ apiInstance.postRoutingAssessmentsJobs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6847,7 +7639,7 @@ apiInstance.postRoutingAssessmentsJobs(opts)
 
 ## postRoutingEmailDomainDkim
 
-> VerificationResult postRoutingEmailDomainDkim(domainId)
+> VerificationResult postRoutingEmailDomainDkim(domainId, opts)
 
 
 POST /api/v2/routing/email/domains/{domainId}/dkim
@@ -6872,8 +7664,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailDomainDkim(domainId)
+apiInstance.postRoutingEmailDomainDkim(domainId, opts)
   .then((data) => {
     console.log(`postRoutingEmailDomainDkim success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6889,6 +7687,7 @@ apiInstance.postRoutingEmailDomainDkim(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6897,7 +7696,7 @@ apiInstance.postRoutingEmailDomainDkim(domainId)
 
 ## postRoutingEmailDomainMailfrom
 
-> MailFromResult postRoutingEmailDomainMailfrom(domainId, body)
+> MailFromResult postRoutingEmailDomainMailfrom(domainId, body, opts)
 
 
 POST /api/v2/routing/email/domains/{domainId}/mailfrom
@@ -6923,8 +7722,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let body = {}; // Object | Mail From Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailDomainMailfrom(domainId, body)
+apiInstance.postRoutingEmailDomainMailfrom(domainId, body, opts)
   .then((data) => {
     console.log(`postRoutingEmailDomainMailfrom success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6941,6 +7746,7 @@ apiInstance.postRoutingEmailDomainMailfrom(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **body** | **Object** | Mail From Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6949,7 +7755,7 @@ apiInstance.postRoutingEmailDomainMailfrom(domainId, body)
 
 ## postRoutingEmailDomainRoutes
 
-> InboundRoute postRoutingEmailDomainRoutes(domainName, body)
+> InboundRoute postRoutingEmailDomainRoutes(domainName, body, opts)
 
 
 POST /api/v2/routing/email/domains/{domainName}/routes
@@ -6975,8 +7781,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainName = "domainName_example"; // String | email domain
 let body = {}; // Object | Route
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailDomainRoutes(domainName, body)
+apiInstance.postRoutingEmailDomainRoutes(domainName, body, opts)
   .then((data) => {
     console.log(`postRoutingEmailDomainRoutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6993,6 +7805,7 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **body** | **Object** | Route |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7029,7 +7842,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let opts = { 
-  'body': {} // Object | TestMessage
+  'body': {}, // Object | TestMessage
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingEmailDomainTestconnection(domainId, opts)
@@ -7049,6 +7866,7 @@ apiInstance.postRoutingEmailDomainTestconnection(domainId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **body** | **Object** | TestMessage | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7057,7 +7875,7 @@ apiInstance.postRoutingEmailDomainTestconnection(domainId, opts)
 
 ## postRoutingEmailDomainVerification
 
-> VerificationResult postRoutingEmailDomainVerification(domainId)
+> VerificationResult postRoutingEmailDomainVerification(domainId, opts)
 
 
 POST /api/v2/routing/email/domains/{domainId}/verification
@@ -7082,8 +7900,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailDomainVerification(domainId)
+apiInstance.postRoutingEmailDomainVerification(domainId, opts)
   .then((data) => {
     console.log(`postRoutingEmailDomainVerification success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7099,6 +7923,7 @@ apiInstance.postRoutingEmailDomainVerification(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7107,7 +7932,7 @@ apiInstance.postRoutingEmailDomainVerification(domainId)
 
 ## postRoutingEmailDomains
 
-> InboundDomain postRoutingEmailDomains(body)
+> InboundDomain postRoutingEmailDomains(body, opts)
 
 
 POST /api/v2/routing/email/domains
@@ -7132,8 +7957,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Domain
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailDomains(body)
+apiInstance.postRoutingEmailDomains(body, opts)
   .then((data) => {
     console.log(`postRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7149,6 +7980,7 @@ apiInstance.postRoutingEmailDomains(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Domain |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7185,7 +8017,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
 let opts = { 
-  'body': {} // Object | TestMessage
+  'body': {}, // Object | TestMessage
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingEmailOutboundDomainTestconnection(domainId, opts)
@@ -7205,6 +8041,7 @@ apiInstance.postRoutingEmailOutboundDomainTestconnection(domainId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
  **body** | **Object** | TestMessage | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7213,7 +8050,7 @@ apiInstance.postRoutingEmailOutboundDomainTestconnection(domainId, opts)
 
 ## postRoutingEmailOutboundDomains
 
-> EmailOutboundDomainResult postRoutingEmailOutboundDomains(body)
+> EmailOutboundDomainResult postRoutingEmailOutboundDomains(body, opts)
 
 
 POST /api/v2/routing/email/outbound/domains
@@ -7238,8 +8075,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Domain
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailOutboundDomains(body)
+apiInstance.postRoutingEmailOutboundDomains(body, opts)
   .then((data) => {
     console.log(`postRoutingEmailOutboundDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7255,6 +8098,7 @@ apiInstance.postRoutingEmailOutboundDomains(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Domain |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7263,7 +8107,7 @@ apiInstance.postRoutingEmailOutboundDomains(body)
 
 ## postRoutingEmailOutboundDomainsSimulated
 
-> EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(body)
+> EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(body, opts)
 
 
 POST /api/v2/routing/email/outbound/domains/simulated
@@ -7288,8 +8132,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Domain
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingEmailOutboundDomainsSimulated(body)
+apiInstance.postRoutingEmailOutboundDomainsSimulated(body, opts)
   .then((data) => {
     console.log(`postRoutingEmailOutboundDomainsSimulated success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7305,6 +8155,7 @@ apiInstance.postRoutingEmailOutboundDomainsSimulated(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Domain |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7313,7 +8164,7 @@ apiInstance.postRoutingEmailOutboundDomainsSimulated(body)
 
 ## postRoutingLanguages
 
-> Language postRoutingLanguages(body)
+> Language postRoutingLanguages(body, opts)
 
 
 POST /api/v2/routing/languages
@@ -7338,8 +8189,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingLanguages(body)
+apiInstance.postRoutingLanguages(body, opts)
   .then((data) => {
     console.log(`postRoutingLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7355,6 +8212,7 @@ apiInstance.postRoutingLanguages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7389,7 +8247,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingPredictors(opts)
@@ -7408,6 +8270,7 @@ apiInstance.postRoutingPredictors(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7416,7 +8279,7 @@ apiInstance.postRoutingPredictors(opts)
 
 ## postRoutingPredictorsKeyperformanceindicators
 
-> KeyPerformanceIndicator postRoutingPredictorsKeyperformanceindicators(body)
+> KeyPerformanceIndicator postRoutingPredictorsKeyperformanceindicators(body, opts)
 
 
 POST /api/v2/routing/predictors/keyperformanceindicators
@@ -7443,8 +8306,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingPredictorsKeyperformanceindicators(body)
+apiInstance.postRoutingPredictorsKeyperformanceindicators(body, opts)
   .then((data) => {
     console.log(`postRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7460,6 +8329,7 @@ apiInstance.postRoutingPredictorsKeyperformanceindicators(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7496,7 +8366,11 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let body = [{}]; // Object | Queue Members
 let opts = { 
-  '_delete': false // Boolean | True to delete queue members
+  '_delete': false, // Boolean | True to delete queue members
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingQueueMembers(queueId, body, opts)
@@ -7517,6 +8391,7 @@ apiInstance.postRoutingQueueMembers(queueId, body, opts)
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** | Queue Members |  |
  **_delete** | **Boolean** | True to delete queue members | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7556,7 +8431,11 @@ let apiInstance = new platformClient.RoutingApi();
 let queueId = "queueId_example"; // String | Queue ID
 let body = [{}]; // Object | Queue Members
 let opts = { 
-  '_delete': false // Boolean | True to delete queue members
+  '_delete': false, // Boolean | True to delete queue members
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingQueueUsers(queueId, body, opts)
@@ -7577,6 +8456,7 @@ apiInstance.postRoutingQueueUsers(queueId, body, opts)
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** | Queue Members |  |
  **_delete** | **Boolean** | True to delete queue members | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7585,7 +8465,7 @@ void (no response body)
 
 ## postRoutingQueueWrapupcodes
 
-> [WrapupCode] postRoutingQueueWrapupcodes(queueId, body)
+> [WrapupCode] postRoutingQueueWrapupcodes(queueId, body, opts)
 
 
 POST /api/v2/routing/queues/{queueId}/wrapupcodes
@@ -7611,8 +8491,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let body = [{}]; // Object | List of wrapup codes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingQueueWrapupcodes(queueId, body)
+apiInstance.postRoutingQueueWrapupcodes(queueId, body, opts)
   .then((data) => {
     console.log(`postRoutingQueueWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7629,6 +8515,7 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** | List of wrapup codes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7637,7 +8524,7 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 
 ## postRoutingQueues
 
-> Queue postRoutingQueues(body)
+> Queue postRoutingQueues(body, opts)
 
 
 POST /api/v2/routing/queues
@@ -7662,8 +8549,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Queue
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingQueues(body)
+apiInstance.postRoutingQueues(body, opts)
   .then((data) => {
     console.log(`postRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7679,6 +8572,7 @@ apiInstance.postRoutingQueues(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Queue |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7713,7 +8607,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postRoutingSkillgroupMembersDivisions(skillGroupId, opts)
@@ -7733,6 +8631,7 @@ apiInstance.postRoutingSkillgroupMembersDivisions(skillGroupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **skillGroupId** | **String** | Skill Group ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7741,7 +8640,7 @@ void (no response body)
 
 ## postRoutingSkillgroups
 
-> SkillGroupWithMemberDivisions postRoutingSkillgroups(body)
+> SkillGroupWithMemberDivisions postRoutingSkillgroups(body, opts)
 
 
 POST /api/v2/routing/skillgroups
@@ -7766,8 +8665,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Create skill group
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingSkillgroups(body)
+apiInstance.postRoutingSkillgroups(body, opts)
   .then((data) => {
     console.log(`postRoutingSkillgroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7783,6 +8688,7 @@ apiInstance.postRoutingSkillgroups(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create skill group |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7791,7 +8697,7 @@ apiInstance.postRoutingSkillgroups(body)
 
 ## postRoutingSkills
 
-> RoutingSkill postRoutingSkills(body)
+> RoutingSkill postRoutingSkills(body, opts)
 
 
 POST /api/v2/routing/skills
@@ -7817,8 +8723,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingSkills(body)
+apiInstance.postRoutingSkills(body, opts)
   .then((data) => {
     console.log(`postRoutingSkills success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7834,6 +8746,7 @@ apiInstance.postRoutingSkills(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7842,7 +8755,7 @@ apiInstance.postRoutingSkills(body)
 
 ## postRoutingSmsAddresses
 
-> SmsAddress postRoutingSmsAddresses(body)
+> SmsAddress postRoutingSmsAddresses(body, opts)
 
 
 POST /api/v2/routing/sms/addresses
@@ -7867,8 +8780,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | SmsAddress
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingSmsAddresses(body)
+apiInstance.postRoutingSmsAddresses(body, opts)
   .then((data) => {
     console.log(`postRoutingSmsAddresses success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7884,6 +8803,7 @@ apiInstance.postRoutingSmsAddresses(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SmsAddress |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7892,7 +8812,7 @@ apiInstance.postRoutingSmsAddresses(body)
 
 ## postRoutingSmsPhonenumbers
 
-> SmsPhoneNumber postRoutingSmsPhonenumbers(body)
+> SmsPhoneNumber postRoutingSmsPhonenumbers(body, opts)
 
 
 POST /api/v2/routing/sms/phonenumbers
@@ -7919,8 +8839,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | SmsPhoneNumber
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingSmsPhonenumbers(body)
+apiInstance.postRoutingSmsPhonenumbers(body, opts)
   .then((data) => {
     console.log(`postRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7936,6 +8862,7 @@ apiInstance.postRoutingSmsPhonenumbers(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SmsPhoneNumber |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7944,7 +8871,7 @@ apiInstance.postRoutingSmsPhonenumbers(body)
 
 ## postRoutingSmsPhonenumbersAlphanumeric
 
-> SmsPhoneNumber postRoutingSmsPhonenumbersAlphanumeric(body)
+> SmsPhoneNumber postRoutingSmsPhonenumbersAlphanumeric(body, opts)
 
 
 POST /api/v2/routing/sms/phonenumbers/alphanumeric
@@ -7971,8 +8898,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | SmsPhoneNumber
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingSmsPhonenumbersAlphanumeric(body)
+apiInstance.postRoutingSmsPhonenumbersAlphanumeric(body, opts)
   .then((data) => {
     console.log(`postRoutingSmsPhonenumbersAlphanumeric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7988,6 +8921,7 @@ apiInstance.postRoutingSmsPhonenumbersAlphanumeric(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SmsPhoneNumber |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7996,7 +8930,7 @@ apiInstance.postRoutingSmsPhonenumbersAlphanumeric(body)
 
 ## postRoutingSmsPhonenumbersImport
 
-> SmsPhoneNumber postRoutingSmsPhonenumbersImport(body)
+> SmsPhoneNumber postRoutingSmsPhonenumbersImport(body, opts)
 
 
 POST /api/v2/routing/sms/phonenumbers/import
@@ -8021,8 +8955,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | SmsPhoneNumber
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingSmsPhonenumbersImport(body)
+apiInstance.postRoutingSmsPhonenumbersImport(body, opts)
   .then((data) => {
     console.log(`postRoutingSmsPhonenumbersImport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8038,6 +8978,7 @@ apiInstance.postRoutingSmsPhonenumbersImport(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SmsPhoneNumber |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8046,7 +8987,7 @@ apiInstance.postRoutingSmsPhonenumbersImport(body)
 
 ## postRoutingUtilizationLabels
 
-> UtilizationLabel postRoutingUtilizationLabels(body)
+> UtilizationLabel postRoutingUtilizationLabels(body, opts)
 
 
 POST /api/v2/routing/utilization/labels
@@ -8071,8 +9012,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | UtilizationLabel
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingUtilizationLabels(body)
+apiInstance.postRoutingUtilizationLabels(body, opts)
   .then((data) => {
     console.log(`postRoutingUtilizationLabels success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8088,6 +9035,7 @@ apiInstance.postRoutingUtilizationLabels(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | UtilizationLabel |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8096,7 +9044,7 @@ apiInstance.postRoutingUtilizationLabels(body)
 
 ## postRoutingUtilizationTags
 
-> UtilizationTag postRoutingUtilizationTags(body)
+> UtilizationTag postRoutingUtilizationTags(body, opts)
 
 
 POST /api/v2/routing/utilization/tags
@@ -8123,8 +9071,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | UtilizationTag
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingUtilizationTags(body)
+apiInstance.postRoutingUtilizationTags(body, opts)
   .then((data) => {
     console.log(`postRoutingUtilizationTags success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8140,6 +9094,7 @@ apiInstance.postRoutingUtilizationTags(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | UtilizationTag |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8148,7 +9103,7 @@ apiInstance.postRoutingUtilizationTags(body)
 
 ## postRoutingWrapupcodes
 
-> WrapupCode postRoutingWrapupcodes(body)
+> WrapupCode postRoutingWrapupcodes(body, opts)
 
 
 POST /api/v2/routing/wrapupcodes
@@ -8173,8 +9128,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | WrapupCode
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRoutingWrapupcodes(body)
+apiInstance.postRoutingWrapupcodes(body, opts)
   .then((data) => {
     console.log(`postRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8190,6 +9151,7 @@ apiInstance.postRoutingWrapupcodes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WrapupCode |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8198,7 +9160,7 @@ apiInstance.postRoutingWrapupcodes(body)
 
 ## postUserRoutinglanguages
 
-> UserRoutingLanguage postUserRoutinglanguages(userId, body)
+> UserRoutingLanguage postUserRoutinglanguages(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/routinglanguages
@@ -8225,8 +9187,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserRoutinglanguages(userId, body)
+apiInstance.postUserRoutinglanguages(userId, body, opts)
   .then((data) => {
     console.log(`postUserRoutinglanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8243,6 +9211,7 @@ apiInstance.postUserRoutinglanguages(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8251,7 +9220,7 @@ apiInstance.postUserRoutinglanguages(userId, body)
 
 ## postUserRoutingskills
 
-> UserRoutingSkill postUserRoutingskills(userId, body)
+> UserRoutingSkill postUserRoutingskills(userId, body, opts)
 
 
 POST /api/v2/users/{userId}/routingskills
@@ -8277,8 +9246,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUserRoutingskills(userId, body)
+apiInstance.postUserRoutingskills(userId, body, opts)
   .then((data) => {
     console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8295,6 +9270,7 @@ apiInstance.postUserRoutingskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8303,7 +9279,7 @@ apiInstance.postUserRoutingskills(userId, body)
 
 ## putRoutingDirectroutingbackupSettingsMe
 
-> AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+> AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body, opts)
 
 
 PUT /api/v2/routing/directroutingbackup/settings/me
@@ -8328,8 +9304,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | directRoutingBackup
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
+apiInstance.putRoutingDirectroutingbackupSettingsMe(body, opts)
   .then((data) => {
     console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8345,6 +9327,7 @@ apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | directRoutingBackup |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8353,7 +9336,7 @@ apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
 
 ## putRoutingEmailDomainRoute
 
-> InboundRoute putRoutingEmailDomainRoute(domainName, routeId, body)
+> InboundRoute putRoutingEmailDomainRoute(domainName, routeId, body, opts)
 
 
 PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}
@@ -8380,8 +9363,14 @@ let apiInstance = new platformClient.RoutingApi();
 let domainName = "domainName_example"; // String | email domain
 let routeId = "routeId_example"; // String | route ID
 let body = {}; // Object | Route
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
+apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body, opts)
   .then((data) => {
     console.log(`putRoutingEmailDomainRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8399,6 +9388,7 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
  **body** | **Object** | Route |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8407,7 +9397,7 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 
 ## putRoutingEmailDomainRouteIdentityresolution
 
-> RouteIdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+> RouteIdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body, opts)
 
 
 PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
@@ -8435,8 +9425,14 @@ let apiInstance = new platformClient.RoutingApi();
 let domainName = "domainName_example"; // String | email domain
 let routeId = "routeId_example"; // String | route ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body, opts)
   .then((data) => {
     console.log(`putRoutingEmailDomainRouteIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8454,6 +9450,7 @@ apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, bo
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8462,7 +9459,7 @@ apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, bo
 
 ## putRoutingEmailOutboundDomainActivation
 
-> EmailOutboundDomainResult putRoutingEmailOutboundDomainActivation(domainId)
+> EmailOutboundDomainResult putRoutingEmailOutboundDomainActivation(domainId, opts)
 
 
 PUT /api/v2/routing/email/outbound/domains/{domainId}/activation
@@ -8487,8 +9484,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingEmailOutboundDomainActivation(domainId)
+apiInstance.putRoutingEmailOutboundDomainActivation(domainId, opts)
   .then((data) => {
     console.log(`putRoutingEmailOutboundDomainActivation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8504,6 +9507,7 @@ apiInstance.putRoutingEmailOutboundDomainActivation(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8512,7 +9516,7 @@ apiInstance.putRoutingEmailOutboundDomainActivation(domainId)
 
 ## putRoutingMessageRecipient
 
-> Recipient putRoutingMessageRecipient(recipientId, body)
+> Recipient putRoutingMessageRecipient(recipientId, body, opts)
 
 
 PUT /api/v2/routing/message/recipients/{recipientId}
@@ -8538,8 +9542,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let recipientId = "recipientId_example"; // String | Recipient ID
 let body = {}; // Object | Recipient
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingMessageRecipient(recipientId, body)
+apiInstance.putRoutingMessageRecipient(recipientId, body, opts)
   .then((data) => {
     console.log(`putRoutingMessageRecipient success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8556,6 +9566,7 @@ apiInstance.putRoutingMessageRecipient(recipientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **recipientId** | **String** | Recipient ID |  |
  **body** | **Object** | Recipient |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8564,7 +9575,7 @@ apiInstance.putRoutingMessageRecipient(recipientId, body)
 
 ## putRoutingQueue
 
-> Queue putRoutingQueue(queueId, body)
+> Queue putRoutingQueue(queueId, body, opts)
 
 
 PUT /api/v2/routing/queues/{queueId}
@@ -8590,8 +9601,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | Queue
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingQueue(queueId, body)
+apiInstance.putRoutingQueue(queueId, body, opts)
   .then((data) => {
     console.log(`putRoutingQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8608,6 +9625,7 @@ apiInstance.putRoutingQueue(queueId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** | Queue |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8616,7 +9634,7 @@ apiInstance.putRoutingQueue(queueId, body)
 
 ## putRoutingQueueIdentityresolution
 
-> IdentityResolutionQueueConfig putRoutingQueueIdentityresolution(queueId, body)
+> IdentityResolutionQueueConfig putRoutingQueueIdentityresolution(queueId, body, opts)
 
 
 PUT /api/v2/routing/queues/{queueId}/identityresolution
@@ -8643,8 +9661,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingQueueIdentityresolution(queueId, body)
+apiInstance.putRoutingQueueIdentityresolution(queueId, body, opts)
   .then((data) => {
     console.log(`putRoutingQueueIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8661,6 +9685,7 @@ apiInstance.putRoutingQueueIdentityresolution(queueId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8669,7 +9694,7 @@ apiInstance.putRoutingQueueIdentityresolution(queueId, body)
 
 ## putRoutingSettings
 
-> RoutingSettings putRoutingSettings(body)
+> RoutingSettings putRoutingSettings(body, opts)
 
 
 PUT /api/v2/routing/settings
@@ -8694,8 +9719,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Organization Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingSettings(body)
+apiInstance.putRoutingSettings(body, opts)
   .then((data) => {
     console.log(`putRoutingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8711,6 +9742,7 @@ apiInstance.putRoutingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8719,7 +9751,7 @@ apiInstance.putRoutingSettings(body)
 
 ## putRoutingSettingsTranscription
 
-> TranscriptionSettings putRoutingSettingsTranscription(body)
+> TranscriptionSettings putRoutingSettingsTranscription(body, opts)
 
 
 PUT /api/v2/routing/settings/transcription
@@ -8744,8 +9776,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | Organization Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingSettingsTranscription(body)
+apiInstance.putRoutingSettingsTranscription(body, opts)
   .then((data) => {
     console.log(`putRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8761,6 +9799,7 @@ apiInstance.putRoutingSettingsTranscription(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8769,7 +9808,7 @@ apiInstance.putRoutingSettingsTranscription(body)
 
 ## putRoutingSmsIdentityresolutionPhonenumber
 
-> SmsIdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+> SmsIdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(addressId, body, opts)
 
 
 PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
@@ -8796,8 +9835,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body, opts)
   .then((data) => {
     console.log(`putRoutingSmsIdentityresolutionPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8814,6 +9859,7 @@ apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8822,7 +9868,7 @@ apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
 
 ## putRoutingUserDirectroutingbackupSettings
 
-> AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+> AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body, opts)
 
 
 PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -8848,8 +9894,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | directRoutingBackup
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
+apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body, opts)
   .then((data) => {
     console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8866,6 +9918,7 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | directRoutingBackup |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8874,7 +9927,7 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
 
 ## putRoutingUserUtilization
 
-> AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
+> AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body, opts)
 
 
 PUT /api/v2/routing/users/{userId}/utilization
@@ -8900,8 +9953,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = {}; // Object | utilization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingUserUtilization(userId, body)
+apiInstance.putRoutingUserUtilization(userId, body, opts)
   .then((data) => {
     console.log(`putRoutingUserUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8918,6 +9977,7 @@ apiInstance.putRoutingUserUtilization(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | utilization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8926,7 +9986,7 @@ apiInstance.putRoutingUserUtilization(userId, body)
 
 ## putRoutingUtilization
 
-> UtilizationResponse putRoutingUtilization(body)
+> UtilizationResponse putRoutingUtilization(body, opts)
 
 
 PUT /api/v2/routing/utilization
@@ -8951,8 +10011,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | utilization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingUtilization(body)
+apiInstance.putRoutingUtilization(body, opts)
   .then((data) => {
     console.log(`putRoutingUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8968,6 +10034,7 @@ apiInstance.putRoutingUtilization(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | utilization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8976,7 +10043,7 @@ apiInstance.putRoutingUtilization(body)
 
 ## putRoutingUtilizationLabel
 
-> UtilizationLabel putRoutingUtilizationLabel(labelId, body)
+> UtilizationLabel putRoutingUtilizationLabel(labelId, body, opts)
 
 
 PUT /api/v2/routing/utilization/labels/{labelId}
@@ -9002,8 +10069,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let labelId = "labelId_example"; // String | Utilization Label ID
 let body = {}; // Object | UtilizationLabel
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingUtilizationLabel(labelId, body)
+apiInstance.putRoutingUtilizationLabel(labelId, body, opts)
   .then((data) => {
     console.log(`putRoutingUtilizationLabel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9020,6 +10093,7 @@ apiInstance.putRoutingUtilizationLabel(labelId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **labelId** | **String** | Utilization Label ID |  |
  **body** | **Object** | UtilizationLabel |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9028,7 +10102,7 @@ apiInstance.putRoutingUtilizationLabel(labelId, body)
 
 ## putRoutingWrapupcode
 
-> WrapupCode putRoutingWrapupcode(codeId, body)
+> WrapupCode putRoutingWrapupcode(codeId, body, opts)
 
 
 PUT /api/v2/routing/wrapupcodes/{codeId}
@@ -9054,8 +10128,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let codeId = "codeId_example"; // String | Wrapup Code ID
 let body = {}; // Object | WrapupCode
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRoutingWrapupcode(codeId, body)
+apiInstance.putRoutingWrapupcode(codeId, body, opts)
   .then((data) => {
     console.log(`putRoutingWrapupcode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9072,6 +10152,7 @@ apiInstance.putRoutingWrapupcode(codeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
  **body** | **Object** | WrapupCode |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9080,7 +10161,7 @@ apiInstance.putRoutingWrapupcode(codeId, body)
 
 ## putUserRoutingskill
 
-> UserRoutingSkill putUserRoutingskill(userId, skillId, body)
+> UserRoutingSkill putUserRoutingskill(userId, skillId, body, opts)
 
 
 PUT /api/v2/users/{userId}/routingskills/{skillId}
@@ -9107,8 +10188,14 @@ let apiInstance = new platformClient.RoutingApi();
 let userId = "userId_example"; // String | User ID
 let skillId = "skillId_example"; // String | skillId
 let body = {}; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoutingskill(userId, skillId, body)
+apiInstance.putUserRoutingskill(userId, skillId, body, opts)
   .then((data) => {
     console.log(`putUserRoutingskill success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9126,6 +10213,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9134,7 +10222,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 
 ## putUserRoutingskillsBulk
 
-> UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
+> UserSkillEntityListing putUserRoutingskillsBulk(userId, body, opts)
 
 
 PUT /api/v2/users/{userId}/routingskills/bulk
@@ -9160,8 +10248,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let userId = "userId_example"; // String | User ID
 let body = [{}]; // Object | Skill
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putUserRoutingskillsBulk(userId, body)
+apiInstance.putUserRoutingskillsBulk(userId, body, opts)
   .then((data) => {
     console.log(`putUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9178,10 +10272,11 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

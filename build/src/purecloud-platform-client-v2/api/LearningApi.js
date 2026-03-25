@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class LearningApi {
 	 * Delete a learning assignment
 	 * 
 	 * @param {String} assignmentId The Learning Assignment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLearningAssignment(assignmentId) { 
+	deleteLearningAssignment(assignmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling deleteLearningAssignment';
@@ -41,7 +45,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class LearningApi {
 	 * Delete a learning module
 	 * This will delete a learning module if it is unpublished or it will delete a published and archived learning module
 	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLearningModule(moduleId) { 
+	deleteLearningModule(moduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling deleteLearningModule';
@@ -66,7 +75,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -76,6 +86,7 @@ class LearningApi {
 	 * @param {String} assignmentId The ID of Learning Assignment
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields to expand in response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningAssignment(assignmentId, opts) { 
 		opts = opts || {};
@@ -95,7 +106,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -108,6 +120,7 @@ class LearningApi {
 	 * @param {String} opts.shareableContentObjectId The ID of SCO to load
 	 * @param {Object} opts.defaultShareableContentObject The default SCO to retrieve
 	 * @param {Array.<String>} opts.expand Fields to expand in response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningAssignmentStep(assignmentId, stepId, opts) { 
 		opts = opts || {};
@@ -131,7 +144,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -154,6 +168,7 @@ class LearningApi {
 	 * @param {Array.<String>} opts.types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningAssignments(opts) { 
 		opts = opts || {};
@@ -169,7 +184,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -191,6 +207,7 @@ class LearningApi {
 	 * @param {Array.<String>} opts.types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningAssignmentsMe(opts) { 
 		opts = opts || {};
@@ -206,7 +223,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -216,6 +234,7 @@ class LearningApi {
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningModule(moduleId, opts) { 
 		opts = opts || {};
@@ -235,7 +254,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -244,8 +264,12 @@ class LearningApi {
 	 * 
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {String} jobId The ID of the learning module job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLearningModuleJob(moduleId, jobId) { 
+	getLearningModuleJob(moduleId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModuleJob';
@@ -265,7 +289,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -273,8 +298,12 @@ class LearningApi {
 	 * Get a learning module preview
 	 * 
 	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLearningModulePreview(moduleId) { 
+	getLearningModulePreview(moduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModulePreview';
@@ -290,7 +319,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -298,8 +328,12 @@ class LearningApi {
 	 * Get a learning module rule
 	 * 
 	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLearningModuleRule(moduleId) { 
+	getLearningModuleRule(moduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling getLearningModuleRule';
@@ -315,7 +349,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -326,6 +361,7 @@ class LearningApi {
 	 * @param {String} versionId The version of learning module
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningModuleVersion(moduleId, versionId, opts) { 
 		opts = opts || {};
@@ -349,7 +385,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -368,6 +405,7 @@ class LearningApi {
 	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned (default to Any)
 	 * @param {Array.<String>} opts.statuses Specifies the module statuses to filter by
 	 * @param {Array.<String>} opts.externalIds Specifies the module external IDs to filter by. Only one ID is allowed
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningModules(opts) { 
 		opts = opts || {};
@@ -383,7 +421,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -398,6 +437,7 @@ class LearningApi {
 	 * @param {Object} opts.overdue Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. (default to Any)
 	 * @param {Array.<String>} opts.assignmentStates Specifies the assignment states to return.
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLearningModulesAssignments(userIds, opts) { 
 		opts = opts || {};
@@ -417,7 +457,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -425,8 +466,12 @@ class LearningApi {
 	 * Get a specific Learning Module cover art using ID
 	 * 
 	 * @param {String} coverArtId Key identifier for the cover art
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLearningModulesCoverartCoverArtId(coverArtId) { 
+	getLearningModulesCoverartCoverArtId(coverArtId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'coverArtId' is set
 		if (coverArtId === undefined || coverArtId === null || coverArtId === '') {
 			throw 'Missing the required parameter "coverArtId" when calling getLearningModulesCoverartCoverArtId';
@@ -442,7 +487,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -450,8 +496,12 @@ class LearningApi {
 	 * Retrieve the status of the job for the slots where a learning activity can be scheduled.
 	 * 
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLearningScheduleslotsJob(jobId) { 
+	getLearningScheduleslotsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getLearningScheduleslotsJob';
@@ -467,7 +517,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -475,8 +526,12 @@ class LearningApi {
 	 * Get Learning SCORM Result
 	 * 
 	 * @param {String} scormId The ID of the SCORM package
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLearningScormScormId(scormId) { 
+	getLearningScormScormId(scormId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'scormId' is set
 		if (scormId === undefined || scormId === null || scormId === '') {
 			throw 'Missing the required parameter "scormId" when calling getLearningScormScormId';
@@ -492,7 +547,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -502,6 +558,7 @@ class LearningApi {
 	 * @param {String} assignmentId The ID of Learning Assignment
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The Learning Assignment to be updated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchLearningAssignment(assignmentId, opts) { 
 		opts = opts || {};
@@ -521,7 +578,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -531,6 +589,7 @@ class LearningApi {
 	 * @param {String} assignmentId The ID of Learning Assignment
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The Learning assignment reschedule model
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchLearningAssignmentReschedule(assignmentId, opts) { 
 		opts = opts || {};
@@ -550,7 +609,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -561,6 +621,7 @@ class LearningApi {
 	 * @param {String} stepId The ID of Learning Assignment Step
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The Learning Assignment Step to be updated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchLearningAssignmentStep(assignmentId, stepId, opts) { 
 		opts = opts || {};
@@ -584,7 +645,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -594,8 +656,12 @@ class LearningApi {
 	 * @param {String} moduleId Key identifier for the module
 	 * @param {String} userId Key identifier for the user
 	 * @param {Object} body The learning request for updating the assignment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchLearningModuleUserAssignments(moduleId, userId, body) { 
+	patchLearningModuleUserAssignments(moduleId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling patchLearningModuleUserAssignments';
@@ -619,7 +685,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -627,8 +694,12 @@ class LearningApi {
 	 * Score learning assessment for preview
 	 * 
 	 * @param {Object} body Assessment form and answers to score
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningAssessmentsScoring(body) { 
+	postLearningAssessmentsScoring(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLearningAssessmentsScoring';
@@ -644,7 +715,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -652,8 +724,12 @@ class LearningApi {
 	 * Reassign Learning Assignment
 	 * This will reassign the state of the assignment to Assigned and update the assignment to the latest version of the module
 	 * @param {String} assignmentId The Learning Assignment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningAssignmentReassign(assignmentId) { 
+	postLearningAssignmentReassign(assignmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReassign';
@@ -669,7 +745,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -677,8 +754,12 @@ class LearningApi {
 	 * Reset Learning Assignment
 	 * This will reset the state of the assignment to Assigned and remove the version of Learning module associated with the assignment
 	 * @param {String} assignmentId The Learning Assignment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningAssignmentReset(assignmentId) { 
+	postLearningAssignmentReset(assignmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null || assignmentId === '') {
 			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReset';
@@ -694,7 +775,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -703,6 +785,7 @@ class LearningApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The Learning Assignment to be created
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLearningAssignments(opts) { 
 		opts = opts || {};
@@ -718,7 +801,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -726,8 +810,12 @@ class LearningApi {
 	 * Retrieve aggregated assignment data
 	 * 
 	 * @param {Object} body Aggregate Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningAssignmentsAggregatesQuery(body) { 
+	postLearningAssignmentsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLearningAssignmentsAggregatesQuery';
@@ -743,7 +831,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -752,6 +841,7 @@ class LearningApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<Object>} opts.body The learning assignments to be created
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLearningAssignmentsBulkadd(opts) { 
 		opts = opts || {};
@@ -767,7 +857,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -776,6 +867,7 @@ class LearningApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.body The IDs of the learning assignments to be removed
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLearningAssignmentsBulkremove(opts) { 
 		opts = opts || {};
@@ -791,7 +883,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -800,8 +893,12 @@ class LearningApi {
 	 * This will initiate operation specified in the request body for a learning module
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {Object} body The learning module job request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningModuleJobs(moduleId, body) { 
+	postLearningModuleJobs(moduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling postLearningModuleJobs';
@@ -821,7 +918,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -831,6 +929,7 @@ class LearningApi {
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The request body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLearningModulePublish(moduleId, opts) { 
 		opts = opts || {};
@@ -850,7 +949,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -858,9 +958,13 @@ class LearningApi {
 	 * Migrate a legacy learning module rule to a users rule.
 	 * 
 	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postLearningModuleRuleMigrate(moduleId) { 
+	postLearningModuleRuleMigrate(moduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling postLearningModuleRuleMigrate';
@@ -876,7 +980,8 @@ class LearningApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -884,8 +989,12 @@ class LearningApi {
 	 * Create a new learning module
 	 * This will create a new unpublished learning module with the specified fields.
 	 * @param {Object} body The learning module to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningModules(body) { 
+	postLearningModules(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLearningModules';
@@ -901,7 +1010,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -911,8 +1021,12 @@ class LearningApi {
 	 * @param {Number} pageSize Page size
 	 * @param {Number} pageNumber Page number
 	 * @param {Object} body The learning module rule to fetch users
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningRulesQuery(pageSize, pageNumber, body) { 
+	postLearningRulesQuery(pageSize, pageNumber, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'pageSize' is set
 		if (pageSize === undefined || pageSize === null) {
 			throw 'Missing the required parameter "pageSize" when calling postLearningRulesQuery';
@@ -936,7 +1050,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -944,8 +1059,12 @@ class LearningApi {
 	 * Start job to retrieve slots where a learning activity can be scheduled.
 	 * 
 	 * @param {Object} body The slots search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningScheduleslotsJobs(body) { 
+	postLearningScheduleslotsJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLearningScheduleslotsJobs';
@@ -961,7 +1080,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -969,8 +1089,12 @@ class LearningApi {
 	 * Get list of possible slots where a learning activity can be scheduled.
 	 * 
 	 * @param {Object} body The slot search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLearningScheduleslotsQuery(body) { 
+	postLearningScheduleslotsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLearningScheduleslotsQuery';
@@ -986,7 +1110,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -995,6 +1120,7 @@ class LearningApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The SCORM package to be uploaded
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLearningScorm(opts) { 
 		opts = opts || {};
@@ -1010,7 +1136,8 @@ class LearningApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1019,8 +1146,12 @@ class LearningApi {
 	 * This will update the name, description, completion time in days and inform steps for a learning module
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {Object} body The learning module to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putLearningModule(moduleId, body) { 
+	putLearningModule(moduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling putLearningModule';
@@ -1040,7 +1171,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1049,8 +1181,12 @@ class LearningApi {
 	 * This will update a learning module preview
 	 * @param {String} moduleId The ID of the learning module
 	 * @param {Object} body The learning module to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putLearningModulePreview(moduleId, body) { 
+	putLearningModulePreview(moduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null || moduleId === '') {
 			throw 'Missing the required parameter "moduleId" when calling putLearningModulePreview';
@@ -1070,7 +1206,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1081,6 +1218,7 @@ class LearningApi {
 	 * @param {Object} body The learning module rule to be updated
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.assign Whether to assign the module to users or not (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putLearningModuleRule(moduleId, body, opts) { 
 		opts = opts || {};
@@ -1104,7 +1242,8 @@ class LearningApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

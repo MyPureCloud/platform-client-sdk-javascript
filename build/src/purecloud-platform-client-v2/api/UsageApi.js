@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -25,8 +25,12 @@ class UsageApi {
 	 * 
 	 * @param {String} executionId ID of the query execution
 	 * @param {String} clientId Client ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getOauthClientUsageQueryResult(executionId, clientId) { 
+	getOauthClientUsageQueryResult(executionId, clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'executionId' is set
 		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
@@ -46,7 +50,8 @@ class UsageApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -56,6 +61,7 @@ class UsageApi {
 	 * @param {String} clientId Client ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.days Previous number of days to query (default to 7)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getOauthClientUsageSummary(clientId, opts) { 
 		opts = opts || {};
@@ -75,7 +81,8 @@ class UsageApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -86,6 +93,7 @@ class UsageApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size of the results. Max is 1000. (default to 100)
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsageAggregatesQueryJob(jobId, opts) { 
 		opts = opts || {};
@@ -105,7 +113,8 @@ class UsageApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -117,6 +126,7 @@ class UsageApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size of the results. Max is 1000. (default to 100)
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsageClientClientIdAggregatesQueryJob(clientId, jobId, opts) { 
 		opts = opts || {};
@@ -140,7 +150,8 @@ class UsageApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -148,8 +159,12 @@ class UsageApi {
 	 * Get the results of a usage query
 	 * 
 	 * @param {String} executionId ID of the query execution
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUsageQueryExecutionIdResults(executionId) { 
+	getUsageQueryExecutionIdResults(executionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'executionId' is set
 		if (executionId === undefined || executionId === null || executionId === '') {
 			throw 'Missing the required parameter "executionId" when calling getUsageQueryExecutionIdResults';
@@ -165,7 +180,8 @@ class UsageApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -176,6 +192,7 @@ class UsageApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned
 	 * @param {Number} opts.pageSize The max number of entities to be returned per request. Maximum page size of 1000
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsageSimplesearchExecutionIdResults(executionId, opts) { 
 		opts = opts || {};
@@ -195,7 +212,8 @@ class UsageApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -204,8 +222,12 @@ class UsageApi {
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
 	 * @param {Object} body Query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postOauthClientUsageQuery(clientId, body) { 
+	postOauthClientUsageQuery(clientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
@@ -225,7 +247,8 @@ class UsageApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -233,8 +256,12 @@ class UsageApi {
 	 * Query your organization's public api usage.
 	 * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
 	 * @param {Object} body Query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsageAggregatesQueryJobs(body) { 
+	postUsageAggregatesQueryJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsageAggregatesQueryJobs';
@@ -250,7 +277,8 @@ class UsageApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -259,8 +287,12 @@ class UsageApi {
 	 * After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
 	 * @param {String} clientId clientId
 	 * @param {Object} body Query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsageClientClientIdAggregatesQueryJobs(clientId, body) { 
+	postUsageClientClientIdAggregatesQueryJobs(clientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling postUsageClientClientIdAggregatesQueryJobs';
@@ -280,7 +312,8 @@ class UsageApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -288,8 +321,12 @@ class UsageApi {
 	 * Query organization API Usage - 
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {Object} body Query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsageQuery(body) { 
+	postUsageQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsageQuery';
@@ -305,7 +342,8 @@ class UsageApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -313,8 +351,12 @@ class UsageApi {
 	 * Search organization API Usage
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 	 * @param {Object} body SimpleSearch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUsageSimplesearch(body) { 
+	postUsageSimplesearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postUsageSimplesearch';
@@ -330,7 +372,8 @@ class UsageApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

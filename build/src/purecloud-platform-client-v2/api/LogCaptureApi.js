@@ -5,7 +5,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class LogCaptureApi {
 	 * Disable browser log capture for the user
 	 * 
 	 * @param {String} userId The id of the user to disable browser log capture
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteDiagnosticsLogcaptureBrowserUser(userId) { 
+	deleteDiagnosticsLogcaptureBrowserUser(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteDiagnosticsLogcaptureBrowserUser';
@@ -41,7 +45,8 @@ class LogCaptureApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class LogCaptureApi {
 	 * Gets status of async download execution
 	 * 
 	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId) { 
+	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getDiagnosticsLogcaptureBrowserEntriesDownloadJob';
@@ -66,7 +75,8 @@ class LogCaptureApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class LogCaptureApi {
 	 * Get log capture configuration for the user
 	 * 
 	 * @param {String} userId The id of the user to get browser log capture configuration
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getDiagnosticsLogcaptureBrowserUser(userId) { 
+	getDiagnosticsLogcaptureBrowserUser(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getDiagnosticsLogcaptureBrowserUser';
@@ -91,7 +105,8 @@ class LogCaptureApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -100,6 +115,7 @@ class LogCaptureApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeExpired Include expired users with log captures still available for search or download (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getDiagnosticsLogcaptureBrowserUsers(opts) { 
 		opts = opts || {};
@@ -115,7 +131,8 @@ class LogCaptureApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,6 +141,7 @@ class LogCaptureApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts) { 
 		opts = opts || {};
@@ -139,7 +157,8 @@ class LogCaptureApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -150,6 +169,7 @@ class LogCaptureApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postDiagnosticsLogcaptureBrowserEntriesQuery(opts) { 
 		opts = opts || {};
@@ -165,7 +185,8 @@ class LogCaptureApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -175,6 +196,7 @@ class LogCaptureApi {
 	 * @param {String} userId The id of the user to enable browser log capture
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postDiagnosticsLogcaptureBrowserUser(userId, opts) { 
 		opts = opts || {};
@@ -194,7 +216,8 @@ class LogCaptureApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

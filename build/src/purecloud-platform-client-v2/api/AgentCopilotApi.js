@@ -5,7 +5,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class AgentCopilotApi {
 	 * Get copilot configuration of an assistant.
 	 * 
 	 * @param {String} assistantId Assistant ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAssistantCopilot(assistantId) { 
+	getAssistantCopilot(assistantId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling getAssistantCopilot';
@@ -41,7 +45,8 @@ class AgentCopilotApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,6 +55,7 @@ class AgentCopilotApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.language Which language are the features supported for
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistantsCopilotFeaturesupport(opts) { 
 		opts = opts || {};
@@ -65,7 +71,8 @@ class AgentCopilotApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +81,12 @@ class AgentCopilotApi {
 	 * 
 	 * @param {String} assistantId Assistant ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAssistantCopilot(assistantId, body) { 
+	putAssistantCopilot(assistantId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assistantId' is set
 		if (assistantId === undefined || assistantId === null || assistantId === '') {
 			throw 'Missing the required parameter "assistantId" when calling putAssistantCopilot';
@@ -95,7 +106,8 @@ class AgentCopilotApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

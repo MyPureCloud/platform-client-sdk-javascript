@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteDiagnosticsLogcaptureBrowserUser
 
-> void deleteDiagnosticsLogcaptureBrowserUser(userId)
+> void deleteDiagnosticsLogcaptureBrowserUser(userId, opts)
 
 
 DELETE /api/v2/diagnostics/logcapture/browser/users/{userId}
@@ -43,8 +43,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LogCaptureApi();
 
 let userId = "userId_example"; // String | The id of the user to disable browser log capture
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteDiagnosticsLogcaptureBrowserUser(userId)
+apiInstance.deleteDiagnosticsLogcaptureBrowserUser(userId, opts)
   .then(() => {
     console.log('deleteDiagnosticsLogcaptureBrowserUser returned successfully.');
   })
@@ -60,6 +66,7 @@ apiInstance.deleteDiagnosticsLogcaptureBrowserUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The id of the user to disable browser log capture |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -68,7 +75,7 @@ void (no response body)
 
 ## getDiagnosticsLogcaptureBrowserEntriesDownloadJob
 
-> LogCaptureDownloadExecutionResponse getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
+> LogCaptureDownloadExecutionResponse getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId, opts)
 
 
 GET /api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}
@@ -93,8 +100,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LogCaptureApi();
 
 let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
+apiInstance.getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId, opts)
   .then((data) => {
     console.log(`getDiagnosticsLogcaptureBrowserEntriesDownloadJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -110,6 +123,7 @@ apiInstance.getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -118,7 +132,7 @@ apiInstance.getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
 
 ## getDiagnosticsLogcaptureBrowserUser
 
-> LogCaptureUserConfigurationResponse getDiagnosticsLogcaptureBrowserUser(userId)
+> LogCaptureUserConfigurationResponse getDiagnosticsLogcaptureBrowserUser(userId, opts)
 
 
 GET /api/v2/diagnostics/logcapture/browser/users/{userId}
@@ -143,8 +157,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LogCaptureApi();
 
 let userId = "userId_example"; // String | The id of the user to get browser log capture configuration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDiagnosticsLogcaptureBrowserUser(userId)
+apiInstance.getDiagnosticsLogcaptureBrowserUser(userId, opts)
   .then((data) => {
     console.log(`getDiagnosticsLogcaptureBrowserUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -160,6 +180,7 @@ apiInstance.getDiagnosticsLogcaptureBrowserUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The id of the user to get browser log capture configuration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -193,7 +214,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LogCaptureApi();
 
 let opts = { 
-  'includeExpired': false // Boolean | Include expired users with log captures still available for search or download
+  'includeExpired': false, // Boolean | Include expired users with log captures still available for search or download
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getDiagnosticsLogcaptureBrowserUsers(opts)
@@ -212,6 +237,7 @@ apiInstance.getDiagnosticsLogcaptureBrowserUsers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includeExpired** | **Boolean** | Include expired users with log captures still available for search or download | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -245,7 +271,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LogCaptureApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts)
@@ -264,6 +294,7 @@ apiInstance.postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -299,7 +330,11 @@ let apiInstance = new platformClient.LogCaptureApi();
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postDiagnosticsLogcaptureBrowserEntriesQuery(opts)
@@ -320,6 +355,7 @@ apiInstance.postDiagnosticsLogcaptureBrowserEntriesQuery(opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -354,7 +390,11 @@ let apiInstance = new platformClient.LogCaptureApi();
 
 let userId = "userId_example"; // String | The id of the user to enable browser log capture
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postDiagnosticsLogcaptureBrowserUser(userId, opts)
@@ -374,10 +414,11 @@ apiInstance.postDiagnosticsLogcaptureBrowserUser(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The id of the user to enable browser log capture |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **LogCaptureUserConfiguration**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

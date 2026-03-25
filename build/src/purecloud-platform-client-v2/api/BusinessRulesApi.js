@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -26,6 +26,7 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Force delete decision table (under certain conditions) (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteBusinessrulesDecisiontable(tableId, opts) { 
 		opts = opts || {};
@@ -45,7 +46,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -54,8 +56,12 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
+	deleteBusinessrulesDecisiontableVersion(tableId, tableVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersion';
@@ -75,7 +81,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -85,8 +92,12 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
+	deleteBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableVersionRow';
@@ -110,7 +121,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -118,8 +130,12 @@ class BusinessRulesApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteBusinessrulesSchema(schemaId) { 
+	deleteBusinessrulesSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteBusinessrulesSchema';
@@ -135,7 +151,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -143,8 +160,12 @@ class BusinessRulesApi {
 	 * Get a decision table
 	 * 
 	 * @param {String} tableId Table ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesDecisiontable(tableId) { 
+	getBusinessrulesDecisiontable(tableId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontable';
@@ -160,7 +181,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -169,8 +191,12 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesDecisiontableVersion(tableId, tableVersion) { 
+	getBusinessrulesDecisiontableVersion(tableId, tableVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersion';
@@ -190,7 +216,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -200,8 +227,12 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId) { 
+	getBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableVersionRow';
@@ -225,7 +256,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -237,6 +269,7 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getBusinessrulesDecisiontableVersionRows(tableId, tableVersion, opts) { 
 		opts = opts || {};
@@ -260,7 +293,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -271,6 +305,7 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getBusinessrulesDecisiontableVersions(tableId, opts) { 
 		opts = opts || {};
@@ -290,7 +325,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -302,6 +338,7 @@ class BusinessRulesApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {Array.<String>} opts.divisionIds One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
 	 * @param {String} opts.name Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getBusinessrulesDecisiontables(opts) { 
 		opts = opts || {};
@@ -317,7 +354,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -332,6 +370,7 @@ class BusinessRulesApi {
 	 * @param {Boolean} opts.withPublishedVersion Filters results to only decision tables that have at least one version in Published status
 	 * @param {Array.<String>} opts.expand Fields to expand in response
 	 * @param {Array.<String>} opts.ids Decision table IDs to search for
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getBusinessrulesDecisiontablesSearch(opts) { 
 		opts = opts || {};
@@ -347,7 +386,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -355,8 +395,12 @@ class BusinessRulesApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesSchema(schemaId) { 
+	getBusinessrulesSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getBusinessrulesSchema';
@@ -372,15 +416,20 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of schemas.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesSchemas() { 
+	getBusinessrulesSchemas(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/businessrules/schemas', 
@@ -392,7 +441,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -400,8 +450,12 @@ class BusinessRulesApi {
 	 * Get a specific named core type.
 	 * 
 	 * @param {String} coreTypeName The core type's name
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesSchemasCoretype(coreTypeName) { 
+	getBusinessrulesSchemasCoretype(coreTypeName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'coreTypeName' is set
 		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
 			throw 'Missing the required parameter "coreTypeName" when calling getBusinessrulesSchemasCoretype';
@@ -417,15 +471,20 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the core types from which all schemas are built.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getBusinessrulesSchemasCoretypes() { 
+	getBusinessrulesSchemasCoretypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/businessrules/schemas/coretypes', 
@@ -437,7 +496,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -446,8 +506,12 @@ class BusinessRulesApi {
 	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchBusinessrulesDecisiontable(tableId, body) { 
+	patchBusinessrulesDecisiontable(tableId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontable';
@@ -467,7 +531,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -477,8 +542,12 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body) { 
+	patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableVersion';
@@ -502,7 +571,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -511,8 +581,12 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Object} body Decision Table
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontableExecute(tableId, body) { 
+	postBusinessrulesDecisiontableExecute(tableId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableExecute';
@@ -532,7 +606,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -542,8 +617,12 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body) { 
+	postBusinessrulesDecisiontableVersionCopy(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionCopy';
@@ -567,7 +646,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -577,8 +657,12 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Decision Table
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body) { 
+	postBusinessrulesDecisiontableVersionExecute(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionExecute';
@@ -602,7 +686,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -612,8 +697,12 @@ class BusinessRulesApi {
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
 	 * @param {Object} body Create decision table row request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body) { 
+	postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRows';
@@ -637,7 +726,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -650,6 +740,7 @@ class BusinessRulesApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageNumber Page number of the entities to return. Defaults to 1.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. Defaults to 25.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postBusinessrulesDecisiontableVersionRowsSearch(tableId, tableVersion, body, opts) { 
 		opts = opts || {};
@@ -677,7 +768,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -686,8 +778,12 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontableVersionSync(tableId, tableVersion) { 
+	postBusinessrulesDecisiontableVersionSync(tableId, tableVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionSync';
@@ -707,7 +803,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -715,8 +812,12 @@ class BusinessRulesApi {
 	 * Create a new decision table version
 	 * 
 	 * @param {String} tableId Table ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontableVersions(tableId) { 
+	postBusinessrulesDecisiontableVersions(tableId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersions';
@@ -732,7 +833,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -740,8 +842,12 @@ class BusinessRulesApi {
 	 * Create a decision table
 	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 	 * @param {Object} body Decision Table
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesDecisiontables(body) { 
+	postBusinessrulesDecisiontables(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontables';
@@ -757,7 +863,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -765,8 +872,12 @@ class BusinessRulesApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Business Rules Schema Create Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postBusinessrulesSchemas(body) { 
+	postBusinessrulesSchemas(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postBusinessrulesSchemas';
@@ -782,7 +893,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -791,8 +903,12 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} tableId Table ID
 	 * @param {Number} tableVersion Table Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion) { 
+	putBusinessrulesDecisiontableVersionPublish(tableId, tableVersion, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling putBusinessrulesDecisiontableVersionPublish';
@@ -812,7 +928,8 @@ class BusinessRulesApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -823,8 +940,12 @@ class BusinessRulesApi {
 	 * @param {Number} tableVersion Table Version
 	 * @param {String} rowId Row ID
 	 * @param {Object} body Full update decision table row request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body) { 
+	putBusinessrulesDecisiontableVersionRow(tableId, tableVersion, rowId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tableId' is set
 		if (tableId === undefined || tableId === null || tableId === '') {
 			throw 'Missing the required parameter "tableId" when calling putBusinessrulesDecisiontableVersionRow';
@@ -852,7 +973,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -861,8 +983,12 @@ class BusinessRulesApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Business Rules Schema Update Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putBusinessrulesSchema(schemaId, body) { 
+	putBusinessrulesSchema(schemaId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putBusinessrulesSchema';
@@ -882,7 +1008,8 @@ class BusinessRulesApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

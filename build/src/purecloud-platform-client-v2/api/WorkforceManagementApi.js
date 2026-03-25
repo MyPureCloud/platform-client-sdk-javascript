@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class WorkforceManagementApi {
 	 * Delete business unit
 	 * A business unit cannot be deleted if it contains one or more management units
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunit(businessUnitId) { 
+	deleteWorkforcemanagementBusinessunit(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunit';
@@ -41,7 +45,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
+	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
@@ -71,7 +80,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -82,6 +92,7 @@ class WorkforceManagementApi {
 	 * @param {String} capacityPlanId The ID of the capacity plan
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.beforeDateId The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts) { 
 		opts = opts || {};
@@ -105,7 +116,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -114,8 +126,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} planningGroupId The ID of a planning group to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId) { 
+	deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
@@ -135,7 +151,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -144,8 +161,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} runId The ID of the schedule run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId) { 
+	deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
@@ -165,7 +186,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,8 +196,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} serviceGoalTemplateId The ID of the service goal template to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId) { 
+	deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
@@ -195,7 +221,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -204,8 +231,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} staffingGroupId The ID of the staffing group to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId) { 
+	deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';
@@ -225,7 +256,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -234,8 +266,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffLimitId The ID of the time-off limit object to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId) { 
+	deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';
@@ -255,7 +291,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -264,8 +301,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffPlanId The ID of the time-off plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId) { 
+	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';
@@ -285,7 +326,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -295,8 +337,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId) { 
+	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
@@ -320,7 +366,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -330,8 +377,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId) { 
+	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
@@ -355,7 +406,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -364,8 +416,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId) { 
+	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';
@@ -385,7 +441,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -395,8 +452,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId Work Plan Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId) { 
+	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
@@ -420,15 +481,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Disable generated calendar link for the current user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementCalendarUrlIcs() { 
+	deleteWorkforcemanagementCalendarUrlIcs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/url/ics', 
@@ -440,7 +506,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -448,8 +515,12 @@ class WorkforceManagementApi {
 	 * Delete management unit
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementManagementunit(managementUnitId) { 
+	deleteWorkforcemanagementManagementunit(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
@@ -465,7 +536,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -474,8 +546,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
+	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
@@ -495,7 +571,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -504,8 +581,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
+	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
@@ -525,7 +606,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -534,8 +616,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to delete
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId) { 
+	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplan';
@@ -555,7 +641,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -564,8 +651,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to be deleted
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
+	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
@@ -585,7 +676,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -593,8 +685,12 @@ class WorkforceManagementApi {
 	 * Get a list of UserScheduleAdherence records for the requested users
 	 * 
 	 * @param {Array.<String>} userId User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAdherence(userId) { 
+	getWorkforcemanagementAdherence(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
 			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementAdherence';
@@ -610,7 +706,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -618,8 +715,12 @@ class WorkforceManagementApi {
 	 * Get an adherence explanation for the current user
 	 * 
 	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAdherenceExplanation(explanationId) { 
+	getWorkforcemanagementAdherenceExplanation(explanationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'explanationId' is set
 		if (explanationId === undefined || explanationId === null || explanationId === '') {
 			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAdherenceExplanation';
@@ -635,7 +736,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -643,8 +745,12 @@ class WorkforceManagementApi {
 	 * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAdherenceExplanationsJob(jobId) { 
+	getWorkforcemanagementAdherenceExplanationsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceExplanationsJob';
@@ -660,7 +766,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -668,8 +775,12 @@ class WorkforceManagementApi {
 	 * Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId ID of the job to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId) { 
+	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalBulkJob';
@@ -685,7 +796,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -693,8 +805,12 @@ class WorkforceManagementApi {
 	 * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAdherenceHistoricalJob(jobId) { 
+	getWorkforcemanagementAdherenceHistoricalJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalJob';
@@ -710,7 +826,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -719,8 +836,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} agentId The ID of the agent to query
 	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId) { 
+	getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceExplanation';
@@ -740,7 +861,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -748,8 +870,12 @@ class WorkforceManagementApi {
 	 * Get the management unit to which the agent belongs
 	 * 
 	 * @param {String} agentId The ID of the agent to look up
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAgentManagementunit(agentId) { 
+	getWorkforcemanagementAgentManagementunit(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentManagementunit';
@@ -765,7 +891,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -773,8 +900,12 @@ class WorkforceManagementApi {
 	 * Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId ID of the job to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId) { 
+	getWorkforcemanagementAgentsMeAdherenceHistoricalJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAgentsMeAdherenceHistoricalJob';
@@ -790,15 +921,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the management unit to which the currently logged in agent belongs
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAgentsMeManagementunit() { 
+	getWorkforcemanagementAgentsMeManagementunit(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/agents/me/managementunit', 
@@ -810,7 +946,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -818,8 +955,12 @@ class WorkforceManagementApi {
 	 * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAlternativeshiftsOffersJob(jobId) { 
+	getWorkforcemanagementAlternativeshiftsOffersJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersJob';
@@ -835,7 +976,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -843,8 +985,12 @@ class WorkforceManagementApi {
 	 * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId) { 
+	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersSearchJob';
@@ -860,15 +1006,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get alternative shifts settings from the current logged in agent’s business unit
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAlternativeshiftsSettings() { 
+	getWorkforcemanagementAlternativeshiftsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/alternativeshifts/settings', 
@@ -880,7 +1031,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -888,8 +1040,12 @@ class WorkforceManagementApi {
 	 * Get my alternative shift trade by trade ID
 	 * 
 	 * @param {String} tradeId The ID of the alternative shift trade
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAlternativeshiftsTrade(tradeId) { 
+	getWorkforcemanagementAlternativeshiftsTrade(tradeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tradeId' is set
 		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementAlternativeshiftsTrade';
@@ -905,7 +1061,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -914,6 +1071,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementAlternativeshiftsTrades(opts) { 
 		opts = opts || {};
@@ -929,7 +1087,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -937,8 +1096,12 @@ class WorkforceManagementApi {
 	 * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAlternativeshiftsTradesJob(jobId) { 
+	getWorkforcemanagementAlternativeshiftsTradesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesJob';
@@ -954,7 +1117,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -962,8 +1126,12 @@ class WorkforceManagementApi {
 	 * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId) { 
+	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesStateJob';
@@ -979,7 +1147,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -990,6 +1159,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the business unit
 	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunit(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1009,7 +1179,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1018,8 +1189,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
+	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';
@@ -1039,7 +1214,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1049,6 +1225,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1068,7 +1245,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1077,8 +1255,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId) { 
+	getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplan';
@@ -1098,7 +1280,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1108,8 +1291,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
 	 * @param {String} jobId The ID of the activity plan run job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId) { 
+	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
@@ -1133,7 +1320,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1143,6 +1331,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.state Optionally filter by activity plan state
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1162,7 +1351,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1170,8 +1360,12 @@ class WorkforceManagementApi {
 	 * Gets the latest job for all activity plans in the business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId) { 
+	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplansJobs';
@@ -1187,7 +1381,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1195,8 +1390,12 @@ class WorkforceManagementApi {
 	 * Get alternative shifts settings for a business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId) { 
+	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsSettings';
@@ -1212,7 +1411,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1221,8 +1421,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} tradeId The ID of the alternative shift trade
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId) { 
+	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';
@@ -1242,7 +1446,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1251,8 +1456,12 @@ class WorkforceManagementApi {
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId) { 
+	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';
@@ -1272,7 +1481,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1281,8 +1491,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId) { 
+	getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplan';
@@ -1302,7 +1516,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1313,6 +1528,7 @@ class WorkforceManagementApi {
 	 * @param {String} capacityPlanId The ID of the capacity plan
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.granularity Granularity to access staffing group data, defaults to weekly
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, opts) { 
 		opts = opts || {};
@@ -1336,7 +1552,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1345,8 +1562,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId) { 
+	getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements';
@@ -1366,7 +1587,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1378,6 +1600,7 @@ class WorkforceManagementApi {
 	 * @param {String} forecastId forecastId of forecast
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.granularity Granularity to access staffing requirements data, defaults to weekly
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -1405,7 +1628,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1413,8 +1637,12 @@ class WorkforceManagementApi {
 	 * Get list of capacity plans for a business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitCapacityplans(businessUnitId) { 
+	getWorkforcemanagementBusinessunitCapacityplans(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitCapacityplans';
@@ -1430,7 +1658,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1439,8 +1668,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date) { 
+	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';
@@ -1460,7 +1693,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1468,9 +1702,13 @@ class WorkforceManagementApi {
 	 * Get the latest session for the business unit ID
 	 * 
 	 * @param {String} businessUnitId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId) { 
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession';
@@ -1486,7 +1724,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1495,9 +1734,13 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId 
 	 * @param {String} sessionId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId) { 
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId';
@@ -1517,7 +1760,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1527,9 +1771,13 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId 
 	 * @param {String} sessionId 
 	 * @param {String} snapshotId 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId) { 
+	getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId';
@@ -1553,7 +1801,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1564,6 +1813,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
 	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1583,7 +1833,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1591,8 +1842,12 @@ class WorkforceManagementApi {
 	 * Get minimum staffing settings for a business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId) { 
+	getWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitMinimumstaffingSettings';
@@ -1608,7 +1863,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1617,8 +1873,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} planningGroupId The ID of a planning group to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId) { 
+	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
@@ -1638,7 +1898,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1646,8 +1907,12 @@ class WorkforceManagementApi {
 	 * Gets list of planning groups
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId) { 
+	getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroups';
@@ -1663,7 +1928,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1671,8 +1937,12 @@ class WorkforceManagementApi {
 	 * Get scheduler settings for a business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId) { 
+	getWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulerSettings';
@@ -1688,7 +1958,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1697,8 +1968,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} runId The ID of the schedule run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId) { 
+	getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
@@ -1718,7 +1993,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1729,8 +2005,12 @@ class WorkforceManagementApi {
 	 * @param {String} runId The ID of the schedule run
 	 * @param {Array.<String>} managementUnitIds The IDs of the management units for which to fetch the reschedule results
 	 * @param {Array.<String>} expand The fields to expand. Omitting will return an empty response
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand) { 
+	getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
@@ -1758,7 +2038,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1766,8 +2047,12 @@ class WorkforceManagementApi {
 	 * Get the list of scheduling runs
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId) { 
+	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRuns';
@@ -1783,7 +2068,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1794,6 +2080,7 @@ class WorkforceManagementApi {
 	 * @param {String} serviceGoalTemplateId The ID of a service goal template to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts) { 
 		opts = opts || {};
@@ -1817,7 +2104,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1827,6 +2115,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1846,7 +2135,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1855,8 +2145,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} staffingGroupId The ID of the staffing group to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId) { 
+	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroup';
@@ -1876,7 +2170,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1887,6 +2182,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1906,7 +2202,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1915,8 +2212,12 @@ class WorkforceManagementApi {
 	 * Returns properties of time-off limit object, but not daily values
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffLimitId The ID of the time-off limit to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId) { 
+	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';
@@ -1936,7 +2237,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1946,6 +2248,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific time-off limit objects
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1965,7 +2268,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1974,8 +2278,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffPlanId The ID of the time-off plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId) { 
+	getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplan';
@@ -1995,7 +2303,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2006,6 +2315,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts) { 
 		opts = opts || {};
@@ -2025,7 +2335,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2035,6 +2346,7 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.managementUnitIds The IDs of the management units for which to retrieve users
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitUsers(businessUnitId, opts) { 
 		opts = opts || {};
@@ -2054,7 +2366,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2066,6 +2379,7 @@ class WorkforceManagementApi {
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts) { 
 		opts = opts || {};
@@ -2093,7 +2407,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2103,8 +2418,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId) { 
+	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
@@ -2128,7 +2447,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2140,6 +2460,7 @@ class WorkforceManagementApi {
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownload Whether to force the result to come via download url.  For testing purposes only
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, opts) { 
 		opts = opts || {};
@@ -2167,7 +2488,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2178,8 +2500,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {String} agentId THe ID of the agent
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId) { 
+	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
@@ -2207,7 +2533,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2217,8 +2544,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId) { 
+	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
@@ -2242,7 +2573,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2253,8 +2585,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 	 * @param {String} scheduleId The ID of the schedule the recalculation belongs to
 	 * @param {String} recalculationId The ID of the recalculation request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId) { 
+	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
@@ -2282,7 +2618,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2294,6 +2631,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
 	 * @param {Object} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, opts) { 
 		opts = opts || {};
@@ -2317,7 +2655,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2329,6 +2668,7 @@ class WorkforceManagementApi {
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the forecast
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -2356,7 +2696,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2369,6 +2710,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.weekNumber The week number to fetch (for multi-week forecasts)
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -2396,7 +2738,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2406,8 +2749,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId) { 
+	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
@@ -2431,7 +2778,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2443,6 +2791,7 @@ class WorkforceManagementApi {
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -2470,7 +2819,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2480,8 +2830,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId) { 
+	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
@@ -2505,7 +2859,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2518,6 +2873,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
 	 * @param {Array.<String>} opts.expand Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -2545,7 +2901,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2554,8 +2911,12 @@ class WorkforceManagementApi {
 	 * Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
+	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
@@ -2575,7 +2936,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2584,8 +2946,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The id of the workplanbid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId) { 
+	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbid';
@@ -2605,7 +2971,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2615,8 +2982,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId Work Plan Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId) { 
+	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
@@ -2640,7 +3011,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2650,8 +3022,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId The ID of the work plan bid group
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId) { 
+	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
@@ -2675,7 +3051,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2684,8 +3061,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId) { 
+	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';
@@ -2705,7 +3086,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2713,8 +3095,12 @@ class WorkforceManagementApi {
 	 * Get list of work plan bids
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId) { 
+	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbids';
@@ -2730,7 +3116,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2740,6 +3127,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned
 	 * @param {String} opts.divisionId If specified, the list of business units belonging to the specified division will be returned
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunits(opts) { 
 		opts = opts || {};
@@ -2755,7 +3143,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2764,6 +3153,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return business units in all divisions
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitsDivisionviews(opts) { 
 		opts = opts || {};
@@ -2779,7 +3169,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2787,8 +3178,12 @@ class WorkforceManagementApi {
 	 * Get ics formatted calendar based on shareable link
 	 * 
 	 * @param {String} calendarId The id of the ics-formatted calendar
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementCalendarDataIcs(calendarId) { 
+	getWorkforcemanagementCalendarDataIcs(calendarId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'calendarId' is set
 		if (calendarId === undefined || calendarId === null) {
 			throw 'Missing the required parameter "calendarId" when calling getWorkforcemanagementCalendarDataIcs';
@@ -2804,15 +3199,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['text/calendar']
+			['text/calendar'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get existing calendar link for the current user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementCalendarUrlIcs() { 
+	getWorkforcemanagementCalendarUrlIcs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/url/ics', 
@@ -2824,7 +3224,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2832,8 +3233,12 @@ class WorkforceManagementApi {
 	 * Retrieves delete job status for historical data imports associated with the job id
 	 * 
 	 * @param {String} jobId The job ID of the historical data delete request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId) { 
+	getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataBulkRemoveJob';
@@ -2849,15 +3254,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieves all delete job status for historical data
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementHistoricaldataBulkRemoveJobs() { 
+	getWorkforcemanagementHistoricaldataBulkRemoveJobs(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs', 
@@ -2869,15 +3279,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieves status of the historical data imports of the organization
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementHistoricaldataImportstatus() { 
+	getWorkforcemanagementHistoricaldataImportstatus(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/importstatus', 
@@ -2889,7 +3304,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2897,8 +3313,12 @@ class WorkforceManagementApi {
 	 * Retrieves status of the historical data imports associated with job id
 	 * 
 	 * @param {String} jobId The job Id of the historical data import request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementHistoricaldataImportstatusJobId(jobId) { 
+	getWorkforcemanagementHistoricaldataImportstatusJobId(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataImportstatusJobId';
@@ -2914,15 +3334,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get integrations
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementIntegrationsHris() { 
+	getWorkforcemanagementIntegrationsHris(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/integrations/hris', 
@@ -2934,7 +3359,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2942,8 +3368,12 @@ class WorkforceManagementApi {
 	 * Query the results of time off types job
 	 * 
 	 * @param {String} jobId The ID of the job.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId) { 
+	getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementIntegrationsHrisTimeofftypesJob';
@@ -2959,7 +3389,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2969,6 +3400,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunit(managementUnitId, opts) { 
 		opts = opts || {};
@@ -2988,7 +3420,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2996,9 +3429,13 @@ class WorkforceManagementApi {
 	 * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
+	getWorkforcemanagementManagementunitActivitycodes(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';
@@ -3014,7 +3451,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3024,6 +3462,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitAdherence(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3043,7 +3482,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3055,6 +3495,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
 	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts) { 
 		opts = opts || {};
@@ -3078,7 +3519,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3087,8 +3529,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
+	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
@@ -3108,7 +3554,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3116,8 +3563,12 @@ class WorkforceManagementApi {
 	 * Gets a summary of all shift trades in the matched state
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
+	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
@@ -3133,7 +3584,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3141,8 +3593,12 @@ class WorkforceManagementApi {
 	 * Gets list of users available for whom you can send direct shift trade requests
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
+	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
@@ -3158,7 +3614,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3167,8 +3624,12 @@ class WorkforceManagementApi {
 	 * Returns properties of time off limit object, but not daily values.
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
+	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
@@ -3188,7 +3649,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3196,8 +3658,12 @@ class WorkforceManagementApi {
 	 * Gets a list of time off limit objects under management unit.
 	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
 	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId) { 
+	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimits';
@@ -3213,7 +3679,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3222,8 +3689,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
+	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplan';
@@ -3243,7 +3714,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3251,8 +3723,12 @@ class WorkforceManagementApi {
 	 * Gets a list of time off plans
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId) { 
+	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplans';
@@ -3268,7 +3744,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3278,8 +3755,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId) { 
+	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
@@ -3303,7 +3784,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3313,8 +3795,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} userId The userId to whom the time off request applies.
 	 * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId) { 
+	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
@@ -3338,7 +3824,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3347,8 +3834,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId) { 
+	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
@@ -3368,7 +3859,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3376,8 +3868,12 @@ class WorkforceManagementApi {
 	 * Get users in the management unit
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
+	getWorkforcemanagementManagementunitUsers(managementUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';
@@ -3393,7 +3889,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3406,6 +3903,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
@@ -3434,7 +3932,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3447,6 +3946,7 @@ class WorkforceManagementApi {
 	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
 	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
 	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
@@ -3471,7 +3971,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3484,6 +3985,7 @@ class WorkforceManagementApi {
 	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
 	 * @param {Boolean} opts.includeCrossWeekShifts Whether to include all shift trades with either the initiating shift or the receiving shift in the week (default to false)
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts) { 
 		opts = opts || {};
@@ -3507,7 +4009,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3518,6 +4021,7 @@ class WorkforceManagementApi {
 	 * @param {String} workPlanId The ID of the work plan to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.includeOnly limit response to the specified fields
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
 		opts = opts || {};
@@ -3541,7 +4045,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3550,8 +4055,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
+	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
@@ -3571,7 +4080,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3581,6 +4091,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3600,7 +4111,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3611,6 +4123,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the work plans
 	 * @param {Array.<String>} opts.exclude Exclude specific data on the work plans from the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3630,7 +4143,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3643,6 +4157,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts.expand Deprecated, expand settings on the single MU route
 	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
 	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunits(opts) { 
 		opts = opts || {};
@@ -3658,7 +4173,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3667,6 +4183,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return all divisions
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementManagementunitsDivisionviews(opts) { 
 		opts = opts || {};
@@ -3682,15 +4199,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of notifications for the current user
 	 * Notifications are only initially sent if you have the relevant Notify and Edit permissions
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementNotifications() { 
+	getWorkforcemanagementNotifications(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/notifications', 
@@ -3702,7 +4224,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3710,8 +4233,12 @@ class WorkforceManagementApi {
 	 * Get status of the scheduling job
 	 * 
 	 * @param {String} jobId The id of the scheduling job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementSchedulingjob(jobId) { 
+	getWorkforcemanagementSchedulingjob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementSchedulingjob';
@@ -3727,15 +4254,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Gets all of my shift trades
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementShifttrades() { 
+	getWorkforcemanagementShifttrades(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/shifttrades', 
@@ -3747,7 +4279,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3755,8 +4288,12 @@ class WorkforceManagementApi {
 	 * Request to fetch the status of the historical shrinkage query
 	 * 
 	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementShrinkageJob(jobId) { 
+	getWorkforcemanagementShrinkageJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShrinkageJob';
@@ -3772,7 +4309,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3780,8 +4318,12 @@ class WorkforceManagementApi {
 	 * Get a list of user schedule adherence records for the requested team
 	 * 
 	 * @param {String} teamId The ID of the team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementTeamAdherence(teamId) { 
+	getWorkforcemanagementTeamAdherence(teamId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling getWorkforcemanagementTeamAdherence';
@@ -3797,7 +4339,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3805,8 +4348,12 @@ class WorkforceManagementApi {
 	 * Query the results of time off types job
 	 * 
 	 * @param {String} jobId The ID of the job.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementTimeoffbalanceJob(jobId) { 
+	getWorkforcemanagementTimeoffbalanceJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementTimeoffbalanceJob';
@@ -3822,7 +4369,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3830,8 +4378,12 @@ class WorkforceManagementApi {
 	 * Get a time off request for the current user
 	 * 
 	 * @param {String} timeOffRequestId The ID of the time off request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementTimeoffrequest(timeOffRequestId) { 
+	getWorkforcemanagementTimeoffrequest(timeOffRequestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequest';
@@ -3847,7 +4399,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3855,8 +4408,12 @@ class WorkforceManagementApi {
 	 * Get the daily waitlist positions of a time off request for the current user
 	 * 
 	 * @param {String} timeOffRequestId The ID of the time off request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId) { 
+	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequestWaitlistpositions';
@@ -3872,15 +4429,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of time off requests for the current user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementTimeoffrequests() { 
+	getWorkforcemanagementTimeoffrequests(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests', 
@@ -3892,15 +4454,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get availability management unit's settings for agent
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementUnavailabletimesSettings() { 
+	getWorkforcemanagementUnavailabletimesSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/unavailabletimes/settings', 
@@ -3912,7 +4479,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3920,8 +4488,12 @@ class WorkforceManagementApi {
 	 * Query agent unavailable times validation job
 	 * 
 	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementUnavailabletimesValidationJob(jobId) { 
+	getWorkforcemanagementUnavailabletimesValidationJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementUnavailabletimesValidationJob';
@@ -3937,7 +4509,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3945,8 +4518,12 @@ class WorkforceManagementApi {
 	 * Get work plan bid ranks for a user
 	 * 
 	 * @param {String} userId The userId to whom the work plan bid ranks apply.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementUserWorkplanbidranks(userId) { 
+	getWorkforcemanagementUserWorkplanbidranks(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementUserWorkplanbidranks';
@@ -3962,7 +4539,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3970,8 +4548,12 @@ class WorkforceManagementApi {
 	 * Gets an agent's work plan bidding preference
 	 * 
 	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementWorkplanbidPreferences(bidId) { 
+	getWorkforcemanagementWorkplanbidPreferences(bidId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bidId' is set
 		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidPreferences';
@@ -3987,7 +4569,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3995,8 +4578,12 @@ class WorkforceManagementApi {
 	 * Gets an agent's work plans for a bid
 	 * 
 	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementWorkplanbidWorkplans(bidId) { 
+	getWorkforcemanagementWorkplanbidWorkplans(bidId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bidId' is set
 		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidWorkplans';
@@ -4012,15 +4599,20 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Gets the list of work plan bids that belong to an agent
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getWorkforcemanagementWorkplanbids() { 
+	getWorkforcemanagementWorkplanbids(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/workplanbids', 
@@ -4032,7 +4624,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4042,8 +4635,12 @@ class WorkforceManagementApi {
 	 * @param {String} agentId The ID of the agent to query
 	 * @param {String} explanationId The ID of the explanation to update
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body) { 
+	patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
@@ -4067,7 +4664,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4076,8 +4674,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} tradeId The ID of the alternative shift trade
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body) { 
+	patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tradeId' is set
 		if (tradeId === undefined || tradeId === null || tradeId === '') {
 			throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';
@@ -4097,7 +4699,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4105,8 +4708,12 @@ class WorkforceManagementApi {
 	 * Bulk update alternative shift trade states
 	 * 
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body) { 
+	patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAlternativeshiftsTradesStateJobs';
@@ -4122,7 +4729,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4133,6 +4741,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchWorkforcemanagementBusinessunit(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -4156,7 +4765,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4166,8 +4776,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body) { 
+	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
@@ -4191,7 +4805,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4201,8 +4816,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body) { 
+	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivityplan';
@@ -4226,7 +4845,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4235,8 +4855,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body) { 
+	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';
@@ -4256,7 +4880,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4266,8 +4891,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body) { 
+	patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitCapacityplan';
@@ -4291,7 +4920,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4300,8 +4930,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body) { 
+	patchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitMinimumstaffingSettings';
@@ -4321,7 +4955,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4331,8 +4966,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} planningGroupId The ID of a planning group to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body) { 
+	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
@@ -4356,7 +4995,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4365,8 +5005,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body) { 
+	patchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulerSettings';
@@ -4386,7 +5030,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4396,8 +5041,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} runId The ID of the schedule run
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body) { 
+	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
@@ -4421,7 +5070,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4431,8 +5081,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} serviceGoalTemplateId The ID of a service goal template to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body) { 
+	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
@@ -4456,7 +5110,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4466,8 +5121,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} staffingGroupId The ID of the staffing group to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body) { 
+	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
@@ -4491,7 +5150,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4501,8 +5161,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffPlanId The ID of the time-off plan to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body) { 
+	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
@@ -4526,7 +5190,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4536,8 +5201,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The id of the workplanbid
 	 * @param {Object} body The work plan bid to be updated
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body) { 
+	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';
@@ -4561,7 +5230,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4572,8 +5242,12 @@ class WorkforceManagementApi {
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId Work Plan Bid Group id
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body) { 
+	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
@@ -4601,7 +5275,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4612,8 +5287,12 @@ class WorkforceManagementApi {
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {String} bidGroupId The ID of the work plan bid group
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body) { 
+	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
@@ -4641,7 +5320,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4650,8 +5330,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunit(managementUnitId, body) { 
+	patchWorkforcemanagementManagementunit(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
@@ -4671,7 +5355,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4680,8 +5365,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitAgents(managementUnitId, body) { 
+	patchWorkforcemanagementManagementunitAgents(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';
@@ -4701,7 +5390,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4710,8 +5400,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body) { 
+	patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';
@@ -4731,7 +5425,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4741,8 +5436,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The id of time off limit object to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body) { 
+	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
@@ -4766,7 +5465,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4776,8 +5476,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body) { 
+	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
@@ -4801,7 +5505,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4812,8 +5517,12 @@ class WorkforceManagementApi {
 	 * @param {String} timeOffRequestId The ID of the time off request.
 	 * @param {String} userId The ID of user to whom the time off request belongs.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body) { 
+	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
@@ -4841,7 +5550,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4850,8 +5560,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body) { 
+	patchWorkforcemanagementManagementunitUnavailabletimesSettings(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUnavailabletimesSettings';
@@ -4871,7 +5585,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4882,8 +5597,12 @@ class WorkforceManagementApi {
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body) { 
+	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
@@ -4911,7 +5630,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4922,8 +5642,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} tradeId The ID of the shift trade to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body) { 
+	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
@@ -4951,7 +5675,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4963,6 +5688,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts) { 
 		opts = opts || {};
@@ -4990,7 +5716,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5000,8 +5727,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body) { 
+	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
@@ -5025,7 +5756,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5034,8 +5766,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} timeOffRequestId The ID of the time off request
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body) { 
+	patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null || timeOffRequestId === '') {
 			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';
@@ -5055,7 +5791,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5063,8 +5800,12 @@ class WorkforceManagementApi {
 	 * Update agent unavailable times
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementUnavailabletimes(body) { 
+	patchWorkforcemanagementUnavailabletimes(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementUnavailabletimes';
@@ -5080,7 +5821,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5089,8 +5831,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} userId The userId to whom the work plan bid ranks apply.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementUserWorkplanbidranks(userId, body) { 
+	patchWorkforcemanagementUserWorkplanbidranks(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';
@@ -5110,7 +5856,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5118,8 +5865,12 @@ class WorkforceManagementApi {
 	 * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
 	 * 
 	 * @param {Array.<Object>} body Users
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementUsersWorkplanbidranksBulk(body) { 
+	patchWorkforcemanagementUsersWorkplanbidranksBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementUsersWorkplanbidranksBulk';
@@ -5135,7 +5886,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5144,8 +5896,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} bidId The ID of the work plan bid
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchWorkforcemanagementWorkplanbidPreferences(bidId, body) { 
+	patchWorkforcemanagementWorkplanbidPreferences(bidId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'bidId' is set
 		if (bidId === undefined || bidId === null || bidId === '') {
 			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';
@@ -5165,7 +5921,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5173,8 +5930,12 @@ class WorkforceManagementApi {
 	 * Submit an adherence explanation for the current user
 	 * 
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAdherenceExplanations(body) { 
+	postWorkforcemanagementAdherenceExplanations(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanations';
@@ -5190,7 +5951,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5201,6 +5963,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementAdherenceExplanationsQuery(body, opts) { 
 		opts = opts || {};
@@ -5220,7 +5983,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5229,6 +5993,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postWorkforcemanagementAdherenceHistorical(opts) { 
@@ -5245,7 +6010,8 @@ class WorkforceManagementApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5253,8 +6019,12 @@ class WorkforceManagementApi {
 	 * Request a historical adherence report in bulk
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAdherenceHistoricalBulk(body) { 
+	postWorkforcemanagementAdherenceHistoricalBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceHistoricalBulk';
@@ -5270,7 +6040,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5279,8 +6050,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} agentId The ID of the agent to query
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAgentAdherenceExplanations(agentId, body) { 
+	postWorkforcemanagementAgentAdherenceExplanations(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanations';
@@ -5300,7 +6075,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5312,6 +6088,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts) { 
 		opts = opts || {};
@@ -5335,7 +6112,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5344,8 +6122,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} agentId The ID of the agent
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body) { 
+	postWorkforcemanagementAgentUnavailabletimesQuery(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentUnavailabletimesQuery';
@@ -5365,7 +6147,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5373,8 +6156,12 @@ class WorkforceManagementApi {
 	 * Move agents in and out of management unit
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAgents(body) { 
+	postWorkforcemanagementAgents(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgents';
@@ -5390,7 +6177,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5398,8 +6186,12 @@ class WorkforceManagementApi {
 	 * Query integrations for agents
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAgentsIntegrationsHrisQuery(body) { 
+	postWorkforcemanagementAgentsIntegrationsHrisQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentsIntegrationsHrisQuery';
@@ -5415,7 +6207,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5425,6 +6218,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
 	 * @param {Object} opts.body body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementAgentsMeAdherenceHistoricalJobs(opts) { 
 		opts = opts || {};
@@ -5440,7 +6234,8 @@ class WorkforceManagementApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5448,8 +6243,12 @@ class WorkforceManagementApi {
 	 * Get agent possible work shifts for requested time frame
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAgentsMePossibleworkshifts(body) { 
+	postWorkforcemanagementAgentsMePossibleworkshifts(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentsMePossibleworkshifts';
@@ -5465,7 +6264,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5476,6 +6276,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementAgentschedulesManagementunitsMine(body, opts) { 
 		opts = opts || {};
@@ -5495,7 +6296,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5503,8 +6305,12 @@ class WorkforceManagementApi {
 	 * Get published schedule for the current user
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAgentschedulesMine(body) { 
+	postWorkforcemanagementAgentschedulesMine(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentschedulesMine';
@@ -5520,7 +6326,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5528,8 +6335,12 @@ class WorkforceManagementApi {
 	 * Request a list of alternative shift offers for a given schedule
 	 * 
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAlternativeshiftsOffersJobs(body) { 
+	postWorkforcemanagementAlternativeshiftsOffersJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsOffersJobs';
@@ -5545,7 +6356,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5553,8 +6365,12 @@ class WorkforceManagementApi {
 	 * Request a search of alternative shift offers for a given shift
 	 * 
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body) { 
+	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsOffersSearchJobs';
@@ -5570,7 +6386,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5578,8 +6395,12 @@ class WorkforceManagementApi {
 	 * Create my alternative shift trade using an existing offer's jobId
 	 * 
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementAlternativeshiftsTrades(body) { 
+	postWorkforcemanagementAlternativeshiftsTrades(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsTrades';
@@ -5595,7 +6416,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5604,8 +6426,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
@@ -5625,7 +6451,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5634,8 +6461,12 @@ class WorkforceManagementApi {
 	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId) { 
+	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';
@@ -5655,7 +6486,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5664,8 +6496,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplans';
@@ -5685,7 +6521,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5697,6 +6534,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -5720,7 +6558,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5732,6 +6571,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -5755,7 +6595,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5766,6 +6607,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body The request body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -5789,7 +6631,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5799,8 +6642,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body) { 
+	postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanCopy';
@@ -5824,7 +6671,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5833,8 +6681,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId) { 
+	postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate';
@@ -5854,7 +6706,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5864,8 +6717,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body) { 
+	postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations';
@@ -5889,7 +6746,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5899,8 +6757,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} capacityPlanId The ID of the capacity plan
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body) { 
+	postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery';
@@ -5924,7 +6786,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5934,8 +6797,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId 
 	 * @param {String} weekDateId weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId forecastId of forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId) { 
+	postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate';
@@ -5959,7 +6826,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5968,8 +6836,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplans';
@@ -5989,7 +6861,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -5998,8 +6871,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove';
@@ -6019,7 +6896,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6030,6 +6908,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -6053,7 +6932,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6062,8 +6942,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';
@@ -6083,7 +6967,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6092,8 +6977,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';
@@ -6113,7 +7002,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6122,8 +7012,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';
@@ -6143,7 +7037,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6152,8 +7047,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery';
@@ -6173,7 +7072,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6184,6 +7084,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, opts) { 
 		opts = opts || {};
@@ -6207,7 +7108,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6216,8 +7118,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';
@@ -6237,7 +7143,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6246,8 +7153,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';
@@ -6267,7 +7178,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6276,8 +7188,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';
@@ -6297,7 +7213,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6306,8 +7223,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery';
@@ -6327,7 +7248,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6336,8 +7258,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery';
@@ -6357,7 +7283,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6371,6 +7298,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, opts) { 
 		opts = opts || {};
@@ -6402,7 +7330,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6413,8 +7342,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule to copy
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body) { 
+	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
@@ -6442,7 +7375,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6453,8 +7387,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body) { 
+	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
@@ -6482,7 +7420,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6493,8 +7432,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
 	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body) { 
+	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
@@ -6522,7 +7465,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6533,8 +7477,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body) { 
+	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
@@ -6562,7 +7510,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6573,8 +7522,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body) { 
+	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
@@ -6602,7 +7555,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6613,8 +7567,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body) { 
+	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
@@ -6642,7 +7600,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6652,8 +7611,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body) { 
+	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedules';
@@ -6677,7 +7640,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6687,8 +7651,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body) { 
+	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
@@ -6712,7 +7680,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6722,8 +7691,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body) { 
+	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
@@ -6747,7 +7720,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6757,8 +7731,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body) { 
+	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
@@ -6782,7 +7760,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6795,6 +7774,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, opts) { 
 		opts = opts || {};
@@ -6826,7 +7806,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6838,6 +7819,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts) { 
 		opts = opts || {};
@@ -6865,7 +7847,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6875,8 +7858,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body) { 
+	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
@@ -6900,7 +7887,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6910,8 +7898,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body) { 
+	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
@@ -6935,7 +7927,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6945,8 +7938,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The ID of the work plan bid to copy
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body) { 
+	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
@@ -6970,7 +7967,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -6980,8 +7978,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} bidId The work plan bid id of the bid groups
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body) { 
+	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
@@ -7005,7 +8007,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7014,8 +8017,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body The work plan bid to be created
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body) { 
+	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';
@@ -7035,7 +8042,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7045,6 +8053,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeSchedulingDefaultMessageSeverities Whether to include scheduling default message severities
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementBusinessunits(body, opts) { 
 		opts = opts || {};
@@ -7064,7 +8073,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7073,6 +8083,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementCalendarUrlIcs(opts) { 
 		opts = opts || {};
@@ -7088,7 +8099,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7096,8 +8108,12 @@ class WorkforceManagementApi {
 	 * Delete the list of the historical data import entries
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementHistoricaldataBulkRemoveJobs(body) { 
+	postWorkforcemanagementHistoricaldataBulkRemoveJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataBulkRemoveJobs';
@@ -7113,7 +8129,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7121,8 +8138,12 @@ class WorkforceManagementApi {
 	 * Trigger validation process for historical import
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementHistoricaldataValidate(body) { 
+	postWorkforcemanagementHistoricaldataValidate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataValidate';
@@ -7138,7 +8159,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7146,8 +8168,12 @@ class WorkforceManagementApi {
 	 * Get list of time off types configured in integration
 	 * 
 	 * @param {String} hrisIntegrationId The ID of the HRIS integration for which time off types are queried.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId) { 
+	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'hrisIntegrationId' is set
 		if (hrisIntegrationId === undefined || hrisIntegrationId === null || hrisIntegrationId === '') {
 			throw 'Missing the required parameter "hrisIntegrationId" when calling postWorkforcemanagementIntegrationsHriTimeofftypesJobs';
@@ -7163,7 +8189,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7174,6 +8201,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -7197,7 +8225,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7209,6 +8238,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -7232,7 +8262,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7241,8 +8272,12 @@ class WorkforceManagementApi {
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
@@ -7262,7 +8297,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7271,8 +8307,12 @@ class WorkforceManagementApi {
 	 * Returns status 200 if the management unit is already in the requested business unit
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitMove(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitMove(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
@@ -7292,7 +8332,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7301,9 +8342,13 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
@@ -7323,7 +8368,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7332,8 +8378,12 @@ class WorkforceManagementApi {
 	 * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';
@@ -7353,7 +8403,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7362,8 +8413,12 @@ class WorkforceManagementApi {
 	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';
@@ -7383,7 +8438,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7392,8 +8448,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';
@@ -7413,7 +8473,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7422,8 +8483,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';
@@ -7443,7 +8508,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7452,8 +8518,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
@@ -7473,7 +8543,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7482,8 +8553,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';
@@ -7503,7 +8578,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7514,6 +8590,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -7537,7 +8614,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7546,8 +8624,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';
@@ -7567,7 +8649,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7577,8 +8660,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} userId The ID of the user
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body) { 
+	postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';
@@ -7602,7 +8689,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7612,8 +8700,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} userId The userId to whom the time off request applies.
 	 * @param {String} timeOffRequestId The time off request id.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId) { 
+	postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
@@ -7637,7 +8729,8 @@ class WorkforceManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7647,8 +8740,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} userId The id of the user for whom the time off request estimate is requested
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body) { 
+	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
@@ -7672,7 +8769,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7683,8 +8781,12 @@ class WorkforceManagementApi {
 	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} tradeId The ID of the shift trade to update
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body) { 
+	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
@@ -7712,7 +8814,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7722,8 +8825,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
+	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
@@ -7747,7 +8854,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7759,6 +8867,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts) { 
 		opts = opts || {};
@@ -7786,7 +8895,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7798,6 +8908,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, opts) { 
 		opts = opts || {};
@@ -7825,7 +8936,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7835,8 +8947,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to create a copy
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body) { 
+	postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
@@ -7860,7 +8976,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7872,6 +8989,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts) { 
 		opts = opts || {};
@@ -7899,7 +9017,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7909,8 +9028,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body) { 
+	postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
@@ -7934,7 +9057,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7943,8 +9067,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body) { 
+	postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';
@@ -7964,7 +9092,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -7975,6 +9104,7 @@ class WorkforceManagementApi {
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts) { 
 		opts = opts || {};
@@ -7998,7 +9128,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8006,8 +9137,12 @@ class WorkforceManagementApi {
 	 * Add a management unit
 	 * It may take a minute or two for a new management unit to be available for api operations
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementManagementunits(body) { 
+	postWorkforcemanagementManagementunits(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunits';
@@ -8023,7 +9158,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8031,8 +9167,12 @@ class WorkforceManagementApi {
 	 * Mark a list of notifications as read or unread
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementNotificationsUpdate(body) { 
+	postWorkforcemanagementNotificationsUpdate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementNotificationsUpdate';
@@ -8048,7 +9188,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8057,6 +9198,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postWorkforcemanagementSchedules(opts) { 
@@ -8073,7 +9215,8 @@ class WorkforceManagementApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8082,8 +9225,12 @@ class WorkforceManagementApi {
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 	 * @param {String} teamId The ID of the team
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTeamAdherenceHistorical(teamId, body) { 
+	postWorkforcemanagementTeamAdherenceHistorical(teamId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';
@@ -8103,7 +9250,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8112,8 +9260,12 @@ class WorkforceManagementApi {
 	 * The maximum supported range for historical shrinkage queries is up to 32 days
 	 * @param {String} teamId The ID of the team
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTeamShrinkageJobs(teamId, body) { 
+	postWorkforcemanagementTeamShrinkageJobs(teamId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';
@@ -8133,7 +9285,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8141,8 +9294,12 @@ class WorkforceManagementApi {
 	 * Query time off balances for the current user for specified activity code and dates
 	 * 
 	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTimeoffbalanceJobs(body) { 
+	postWorkforcemanagementTimeoffbalanceJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffbalanceJobs';
@@ -8158,7 +9315,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8166,8 +9324,12 @@ class WorkforceManagementApi {
 	 * Queries available time off for the current user
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTimeofflimitsAvailableQuery(body) { 
+	postWorkforcemanagementTimeofflimitsAvailableQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeofflimitsAvailableQuery';
@@ -8183,7 +9345,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8191,8 +9354,12 @@ class WorkforceManagementApi {
 	 * Create a time off request for the current user
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTimeoffrequests(body) { 
+	postWorkforcemanagementTimeoffrequests(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequests';
@@ -8208,7 +9375,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8216,8 +9384,12 @@ class WorkforceManagementApi {
 	 * Estimates available time off for current user
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTimeoffrequestsEstimate(body) { 
+	postWorkforcemanagementTimeoffrequestsEstimate(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsEstimate';
@@ -8233,7 +9405,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8241,8 +9414,12 @@ class WorkforceManagementApi {
 	 * Retrieves integration statuses for a list of current user time off requests
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body) { 
+	postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery';
@@ -8258,7 +9435,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8266,8 +9444,12 @@ class WorkforceManagementApi {
 	 * Get agent unavailable times
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementUnavailabletimesQuery(body) { 
+	postWorkforcemanagementUnavailabletimesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementUnavailabletimesQuery';
@@ -8283,7 +9465,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8291,8 +9474,12 @@ class WorkforceManagementApi {
 	 * Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
 	 * 
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postWorkforcemanagementUnavailabletimesValidationJobs(body) { 
+	postWorkforcemanagementUnavailabletimesValidationJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postWorkforcemanagementUnavailabletimesValidationJobs';
@@ -8308,7 +9495,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8317,8 +9505,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} agentId The ID of the agent
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putWorkforcemanagementAgentIntegrationsHris(agentId, body) { 
+	putWorkforcemanagementAgentIntegrationsHris(agentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling putWorkforcemanagementAgentIntegrationsHris';
@@ -8338,7 +9530,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8348,8 +9541,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body) { 
+	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
 			throw 'Missing the required parameter "businessUnitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
@@ -8373,7 +9570,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -8383,8 +9581,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body) { 
+	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null || managementUnitId === '') {
 			throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
@@ -8408,7 +9610,8 @@ class WorkforceManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

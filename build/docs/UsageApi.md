@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getOauthClientUsageQueryResult
 
-> ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
+> ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId, opts)
 
 
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
@@ -49,8 +49,14 @@ let apiInstance = new platformClient.UsageApi();
 
 let executionId = "executionId_example"; // String | ID of the query execution
 let clientId = "clientId_example"; // String | Client ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
+apiInstance.getOauthClientUsageQueryResult(executionId, clientId, opts)
   .then((data) => {
     console.log(`getOauthClientUsageQueryResult success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -67,6 +73,7 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the query execution |  |
  **clientId** | **String** | Client ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -104,7 +111,11 @@ let apiInstance = new platformClient.UsageApi();
 
 let clientId = "clientId_example"; // String | Client ID
 let opts = { 
-  'days': "7" // String | Previous number of days to query
+  'days': "7", // String | Previous number of days to query
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOauthClientUsageSummary(clientId, opts)
@@ -124,6 +135,7 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **days** | **String** | Previous number of days to query | [optional] [default to 7] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -159,7 +171,11 @@ let apiInstance = new platformClient.UsageApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'pageSize': 100, // Number | Page size of the results. Max is 1000.
-  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsageAggregatesQueryJob(jobId, opts)
@@ -180,6 +196,7 @@ apiInstance.getUsageAggregatesQueryJob(jobId, opts)
  **jobId** | **String** | jobId |  |
  **pageSize** | **Number** | Page size of the results. Max is 1000. | [optional] [default to 100] |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -216,7 +233,11 @@ let clientId = "clientId_example"; // String | clientId
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'pageSize': 100, // Number | Page size of the results. Max is 1000.
-  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsageClientClientIdAggregatesQueryJob(clientId, jobId, opts)
@@ -238,6 +259,7 @@ apiInstance.getUsageClientClientIdAggregatesQueryJob(clientId, jobId, opts)
  **jobId** | **String** | jobId |  |
  **pageSize** | **Number** | Page size of the results. Max is 1000. | [optional] [default to 100] |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -246,7 +268,7 @@ apiInstance.getUsageClientClientIdAggregatesQueryJob(clientId, jobId, opts)
 
 ## getUsageQueryExecutionIdResults
 
-> ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId)
+> ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId, opts)
 
 
 GET /api/v2/usage/query/{executionId}/results
@@ -272,8 +294,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsageApi();
 
 let executionId = "executionId_example"; // String | ID of the query execution
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUsageQueryExecutionIdResults(executionId)
+apiInstance.getUsageQueryExecutionIdResults(executionId, opts)
   .then((data) => {
     console.log(`getUsageQueryExecutionIdResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -289,6 +317,7 @@ apiInstance.getUsageQueryExecutionIdResults(executionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the query execution |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -325,7 +354,11 @@ let apiInstance = new platformClient.UsageApi();
 let executionId = "executionId_example"; // String | ID of the search execution
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned
-  'pageSize': 3.4 // Number | The max number of entities to be returned per request. Maximum page size of 1000
+  'pageSize': 3.4, // Number | The max number of entities to be returned per request. Maximum page size of 1000
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
@@ -346,6 +379,7 @@ apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
  **executionId** | **String** | ID of the search execution |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned | [optional]  |
  **pageSize** | **Number** | The max number of entities to be returned per request. Maximum page size of 1000 | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -354,7 +388,7 @@ apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
 
 ## postOauthClientUsageQuery
 
-> UsageExecutionResult postOauthClientUsageQuery(clientId, body)
+> UsageExecutionResult postOauthClientUsageQuery(clientId, body, opts)
 
 
 POST /api/v2/oauth/clients/{clientId}/usage/query
@@ -383,8 +417,14 @@ let apiInstance = new platformClient.UsageApi();
 
 let clientId = "clientId_example"; // String | Client ID
 let body = {}; // Object | Query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOauthClientUsageQuery(clientId, body)
+apiInstance.postOauthClientUsageQuery(clientId, body, opts)
   .then((data) => {
     console.log(`postOauthClientUsageQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -401,6 +441,7 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **body** | **Object** | Query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -409,7 +450,7 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 
 ## postUsageAggregatesQueryJobs
 
-> OrganizationUsageQueryResponse postUsageAggregatesQueryJobs(body)
+> OrganizationUsageQueryResponse postUsageAggregatesQueryJobs(body, opts)
 
 
 POST /api/v2/usage/aggregates/query/jobs
@@ -436,8 +477,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsageApi();
 
 let body = {}; // Object | Query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsageAggregatesQueryJobs(body)
+apiInstance.postUsageAggregatesQueryJobs(body, opts)
   .then((data) => {
     console.log(`postUsageAggregatesQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -453,6 +500,7 @@ apiInstance.postUsageAggregatesQueryJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -461,7 +509,7 @@ apiInstance.postUsageAggregatesQueryJobs(body)
 
 ## postUsageClientClientIdAggregatesQueryJobs
 
-> ClientUsageQueryResponse postUsageClientClientIdAggregatesQueryJobs(clientId, body)
+> ClientUsageQueryResponse postUsageClientClientIdAggregatesQueryJobs(clientId, body, opts)
 
 
 POST /api/v2/usage/client/{clientId}/aggregates/query/jobs
@@ -489,8 +537,14 @@ let apiInstance = new platformClient.UsageApi();
 
 let clientId = "clientId_example"; // String | clientId
 let body = {}; // Object | Query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsageClientClientIdAggregatesQueryJobs(clientId, body)
+apiInstance.postUsageClientClientIdAggregatesQueryJobs(clientId, body, opts)
   .then((data) => {
     console.log(`postUsageClientClientIdAggregatesQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -507,6 +561,7 @@ apiInstance.postUsageClientClientIdAggregatesQueryJobs(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | clientId |  |
  **body** | **Object** | Query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -515,7 +570,7 @@ apiInstance.postUsageClientClientIdAggregatesQueryJobs(clientId, body)
 
 ## postUsageQuery
 
-> UsageExecutionResult postUsageQuery(body)
+> UsageExecutionResult postUsageQuery(body, opts)
 
 
 POST /api/v2/usage/query
@@ -543,8 +598,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsageApi();
 
 let body = {}; // Object | Query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsageQuery(body)
+apiInstance.postUsageQuery(body, opts)
   .then((data) => {
     console.log(`postUsageQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -560,6 +621,7 @@ apiInstance.postUsageQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -568,7 +630,7 @@ apiInstance.postUsageQuery(body)
 
 ## postUsageSimplesearch
 
-> UsageExecutionResult postUsageSimplesearch(body)
+> UsageExecutionResult postUsageSimplesearch(body, opts)
 
 
 POST /api/v2/usage/simplesearch
@@ -596,8 +658,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsageApi();
 
 let body = {}; // Object | SimpleSearch
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsageSimplesearch(body)
+apiInstance.postUsageSimplesearch(body, opts)
   .then((data) => {
     console.log(`postUsageSimplesearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -613,10 +681,11 @@ apiInstance.postUsageSimplesearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SimpleSearch |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UsageExecutionResult**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

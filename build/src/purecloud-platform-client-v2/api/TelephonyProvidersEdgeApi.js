@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a edge.
 	 * 
 	 * @param {String} edgeId Edge ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdge(edgeId) { 
+	deleteTelephonyProvidersEdge(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdge';
@@ -41,7 +45,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge ID
 	 * @param {String} interfaceId Interface ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId) { 
+	deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdgeLogicalinterface';
@@ -71,7 +80,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -79,8 +89,12 @@ class TelephonyProvidersEdgeApi {
 	 * Cancels any in-progress update for this edge.
 	 * 
 	 * @param {String} edgeId Edge ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgeSoftwareupdate(edgeId) { 
+	deleteTelephonyProvidersEdgeSoftwareupdate(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdgeSoftwareupdate';
@@ -96,15 +110,20 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Deletes alertable presences overrides.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesAlertablepresences() { 
+	deleteTelephonyProvidersEdgesAlertablepresences(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/alertablepresences', 
@@ -116,7 +135,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,8 +144,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a certificate authority.
 	 * 
 	 * @param {String} certificateId Certificate ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesCertificateauthority(certificateId) { 
+	deleteTelephonyProvidersEdgesCertificateauthority(certificateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'certificateId' is set
 		if (certificateId === undefined || certificateId === null || certificateId === '') {
 			throw 'Missing the required parameter "certificateId" when calling deleteTelephonyProvidersEdgesCertificateauthority';
@@ -141,7 +165,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -149,8 +174,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a DID Pool by ID.
 	 * 
 	 * @param {String} didPoolId DID pool ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesDidpool(didPoolId) { 
+	deleteTelephonyProvidersEdgesDidpool(didPoolId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'didPoolId' is set
 		if (didPoolId === undefined || didPoolId === null || didPoolId === '') {
 			throw 'Missing the required parameter "didPoolId" when calling deleteTelephonyProvidersEdgesDidpool';
@@ -166,7 +195,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,8 +204,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete an edge group.
 	 * 
 	 * @param {String} edgeGroupId Edge group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId) { 
+	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeGroupId' is set
 		if (edgeGroupId === undefined || edgeGroupId === null || edgeGroupId === '') {
 			throw 'Missing the required parameter "edgeGroupId" when calling deleteTelephonyProvidersEdgesEdgegroup';
@@ -191,7 +225,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -199,8 +234,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete an extension pool by ID
 	 * 
 	 * @param {String} extensionPoolId Extension pool ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId) { 
+	deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'extensionPoolId' is set
 		if (extensionPoolId === undefined || extensionPoolId === null || extensionPoolId === '') {
 			throw 'Missing the required parameter "extensionPoolId" when calling deleteTelephonyProvidersEdgesExtensionpool';
@@ -216,7 +255,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -224,8 +264,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a Phone by ID
 	 * 
 	 * @param {String} phoneId Phone ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesPhone(phoneId) { 
+	deleteTelephonyProvidersEdgesPhone(phoneId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneId' is set
 		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling deleteTelephonyProvidersEdgesPhone';
@@ -241,7 +285,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -249,8 +294,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a Phone Base Settings by ID
 	 * 
 	 * @param {String} phoneBaseId Phone base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId) { 
+	deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneBaseId' is set
 		if (phoneBaseId === undefined || phoneBaseId === null || phoneBaseId === '') {
 			throw 'Missing the required parameter "phoneBaseId" when calling deleteTelephonyProvidersEdgesPhonebasesetting';
@@ -266,7 +315,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -274,8 +324,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a Site by ID
 	 * 
 	 * @param {String} siteId Site ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesSite(siteId) { 
+	deleteTelephonyProvidersEdgesSite(siteId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling deleteTelephonyProvidersEdgesSite';
@@ -291,7 +345,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -300,8 +355,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {String} outboundRouteId Outbound route ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId) { 
+	deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling deleteTelephonyProvidersEdgesSiteOutboundroute';
@@ -321,7 +380,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -329,8 +389,12 @@ class TelephonyProvidersEdgeApi {
 	 * Delete a Trunk Base Settings object by ID
 	 * 
 	 * @param {String} trunkBaseSettingsId Trunk Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId) { 
+	deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trunkBaseSettingsId' is set
 		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null || trunkBaseSettingsId === '') {
 			throw 'Missing the required parameter "trunkBaseSettingsId" when calling deleteTelephonyProvidersEdgesTrunkbasesetting';
@@ -346,7 +410,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -356,6 +421,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdge(edgeId, opts) { 
 		opts = opts || {};
@@ -375,7 +441,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -383,8 +450,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get networking-related information from an Edge for a target IP or host.
 	 * 
 	 * @param {String} edgeId Edge Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeDiagnosticNslookup(edgeId) { 
+	getTelephonyProvidersEdgeDiagnosticNslookup(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticNslookup';
@@ -400,7 +471,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -408,8 +480,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get networking-related information from an Edge for a target IP or host.
 	 * 
 	 * @param {String} edgeId Edge Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeDiagnosticPing(edgeId) { 
+	getTelephonyProvidersEdgeDiagnosticPing(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticPing';
@@ -425,7 +501,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -433,8 +510,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get networking-related information from an Edge for a target IP or host.
 	 * 
 	 * @param {String} edgeId Edge Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeDiagnosticRoute(edgeId) { 
+	getTelephonyProvidersEdgeDiagnosticRoute(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticRoute';
@@ -450,7 +531,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -458,8 +540,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get networking-related information from an Edge for a target IP or host.
 	 * 
 	 * @param {String} edgeId Edge Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeDiagnosticTracepath(edgeId) { 
+	getTelephonyProvidersEdgeDiagnosticTracepath(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticTracepath';
@@ -475,7 +561,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -486,6 +573,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} interfaceId Interface ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Field to expand in the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts) { 
 		opts = opts || {};
@@ -509,7 +597,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -519,6 +608,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Field to expand in the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts) { 
 		opts = opts || {};
@@ -538,7 +628,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -547,8 +638,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge ID
 	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeLogsJob(edgeId, jobId) { 
+	getTelephonyProvidersEdgeLogsJob(edgeId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeLogsJob';
@@ -568,7 +663,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -576,8 +672,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get the edge metrics.
 	 * 
 	 * @param {String} edgeId Edge Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeMetrics(edgeId) { 
+	getTelephonyProvidersEdgeMetrics(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeMetrics';
@@ -593,7 +693,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -602,8 +703,12 @@ class TelephonyProvidersEdgeApi {
 	 * Retrieve a physical interface from a specific edge.
 	 * @param {String} edgeId Edge ID
 	 * @param {String} interfaceId Interface ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId) { 
+	getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgePhysicalinterface';
@@ -623,7 +728,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -631,8 +737,12 @@ class TelephonyProvidersEdgeApi {
 	 * Retrieve a list of all configured physical interfaces from a specific edge.
 	 * 
 	 * @param {String} edgeId Edge ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgePhysicalinterfaces(edgeId) { 
+	getTelephonyProvidersEdgePhysicalinterfaces(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgePhysicalinterfaces';
@@ -648,7 +758,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -656,8 +767,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
 	 * 
 	 * @param {String} edgeId Edge ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeSetuppackage(edgeId) { 
+	getTelephonyProvidersEdgeSetuppackage(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeSetuppackage';
@@ -673,7 +788,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -681,8 +797,12 @@ class TelephonyProvidersEdgeApi {
 	 * Gets software update status information about any edge.
 	 * 
 	 * @param {String} edgeId Edge ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeSoftwareupdate(edgeId) { 
+	getTelephonyProvidersEdgeSoftwareupdate(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeSoftwareupdate';
@@ -698,7 +818,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -706,8 +827,12 @@ class TelephonyProvidersEdgeApi {
 	 * Gets all the available software versions for this edge.
 	 * 
 	 * @param {String} edgeId Edge ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgeSoftwareversions(edgeId) { 
+	getTelephonyProvidersEdgeSoftwareversions(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeSoftwareversions';
@@ -723,7 +848,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -738,6 +864,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.trunkBaseId Filter by Trunk Base Ids
 	 * @param {Object} opts.trunkType Filter by a Trunk type
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgeTrunks(edgeId, opts) { 
 		opts = opts || {};
@@ -757,7 +884,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -773,6 +901,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {Boolean} opts.managed Filter by managed
 	 * @param {Boolean} opts.showCloudMedia True to show the cloud media devices in the result. (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdges(opts) { 
 		opts = opts || {};
@@ -788,7 +917,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -797,6 +927,7 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.type 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesAlertablepresences(opts) { 
 		opts = opts || {};
@@ -812,15 +943,20 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of certificate authorities.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesCertificateauthorities() { 
+	getTelephonyProvidersEdgesCertificateauthorities(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/certificateauthorities', 
@@ -832,7 +968,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -840,8 +977,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a certificate authority.
 	 * 
 	 * @param {String} certificateId Certificate ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesCertificateauthority(certificateId) { 
+	getTelephonyProvidersEdgesCertificateauthority(certificateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'certificateId' is set
 		if (certificateId === undefined || certificateId === null || certificateId === '') {
 			throw 'Missing the required parameter "certificateId" when calling getTelephonyProvidersEdgesCertificateauthority';
@@ -857,7 +998,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -865,8 +1007,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a DID by ID.
 	 * 
 	 * @param {String} didId DID ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesDid(didId) { 
+	getTelephonyProvidersEdgesDid(didId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'didId' is set
 		if (didId === undefined || didId === null || didId === '') {
 			throw 'Missing the required parameter "didId" when calling getTelephonyProvidersEdgesDid';
@@ -882,7 +1028,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -890,8 +1037,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a DID Pool by ID.
 	 * 
 	 * @param {String} didPoolId DID pool ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesDidpool(didPoolId) { 
+	getTelephonyProvidersEdgesDidpool(didPoolId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'didPoolId' is set
 		if (didPoolId === undefined || didPoolId === null || didPoolId === '') {
 			throw 'Missing the required parameter "didPoolId" when calling getTelephonyProvidersEdgesDidpool';
@@ -907,7 +1058,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -919,6 +1071,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to number)
 	 * @param {Array.<String>} opts.id Filter by a specific list of ID's
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesDidpools(opts) { 
 		opts = opts || {};
@@ -934,7 +1087,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -948,6 +1102,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesDidpoolsDids(type, opts) { 
 		opts = opts || {};
@@ -967,7 +1122,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -983,6 +1139,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.ownerId Filter by the owner of a phone number
 	 * @param {String} opts.didPoolId Filter by the DID Pool assignment
 	 * @param {Array.<String>} opts.id Filter by a specific list of ID's
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesDids(opts) { 
 		opts = opts || {};
@@ -998,7 +1155,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1008,6 +1166,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeGroupId Edge group ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Fields to expand in the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts) { 
 		opts = opts || {};
@@ -1027,7 +1186,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1036,8 +1196,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgegroupId Edge Group ID
 	 * @param {String} edgetrunkbaseId Edge Trunk Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId) { 
+	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgegroupId' is set
 		if (edgegroupId === undefined || edgegroupId === null || edgegroupId === '') {
 			throw 'Missing the required parameter "edgegroupId" when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase';
@@ -1057,7 +1221,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1070,6 +1235,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {Boolean} opts.managed Filter by managed
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesEdgegroups(opts) { 
 		opts = opts || {};
@@ -1085,15 +1251,20 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the edge version report.
 	 * The report will not have consistent data about the edge version(s) until all edges have been reset.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesEdgeversionreport() { 
+	getTelephonyProvidersEdgesEdgeversionreport(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgeversionreport', 
@@ -1105,15 +1276,20 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * List of edges more than 4 edge versions behind the latest software.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesExpired() { 
+	getTelephonyProvidersEdgesExpired(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/expired', 
@@ -1125,7 +1301,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1133,8 +1310,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get an extension by ID.
 	 * 
 	 * @param {String} extensionId Extension ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesExtension(extensionId) { 
+	getTelephonyProvidersEdgesExtension(extensionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'extensionId' is set
 		if (extensionId === undefined || extensionId === null || extensionId === '') {
 			throw 'Missing the required parameter "extensionId" when calling getTelephonyProvidersEdgesExtension';
@@ -1150,7 +1331,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1158,8 +1340,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get an extension pool by ID
 	 * 
 	 * @param {String} extensionPoolId Extension pool ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesExtensionpool(extensionPoolId) { 
+	getTelephonyProvidersEdgesExtensionpool(extensionPoolId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'extensionPoolId' is set
 		if (extensionPoolId === undefined || extensionPoolId === null || extensionPoolId === '') {
 			throw 'Missing the required parameter "extensionPoolId" when calling getTelephonyProvidersEdgesExtensionpool';
@@ -1175,7 +1361,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1188,6 +1375,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts._number Deprecated, filtering by number not supported
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesExtensionpools(opts) { 
 		opts = opts || {};
@@ -1203,7 +1391,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1218,6 +1407,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
 	 * @param {String} opts.name Name of the Extension Pools to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1233,7 +1423,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1246,6 +1437,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Sort by (default to number)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts._number Filter by number
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesExtensions(opts) { 
 		opts = opts || {};
@@ -1261,7 +1453,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1269,8 +1462,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Line by ID
 	 * 
 	 * @param {String} lineId Line ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesLine(lineId) { 
+	getTelephonyProvidersEdgesLine(lineId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'lineId' is set
 		if (lineId === undefined || lineId === null || lineId === '') {
 			throw 'Missing the required parameter "lineId" when calling getTelephonyProvidersEdgesLine';
@@ -1286,7 +1483,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1294,8 +1492,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a line base settings object by ID
 	 * 
 	 * @param {String} lineBaseId Line base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesLinebasesetting(lineBaseId) { 
+	getTelephonyProvidersEdgesLinebasesetting(lineBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'lineBaseId' is set
 		if (lineBaseId === undefined || lineBaseId === null || lineBaseId === '') {
 			throw 'Missing the required parameter "lineBaseId" when calling getTelephonyProvidersEdgesLinebasesetting';
@@ -1311,7 +1513,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1324,6 +1527,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Value by which to sort (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesLinebasesettings(opts) { 
 		opts = opts || {};
@@ -1339,7 +1543,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1352,6 +1557,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Value by which to sort (default to name)
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesLines(opts) { 
 		opts = opts || {};
@@ -1367,7 +1573,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1375,8 +1582,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
 	 * 
 	 * @param {String} lineBaseSettingsId The id of a Line Base Settings object upon which to base this Line
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId) { 
+	getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'lineBaseSettingsId' is set
 		if (lineBaseSettingsId === undefined || lineBaseSettingsId === null) {
 			throw 'Missing the required parameter "lineBaseSettingsId" when calling getTelephonyProvidersEdgesLinesTemplate';
@@ -1392,7 +1603,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1402,6 +1614,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeIds Comma separated list of Edge Id's
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Field to expand in the response
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts) { 
 		opts = opts || {};
@@ -1421,7 +1634,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1429,9 +1643,13 @@ class TelephonyProvidersEdgeApi {
 	 * Get media endpoint statistics events.
 	 * 
 	 * @param {String} conversationId Identifier of the conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId) { 
+	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonyProvidersEdgesMediastatisticsConversation';
@@ -1447,7 +1665,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1456,9 +1675,13 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} conversationId Identifier of the conversation
 	 * @param {String} communicationId Identifier of the media session
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId) { 
+	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication';
@@ -1478,7 +1701,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1486,8 +1710,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get the metrics for a list of edges.
 	 * 
 	 * @param {String} edgeIds Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesMetrics(edgeIds) { 
+	getTelephonyProvidersEdgesMetrics(edgeIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeIds' is set
 		if (edgeIds === undefined || edgeIds === null) {
 			throw 'Missing the required parameter "edgeIds" when calling getTelephonyProvidersEdgesMetrics';
@@ -1503,7 +1731,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1517,6 +1746,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.siteId Filter by site.id
 	 * @param {String} opts.externalTrunkBasesIds Filter by externalTrunkBases.ids
 	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesOutboundroutes(opts) { 
 		opts = opts || {};
@@ -1532,7 +1762,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1540,8 +1771,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Phone by ID
 	 * 
 	 * @param {String} phoneId Phone ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesPhone(phoneId) { 
+	getTelephonyProvidersEdgesPhone(phoneId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneId' is set
 		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling getTelephonyProvidersEdgesPhone';
@@ -1557,7 +1792,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1565,8 +1801,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Phone Base Settings object by ID
 	 * 
 	 * @param {String} phoneBaseId Phone base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId) { 
+	getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneBaseId' is set
 		if (phoneBaseId === undefined || phoneBaseId === null || phoneBaseId === '') {
 			throw 'Missing the required parameter "phoneBaseId" when calling getTelephonyProvidersEdgesPhonebasesetting';
@@ -1582,7 +1822,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1596,6 +1837,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 * @param {String} opts.name Name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesPhonebasesettings(opts) { 
 		opts = opts || {};
@@ -1611,7 +1853,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1621,6 +1864,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts) { 
 		opts = opts || {};
@@ -1636,7 +1880,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1644,8 +1889,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
 	 * 
 	 * @param {String} phoneMetabaseId The id of a metabase object upon which to base this Phone Base Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId) { 
+	getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneMetabaseId' is set
 		if (phoneMetabaseId === undefined || phoneMetabaseId === null) {
 			throw 'Missing the required parameter "phoneMetabaseId" when calling getTelephonyProvidersEdgesPhonebasesettingsTemplate';
@@ -1661,7 +1910,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1686,6 +1936,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.secondaryStatusOperationalStatus The secondary status to filter by
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesPhones(opts) { 
 		opts = opts || {};
@@ -1701,7 +1952,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1709,8 +1961,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
 	 * 
 	 * @param {String} phoneBaseSettingsId The id of a Phone Base Settings object upon which to base this Phone
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId) { 
+	getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneBaseSettingsId' is set
 		if (phoneBaseSettingsId === undefined || phoneBaseSettingsId === null) {
 			throw 'Missing the required parameter "phoneBaseSettingsId" when calling getTelephonyProvidersEdgesPhonesTemplate';
@@ -1726,7 +1982,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1734,8 +1991,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get physical interfaces for edges.
 	 * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
 	 * @param {String} edgeIds Comma separated list of Edge Id's
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds) { 
+	getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeIds' is set
 		if (edgeIds === undefined || edgeIds === null) {
 			throw 'Missing the required parameter "edgeIds" when calling getTelephonyProvidersEdgesPhysicalinterfaces';
@@ -1751,7 +2012,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1759,8 +2021,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Site by ID.
 	 * 
 	 * @param {String} siteId Site ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesSite(siteId) { 
+	getTelephonyProvidersEdgesSite(siteId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSite';
@@ -1776,7 +2042,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1785,8 +2052,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {String} numberPlanId Number Plan ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId) { 
+	getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteNumberplan';
@@ -1806,7 +2077,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1814,8 +2086,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get the list of Number Plans for this Site. Only fetches the first 200 records.
 	 * 
 	 * @param {String} siteId Site ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesSiteNumberplans(siteId) { 
+	getTelephonyProvidersEdgesSiteNumberplans(siteId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteNumberplans';
@@ -1831,7 +2107,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1841,6 +2118,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} siteId Site ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.classification Classification
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opts) { 
 		opts = opts || {};
@@ -1860,7 +2138,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1869,8 +2148,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {String} outboundRouteId Outbound route ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId) { 
+	getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteOutboundroute';
@@ -1890,7 +2173,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1904,6 +2188,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.externalTrunkBasesIds externalTrunkBases.ids
 	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts) { 
 		opts = opts || {};
@@ -1923,7 +2208,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1931,8 +2217,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get site connections for a site.
 	 * 
 	 * @param {String} siteId Site ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesSiteSiteconnections(siteId) { 
+	getTelephonyProvidersEdgesSiteSiteconnections(siteId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteSiteconnections';
@@ -1948,7 +2238,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1964,6 +2255,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.locationId Location Id
 	 * @param {Boolean} opts.managed Filter by managed
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesSites(opts) { 
 		opts = opts || {};
@@ -1979,7 +2271,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1989,6 +2282,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
 		opts = opts || {};
@@ -2008,7 +2302,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2018,6 +2313,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 1000)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesTimezones(opts) { 
 		opts = opts || {};
@@ -2033,7 +2329,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2041,8 +2338,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Trunk by ID
 	 * 
 	 * @param {String} trunkId Trunk ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesTrunk(trunkId) { 
+	getTelephonyProvidersEdgesTrunk(trunkId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trunkId' is set
 		if (trunkId === undefined || trunkId === null || trunkId === '') {
 			throw 'Missing the required parameter "trunkId" when calling getTelephonyProvidersEdgesTrunk';
@@ -2058,7 +2359,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2066,8 +2368,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get the trunk metrics.
 	 * 
 	 * @param {String} trunkId Trunk Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesTrunkMetrics(trunkId) { 
+	getTelephonyProvidersEdgesTrunkMetrics(trunkId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trunkId' is set
 		if (trunkId === undefined || trunkId === null || trunkId === '') {
 			throw 'Missing the required parameter "trunkId" when calling getTelephonyProvidersEdgesTrunkMetrics';
@@ -2083,7 +2389,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2093,6 +2400,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} trunkBaseSettingsId Trunk Base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.ignoreHidden Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts) { 
 		opts = opts || {};
@@ -2112,7 +2420,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2129,6 +2438,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Boolean} opts.managed Filter by managed
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 * @param {String} opts.name Name of the TrunkBase to filter by
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesTrunkbasesettings(opts) { 
 		opts = opts || {};
@@ -2144,7 +2454,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2155,6 +2466,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Object} opts.type 
 	 * @param {Number} opts.pageSize  (default to 25)
 	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts) { 
 		opts = opts || {};
@@ -2170,7 +2482,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2178,8 +2491,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 	 * 
 	 * @param {String} trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId) { 
+	getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trunkMetabaseId' is set
 		if (trunkMetabaseId === undefined || trunkMetabaseId === null) {
 			throw 'Missing the required parameter "trunkMetabaseId" when calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate';
@@ -2195,7 +2512,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2210,6 +2528,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.edgeId Filter by Edge Ids
 	 * @param {String} opts.trunkBaseId Filter by Trunk Base Ids
 	 * @param {Object} opts.trunkType Filter by a Trunk type
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesTrunks(opts) { 
 		opts = opts || {};
@@ -2225,7 +2544,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2233,8 +2553,12 @@ class TelephonyProvidersEdgeApi {
 	 * Get the metrics for a list of trunks.
 	 * 
 	 * @param {String} trunkIds Comma separated list of Trunk Id's
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getTelephonyProvidersEdgesTrunksMetrics(trunkIds) { 
+	getTelephonyProvidersEdgesTrunksMetrics(trunkIds, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trunkIds' is set
 		if (trunkIds === undefined || trunkIds === null) {
 			throw 'Missing the required parameter "trunkIds" when calling getTelephonyProvidersEdgesTrunksMetrics';
@@ -2250,7 +2574,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2259,6 +2584,7 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.trunkType The type of this trunk base.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getTelephonyProvidersEdgesTrunkswithrecording(opts) { 
 		opts = opts || {};
@@ -2274,7 +2600,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2283,8 +2610,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {Object} body Site
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
+	patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
@@ -2304,7 +2635,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2313,8 +2645,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge Id
 	 * @param {Object} body request payload to get network diagnostic
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body) { 
+	postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticNslookup';
@@ -2334,7 +2670,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2343,8 +2680,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge Id
 	 * @param {Object} body request payload to get network diagnostic
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeDiagnosticPing(edgeId, body) { 
+	postTelephonyProvidersEdgeDiagnosticPing(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticPing';
@@ -2364,7 +2705,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2373,8 +2715,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge Id
 	 * @param {Object} body request payload to get network diagnostic
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body) { 
+	postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticRoute';
@@ -2394,7 +2740,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2403,8 +2750,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge Id
 	 * @param {Object} body request payload to get network diagnostic
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body) { 
+	postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticTracepath';
@@ -2424,7 +2775,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2433,8 +2785,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} body Logical interface
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body) { 
+	postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeLogicalinterfaces';
@@ -2454,7 +2810,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2464,8 +2821,12 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeId Edge ID
 	 * @param {String} jobId Job ID
 	 * @param {Object} body Log upload request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body) { 
+	postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeLogsJobUpload';
@@ -2489,7 +2850,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2498,8 +2860,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} body EdgeLogsJobRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeLogsJobs(edgeId, body) { 
+	postTelephonyProvidersEdgeLogsJobs(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeLogsJobs';
@@ -2519,7 +2885,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2529,6 +2896,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Parameters for the edge reboot
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postTelephonyProvidersEdgeReboot(edgeId, opts) { 
 		opts = opts || {};
@@ -2548,7 +2916,8 @@ class TelephonyProvidersEdgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2557,8 +2926,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} body Software update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeSoftwareupdate(edgeId, body) { 
+	postTelephonyProvidersEdgeSoftwareupdate(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeSoftwareupdate';
@@ -2578,7 +2951,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2588,6 +2962,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Edge Service State
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postTelephonyProvidersEdgeStatuscode(edgeId, opts) { 
 		opts = opts || {};
@@ -2607,7 +2982,8 @@ class TelephonyProvidersEdgeApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2615,8 +2991,12 @@ class TelephonyProvidersEdgeApi {
 	 * Unpair an Edge
 	 * 
 	 * @param {String} edgeId Edge Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgeUnpair(edgeId) { 
+	postTelephonyProvidersEdgeUnpair(edgeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeUnpair';
@@ -2632,7 +3012,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2640,8 +3021,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create an edge.
 	 * 
 	 * @param {Object} body Edge
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdges(body) { 
+	postTelephonyProvidersEdges(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdges';
@@ -2657,7 +3042,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2665,8 +3051,12 @@ class TelephonyProvidersEdgeApi {
 	 * Validates a street address
 	 * 
 	 * @param {Object} body Address
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesAddressvalidation(body) { 
+	postTelephonyProvidersEdgesAddressvalidation(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesAddressvalidation';
@@ -2682,7 +3072,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2690,8 +3081,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a certificate authority.
 	 * 
 	 * @param {Object} body CertificateAuthority
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesCertificateauthorities(body) { 
+	postTelephonyProvidersEdgesCertificateauthorities(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesCertificateauthorities';
@@ -2707,7 +3102,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2715,8 +3111,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a new DID pool
 	 * 
 	 * @param {Object} body DID pool
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesDidpools(body) { 
+	postTelephonyProvidersEdgesDidpools(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesDidpools';
@@ -2732,7 +3132,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2740,8 +3141,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create an edge group.
 	 * 
 	 * @param {Object} body EdgeGroup
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesEdgegroups(body) { 
+	postTelephonyProvidersEdgesEdgegroups(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesEdgegroups';
@@ -2757,7 +3162,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2765,8 +3171,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a new extension pool
 	 * 
 	 * @param {Object} body ExtensionPool
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesExtensionpools(body) { 
+	postTelephonyProvidersEdgesExtensionpools(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesExtensionpools';
@@ -2782,7 +3192,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2793,9 +3204,13 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} communicationId Identifier of the media session
 	 * @param {String} mediaResourceId Identifier of the media resource of the endpoint
 	 * @param {Object} body MediaStatisticsPostRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body) { 
+	postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
@@ -2823,7 +3238,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2831,8 +3247,12 @@ class TelephonyProvidersEdgeApi {
 	 * Reboot a Phone
 	 * 
 	 * @param {String} phoneId Phone Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesPhoneReboot(phoneId) { 
+	postTelephonyProvidersEdgesPhoneReboot(phoneId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneId' is set
 		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling postTelephonyProvidersEdgesPhoneReboot';
@@ -2848,7 +3268,8 @@ class TelephonyProvidersEdgeApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2856,8 +3277,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a new Phone Base Settings object
 	 * 
 	 * @param {Object} body Phone base settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesPhonebasesettings(body) { 
+	postTelephonyProvidersEdgesPhonebasesettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesPhonebasesettings';
@@ -2873,7 +3298,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2881,8 +3307,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a new Phone
 	 * 
 	 * @param {Object} body Phone
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesPhones(body) { 
+	postTelephonyProvidersEdgesPhones(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesPhones';
@@ -2898,7 +3328,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2906,8 +3337,12 @@ class TelephonyProvidersEdgeApi {
 	 * Reboot Multiple Phones
 	 * 
 	 * @param {Object} body Phones
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesPhonesReboot(body) { 
+	postTelephonyProvidersEdgesPhonesReboot(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesPhonesReboot';
@@ -2923,7 +3358,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2932,8 +3368,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {Object} body OutboundRoute
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body) { 
+	postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteOutboundroutes';
@@ -2953,7 +3393,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2961,8 +3402,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a Site.
 	 * 
 	 * @param {Object} body Site
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesSites(body) { 
+	postTelephonyProvidersEdgesSites(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSites';
@@ -2978,7 +3423,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2986,8 +3432,12 @@ class TelephonyProvidersEdgeApi {
 	 * Search sites
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesSitesSearch(body) { 
+	postTelephonyProvidersEdgesSitesSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
@@ -3003,7 +3453,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3011,8 +3462,12 @@ class TelephonyProvidersEdgeApi {
 	 * Create a Trunk Base Settings object
 	 * 
 	 * @param {Object} body Trunk base settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postTelephonyProvidersEdgesTrunkbasesettings(body) { 
+	postTelephonyProvidersEdgesTrunkbasesettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunkbasesettings';
@@ -3028,7 +3483,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3037,8 +3493,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeId Edge ID
 	 * @param {Object} body Edge
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdge(edgeId, body) { 
+	putTelephonyProvidersEdge(edgeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling putTelephonyProvidersEdge';
@@ -3058,7 +3518,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3068,8 +3529,12 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgeId Edge ID
 	 * @param {String} interfaceId Interface ID
 	 * @param {Object} body Logical interface
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body) { 
+	putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeId' is set
 		if (edgeId === undefined || edgeId === null || edgeId === '') {
 			throw 'Missing the required parameter "edgeId" when calling putTelephonyProvidersEdgeLogicalinterface';
@@ -3093,7 +3558,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3101,8 +3567,12 @@ class TelephonyProvidersEdgeApi {
 	 * Creates or updates alertable presences overrides.
 	 * 
 	 * @param {Object} body Alertable Presences Overrides
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesAlertablepresences(body) { 
+	putTelephonyProvidersEdgesAlertablepresences(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesAlertablepresences';
@@ -3118,7 +3588,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3127,8 +3598,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} certificateId Certificate ID
 	 * @param {Object} body Certificate authority
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesCertificateauthority(certificateId, body) { 
+	putTelephonyProvidersEdgesCertificateauthority(certificateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'certificateId' is set
 		if (certificateId === undefined || certificateId === null || certificateId === '') {
 			throw 'Missing the required parameter "certificateId" when calling putTelephonyProvidersEdgesCertificateauthority';
@@ -3148,7 +3623,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3157,8 +3633,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} didPoolId DID pool ID
 	 * @param {Object} body DID pool
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesDidpool(didPoolId, body) { 
+	putTelephonyProvidersEdgesDidpool(didPoolId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'didPoolId' is set
 		if (didPoolId === undefined || didPoolId === null || didPoolId === '') {
 			throw 'Missing the required parameter "didPoolId" when calling putTelephonyProvidersEdgesDidpool';
@@ -3178,7 +3658,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3187,8 +3668,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} edgeGroupId Edge group ID
 	 * @param {Object} body EdgeGroup
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body) { 
+	putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgeGroupId' is set
 		if (edgeGroupId === undefined || edgeGroupId === null || edgeGroupId === '') {
 			throw 'Missing the required parameter "edgeGroupId" when calling putTelephonyProvidersEdgesEdgegroup';
@@ -3208,7 +3693,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3218,8 +3704,12 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} edgegroupId Edge Group ID
 	 * @param {String} edgetrunkbaseId Edge Trunk Base ID
 	 * @param {Object} body EdgeTrunkBase
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body) { 
+	putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'edgegroupId' is set
 		if (edgegroupId === undefined || edgegroupId === null || edgegroupId === '') {
 			throw 'Missing the required parameter "edgegroupId" when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase';
@@ -3243,7 +3733,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3252,8 +3743,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} extensionPoolId Extension pool ID
 	 * @param {Object} body ExtensionPool
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body) { 
+	putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'extensionPoolId' is set
 		if (extensionPoolId === undefined || extensionPoolId === null || extensionPoolId === '') {
 			throw 'Missing the required parameter "extensionPoolId" when calling putTelephonyProvidersEdgesExtensionpool';
@@ -3273,7 +3768,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3282,8 +3778,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} phoneId Phone ID
 	 * @param {Object} body Phone
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesPhone(phoneId, body) { 
+	putTelephonyProvidersEdgesPhone(phoneId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneId' is set
 		if (phoneId === undefined || phoneId === null || phoneId === '') {
 			throw 'Missing the required parameter "phoneId" when calling putTelephonyProvidersEdgesPhone';
@@ -3303,7 +3803,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3312,8 +3813,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} phoneBaseId Phone base ID
 	 * @param {Object} body Phone base settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body) { 
+	putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneBaseId' is set
 		if (phoneBaseId === undefined || phoneBaseId === null || phoneBaseId === '') {
 			throw 'Missing the required parameter "phoneBaseId" when calling putTelephonyProvidersEdgesPhonebasesetting';
@@ -3333,7 +3838,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3342,8 +3848,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {Object} body Site
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesSite(siteId, body) { 
+	putTelephonyProvidersEdgesSite(siteId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSite';
@@ -3363,7 +3873,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3372,8 +3883,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {Array.<Object>} body List of number plans
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesSiteNumberplans(siteId, body) { 
+	putTelephonyProvidersEdgesSiteNumberplans(siteId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteNumberplans';
@@ -3393,7 +3908,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3403,8 +3919,12 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} siteId Site ID
 	 * @param {String} outboundRouteId Outbound route ID
 	 * @param {Object} body OutboundRoute
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body) { 
+	putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteOutboundroute';
@@ -3428,7 +3948,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3437,8 +3958,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {Object} body Site
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
+	putTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'siteId' is set
 		if (siteId === undefined || siteId === null || siteId === '') {
 			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteSiteconnections';
@@ -3458,7 +3983,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3467,8 +3993,12 @@ class TelephonyProvidersEdgeApi {
 	 * 
 	 * @param {String} trunkBaseSettingsId Trunk Base ID
 	 * @param {Object} body Trunk base settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body) { 
+	putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'trunkBaseSettingsId' is set
 		if (trunkBaseSettingsId === undefined || trunkBaseSettingsId === null || trunkBaseSettingsId === '') {
 			throw 'Missing the required parameter "trunkBaseSettingsId" when calling putTelephonyProvidersEdgesTrunkbasesetting';
@@ -3488,7 +4018,8 @@ class TelephonyProvidersEdgeApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

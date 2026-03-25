@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class LanguageUnderstandingApi {
 	 * Delete an NLU Domain.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLanguageunderstandingDomain(domainId) { 
+	deleteLanguageunderstandingDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomain';
@@ -41,7 +45,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} feedbackId ID of the Feedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId) { 
+	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
@@ -71,7 +80,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -80,8 +90,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLanguageunderstandingDomainVersion(domainId, domainVersionId) { 
+	deleteLanguageunderstandingDomainVersion(domainId, domainVersionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainVersion';
@@ -101,7 +115,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -109,8 +124,12 @@ class LanguageUnderstandingApi {
 	 * Delete a miner.
 	 * 
 	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLanguageunderstandingMiner(minerId) { 
+	deleteLanguageunderstandingMiner(minerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMiner';
@@ -126,7 +145,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -135,8 +155,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {String} draftId Draft ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteLanguageunderstandingMinerDraft(minerId, draftId) { 
+	deleteLanguageunderstandingMinerDraft(minerId, draftId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMinerDraft';
@@ -156,7 +180,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -164,8 +189,12 @@ class LanguageUnderstandingApi {
 	 * Find an NLU Domain.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingDomain(domainId) { 
+	getLanguageunderstandingDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomain';
@@ -181,7 +210,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -202,6 +232,7 @@ class LanguageUnderstandingApi {
 	 * @param {Boolean} opts.includeTrainingUtterances Include Training Utterances. By default they're included. (default to true)
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingDomainFeedback(domainId, opts) { 
 		opts = opts || {};
@@ -221,7 +252,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -232,6 +264,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} feedbackId ID of the Feedback
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts) { 
 		opts = opts || {};
@@ -255,7 +288,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -266,6 +300,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} domainVersionId ID of the NLU domain version.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeUtterances Whether utterances for intent definition should be included when marshalling response.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingDomainVersion(domainId, domainVersionId, opts) { 
 		opts = opts || {};
@@ -289,7 +324,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -298,8 +334,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingDomainVersionReport(domainId, domainVersionId) { 
+	getLanguageunderstandingDomainVersionReport(domainId, domainVersionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersionReport';
@@ -319,7 +359,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -331,6 +372,7 @@ class LanguageUnderstandingApi {
 	 * @param {Boolean} opts.includeUtterances Whether utterances for intent definition should be included when marshalling response.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingDomainVersions(domainId, opts) { 
 		opts = opts || {};
@@ -350,7 +392,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -360,6 +403,7 @@ class LanguageUnderstandingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingDomains(opts) { 
 		opts = opts || {};
@@ -375,7 +419,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -389,6 +434,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} opts.text The phrase text filter applied to the listing
 	 * @param {Object} opts.sortOrder The sort order for the listing (default to desc)
 	 * @param {Object} opts.sortBy The field to sort by for the listing (default to dateModified)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingIgnorephrase(languageCode, opts) { 
 		opts = opts || {};
@@ -408,7 +454,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -422,6 +469,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} opts.text The topic text filter applied to the listing
 	 * @param {Object} opts.sortOrder The sort order for the listing (default to desc)
 	 * @param {Object} opts.sortBy The field to sort by for the listing (default to dateModified)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingIgnoretopic(languageCode, opts) { 
 		opts = opts || {};
@@ -441,7 +489,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -449,8 +498,12 @@ class LanguageUnderstandingApi {
 	 * Get information about a miner.
 	 * 
 	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingMiner(minerId) { 
+	getLanguageunderstandingMiner(minerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMiner';
@@ -466,7 +519,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -478,6 +532,7 @@ class LanguageUnderstandingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.draftIntentId Parameter to filter a specific intent.
 	 * @param {String} opts.draftTopicId Parameter to filter a specific topic.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingMinerDraft(minerId, draftId, opts) { 
 		opts = opts || {};
@@ -501,7 +556,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -509,8 +565,12 @@ class LanguageUnderstandingApi {
 	 * Retrieve the list of drafts created.
 	 * 
 	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingMinerDrafts(minerId) { 
+	getLanguageunderstandingMinerDrafts(minerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDrafts';
@@ -526,7 +586,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -537,6 +598,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} intentId The ID of the intent to be retrieved.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Option to fetch utterances
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingMinerIntent(minerId, intentId, opts) { 
 		opts = opts || {};
@@ -560,7 +622,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -570,6 +633,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} minerId Miner ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Option to fetch utterances.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingMinerIntents(minerId, opts) { 
 		opts = opts || {};
@@ -589,7 +653,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -600,6 +665,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} topicId The ID of the topic to be retrieved.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Option to fetch phrases
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingMinerTopic(minerId, topicId, opts) { 
 		opts = opts || {};
@@ -623,7 +689,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -633,8 +700,12 @@ class LanguageUnderstandingApi {
 	 * @param {String} minerId Miner ID
 	 * @param {String} topicId The ID of the topic to be retrieved.
 	 * @param {String} phraseId The ID of the phrase to be retrieved.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId) { 
+	getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopicPhrase';
@@ -658,7 +729,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -666,8 +738,12 @@ class LanguageUnderstandingApi {
 	 * Retrieve a list of mined topics.
 	 * 
 	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingMinerTopics(minerId) { 
+	getLanguageunderstandingMinerTopics(minerId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopics';
@@ -683,7 +759,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -692,6 +769,7 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.minerType Type of miner, either intent or topic
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getLanguageunderstandingMiners(opts) { 
 		opts = opts || {};
@@ -707,15 +785,20 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Organization Configuration
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getLanguageunderstandingSettings() { 
+	getLanguageunderstandingSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/settings', 
@@ -727,7 +810,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -736,8 +820,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {Object} body The updated NLU Domain.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchLanguageunderstandingDomain(domainId, body) { 
+	patchLanguageunderstandingDomain(domainId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
@@ -757,7 +845,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -768,6 +857,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} draftId Draft ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchLanguageunderstandingMinerDraft(minerId, draftId, opts) { 
 		opts = opts || {};
@@ -791,7 +881,8 @@ class LanguageUnderstandingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -800,8 +891,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {Object} body The Feedback to create.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingDomainFeedback(domainId, body) { 
+	postLanguageunderstandingDomainFeedback(domainId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
@@ -821,7 +916,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -831,8 +927,12 @@ class LanguageUnderstandingApi {
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
 	 * @param {Object} body The input data to perform detection on.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body) { 
+	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
@@ -856,7 +956,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -865,8 +966,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId) { 
+	postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionPublish';
@@ -886,7 +991,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -895,8 +1001,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId) { 
+	postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionTrain';
@@ -916,7 +1026,8 @@ class LanguageUnderstandingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -927,6 +1038,7 @@ class LanguageUnderstandingApi {
 	 * @param {Object} body The NLU Domain Version to create.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeUtterances Whether utterances for intent definition should be included when marshalling response.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLanguageunderstandingDomainVersions(domainId, body, opts) { 
 		opts = opts || {};
@@ -950,7 +1062,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -958,8 +1071,12 @@ class LanguageUnderstandingApi {
 	 * Create an NLU Domain.
 	 * 
 	 * @param {Object} body The NLU Domain to create.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingDomains(body) { 
+	postLanguageunderstandingDomains(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomains';
@@ -975,7 +1092,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -984,8 +1102,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} languageCode Language Code
 	 * @param {Object} body Request body containing phrases to be ignored
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingIgnorephrase(languageCode, body) { 
+	postLanguageunderstandingIgnorephrase(languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnorephrase';
@@ -1005,7 +1127,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1014,8 +1137,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} languageCode Language Code
 	 * @param {Object} body Request body containing entities to be removed
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingIgnorephraseRemove(languageCode, body) { 
+	postLanguageunderstandingIgnorephraseRemove(languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnorephraseRemove';
@@ -1035,7 +1162,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1044,8 +1172,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} languageCode Language Code
 	 * @param {Object} body Request body containing topics to be ignored
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingIgnoretopic(languageCode, body) { 
+	postLanguageunderstandingIgnoretopic(languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnoretopic';
@@ -1065,7 +1197,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1074,8 +1207,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} languageCode Language Code
 	 * @param {Object} body Request body containing entities to be removed
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingIgnoretopicRemove(languageCode, body) { 
+	postLanguageunderstandingIgnoretopicRemove(languageCode, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postLanguageunderstandingIgnoretopicRemove';
@@ -1095,7 +1232,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1104,8 +1242,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {Object} body Details for creating draft resource
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingMinerDrafts(minerId, body) { 
+	postLanguageunderstandingMinerDrafts(minerId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null || minerId === '') {
 			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerDrafts';
@@ -1125,7 +1267,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1135,6 +1278,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} minerId Miner ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postLanguageunderstandingMinerExecute(minerId, opts) { 
 		opts = opts || {};
@@ -1154,7 +1298,8 @@ class LanguageUnderstandingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1162,8 +1307,12 @@ class LanguageUnderstandingApi {
 	 * Create a unique miner.
 	 * 
 	 * @param {Object} body Details for creating a new miner resource.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postLanguageunderstandingMiners(body) { 
+	postLanguageunderstandingMiners(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMiners';
@@ -1179,7 +1328,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1189,8 +1339,12 @@ class LanguageUnderstandingApi {
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
 	 * @param {Object} body The updated NLU Domain Version.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putLanguageunderstandingDomainVersion(domainId, domainVersionId, body) { 
+	putLanguageunderstandingDomainVersion(domainId, domainVersionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
@@ -1214,7 +1368,8 @@ class LanguageUnderstandingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

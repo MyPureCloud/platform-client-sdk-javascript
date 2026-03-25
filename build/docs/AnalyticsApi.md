@@ -139,7 +139,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAnalyticsActionsAggregatesJob
 
-> void deleteAnalyticsActionsAggregatesJob(jobId)
+> void deleteAnalyticsActionsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/actions/aggregates/jobs/{jobId}
@@ -167,8 +167,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsActionsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsActionsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsActionsAggregatesJob returned successfully.');
   })
@@ -184,6 +190,7 @@ apiInstance.deleteAnalyticsActionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -192,7 +199,7 @@ void (no response body)
 
 ## deleteAnalyticsAgentcopilotsAggregatesJob
 
-> void deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+> void deleteAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
@@ -219,8 +226,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsAgentcopilotsAggregatesJob returned successfully.');
   })
@@ -236,6 +249,7 @@ apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -244,7 +258,7 @@ void (no response body)
 
 ## deleteAnalyticsBotsAggregatesJob
 
-> void deleteAnalyticsBotsAggregatesJob(jobId)
+> void deleteAnalyticsBotsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/bots/aggregates/jobs/{jobId}
@@ -271,8 +285,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsBotsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsBotsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsBotsAggregatesJob returned successfully.');
   })
@@ -288,6 +308,7 @@ apiInstance.deleteAnalyticsBotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -296,7 +317,7 @@ void (no response body)
 
 ## deleteAnalyticsCasemanagementAggregatesJob
 
-> void deleteAnalyticsCasemanagementAggregatesJob(jobId)
+> void deleteAnalyticsCasemanagementAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}
@@ -323,8 +344,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsCasemanagementAggregatesJob(jobId)
+apiInstance.deleteAnalyticsCasemanagementAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsCasemanagementAggregatesJob returned successfully.');
   })
@@ -340,6 +367,7 @@ apiInstance.deleteAnalyticsCasemanagementAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -348,7 +376,7 @@ void (no response body)
 
 ## deleteAnalyticsConversationsAggregatesJob
 
-> void deleteAnalyticsConversationsAggregatesJob(jobId)
+> void deleteAnalyticsConversationsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
@@ -375,8 +403,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsConversationsAggregatesJob returned successfully.');
   })
@@ -392,6 +426,7 @@ apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -400,7 +435,7 @@ void (no response body)
 
 ## deleteAnalyticsConversationsDetailsJob
 
-> void deleteAnalyticsConversationsDetailsJob(jobId)
+> void deleteAnalyticsConversationsDetailsJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -426,8 +461,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
+apiInstance.deleteAnalyticsConversationsDetailsJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsConversationsDetailsJob returned successfully.');
   })
@@ -443,6 +484,7 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -451,7 +493,7 @@ void (no response body)
 
 ## deleteAnalyticsEvaluationsAggregatesJob
 
-> void deleteAnalyticsEvaluationsAggregatesJob(jobId)
+> void deleteAnalyticsEvaluationsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
@@ -478,8 +520,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsEvaluationsAggregatesJob returned successfully.');
   })
@@ -495,6 +543,7 @@ apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -503,7 +552,7 @@ void (no response body)
 
 ## deleteAnalyticsFlowexecutionsAggregatesJob
 
-> void deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+> void deleteAnalyticsFlowexecutionsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
@@ -530,8 +579,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsFlowexecutionsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsFlowexecutionsAggregatesJob returned successfully.');
   })
@@ -547,6 +602,7 @@ apiInstance.deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -555,7 +611,7 @@ void (no response body)
 
 ## deleteAnalyticsFlowsAggregatesJob
 
-> void deleteAnalyticsFlowsAggregatesJob(jobId)
+> void deleteAnalyticsFlowsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
@@ -582,8 +638,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsFlowsAggregatesJob returned successfully.');
   })
@@ -599,6 +661,7 @@ apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -607,7 +670,7 @@ void (no response body)
 
 ## deleteAnalyticsJourneysAggregatesJob
 
-> void deleteAnalyticsJourneysAggregatesJob(jobId)
+> void deleteAnalyticsJourneysAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -634,8 +697,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId)
+apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsJourneysAggregatesJob returned successfully.');
   })
@@ -651,6 +720,7 @@ apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -659,7 +729,7 @@ void (no response body)
 
 ## deleteAnalyticsKnowledgeAggregatesJob
 
-> void deleteAnalyticsKnowledgeAggregatesJob(jobId)
+> void deleteAnalyticsKnowledgeAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
@@ -686,8 +756,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId)
+apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsKnowledgeAggregatesJob returned successfully.');
   })
@@ -703,6 +779,7 @@ apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -711,7 +788,7 @@ void (no response body)
 
 ## deleteAnalyticsResolutionsAggregatesJob
 
-> void deleteAnalyticsResolutionsAggregatesJob(jobId)
+> void deleteAnalyticsResolutionsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
@@ -738,8 +815,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsResolutionsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsResolutionsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsResolutionsAggregatesJob returned successfully.');
   })
@@ -755,6 +838,7 @@ apiInstance.deleteAnalyticsResolutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -763,7 +847,7 @@ void (no response body)
 
 ## deleteAnalyticsSummariesAggregatesJob
 
-> void deleteAnalyticsSummariesAggregatesJob(jobId)
+> void deleteAnalyticsSummariesAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/summaries/aggregates/jobs/{jobId}
@@ -790,8 +874,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsSummariesAggregatesJob(jobId)
+apiInstance.deleteAnalyticsSummariesAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsSummariesAggregatesJob returned successfully.');
   })
@@ -807,6 +897,7 @@ apiInstance.deleteAnalyticsSummariesAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -815,7 +906,7 @@ void (no response body)
 
 ## deleteAnalyticsSurveysAggregatesJob
 
-> void deleteAnalyticsSurveysAggregatesJob(jobId)
+> void deleteAnalyticsSurveysAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
@@ -842,8 +933,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
+apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsSurveysAggregatesJob returned successfully.');
   })
@@ -859,6 +956,7 @@ apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -867,7 +965,7 @@ void (no response body)
 
 ## deleteAnalyticsTaskmanagementAggregatesJob
 
-> void deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+> void deleteAnalyticsTaskmanagementAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
@@ -894,8 +992,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+apiInstance.deleteAnalyticsTaskmanagementAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsTaskmanagementAggregatesJob returned successfully.');
   })
@@ -911,6 +1015,7 @@ apiInstance.deleteAnalyticsTaskmanagementAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -919,7 +1024,7 @@ void (no response body)
 
 ## deleteAnalyticsTranscriptsAggregatesJob
 
-> void deleteAnalyticsTranscriptsAggregatesJob(jobId)
+> void deleteAnalyticsTranscriptsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
@@ -946,8 +1051,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsTranscriptsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsTranscriptsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsTranscriptsAggregatesJob returned successfully.');
   })
@@ -963,6 +1074,7 @@ apiInstance.deleteAnalyticsTranscriptsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -971,7 +1083,7 @@ void (no response body)
 
 ## deleteAnalyticsUsersAggregatesJob
 
-> void deleteAnalyticsUsersAggregatesJob(jobId)
+> void deleteAnalyticsUsersAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -998,8 +1110,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
+apiInstance.deleteAnalyticsUsersAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsUsersAggregatesJob returned successfully.');
   })
@@ -1015,6 +1133,7 @@ apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1023,7 +1142,7 @@ void (no response body)
 
 ## deleteAnalyticsUsersDetailsJob
 
-> void deleteAnalyticsUsersDetailsJob(jobId)
+> void deleteAnalyticsUsersDetailsJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
@@ -1048,8 +1167,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
+apiInstance.deleteAnalyticsUsersDetailsJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsUsersDetailsJob returned successfully.');
   })
@@ -1065,6 +1190,7 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1073,7 +1199,7 @@ void (no response body)
 
 ## getAnalyticsActionsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsActionsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsActionsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/actions/aggregates/jobs/{jobId}
@@ -1101,8 +1227,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsActionsAggregatesJob(jobId)
+apiInstance.getAnalyticsActionsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsActionsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1118,6 +1250,7 @@ apiInstance.getAnalyticsActionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1155,7 +1288,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
@@ -1175,6 +1312,7 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1183,7 +1321,7 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsAgentStatus
 
-> AnalyticsAgentStateAgentResponse getAnalyticsAgentStatus(userId)
+> AnalyticsAgentStateAgentResponse getAnalyticsAgentStatus(userId, opts)
 
 
 GET /api/v2/analytics/agents/{userId}/status
@@ -1208,8 +1346,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let userId = "userId_example"; // String | userId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsAgentStatus(userId)
+apiInstance.getAnalyticsAgentStatus(userId, opts)
   .then((data) => {
     console.log(`getAnalyticsAgentStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1225,6 +1369,7 @@ apiInstance.getAnalyticsAgentStatus(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1233,7 +1378,7 @@ apiInstance.getAnalyticsAgentStatus(userId)
 
 ## getAnalyticsAgentcopilotsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsAgentcopilotsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
@@ -1260,8 +1405,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId)
+apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsAgentcopilotsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1277,6 +1428,7 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1313,7 +1465,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
@@ -1333,6 +1489,7 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1375,7 +1532,11 @@ let opts = {
   'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
   'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
   'language': en-us, // String | Optional language code to get the reporting turns for a particular language
-  'askActionResults': "askActionResults_example" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+  'askActionResults': "askActionResults_example", // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
@@ -1401,6 +1562,7 @@ apiInstance.getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
  **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SkippedCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone, GuardrailsViolation |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1446,7 +1608,11 @@ let opts = {
   'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
   'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
   'language': en-us, // String | Optional language code to get the reporting turns for a particular language
-  'askActionResults': "askActionResults_example" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+  'askActionResults': "askActionResults_example", // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
@@ -1472,6 +1638,7 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
  **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SkippedCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone, GuardrailsViolation |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1512,7 +1679,11 @@ let opts = {
   'pageSize': "50", // String | Max number of entities to return. Maximum of 250
   'interval': 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z, // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'botResultCategories': "botResultCategories_example", // String | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
-  'endLanguage': "endLanguage_example" // String | Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+  'endLanguage': "endLanguage_example", // String | Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsBotflowSessions(botFlowId, opts)
@@ -1536,6 +1707,7 @@ apiInstance.getAnalyticsBotflowSessions(botFlowId, opts)
  **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **botResultCategories** | **String** | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. | [optional] <br />**Values**: Unknown, UserExit, BotExit, Error, RecognitionFailure, UserDisconnect, BotDisconnect, SessionExpired, Transfer |
  **endLanguage** | **String** | Optional case-insensitive language code to filter sessions by the language the sessions ended in. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1544,7 +1716,7 @@ apiInstance.getAnalyticsBotflowSessions(botFlowId, opts)
 
 ## getAnalyticsBotsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsBotsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsBotsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/bots/aggregates/jobs/{jobId}
@@ -1571,8 +1743,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsBotsAggregatesJob(jobId)
+apiInstance.getAnalyticsBotsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsBotsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1588,6 +1766,7 @@ apiInstance.getAnalyticsBotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1624,7 +1803,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsBotsAggregatesJobResults(jobId, opts)
@@ -1644,6 +1827,7 @@ apiInstance.getAnalyticsBotsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1652,7 +1836,7 @@ apiInstance.getAnalyticsBotsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsCasemanagementAggregatesJob
 
-> AsyncQueryStatus getAnalyticsCasemanagementAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsCasemanagementAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}
@@ -1679,8 +1863,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsCasemanagementAggregatesJob(jobId)
+apiInstance.getAnalyticsCasemanagementAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsCasemanagementAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1696,6 +1886,7 @@ apiInstance.getAnalyticsCasemanagementAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1732,7 +1923,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsCasemanagementAggregatesJobResults(jobId, opts)
@@ -1752,6 +1947,7 @@ apiInstance.getAnalyticsCasemanagementAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1760,7 +1956,7 @@ apiInstance.getAnalyticsCasemanagementAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsConversationDetails
 
-> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
+> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId, opts)
 
 
 GET /api/v2/analytics/conversations/{conversationId}/details
@@ -1786,8 +1982,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationDetails(conversationId)
+apiInstance.getAnalyticsConversationDetails(conversationId, opts)
   .then((data) => {
     console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1803,6 +2005,7 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1811,7 +2014,7 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 ## getAnalyticsConversationsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
@@ -1838,8 +2041,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
+apiInstance.getAnalyticsConversationsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsConversationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1855,6 +2064,7 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1891,7 +2101,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
@@ -1911,6 +2125,7 @@ apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1945,7 +2160,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let opts = { 
-  'id': ["id_example"] // [String] | Comma-separated conversation ids
+  'id': ["id_example"], // [String] | Comma-separated conversation ids
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsConversationsDetails(opts)
@@ -1964,6 +2183,7 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma-separated conversation ids | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1972,7 +2192,7 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 
 ## getAnalyticsConversationsDetailsJob
 
-> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
+> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -1998,8 +2218,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationsDetailsJob(jobId)
+apiInstance.getAnalyticsConversationsDetailsJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsConversationsDetailsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2015,6 +2241,7 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2051,7 +2278,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 3.4 // Number | The desired maximum number of results
+  'pageSize': 3.4, // Number | The desired maximum number of results
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
@@ -2072,6 +2303,7 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2080,7 +2312,7 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 ## getAnalyticsConversationsDetailsJobsAvailability
 
-> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability(opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/availability
@@ -2103,8 +2335,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
+apiInstance.getAnalyticsConversationsDetailsJobsAvailability(opts)
   .then((data) => {
     console.log(`getAnalyticsConversationsDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2116,7 +2354,10 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2125,7 +2366,7 @@ This endpoint does not need any parameter.
 
 ## getAnalyticsDataextractionDownload
 
-> void getAnalyticsDataextractionDownload(downloadId)
+> void getAnalyticsDataextractionDownload(downloadId, opts)
 
 
 GET /api/v2/analytics/dataextraction/downloads/{downloadId}
@@ -2152,8 +2393,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let downloadId = "downloadId_example"; // String | Unique file Id to download
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsDataextractionDownload(downloadId)
+apiInstance.getAnalyticsDataextractionDownload(downloadId, opts)
   .then(() => {
     console.log('getAnalyticsDataextractionDownload returned successfully.');
   })
@@ -2169,6 +2416,7 @@ apiInstance.getAnalyticsDataextractionDownload(downloadId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **downloadId** | **String** | Unique file Id to download |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2209,7 +2457,11 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'dataSchema': "dataSchema_example", // String | Data schema like conversations
   'dateStart': new Date("2013-10-20T19:20:30+01:00"), // Date | Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-  'dateEnd': new Date("2013-10-20T19:20:30+01:00") // Date | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'dateEnd': new Date("2013-10-20T19:20:30+01:00"), // Date | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsDataextractionDownloadsMetadata(opts)
@@ -2233,6 +2485,7 @@ apiInstance.getAnalyticsDataextractionDownloadsMetadata(opts)
  **dataSchema** | **String** | Data schema like conversations | [optional]  |
  **dateStart** | **Date** | Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
  **dateEnd** | **Date** | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2241,7 +2494,7 @@ apiInstance.getAnalyticsDataextractionDownloadsMetadata(opts)
 
 ## getAnalyticsDataretentionSettings
 
-> AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings()
+> AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings(opts)
 
 
 GET /api/v2/analytics/dataretention/settings
@@ -2264,8 +2517,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsDataretentionSettings()
+apiInstance.getAnalyticsDataretentionSettings(opts)
   .then((data) => {
     console.log(`getAnalyticsDataretentionSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2277,7 +2536,10 @@ apiInstance.getAnalyticsDataretentionSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2286,7 +2548,7 @@ This endpoint does not need any parameter.
 
 ## getAnalyticsEvaluationsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
@@ -2313,8 +2575,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
+apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsEvaluationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2330,6 +2598,7 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2366,7 +2635,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
@@ -2386,6 +2659,7 @@ apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2394,7 +2668,7 @@ apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsFlowexecutionsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
@@ -2421,8 +2695,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId)
+apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsFlowexecutionsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2438,6 +2718,7 @@ apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2474,7 +2755,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
@@ -2494,6 +2779,7 @@ apiInstance.getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2502,7 +2788,7 @@ apiInstance.getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsFlowsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
@@ -2529,8 +2815,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsFlowsAggregatesJob(jobId)
+apiInstance.getAnalyticsFlowsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsFlowsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2546,6 +2838,7 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2582,7 +2875,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
@@ -2602,6 +2899,7 @@ apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2610,7 +2908,7 @@ apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsJourneysAggregatesJob
 
-> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -2637,8 +2935,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
+apiInstance.getAnalyticsJourneysAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsJourneysAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2654,6 +2958,7 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2690,7 +2995,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
@@ -2710,6 +3019,7 @@ apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2718,7 +3028,7 @@ apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsKnowledgeAggregatesJob
 
-> AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
@@ -2745,8 +3055,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsKnowledgeAggregatesJob(jobId)
+apiInstance.getAnalyticsKnowledgeAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsKnowledgeAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2762,6 +3078,7 @@ apiInstance.getAnalyticsKnowledgeAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2798,7 +3115,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
@@ -2818,6 +3139,7 @@ apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2826,7 +3148,7 @@ apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsReportingDashboardsUser
 
-> DashboardUser getAnalyticsReportingDashboardsUser(userId)
+> DashboardUser getAnalyticsReportingDashboardsUser(userId, opts)
 
 
 GET /api/v2/analytics/reporting/dashboards/users/{userId}
@@ -2851,8 +3173,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let userId = "userId_example"; // String | User ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsReportingDashboardsUser(userId)
+apiInstance.getAnalyticsReportingDashboardsUser(userId, opts)
   .then((data) => {
     console.log(`getAnalyticsReportingDashboardsUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2868,6 +3196,7 @@ apiInstance.getAnalyticsReportingDashboardsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2906,7 +3235,11 @@ let opts = {
   'pageSize': 25, // Number | 
   'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
   'state': "state_example", // String | Only list users of this state
-  'deletedOnly': true // Boolean | Only list users with deleted dashboards
+  'deletedOnly': true, // Boolean | Only list users with deleted dashboards
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsReportingDashboardsUsers(opts)
@@ -2930,6 +3263,7 @@ apiInstance.getAnalyticsReportingDashboardsUsers(opts)
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
  **state** | **String** | Only list users of this state | [optional] <br />**Values**: active, inactive |
  **deletedOnly** | **Boolean** | Only list users with deleted dashboards | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2964,7 +3298,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsReportingExports(opts)
@@ -2984,6 +3322,7 @@ apiInstance.getAnalyticsReportingExports(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2992,7 +3331,7 @@ apiInstance.getAnalyticsReportingExports(opts)
 
 ## getAnalyticsReportingExportsMetadata
 
-> ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
+> ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata(opts)
 
 
 GET /api/v2/analytics/reporting/exports/metadata
@@ -3015,8 +3354,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsReportingExportsMetadata()
+apiInstance.getAnalyticsReportingExportsMetadata(opts)
   .then((data) => {
     console.log(`getAnalyticsReportingExportsMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3028,7 +3373,10 @@ apiInstance.getAnalyticsReportingExportsMetadata()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3037,7 +3385,7 @@ This endpoint does not need any parameter.
 
 ## getAnalyticsReportingSettings
 
-> AnalyticsReportingSettings getAnalyticsReportingSettings()
+> AnalyticsReportingSettings getAnalyticsReportingSettings(opts)
 
 
 GET /api/v2/analytics/reporting/settings
@@ -3058,8 +3406,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsReportingSettings()
+apiInstance.getAnalyticsReportingSettings(opts)
   .then((data) => {
     console.log(`getAnalyticsReportingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3071,7 +3425,10 @@ apiInstance.getAnalyticsReportingSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3111,7 +3468,11 @@ let opts = {
   'dashboardState': "Active", // String | List dashboard of given state
   'sortBy': "desc", // String | 
   'pageNumber': 1, // Number | 
-  'pageSize': 9 // Number | 
+  'pageSize': 9, // Number | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
@@ -3136,6 +3497,7 @@ apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboar
  **sortBy** | **String** |  | [optional] [default to desc] |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** |  | [optional] [default to 9] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3176,7 +3538,11 @@ let opts = {
   'publicOnly': true, // Boolean | If true, retrieve only public dashboards
   'favoriteOnly': true, // Boolean | If true, retrieve only favorite dashboards
   'deletedOnly': true, // Boolean | If true, retrieve only deleted dashboards that are still recoverable
-  'name': "name_example" // String | retrieve dashboards that match with given name
+  'name': "name_example", // String | retrieve dashboards that match with given name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
@@ -3202,6 +3568,7 @@ apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
  **favoriteOnly** | **Boolean** | If true, retrieve only favorite dashboards | [optional]  |
  **deletedOnly** | **Boolean** | If true, retrieve only deleted dashboards that are still recoverable | [optional]  |
  **name** | **String** | retrieve dashboards that match with given name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3210,7 +3577,7 @@ apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
 
 ## getAnalyticsResolutionsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
@@ -3237,8 +3604,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsResolutionsAggregatesJob(jobId)
+apiInstance.getAnalyticsResolutionsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsResolutionsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3254,6 +3627,7 @@ apiInstance.getAnalyticsResolutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3290,7 +3664,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
@@ -3310,6 +3688,7 @@ apiInstance.getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3318,7 +3697,7 @@ apiInstance.getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsSummariesAggregatesJob
 
-> AsyncQueryStatus getAnalyticsSummariesAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsSummariesAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}
@@ -3345,8 +3724,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsSummariesAggregatesJob(jobId)
+apiInstance.getAnalyticsSummariesAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsSummariesAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3362,6 +3747,7 @@ apiInstance.getAnalyticsSummariesAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3398,7 +3784,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsSummariesAggregatesJobResults(jobId, opts)
@@ -3418,6 +3808,7 @@ apiInstance.getAnalyticsSummariesAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3426,7 +3817,7 @@ apiInstance.getAnalyticsSummariesAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsSurveysAggregatesJob
 
-> AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
@@ -3453,8 +3844,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
+apiInstance.getAnalyticsSurveysAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsSurveysAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3470,6 +3867,7 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3506,7 +3904,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
@@ -3526,6 +3928,7 @@ apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3534,7 +3937,7 @@ apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsTaskmanagementAggregatesJob
 
-> AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
@@ -3561,8 +3964,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsTaskmanagementAggregatesJob(jobId)
+apiInstance.getAnalyticsTaskmanagementAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsTaskmanagementAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3578,6 +3987,7 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3614,7 +4024,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
@@ -3634,6 +4048,7 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3642,7 +4057,7 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsTranscriptsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
@@ -3669,8 +4084,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsTranscriptsAggregatesJob(jobId)
+apiInstance.getAnalyticsTranscriptsAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsTranscriptsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3686,6 +4107,7 @@ apiInstance.getAnalyticsTranscriptsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3722,7 +4144,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
@@ -3742,6 +4168,7 @@ apiInstance.getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3750,7 +4177,7 @@ apiInstance.getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsUsersAggregatesJob
 
-> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -3777,8 +4204,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsUsersAggregatesJob(jobId)
+apiInstance.getAnalyticsUsersAggregatesJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsUsersAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3794,6 +4227,7 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3830,7 +4264,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
@@ -3850,6 +4288,7 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3858,7 +4297,7 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 
 ## getAnalyticsUsersDetailsJob
 
-> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId, opts)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
@@ -3883,8 +4322,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsUsersDetailsJob(jobId)
+apiInstance.getAnalyticsUsersDetailsJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsUsersDetailsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3900,6 +4345,7 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3935,7 +4381,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 3.4 // Number | The desired maximum number of results
+  'pageSize': 3.4, // Number | The desired maximum number of results
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
@@ -3956,6 +4406,7 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3964,7 +4415,7 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 ## getAnalyticsUsersDetailsJobsAvailability
 
-> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability(opts)
 
 
 GET /api/v2/analytics/users/details/jobs/availability
@@ -3987,8 +4438,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsUsersDetailsJobsAvailability()
+apiInstance.getAnalyticsUsersDetailsJobsAvailability(opts)
   .then((data) => {
     console.log(`getAnalyticsUsersDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4000,7 +4457,10 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4009,7 +4469,7 @@ This endpoint does not need any parameter.
 
 ## patchAnalyticsReportingSettings
 
-> AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
+> AnalyticsReportingSettings patchAnalyticsReportingSettings(body, opts)
 
 
 PATCH /api/v2/analytics/reporting/settings
@@ -4034,8 +4494,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | AnalyticsReportingSettingsRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchAnalyticsReportingSettings(body)
+apiInstance.patchAnalyticsReportingSettings(body, opts)
   .then((data) => {
     console.log(`patchAnalyticsReportingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4051,6 +4517,7 @@ apiInstance.patchAnalyticsReportingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AnalyticsReportingSettingsRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4059,7 +4526,7 @@ apiInstance.patchAnalyticsReportingSettings(body)
 
 ## postAnalyticsActionsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsActionsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsActionsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/actions/aggregates/jobs
@@ -4087,8 +4554,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsActionsAggregatesJobs(body)
+apiInstance.postAnalyticsActionsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsActionsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4104,6 +4577,7 @@ apiInstance.postAnalyticsActionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4112,7 +4586,7 @@ apiInstance.postAnalyticsActionsAggregatesJobs(body)
 
 ## postAnalyticsActionsAggregatesQuery
 
-> ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body)
+> ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/actions/aggregates/query
@@ -4138,8 +4612,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsActionsAggregatesQuery(body)
+apiInstance.postAnalyticsActionsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsActionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4155,6 +4635,7 @@ apiInstance.postAnalyticsActionsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4163,7 +4644,7 @@ apiInstance.postAnalyticsActionsAggregatesQuery(body)
 
 ## postAnalyticsAgentcopilotsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsAgentcopilotsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsAgentcopilotsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/agentcopilots/aggregates/jobs
@@ -4190,8 +4671,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
+apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsAgentcopilotsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4207,6 +4694,7 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4215,7 +4703,7 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
 
 ## postAnalyticsAgentcopilotsAggregatesQuery
 
-> AgentCopilotAggregateQueryResponse postAnalyticsAgentcopilotsAggregatesQuery(body)
+> AgentCopilotAggregateQueryResponse postAnalyticsAgentcopilotsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/agentcopilots/aggregates/query
@@ -4240,8 +4728,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
+apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsAgentcopilotsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4257,6 +4751,7 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4291,7 +4786,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
 let opts = { 
-  'groupBy': ["groupBy_example"] // [String] | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType
+  'groupBy': ["groupBy_example"], // [String] | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsAgentsStatusCounts(body, opts)
@@ -4311,6 +4810,7 @@ apiInstance.postAnalyticsAgentsStatusCounts(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
  **groupBy** | **[String]** | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType | [optional] <br />**Values**: segmentType, presence, routingStatus, isOutOfOffice |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4319,7 +4819,7 @@ apiInstance.postAnalyticsAgentsStatusCounts(body, opts)
 
 ## postAnalyticsAgentsStatusQuery
 
-> AnalyticsAgentStateQueryResponse postAnalyticsAgentsStatusQuery(body)
+> AnalyticsAgentStateQueryResponse postAnalyticsAgentsStatusQuery(body, opts)
 
 
 POST /api/v2/analytics/agents/status/query
@@ -4344,8 +4844,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsAgentsStatusQuery(body)
+apiInstance.postAnalyticsAgentsStatusQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsAgentsStatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4361,6 +4867,7 @@ apiInstance.postAnalyticsAgentsStatusQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4369,7 +4876,7 @@ apiInstance.postAnalyticsAgentsStatusQuery(body)
 
 ## postAnalyticsBotsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/bots/aggregates/jobs
@@ -4396,8 +4903,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsBotsAggregatesJobs(body)
+apiInstance.postAnalyticsBotsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsBotsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4413,6 +4926,7 @@ apiInstance.postAnalyticsBotsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4421,7 +4935,7 @@ apiInstance.postAnalyticsBotsAggregatesJobs(body)
 
 ## postAnalyticsBotsAggregatesQuery
 
-> BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
+> BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/bots/aggregates/query
@@ -4446,8 +4960,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsBotsAggregatesQuery(body)
+apiInstance.postAnalyticsBotsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsBotsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4463,6 +4983,7 @@ apiInstance.postAnalyticsBotsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4471,7 +4992,7 @@ apiInstance.postAnalyticsBotsAggregatesQuery(body)
 
 ## postAnalyticsCasemanagementAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsCasemanagementAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsCasemanagementAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/casemanagement/aggregates/jobs
@@ -4498,8 +5019,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsCasemanagementAggregatesJobs(body)
+apiInstance.postAnalyticsCasemanagementAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsCasemanagementAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4515,6 +5042,7 @@ apiInstance.postAnalyticsCasemanagementAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4523,7 +5051,7 @@ apiInstance.postAnalyticsCasemanagementAggregatesJobs(body)
 
 ## postAnalyticsCasemanagementAggregatesQuery
 
-> CaseManagementAggregateQueryResponse postAnalyticsCasemanagementAggregatesQuery(body)
+> CaseManagementAggregateQueryResponse postAnalyticsCasemanagementAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/casemanagement/aggregates/query
@@ -4550,8 +5078,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsCasemanagementAggregatesQuery(body)
+apiInstance.postAnalyticsCasemanagementAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsCasemanagementAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4567,6 +5101,7 @@ apiInstance.postAnalyticsCasemanagementAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4575,7 +5110,7 @@ apiInstance.postAnalyticsCasemanagementAggregatesQuery(body)
 
 ## postAnalyticsConversationDetailsProperties
 
-> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
+> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body, opts)
 
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
@@ -4601,8 +5136,14 @@ let apiInstance = new platformClient.AnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
+apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4619,6 +5160,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4654,7 +5196,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
@@ -4675,6 +5221,7 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4683,7 +5230,7 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
 
 ## postAnalyticsConversationsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/conversations/aggregates/jobs
@@ -4710,8 +5257,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsAggregatesJobs(body)
+apiInstance.postAnalyticsConversationsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4727,6 +5280,7 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4735,7 +5289,7 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 
 ## postAnalyticsConversationsAggregatesQuery
 
-> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
+> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/aggregates/query
@@ -4760,8 +5314,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsAggregatesQuery(body)
+apiInstance.postAnalyticsConversationsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4777,6 +5337,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4785,7 +5346,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 ## postAnalyticsConversationsDetailsJobs
 
-> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
+> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body, opts)
 
 
 POST /api/v2/analytics/conversations/details/jobs
@@ -4811,8 +5372,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsDetailsJobs(body)
+apiInstance.postAnalyticsConversationsDetailsJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsDetailsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4828,6 +5395,7 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4836,7 +5404,7 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 
 ## postAnalyticsConversationsDetailsQuery
 
-> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
+> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/details/query
@@ -4862,8 +5430,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsDetailsQuery(body)
+apiInstance.postAnalyticsConversationsDetailsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4879,6 +5453,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4887,7 +5462,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 ## postAnalyticsDataextractionDownloadsBulk
 
-> DataExtractionFileUrlListing postAnalyticsDataextractionDownloadsBulk(body)
+> DataExtractionFileUrlListing postAnalyticsDataextractionDownloadsBulk(body, opts)
 
 
 POST /api/v2/analytics/dataextraction/downloads/bulk
@@ -4914,8 +5489,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsDataextractionDownloadsBulk(body)
+apiInstance.postAnalyticsDataextractionDownloadsBulk(body, opts)
   .then((data) => {
     console.log(`postAnalyticsDataextractionDownloadsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4931,6 +5512,7 @@ apiInstance.postAnalyticsDataextractionDownloadsBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4939,7 +5521,7 @@ apiInstance.postAnalyticsDataextractionDownloadsBulk(body)
 
 ## postAnalyticsEvaluationsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/evaluations/aggregates/jobs
@@ -4966,8 +5548,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
+apiInstance.postAnalyticsEvaluationsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsEvaluationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4983,6 +5571,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4991,7 +5580,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
 
 ## postAnalyticsEvaluationsAggregatesQuery
 
-> EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
+> EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/evaluations/aggregates/query
@@ -5016,8 +5605,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
+apiInstance.postAnalyticsEvaluationsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5033,6 +5628,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5041,7 +5637,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 ## postAnalyticsFlowexecutionsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/flowexecutions/aggregates/jobs
@@ -5068,8 +5664,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body)
+apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsFlowexecutionsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5085,6 +5687,7 @@ apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5093,7 +5696,7 @@ apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body)
 
 ## postAnalyticsFlowexecutionsAggregatesQuery
 
-> FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(body)
+> FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/flowexecutions/aggregates/query
@@ -5118,8 +5721,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body)
+apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsFlowexecutionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5135,6 +5744,7 @@ apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5170,7 +5780,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
@@ -5191,6 +5805,7 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5199,7 +5814,7 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
 
 ## postAnalyticsFlowsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/flows/aggregates/jobs
@@ -5226,8 +5841,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsFlowsAggregatesJobs(body)
+apiInstance.postAnalyticsFlowsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsFlowsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5243,6 +5864,7 @@ apiInstance.postAnalyticsFlowsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5251,7 +5873,7 @@ apiInstance.postAnalyticsFlowsAggregatesJobs(body)
 
 ## postAnalyticsFlowsAggregatesQuery
 
-> FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
+> FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/flows/aggregates/query
@@ -5276,8 +5898,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsFlowsAggregatesQuery(body)
+apiInstance.postAnalyticsFlowsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsFlowsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5293,6 +5921,7 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5301,7 +5930,7 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 
 ## postAnalyticsFlowsObservationsQuery
 
-> FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+> FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body, opts)
 
 
 POST /api/v2/analytics/flows/observations/query
@@ -5326,8 +5955,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsFlowsObservationsQuery(body)
+apiInstance.postAnalyticsFlowsObservationsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsFlowsObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5343,6 +5978,7 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5351,7 +5987,7 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 
 ## postAnalyticsJourneysAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/journeys/aggregates/jobs
@@ -5378,8 +6014,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsJourneysAggregatesJobs(body)
+apiInstance.postAnalyticsJourneysAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsJourneysAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5395,6 +6037,7 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5403,7 +6046,7 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 
 ## postAnalyticsJourneysAggregatesQuery
 
-> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
+> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/journeys/aggregates/query
@@ -5428,8 +6071,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsJourneysAggregatesQuery(body)
+apiInstance.postAnalyticsJourneysAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsJourneysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5445,6 +6094,7 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5453,7 +6103,7 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 
 ## postAnalyticsKnowledgeAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/knowledge/aggregates/jobs
@@ -5480,8 +6130,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsKnowledgeAggregatesJobs(body)
+apiInstance.postAnalyticsKnowledgeAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsKnowledgeAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5497,6 +6153,7 @@ apiInstance.postAnalyticsKnowledgeAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5505,7 +6162,7 @@ apiInstance.postAnalyticsKnowledgeAggregatesJobs(body)
 
 ## postAnalyticsKnowledgeAggregatesQuery
 
-> KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(body)
+> KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/knowledge/aggregates/query
@@ -5530,8 +6187,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsKnowledgeAggregatesQuery(body)
+apiInstance.postAnalyticsKnowledgeAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsKnowledgeAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5547,6 +6210,7 @@ apiInstance.postAnalyticsKnowledgeAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5555,7 +6219,7 @@ apiInstance.postAnalyticsKnowledgeAggregatesQuery(body)
 
 ## postAnalyticsQueuesObservationsQuery
 
-> QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
+> QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body, opts)
 
 
 POST /api/v2/analytics/queues/observations/query
@@ -5580,8 +6244,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsQueuesObservationsQuery(body)
+apiInstance.postAnalyticsQueuesObservationsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5597,6 +6267,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5605,7 +6276,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 ## postAnalyticsRatelimitsAggregatesQuery
 
-> RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(body)
+> RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/ratelimits/aggregates/query
@@ -5632,8 +6303,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
+apiInstance.postAnalyticsRatelimitsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsRatelimitsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5649,6 +6326,7 @@ apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5657,7 +6335,7 @@ apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
 
 ## postAnalyticsReportingDashboardsUsersBulkRemove
 
-> void postAnalyticsReportingDashboardsUsersBulkRemove(body)
+> void postAnalyticsReportingDashboardsUsersBulkRemove(body, opts)
 
 
 POST /api/v2/analytics/reporting/dashboards/users/bulk/remove
@@ -5683,8 +6361,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = ["body_example"]; // [String] | List of userIds
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body)
+apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body, opts)
   .then(() => {
     console.log('postAnalyticsReportingDashboardsUsersBulkRemove returned successfully.');
   })
@@ -5700,6 +6384,7 @@ apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | List of userIds |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5708,7 +6393,7 @@ void (no response body)
 
 ## postAnalyticsReportingExports
 
-> ReportingExportJobResponse postAnalyticsReportingExports(body)
+> ReportingExportJobResponse postAnalyticsReportingExports(body, opts)
 
 
 POST /api/v2/analytics/reporting/exports
@@ -5735,8 +6420,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | ReportingExportJobRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsReportingExports(body)
+apiInstance.postAnalyticsReportingExports(body, opts)
   .then((data) => {
     console.log(`postAnalyticsReportingExports success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5752,6 +6443,7 @@ apiInstance.postAnalyticsReportingExports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ReportingExportJobRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5760,7 +6452,7 @@ apiInstance.postAnalyticsReportingExports(body)
 
 ## postAnalyticsReportingSettingsDashboardsBulkRemove
 
-> void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+> void postAnalyticsReportingSettingsDashboardsBulkRemove(body, opts)
 
 
 POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove
@@ -5785,8 +6477,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body, opts)
   .then(() => {
     console.log('postAnalyticsReportingSettingsDashboardsBulkRemove returned successfully.');
   })
@@ -5802,6 +6500,7 @@ apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5810,7 +6509,7 @@ void (no response body)
 
 ## postAnalyticsReportingSettingsDashboardsQuery
 
-> DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(body)
+> DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(body, opts)
 
 
 POST /api/v2/analytics/reporting/settings/dashboards/query
@@ -5835,8 +6534,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body)
+apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5852,6 +6557,7 @@ apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5860,7 +6566,7 @@ apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body)
 
 ## postAnalyticsResolutionsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/resolutions/aggregates/jobs
@@ -5887,8 +6593,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
+apiInstance.postAnalyticsResolutionsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsResolutionsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5904,6 +6616,7 @@ apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5912,7 +6625,7 @@ apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
 
 ## postAnalyticsResolutionsAggregatesQuery
 
-> ResolutionAggregateQueryResponse postAnalyticsResolutionsAggregatesQuery(body)
+> ResolutionAggregateQueryResponse postAnalyticsResolutionsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/resolutions/aggregates/query
@@ -5937,8 +6650,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsResolutionsAggregatesQuery(body)
+apiInstance.postAnalyticsResolutionsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsResolutionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5954,6 +6673,7 @@ apiInstance.postAnalyticsResolutionsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5989,7 +6709,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
@@ -6010,6 +6734,7 @@ apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6018,7 +6743,7 @@ apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
 
 ## postAnalyticsSummariesAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsSummariesAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsSummariesAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/summaries/aggregates/jobs
@@ -6045,8 +6770,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsSummariesAggregatesJobs(body)
+apiInstance.postAnalyticsSummariesAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsSummariesAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6062,6 +6793,7 @@ apiInstance.postAnalyticsSummariesAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6070,7 +6802,7 @@ apiInstance.postAnalyticsSummariesAggregatesJobs(body)
 
 ## postAnalyticsSummariesAggregatesQuery
 
-> SummaryAggregateQueryResponse postAnalyticsSummariesAggregatesQuery(body)
+> SummaryAggregateQueryResponse postAnalyticsSummariesAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/summaries/aggregates/query
@@ -6095,8 +6827,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsSummariesAggregatesQuery(body)
+apiInstance.postAnalyticsSummariesAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsSummariesAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6112,6 +6850,7 @@ apiInstance.postAnalyticsSummariesAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6120,7 +6859,7 @@ apiInstance.postAnalyticsSummariesAggregatesQuery(body)
 
 ## postAnalyticsSurveysAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/surveys/aggregates/jobs
@@ -6147,8 +6886,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsSurveysAggregatesJobs(body)
+apiInstance.postAnalyticsSurveysAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsSurveysAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6164,6 +6909,7 @@ apiInstance.postAnalyticsSurveysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6172,7 +6918,7 @@ apiInstance.postAnalyticsSurveysAggregatesJobs(body)
 
 ## postAnalyticsSurveysAggregatesQuery
 
-> SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+> SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/surveys/aggregates/query
@@ -6197,8 +6943,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsSurveysAggregatesQuery(body)
+apiInstance.postAnalyticsSurveysAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsSurveysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6214,6 +6966,7 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6222,7 +6975,7 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 
 ## postAnalyticsTaskmanagementAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/taskmanagement/aggregates/jobs
@@ -6249,8 +7002,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body)
+apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsTaskmanagementAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6266,6 +7025,7 @@ apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6274,7 +7034,7 @@ apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body)
 
 ## postAnalyticsTaskmanagementAggregatesQuery
 
-> TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(body)
+> TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/taskmanagement/aggregates/query
@@ -6299,8 +7059,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsTaskmanagementAggregatesQuery(body)
+apiInstance.postAnalyticsTaskmanagementAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsTaskmanagementAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6316,6 +7082,7 @@ apiInstance.postAnalyticsTaskmanagementAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6353,7 +7120,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let body = {}; // Object | query
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned. Used for pagination.
-  'pageSize': 3.4 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'pageSize': 3.4, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsTaskmanagementMetricsQuery(body, opts)
@@ -6374,6 +7145,7 @@ apiInstance.postAnalyticsTaskmanagementMetricsQuery(body, opts)
  **body** | **Object** | query |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. Used for pagination. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6409,7 +7181,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
@@ -6430,6 +7206,7 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6438,7 +7215,7 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
 
 ## postAnalyticsTranscriptsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/transcripts/aggregates/jobs
@@ -6465,8 +7242,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsTranscriptsAggregatesJobs(body)
+apiInstance.postAnalyticsTranscriptsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsTranscriptsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6482,6 +7265,7 @@ apiInstance.postAnalyticsTranscriptsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6490,7 +7274,7 @@ apiInstance.postAnalyticsTranscriptsAggregatesJobs(body)
 
 ## postAnalyticsTranscriptsAggregatesQuery
 
-> TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
+> TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/transcripts/aggregates/query
@@ -6515,8 +7299,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
+apiInstance.postAnalyticsTranscriptsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsTranscriptsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6532,6 +7322,7 @@ apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6567,7 +7358,11 @@ let apiInstance = new platformClient.AnalyticsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsUsersActivityQuery(body, opts)
@@ -6588,6 +7383,7 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6596,7 +7392,7 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
 
 ## postAnalyticsUsersAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/users/aggregates/jobs
@@ -6623,8 +7419,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersAggregatesJobs(body)
+apiInstance.postAnalyticsUsersAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6640,6 +7442,7 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6648,7 +7451,7 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 
 ## postAnalyticsUsersAggregatesQuery
 
-> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
+> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/users/aggregates/query
@@ -6673,8 +7476,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersAggregatesQuery(body)
+apiInstance.postAnalyticsUsersAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6690,6 +7499,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6698,7 +7508,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 ## postAnalyticsUsersDetailsJobs
 
-> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body, opts)
 
 
 POST /api/v2/analytics/users/details/jobs
@@ -6723,8 +7533,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersDetailsJobs(body)
+apiInstance.postAnalyticsUsersDetailsJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersDetailsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6740,6 +7556,7 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6748,7 +7565,7 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 
 ## postAnalyticsUsersDetailsQuery
 
-> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
+> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body, opts)
 
 
 POST /api/v2/analytics/users/details/query
@@ -6773,8 +7590,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersDetailsQuery(body)
+apiInstance.postAnalyticsUsersDetailsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6790,6 +7613,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6798,7 +7622,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 ## postAnalyticsUsersObservationsQuery
 
-> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body, opts)
 
 
 POST /api/v2/analytics/users/observations/query
@@ -6823,8 +7647,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsUsersObservationsQuery(body)
+apiInstance.postAnalyticsUsersObservationsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6840,6 +7670,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6848,7 +7679,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 ## putAnalyticsDataretentionSettings
 
-> AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body)
+> AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body, opts)
 
 
 PUT /api/v2/analytics/dataretention/settings
@@ -6873,8 +7704,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AnalyticsApi();
 
 let body = {}; // Object | retentionDays
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putAnalyticsDataretentionSettings(body)
+apiInstance.putAnalyticsDataretentionSettings(body, opts)
   .then((data) => {
     console.log(`putAnalyticsDataretentionSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6890,10 +7727,11 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | retentionDays |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@249.0.0_
+_purecloud-platform-client-v2@249.1.0_

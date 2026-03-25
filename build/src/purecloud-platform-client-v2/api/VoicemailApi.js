@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 249.0.0
+	 * @version 249.1.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class VoicemailApi {
 	 * Delete a voicemail message.
 	 * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 	 * @param {String} messageId Message ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteVoicemailMessage(messageId) { 
+	deleteVoicemailMessage(messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling deleteVoicemailMessage';
@@ -41,15 +45,20 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete all voicemail messages
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteVoicemailMessages() { 
+	deleteVoicemailMessages(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages', 
@@ -61,7 +70,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -69,8 +79,12 @@ class VoicemailApi {
 	 * Get the group's mailbox information
 	 * 
 	 * @param {String} groupId groupId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailGroupMailbox(groupId) { 
+	getVoicemailGroupMailbox(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupMailbox';
@@ -86,7 +100,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -97,6 +112,7 @@ class VoicemailApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailGroupMessages(groupId, opts) { 
 		opts = opts || {};
@@ -116,7 +132,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,8 +141,12 @@ class VoicemailApi {
 	 * Get a group's voicemail policy
 	 * 
 	 * @param {String} groupId Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailGroupPolicy(groupId) { 
+	getVoicemailGroupPolicy(groupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupPolicy';
@@ -141,15 +162,20 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the current user's mailbox information
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailMailbox() { 
+	getVoicemailMailbox(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/mailbox', 
@@ -161,15 +187,20 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the current user's mailbox information
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailMeMailbox() { 
+	getVoicemailMeMailbox(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/me/mailbox', 
@@ -181,7 +212,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -191,6 +223,7 @@ class VoicemailApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailMeMessages(opts) { 
 		opts = opts || {};
@@ -206,15 +239,20 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the current user's voicemail policy
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailMePolicy() { 
+	getVoicemailMePolicy(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/me/policy', 
@@ -226,7 +264,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -236,6 +275,7 @@ class VoicemailApi {
 	 * @param {String} messageId Message ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand If the caller is a known user, which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailMessage(messageId, opts) { 
 		opts = opts || {};
@@ -255,7 +295,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -265,6 +306,7 @@ class VoicemailApi {
 	 * @param {String} messageId Message ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailMessageMedia(messageId, opts) { 
 		opts = opts || {};
@@ -284,7 +326,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -294,6 +337,7 @@ class VoicemailApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ids An optional comma separated list of VoicemailMessage ids
 	 * @param {Array.<String>} opts.expand If the caller is a known user, which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailMessages(opts) { 
 		opts = opts || {};
@@ -309,15 +353,20 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a policy
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailPolicy() { 
+	getVoicemailPolicy(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/policy', 
@@ -329,7 +378,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -340,6 +390,7 @@ class VoicemailApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailQueueMessages(queueId, opts) { 
 		opts = opts || {};
@@ -359,7 +410,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -369,6 +421,7 @@ class VoicemailApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailSearch(q64, opts) { 
 		opts = opts || {};
@@ -388,7 +441,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -396,8 +450,12 @@ class VoicemailApi {
 	 * Get a user's mailbox information
 	 * 
 	 * @param {String} userId userId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailUserMailbox(userId) { 
+	getVoicemailUserMailbox(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getVoicemailUserMailbox';
@@ -413,7 +471,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -424,6 +483,7 @@ class VoicemailApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getVoicemailUserMessages(userId, opts) { 
 		opts = opts || {};
@@ -443,7 +503,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -451,8 +512,12 @@ class VoicemailApi {
 	 * Get a user's voicemail policy
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getVoicemailUserpolicy(userId) { 
+	getVoicemailUserpolicy(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getVoicemailUserpolicy';
@@ -468,7 +533,8 @@ class VoicemailApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -477,8 +543,12 @@ class VoicemailApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body The group's voicemail policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchVoicemailGroupPolicy(groupId, body) { 
+	patchVoicemailGroupPolicy(groupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling patchVoicemailGroupPolicy';
@@ -498,7 +568,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -506,8 +577,12 @@ class VoicemailApi {
 	 * Update the current user's voicemail policy
 	 * 
 	 * @param {Object} body The user's voicemail policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchVoicemailMePolicy(body) { 
+	patchVoicemailMePolicy(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchVoicemailMePolicy';
@@ -523,7 +598,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -532,8 +608,12 @@ class VoicemailApi {
 	 * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 	 * @param {String} messageId Message ID
 	 * @param {Object} body VoicemailMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchVoicemailMessage(messageId, body) { 
+	patchVoicemailMessage(messageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling patchVoicemailMessage';
@@ -553,7 +633,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -562,8 +643,12 @@ class VoicemailApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body The user's voicemail policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchVoicemailUserpolicy(userId, body) { 
+	patchVoicemailUserpolicy(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchVoicemailUserpolicy';
@@ -583,7 +668,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -592,6 +678,7 @@ class VoicemailApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postVoicemailMessages(opts) { 
 		opts = opts || {};
@@ -607,7 +694,8 @@ class VoicemailApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -615,8 +703,12 @@ class VoicemailApi {
 	 * Search voicemails
 	 * 
 	 * @param {Object} body Search request options
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postVoicemailSearch(body) { 
+	postVoicemailSearch(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postVoicemailSearch';
@@ -632,7 +724,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -641,8 +734,12 @@ class VoicemailApi {
 	 * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 	 * @param {String} messageId Message ID
 	 * @param {Object} body VoicemailMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putVoicemailMessage(messageId, body) { 
+	putVoicemailMessage(messageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling putVoicemailMessage';
@@ -662,7 +759,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -670,8 +768,12 @@ class VoicemailApi {
 	 * Update a policy
 	 * 
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putVoicemailPolicy(body) { 
+	putVoicemailPolicy(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putVoicemailPolicy';
@@ -687,7 +789,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -696,8 +799,12 @@ class VoicemailApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body The user's voicemail policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putVoicemailUserpolicy(userId, body) { 
+	putVoicemailUserpolicy(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putVoicemailUserpolicy';
@@ -717,7 +824,8 @@ class VoicemailApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
