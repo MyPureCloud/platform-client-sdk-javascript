@@ -237,6 +237,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
 [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCallParticipantSnippetRecord**](ConversationsApi#postConversationsCallParticipantSnippetRecord) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record | Start/stop the snippet recording for a participant
 [**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer
 [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
 [**postConversationsCallParticipantsUserUserId**](ConversationsApi#postConversationsCallParticipantsUserUserId) | **POST** /api/v2/conversations/calls/{conversationId}/participants/user/{userId} | Add participants to a conversation on behalf of a user
@@ -14115,6 +14116,67 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
 void (no response body)
 
 
+## postConversationsCallParticipantSnippetRecord
+
+> **&#39;String&#39;** postConversationsCallParticipantSnippetRecord(conversationId, participantId, body, opts)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record
+
+Start/stop the snippet recording for a participant
+
+Requires ANY permissions:
+
+* conversation:recording:snippetRecord
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | snippetRecordingRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCallParticipantSnippetRecord(conversationId, participantId, body, opts)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantSnippetRecord success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantSnippetRecord');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | snippetRecordingRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**&#39;String&#39;**
+
+
 ## postConversationsCallParticipantVoiceConsult
 
 > ConsultTransferResponse postConversationsCallParticipantVoiceConsult(conversationId, participantId, body, opts)
@@ -19542,4 +19604,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@249.1.0_
+_purecloud-platform-client-v2@250.0.0_

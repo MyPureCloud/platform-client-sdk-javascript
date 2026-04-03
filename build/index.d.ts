@@ -512,6 +512,7 @@ declare class AnalyticsApi {
   	deleteAnalyticsCasemanagementAggregatesJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsCasemanagementAggregatesJobOptions): Promise<void>;
   	deleteAnalyticsConversationsAggregatesJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsConversationsAggregatesJobOptions): Promise<void>;
   	deleteAnalyticsConversationsDetailsJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsConversationsDetailsJobOptions): Promise<void>;
+  	deleteAnalyticsCopilotsAggregatesJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsCopilotsAggregatesJobOptions): Promise<void>;
   	deleteAnalyticsEvaluationsAggregatesJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsEvaluationsAggregatesJobOptions): Promise<void>;
   	deleteAnalyticsFlowexecutionsAggregatesJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsFlowexecutionsAggregatesJobOptions): Promise<void>;
   	deleteAnalyticsFlowsAggregatesJob(jobId: string, opts?: AnalyticsApi.deleteAnalyticsFlowsAggregatesJobOptions): Promise<void>;
@@ -543,6 +544,8 @@ declare class AnalyticsApi {
   	getAnalyticsConversationsDetailsJob(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsDetailsJobOptions): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>;
   	getAnalyticsConversationsDetailsJobsAvailability(opts?: AnalyticsApi.getAnalyticsConversationsDetailsJobsAvailabilityOptions): Promise<Models.DataAvailabilityResponse>;
+  	getAnalyticsCopilotsAggregatesJob(jobId: string, opts?: AnalyticsApi.getAnalyticsCopilotsAggregatesJobOptions): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsCopilotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsCopilotsAggregatesJobResultsOptions): Promise<Models.CopilotAsyncAggregateQueryResponse>;
   	getAnalyticsDataextractionDownload(downloadId: string, opts?: AnalyticsApi.getAnalyticsDataextractionDownloadOptions): Promise<void>;
   	getAnalyticsDataextractionDownloadsMetadata(opts?: AnalyticsApi.getAnalyticsDataextractionDownloadsMetadataOptions): Promise<Models.DataExtractionFileSchemaListing>;
   	getAnalyticsDataretentionSettings(opts?: AnalyticsApi.getAnalyticsDataretentionSettingsOptions): Promise<Models.AnalyticsDataRetentionResponse>;
@@ -595,6 +598,8 @@ declare class AnalyticsApi {
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery, opts?: AnalyticsApi.postAnalyticsConversationsAggregatesQueryOptions): Promise<Models.ConversationAggregateQueryResponse>;
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery, opts?: AnalyticsApi.postAnalyticsConversationsDetailsJobsOptions): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery, opts?: AnalyticsApi.postAnalyticsConversationsDetailsQueryOptions): Promise<Models.AnalyticsConversationQueryResponse>;
+  	postAnalyticsCopilotsAggregatesJobs(body: Models.CopilotAsyncAggregationQuery, opts?: AnalyticsApi.postAnalyticsCopilotsAggregatesJobsOptions): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsCopilotsAggregatesQuery(body: Models.CopilotAggregationQuery, opts?: AnalyticsApi.postAnalyticsCopilotsAggregatesQueryOptions): Promise<Models.CopilotAggregateQueryResponse>;
   	postAnalyticsDataextractionDownloadsBulk(body: Models.DownloadServiceRequest, opts?: AnalyticsApi.postAnalyticsDataextractionDownloadsBulkOptions): Promise<Models.DataExtractionFileUrlListing>;
   	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery, opts?: AnalyticsApi.postAnalyticsEvaluationsAggregatesJobsOptions): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery, opts?: AnalyticsApi.postAnalyticsEvaluationsAggregatesQueryOptions): Promise<Models.EvaluationAggregateQueryResponse>;
@@ -653,6 +658,9 @@ declare namespace AnalyticsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteAnalyticsConversationsDetailsJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteAnalyticsCopilotsAggregatesJobOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteAnalyticsEvaluationsAggregatesJobOptions { 
@@ -773,6 +781,13 @@ declare namespace AnalyticsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getAnalyticsConversationsDetailsJobsAvailabilityOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getAnalyticsCopilotsAggregatesJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getAnalyticsCopilotsAggregatesJobResultsOptions { 
+		"cursor"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getAnalyticsDataextractionDownloadOptions { 
@@ -971,6 +986,12 @@ declare namespace AnalyticsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postAnalyticsConversationsDetailsQueryOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postAnalyticsCopilotsAggregatesJobsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postAnalyticsCopilotsAggregatesQueryOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postAnalyticsDataextractionDownloadsBulkOptions { 
@@ -3461,6 +3482,7 @@ declare class ConversationsApi {
   	postConversationsCallParticipantConsultQueue(conversationId: string, participantId: string, body: Models.ConsultTransferToQueue, opts?: ConversationsApi.postConversationsCallParticipantConsultQueueOptions): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipantMonitor(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationsCallParticipantMonitorOptions): Promise<void>;
   	postConversationsCallParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest, opts?: ConversationsApi.postConversationsCallParticipantReplaceOptions): Promise<void>;
+  	postConversationsCallParticipantSnippetRecord(conversationId: string, participantId: string, body: Models.SnippetRecordingRequest, opts?: ConversationsApi.postConversationsCallParticipantSnippetRecordOptions): Promise<string>;
   	postConversationsCallParticipantVoiceConsult(conversationId: string, participantId: string, body: Models.ConsultTransferToAddress, opts?: ConversationsApi.postConversationsCallParticipantVoiceConsultOptions): Promise<Models.ConsultTransferResponse>;
   	postConversationsCallParticipants(conversationId: string, body: Models.Conversation, opts?: ConversationsApi.postConversationsCallParticipantsOptions): Promise<Models.Conversation>;
   	postConversationsCallParticipantsUserUserId(conversationId: string, userId: string, body: Models.Conversation, opts?: ConversationsApi.postConversationsCallParticipantsUserUserIdOptions): Promise<Models.Conversation>;
@@ -4356,6 +4378,9 @@ declare namespace ConversationsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postConversationsCallParticipantReplaceOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postConversationsCallParticipantSnippetRecordOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postConversationsCallParticipantVoiceConsultOptions { 
@@ -6331,7 +6356,7 @@ declare class IntegrationsApi {
   	getIntegrationsCredential(credentialId: string, opts?: IntegrationsApi.getIntegrationsCredentialOptions): Promise<Models.Credential>;
   	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>;
   	getIntegrationsCredentialsListing(opts?: IntegrationsApi.getIntegrationsCredentialsListingOptions): Promise<Models.CredentialInfoCursorListing>;
-  	getIntegrationsCredentialsTypes(opts?: IntegrationsApi.getIntegrationsCredentialsTypesOptions): Promise<Models.CredentialTypeListing>;
+  	getIntegrationsCredentialsTypes(opts?: IntegrationsApi.getIntegrationsCredentialsTypesOptions): Promise<Array<Models.CredentialType>>;
   	getIntegrationsSpeechAudioconnector(opts?: IntegrationsApi.getIntegrationsSpeechAudioconnectorOptions): Promise<Models.AudioConnectorIntegrationEntityListing>;
   	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId: string, opts?: IntegrationsApi.getIntegrationsSpeechAudioconnectorIntegrationIdOptions): Promise<Models.AudioConnectorIntegration>;
   	getIntegrationsSpeechDialogflowAgent(agentId: string, opts?: IntegrationsApi.getIntegrationsSpeechDialogflowAgentOptions): Promise<Models.DialogflowAgent>;
@@ -6921,6 +6946,8 @@ declare class JourneyApi {
   	deleteAnalyticsJourneysAggregatesJob(jobId: string, opts?: JourneyApi.deleteAnalyticsJourneysAggregatesJobOptions): Promise<void>;
   	deleteJourneyActionmap(actionMapId: string, opts?: JourneyApi.deleteJourneyActionmapOptions): Promise<void>;
   	deleteJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.deleteJourneyActiontemplateOptions): Promise<void>;
+  	deleteJourneyExternaleventsConfiguration(configId: string, opts?: JourneyApi.deleteJourneyExternaleventsConfigurationOptions): Promise<void>;
+  	deleteJourneyExternaleventsSchema(schemaId: string, opts?: JourneyApi.deleteJourneyExternaleventsSchemaOptions): Promise<void>;
   	deleteJourneyOutcome(outcomeId: string, opts?: JourneyApi.deleteJourneyOutcomeOptions): Promise<void>;
   	deleteJourneyOutcomesPredictor(predictorId: string, opts?: JourneyApi.deleteJourneyOutcomesPredictorOptions): Promise<void>;
   	deleteJourneySegment(segmentId: string, opts?: JourneyApi.deleteJourneySegmentOptions): Promise<void>;
@@ -6939,6 +6966,15 @@ declare class JourneyApi {
   	getJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.getJourneyActiontemplateOptions): Promise<Models.ActionTemplate>;
   	getJourneyActiontemplates(opts?: JourneyApi.getJourneyActiontemplatesOptions): Promise<Models.ActionTemplateListing>;
   	getJourneyDeploymentCustomerPing(deploymentId: string, customerCookieId: string, opts?: JourneyApi.getJourneyDeploymentCustomerPingOptions): Promise<Models.DeploymentPing>;
+  	getJourneyExternaleventsConfiguration(configId: string, opts?: JourneyApi.getJourneyExternaleventsConfigurationOptions): Promise<Models.ExternalEventsConfiguration>;
+  	getJourneyExternaleventsConfigurations(opts?: JourneyApi.getJourneyExternaleventsConfigurationsOptions): Promise<Models.ExternalEventsConfigurationListing>;
+  	getJourneyExternaleventsSchema(schemaId: string, opts?: JourneyApi.getJourneyExternaleventsSchemaOptions): Promise<Models.JourneyExternalEventsSchema>;
+  	getJourneyExternaleventsSchemaVersion(schemaId: string, versionId: string, opts?: JourneyApi.getJourneyExternaleventsSchemaVersionOptions): Promise<Models.JourneyExternalEventsSchema>;
+  	getJourneyExternaleventsSchemaVersions(schemaId: string, opts?: JourneyApi.getJourneyExternaleventsSchemaVersionsOptions): Promise<Models.JourneyExternalEventsSchemaListing>;
+  	getJourneyExternaleventsSchemas(opts?: JourneyApi.getJourneyExternaleventsSchemasOptions): Promise<Models.JourneyExternalEventsSchemaListing>;
+  	getJourneyExternaleventsSchemasCoretype(coreTypeName: string, opts?: JourneyApi.getJourneyExternaleventsSchemasCoretypeOptions): Promise<Models.Coretype>;
+  	getJourneyExternaleventsSchemasCoretypes(opts?: JourneyApi.getJourneyExternaleventsSchemasCoretypesOptions): Promise<Models.CoretypeListing>;
+  	getJourneyExternaleventsSchemasLimits(opts?: JourneyApi.getJourneyExternaleventsSchemasLimitsOptions): Promise<Models.SchemaQuantityLimits>;
   	getJourneyOutcome(outcomeId: string, opts?: JourneyApi.getJourneyOutcomeOptions): Promise<Models.Outcome>;
   	getJourneyOutcomes(opts?: JourneyApi.getJourneyOutcomesOptions): Promise<Models.OutcomeListing>;
   	getJourneyOutcomesAttributionsJob(jobId: string, opts?: JourneyApi.getJourneyOutcomesAttributionsJobOptions): Promise<Models.OutcomeAttributionJobStateResponse>;
@@ -6969,6 +7005,7 @@ declare class JourneyApi {
   	patchJourneyActionmap(actionMapId: string, opts?: JourneyApi.patchJourneyActionmapOptions): Promise<Models.ActionMap>;
   	patchJourneyActiontarget(actionTargetId: string, opts?: JourneyApi.patchJourneyActiontargetOptions): Promise<Models.ActionTarget>;
   	patchJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.patchJourneyActiontemplateOptions): Promise<Models.ActionTemplate>;
+  	patchJourneyExternaleventsConfiguration(configId: string, opts?: JourneyApi.patchJourneyExternaleventsConfigurationOptions): Promise<Models.ExternalEventsConfiguration>;
   	patchJourneyOutcome(outcomeId: string, opts?: JourneyApi.patchJourneyOutcomeOptions): Promise<Models.Outcome>;
   	patchJourneySegment(segmentId: string, opts?: JourneyApi.patchJourneySegmentOptions): Promise<Models.JourneySegment>;
   	patchJourneyViewVersionJob(viewId: string, journeyVersionId: string, jobId: string, body: Models.JourneyViewJob, opts?: JourneyApi.patchJourneyViewVersionJobOptions): Promise<Models.JourneyViewJob>;
@@ -6981,6 +7018,9 @@ declare class JourneyApi {
   	postJourneyDeploymentActionevent(deploymentId: string, body: Models.ActionEventRequest, opts?: JourneyApi.postJourneyDeploymentActioneventOptions): Promise<void>;
   	postJourneyDeploymentAppevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentAppeventsOptions): Promise<Models.AppEventResponse>;
   	postJourneyDeploymentWebevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentWebeventsOptions): Promise<Models.WebEventResponse>;
+  	postJourneyExternaleventsConfigurationEvents(configurationId: string, opts?: JourneyApi.postJourneyExternaleventsConfigurationEventsOptions): Promise<Models.ExternalEventsResponse>;
+  	postJourneyExternaleventsConfigurations(opts?: JourneyApi.postJourneyExternaleventsConfigurationsOptions): Promise<Models.ExternalEventsConfiguration>;
+  	postJourneyExternaleventsSchemas(body: Models.JourneyJsonSchemaRequest, opts?: JourneyApi.postJourneyExternaleventsSchemasOptions): Promise<Models.JourneyExternalEventsSchema>;
   	postJourneyFlowsPathsQuery(opts?: JourneyApi.postJourneyFlowsPathsQueryOptions): Promise<Models.FlowPaths>;
   	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>;
   	postJourneyOutcomesAttributionsJobs(opts?: JourneyApi.postJourneyOutcomesAttributionsJobsOptions): Promise<Models.OutcomeAttributionAsyncResponse>;
@@ -6991,6 +7031,7 @@ declare class JourneyApi {
   	postJourneyViewVersions(viewId: string, body: Models.JourneyView, opts?: JourneyApi.postJourneyViewVersionsOptions): Promise<Models.JourneyView>;
   	postJourneyViews(body: Models.JourneyView, opts?: JourneyApi.postJourneyViewsOptions): Promise<Models.JourneyView>;
   	postJourneyViewsEncodingsValidate(opts?: JourneyApi.postJourneyViewsEncodingsValidateOptions): Promise<Models.EntityListing>;
+  	putJourneyExternaleventsSchema(schemaId: string, body: Models.JourneySchemaUpdateRequest, opts?: JourneyApi.putJourneyExternaleventsSchemaOptions): Promise<Models.JourneyExternalEventsSchema>;
   	putJourneyViewSchedules(viewId: string, body: Models.JourneyViewSchedule, opts?: JourneyApi.putJourneyViewSchedulesOptions): Promise<Models.JourneyViewSchedule>;
   	putJourneyViewVersion(viewId: string, versionId: string, body: Models.JourneyView, opts?: JourneyApi.putJourneyViewVersionOptions): Promise<Models.JourneyView>;
 }
@@ -7004,6 +7045,12 @@ declare namespace JourneyApi {
 	}
 	export interface deleteJourneyActiontemplateOptions { 
 		"hardDelete"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteJourneyExternaleventsConfigurationOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteJourneyExternaleventsSchemaOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteJourneyOutcomeOptions { 
@@ -7086,6 +7133,35 @@ declare namespace JourneyApi {
 		"appNamespace"?: string;
 		"sessionId"?: string;
 		"sinceLastBeaconMilliseconds"?: number;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsConfigurationOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsConfigurationsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemaOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemaVersionOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemaVersionsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemasOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemasCoretypeOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemasCoretypesOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getJourneyExternaleventsSchemasLimitsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getJourneyOutcomeOptions { 
@@ -7212,6 +7288,10 @@ declare namespace JourneyApi {
 		"body"?: Models.PatchActionTemplate;
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface patchJourneyExternaleventsConfigurationOptions { 
+		"body"?: Models.UpdateExternalEventsConfigurationRequest;
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface patchJourneyOutcomeOptions { 
 		"body"?: Models.PatchOutcome;
 		"customHeaders"?: Record<string, string>;
@@ -7255,6 +7335,17 @@ declare namespace JourneyApi {
 		"body"?: Models.WebEventRequest;
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface postJourneyExternaleventsConfigurationEventsOptions { 
+		"body"?: Models.ExternalEventsRequest;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postJourneyExternaleventsConfigurationsOptions { 
+		"body"?: Models.CreateExternalEventsConfigurationRequest;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postJourneyExternaleventsSchemasOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface postJourneyFlowsPathsQueryOptions { 
 		"body"?: Models.FlowPathsQuery;
 		"customHeaders"?: Record<string, string>;
@@ -7289,6 +7380,9 @@ declare namespace JourneyApi {
 	}
 	export interface postJourneyViewsEncodingsValidateOptions { 
 		"body"?: Array<Models.Label>;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface putJourneyExternaleventsSchemaOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface putJourneyViewSchedulesOptions { 
@@ -14643,6 +14737,7 @@ declare namespace UsersApi {
 	export interface getUserOptions { 
 		"expand"?: Array<string>;
 		"integrationPresenceSource"?: string;
+		"userCustomAttributeSchemaIds"?: Array<string>;
 		"state"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
@@ -14747,6 +14842,7 @@ declare namespace UsersApi {
 		"sortOrder"?: string;
 		"expand"?: Array<string>;
 		"integrationPresenceSource"?: string;
+		"userCustomAttributeSchemaIds"?: Array<string>;
 		"state"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
@@ -14816,6 +14912,7 @@ declare namespace UsersApi {
 	export interface getUsersMeOptions { 
 		"expand"?: Array<string>;
 		"integrationPresenceSource"?: string;
+		"userCustomAttributeSchemaIds"?: Array<string>;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getUsersQueryOptions { 
@@ -14824,6 +14921,7 @@ declare namespace UsersApi {
 		"sortOrder"?: string;
 		"expand"?: Array<string>;
 		"integrationPresenceSource"?: string;
+		"userCustomAttributeSchemaIds"?: Array<string>;
 		"state"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
@@ -15515,6 +15613,11 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitSchedulingRunsOptions): Promise<Models.BuScheduleRunListing>;
   	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>;
   	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplateList>;
+  	getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobOptions): Promise<Models.ShiftTradeEvaluateTradesBuJobResponse>;
+  	getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitShifttradingTradesQueryJobOptions): Promise<Models.ShiftTradeQueryTradesBuJobResponse>;
+  	getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobOptions): Promise<Models.ShiftTradeBulkUpdateTradeStateBuJobResponse>;
+  	getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobOptions): Promise<Models.ShiftTradeSearchUnmatchedTradesBuJobResponse>;
+  	getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobOptions): Promise<Models.ShiftTradeQueryWeekSummariesBuJobResponse>;
   	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitStaffinggroupOptions): Promise<Models.StaffingGroupResponse>;
   	getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitStaffinggroupsOptions): Promise<Models.StaffingGroupListing>;
   	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitTimeofflimitOptions): Promise<Models.BuTimeOffLimitResponse>;
@@ -15578,6 +15681,11 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementNotifications(opts?: WorkforceManagementApi.getWorkforcemanagementNotificationsOptions): Promise<Models.NotificationsResponse>;
   	getWorkforcemanagementSchedulingjob(jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementSchedulingjobOptions): Promise<Models.SchedulingStatusResponse>;
   	getWorkforcemanagementShifttrades(opts?: WorkforceManagementApi.getWorkforcemanagementShifttradesOptions): Promise<Models.ShiftTradeListResponse>;
+  	getWorkforcemanagementShifttradingTradeJob(tradeId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementShifttradingTradeJobOptions): Promise<Models.ShiftTradeUpdateTradeJobResponse>;
+  	getWorkforcemanagementShifttradingTradeMatchJob(tradeId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementShifttradingTradeMatchJobOptions): Promise<Models.ShiftTradeMatchTradeJobResponse>;
+  	getWorkforcemanagementShifttradingTradeStateJob(tradeId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementShifttradingTradeStateJobOptions): Promise<Models.ShiftTradeUpdateTradeStateJobResponse>;
+  	getWorkforcemanagementShifttradingTradesJob(jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementShifttradingTradesJobOptions): Promise<Models.ShiftTradeAddTradeJobResponse>;
+  	getWorkforcemanagementShifttradingTradesMineQueryJob(jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementShifttradingTradesMineQueryJobOptions): Promise<Models.ShiftTradeQueryAgentTradesJobResponse>;
   	getWorkforcemanagementShrinkageJob(jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementShrinkageJobOptions): Promise<Models.WfmHistoricalShrinkageResponse>;
   	getWorkforcemanagementTeamAdherence(teamId: string, opts?: WorkforceManagementApi.getWorkforcemanagementTeamAdherenceOptions): Promise<Models.UserScheduleAdherenceListing>;
   	getWorkforcemanagementTimeoffbalanceJob(jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffbalanceJobOptions): Promise<Models.TimeOffBalanceJobResponse>;
@@ -15656,6 +15764,11 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitIntraday(businessUnitId: string, body: Models.IntradayPlanningGroupRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitIntradayOptions): Promise<Models.AsyncIntradayResponse>;
   	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string, body: Models.CreatePlanningGroupRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitPlanninggroupsOptions): Promise<Models.PlanningGroup>;
   	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, body: Models.CreateServiceGoalTemplate, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplate>;
+  	postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId: string, body: Models.EvaluateShiftTradeListJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsOptions): Promise<Models.ShiftTradeEvaluateTradesBuJobResponse>;
+  	postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId: string, body: Models.QueryShiftTradeListJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitShifttradingTradesQueryJobsOptions): Promise<Models.ShiftTradeQueryTradesBuJobResponse>;
+  	postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId: string, body: Models.BulkUpdateShiftTradeListJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsOptions): Promise<Models.ShiftTradeBulkUpdateTradeStateBuJobResponse>;
+  	postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId: string, body: Models.SearchUnmatchedShiftTradeListJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsOptions): Promise<Models.ShiftTradeSearchUnmatchedTradesBuJobResponse>;
+  	postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId: string, body: Models.QueryWeekSummaryListJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsOptions): Promise<Models.ShiftTradeQueryWeekSummariesBuJobResponse>;
   	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId: string, body: Models.CreateStaffingGroupRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsOptions): Promise<Models.StaffingGroupResponse>;
   	postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId: string, body: Models.QueryPlanningGroupToStaffingGroupsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQueryOptions): Promise<Models.PlanningGroupToStaffingGroupsListing>;
   	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId: string, body: Models.QueryUserStaffingGroupListRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsQueryOptions): Promise<Models.UserStaffingGroupListing>;
@@ -15715,6 +15828,11 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementManagementunits(body: Models.CreateManagementUnitApiRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnit>;
   	postWorkforcemanagementNotificationsUpdate(body: Models.UpdateNotificationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementNotificationsUpdateOptions): Promise<Models.UpdateNotificationsResponse>;
   	postWorkforcemanagementSchedules(opts?: WorkforceManagementApi.postWorkforcemanagementSchedulesOptions): Promise<Models.UserScheduleContainer>;
+  	postWorkforcemanagementShifttradingTradeJobs(tradeId: string, body: Models.UpdateShiftTradeJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementShifttradingTradeJobsOptions): Promise<Models.ShiftTradeUpdateTradeJobResponse>;
+  	postWorkforcemanagementShifttradingTradeMatchJobs(tradeId: string, body: Models.MatchShiftTradeJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementShifttradingTradeMatchJobsOptions): Promise<Models.ShiftTradeMatchTradeJobResponse>;
+  	postWorkforcemanagementShifttradingTradeStateJobs(tradeId: string, body: Models.UpdateShiftTradeStateJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementShifttradingTradeStateJobsOptions): Promise<Models.ShiftTradeUpdateTradeStateJobResponse>;
+  	postWorkforcemanagementShifttradingTradesJobs(body: Models.AddShiftTradeJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementShifttradingTradesJobsOptions): Promise<Models.ShiftTradeAddTradeJobResponse>;
+  	postWorkforcemanagementShifttradingTradesMineQueryJobs(body: Models.QueryAgentShiftTradeListJobRequest, opts?: WorkforceManagementApi.postWorkforcemanagementShifttradingTradesMineQueryJobsOptions): Promise<Models.ShiftTradeQueryAgentTradesJobResponse>;
   	postWorkforcemanagementTeamAdherenceHistorical(teamId: string, body: Models.WfmHistoricalAdherenceQueryForTeams, opts?: WorkforceManagementApi.postWorkforcemanagementTeamAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>;
   	postWorkforcemanagementTeamShrinkageJobs(teamId: string, body: Models.WfmHistoricalShrinkageTeamsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementTeamShrinkageJobsOptions): Promise<Models.WfmHistoricalShrinkageResponse>;
   	postWorkforcemanagementTimeoffbalanceJobs(body: Models.TimeOffBalanceRequest, opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffbalanceJobsOptions): Promise<Models.TimeOffBalancesResponse>;
@@ -15932,6 +16050,21 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface getWorkforcemanagementBusinessunitServicegoaltemplatesOptions { 
 		"expand"?: Array<string>;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementBusinessunitShifttradingTradesQueryJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getWorkforcemanagementBusinessunitStaffinggroupOptions { 
@@ -16162,6 +16295,21 @@ declare namespace WorkforceManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getWorkforcemanagementShifttradesOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementShifttradingTradeJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementShifttradingTradeMatchJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementShifttradingTradeStateJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementShifttradingTradesJobOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getWorkforcemanagementShifttradingTradesMineQueryJobOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getWorkforcemanagementShrinkageJobOptions { 
@@ -16415,6 +16563,30 @@ declare namespace WorkforceManagementApi {
 	export interface postWorkforcemanagementBusinessunitServicegoaltemplatesOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementBusinessunitShifttradingTradesQueryJobsOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsOptions { 
+		"forceAsync"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface postWorkforcemanagementBusinessunitStaffinggroupsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
@@ -16606,6 +16778,27 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface postWorkforcemanagementSchedulesOptions { 
 		"body"?: Models.CurrentUserScheduleRequestBody;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementShifttradingTradeJobsOptions { 
+		"forceAsync"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementShifttradingTradeMatchJobsOptions { 
+		"forceAsync"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementShifttradingTradeStateJobsOptions { 
+		"forceAsync"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementShifttradingTradesJobsOptions { 
+		"forceAsync"?: boolean;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postWorkforcemanagementShifttradingTradesMineQueryJobsOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postWorkforcemanagementTeamAdherenceHistoricalOptions { 
@@ -17178,12 +17371,12 @@ declare namespace Models {
 	
 	export interface ActivityPlanJobResponse { 
 		"id"?: string;
-		"activityPlan": Models.ActivityPlanReference;
 		"status": string;
 		"exceptions": Array<Models.ActivityPlanJobException>;
 		"error"?: Models.ErrorBody;
-		"occurrence"?: Models.ActivityPlanOccurrenceReference;
+		"activityPlan": Models.ActivityPlanStructureWithOccurrenceSessionsUsersReference;
 		"type": string;
+		"occurrence"?: Models.ActivityPlanOccurrenceReference;
 		"selfUri"?: string;
 	}
 	
@@ -17212,6 +17405,12 @@ declare namespace Models {
 	
 	export interface ActivityPlanOccurrenceReference { 
 		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanOccurrenceSessionsUsersStructureReference { 
+		"id"?: string;
+		"sessions": Array<Models.ActivityPlanSessionStructureReference>;
 		"selfUri"?: string;
 	}
 	
@@ -17251,10 +17450,10 @@ declare namespace Models {
 	
 	export interface ActivityPlanRunJobResponse { 
 		"id"?: string;
-		"activityPlan": Models.ActivityPlanReference;
 		"status": string;
 		"exceptions": Array<Models.ActivityPlanJobException>;
 		"error"?: Models.ErrorBody;
+		"activityPlan": Models.ActivityPlanReference;
 		"selfUri"?: string;
 	}
 	
@@ -17266,6 +17465,18 @@ declare namespace Models {
 	
 	export interface ActivityPlanServiceLevelImpactOverride { 
 		"decreaseByPercent": number;
+	}
+	
+	export interface ActivityPlanSessionStructureReference { 
+		"id"?: string;
+		"users"?: Array<Models.UserReference>;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanStructureWithOccurrenceSessionsUsersReference { 
+		"id"?: string;
+		"occurrences": Array<Models.ActivityPlanOccurrenceSessionsUsersStructureReference>;
+		"selfUri"?: string;
 	}
 	
 	export interface AcwDetailEventTopicAfterCallWorkEvent { 
@@ -17322,6 +17533,13 @@ declare namespace Models {
 	export interface AddConversationResponse { 
 		"conversation"?: Models.ConversationReference;
 		"appointment"?: Models.CoachingAppointmentReference;
+	}
+	
+	export interface AddShiftTradeJobRequest { 
+		"initiatingShift": Models.InitiatingShiftRequestItem;
+		"acceptableIntervals"?: Array<Models.RequiredDateRange>;
+		"target"?: Models.ShiftTradeTargetRequestItem;
+		"expirationDate"?: string;
 	}
 	
 	export interface AddShiftTradeRequest { 
@@ -17873,6 +18091,7 @@ declare namespace Models {
 	export interface AgentMaxUtilizationResponse { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
 		"labelUtilizations"?: { [key: string]: Models.LabelUtilizationResponse; };
+		"maxInboundCalls"?: number;
 		"level"?: string;
 	}
 	
@@ -18509,7 +18728,10 @@ declare namespace Models {
 	}
 	
 	export interface AnalyticsConversation { 
+		"accessAttributes"?: Array<string>;
+		"associatedConversationId"?: string;
 		"conferenceStart"?: string;
+		"consultationConversationIds"?: Array<string>;
 		"conversationEnd"?: string;
 		"conversationId"?: string;
 		"conversationInitiator"?: string;
@@ -18518,8 +18740,6 @@ declare namespace Models {
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
 		"inactivityTimeout"?: string;
-		"associatedConversationId"?: string;
-		"consultationConversationIds"?: Array<string>;
 		"knowledgeBaseIds"?: Array<string>;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
@@ -18573,7 +18793,10 @@ declare namespace Models {
 	}
 	
 	export interface AnalyticsConversationWithoutAttributes { 
+		"accessAttributes"?: Array<string>;
+		"associatedConversationId"?: string;
 		"conferenceStart"?: string;
+		"consultationConversationIds"?: Array<string>;
 		"conversationEnd"?: string;
 		"conversationId"?: string;
 		"conversationInitiator"?: string;
@@ -18582,8 +18805,6 @@ declare namespace Models {
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
 		"inactivityTimeout"?: string;
-		"associatedConversationId"?: string;
-		"consultationConversationIds"?: Array<string>;
 		"knowledgeBaseIds"?: Array<string>;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
@@ -18812,6 +19033,7 @@ declare namespace Models {
 		"sessionDnis"?: string;
 		"sessionId"?: string;
 		"sharingScreen"?: boolean;
+		"skillExpressionId"?: string;
 		"skipEnabled"?: boolean;
 		"snippetRecording"?: boolean;
 		"timeoutSeconds"?: number;
@@ -19036,7 +19258,6 @@ declare namespace Models {
 	}
 	
 	export interface AppleIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -21897,6 +22118,12 @@ declare namespace Models {
 		"results"?: Array<Models.BulkResults>;
 		"errorCount"?: number;
 		"errorResultIds"?: Array<string>;
+	}
+	
+	export interface BulkUpdateShiftTradeListJobRequest { 
+		"managementUnitIds": Array<string>;
+		"weekDates": Array<string>;
+		"entities": Array<Models.BulkUpdateShiftTradeStateRequestItem>;
 	}
 	
 	export interface BulkUpdateShiftTradeStateRequestItem { 
@@ -25075,13 +25302,11 @@ declare namespace Models {
 	}
 	
 	export interface ContactIdentifier { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"type": string;
 		"value": string;
 		"dateCreated"?: string;
 		"externalSource"?: Models.ExternalSource;
-		"selfUri"?: string;
 	}
 	
 	export interface ContactIdentifierListing { 
@@ -29781,6 +30006,76 @@ declare namespace Models {
 		"attributes"?: { [key: string]: string; };
 	}
 	
+	export interface CopilotAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface CopilotAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.CopilotAggregateQueryPredicate>;
+	}
+	
+	export interface CopilotAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.CopilotAggregateQueryClause>;
+		"predicates"?: Array<Models.CopilotAggregateQueryPredicate>;
+	}
+	
+	export interface CopilotAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface CopilotAggregateQueryResponse { 
+		"results"?: Array<Models.CopilotAggregateDataContainer>;
+	}
+	
+	export interface CopilotAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.CopilotAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.CopilotAggregationView>;
+		"alternateTimeDimension"?: string;
+	}
+	
+	export interface CopilotAggregationSort { 
+		"name": string;
+		"function": string;
+	}
+	
+	export interface CopilotAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface CopilotAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.CopilotAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface CopilotAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.CopilotAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.CopilotAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
+	}
+	
 	export interface CopilotCondition { 
 		"conditionType": string;
 		"conditionValues": Array<string>;
@@ -30103,6 +30398,14 @@ declare namespace Models {
 		"textBody"?: string;
 		"externalContactId"?: string;
 		"utilizationLabel"?: string;
+	}
+	
+	export interface CreateExternalEventsConfigurationRequest { 
+		"name": string;
+		"description": string;
+		"divisionId": string;
+		"schemaId": string;
+		"source": string;
 	}
 	
 	export interface CreateGeneralProgramTestPhraseDetectedPhrase { 
@@ -30653,19 +30956,6 @@ declare namespace Models {
 		"properties"?: object;
 		"displayOrder"?: Array<string>;
 		"required"?: Array<string>;
-	}
-	
-	export interface CredentialTypeListing { 
-		"entities"?: Array<Models.CredentialType>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"selfUri"?: string;
-		"pageCount"?: number;
 	}
 	
 	export interface Criteria { 
@@ -31842,7 +32132,6 @@ declare namespace Models {
 	}
 	
 	export interface DeploymentIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"externalSource"?: Models.IdentityResolutionExternalSource;
@@ -35337,6 +35626,20 @@ declare namespace Models {
 		"results": Array<Models.PredictionResults>;
 	}
 	
+	export interface EvaluateShiftTradeListJobRequest { 
+		"managementUnitIds": Array<string>;
+		"weekDates": Array<string>;
+	}
+	
+	export interface EvaluateShiftTradeListJobResponseItem { 
+		"entities"?: Array<Models.EvaluatedShiftTradeResponseItem>;
+	}
+	
+	export interface EvaluatedShiftTradeResponseItem { 
+		"trade": Models.ShiftTradeResponseItem;
+		"matchReview"?: Models.ShiftTradeMatchReviewResponse;
+	}
+	
 	export interface Evaluation { 
 		"id"?: string;
 		"name"?: string;
@@ -35585,6 +35888,21 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface EvaluationFormSearchResponse { 
+		"id"?: string;
+		"modifiedDate"?: string;
+		"published"?: boolean;
+		"contextId"?: string;
+		"questionGroups"?: Array<Models.EvaluationQuestionGroup>;
+		"weightMode"?: string;
+		"evaluationSettings"?: Models.EvaluationSettings;
+		"publishedVersions"?: Models.DomainEntityListingEvaluationForm;
+		"latestVersionFormName"?: string;
+		"aiScoring"?: Models.AiScoringSettings;
+		"dialect"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface EvaluationQualityV2TopicCalibration { 
 		"id"?: string;
 	}
@@ -35819,6 +36137,45 @@ declare namespace Models {
 		"operator"?: string;
 	}
 	
+	export interface EvaluationSearchItemResponse { 
+		"id"?: string;
+		"name"?: string;
+		"conversation"?: Models.ConversationReference;
+		"evaluationForm"?: Models.EvaluationFormSearchResponse;
+		"evaluator"?: Models.User;
+		"agent"?: Models.User;
+		"calibration"?: Models.AddressableEntityRef;
+		"status"?: string;
+		"answers"?: Models.EvaluationScoringSet;
+		"agentHasRead"?: boolean;
+		"assignee"?: Models.User;
+		"assigneeApplicable"?: boolean;
+		"releaseDate"?: string;
+		"assignedDate"?: string;
+		"createdDate"?: string;
+		"changedDate"?: string;
+		"submittedDate"?: string;
+		"revisionCreatedDate"?: string;
+		"queue"?: Models.Queue;
+		"mediaType"?: Array<string>;
+		"divisionIds"?: Array<string>;
+		"rescore"?: boolean;
+		"conversationDate"?: string;
+		"conversationEndDate"?: string;
+		"neverRelease"?: boolean;
+		"assigned"?: boolean;
+		"dateAssigneeChanged"?: string;
+		"resourceId"?: string;
+		"resourceType"?: string;
+		"redacted"?: boolean;
+		"isScoringIndex"?: boolean;
+		"authorizedActions"?: Array<string>;
+		"hasAssistanceFailed"?: boolean;
+		"evaluationSource"?: Models.EvaluationSource;
+		"aiScoring"?: Models.AiScoring;
+		"selfUri"?: string;
+	}
+	
 	export interface EvaluationSearchRequestDTO { 
 		"query": Array<Models.EvaluationSearchCriteriaDTO>;
 		"aggregations"?: Array<Models.EvaluationSearchAggregationDTO>;
@@ -35832,7 +36189,7 @@ declare namespace Models {
 	export interface EvaluationSearchResponse { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
-		"results"?: Array<Models.EvaluationResponse>;
+		"results"?: Array<Models.EvaluationSearchItemResponse>;
 		"aggregations"?: { [key: string]: Models.EvaluationSearchAggregationResponse; };
 	}
 	
@@ -36767,6 +37124,56 @@ declare namespace Models {
 		"sourceConfiguration": Models.SourceConfiguration;
 	}
 	
+	export interface ExternalEvent { 
+		"id": string;
+		"dateCreated": string;
+		"identifiers": Models.ExternalEventIdentifiers;
+		"attributes": { [key: string]: object; };
+	}
+	
+	export interface ExternalEventExternalId { 
+		"value": string;
+		"externalSourceId": string;
+	}
+	
+	export interface ExternalEventIdentifiers { 
+		"externalIds": Array<Models.ExternalEventExternalId>;
+	}
+	
+	export interface ExternalEventsConfiguration { 
+		"id": string;
+		"name"?: string;
+		"description": string;
+		"divisionId": string;
+		"divisionIdActive": boolean;
+		"schemaId": string;
+		"schemaActive": boolean;
+		"source": string;
+		"dateLastModified": string;
+		"selfUri"?: string;
+	}
+	
+	export interface ExternalEventsConfigurationListing { 
+		"entities"?: Array<Models.ExternalEventsConfiguration>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface ExternalEventsRequest { 
+		"entities": Array<Models.ExternalEvent>;
+	}
+	
+	export interface ExternalEventsResponse { 
+		"unprocessedEntities": Array<Models.UnprocessedExternalEvent>;
+	}
+	
 	export interface ExternalId { 
 		"externalSource": Models.ExternalSource;
 		"value": string;
@@ -36892,17 +37299,14 @@ declare namespace Models {
 		"action"?: string;
 		"externalOrganization"?: Models.ExternalOrganization;
 		"fieldRules"?: Models.EnrichFieldRules;
-		"selfUri"?: string;
 	}
 	
 	export interface ExternalOrganizationIdentifier { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"type": string;
 		"value": string;
 		"dateCreated"?: string;
 		"externalSource"?: Models.ExternalSource;
-		"selfUri"?: string;
 	}
 	
 	export interface ExternalOrganizationIdentifierClaimRequest { 
@@ -36929,13 +37333,11 @@ declare namespace Models {
 	}
 	
 	export interface ExternalOrganizationTrustorLink { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"externalOrganizationId"?: string;
 		"trustorOrgId"?: string;
 		"dateCreated"?: string;
 		"externalOrganizationUri"?: string;
-		"selfUri"?: string;
 	}
 	
 	export interface ExternalPageMetadata { 
@@ -37018,7 +37420,6 @@ declare namespace Models {
 	}
 	
 	export interface FacebookIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -39877,7 +40278,6 @@ declare namespace Models {
 	}
 	
 	export interface IVRIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -40307,6 +40707,12 @@ declare namespace Models {
 		"startDate": string;
 	}
 	
+	export interface InitiatingShiftRequestItem { 
+		"id": string;
+		"schedule": Models.BuScheduleReference;
+		"weekDate": string;
+	}
+	
 	export interface Input { 
 		"id"?: string;
 		"title"?: string;
@@ -40525,7 +40931,6 @@ declare namespace Models {
 	}
 	
 	export interface InstagramIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -41330,6 +41735,22 @@ declare namespace Models {
 		"trackingSettings"?: Models.TrackingSettings;
 	}
 	
+	export interface JourneyExternalEventsSchema { 
+		"id"?: string;
+		"version"?: number;
+		"enabled"?: boolean;
+		"dateCreated"?: string;
+		"createdBy"?: Models.DomainEntityRef;
+		"jsonSchema"?: Models.JourneyJsonSchemaDocument;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyExternalEventsSchemaListing { 
+		"total"?: number;
+		"entities"?: Array<Models.JourneyExternalEventsSchema>;
+		"selfUri"?: string;
+	}
+	
 	export interface JourneyGeolocation { 
 		"country"?: string;
 		"countryName"?: string;
@@ -41341,6 +41762,22 @@ declare namespace Models {
 		"regionName"?: string;
 		"source"?: string;
 		"timezone"?: string;
+	}
+	
+	export interface JourneyJsonSchemaDocument { 
+		"$schema": string;
+		"title": string;
+		"description"?: string;
+		"required"?: Array<string>;
+		"properties"?: { [key: string]: object; };
+	}
+	
+	export interface JourneyJsonSchemaRequest { 
+		"$schema": string;
+		"title": string;
+		"description"?: string;
+		"required"?: Array<string>;
+		"properties": { [key: string]: object; };
 	}
 	
 	export interface JourneyOutcomeEventsNotificationActionMap { 
@@ -41501,6 +41938,12 @@ declare namespace Models {
 		"streamType": string;
 		"sessionType": string;
 		"eventName"?: string;
+	}
+	
+	export interface JourneySchemaUpdateRequest { 
+		"version": number;
+		"enabled": boolean;
+		"jsonSchema": Models.JourneyJsonSchemaRequest;
 	}
 	
 	export interface JourneySegment { 
@@ -44797,6 +45240,10 @@ declare namespace Models {
 		"values"?: Array<Models.PlanningGroupMinimumsRequest>;
 	}
 	
+	export interface ListWrapperRequiredDateRange { 
+		"values"?: Array<Models.RequiredDateRange>;
+	}
+	
 	export interface ListWrapperSecondaryPresence { 
 		"values"?: Array<Models.SecondaryPresence>;
 	}
@@ -45319,6 +45766,13 @@ declare namespace Models {
 		"generatedJsonPathCondition"?: string;
 		"match"?: boolean;
 		"jsonPathExtraction"?: Array<Models.MatchTestResult>;
+	}
+	
+	export interface MatchShiftTradeJobRequest { 
+		"weekDate": string;
+		"receivingSchedule": Models.ReceivingScheduleLookup;
+		"receivingShiftId"?: string;
+		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
 	export interface MatchShiftTradeRequest { 
@@ -46032,7 +46486,6 @@ declare namespace Models {
 	}
 	
 	export interface MessagingIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -46490,6 +46943,10 @@ declare namespace Models {
 	
 	export interface MobileSettings { 
 		"notifications": Models.MobileNotificationSettings;
+	}
+	
+	export interface ModelConfig { 
+		"useLatestModel": boolean;
 	}
 	
 	export interface ModelData { 
@@ -47427,7 +47884,6 @@ declare namespace Models {
 	}
 	
 	export interface OpenMessagingIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"externalSource"?: Models.IdentityResolutionExternalSource;
@@ -48543,7 +48999,6 @@ declare namespace Models {
 	}
 	
 	export interface OutboundQueueIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -49762,6 +50217,7 @@ declare namespace Models {
 		"text": string;
 		"strictness"?: string;
 		"sentiment"?: string;
+		"isAIGenerated"?: boolean;
 	}
 	
 	export interface PhraseAssociations { 
@@ -50733,6 +51189,10 @@ declare namespace Models {
 		"scheduleGenerationUnavailableTimes": Array<Models.AgentScheduleUnavailableTime>;
 	}
 	
+	export interface QueryAgentShiftTradeListJobRequest { 
+		"weekDates": Array<string>;
+	}
+	
 	export interface QueryAgentUnavailableTimesRequest { 
 		"startDate": string;
 		"endDate": string;
@@ -50865,6 +51325,12 @@ declare namespace Models {
 		"facetInfo"?: Models.QueryFacetInfo;
 	}
 	
+	export interface QueryShiftTradeListJobRequest { 
+		"managementUnitIds": Array<string>;
+		"weekDates": Array<string>;
+		"userIds": Array<string>;
+	}
+	
 	export interface QueryTimeOffIntegrationStatusRequest { 
 		"timeOffRequestLookups": Array<Models.TimeOffRequestLookup>;
 	}
@@ -50885,6 +51351,15 @@ declare namespace Models {
 	
 	export interface QueryWaitlistPositionsRequest { 
 		"timeOffRequests": Array<Models.UserTimeOffRequestReference>;
+	}
+	
+	export interface QueryWeekSummaryListJobRequest { 
+		"managementUnitIds": Array<string>;
+		"weekDates": Array<string>;
+	}
+	
+	export interface QueryWeekSummaryListJobResponseItem { 
+		"weeks": Array<Models.ShiftTradeWeekSummaryResponseItem>;
 	}
 	
 	export interface QuestionGroupSettings { 
@@ -54190,6 +54665,10 @@ declare namespace Models {
 		"subtitle"?: string;
 	}
 	
+	export interface ReceivingScheduleLookup { 
+		"id": string;
+	}
+	
 	export interface Recipient { 
 		"id"?: string;
 		"name"?: string;
@@ -54274,6 +54753,7 @@ declare namespace Models {
 		"adhocState"?: string;
 		"customerExperienceState"?: string;
 		"agentExperienceState"?: string;
+		"snippetState"?: string;
 	}
 	
 	export interface Recording { 
@@ -55169,6 +55649,11 @@ declare namespace Models {
 		"score"?: number;
 	}
 	
+	export interface RequiredDateRange { 
+		"startDate": string;
+		"endDate": string;
+	}
+	
 	export interface RequiredLocalDateRange { 
 		"startDate": string;
 		"endDate": string;
@@ -55597,7 +56082,6 @@ declare namespace Models {
 	}
 	
 	export interface RouteIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -56073,6 +56557,13 @@ declare namespace Models {
 	export interface ScheduleInterval { 
 		"start": string;
 		"end": string;
+	}
+	
+	export interface ScheduleReferenceWithBusinessUnit { 
+		"id": string;
+		"weekDate": string;
+		"businessUnit": Models.BusinessUnitReference;
+		"selfUri"?: string;
 	}
 	
 	export interface ScheduleUploadProcessingResponse { 
@@ -56596,6 +57087,22 @@ declare namespace Models {
 		"sortBy"?: string;
 	}
 	
+	export interface SearchUnmatchedShiftTradeListJobRequest { 
+		"managementUnitIds": Array<string>;
+		"weekDates": Array<string>;
+		"receivingSchedule": Models.ReceivingScheduleLookup;
+		"receivingShiftIds"?: Array<string>;
+	}
+	
+	export interface SearchUnmatchedShiftTradeListJobResponseItem { 
+		"trades": Array<Models.SearchUnmatchedShiftTradeResponseItem>;
+	}
+	
+	export interface SearchUnmatchedShiftTradeResponseItem { 
+		"trade": Models.ShiftTradeResponseItem;
+		"receivingShiftMatches": Array<Models.ShiftTradeMatchResponseItem>;
+	}
+	
 	export interface SearchUpdateRequest { 
 		"sessionId"?: string;
 		"answered": boolean;
@@ -56965,6 +57472,10 @@ declare namespace Models {
 		"authenticated": boolean;
 		"divisionIds"?: Array<string>;
 		"lastScreen"?: string;
+		"caseAssociations"?: Array<Models.JourneyCaseAssociation>;
+		"caseEntity"?: Models.AddressableEntityRef;
+		"caseReference"?: string;
+		"caseStatus"?: string;
 		"selfUri"?: string;
 		"createdDate": string;
 		"endedDate"?: string;
@@ -57167,14 +57678,60 @@ declare namespace Models {
 		"activityCodeIdReplacement"?: string;
 	}
 	
+	export interface ShiftTradeAddTradeJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"addTradeResult"?: Models.ShiftTradeResponseItem;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeBulkUpdateTradeStateBuJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"bulkUpdateTradeStatesResult"?: Models.BulkUpdateShiftTradeStateResult;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeEvaluateTradesBuJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"evaluateTradesResult"?: Models.EvaluateShiftTradeListJobResponseItem;
+		"selfUri"?: string;
+	}
+	
 	export interface ShiftTradeExternalActivityRule { 
 		"externalActivityType": string;
 		"action": string;
 		"activityCodeIdReplacement"?: string;
 	}
 	
+	export interface ShiftTradeInitiatingSideResponseItem { 
+		"user": Models.UserReference;
+		"managementUnit": Models.ManagementUnitReference;
+		"schedule": Models.ScheduleReferenceWithBusinessUnit;
+		"shift": Models.ShiftTradeShiftResponseItem;
+	}
+	
+	export interface ShiftTradeListJobResponse { 
+		"entities"?: Array<Models.ShiftTradeResponseItem>;
+	}
+	
 	export interface ShiftTradeListResponse { 
 		"entities"?: Array<Models.ShiftTradeResponse>;
+	}
+	
+	export interface ShiftTradeMatchResponseItem { 
+		"shiftIds": Array<string>;
+		"preview": Models.ShiftTradePreviewResponse;
 	}
 	
 	export interface ShiftTradeMatchReviewResponse { 
@@ -57191,6 +57748,16 @@ declare namespace Models {
 		"preTradeSchedulePaidMinutes"?: number;
 		"postTradeSchedulePaidMinutes"?: number;
 		"postTradeNewShift"?: Models.ShiftTradePreviewResponse;
+	}
+	
+	export interface ShiftTradeMatchTradeJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"matchTradeResult"?: Models.EvaluatedShiftTradeResponseItem;
+		"selfUri"?: string;
 	}
 	
 	export interface ShiftTradeMatchViolation { 
@@ -57217,6 +57784,41 @@ declare namespace Models {
 		"activities"?: Array<Models.ShiftTradeActivityPreviewResponse>;
 	}
 	
+	export interface ShiftTradeQueryAgentTradesJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"queryAgentTradesResult"?: Models.ShiftTradeListJobResponse;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeQueryTradesBuJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"queryTradesResult"?: Models.ShiftTradeListJobResponse;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeQueryWeekSummariesBuJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"queryWeekSummariesResult"?: Models.QueryWeekSummaryListJobResponseItem;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeReceivingSideResponseItem { 
+		"user": Models.UserReference;
+		"shift"?: Models.ShiftTradeShiftResponseItem;
+	}
+	
 	export interface ShiftTradeResponse { 
 		"id"?: string;
 		"weekDate"?: string;
@@ -57237,6 +57839,30 @@ declare namespace Models {
 		"reviewedBy"?: Models.UserReference;
 		"reviewedDate"?: string;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface ShiftTradeResponseItem { 
+		"id": string;
+		"state": string;
+		"expirationDate"?: string;
+		"initiating": Models.ShiftTradeInitiatingSideResponseItem;
+		"receiving"?: Models.ShiftTradeReceivingSideResponseItem;
+		"acceptableIntervals": Array<Models.RequiredDateRange>;
+		"oneSided": boolean;
+		"target"?: Models.ShiftTradeTargetResponseItem;
+		"reviewedBy"?: Models.UserReference;
+		"reviewedDate"?: string;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface ShiftTradeSearchUnmatchedTradesBuJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"searchUnmatchedTradesResult"?: Models.SearchUnmatchedShiftTradeListJobResponseItem;
+		"selfUri"?: string;
 	}
 	
 	export interface ShiftTradeSettings { 
@@ -57261,6 +57887,47 @@ declare namespace Models {
 		"planningPeriodMinPaidViolations"?: string;
 		"planningPeriodMaxPaidViolations"?: string;
 		"minMinutesBetweenShiftsViolations"?: string;
+	}
+	
+	export interface ShiftTradeShiftResponseItem { 
+		"id": string;
+		"startDate": string;
+		"endDate": string;
+		"weekDate": string;
+	}
+	
+	export interface ShiftTradeTargetRequestItem { 
+		"userId"?: string;
+	}
+	
+	export interface ShiftTradeTargetResponseItem { 
+		"user"?: Models.UserReference;
+	}
+	
+	export interface ShiftTradeUpdateTradeJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"updateTradeResult"?: Models.ShiftTradeResponseItem;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeUpdateTradeStateJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"updateTradeStateResult"?: Models.BulkUpdateShiftTradeStateResultItem;
+		"selfUri"?: string;
+	}
+	
+	export interface ShiftTradeWeekSummaryResponseItem { 
+		"weekDate": string;
+		"initiatingMatchedCount": number;
+		"crossWeekReceivingMatchedCount": number;
 	}
 	
 	export interface ShortTermForecastReference { 
@@ -57607,7 +58274,6 @@ declare namespace Models {
 	}
 	
 	export interface SmsIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -57729,6 +58395,11 @@ declare namespace Models {
 	export interface Snapshots { 
 		"id"?: string;
 		"daysInPast"?: number;
+	}
+	
+	export interface SnippetRecordingRequest { 
+		"type": string;
+		"record"?: boolean;
 	}
 	
 	export interface SocialEscalationResponseEntityListing { 
@@ -57867,6 +58538,9 @@ declare namespace Models {
 		"operator"?: string;
 		"value"?: string;
 		"range"?: Models.NumericRange;
+	}
+	
+	export interface SocialMediaQuerySort { 
 	}
 	
 	export interface SocialMediaStatisticalResponse { 
@@ -60463,6 +61137,7 @@ declare namespace Models {
 		"mediaType"?: string;
 		"startTimeMs"?: number;
 		"endTimeMs"?: number;
+		"programs"?: Array<string>;
 		"queues"?: Array<string>;
 		"flows"?: Array<string>;
 	}
@@ -61170,7 +61845,6 @@ declare namespace Models {
 	}
 	
 	export interface TwitterIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;
@@ -61417,6 +62091,14 @@ declare namespace Models {
 		"entities"?: Array<Models.UnifiedGeneralTopic>;
 	}
 	
+	export interface UnprocessedExternalEvent { 
+		"event": Models.ExternalEvent;
+		"originalRequestIndex": number;
+		"isRetryable": boolean;
+		"errorMessage": string;
+		"statusCode"?: number;
+	}
+	
 	export interface UnprocessedSegmentAssignments { 
 		"assign"?: Models.SegmentAssignments;
 		"unassign"?: Models.SegmentUnassignments;
@@ -61564,6 +62246,11 @@ declare namespace Models {
 		"version": number;
 	}
 	
+	export interface UpdateExternalEventsConfigurationRequest { 
+		"name"?: string;
+		"description"?: string;
+	}
+	
 	export interface UpdateGuide { 
 		"name"?: string;
 	}
@@ -61677,6 +62364,20 @@ declare namespace Models {
 		"abandonRate"?: Models.BuAbandonRate;
 		"metadata": Models.WfmVersionedEntityMetadata;
 		"impactOverride"?: Models.ServiceGoalTemplateImpactOverride;
+	}
+	
+	export interface UpdateShiftTradeJobRequest { 
+		"weekDate": string;
+		"target"?: Models.ValueWrapperShiftTradeTargetRequestItem;
+		"expirationDate"?: Models.ValueWrapperDate;
+		"acceptableIntervals"?: Models.ListWrapperRequiredDateRange;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface UpdateShiftTradeStateJobRequest { 
+		"weekDate": string;
+		"state": string;
+		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
 	export interface UpdateSkillDivisionRequest { 
@@ -63163,11 +63864,13 @@ declare namespace Models {
 	export interface UtilizationRequest { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
 		"labelUtilizations"?: { [key: string]: Models.LabelUtilizationRequest; };
+		"maxInboundCalls"?: number;
 	}
 	
 	export interface UtilizationResponse { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
 		"labelUtilizations"?: { [key: string]: Models.LabelUtilizationResponse; };
+		"maxInboundCalls"?: number;
 	}
 	
 	export interface UtilizationTag { 
@@ -64079,6 +64782,10 @@ declare namespace Models {
 		"value"?: Models.PlanningPeriodSettings;
 	}
 	
+	export interface ValueWrapperShiftTradeTargetRequestItem { 
+		"value"?: Models.ShiftTradeTargetRequestItem;
+	}
+	
 	export interface ValueWrapperString { 
 		"value"?: string;
 	}
@@ -64399,6 +65106,7 @@ declare namespace Models {
 		"contentModerationFlags"?: Array<string>;
 		"socialSourceTypes"?: Array<string>;
 		"sessionExpired"?: boolean;
+		"screenMonitored"?: boolean;
 		"engagementSources"?: Array<string>;
 		"isSnippetRecorded"?: boolean;
 		"takeover"?: boolean;
@@ -66740,7 +67448,6 @@ declare namespace Models {
 	}
 	
 	export interface WhatsAppIdentityResolutionConfig { 
-		"id"?: string;
 		"division"?: Models.WritableStarrableDivision;
 		"resolveIdentities": boolean;
 		"selfUri"?: string;

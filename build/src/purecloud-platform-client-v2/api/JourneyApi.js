@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -102,6 +102,66 @@ class JourneyApi {
 			'DELETE', 
 			{ 'actionTemplateId': actionTemplateId },
 			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an external events configuration.
+	 * 
+	 * @param {String} configId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteJourneyExternaleventsConfiguration(configId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configId' is set
+		if (configId === undefined || configId === null || configId === '') {
+			throw 'Missing the required parameter "configId" when calling deleteJourneyExternaleventsConfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configId}', 
+			'DELETE', 
+			{ 'configId': configId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteJourneyExternaleventsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling deleteJourneyExternaleventsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}', 
+			'DELETE', 
+			{ 'schemaId': schemaId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -662,6 +722,263 @@ class JourneyApi {
 			'GET', 
 			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
 			{ 'dl': opts['dl'],'dt': opts['dt'],'appNamespace': opts['appNamespace'],'sessionId': opts['sessionId'],'sinceLastBeaconMilliseconds': opts['sinceLastBeaconMilliseconds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get an external events configuration
+	 * 
+	 * @param {String} configId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsConfiguration(configId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configId' is set
+		if (configId === undefined || configId === null || configId === '') {
+			throw 'Missing the required parameter "configId" when calling getJourneyExternaleventsConfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configId}', 
+			'GET', 
+			{ 'configId': configId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all external event configurations.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 20)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsConfigurations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getJourneyExternaleventsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemaVersion(schemaId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getJourneyExternaleventsSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getJourneyExternaleventsSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all versions of a External Events schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemaVersions(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getJourneyExternaleventsSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemas(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a core type from which all schemas are built
+	 * 
+	 * @param {String} coreTypeName Name of core type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemasCoretype(coreTypeName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+			throw 'Missing the required parameter "coreTypeName" when calling getJourneyExternaleventsSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the list of core types enabled for a specific namespace.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemasCoretypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemasLimits(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1634,6 +1951,37 @@ class JourneyApi {
 	}
 
 	/**
+	 * Update an external events configuration.
+	 * 
+	 * @param {String} configId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchJourneyExternaleventsConfiguration(configId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configId' is set
+		if (configId === undefined || configId === null || configId === '') {
+			throw 'Missing the required parameter "configId" when calling patchJourneyExternaleventsConfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configId}', 
+			'PATCH', 
+			{ 'configId': configId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update an outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
@@ -2012,6 +2360,93 @@ class JourneyApi {
 	}
 
 	/**
+	 * Create external events
+	 * 
+	 * @param {String} configurationId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postJourneyExternaleventsConfigurationEvents(configurationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configurationId' is set
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
+			throw 'Missing the required parameter "configurationId" when calling postJourneyExternaleventsConfigurationEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configurationId}/events', 
+			'POST', 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create an external events configuration.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postJourneyExternaleventsConfigurations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema create request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postJourneyExternaleventsSchemas(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyExternaleventsSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Query for flow paths.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2296,6 +2731,41 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Schema update request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putJourneyExternaleventsSchema(schemaId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling putJourneyExternaleventsSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyExternaleventsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

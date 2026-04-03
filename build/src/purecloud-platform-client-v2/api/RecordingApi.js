@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -242,7 +242,7 @@ class RecordingApi {
 
 	/**
 	 * Gets a specific recording.
-	 * 
+	 * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} opts Optional parameters
@@ -389,7 +389,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get metadata for a specific recording. Does not return playable media.
+	 * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
@@ -425,7 +425,7 @@ class RecordingApi {
 
 	/**
 	 * Get all of a Conversation's Recordings.
-	 * 
+	 * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
@@ -1110,7 +1110,7 @@ class RecordingApi {
 
 	/**
 	 * Create annotation
-	 * 
+	 * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} body annotation
@@ -1149,7 +1149,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+	 * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 	 * 
 	 * @param {Object} body Job submission criteria
 	 * @param {Object} opts Optional parameters
@@ -1505,7 +1505,7 @@ class RecordingApi {
 
 	/**
 	 * Updates the retention records on a recording.
-	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} body recording
@@ -1546,7 +1546,7 @@ class RecordingApi {
 
 	/**
 	 * Update annotation
-	 * 
+	 * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {String} annotationId Annotation ID

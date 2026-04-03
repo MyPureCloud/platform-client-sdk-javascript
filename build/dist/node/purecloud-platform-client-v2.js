@@ -748,7 +748,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 249.1.0
+ * @version 250.0.0
  */
 class ApiClient {
 	/**
@@ -2436,7 +2436,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -3151,7 +3151,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -3955,7 +3955,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -4067,7 +4067,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -4218,7 +4218,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -4679,7 +4679,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -4866,6 +4866,37 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for copilot aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsCopilotsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsCopilotsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/copilots/aggregates/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
 			{  },
@@ -5838,6 +5869,69 @@ class AnalyticsApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get status for async query for copilot aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsCopilotsAggregatesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsCopilotsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/copilots/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsCopilotsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsCopilotsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/copilots/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
 			{  },
 			{  },
 			null, 
@@ -7456,6 +7550,68 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Query for copilot aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsCopilotsAggregatesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsCopilotsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/copilots/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query for copilot aggregates
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsCopilotsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsCopilotsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/copilots/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get download URLs for analytics data warehouse files
 	 * 
 	 * @param {Object} body request
@@ -8317,7 +8473,6 @@ class AnalyticsApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned. Used for pagination.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementMetricsQuery(body, opts) { 
 		opts = opts || {};
@@ -8654,7 +8809,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -13477,7 +13632,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -13673,7 +13828,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -13900,7 +14055,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -15825,7 +15980,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -15899,7 +16054,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -16183,7 +16338,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -17197,7 +17352,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -17274,7 +17429,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -18500,7 +18655,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -19639,7 +19794,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -20353,7 +20508,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -21548,7 +21703,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -29425,6 +29580,46 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Start/stop the snippet recording for a participant
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body snippetRecordingRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsCallParticipantSnippetRecord(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantSnippetRecord';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantSnippetRecord';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantSnippetRecord';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Initiate voice consult transfer
 	 * 
 	 * @param {String} conversationId conversationId
@@ -32543,7 +32738,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -32644,7 +32839,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -32841,7 +33036,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -32895,7 +33090,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -33043,7 +33238,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -33247,7 +33442,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -33358,7 +33553,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -37129,7 +37324,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -37378,7 +37573,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -37616,7 +37811,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -40468,7 +40663,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -40612,7 +40807,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -40763,7 +40958,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -41379,7 +41574,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -41970,7 +42165,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -43021,7 +43216,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -43201,7 +43396,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -46173,7 +46368,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -46705,7 +46900,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -46802,6 +46997,66 @@ class JourneyApi {
 			'DELETE', 
 			{ 'actionTemplateId': actionTemplateId },
 			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an external events configuration.
+	 * 
+	 * @param {String} configId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteJourneyExternaleventsConfiguration(configId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configId' is set
+		if (configId === undefined || configId === null || configId === '') {
+			throw 'Missing the required parameter "configId" when calling deleteJourneyExternaleventsConfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configId}', 
+			'DELETE', 
+			{ 'configId': configId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteJourneyExternaleventsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling deleteJourneyExternaleventsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}', 
+			'DELETE', 
+			{ 'schemaId': schemaId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -47362,6 +47617,263 @@ class JourneyApi {
 			'GET', 
 			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
 			{ 'dl': opts['dl'],'dt': opts['dt'],'appNamespace': opts['appNamespace'],'sessionId': opts['sessionId'],'sinceLastBeaconMilliseconds': opts['sinceLastBeaconMilliseconds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get an external events configuration
+	 * 
+	 * @param {String} configId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsConfiguration(configId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configId' is set
+		if (configId === undefined || configId === null || configId === '') {
+			throw 'Missing the required parameter "configId" when calling getJourneyExternaleventsConfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configId}', 
+			'GET', 
+			{ 'configId': configId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all external event configurations.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 20)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsConfigurations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getJourneyExternaleventsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemaVersion(schemaId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getJourneyExternaleventsSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getJourneyExternaleventsSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all versions of a External Events schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemaVersions(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling getJourneyExternaleventsSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemas(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a core type from which all schemas are built
+	 * 
+	 * @param {String} coreTypeName Name of core type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemasCoretype(coreTypeName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+			throw 'Missing the required parameter "coreTypeName" when calling getJourneyExternaleventsSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get the list of core types enabled for a specific namespace.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemasCoretypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyExternaleventsSchemasLimits(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -48334,6 +48846,37 @@ class JourneyApi {
 	}
 
 	/**
+	 * Update an external events configuration.
+	 * 
+	 * @param {String} configId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchJourneyExternaleventsConfiguration(configId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configId' is set
+		if (configId === undefined || configId === null || configId === '') {
+			throw 'Missing the required parameter "configId" when calling patchJourneyExternaleventsConfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configId}', 
+			'PATCH', 
+			{ 'configId': configId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update an outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
@@ -48712,6 +49255,93 @@ class JourneyApi {
 	}
 
 	/**
+	 * Create external events
+	 * 
+	 * @param {String} configurationId The ID of the external event configuration.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postJourneyExternaleventsConfigurationEvents(configurationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'configurationId' is set
+		if (configurationId === undefined || configurationId === null || configurationId === '') {
+			throw 'Missing the required parameter "configurationId" when calling postJourneyExternaleventsConfigurationEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations/{configurationId}/events', 
+			'POST', 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create an external events configuration.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postJourneyExternaleventsConfigurations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/configurations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema create request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postJourneyExternaleventsSchemas(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyExternaleventsSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Query for flow paths.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -49004,6 +49634,41 @@ class JourneyApi {
 	}
 
 	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Schema update request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putJourneyExternaleventsSchema(schemaId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
+			throw 'Missing the required parameter "schemaId" when calling putJourneyExternaleventsSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyExternaleventsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/externalevents/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update the Schedule for a JourneyView
 	 * 
 	 * @param {String} viewId Journey View Id
@@ -49084,7 +49749,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -53292,7 +53957,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -54666,7 +55331,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -54925,7 +55590,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -56173,7 +56838,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -56471,7 +57136,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -56738,7 +57403,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -56960,7 +57625,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -57378,7 +58043,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -57548,7 +58213,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -57809,7 +58474,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -58225,7 +58890,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -58589,7 +59254,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -58720,7 +59385,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -59281,7 +59946,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -60885,7 +61550,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -66472,7 +67137,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -67330,7 +67995,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -67597,7 +68262,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -69955,7 +70620,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -70192,7 +70857,7 @@ class RecordingApi {
 
 	/**
 	 * Gets a specific recording.
-	 * 
+	 * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} opts Optional parameters
@@ -70339,7 +71004,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get metadata for a specific recording. Does not return playable media.
+	 * Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
@@ -70375,7 +71040,7 @@ class RecordingApi {
 
 	/**
 	 * Get all of a Conversation's Recordings.
-	 * 
+	 * Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
@@ -71060,7 +71725,7 @@ class RecordingApi {
 
 	/**
 	 * Create annotation
-	 * 
+	 * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} body annotation
@@ -71099,7 +71764,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+	 * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 	 * 
 	 * @param {Object} body Job submission criteria
 	 * @param {Object} opts Optional parameters
@@ -71455,7 +72120,7 @@ class RecordingApi {
 
 	/**
 	 * Updates the retention records on a recording.
-	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} body recording
@@ -71496,7 +72161,7 @@ class RecordingApi {
 
 	/**
 	 * Update annotation
-	 * 
+	 * If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {String} annotationId Annotation ID
@@ -71803,7 +72468,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -72448,7 +73113,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -77835,7 +78500,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -78796,7 +79461,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -79305,7 +79970,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -80121,7 +80786,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -80530,7 +81195,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -82515,7 +83180,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -84466,7 +85131,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -84580,7 +85245,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -84727,7 +85392,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -87223,7 +87888,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -87566,7 +88231,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -87973,7 +88638,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -91997,7 +92662,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -92143,7 +92808,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -92321,7 +92986,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -92692,7 +93357,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -93070,7 +93735,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -93272,7 +93937,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -93510,7 +94175,6 @@ class UsersApi {
 	 * @param {String} schemaId schemaId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteUserCustomattribute(userId, schemaId, opts) { 
 		opts = opts || {};
@@ -93750,7 +94414,6 @@ class UsersApi {
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteUsersCustomattributesSchema(schemaId, opts) { 
 		opts = opts || {};
@@ -94240,6 +94903,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
 	 * @param {Object} opts.state Search for a user with this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -94255,7 +94919,7 @@ class UsersApi {
 			'/api/v2/users/{userId}', 
 			'GET', 
 			{ 'userId': userId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi'),'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -94334,7 +94998,6 @@ class UsersApi {
 	 * @param {String} schemaId schemaId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUserCustomattribute(userId, schemaId, opts) { 
 		opts = opts || {};
@@ -94370,7 +95033,6 @@ class UsersApi {
 	 * @param {Array.<String>} schemaIds 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUserCustomattributesBulk(userId, schemaIds, opts) { 
 		opts = opts || {};
@@ -95015,6 +95677,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -95026,7 +95689,7 @@ class UsersApi {
 			'/api/v2/users', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi'),'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -95071,7 +95734,6 @@ class UsersApi {
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchema(schemaId, opts) { 
 		opts = opts || {};
@@ -95103,7 +95765,6 @@ class UsersApi {
 	 * @param {String} versionId Schema version
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemaVersion(schemaId, versionId, opts) { 
 		opts = opts || {};
@@ -95138,7 +95799,6 @@ class UsersApi {
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemaVersions(schemaId, opts) { 
 		opts = opts || {};
@@ -95168,7 +95828,6 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemas(opts) { 
 		opts = opts || {};
@@ -95195,7 +95854,6 @@ class UsersApi {
 	 * @param {String} coreTypeName Name of the core type
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemasCoretype(coreTypeName, opts) { 
 		opts = opts || {};
@@ -95225,7 +95883,6 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemasCoretypes(opts) { 
 		opts = opts || {};
@@ -95251,7 +95908,6 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemasLimits(opts) { 
 		opts = opts || {};
@@ -95422,6 +96078,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {Object} opts.integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersMe(opts) { 
@@ -95432,7 +96089,7 @@ class UsersApi {
 			'/api/v2/users/me', 
 			'GET', 
 			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -95452,6 +96109,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -95464,7 +96122,7 @@ class UsersApi {
 			'/api/v2/users/query', 
 			'GET', 
 			{  },
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi'),'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -95584,7 +96242,6 @@ class UsersApi {
 	 * @param {Object} userCustomAttributes 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchUserCustomattributes(userId, userCustomAttributes, opts) { 
 		opts = opts || {};
@@ -95620,7 +96277,6 @@ class UsersApi {
 	 * @param {Array.<Object>} userCustomAttributesList 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchUserCustomattributesBulk(userId, userCustomAttributesList, opts) { 
 		opts = opts || {};
@@ -96443,7 +97099,6 @@ class UsersApi {
 	 * @param {Object} body Schema
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersCustomattributesSchemas(body, opts) { 
 		opts = opts || {};
@@ -96792,7 +97447,6 @@ class UsersApi {
 	 * @param {Object} userCustomAttributes 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putUserCustomattributes(userId, userCustomAttributes, opts) { 
 		opts = opts || {};
@@ -97188,7 +97842,6 @@ class UsersApi {
 	 * @param {Object} body Data Schema
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putUsersCustomattributesSchema(schemaId, body, opts) { 
 		opts = opts || {};
@@ -97223,7 +97876,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -97540,7 +98193,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -97668,7 +98321,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -98498,7 +99151,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -99150,7 +99803,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -99828,7 +100481,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -99991,7 +100644,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -100167,7 +100820,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -102303,6 +102956,181 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingTradesQueryJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingTradesQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View results of bulk update trades states operation. Only the user who started the operation can query the status.
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Gets a staffing group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -102787,7 +103615,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get the list of week schedules for the specified week
-	 * Use "recent" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+	 * Use "recent" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 	 * @param {Object} opts Optional parameters
@@ -103070,7 +103898,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get short term forecasts
-	 * Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+	 * Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 	 * @param {Object} opts Optional parameters
@@ -104435,6 +105263,171 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/shifttrades', 
 			'GET', 
 			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View result of update trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementShifttradingTradeJob(tradeId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
+			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementShifttradingTradeJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId}', 
+			'GET', 
+			{ 'tradeId': tradeId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementShifttradingTradeMatchJob(tradeId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
+			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementShifttradingTradeMatchJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradeMatchJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId}', 
+			'GET', 
+			{ 'tradeId': tradeId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View result of update trade state operation. Only the user who started the operation can query the status.
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementShifttradingTradeStateJob(tradeId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
+			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementShifttradingTradeStateJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradeStateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId}', 
+			'GET', 
+			{ 'tradeId': tradeId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View result of create trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementShifttradingTradesJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getWorkforcemanagementShifttradingTradesMineQueryJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShifttradingTradesMineQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -107170,6 +108163,190 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Queries and evaluates against shift trade configuration shift trades in a management unit per week
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Queries shift trades in a management unit per user
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Start an async job to find potential shift trade matches for the current receiving user
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieves the summary of shift trades in a matched state per week
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null || businessUnitId === '') {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Creates a new staffing group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -109383,6 +110560,177 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Updates a shift trade. This route can only be called by the initiating user
+	 * 
+	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementShifttradingTradeJobs(tradeId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
+			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementShifttradingTradeJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradeJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs', 
+			'POST', 
+			{ 'tradeId': tradeId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Matches a shift trade. This route can only be called by the receiving user
+	 * 
+	 * @param {String} tradeId The ID of the shift trade to match
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementShifttradingTradeMatchJobs(tradeId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
+			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementShifttradingTradeMatchJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradeMatchJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs', 
+			'POST', 
+			{ 'tradeId': tradeId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update trade state by a user
+	 * 
+	 * @param {String} tradeId The ID of the shift trade to update state
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementShifttradingTradeStateJobs(tradeId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null || tradeId === '') {
+			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementShifttradingTradeStateJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradeStateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs', 
+			'POST', 
+			{ 'tradeId': tradeId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Add a shift trade job
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementShifttradingTradesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/jobs', 
+			'POST', 
+			{  },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieve all my shift trades where I am either the initiating or receiving user
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postWorkforcemanagementShifttradingTradesMineQueryJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementShifttradingTradesMineQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs', 
+			'POST', 
+			{  },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Request a teams historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 	 * @param {String} teamId The ID of the team
@@ -109808,7 +111156,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 249.1.0
+ * @version 250.0.0
  */
 class platformClient {
 	constructor() {

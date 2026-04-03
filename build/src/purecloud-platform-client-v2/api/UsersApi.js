@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 249.1.0
+	 * @version 250.0.0
 	 */
 
 	/**
@@ -243,7 +243,6 @@ class UsersApi {
 	 * @param {String} schemaId schemaId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteUserCustomattribute(userId, schemaId, opts) { 
 		opts = opts || {};
@@ -483,7 +482,6 @@ class UsersApi {
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteUsersCustomattributesSchema(schemaId, opts) { 
 		opts = opts || {};
@@ -973,6 +971,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
 	 * @param {Object} opts.state Search for a user with this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -988,7 +987,7 @@ class UsersApi {
 			'/api/v2/users/{userId}', 
 			'GET', 
 			{ 'userId': userId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi'),'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -1067,7 +1066,6 @@ class UsersApi {
 	 * @param {String} schemaId schemaId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUserCustomattribute(userId, schemaId, opts) { 
 		opts = opts || {};
@@ -1103,7 +1101,6 @@ class UsersApi {
 	 * @param {Array.<String>} schemaIds 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUserCustomattributesBulk(userId, schemaIds, opts) { 
 		opts = opts || {};
@@ -1748,6 +1745,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -1759,7 +1757,7 @@ class UsersApi {
 			'/api/v2/users', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi'),'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -1804,7 +1802,6 @@ class UsersApi {
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchema(schemaId, opts) { 
 		opts = opts || {};
@@ -1836,7 +1833,6 @@ class UsersApi {
 	 * @param {String} versionId Schema version
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemaVersion(schemaId, versionId, opts) { 
 		opts = opts || {};
@@ -1871,7 +1867,6 @@ class UsersApi {
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemaVersions(schemaId, opts) { 
 		opts = opts || {};
@@ -1901,7 +1896,6 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemas(opts) { 
 		opts = opts || {};
@@ -1928,7 +1922,6 @@ class UsersApi {
 	 * @param {String} coreTypeName Name of the core type
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemasCoretype(coreTypeName, opts) { 
 		opts = opts || {};
@@ -1958,7 +1951,6 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemasCoretypes(opts) { 
 		opts = opts || {};
@@ -1984,7 +1976,6 @@ class UsersApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersCustomattributesSchemasLimits(opts) { 
 		opts = opts || {};
@@ -2155,6 +2146,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {Object} opts.integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUsersMe(opts) { 
@@ -2165,7 +2157,7 @@ class UsersApi {
 			'/api/v2/users/me', 
 			'GET', 
 			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2185,6 +2177,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -2197,7 +2190,7 @@ class UsersApi {
 			'/api/v2/users/query', 
 			'GET', 
 			{  },
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'userCustomAttributeSchemaIds': this.apiClient.buildCollectionParam(opts['userCustomAttributeSchemaIds'], 'multi'),'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -2317,7 +2310,6 @@ class UsersApi {
 	 * @param {Object} userCustomAttributes 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchUserCustomattributes(userId, userCustomAttributes, opts) { 
 		opts = opts || {};
@@ -2353,7 +2345,6 @@ class UsersApi {
 	 * @param {Array.<Object>} userCustomAttributesList 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchUserCustomattributesBulk(userId, userCustomAttributesList, opts) { 
 		opts = opts || {};
@@ -3176,7 +3167,6 @@ class UsersApi {
 	 * @param {Object} body Schema
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersCustomattributesSchemas(body, opts) { 
 		opts = opts || {};
@@ -3525,7 +3515,6 @@ class UsersApi {
 	 * @param {Object} userCustomAttributes 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putUserCustomattributes(userId, userCustomAttributes, opts) { 
 		opts = opts || {};
@@ -3921,7 +3910,6 @@ class UsersApi {
 	 * @param {Object} body Data Schema
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putUsersCustomattributesSchema(schemaId, body, opts) { 
 		opts = opts || {};

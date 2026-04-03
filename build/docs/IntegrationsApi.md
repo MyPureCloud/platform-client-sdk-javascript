@@ -2220,7 +2220,7 @@ apiInstance.getIntegrationsCredentialsListing(opts)
 
 ## getIntegrationsCredentialsTypes
 
-> CredentialTypeListing getIntegrationsCredentialsTypes(opts)
+> [CredentialType] getIntegrationsCredentialsTypes(opts)
 
 
 GET /api/v2/integrations/credentials/types
@@ -2269,7 +2269,7 @@ apiInstance.getIntegrationsCredentialsTypes(opts)
 
 ### Return type
 
-**CredentialTypeListing**
+**[CredentialType]**
 
 
 ## getIntegrationsSpeechAudioconnector
@@ -5699,4 +5699,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@249.1.0_
+_purecloud-platform-client-v2@250.0.0_

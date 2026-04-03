@@ -183,6 +183,7 @@ docs/deleteAnalyticsConversationsAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
+docs/deleteAnalyticsCopilotsAggregatesJob-example.txt
 docs/deleteAnalyticsEvaluationsAggregatesJob-example.txt
 docs/deleteAnalyticsEvaluationsAggregatesJob-example.txt
 docs/deleteAnalyticsFlowexecutionsAggregatesJob-example.txt
@@ -316,6 +317,8 @@ docs/deleteIntentsCategory-example.txt
 docs/deleteIntentsCustomerintent-example.txt
 docs/deleteJourneyActionmap-example.txt
 docs/deleteJourneyActiontemplate-example.txt
+docs/deleteJourneyExternaleventsConfiguration-example.txt
+docs/deleteJourneyExternaleventsSchema-example.txt
 docs/deleteJourneyOutcome-example.txt
 docs/deleteJourneyOutcomesPredictor-example.txt
 docs/deleteJourneySegment-example.txt
@@ -556,6 +559,8 @@ docs/getAnalyticsConversationsDetailsJobResults-example.txt
 docs/getAnalyticsConversationsDetailsJobResults-example.txt
 docs/getAnalyticsConversationsDetailsJobsAvailability-example.txt
 docs/getAnalyticsConversationsDetailsJobsAvailability-example.txt
+docs/getAnalyticsCopilotsAggregatesJob-example.txt
+docs/getAnalyticsCopilotsAggregatesJobResults-example.txt
 docs/getAnalyticsDataextractionDownload-example.txt
 docs/getAnalyticsDataextractionDownloadsMetadata-example.txt
 docs/getAnalyticsDataretentionSettings-example.txt
@@ -1195,6 +1200,15 @@ docs/getJourneyActiontargets-example.txt
 docs/getJourneyActiontemplate-example.txt
 docs/getJourneyActiontemplates-example.txt
 docs/getJourneyDeploymentCustomerPing-example.txt
+docs/getJourneyExternaleventsConfiguration-example.txt
+docs/getJourneyExternaleventsConfigurations-example.txt
+docs/getJourneyExternaleventsSchema-example.txt
+docs/getJourneyExternaleventsSchemaVersion-example.txt
+docs/getJourneyExternaleventsSchemaVersions-example.txt
+docs/getJourneyExternaleventsSchemas-example.txt
+docs/getJourneyExternaleventsSchemasCoretype-example.txt
+docs/getJourneyExternaleventsSchemasCoretypes-example.txt
+docs/getJourneyExternaleventsSchemasLimits-example.txt
 docs/getJourneyOutcome-example.txt
 docs/getJourneyOutcomes-example.txt
 docs/getJourneyOutcomesAttributionsJob-example.txt
@@ -1961,6 +1975,11 @@ docs/getWorkforcemanagementBusinessunitSchedulingRunResult-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRuns-example.txt
 docs/getWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
 docs/getWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
+docs/getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob-example.txt
+docs/getWorkforcemanagementBusinessunitShifttradingTradesQueryJob-example.txt
+docs/getWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob-example.txt
+docs/getWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob-example.txt
+docs/getWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob-example.txt
 docs/getWorkforcemanagementBusinessunitStaffinggroup-example.txt
 docs/getWorkforcemanagementBusinessunitStaffinggroups-example.txt
 docs/getWorkforcemanagementBusinessunitTimeofflimit-example.txt
@@ -2024,6 +2043,11 @@ docs/getWorkforcemanagementManagementunitsDivisionviews-example.txt
 docs/getWorkforcemanagementNotifications-example.txt
 docs/getWorkforcemanagementSchedulingjob-example.txt
 docs/getWorkforcemanagementShifttrades-example.txt
+docs/getWorkforcemanagementShifttradingTradeJob-example.txt
+docs/getWorkforcemanagementShifttradingTradeMatchJob-example.txt
+docs/getWorkforcemanagementShifttradingTradeStateJob-example.txt
+docs/getWorkforcemanagementShifttradingTradesJob-example.txt
+docs/getWorkforcemanagementShifttradingTradesMineQueryJob-example.txt
 docs/getWorkforcemanagementShrinkageJob-example.txt
 docs/getWorkforcemanagementTeamAdherence-example.txt
 docs/getWorkforcemanagementTimeoffbalanceJob-example.txt
@@ -2142,6 +2166,7 @@ docs/patchIntentsCustomerintent-example.txt
 docs/patchJourneyActionmap-example.txt
 docs/patchJourneyActiontarget-example.txt
 docs/patchJourneyActiontemplate-example.txt
+docs/patchJourneyExternaleventsConfiguration-example.txt
 docs/patchJourneyOutcome-example.txt
 docs/patchJourneySegment-example.txt
 docs/patchJourneyViewVersionJob-example.txt
@@ -2310,6 +2335,8 @@ docs/postAnalyticsConversationsDetailsJobs-example.txt
 docs/postAnalyticsConversationsDetailsJobs-example.txt
 docs/postAnalyticsConversationsDetailsQuery-example.txt
 docs/postAnalyticsConversationsDetailsQuery-example.txt
+docs/postAnalyticsCopilotsAggregatesJobs-example.txt
+docs/postAnalyticsCopilotsAggregatesQuery-example.txt
 docs/postAnalyticsDataextractionDownloadsBulk-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
@@ -2488,6 +2515,7 @@ docs/postConversationsCallParticipantConsultExternal-example.txt
 docs/postConversationsCallParticipantConsultQueue-example.txt
 docs/postConversationsCallParticipantMonitor-example.txt
 docs/postConversationsCallParticipantReplace-example.txt
+docs/postConversationsCallParticipantSnippetRecord-example.txt
 docs/postConversationsCallParticipantVoiceConsult-example.txt
 docs/postConversationsCallParticipants-example.txt
 docs/postConversationsCallParticipantsUserUserId-example.txt
@@ -2692,6 +2720,9 @@ docs/postJourneyActiontemplates-example.txt
 docs/postJourneyDeploymentActionevent-example.txt
 docs/postJourneyDeploymentAppevents-example.txt
 docs/postJourneyDeploymentWebevents-example.txt
+docs/postJourneyExternaleventsConfigurationEvents-example.txt
+docs/postJourneyExternaleventsConfigurations-example.txt
+docs/postJourneyExternaleventsSchemas-example.txt
 docs/postJourneyFlowsPathsQuery-example.txt
 docs/postJourneyOutcomes-example.txt
 docs/postJourneyOutcomesAttributionsJobs-example.txt
@@ -3078,6 +3109,11 @@ docs/postWorkforcemanagementBusinessunitCapacityplansBulkRemove-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
 docs/postWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
+docs/postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs-example.txt
+docs/postWorkforcemanagementBusinessunitShifttradingTradesQueryJobs-example.txt
+docs/postWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs-example.txt
+docs/postWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs-example.txt
+docs/postWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroups-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitStaffinggroupsQuery-example.txt
@@ -3137,6 +3173,11 @@ docs/postWorkforcemanagementManagementunitWorkplans-example.txt
 docs/postWorkforcemanagementManagementunits-example.txt
 docs/postWorkforcemanagementNotificationsUpdate-example.txt
 docs/postWorkforcemanagementSchedules-example.txt
+docs/postWorkforcemanagementShifttradingTradeJobs-example.txt
+docs/postWorkforcemanagementShifttradingTradeMatchJobs-example.txt
+docs/postWorkforcemanagementShifttradingTradeStateJobs-example.txt
+docs/postWorkforcemanagementShifttradingTradesJobs-example.txt
+docs/postWorkforcemanagementShifttradingTradesMineQueryJobs-example.txt
 docs/postWorkforcemanagementTeamAdherenceHistorical-example.txt
 docs/postWorkforcemanagementTeamShrinkageJobs-example.txt
 docs/postWorkforcemanagementTimeoffbalanceJobs-example.txt
@@ -3259,6 +3300,7 @@ docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
+docs/putJourneyExternaleventsSchema-example.txt
 docs/putJourneyViewSchedules-example.txt
 docs/putJourneyViewVersion-example.txt
 docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
