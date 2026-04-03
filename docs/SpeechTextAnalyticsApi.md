@@ -848,9 +848,6 @@ Get sentiment data
 Requires ALL permissions:
 
 * speechAndTextAnalytics:sentimentData:view
-* speechAndTextAnalytics:data:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example Usage
 
@@ -908,8 +905,6 @@ Get conversation summaries by conversation id.
 Requires ALL permissions:
 
 * speechAndTextAnalytics:aiSummary:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example Usage
 
@@ -3812,4 +3807,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@249.1.0_
+_purecloud-platform-client-v2@250.0.0_

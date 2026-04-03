@@ -542,8 +542,6 @@ DELETE /api/v2/users/{userId}/customattributes/{schemaId}
 
 Delete a custom attributes record.
 
-deleteUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * directory:user:edit
@@ -954,8 +952,6 @@ void (no response body)
 DELETE /api/v2/users/customattributes/schemas/{schemaId}
 
 Delete a schema
-
-deleteUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1925,6 +1921,7 @@ let userId = "userId_example"; // String | User ID
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for a user instead of their default.
+  'userCustomAttributeSchemaIds': ["userCustomAttributeSchemaIds_example"], // [String] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
   'state': "active", // String | Search for a user with this state
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1950,6 +1947,7 @@ apiInstance.getUser(userId, opts)
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **userCustomAttributeSchemaIds** | **[String]** | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100 | [optional]  |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -2079,8 +2077,6 @@ GET /api/v2/users/{userId}/customattributes/{schemaId}
 
 Get custom attributes by schema id
 
-getUserCustomattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * directory:user:view
@@ -2139,8 +2135,6 @@ apiInstance.getUserCustomattribute(userId, schemaId, opts)
 GET /api/v2/users/{userId}/customattributes/bulk
 
 Get multiple custom attributes records by schema ids
-
-getUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3343,6 +3337,7 @@ let opts = {
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+  'userCustomAttributeSchemaIds': ["userCustomAttributeSchemaIds_example"], // [String] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
   'state': "active", // String | Only list users of this state
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -3372,6 +3367,7 @@ apiInstance.getUsers(opts)
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **userCustomAttributeSchemaIds** | **[String]** | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5 | [optional]  |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -3451,8 +3447,6 @@ GET /api/v2/users/customattributes/schemas/{schemaId}
 
 Get a schema
 
-getUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:customAttributesSchema:view
@@ -3509,8 +3503,6 @@ apiInstance.getUsersCustomattributesSchema(schemaId, opts)
 GET /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}
 
 Get a specific version of a schema
-
-getUsersCustomattributesSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3571,8 +3563,6 @@ GET /api/v2/users/customattributes/schemas/{schemaId}/versions
 
 Get all versions of a user schema
 
-getUsersCustomattributesSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:customAttributesSchema:view
@@ -3630,8 +3620,6 @@ GET /api/v2/users/customattributes/schemas
 
 Get a list of schemas.
 
-getUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:customAttributesSchema:view
@@ -3685,8 +3673,6 @@ apiInstance.getUsersCustomattributesSchemas(opts)
 GET /api/v2/users/customattributes/schemas/coretypes/{coreTypeName}
 
 Get the core types from which all schemas are built.
-
-getUsersCustomattributesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3745,8 +3731,6 @@ GET /api/v2/users/customattributes/schemas/coretypes
 
 Get the list of core types enabled for a specific namespace.
 
-getUsersCustomattributesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:customAttributesSchema:view
@@ -3800,8 +3784,6 @@ apiInstance.getUsersCustomattributesSchemasCoretypes(opts)
 GET /api/v2/users/customattributes/schemas/limits
 
 Get quantitative limits on schemas
-
-getUsersCustomattributesSchemasLimits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4159,6 +4141,7 @@ let apiInstance = new platformClient.UsersApi();
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
+  'userCustomAttributeSchemaIds': ["userCustomAttributeSchemaIds_example"], // [String] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -4182,6 +4165,7 @@ apiInstance.getUsersMe(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
  **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **userCustomAttributeSchemaIds** | **[String]** | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100 | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -4223,6 +4207,7 @@ let opts = {
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+  'userCustomAttributeSchemaIds': ["userCustomAttributeSchemaIds_example"], // [String] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
   'state': "active", // String | Only list users of this state
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -4250,6 +4235,7 @@ apiInstance.getUsersQuery(opts)
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ASC, DESC |
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **userCustomAttributeSchemaIds** | **[String]** | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5 | [optional]  |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -4448,8 +4434,6 @@ PATCH /api/v2/users/{userId}/customattributes
 
 Update a single custom attributes record by amending the data with only the provided fields.
 
-patchUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * directory:user:edit
@@ -4508,8 +4492,6 @@ apiInstance.patchUserCustomattributes(userId, userCustomAttributes, opts)
 PATCH /api/v2/users/{userId}/customattributes/bulk
 
 Update multiple custom attributes records by amending the data with only the provided fields.
-
-patchUserCustomattributesBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5950,8 +5932,6 @@ POST /api/v2/users/customattributes/schemas
 
 Create a schema
 
-postUsersCustomattributesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:customAttributesSchema:add
@@ -6590,8 +6570,6 @@ apiInstance.putUserCallforwarding(userId, body, opts)
 PUT /api/v2/users/{userId}/customattributes
 
 Create or update a single custom attributes record. Updating replaces all data with the provided fields.
-
-putUserCustomattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7241,8 +7219,6 @@ PUT /api/v2/users/customattributes/schemas/{schemaId}
 
 Update a schema
 
-putUsersCustomattributesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * users:customAttributesSchema:edit
@@ -7293,4 +7269,4 @@ apiInstance.putUsersCustomattributesSchema(schemaId, body, opts)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@249.1.0_
+_purecloud-platform-client-v2@250.0.0_

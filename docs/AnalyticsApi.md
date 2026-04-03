@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsCasemanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsCasemanagementAggregatesJob) | **DELETE** /api/v2/analytics/casemanagement/aggregates/jobs/{jobId} | Delete/cancel an async request for case management aggregates
 [**deleteAnalyticsConversationsAggregatesJob**](AnalyticsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
 [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteAnalyticsCopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsCopilotsAggregatesJob) | **DELETE** /api/v2/analytics/copilots/aggregates/jobs/{jobId} | Delete/cancel an async request for copilot aggregates
 [**deleteAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#deleteAnalyticsEvaluationsAggregatesJob) | **DELETE** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Delete/cancel an async request for evaluation aggregates
 [**deleteAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowexecutionsAggregatesJob) | **DELETE** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} | Delete/cancel an async request for flow execution aggregates
 [**deleteAnalyticsFlowsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowsAggregatesJob) | **DELETE** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Delete/cancel an async request for flow aggregates
@@ -43,6 +44,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
+[**getAnalyticsCopilotsAggregatesJob**](AnalyticsApi#getAnalyticsCopilotsAggregatesJob) | **GET** /api/v2/analytics/copilots/aggregates/jobs/{jobId} | Get status for async query for copilot aggregates
+[**getAnalyticsCopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsCopilotsAggregatesJobResults) | **GET** /api/v2/analytics/copilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsDataextractionDownload**](AnalyticsApi#getAnalyticsDataextractionDownload) | **GET** /api/v2/analytics/dataextraction/downloads/{downloadId} | Get analytics data warehouse file download
 [**getAnalyticsDataextractionDownloadsMetadata**](AnalyticsApi#getAnalyticsDataextractionDownloadsMetadata) | **GET** /api/v2/analytics/dataextraction/downloads/metadata | Get metadata on files available for extraction
 [**getAnalyticsDataretentionSettings**](AnalyticsApi#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
@@ -95,6 +98,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
+[**postAnalyticsCopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsCopilotsAggregatesJobs) | **POST** /api/v2/analytics/copilots/aggregates/jobs | Query for copilot aggregates asynchronously
+[**postAnalyticsCopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsCopilotsAggregatesQuery) | **POST** /api/v2/analytics/copilots/aggregates/query | Query for copilot aggregates
 [**postAnalyticsDataextractionDownloadsBulk**](AnalyticsApi#postAnalyticsDataextractionDownloadsBulk) | **POST** /api/v2/analytics/dataextraction/downloads/bulk | Get download URLs for analytics data warehouse files
 [**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
 [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
@@ -474,6 +479,65 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId, opts)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteAnalyticsConversationsDetailsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsCopilotsAggregatesJob
+
+> void deleteAnalyticsCopilotsAggregatesJob(jobId, opts)
+
+
+DELETE /api/v2/analytics/copilots/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for copilot aggregates
+
+deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:copilotsAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteAnalyticsCopilotsAggregatesJob(jobId, opts)
+  .then(() => {
+    console.log('deleteAnalyticsCopilotsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsCopilotsAggregatesJob');
     console.error(err);
   });
 ```
@@ -2362,6 +2426,126 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability(opts)
 ### Return type
 
 **DataAvailabilityResponse**
+
+
+## getAnalyticsCopilotsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsCopilotsAggregatesJob(jobId, opts)
+
+
+GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}
+
+Get status for async query for copilot aggregates
+
+getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:copilotsAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsCopilotsAggregatesJob(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsCopilotsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsCopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsCopilotsAggregatesJobResults
+
+> CopilotAsyncAggregateQueryResponse getAnalyticsCopilotsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:copilotsAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsCopilotsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsCopilotsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsCopilotsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CopilotAsyncAggregateQueryResponse**
 
 
 ## getAnalyticsDataextractionDownload
@@ -5460,6 +5644,124 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body, opts)
 **AnalyticsConversationQueryResponse**
 
 
+## postAnalyticsCopilotsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsCopilotsAggregatesJobs(body, opts)
+
+
+POST /api/v2/analytics/copilots/aggregates/jobs
+
+Query for copilot aggregates asynchronously
+
+postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:copilotsAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsCopilotsAggregatesJobs(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsCopilotsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsCopilotsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsCopilotsAggregatesQuery
+
+> CopilotAggregateQueryResponse postAnalyticsCopilotsAggregatesQuery(body, opts)
+
+
+POST /api/v2/analytics/copilots/aggregates/query
+
+Query for copilot aggregates
+
+postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:copilotsAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsCopilotsAggregatesQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsCopilotsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsCopilotsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CopilotAggregateQueryResponse**
+
+
 ## postAnalyticsDataextractionDownloadsBulk
 
 > DataExtractionFileUrlListing postAnalyticsDataextractionDownloadsBulk(body, opts)
@@ -7098,8 +7400,6 @@ POST /api/v2/analytics/taskmanagement/metrics/query
 
 Query for task management observations
 
-postAnalyticsTaskmanagementMetricsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * analytics:taskManagementObservation:view
@@ -7734,4 +8034,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@249.1.0_
+_purecloud-platform-client-v2@250.0.0_

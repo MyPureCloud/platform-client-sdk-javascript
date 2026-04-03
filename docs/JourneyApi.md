@@ -9,6 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsJourneysAggregatesJob**](JourneyApi#deleteAnalyticsJourneysAggregatesJob) | **DELETE** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Delete/cancel an async request for journey aggregates
 [**deleteJourneyActionmap**](JourneyApi#deleteJourneyActionmap) | **DELETE** /api/v2/journey/actionmaps/{actionMapId} | Delete single action map.
 [**deleteJourneyActiontemplate**](JourneyApi#deleteJourneyActiontemplate) | **DELETE** /api/v2/journey/actiontemplates/{actionTemplateId} | Delete a single action template.
+[**deleteJourneyExternaleventsConfiguration**](JourneyApi#deleteJourneyExternaleventsConfiguration) | **DELETE** /api/v2/journey/externalevents/configurations/{configId} | Delete an external events configuration.
+[**deleteJourneyExternaleventsSchema**](JourneyApi#deleteJourneyExternaleventsSchema) | **DELETE** /api/v2/journey/externalevents/schemas/{schemaId} | Delete a schema
 [**deleteJourneyOutcome**](JourneyApi#deleteJourneyOutcome) | **DELETE** /api/v2/journey/outcomes/{outcomeId} | Delete an outcome.
 [**deleteJourneyOutcomesPredictor**](JourneyApi#deleteJourneyOutcomesPredictor) | **DELETE** /api/v2/journey/outcomes/predictors/{predictorId} | Delete an outcome predictor.
 [**deleteJourneySegment**](JourneyApi#deleteJourneySegment) | **DELETE** /api/v2/journey/segments/{segmentId} | Delete a segment.
@@ -27,6 +29,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyActiontemplate**](JourneyApi#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
 [**getJourneyActiontemplates**](JourneyApi#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
 [**getJourneyDeploymentCustomerPing**](JourneyApi#getJourneyDeploymentCustomerPing) | **GET** /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping | Send a ping.
+[**getJourneyExternaleventsConfiguration**](JourneyApi#getJourneyExternaleventsConfiguration) | **GET** /api/v2/journey/externalevents/configurations/{configId} | Get an external events configuration
+[**getJourneyExternaleventsConfigurations**](JourneyApi#getJourneyExternaleventsConfigurations) | **GET** /api/v2/journey/externalevents/configurations | Get all external event configurations.
+[**getJourneyExternaleventsSchema**](JourneyApi#getJourneyExternaleventsSchema) | **GET** /api/v2/journey/externalevents/schemas/{schemaId} | Get a schema
+[**getJourneyExternaleventsSchemaVersion**](JourneyApi#getJourneyExternaleventsSchemaVersion) | **GET** /api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getJourneyExternaleventsSchemaVersions**](JourneyApi#getJourneyExternaleventsSchemaVersions) | **GET** /api/v2/journey/externalevents/schemas/{schemaId}/versions | Get all versions of a External Events schema
+[**getJourneyExternaleventsSchemas**](JourneyApi#getJourneyExternaleventsSchemas) | **GET** /api/v2/journey/externalevents/schemas | Get a list of schemas.
+[**getJourneyExternaleventsSchemasCoretype**](JourneyApi#getJourneyExternaleventsSchemasCoretype) | **GET** /api/v2/journey/externalevents/schemas/coretypes/{coreTypeName} | Get a core type from which all schemas are built
+[**getJourneyExternaleventsSchemasCoretypes**](JourneyApi#getJourneyExternaleventsSchemasCoretypes) | **GET** /api/v2/journey/externalevents/schemas/coretypes | Get the list of core types enabled for a specific namespace.
+[**getJourneyExternaleventsSchemasLimits**](JourneyApi#getJourneyExternaleventsSchemasLimits) | **GET** /api/v2/journey/externalevents/schemas/limits | Get quantitative limits on schemas
 [**getJourneyOutcome**](JourneyApi#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
 [**getJourneyOutcomes**](JourneyApi#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
 [**getJourneyOutcomesAttributionsJob**](JourneyApi#getJourneyOutcomesAttributionsJob) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status.
@@ -57,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
+[**patchJourneyExternaleventsConfiguration**](JourneyApi#patchJourneyExternaleventsConfiguration) | **PATCH** /api/v2/journey/externalevents/configurations/{configId} | Update an external events configuration.
 [**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | **PATCH** /api/v2/journey/outcomes/{outcomeId} | Update an outcome.
 [**patchJourneySegment**](JourneyApi#patchJourneySegment) | **PATCH** /api/v2/journey/segments/{segmentId} | Update a segment.
 [**patchJourneyViewVersionJob**](JourneyApi#patchJourneyViewVersionJob) | **PATCH** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} | Update the job for a journey view version. Only the status can be changed and only to Cancelled
@@ -69,6 +81,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postJourneyDeploymentActionevent**](JourneyApi#postJourneyDeploymentActionevent) | **POST** /api/v2/journey/deployments/{deploymentId}/actionevent | Sends an action event, which is used for changing the state of actions that have been offered to the user.
 [**postJourneyDeploymentAppevents**](JourneyApi#postJourneyDeploymentAppevents) | **POST** /api/v2/journey/deployments/{deploymentId}/appevents | Send a journey app event, used for tracking customer activity on an application.
 [**postJourneyDeploymentWebevents**](JourneyApi#postJourneyDeploymentWebevents) | **POST** /api/v2/journey/deployments/{deploymentId}/webevents | Send a journey web event, used for tracking customer activity on a website.
+[**postJourneyExternaleventsConfigurationEvents**](JourneyApi#postJourneyExternaleventsConfigurationEvents) | **POST** /api/v2/journey/externalevents/configurations/{configurationId}/events | Create external events
+[**postJourneyExternaleventsConfigurations**](JourneyApi#postJourneyExternaleventsConfigurations) | **POST** /api/v2/journey/externalevents/configurations | Create an external events configuration.
+[**postJourneyExternaleventsSchemas**](JourneyApi#postJourneyExternaleventsSchemas) | **POST** /api/v2/journey/externalevents/schemas | Create a schema
 [**postJourneyFlowsPathsQuery**](JourneyApi#postJourneyFlowsPathsQuery) | **POST** /api/v2/journey/flows/paths/query | Query for flow paths.
 [**postJourneyOutcomes**](JourneyApi#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
 [**postJourneyOutcomesAttributionsJobs**](JourneyApi#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
@@ -79,6 +94,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postJourneyViewVersions**](JourneyApi#postJourneyViewVersions) | **POST** /api/v2/journey/views/{viewId}/versions | Update a Journey View by ID
 [**postJourneyViews**](JourneyApi#postJourneyViews) | **POST** /api/v2/journey/views | Create a new Journey View
 [**postJourneyViewsEncodingsValidate**](JourneyApi#postJourneyViewsEncodingsValidate) | **POST** /api/v2/journey/views/encodings/validate | Validate whether an encoding exist for a label/value combination.
+[**putJourneyExternaleventsSchema**](JourneyApi#putJourneyExternaleventsSchema) | **PUT** /api/v2/journey/externalevents/schemas/{schemaId} | Update a schema
 [**putJourneyViewSchedules**](JourneyApi#putJourneyViewSchedules) | **PUT** /api/v2/journey/views/{viewId}/schedules | Update the Schedule for a JourneyView
 [**putJourneyViewVersion**](JourneyApi#putJourneyViewVersion) | **PUT** /api/v2/journey/views/{viewId}/versions/{versionId} | Update a Journey View by ID and version
 
@@ -252,6 +268,120 @@ apiInstance.deleteJourneyActiontemplate(actionTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
  **hardDelete** | **Boolean** | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteJourneyExternaleventsConfiguration
+
+> void deleteJourneyExternaleventsConfiguration(configId, opts)
+
+
+DELETE /api/v2/journey/externalevents/configurations/{configId}
+
+Delete an external events configuration.
+
+Requires ANY permissions:
+
+* journey:externalEventsConfiguration:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let configId = "configId_example"; // String | The ID of the external event configuration.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteJourneyExternaleventsConfiguration(configId, opts)
+  .then(() => {
+    console.log('deleteJourneyExternaleventsConfiguration returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteJourneyExternaleventsConfiguration');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **configId** | **String** | The ID of the external event configuration. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteJourneyExternaleventsSchema
+
+> void deleteJourneyExternaleventsSchema(schemaId, opts)
+
+
+DELETE /api/v2/journey/externalevents/schemas/{schemaId}
+
+Delete a schema
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteJourneyExternaleventsSchema(schemaId, opts)
+  .then(() => {
+    console.log('deleteJourneyExternaleventsSchema returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteJourneyExternaleventsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1336,6 +1466,514 @@ apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opt
 ### Return type
 
 **DeploymentPing**
+
+
+## getJourneyExternaleventsConfiguration
+
+> ExternalEventsConfiguration getJourneyExternaleventsConfiguration(configId, opts)
+
+
+GET /api/v2/journey/externalevents/configurations/{configId}
+
+Get an external events configuration
+
+Requires ANY permissions:
+
+* journey:externalEventsConfiguration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let configId = "configId_example"; // String | The ID of the external event configuration.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsConfiguration(configId, opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsConfiguration success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsConfiguration');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **configId** | **String** | The ID of the external event configuration. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalEventsConfiguration**
+
+
+## getJourneyExternaleventsConfigurations
+
+> ExternalEventsConfigurationListing getJourneyExternaleventsConfigurations(opts)
+
+
+GET /api/v2/journey/externalevents/configurations
+
+Get all external event configurations.
+
+Requires ANY permissions:
+
+* journey:externalEventsConfiguration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'pageSize': 20, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsConfigurations(opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsConfigurations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsConfigurations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalEventsConfigurationListing**
+
+
+## getJourneyExternaleventsSchema
+
+> JourneyExternalEventsSchema getJourneyExternaleventsSchema(schemaId, opts)
+
+
+GET /api/v2/journey/externalevents/schemas/{schemaId}
+
+Get a schema
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchema(schemaId, opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JourneyExternalEventsSchema**
+
+
+## getJourneyExternaleventsSchemaVersion
+
+> JourneyExternalEventsSchema getJourneyExternaleventsSchemaVersion(schemaId, versionId, opts)
+
+
+GET /api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}
+
+Get a specific version of a schema
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let versionId = "versionId_example"; // String | Schema version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchemaVersion(schemaId, versionId, opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **versionId** | **String** | Schema version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JourneyExternalEventsSchema**
+
+
+## getJourneyExternaleventsSchemaVersions
+
+> JourneyExternalEventsSchemaListing getJourneyExternaleventsSchemaVersions(schemaId, opts)
+
+
+GET /api/v2/journey/externalevents/schemas/{schemaId}/versions
+
+Get all versions of a External Events schema
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchemaVersions(schemaId, opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JourneyExternalEventsSchemaListing**
+
+
+## getJourneyExternaleventsSchemas
+
+> JourneyExternalEventsSchemaListing getJourneyExternaleventsSchemas(opts)
+
+
+GET /api/v2/journey/externalevents/schemas
+
+Get a list of schemas.
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchemas(opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JourneyExternalEventsSchemaListing**
+
+
+## getJourneyExternaleventsSchemasCoretype
+
+> Coretype getJourneyExternaleventsSchemasCoretype(coreTypeName, opts)
+
+
+GET /api/v2/journey/externalevents/schemas/coretypes/{coreTypeName}
+
+Get a core type from which all schemas are built
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of core type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchemasCoretype(coreTypeName, opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of core type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Coretype**
+
+
+## getJourneyExternaleventsSchemasCoretypes
+
+> CoretypeListing getJourneyExternaleventsSchemasCoretypes(opts)
+
+
+GET /api/v2/journey/externalevents/schemas/coretypes
+
+Get the list of core types enabled for a specific namespace.
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchemasCoretypes(opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CoretypeListing**
+
+
+## getJourneyExternaleventsSchemasLimits
+
+> SchemaQuantityLimits getJourneyExternaleventsSchemasLimits(opts)
+
+
+GET /api/v2/journey/externalevents/schemas/limits
+
+Get quantitative limits on schemas
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyExternaleventsSchemasLimits(opts)
+  .then((data) => {
+    console.log(`getJourneyExternaleventsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyExternaleventsSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SchemaQuantityLimits**
 
 
 ## getJourneyOutcome
@@ -3132,6 +3770,65 @@ apiInstance.patchJourneyActiontemplate(actionTemplateId, opts)
 **ActionTemplate**
 
 
+## patchJourneyExternaleventsConfiguration
+
+> ExternalEventsConfiguration patchJourneyExternaleventsConfiguration(configId, opts)
+
+
+PATCH /api/v2/journey/externalevents/configurations/{configId}
+
+Update an external events configuration.
+
+Requires ANY permissions:
+
+* journey:externalEventsConfiguration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let configId = "configId_example"; // String | The ID of the external event configuration.
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchJourneyExternaleventsConfiguration(configId, opts)
+  .then((data) => {
+    console.log(`patchJourneyExternaleventsConfiguration success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchJourneyExternaleventsConfiguration');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **configId** | **String** | The ID of the external event configuration. |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalEventsConfiguration**
+
+
 ## patchJourneyOutcome
 
 > Outcome patchJourneyOutcome(outcomeId, opts)
@@ -3822,6 +4519,179 @@ apiInstance.postJourneyDeploymentWebevents(deploymentId, opts)
 **WebEventResponse**
 
 
+## postJourneyExternaleventsConfigurationEvents
+
+> ExternalEventsResponse postJourneyExternaleventsConfigurationEvents(configurationId, opts)
+
+
+POST /api/v2/journey/externalevents/configurations/{configurationId}/events
+
+Create external events
+
+Requires ANY permissions:
+
+* journey:externalEventsEvent:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let configurationId = "configurationId_example"; // String | The ID of the external event configuration.
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postJourneyExternaleventsConfigurationEvents(configurationId, opts)
+  .then((data) => {
+    console.log(`postJourneyExternaleventsConfigurationEvents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyExternaleventsConfigurationEvents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **configurationId** | **String** | The ID of the external event configuration. |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalEventsResponse**
+
+
+## postJourneyExternaleventsConfigurations
+
+> ExternalEventsConfiguration postJourneyExternaleventsConfigurations(opts)
+
+
+POST /api/v2/journey/externalevents/configurations
+
+Create an external events configuration.
+
+Requires ANY permissions:
+
+* journey:externalEventsConfiguration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postJourneyExternaleventsConfigurations(opts)
+  .then((data) => {
+    console.log(`postJourneyExternaleventsConfigurations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyExternaleventsConfigurations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalEventsConfiguration**
+
+
+## postJourneyExternaleventsSchemas
+
+> JourneyExternalEventsSchema postJourneyExternaleventsSchemas(body, opts)
+
+
+POST /api/v2/journey/externalevents/schemas
+
+Create a schema
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let body = {}; // Object | Schema create request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postJourneyExternaleventsSchemas(body, opts)
+  .then((data) => {
+    console.log(`postJourneyExternaleventsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyExternaleventsSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Schema create request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JourneyExternalEventsSchema**
+
+
 ## postJourneyFlowsPathsQuery
 
 > FlowPaths postJourneyFlowsPathsQuery(opts)
@@ -4404,6 +5274,65 @@ apiInstance.postJourneyViewsEncodingsValidate(opts)
 **EntityListing**
 
 
+## putJourneyExternaleventsSchema
+
+> JourneyExternalEventsSchema putJourneyExternaleventsSchema(schemaId, body, opts)
+
+
+PUT /api/v2/journey/externalevents/schemas/{schemaId}
+
+Update a schema
+
+Requires ANY permissions:
+
+* journey:externalEventsSchema:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let body = {}; // Object | Schema update request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putJourneyExternaleventsSchema(schemaId, body, opts)
+  .then((data) => {
+    console.log(`putJourneyExternaleventsSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putJourneyExternaleventsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **body** | **Object** | Schema update request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JourneyExternalEventsSchema**
+
+
 ## putJourneyViewSchedules
 
 > JourneyViewSchedule putJourneyViewSchedules(viewId, body, opts)
@@ -4526,4 +5455,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body, opts)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@249.1.0_
+_purecloud-platform-client-v2@250.0.0_
