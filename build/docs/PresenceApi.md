@@ -1610,4 +1610,4 @@ apiInstance.putUsersPresencesBulk(body, opts)
 **[UserPresence]**
 
 
-_purecloud-platform-client-v2@250.0.0_
+_purecloud-platform-client-v2@250.1.0_

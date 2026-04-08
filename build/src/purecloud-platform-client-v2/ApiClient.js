@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 250.0.0
+ * @version 250.1.0
  */
 class ApiClient {
 	/**
@@ -72,7 +72,7 @@ class ApiClient {
 			MULTI: 'multi'
 		};
 
-		this.useLegacyParameterFilter = true;
+		this.useLegacyParameterFilter = false;
 
 		/**
 		 * @description Value is `true` if local storage exists. Otherwise, false.
