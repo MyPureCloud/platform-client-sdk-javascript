@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postCasemanagementCaseplans**](CaseManagementApi#postCasemanagementCaseplans) | **POST** /api/v2/casemanagement/caseplans | Create a Caseplan.
 [**postCasemanagementCases**](CaseManagementApi#postCasemanagementCases) | **POST** /api/v2/casemanagement/cases | Create a Case.
 [**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | **POST** /api/v2/casemanagement/cases/associations/query | Query for case associations
+[**putCasemanagementCaseplanIntakesettings**](CaseManagementApi#putCasemanagementCaseplanIntakesettings) | **PUT** /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings | Update the intake settings for a Caseplan.
 
 
 
@@ -1031,7 +1032,7 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versio
  **versionId** | **String** | Version ID |  |
  **stageplanId** | **String** | Stageplan ID |  |
  **stepplanId** | **String** | Stepplan ID |  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan |
+ **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan, worktype |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1102,7 +1103,7 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versi
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan |
+ **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2159,4 +2160,65 @@ apiInstance.postCasemanagementCasesAssociationsQuery(opts)
 **CaseAssociationQueryEntityListing**
 
 
-_purecloud-platform-client-v2@250.1.0_
+## putCasemanagementCaseplanIntakesettings
+
+> IntakeSettingsListing putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
+
+
+PUT /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings
+
+Update the intake settings for a Caseplan.
+
+putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* caseManagement:caseplanIntakeSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let body = {}; // Object | Intake Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
+  .then((data) => {
+    console.log(`putCasemanagementCaseplanIntakesettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putCasemanagementCaseplanIntakesettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan ID |  |
+ **body** | **Object** | Intake Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**IntakeSettingsListing**
+
+
+_purecloud-platform-client-v2@251.0.0_

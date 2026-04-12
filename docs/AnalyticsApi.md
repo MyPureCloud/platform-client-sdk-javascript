@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsActionsAggregatesJob**](AnalyticsApi#deleteAnalyticsActionsAggregatesJob) | **DELETE** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Delete/cancel an async request for action aggregates
 [**deleteAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob) | **DELETE** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Delete/cancel an async request for agent copilot aggregates
+[**deleteAnalyticsAgentutilizationsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentutilizationsAggregatesJob) | **DELETE** /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId} | Delete/cancel an async request for agent utilization aggregates
 [**deleteAnalyticsBotsAggregatesJob**](AnalyticsApi#deleteAnalyticsBotsAggregatesJob) | **DELETE** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Delete/cancel an async request for bot aggregates
 [**deleteAnalyticsCasemanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsCasemanagementAggregatesJob) | **DELETE** /api/v2/analytics/casemanagement/aggregates/jobs/{jobId} | Delete/cancel an async request for case management aggregates
 [**deleteAnalyticsConversationsAggregatesJob**](AnalyticsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
@@ -30,6 +31,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsAgentStatus**](AnalyticsApi#getAnalyticsAgentStatus) | **GET** /api/v2/analytics/agents/{userId}/status | Get an agent and their active sessions by user ID
 [**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
 [**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsAgentutilizationsAggregatesJob**](AnalyticsApi#getAnalyticsAgentutilizationsAggregatesJob) | **GET** /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId} | Get status for async query for agent utilization aggregates
+[**getAnalyticsAgentutilizationsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentutilizationsAggregatesJobResults) | **GET** /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
 [**getAnalyticsBotflowReportingturns**](AnalyticsApi#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
 [**getAnalyticsBotflowSessions**](AnalyticsApi#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
@@ -88,6 +91,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
 [**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | **POST** /api/v2/analytics/agents/status/counts | Count agents by different groupings
 [**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | **POST** /api/v2/analytics/agents/status/query | Retrieve the top 50 agents matching the query filters
+[**postAnalyticsAgentutilizationsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentutilizationsAggregatesJobs) | **POST** /api/v2/analytics/agentutilizations/aggregates/jobs | Query for agent utilization aggregates asynchronously
+[**postAnalyticsAgentutilizationsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentutilizationsAggregatesQuery) | **POST** /api/v2/analytics/agentutilizations/aggregates/query | Query for agent utilization aggregates
 [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
 [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
 [**postAnalyticsCasemanagementAggregatesJobs**](AnalyticsApi#postAnalyticsCasemanagementAggregatesJobs) | **POST** /api/v2/analytics/casemanagement/aggregates/jobs | Query for case management aggregates asynchronously
@@ -244,6 +249,65 @@ apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId, opts)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteAnalyticsAgentcopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsAgentutilizationsAggregatesJob
+
+> void deleteAnalyticsAgentutilizationsAggregatesJob(jobId, opts)
+
+
+DELETE /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for agent utilization aggregates
+
+deleteAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentUtilizationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteAnalyticsAgentutilizationsAggregatesJob(jobId, opts)
+  .then(() => {
+    console.log('deleteAnalyticsAgentutilizationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsAgentutilizationsAggregatesJob');
     console.error(err);
   });
 ```
@@ -1558,6 +1622,126 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
 ### Return type
 
 **AgentCopilotAsyncAggregateQueryResponse**
+
+
+## getAnalyticsAgentutilizationsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsAgentutilizationsAggregatesJob(jobId, opts)
+
+
+GET /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}
+
+Get status for async query for agent utilization aggregates
+
+getAnalyticsAgentutilizationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentUtilizationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsAgentutilizationsAggregatesJob(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsAgentutilizationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentutilizationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsAgentutilizationsAggregatesJobResults
+
+> AgentUtilizationAsyncAggregateQueryResponse getAnalyticsAgentutilizationsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsAgentutilizationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentUtilizationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsAgentutilizationsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsAgentutilizationsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentutilizationsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentUtilizationAsyncAggregateQueryResponse**
 
 
 ## getAnalyticsBotflowDivisionsReportingturns
@@ -5058,6 +5242,124 @@ apiInstance.postAnalyticsAgentsStatusQuery(body, opts)
 **AnalyticsAgentStateQueryResponse**
 
 
+## postAnalyticsAgentutilizationsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsAgentutilizationsAggregatesJobs(body, opts)
+
+
+POST /api/v2/analytics/agentutilizations/aggregates/jobs
+
+Query for agent utilization aggregates asynchronously
+
+postAnalyticsAgentutilizationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentUtilizationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsAgentutilizationsAggregatesJobs(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsAgentutilizationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentutilizationsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsAgentutilizationsAggregatesQuery
+
+> AgentUtilizationAggregateQueryResponse postAnalyticsAgentutilizationsAggregatesQuery(body, opts)
+
+
+POST /api/v2/analytics/agentutilizations/aggregates/query
+
+Query for agent utilization aggregates
+
+postAnalyticsAgentutilizationsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentUtilizationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postAnalyticsAgentutilizationsAggregatesQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsAgentutilizationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentutilizationsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentUtilizationAggregateQueryResponse**
+
+
 ## postAnalyticsBotsAggregatesJobs
 
 > AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body, opts)
@@ -8034,4 +8336,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@250.1.0_
+_purecloud-platform-client-v2@251.0.0_
