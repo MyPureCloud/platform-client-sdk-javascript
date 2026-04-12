@@ -5,7 +5,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**

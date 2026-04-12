@@ -5,7 +5,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**
@@ -19,6 +19,36 @@ class ProcessAutomationApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a Scheduled Trigger
+	 * 
+	 * @param {String} scheduledTriggerId scheduledTriggerId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteProcessautomationScheduledtrigger(scheduledTriggerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scheduledTriggerId' is set
+		if (scheduledTriggerId === undefined || scheduledTriggerId === null || scheduledTriggerId === '') {
+			throw 'Missing the required parameter "scheduledTriggerId" when calling deleteProcessautomationScheduledtrigger';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}', 
+			'DELETE', 
+			{ 'scheduledTriggerId': scheduledTriggerId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
 
 	/**
 	 * Delete a Trigger
@@ -40,6 +70,65 @@ class ProcessAutomationApi {
 			'DELETE', 
 			{ 'triggerId': triggerId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieve a single Scheduled Trigger matching id
+	 * 
+	 * @param {String} scheduledTriggerId scheduledTriggerId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getProcessautomationScheduledtrigger(scheduledTriggerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scheduledTriggerId' is set
+		if (scheduledTriggerId === undefined || scheduledTriggerId === null || scheduledTriggerId === '') {
+			throw 'Missing the required parameter "scheduledTriggerId" when calling getProcessautomationScheduledtrigger';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}', 
+			'GET', 
+			{ 'scheduledTriggerId': scheduledTriggerId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieves all scheduled triggers, optionally filtered by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Boolean} opts.enabled Boolean indicating desired enabled state of scheduled triggers
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getProcessautomationScheduledtriggers(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/scheduledtriggers', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'enabled': opts['enabled'] },
 			{  },
 			{  },
 			null, 
@@ -140,6 +229,36 @@ class ProcessAutomationApi {
 	}
 
 	/**
+	 * Create a scheduled Trigger
+	 * 
+	 * @param {Object} body Input used to create a Scheduled Trigger
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postProcessautomationScheduledtriggers(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postProcessautomationScheduledtriggers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/scheduledtriggers', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Test the matching of a Trigger based on provided event body
 	 * 
 	 * @param {String} triggerId triggerId
@@ -224,6 +343,41 @@ class ProcessAutomationApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a Scheduled Trigger
+	 * 
+	 * @param {String} scheduledTriggerId scheduledTriggerId
+	 * @param {Object} body Input to update Scheduled Trigger.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putProcessautomationScheduledtrigger(scheduledTriggerId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scheduledTriggerId' is set
+		if (scheduledTriggerId === undefined || scheduledTriggerId === null || scheduledTriggerId === '') {
+			throw 'Missing the required parameter "scheduledTriggerId" when calling putProcessautomationScheduledtrigger';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putProcessautomationScheduledtrigger';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}', 
+			'PUT', 
+			{ 'scheduledTriggerId': scheduledTriggerId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

@@ -169,8 +169,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsIdentityresolutionPhonenumber**](RoutingApi#putRoutingSmsIdentityresolutionPhonenumber) | **PUT** /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} | Update an SMS identity resolution settings.
 [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
-[**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
-[**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+[**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
+[**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 [**putRoutingUtilizationLabel**](RoutingApi#putRoutingUtilizationLabel) | **PUT** /api/v2/routing/utilization/labels/{labelId} | Update a utilization label
 [**putRoutingWrapupcode**](RoutingApi#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
 [**putUserRoutingskill**](RoutingApi#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update an assigned routing skill's proficiency
@@ -9932,7 +9932,7 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body, opts)
 
 PUT /api/v2/routing/users/{userId}/utilization
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Requires ANY permissions:
 
@@ -9991,7 +9991,7 @@ apiInstance.putRoutingUserUtilization(userId, body, opts)
 
 PUT /api/v2/routing/utilization
 
-Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 
 Requires ALL permissions:
 
@@ -10279,4 +10279,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@250.1.0_
+_purecloud-platform-client-v2@251.0.0_

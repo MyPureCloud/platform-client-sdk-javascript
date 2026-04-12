@@ -112,7 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersSearchTeamsAssign**](UsersApi#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
 [**putRoutingDirectroutingbackupSettingsMe**](UsersApi#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
 [**putRoutingUserDirectroutingbackupSettings**](UsersApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
-[**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+[**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 [**putUserCallforwarding**](UsersApi#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
 [**putUserCustomattributes**](UsersApi#putUserCustomattributes) | **PUT** /api/v2/users/{userId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields.
 [**putUserOutofoffice**](UsersApi#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
@@ -6451,7 +6451,7 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body, opts)
 
 PUT /api/v2/routing/users/{userId}/utilization
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Requires ANY permissions:
 
@@ -7269,4 +7269,4 @@ apiInstance.putUsersCustomattributesSchema(schemaId, body, opts)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@250.1.0_
+_purecloud-platform-client-v2@251.0.0_

@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**

@@ -177,6 +177,7 @@ docs/deleteAlertingAlertsAll-example.txt
 docs/deleteAlertingRule-example.txt
 docs/deleteAnalyticsActionsAggregatesJob-example.txt
 docs/deleteAnalyticsAgentcopilotsAggregatesJob-example.txt
+docs/deleteAnalyticsAgentutilizationsAggregatesJob-example.txt
 docs/deleteAnalyticsBotsAggregatesJob-example.txt
 docs/deleteAnalyticsCasemanagementAggregatesJob-example.txt
 docs/deleteAnalyticsConversationsAggregatesJob-example.txt
@@ -400,6 +401,7 @@ docs/deleteOutboundSequence-example.txt
 docs/deletePresenceDefinition0-example.txt
 docs/deletePresenceSource-example.txt
 docs/deletePresencedefinition-example.txt
+docs/deleteProcessautomationScheduledtrigger-example.txt
 docs/deleteProcessautomationTrigger-example.txt
 docs/deleteQualityCalibration-example.txt
 docs/deleteQualityConversationEvaluation-example.txt
@@ -538,6 +540,8 @@ docs/getAnalyticsActionsAggregatesJobResults-example.txt
 docs/getAnalyticsAgentStatus-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJob-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJobResults-example.txt
+docs/getAnalyticsAgentutilizationsAggregatesJob-example.txt
+docs/getAnalyticsAgentutilizationsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowDivisionsReportingturns-example.txt
 docs/getAnalyticsBotflowReportingturns-example.txt
 docs/getAnalyticsBotflowSessions-example.txt
@@ -1465,6 +1469,8 @@ docs/getPresenceSources-example.txt
 docs/getPresenceUserPrimarysource-example.txt
 docs/getPresencedefinition-example.txt
 docs/getPresencedefinitions-example.txt
+docs/getProcessautomationScheduledtrigger-example.txt
+docs/getProcessautomationScheduledtriggers-example.txt
 docs/getProcessautomationTrigger-example.txt
 docs/getProcessautomationTriggers-example.txt
 docs/getProcessautomationTriggersTopics-example.txt
@@ -2319,6 +2325,8 @@ docs/postAnalyticsAgentcopilotsAggregatesJobs-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesQuery-example.txt
 docs/postAnalyticsAgentsStatusCounts-example.txt
 docs/postAnalyticsAgentsStatusQuery-example.txt
+docs/postAnalyticsAgentutilizationsAggregatesJobs-example.txt
+docs/postAnalyticsAgentutilizationsAggregatesQuery-example.txt
 docs/postAnalyticsBotsAggregatesJobs-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
 docs/postAnalyticsCasemanagementAggregatesJobs-example.txt
@@ -2879,6 +2887,7 @@ docs/postOutboundSequences-example.txt
 docs/postPresenceDefinitions0-example.txt
 docs/postPresenceSources-example.txt
 docs/postPresencedefinitions-example.txt
+docs/postProcessautomationScheduledtriggers-example.txt
 docs/postProcessautomationTriggerTest-example.txt
 docs/postProcessautomationTriggers-example.txt
 docs/postProcessautomationTriggersTopicTest-example.txt
@@ -3214,6 +3223,7 @@ docs/putAuthorizationRolesSettings-example.txt
 docs/putBusinessrulesDecisiontableVersionPublish-example.txt
 docs/putBusinessrulesDecisiontableVersionRow-example.txt
 docs/putBusinessrulesSchema-example.txt
+docs/putCasemanagementCaseplanIntakesettings-example.txt
 docs/putChatsMessageReactions-example.txt
 docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
@@ -3355,6 +3365,7 @@ docs/putPresenceSettings-example.txt
 docs/putPresenceSource-example.txt
 docs/putPresenceUserPrimarysource-example.txt
 docs/putPresencedefinition-example.txt
+docs/putProcessautomationScheduledtrigger-example.txt
 docs/putProcessautomationTrigger-example.txt
 docs/putQualityCalibration-example.txt
 docs/putQualityConversationEvaluation-example.txt

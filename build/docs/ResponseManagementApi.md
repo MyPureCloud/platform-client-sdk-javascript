@@ -683,8 +683,6 @@ POST /api/v2/responsemanagement/libraries/query
 
 Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
 
-postResponsemanagementLibrariesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * responses:library:view
@@ -1209,4 +1207,4 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body, opts)
 **ResponseAsset**
 
 
-_purecloud-platform-client-v2@250.1.0_
+_purecloud-platform-client-v2@251.0.0_

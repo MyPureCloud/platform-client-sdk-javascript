@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**
@@ -1218,6 +1218,42 @@ class CaseManagementApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the intake settings for a Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan ID
+	 * @param {Object} body Intake Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putCasemanagementCaseplanIntakesettings(caseplanId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling putCasemanagementCaseplanIntakesettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putCasemanagementCaseplanIntakesettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings', 
+			'PUT', 
+			{ 'caseplanId': caseplanId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

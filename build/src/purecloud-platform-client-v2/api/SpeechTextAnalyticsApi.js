@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**
@@ -667,6 +667,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
 	 * @param {Object} opts.state Program state. Defaults to Latest
 	 * @param {String} opts.name Case insensitive partial name to filter by
+	 * @param {Array.<String>} opts.ids Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed.
 	 * @param {Object} opts.sortBy Sort results by. Defaults to name
 	 * @param {Object} opts.sortOrder Sort order. Defaults to asc
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -679,7 +680,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/programs', 
 			'GET', 
 			{  },
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 

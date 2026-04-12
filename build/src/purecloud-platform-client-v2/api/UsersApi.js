@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**
@@ -3439,7 +3439,7 @@ class UsersApi {
 	}
 
 	/**
-	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body utilization

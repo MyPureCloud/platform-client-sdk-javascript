@@ -69,6 +69,10 @@
       "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
     },
     {
+      "topic": "v2.coaching.scheduleslots.jobs.{id}",
+      "class": "WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobComplete"
+    },
+    {
       "topic": "v2.contentmanagement.documents.{id}",
       "class": "ContentManagementSingleDocumentTopicDocumentDataV2"
     },
@@ -757,6 +761,10 @@
       "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.agentschedules.managementunit.search.complete",
+      "class": "WfmAgentMuScheduleSearchCompleteTopicAgentMuScheduleSearchCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.alternative.shift.jobs",
       "class": "WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification"
     },
@@ -779,6 +787,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
       "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shift.trading.jobs",
+      "class": "WfmShiftTradingJobCompleteEventShiftTradingJobCompleteNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",

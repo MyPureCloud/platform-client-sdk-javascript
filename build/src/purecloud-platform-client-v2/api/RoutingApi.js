@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 250.1.0
+	 * @version 251.0.0
 	 */
 
 	/**
@@ -5177,7 +5177,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body utilization
@@ -5212,7 +5212,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 	 * 
 	 * @param {Object} body utilization
 	 * @param {Object} opts Optional parameters

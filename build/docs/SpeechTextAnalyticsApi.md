@@ -1330,6 +1330,7 @@ let opts = {
   'pageSize': 20, // Number | The page size for the listing
   'state': "state_example", // String | Program state. Defaults to Latest
   'name': "name_example", // String | Case insensitive partial name to filter by
+  'ids': ["ids_example"], // [String] | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed.
   'sortBy': "sortBy_example", // String | Sort results by. Defaults to name
   'sortOrder': "sortOrder_example", // String | Sort order. Defaults to asc
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
@@ -1357,6 +1358,7 @@ apiInstance.getSpeechandtextanalyticsPrograms(opts)
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
  **state** | **String** | Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
+ **ids** | **[String]** | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. | [optional]  |
  **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name |
  **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
@@ -3807,4 +3809,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
 **Topic**
 
 
-_purecloud-platform-client-v2@250.1.0_
+_purecloud-platform-client-v2@251.0.0_
