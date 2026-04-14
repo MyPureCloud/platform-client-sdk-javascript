@@ -5,7 +5,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 251.0.0
+	 * @version 251.1.0
 	 */
 
 	/**
