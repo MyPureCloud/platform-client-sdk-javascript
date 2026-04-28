@@ -421,4 +421,4 @@ apiInstance.postDiagnosticsLogcaptureBrowserUser(userId, opts)
 **LogCaptureUserConfiguration**
 
 
-_purecloud-platform-client-v2@251.1.0_
+_purecloud-platform-client-v2@251.2.0_
