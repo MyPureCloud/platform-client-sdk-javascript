@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -495,6 +495,31 @@ class UsersApi {
 			'/api/v2/users/customattributes/schemas/{schemaId}', 
 			'DELETE', 
 			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Clear self associated station
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteUsersStationsMeAssociatedstation(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/stations/me/associatedstation', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -1774,6 +1799,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.excludeClosed Whether or not to exclude closed chats
 	 * @param {Boolean} opts.includePresence Whether or not to include user presence
+	 * @param {Boolean} opts.includeRoomOwners Whether or not to include room owners
 	 * @param {String} opts.after The key to start after
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -1785,7 +1811,7 @@ class UsersApi {
 			'/api/v2/users/chats/me', 
 			'GET', 
 			{  },
-			{ 'excludeClosed': opts['excludeClosed'],'includePresence': opts['includePresence'],'after': opts['after'] },
+			{ 'excludeClosed': opts['excludeClosed'],'includePresence': opts['includePresence'],'includeRoomOwners': opts['includeRoomOwners'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -2180,7 +2206,6 @@ class UsersApi {
 	 * @param {Array.<String>} opts.userCustomAttributeSchemaIds Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getUsersQuery(opts) { 
 		opts = opts || {};
@@ -2223,6 +2248,31 @@ class UsersApi {
 			'GET', 
 			{  },
 			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get station information for self
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getUsersStationsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/stations/me', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3931,6 +3981,36 @@ class UsersApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Set self associated station
+	 * 
+	 * @param {String} stationId stationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putUsersStationsMeAssociatedstationStationId(stationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'stationId' is set
+		if (stationId === undefined || stationId === null || stationId === '') {
+			throw 'Missing the required parameter "stationId" when calling putUsersStationsMeAssociatedstationStationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/stations/me/associatedstation/{stationId}', 
+			'PUT', 
+			{ 'stationId': stationId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

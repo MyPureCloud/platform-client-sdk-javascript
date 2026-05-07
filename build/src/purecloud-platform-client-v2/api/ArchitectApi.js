@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -3997,12 +3997,48 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Begin an import process for importing rows into a datatable
+	 * Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+	 * Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+	 * @param {String} datatableId id of datatable
+	 * @param {Object} body import job information
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postFlowsDatatableImportCsvJobs(datatableId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null || datatableId === '') {
+			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableImportCsvJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsDatatableImportCsvJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/csv/jobs', 
+			'POST', 
+			{ 'datatableId': datatableId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
 	 * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} body import job information
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postFlowsDatatableImportJobs(datatableId, body, opts) { 
 		opts = opts || {};

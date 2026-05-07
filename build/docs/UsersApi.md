@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
 [**deleteUserVerifier**](UsersApi#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
 [**deleteUsersCustomattributesSchema**](UsersApi#deleteUsersCustomattributesSchema) | **DELETE** /api/v2/users/customattributes/schemas/{schemaId} | Delete a schema
+[**deleteUsersStationsMeAssociatedstation**](UsersApi#deleteUsersStationsMeAssociatedstation) | **DELETE** /api/v2/users/stations/me/associatedstation | Clear self associated station
 [**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
 [**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsUsersDetailsJob**](UsersApi#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
@@ -76,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersMe**](UsersApi#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
 [**getUsersQuery**](UsersApi#getUsersQuery) | **GET** /api/v2/users/query | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 [**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
+[**getUsersStationsMe**](UsersApi#getUsersStationsMe) | **GET** /api/v2/users/stations/me | Get station information for self
 [**patchUser**](UsersApi#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
 [**patchUserCallforwarding**](UsersApi#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
 [**patchUserCustomattributes**](UsersApi#patchUserCustomattributes) | **PATCH** /api/v2/users/{userId}/customattributes | Update a single custom attributes record by amending the data with only the provided fields.
@@ -126,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
 [**putUserVerifier**](UsersApi#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 [**putUsersCustomattributesSchema**](UsersApi#putUsersCustomattributesSchema) | **PUT** /api/v2/users/customattributes/schemas/{schemaId} | Update a schema
+[**putUsersStationsMeAssociatedstationStationId**](UsersApi#putUsersStationsMeAssociatedstationStationId) | **PUT** /api/v2/users/stations/me/associatedstation/{stationId} | Set self associated station
 
 
 
@@ -781,7 +784,9 @@ DELETE /api/v2/users/{userId}/station/associatedstation
 
 Clear associated station
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* telephony:station:disassociate
 
 ### Example Usage
 
@@ -994,6 +999,60 @@ apiInstance.deleteUsersCustomattributesSchema(schemaId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteUsersStationsMeAssociatedstation
+
+> void deleteUsersStationsMeAssociatedstation(opts)
+
+
+DELETE /api/v2/users/stations/me/associatedstation
+
+Clear self associated station
+
+Requires ANY permissions:
+
+* telephony:station:disassociateSelf
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteUsersStationsMeAssociatedstation(opts)
+  .then(() => {
+    console.log('deleteUsersStationsMeAssociatedstation returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUsersStationsMeAssociatedstation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2022,7 +2081,9 @@ GET /api/v2/users/{userId}/callforwarding
 
 Get a user's CallForwarding
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:callForwarding:view
 
 ### Example Usage
 
@@ -3084,7 +3145,9 @@ GET /api/v2/users/{userId}/station
 
 Get station information for user
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* telephony:otherStationAssociation:view
 
 ### Example Usage
 
@@ -3406,6 +3469,7 @@ let apiInstance = new platformClient.UsersApi();
 let opts = { 
   'excludeClosed': true, // Boolean | Whether or not to exclude closed chats
   'includePresence': true, // Boolean | Whether or not to include user presence
+  'includeRoomOwners': true, // Boolean | Whether or not to include room owners
   'after': "after_example", // String | The key to start after
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -3430,6 +3494,7 @@ apiInstance.getUsersChatsMe(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **excludeClosed** | **Boolean** | Whether or not to exclude closed chats | [optional]  |
  **includePresence** | **Boolean** | Whether or not to include user presence | [optional]  |
+ **includeRoomOwners** | **Boolean** | Whether or not to include room owners | [optional]  |
  **after** | **String** | The key to start after | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -4182,8 +4247,6 @@ GET /api/v2/users/query
 
 Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 
-getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * directory:user:view
@@ -4303,6 +4366,60 @@ apiInstance.getUsersSearch(q64, opts)
 ### Return type
 
 **UsersSearchResponse**
+
+
+## getUsersStationsMe
+
+> UserStations getUsersStationsMe(opts)
+
+
+GET /api/v2/users/stations/me
+
+Get station information for self
+
+Requires ANY permissions:
+
+* telephony:selfStationAssociation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getUsersStationsMe(opts)
+  .then((data) => {
+    console.log(`getUsersStationsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersStationsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UserStations**
 
 
 ## patchUser
@@ -7041,7 +7158,9 @@ PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
 
 Set associated station
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* telephony:otherStationAssociation:edit
 
 ### Example Usage
 
@@ -7269,4 +7388,61 @@ apiInstance.putUsersCustomattributesSchema(schemaId, body, opts)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@251.2.0_
+## putUsersStationsMeAssociatedstationStationId
+
+> void putUsersStationsMeAssociatedstationStationId(stationId, opts)
+
+
+PUT /api/v2/users/stations/me/associatedstation/{stationId}
+
+Set self associated station
+
+Requires ANY permissions:
+
+* telephony:selfStationAssociation:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let stationId = "stationId_example"; // String | stationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putUsersStationsMeAssociatedstationStationId(stationId, opts)
+  .then(() => {
+    console.log('putUsersStationsMeAssociatedstationStationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUsersStationsMeAssociatedstationStationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **stationId** | **String** | stationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+_purecloud-platform-client-v2@252.0.0_

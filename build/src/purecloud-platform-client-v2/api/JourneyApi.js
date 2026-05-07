@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -173,11 +173,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Delete an outcome.
-	 * 
+	 * Deprecated. Delete an outcome.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} outcomeId ID of the outcome.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	deleteJourneyOutcome(outcomeId, opts) { 
 		opts = opts || {};
@@ -203,11 +204,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Delete an outcome predictor.
-	 * 
+	 * Deprecated. Delete an outcome predictor.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} predictorId ID of predictor
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	deleteJourneyOutcomesPredictor(predictorId, opts) { 
 		opts = opts || {};
@@ -514,11 +516,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Get status of job.
-	 * 
+	 * Deprecated. Get status of job.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} jobId ID of the job.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyActionmapsEstimatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -544,11 +547,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Get estimates from completed job.
-	 * 
+	 * Deprecated. Get estimates from completed job.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} jobId ID of the job.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyActionmapsEstimatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -990,11 +994,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve a single outcome.
-	 * 
+	 * Deprecated. Retrieve a single outcome.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} outcomeId ID of the outcome.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyOutcome(outcomeId, opts) { 
 		opts = opts || {};
@@ -1020,8 +1025,8 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve all outcomes.
-	 * 
+	 * Deprecated. Retrieve all outcomes.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -1030,6 +1035,7 @@ class JourneyApi {
 	 * @param {Array.<String>} opts.queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set.
 	 * @param {String} opts.queryValue Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyOutcomes(opts) { 
 		opts = opts || {};
@@ -1051,11 +1057,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Get job status.
-	 * 
+	 * Deprecated. Get job status.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} jobId ID of the job.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyOutcomesAttributionsJob(jobId, opts) { 
@@ -1082,11 +1089,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Get outcome attribution entities from completed job.
-	 * 
+	 * Deprecated. Get outcome attribution entities from completed job.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} jobId ID of the job.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyOutcomesAttributionsJobResults(jobId, opts) { 
@@ -1113,11 +1121,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve a single outcome predictor.
-	 * 
+	 * Deprecated. Retrieve a single outcome predictor.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} predictorId ID of predictor
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyOutcomesPredictor(predictorId, opts) { 
 		opts = opts || {};
@@ -1143,10 +1152,11 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve all outcome predictors.
-	 * 
+	 * Deprecated. Retrieve all outcome predictors.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyOutcomesPredictors(opts) { 
 		opts = opts || {};
@@ -1293,11 +1303,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve latest outcome score associated with a session for all outcomes.
-	 * 
+	 * Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} sessionId ID of the session.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneySessionOutcomescores(sessionId, opts) { 
 		opts = opts || {};
@@ -1982,12 +1993,13 @@ class JourneyApi {
 	}
 
 	/**
-	 * Update an outcome.
-	 * 
+	 * Deprecated. Update an outcome.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {String} outcomeId ID of the outcome.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	patchJourneyOutcome(outcomeId, opts) { 
 		opts = opts || {};
@@ -2207,11 +2219,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Query for estimates
-	 * 
+	 * Deprecated. Query for estimates
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {Object} body audience estimator request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postJourneyActionmapsEstimatesJobs(body, opts) { 
 		opts = opts || {};
@@ -2473,11 +2486,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Create an outcome.
-	 * 
+	 * Deprecated. Create an outcome.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postJourneyOutcomes(opts) { 
 		opts = opts || {};
@@ -2499,11 +2513,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Create Outcome Attributions
-	 * 
+	 * Deprecated. Create Outcome Attributions
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body outcome attribution request
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyOutcomesAttributionsJobs(opts) { 
@@ -2526,11 +2541,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Create an outcome predictor.
-	 * 
+	 * Deprecated. Create an outcome predictor.
+	 * Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	postJourneyOutcomesPredictors(opts) { 
 		opts = opts || {};

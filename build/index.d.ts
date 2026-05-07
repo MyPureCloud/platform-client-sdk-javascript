@@ -1268,6 +1268,7 @@ declare class ArchitectApi {
   	postFlowsActionsRevert(flow: string, opts?: ArchitectApi.postFlowsActionsRevertOptions): Promise<Models.Flow>;
   	postFlowsActionsUnlock(flow: string, opts?: ArchitectApi.postFlowsActionsUnlockOptions): Promise<Models.Flow>;
   	postFlowsDatatableExportJobs(datatableId: string, opts?: ArchitectApi.postFlowsDatatableExportJobsOptions): Promise<Models.DataTableExportJob>;
+  	postFlowsDatatableImportCsvJobs(datatableId: string, body: Models.DataTableImportJob, opts?: ArchitectApi.postFlowsDatatableImportCsvJobsOptions): Promise<Models.DataTableImportJob>;
   	postFlowsDatatableImportJobs(datatableId: string, body: Models.DataTableImportJob, opts?: ArchitectApi.postFlowsDatatableImportJobsOptions): Promise<Models.DataTableImportJob>;
   	postFlowsDatatableRows(datatableId: string, dataTableRow: object, opts?: ArchitectApi.postFlowsDatatableRowsOptions): Promise<{ [key: string]: object; }>;
   	postFlowsDatatables(body: Models.DataTable, opts?: ArchitectApi.postFlowsDatatablesOptions): Promise<Models.DataTable>;
@@ -1919,6 +1920,9 @@ declare namespace ArchitectApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postFlowsDatatableExportJobsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postFlowsDatatableImportCsvJobsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postFlowsDatatableImportJobsOptions { 
@@ -2651,6 +2655,7 @@ declare class CaseManagementApi {
   	postCasemanagementCaseplanPublish(caseplanId: string, opts?: CaseManagementApi.postCasemanagementCaseplanPublishOptions): Promise<Models.Caseplan>;
   	postCasemanagementCaseplanVersions(caseplanId: string, opts?: CaseManagementApi.postCasemanagementCaseplanVersionsOptions): Promise<Models.Caseplan>;
   	postCasemanagementCaseplans(body: Models.CaseplanCreate, opts?: CaseManagementApi.postCasemanagementCaseplansOptions): Promise<Models.CaseplanCreateResponse>;
+  	postCasemanagementCaseplansQuery(body: Models.CaseplanQueryRequest, opts?: CaseManagementApi.postCasemanagementCaseplansQueryOptions): Promise<Models.CaseplanQueryEntityListing>;
   	postCasemanagementCases(body: Models.CaseCreate, opts?: CaseManagementApi.postCasemanagementCasesOptions): Promise<Models.Case>;
   	postCasemanagementCasesAssociationsQuery(opts?: CaseManagementApi.postCasemanagementCasesAssociationsQueryOptions): Promise<Models.CaseAssociationQueryEntityListing>;
   	putCasemanagementCaseplanIntakesettings(caseplanId: string, body: Models.IntakeSettingsUpdate, opts?: CaseManagementApi.putCasemanagementCaseplanIntakesettingsOptions): Promise<Models.IntakeSettingsListing>;
@@ -2781,6 +2786,9 @@ declare namespace CaseManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCaseplansOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postCasemanagementCaseplansQueryOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCasesOptions { 
@@ -3304,6 +3312,7 @@ declare class ConversationsApi {
   	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>;
   	getAnalyticsConversationsDetailsJobsAvailability(opts?: ConversationsApi.getAnalyticsConversationsDetailsJobsAvailabilityOptions): Promise<Models.DataAvailabilityResponse>;
   	getConversation(conversationId: string, opts?: ConversationsApi.getConversationOptions): Promise<Models.Conversation>;
+  	getConversationAssistantCopilotcontext(conversationId: string, opts?: ConversationsApi.getConversationAssistantCopilotcontextOptions): Promise<Models.CopilotContextValues>;
   	getConversationCommunicationAgentchecklist(conversationId: string, communicationId: string, agentChecklistId: string, opts?: ConversationsApi.getConversationCommunicationAgentchecklistOptions): Promise<Models.AgentChecklistResponse>;
   	getConversationCommunicationAgentchecklistJob(conversationId: string, communicationId: string, agentChecklistId: string, jobId: string, opts?: ConversationsApi.getConversationCommunicationAgentchecklistJobOptions): Promise<Models.ChecklistInferenceJobResponse>;
   	getConversationCommunicationAgentchecklists(conversationId: string, communicationId: string, opts?: ConversationsApi.getConversationCommunicationAgentchecklistsOptions): Promise<Models.AgentChecklistResponseList>;
@@ -3457,6 +3466,7 @@ declare class ConversationsApi {
   	patchConversationsMessageParticipant(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantOptions): Promise<void>;
   	patchConversationsMessageParticipantAttributes(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantAttributesOptions): Promise<Models.ParticipantAttributes>;
   	patchConversationsMessageParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest, opts?: ConversationsApi.patchConversationsMessageParticipantCommunicationOptions): Promise<object>;
+  	patchConversationsMessageParticipantParkingstate(conversationId: string, participantId: string, body: Models.ParkingStateRequest, opts?: ConversationsApi.patchConversationsMessageParticipantParkingstateOptions): Promise<void>;
   	patchConversationsMessagingIntegrationsAppleIntegrationId(integrationId: string, body: Models.AppleIntegrationUpdateRequest, opts?: ConversationsApi.patchConversationsMessagingIntegrationsAppleIntegrationIdOptions): Promise<Models.AppleIntegration>;
   	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, body: Models.FacebookIntegrationUpdateRequest, opts?: ConversationsApi.patchConversationsMessagingIntegrationsFacebookIntegrationIdOptions): Promise<Models.FacebookIntegration>;
   	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, body: Models.InstagramIntegrationUpdateRequest, opts?: ConversationsApi.patchConversationsMessagingIntegrationsInstagramIntegrationIdOptions): Promise<Models.InstagramIntegration>;
@@ -3687,6 +3697,9 @@ declare namespace ConversationsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getConversationOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getConversationAssistantCopilotcontextOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getConversationCommunicationAgentchecklistOptions { 
@@ -4246,6 +4259,9 @@ declare namespace ConversationsApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface patchConversationsMessageParticipantCommunicationOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface patchConversationsMessageParticipantParkingstateOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface patchConversationsMessagingIntegrationsAppleIntegrationIdOptions { 
@@ -4832,12 +4848,16 @@ declare namespace EmployeeEngagementApi {
 declare class EventsApi {
 	constructor(apiClient?: ApiClientClass);
   	postEventsConversations(body: Models.BatchConversationEventRequest, opts?: EventsApi.postEventsConversationsOptions): Promise<Models.BatchEventResponse>;
+  	postEventsRoutingCustomkpiattributions(body: Models.BatchPredictiveRoutingCustomKpiAttributionEventRequest, opts?: EventsApi.postEventsRoutingCustomkpiattributionsOptions): Promise<Models.BatchEventResponse>;
   	postEventsUsersPresence(body: Models.BatchUserPresenceEventRequest, opts?: EventsApi.postEventsUsersPresenceOptions): Promise<Models.BatchEventResponse>;
   	postEventsUsersRoutingstatus(body: Models.BatchUserRoutingStatusEventRequest, opts?: EventsApi.postEventsUsersRoutingstatusOptions): Promise<Models.BatchEventResponse>;
 }
 
 declare namespace EventsApi { 
 	export interface postEventsConversationsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postEventsRoutingCustomkpiattributionsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postEventsUsersPresenceOptions { 
@@ -7471,10 +7491,10 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>;
   	getKnowledgeSetting(knowledgeSettingId: string, opts?: KnowledgeApi.getKnowledgeSettingOptions): Promise<Models.KnowledgeSettingsResponse>;
   	getKnowledgeSettings(opts?: KnowledgeApi.getKnowledgeSettingsOptions): Promise<Models.KnowledgeSettingListing>;
-  	getKnowledgeSource(sourceId: string, opts?: KnowledgeApi.getKnowledgeSourceOptions): Promise<Models.V3SourceDetailedWithErrorResponse>;
+  	getKnowledgeSource(sourceId: string, opts?: KnowledgeApi.getKnowledgeSourceOptions): Promise<Models.V3SourceExpandableResponse>;
   	getKnowledgeSourceSynchronization(sourceId: string, synchronizationId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationOptions): Promise<Models.V3Synchronization>;
   	getKnowledgeSourceSynchronizations(sourceId: string, opts?: KnowledgeApi.getKnowledgeSourceSynchronizationsOptions): Promise<Models.V3SynchronizationListing>;
-  	getKnowledgeSources(opts?: KnowledgeApi.getKnowledgeSourcesOptions): Promise<Models.V3SourceWithErrorListing>;
+  	getKnowledgeSources(opts?: KnowledgeApi.getKnowledgeSourcesOptions): Promise<Models.V3SourceExpandableListing>;
   	getKnowledgeSourcesSynchronizations(opts?: KnowledgeApi.getKnowledgeSourcesSynchronizationsOptions): Promise<Models.V3SynchronizationListing>;
   	patchKnowledgeConnection(connectionId: string, opts?: KnowledgeApi.patchKnowledgeConnectionOptions): Promise<Models.ConnectionResponse>;
   	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest, opts?: KnowledgeApi.patchKnowledgeGuestSessionDocumentsSearchSearchIdOptions): Promise<void>;
@@ -7586,6 +7606,8 @@ declare namespace KnowledgeApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getKnowledgeConnectionOptionsOptions { 
+		"after"?: string;
+		"pageSize"?: string;
 		"parentId"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
@@ -14569,6 +14591,7 @@ declare class UsersApi {
   	deleteUserStationDefaultstation(userId: string, opts?: UsersApi.deleteUserStationDefaultstationOptions): Promise<void>;
   	deleteUserVerifier(userId: string, verifierId: string, opts?: UsersApi.deleteUserVerifierOptions): Promise<void>;
   	deleteUsersCustomattributesSchema(schemaId: string, opts?: UsersApi.deleteUsersCustomattributesSchemaOptions): Promise<void>;
+  	deleteUsersStationsMeAssociatedstation(opts?: UsersApi.deleteUsersStationsMeAssociatedstationOptions): Promise<void>;
   	getAnalyticsUsersAggregatesJob(jobId: string, opts?: UsersApi.getAnalyticsUsersAggregatesJobOptions): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>;
   	getAnalyticsUsersDetailsJob(jobId: string, opts?: UsersApi.getAnalyticsUsersDetailsJobOptions): Promise<Models.AsyncQueryStatus>;
@@ -14624,6 +14647,7 @@ declare class UsersApi {
   	getUsersMe(opts?: UsersApi.getUsersMeOptions): Promise<Models.UserMe>;
   	getUsersQuery(opts?: UsersApi.getUsersQueryOptions): Promise<Models.UserCursorEntityListing>;
   	getUsersSearch(q64: string, opts?: UsersApi.getUsersSearchOptions): Promise<Models.UsersSearchResponse>;
+  	getUsersStationsMe(opts?: UsersApi.getUsersStationsMeOptions): Promise<Models.UserStations>;
   	patchUser(userId: string, body: Models.UpdateUser, opts?: UsersApi.patchUserOptions): Promise<Models.User>;
   	patchUserCallforwarding(userId: string, body: Models.CallForwarding, opts?: UsersApi.patchUserCallforwardingOptions): Promise<Models.CallForwarding>;
   	patchUserCustomattributes(userId: string, userCustomAttributes: Models.UserCustomAttributesUpdateRequest, opts?: UsersApi.patchUserCustomattributesOptions): Promise<Models.UserCustomAttributes>;
@@ -14674,6 +14698,7 @@ declare class UsersApi {
   	putUserStationDefaultstationStationId(userId: string, stationId: string, opts?: UsersApi.putUserStationDefaultstationStationIdOptions): Promise<void>;
   	putUserVerifier(userId: string, verifierId: string, body: Models.UpdateVerifierRequest, opts?: UsersApi.putUserVerifierOptions): Promise<Models.Verifier>;
   	putUsersCustomattributesSchema(schemaId: string, body: Models.DataSchema, opts?: UsersApi.putUsersCustomattributesSchemaOptions): Promise<Models.DataSchema>;
+  	putUsersStationsMeAssociatedstationStationId(stationId: string, opts?: UsersApi.putUsersStationsMeAssociatedstationStationIdOptions): Promise<void>;
 }
 
 declare namespace UsersApi { 
@@ -14720,6 +14745,9 @@ declare namespace UsersApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteUsersCustomattributesSchemaOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteUsersStationsMeAssociatedstationOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getAnalyticsUsersAggregatesJobOptions { 
@@ -14899,6 +14927,7 @@ declare namespace UsersApi {
 	export interface getUsersChatsMeOptions { 
 		"excludeClosed"?: boolean;
 		"includePresence"?: boolean;
+		"includeRoomOwners"?: boolean;
 		"after"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
@@ -14978,6 +15007,9 @@ declare namespace UsersApi {
 	export interface getUsersSearchOptions { 
 		"expand"?: Array<string>;
 		"integrationPresenceSource"?: string;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getUsersStationsMeOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface patchUserOptions { 
@@ -15135,6 +15167,9 @@ declare namespace UsersApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface putUsersCustomattributesSchemaOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface putUsersStationsMeAssociatedstationStationIdOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 }
@@ -15638,7 +15673,7 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>;
   	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCodeListing>;
   	getWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplanOptions): Promise<Models.ActivityPlanResponse>;
-  	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId: string, activityPlanId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplanRunsJobOptions): Promise<Models.ActivityPlanRunJobResponse>;
+  	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId: string, activityPlanId: string, jobId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplanRunsJobOptions): Promise<Models.ActivityPlanJobResponse>;
   	getWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplansOptions): Promise<Models.ActivityPlanListing>;
   	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplansJobsOptions): Promise<Models.ActivityPlanJobListing>;
   	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitAlternativeshiftsSettingsOptions): Promise<Models.AlternativeShiftBuSettingsResponse>;
@@ -15799,7 +15834,7 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body: Models.AlternativeShiftSearchOffersRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAlternativeshiftsOffersSearchJobsOptions): Promise<Models.AlternativeShiftAsyncResponse>;
   	postWorkforcemanagementAlternativeshiftsTrades(body: Models.CreateAlternativeShiftTradeRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAlternativeshiftsTradesOptions): Promise<Models.AlternativeShiftTradeResponse>;
   	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, body: Models.CreateActivityCodeRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCode>;
-  	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId: string, activityPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivityplanRunsJobsOptions): Promise<Models.ActivityPlanJobResponse>;
+  	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId: string, activityPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivityplanRunsJobsOptions): Promise<Models.ActivityPlanRunJobResponse>;
   	postWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, body: Models.CreateActivityPlanRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivityplansOptions): Promise<Models.ActivityPlanResponse>;
   	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId: string, body: Models.BuQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions): Promise<Models.BuQueryAdherenceExplanationsResponse>;
   	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId: string, body: Models.BuSearchAgentSchedulesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>;
@@ -16908,6 +16943,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -17195,12 +17231,12 @@ declare namespace Models {
 		"version"?: number;
 		"isActive"?: boolean;
 		"displayName": string;
-		"triggerWithSegments": Array<string>;
+		"triggerWithSegments"?: Array<string>;
 		"triggerWithEventConditions"?: Array<Models.EventCondition>;
 		"triggerWithOutcomeProbabilityConditions"?: Array<Models.OutcomeProbabilityCondition>;
 		"triggerWithOutcomePercentileConditions"?: Array<Models.OutcomePercentileCondition>;
 		"triggerWithOutcomeQuantileConditions"?: Array<Models.OutcomeQuantileCondition>;
-		"pageUrlConditions": Array<Models.UrlCondition>;
+		"pageUrlConditions"?: Array<Models.UrlCondition>;
 		"activation"?: Models.Activation;
 		"weight"?: number;
 		"action"?: Models.ActionMapAction;
@@ -17362,7 +17398,7 @@ declare namespace Models {
 	}
 	
 	export interface ActivityCode { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 		"name"?: string;
 		"isActive"?: boolean;
@@ -17420,7 +17456,7 @@ declare namespace Models {
 	}
 	
 	export interface ActivityPlanJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"exceptions": Array<Models.ActivityPlanJobException>;
 		"error"?: Models.ErrorBody;
@@ -17454,18 +17490,18 @@ declare namespace Models {
 	}
 	
 	export interface ActivityPlanOccurrenceReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
 	export interface ActivityPlanOccurrenceSessionsUsersStructureReference { 
-		"id"?: string;
+		"id": string;
 		"sessions": Array<Models.ActivityPlanSessionStructureReference>;
 		"selfUri"?: string;
 	}
 	
 	export interface ActivityPlanReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -17499,7 +17535,7 @@ declare namespace Models {
 	}
 	
 	export interface ActivityPlanRunJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"exceptions": Array<Models.ActivityPlanJobException>;
 		"error"?: Models.ErrorBody;
@@ -17518,13 +17554,13 @@ declare namespace Models {
 	}
 	
 	export interface ActivityPlanSessionStructureReference { 
-		"id"?: string;
+		"id": string;
 		"users"?: Array<Models.UserReference>;
 		"selfUri"?: string;
 	}
 	
 	export interface ActivityPlanStructureWithOccurrenceSessionsUsersReference { 
-		"id"?: string;
+		"id": string;
 		"occurrences": Array<Models.ActivityPlanOccurrenceSessionsUsersStructureReference>;
 		"selfUri"?: string;
 	}
@@ -17794,7 +17830,7 @@ declare namespace Models {
 	}
 	
 	export interface AdminAgentWorkPlanPreferenceResponse { 
-		"id"?: string;
+		"id": string;
 		"workPlans": Array<Models.WorkPlanReference>;
 		"agentWorkPlanBidPreferences": Array<Models.AdminAgentWorkPlanBiddingPreference>;
 		"selfUri"?: string;
@@ -18246,6 +18282,7 @@ declare namespace Models {
 		"enabled": boolean;
 		"published"?: boolean;
 		"evaluator"?: Models.AddressableEntityRef;
+		"agentToScore"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"selfUri"?: string;
@@ -19324,6 +19361,7 @@ declare namespace Models {
 		"searchQuery"?: string;
 		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
 		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+		"externalId"?: string;
 		"customerCookieId": string;
 		"createdDate": string;
 	}
@@ -19345,6 +19383,7 @@ declare namespace Models {
 		"searchQuery"?: string;
 		"attributes": { [key: string]: Models.CustomEventAttribute; };
 		"traits": { [key: string]: Models.CustomEventAttribute; };
+		"externalId"?: string;
 		"createdDate": string;
 	}
 	
@@ -20645,6 +20684,10 @@ declare namespace Models {
 		"errors"?: Array<Models.EventError>;
 	}
 	
+	export interface BatchPredictiveRoutingCustomKpiAttributionEventRequest { 
+		"customKpiAttributionEvents"?: Array<Models.PredictiveRoutingCustomKpiAttributionEvent>;
+	}
+	
 	export interface BatchUserPresenceEventRequest { 
 		"userPresenceEvents"?: Array<Models.UserPresenceEvent>;
 	}
@@ -21265,7 +21308,7 @@ declare namespace Models {
 	}
 	
 	export interface BuAlternativeShiftJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -21634,7 +21677,7 @@ declare namespace Models {
 	}
 	
 	export interface BuScheduleRun { 
-		"id"?: string;
+		"id": string;
 		"schedulerRunId"?: string;
 		"intradayRescheduling"?: boolean;
 		"state"?: string;
@@ -21704,7 +21747,7 @@ declare namespace Models {
 	}
 	
 	export interface BuShortTermForecast { 
-		"id"?: string;
+		"id": string;
 		"weekDate"?: string;
 		"weekCount"?: number;
 		"creationMethod"?: string;
@@ -21723,7 +21766,7 @@ declare namespace Models {
 	}
 	
 	export interface BuShortTermForecastListItem { 
-		"id"?: string;
+		"id": string;
 		"weekDate"?: string;
 		"weekCount"?: number;
 		"creationMethod"?: string;
@@ -21767,12 +21810,12 @@ declare namespace Models {
 	}
 	
 	export interface BuTimeOffLimitReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
 	export interface BuTimeOffLimitResponse { 
-		"id"?: string;
+		"id": string;
 		"staffingGroup"?: Models.StaffingGroupReference;
 		"managementUnit"?: Models.ManagementUnitReference;
 		"metadata": Models.WfmVersionedEntityMetadata;
@@ -21780,7 +21823,7 @@ declare namespace Models {
 	}
 	
 	export interface BuTimeOffLimitValueRange { 
-		"id"?: string;
+		"id": string;
 		"timeOffLimit": Models.BuTimeOffLimitReference;
 		"startDate": string;
 		"granularity": string;
@@ -21802,7 +21845,7 @@ declare namespace Models {
 	}
 	
 	export interface BuTimeOffPlanResponse { 
-		"id"?: string;
+		"id": string;
 		"name": string;
 		"activityCodeIds": Array<string>;
 		"timeOffLimits"?: Array<Models.BuTimeOffLimitReference>;
@@ -23845,7 +23888,7 @@ declare namespace Models {
 		"description"?: string;
 		"defaultCaseOwnerId"?: string;
 		"divisionId": string;
-		"dataSchemas": Array<Models.CaseplanDataSchema>;
+		"dataSchemas"?: Array<Models.CaseplanDataSchema>;
 		"intakeSettings"?: Array<Models.IntakeSetting>;
 	}
 	
@@ -23873,7 +23916,6 @@ declare namespace Models {
 	
 	export interface CaseplanDataSchema { 
 		"id": string;
-		"version"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -23886,6 +23928,21 @@ declare namespace Models {
 		"nextUri"?: string;
 		"selfUri"?: string;
 		"previousUri"?: string;
+	}
+	
+	export interface CaseplanQueryEntityListing { 
+		"entities"?: Array<Models.Caseplan>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
+	export interface CaseplanQueryRequest { 
+		"name"?: string;
+		"pageSize"?: number;
+		"after"?: string;
+		"divisionIds"?: Array<string>;
 	}
 	
 	export interface CaseplanReference { 
@@ -25190,6 +25247,9 @@ declare namespace Models {
 	
 	export interface ConnectionOptionListing { 
 		"entities"?: Array<Models.ConnectionOption>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface ConnectionResponse { 
@@ -25204,6 +25264,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"status"?: string;
 		"error"?: Models.ErrorBody;
+		"dateExpiry"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -26476,6 +26537,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationCallEventTopicConversationDivisionMembership>;
 		"recordingState"?: string;
@@ -26692,6 +26754,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationCallbackEventTopicConversationDivisionMembership>;
 	}
@@ -26935,6 +26998,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationChatEventTopicConversationDivisionMembership>;
 	}
@@ -27146,6 +27210,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationCobrowseEventTopicConversationDivisionMembership>;
 	}
@@ -27427,6 +27492,13 @@ declare namespace Models {
 		"longitude"?: number;
 	}
 	
+	export interface ConversationContentNotificationResponse { 
+		"originatingMessageId": string;
+		"referenceId"?: string;
+		"notificationStatus": string;
+		"notificationText"?: string;
+	}
+	
 	export interface ConversationContentNotificationTemplate { 
 		"id"?: string;
 		"language"?: string;
@@ -27669,6 +27741,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationEmailEventTopicConversationDivisionMembership>;
 	}
@@ -27987,6 +28060,7 @@ declare namespace Models {
 		"address"?: string;
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"securePause"?: boolean;
 		"inactivityTimeout"?: string;
 		"associatedConversation"?: Models.ConversationEventTopicDomainEntityRef;
@@ -28660,6 +28734,7 @@ declare namespace Models {
 		"paymentResponse"?: Models.ConversationContentPaymentResponse;
 		"push"?: Models.ConversationContentPush;
 		"form"?: Models.ConversationContentForm;
+		"notificationResponse"?: Models.ConversationContentNotificationResponse;
 	}
 	
 	export interface ConversationMessageEvent { 
@@ -28765,6 +28840,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationMessageEventTopicConversationDivisionMembership>;
 	}
@@ -29023,6 +29099,7 @@ declare namespace Models {
 		"selfServed"?: boolean;
 		"sessionDnis"?: string;
 		"sessionId"?: string;
+		"skillExpressionId"?: string;
 		"stationId"?: string;
 		"teamId"?: string;
 		"usedRouting"?: string;
@@ -29367,6 +29444,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationScreenShareEventTopicConversationDivisionMembership>;
 	}
@@ -29598,6 +29676,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationSocialExpressionEventTopicConversationDivisionMembership>;
 	}
@@ -30046,6 +30125,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.ConversationVideoEventTopicConversationDivisionMembership>;
 	}
@@ -30207,6 +30287,11 @@ declare namespace Models {
 		"values"?: Array<Models.CopilotContextValue>;
 	}
 	
+	export interface CopilotContextEntity { 
+		"assistant"?: Models.AddressableEntityRef;
+		"contextValues"?: Array<Models.CopilotContextValueItem>;
+	}
+	
 	export interface CopilotContextFilter { 
 		"operator"?: string;
 		"values"?: Array<string>;
@@ -30217,6 +30302,15 @@ declare namespace Models {
 		"type": string;
 		"participantDataProperties"?: Models.ParticipantDataProperties;
 		"conversationAttributeProperties"?: Models.ConversationAttributeProperties;
+	}
+	
+	export interface CopilotContextValueItem { 
+		"name"?: string;
+		"value"?: string;
+	}
+	
+	export interface CopilotContextValues { 
+		"entities"?: Array<Models.CopilotContextEntity>;
 	}
 	
 	export interface CopilotFallbackAction { 
@@ -30353,7 +30447,7 @@ declare namespace Models {
 		"notes"?: string;
 		"fullDayManagementUnitDates"?: Array<string>;
 		"partialDayStartDateTimes"?: Array<string>;
-		"dailyDurationMinutes": number;
+		"dailyDurationMinutes"?: number;
 		"durationMinutes"?: Array<number>;
 		"payableMinutes"?: Array<number>;
 		"paid"?: boolean;
@@ -30364,7 +30458,7 @@ declare namespace Models {
 		"notes"?: string;
 		"fullDayManagementUnitDates"?: Array<string>;
 		"partialDayStartDateTimes"?: Array<string>;
-		"dailyDurationMinutes": number;
+		"dailyDurationMinutes"?: number;
 		"durationMinutes"?: Array<number>;
 		"payableMinutes"?: Array<number>;
 	}
@@ -31379,6 +31473,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"endpointCompression"?: boolean;
 		"selfUri"?: string;
 	}
@@ -31510,6 +31605,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -32675,6 +32771,27 @@ declare namespace Models {
 		"name"?: string;
 	}
 	
+	export interface DialerCampaignSkillCombinationStatsEventCampaignSkillCombinationStats { 
+		"campaign"?: Models.DialerCampaignSkillCombinationStatsEventUriReference;
+		"contactList"?: Models.DialerCampaignSkillCombinationStatsEventUriReference;
+		"totalSkillCombinations"?: number;
+		"totalRemainingContacts"?: number;
+		"totalProcessedContacts"?: number;
+		"skillCombinationDetails"?: Array<Models.DialerCampaignSkillCombinationStatsEventSkillCombinationDetailNotification>;
+	}
+	
+	export interface DialerCampaignSkillCombinationStatsEventSkillCombinationDetailNotification { 
+		"skillCombination"?: Array<string>;
+		"totalCount"?: number;
+		"processedCount"?: number;
+		"completionPercentage"?: number;
+	}
+	
+	export interface DialerCampaignSkillCombinationStatsEventUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface DialerContact { 
 		"id"?: string;
 		"name"?: string;
@@ -33217,6 +33334,7 @@ declare namespace Models {
 		"markContactAddressUncontactableActionSettings"?: object;
 		"setContentTemplateActionSettings"?: Models.SetContentTemplateActionSettings;
 		"setSmsPhoneNumberActionSettings"?: Models.SetSmsPhoneNumberActionSettings;
+		"setWhatsAppIntegrationActionSettings"?: Models.SetWhatsAppIntegrationActionSettings;
 	}
 	
 	export interface DigitalCondition { 
@@ -36109,6 +36227,7 @@ declare namespace Models {
 		"answerOptions"?: Array<Models.AnswerOption>;
 		"multipleSelectOptionQuestions"?: Array<Models.EvaluationQuestion>;
 		"defaultAnswer"?: Models.DefaultAnswer;
+		"automatedScoringFocus"?: string;
 		"isKill"?: boolean;
 		"isCritical"?: boolean;
 	}
@@ -38461,6 +38580,7 @@ declare namespace Models {
 		"selfServed"?: boolean;
 		"sessionDnis"?: string;
 		"sessionId"?: string;
+		"skillExpressionId"?: string;
 		"startingLanguage"?: string;
 		"stationId"?: string;
 		"teamId"?: string;
@@ -39136,6 +39256,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -39176,6 +39297,8 @@ declare namespace Models {
 		"dateStart"?: string;
 		"dateScheduleStart"?: string;
 		"activityCode"?: string;
+		"activityColor"?: string;
+		"activityName"?: string;
 		"points"?: number;
 	}
 	
@@ -39296,6 +39419,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"endpointCompression"?: boolean;
 		"selfUri"?: string;
 	}
@@ -40413,6 +40537,10 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface Icon { 
+		"url"?: string;
+	}
+	
 	export interface IdentifierClaimRequest { 
 		"operation": string;
 		"identifier": Models.ContactIdentifier;
@@ -40436,6 +40564,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -40461,6 +40590,7 @@ declare namespace Models {
 	
 	export interface IdentityResolutionAutomergeConfig { 
 		"authenticatedWebMessaging"?: boolean;
+		"webTracking"?: boolean;
 	}
 	
 	export interface IdentityResolutionExternalSource { 
@@ -42138,10 +42268,10 @@ declare namespace Models {
 		"displayName": string;
 		"version"?: number;
 		"description"?: string;
-		"color": string;
+		"color"?: string;
 		"shouldDisplayToAgent"?: boolean;
-		"context": Models.RequestContext;
-		"journey": Models.RequestJourney;
+		"context"?: Models.RequestContext;
+		"journey"?: Models.RequestJourney;
 		"externalSegment"?: Models.RequestExternalSegment;
 		"assignmentExpirationDays"?: number;
 	}
@@ -44021,6 +44151,7 @@ declare namespace Models {
 		"text"?: string;
 		"fileName"?: string;
 		"url"?: string;
+		"usedForGeneration"?: boolean;
 	}
 	
 	export interface KnowledgeSearchClientApplication { 
@@ -44322,6 +44453,7 @@ declare namespace Models {
 	export interface LastAttemptByColumnConditionSettings { 
 		"emailColumnName"?: string;
 		"smsColumnName"?: string;
+		"whatsAppColumnName"?: string;
 		"operator": string;
 		"value": string;
 	}
@@ -44337,11 +44469,14 @@ declare namespace Models {
 		"emailWrapupCodes"?: Array<string>;
 		"smsColumnName"?: string;
 		"smsWrapupCodes"?: Array<string>;
+		"whatsAppColumnName"?: string;
+		"whatsAppWrapupCodes"?: Array<string>;
 	}
 	
 	export interface LastResultOverallConditionSettings { 
 		"emailWrapupCodes"?: Array<string>;
 		"smsWrapupCodes"?: Array<string>;
+		"whatsAppWrapupCodes"?: Array<string>;
 	}
 	
 	export interface LauncherButtonSettings { 
@@ -45354,6 +45489,9 @@ declare namespace Models {
 		"title": string;
 	}
 	
+	export interface ListValues { 
+	}
+	
 	export interface ListWrapperAgentWorkPlanField { 
 		"values"?: Array<string>;
 	}
@@ -46172,6 +46310,8 @@ declare namespace Models {
 		"byoSmsIntegrationId"?: string;
 		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 		"engagementSource"?: string;
+		"resumeTime"?: string;
+		"parkTime"?: string;
 	}
 	
 	export interface MessageConversation { 
@@ -47776,6 +47916,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -47801,6 +47942,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -49494,9 +49636,29 @@ declare namespace Models {
 		"messageId"?: string;
 	}
 	
+	export interface Outlier { 
+		"timestamp"?: string;
+		"anomaly"?: string;
+		"normalizedValue"?: number;
+	}
+	
+	export interface OutlierData { 
+		"downloadUrls"?: Array<string>;
+		"downloadResultTemplate"?: Models.OutlierResultTemplate;
+	}
+	
 	export interface OutlierInfo { 
 		"outlier"?: boolean;
 		"score"?: number;
+	}
+	
+	export interface OutlierResultBody { 
+		"planningGroupId"?: string;
+		"outliers"?: Array<Models.Outlier>;
+	}
+	
+	export interface OutlierResultTemplate { 
+		"entities"?: Array<Models.OutlierResultBody>;
 	}
 	
 	export interface OutputValue { 
@@ -50062,7 +50224,7 @@ declare namespace Models {
 	}
 	
 	export interface PerformancePredictionResponse { 
-		"id"?: string;
+		"id": string;
 		"weekDate": string;
 		"scheduleId": string;
 		"downloadUrl"?: string;
@@ -50411,6 +50573,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -50455,7 +50618,7 @@ declare namespace Models {
 	}
 	
 	export interface PlanningGroupReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -50725,6 +50888,16 @@ declare namespace Models {
 	export interface PredictiveRouting { 
 		"respectSkills"?: boolean;
 		"enableConversationScoreBiasing"?: boolean;
+	}
+	
+	export interface PredictiveRoutingCustomKpiAttributionEvent { 
+		"eventId": string;
+		"eventDateTime": string;
+		"externalContactId"?: string;
+		"conversationId"?: string;
+		"agentId"?: string;
+		"kpiId": string;
+		"associatedValue": number;
 	}
 	
 	export interface Predictor { 
@@ -51233,6 +51406,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"autoProvisionUsers"?: boolean;
 		"selfUri"?: string;
 	}
@@ -51572,6 +51746,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationCallEventTopicConversationDivisionMembership>;
 		"recordingState"?: string;
@@ -51788,6 +51963,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationCallbackEventTopicConversationDivisionMembership>;
 	}
@@ -51972,6 +52148,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationChatEventTopicConversationDivisionMembership>;
 	}
@@ -52131,6 +52308,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationCobrowseEventTopicConversationDivisionMembership>;
 	}
@@ -52332,6 +52510,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationEmailEventTopicConversationDivisionMembership>;
 	}
@@ -52598,6 +52777,7 @@ declare namespace Models {
 		"address"?: string;
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"securePause"?: boolean;
 		"inactivityTimeout"?: string;
 		"associatedConversation"?: Models.QueueConversationEventTopicDomainEntityRef;
@@ -53123,6 +53303,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationMessageEventTopicConversationDivisionMembership>;
 	}
@@ -53340,6 +53521,7 @@ declare namespace Models {
 		"otherMediaUris"?: Array<string>;
 		"address"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"inactivityTimeout"?: string;
 		"divisions"?: Array<Models.QueueConversationScreenShareEventTopicConversationDivisionMembership>;
 	}
@@ -53544,6 +53726,7 @@ declare namespace Models {
 		"address"?: string;
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"securePause"?: boolean;
 		"inactivityTimeout"?: string;
 		"associatedConversation"?: Models.QueueConversationSocialExpressionEventTopicDomainEntityRef;
@@ -54115,6 +54298,7 @@ declare namespace Models {
 		"address"?: string;
 		"externalTag"?: string;
 		"utilizationLabelId"?: string;
+		"accessAttributes"?: Array<string>;
 		"securePause"?: boolean;
 		"inactivityTimeout"?: string;
 		"associatedConversation"?: Models.QueueConversationVideoEventTopicDomainEntityRef;
@@ -55134,6 +55318,8 @@ declare namespace Models {
 		"integrationId"?: string;
 		"includeRecordingsWithSensitiveData"?: boolean;
 		"includeScreenRecordings"?: boolean;
+		"includePolicyBasedRecordings"?: boolean;
+		"includeSnippetRecordings"?: boolean;
 		"clearExport"?: boolean;
 		"conversationQuery"?: Models.AsyncConversationQuery;
 		"agedConversationInterval"?: string;
@@ -55631,6 +55817,7 @@ declare namespace Models {
 	
 	export interface ReportingTurnIntent { 
 		"name"?: string;
+		"id"?: string;
 		"confidence"?: number;
 		"slots"?: Array<Models.ReportingTurnIntentSlot>;
 	}
@@ -56505,6 +56692,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -56543,6 +56731,7 @@ declare namespace Models {
 		"providerName"?: string;
 		"displayOnLogin"?: boolean;
 		"metadataURL"?: string;
+		"forceAuthn"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -57574,7 +57763,7 @@ declare namespace Models {
 	}
 	
 	export interface ServiceGoalTemplateReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -57717,6 +57906,7 @@ declare namespace Models {
 		"computed"?: Models.ComputedData;
 		"historical"?: Models.HistoricalData;
 		"modelMetaData"?: Models.ModelMetaData;
+		"outliers"?: Models.OutlierData;
 	}
 	
 	export interface SessionSegmentAssignment { 
@@ -57734,6 +57924,7 @@ declare namespace Models {
 	export interface SetContentTemplateActionSettings { 
 		"smsContentTemplateId": string;
 		"emailContentTemplateId": string;
+		"whatsAppContentTemplateId": string;
 	}
 	
 	export interface SetRecordingState { 
@@ -57758,6 +57949,7 @@ declare namespace Models {
 	}
 	
 	export interface SetWhatsAppIntegrationActionSettings { 
+		"whatsAppIntegrationId": string;
 	}
 	
 	export interface SetWrapperAssignmentEffectiveDateRange { 
@@ -57862,7 +58054,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeAddTradeJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -57872,7 +58064,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeBulkUpdateTradeStateBuJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -57882,7 +58074,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeEvaluateTradesBuJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -57934,7 +58126,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeMatchTradeJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -57968,7 +58160,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeQueryAgentTradesJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -57978,7 +58170,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeQueryTradesBuJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -57988,7 +58180,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeQueryWeekSummariesBuJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -58039,7 +58231,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeSearchUnmatchedTradesBuJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -58088,7 +58280,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeUpdateTradeJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -58098,7 +58290,7 @@ declare namespace Models {
 	}
 	
 	export interface ShiftTradeUpdateTradeStateJobResponse { 
-		"id"?: string;
+		"id": string;
 		"status": string;
 		"type": string;
 		"downloadUrl"?: string;
@@ -58114,7 +58306,7 @@ declare namespace Models {
 	}
 	
 	export interface ShortTermForecastReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 		"weekDate": string;
 		"description"?: string;
@@ -58683,6 +58875,9 @@ declare namespace Models {
 		"contentModeration"?: Models.ContentModeration;
 	}
 	
+	export interface SocialMediaEngagement { 
+	}
+	
 	export interface SocialMediaMessageData { 
 		"id"?: string;
 		"name"?: string;
@@ -58967,12 +59162,12 @@ declare namespace Models {
 	}
 	
 	export interface StaffingGroupReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
 	export interface StaffingGroupResponse { 
-		"id"?: string;
+		"id": string;
 		"name": string;
 		"users"?: Array<Models.UserReference>;
 		"managementUnit"?: Models.ManagementUnitReference;
@@ -60703,6 +60898,10 @@ declare namespace Models {
 		"textAlign"?: string;
 	}
 	
+	export interface ThirdPartySuggestion { 
+		"text"?: string;
+	}
+	
 	export interface Ticker { 
 		"symbol": string;
 		"exchange": string;
@@ -60775,7 +60974,7 @@ declare namespace Models {
 	}
 	
 	export interface TimeOffLimit { 
-		"id"?: string;
+		"id": string;
 		"granularity"?: string;
 		"defaultLimitMinutes"?: number;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
@@ -60793,7 +60992,7 @@ declare namespace Models {
 	}
 	
 	export interface TimeOffLimitReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -60809,7 +61008,7 @@ declare namespace Models {
 	}
 	
 	export interface TimeOffPlan { 
-		"id"?: string;
+		"id": string;
 		"name"?: string;
 		"activityCodeIds"?: Array<string>;
 		"timeOffLimits"?: Array<Models.TimeOffLimitReference>;
@@ -60899,7 +61098,7 @@ declare namespace Models {
 	}
 	
 	export interface TimeOffRequestResponse { 
-		"id"?: string;
+		"id": string;
 		"user"?: Models.UserReference;
 		"isFullDayRequest"?: boolean;
 		"markedAsRead"?: boolean;
@@ -63961,7 +64160,7 @@ declare namespace Models {
 	}
 	
 	export interface UsersRulesLockedCriteriaSettingsGroup { 
-		"operator": string;
+		"operators": Array<string>;
 		"container": string;
 		"maxIdCount"?: number;
 	}
@@ -64728,7 +64927,28 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface V3SourceDetailedWithErrorResponse { 
+	export interface V3SourceExpandableListResponse { 
+		"id"?: string;
+		"name"?: string;
+		"connectionId"?: string;
+		"type"?: string;
+		"triggerType"?: string;
+		"status"?: string;
+		"createdBy"?: Models.UserReference;
+		"modifiedBy"?: Models.UserReference;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"lastSync"?: Models.V3SourceLastSynchronization;
+		"connection"?: Models.ConnectionResponse;
+		"error"?: Models.ErrorBody;
+		"selfUri"?: string;
+	}
+	
+	export interface V3SourceExpandableListing { 
+		"entities"?: Array<Models.V3SourceExpandableListResponse>;
+	}
+	
+	export interface V3SourceExpandableResponse { 
 		"id"?: string;
 		"name"?: string;
 		"connectionId"?: string;
@@ -64743,6 +64963,7 @@ declare namespace Models {
 		"scheduleSettings"?: Models.V3SourceScheduleSettings;
 		"filters"?: Models.V3SourceFilter;
 		"filterDetails"?: Models.V3SourceFilterDetails;
+		"connection"?: Models.ConnectionResponse;
 		"error"?: Models.ErrorBody;
 		"selfUri"?: string;
 	}
@@ -64796,26 +65017,6 @@ declare namespace Models {
 		"name": string;
 		"triggerType": string;
 		"scheduleSettings"?: Models.V3SourceScheduleSettings;
-	}
-	
-	export interface V3SourceWithErrorListing { 
-		"entities"?: Array<Models.V3SourceWithErrorResponse>;
-	}
-	
-	export interface V3SourceWithErrorResponse { 
-		"id"?: string;
-		"name"?: string;
-		"connectionId"?: string;
-		"type"?: string;
-		"triggerType"?: string;
-		"status"?: string;
-		"createdBy"?: Models.UserReference;
-		"modifiedBy"?: Models.UserReference;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"lastSync"?: Models.V3SourceLastSynchronization;
-		"error"?: Models.ErrorBody;
-		"selfUri"?: string;
 	}
 	
 	export interface V3StartManualSyncRequest { 
@@ -65001,11 +65202,12 @@ declare namespace Models {
 		"type": string;
 		"scope": string;
 		"description"?: string;
-		"validation"?: Models.VariableValidation;
+		"validation"?: object;
+		"listValues"?: object;
+		"listVariables"?: Array<Models.Variable>;
 	}
 	
 	export interface VariableValidation { 
-		"additionalProperties"?: { [key: string]: object; };
 	}
 	
 	export interface VerificationResult { 
@@ -65891,6 +66093,7 @@ declare namespace Models {
 		"referrerUrl"?: string;
 		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
 		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+		"externalId"?: string;
 		"createdDate": string;
 	}
 	
@@ -65911,6 +66114,7 @@ declare namespace Models {
 		"attributes": { [key: string]: Models.CustomEventAttribute; };
 		"traits": { [key: string]: Models.CustomEventAttribute; };
 		"authenticated": boolean;
+		"externalId"?: string;
 		"createdDate": string;
 	}
 	
@@ -66044,7 +66248,7 @@ declare namespace Models {
 	}
 	
 	export interface WeekSchedule { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 		"weekDate"?: string;
 		"description"?: string;
@@ -66065,7 +66269,7 @@ declare namespace Models {
 	}
 	
 	export interface WeekScheduleListItemResponse { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 		"weekDate"?: string;
 		"description"?: string;
@@ -66080,7 +66284,7 @@ declare namespace Models {
 	}
 	
 	export interface WeekScheduleReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 		"weekDate"?: string;
 	}
@@ -66161,27 +66365,33 @@ declare namespace Models {
 		"status"?: string;
 	}
 	
-	export interface WfmActivityPlanJobCompleteTopicActivityPlanJobException { 
-		"exceptionType"?: string;
-		"occurrences"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>;
-	}
-	
-	export interface WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification { 
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification { 
 		"id"?: string;
 		"type"?: string;
 		"activityPlan"?: Models.WfmActivityPlanJobCompleteTopicActivityPlanReference;
 		"status"?: string;
 		"exceptions"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanJobException>;
 		"error"?: Models.WfmActivityPlanJobCompleteTopicErrorBody;
-		"occurrence"?: Models.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanJobException { 
+		"exceptionType"?: string;
+		"occurrences"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>;
 	}
 	
 	export interface WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference { 
 		"id"?: string;
+		"sessions"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanSessionReference>;
 	}
 	
 	export interface WfmActivityPlanJobCompleteTopicActivityPlanReference { 
 		"id"?: string;
+		"occurrences"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanSessionReference { 
+		"id"?: string;
+		"users"?: Array<string>;
 	}
 	
 	export interface WfmActivityPlanJobCompleteTopicErrorBody { 
@@ -66191,6 +66401,15 @@ declare namespace Models {
 		"messageParams"?: { [key: string]: string; };
 	}
 	
+	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotification { 
+		"id"?: string;
+		"type"?: string;
+		"activityPlan"?: Models.WfmActivityPlanRunJobCompleteTopicActivityPlanReference;
+		"status"?: string;
+		"exceptions"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanJobException>;
+		"error"?: Models.WfmActivityPlanRunJobCompleteTopicErrorBody;
+	}
+	
 	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanJobException { 
 		"exceptionType"?: string;
 		"occurrences"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference>;
@@ -66198,19 +66417,17 @@ declare namespace Models {
 	
 	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference { 
 		"id"?: string;
+		"sessions"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference>;
 	}
 	
 	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanReference { 
 		"id"?: string;
+		"occurrences"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference>;
 	}
 	
-	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification { 
+	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference { 
 		"id"?: string;
-		"type"?: string;
-		"activityPlan"?: Models.WfmActivityPlanRunJobCompleteTopicActivityPlanReference;
-		"status"?: string;
-		"exceptions"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanJobException>;
-		"error"?: Models.WfmActivityPlanRunJobCompleteTopicErrorBody;
+		"users"?: Array<string>;
 	}
 	
 	export interface WfmActivityPlanRunJobCompleteTopicErrorBody { 
@@ -66263,7 +66480,7 @@ declare namespace Models {
 	}
 	
 	export interface WfmAgent { 
-		"id"?: string;
+		"id": string;
 		"user"?: Models.UserReference;
 		"workPlan"?: Models.WorkPlanReference;
 		"workPlanRotation"?: Models.WorkPlanRotationReference;
@@ -68057,14 +68274,14 @@ declare namespace Models {
 	}
 	
 	export interface WorkPlanBidGroupResponse { 
-		"id"?: string;
+		"id": string;
 		"workPlanBidGroup"?: Models.WorkPlanBidGroup;
 		"metadata"?: Models.WorkPlanBidMetadata;
 		"selfUri"?: string;
 	}
 	
 	export interface WorkPlanBidGroupSummary { 
-		"id"?: string;
+		"id": string;
 		"name": string;
 		"managementUnit": Models.ManagementUnitReference;
 		"agentCount": number;
@@ -68228,7 +68445,7 @@ declare namespace Models {
 	}
 	
 	export interface WorkPlanRotationReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -69522,6 +69739,7 @@ declare namespace Models {
 		"filters": Array<Models.WorkitemFilter>;
 		"attributes"?: Array<string>;
 		"after"?: string;
+		"expands"?: string;
 		"sort"?: Models.WorktypeQuerySort;
 	}
 	

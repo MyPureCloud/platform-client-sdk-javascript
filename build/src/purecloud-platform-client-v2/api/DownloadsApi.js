@@ -5,7 +5,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**

@@ -503,6 +503,7 @@ docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteUsersCustomattributesSchema-example.txt
 docs/deleteUsersRule-example.txt
+docs/deleteUsersStationsMeAssociatedstation-example.txt
 docs/deleteVoicemailMessage-example.txt
 docs/deleteVoicemailMessages-example.txt
 docs/deleteWebchatDeployment-example.txt
@@ -786,6 +787,7 @@ docs/getContentmanagementWorkspaceTagvalue-example.txt
 docs/getContentmanagementWorkspaceTagvalues-example.txt
 docs/getContentmanagementWorkspaces-example.txt
 docs/getConversation-example.txt
+docs/getConversationAssistantCopilotcontext-example.txt
 docs/getConversationCommunicationAgentchecklist-example.txt
 docs/getConversationCommunicationAgentchecklistJob-example.txt
 docs/getConversationCommunicationAgentchecklists-example.txt
@@ -1898,6 +1900,7 @@ docs/getUsersRules-example.txt
 docs/getUsersRulesSetting-example.txt
 docs/getUsersSearch-example.txt
 docs/getUsersSearch-example.txt
+docs/getUsersStationsMe-example.txt
 docs/getVoicemailGroupMailbox-example.txt
 docs/getVoicemailGroupMessages-example.txt
 docs/getVoicemailGroupPolicy-example.txt
@@ -2138,6 +2141,7 @@ docs/patchConversationsMessage-example.txt
 docs/patchConversationsMessageParticipant-example.txt
 docs/patchConversationsMessageParticipantAttributes-example.txt
 docs/patchConversationsMessageParticipantCommunication-example.txt
+docs/patchConversationsMessageParticipantParkingstate-example.txt
 docs/patchConversationsMessagingIntegrationsAppleIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
@@ -2465,6 +2469,7 @@ docs/postCasemanagementCaseTerminateJobs-example.txt
 docs/postCasemanagementCaseplanPublish-example.txt
 docs/postCasemanagementCaseplanVersions-example.txt
 docs/postCasemanagementCaseplans-example.txt
+docs/postCasemanagementCaseplansQuery-example.txt
 docs/postCasemanagementCases-example.txt
 docs/postCasemanagementCasesAssociationsQuery-example.txt
 docs/postCertificateDetails-example.txt
@@ -2603,6 +2608,7 @@ docs/postEmployeeengagementRecognitions-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt
 docs/postEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/postEventsConversations-example.txt
+docs/postEventsRoutingCustomkpiattributions-example.txt
 docs/postEventsUsersPresence-example.txt
 docs/postEventsUsersRoutingstatus-example.txt
 docs/postExternalcontactsBulkContacts-example.txt
@@ -2661,6 +2667,7 @@ docs/postFlowsActionsPublish-example.txt
 docs/postFlowsActionsRevert-example.txt
 docs/postFlowsActionsUnlock-example.txt
 docs/postFlowsDatatableExportJobs-example.txt
+docs/postFlowsDatatableImportCsvJobs-example.txt
 docs/postFlowsDatatableImportJobs-example.txt
 docs/postFlowsDatatableRows-example.txt
 docs/postFlowsDatatables-example.txt
@@ -3462,6 +3469,7 @@ docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/putUsersCustomattributesSchema-example.txt
 docs/putUsersPresencesBulk-example.txt
+docs/putUsersStationsMeAssociatedstationStationId-example.txt
 docs/putVoicemailMessage-example.txt
 docs/putVoicemailPolicy-example.txt
 docs/putVoicemailUserpolicy-example.txt

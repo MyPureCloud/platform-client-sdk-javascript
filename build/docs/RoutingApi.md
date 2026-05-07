@@ -4423,7 +4423,9 @@ GET /api/v2/routing/skills/{skillId}
 
 Get Routing Skill
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* routing:skill:view
 
 ### Example Usage
 
@@ -4722,7 +4724,9 @@ GET /api/v2/routing/skills
 
 Get the list of routing skills.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* routing:skill:view
 
 ### Example Usage
 
@@ -10279,4 +10283,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_

@@ -977,6 +977,8 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let connectionId = "connectionId_example"; // String | Connection ID
 let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "200", // String | Number of results per page. Minimum: 25, Maximum: 500.
   'parentId': "parentId_example", // String | The id of the parent option whose children to be listed.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1000,6 +1002,8 @@ apiInstance.getKnowledgeConnectionOptions(connectionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **connectionId** | **String** | Connection ID |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of results per page. Minimum: 25, Maximum: 500. | [optional] [default to 200] |
  **parentId** | **String** | The id of the parent option whose children to be listed. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -3306,7 +3310,7 @@ apiInstance.getKnowledgeSettings(opts)
 
 ## getKnowledgeSource
 
-> V3SourceDetailedWithErrorResponse getKnowledgeSource(sourceId, opts)
+> V3SourceExpandableResponse getKnowledgeSource(sourceId, opts)
 
 
 GET /api/v2/knowledge/sources/{sourceId}
@@ -3355,12 +3359,12 @@ apiInstance.getKnowledgeSource(sourceId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Source ID |  |
- **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails |
+ **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails, connection |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**V3SourceDetailedWithErrorResponse**
+**V3SourceExpandableResponse**
 
 
 ## getKnowledgeSourceSynchronization
@@ -3487,7 +3491,7 @@ apiInstance.getKnowledgeSourceSynchronizations(sourceId, opts)
 
 ## getKnowledgeSources
 
-> V3SourceWithErrorListing getKnowledgeSources(opts)
+> V3SourceExpandableListing getKnowledgeSources(opts)
 
 
 GET /api/v2/knowledge/sources
@@ -3534,12 +3538,12 @@ apiInstance.getKnowledgeSources(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync |
+ **expand** | **[String]** | Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, connection |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**V3SourceWithErrorListing**
+**V3SourceExpandableListing**
 
 
 ## getKnowledgeSourcesSynchronizations
@@ -7328,4 +7332,4 @@ apiInstance.putKnowledgeSource(sourceId, body, opts)
 **V3SourceDetailedResponse**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_

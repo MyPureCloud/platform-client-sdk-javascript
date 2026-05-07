@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -496,6 +496,8 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} connectionId Connection ID
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of results per page. Minimum: 25, Maximum: 500. (default to 200)
 	 * @param {String} opts.parentId The id of the parent option whose children to be listed.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
@@ -511,7 +513,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/connections/{connectionId}/options', 
 			'GET', 
 			{ 'connectionId': connectionId },
-			{ 'parentId': opts['parentId'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'parentId': opts['parentId'] },
 			{  },
 			{  },
 			null, 

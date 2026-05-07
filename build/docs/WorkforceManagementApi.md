@@ -2780,7 +2780,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activ
 
 ## getWorkforcemanagementBusinessunitActivityplanRunsJob
 
-> ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId, opts)
+> ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}
@@ -2836,7 +2836,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId
 
 ### Return type
 
-**ActivityPlanRunJobResponse**
+**ActivityPlanJobResponse**
 
 
 ## getWorkforcemanagementBusinessunitActivityplans
@@ -3723,7 +3723,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -6236,7 +6236,7 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
+ **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
  **divisionId** | **String** | If specified, the list of business units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -8252,7 +8252,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** | Deprecated, paging is not supported | [optional]  |
  **pageNumber** | **Number** | Deprecated, paging is not supported | [optional]  |
  **expand** | **String** | Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -12514,7 +12514,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, bod
 
 ## postWorkforcemanagementBusinessunitActivityplanRunsJobs
 
-> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId, opts)
+> ActivityPlanRunJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs
@@ -12570,7 +12570,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnit
 
 ### Return type
 
-**ActivityPlanJobResponse**
+**ActivityPlanRunJobResponse**
 
 
 ## postWorkforcemanagementBusinessunitActivityplans
@@ -18348,4 +18348,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_

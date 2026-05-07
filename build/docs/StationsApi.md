@@ -21,7 +21,9 @@ DELETE /api/v2/stations/{stationId}/associateduser
 
 Unassigns the user assigned to this station
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* telephony:station:disassociate
 
 ### Example Usage
 
@@ -191,4 +193,4 @@ apiInstance.getStations(opts)
 **StationEntityListing**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_

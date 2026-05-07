@@ -297,6 +297,10 @@
       "class": "DialerCampaignProgressEventCampaignProgress"
     },
     {
+      "topic": "v2.outbound.campaigns.{id}.skillstats",
+      "class": "DialerCampaignSkillCombinationStatsEventCampaignSkillCombinationStats"
+    },
+    {
       "topic": "v2.outbound.campaigns.{id}.stats",
       "class": "StatEventCampaignTopicStatsNotification"
     },
@@ -838,11 +842,11 @@
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.jobs",
-      "class": "WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification"
+      "class": "WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.runs.jobs",
-      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification"
+      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.adherence.explanations",

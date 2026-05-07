@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getConversation**](ConversationsApi#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationAssistantCopilotcontext**](ConversationsApi#getConversationAssistantCopilotcontext) | **GET** /api/v2/conversations/{conversationId}/assistant/copilotcontext | Get copilot context values for a conversation.
 [**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Get checklist info for a single checklist.
 [**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId} | Get inference job status
 [**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists | Get information of all checklists associated with a conversation.
@@ -187,6 +188,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessageParticipant**](ConversationsApi#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsMessageParticipantCommunication**](ConversationsApi#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsMessageParticipantParkingstate**](ConversationsApi#patchConversationsMessageParticipantParkingstate) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate | Update conversation by setting its parking state
 [**patchConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsAppleIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Update an Apple messaging integration
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
@@ -1954,6 +1956,65 @@ apiInstance.getConversation(conversationId, opts)
 **Conversation**
 
 
+## getConversationAssistantCopilotcontext
+
+> CopilotContextValues getConversationAssistantCopilotcontext(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/assistant/copilotcontext
+
+Get copilot context values for a conversation.
+
+getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* conversation:assistantCopilotContext:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationAssistantCopilotcontext(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationAssistantCopilotcontext success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationAssistantCopilotcontext');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CopilotContextValues**
+
+
 ## getConversationCommunicationAgentchecklist
 
 > AgentChecklistResponse getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, opts)
@@ -2783,7 +2844,7 @@ apiInstance.getConversationSuggestions(conversationId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer |
+ **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer, ThirdPartySuggestion |
  **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
@@ -11069,6 +11130,67 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
 ### Return type
 
 **Object**
+
+
+## patchConversationsMessageParticipantParkingstate
+
+> void patchConversationsMessageParticipantParkingstate(conversationId, participantId, body, opts)
+
+
+PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate
+
+Update conversation by setting its parking state
+
+Requires ANY permissions:
+
+* conversation:message:park
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Parking update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsMessageParticipantParkingstate(conversationId, participantId, body, opts)
+  .then(() => {
+    console.log('patchConversationsMessageParticipantParkingstate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessageParticipantParkingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Parking update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
 
 
 ## patchConversationsMessagingIntegrationsAppleIntegrationId
@@ -19604,4 +19726,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_

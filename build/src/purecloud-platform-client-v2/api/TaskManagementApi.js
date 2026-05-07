@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -2432,7 +2432,7 @@ class TaskManagementApi {
 
 	/**
 	 * Query for worktypes
-	 * 
+	 * Optional request field expands may include schema to populate the name on each worktypes schema reference.
 	 * @param {Object} body QueryPostRequest
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers

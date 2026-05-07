@@ -5,7 +5,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**

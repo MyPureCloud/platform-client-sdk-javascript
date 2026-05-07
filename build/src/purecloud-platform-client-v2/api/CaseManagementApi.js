@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -1154,6 +1154,37 @@ class CaseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/caseplans', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query for caseplans
+	 * 
+	 * @param {Object} body CaseplanQueryRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCaseplansQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseplansQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/query', 
 			'POST', 
 			{  },
 			{  },

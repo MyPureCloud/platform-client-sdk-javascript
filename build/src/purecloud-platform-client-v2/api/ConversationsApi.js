@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 251.2.0
+	 * @version 252.0.0
 	 */
 
 	/**
@@ -880,6 +880,37 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get copilot context values for a conversation.
+	 * 
+	 * @param {String} conversationId Conversation ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationAssistantCopilotcontext(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getConversationAssistantCopilotcontext';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/assistant/copilotcontext', 
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
@@ -6036,6 +6067,46 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update conversation by setting its parking state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Parking update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchConversationsMessageParticipantParkingstate(conversationId, participantId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantParkingstate';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null || participantId === '') {
+			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipantParkingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessageParticipantParkingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
 			{  },
 			{  },
