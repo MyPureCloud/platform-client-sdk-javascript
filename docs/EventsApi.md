@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**postEventsConversations**](EventsApi#postEventsConversations) | **POST** /api/v2/events/conversations | Publish Conversation Batch Events
+[**postEventsRoutingCustomkpiattributions**](EventsApi#postEventsRoutingCustomkpiattributions) | **POST** /api/v2/events/routing/customkpiattributions | Publish Predictive Routing Custom Kpi Attribution Batch Events
 [**postEventsUsersPresence**](EventsApi#postEventsUsersPresence) | **POST** /api/v2/events/users/presence | Publish User Presence Status Batch Events
 [**postEventsUsersRoutingstatus**](EventsApi#postEventsUsersRoutingstatus) | **POST** /api/v2/events/users/routingstatus | Publish Agent Routing Status Batch Events
 
@@ -52,6 +53,65 @@ apiInstance.postEventsConversations(body, opts)
   })
   .catch((err) => {
     console.log('There was a failure calling postEventsConversations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BatchEventResponse**
+
+
+## postEventsRoutingCustomkpiattributions
+
+> BatchEventResponse postEventsRoutingCustomkpiattributions(body, opts)
+
+
+POST /api/v2/events/routing/customkpiattributions
+
+Publish Predictive Routing Custom Kpi Attribution Batch Events
+
+postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:customKpiAttribution:inject
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.EventsApi();
+
+let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postEventsRoutingCustomkpiattributions(body, opts)
+  .then((data) => {
+    console.log(`postEventsRoutingCustomkpiattributions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postEventsRoutingCustomkpiattributions');
     console.error(err);
   });
 ```
@@ -183,4 +243,4 @@ apiInstance.postEventsUsersRoutingstatus(body, opts)
 **BatchEventResponse**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_

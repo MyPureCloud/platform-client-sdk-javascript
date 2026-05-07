@@ -4453,6 +4453,8 @@ POST /api/v2/taskmanagement/worktypes/query
 
 Query for worktypes
 
+Optional request field expands may include schema to populate the name on each worktypes schema reference.
+
 Requires ALL permissions:
 
 * workitems:worktype:view
@@ -4560,4 +4562,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body, opts)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@251.2.0_
+_purecloud-platform-client-v2@252.0.0_
