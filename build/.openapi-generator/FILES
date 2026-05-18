@@ -3483,6 +3483,7 @@ docs/putWorkforcemanagementAgentIntegrationsHris-example.txt
 docs/putWorkforcemanagementBusinessunitTimeofflimitValues-example.txt
 docs/putWorkforcemanagementManagementunitTimeofflimitValues-example.txt
 index.d.ts
+package-lock.json
 package.json
 rollup-amd.config.js
 rollup-cjs-for-browserify.config.js

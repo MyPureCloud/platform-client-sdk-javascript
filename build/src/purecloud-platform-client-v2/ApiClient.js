@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 252.0.0
+ * @version 252.1.0
  */
 class ApiClient {
 	/**
@@ -680,9 +680,12 @@ class ApiClient {
 				// Get access token from response
 				var access_token = response.data.access_token;
 
-				this.setAccessToken(access_token);
-				this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
-				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+				let optsSettings = { accessToken: access_token };
+				if (response.data['expires_in'] !== null && response.data['expires_in'] !== undefined) {
+					optsSettings.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
+					optsSettings.tokenExpiryTimeString = new Date(optsSettings.tokenExpiryTime).toUTCString();
+				}
+				this._saveSettings(optsSettings);
 
 				// Return auth data
 				resolve(this.authData);
@@ -806,9 +809,9 @@ class ApiClient {
         return new Promise((resolve, reject) => {
             // Abort if org and provider are not set together
             if (opts.org && !opts.provider) {
-                reject(new Error('opts.provider must be set if opts.org is set'));
+                return reject(new Error('opts.provider must be set if opts.org is set'));
             } else if (opts.provider && !opts.org) {
-            	reject(new Error('opts.org must be set if opts.provider is set'));
+            	return reject(new Error('opts.org must be set if opts.provider is set'));
             }
 
             // Abort on auth error

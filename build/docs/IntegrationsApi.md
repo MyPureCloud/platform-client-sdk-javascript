@@ -5699,4 +5699,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@252.0.0_
+_purecloud-platform-client-v2@252.1.0_
