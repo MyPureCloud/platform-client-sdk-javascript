@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**
@@ -1194,6 +1194,47 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
 			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'documentId': this.apiClient.buildCollectionParam(opts['documentId'], 'multi'),'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'includeSubcategories': opts['includeSubcategories'],'includeDrafts': opts['includeDrafts'],'labelIds': this.apiClient.buildCollectionParam(opts['labelIds'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'externalIds': this.apiClient.buildCollectionParam(opts['externalIds'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a list of feedback records given on documents in a knowledge base
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Boolean} opts.onlyCommented If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.
+	 * @param {String} opts.documentVersionId Document version ID to filter by. Supported only if onlyCommented=true is set.
+	 * @param {String} opts.documentVariationId Document variation ID to filter by. Supported only if onlyCommented=true is set.
+	 * @param {Object} opts.appType Application type to filter by. Supported only if onlyCommented=true is set.
+	 * @param {Object} opts.queryType Query type to filter by. Supported only if onlyCommented=true is set.
+	 * @param {String} opts.userId The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
+	 * @param {String} opts.queueId Queue ID to filter by. Supported only if onlyCommented=true is set.
+	 * @param {Object} opts.state State to filter by. Supported only if onlyCommented=true is set. Default: Final
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getKnowledgeKnowledgebaseDocumentsFeedback(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentsFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'onlyCommented': opts['onlyCommented'],'documentVersionId': opts['documentVersionId'],'documentVariationId': opts['documentVariationId'],'appType': opts['appType'],'queryType': opts['queryType'],'userId': opts['userId'],'queueId': opts['queueId'],'state': opts['state'] },
 			{  },
 			{  },
 			null, 

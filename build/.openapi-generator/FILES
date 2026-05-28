@@ -432,6 +432,8 @@ docs/deleteRoutingQueueUser-example.txt
 docs/deleteRoutingQueueWrapupcode-example.txt
 docs/deleteRoutingSettings-example.txt
 docs/deleteRoutingSkill-example.txt
+docs/deleteRoutingSkillexpression-example.txt
+docs/deleteRoutingSkillexpressions-example.txt
 docs/deleteRoutingSkillgroup-example.txt
 docs/deleteRoutingSmsAddress-example.txt
 docs/deleteRoutingSmsPhonenumber-example.txt
@@ -441,7 +443,6 @@ docs/deleteRoutingUserUtilization-example.txt
 docs/deleteRoutingUserUtilization-example.txt
 docs/deleteRoutingUtilization-example.txt
 docs/deleteRoutingUtilizationLabel-example.txt
-docs/deleteRoutingUtilizationTag-example.txt
 docs/deleteRoutingWrapupcode-example.txt
 docs/deleteScimUser-example.txt
 docs/deleteScimV2User-example.txt
@@ -1239,6 +1240,8 @@ docs/getJourneyViews-example.txt
 docs/getJourneyViewsDataDetails-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
 docs/getJourneyViewsEventdefinitions-example.txt
+docs/getJourneyViewsEventdefinitionsExternal-example.txt
+docs/getJourneyViewsEventdefinitionsExternalChanges-example.txt
 docs/getJourneyViewsJobs-example.txt
 docs/getJourneyViewsJobsMe-example.txt
 docs/getJourneyViewsSchedules-example.txt
@@ -1262,6 +1265,7 @@ docs/getKnowledgeKnowledgebaseDocumentVersionVariation-example.txt
 docs/getKnowledgeKnowledgebaseDocumentVersionVariations-example.txt
 docs/getKnowledgeKnowledgebaseDocumentVersions-example.txt
 docs/getKnowledgeKnowledgebaseDocuments-example.txt
+docs/getKnowledgeKnowledgebaseDocumentsFeedback-example.txt
 docs/getKnowledgeKnowledgebaseExportJob-example.txt
 docs/getKnowledgeKnowledgebaseImportJob-example.txt
 docs/getKnowledgeKnowledgebaseLabel-example.txt
@@ -1580,6 +1584,9 @@ docs/getRoutingSettings-example.txt
 docs/getRoutingSettingsContactcenter-example.txt
 docs/getRoutingSettingsTranscription-example.txt
 docs/getRoutingSkill-example.txt
+docs/getRoutingSkillexpression-example.txt
+docs/getRoutingSkillexpressions-example.txt
+docs/getRoutingSkillexpressionsQueueQueueId-example.txt
 docs/getRoutingSkillgroup-example.txt
 docs/getRoutingSkillgroupMembers-example.txt
 docs/getRoutingSkillgroupMembersDivisions-example.txt
@@ -1599,9 +1606,6 @@ docs/getRoutingUtilization-example.txt
 docs/getRoutingUtilizationLabel-example.txt
 docs/getRoutingUtilizationLabelAgents-example.txt
 docs/getRoutingUtilizationLabels-example.txt
-docs/getRoutingUtilizationTag-example.txt
-docs/getRoutingUtilizationTagAgents-example.txt
-docs/getRoutingUtilizationTags-example.txt
 docs/getRoutingWrapupcode-example.txt
 docs/getRoutingWrapupcodes-example.txt
 docs/getRoutingWrapupcodesDivisionview-example.txt
@@ -1976,6 +1980,7 @@ docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSess
 docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId-example.txt
 docs/getWorkforcemanagementBusinessunitManagementunits-example.txt
 docs/getWorkforcemanagementBusinessunitMinimumstaffingSettings-example.txt
+docs/getWorkforcemanagementBusinessunitOpportunity-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroups-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulerSettings-example.txt
@@ -2294,6 +2299,7 @@ docs/patchWorkforcemanagementBusinessunitActivityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitCapacityplan-example.txt
 docs/patchWorkforcemanagementBusinessunitMinimumstaffingSettings-example.txt
+docs/patchWorkforcemanagementBusinessunitOpportunity-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulerSettings-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulingRun-example.txt
@@ -2951,6 +2957,7 @@ docs/postRoutingQueueMembers-example.txt
 docs/postRoutingQueueUsers-example.txt
 docs/postRoutingQueueWrapupcodes-example.txt
 docs/postRoutingQueues-example.txt
+docs/postRoutingSkillexpressionsValidate-example.txt
 docs/postRoutingSkillgroupMembersDivisions-example.txt
 docs/postRoutingSkillgroups-example.txt
 docs/postRoutingSkills-example.txt
@@ -2959,7 +2966,6 @@ docs/postRoutingSmsPhonenumbers-example.txt
 docs/postRoutingSmsPhonenumbersAlphanumeric-example.txt
 docs/postRoutingSmsPhonenumbersImport-example.txt
 docs/postRoutingUtilizationLabels-example.txt
-docs/postRoutingUtilizationTags-example.txt
 docs/postRoutingWrapupcodes-example.txt
 docs/postScimUsers-example.txt
 docs/postScimV2Users-example.txt
@@ -3033,7 +3039,6 @@ docs/postTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/postTelephonyProvidersEdgesDidpools-example.txt
 docs/postTelephonyProvidersEdgesEdgegroups-example.txt
 docs/postTelephonyProvidersEdgesExtensionpools-example.txt
-docs/postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource-example.txt
 docs/postTelephonyProvidersEdgesPhoneReboot-example.txt
 docs/postTelephonyProvidersEdgesPhonebasesettings-example.txt
 docs/postTelephonyProvidersEdgesPhones-example.txt
@@ -3095,7 +3100,6 @@ docs/postWebmessagingDeploymentPushdevice-example.txt
 docs/postWidgetsDeployments-example.txt
 docs/postWorkforcemanagementAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAdherenceExplanationsQuery-example.txt
-docs/postWorkforcemanagementAdherenceHistorical-example.txt
 docs/postWorkforcemanagementAdherenceHistoricalBulk-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
@@ -3104,6 +3108,9 @@ docs/postWorkforcemanagementAgents-example.txt
 docs/postWorkforcemanagementAgentsIntegrationsHrisQuery-example.txt
 docs/postWorkforcemanagementAgentsMeAdherenceHistoricalJobs-example.txt
 docs/postWorkforcemanagementAgentsMePossibleworkshifts-example.txt
+docs/postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkAdd-example.txt
+docs/postWorkforcemanagementAgentsOpportunitiesEnrollmentsBulkStatusesUpdate-example.txt
+docs/postWorkforcemanagementAgentsOpportunitiesQuery-example.txt
 docs/postWorkforcemanagementAgentschedulesManagementunitsMine-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
 docs/postWorkforcemanagementAlternativeshiftsOffersJobs-example.txt
@@ -3123,6 +3130,14 @@ docs/postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAuto
 docs/postWorkforcemanagementBusinessunitCapacityplans-example.txt
 docs/postWorkforcemanagementBusinessunitCapacityplansBulkRemove-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesBulkAdd-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesBulkPublish-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesBulkRemove-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesBulkStatusesUpdate-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsBulkStatusesUpdate-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesEnrollmentsQuery-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesExternalactivitiesQuery-example.txt
+docs/postWorkforcemanagementBusinessunitOpportunitiesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
 docs/postWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
 docs/postWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs-example.txt
@@ -3320,6 +3335,8 @@ docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
 docs/putJourneyExternaleventsSchema-example.txt
 docs/putJourneyViewSchedules-example.txt
 docs/putJourneyViewVersion-example.txt
+docs/putJourneyViewsEventdefinition-example.txt
+docs/putJourneyViewsEventdefinitionActivate-example.txt
 docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/putKnowledgeSource-example.txt

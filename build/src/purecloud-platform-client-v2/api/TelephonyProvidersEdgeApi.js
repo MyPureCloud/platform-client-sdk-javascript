@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**
@@ -3186,52 +3186,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensionpools', 
 			'POST', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Post media endpoint statistics event.
-	 * 
-	 * @param {String} conversationId Identifier of the conversation
-	 * @param {String} communicationId Identifier of the media session
-	 * @param {String} mediaResourceId Identifier of the media resource of the endpoint
-	 * @param {Object} body MediaStatisticsPostRequest
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null || conversationId === '') {
-			throw 'Missing the required parameter "conversationId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null || communicationId === '') {
-			throw 'Missing the required parameter "communicationId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
-		}
-		// verify the required parameter 'mediaResourceId' is set
-		if (mediaResourceId === undefined || mediaResourceId === null || mediaResourceId === '') {
-			throw 'Missing the required parameter "mediaResourceId" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}', 
-			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId,'mediaResourceId': mediaResourceId },
 			{  },
 			{  },
 			{  },

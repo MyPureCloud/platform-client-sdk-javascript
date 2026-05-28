@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**
@@ -454,6 +454,62 @@ class RoutingApi {
 	}
 
 	/**
+	 * Archive a skill expression to remove it from the set of active expressions
+	 * 
+	 * @param {String} expressionId Expression ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingSkillexpression(expressionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'expressionId' is set
+		if (expressionId === undefined || expressionId === null || expressionId === '') {
+			throw 'Missing the required parameter "expressionId" when calling deleteRoutingSkillexpression';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/{expressionId}', 
+			'DELETE', 
+			{ 'expressionId': expressionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Archive a set of skill expressions to remove them from the set of active expressions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingSkillexpressions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Remove skill group definition
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
@@ -648,38 +704,6 @@ class RoutingApi {
 			'/api/v2/routing/utilization/labels/{labelId}', 
 			'DELETE', 
 			{ 'labelId': labelId },
-			{ 'forceDelete': opts['forceDelete'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Delete an utilization tag
-	 * 
-	 * @param {String} tagId Utilization Tag ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDelete Remove all tag usages (if found) without warning (default to false)
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	deleteRoutingUtilizationTag(tagId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null || tagId === '') {
-			throw 'Missing the required parameter "tagId" when calling deleteRoutingUtilizationTag';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags/{tagId}', 
-			'DELETE', 
-			{ 'tagId': tagId },
 			{ 'forceDelete': opts['forceDelete'] },
 			{  },
 			{  },
@@ -2232,6 +2256,98 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get a skill expression by ID
+	 * 
+	 * @param {String} expressionId Expression ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeArchived Include archived (default to false)
+	 * @param {Object} opts.format Response format: raw expression or normalized (default to Raw)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingSkillexpression(expressionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'expressionId' is set
+		if (expressionId === undefined || expressionId === null || expressionId === '') {
+			throw 'Missing the required parameter "expressionId" when calling getRoutingSkillexpression';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/{expressionId}', 
+			'GET', 
+			{ 'expressionId': expressionId },
+			{ 'includeArchived': opts['includeArchived'],'format': opts['format'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get skill expressions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.format Response format: raw expression or normalized (default to Raw)
+	 * @param {Boolean} opts.includeArchived Include archived (default to false)
+	 * @param {Array.<String>} opts.id Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingSkillexpressions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions', 
+			'GET', 
+			{  },
+			{ 'format': opts['format'],'includeArchived': opts['includeArchived'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get skill expressions associated with a queue
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.format Response format: raw expression or normalized (default to Raw)
+	 * @param {Boolean} opts.includeArchived Include archived (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingSkillexpressionsQueueQueueId(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling getRoutingSkillexpressionsQueueQueueId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/queue/{queueId}', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'format': opts['format'],'includeArchived': opts['includeArchived'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get skill group
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
@@ -2740,98 +2856,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization/labels', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get details about this utilization tag
-	 * 
-	 * @param {String} tagId Utilization Tag ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getRoutingUtilizationTag(tagId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null || tagId === '') {
-			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTag';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags/{tagId}', 
-			'GET', 
-			{ 'tagId': tagId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get list of agent ids associated with a utilization tag
-	 * 
-	 * @param {String} tagId Utilization Tag ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getRoutingUtilizationTagAgents(tagId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null || tagId === '') {
-			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTagAgents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags/{tagId}/agents', 
-			'GET', 
-			{ 'tagId': tagId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Get list of utilization tags
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
-	 * @param {String} opts.name Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getRoutingUtilizationTags(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags', 
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
@@ -4429,6 +4453,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Validate and normalize a skill expression
+	 * 
+	 * @param {Object} body Skill expression data to validate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingSkillexpressionsValidate(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingSkillexpressionsValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/validate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Add or remove member divisions for this skill group.
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
@@ -4657,37 +4711,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization/labels', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json'],
-			opts['customHeaders']
-		);
-	}
-
-	/**
-	 * Create an utilization tag
-	 * 
-	 * @param {Object} body UtilizationTag
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	postRoutingUtilizationTags(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingUtilizationTags';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags', 
 			'POST', 
 			{  },
 			{  },

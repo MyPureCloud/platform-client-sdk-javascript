@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseDocumentVersionVariations**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersionVariations) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations | Get variations for the given document version.
 [**getKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersions) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions | Get document versions.
 [**getKnowledgeKnowledgebaseDocuments**](KnowledgeApi#getKnowledgeKnowledgebaseDocuments) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents | Get documents.
+[**getKnowledgeKnowledgebaseDocumentsFeedback**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentsFeedback) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback | Get a list of feedback records given on documents in a knowledge base
 [**getKnowledgeKnowledgebaseExportJob**](KnowledgeApi#getKnowledgeKnowledgebaseExportJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId} | Get export job report
 [**getKnowledgeKnowledgebaseImportJob**](KnowledgeApi#getKnowledgeKnowledgebaseImportJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} | Get import job report
 [**getKnowledgeKnowledgebaseLabel**](KnowledgeApi#getKnowledgeKnowledgebaseLabel) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} | Get label
@@ -2172,6 +2173,85 @@ apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
 ### Return type
 
 **KnowledgeDocumentResponseListing**
+
+
+## getKnowledgeKnowledgebaseDocumentsFeedback
+
+> KnowledgeDocumentFeedbackResponseListing getKnowledgeKnowledgebaseDocumentsFeedback(knowledgeBaseId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback
+
+Get a list of feedback records given on documents in a knowledge base
+
+Requires ANY permissions:
+
+* knowledge:feedback:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'onlyCommented': true, // Boolean | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.
+  'documentVersionId': "documentVersionId_example", // String | Document version ID to filter by. Supported only if onlyCommented=true is set.
+  'documentVariationId': "documentVariationId_example", // String | Document variation ID to filter by. Supported only if onlyCommented=true is set.
+  'appType': "appType_example", // String | Application type to filter by. Supported only if onlyCommented=true is set.
+  'queryType': "queryType_example", // String | Query type to filter by. Supported only if onlyCommented=true is set.
+  'userId': "userId_example", // String | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
+  'queueId': "queueId_example", // String | Queue ID to filter by. Supported only if onlyCommented=true is set.
+  'state': "state_example", // String | State to filter by. Supported only if onlyCommented=true is set. Default: Final
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getKnowledgeKnowledgebaseDocumentsFeedback(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseDocumentsFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseDocumentsFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **onlyCommented** | **Boolean** | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. | [optional]  |
+ **documentVersionId** | **String** | Document version ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
+ **documentVariationId** | **String** | Document variation ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
+ **appType** | **String** | Application type to filter by. Supported only if onlyCommented=true is set. | [optional] <br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter |
+ **queryType** | **String** | Query type to filter by. Supported only if onlyCommented=true is set. | [optional] <br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle |
+ **userId** | **String** | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. | [optional]  |
+ **queueId** | **String** | Queue ID to filter by. Supported only if onlyCommented=true is set. | [optional]  |
+ **state** | **String** | State to filter by. Supported only if onlyCommented=true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**KnowledgeDocumentFeedbackResponseListing**
 
 
 ## getKnowledgeKnowledgebaseExportJob
@@ -7332,4 +7412,4 @@ apiInstance.putKnowledgeSource(sourceId, body, opts)
 **V3SourceDetailedResponse**
 
 
-_purecloud-platform-client-v2@252.1.0_
+_purecloud-platform-client-v2@253.0.0_

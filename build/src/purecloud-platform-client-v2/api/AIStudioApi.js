@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**
@@ -114,12 +114,12 @@ class AIStudioApi {
 	 * Get all summary settings.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.language Filter by matching language - case insensitive.
-	 * @param {String} opts.name Filter by partially matching name - case insensitive.
-	 * @param {Object} opts.sortBy Sort by. Default value dateModified. (default to dateModified)
-	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
 	 * @param {Number} opts.pageNumber Page number. (default to 1)
 	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
+	 * @param {String} opts.name Filter by partially matching name - case insensitive.
+	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
+	 * @param {String} opts.language Filter by matching language - case insensitive.
+	 * @param {Object} opts.sortBy Sort by. Default value dateModified. (default to dateModified)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getConversationsSummariesSettings(opts) { 
@@ -130,7 +130,7 @@ class AIStudioApi {
 			'/api/v2/conversations/summaries/settings', 
 			'GET', 
 			{  },
-			{ 'language': opts['language'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'sortOrder': opts['sortOrder'],'language': opts['language'],'sortBy': opts['sortBy'] },
 			{  },
 			{  },
 			null, 

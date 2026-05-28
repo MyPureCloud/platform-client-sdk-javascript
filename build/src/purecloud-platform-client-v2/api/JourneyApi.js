@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**
@@ -578,11 +578,12 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve a single action target.
-	 * 
+	 * Deprecated. Retrieve a single action target.
+	 * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 	 * @param {String} actionTargetId ID of the action target.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyActiontarget(actionTargetId, opts) { 
 		opts = opts || {};
@@ -608,12 +609,13 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve all action targets.
-	 * 
+	 * Deprecated. Retrieve all action targets.
+	 * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	getJourneyActiontargets(opts) { 
 		opts = opts || {};
@@ -1784,6 +1786,56 @@ class JourneyApi {
 	}
 
 	/**
+	 * Get external events for journey views
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyViewsEventdefinitionsExternal(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions/external', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get changes in external event definitions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getJourneyViewsEventdefinitionsExternalChanges(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions/external/changes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get the jobs for an organization.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1900,12 +1952,13 @@ class JourneyApi {
 	}
 
 	/**
-	 * Update a single action target.
-	 * 
+	 * Deprecated. Update a single action target.
+	 * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 	 * @param {String} actionTargetId ID of the action target.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * @deprecated
 	 */
 	patchJourneyActiontarget(actionTargetId, opts) { 
 		opts = opts || {};
@@ -2857,6 +2910,68 @@ class JourneyApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update external event for journey views
+	 * 
+	 * @param {String} eventDefinitionId Event Definition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putJourneyViewsEventdefinition(eventDefinitionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'eventDefinitionId' is set
+		if (eventDefinitionId === undefined || eventDefinitionId === null || eventDefinitionId === '') {
+			throw 'Missing the required parameter "eventDefinitionId" when calling putJourneyViewsEventdefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions/{eventDefinitionId}', 
+			'PUT', 
+			{ 'eventDefinitionId': eventDefinitionId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Activate external event for journey views
+	 * 
+	 * @param {String} eventDefinitionId Event Definition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putJourneyViewsEventdefinitionActivate(eventDefinitionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'eventDefinitionId' is set
+		if (eventDefinitionId === undefined || eventDefinitionId === null || eventDefinitionId === '') {
+			throw 'Missing the required parameter "eventDefinitionId" when calling putJourneyViewsEventdefinitionActivate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate', 
+			'PUT', 
+			{ 'eventDefinitionId': eventDefinitionId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

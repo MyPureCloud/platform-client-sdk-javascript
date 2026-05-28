@@ -672,6 +672,7 @@ let opts = {
   'language': "language_example", // String | The agent checklist language filter applied to the listing.
   'sortOrder': "sortOrder_example", // String | The sort order for the listing
   'sortBy': "sortBy_example", // String | The field to sort by for the listing.
+  'agentChecklistIds': ["agentChecklistIds_example"], // [String] | Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -700,6 +701,7 @@ apiInstance.getAssistantsAgentchecklists(opts)
  **language** | **String** | The agent checklist language filter applied to the listing. | [optional]  |
  **sortOrder** | **String** | The sort order for the listing | [optional] <br />**Values**: asc, desc |
  **sortBy** | **String** | The field to sort by for the listing. | [optional] <br />**Values**: dateModified, language, name |
+ **agentChecklistIds** | **[String]** | Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1424,4 +1426,4 @@ apiInstance.putAssistantsAgentchecklist(agentChecklistId, body, opts)
 **AgentChecklist**
 
 
-_purecloud-platform-client-v2@252.1.0_
+_purecloud-platform-client-v2@253.0.0_

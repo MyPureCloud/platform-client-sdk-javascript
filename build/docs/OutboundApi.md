@@ -10782,4 +10782,4 @@ apiInstance.putOutboundWrapupcodemappings(body, opts)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@252.1.0_
+_purecloud-platform-client-v2@253.0.0_

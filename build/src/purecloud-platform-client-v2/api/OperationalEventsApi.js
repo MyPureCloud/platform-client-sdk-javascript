@@ -5,7 +5,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**

@@ -5,7 +5,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 252.1.0
+	 * @version 253.0.0
 	 */
 
 	/**
@@ -361,6 +361,7 @@ class AgentAssistantsApi {
 	 * @param {String} opts.language The agent checklist language filter applied to the listing.
 	 * @param {Object} opts.sortOrder The sort order for the listing
 	 * @param {Object} opts.sortBy The field to sort by for the listing.
+	 * @param {Array.<String>} opts.agentChecklistIds Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAssistantsAgentchecklists(opts) { 
@@ -371,7 +372,7 @@ class AgentAssistantsApi {
 			'/api/v2/assistants/agentchecklists', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'namePrefix': opts['namePrefix'],'language': opts['language'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'] },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'namePrefix': opts['namePrefix'],'language': opts['language'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'agentChecklistIds': this.apiClient.buildCollectionParam(opts['agentChecklistIds'], 'multi') },
 			{  },
 			{  },
 			null, 

@@ -24,8 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyActionmaps**](JourneyApi#getJourneyActionmaps) | **GET** /api/v2/journey/actionmaps | Retrieve all action maps.
 [**getJourneyActionmapsEstimatesJob**](JourneyApi#getJourneyActionmapsEstimatesJob) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Deprecated. Get status of job.
 [**getJourneyActionmapsEstimatesJobResults**](JourneyApi#getJourneyActionmapsEstimatesJobResults) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results | Deprecated. Get estimates from completed job.
-[**getJourneyActiontarget**](JourneyApi#getJourneyActiontarget) | **GET** /api/v2/journey/actiontargets/{actionTargetId} | Retrieve a single action target.
-[**getJourneyActiontargets**](JourneyApi#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
+[**getJourneyActiontarget**](JourneyApi#getJourneyActiontarget) | **GET** /api/v2/journey/actiontargets/{actionTargetId} | Deprecated. Retrieve a single action target.
+[**getJourneyActiontargets**](JourneyApi#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Deprecated. Retrieve all action targets.
 [**getJourneyActiontemplate**](JourneyApi#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
 [**getJourneyActiontemplates**](JourneyApi#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
 [**getJourneyDeploymentCustomerPing**](JourneyApi#getJourneyDeploymentCustomerPing) | **GET** /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping | Send a ping.
@@ -62,11 +62,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyViewsDataDetails**](JourneyApi#getJourneyViewsDataDetails) | **GET** /api/v2/journey/views/data/details | Get details about the data available for journey queries including oldest and newest event dates
 [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
 [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
+[**getJourneyViewsEventdefinitionsExternal**](JourneyApi#getJourneyViewsEventdefinitionsExternal) | **GET** /api/v2/journey/views/eventdefinitions/external | Get external events for journey views
+[**getJourneyViewsEventdefinitionsExternalChanges**](JourneyApi#getJourneyViewsEventdefinitionsExternalChanges) | **GET** /api/v2/journey/views/eventdefinitions/external/changes | Get changes in external event definitions
 [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | **GET** /api/v2/journey/views/jobs | Get the jobs for an organization.
 [**getJourneyViewsJobsMe**](JourneyApi#getJourneyViewsJobsMe) | **GET** /api/v2/journey/views/jobs/me | Get my jobs
 [**getJourneyViewsSchedules**](JourneyApi#getJourneyViewsSchedules) | **GET** /api/v2/journey/views/schedules | Get the journey schedules for an organization.
 [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
-[**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
+[**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Deprecated. Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
 [**patchJourneyExternaleventsConfiguration**](JourneyApi#patchJourneyExternaleventsConfiguration) | **PATCH** /api/v2/journey/externalevents/configurations/{configId} | Update an external events configuration.
 [**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | **PATCH** /api/v2/journey/outcomes/{outcomeId} | Deprecated. Update an outcome.
@@ -97,6 +99,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putJourneyExternaleventsSchema**](JourneyApi#putJourneyExternaleventsSchema) | **PUT** /api/v2/journey/externalevents/schemas/{schemaId} | Update a schema
 [**putJourneyViewSchedules**](JourneyApi#putJourneyViewSchedules) | **PUT** /api/v2/journey/views/{viewId}/schedules | Update the Schedule for a JourneyView
 [**putJourneyViewVersion**](JourneyApi#putJourneyViewVersion) | **PUT** /api/v2/journey/views/{viewId}/versions/{versionId} | Update a Journey View by ID and version
+[**putJourneyViewsEventdefinition**](JourneyApi#putJourneyViewsEventdefinition) | **PUT** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Update external event for journey views
+[**putJourneyViewsEventdefinitionActivate**](JourneyApi#putJourneyViewsEventdefinitionActivate) | **PUT** /api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate | Activate external event for journey views
 
 
 
@@ -1186,10 +1190,15 @@ apiInstance.getJourneyActionmapsEstimatesJobResults(jobId, opts)
 
 > ActionTarget getJourneyActiontarget(actionTargetId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/journey/actiontargets/{actionTargetId}
 
-Retrieve a single action target.
+Deprecated. Retrieve a single action target.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Requires ANY permissions:
 
@@ -1243,10 +1252,15 @@ apiInstance.getJourneyActiontarget(actionTargetId, opts)
 
 > ActionTargetListing getJourneyActiontargets(opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/journey/actiontargets
 
-Retrieve all action targets.
+Deprecated. Retrieve all action targets.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Requires ANY permissions:
 
@@ -3463,6 +3477,114 @@ apiInstance.getJourneyViewsEventdefinitions(opts)
 **JourneyEventDefinitionListing**
 
 
+## getJourneyViewsEventdefinitionsExternal
+
+> GetExternalEventsResponse getJourneyViewsEventdefinitionsExternal(opts)
+
+
+GET /api/v2/journey/views/eventdefinitions/external
+
+Get external events for journey views
+
+Requires ALL permissions:
+
+* journey:externalEvents:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyViewsEventdefinitionsExternal(opts)
+  .then((data) => {
+    console.log(`getJourneyViewsEventdefinitionsExternal success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsEventdefinitionsExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GetExternalEventsResponse**
+
+
+## getJourneyViewsEventdefinitionsExternalChanges
+
+> ExternalEventChangesResponse getJourneyViewsEventdefinitionsExternalChanges(opts)
+
+
+GET /api/v2/journey/views/eventdefinitions/external/changes
+
+Get changes in external event definitions
+
+Requires ALL permissions:
+
+* journey:externalEvents:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getJourneyViewsEventdefinitionsExternalChanges(opts)
+  .then((data) => {
+    console.log(`getJourneyViewsEventdefinitionsExternalChanges success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsEventdefinitionsExternalChanges');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalEventChangesResponse**
+
+
 ## getJourneyViewsJobs
 
 > JourneyViewJobListing getJourneyViewsJobs(opts)
@@ -3711,10 +3833,15 @@ apiInstance.patchJourneyActionmap(actionMapId, opts)
 
 > ActionTarget patchJourneyActiontarget(actionTargetId, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/journey/actiontargets/{actionTargetId}
 
-Update a single action target.
+Deprecated. Update a single action target.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Requires ANY permissions:
 
@@ -5535,4 +5662,122 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body, opts)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@252.1.0_
+## putJourneyViewsEventdefinition
+
+> UpdateExternalEventResponse putJourneyViewsEventdefinition(eventDefinitionId, opts)
+
+
+PUT /api/v2/journey/views/eventdefinitions/{eventDefinitionId}
+
+Update external event for journey views
+
+Requires ALL permissions:
+
+* journey:externalEvents:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putJourneyViewsEventdefinition(eventDefinitionId, opts)
+  .then((data) => {
+    console.log(`putJourneyViewsEventdefinition success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putJourneyViewsEventdefinition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **eventDefinitionId** | **String** | Event Definition ID |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UpdateExternalEventResponse**
+
+
+## putJourneyViewsEventdefinitionActivate
+
+> ActivateExternalEventResponse putJourneyViewsEventdefinitionActivate(eventDefinitionId, opts)
+
+
+PUT /api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate
+
+Activate external event for journey views
+
+Requires ALL permissions:
+
+* journey:externalEvents:activate
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putJourneyViewsEventdefinitionActivate(eventDefinitionId, opts)
+  .then((data) => {
+    console.log(`putJourneyViewsEventdefinitionActivate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putJourneyViewsEventdefinitionActivate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **eventDefinitionId** | **String** | Event Definition ID |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ActivateExternalEventResponse**
+
+
+_purecloud-platform-client-v2@253.0.0_

@@ -228,12 +228,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AIStudioApi();
 
 let opts = { 
-  'language': "language_example", // String | Filter by matching language - case insensitive.
-  'name': "name_example", // String | Filter by partially matching name - case insensitive.
-  'sortBy': "dateModified", // String | Sort by. Default value dateModified.
-  'sortOrder': "desc", // String | Sort Order. Default value desc.
   'pageNumber': 1, // Number | Page number.
   'pageSize': 25, // Number | Page size. The maximum page size is 100.
+  'name': "name_example", // String | Filter by partially matching name - case insensitive.
+  'sortOrder': "desc", // String | Sort Order. Default value desc.
+  'language': "language_example", // String | Filter by matching language - case insensitive.
+  'sortBy': "dateModified", // String | Sort by. Default value dateModified.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -255,12 +255,12 @@ apiInstance.getConversationsSummariesSettings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **language** | **String** | Filter by matching language - case insensitive. | [optional]  |
- **name** | **String** | Filter by partially matching name - case insensitive. | [optional]  |
- **sortBy** | **String** | Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name |
- **sortOrder** | **String** | Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc |
  **pageNumber** | **Number** | Page number. | [optional] [default to 1] |
  **pageSize** | **Number** | Page size. The maximum page size is 100. | [optional] [default to 25] |
+ **name** | **String** | Filter by partially matching name - case insensitive. | [optional]  |
+ **sortOrder** | **String** | Sort Order. Default value desc. | [optional] [default to desc]<br />**Values**: asc, desc |
+ **language** | **String** | Filter by matching language - case insensitive. | [optional]  |
+ **sortBy** | **String** | Sort by. Default value dateModified. | [optional] [default to dateModified]<br />**Values**: dateModified, name |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1277,4 +1277,4 @@ apiInstance.putConversationsSummariesSetting(summarySettingId, body, opts)
 **SummarySetting**
 
 
-_purecloud-platform-client-v2@252.1.0_
+_purecloud-platform-client-v2@253.0.0_
