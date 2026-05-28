@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingQueueWrapupcode**](RoutingApi#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
 [**deleteRoutingSettings**](RoutingApi#deleteRoutingSettings) | **DELETE** /api/v2/routing/settings | Delete an organization's routing settings
 [**deleteRoutingSkill**](RoutingApi#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
+[**deleteRoutingSkillexpression**](RoutingApi#deleteRoutingSkillexpression) | **DELETE** /api/v2/routing/skillexpressions/{expressionId} | Archive a skill expression to remove it from the set of active expressions
+[**deleteRoutingSkillexpressions**](RoutingApi#deleteRoutingSkillexpressions) | **DELETE** /api/v2/routing/skillexpressions | Archive a set of skill expressions to remove them from the set of active expressions
 [**deleteRoutingSkillgroup**](RoutingApi#deleteRoutingSkillgroup) | **DELETE** /api/v2/routing/skillgroups/{skillGroupId} | Remove skill group definition
 [**deleteRoutingSmsAddress**](RoutingApi#deleteRoutingSmsAddress) | **DELETE** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS
 [**deleteRoutingSmsPhonenumber**](RoutingApi#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Delete a phone number provisioned for SMS.
@@ -27,7 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingUserUtilization**](RoutingApi#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
 [**deleteRoutingUtilizationLabel**](RoutingApi#deleteRoutingUtilizationLabel) | **DELETE** /api/v2/routing/utilization/labels/{labelId} | Delete a utilization label
-[**deleteRoutingUtilizationTag**](RoutingApi#deleteRoutingUtilizationTag) | **DELETE** /api/v2/routing/utilization/tags/{tagId} | Delete an utilization tag
 [**deleteRoutingWrapupcode**](RoutingApi#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutinglanguage**](RoutingApi#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove a routing language from a user
 [**deleteUserRoutingskill**](RoutingApi#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove a routing skill from a user
@@ -78,6 +79,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSettingsContactcenter**](RoutingApi#getRoutingSettingsContactcenter) | **GET** /api/v2/routing/settings/contactcenter | Get Contact Center Settings
 [**getRoutingSettingsTranscription**](RoutingApi#getRoutingSettingsTranscription) | **GET** /api/v2/routing/settings/transcription | Get Transcription Settings
 [**getRoutingSkill**](RoutingApi#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
+[**getRoutingSkillexpression**](RoutingApi#getRoutingSkillexpression) | **GET** /api/v2/routing/skillexpressions/{expressionId} | Get a skill expression by ID
+[**getRoutingSkillexpressions**](RoutingApi#getRoutingSkillexpressions) | **GET** /api/v2/routing/skillexpressions | Get skill expressions
+[**getRoutingSkillexpressionsQueueQueueId**](RoutingApi#getRoutingSkillexpressionsQueueQueueId) | **GET** /api/v2/routing/skillexpressions/queue/{queueId} | Get skill expressions associated with a queue
 [**getRoutingSkillgroup**](RoutingApi#getRoutingSkillgroup) | **GET** /api/v2/routing/skillgroups/{skillGroupId} | Get skill group
 [**getRoutingSkillgroupMembers**](RoutingApi#getRoutingSkillgroupMembers) | **GET** /api/v2/routing/skillgroups/{skillGroupId}/members | Get skill group members
 [**getRoutingSkillgroupMembersDivisions**](RoutingApi#getRoutingSkillgroupMembersDivisions) | **GET** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Get list of member divisions for this skill group.
@@ -95,9 +99,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingUtilizationLabel**](RoutingApi#getRoutingUtilizationLabel) | **GET** /api/v2/routing/utilization/labels/{labelId} | Get details about this utilization label
 [**getRoutingUtilizationLabelAgents**](RoutingApi#getRoutingUtilizationLabelAgents) | **GET** /api/v2/routing/utilization/labels/{labelId}/agents | Get list of agent ids associated with a utilization label
 [**getRoutingUtilizationLabels**](RoutingApi#getRoutingUtilizationLabels) | **GET** /api/v2/routing/utilization/labels | Get list of utilization labels
-[**getRoutingUtilizationTag**](RoutingApi#getRoutingUtilizationTag) | **GET** /api/v2/routing/utilization/tags/{tagId} | Get details about this utilization tag
-[**getRoutingUtilizationTagAgents**](RoutingApi#getRoutingUtilizationTagAgents) | **GET** /api/v2/routing/utilization/tags/{tagId}/agents | Get list of agent ids associated with a utilization tag
-[**getRoutingUtilizationTags**](RoutingApi#getRoutingUtilizationTags) | **GET** /api/v2/routing/utilization/tags | Get list of utilization tags
 [**getRoutingWrapupcode**](RoutingApi#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
 [**getRoutingWrapupcodesDivisionview**](RoutingApi#getRoutingWrapupcodesDivisionview) | **GET** /api/v2/routing/wrapupcodes/divisionviews/{codeId} | Get a simplified wrap-up code.
@@ -146,6 +147,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingQueueUsers**](RoutingApi#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 [**postRoutingQueueWrapupcodes**](RoutingApi#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
 [**postRoutingQueues**](RoutingApi#postRoutingQueues) | **POST** /api/v2/routing/queues | Create a queue
+[**postRoutingSkillexpressionsValidate**](RoutingApi#postRoutingSkillexpressionsValidate) | **POST** /api/v2/routing/skillexpressions/validate | Validate and normalize a skill expression
 [**postRoutingSkillgroupMembersDivisions**](RoutingApi#postRoutingSkillgroupMembersDivisions) | **POST** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Add or remove member divisions for this skill group.
 [**postRoutingSkillgroups**](RoutingApi#postRoutingSkillgroups) | **POST** /api/v2/routing/skillgroups | Create a skill group
 [**postRoutingSkills**](RoutingApi#postRoutingSkills) | **POST** /api/v2/routing/skills | Create Skill
@@ -154,7 +156,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingSmsPhonenumbersAlphanumeric**](RoutingApi#postRoutingSmsPhonenumbersAlphanumeric) | **POST** /api/v2/routing/sms/phonenumbers/alphanumeric | Provision an alphanumeric number for SMS
 [**postRoutingSmsPhonenumbersImport**](RoutingApi#postRoutingSmsPhonenumbersImport) | **POST** /api/v2/routing/sms/phonenumbers/import | Imports a phone number for SMS
 [**postRoutingUtilizationLabels**](RoutingApi#postRoutingUtilizationLabels) | **POST** /api/v2/routing/utilization/labels | Create a utilization label
-[**postRoutingUtilizationTags**](RoutingApi#postRoutingUtilizationTags) | **POST** /api/v2/routing/utilization/tags | Create an utilization tag
 [**postRoutingWrapupcodes**](RoutingApi#postRoutingWrapupcodes) | **POST** /api/v2/routing/wrapupcodes | Create a wrap-up code
 [**postUserRoutinglanguages**](RoutingApi#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Assign a routing language to a user
 [**postUserRoutingskills**](RoutingApi#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Assign a routing skill to a user
@@ -989,6 +990,120 @@ apiInstance.deleteRoutingSkill(skillId, opts)
 void (no response body)
 
 
+## deleteRoutingSkillexpression
+
+> void deleteRoutingSkillexpression(expressionId, opts)
+
+
+DELETE /api/v2/routing/skillexpressions/{expressionId}
+
+Archive a skill expression to remove it from the set of active expressions
+
+Requires ALL permissions:
+
+* routing:skillExpressions:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let expressionId = "expressionId_example"; // String | Expression ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteRoutingSkillexpression(expressionId, opts)
+  .then(() => {
+    console.log('deleteRoutingSkillexpression returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSkillexpression');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expressionId** | **String** | Expression ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteRoutingSkillexpressions
+
+> void deleteRoutingSkillexpressions(opts)
+
+
+DELETE /api/v2/routing/skillexpressions
+
+Archive a set of skill expressions to remove them from the set of active expressions
+
+Requires ALL permissions:
+
+* routing:skillExpressions:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'id': ["id_example"], // [String] | Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteRoutingSkillexpressions(opts)
+  .then(() => {
+    console.log('deleteRoutingSkillexpressions returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSkillexpressions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | Expression ID(s) to filter. Repeat for multiple or use comma-separated list. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
 ## deleteRoutingSkillgroup
 
 > void deleteRoutingSkillgroup(skillGroupId, opts)
@@ -1380,67 +1495,6 @@ apiInstance.deleteRoutingUtilizationLabel(labelId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **labelId** | **String** | Utilization Label ID |  |
  **forceDelete** | **Boolean** | Remove all label usages (if found) without warning | [optional] [default to false] |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-void (no response body)
-
-
-## deleteRoutingUtilizationTag
-
-> void deleteRoutingUtilizationTag(tagId, opts)
-
-
-DELETE /api/v2/routing/utilization/tags/{tagId}
-
-Delete an utilization tag
-
-deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions:
-
-* routing:utilization:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let tagId = "tagId_example"; // String | Utilization Tag ID
-let opts = { 
-  'forceDelete': false, // Boolean | Remove all tag usages (if found) without warning
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.deleteRoutingUtilizationTag(tagId, opts)
-  .then(() => {
-    console.log('deleteRoutingUtilizationTag returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRoutingUtilizationTag');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **tagId** | **String** | Utilization Tag ID |  |
- **forceDelete** | **Boolean** | Remove all tag usages (if found) without warning | [optional] [default to false] |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -4471,6 +4525,189 @@ apiInstance.getRoutingSkill(skillId, opts)
 **RoutingSkill**
 
 
+## getRoutingSkillexpression
+
+> SkillExpression getRoutingSkillexpression(expressionId, opts)
+
+
+GET /api/v2/routing/skillexpressions/{expressionId}
+
+Get a skill expression by ID
+
+Requires ALL permissions:
+
+* routing:skillExpressions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let expressionId = "expressionId_example"; // String | Expression ID
+let opts = { 
+  'includeArchived': false, // Boolean | Include archived
+  'format': "Raw", // String | Response format: raw expression or normalized
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getRoutingSkillexpression(expressionId, opts)
+  .then((data) => {
+    console.log(`getRoutingSkillexpression success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillexpression');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expressionId** | **String** | Expression ID |  |
+ **includeArchived** | **Boolean** | Include archived | [optional] [default to false] |
+ **format** | **String** | Response format: raw expression or normalized | [optional] [default to Raw]<br />**Values**: Raw, Normalized |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SkillExpression**
+
+
+## getRoutingSkillexpressions
+
+> SkillExpressionEntityListing getRoutingSkillexpressions(opts)
+
+
+GET /api/v2/routing/skillexpressions
+
+Get skill expressions
+
+Requires ALL permissions:
+
+* routing:skillExpressions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'format': "Raw", // String | Response format: raw expression or normalized
+  'includeArchived': false, // Boolean | Include archived
+  'id': ["id_example"], // [String] | Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getRoutingSkillexpressions(opts)
+  .then((data) => {
+    console.log(`getRoutingSkillexpressions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillexpressions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **format** | **String** | Response format: raw expression or normalized | [optional] [default to Raw]<br />**Values**: Raw, Normalized |
+ **includeArchived** | **Boolean** | Include archived | [optional] [default to false] |
+ **id** | **[String]** | Expression ID(s) to filter. Repeat for multiple or use comma-separated list. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SkillExpressionEntityListing**
+
+
+## getRoutingSkillexpressionsQueueQueueId
+
+> SkillExpressionEntityListing getRoutingSkillexpressionsQueueQueueId(queueId, opts)
+
+
+GET /api/v2/routing/skillexpressions/queue/{queueId}
+
+Get skill expressions associated with a queue
+
+Requires ALL permissions:
+
+* routing:skillExpressions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'format': "Raw", // String | Response format: raw expression or normalized
+  'includeArchived': false, // Boolean | Include archived
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getRoutingSkillexpressionsQueueQueueId(queueId, opts)
+  .then((data) => {
+    console.log(`getRoutingSkillexpressionsQueueQueueId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillexpressionsQueueQueueId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **format** | **String** | Response format: raw expression or normalized | [optional] [default to Raw]<br />**Values**: Raw, Normalized |
+ **includeArchived** | **Boolean** | Include archived | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SkillExpressionEntityListing**
+
+
 ## getRoutingSkillgroup
 
 > SkillGroup getRoutingSkillgroup(skillGroupId, opts)
@@ -5510,189 +5747,6 @@ apiInstance.getRoutingUtilizationLabels(opts)
 ### Return type
 
 **UtilizationLabelEntityListing**
-
-
-## getRoutingUtilizationTag
-
-> UtilizationTag getRoutingUtilizationTag(tagId, opts)
-
-
-GET /api/v2/routing/utilization/tags/{tagId}
-
-Get details about this utilization tag
-
-getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions:
-
-* routing:utilization:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let tagId = "tagId_example"; // String | Utilization Tag ID
-let opts = { 
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.getRoutingUtilizationTag(tagId, opts)
-  .then((data) => {
-    console.log(`getRoutingUtilizationTag success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUtilizationTag');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **tagId** | **String** | Utilization Tag ID |  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**UtilizationTag**
-
-
-## getRoutingUtilizationTagAgents
-
-> **[Object]** getRoutingUtilizationTagAgents(tagId, opts)
-
-
-GET /api/v2/routing/utilization/tags/{tagId}/agents
-
-Get list of agent ids associated with a utilization tag
-
-getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions:
-
-* routing:utilization:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let tagId = "tagId_example"; // String | Utilization Tag ID
-let opts = { 
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.getRoutingUtilizationTagAgents(tagId, opts)
-  .then((data) => {
-    console.log(`getRoutingUtilizationTagAgents success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUtilizationTagAgents');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **tagId** | **String** | Utilization Tag ID |  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**[Object]**
-
-
-## getRoutingUtilizationTags
-
-> UtilizationTagEntityListing getRoutingUtilizationTags(opts)
-
-
-GET /api/v2/routing/utilization/tags
-
-Get list of utilization tags
-
-getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions:
-
-* routing:utilization:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'sortOrder': "ascending", // String | Sort order by name
-  'name': "name_example", // String | Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.getRoutingUtilizationTags(opts)
-  .then((data) => {
-    console.log(`getRoutingUtilizationTags success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUtilizationTags');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortOrder** | **String** | Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending |
- **name** | **String** | Utilization tag's name (Wildcard is supported, e.g., 'tag1*') | [optional]  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**UtilizationTagEntityListing**
 
 
 ## getRoutingWrapupcode
@@ -8583,6 +8637,63 @@ apiInstance.postRoutingQueues(body, opts)
 **Queue**
 
 
+## postRoutingSkillexpressionsValidate
+
+> SkillExpressionValidationResult postRoutingSkillexpressionsValidate(body, opts)
+
+
+POST /api/v2/routing/skillexpressions/validate
+
+Validate and normalize a skill expression
+
+Requires ALL permissions:
+
+* routing:skillExpressions:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Skill expression data to validate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postRoutingSkillexpressionsValidate(body, opts)
+  .then((data) => {
+    console.log(`postRoutingSkillexpressionsValidate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSkillexpressionsValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Skill expression data to validate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SkillExpressionValidationResult**
+
+
 ## postRoutingSkillgroupMembersDivisions
 
 > void postRoutingSkillgroupMembersDivisions(skillGroupId, opts)
@@ -9044,65 +9155,6 @@ apiInstance.postRoutingUtilizationLabels(body, opts)
 ### Return type
 
 **UtilizationLabel**
-
-
-## postRoutingUtilizationTags
-
-> UtilizationTag postRoutingUtilizationTags(body, opts)
-
-
-POST /api/v2/routing/utilization/tags
-
-Create an utilization tag
-
-postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions:
-
-* routing:utilization:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | UtilizationTag
-let opts = { 
-  'customHeaders': {  // Object.<string, string> | Request Custom Headers
-    'X-Service-Name': 'customer-service',
-    'X-Request-ID': 'req-12345'
-  }
-};
-
-apiInstance.postRoutingUtilizationTags(body, opts)
-  .then((data) => {
-    console.log(`postRoutingUtilizationTags success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingUtilizationTags');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | UtilizationTag |  |
- **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
-
-### Return type
-
-**UtilizationTag**
 
 
 ## postRoutingWrapupcodes
@@ -10283,4 +10335,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@252.1.0_
+_purecloud-platform-client-v2@253.0.0_
