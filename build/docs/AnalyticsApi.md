@@ -156,8 +156,6 @@ DELETE /api/v2/analytics/actions/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for action aggregates
 
-deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:action:view
@@ -334,8 +332,6 @@ DELETE /api/v2/analytics/bots/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for bot aggregates
 
-deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:botAggregate:view
@@ -393,8 +389,6 @@ DELETE /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for case management aggregates
 
-deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:caseManagementAggregate:view
@@ -451,8 +445,6 @@ void (no response body)
 DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for conversation aggregates
-
-deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -628,8 +620,6 @@ DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for evaluation aggregates
 
-deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -686,8 +676,6 @@ void (no response body)
 DELETE /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for flow execution aggregates
-
-deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -746,8 +734,6 @@ DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for flow aggregates
 
-deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowAggregate:view
@@ -804,8 +790,6 @@ void (no response body)
 DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for journey aggregates
-
-deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -864,8 +848,6 @@ DELETE /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for knowledge aggregates
 
-deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:knowledgeAggregate:view
@@ -922,8 +904,6 @@ void (no response body)
 DELETE /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for resolution aggregates
-
-deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -982,8 +962,6 @@ DELETE /api/v2/analytics/summaries/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for summary aggregates
 
-deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:summaryAggregate:view
@@ -1040,8 +1018,6 @@ void (no response body)
 DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for survey aggregates
-
-deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1100,8 +1076,6 @@ DELETE /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for task management aggregates
 
-deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:taskManagementAggregate:view
@@ -1159,8 +1133,6 @@ DELETE /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for transcript aggregates
 
-deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:speechAndTextAnalyticsAggregates:view
@@ -1217,8 +1189,6 @@ void (no response body)
 DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for user aggregates
-
-deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1334,8 +1304,6 @@ GET /api/v2/analytics/actions/aggregates/jobs/{jobId}
 
 Get status for async query for action aggregates
 
-getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:action:view
@@ -1393,8 +1361,6 @@ apiInstance.getAnalyticsActionsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1971,8 +1937,6 @@ GET /api/v2/analytics/bots/aggregates/jobs/{jobId}
 
 Get status for async query for bot aggregates
 
-getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:botAggregate:view
@@ -2029,8 +1993,6 @@ apiInstance.getAnalyticsBotsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2091,8 +2053,6 @@ GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}
 
 Get status for async query for case management aggregates
 
-getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:caseManagementAggregate:view
@@ -2149,8 +2109,6 @@ apiInstance.getAnalyticsCasemanagementAggregatesJob(jobId, opts)
 GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async case management query
-
-getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2269,8 +2227,6 @@ GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Get status for async query for conversation aggregates
 
-getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:conversationAggregate:view
@@ -2327,8 +2283,6 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2923,8 +2877,6 @@ GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
 
 Get status for async query for evaluation aggregates
 
-getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -2981,8 +2933,6 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3043,8 +2993,6 @@ GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
 
 Get status for async query for flow execution aggregates
 
-getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowExecutionAggregate:view
@@ -3101,8 +3049,6 @@ apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3163,8 +3109,6 @@ GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
 
 Get status for async query for Flow aggregates
 
-getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowAggregate:view
@@ -3221,8 +3165,6 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3283,8 +3225,6 @@ GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
 
 Get status for async query for journey aggregates
 
-getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -3341,8 +3281,6 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId, opts)
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3403,8 +3341,6 @@ GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
 
 Get status for async query for knowledge aggregates
 
-getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:knowledgeAggregate:view
@@ -3461,8 +3397,6 @@ apiInstance.getAnalyticsKnowledgeAggregatesJob(jobId, opts)
 GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3952,8 +3886,6 @@ GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
 
 Get status for async query for resolution aggregates
 
-getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:resolutionAggregate:view
@@ -4010,8 +3942,6 @@ apiInstance.getAnalyticsResolutionsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4072,8 +4002,6 @@ GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}
 
 Get status for async query for summary aggregates
 
-getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:summaryAggregate:view
@@ -4130,8 +4058,6 @@ apiInstance.getAnalyticsSummariesAggregatesJob(jobId, opts)
 GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4192,8 +4118,6 @@ GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
 
 Get status for async query for survey aggregates
 
-getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:surveyAggregate:view
@@ -4250,8 +4174,6 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId, opts)
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4312,8 +4234,6 @@ GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
 
 Get status for async query for task management aggregates
 
-getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:taskManagementAggregate:view
@@ -4370,8 +4290,6 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJob(jobId, opts)
 GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async task management query
-
-getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4432,8 +4350,6 @@ GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
 
 Get status for async query for transcript aggregates
 
-getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:speechAndTextAnalyticsAggregates:view
@@ -4490,8 +4406,6 @@ apiInstance.getAnalyticsTranscriptsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4552,8 +4466,6 @@ GET /api/v2/analytics/users/aggregates/jobs/{jobId}
 
 Get status for async query for user aggregates
 
-getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:userAggregate:view
@@ -4610,8 +4522,6 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId, opts)
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4900,8 +4810,6 @@ apiInstance.patchAnalyticsReportingSettings(body, opts)
 POST /api/v2/analytics/actions/aggregates/jobs
 
 Query for action aggregates asynchronously
-
-postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5369,8 +5277,6 @@ POST /api/v2/analytics/bots/aggregates/jobs
 
 Query for bot aggregates asynchronously
 
-postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:botAggregate:view
@@ -5485,8 +5391,6 @@ POST /api/v2/analytics/casemanagement/aggregates/jobs
 
 Query for case management aggregates asynchronously
 
-postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:caseManagementAggregate:view
@@ -5543,8 +5447,6 @@ apiInstance.postAnalyticsCasemanagementAggregatesJobs(body, opts)
 POST /api/v2/analytics/casemanagement/aggregates/query
 
 Query for case management aggregates
-
-postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5722,8 +5624,6 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
 POST /api/v2/analytics/conversations/aggregates/jobs
 
 Query for conversation aggregates asynchronously
-
-postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -6132,8 +6032,6 @@ POST /api/v2/analytics/evaluations/aggregates/jobs
 
 Query for evaluation aggregates asynchronously
 
-postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -6247,8 +6145,6 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body, opts)
 POST /api/v2/analytics/flowexecutions/aggregates/jobs
 
 Query for flow execution aggregates asynchronously
-
-postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -6425,8 +6321,6 @@ POST /api/v2/analytics/flows/aggregates/jobs
 
 Query for flow aggregates asynchronously
 
-postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowAggregate:view
@@ -6598,8 +6492,6 @@ POST /api/v2/analytics/journeys/aggregates/jobs
 
 Query for journey aggregates asynchronously
 
-postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -6713,8 +6605,6 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body, opts)
 POST /api/v2/analytics/knowledge/aggregates/jobs
 
 Query for knowledge aggregates asynchronously
-
-postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7177,8 +7067,6 @@ POST /api/v2/analytics/resolutions/aggregates/jobs
 
 Query for resolution aggregates asynchronously
 
-postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:resolutionAggregate:view
@@ -7354,8 +7242,6 @@ POST /api/v2/analytics/summaries/aggregates/jobs
 
 Query for summary aggregates asynchronously
 
-postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:summaryAggregate:view
@@ -7470,8 +7356,6 @@ POST /api/v2/analytics/surveys/aggregates/jobs
 
 Query for survey aggregates asynchronously
 
-postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:surveyAggregate:view
@@ -7585,8 +7469,6 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body, opts)
 POST /api/v2/analytics/taskmanagement/aggregates/jobs
 
 Query for task management aggregates asynchronously
-
-postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7824,8 +7706,6 @@ POST /api/v2/analytics/transcripts/aggregates/jobs
 
 Query for transcript aggregates asynchronously
 
-postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:speechAndTextAnalyticsAggregates:view
@@ -8000,8 +7880,6 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
 POST /api/v2/analytics/users/aggregates/jobs
 
 Query for user aggregates asynchronously
-
-postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8336,4 +8214,4 @@ apiInstance.putAnalyticsDataretentionSettings(body, opts)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

@@ -141,8 +141,6 @@ DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for user aggregates
 
-deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:userAggregate:view
@@ -1069,8 +1067,6 @@ GET /api/v2/analytics/users/aggregates/jobs/{jobId}
 
 Get status for async query for user aggregates
 
-getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:userAggregate:view
@@ -1127,8 +1123,6 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId, opts)
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5156,8 +5150,6 @@ POST /api/v2/analytics/users/aggregates/jobs
 
 Query for user aggregates asynchronously
 
-postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:userAggregate:view
@@ -7445,4 +7437,4 @@ apiInstance.putUsersStationsMeAssociatedstationStationId(stationId, opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

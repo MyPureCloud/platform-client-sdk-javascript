@@ -5,7 +5,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -41,6 +41,76 @@ class BusinessRulesApi {
 			'DELETE', 
 			{ 'tableId': tableId },
 			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an export job for a decision table
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} exportJobId Export Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteBusinessrulesDecisiontableExport(tableId, exportJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableExport';
+		}
+		// verify the required parameter 'exportJobId' is set
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
+			throw 'Missing the required parameter "exportJobId" when calling deleteBusinessrulesDecisiontableExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}', 
+			'DELETE', 
+			{ 'tableId': tableId,'exportJobId': exportJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} importJobId Import job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteBusinessrulesDecisiontableImport(tableId, importJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
+			throw 'Missing the required parameter "importJobId" when calling deleteBusinessrulesDecisiontableImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}', 
+			'DELETE', 
+			{ 'tableId': tableId,'importJobId': importJobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -176,6 +246,140 @@ class BusinessRulesApi {
 			'GET', 
 			{ 'tableId': tableId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get an export job for a decision table
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} exportJobId Export Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableExport(tableId, exportJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableExport';
+		}
+		// verify the required parameter 'exportJobId' is set
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
+			throw 'Missing the required parameter "exportJobId" when calling getBusinessrulesDecisiontableExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}', 
+			'GET', 
+			{ 'tableId': tableId,'exportJobId': exportJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List export jobs for a decision table
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableExports(tableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports', 
+			'GET', 
+			{ 'tableId': tableId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} importJobId Import job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableImport(tableId, importJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
+			throw 'Missing the required parameter "importJobId" when calling getBusinessrulesDecisiontableImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}', 
+			'GET', 
+			{ 'tableId': tableId,'importJobId': importJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List decision table row import jobs
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableImports(tableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableImports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports', 
+			'GET', 
+			{ 'tableId': tableId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -537,6 +741,46 @@ class BusinessRulesApi {
 	}
 
 	/**
+	 * Update decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} importJobId Import job ID
+	 * @param {Object} body Import job update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchBusinessrulesDecisiontableImport(tableId, importJobId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
+			throw 'Missing the required parameter "importJobId" when calling patchBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchBusinessrulesDecisiontableImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}', 
+			'PATCH', 
+			{ 'tableId': tableId,'importJobId': importJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a decision table version
 	 * 
 	 * @param {String} tableId Table ID
@@ -598,6 +842,76 @@ class BusinessRulesApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/businessrules/decisiontables/{tableId}/execute', 
+			'POST', 
+			{ 'tableId': tableId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create an export job for a decision table version
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} body Export job request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableExports(tableId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableExports';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports', 
+			'POST', 
+			{ 'tableId': tableId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} body Import job create request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableImports(tableId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableImports';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableImports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports', 
 			'POST', 
 			{ 'tableId': tableId },
 			{  },
@@ -718,6 +1032,126 @@ class BusinessRulesApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk add decision table rows
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body Bulk add decision table rows request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsBulkAdd';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsBulkAdd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk delete decision table rows
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsBulkRemove';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk update decision table rows
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body Bulk update decision table rows request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsBulkUpdate';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsBulkUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update', 
 			'POST', 
 			{ 'tableId': tableId,'tableVersion': tableVersion },
 			{  },

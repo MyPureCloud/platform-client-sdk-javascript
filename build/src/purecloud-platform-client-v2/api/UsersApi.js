@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -26,7 +26,6 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsUsersAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -537,7 +536,6 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -569,7 +567,6 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -2717,7 +2714,6 @@ class UsersApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersAggregatesJobs(body, opts) { 
 		opts = opts || {};

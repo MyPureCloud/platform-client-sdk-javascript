@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -26,7 +26,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -57,7 +56,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsSurveysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -285,7 +283,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -317,7 +314,6 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -348,7 +344,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -380,7 +375,6 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1484,7 +1478,6 @@ class QualityApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -1545,7 +1538,6 @@ class QualityApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body, opts) { 
 		opts = opts || {};

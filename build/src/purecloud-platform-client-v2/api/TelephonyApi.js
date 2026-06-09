@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -19,6 +19,36 @@ class TelephonyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a link
+	 * 
+	 * @param {String} targetOrganizationId targetOrganizationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteTelephonyOrganizationLinkTargetOrganizationId(targetOrganizationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'targetOrganizationId' is set
+		if (targetOrganizationId === undefined || targetOrganizationId === null || targetOrganizationId === '') {
+			throw 'Missing the required parameter "targetOrganizationId" when calling deleteTelephonyOrganizationLinkTargetOrganizationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link/{targetOrganizationId}', 
+			'DELETE', 
+			{ 'targetOrganizationId': targetOrganizationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
 
 	/**
 	 * Get an agent's greetings.
@@ -113,6 +143,88 @@ class TelephonyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/mediaregions', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get Number Routings by organizationId
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.numberId numberId
+	 * @param {String} opts.activeRoutingOrganizationId activeRoutingOrganizationId
+	 * @param {String} opts.ownerOrganizationId ownerOrganizationId
+	 * @param {Object} opts.status status
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyNumbersRouting(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'numberId': opts['numberId'],'activeRoutingOrganizationId': opts['activeRoutingOrganizationId'],'ownerOrganizationId': opts['ownerOrganizationId'],'status': opts['status'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get organization links
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyOrganizationLink(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all the replica regions by primary region
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyOrganizationLinkRegions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link/regions', 
 			'GET', 
 			{  },
 			{  },
@@ -274,6 +386,161 @@ class TelephonyApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Approving a requested link
+	 * 
+	 * @param {String} requestingOrganizationId requestingOrganizationId
+	 * @param {Object} body Approval request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchTelephonyOrganizationLinkApproveRequestingOrganizationId(requestingOrganizationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'requestingOrganizationId' is set
+		if (requestingOrganizationId === undefined || requestingOrganizationId === null || requestingOrganizationId === '') {
+			throw 'Missing the required parameter "requestingOrganizationId" when calling patchTelephonyOrganizationLinkApproveRequestingOrganizationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTelephonyOrganizationLinkApproveRequestingOrganizationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link/approve/{requestingOrganizationId}', 
+			'PATCH', 
+			{ 'requestingOrganizationId': requestingOrganizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the routing of numbers for one or multiple organizations
+	 * 
+	 * @param {Array.<Object>} body drRoutingList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyNumbersRouting(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyNumbersRouting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Re-route all numbers on an organization
+	 * 
+	 * @param {Object} body Value for all routing request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyNumbersRoutingAll(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyNumbersRoutingAll';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing/all', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Reset routing for organization
+	 * 
+	 * @param {Object} body Value for bulk routing request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyNumbersRoutingReset(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyNumbersRoutingReset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing/reset', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a link with an organization
+	 * 
+	 * @param {Object} body CreateLinkOrg body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyOrganizationLink(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyOrganizationLink';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],

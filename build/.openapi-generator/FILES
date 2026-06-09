@@ -228,11 +228,14 @@ docs/deleteAuthorizationRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
 docs/deleteBusinessrulesDecisiontable-example.txt
+docs/deleteBusinessrulesDecisiontableExport-example.txt
+docs/deleteBusinessrulesDecisiontableImport-example.txt
 docs/deleteBusinessrulesDecisiontableVersion-example.txt
 docs/deleteBusinessrulesDecisiontableVersionRow-example.txt
 docs/deleteBusinessrulesSchema-example.txt
 docs/deleteCasemanagementCase-example.txt
 docs/deleteCasemanagementCaseplan-example.txt
+docs/deleteCasemanagementCaseplanDataschema-example.txt
 docs/deleteChatsRoomMessage-example.txt
 docs/deleteChatsRoomMessagesPin-example.txt
 docs/deleteChatsRoomParticipant-example.txt
@@ -423,6 +426,7 @@ docs/deleteRoutingDirectroutingbackupSettingsMe-example.txt
 docs/deleteRoutingEmailDomain-example.txt
 docs/deleteRoutingEmailDomainRoute-example.txt
 docs/deleteRoutingEmailOutboundDomain-example.txt
+docs/deleteRoutingEmailSettingEmailSettingId-example.txt
 docs/deleteRoutingLanguage-example.txt
 docs/deleteRoutingPredictor-example.txt
 docs/deleteRoutingPredictorsKeyperformanceindicator-example.txt
@@ -474,6 +478,7 @@ docs/deleteTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/deleteTaskmanagementWorktypeStatus-example.txt
 docs/deleteTeam-example.txt
 docs/deleteTeamMembers-example.txt
+docs/deleteTelephonyOrganizationLinkTargetOrganizationId-example.txt
 docs/deleteTelephonyProvidersEdge-example.txt
 docs/deleteTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/deleteTelephonyProvidersEdgeSoftwareupdate-example.txt
@@ -716,6 +721,10 @@ docs/getBillingContractsInvoices-example.txt
 docs/getBillingReportsBillableusage-example.txt
 docs/getBillingTrusteebillingoverviewTrustorOrgId-example.txt
 docs/getBusinessrulesDecisiontable-example.txt
+docs/getBusinessrulesDecisiontableExport-example.txt
+docs/getBusinessrulesDecisiontableExports-example.txt
+docs/getBusinessrulesDecisiontableImport-example.txt
+docs/getBusinessrulesDecisiontableImports-example.txt
 docs/getBusinessrulesDecisiontableVersion-example.txt
 docs/getBusinessrulesDecisiontableVersionRow-example.txt
 docs/getBusinessrulesDecisiontableVersionRows-example.txt
@@ -1554,6 +1563,8 @@ docs/getRoutingEmailDomains-example.txt
 docs/getRoutingEmailOutboundDomain-example.txt
 docs/getRoutingEmailOutboundDomainActivation-example.txt
 docs/getRoutingEmailOutboundDomains-example.txt
+docs/getRoutingEmailSetting-example.txt
+docs/getRoutingEmailSettingEmailSettingId-example.txt
 docs/getRoutingEmailSetup-example.txt
 docs/getRoutingLanguage-example.txt
 docs/getRoutingLanguages-example.txt
@@ -1753,6 +1764,9 @@ docs/getTelephonyAgentGreetings-example.txt
 docs/getTelephonyAgentsGreetingsMe-example.txt
 docs/getTelephonyCallsMetrics-example.txt
 docs/getTelephonyMediaregions-example.txt
+docs/getTelephonyNumbersRouting-example.txt
+docs/getTelephonyOrganizationLink-example.txt
+docs/getTelephonyOrganizationLinkRegions-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
@@ -2088,6 +2102,7 @@ docs/patchAssistantQueues-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchBusinessrulesDecisiontable-example.txt
+docs/patchBusinessrulesDecisiontableImport-example.txt
 docs/patchBusinessrulesDecisiontableVersion-example.txt
 docs/patchCasemanagementCaseDatedue-example.txt
 docs/patchCasemanagementCasePriority-example.txt
@@ -2225,6 +2240,7 @@ docs/patchRoutingConversation-example.txt
 docs/patchRoutingEmailDomain-example.txt
 docs/patchRoutingEmailDomainValidate-example.txt
 docs/patchRoutingEmailOutboundDomain-example.txt
+docs/patchRoutingEmailSettingEmailSettingId-example.txt
 docs/patchRoutingPredictor-example.txt
 docs/patchRoutingPredictorsKeyperformanceindicator-example.txt
 docs/patchRoutingQueueMember-example.txt
@@ -2261,6 +2277,7 @@ docs/patchTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/patchTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/patchTaskmanagementWorktypeStatus-example.txt
 docs/patchTeam-example.txt
+docs/patchTelephonyOrganizationLinkApproveRequestingOrganizationId-example.txt
 docs/patchTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/patchUser-example.txt
 docs/patchUserCallforwarding-example.txt
@@ -2461,9 +2478,14 @@ docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postBackgroundassistantToken-example.txt
 docs/postBusinessrulesDecisiontableExecute-example.txt
+docs/postBusinessrulesDecisiontableExports-example.txt
+docs/postBusinessrulesDecisiontableImports-example.txt
 docs/postBusinessrulesDecisiontableVersionCopy-example.txt
 docs/postBusinessrulesDecisiontableVersionExecute-example.txt
 docs/postBusinessrulesDecisiontableVersionRows-example.txt
+docs/postBusinessrulesDecisiontableVersionRowsBulkAdd-example.txt
+docs/postBusinessrulesDecisiontableVersionRowsBulkRemove-example.txt
+docs/postBusinessrulesDecisiontableVersionRowsBulkUpdate-example.txt
 docs/postBusinessrulesDecisiontableVersionRowsSearch-example.txt
 docs/postBusinessrulesDecisiontableVersionSync-example.txt
 docs/postBusinessrulesDecisiontableVersions-example.txt
@@ -2472,6 +2494,7 @@ docs/postBusinessrulesSchemas-example.txt
 docs/postCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/postCasemanagementCaseAssociations-example.txt
 docs/postCasemanagementCaseTerminateJobs-example.txt
+docs/postCasemanagementCaseplanDataschemas-example.txt
 docs/postCasemanagementCaseplanPublish-example.txt
 docs/postCasemanagementCaseplanVersions-example.txt
 docs/postCasemanagementCaseplans-example.txt
@@ -2950,6 +2973,7 @@ docs/postRoutingEmailDomains-example.txt
 docs/postRoutingEmailOutboundDomainTestconnection-example.txt
 docs/postRoutingEmailOutboundDomains-example.txt
 docs/postRoutingEmailOutboundDomainsSimulated-example.txt
+docs/postRoutingEmailSetting-example.txt
 docs/postRoutingLanguages-example.txt
 docs/postRoutingPredictors-example.txt
 docs/postRoutingPredictorsKeyperformanceindicators-example.txt
@@ -3022,6 +3046,10 @@ docs/postTeamMembers-example.txt
 docs/postTeams-example.txt
 docs/postTeamsSearch-example.txt
 docs/postTeamsSearch-example.txt
+docs/postTelephonyNumbersRouting-example.txt
+docs/postTelephonyNumbersRoutingAll-example.txt
+docs/postTelephonyNumbersRoutingReset-example.txt
+docs/postTelephonyOrganizationLink-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticPing-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticRoute-example.txt
@@ -3245,6 +3273,7 @@ docs/putAuthorizationRolesSettings-example.txt
 docs/putBusinessrulesDecisiontableVersionPublish-example.txt
 docs/putBusinessrulesDecisiontableVersionRow-example.txt
 docs/putBusinessrulesSchema-example.txt
+docs/putCasemanagementCaseplanDataschema-example.txt
 docs/putCasemanagementCaseplanIntakesettings-example.txt
 docs/putChatsMessageReactions-example.txt
 docs/putChatsSettings-example.txt

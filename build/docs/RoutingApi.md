@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingEmailDomain**](RoutingApi#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
 [**deleteRoutingEmailOutboundDomain**](RoutingApi#deleteRoutingEmailOutboundDomain) | **DELETE** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain
+[**deleteRoutingEmailSettingEmailSettingId**](RoutingApi#deleteRoutingEmailSettingEmailSettingId) | **DELETE** /api/v2/routing/email/setting/{emailSettingId} | Delete an email setting. Removes the email setting and its associated settings
 [**deleteRoutingLanguage**](RoutingApi#deleteRoutingLanguage) | **DELETE** /api/v2/routing/languages/{languageId} | Delete a routing language
 [**deleteRoutingPredictor**](RoutingApi#deleteRoutingPredictor) | **DELETE** /api/v2/routing/predictors/{predictorId} | Delete single predictor.
 [**deleteRoutingPredictorsKeyperformanceindicator**](RoutingApi#deleteRoutingPredictorsKeyperformanceindicator) | **DELETE** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Delete a custom Key Performance Indicator.
@@ -49,6 +50,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | **GET** /api/v2/routing/email/outbound/domains/{domainId} | Get domain
 [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/activation | Get activation status (cname + dkim) of an outbound domain
 [**getRoutingEmailOutboundDomains**](RoutingApi#getRoutingEmailOutboundDomains) | **GET** /api/v2/routing/email/outbound/domains | Get outbound domains
+[**getRoutingEmailSetting**](RoutingApi#getRoutingEmailSetting) | **GET** /api/v2/routing/email/setting | Get a paged list of email routing settings.
+[**getRoutingEmailSettingEmailSettingId**](RoutingApi#getRoutingEmailSettingEmailSettingId) | **GET** /api/v2/routing/email/setting/{emailSettingId} | Get email setting. Returns the specified email setting that defines settings for email
 [**getRoutingEmailSetup**](RoutingApi#getRoutingEmailSetup) | **GET** /api/v2/routing/email/setup | Get email setup
 [**getRoutingLanguage**](RoutingApi#getRoutingLanguage) | **GET** /api/v2/routing/languages/{languageId} | Get a routing language
 [**getRoutingLanguages**](RoutingApi#getRoutingLanguages) | **GET** /api/v2/routing/languages | Get the list of supported languages.
@@ -86,7 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSkillgroupMembers**](RoutingApi#getRoutingSkillgroupMembers) | **GET** /api/v2/routing/skillgroups/{skillGroupId}/members | Get skill group members
 [**getRoutingSkillgroupMembersDivisions**](RoutingApi#getRoutingSkillgroupMembersDivisions) | **GET** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Get list of member divisions for this skill group.
 [**getRoutingSkillgroups**](RoutingApi#getRoutingSkillgroups) | **GET** /api/v2/routing/skillgroups | Get skill group listing
-[**getRoutingSkills**](RoutingApi#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
+[**getRoutingSkills**](RoutingApi#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 [**getRoutingSmsAddress**](RoutingApi#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
 [**getRoutingSmsAddresses**](RoutingApi#getRoutingSmsAddresses) | **GET** /api/v2/routing/sms/addresses | Get a list of Addresses for SMS
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
@@ -111,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
 [**patchRoutingEmailOutboundDomain**](RoutingApi#patchRoutingEmailOutboundDomain) | **PATCH** /api/v2/routing/email/outbound/domains/{domainId} | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+[**patchRoutingEmailSettingEmailSettingId**](RoutingApi#patchRoutingEmailSettingEmailSettingId) | **PATCH** /api/v2/routing/email/setting/{emailSettingId} | Update an email setting. Modifies the settings for email setting
 [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
 [**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi#patchRoutingPredictorsKeyperformanceindicator) | **PATCH** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Update a custom Key Performance Indicator.
 [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
@@ -140,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingEmailOutboundDomainTestconnection**](RoutingApi#postRoutingEmailOutboundDomainTestconnection) | **POST** /api/v2/routing/email/outbound/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this outbound domain
 [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | **POST** /api/v2/routing/email/outbound/domains | Create a domain
 [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
+[**postRoutingEmailSetting**](RoutingApi#postRoutingEmailSetting) | **POST** /api/v2/routing/email/setting | Create a new email setting. Used to define various settings, that can then be associated with email domains
 [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
 [**postRoutingPredictors**](RoutingApi#postRoutingPredictors) | **POST** /api/v2/routing/predictors | Create a predictor.
 [**postRoutingPredictorsKeyperformanceindicators**](RoutingApi#postRoutingPredictorsKeyperformanceindicators) | **POST** /api/v2/routing/predictors/keyperformanceindicators | Create a custom Key Performance Indicator.
@@ -456,6 +461,63 @@ apiInstance.deleteRoutingEmailOutboundDomain(domainId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteRoutingEmailSettingEmailSettingId
+
+> void deleteRoutingEmailSettingEmailSettingId(emailSettingId, opts)
+
+
+DELETE /api/v2/routing/email/setting/{emailSettingId}
+
+Delete an email setting. Removes the email setting and its associated settings
+
+Requires ALL permissions:
+
+* email:settings:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let emailSettingId = "emailSettingId_example"; // String | Email Setting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteRoutingEmailSettingEmailSettingId(emailSettingId, opts)
+  .then(() => {
+    console.log('deleteRoutingEmailSettingEmailSettingId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingEmailSettingEmailSettingId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailSettingId** | **String** | Email Setting ID |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2685,6 +2747,122 @@ apiInstance.getRoutingEmailOutboundDomains(opts)
 **OutboundDomainEntityListing**
 
 
+## getRoutingEmailSetting
+
+> EmailSettingEntityListing getRoutingEmailSetting(opts)
+
+
+GET /api/v2/routing/email/setting
+
+Get a paged list of email routing settings.
+
+Requires ALL permissions:
+
+* email:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getRoutingEmailSetting(opts)
+  .then((data) => {
+    console.log(`getRoutingEmailSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**EmailSettingEntityListing**
+
+
+## getRoutingEmailSettingEmailSettingId
+
+> EmailSetting getRoutingEmailSettingEmailSettingId(emailSettingId, opts)
+
+
+GET /api/v2/routing/email/setting/{emailSettingId}
+
+Get email setting. Returns the specified email setting that defines settings for email
+
+Requires ALL permissions:
+
+* email:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let emailSettingId = "emailSettingId_example"; // String | Email Setting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getRoutingEmailSettingEmailSettingId(emailSettingId, opts)
+  .then((data) => {
+    console.log(`getRoutingEmailSettingEmailSettingId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailSettingEmailSettingId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailSettingId** | **String** | Email Setting ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**EmailSetting**
+
+
 ## getRoutingEmailSetup
 
 > EmailSetup getRoutingEmailSetup(opts)
@@ -4152,7 +4330,7 @@ let opts = {
   'sortOrder': "asc", // String | Sort order
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | Queue ID(s)
-  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s). Including '*' will query for all divisions
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -4180,7 +4358,7 @@ apiInstance.getRoutingQueuesDivisionviews(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | Queue ID(s) | [optional]  |
- **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **divisionId** | **[String]** | Division ID(s). Including '*' will query for all divisions | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -4959,7 +5137,7 @@ apiInstance.getRoutingSkillgroups(opts)
 
 GET /api/v2/routing/skills
 
-Get the list of routing skills.
+Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 
 Requires ANY permissions:
 
@@ -6487,6 +6665,65 @@ apiInstance.patchRoutingEmailOutboundDomain(domainId, body, opts)
 ### Return type
 
 **OutboundDomain**
+
+
+## patchRoutingEmailSettingEmailSettingId
+
+> EmailSetting patchRoutingEmailSettingEmailSettingId(emailSettingId, body, opts)
+
+
+PATCH /api/v2/routing/email/setting/{emailSettingId}
+
+Update an email setting. Modifies the settings for email setting
+
+Requires ALL permissions:
+
+* email:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let emailSettingId = "emailSettingId_example"; // String | Email Setting ID
+let body = {}; // Object | EmailSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchRoutingEmailSettingEmailSettingId(emailSettingId, body, opts)
+  .then((data) => {
+    console.log(`patchRoutingEmailSettingEmailSettingId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingEmailSettingEmailSettingId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailSettingId** | **String** | Email Setting ID |  |
+ **body** | **Object** | EmailSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**EmailSetting**
 
 
 ## patchRoutingPredictor
@@ -8218,6 +8455,63 @@ apiInstance.postRoutingEmailOutboundDomainsSimulated(body, opts)
 ### Return type
 
 **EmailOutboundDomainResult**
+
+
+## postRoutingEmailSetting
+
+> EmailSetting postRoutingEmailSetting(body, opts)
+
+
+POST /api/v2/routing/email/setting
+
+Create a new email setting. Used to define various settings, that can then be associated with email domains
+
+Requires ANY permissions:
+
+* email:settings:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | EmailSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postRoutingEmailSetting(body, opts)
+  .then((data) => {
+    console.log(`postRoutingEmailSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | EmailSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**EmailSetting**
 
 
 ## postRoutingLanguages
@@ -10335,4 +10629,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body, opts)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

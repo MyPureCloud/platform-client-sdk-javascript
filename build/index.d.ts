@@ -2469,10 +2469,16 @@ declare namespace BillingApi {
 declare class BusinessRulesApi {
 	constructor(apiClient?: ApiClientClass);
   	deleteBusinessrulesDecisiontable(tableId: string, opts?: BusinessRulesApi.deleteBusinessrulesDecisiontableOptions): Promise<void>;
+  	deleteBusinessrulesDecisiontableExport(tableId: string, exportJobId: string, opts?: BusinessRulesApi.deleteBusinessrulesDecisiontableExportOptions): Promise<void>;
+  	deleteBusinessrulesDecisiontableImport(tableId: string, importJobId: string, opts?: BusinessRulesApi.deleteBusinessrulesDecisiontableImportOptions): Promise<void>;
   	deleteBusinessrulesDecisiontableVersion(tableId: string, tableVersion: number, opts?: BusinessRulesApi.deleteBusinessrulesDecisiontableVersionOptions): Promise<void>;
   	deleteBusinessrulesDecisiontableVersionRow(tableId: string, tableVersion: number, rowId: string, opts?: BusinessRulesApi.deleteBusinessrulesDecisiontableVersionRowOptions): Promise<void>;
   	deleteBusinessrulesSchema(schemaId: string, opts?: BusinessRulesApi.deleteBusinessrulesSchemaOptions): Promise<void>;
   	getBusinessrulesDecisiontable(tableId: string, opts?: BusinessRulesApi.getBusinessrulesDecisiontableOptions): Promise<Models.DecisionTable>;
+  	getBusinessrulesDecisiontableExport(tableId: string, exportJobId: string, opts?: BusinessRulesApi.getBusinessrulesDecisiontableExportOptions): Promise<Models.DecisionTableExportJob>;
+  	getBusinessrulesDecisiontableExports(tableId: string, opts?: BusinessRulesApi.getBusinessrulesDecisiontableExportsOptions): Promise<Models.DecisionTableExportJobListing>;
+  	getBusinessrulesDecisiontableImport(tableId: string, importJobId: string, opts?: BusinessRulesApi.getBusinessrulesDecisiontableImportOptions): Promise<Models.DecisionTableImportJob>;
+  	getBusinessrulesDecisiontableImports(tableId: string, opts?: BusinessRulesApi.getBusinessrulesDecisiontableImportsOptions): Promise<Models.DecisionTableImportJobListing>;
   	getBusinessrulesDecisiontableVersion(tableId: string, tableVersion: number, opts?: BusinessRulesApi.getBusinessrulesDecisiontableVersionOptions): Promise<Models.DecisionTableVersion>;
   	getBusinessrulesDecisiontableVersionRow(tableId: string, tableVersion: number, rowId: string, opts?: BusinessRulesApi.getBusinessrulesDecisiontableVersionRowOptions): Promise<Models.DecisionTableRow>;
   	getBusinessrulesDecisiontableVersionRows(tableId: string, tableVersion: number, opts?: BusinessRulesApi.getBusinessrulesDecisiontableVersionRowsOptions): Promise<Models.DecisionTableRowListing>;
@@ -2484,11 +2490,17 @@ declare class BusinessRulesApi {
   	getBusinessrulesSchemasCoretype(coreTypeName: string, opts?: BusinessRulesApi.getBusinessrulesSchemasCoretypeOptions): Promise<Models.Coretype>;
   	getBusinessrulesSchemasCoretypes(opts?: BusinessRulesApi.getBusinessrulesSchemasCoretypesOptions): Promise<Models.CoretypeListing>;
   	patchBusinessrulesDecisiontable(tableId: string, body: Models.UpdateDecisionTableRequest, opts?: BusinessRulesApi.patchBusinessrulesDecisiontableOptions): Promise<Models.DecisionTable>;
+  	patchBusinessrulesDecisiontableImport(tableId: string, importJobId: string, body: Models.UpdateDecisionTableImportJobRequest, opts?: BusinessRulesApi.patchBusinessrulesDecisiontableImportOptions): Promise<Models.DecisionTableImportJob>;
   	patchBusinessrulesDecisiontableVersion(tableId: string, tableVersion: number, body: Models.UpdateDecisionTableVersionRequest, opts?: BusinessRulesApi.patchBusinessrulesDecisiontableVersionOptions): Promise<Models.DecisionTableVersion>;
   	postBusinessrulesDecisiontableExecute(tableId: string, body: Models.DecisionTableExecutionRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableExecuteOptions): Promise<Models.DecisionTableExecutionResponse>;
+  	postBusinessrulesDecisiontableExports(tableId: string, body: Models.DecisionTableExportJobRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableExportsOptions): Promise<Models.DecisionTableExportJob>;
+  	postBusinessrulesDecisiontableImports(tableId: string, body: Models.CreateDecisionTableImportJobRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableImportsOptions): Promise<Models.DecisionTableImportJob>;
   	postBusinessrulesDecisiontableVersionCopy(tableId: string, tableVersion: number, body: Models.CopyDecisionTableRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionCopyOptions): Promise<Models.DecisionTableVersion>;
   	postBusinessrulesDecisiontableVersionExecute(tableId: string, tableVersion: number, body: Models.DecisionTableExecutionRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionExecuteOptions): Promise<Models.DecisionTableExecutionResponse>;
   	postBusinessrulesDecisiontableVersionRows(tableId: string, tableVersion: number, body: Models.CreateDecisionTableRowRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionRowsOptions): Promise<Models.DecisionTableRow>;
+  	postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId: string, tableVersion: number, body: Models.BulkAddDecisionTableRowsRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionRowsBulkAddOptions): Promise<Models.BulkAddDecisionTableRowsResponse>;
+  	postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId: string, tableVersion: number, body: Models.BulkDeleteDecisionTableRowsRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionRowsBulkRemoveOptions): Promise<void>;
+  	postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId: string, tableVersion: number, body: Models.BulkUpdateDecisionTableRowsRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionRowsBulkUpdateOptions): Promise<Models.BulkUpdateDecisionTableRowsResponse>;
   	postBusinessrulesDecisiontableVersionRowsSearch(tableId: string, tableVersion: number, body: Models.SearchDecisionTableRowsRequest, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionRowsSearchOptions): Promise<Models.DecisionTableRowListing>;
   	postBusinessrulesDecisiontableVersionSync(tableId: string, tableVersion: number, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionSyncOptions): Promise<Models.DecisionTableVersion>;
   	postBusinessrulesDecisiontableVersions(tableId: string, opts?: BusinessRulesApi.postBusinessrulesDecisiontableVersionsOptions): Promise<Models.DecisionTableVersion>;
@@ -2504,6 +2516,12 @@ declare namespace BusinessRulesApi {
 		"forceDelete"?: boolean;
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface deleteBusinessrulesDecisiontableExportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteBusinessrulesDecisiontableImportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface deleteBusinessrulesDecisiontableVersionOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
@@ -2514,6 +2532,22 @@ declare namespace BusinessRulesApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getBusinessrulesDecisiontableOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getBusinessrulesDecisiontableExportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getBusinessrulesDecisiontableExportsOptions { 
+		"after"?: string;
+		"pageSize"?: string;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getBusinessrulesDecisiontableImportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getBusinessrulesDecisiontableImportsOptions { 
+		"after"?: string;
+		"pageSize"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getBusinessrulesDecisiontableVersionOptions { 
@@ -2564,10 +2598,19 @@ declare namespace BusinessRulesApi {
 	export interface patchBusinessrulesDecisiontableOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface patchBusinessrulesDecisiontableImportOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface patchBusinessrulesDecisiontableVersionOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postBusinessrulesDecisiontableExecuteOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postBusinessrulesDecisiontableExportsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postBusinessrulesDecisiontableImportsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postBusinessrulesDecisiontableVersionCopyOptions { 
@@ -2577,6 +2620,15 @@ declare namespace BusinessRulesApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postBusinessrulesDecisiontableVersionRowsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postBusinessrulesDecisiontableVersionRowsBulkAddOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postBusinessrulesDecisiontableVersionRowsBulkRemoveOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postBusinessrulesDecisiontableVersionRowsBulkUpdateOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postBusinessrulesDecisiontableVersionRowsSearchOptions { 
@@ -2627,6 +2679,7 @@ declare class CaseManagementApi {
 	constructor(apiClient?: ApiClientClass);
   	deleteCasemanagementCase(caseId: string, opts?: CaseManagementApi.deleteCasemanagementCaseOptions): Promise<object>;
   	deleteCasemanagementCaseplan(caseplanId: string, opts?: CaseManagementApi.deleteCasemanagementCaseplanOptions): Promise<object>;
+  	deleteCasemanagementCaseplanDataschema(caseplanId: string, schemaKeyName: string, opts?: CaseManagementApi.deleteCasemanagementCaseplanDataschemaOptions): Promise<object>;
   	getCasemanagementCase(caseId: string, opts?: CaseManagementApi.getCasemanagementCaseOptions): Promise<Models.Case>;
   	getCasemanagementCaseAssociation(caseId: string, associationId: string, opts?: CaseManagementApi.getCasemanagementCaseAssociationOptions): Promise<Models.CaseAssociation>;
   	getCasemanagementCaseAssociations(caseId: string, opts?: CaseManagementApi.getCasemanagementCaseAssociationsOptions): Promise<Models.CaseAssociationListing>;
@@ -2652,14 +2705,16 @@ declare class CaseManagementApi {
   	patchCasemanagementCaseplan(caseplanId: string, body: Models.CaseplanUpdate, opts?: CaseManagementApi.patchCasemanagementCaseplanOptions): Promise<Models.Caseplan>;
   	patchCasemanagementCaseplanStageplan(caseplanId: string, stageplanId: string, body: Models.StageplanUpdate, opts?: CaseManagementApi.patchCasemanagementCaseplanStageplanOptions): Promise<Models.Stageplan>;
   	patchCasemanagementCaseplanStageplanStepplan(caseplanId: string, stageplanId: string, stepplanId: string, body: Models.StepplanUpdate, opts?: CaseManagementApi.patchCasemanagementCaseplanStageplanStepplanOptions): Promise<Models.Stepplan>;
-  	postCasemanagementCaseAssociations(caseId: string, opts?: CaseManagementApi.postCasemanagementCaseAssociationsOptions): Promise<Models.CaseAssociation>;
+  	postCasemanagementCaseAssociations(caseId: string, body: Models.CaseAssociationCreate, opts?: CaseManagementApi.postCasemanagementCaseAssociationsOptions): Promise<Models.CaseAssociation>;
   	postCasemanagementCaseTerminateJobs(caseId: string, opts?: CaseManagementApi.postCasemanagementCaseTerminateJobsOptions): Promise<Models.TerminateJob>;
+  	postCasemanagementCaseplanDataschemas(caseplanId: string, body: Models.CaseplanDataSchemaRequest, opts?: CaseManagementApi.postCasemanagementCaseplanDataschemasOptions): Promise<Models.CaseplanDataSchema>;
   	postCasemanagementCaseplanPublish(caseplanId: string, opts?: CaseManagementApi.postCasemanagementCaseplanPublishOptions): Promise<Models.Caseplan>;
   	postCasemanagementCaseplanVersions(caseplanId: string, opts?: CaseManagementApi.postCasemanagementCaseplanVersionsOptions): Promise<Models.Caseplan>;
   	postCasemanagementCaseplans(body: Models.CaseplanCreate, opts?: CaseManagementApi.postCasemanagementCaseplansOptions): Promise<Models.CaseplanCreateResponse>;
   	postCasemanagementCaseplansQuery(body: Models.CaseplanQueryRequest, opts?: CaseManagementApi.postCasemanagementCaseplansQueryOptions): Promise<Models.CaseplanQueryEntityListing>;
   	postCasemanagementCases(body: Models.CaseCreate, opts?: CaseManagementApi.postCasemanagementCasesOptions): Promise<Models.Case>;
-  	postCasemanagementCasesAssociationsQuery(opts?: CaseManagementApi.postCasemanagementCasesAssociationsQueryOptions): Promise<Models.CaseAssociationQueryEntityListing>;
+  	postCasemanagementCasesAssociationsQuery(body: Models.CaseAssociationQuery, opts?: CaseManagementApi.postCasemanagementCasesAssociationsQueryOptions): Promise<Models.CaseAssociationQueryEntityListing>;
+  	putCasemanagementCaseplanDataschema(caseplanId: string, schemaKeyName: string, body: Models.CaseplanDataSchemaRequest, opts?: CaseManagementApi.putCasemanagementCaseplanDataschemaOptions): Promise<Models.CaseplanDataSchema>;
   	putCasemanagementCaseplanIntakesettings(caseplanId: string, body: Models.IntakeSettingsUpdate, opts?: CaseManagementApi.putCasemanagementCaseplanIntakesettingsOptions): Promise<Models.IntakeSettingsListing>;
 }
 
@@ -2668,6 +2723,9 @@ declare namespace CaseManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteCasemanagementCaseplanOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteCasemanagementCaseplanDataschemaOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getCasemanagementCaseOptions { 
@@ -2775,10 +2833,12 @@ declare namespace CaseManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCaseAssociationsOptions { 
-		"body"?: Models.CaseAssociationCreate;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCaseTerminateJobsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postCasemanagementCaseplanDataschemasOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCaseplanPublishOptions { 
@@ -2797,7 +2857,9 @@ declare namespace CaseManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postCasemanagementCasesAssociationsQueryOptions { 
-		"body"?: Models.CaseAssociationQuery;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface putCasemanagementCaseplanDataschemaOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface putCasemanagementCaseplanIntakesettingsOptions { 
@@ -4891,7 +4953,7 @@ declare class ExternalContactsApi {
   	getExternalcontactsContactUnresolved(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactUnresolvedOptions): Promise<Models.ExternalContact>;
   	getExternalcontactsContacts(opts?: ExternalContactsApi.getExternalcontactsContactsOptions): Promise<Models.ContactListing>;
   	getExternalcontactsContactsExport(exportId: string, opts?: ExternalContactsApi.getExternalcontactsContactsExportOptions): Promise<Models.ContactsExport>;
-  	getExternalcontactsContactsExports(opts?: ExternalContactsApi.getExternalcontactsContactsExportsOptions): Promise<Models.ExportListing>;
+  	getExternalcontactsContactsExports(opts?: ExternalContactsApi.getExternalcontactsContactsExportsOptions): Promise<Models.ContactsExportListing>;
   	getExternalcontactsContactsSchema(schemaId: string, opts?: ExternalContactsApi.getExternalcontactsContactsSchemaOptions): Promise<Models.DataSchema>;
   	getExternalcontactsContactsSchemaVersion(schemaId: string, versionId: string, opts?: ExternalContactsApi.getExternalcontactsContactsSchemaVersionOptions): Promise<Models.DataSchema>;
   	getExternalcontactsContactsSchemaVersions(schemaId: string, opts?: ExternalContactsApi.getExternalcontactsContactsSchemaVersionsOptions): Promise<Models.DataSchemaListing>;
@@ -11273,6 +11335,7 @@ declare class RoutingApi {
   	deleteRoutingEmailDomain(domainId: string, opts?: RoutingApi.deleteRoutingEmailDomainOptions): Promise<void>;
   	deleteRoutingEmailDomainRoute(domainName: string, routeId: string, opts?: RoutingApi.deleteRoutingEmailDomainRouteOptions): Promise<void>;
   	deleteRoutingEmailOutboundDomain(domainId: string, opts?: RoutingApi.deleteRoutingEmailOutboundDomainOptions): Promise<void>;
+  	deleteRoutingEmailSettingEmailSettingId(emailSettingId: string, opts?: RoutingApi.deleteRoutingEmailSettingEmailSettingIdOptions): Promise<void>;
   	deleteRoutingLanguage(languageId: string, opts?: RoutingApi.deleteRoutingLanguageOptions): Promise<void>;
   	deleteRoutingPredictor(predictorId: string, opts?: RoutingApi.deleteRoutingPredictorOptions): Promise<void>;
   	deleteRoutingPredictorsKeyperformanceindicator(kpiId: string, opts?: RoutingApi.deleteRoutingPredictorsKeyperformanceindicatorOptions): Promise<void>;
@@ -11311,6 +11374,8 @@ declare class RoutingApi {
   	getRoutingEmailOutboundDomain(domainId: string, opts?: RoutingApi.getRoutingEmailOutboundDomainOptions): Promise<Models.OutboundDomain>;
   	getRoutingEmailOutboundDomainActivation(domainId: string, opts?: RoutingApi.getRoutingEmailOutboundDomainActivationOptions): Promise<Models.EmailOutboundDomainResult>;
   	getRoutingEmailOutboundDomains(opts?: RoutingApi.getRoutingEmailOutboundDomainsOptions): Promise<Models.OutboundDomainEntityListing>;
+  	getRoutingEmailSetting(opts?: RoutingApi.getRoutingEmailSettingOptions): Promise<Models.EmailSettingEntityListing>;
+  	getRoutingEmailSettingEmailSettingId(emailSettingId: string, opts?: RoutingApi.getRoutingEmailSettingEmailSettingIdOptions): Promise<Models.EmailSetting>;
   	getRoutingEmailSetup(opts?: RoutingApi.getRoutingEmailSetupOptions): Promise<Models.EmailSetup>;
   	getRoutingLanguage(languageId: string, opts?: RoutingApi.getRoutingLanguageOptions): Promise<Models.Language>;
   	getRoutingLanguages(opts?: RoutingApi.getRoutingLanguagesOptions): Promise<Models.LanguageEntityListing>;
@@ -11373,6 +11438,7 @@ declare class RoutingApi {
   	patchRoutingEmailDomain(domainId: string, body: Models.InboundDomainPatchRequest, opts?: RoutingApi.patchRoutingEmailDomainOptions): Promise<Models.InboundDomain>;
   	patchRoutingEmailDomainValidate(domainId: string, body: Models.InboundDomainPatchRequest, opts?: RoutingApi.patchRoutingEmailDomainValidateOptions): Promise<Models.InboundDomain>;
   	patchRoutingEmailOutboundDomain(domainId: string, body: Models.OutboundDomainPatchRequest, opts?: RoutingApi.patchRoutingEmailOutboundDomainOptions): Promise<Models.OutboundDomain>;
+  	patchRoutingEmailSettingEmailSettingId(emailSettingId: string, body: Models.EmailSetting, opts?: RoutingApi.patchRoutingEmailSettingEmailSettingIdOptions): Promise<Models.EmailSetting>;
   	patchRoutingPredictor(predictorId: string, opts?: RoutingApi.patchRoutingPredictorOptions): Promise<Models.Predictor>;
   	patchRoutingPredictorsKeyperformanceindicator(kpiId: string, opts?: RoutingApi.patchRoutingPredictorsKeyperformanceindicatorOptions): Promise<Models.KeyPerformanceIndicator>;
   	patchRoutingQueueMember(queueId: string, memberId: string, body: Models.QueueMember, opts?: RoutingApi.patchRoutingQueueMemberOptions): Promise<void>;
@@ -11402,6 +11468,7 @@ declare class RoutingApi {
   	postRoutingEmailOutboundDomainTestconnection(domainId: string, opts?: RoutingApi.postRoutingEmailOutboundDomainTestconnectionOptions): Promise<Models.TestMessage>;
   	postRoutingEmailOutboundDomains(body: Models.OutboundDomainCreateRequest, opts?: RoutingApi.postRoutingEmailOutboundDomainsOptions): Promise<Models.EmailOutboundDomainResult>;
   	postRoutingEmailOutboundDomainsSimulated(body: Models.OutboundDomainCreateRequest, opts?: RoutingApi.postRoutingEmailOutboundDomainsSimulatedOptions): Promise<Models.EmailOutboundDomainResult>;
+  	postRoutingEmailSetting(body: Models.EmailSetting, opts?: RoutingApi.postRoutingEmailSettingOptions): Promise<Models.EmailSetting>;
   	postRoutingLanguages(body: Models.Language, opts?: RoutingApi.postRoutingLanguagesOptions): Promise<Models.Language>;
   	postRoutingPredictors(opts?: RoutingApi.postRoutingPredictorsOptions): Promise<Models.Predictor>;
   	postRoutingPredictorsKeyperformanceindicators(body: Models.CreateKpiRequest, opts?: RoutingApi.postRoutingPredictorsKeyperformanceindicatorsOptions): Promise<Models.KeyPerformanceIndicator>;
@@ -11454,6 +11521,9 @@ declare namespace RoutingApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteRoutingEmailOutboundDomainOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface deleteRoutingEmailSettingEmailSettingIdOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface deleteRoutingLanguageOptions { 
@@ -11593,6 +11663,14 @@ declare namespace RoutingApi {
 		"pageNumber"?: number;
 		"filter"?: string;
 		"expand"?: string;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getRoutingEmailSettingOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getRoutingEmailSettingEmailSettingIdOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getRoutingEmailSetupOptions { 
@@ -11926,6 +12004,9 @@ declare namespace RoutingApi {
 	export interface patchRoutingEmailOutboundDomainOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
+	export interface patchRoutingEmailSettingEmailSettingIdOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface patchRoutingPredictorOptions { 
 		"body"?: Models.PatchPredictorRequest;
 		"customHeaders"?: Record<string, string>;
@@ -12020,6 +12101,9 @@ declare namespace RoutingApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postRoutingEmailOutboundDomainsSimulatedOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postRoutingEmailSettingOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postRoutingLanguagesOptions { 
@@ -13695,15 +13779,24 @@ declare namespace TeamsApi {
 
 declare class TelephonyApi {
 	constructor(apiClient?: ApiClientClass);
+  	deleteTelephonyOrganizationLinkTargetOrganizationId(targetOrganizationId: string, opts?: TelephonyApi.deleteTelephonyOrganizationLinkTargetOrganizationIdOptions): Promise<void>;
   	getTelephonyAgentGreetings(agentId: string, opts?: TelephonyApi.getTelephonyAgentGreetingsOptions): Promise<Models.AgentGreeting>;
   	getTelephonyAgentsGreetingsMe(opts?: TelephonyApi.getTelephonyAgentsGreetingsMeOptions): Promise<Models.SelfAgentGreeting>;
   	getTelephonyCallsMetrics(opts?: TelephonyApi.getTelephonyCallsMetricsOptions): Promise<Models.OrganizationCallMetrics>;
   	getTelephonyMediaregions(opts?: TelephonyApi.getTelephonyMediaregionsOptions): Promise<Models.MediaRegions>;
+  	getTelephonyNumbersRouting(opts?: TelephonyApi.getTelephonyNumbersRoutingOptions): Promise<Models.NumberRoutingListing>;
+  	getTelephonyOrganizationLink(opts?: TelephonyApi.getTelephonyOrganizationLinkOptions): Promise<Array<Models.OrganizationLinkResponse>>;
+  	getTelephonyOrganizationLinkRegions(opts?: TelephonyApi.getTelephonyOrganizationLinkRegionsOptions): Promise<Array<Models.RegionResponse>>;
   	getTelephonySettings(opts?: TelephonyApi.getTelephonySettingsOptions): Promise<Models.TelephonySettings>;
   	getTelephonySipmessagesConversation(conversationId: string, opts?: TelephonyApi.getTelephonySipmessagesConversationOptions): Promise<Models.Callmessage>;
   	getTelephonySipmessagesConversationHeaders(conversationId: string, opts?: TelephonyApi.getTelephonySipmessagesConversationHeadersOptions): Promise<Models.Callheader>;
   	getTelephonySiptraces(dateStart: string, dateEnd: string, opts?: TelephonyApi.getTelephonySiptracesOptions): Promise<Models.SipSearchResult>;
   	getTelephonySiptracesDownloadDownloadId(downloadId: string, opts?: TelephonyApi.getTelephonySiptracesDownloadDownloadIdOptions): Promise<Models.SignedUrlResponse>;
+  	patchTelephonyOrganizationLinkApproveRequestingOrganizationId(requestingOrganizationId: string, body: Models.OrganizationLinkApprovalRequest, opts?: TelephonyApi.patchTelephonyOrganizationLinkApproveRequestingOrganizationIdOptions): Promise<void>;
+  	postTelephonyNumbersRouting(body: Array<Models.NumberRoutingRequest>, opts?: TelephonyApi.postTelephonyNumbersRoutingOptions): Promise<void>;
+  	postTelephonyNumbersRoutingAll(body: Models.DisasterRecoveryAllRoutingRequest, opts?: TelephonyApi.postTelephonyNumbersRoutingAllOptions): Promise<void>;
+  	postTelephonyNumbersRoutingReset(body: Models.NumberRoutingResetOrganizationRequest, opts?: TelephonyApi.postTelephonyNumbersRoutingResetOptions): Promise<void>;
+  	postTelephonyOrganizationLink(body: Models.CreateOrganizationLink, opts?: TelephonyApi.postTelephonyOrganizationLinkOptions): Promise<Models.OrganizationLink>;
   	postTelephonySiptracesDownload(sIPSearchPublicRequest: Models.SIPSearchPublicRequest, opts?: TelephonyApi.postTelephonySiptracesDownloadOptions): Promise<Models.SipDownloadResponse>;
   	putTelephonyAgentGreetings(agentId: string, body: Models.AgentGreeting, opts?: TelephonyApi.putTelephonyAgentGreetingsOptions): Promise<Models.AgentGreeting>;
   	putTelephonyAgentsGreetingsMe(body: Models.SelfAgentGreeting, opts?: TelephonyApi.putTelephonyAgentsGreetingsMeOptions): Promise<Models.SelfAgentGreeting>;
@@ -13711,6 +13804,9 @@ declare class TelephonyApi {
 }
 
 declare namespace TelephonyApi { 
+	export interface deleteTelephonyOrganizationLinkTargetOrganizationIdOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
 	export interface getTelephonyAgentGreetingsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
@@ -13722,6 +13818,22 @@ declare namespace TelephonyApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getTelephonyMediaregionsOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getTelephonyNumbersRoutingOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"numberId"?: string;
+		"activeRoutingOrganizationId"?: string;
+		"ownerOrganizationId"?: string;
+		"status"?: string;
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getTelephonyOrganizationLinkOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface getTelephonyOrganizationLinkRegionsOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getTelephonySettingsOptions { 
@@ -13742,6 +13854,21 @@ declare namespace TelephonyApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getTelephonySiptracesDownloadDownloadIdOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface patchTelephonyOrganizationLinkApproveRequestingOrganizationIdOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postTelephonyNumbersRoutingOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postTelephonyNumbersRoutingAllOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postTelephonyNumbersRoutingResetOptions { 
+		"customHeaders"?: Record<string, string>;
+	}
+	export interface postTelephonyOrganizationLinkOptions { 
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postTelephonySiptracesDownloadOptions { 
@@ -16227,6 +16354,7 @@ declare namespace WorkforceManagementApi {
 	export interface getWorkforcemanagementBusinessunitTimeoffplansOptions { 
 		"managementUnitId"?: string;
 		"forceDownloadService"?: boolean;
+		"expand"?: Array<string>;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getWorkforcemanagementBusinessunitUsersOptions { 
@@ -16254,6 +16382,8 @@ declare namespace WorkforceManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface getWorkforcemanagementBusinessunitWeekSchedulesOptions { 
+		"earliestWeekDate"?: string;
+		"latestWeekDate"?: string;
 		"includeOnlyPublished"?: boolean;
 		"expand"?: string;
 		"customHeaders"?: Record<string, string>;
@@ -16913,6 +17043,7 @@ declare namespace WorkforceManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postWorkforcemanagementManagementunitUserTimeoffrequestsEstimateOptions { 
+		"includeOnly"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postWorkforcemanagementManagementunitWeekShifttradeMatchOptions { 
@@ -16993,6 +17124,7 @@ declare namespace WorkforceManagementApi {
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postWorkforcemanagementTimeoffrequestsEstimateOptions { 
+		"includeOnly"?: string;
 		"customHeaders"?: Record<string, string>;
 	}
 	export interface postWorkforcemanagementTimeoffrequestsIntegrationstatusQueryOptions { 
@@ -18496,6 +18628,16 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface AgentStateActivityCategoryCount { 
+		"activityCategory"?: string;
+		"count"?: number;
+	}
+	
+	export interface AgentStateAdherenceStateCount { 
+		"adherenceState"?: string;
+		"count"?: number;
+	}
+	
 	export interface AgentStateAgentQueryClause { 
 		"type": string;
 		"predicates": Array<Models.AgentStateAgentQueryPredicate>;
@@ -19678,6 +19820,9 @@ declare namespace Models {
 		"appleAuthentication"?: Models.AppleAuthentication;
 		"applePay"?: Models.ApplePay;
 		"selfUri"?: string;
+	}
+	
+	export interface AppleInvitation { 
 	}
 	
 	export interface AppleOpaqueId { 
@@ -21571,6 +21716,7 @@ declare namespace Models {
 		"daysBeforeStartToExpireFromWaitlist"?: number;
 		"autoPublishApprovedTimeOffRequests"?: boolean;
 		"restrictedActivityCodeIds"?: Array<string>;
+		"overrideDates"?: Array<Models.OverrideDate>;
 		"hrisTimeOffType"?: Models.HrisTimeOffType;
 		"enabled"?: boolean;
 		"countAgainstTimeOffLimits"?: boolean;
@@ -22048,6 +22194,7 @@ declare namespace Models {
 		"daysBeforeStartToExpireFromWaitlist": number;
 		"autoPublishApprovedTimeOffRequests"?: boolean;
 		"restrictedActivityCodes"?: Models.ActivityCodesReference;
+		"overrideDates"?: Array<Models.OverrideDate>;
 		"hrisTimeOffType"?: Models.HrisTimeOffType;
 		"enabled": boolean;
 		"countAgainstTimeOffLimits": boolean;
@@ -22086,6 +22233,7 @@ declare namespace Models {
 		"daysBeforeStartToExpireFromWaitlist"?: number;
 		"autoPublishApprovedTimeOffRequests"?: boolean;
 		"restrictedActivityCodeIds"?: Models.SetWrapperString;
+		"overrideDates"?: Models.ListWrapperOverrideDate;
 		"hrisTimeOffType"?: Models.ValueWrapperHrisTimeOffType;
 		"enabled"?: boolean;
 		"countAgainstTimeOffLimits"?: boolean;
@@ -22096,6 +22244,15 @@ declare namespace Models {
 	
 	export interface BuUserListing { 
 		"managementUnits": Array<Models.ManagementUnitUserListing>;
+	}
+	
+	export interface BulkAddDecisionTableRowsRequest { 
+		"rows": Array<Models.CreateDecisionTableRowRequest>;
+	}
+	
+	export interface BulkAddDecisionTableRowsResponse { 
+		"totalCreated": number;
+		"rows": Array<Models.DecisionTableRow>;
 	}
 	
 	export interface BulkAddOpportunitiesRequest { 
@@ -22143,6 +22300,10 @@ declare namespace Models {
 		"results"?: Array<Models.BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact>;
 		"errorCount"?: number;
 		"errorIndexes"?: Array<number>;
+	}
+	
+	export interface BulkDeleteDecisionTableRowsRequest { 
+		"rowIds": Array<string>;
 	}
 	
 	export interface BulkDeleteResponse { 
@@ -22544,6 +22705,15 @@ declare namespace Models {
 		"errorResultIds"?: Array<string>;
 	}
 	
+	export interface BulkUpdateDecisionTableRowsRequest { 
+		"rows": Array<Models.Row>;
+	}
+	
+	export interface BulkUpdateDecisionTableRowsResponse { 
+		"totalUpdated": number;
+		"rows": Array<Models.DecisionTableRow>;
+	}
+	
 	export interface BulkUpdateOpportunityEnrollmentsStatusResponse { 
 		"results": Array<Models.BulkOpportunitiesEnrollmentResult>;
 		"errorCount": number;
@@ -22675,6 +22845,7 @@ declare namespace Models {
 		"type"?: string;
 		"content"?: string;
 		"contentText"?: string;
+		"payload"?: string;
 	}
 	
 	export interface ButtonComponent { 
@@ -23935,6 +24106,8 @@ declare namespace Models {
 	}
 	
 	export interface CardBodyText { 
+		"content": string;
+		"contentType": string;
 	}
 	
 	export interface CardParameters { 
@@ -23944,9 +24117,13 @@ declare namespace Models {
 	}
 	
 	export interface Carousel { 
+		"cards": Array<Models.CarouselCard>;
 	}
 	
 	export interface CarouselCard { 
+		"header": Models.MessageHeader;
+		"buttons": Array<Models.Button>;
+		"cardBodyText"?: Models.CardBodyText;
 	}
 	
 	export interface CarouselParameters { 
@@ -24189,6 +24366,10 @@ declare namespace Models {
 	
 	export interface CaseplanDataSchemaListing { 
 		"entities"?: Array<Models.CaseplanDataSchema>;
+	}
+	
+	export interface CaseplanDataSchemaRequest { 
+		"id": string;
 	}
 	
 	export interface CaseplanListing { 
@@ -26094,11 +26275,11 @@ declare namespace Models {
 	export interface ContactsExport { 
 		"id"?: string;
 		"divisionIds"?: Array<string>;
-		"queryConditions"?: Models.ContactsExportQueryConditions;
 		"createdBy"?: Models.DomainEntityRef;
 		"dateCreated"?: string;
 		"status"?: string;
 		"downloadUrl"?: string;
+		"queryConditions"?: Models.ContactsExportQueryConditions;
 		"selfUri"?: string;
 	}
 	
@@ -26118,6 +26299,13 @@ declare namespace Models {
 		"and"?: Array<Models.ContactsExportFilter>;
 		"or"?: Array<Models.ContactsExportFilter>;
 		"not"?: Models.ContactsExportFilter;
+	}
+	
+	export interface ContactsExportListing { 
+		"entities"?: Array<Models.ContactsExport>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface ContactsExportQueryConditions { 
@@ -30046,6 +30234,12 @@ declare namespace Models {
 		"description"?: string;
 	}
 	
+	export interface ConversationSummaryLabel { 
+		"name"?: string;
+		"description"?: string;
+		"type"?: string;
+	}
+	
 	export interface ConversationSummaryReason { 
 		"confidence"?: number;
 		"text"?: string;
@@ -30859,6 +31053,11 @@ declare namespace Models {
 		"outputs": Array<Models.DecisionTableOutputColumnRequest>;
 	}
 	
+	export interface CreateDecisionTableImportJobRequest { 
+		"importMode": string;
+		"fileName": string;
+	}
+	
 	export interface CreateDecisionTableRequest { 
 		"name": string;
 		"description"?: string;
@@ -30996,6 +31195,11 @@ declare namespace Models {
 		"evaluationFormContextIds"?: Array<string>;
 		"initialDirection"?: string;
 		"dateStart"?: string;
+	}
+	
+	export interface CreateOrganizationLink { 
+		"targetOrganizationId": string;
+		"targetRegion": string;
 	}
 	
 	export interface CreateOutboundMessagingConversationRequest { 
@@ -32393,6 +32597,90 @@ declare namespace Models {
 		"rowExecutionOutputs"?: Array<Models.DecisionTableRowExecutionOutput>;
 	}
 	
+	export interface DecisionTableExportJob { 
+		"id"?: string;
+		"tableVersion"?: number;
+		"status"?: string;
+		"createdBy"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"fileName"?: string;
+		"download"?: Models.AddressableEntityRef;
+		"dateDownloadExpires"?: string;
+		"exportType"?: string;
+		"totalRows"?: number;
+		"rowsExported"?: number;
+		"format"?: string;
+		"error"?: Models.DecisionTableExportJobError;
+		"selfUri"?: string;
+	}
+	
+	export interface DecisionTableExportJobError { 
+		"errorCode"?: string;
+		"errorMessage"?: string;
+		"messageWithParams"?: string;
+		"messageParams"?: { [key: string]: string; };
+		"validationErrors"?: Array<Models.DecisionTableJobValidationError>;
+	}
+	
+	export interface DecisionTableExportJobListing { 
+		"entities"?: Array<Models.DecisionTableExportJob>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface DecisionTableExportJobRequest { 
+		"tableVersion"?: number;
+		"exportType": string;
+		"format": string;
+	}
+	
+	export interface DecisionTableImportJob { 
+		"id"?: string;
+		"tableVersion"?: number;
+		"status": string;
+		"uploadUrl"?: string;
+		"uploadHeaders"?: { [key: string]: string; };
+		"importMode": string;
+		"fileName"?: string;
+		"createdBy"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"dateCompleted"?: string;
+		"dateExpires"?: string;
+		"rowMetrics"?: Models.DecisionTableImportRowMetrics;
+		"error"?: Models.DecisionTableImportJobError;
+		"selfUri"?: string;
+	}
+	
+	export interface DecisionTableImportJobError { 
+		"errorCode"?: string;
+		"errorMessage"?: string;
+		"messageWithParams"?: string;
+		"messageParams"?: { [key: string]: string; };
+		"validationErrors"?: Array<Models.DecisionTableJobValidationError>;
+	}
+	
+	export interface DecisionTableImportJobListing { 
+		"entities"?: Array<Models.DecisionTableImportJob>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface DecisionTableImportRowMetrics { 
+		"totalRows"?: number;
+		"rowsParsed"?: number;
+		"rowParseFailed"?: number;
+		"rowsCreated"?: number;
+		"rowsUpdated"?: number;
+		"rowsDeleted"?: number;
+		"rowCreateFailed"?: number;
+		"rowUpdateFailed"?: number;
+		"rowDeleteFailed"?: number;
+	}
+	
 	export interface DecisionTableInputColumn { 
 		"id"?: string;
 		"defaultsTo"?: Models.DecisionTableColumnDefaultRowValue;
@@ -32407,6 +32695,21 @@ declare namespace Models {
 	export interface DecisionTableInputColumnRequest { 
 		"defaultsTo"?: Models.DecisionTableColumnDefaultRowValue;
 		"expression": Models.DecisionTableInputColumnExpression;
+	}
+	
+	export interface DecisionTableJobValidationError { 
+		"message"?: string;
+		"code"?: string;
+		"status"?: number;
+		"entityId"?: string;
+		"entityName"?: string;
+		"messageWithParams"?: string;
+		"messageParams"?: { [key: string]: string; };
+		"contextId"?: string;
+		"details"?: Array<Models.Detail>;
+		"errors"?: Array<Models.ErrorBody>;
+		"limit"?: Models.Limit;
+		"rowNumber"?: number;
 	}
 	
 	export interface DecisionTableListing { 
@@ -33709,6 +34012,12 @@ declare namespace Models {
 		"entity"?: Models.LearningAssignmentReference;
 	}
 	
+	export interface DisasterRecoveryAllRoutingRequest { 
+		"sourceOrganizationId": string;
+		"switchOrganizationId": string;
+		"targetRegion": string;
+	}
+	
 	export interface DisconnectReason { 
 		"type"?: string;
 		"code"?: number;
@@ -34794,6 +35103,8 @@ declare namespace Models {
 	
 	export interface Domains { 
 		"authorizedDomains"?: Models.AuthorizedDomains;
+		"allowExistingEmailParticipants"?: boolean;
+		"allowOutboundToAnyDomainAcd"?: boolean;
 	}
 	
 	export interface DownloadResponse { 
@@ -35776,6 +36087,19 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface EmailSettingEntityListing { 
+		"entities"?: Array<Models.EmailSetting>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface EmailSettingReference { 
 		"id": string;
 		"name"?: string;
@@ -36122,6 +36446,7 @@ declare namespace Models {
 		"durationMinutes": number;
 		"payableMinutes": number;
 		"flexible": boolean;
+		"overrideDateType"?: string;
 	}
 	
 	export interface EstimateAvailablePartialDayTimeOffRequest { 
@@ -36134,6 +36459,7 @@ declare namespace Models {
 		"durationMinutes": number;
 		"payableMinutes": number;
 		"flexible": boolean;
+		"overrideDateType"?: string;
 	}
 	
 	export interface EstimateAvailableTimeOffRequest { 
@@ -36984,13 +37310,6 @@ declare namespace Models {
 		"flow": Models.ArchitectFlowReference;
 		"fileName"?: string;
 		"exportType"?: string;
-	}
-	
-	export interface ExportListing { 
-		"entities"?: Array<Models.ContactsExport>;
-		"nextUri"?: string;
-		"selfUri"?: string;
-		"previousUri"?: string;
 	}
 	
 	export interface ExportScriptRequest { 
@@ -44520,6 +44839,7 @@ declare namespace Models {
 		"generationSetting": Models.KnowledgeGenerationSetting;
 		"stateful"?: boolean;
 		"conversationTurns"?: Array<Models.KnowledgeConversationTurn>;
+		"filter"?: Models.V3SourceTagFilter;
 	}
 	
 	export interface KnowledgeSearchPreviewResponse { 
@@ -44558,6 +44878,7 @@ declare namespace Models {
 		"sources": Array<Models.V3SourceRef>;
 		"generationSetting"?: Models.KnowledgeGenerationSetting;
 		"stateful"?: boolean;
+		"filter"?: Models.V3SourceTagFilter;
 	}
 	
 	export interface KnowledgeSettingsResponse { 
@@ -44567,6 +44888,7 @@ declare namespace Models {
 		"sources"?: Array<Models.V3SourceRef>;
 		"generationSetting"?: Models.KnowledgeGenerationSetting;
 		"stateful"?: boolean;
+		"filter"?: Models.V3SourceTagFilter;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"modifiedBy"?: Models.UserReference;
@@ -48053,6 +48375,34 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface NumberRouting { 
+		"numberId"?: string;
+		"ownerOrganizationId"?: string;
+		"carrierCode"?: string;
+		"pendingOrganizationId"?: string;
+		"region"?: string;
+		"status"?: string;
+		"activeOrganizationId"?: string;
+		"linkedOrganizationIds"?: Array<string>;
+	}
+	
+	export interface NumberRoutingListing { 
+		"entities"?: Array<Models.Number>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface NumberRoutingRequest { 
+		"organizationId"?: string;
+		"numberId"?: string;
+		"targetRegion"?: string;
+	}
+	
+	export interface NumberRoutingResetOrganizationRequest { 
+		"resetOrganizationId": string;
+	}
+	
 	export interface NumericRange { 
 		"gt"?: number;
 		"gte"?: number;
@@ -48935,6 +49285,27 @@ declare namespace Models {
 		"contactCenter"?: boolean;
 		"unifiedCommunications"?: boolean;
 		"custserv"?: boolean;
+	}
+	
+	export interface OrganizationLink { 
+		"sourceOrganizationId": string;
+		"targetOrganizationId": string;
+		"sourceRegion": string;
+		"targetRegion": string;
+		"status"?: string;
+	}
+	
+	export interface OrganizationLinkApprovalRequest { 
+		"approval": boolean;
+	}
+	
+	export interface OrganizationLinkResponse { 
+		"sourceOrganizationId"?: string;
+		"targetOrganizationId"?: string;
+		"sourceRegion"?: string;
+		"targetRegion"?: string;
+		"targetName"?: string;
+		"status"?: string;
 	}
 	
 	export interface OrganizationPresence { 
@@ -55883,6 +56254,13 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface RecordingNotificationResponse { 
+		"originatingMessageId"?: string;
+		"referenceId"?: string;
+		"notificationStatus"?: string;
+		"notificationText"?: string;
+	}
+	
 	export interface RecordingNotificationTemplate { 
 		"id"?: string;
 		"language"?: string;
@@ -56030,6 +56408,10 @@ declare namespace Models {
 		"fragment"?: string;
 		"name"?: string;
 		"medium": string;
+	}
+	
+	export interface RegionResponse { 
+		"regionName"?: string;
 	}
 	
 	export interface RegionTimeZone { 
@@ -57107,6 +57489,12 @@ declare namespace Models {
 		"skillIds"?: Array<string>;
 	}
 	
+	export interface Row { 
+		"rowId": string;
+		"inputs": { [key: string]: Models.DecisionTableRowParameterValue; };
+		"outputs": { [key: string]: Models.DecisionTableRowParameterValue; };
+	}
+	
 	export interface RowSearchFilter { 
 		"predicates": Array<Models.RowSearchPredicate>;
 	}
@@ -57409,6 +57797,21 @@ declare namespace Models {
 		"status"?: string;
 		"operationId"?: string;
 		"result"?: Models.BuScheduleMetadata;
+	}
+	
+	export interface ScheduleVisibilityRange { 
+		"endDate": string;
+		"endBusinessUnitDate": string;
+	}
+	
+	export interface ScheduleVisibilitySettingsRequest { 
+		"enabled"?: boolean;
+		"futureWeeks"?: number;
+	}
+	
+	export interface ScheduleVisibilitySettingsResponse { 
+		"enabled": boolean;
+		"futureWeeks": number;
 	}
 	
 	export interface ScheduledTrigger { 
@@ -58145,7 +58548,7 @@ declare namespace Models {
 	
 	export interface SendAgentlessOutboundMessageRequest { 
 		"fromAddress": string;
-		"toAddress": string;
+		"toAddress"?: string;
 		"toAddressMessengerType": string;
 		"textBody"?: string;
 		"messagingTemplate"?: Models.SendMessagingTemplateRequest;
@@ -59383,7 +59786,6 @@ declare namespace Models {
 		"interval": string;
 		"timeZone"?: string;
 		"filter"?: Models.SocialMediaQueryFilter;
-		"topicIds"?: Array<string>;
 		"pageSize"?: number;
 		"order"?: string;
 	}
@@ -59473,6 +59875,14 @@ declare namespace Models {
 		"target"?: number;
 		"p95"?: number;
 		"p99"?: number;
+	}
+	
+	export interface SocialNumericRange { 
+		"eq"?: number;
+		"gt"?: number;
+		"gte"?: number;
+		"lt"?: number;
+		"lte"?: number;
 	}
 	
 	export interface SocialTopicPatchRequest { 
@@ -59941,6 +60351,8 @@ declare namespace Models {
 	}
 	
 	export interface StatusInfo { 
+		"code"?: string;
+		"message"?: string;
 	}
 	
 	export interface Step { 
@@ -61431,6 +61843,13 @@ declare namespace Models {
 	
 	export interface ThirdPartySuggestion { 
 		"text"?: string;
+		"title"?: string;
+		"sources"?: Array<Models.ThirdPartySuggestionSource>;
+	}
+	
+	export interface ThirdPartySuggestionSource { 
+		"name"?: string;
+		"url"?: string;
 	}
 	
 	export interface Ticker { 
@@ -63150,6 +63569,10 @@ declare namespace Models {
 	export interface UpdateDecisionTableColumnsRequest { 
 		"inputs"?: Array<Models.DecisionTableInputColumnRequest>;
 		"outputs"?: Array<Models.DecisionTableOutputColumnRequest>;
+	}
+	
+	export interface UpdateDecisionTableImportJobRequest { 
+		"status": string;
 	}
 	
 	export interface UpdateDecisionTableRequest { 
@@ -65540,6 +65963,12 @@ declare namespace Models {
 		"name"?: string;
 	}
 	
+	export interface V3SourceTagFilter { 
+		"allOf"?: Array<string>;
+		"anyOfGroups"?: Array<Array<string>>;
+		"noneOf"?: Array<string>;
+	}
+	
 	export interface V3SourceUpdateRequest { 
 		"name": string;
 		"triggerType": string;
@@ -65574,6 +66003,12 @@ declare namespace Models {
 		"previousUri"?: string;
 	}
 	
+	export interface V3SynchronizationRef { 
+		"id": string;
+		"source": Models.V3SourceRef;
+		"selfUri"?: string;
+	}
+	
 	export interface V3SynchronizationStatistics { 
 		"synchronizedItemCount"?: number;
 		"failedItemCount"?: number;
@@ -65597,8 +66032,13 @@ declare namespace Models {
 	}
 	
 	export interface V3SynchronizationUploadUrlResponse { 
+		"fileId"?: string;
+		"fileName"?: string;
+		"metadata"?: Models.V3SynchronizationUploadMetadata;
+		"synchronization"?: Models.V3SynchronizationRef;
 		"url"?: string;
 		"headers"?: { [key: string]: string; };
+		"selfUri"?: string;
 	}
 	
 	export interface ValidateAddressRequest { 
@@ -66040,6 +66480,8 @@ declare namespace Models {
 		"sentimentTrendCategories"?: Array<string>;
 		"contentModerationFlags"?: Array<string>;
 		"socialSourceTypes"?: Array<string>;
+		"socialFollowerRange"?: Models.SocialNumericRange;
+		"socialVerificationStatus"?: boolean;
 		"sessionExpired"?: boolean;
 		"screenMonitored"?: boolean;
 		"engagementSources"?: Array<string>;
@@ -68484,6 +68926,11 @@ declare namespace Models {
 		"buttons"?: Array<Models.Button>;
 		"messageFooter"?: Models.MessageFooter;
 		"header"?: Models.MessageHeader;
+		"integrationId"?: string;
+		"category"?: string;
+		"templateStatus"?: string;
+		"statusInfo"?: Models.StatusInfo;
+		"carousel"?: Models.Carousel;
 	}
 	
 	export interface WhatsAppEmbeddedSignupIntegrationActivationRequest { 

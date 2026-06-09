@@ -748,7 +748,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 253.0.0
+ * @version 254.0.0
  */
 class ApiClient {
 	/**
@@ -2439,7 +2439,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -3154,7 +3154,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -3959,7 +3959,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -4071,7 +4071,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -4222,7 +4222,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -4683,7 +4683,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -4704,7 +4704,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsActionsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -4797,7 +4796,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsBotsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -4828,7 +4826,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsCasemanagementAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -4859,7 +4856,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsConversationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -4951,7 +4947,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -4982,7 +4977,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsFlowexecutionsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5013,7 +5007,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsFlowsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5044,7 +5037,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsJourneysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5075,7 +5067,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsKnowledgeAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5106,7 +5097,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsResolutionsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5137,7 +5127,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsSummariesAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5168,7 +5157,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsSurveysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5199,7 +5187,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsTaskmanagementAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5230,7 +5217,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsTranscriptsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5261,7 +5247,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsUsersAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5322,7 +5307,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsActionsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5354,7 +5338,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsActionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -5651,7 +5634,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsBotsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5683,7 +5665,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsBotsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -5714,7 +5695,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsCasemanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsCasemanagementAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5746,7 +5726,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsCasemanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsCasemanagementAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -5807,7 +5786,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -5839,7 +5817,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6134,7 +6111,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6166,7 +6142,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6197,7 +6172,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowexecutionsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6229,7 +6203,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6260,7 +6233,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6292,7 +6264,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6323,7 +6294,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6355,7 +6325,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6386,7 +6355,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsKnowledgeAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6418,7 +6386,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsKnowledgeAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6664,7 +6631,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsResolutionsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6696,7 +6662,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsResolutionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6727,7 +6692,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSummariesAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6759,7 +6723,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSummariesAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6790,7 +6753,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6822,7 +6784,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6853,7 +6814,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTaskmanagementAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6885,7 +6845,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6916,7 +6875,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTranscriptsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -6948,7 +6906,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTranscriptsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -6979,7 +6936,6 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -7011,7 +6967,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -7159,7 +7114,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsActionsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -7404,7 +7358,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsBotsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -7465,7 +7418,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsCasemanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsCasemanagementAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -7496,7 +7448,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsCasemanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsCasemanagementAggregatesQuery(body, opts) { 
 		opts = opts || {};
@@ -7594,7 +7545,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -7808,7 +7758,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -7869,7 +7818,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowexecutionsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -7962,7 +7910,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8053,7 +8000,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsJourneysAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8114,7 +8060,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsKnowledgeAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8355,7 +8300,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsResolutionsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8448,7 +8392,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSummariesAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8509,7 +8452,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8570,7 +8512,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8695,7 +8636,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTranscriptsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8788,7 +8728,6 @@ class AnalyticsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -8969,7 +8908,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -13829,7 +13768,7 @@ class AssistantCopilotVariationsApi {
 	/**
 	 * AssistantCopilotVariations service.
 	 * @module purecloud-platform-client-v2/api/AssistantCopilotVariationsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -14025,7 +13964,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -14252,7 +14191,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -16177,7 +16116,7 @@ class BackgroundAssistantApi {
 	/**
 	 * BackgroundAssistant service.
 	 * @module purecloud-platform-client-v2/api/BackgroundAssistantApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -16251,7 +16190,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -16535,7 +16474,7 @@ class BusinessRulesApi {
 	/**
 	 * BusinessRules service.
 	 * @module purecloud-platform-client-v2/api/BusinessRulesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -16571,6 +16510,76 @@ class BusinessRulesApi {
 			'DELETE', 
 			{ 'tableId': tableId },
 			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an export job for a decision table
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} exportJobId Export Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteBusinessrulesDecisiontableExport(tableId, exportJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableExport';
+		}
+		// verify the required parameter 'exportJobId' is set
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
+			throw 'Missing the required parameter "exportJobId" when calling deleteBusinessrulesDecisiontableExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}', 
+			'DELETE', 
+			{ 'tableId': tableId,'exportJobId': exportJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} importJobId Import job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteBusinessrulesDecisiontableImport(tableId, importJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling deleteBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
+			throw 'Missing the required parameter "importJobId" when calling deleteBusinessrulesDecisiontableImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}', 
+			'DELETE', 
+			{ 'tableId': tableId,'importJobId': importJobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -16706,6 +16715,140 @@ class BusinessRulesApi {
 			'GET', 
 			{ 'tableId': tableId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get an export job for a decision table
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} exportJobId Export Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableExport(tableId, exportJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableExport';
+		}
+		// verify the required parameter 'exportJobId' is set
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
+			throw 'Missing the required parameter "exportJobId" when calling getBusinessrulesDecisiontableExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}', 
+			'GET', 
+			{ 'tableId': tableId,'exportJobId': exportJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List export jobs for a decision table
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableExports(tableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports', 
+			'GET', 
+			{ 'tableId': tableId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} importJobId Import job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableImport(tableId, importJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
+			throw 'Missing the required parameter "importJobId" when calling getBusinessrulesDecisiontableImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}', 
+			'GET', 
+			{ 'tableId': tableId,'importJobId': importJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * List decision table row import jobs
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getBusinessrulesDecisiontableImports(tableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling getBusinessrulesDecisiontableImports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports', 
+			'GET', 
+			{ 'tableId': tableId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -17067,6 +17210,46 @@ class BusinessRulesApi {
 	}
 
 	/**
+	 * Update decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {String} importJobId Import job ID
+	 * @param {Object} body Import job update request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchBusinessrulesDecisiontableImport(tableId, importJobId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling patchBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
+			throw 'Missing the required parameter "importJobId" when calling patchBusinessrulesDecisiontableImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchBusinessrulesDecisiontableImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}', 
+			'PATCH', 
+			{ 'tableId': tableId,'importJobId': importJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Update a decision table version
 	 * 
 	 * @param {String} tableId Table ID
@@ -17128,6 +17311,76 @@ class BusinessRulesApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/businessrules/decisiontables/{tableId}/execute', 
+			'POST', 
+			{ 'tableId': tableId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create an export job for a decision table version
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} body Export job request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableExports(tableId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableExports';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableExports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/exports', 
+			'POST', 
+			{ 'tableId': tableId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a decision table row import job
+	 * 
+	 * @param {String} tableId Table ID
+	 * @param {Object} body Import job create request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableImports(tableId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableImports';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableImports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/imports', 
 			'POST', 
 			{ 'tableId': tableId },
 			{  },
@@ -17248,6 +17501,126 @@ class BusinessRulesApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk add decision table rows
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body Bulk add decision table rows request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsBulkAdd';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsBulkAdd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk delete decision table rows
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsBulkRemove';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove', 
+			'POST', 
+			{ 'tableId': tableId,'tableVersion': tableVersion },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Bulk update decision table rows
+	 * Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+	 * @param {String} tableId Table ID
+	 * @param {Number} tableVersion Table Version
+	 * @param {Object} body Bulk update decision table rows request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId, tableVersion, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tableId' is set
+		if (tableId === undefined || tableId === null || tableId === '') {
+			throw 'Missing the required parameter "tableId" when calling postBusinessrulesDecisiontableVersionRowsBulkUpdate';
+		}
+		// verify the required parameter 'tableVersion' is set
+		if (tableVersion === undefined || tableVersion === null) {
+			throw 'Missing the required parameter "tableVersion" when calling postBusinessrulesDecisiontableVersionRowsBulkUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postBusinessrulesDecisiontableVersionRowsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update', 
 			'POST', 
 			{ 'tableId': tableId,'tableVersion': tableVersion },
 			{  },
@@ -17549,7 +17922,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -17626,7 +17999,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -17644,10 +18017,9 @@ class CaseManagementApi {
 	/**
 	 * Delete a Case.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteCasemanagementCase(caseId, opts) { 
 		opts = opts || {};
@@ -17675,10 +18047,9 @@ class CaseManagementApi {
 	/**
 	 * Delete a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteCasemanagementCaseplan(caseplanId, opts) { 
 		opts = opts || {};
@@ -17704,13 +18075,47 @@ class CaseManagementApi {
 	}
 
 	/**
+	 * Remove a data schema from a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} schemaKeyName Schema key (for example default).
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling deleteCasemanagementCaseplanDataschema';
+		}
+		// verify the required parameter 'schemaKeyName' is set
+		if (schemaKeyName === undefined || schemaKeyName === null || schemaKeyName === '') {
+			throw 'Missing the required parameter "schemaKeyName" when calling deleteCasemanagementCaseplanDataschema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}', 
+			'DELETE', 
+			{ 'caseplanId': caseplanId,'schemaKeyName': schemaKeyName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Case.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Which fields to expand.
+	 * @param {Object} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCase(caseId, opts) { 
 		opts = opts || {};
@@ -17738,11 +18143,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Case Association.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} associationId Case Association ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} associationId Case association identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseAssociation(caseId, associationId, opts) { 
 		opts = opts || {};
@@ -17772,15 +18176,14 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Get a list of case associations for a provided case.
+	 * Get a list of Case associations for the Case.
 	 * 
-	 * @param {String} caseId Case ID.
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseAssociations(caseId, opts) { 
 		opts = opts || {};
@@ -17808,11 +18211,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Stage.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} stageId Stage ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStage(caseId, stageId, opts) { 
 		opts = opts || {};
@@ -17844,12 +18246,11 @@ class CaseManagementApi {
 	/**
 	 * Get a Step.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} stageId Stage ID
-	 * @param {String} stepId Step ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
+	 * @param {String} stepId Step identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStageStep(caseId, stageId, stepId, opts) { 
 		opts = opts || {};
@@ -17885,14 +18286,13 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Steps.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} stageId Stage ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStageSteps(caseId, stageId, opts) { 
 		opts = opts || {};
@@ -17924,13 +18324,12 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Stages.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStages(caseId, opts) { 
 		opts = opts || {};
@@ -17958,11 +18357,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Terminate Job for a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} jobId Job ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} jobId Terminate Job identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseTerminateJob(caseId, jobId, opts) { 
 		opts = opts || {};
@@ -17994,10 +18392,9 @@ class CaseManagementApi {
 	/**
 	 * Get a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplan(caseplanId, opts) { 
 		opts = opts || {};
@@ -18025,11 +18422,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version of the caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersion(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -18059,13 +18455,12 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Get the dataSchemas for a caseplan version.
+	 * Get the data schemas for a Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version of the caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -18097,11 +18492,10 @@ class CaseManagementApi {
 	/**
 	 * Get the intake settings for a Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version of the caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -18133,13 +18527,12 @@ class CaseManagementApi {
 	/**
 	 * Get a Stageplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
-	 * @param {String} stageplanId Stageplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
+	 * @param {String} stageplanId Stageplan identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, stageplanId, opts) { 
 		opts = opts || {};
@@ -18175,14 +18568,13 @@ class CaseManagementApi {
 	/**
 	 * Get a Stepplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
-	 * @param {String} stageplanId Stageplan ID
-	 * @param {String} stepplanId Stepplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {String} stepplanId Stepplan identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versionId, stageplanId, stepplanId, opts) { 
 		opts = opts || {};
@@ -18222,16 +18614,15 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Stepplans.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
-	 * @param {String} stageplanId Stageplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
+	 * @param {String} stageplanId Stageplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, opts) { 
 		opts = opts || {};
@@ -18267,15 +18658,14 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Stageplans.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -18308,12 +18698,11 @@ class CaseManagementApi {
 	 * Get a list of Caseplans.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of caseplans that has been returned.
-	 * @param {Number} opts.pageSize Number of caseplans to return. Maximum of 200.
-	 * @param {String} opts.customerIntentId Filter by Customer Intent.
-	 * @param {String} opts.divisionIds Filter by Divisions.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned set of Caseplans.
+	 * @param {Number} opts.pageSize Number of Caseplans to return. Maximum is 200.
+	 * @param {String} opts.customerIntentId Filter by customer intent.
+	 * @param {String} opts.divisionIds Filter by divisions.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplans(opts) { 
 		opts = opts || {};
@@ -18335,16 +18724,15 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Get a list of cases for provided external contact id.
+	 * Get a list of Cases for an External Contact.
 	 * 
-	 * @param {String} externalContactId External Contact ID
+	 * @param {String} externalContactId External contact identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of cases that has been returned.
-	 * @param {Number} opts.pageSize Number of cases to return. Maximum of 200.
-	 * @param {String} opts.divisionIds Filter by Divisions
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {String} opts.after Cursor pointing to the end of the previously returned page of Cases.
+	 * @param {Number} opts.pageSize Number of Cases to return (maximum 200).
+	 * @param {String} opts.divisionIds Filter by divisions.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesExternalcontact(externalContactId, opts) { 
 		opts = opts || {};
@@ -18372,11 +18760,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Case by reference.
 	 * 
-	 * @param {String} referenceId Reference
+	 * @param {String} referenceId Case reference.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Which fields to expand.
+	 * @param {Object} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesReference(referenceId, opts) { 
 		opts = opts || {};
@@ -18402,13 +18789,12 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Update date due of a Case.
+	 * Update the due date of a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {Object} body Date due
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Due date update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseDatedue(caseId, body, opts) { 
 		opts = opts || {};
@@ -18440,11 +18826,10 @@ class CaseManagementApi {
 	/**
 	 * Update priority of a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {Object} body Priority
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Priority update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCasePriority(caseId, body, opts) { 
 		opts = opts || {};
@@ -18476,11 +18861,10 @@ class CaseManagementApi {
 	/**
 	 * Update summary of a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {Object} body Summary
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Summary update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseSummary(caseId, body, opts) { 
 		opts = opts || {};
@@ -18512,11 +18896,10 @@ class CaseManagementApi {
 	/**
 	 * Update the attributes of a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {Object} body Caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Caseplan update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseplan(caseplanId, body, opts) { 
 		opts = opts || {};
@@ -18548,12 +18931,11 @@ class CaseManagementApi {
 	/**
 	 * Update the attributes of a Stageplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} stageplanId Stageplan ID
-	 * @param {Object} body Stageplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {Object} body Stageplan update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, opts) { 
 		opts = opts || {};
@@ -18589,13 +18971,12 @@ class CaseManagementApi {
 	/**
 	 * Update the attributes of a Stepplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} stageplanId Stageplan ID
-	 * @param {String} stepplanId Stepplan ID
-	 * @param {Object} body Stepplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {String} stepplanId Stepplan identifier.
+	 * @param {Object} body Stepplan update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body, opts) { 
 		opts = opts || {};
@@ -18633,20 +19014,23 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Create a case association.
+	 * Create a Case association.
 	 * 
-	 * @param {String} caseId Case ID.
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Case association create request.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Case Association
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCaseAssociations(caseId, opts) { 
+	postCasemanagementCaseAssociations(caseId, body, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling postCasemanagementCaseAssociations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseAssociations';
 		}
 
 		return this.apiClient.callApi(
@@ -18656,7 +19040,7 @@ class CaseManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],
@@ -18667,10 +19051,9 @@ class CaseManagementApi {
 	/**
 	 * Create a Terminate Job for a Case.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseTerminateJobs(caseId, opts) { 
 		opts = opts || {};
@@ -18696,12 +19079,46 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Publish Caseplan.
+	 * Add a data schema to a draft Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Data schema reference.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCaseplanDataschemas(caseplanId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling postCasemanagementCaseplanDataschemas';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseplanDataschemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas', 
+			'POST', 
+			{ 'caseplanId': caseplanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Publish Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postCasemanagementCaseplanPublish(caseplanId, opts) { 
 		opts = opts || {};
@@ -18729,10 +19146,9 @@ class CaseManagementApi {
 	/**
 	 * Create Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplanVersions(caseplanId, opts) { 
 		opts = opts || {};
@@ -18760,10 +19176,9 @@ class CaseManagementApi {
 	/**
 	 * Create a Caseplan.
 	 * 
-	 * @param {Object} body Caseplan
+	 * @param {Object} body Caseplan create request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplans(body, opts) { 
 		opts = opts || {};
@@ -18789,12 +19204,11 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Query for caseplans
+	 * Query for Caseplans.
 	 * 
-	 * @param {Object} body CaseplanQueryRequest
+	 * @param {Object} body Caseplan query request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplansQuery(body, opts) { 
 		opts = opts || {};
@@ -18822,10 +19236,9 @@ class CaseManagementApi {
 	/**
 	 * Create a Case.
 	 * 
-	 * @param {Object} body Case
+	 * @param {Object} body Case create request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCases(body, opts) { 
 		opts = opts || {};
@@ -18851,16 +19264,19 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Query for case associations
+	 * Query for Case associations by interaction.
 	 * 
+	 * @param {Object} body Case association query request.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Case Association
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCasesAssociationsQuery(opts) { 
+	postCasemanagementCasesAssociationsQuery(body, opts) { 
 		opts = opts || {};
 		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCasesAssociationsQuery';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/associations/query', 
@@ -18869,7 +19285,47 @@ class CaseManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a data schema on a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} schemaKeyName Schema key (for example default).
+	 * @param {Object} body Data schema reference.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling putCasemanagementCaseplanDataschema';
+		}
+		// verify the required parameter 'schemaKeyName' is set
+		if (schemaKeyName === undefined || schemaKeyName === null || schemaKeyName === '') {
+			throw 'Missing the required parameter "schemaKeyName" when calling putCasemanagementCaseplanDataschema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putCasemanagementCaseplanDataschema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}', 
+			'PUT', 
+			{ 'caseplanId': caseplanId,'schemaKeyName': schemaKeyName },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],
@@ -18880,11 +19336,10 @@ class CaseManagementApi {
 	/**
 	 * Update the intake settings for a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {Object} body Intake Settings
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Intake settings update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putCasemanagementCaseplanIntakesettings(caseplanId, body, opts) { 
 		opts = opts || {};
@@ -18919,7 +19374,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -20058,7 +20513,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -20772,7 +21227,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -21967,7 +22422,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -21988,7 +22443,6 @@ class ConversationsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsConversationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -22655,7 +23109,6 @@ class ConversationsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -22687,7 +23140,6 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -28534,7 +28986,6 @@ class ConversationsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -31519,7 +31970,7 @@ class ConversationsApi {
 
 	/**
 	 * Send an agentless outbound message
-	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and toAddress specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
+	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and recipient specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
 	 * @param {Object} body Create agentless outbound messaging request
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (default to false)
@@ -33073,7 +33524,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -33174,7 +33625,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -33371,7 +33822,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -33425,7 +33876,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -33573,7 +34024,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -33777,7 +34228,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -33919,7 +34370,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -37690,7 +38141,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -37939,7 +38390,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -37960,7 +38411,6 @@ class FlowsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsFlowsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -37991,7 +38441,6 @@ class FlowsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -38023,7 +38472,6 @@ class FlowsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -38086,7 +38534,6 @@ class FlowsApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -38177,7 +38624,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -41029,7 +41476,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -41173,7 +41620,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -41324,7 +41771,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -41940,7 +42387,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -42531,7 +42978,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -43582,7 +44029,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -43762,7 +44209,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -46734,7 +47181,7 @@ class IntentsApi {
 	/**
 	 * Intents service.
 	 * @module purecloud-platform-client-v2/api/IntentsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -47266,7 +47713,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -47287,7 +47734,6 @@ class JourneyApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsJourneysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -47591,7 +48037,6 @@ class JourneyApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -47623,7 +48068,6 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -49420,7 +49864,6 @@ class JourneyApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsJourneysAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -50246,7 +50689,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -54497,7 +54940,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -55871,7 +56314,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -56130,7 +56573,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -57378,7 +57821,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -57676,7 +58119,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -57943,7 +58386,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -58165,7 +58608,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -58583,7 +59026,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -58753,7 +59196,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -59014,7 +59457,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -59430,7 +59873,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -59794,7 +60237,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -59925,7 +60368,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -60486,7 +60929,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -62090,7 +62533,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -67677,7 +68120,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -68535,7 +68978,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -68956,7 +69399,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -68977,7 +69420,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -69008,7 +69450,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsSurveysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -69236,7 +69677,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -69268,7 +69708,6 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -69299,7 +69738,6 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -69331,7 +69769,6 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -70435,7 +70872,6 @@ class QualityApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -70496,7 +70932,6 @@ class QualityApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -71314,7 +71749,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -73162,7 +73597,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -73806,7 +74241,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -73960,6 +74395,36 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'DELETE', 
 			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an email setting. Removes the email setting and its associated settings
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingEmailSettingEmailSettingId(emailSettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling deleteRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'DELETE', 
+			{ 'emailSettingId': emailSettingId },
 			{  },
 			{  },
 			{  },
@@ -75129,6 +75594,63 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get a paged list of email routing settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailSetting(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get email setting. Returns the specified email setting that defines settings for email
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailSettingEmailSettingId(emailSettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling getRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'GET', 
+			{ 'emailSettingId': emailSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get email setup
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -75872,7 +76394,7 @@ class RoutingApi {
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id Queue ID(s)
-	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s). Including '*' will query for all divisions
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueuesDivisionviews(opts) { 
@@ -76273,7 +76795,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get the list of routing skills.
+	 * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -77055,6 +77577,41 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'PATCH', 
 			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an email setting. Modifies the settings for email setting
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} body EmailSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchRoutingEmailSettingEmailSettingId(emailSettingId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling patchRoutingEmailSettingEmailSettingId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'PATCH', 
+			{ 'emailSettingId': emailSettingId },
 			{  },
 			{  },
 			{  },
@@ -78015,6 +78572,36 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/outbound/domains/simulated', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a new email setting. Used to define various settings, that can then be associated with email domains
+	 * 
+	 * @param {Object} body EmailSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailSetting(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting', 
 			'POST', 
 			{  },
 			{  },
@@ -79216,7 +79803,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -80177,7 +80764,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -80686,7 +81273,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -81502,7 +82089,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -81911,7 +82498,7 @@ class SocialMediaApi {
 	/**
 	 * SocialMedia service.
 	 * @module purecloud-platform-client-v2/api/SocialMediaApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -83896,7 +84483,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -85848,7 +86435,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -85962,7 +86549,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -86109,7 +86696,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -88605,7 +89192,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -88948,7 +89535,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -88962,6 +89549,36 @@ class TelephonyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a link
+	 * 
+	 * @param {String} targetOrganizationId targetOrganizationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteTelephonyOrganizationLinkTargetOrganizationId(targetOrganizationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'targetOrganizationId' is set
+		if (targetOrganizationId === undefined || targetOrganizationId === null || targetOrganizationId === '') {
+			throw 'Missing the required parameter "targetOrganizationId" when calling deleteTelephonyOrganizationLinkTargetOrganizationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link/{targetOrganizationId}', 
+			'DELETE', 
+			{ 'targetOrganizationId': targetOrganizationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
 
 	/**
 	 * Get an agent's greetings.
@@ -89056,6 +89673,88 @@ class TelephonyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/mediaregions', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get Number Routings by organizationId
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.numberId numberId
+	 * @param {String} opts.activeRoutingOrganizationId activeRoutingOrganizationId
+	 * @param {String} opts.ownerOrganizationId ownerOrganizationId
+	 * @param {Object} opts.status status
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyNumbersRouting(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'numberId': opts['numberId'],'activeRoutingOrganizationId': opts['activeRoutingOrganizationId'],'ownerOrganizationId': opts['ownerOrganizationId'],'status': opts['status'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get organization links
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyOrganizationLink(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all the replica regions by primary region
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getTelephonyOrganizationLinkRegions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link/regions', 
 			'GET', 
 			{  },
 			{  },
@@ -89225,6 +89924,161 @@ class TelephonyApi {
 	}
 
 	/**
+	 * Approving a requested link
+	 * 
+	 * @param {String} requestingOrganizationId requestingOrganizationId
+	 * @param {Object} body Approval request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchTelephonyOrganizationLinkApproveRequestingOrganizationId(requestingOrganizationId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'requestingOrganizationId' is set
+		if (requestingOrganizationId === undefined || requestingOrganizationId === null || requestingOrganizationId === '') {
+			throw 'Missing the required parameter "requestingOrganizationId" when calling patchTelephonyOrganizationLinkApproveRequestingOrganizationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTelephonyOrganizationLinkApproveRequestingOrganizationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link/approve/{requestingOrganizationId}', 
+			'PATCH', 
+			{ 'requestingOrganizationId': requestingOrganizationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update the routing of numbers for one or multiple organizations
+	 * 
+	 * @param {Array.<Object>} body drRoutingList
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyNumbersRouting(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyNumbersRouting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Re-route all numbers on an organization
+	 * 
+	 * @param {Object} body Value for all routing request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyNumbersRoutingAll(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyNumbersRoutingAll';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing/all', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Reset routing for organization
+	 * 
+	 * @param {Object} body Value for bulk routing request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyNumbersRoutingReset(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyNumbersRoutingReset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/numbers/routing/reset', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a link with an organization
+	 * 
+	 * @param {Object} body CreateLinkOrg body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postTelephonyOrganizationLink(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyOrganizationLink';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/organization/link', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Request a download of a pcap file to S3
 	 * 
 	 * @param {Object} sIPSearchPublicRequest 
@@ -89355,7 +90209,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -93333,7 +94187,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -93479,7 +94333,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -93657,7 +94511,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -94028,7 +94882,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -94406,7 +95260,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -94608,7 +95462,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -94629,7 +95483,6 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteAnalyticsUsersAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -95140,7 +95993,6 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJob(jobId, opts) { 
 		opts = opts || {};
@@ -95172,7 +96024,6 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -97320,7 +98171,6 @@ class UsersApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersAggregatesJobs(body, opts) { 
 		opts = opts || {};
@@ -98627,7 +99477,7 @@ class UsersRulesApi {
 	/**
 	 * UsersRules service.
 	 * @module purecloud-platform-client-v2/api/UsersRulesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -98944,7 +99794,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -99072,7 +99922,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -99902,7 +100752,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -100554,7 +101404,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -101232,7 +102082,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -101395,7 +102245,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -101571,7 +102421,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -104092,6 +104942,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Array.<String>} opts.expand Include to access additional data for the time-off plans
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts) { 
@@ -104106,7 +104957,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
-			{ 'managementUnitId': opts['managementUnitId'],'forceDownloadService': opts['forceDownloadService'] },
+			{ 'managementUnitId': opts['managementUnitId'],'forceDownloadService': opts['forceDownloadService'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -104406,6 +105257,8 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.earliestWeekDate If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.latestWeekDate If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
 	 * @param {Object} opts.expand expand
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -104426,7 +105279,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekId': weekId },
-			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'expand': opts['expand'] },
+			{ 'earliestWeekDate': opts['earliestWeekDate'],'latestWeekDate': opts['latestWeekDate'],'includeOnlyPublished': opts['includeOnlyPublished'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -111260,6 +112113,7 @@ class WorkforceManagementApi {
 	 * @param {String} userId The id of the user for whom the time off request estimate is requested
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeOnly Limit response to the specified field
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body, opts) { 
@@ -111282,7 +112136,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'userId': userId },
-			{  },
+			{ 'includeOnly': opts['includeOnly'] },
 			{  },
 			{  },
 			body, 
@@ -112079,6 +112933,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeOnly Limit response to the specified field
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementTimeoffrequestsEstimate(body, opts) { 
@@ -112093,7 +112948,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/timeoffrequests/estimate', 
 			'POST', 
 			{  },
-			{  },
+			{ 'includeOnly': opts['includeOnly'] },
 			{  },
 			{  },
 			body, 
@@ -112340,7 +113195,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 253.0.0
+ * @version 254.0.0
  */
 class platformClient {
 	constructor() {

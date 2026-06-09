@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -2526,6 +2526,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Array.<String>} opts.expand Include to access additional data for the time-off plans
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts) { 
@@ -2540,7 +2541,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
-			{ 'managementUnitId': opts['managementUnitId'],'forceDownloadService': opts['forceDownloadService'] },
+			{ 'managementUnitId': opts['managementUnitId'],'forceDownloadService': opts['forceDownloadService'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2840,6 +2841,8 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.earliestWeekDate If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.latestWeekDate If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
 	 * @param {Object} opts.expand expand
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
@@ -2860,7 +2863,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekId': weekId },
-			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'expand': opts['expand'] },
+			{ 'earliestWeekDate': opts['earliestWeekDate'],'latestWeekDate': opts['latestWeekDate'],'includeOnlyPublished': opts['includeOnlyPublished'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -9694,6 +9697,7 @@ class WorkforceManagementApi {
 	 * @param {String} userId The id of the user for whom the time off request estimate is requested
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeOnly Limit response to the specified field
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body, opts) { 
@@ -9716,7 +9720,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'userId': userId },
-			{  },
+			{ 'includeOnly': opts['includeOnly'] },
 			{  },
 			{  },
 			body, 
@@ -10513,6 +10517,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeOnly Limit response to the specified field
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postWorkforcemanagementTimeoffrequestsEstimate(body, opts) { 
@@ -10527,7 +10532,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/timeoffrequests/estimate', 
 			'POST', 
 			{  },
-			{  },
+			{ 'includeOnly': opts['includeOnly'] },
 			{  },
 			{  },
 			body, 

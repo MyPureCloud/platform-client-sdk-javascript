@@ -5,7 +5,7 @@ class CaseManagementApi {
 	/**
 	 * CaseManagement service.
 	 * @module purecloud-platform-client-v2/api/CaseManagementApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -23,10 +23,9 @@ class CaseManagementApi {
 	/**
 	 * Delete a Case.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteCasemanagementCase(caseId, opts) { 
 		opts = opts || {};
@@ -54,10 +53,9 @@ class CaseManagementApi {
 	/**
 	 * Delete a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteCasemanagementCaseplan(caseplanId, opts) { 
 		opts = opts || {};
@@ -83,13 +81,47 @@ class CaseManagementApi {
 	}
 
 	/**
+	 * Remove a data schema from a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} schemaKeyName Schema key (for example default).
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling deleteCasemanagementCaseplanDataschema';
+		}
+		// verify the required parameter 'schemaKeyName' is set
+		if (schemaKeyName === undefined || schemaKeyName === null || schemaKeyName === '') {
+			throw 'Missing the required parameter "schemaKeyName" when calling deleteCasemanagementCaseplanDataschema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}', 
+			'DELETE', 
+			{ 'caseplanId': caseplanId,'schemaKeyName': schemaKeyName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get a Case.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Which fields to expand.
+	 * @param {Object} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCase(caseId, opts) { 
 		opts = opts || {};
@@ -117,11 +149,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Case Association.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} associationId Case Association ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} associationId Case association identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseAssociation(caseId, associationId, opts) { 
 		opts = opts || {};
@@ -151,15 +182,14 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Get a list of case associations for a provided case.
+	 * Get a list of Case associations for the Case.
 	 * 
-	 * @param {String} caseId Case ID.
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseAssociations(caseId, opts) { 
 		opts = opts || {};
@@ -187,11 +217,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Stage.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} stageId Stage ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStage(caseId, stageId, opts) { 
 		opts = opts || {};
@@ -223,12 +252,11 @@ class CaseManagementApi {
 	/**
 	 * Get a Step.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} stageId Stage ID
-	 * @param {String} stepId Step ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
+	 * @param {String} stepId Step identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStageStep(caseId, stageId, stepId, opts) { 
 		opts = opts || {};
@@ -264,14 +292,13 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Steps.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} stageId Stage ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} stageId Stage identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStageSteps(caseId, stageId, opts) { 
 		opts = opts || {};
@@ -303,13 +330,12 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Stages.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseStages(caseId, opts) { 
 		opts = opts || {};
@@ -337,11 +363,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Terminate Job for a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {String} jobId Job ID
+	 * @param {String} caseId Case identifier.
+	 * @param {String} jobId Terminate Job identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseTerminateJob(caseId, jobId, opts) { 
 		opts = opts || {};
@@ -373,10 +398,9 @@ class CaseManagementApi {
 	/**
 	 * Get a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplan(caseplanId, opts) { 
 		opts = opts || {};
@@ -404,11 +428,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version of the caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersion(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -438,13 +461,12 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Get the dataSchemas for a caseplan version.
+	 * Get the data schemas for a Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version of the caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -476,11 +498,10 @@ class CaseManagementApi {
 	/**
 	 * Get the intake settings for a Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version of the caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -512,13 +533,12 @@ class CaseManagementApi {
 	/**
 	 * Get a Stageplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
-	 * @param {String} stageplanId Stageplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
+	 * @param {String} stageplanId Stageplan identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, stageplanId, opts) { 
 		opts = opts || {};
@@ -554,14 +574,13 @@ class CaseManagementApi {
 	/**
 	 * Get a Stepplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
-	 * @param {String} stageplanId Stageplan ID
-	 * @param {String} stepplanId Stepplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {String} stepplanId Stepplan identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versionId, stageplanId, stepplanId, opts) { 
 		opts = opts || {};
@@ -601,16 +620,15 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Stepplans.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
-	 * @param {String} stageplanId Stageplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
+	 * @param {String} stageplanId Stageplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, opts) { 
 		opts = opts || {};
@@ -646,15 +664,14 @@ class CaseManagementApi {
 	/**
 	 * Get a list of Stageplans.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} versionId Version ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} versionId Caseplan version identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, opts) { 
 		opts = opts || {};
@@ -687,12 +704,11 @@ class CaseManagementApi {
 	 * Get a list of Caseplans.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of caseplans that has been returned.
-	 * @param {Number} opts.pageSize Number of caseplans to return. Maximum of 200.
-	 * @param {String} opts.customerIntentId Filter by Customer Intent.
-	 * @param {String} opts.divisionIds Filter by Divisions.
+	 * @param {String} opts.after Cursor that points to the end of the previously returned set of Caseplans.
+	 * @param {Number} opts.pageSize Number of Caseplans to return. Maximum is 200.
+	 * @param {String} opts.customerIntentId Filter by customer intent.
+	 * @param {String} opts.divisionIds Filter by divisions.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCaseplans(opts) { 
 		opts = opts || {};
@@ -714,16 +730,15 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Get a list of cases for provided external contact id.
+	 * Get a list of Cases for an External Contact.
 	 * 
-	 * @param {String} externalContactId External Contact ID
+	 * @param {String} externalContactId External contact identifier.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of cases that has been returned.
-	 * @param {Number} opts.pageSize Number of cases to return. Maximum of 200.
-	 * @param {String} opts.divisionIds Filter by Divisions
-	 * @param {Array.<String>} opts.expands Which fields to expand.
+	 * @param {String} opts.after Cursor pointing to the end of the previously returned page of Cases.
+	 * @param {Number} opts.pageSize Number of Cases to return (maximum 200).
+	 * @param {String} opts.divisionIds Filter by divisions.
+	 * @param {Array.<String>} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesExternalcontact(externalContactId, opts) { 
 		opts = opts || {};
@@ -751,11 +766,10 @@ class CaseManagementApi {
 	/**
 	 * Get a Case by reference.
 	 * 
-	 * @param {String} referenceId Reference
+	 * @param {String} referenceId Case reference.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expands Which fields to expand.
+	 * @param {Object} opts.expands Fields to expand.
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getCasemanagementCasesReference(referenceId, opts) { 
 		opts = opts || {};
@@ -781,13 +795,12 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Update date due of a Case.
+	 * Update the due date of a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {Object} body Date due
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Due date update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseDatedue(caseId, body, opts) { 
 		opts = opts || {};
@@ -819,11 +832,10 @@ class CaseManagementApi {
 	/**
 	 * Update priority of a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {Object} body Priority
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Priority update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCasePriority(caseId, body, opts) { 
 		opts = opts || {};
@@ -855,11 +867,10 @@ class CaseManagementApi {
 	/**
 	 * Update summary of a Case.
 	 * 
-	 * @param {String} caseId Case ID
-	 * @param {Object} body Summary
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Summary update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseSummary(caseId, body, opts) { 
 		opts = opts || {};
@@ -891,11 +902,10 @@ class CaseManagementApi {
 	/**
 	 * Update the attributes of a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {Object} body Caseplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Caseplan update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseplan(caseplanId, body, opts) { 
 		opts = opts || {};
@@ -927,12 +937,11 @@ class CaseManagementApi {
 	/**
 	 * Update the attributes of a Stageplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} stageplanId Stageplan ID
-	 * @param {Object} body Stageplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {Object} body Stageplan update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, opts) { 
 		opts = opts || {};
@@ -968,13 +977,12 @@ class CaseManagementApi {
 	/**
 	 * Update the attributes of a Stepplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {String} stageplanId Stageplan ID
-	 * @param {String} stepplanId Stepplan ID
-	 * @param {Object} body Stepplan
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} stageplanId Stageplan identifier.
+	 * @param {String} stepplanId Stepplan identifier.
+	 * @param {Object} body Stepplan update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId, stepplanId, body, opts) { 
 		opts = opts || {};
@@ -1012,20 +1020,23 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Create a case association.
+	 * Create a Case association.
 	 * 
-	 * @param {String} caseId Case ID.
+	 * @param {String} caseId Case identifier.
+	 * @param {Object} body Case association create request.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Case Association
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCaseAssociations(caseId, opts) { 
+	postCasemanagementCaseAssociations(caseId, body, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'caseId' is set
 		if (caseId === undefined || caseId === null || caseId === '') {
 			throw 'Missing the required parameter "caseId" when calling postCasemanagementCaseAssociations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseAssociations';
 		}
 
 		return this.apiClient.callApi(
@@ -1035,7 +1046,7 @@ class CaseManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],
@@ -1046,10 +1057,9 @@ class CaseManagementApi {
 	/**
 	 * Create a Terminate Job for a Case.
 	 * 
-	 * @param {String} caseId Case ID
+	 * @param {String} caseId Case identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseTerminateJobs(caseId, opts) { 
 		opts = opts || {};
@@ -1075,12 +1085,46 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Publish Caseplan.
+	 * Add a data schema to a draft Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Data schema reference.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postCasemanagementCaseplanDataschemas(caseplanId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling postCasemanagementCaseplanDataschemas';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCaseplanDataschemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas', 
+			'POST', 
+			{ 'caseplanId': caseplanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Publish Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postCasemanagementCaseplanPublish(caseplanId, opts) { 
 		opts = opts || {};
@@ -1108,10 +1152,9 @@ class CaseManagementApi {
 	/**
 	 * Create Caseplan version.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
+	 * @param {String} caseplanId Caseplan identifier.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplanVersions(caseplanId, opts) { 
 		opts = opts || {};
@@ -1139,10 +1182,9 @@ class CaseManagementApi {
 	/**
 	 * Create a Caseplan.
 	 * 
-	 * @param {Object} body Caseplan
+	 * @param {Object} body Caseplan create request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplans(body, opts) { 
 		opts = opts || {};
@@ -1168,12 +1210,11 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Query for caseplans
+	 * Query for Caseplans.
 	 * 
-	 * @param {Object} body CaseplanQueryRequest
+	 * @param {Object} body Caseplan query request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCaseplansQuery(body, opts) { 
 		opts = opts || {};
@@ -1201,10 +1242,9 @@ class CaseManagementApi {
 	/**
 	 * Create a Case.
 	 * 
-	 * @param {Object} body Case
+	 * @param {Object} body Case create request.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postCasemanagementCases(body, opts) { 
 		opts = opts || {};
@@ -1230,16 +1270,19 @@ class CaseManagementApi {
 	}
 
 	/**
-	 * Query for case associations
+	 * Query for Case associations by interaction.
 	 * 
+	 * @param {Object} body Case association query request.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Case Association
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postCasemanagementCasesAssociationsQuery(opts) { 
+	postCasemanagementCasesAssociationsQuery(body, opts) { 
 		opts = opts || {};
 		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCasemanagementCasesAssociationsQuery';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/casemanagement/cases/associations/query', 
@@ -1248,7 +1291,47 @@ class CaseManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a data schema on a draft Caseplan.
+	 * 
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {String} schemaKeyName Schema key (for example default).
+	 * @param {Object} body Data schema reference.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'caseplanId' is set
+		if (caseplanId === undefined || caseplanId === null || caseplanId === '') {
+			throw 'Missing the required parameter "caseplanId" when calling putCasemanagementCaseplanDataschema';
+		}
+		// verify the required parameter 'schemaKeyName' is set
+		if (schemaKeyName === undefined || schemaKeyName === null || schemaKeyName === '') {
+			throw 'Missing the required parameter "schemaKeyName" when calling putCasemanagementCaseplanDataschema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putCasemanagementCaseplanDataschema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}', 
+			'PUT', 
+			{ 'caseplanId': caseplanId,'schemaKeyName': schemaKeyName },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json'],
@@ -1259,11 +1342,10 @@ class CaseManagementApi {
 	/**
 	 * Update the intake settings for a Caseplan.
 	 * 
-	 * @param {String} caseplanId Caseplan ID
-	 * @param {Object} body Intake Settings
+	 * @param {String} caseplanId Caseplan identifier.
+	 * @param {Object} body Intake settings update.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
-	 * putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putCasemanagementCaseplanIntakesettings(caseplanId, body, opts) { 
 		opts = opts || {};

@@ -1265,7 +1265,7 @@ apiInstance.getExternalcontactsContactsExport(exportId, opts)
 
 ## getExternalcontactsContactsExports
 
-> ExportListing getExternalcontactsContactsExports(opts)
+> ContactsExportListing getExternalcontactsContactsExports(opts)
 
 
 GET /api/v2/externalcontacts/contacts/exports
@@ -1322,7 +1322,7 @@ apiInstance.getExternalcontactsContactsExports(opts)
 
 ### Return type
 
-**ExportListing**
+**ContactsExportListing**
 
 
 ## getExternalcontactsContactsSchema
@@ -7291,4 +7291,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body, opts)
 **Relationship**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

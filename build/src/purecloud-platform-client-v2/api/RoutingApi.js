@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 253.0.0
+	 * @version 254.0.0
 	 */
 
 	/**
@@ -159,6 +159,36 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'DELETE', 
 			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an email setting. Removes the email setting and its associated settings
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingEmailSettingEmailSettingId(emailSettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling deleteRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'DELETE', 
+			{ 'emailSettingId': emailSettingId },
 			{  },
 			{  },
 			{  },
@@ -1328,6 +1358,63 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get a paged list of email routing settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailSetting(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get email setting. Returns the specified email setting that defines settings for email
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailSettingEmailSettingId(emailSettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling getRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'GET', 
+			{ 'emailSettingId': emailSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Get email setup
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2071,7 +2158,7 @@ class RoutingApi {
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id Queue ID(s)
-	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s). Including '*' will query for all divisions
 	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueuesDivisionviews(opts) { 
@@ -2472,7 +2559,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get the list of routing skills.
+	 * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -3254,6 +3341,41 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'PATCH', 
 			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an email setting. Modifies the settings for email setting
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} body EmailSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchRoutingEmailSettingEmailSettingId(emailSettingId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling patchRoutingEmailSettingEmailSettingId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'PATCH', 
+			{ 'emailSettingId': emailSettingId },
 			{  },
 			{  },
 			{  },
@@ -4214,6 +4336,36 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/outbound/domains/simulated', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a new email setting. Used to define various settings, that can then be associated with email domains
+	 * 
+	 * @param {Object} body EmailSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailSetting(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting', 
 			'POST', 
 			{  },
 			{  },

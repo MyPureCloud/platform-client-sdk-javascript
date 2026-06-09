@@ -8,9 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteCasemanagementCase**](CaseManagementApi#deleteCasemanagementCase) | **DELETE** /api/v2/casemanagement/cases/{caseId} | Delete a Case.
 [**deleteCasemanagementCaseplan**](CaseManagementApi#deleteCasemanagementCaseplan) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId} | Delete a Caseplan.
+[**deleteCasemanagementCaseplanDataschema**](CaseManagementApi#deleteCasemanagementCaseplanDataschema) | **DELETE** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} | Remove a data schema from a draft Caseplan.
 [**getCasemanagementCase**](CaseManagementApi#getCasemanagementCase) | **GET** /api/v2/casemanagement/cases/{caseId} | Get a Case.
 [**getCasemanagementCaseAssociation**](CaseManagementApi#getCasemanagementCaseAssociation) | **GET** /api/v2/casemanagement/cases/{caseId}/associations/{associationId} | Get a Case Association.
-[**getCasemanagementCaseAssociations**](CaseManagementApi#getCasemanagementCaseAssociations) | **GET** /api/v2/casemanagement/cases/{caseId}/associations | Get a list of case associations for a provided case.
+[**getCasemanagementCaseAssociations**](CaseManagementApi#getCasemanagementCaseAssociations) | **GET** /api/v2/casemanagement/cases/{caseId}/associations | Get a list of Case associations for the Case.
 [**getCasemanagementCaseStage**](CaseManagementApi#getCasemanagementCaseStage) | **GET** /api/v2/casemanagement/cases/{caseId}/stages/{stageId} | Get a Stage.
 [**getCasemanagementCaseStageStep**](CaseManagementApi#getCasemanagementCaseStageStep) | **GET** /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId} | Get a Step.
 [**getCasemanagementCaseStageSteps**](CaseManagementApi#getCasemanagementCaseStageSteps) | **GET** /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps | Get a list of Steps.
@@ -18,29 +19,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getCasemanagementCaseTerminateJob**](CaseManagementApi#getCasemanagementCaseTerminateJob) | **GET** /api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId} | Get a Terminate Job for a Case.
 [**getCasemanagementCaseplan**](CaseManagementApi#getCasemanagementCaseplan) | **GET** /api/v2/casemanagement/caseplans/{caseplanId} | Get a Caseplan.
 [**getCasemanagementCaseplanVersion**](CaseManagementApi#getCasemanagementCaseplanVersion) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId} | Get a Caseplan version.
-[**getCasemanagementCaseplanVersionDataschemas**](CaseManagementApi#getCasemanagementCaseplanVersionDataschemas) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas | Get the dataSchemas for a caseplan version.
+[**getCasemanagementCaseplanVersionDataschemas**](CaseManagementApi#getCasemanagementCaseplanVersionDataschemas) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas | Get the data schemas for a Caseplan version.
 [**getCasemanagementCaseplanVersionIntakesettings**](CaseManagementApi#getCasemanagementCaseplanVersionIntakesettings) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/intakesettings | Get the intake settings for a Caseplan version.
 [**getCasemanagementCaseplanVersionStageplan**](CaseManagementApi#getCasemanagementCaseplanVersionStageplan) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId} | Get a Stageplan.
 [**getCasemanagementCaseplanVersionStageplanStepplan**](CaseManagementApi#getCasemanagementCaseplanVersionStageplanStepplan) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans/{stepplanId} | Get a Stepplan.
 [**getCasemanagementCaseplanVersionStageplanStepplans**](CaseManagementApi#getCasemanagementCaseplanVersionStageplanStepplans) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans | Get a list of Stepplans.
 [**getCasemanagementCaseplanVersionStageplans**](CaseManagementApi#getCasemanagementCaseplanVersionStageplans) | **GET** /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans | Get a list of Stageplans.
 [**getCasemanagementCaseplans**](CaseManagementApi#getCasemanagementCaseplans) | **GET** /api/v2/casemanagement/caseplans | Get a list of Caseplans.
-[**getCasemanagementCasesExternalcontact**](CaseManagementApi#getCasemanagementCasesExternalcontact) | **GET** /api/v2/casemanagement/cases/externalcontacts/{externalContactId} | Get a list of cases for provided external contact id.
+[**getCasemanagementCasesExternalcontact**](CaseManagementApi#getCasemanagementCasesExternalcontact) | **GET** /api/v2/casemanagement/cases/externalcontacts/{externalContactId} | Get a list of Cases for an External Contact.
 [**getCasemanagementCasesReference**](CaseManagementApi#getCasemanagementCasesReference) | **GET** /api/v2/casemanagement/cases/references/{referenceId} | Get a Case by reference.
-[**patchCasemanagementCaseDatedue**](CaseManagementApi#patchCasemanagementCaseDatedue) | **PATCH** /api/v2/casemanagement/cases/{caseId}/datedue | Update date due of a Case.
+[**patchCasemanagementCaseDatedue**](CaseManagementApi#patchCasemanagementCaseDatedue) | **PATCH** /api/v2/casemanagement/cases/{caseId}/datedue | Update the due date of a Case.
 [**patchCasemanagementCasePriority**](CaseManagementApi#patchCasemanagementCasePriority) | **PATCH** /api/v2/casemanagement/cases/{caseId}/priority | Update priority of a Case.
 [**patchCasemanagementCaseSummary**](CaseManagementApi#patchCasemanagementCaseSummary) | **PATCH** /api/v2/casemanagement/cases/{caseId}/summary | Update summary of a Case.
 [**patchCasemanagementCaseplan**](CaseManagementApi#patchCasemanagementCaseplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId} | Update the attributes of a Caseplan.
 [**patchCasemanagementCaseplanStageplan**](CaseManagementApi#patchCasemanagementCaseplanStageplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} | Update the attributes of a Stageplan.
 [**patchCasemanagementCaseplanStageplanStepplan**](CaseManagementApi#patchCasemanagementCaseplanStageplanStepplan) | **PATCH** /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId} | Update the attributes of a Stepplan.
-[**postCasemanagementCaseAssociations**](CaseManagementApi#postCasemanagementCaseAssociations) | **POST** /api/v2/casemanagement/cases/{caseId}/associations | Create a case association.
+[**postCasemanagementCaseAssociations**](CaseManagementApi#postCasemanagementCaseAssociations) | **POST** /api/v2/casemanagement/cases/{caseId}/associations | Create a Case association.
 [**postCasemanagementCaseTerminateJobs**](CaseManagementApi#postCasemanagementCaseTerminateJobs) | **POST** /api/v2/casemanagement/cases/{caseId}/terminate/jobs | Create a Terminate Job for a Case.
+[**postCasemanagementCaseplanDataschemas**](CaseManagementApi#postCasemanagementCaseplanDataschemas) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas | Add a data schema to a draft Caseplan.
 [**postCasemanagementCaseplanPublish**](CaseManagementApi#postCasemanagementCaseplanPublish) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/publish | Publish Caseplan.
 [**postCasemanagementCaseplanVersions**](CaseManagementApi#postCasemanagementCaseplanVersions) | **POST** /api/v2/casemanagement/caseplans/{caseplanId}/versions | Create Caseplan version.
 [**postCasemanagementCaseplans**](CaseManagementApi#postCasemanagementCaseplans) | **POST** /api/v2/casemanagement/caseplans | Create a Caseplan.
-[**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | **POST** /api/v2/casemanagement/caseplans/query | Query for caseplans
+[**postCasemanagementCaseplansQuery**](CaseManagementApi#postCasemanagementCaseplansQuery) | **POST** /api/v2/casemanagement/caseplans/query | Query for Caseplans.
 [**postCasemanagementCases**](CaseManagementApi#postCasemanagementCases) | **POST** /api/v2/casemanagement/cases | Create a Case.
-[**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | **POST** /api/v2/casemanagement/cases/associations/query | Query for case associations
+[**postCasemanagementCasesAssociationsQuery**](CaseManagementApi#postCasemanagementCasesAssociationsQuery) | **POST** /api/v2/casemanagement/cases/associations/query | Query for Case associations by interaction.
+[**putCasemanagementCaseplanDataschema**](CaseManagementApi#putCasemanagementCaseplanDataschema) | **PUT** /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} | Update a data schema on a draft Caseplan.
 [**putCasemanagementCaseplanIntakesettings**](CaseManagementApi#putCasemanagementCaseplanIntakesettings) | **PUT** /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings | Update the intake settings for a Caseplan.
 
 
@@ -53,8 +56,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 DELETE /api/v2/casemanagement/cases/{caseId}
 
 Delete a Case.
-
-deleteCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -73,7 +74,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
+let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -96,7 +97,7 @@ apiInstance.deleteCasemanagementCase(caseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
+ **caseId** | **String** | Case identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -112,8 +113,6 @@ apiInstance.deleteCasemanagementCase(caseId, opts)
 DELETE /api/v2/casemanagement/caseplans/{caseplanId}
 
 Delete a Caseplan.
-
-deleteCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -132,7 +131,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -155,7 +154,66 @@ apiInstance.deleteCasemanagementCaseplan(caseplanId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Object**
+
+
+## deleteCasemanagementCaseplanDataschema
+
+> **Object** deleteCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, opts)
+
+
+DELETE /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}
+
+Remove a data schema from a draft Caseplan.
+
+Requires ALL permissions:
+
+* caseManagement:caseplanDataSchemas:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let schemaKeyName = "schemaKeyName_example"; // String | Schema key (for example default).
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, opts)
+  .then((data) => {
+    console.log(`deleteCasemanagementCaseplanDataschema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteCasemanagementCaseplanDataschema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **schemaKeyName** | **String** | Schema key (for example default). |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -171,8 +229,6 @@ apiInstance.deleteCasemanagementCaseplan(caseplanId, opts)
 GET /api/v2/casemanagement/cases/{caseId}
 
 Get a Case.
-
-getCasemanagementCase is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -191,9 +247,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
+let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
-  'expands': "expands_example", // String | Which fields to expand.
+  'expands': "expands_example", // String | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -215,8 +271,8 @@ apiInstance.getCasemanagementCase(caseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **expands** | **String** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **caseId** | **String** | Case identifier. |  |
+ **expands** | **String** | Fields to expand. | [optional] <br />**Values**: caseplan |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -232,8 +288,6 @@ apiInstance.getCasemanagementCase(caseId, opts)
 GET /api/v2/casemanagement/cases/{caseId}/associations/{associationId}
 
 Get a Case Association.
-
-getCasemanagementCaseAssociation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -252,8 +306,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let associationId = "associationId_example"; // String | Case Association ID
+let caseId = "caseId_example"; // String | Case identifier.
+let associationId = "associationId_example"; // String | Case association identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -276,8 +330,8 @@ apiInstance.getCasemanagementCaseAssociation(caseId, associationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **associationId** | **String** | Case Association ID |  |
+ **caseId** | **String** | Case identifier. |  |
+ **associationId** | **String** | Case association identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -292,9 +346,7 @@ apiInstance.getCasemanagementCaseAssociation(caseId, associationId, opts)
 
 GET /api/v2/casemanagement/cases/{caseId}/associations
 
-Get a list of case associations for a provided case.
-
-getCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Get a list of Case associations for the Case.
 
 Requires ANY permissions:
 
@@ -313,7 +365,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID.
+let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
@@ -339,7 +391,7 @@ apiInstance.getCasemanagementCaseAssociations(caseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID. |  |
+ **caseId** | **String** | Case identifier. |  |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
@@ -359,8 +411,6 @@ GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}
 
 Get a Stage.
 
-getCasemanagementCaseStage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * caseManagement:stage:view
@@ -378,8 +428,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let stageId = "stageId_example"; // String | Stage ID
+let caseId = "caseId_example"; // String | Case identifier.
+let stageId = "stageId_example"; // String | Stage identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -402,8 +452,8 @@ apiInstance.getCasemanagementCaseStage(caseId, stageId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **stageId** | **String** | Stage ID |  |
+ **caseId** | **String** | Case identifier. |  |
+ **stageId** | **String** | Stage identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -419,8 +469,6 @@ apiInstance.getCasemanagementCaseStage(caseId, stageId, opts)
 GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId}
 
 Get a Step.
-
-getCasemanagementCaseStageStep is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -439,9 +487,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let stageId = "stageId_example"; // String | Stage ID
-let stepId = "stepId_example"; // String | Step ID
+let caseId = "caseId_example"; // String | Case identifier.
+let stageId = "stageId_example"; // String | Stage identifier.
+let stepId = "stepId_example"; // String | Step identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -464,9 +512,9 @@ apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **stageId** | **String** | Stage ID |  |
- **stepId** | **String** | Step ID |  |
+ **caseId** | **String** | Case identifier. |  |
+ **stageId** | **String** | Stage identifier. |  |
+ **stepId** | **String** | Step identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -482,8 +530,6 @@ apiInstance.getCasemanagementCaseStageStep(caseId, stageId, stepId, opts)
 GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps
 
 Get a list of Steps.
-
-getCasemanagementCaseStageSteps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -502,8 +548,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let stageId = "stageId_example"; // String | Stage ID
+let caseId = "caseId_example"; // String | Case identifier.
+let stageId = "stageId_example"; // String | Stage identifier.
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
@@ -529,8 +575,8 @@ apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **stageId** | **String** | Stage ID |  |
+ **caseId** | **String** | Case identifier. |  |
+ **stageId** | **String** | Stage identifier. |  |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
@@ -550,8 +596,6 @@ GET /api/v2/casemanagement/cases/{caseId}/stages
 
 Get a list of Stages.
 
-getCasemanagementCaseStages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * caseManagement:stage:view
@@ -569,7 +613,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
+let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
@@ -595,7 +639,7 @@ apiInstance.getCasemanagementCaseStages(caseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
+ **caseId** | **String** | Case identifier. |  |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
@@ -615,8 +659,6 @@ GET /api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId}
 
 Get a Terminate Job for a Case.
 
-getCasemanagementCaseTerminateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * caseManagement:terminateJob:view
@@ -634,8 +676,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let jobId = "jobId_example"; // String | Job ID
+let caseId = "caseId_example"; // String | Case identifier.
+let jobId = "jobId_example"; // String | Terminate Job identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -658,8 +700,8 @@ apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **jobId** | **String** | Job ID |  |
+ **caseId** | **String** | Case identifier. |  |
+ **jobId** | **String** | Terminate Job identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -675,8 +717,6 @@ apiInstance.getCasemanagementCaseTerminateJob(caseId, jobId, opts)
 GET /api/v2/casemanagement/caseplans/{caseplanId}
 
 Get a Caseplan.
-
-getCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -695,7 +735,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -718,7 +758,7 @@ apiInstance.getCasemanagementCaseplan(caseplanId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -734,8 +774,6 @@ apiInstance.getCasemanagementCaseplan(caseplanId, opts)
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}
 
 Get a Caseplan version.
-
-getCasemanagementCaseplanVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -754,8 +792,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version of the caseplan
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -778,8 +816,8 @@ apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version of the caseplan |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -794,9 +832,7 @@ apiInstance.getCasemanagementCaseplanVersion(caseplanId, versionId, opts)
 
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas
 
-Get the dataSchemas for a caseplan version.
-
-getCasemanagementCaseplanVersionDataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Get the data schemas for a Caseplan version.
 
 Requires ANY permissions:
 
@@ -815,8 +851,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version of the caseplan
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -839,8 +875,8 @@ apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, o
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version of the caseplan |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -856,8 +892,6 @@ apiInstance.getCasemanagementCaseplanVersionDataschemas(caseplanId, versionId, o
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/intakesettings
 
 Get the intake settings for a Caseplan version.
-
-getCasemanagementCaseplanVersionIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -876,8 +910,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version of the caseplan
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -900,8 +934,8 @@ apiInstance.getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version of the caseplan |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -917,8 +951,6 @@ apiInstance.getCasemanagementCaseplanVersionIntakesettings(caseplanId, versionId
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}
 
 Get a Stageplan.
-
-getCasemanagementCaseplanVersionStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -937,11 +969,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version ID
-let stageplanId = "stageplanId_example"; // String | Stageplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
 let opts = { 
-  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -963,10 +995,10 @@ apiInstance.getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, sta
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version ID |  |
- **stageplanId** | **String** | Stageplan ID |  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
+ **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: caseplan |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -982,8 +1014,6 @@ apiInstance.getCasemanagementCaseplanVersionStageplan(caseplanId, versionId, sta
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans/{stepplanId}
 
 Get a Stepplan.
-
-getCasemanagementCaseplanVersionStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1002,12 +1032,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version ID
-let stageplanId = "stageplanId_example"; // String | Stageplan ID
-let stepplanId = "stepplanId_example"; // String | Stepplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+let stepplanId = "stepplanId_example"; // String | Stepplan identifier.
 let opts = { 
-  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1029,11 +1059,11 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versio
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version ID |  |
- **stageplanId** | **String** | Stageplan ID |  |
- **stepplanId** | **String** | Stepplan ID |  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan, worktype |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
+ **stepplanId** | **String** | Stepplan identifier. |  |
+ **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: stageplan, caseplan, worktype |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1049,8 +1079,6 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplan(caseplanId, versio
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans
 
 Get a list of Stepplans.
-
-getCasemanagementCaseplanVersionStageplanStepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1069,14 +1097,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version ID
-let stageplanId = "stageplanId_example"; // String | Stageplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1098,13 +1126,13 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versi
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version ID |  |
- **stageplanId** | **String** | Stageplan ID |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
+ **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1120,8 +1148,6 @@ apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versi
 GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans
 
 Get a list of Stageplans.
-
-getCasemanagementCaseplanVersionStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1140,13 +1166,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let versionId = "versionId_example"; // String | Version ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let versionId = "versionId_example"; // String | Caseplan version identifier.
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1168,12 +1194,12 @@ apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, op
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **versionId** | **String** | Version ID |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **versionId** | **String** | Caseplan version identifier. |  |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: caseplan |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1189,8 +1215,6 @@ apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, op
 GET /api/v2/casemanagement/caseplans
 
 Get a list of Caseplans.
-
-getCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1210,10 +1234,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CaseManagementApi();
 
 let opts = { 
-  'after': "after_example", // String | The cursor that points to the end of the set of caseplans that has been returned.
-  'pageSize': 3.4, // Number | Number of caseplans to return. Maximum of 200.
-  'customerIntentId': "customerIntentId_example", // String | Filter by Customer Intent.
-  'divisionIds': "divisionIds_example", // String | Filter by Divisions.
+  'after': "after_example", // String | Cursor that points to the end of the previously returned set of Caseplans.
+  'pageSize': 3.4, // Number | Number of Caseplans to return. Maximum is 200.
+  'customerIntentId': "customerIntentId_example", // String | Filter by customer intent.
+  'divisionIds': "divisionIds_example", // String | Filter by divisions.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1235,10 +1259,10 @@ apiInstance.getCasemanagementCaseplans(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **after** | **String** | The cursor that points to the end of the set of caseplans that has been returned. | [optional]  |
- **pageSize** | **Number** | Number of caseplans to return. Maximum of 200. | [optional]  |
- **customerIntentId** | **String** | Filter by Customer Intent. | [optional]  |
- **divisionIds** | **String** | Filter by Divisions. | [optional]  |
+ **after** | **String** | Cursor that points to the end of the previously returned set of Caseplans. | [optional]  |
+ **pageSize** | **Number** | Number of Caseplans to return. Maximum is 200. | [optional]  |
+ **customerIntentId** | **String** | Filter by customer intent. | [optional]  |
+ **divisionIds** | **String** | Filter by divisions. | [optional]  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1253,9 +1277,7 @@ apiInstance.getCasemanagementCaseplans(opts)
 
 GET /api/v2/casemanagement/cases/externalcontacts/{externalContactId}
 
-Get a list of cases for provided external contact id.
-
-getCasemanagementCasesExternalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Get a list of Cases for an External Contact.
 
 Requires ANY permissions:
 
@@ -1274,12 +1296,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let externalContactId = "externalContactId_example"; // String | External Contact ID
+let externalContactId = "externalContactId_example"; // String | External contact identifier.
 let opts = { 
-  'after': "after_example", // String | The cursor that points to the end of the set of cases that has been returned.
-  'pageSize': 3.4, // Number | Number of cases to return. Maximum of 200.
-  'divisionIds': "divisionIds_example", // String | Filter by Divisions
-  'expands': ["expands_example"], // [String] | Which fields to expand.
+  'after': "after_example", // String | Cursor pointing to the end of the previously returned page of Cases.
+  'pageSize': 3.4, // Number | Number of Cases to return (maximum 200).
+  'divisionIds': "divisionIds_example", // String | Filter by divisions.
+  'expands': ["expands_example"], // [String] | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1301,11 +1323,11 @@ apiInstance.getCasemanagementCasesExternalcontact(externalContactId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalContactId** | **String** | External Contact ID |  |
- **after** | **String** | The cursor that points to the end of the set of cases that has been returned. | [optional]  |
- **pageSize** | **Number** | Number of cases to return. Maximum of 200. | [optional]  |
- **divisionIds** | **String** | Filter by Divisions | [optional]  |
- **expands** | **[String]** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **externalContactId** | **String** | External contact identifier. |  |
+ **after** | **String** | Cursor pointing to the end of the previously returned page of Cases. | [optional]  |
+ **pageSize** | **Number** | Number of Cases to return (maximum 200). | [optional]  |
+ **divisionIds** | **String** | Filter by divisions. | [optional]  |
+ **expands** | **[String]** | Fields to expand. | [optional] <br />**Values**: caseplan |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1321,8 +1343,6 @@ apiInstance.getCasemanagementCasesExternalcontact(externalContactId, opts)
 GET /api/v2/casemanagement/cases/references/{referenceId}
 
 Get a Case by reference.
-
-getCasemanagementCasesReference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1341,9 +1361,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let referenceId = "referenceId_example"; // String | Reference
+let referenceId = "referenceId_example"; // String | Case reference.
 let opts = { 
-  'expands': "expands_example", // String | Which fields to expand.
+  'expands': "expands_example", // String | Fields to expand.
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
@@ -1365,8 +1385,8 @@ apiInstance.getCasemanagementCasesReference(referenceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **referenceId** | **String** | Reference |  |
- **expands** | **String** | Which fields to expand. | [optional] <br />**Values**: caseplan |
+ **referenceId** | **String** | Case reference. |  |
+ **expands** | **String** | Fields to expand. | [optional] <br />**Values**: caseplan |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1381,9 +1401,7 @@ apiInstance.getCasemanagementCasesReference(referenceId, opts)
 
 PATCH /api/v2/casemanagement/cases/{caseId}/datedue
 
-Update date due of a Case.
-
-patchCasemanagementCaseDatedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Update the due date of a Case.
 
 Requires ANY permissions:
 
@@ -1402,8 +1420,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let body = {}; // Object | Date due
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | Due date update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1426,8 +1444,8 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **body** | **Object** | Date due |  |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | Due date update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1443,8 +1461,6 @@ apiInstance.patchCasemanagementCaseDatedue(caseId, body, opts)
 PATCH /api/v2/casemanagement/cases/{caseId}/priority
 
 Update priority of a Case.
-
-patchCasemanagementCasePriority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1463,8 +1479,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let body = {}; // Object | Priority
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | Priority update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1487,8 +1503,8 @@ apiInstance.patchCasemanagementCasePriority(caseId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **body** | **Object** | Priority |  |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | Priority update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1504,8 +1520,6 @@ apiInstance.patchCasemanagementCasePriority(caseId, body, opts)
 PATCH /api/v2/casemanagement/cases/{caseId}/summary
 
 Update summary of a Case.
-
-patchCasemanagementCaseSummary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1524,8 +1538,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
-let body = {}; // Object | Summary
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | Summary update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1548,8 +1562,8 @@ apiInstance.patchCasemanagementCaseSummary(caseId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
- **body** | **Object** | Summary |  |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | Summary update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1565,8 +1579,6 @@ apiInstance.patchCasemanagementCaseSummary(caseId, body, opts)
 PATCH /api/v2/casemanagement/caseplans/{caseplanId}
 
 Update the attributes of a Caseplan.
-
-patchCasemanagementCaseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1585,8 +1597,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let body = {}; // Object | Caseplan
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let body = {}; // Object | Caseplan update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1609,8 +1621,8 @@ apiInstance.patchCasemanagementCaseplan(caseplanId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **body** | **Object** | Caseplan |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **body** | **Object** | Caseplan update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1626,8 +1638,6 @@ apiInstance.patchCasemanagementCaseplan(caseplanId, body, opts)
 PATCH /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}
 
 Update the attributes of a Stageplan.
-
-patchCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1646,9 +1656,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let stageplanId = "stageplanId_example"; // String | Stageplan ID
-let body = {}; // Object | Stageplan
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+let body = {}; // Object | Stageplan update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1671,9 +1681,9 @@ apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **stageplanId** | **String** | Stageplan ID |  |
- **body** | **Object** | Stageplan |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
+ **body** | **Object** | Stageplan update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1689,8 +1699,6 @@ apiInstance.patchCasemanagementCaseplanStageplan(caseplanId, stageplanId, body, 
 PATCH /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId}
 
 Update the attributes of a Stepplan.
-
-patchCasemanagementCaseplanStageplanStepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1709,10 +1717,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let stageplanId = "stageplanId_example"; // String | Stageplan ID
-let stepplanId = "stepplanId_example"; // String | Stepplan ID
-let body = {}; // Object | Stepplan
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let stageplanId = "stageplanId_example"; // String | Stageplan identifier.
+let stepplanId = "stepplanId_example"; // String | Stepplan identifier.
+let body = {}; // Object | Stepplan update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1735,10 +1743,10 @@ apiInstance.patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **stageplanId** | **String** | Stageplan ID |  |
- **stepplanId** | **String** | Stepplan ID |  |
- **body** | **Object** | Stepplan |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **stageplanId** | **String** | Stageplan identifier. |  |
+ **stepplanId** | **String** | Stepplan identifier. |  |
+ **body** | **Object** | Stepplan update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1748,14 +1756,12 @@ apiInstance.patchCasemanagementCaseplanStageplanStepplan(caseplanId, stageplanId
 
 ## postCasemanagementCaseAssociations
 
-> CaseAssociation postCasemanagementCaseAssociations(caseId, opts)
+> CaseAssociation postCasemanagementCaseAssociations(caseId, body, opts)
 
 
 POST /api/v2/casemanagement/cases/{caseId}/associations
 
-Create a case association.
-
-postCasemanagementCaseAssociations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Create a Case association.
 
 Requires ANY permissions:
 
@@ -1774,16 +1780,16 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID.
+let caseId = "caseId_example"; // String | Case identifier.
+let body = {}; // Object | Case association create request.
 let opts = { 
-  'body': {}, // Object | Case Association
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
   }
 };
 
-apiInstance.postCasemanagementCaseAssociations(caseId, opts)
+apiInstance.postCasemanagementCaseAssociations(caseId, body, opts)
   .then((data) => {
     console.log(`postCasemanagementCaseAssociations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1798,8 +1804,8 @@ apiInstance.postCasemanagementCaseAssociations(caseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID. |  |
- **body** | **Object** | Case Association | [optional]  |
+ **caseId** | **String** | Case identifier. |  |
+ **body** | **Object** | Case association create request. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1815,8 +1821,6 @@ apiInstance.postCasemanagementCaseAssociations(caseId, opts)
 POST /api/v2/casemanagement/cases/{caseId}/terminate/jobs
 
 Create a Terminate Job for a Case.
-
-postCasemanagementCaseTerminateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1835,7 +1839,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseId = "caseId_example"; // String | Case ID
+let caseId = "caseId_example"; // String | Case identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1858,12 +1862,71 @@ apiInstance.postCasemanagementCaseTerminateJobs(caseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseId** | **String** | Case ID |  |
+ **caseId** | **String** | Case identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TerminateJob**
+
+
+## postCasemanagementCaseplanDataschemas
+
+> CaseplanDataSchema postCasemanagementCaseplanDataschemas(caseplanId, body, opts)
+
+
+POST /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas
+
+Add a data schema to a draft Caseplan.
+
+Requires ALL permissions:
+
+* caseManagement:caseplanDataSchemas:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let body = {}; // Object | Data schema reference.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postCasemanagementCaseplanDataschemas(caseplanId, body, opts)
+  .then((data) => {
+    console.log(`postCasemanagementCaseplanDataschemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCasemanagementCaseplanDataschemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **body** | **Object** | Data schema reference. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CaseplanDataSchema**
 
 
 ## postCasemanagementCaseplanPublish
@@ -1874,8 +1937,6 @@ apiInstance.postCasemanagementCaseTerminateJobs(caseId, opts)
 POST /api/v2/casemanagement/caseplans/{caseplanId}/publish
 
 Publish Caseplan.
-
-postCasemanagementCaseplanPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1894,7 +1955,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1917,7 +1978,7 @@ apiInstance.postCasemanagementCaseplanPublish(caseplanId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1933,8 +1994,6 @@ apiInstance.postCasemanagementCaseplanPublish(caseplanId, opts)
 POST /api/v2/casemanagement/caseplans/{caseplanId}/versions
 
 Create Caseplan version.
-
-postCasemanagementCaseplanVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1953,7 +2012,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -1976,7 +2035,7 @@ apiInstance.postCasemanagementCaseplanVersions(caseplanId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -1992,8 +2051,6 @@ apiInstance.postCasemanagementCaseplanVersions(caseplanId, opts)
 POST /api/v2/casemanagement/caseplans
 
 Create a Caseplan.
-
-postCasemanagementCaseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2012,7 +2069,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let body = {}; // Object | Caseplan
+let body = {}; // Object | Caseplan create request.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -2035,7 +2092,7 @@ apiInstance.postCasemanagementCaseplans(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Caseplan |  |
+ **body** | **Object** | Caseplan create request. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2050,9 +2107,7 @@ apiInstance.postCasemanagementCaseplans(body, opts)
 
 POST /api/v2/casemanagement/caseplans/query
 
-Query for caseplans
-
-postCasemanagementCaseplansQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Query for Caseplans.
 
 Requires ANY permissions:
 
@@ -2071,7 +2126,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let body = {}; // Object | CaseplanQueryRequest
+let body = {}; // Object | Caseplan query request.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -2094,7 +2149,7 @@ apiInstance.postCasemanagementCaseplansQuery(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | CaseplanQueryRequest |  |
+ **body** | **Object** | Caseplan query request. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2110,8 +2165,6 @@ apiInstance.postCasemanagementCaseplansQuery(body, opts)
 POST /api/v2/casemanagement/cases
 
 Create a Case.
-
-postCasemanagementCases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2130,7 +2183,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let body = {}; // Object | Case
+let body = {}; // Object | Case create request.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -2153,7 +2206,7 @@ apiInstance.postCasemanagementCases(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Case |  |
+ **body** | **Object** | Case create request. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2163,14 +2216,12 @@ apiInstance.postCasemanagementCases(body, opts)
 
 ## postCasemanagementCasesAssociationsQuery
 
-> CaseAssociationQueryEntityListing postCasemanagementCasesAssociationsQuery(opts)
+> CaseAssociationQueryEntityListing postCasemanagementCasesAssociationsQuery(body, opts)
 
 
 POST /api/v2/casemanagement/cases/associations/query
 
-Query for case associations
-
-postCasemanagementCasesAssociationsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Query for Case associations by interaction.
 
 Requires ANY permissions:
 
@@ -2189,15 +2240,15 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
+let body = {}; // Object | Case association query request.
 let opts = { 
-  'body': {}, // Object | Case Association
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
     'X-Request-ID': 'req-12345'
   }
 };
 
-apiInstance.postCasemanagementCasesAssociationsQuery(opts)
+apiInstance.postCasemanagementCasesAssociationsQuery(body, opts)
   .then((data) => {
     console.log(`postCasemanagementCasesAssociationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2212,12 +2263,73 @@ apiInstance.postCasemanagementCasesAssociationsQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Case Association | [optional]  |
+ **body** | **Object** | Case association query request. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CaseAssociationQueryEntityListing**
+
+
+## putCasemanagementCaseplanDataschema
+
+> CaseplanDataSchema putCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, body, opts)
+
+
+PUT /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}
+
+Update a data schema on a draft Caseplan.
+
+Requires ALL permissions:
+
+* caseManagement:caseplanDataSchemas:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CaseManagementApi();
+
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let schemaKeyName = "schemaKeyName_example"; // String | Schema key (for example default).
+let body = {}; // Object | Data schema reference.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putCasemanagementCaseplanDataschema(caseplanId, schemaKeyName, body, opts)
+  .then((data) => {
+    console.log(`putCasemanagementCaseplanDataschema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putCasemanagementCaseplanDataschema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **schemaKeyName** | **String** | Schema key (for example default). |  |
+ **body** | **Object** | Data schema reference. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CaseplanDataSchema**
 
 
 ## putCasemanagementCaseplanIntakesettings
@@ -2228,8 +2340,6 @@ apiInstance.postCasemanagementCasesAssociationsQuery(opts)
 PUT /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings
 
 Update the intake settings for a Caseplan.
-
-putCasemanagementCaseplanIntakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2248,8 +2358,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.CaseManagementApi();
 
-let caseplanId = "caseplanId_example"; // String | Caseplan ID
-let body = {}; // Object | Intake Settings
+let caseplanId = "caseplanId_example"; // String | Caseplan identifier.
+let body = {}; // Object | Intake settings update.
 let opts = { 
   'customHeaders': {  // Object.<string, string> | Request Custom Headers
     'X-Service-Name': 'customer-service',
@@ -2272,8 +2382,8 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **caseplanId** | **String** | Caseplan ID |  |
- **body** | **Object** | Intake Settings |  |
+ **caseplanId** | **String** | Caseplan identifier. |  |
+ **body** | **Object** | Intake settings update. |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -2281,4 +2391,4 @@ apiInstance.putCasemanagementCaseplanIntakesettings(caseplanId, body, opts)
 **IntakeSettingsListing**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_
