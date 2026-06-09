@@ -7,10 +7,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteBusinessrulesDecisiontable**](BusinessRulesApi#deleteBusinessrulesDecisiontable) | **DELETE** /api/v2/businessrules/decisiontables/{tableId} | Delete a decision table
+[**deleteBusinessrulesDecisiontableExport**](BusinessRulesApi#deleteBusinessrulesDecisiontableExport) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId} | Delete an export job for a decision table
+[**deleteBusinessrulesDecisiontableImport**](BusinessRulesApi#deleteBusinessrulesDecisiontableImport) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} | Delete decision table row import job
 [**deleteBusinessrulesDecisiontableVersion**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersion) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} | Delete a decision table version
 [**deleteBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#deleteBusinessrulesDecisiontableVersionRow) | **DELETE** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} | Delete a decision table row
 [**deleteBusinessrulesSchema**](BusinessRulesApi#deleteBusinessrulesSchema) | **DELETE** /api/v2/businessrules/schemas/{schemaId} | Delete a schema
 [**getBusinessrulesDecisiontable**](BusinessRulesApi#getBusinessrulesDecisiontable) | **GET** /api/v2/businessrules/decisiontables/{tableId} | Get a decision table
+[**getBusinessrulesDecisiontableExport**](BusinessRulesApi#getBusinessrulesDecisiontableExport) | **GET** /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId} | Get an export job for a decision table
+[**getBusinessrulesDecisiontableExports**](BusinessRulesApi#getBusinessrulesDecisiontableExports) | **GET** /api/v2/businessrules/decisiontables/{tableId}/exports | List export jobs for a decision table
+[**getBusinessrulesDecisiontableImport**](BusinessRulesApi#getBusinessrulesDecisiontableImport) | **GET** /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} | Get decision table row import job
+[**getBusinessrulesDecisiontableImports**](BusinessRulesApi#getBusinessrulesDecisiontableImports) | **GET** /api/v2/businessrules/decisiontables/{tableId}/imports | List decision table row import jobs
 [**getBusinessrulesDecisiontableVersion**](BusinessRulesApi#getBusinessrulesDecisiontableVersion) | **GET** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} | Get a decision table version
 [**getBusinessrulesDecisiontableVersionRow**](BusinessRulesApi#getBusinessrulesDecisiontableVersionRow) | **GET** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} | Get a decision table row
 [**getBusinessrulesDecisiontableVersionRows**](BusinessRulesApi#getBusinessrulesDecisiontableVersionRows) | **GET** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows | Get a list of decision table rows.
@@ -22,11 +28,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getBusinessrulesSchemasCoretype**](BusinessRulesApi#getBusinessrulesSchemasCoretype) | **GET** /api/v2/businessrules/schemas/coretypes/{coreTypeName} | Get a specific named core type.
 [**getBusinessrulesSchemasCoretypes**](BusinessRulesApi#getBusinessrulesSchemasCoretypes) | **GET** /api/v2/businessrules/schemas/coretypes | Get the core types from which all schemas are built.
 [**patchBusinessrulesDecisiontable**](BusinessRulesApi#patchBusinessrulesDecisiontable) | **PATCH** /api/v2/businessrules/decisiontables/{tableId} | Update a decision table
+[**patchBusinessrulesDecisiontableImport**](BusinessRulesApi#patchBusinessrulesDecisiontableImport) | **PATCH** /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} | Update decision table row import job
 [**patchBusinessrulesDecisiontableVersion**](BusinessRulesApi#patchBusinessrulesDecisiontableVersion) | **PATCH** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} | Update a decision table version
 [**postBusinessrulesDecisiontableExecute**](BusinessRulesApi#postBusinessrulesDecisiontableExecute) | **POST** /api/v2/businessrules/decisiontables/{tableId}/execute | Execute a published decision table
+[**postBusinessrulesDecisiontableExports**](BusinessRulesApi#postBusinessrulesDecisiontableExports) | **POST** /api/v2/businessrules/decisiontables/{tableId}/exports | Create an export job for a decision table version
+[**postBusinessrulesDecisiontableImports**](BusinessRulesApi#postBusinessrulesDecisiontableImports) | **POST** /api/v2/businessrules/decisiontables/{tableId}/imports | Create a decision table row import job
 [**postBusinessrulesDecisiontableVersionCopy**](BusinessRulesApi#postBusinessrulesDecisiontableVersionCopy) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy | Copy a decision table version
 [**postBusinessrulesDecisiontableVersionExecute**](BusinessRulesApi#postBusinessrulesDecisiontableVersionExecute) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute | Execute a decision table version
 [**postBusinessrulesDecisiontableVersionRows**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRows) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows | Create a decision table row
+[**postBusinessrulesDecisiontableVersionRowsBulkAdd**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkAdd) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add | Bulk add decision table rows
+[**postBusinessrulesDecisiontableVersionRowsBulkRemove**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkRemove) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove | Bulk delete decision table rows
+[**postBusinessrulesDecisiontableVersionRowsBulkUpdate**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsBulkUpdate) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update | Bulk update decision table rows
 [**postBusinessrulesDecisiontableVersionRowsSearch**](BusinessRulesApi#postBusinessrulesDecisiontableVersionRowsSearch) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search | Search for decision table rows
 [**postBusinessrulesDecisiontableVersionSync**](BusinessRulesApi#postBusinessrulesDecisiontableVersionSync) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync | Update the Business Rules Schema to the latest version for a given decision table version
 [**postBusinessrulesDecisiontableVersions**](BusinessRulesApi#postBusinessrulesDecisiontableVersions) | **POST** /api/v2/businessrules/decisiontables/{tableId}/versions | Create a new decision table version
@@ -90,6 +102,124 @@ apiInstance.deleteBusinessrulesDecisiontable(tableId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **tableId** | **String** | Table ID |  |
  **forceDelete** | **Boolean** | Force delete decision table (under certain conditions) | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteBusinessrulesDecisiontableExport
+
+> void deleteBusinessrulesDecisiontableExport(tableId, exportJobId, opts)
+
+
+DELETE /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}
+
+Delete an export job for a decision table
+
+Requires ANY permissions:
+
+* businessrules:decisionTableExportJob:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let exportJobId = "exportJobId_example"; // String | Export Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteBusinessrulesDecisiontableExport(tableId, exportJobId, opts)
+  .then(() => {
+    console.log('deleteBusinessrulesDecisiontableExport returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteBusinessrulesDecisiontableExport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **exportJobId** | **String** | Export Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteBusinessrulesDecisiontableImport
+
+> void deleteBusinessrulesDecisiontableImport(tableId, importJobId, opts)
+
+
+DELETE /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}
+
+Delete decision table row import job
+
+Requires ANY permissions:
+
+* businessrules:decisionTableImportJob:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let importJobId = "importJobId_example"; // String | Import job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteBusinessrulesDecisiontableImport(tableId, importJobId, opts)
+  .then(() => {
+    console.log('deleteBusinessrulesDecisiontableImport returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteBusinessrulesDecisiontableImport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **importJobId** | **String** | Import job ID |  |
  **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
@@ -332,6 +462,246 @@ apiInstance.getBusinessrulesDecisiontable(tableId, opts)
 ### Return type
 
 **DecisionTable**
+
+
+## getBusinessrulesDecisiontableExport
+
+> DecisionTableExportJob getBusinessrulesDecisiontableExport(tableId, exportJobId, opts)
+
+
+GET /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}
+
+Get an export job for a decision table
+
+Requires ANY permissions:
+
+* businessrules:decisionTableExportJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let exportJobId = "exportJobId_example"; // String | Export Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getBusinessrulesDecisiontableExport(tableId, exportJobId, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesDecisiontableExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getBusinessrulesDecisiontableExport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **exportJobId** | **String** | Export Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableExportJob**
+
+
+## getBusinessrulesDecisiontableExports
+
+> DecisionTableExportJobListing getBusinessrulesDecisiontableExports(tableId, opts)
+
+
+GET /api/v2/businessrules/decisiontables/{tableId}/exports
+
+List export jobs for a decision table
+
+Requires ANY permissions:
+
+* businessrules:decisionTableExportJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getBusinessrulesDecisiontableExports(tableId, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesDecisiontableExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getBusinessrulesDecisiontableExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableExportJobListing**
+
+
+## getBusinessrulesDecisiontableImport
+
+> DecisionTableImportJob getBusinessrulesDecisiontableImport(tableId, importJobId, opts)
+
+
+GET /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}
+
+Get decision table row import job
+
+Requires ANY permissions:
+
+* businessrules:decisionTableImportJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let importJobId = "importJobId_example"; // String | Import job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getBusinessrulesDecisiontableImport(tableId, importJobId, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesDecisiontableImport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getBusinessrulesDecisiontableImport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **importJobId** | **String** | Import job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableImportJob**
+
+
+## getBusinessrulesDecisiontableImports
+
+> DecisionTableImportJobListing getBusinessrulesDecisiontableImports(tableId, opts)
+
+
+GET /api/v2/businessrules/decisiontables/{tableId}/imports
+
+List decision table row import jobs
+
+Requires ANY permissions:
+
+* businessrules:decisionTableImportJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 100.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getBusinessrulesDecisiontableImports(tableId, opts)
+  .then((data) => {
+    console.log(`getBusinessrulesDecisiontableImports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getBusinessrulesDecisiontableImports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableImportJobListing**
 
 
 ## getBusinessrulesDecisiontableVersion
@@ -995,6 +1365,67 @@ apiInstance.patchBusinessrulesDecisiontable(tableId, body, opts)
 **DecisionTable**
 
 
+## patchBusinessrulesDecisiontableImport
+
+> DecisionTableImportJob patchBusinessrulesDecisiontableImport(tableId, importJobId, body, opts)
+
+
+PATCH /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}
+
+Update decision table row import job
+
+Requires ANY permissions:
+
+* businessrules:decisionTableImportJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let importJobId = "importJobId_example"; // String | Import job ID
+let body = {}; // Object | Import job update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchBusinessrulesDecisiontableImport(tableId, importJobId, body, opts)
+  .then((data) => {
+    console.log(`patchBusinessrulesDecisiontableImport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchBusinessrulesDecisiontableImport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **importJobId** | **String** | Import job ID |  |
+ **body** | **Object** | Import job update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableImportJob**
+
+
 ## patchBusinessrulesDecisiontableVersion
 
 > DecisionTableVersion patchBusinessrulesDecisiontableVersion(tableId, tableVersion, body, opts)
@@ -1113,6 +1544,124 @@ apiInstance.postBusinessrulesDecisiontableExecute(tableId, body, opts)
 ### Return type
 
 **DecisionTableExecutionResponse**
+
+
+## postBusinessrulesDecisiontableExports
+
+> DecisionTableExportJob postBusinessrulesDecisiontableExports(tableId, body, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/exports
+
+Create an export job for a decision table version
+
+Requires ANY permissions:
+
+* businessrules:decisionTableExportJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let body = {}; // Object | Export job request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableExports(tableId, body, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **body** | **Object** | Export job request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableExportJob**
+
+
+## postBusinessrulesDecisiontableImports
+
+> DecisionTableImportJob postBusinessrulesDecisiontableImports(tableId, body, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/imports
+
+Create a decision table row import job
+
+Requires ANY permissions:
+
+* businessrules:decisionTableImportJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let body = {}; // Object | Import job create request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableImports(tableId, body, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableImports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableImports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **body** | **Object** | Import job create request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DecisionTableImportJob**
 
 
 ## postBusinessrulesDecisiontableVersionCopy
@@ -1299,6 +1848,198 @@ apiInstance.postBusinessrulesDecisiontableVersionRows(tableId, tableVersion, bod
 ### Return type
 
 **DecisionTableRow**
+
+
+## postBusinessrulesDecisiontableVersionRowsBulkAdd
+
+> BulkAddDecisionTableRowsResponse postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId, tableVersion, body, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add
+
+Bulk add decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Requires ALL permissions:
+
+* businessrules:decisionTableRow:add
+* routing:queue:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let body = {}; // Object | Bulk add decision table rows request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableVersionRowsBulkAdd(tableId, tableVersion, body, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableVersionRowsBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableVersionRowsBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **tableVersion** | **Number** | Table Version |  |
+ **body** | **Object** | Bulk add decision table rows request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BulkAddDecisionTableRowsResponse**
+
+
+## postBusinessrulesDecisiontableVersionRowsBulkRemove
+
+> void postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId, tableVersion, body, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove
+
+Bulk delete decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Requires ALL permissions:
+
+* businessrules:decisionTableRow:delete
+* routing:queue:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableVersionRowsBulkRemove(tableId, tableVersion, body, opts)
+  .then(() => {
+    console.log('postBusinessrulesDecisiontableVersionRowsBulkRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableVersionRowsBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **tableVersion** | **Number** | Table Version |  |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## postBusinessrulesDecisiontableVersionRowsBulkUpdate
+
+> BulkUpdateDecisionTableRowsResponse postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId, tableVersion, body, opts)
+
+
+POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update
+
+Bulk update decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queues division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Requires ALL permissions:
+
+* businessrules:decisionTableRow:edit
+* routing:queue:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.BusinessRulesApi();
+
+let tableId = "tableId_example"; // String | Table ID
+let tableVersion = 3.4; // Number | Table Version
+let body = {}; // Object | Bulk update decision table rows request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postBusinessrulesDecisiontableVersionRowsBulkUpdate(tableId, tableVersion, body, opts)
+  .then((data) => {
+    console.log(`postBusinessrulesDecisiontableVersionRowsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postBusinessrulesDecisiontableVersionRowsBulkUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tableId** | **String** | Table ID |  |
+ **tableVersion** | **Number** | Table Version |  |
+ **body** | **Object** | Bulk update decision table rows request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BulkUpdateDecisionTableRowsResponse**
 
 
 ## postBusinessrulesDecisiontableVersionRowsSearch
@@ -1784,4 +2525,4 @@ apiInstance.putBusinessrulesSchema(schemaId, body, opts)
 **BusinessRulesDataSchema**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

@@ -342,8 +342,6 @@ DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for conversation aggregates
 
-deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:conversationAggregate:view
@@ -1556,8 +1554,6 @@ GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Get status for async query for conversation aggregates
 
-getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:conversationAggregate:view
@@ -1614,8 +1610,6 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -11977,8 +11971,6 @@ POST /api/v2/analytics/conversations/aggregates/jobs
 
 Query for conversation aggregates asynchronously
 
-postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:conversationAggregate:view
@@ -16987,7 +16979,7 @@ POST /api/v2/conversations/messages/agentless
 
 Send an agentless outbound message
 
-Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and toAddress specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
+Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and recipient specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
 
 Requires ALL permissions:
 
@@ -19726,4 +19718,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

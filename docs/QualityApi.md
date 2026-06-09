@@ -90,8 +90,6 @@ DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for evaluation aggregates
 
-deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -148,8 +146,6 @@ void (no response body)
 DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for survey aggregates
-
-deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -561,8 +557,6 @@ GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
 
 Get status for async query for evaluation aggregates
 
-getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -619,8 +613,6 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -681,8 +673,6 @@ GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
 
 Get status for async query for survey aggregates
 
-getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:surveyAggregate:view
@@ -739,8 +729,6 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId, opts)
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2906,8 +2894,6 @@ POST /api/v2/analytics/evaluations/aggregates/jobs
 
 Query for evaluation aggregates asynchronously
 
-postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -3021,8 +3007,6 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body, opts)
 POST /api/v2/analytics/surveys/aggregates/jobs
 
 Query for survey aggregates asynchronously
-
-postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4478,4 +4462,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body, opts)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

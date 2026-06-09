@@ -25,8 +25,6 @@ DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for flow aggregates
 
-deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowAggregate:view
@@ -84,8 +82,6 @@ GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
 
 Get status for async query for Flow aggregates
 
-getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowAggregate:view
@@ -142,8 +138,6 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId, opts)
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -264,8 +258,6 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
 POST /api/v2/analytics/flows/aggregates/jobs
 
 Query for flow aggregates asynchronously
-
-postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -429,4 +421,4 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body, opts)
 **FlowObservationQueryResponse**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_

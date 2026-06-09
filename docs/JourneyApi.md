@@ -113,8 +113,6 @@ DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for journey aggregates
 
-deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -699,8 +697,6 @@ GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
 
 Get status for async query for journey aggregates
 
-getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -757,8 +753,6 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId, opts)
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4206,8 +4200,6 @@ POST /api/v2/analytics/journeys/aggregates/jobs
 
 Query for journey aggregates asynchronously
 
-postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -5780,4 +5772,4 @@ apiInstance.putJourneyViewsEventdefinitionActivate(eventDefinitionId, opts)
 **ActivateExternalEventResponse**
 
 
-_purecloud-platform-client-v2@253.0.0_
+_purecloud-platform-client-v2@254.0.0_
