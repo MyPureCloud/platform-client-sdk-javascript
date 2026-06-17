@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactUnresolved**](ExternalContactsApi#getExternalcontactsContactUnresolved) | **GET** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact
 [**getExternalcontactsContacts**](ExternalContactsApi#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
 [**getExternalcontactsContactsExport**](ExternalContactsApi#getExternalcontactsContactsExport) | **GET** /api/v2/externalcontacts/contacts/exports/{exportId} | Get export for exportId
-[**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | **GET** /api/v2/externalcontacts/contacts/exports | List exports for organization
+[**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | **GET** /api/v2/externalcontacts/contacts/exports | List contact exports for organization
 [**getExternalcontactsContactsSchema**](ExternalContactsApi#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
 [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
@@ -1270,7 +1270,7 @@ apiInstance.getExternalcontactsContactsExport(exportId, opts)
 
 GET /api/v2/externalcontacts/contacts/exports
 
-List exports for organization
+List contact exports for organization
 
 Requires ALL permissions:
 
@@ -7291,4 +7291,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body, opts)
 **Relationship**
 
 
-_purecloud-platform-client-v2@254.0.0_
+_purecloud-platform-client-v2@255.0.0_

@@ -123,4 +123,4 @@ apiInstance.postScreenrecordingToken(opts)
 **SignedData**
 
 
-_purecloud-platform-client-v2@254.0.0_
+_purecloud-platform-client-v2@255.0.0_

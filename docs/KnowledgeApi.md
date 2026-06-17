@@ -7412,4 +7412,4 @@ apiInstance.putKnowledgeSource(sourceId, body, opts)
 **V3SourceDetailedResponse**
 
 
-_purecloud-platform-client-v2@254.0.0_
+_purecloud-platform-client-v2@255.0.0_
